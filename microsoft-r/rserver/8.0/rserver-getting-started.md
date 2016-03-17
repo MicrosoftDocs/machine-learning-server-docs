@@ -1,4 +1,5 @@
 ---
+
 # required metadata
 title:"Getting Started Guide"
 description: "Microsoft R Services features and components overview."
@@ -20,6 +21,7 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: ""
 ms.custom:""
+
 ---
 
 # R Services 2016 Getting Started Guide
