@@ -1,4 +1,3 @@
-
 ---
 # required metadata
 title:"Getting Started Guide"
