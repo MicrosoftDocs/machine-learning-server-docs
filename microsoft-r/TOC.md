@@ -1,6 +1,12 @@
 # [R at Microsoft](index.md)
-# Microsoft R Server
-## 8.0
-### [Getting Started Guide](rserver/8.0/rserver-getting-started.md)
-# Microsoft DeployR
-## 8.0
+# [Microsoft R Server]()
+## [8.0]()
+### [Install Docs]()
+### [R Server General]()
+#### [Getting Started Guide](rserver/8.0/rserver-getting-started.md)
+#### [New Features Guide](rserver/8.0/rserver-new-features.md)
+### [IDE Getting Started Guide](rserver/8.0/RevoRPE_Getting_Started.md)
+### [IDE User's Guide](rserver/8.0/RevoREP_Users_Guide.md)
+### [RevoScaleR Getting Started Guide](rserver/8.0/rserver-scaler-getting-started.md)
+# [Microsoft DeployR]()
+## [8.0]()
