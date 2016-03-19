@@ -42,6 +42,5 @@
 #### [RevoScaleR ODBC Data Import Guide](rserver/8.0/rserver-scaler-odbc.md)
 ### RevoPemaR Documentation
 #### [RevoPemaR Getting Started Guide](rserver/8.0/rserver-pemar-getting-started.md)
-
 # DeployR
 ## 8.0
