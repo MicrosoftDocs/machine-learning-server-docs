@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title:"Getting Started Guide"
+title: "Getting Started Guide"
 description: "Microsoft R Services features and components overview."
 keywords: ""
 author: "richcalaway"
@@ -13,14 +13,14 @@ ms.service: ""
 ms.assetid: ""
 
 # optional metadata
-ROBOTS:""
+ROBOTS: ""
 audience: ""
 ms.devlang: ""
-ms.reviewer:""
+ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: ""
-ms.custom:""
+ms.custom: ""
 
 ---
 
