@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "RevoScaleR ODBC Data Import Guide"
+description: "Microsoft R Services data import with ODBC."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # RevoScaleR ODBC Data Import Guide
 
 ## Before You Begin

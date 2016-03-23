@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "RevoScaleR SQL Server Getting Started Guide"
+description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # RevoScaleR SQL Server Getting Started Guide 
 
 ## Overview 
