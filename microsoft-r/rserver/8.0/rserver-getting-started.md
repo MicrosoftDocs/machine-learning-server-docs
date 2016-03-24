@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "Getting Started Guide"
+description: "Microsoft R Services features and components overview."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # R Services 2016 Getting Started Guide
 
 ## What is Microsoft R Services?

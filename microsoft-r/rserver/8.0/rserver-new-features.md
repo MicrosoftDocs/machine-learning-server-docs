@@ -1,4 +1,30 @@
-# What’s New in Microsoft R Services
+---
+
+# required metadata
+title: "What's New in Microsoft R Server"
+description: "Microsoft R Services what's new guide."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# What’s New in Microsoft R Server
 
 ## Overview
 

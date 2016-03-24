@@ -1,4 +1,30 @@
-# RevoScaleR Hadoop Getting Started Guide
+---
+
+# required metadata
+title: "RevoScaleR Hadoop MapReduce Getting Started Guide"
+description: "Microsoft R Server with Hadoop MapReduce features and components overview."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# RevoScaleR Hadoop MapReduce Getting Started Guide
 
 ## Overview
 
