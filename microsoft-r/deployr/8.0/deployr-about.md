@@ -1,4 +1,4 @@
-## About
+# About DeployR
 
 ## Overview
 
@@ -108,12 +108,12 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 [Consult the administration documentation](https://deployr.revolutionanalytics.com/admin/) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
->**DeployR Security**  
->DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
->
->Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
->
->Learn more about authentication, access controls, and privacy with DeployR in our [Security](https://deployr.revolutionanalytics.com/documents/admin/security) guide.
+**DeployR Security**  
+DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
+
+Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
+
+Learn more about authentication, access controls, and privacy with DeployR in our [Security](https://deployr.revolutionanalytics.com/documents/admin/security) guide.
 
 Learn more in the [Getting Started Guide for Administrators](https://deployr.revolutionanalytics.com/documents/getting-started/administrator).
 
