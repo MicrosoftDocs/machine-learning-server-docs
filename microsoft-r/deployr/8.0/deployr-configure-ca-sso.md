@@ -20,7 +20,7 @@ The first step to configuring CA Single Sign-On for DeployR is to create an agen
 
 5.  Click **OK**.
 
-    ![Create Agent](/media/deployr-configure-ca-sso/001-createagent.jpg)
+    ![Create Agent](./media/deployr-configure-ca-sso/001-createagent.jpg)
 
 6.  In the **Name** field, enter the name `deployr`.
 
@@ -44,13 +44,13 @@ The second step is to create an Agent Group.
 
 6.  Click **OK**.
 
-    ![Create Agent Group](/media/deployr-configure-ca-sso/002-createagentgroup.jpg)
+    ![Create Agent Group](./media/deployr-configure-ca-sso/002-createagentgroup.jpg)
 
 7.  In the **Name** field, enter the name `deployrGroup`.
 
 8.  Click **Add/Remove** button.
 
-    ![Create Agent Group](/media/deployr-configure-ca-sso/003-createagentgroup2.jpg)
+    ![Create Agent Group](./media/deployr-configure-ca-sso/003-createagentgroup2.jpg)
 
 9.  Select the `deployr` agent from the list of available members and move it to **Selected Members**.
 
@@ -66,13 +66,13 @@ The second step is to create an Agent Group.
 
 2.  Click **Create Agent Configuration**.
 
-    ![Create Agent Configuration](/media/deployr-configure-ca-sso/004-createagentconfig.jpg)
+    ![Create Agent Configuration](./media/deployr-configure-ca-sso/004-createagentconfig.jpg)
 
 3.  Select **Create a copy of an object of type Agent Configuration**.
 
 4.  Select `ApacheDefaultsSettings`.
 
-    ![Modify Agent Configuration](/media/deployr-configure-ca-sso/005-modifyagentconfig.jpg)
+    ![Modify Agent Configuration](./media/deployr-configure-ca-sso/005-modifyagentconfig.jpg)
 
 5.  In the **Name** field, enter the name `deployrApacheSettings`.
 
@@ -84,7 +84,7 @@ The second step is to create an Agent Group.
 
 1.  Click on the pencil icon next to the `deployrApacheSettings` object to enter the configuration page.
 
-    ![Configuration page](/media/deployr-configure-ca-sso/006.jpg)
+    ![Configuration page](./media/deployr-configure-ca-sso/006.jpg)
 
 2.  In the table, click on the pencil icon next to `DefaultAgentName`.
 
@@ -94,7 +94,7 @@ The second step is to create an Agent Group.
 
 5.  Click **OK**.
 
-    ![Modify Agent Configuration](/media/deployr-configure-ca-sso/007.jpg)
+    ![Modify Agent Configuration](./media/deployr-configure-ca-sso/007.jpg)
 
 6.  In the table, click on the pencil icon to the left of `BadUrlChars`.
 
@@ -102,7 +102,7 @@ The second step is to create an Agent Group.
 
 8.  Click **OK**.
 
-    ![Modify Agent Configuration](/media/deployr-configure-ca-sso/008.jpg)
+    ![Modify Agent Configuration](./media/deployr-configure-ca-sso/008.jpg)
 
 9.  Click on the pencil icon next to `LogoffUri`.
 
@@ -128,11 +128,11 @@ A domain is a logical grouping of resources associated with one or more user dir
 
 4.  In the **General** tab, enter `deployrDomain` in the **Name** field.
 
-    ![Create New Domain](/media/deployr-configure-ca-sso/009.jpg)
+    ![Create New Domain](./media/deployr-configure-ca-sso/009.jpg)
 
 5.  In the **User Directory** window, click **Create** and fill in the following info:
 
-    ![Create User Directory](/media/deployr-configure-ca-sso/010.jpg)
+    ![Create User Directory](./media/deployr-configure-ca-sso/010.jpg)
 
 6.  Click **Submit**.
 
@@ -150,17 +150,17 @@ Conceptually, a realm is the door that protects the resources.
 
 3.  Enter the following information in the form.
 
-    ![Create User Directory](/media/deployr-configure-ca-sso/011.jpg)
+    ![Create User Directory](./media/deployr-configure-ca-sso/011.jpg)
 
 4.  In the **Rules** section, click **Create**.
 
 5.  Enter the following information in the form.
 
-    ![Create User Directory](/media/deployr-configure-ca-sso/012.jpg)
+    ![Create User Directory](./media/deployr-configure-ca-sso/012.jpg)
 
 6.  Create the following sub-realms for your configuration using the values in the following table. There are no rules associated with the sub-realms.
 
-    ![Create Realm](/media/deployr-configure-ca-sso/013.jpg)
+    ![Create Realm](./media/deployr-configure-ca-sso/013.jpg)
 
 | Name                    | ResourceFilter                   |
 |-------------------------|----------------------------------|
@@ -180,13 +180,13 @@ A response returns information to the web agent or redirects the user to another
 
 2.  Enter the following information in the form.
 
-    ![Create Response](/media/deployr-configure-ca-sso/014.jpg)
+    ![Create Response](./media/deployr-configure-ca-sso/014.jpg)
 
 3.  Click **Create Response Attribute**. The **Create Response Attribute** window appears.
 
 4.  Fill in the information as shown in the image below.
 
-    ![Create Response Attribute](/media/deployr-configure-ca-sso/015.jpg)
+    ![Create Response Attribute](./media/deployr-configure-ca-sso/015.jpg)
 
 5.  Click **OK**.
 
@@ -200,11 +200,11 @@ A response returns information to the web agent or redirects the user to another
 
 3.  Enter the following information in the form.
 
-    ![Create Response](/media/deployr-configure-ca-sso/016.jpg)
+    ![Create Response](./media/deployr-configure-ca-sso/016.jpg)
 
 4.  Click **Add/Remove** and add `deployrGroupResponse`.
 
-    ![Create Response](/media/deployr-configure-ca-sso/017.jpg)
+    ![Create Response](./media/deployr-configure-ca-sso/017.jpg)
 
 5.  Move `deployrGroupResponse` from **Available Members** to **Selected Members**.
 
@@ -222,21 +222,21 @@ Policies define how users can interact with resources. When a user creates polic
 
 3.  Fill in the following information in the form.
 
-    ![Create Policy](/media/deployr-configure-ca-sso/018.jpg)
+    ![Create Policy](./media/deployr-configure-ca-sso/018.jpg)
 
 4.  Click the **Users** tab.
 
-    ![Add Members](/media/deployr-configure-ca-sso/019.jpg)
+    ![Add Members](./media/deployr-configure-ca-sso/019.jpg)
 
 5.  Click **Add Members**.
 
-    ![Add Members](/media/deployr-configure-ca-sso/020.jpg)
+    ![Add Members](./media/deployr-configure-ca-sso/020.jpg)
 
 6.  Select `CN=scriptGroup,OU=engineering,DC=revolution,DC=com`.
 
 7.  Click **OK**.
 
-    ![Add Members](/media/deployr-configure-ca-sso/021.jpg)
+    ![Add Members](./media/deployr-configure-ca-sso/021.jpg)
 
 8.  Click **Add Rule** and select `GeneralRuleDeployr`.
 

@@ -109,7 +109,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 5.  Test the script locally with those default values.
 
-    ![Script](/media/deployr-writing-portable-r-code/rcode.png)
+    ![Script](./media/deployr-writing-portable-r-code/rcode.png)
 
 **Part 2. In the DeployR Repository Manager:**
 
@@ -118,11 +118,11 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the Repository Manager.
 
-    ![Login](/media/deployr-writing-portable-r-code/login1.png)
+    ![Login](./media/deployr-writing-portable-r-code/login1.png)
 
 2.  [Upload](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-create-upload.htm) your script to the DeployR repository.
 
-    ![Upload](/media/deployr-writing-portable-r-code/upload.png)
+    ![Upload](./media/deployr-writing-portable-r-code/upload.png)
 
 3.  [Verify](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist/#test) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) before handing it off to the application developer(s).
 
@@ -134,4 +134,4 @@ The following steps describe how to use the functions in the `deployrUtils` pack
     >[!NOTE]
 	>If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 
-    ![Test Page](/media/deployr-writing-portable-r-code/testpage.png)
+    ![Test Page](./media/deployr-writing-portable-r-code/testpage.png)
