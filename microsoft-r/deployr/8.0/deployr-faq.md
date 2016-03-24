@@ -1,0 +1,41 @@
+﻿# Frequently Asked Questions
+
+<a href="#answer1" class="faq-toggle">If I want to use the DeployR Web server for my Web application, where should I put my application files?</a>
+
+-   [Linux / OS X](#tab-417MIIvqx-0)
+-   [Windows](#tab-417MIIvqx-1)
+
+ 
+For product evaluation purposes, you can put your Web application files under the directory &lt;DEPLOYR-INSTALL-DIR&gt;/www/apps/&lt;YOUR-EVALUATION-APP&gt;, such as: `     /home/deployr-user/deployr/8.0.0/www/apps/my-demo-application/     `
+
+ 
+For product evaluation purposes, you can put your Web application files under the directory &lt;DEPLOYR-INSTALL-DIR&gt;\\www\\apps\\&lt;YOUR-EVALUATION-APP&gt;, such as: `     C:\Program Files\Microsoft\DeployR\8.0\www\apps\my-demo-application\     `
+
+ 
+No other configuration changes are needed. Once you put your files there, your evaluation application becomes live. Using the previous example, you could see your application files at this Web address: `http://<DEPLOYR-SERVER-IP:8000>/apps/my-demo-application/one-of-my-files.html`  
+ 
+
+**These instructions for handling Web application files under the DeployR Web server are for demonstration or evaluation purposes only!** In practice, we strongly recommend that you place your Web application files and any other assets under a different Web server.
+
+<a href="#answer2" class="faq-toggle">I'm having issues after installing DeployR. Where do I go for answers?</a>
+1.  Check out our [troubleshooting topics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#solutions).
+2.  Run the [diagnostics tests](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#run-diagnostics).
+3.  Join the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535) where you can post questions and find answers.
+
+<a href="#answer4" class="faq-toggle">Why can't I reach DeployR landing page anymore?</a>
+If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here.](https://deployr.revolutionanalytics.com/documents/admin/install/#servernoconnect)
+
+<a href="#answer3" class="faq-toggle">How does DeployR compare to Shiny?</a>
+DeployR is an integration technology for application developers to deploy R analytics inside any Web, desktop, mobile, dashboard application or backend system. Shiny is a package from [RStudio](http://www.rstudio.com/) designed to help R users take their analysis and build them into interactive Web applications. However, Shiny is not designed to build applications other than interactive Web applications.
+
+The following table contrasts the two solutions:
+
+| Comparison          | DeployR                                                                                                                                                                                                                                    | Shiny                                        |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| Supports            | R analysis integration inside any application                                                                                                                                                                                              | The building of interactive Web applications |
+| Primary Audience    | Application developers                                                                                                                                                                                                                     | Data scientists                              |
+| Required Skills     | Application programming skills                                                                                                                                                                                                             | R programming skills                         |
+| Developer Interface | [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/), [Client Libraries](https://deployr.revolutionanalytics.com/docanddown/#clientlib), [RBroker Framework](https://deployr.revolutionanalytics.com/docanddown/#rbroker) | R package                                    |
+| Optional Skills     | R programming skills                                                                                                                                                                                                                       | Web programming skills                       |
+
+
