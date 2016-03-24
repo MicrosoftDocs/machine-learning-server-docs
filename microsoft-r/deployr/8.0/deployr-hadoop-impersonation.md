@@ -1,4 +1,4 @@
-## Using Hadoop Impersonation and DeployR
+# Using Hadoop Impersonation and DeployR
 
 ## Introduction
 

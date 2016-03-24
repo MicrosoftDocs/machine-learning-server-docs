@@ -1,4 +1,4 @@
-﻿## Installing & Configuring DeployR
+﻿# Installing & Configuring DeployR
 
 ## System Requirements for DeployR
 

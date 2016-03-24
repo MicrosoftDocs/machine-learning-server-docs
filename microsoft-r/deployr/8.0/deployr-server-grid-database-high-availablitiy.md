@@ -1,4 +1,4 @@
-## DeployR Server, Grid & Database High Availability
+﻿# DeployR Server, Grid & Database High Availability
 
 ## Server High Availability
 

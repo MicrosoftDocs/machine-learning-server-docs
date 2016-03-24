@@ -1,4 +1,4 @@
-﻿## Scale & Throughput
+﻿# Scale & Throughput
 
 ## Introduction
 
