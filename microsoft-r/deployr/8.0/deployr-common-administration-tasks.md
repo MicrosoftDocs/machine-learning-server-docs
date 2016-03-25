@@ -177,9 +177,9 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 
 ## Backing Up and Restoring Data
 
-Follow these instructions to [back up](#backupdata) and [restore](#restoredata) your DeployR data or to [reset the database](#db-reset) to its initial post-installation state.
+Follow these instructions to back up  and restore your DeployR data or to reset the database to its initial post-installation state.
 
-### Backing Up Database Data
+### On Linux/OS X
 
 Follow these steps to back up the data in the database used by DeployR.
 
@@ -187,82 +187,34 @@ Follow these steps to back up the data in the database used by DeployR.
 
 2.  Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
 
-3.  Run the database utility script as follows.
+3.  Run the database utility script as follows:
 
-    #### For Linux / Mac OS X
-    
-    Type the following at a command prompt:
-
-         cd <8.0.0_Install_Dir>/deployr/tools
+         cd /home/deployr-user/deployr/8.0.0/deployr/tools
         ./databaseUtils.sh
-
-	#### For Windows
-
-    1.  Start a command prompt with full administrator permissions using the `Run as Administrator` option.
-
-    2.  Type the following at a command prompt:
-
-          cd <8.0.0_Install_Dir>\deployr\tools
-          /databaseUtils.bat
-
-    Where `<8.0.0_Install_Dir>` is the full path to the DeployR 8.0.0 server installation directory.
 
 4.  When prompted by the script:
+    -  To reinitialize the database, choose option `2`.
+    -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
+    -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
 
-    -   Choose option `3` to back up the database.
+### On Windows
 
-    -   Enter the path in which the database backup should be saved.
+Follow these steps to back up the data in the database used by DeployR.
 
-5.  Verify that the backup was successful by checking the contents of the directory where you dumped the database.
-
-### Restoring Database Data
-
-Follow these steps to restore data into the database used by DeployR. Restoring will purge any data in database before restoring the data found in the database backup.
-
-1.  Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
-
-2.  Run the database utility script as follows.
-
-    #### For Linux / Mac OS X
-
-    Type the following at a command prompt:
-
-         cd <8.0.0_Install_Dir>/deployr/tools
-        ./databaseUtils.sh
-
-	#### For Windows
-
-    1.  Start a command prompt with full administrator permissions using the `Run as Administrator` option.
-
-    2.  Type the following at a command prompt:
-
-          cd <8.0.0_Install_Dir>\deployr\tools
-          /databaseUtils.bat
-
-    Where `<8.0.0_Install_Dir>` is the full path to the DeployR 8.0.0 server installation directory.
-
-3.  When prompted by the script:
-
-    -   Choose option `4` to restore the database.
-
-    -   Enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
-
-### Reinitialize the Database
-
-Follow these steps to reinitialize the database used by DeployR. Reinitializing will reset the database to the default post-installation state.
+1. Log into the machine as a user with administrator privileges.
 
 1. Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
-1. Run the database utility script as follows.
-   + For Linux / Mac OS X, type the following at a command prompt:
-		cd <8.0.0_Install_Dir>/deployr/tools
-		./databaseUtils.sh
-   + For Windows, start a command prompt with full administrator permissions using the `Run as Administrator` option and type the following at a command prompt:
 
-		cd <8.0.0_Install_Dir>\deployr\tools
-		/databaseUtils.bat
-    Where `<8.0.0_Install_Dir>` is the full path to the DeployR 8.0.0 server installation directory.
+1.  Run the database utility script as follows:
 
-3. When prompted by the script, choose option `2` to reinitialize the database.
+          cd C:\Program Files\Microsoft\DeployR\8.0\deployr\tools
+          databaseUtils.bat
+
+1.  When prompted by the script:
+    -  To reinitialize the database, choose option `2`.
+    -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
+    -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
+
 
 ## Opening DeployR Ports
 
