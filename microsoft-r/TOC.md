@@ -75,5 +75,3 @@
 #### [Writing Portable R Code](deployr/8.0/deployr-data-scientist-write-portable-r-code.md)
 #### [Repository Manager Help](deployr/8.0/deployr-data-scientist-repository-manager-help.md)
 ### [Frequently Asked Questions](deployr/8.0/deployr-faqs.md)
-
-
