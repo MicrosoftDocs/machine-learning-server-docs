@@ -251,31 +251,18 @@ Follow these steps to restore data into the database used by DeployR. Restoring 
 
 Follow these steps to reinitialize the database used by DeployR. Reinitializing will reset the database to the default post-installation state.
 
-1.  Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
-
-2.  Run the database utility script as follows.
-
-    #### For Linux / Mac OS X
-
-    Type the following at a command prompt:
-
-        cd <8.0.0_Install_Dir>/deployr/tools
+1. Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
+1. Run the database utility script as follows.
+   + For Linux / Mac OS X, type the following at a command prompt:
+		cd <8.0.0_Install_Dir>/deployr/tools
 		./databaseUtils.sh
+   + For Windows, start a command prompt with full administrator permissions using the `Run as Administrator` option and type the following at a command prompt:
 
-	#### For Windows
-	
-    1.  Start a command prompt with full administrator permissions using the `Run as Administrator` option.
-
-    2.  Type the following at a command prompt:
-
-			cd <8.0.0_Install_Dir>\deployr\tools
-			/databaseUtils.bat
-
+		cd <8.0.0_Install_Dir>\deployr\tools
+		/databaseUtils.bat
     Where `<8.0.0_Install_Dir>` is the full path to the DeployR 8.0.0 server installation directory.
 
-    When prompted by the script:
-
-3.  Choose option `2` to reinitialize the database.
+3. When prompted by the script, choose option `2` to reinitialize the database.
 
 ## Opening DeployR Ports
 
