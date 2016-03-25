@@ -129,8 +129,6 @@ The following steps describe how to use the functions in the `deployrUtils` pack
     >[!NOTE]
 	>If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](https://deployr.revolutionanalytics.com/documents/admin/r-package-mgmt/).
 
-	&nbsp;
-
     >[!NOTE]
 	>If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 
