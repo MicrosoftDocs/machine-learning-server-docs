@@ -44,36 +44,13 @@
 #### [RevoPemaR Getting Started Guide](rserver/8.0/rserver-pemar-getting-started.md)
 # DeployR
 ## 8.0
-### [About DeployR](deployr/8.0/deployr-about.md
-### [DeployR Open and Enterprise](deployr/8.0/deployr-compare.md
-### [What's New in This Release](deployr/8.0/deployr-whats-new.md
+### [About DeployR](deployr/8.0/deployr-about.md)
+### [DeployR Open and Enterprise](deployr/8.0/deployr-compare.md)
+### [What's New in This Release](deployr/8.0/deployr-whats-new.md)
 ### Administrators
-#### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md
-#### Installation
-##### [Installation and Configuration on Windows](deployr/8.0/deployr-admin-install-on-windows.md
-##### [Installation and Configuration on Linux](deployr/8.0/deployr-admin-install-on-linux.md
-##### [Installation and Configuration on OS X](deployr/8.0/deployr-admin-install-on-osx.md
-#### Configuration
-##### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md
-##### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md
-##### [Using SQL Server or PostgreSQL](deployr/8.0/deployr-admin-configure-for-sql-server.md
-##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md
-##### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md
-##### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md
-##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md
-#### [Security on DeployR](deployr/8.0/deployr-admin-security.md
-#### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md
-#### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md
-#### [Administration Console Help](deployr/8.0/deployr-administration-console-help.md
-#### [Common Administrative Tasks](deployr/8.0/common-administration-tasks.md
-#### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-troubleshooting.md
-### Application Developers
-#### [Getting Started for Application Developers](deployr/8.0/deployr-application-developer-getting-started.md
-#### [Repository Manager Help](deployr/8.0/deployr-app-developer-repository-manager-help.md
-### Data Scientists
-#### [Getting Started for Data Scientists](deployr/8.0/deployr-data-scientist-getting-started.md
-#### [Writing Portable R Code](deployr/8.0/deployr-data-scientist-write-portable-r-code.md
-#### [Repository Manager Help](deployr/8.0/deployr-data-scientist-repository-manager-help.md
-### [Frequently Asked Questions](deployr/8.0/deployr-faqs.md
-
+#### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md#### Installation
+##### [Installation and Configuration on Windows](deployr/8.0/deployr-admin-install-on-windows.md##### [Installation and Configuration on Linux](deployr/8.0/deployr-admin-install-on-linux.md##### [Installation and Configuration on OS X](deployr/8.0/deployr-admin-install-on-osx.md#### Configuration
+##### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md##### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md##### [Using SQL Server or PostgreSQL](deployr/8.0/deployr-admin-configure-for-sql-server.md##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md##### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md##### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md#### [Security on DeployR](deployr/8.0/deployr-admin-security.md#### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md#### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md#### [Administration Console Help](deployr/8.0/deployr-administration-console-help.md#### [Common Administrative Tasks](deployr/8.0/common-administration-tasks.md#### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-troubleshooting.md### Application Developers
+#### [Getting Started for Application Developers](deployr/8.0/deployr-application-developer-getting-started.md#### [Repository Manager Help](deployr/8.0/deployr-app-developer-repository-manager-help.md### Data Scientists
+#### [Getting Started for Data Scientists](deployr/8.0/deployr-data-scientist-getting-started.md#### [Writing Portable R Code](deployr/8.0/deployr-data-scientist-write-portable-r-code.md#### [Repository Manager Help](deployr/8.0/deployr-data-scientist-repository-manager-help.md### [Frequently Asked Questions](deployr/8.0/deployr-faqs.md
 
