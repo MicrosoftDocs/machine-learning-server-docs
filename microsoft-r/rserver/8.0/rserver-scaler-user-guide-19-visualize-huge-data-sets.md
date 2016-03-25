@@ -1,4 +1,30 @@
-## Visualizing Huge Data Sets: An Example from the U.S. Census
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Visualizing Huge Data Sets"
+description: "Visualizing huge data sets with an example from the U.S. Census."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Visualizing Huge Data Sets: An Example from the U.S. Census
 
 By combining the power and flexibility of the open-source R language with the fast computations and rapid access to huge datasets provided by RevoScaleR, it is easy and efficient to not only do fine-grained calculations “on the fly” for plotting, but to visually drill down into these patterns.
 

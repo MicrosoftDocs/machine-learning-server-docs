@@ -1,4 +1,30 @@
-## Transform Functions
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Transform Functions"
+description: "RevoScaleR transform functions."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Transform Functions
 
 In previous chapters, we have used the *transforms* argument and inline transformations within formulas whenever we needed to specify a data transformation, and performed row selection with the *rowSelection* argument. In this chapter, we introduce another method for performing transformations within RevoScaleR that is extremely powerful and can be used both for transforming variables and for creating row selection variables. This method is the use of transform functions.
 

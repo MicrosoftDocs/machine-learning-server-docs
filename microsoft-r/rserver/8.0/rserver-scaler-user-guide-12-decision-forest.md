@@ -1,4 +1,30 @@
-## Estimating Decision Forest Models
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Estimating Decision Forest Models"
+description: "Decision forests with RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Estimating Decision Forest Models
 
 The *rxDForest* function in RevoScaleR fits a *decision forest*, which is an ensemble of decision trees. Each tree is fitted to a bootstrap sample of the original data, which leaves about 1/3 of the data unused in the fitting of each tree. Each data point in the original data is fed through each of the trees for which it was unused; the decision forest prediction for that data point is the statistical *mode* of the individual tree predictions, that is, the majority prediction (for classification; for regression problems, the prediction is the mean of the individual predictions).
 

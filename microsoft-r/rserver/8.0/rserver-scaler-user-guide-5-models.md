@@ -1,3 +1,28 @@
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Models in RevoScaleR"
+description: "Models in RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
 
 # Models in RevoScaleR
 

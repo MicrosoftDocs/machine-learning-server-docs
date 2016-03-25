@@ -1,4 +1,30 @@
-## Bibliography
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Bibliography"
+description: "Bibliography for RevoScaleR User's Guide."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Bibliography
 
 Alexander, J. T., Davern, M., & Stevenson, B. (2009). *Inaccurate Age and Sex Data in the Census PUMS Files: Evidence and Implications.* http://bpp.wharton.upenn.edu/betseys/papers/Inaccurate%20Age%20and%20Sex%20Data%20in%20Census%20PUMS%20Files.pdf.
 

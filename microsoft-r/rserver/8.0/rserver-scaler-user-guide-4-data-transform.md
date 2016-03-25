@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Transforming and Subsetting Data"
+description: "Data manipulation with RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Transforming and Subsetting Data
 
 RevoScaleR provides a full set of functions for modifying, transforming, and subsetting data stored in memory in a data frame or in an .xdf file on disk:

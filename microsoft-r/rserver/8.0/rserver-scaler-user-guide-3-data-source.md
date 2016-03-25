@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Data Sources"
+description: "Data sources in RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Data Sources
 
 A *data source* in RevoScaleR can be thought of as a small R object representing a data set. We have already encountered them as the return objects of *rxImport* and *rxDataStep*. The data itself may be on disk, but the data source is an in-memory object that allows us to treat data from disparate sources in a consistent manner within RevoScaleR. Behind the scenes, *rxImport* often creates data sources “on the fly” to facilitate data import. You can create your own data sources to give you finer control over how data is imported. In this chapter, we describe how to create a variety of data sources and use them with RevoScaleR High Performance Analytics functions (discussed in more detail in later chapters). For occasional analysis of external data, running the analysis on the original data source can save you some time. However, when you will be performing repeated analysis of a single data set, it will almost always be faster for you to import the data into the .xdf format and run your analyses on the .xdf data source. This chapter also describes how to use .xdf data sources to easily access your .xdf file in blocks so that you can write your own “chunking” algorithms.
