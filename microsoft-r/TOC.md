@@ -45,7 +45,7 @@
 # DeployR
 ## 8.0
 ### [About DeployR](deployr/8.0/deployr-about.md)
-### [DeployR Open and Enterprise](deployr/8.0/deployr-compare.md)
+### DeployR Open and Enterprise
 ### [What's New in This Release](deployr/8.0/deployr-whats-new.md)
 ### Administrators
 #### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
