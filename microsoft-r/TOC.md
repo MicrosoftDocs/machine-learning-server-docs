@@ -48,6 +48,7 @@
 ### DeployR Open and Enterprise
 ### [What's New in This Release](deployr/8.0/deployr-whats-new.md)
 ### Administrators
+#### [RevoScaleR ODBC Data Import Guide](rserver/8.0/rserver-scaler-odbc.md)
 #### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
 #### Installation
 ##### [Installation and Configuration on Windows](deployr/8.0/deployr-admin-install-on-windows.md)
