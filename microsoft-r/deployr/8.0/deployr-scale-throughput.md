@@ -33,7 +33,7 @@ By default, the DeployR server instance should be able to comfortably accommodat
 All server resources are allocated on the Java Virtual Machine (JVM) heap, which is a finite block of dedicated memory. By default, DeployR attempts to allocate a JVM heap size of 1024MB, which is a required minimum system requirement in production environments.
 
 >**Take Action!**  
->If you expect or encounter a server load that exceeds the resources provided by the default DeployR configuration, use the JVM command line options -Xms and -Xmx to increase JVM heap space, and -Xss to reduce Java thread stack size used by the server. You can allocate a JVM heap size of up to one fourth of the physical memory size of your server computer. For example, if your server computer has 8 GB of physical memory, allocate a heap size of no more than 2 GB.
+>If you expect or encounter a server load that exceeds the resources provided by the default DeployR configuration, use the JVM command line options `-Xms` and `-Xmx` to increase JVM heap space, and `-Xss` to reduce Java thread stack size used by the server. You can allocate a JVM heap size of up to one fourth of the physical memory size of your server computer. For example, if your server computer has 8 GB of physical memory, allocate a heap size of no more than 2 GB.
 
 ## Tuning Grid Capacity
 
