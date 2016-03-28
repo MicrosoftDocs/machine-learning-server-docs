@@ -16,29 +16,30 @@ This diagram captures the basic workflow used by data scientists and application
 
 ### Workflow In Action
 
-The workflow is simple: A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR application programming interface [(API)](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/).
+The workflow is simple. A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR [(API)](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/).
 
 The following real-world scenario demonstrates the key concepts introduced in preceding workflow diagram.
 
 While this scenario is provided as an example only, it highlights how DeployR acts as a effective bridge between data scientist and application developer workflows. By supporting a clean separation of concerns, DeployR delivers arbitrarily sophisticated R analytics to any network-enabled application, system or software solution.
 
-**The Scenario:** As a solutions provider at an insurance company, you have been tasked with enhancing an existing customer support system to deliver real-time, high-quality policy quotes to customers who contact your customer support center. 
-
-**The Plan:** To deliver this solution, you decide to leverage the power of R-based predictive analytics with DeployR. The solution relies on a real-time scoring engine architecture to rapidly generate and return accurate scores to your existing customer support system. These scores can then be used to drive the customer experience to a successful conclusion. At a high-level, such a DeployR-powered solution can be realized as follows: 
-
-1. **Produce:** Data scientists begin by building an appropriate predictive model and scoring function for insurance policy quotes using their existing analytics tools and data sets. 
-
-2. **Upload:** Once the model and scoring function are ready, the data scientist uploads these files to the DeployR repository via the Repository Manager. Uploading the scoring function as an R script will automatically turn it into an analytics Web service. 
-
-3. **Verify:** As a final step, the data scientist should test and verify the scoring function against a live DeployR server via the Repository Manager. 
-
-	>Handoff From Data Scientist to Application Developer  
-
-4. **Integrate:** Application developers choose and download their preferred client application integration tool: RBroker framework, client library or working with the raw API. 
-
-5. **Test:** With their tool selected, application developers implement the integration between the customer support system and the DeployR-powered analytics Web service. This can be an iterative process with testing at each stage of development. 
-
-6. **Deploy:** Once application developers are confident their integration is completed, tested, and verified, it is time to deploy your enhanced customer support system to your live production environment.
+>[!IMPORTANT]
+>**The Scenario:** As a solutions provider at an insurance company, you have been tasked with enhancing an existing customer support system to deliver real-time, high-quality policy quotes to customers who contact your customer support center. 
+>
+>**The Plan:** To deliver this solution, you decide to leverage the power of R-based predictive analytics with DeployR. The solution relies on a real-time scoring engine architecture to rapidly generate and return accurate scores to your existing customer support system. These scores can then be used to drive the customer experience to a successful conclusion. At a high-level, such a DeployR-powered solution can be realized as follows: 
+>
+>1. **Produce:** Data scientists begin by building an appropriate predictive model and scoring function for insurance policy quotes using their existing analytics tools and data sets. 
+>
+>2. **Upload:** Once the model and scoring function are ready, the data scientist uploads these files to the DeployR repository via the Repository Manager. Uploading the scoring function as an R script will automatically turn it into an analytics Web service. 
+>
+>3. **Verify:** As a final step, the data scientist should test and verify the scoring function against a live DeployR server via the Repository Manager. 
+>
+>	>Handoff From Data Scientist to Application Developer  
+>
+>4. **Integrate:** Application developers choose and download their preferred client application integration tool: RBroker framework, client library or working with the raw API. 
+>
+>5. **Test:** With their tool selected, application developers implement the integration between the customer support system and the DeployR-powered analytics Web service. This can be an iterative process with testing at each stage of development. 
+>
+>6. **Deploy:** Once application developers are confident their integration is completed, tested, and verified, it is time to deploy your enhanced customer support system to your live production environment.
 
 ## Roles & Responsibilities
 
@@ -64,14 +65,11 @@ In DeployR, there is but one tool for the data scientists -- the [Repository Man
 
 With DeployR, the recommended steps for a data scientist are both simple and familiar:
 
-1.  Use your preferred R integrated development environment (IDE) to develop and test your R scripts, models, and data sets.
-2.  Use the [RevoScriptTools R package](https://deployr.revolutionanalytics.com/documents/help/repo-man/#revoscripttools.htm) to add inputs to your R scripts with default values. Once you’ve uploaded your R scripts into the Repository Manager in the next step, you’ll be able to test and visualize these inputs in the Test tab before they are integrated into the application.
-3.  Upload these files to the DeployR repository using the [Repository Manager](#g_repoman).
-4.  [Test your R scripts live](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) on DeployR in the Repository Manager.
-5.  Once testing is complete, make your files available for use by the application and its developer by setting the appropriate access rights on each file.
-6.  Inform your application developers that the new R scripts, models, and/or datasets are available in the DeployR repository and ready for integration.
+1.  Develop your analytics
+2.  Test those analytics
+3.  Collaborate with the application developers
 
-Learn more in the [Getting Started Guide Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist).
+Get more details in the [Getting Started Guide Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist).
 
 ### Application Developers
 
