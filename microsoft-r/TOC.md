@@ -46,7 +46,7 @@
 ## 8.0
 ### [About DeployR](deployr/8.0/deployr-about.md)
 ### Administrators
-#### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
+#### [Getting Started for Administrators](deployr/8.0/deployr-get-started-administrators.md)
 #### [Installation](deployr/8.0/deployr-installing-configuring.md)
 #### Configuration
 ##### [Setting up DeployR on AWS](deployr/8.0/deployr-aws-setup.md)
