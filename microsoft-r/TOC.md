@@ -58,7 +58,7 @@
 ##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-hadoop-impersonation.md)
 #### [Security on DeployR](deployr/8.0/deployr-security-guide.md)
 #### [R Package Management for Administrators](deployr/8.0/deployr-package-management.md)
-#### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
+#### [Managing Big Data](deployr/8.0/deployr-managing-external-directories-big-data.md)
 #### Administration Console Help
 #### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
 #### [Troubleshooting & Diagnostics](deployr/8.0/deployr-diagnostic-testing-troubleshooting.md)
