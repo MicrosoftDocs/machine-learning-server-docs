@@ -1,4 +1,30 @@
-## Estimating Models Using Stochastic Gradient Boosting
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Estimating Models using Stochastic Gradient Boosting"
+description: "Boosted trees with RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Estimating Models Using Stochastic Gradient Boosting
 
 The *rxBTrees* function in RevoScaleR, like *rxDForest*, fits a decision forest to your data, but the forest is generated using a stochastic gradient boosting algorithm. This is similar to the decision forest algorithm in that each tree is fitted to a subsample of the training set (sampling without replacement) and predictions are made by aggregating over the predictions of all trees. Unlike the *rxDForest* algorithm, the boosted trees are added one at a time, and at each iteration, a regression tree is fitted to the current pseudo-residuals, i.e., the gradient of the loss functional being minimized.
 

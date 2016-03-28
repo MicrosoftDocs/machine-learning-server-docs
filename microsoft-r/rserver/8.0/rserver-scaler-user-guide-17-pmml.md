@@ -1,4 +1,30 @@
-## Converting RevoScaleR Model Objects for Use in PMML
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Converting RevoScaleR Model Objects for Use in PMML"
+description: "Using PMML with RevoScaleR model objects."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Converting RevoScaleR Model Objects for Use in PMML
 
 The objects returned by RevoScaleR predictive analytics functions have similarities to objects returned by the predictive analytics functions provided by base and recommended packages in R. A key difference between these two types of model objects is that RevoScaleR model objects typically do not contain any components that have the same length as the number of rows in the original data set. For example, if you use base R's lm function to estimate a linear model, the result object contains not only all of the data used to estimate the model, but components such as residuals and fitted.values that contain values corresponding to every observation in the data set. For estimating models using big data, this is not appropriate.
 

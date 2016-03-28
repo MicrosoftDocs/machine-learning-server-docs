@@ -1,4 +1,30 @@
-## Estimating Correlation and Variance/Covariance Matrices
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Estimating Correlation and Variance/Covariance Matrices"
+description: "Correlation and variance/covariance matrices in RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Estimating Correlation and Variance/Covariance Matrices
 
 The *rxCovCor* function in RevoScaleR calculates the covariance, correlation, or sum of squares/cross-product matrix for a set of variables in an .xdf file or data frame. The size of these matrices is determined by the number of variables rather than the number of observations, so typically the results can easily fit into memory in R. A broad category of analyses can be computed from some form of a cross-product matrix, for example, factor analysis and principal components.
 

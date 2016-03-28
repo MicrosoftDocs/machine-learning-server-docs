@@ -1,4 +1,30 @@
-## Fitting Generalized Linear Models
+---
+
+# required metadata
+title: "RevoScaleR User's Guide--Generalized Linear Models"
+description: "Generalized linear models with RevoScaleR."
+keywords: ""
+author: "richcalaway"
+manager: "mblythe"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "rserver"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Generalized Linear Models
 
 Generalized linear models (GLM) are a framework for a wide range of analyses. They relax the assumptions for a standard linear model in two ways. First, a functional form can be specified for the conditional mean of the predictor. This is referred to as the “link” function. Second, you can specify a distribution for the response variable. The rxGlm function in RevoScaleR provides the ability to estimate generalized linear models on large data sets.
 
