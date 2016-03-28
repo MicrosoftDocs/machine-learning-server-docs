@@ -236,7 +236,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 
 <sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](https://deployr.revolutionanalytics.com/documents/admin/install/#install-deployr-custom).
 
-#### For Windows
+### For Windows
 
 During installation, the Windows firewall was updated to allow inbound communications to DeployR on the ports listed in the following table.
 
