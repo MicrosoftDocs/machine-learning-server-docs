@@ -151,7 +151,7 @@ For example, if the base directory is `/Users/deployr-user/deployr/8.0.0/deployr
 `/Users/deployr-user/deployr/8.0.0/deployr/external/data/user1`
 `/Users/deployr-user/deployr/8.0.0/deployr/external/data/{private_user_dir}`
 
----------
+&nbsp;
 
 Two directories are automatically created by the server the first time the corresponding user logs into the system. The first directory is called `/public` and contains the files that can be read by any authenticated users on the server. The second directory is the user’s private directory. Each private external directory can be found at `<DeployR_Install_Dir>/external/data/{deployr_username}`. Files in each private directory are available only to that authenticated user during a live session. The administrator can also manually create these subdirectories in advance. The names of the directories are case-sensitive.
 
