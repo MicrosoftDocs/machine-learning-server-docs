@@ -28,7 +28,7 @@ One such approach is to use a master R script that contains all required package
 
     1.  Manually run this R script on a DeployR grid node.
 
-    2.  **Repeat step 1 by running the master script manually on every grid node machine.** Running this script on each grid node ensures the full set of packages is installed and available on each node.
+    2.  **Repeat previous step by running the master script manually on every grid node machine.** Running this script on each grid node ensures the full set of packages is installed and available on each node.
 
 >[!IMPORTANT]
 >You will have to update and manually rerun this script on each node on the DeployR grid whenever a new package needs to be added to the server environment.
