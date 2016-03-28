@@ -55,7 +55,7 @@
 ##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-reinstalling.md)
 ##### [Server, Grid & Database High Availability](deployr/8.0/deployr-server-grid-database-high-availablitiy.md)
 ##### [Scale & Throughput](deployr/8.0/deployr-scale-throughput.md)
-##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-deployr-hadoop-impersonation.md)
+##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-hadoop-impersonation.md)
 #### [Security on DeployR](deployr/8.0/deployr-security-guide.md)
 #### [R Package Management for Administrators](deployr/8.0/deployr-package-management.md)
 #### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
