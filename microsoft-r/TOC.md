@@ -42,31 +42,3 @@
 #### [RevoScaleR ODBC Data Import Guide](rserver/8.0/rserver-scaler-odbc.md)
 ### RevoPemaR Documentation
 #### [RevoPemaR Getting Started Guide](rserver/8.0/rserver-pemar-getting-started.md)
-# DeployR
-## 8.0
-### [About DeployR](deployr/8.0/deployr-about.md)
-### Administrators
-#### [Getting Started for Administrators](deployr/8.0/deployr-get-started-administrators.md)
-#### [Installation](deployr/8.0/deployr-installing-configuring.md)
-#### Configuration
-##### [Setting up DeployR on AWS](deployr/8.0/deployr-aws-setup.md)
-##### [Setting Up DeployR on Azure](deployr/8.0/deployr-enabling-azure.md)
-##### Using SQL Server or PostgreSQL
-##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-reinstalling.md)
-##### [Server, Grid & Database High Availability](deployr/8.0/deployr-server-grid-database-high-availablitiy.md)
-##### [Scale & Throughput](deployr/8.0/deployr-scale-throughput.md)
-##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-hadoop-impersonation.md)
-#### [Security on DeployR](deployr/8.0/deployr-security-guide.md)
-#### [R Package Management for Administrators](deployr/8.0/deployr-package-management.md)
-#### [Managing Big Data](deployr/8.0/deployr-managing-external-directories-big-data.md)
-#### Administration Console Help
-#### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
-#### [Troubleshooting & Diagnostics](deployr/8.0/deployr-diagnostic-testing-troubleshooting.md)
-### Application Developers
-#### [Getting Started for Application Developers](deployr/8.0/deployr-get-started-application-developers.md)
-#### Repository Manager Help
-### Data Scientists
-#### [Getting Started for Data Scientists](deployr/8.0/deployr-get-started-data-scientists.md)
-#### [Writing Portable R Code](deployr/8.0/deployr-writing-portable-r-code.md)
-#### Repository Manager Help
-### [Frequently Asked Questions](deployr/8.0/deployr-faq.md)
