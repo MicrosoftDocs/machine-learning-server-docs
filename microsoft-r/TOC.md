@@ -48,20 +48,18 @@
 ### Administrators
 #### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
 #### [Installation](deployr/8.0/deployr-installing-configuring.md)
-#### Configuration
-##### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md)
-##### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md)
-##### Using SQL Server or PostgreSQL
-##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md)
-##### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
-##### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md)
-##### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md)
-#### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
-#### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md)
-#### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
+#### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
 #### Administration Console Help
 #### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
-#### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
+#### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
+#### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md)
+#### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md)
+#### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md)
+#### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md)
+#### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
+#### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md)
+#### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
+#### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md)
 ### Application Developers
 #### [Getting Started for Application Developers](deployr/8.0/deployr-application-developer-getting-started.md)
 #### Repository Manager Help
