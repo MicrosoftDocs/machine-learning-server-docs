@@ -41,8 +41,9 @@ If DeployR was installed as user `root`, do the following:
 
         vi /opt/deploy/8.0.0/rserve/rserve.sh
 
-4.  Replace all instances of `apache` with `rserve`. >[!NOTE]
->There are 2 instances of the string `apache` in the file.
+4.  Replace all instances of `apache` with `rserve`. 
+    >[!NOTE]
+    >There are 2 instances of the string `apache` in the file.
 
 5.  Give full write permissions to directory `workdir`. For example:
 
