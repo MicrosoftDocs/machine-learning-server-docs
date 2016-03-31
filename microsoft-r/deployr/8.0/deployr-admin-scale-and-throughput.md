@@ -64,7 +64,7 @@ The following scenarios demonstrate different deployment configurations based on
 
 When tuning your DeployR Enterprise grid’s capacity for the anticipated project workload, use the following formula to determine the optimal number of nodes (N) to have on your grid that can handle authenticated operations:
 
-![Formula](/media/deployr-admin-scale-and-throughput/tuneprojects.png)
+![Formula](/microsoft-r/media/deployr-admin-scale-and-throughput/tuneprojects.png)
 
 Where:
 
@@ -87,13 +87,13 @@ Where:
 
 Let’s say that we have a DeployR Enterprise deployment with `50` authenticated users, each of which is actively working on their own projects. During the working day, each user may work on up to `3` different projects simultaneously. With as many as 50 users working on as many as three projects, the grid’s capacity must support `150` simultaneous, live projects in order to be capable of handling peak workloads. In this example, if each grid node is configured with sufficient resources for `30` slots, the appropriate value of `N` is at least `5` nodes dedicated to authenticated operations.
 
-![Formula](/media/deployr-admin-scale-and-throughput/tuneprojects-example.png)
+![Formula](/microsoft-r/media/deployr-admin-scale-and-throughput/tuneprojects-example.png)
 
 ### Asynchronous Job Workloads
 
 When tuning your DeployR Enterprise grid’s capacity for your anticipated asynchronous job workload, use the following formula to determine the optimal number of nodes (N) capable of handling asynchronous operations to have on your grid:
 
-![Formula](/media/deployr-admin-scale-and-throughput/tuneasync.png)
+![Formula](/microsoft-r/media/deployr-admin-scale-and-throughput/tuneasync.png)
 
 Where:
 
@@ -120,7 +120,7 @@ Let’s say that we have a DeployR Enterprise deployment where `1000` asynchrono
 
 If each grid node is configured with sufficient resources for `30` slots, then the optimal value of `N` is at least `6` nodes dedicated to asynchronous operations.
 
-![Formula](/media/deployr-admin-scale-and-throughput/tuneasync-example.png)
+![Formula](/microsoft-r/media/deployr-admin-scale-and-throughput/tuneasync-example.png)
 
 ## About Throughput
 
@@ -134,7 +134,7 @@ DeployR throughput measures the number of tasks processed on the DeployR grid in
 
 To illustrate the nature of a task, let’s begin with a summary of the basic workflow for an asynchronous job.
 
-![Workflow](/media/deployr-admin-scale-and-throughput/throughput1.png)
+![Workflow](/microsoft-r/media/deployr-admin-scale-and-throughput/throughput1.png)
 
 1.  A DeployR user submits an asynchronous job.
 

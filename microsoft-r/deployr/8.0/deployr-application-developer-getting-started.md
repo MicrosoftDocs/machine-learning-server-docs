@@ -203,7 +203,7 @@ Install and use the CLI as follows:
 
         di
 
-    ![DeployR CLI](/media/deployr-application-developer-getting-started/cli.png)
+    ![DeployR CLI](/microsoft-r/media/deployr-application-developer-getting-started/cli.png)
 
 3.  From the CLI main menu, choose **Install an example** to see the complete list of available examples, including all of the latest DeployR code tutorials found on github.
 
@@ -215,7 +215,7 @@ The [Developer Tools](#tools) section introduced the available tool set and some
 
 The sample application is a classic application in the analytics space, a realtime scoring engine powered by DeployR. The example scenario mimics a real world application where employees at a fictitious bank can request fraud scores for one or more bank account records on-demand in order to help detect fraudulent account activity:
 
-![Fraud Score Example Application](/media/deployr-application-developer-getting-started/fraud-score-example.png)
+![Fraud Score Example Application](/microsoft-r/media/deployr-application-developer-getting-started/fraud-score-example.png)
 
 Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](https://deployr.revolutionanalytics.com/documents/dev/rbroker/#profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
