@@ -1,4 +1,4 @@
-﻿# Diagnostics & Troubleshooting
+# Diagnostics & Troubleshooting
 
 ## Introduction
 
@@ -122,7 +122,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#run-diagnostics). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console//#..//Content/Topics/policies-properties.htm#basic).
 
-![Landing Page Inaccessible](./media/deployr-diagnostic-testing-troubleshooting/noaccess.png)
+![Landing Page Inaccessible](./media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
 
 This problem can arise for various reasons, including:
 
@@ -131,8 +131,6 @@ This problem can arise for various reasons, including:
 -   When the underlying IP address of your DeployR server has changed. This is most common when you have installed the DeployR server on a portable laptop and have since changed networks (for example, between your office and your home).
 
 To fix this issue, run the `setWebContext` script to update the IP address in the DeployR Server Web Context.
-
- []()
 
 Usage tips for the `setWebContext` script arguments:
 
@@ -176,13 +174,13 @@ If you are attempting to access the DeployR landing page using `http://localhost
 
 1.  In Internet Explorer 11, go to the **Security** tab in the **Internet Options** dialog box.
 
-    ![](media/deployr-diagnostic-testing-troubleshooting/ie11.png)
+    ![](media/deployr-admin-diagnostics-troubleshooting/ie11.png)
 
 2.  Add `http://localhost:8000/deployr` to the **Trusted Sites** list.
 
 3.  In the **Connections** tab in the same **Internet Options** dialog box, click **LAN settings**.
 
-    ![](media/deployr-diagnostic-testing-troubleshooting/ie11connections.png)
+    ![](media/deployr-admin-diagnostics-troubleshooting/ie11connections.png)
 
 4.  Deselect the **Automatically detect settings** checkbox to enable custom entries in the HOSTS file.
 
@@ -318,7 +316,7 @@ If you reboot after installing and get an access error message for Tomcat, you c
 
 If the **DeployR Default Node** appears **Inactive** in the DeployR landing page directly after having installed DeployR on a Windows 7 machine, then the `R_HOME` variable may not be set.
 
-![](./media/deployr-diagnostic-testing-troubleshooting/inactivenode.png)
+![](./media/deployr-admin-diagnostics-troubleshooting/inactivenode.png)
 
 **To correct this issue:**
 

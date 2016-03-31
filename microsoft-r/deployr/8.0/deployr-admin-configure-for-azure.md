@@ -27,7 +27,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
 1.  Log into the Azure portal and take note of the **Public IP address**.
 
-    ![Public IP Address in Azure Portal](./media/deployr-enabling-azure/azure-public-ip.png)
+    ![Public IP Address in Azure Portal](./media/deployr-admin-configure-for-azure/azure-public-ip.png)
 
 2.  If DeployR was installed on a virtual machine, remote desktop into that VM.
 
@@ -55,7 +55,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
 1.  Log into the Azure portal and take note of the **Public IP address**.
 
-    ![Public IP Address in Azure Portal](./media/deployr-enabling-azure/azure-public-ip.png)
+    ![Public IP Address in Azure Portal](./media/deployr-admin-configure-for-azure/azure-public-ip.png)
 
 2.  If DeployR was installed on a virtual machine, SSH into that machine.
 
@@ -102,7 +102,7 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 
 2.  Click the **Resource Group** name.
 
-    ![Rules](./media/deployr-enabling-azure/azure-resource-group.png)
+    ![Rules](./media/deployr-admin-configure-for-azure/azure-resource-group.png)
 
 3.  In the table in the **Resource Group** page, click the **Network Security Group**.
 
@@ -118,7 +118,7 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 
     3.  Set the **Source Port Range** to the `*` character.
 
-        ![Rules](./media/deployr-enabling-azure/azure-source-port-range.png)
+        ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
 
     4.  Enter the port number to the **Destination port range**.
 
@@ -132,7 +132,7 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 
     6.  Repeat step 6 to add inbound rules for the other DeployR ports.
 
-![Rules](./media/deployr-enabling-azure/azure-inbound-rules.png)
+![Rules](./media/deployr-admin-configure-for-azure/azure-inbound-rules.png)
 
 ## Updating the Firewall
 
