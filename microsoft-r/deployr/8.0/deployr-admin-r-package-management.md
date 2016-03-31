@@ -37,7 +37,7 @@ One such approach is to use a master R script that contains all required package
 
 Another option is to [assign permissions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/role-view-edit.htm) for R package installation to select users. Then, these select users can install the packages they need directly within their code. When you've explicitly assigned the 'PACKAGE\_MANAGER' role to users, they are granted permissions to install R packages via `deployrUtils::deployrPackage()`.
 
-![Login](/microsoft-r/media/deployr-admin-r-package-management/packagemgr.png)
+![Login](./media/deployr-admin-r-package-management/packagemgr.png)
 
 Also note that the 'ADMINISTRATOR' and 'POWER\_USER' roles have implicit 'PACKAGE\_MANAGER' rights, while 'BASIC\_USER' does not. [Read more on default roles...](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/role-default.htm)
 

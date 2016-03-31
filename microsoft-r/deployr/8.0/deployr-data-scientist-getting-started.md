@@ -31,7 +31,7 @@ You can install `deployrUtils` locally [from GitHub](https://github.com/deployr/
 
 Learn more on how to [write portable R code using these functions](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code).
 
-![Script in IDE](/microsoft-r/media/deployr-data-scientist-getting-started/rstudio.png)
+![Script in IDE](./media/deployr-data-scientist-getting-started/rstudio.png)
 
 Once your R code, models, and data files are ready, you can [verify](#test) their behavior in a DeployR server environment.
  
@@ -46,7 +46,7 @@ Perhaps not surprisingly, the next step after developing your analytics is to te
 
 Testing locally involves running your R code within your local R integrated development environment as you always have. If you encounter issues during your tests, simply refine your analytics and retest them. When satisfied with your results, the next step is to verify that you obtain the same results when testing remotely.
 
-![Login](/microsoft-r/media/deployr-data-scientist-getting-started/rstudio-test.png)
+![Login](./media/deployr-data-scientist-getting-started/rstudio-test.png)
 
 ### Testing Remotely
 
@@ -54,27 +54,27 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
 1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the web-based DeployR landing page.
 
-    ![Login](/microsoft-r/media/deployr-data-scientist-getting-started/login1.png)
+    ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
 3.  [Create a directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#b-dir-create.htm) that you can use to store your development copies of your R analytics. In our example, we'll call this directory you'll use for development and testing in DeployR, `fraud-score-dev`. These copies of your R analytics won't be shared with the application developers. We'll do that in a later step in the [Collaboration](#collaborate) section.
 
-    ![New Directory](/microsoft-r/media/deployr-data-scientist-getting-started/newdir1.png)
+    ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
 4.  [Upload](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-create-upload.htm) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/#webservices) that, with the proper permissions, can be consumed by any application.
 
-    ![Upload](/microsoft-r/media/deployr-data-scientist-getting-started/upload.png)
+    ![Upload](./media/deployr-data-scientist-getting-started/upload.png)
 
 5.  [Open the R script](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm) you want to test.
 
-    ![Open File](/microsoft-r/media/deployr-data-scientist-getting-started/openfile.png)
+    ![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
 6.  [Click **Test**](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) on the right of the **File Properties** page to open the **Test** page. The **Test** page acts as a live debugging environment.
 
 7.  [Click **Run**](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-run.htm) in the upper-right hand pane to execute the R script. As the script executes, you'll see the [console output](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-2-console.htm) in the bottom left pane. After execution, you can review the [response markup](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-4-artifacts.htm) in the bottom right pane.
 
-    ![Test Page](/microsoft-r/media/deployr-data-scientist-getting-started/testpage.png)
+    ![Test Page](./media/deployr-data-scientist-getting-started/testpage.png)
 
 8.  Verify that you experience the same R script behavior in the DeployR server environment as you did when you tested your R scripts locally.
 
@@ -88,7 +88,7 @@ Collaboration with the application developers on your team makes it possible to 
 
 How you share and collaborate on these R analytics depends on whether you plan to do so [on-server](#howtoshare), which requires access to a common DeployR server instance, or [off-server](#noaccess).
 
-![Collaborate](/microsoft-r/media/deployr-data-scientist-getting-started/collaborate.png)
+![Collaborate](./media/deployr-data-scientist-getting-started/collaborate.png)
 
 This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the [Getting Started](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer) guide for application developers.
 
@@ -117,7 +117,7 @@ Once you share a snapshot with application developers, you must let them know th
 -   Any new/updated inputs required by your R script
 -   Any new/updated outputs generated by your R scripts
 
-![Communicate](/microsoft-r/media/deployr-data-scientist-getting-started/email.png)
+![Communicate](./media/deployr-data-scientist-getting-started/email.png)
 
 ### On-Server Collaboration
 
@@ -125,7 +125,7 @@ When the application developers have access to the same DeployR server instance 
 
 1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the web-based [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/repo-man).
 
-    ![Login](/microsoft-r/media/deployr-data-scientist-getting-started/login1.png)
+    ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
@@ -134,17 +134,17 @@ When the application developers have access to the same DeployR server instance 
     >[!TIP]
     >We recommend that you follow a convention when naming your project directories that enables those directories to be easily associated. In our example, the directory we used to upload and test these R analytics in DeployR before sharing them is called `fraud-score-dev`. And here, we'll name the snapshot directory `fraud-score`.
 
-    ![New Directory](/microsoft-r/media/deployr-data-scientist-getting-started/newdir2.png)
+    ![New Directory](./media/deployr-data-scientist-getting-started/newdir2.png)
 
 4.  Create a copy of each file from your development directory to the newly created project directory:
 
     1.  [Open each file](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm). The **File Properties** page appears.
 
-    	![Open File](/microsoft-r/media/deployr-data-scientist-getting-started/openfile.png)
+    	![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
     2.  In the **File Properties** page, choose **Copy** from the **Manage** menu. The **Copy File** dialog opens.
 
-    	![Copy File](/microsoft-r/media/deployr-data-scientist-getting-started/copyfile.png)
+    	![Copy File](./media/deployr-data-scientist-getting-started/copyfile.png)
 
     3.  Enter a name for the file in the **Name** field. We recommend you use the same name as you have in your development directory. If a file by that name already exists, this will become the new Latest version of that file. The version history is available to file owners.
 
@@ -158,7 +158,7 @@ When the application developers have access to the same DeployR server instance 
 
     1.  From the **Files** tab, click the name of the new directory under the **My Files** tree on the left side of the page.
 
-    	![Contents of New Directory](/microsoft-r/media/deployr-data-scientist-getting-started/newdir2contents.png)
+    	![Contents of New Directory](./media/deployr-data-scientist-getting-started/newdir2contents.png)
 
     2.  [Open each file](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm) in the new directory. The **File Properties** page appears.
 
@@ -166,7 +166,7 @@ When the application developers have access to the same DeployR server instance 
 
     4.  Click **Add/Remove** to [add application developers as owners](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#e-file-properties-owners.htm) of the file.
 
-    	![Add Owners](/microsoft-r/media/deployr-data-scientist-getting-started/addowner.png)
+    	![Add Owners](./media/deployr-data-scientist-getting-started/addowner.png)
 
     5.  Repeat steps a - d for each file you've just copied to the new directory.
 
