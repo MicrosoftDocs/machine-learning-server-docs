@@ -1,4 +1,4 @@
-# Diagnostics & Troubleshooting
+﻿# Diagnostics & Troubleshooting
 
 ## Introduction
 
@@ -122,7 +122,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#run-diagnostics). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console//#..//Content/Topics/policies-properties.htm#basic).
 
-![Landing Page Inaccessible](./media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
+![Landing Page Inaccessible](/media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
 
 This problem can arise for various reasons, including:
 
@@ -316,7 +316,7 @@ If you reboot after installing and get an access error message for Tomcat, you c
 
 If the **DeployR Default Node** appears **Inactive** in the DeployR landing page directly after having installed DeployR on a Windows 7 machine, then the `R_HOME` variable may not be set.
 
-![](./media/deployr-admin-diagnostics-troubleshooting/inactivenode.png)
+![](/media/deployr-admin-diagnostics-troubleshooting/inactivenode.png)
 
 **To correct this issue:**
 

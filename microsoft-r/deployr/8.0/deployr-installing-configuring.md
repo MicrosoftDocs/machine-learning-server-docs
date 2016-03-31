@@ -127,7 +127,7 @@ Before you can install DeployR on the main server machine or any additional grid
 >This path varies from one Windows version to another.
         For example, on Windows Server 2012, it might appear as: `C:\Users\<username>\AppData\Local\Temp\2`.
 
-         ![File Path](./media/deployr-installing-configuring/mongodb-1.png)
+         ![File Path](/media/deployr-installing-configuring/mongodb-1.png)
 
     C. Create a directory named `MONGODB_DEPLOYR` under the path you just revealed.
 
@@ -136,7 +136,7 @@ Before you can install DeployR on the main server machine or any additional grid
     E. To capture the path to this directory to use when unzipping later, copy the file path to your clipboard.
         To see the full path, click inside the file path field.
 
-         ![File Path](./media/deployr-installing-configuring/mongodb-3.png)
+         ![File Path](/media/deployr-installing-configuring/mongodb-3.png)
 
     F. Extract the contents of the MongoDB 2.6.7 zip file into the new `MONGODB_DEPLOYR` directory.
 

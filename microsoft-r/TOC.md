@@ -50,7 +50,7 @@
 #### [Installation](deployr/8.0/deployr-installing-configuring.md)
 #### Configuration
 ##### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md)
-##### [Setting Up DeployR on Azure](deployr-admin-configure-for-azure.md)
+##### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md)
 ##### Using SQL Server or PostgreSQL
 ##### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md)
 ##### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
