@@ -45,6 +45,7 @@
 # DeployR
 ## 8.0
 ### [About DeployR](deployr/8.0/deployr-about.md)
+### [What's New](deployr/8.0/deployr-whats-new.md)
 ### Administrators
 #### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
 #### [Installation](deployr/8.0/deployr-installing-configuring.md)
