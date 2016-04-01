@@ -77,7 +77,7 @@ To benefit from external directory support in a multi-grid node DeployR environm
             /etc/init.d/rpcbind start 
             /etc/init.d/nfsserver start
 
-    -   For a grid machine on SLES, type the following at the prompt:
+   -   For a grid machine on SLES, type the following at the prompt:
 
             /sbin/chkconfig nfs on 
             /etc/init.d/rpcbind start 
