@@ -27,7 +27,7 @@ Since, Rserve runs by default as the `apache` user who **does not** have a `home
 
 In this example, we will create the user `rserve` and change which user used to run Rserve.
 
-####`root` Installation
+**Root Installation**
 
 If DeployR was installed as user `root`, do the following:
 
@@ -59,7 +59,7 @@ If DeployR was installed as user `root`, do the following:
         ./rserve.sh stop
         ./rserve.sh start
 
-####Non Root Installation
+**Non Root Installation**
 
 If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
 
