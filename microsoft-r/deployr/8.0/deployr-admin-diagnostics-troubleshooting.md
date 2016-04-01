@@ -36,18 +36,16 @@ There are two ways to run the diagnostic tests:
 
     #### For Linux
 
-    >[!NOTE]
-	>If the server log, `catalina.out`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`./diagnostics.sh --exclude-server-log`
+    If the server log, `catalina.out`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`./diagnostics.sh --exclude-server-log`
 
          cd $DEPLOYR_HOME/deployr/diagnostics 
          ./diagnostics.sh
 
     All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.tar.gz`.
 	
-	#### For Linux
+	#### For Windows
 
-    >[!NOTE]
-	>If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
+    If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
 
          cd C:\Program Files\Microsoft\DeployR\8.0\deployr\diagnostics 
          diagnostics.bat
@@ -63,7 +61,7 @@ A copy of the following log and configuration files are bundled together during 
 The following log files can be found in the resulting `diagnostics.tar.gz` file as well as under `$DEPLOYR_HOME/deployr/diagnostics/logs` directly on the DeployR host.
 
 | Component          | Log & Config Files                | Description                                                                                                                                                                                                                                                                                      |
-|--------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results | `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information.                                                                                                                                                    |
 | DeployR            | `deployr.groovy`<br />`catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](https://deployr.revolutionanalytics.com/documents/admin/common/#logs). [Learn more](https://deployr.revolutionanalytics.com/documents/admin/common/#logs) about this file. |
 | Tomcat             | `catalina.out`<br />`catalina.sh`<br />`localhost_access_log.[DATE].txt`<br />`server.xml`| The log and configuration files for Tomcat.                                                                                                                                                                                                                                                      |
@@ -75,7 +73,7 @@ The following log files can be found in the resulting `diagnostics.tar.gz` file 
 The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR\8.0\deployr\diagnostics\logs` directly on the DeployR host.
 
 | Component          | Log & Config Files                | Description                                                                                                                                                                                                                                                                                      |
-|--------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results | `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information.                                                                                                                                                    |
 | DeployR            | `deployr.groovy`<br />`Stacktrace.log`<br />`catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](https://deployr.revolutionanalytics.com/documents/admin/common/#logs). [Learn more](https://deployr.revolutionanalytics.com/documents/admin/common/#logs) about this file. |
 | Tomcat             | `catalina.out`<br />`localhost_access_log.[DATE].txt`<br />`server.xml`                       | The log and configuration files for Tomcat.                                                                                                                                                                                                                                                      |
@@ -161,7 +159,6 @@ Usage tips for the `setWebContext` script arguments:
 
 3.  For this change to take effect [restart the DeployR services](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
->[!NOTE]
 >If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#localhost-ie).
 
 ### Landing Page Blocked in I.E. 11
@@ -284,7 +281,7 @@ For example, the following line will raise the maximum memory limit to 10 GB for
 
     memory.limit(size = 10240)
 
->[!Note]
+>[!NOTE]
 >-   The increase in the memory allocation takes place only once the line is executed.
 >-   The memory allocated during a session can only be increased, and not decreased.
 >-   The value for `memory.limit` is not applied system wide. Instead, it applies only to the R >session where the `memory.limit` function has been executed.

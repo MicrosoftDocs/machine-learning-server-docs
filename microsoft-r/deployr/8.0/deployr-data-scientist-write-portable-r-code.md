@@ -68,10 +68,10 @@ When you declare your required inputs (and default values) using the `deployrInp
 
 Let's begin with some sample R code demonstrating how to reference your data files in a portable manner:
 
-        ## READ CSV FILE
-        ## Locally: finds in current working directory
-        ## In DeployR: finds in user's external directory
-        data <- read.csv(file = deployrExternal("data.csv"))
+    ## READ CSV FILE
+    ## Locally: finds in current working directory
+    ## In DeployR: finds in user's external directory
+    data <- read.csv(file = deployrExternal("data.csv"))
 
 Whenever the data files with which you need to work are too big to be copied from the Web or copied from your local machine to the server, you can ask your administrator to store those files on your behalf in 'big data' external directories on the DeployR main server. Since you're likely to use a copy or subset of the data in your local environment for development and testing purposes, it becomes interesting to reference those files in a portable manner so that data can be accessed whenever you run the R code locally or on the DeployR server.
 
@@ -92,7 +92,6 @@ When you use the `deployrExternal` function, you can avoid issues such as having
 
 The following steps describe how to use the functions in the `deployrUtils` package to ensure the portability of your R code.
 
->[!NOTE]
 >For the complete package help, use `library(help="deployrUtils")` in your IDE.
 
 **Part 1. In your local environment:**
@@ -113,8 +112,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 **Part 2. In the DeployR Repository Manager:**
 
->[!NOTE]
->>The `deployrUtils` package is preinstalled in the DeployR server environment.
+>The `deployrUtils` package is preinstalled in the DeployR server environment.
 
 1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the Repository Manager.
 
@@ -128,8 +126,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
     >[!NOTE]
 	>If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](https://deployr.revolutionanalytics.com/documents/admin/r-package-mgmt/).
-
-    >[!NOTE]
-	>If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
+	>
+    >If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 
     ![Test Page](./media/deployr-data-scientist-write-portable-r-code/testpage.png)
