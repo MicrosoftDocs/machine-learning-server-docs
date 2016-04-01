@@ -61,27 +61,27 @@ To benefit from external directory support in a multi-grid node DeployR environm
 
    -   For both the main server and any grid machines on Redhat 5, type:
 
-        /sbin/chkconfig nfs on 
-        /etc/init.d/portmap start 
-        /etc/init.d/nfs start
+            /sbin/chkconfig nfs on 
+            /etc/init.d/portmap start 
+            /etc/init.d/nfs start
 
    -   For both the main server and any grid machines on Redhat 6, type:
 
-        /sbin/chkconfig nfs on 
-        /etc/init.d/rpcbind start 
-        /etc/init.d/nfs start
+            /sbin/chkconfig nfs on 
+            /etc/init.d/rpcbind start 
+            /etc/init.d/nfs start
 
    -   For the main server on SLES, type the following at the prompt:
 
-        /sbin/chkconfig nfsserver on 
-        /etc/init.d/rpcbind start 
-        /etc/init.d/nfsserver start
+            /sbin/chkconfig nfsserver on 
+            /etc/init.d/rpcbind start 
+            /etc/init.d/nfsserver start
 
     -   For a grid machine on SLES, type the following at the prompt:
 
-        /sbin/chkconfig nfs on 
-        /etc/init.d/rpcbind start 
-        /etc/init.d/nfs start
+            /sbin/chkconfig nfs on 
+            /etc/init.d/rpcbind start 
+            /etc/init.d/nfs start
 
 1. To create a new NFS directory share, run the following commands. To update an existing NFS share, see the next step instead.
 
