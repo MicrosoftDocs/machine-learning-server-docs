@@ -2,9 +2,7 @@
 
 ## DeployR on AWS
 
-You can set up DeployR on **Amazon Web Services** (AWS).
-
-For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
+You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
 
 -   Have the [minimum required disk space](#sysreq) (or more) for the [installation of DeployR](https://deployr.revolutionanalytics.com/documents/admin/install) software and its database
 
@@ -22,6 +20,7 @@ For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rand
 
 -   Consider enabling HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](https://deployr.revolutionanalytics.com/documents/admin/security/#httpson).
 
-**Important!** [Change all default DeployR user passwords](#change-pass), including the `admin` account, after installing DeployR.
+>[!IMPORTANT]
+>[Change all default DeployR user passwords](#change-pass), including the `admin` account, after installing DeployR.
 
 
