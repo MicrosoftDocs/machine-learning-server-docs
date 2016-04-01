@@ -20,10 +20,9 @@ You can set up DeployR on **Microsoft Azure**. For each Azure instance, be sure 
 
 The DeployR server Web context must be updated to the Public IP address of the virtual machine.
 
- 
-**To update the DeployR server Web context:**
+###To update the DeployR server Web context:
 
-### On Windows:
+**On Windows:**
 
 1.  Log into the Azure portal and take note of the **Public IP address**.
 
@@ -51,7 +50,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
 9.  For this change to take effect [restart the Tomcat service](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
-### On Linux:
+**On Linux:**
 
 1.  Log into the Azure portal and take note of the **Public IP address**.
 
@@ -95,8 +94,7 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 >[!NOTE]
 >If custom ports were defined during installation, enable those instead.
 
- 
-**To configure Azure endpoints for DeployR:**
+### To configure Azure endpoints for DeployR:
 
 1.  Go to the main Microsoft Azure portal page.
 
@@ -138,10 +136,9 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 
 Updating your firewall is the last step. [Learn more about the DeployR ports](https://deployr.revolutionanalytics.com/documents/admin/install/#update-firewall)
 
- 
-**To update your firewall:** []()
+### To update your firewall:
 
-### For Windows:
+**For Windows:**
 
 In Windows Firewall, you must open the same DeployR ports as you configured as Azure endpoints.
 
@@ -181,7 +178,7 @@ In Windows Firewall, you must open the same DeployR ports as you configured as A
 
     4.  Click **OK**.
 
-### For Linux:
+**For Linux:**
 
 On Linux, you must disable `iptables` firewall or equivalent.
 
