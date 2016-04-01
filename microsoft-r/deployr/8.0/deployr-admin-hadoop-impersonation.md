@@ -27,7 +27,7 @@ Since, Rserve runs by default as the `apache` user who **does not** have a `home
 
 In this example, we will create the user `rserve` and change which user used to run Rserve.
 
-**If DeployR was Installed as `root`**
+####`root` Installation
 
 If DeployR was installed as user `root`, do the following:
 
@@ -42,7 +42,7 @@ If DeployR was installed as user `root`, do the following:
         vi /opt/deploy/8.0.0/rserve/rserve.sh
 
 4.  Replace all instances of `apache` with `rserve`. 
-    >[!NOTE]
+
     >There are 2 instances of the string `apache` in the file.
 
 5.  Give full write permissions to directory `workdir`. For example:
@@ -53,17 +53,19 @@ If DeployR was installed as user `root`, do the following:
 
         apache:x:502:rserve
 
-7.  Restart Rserve
+7.  Restart Rserve.
 
         cd /opt/deploy/8.0.0/rserve
         ./rserve.sh stop
         ./rserve.sh start
 
-**If DeployR was Installed as Non Root User**
+####Non Root Installation
 
 If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
 
+
 ### Setting Up the Environment for User 'rserve'
+
 
 **ScaleR**
 
@@ -80,7 +82,8 @@ Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
     su - rserve
     kinit hdfs
 
-**Tip:** We recommend that you use a `cron` job or equivalent to renew this ticket periodically to keep it from expiring.
+>[!Tip]
+>We recommend that you use a `cron` job or equivalent to renew this ticket periodically to keep it from expiring.
 
 ### Testing the environment
 
@@ -324,5 +327,3 @@ This is an update of the [code shown here](#clientapp) that now reads in and exe
             End Try
         End Sub
     End Module
-
-
