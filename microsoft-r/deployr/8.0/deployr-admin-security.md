@@ -1,4 +1,4 @@
-﻿# Security for DeployR
+# Security for DeployR
 
 ## Overview
 
@@ -8,8 +8,8 @@ By default, DeployR supports basic authentication. Users simply provide plain te
 
 While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
 
-**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
-[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
@@ -26,8 +26,8 @@ DeployR ships with security providers for the following enterprise security solu
 -   [Active Directory Services](#activedir)
 -   [R Session Process Controls](#processcontrols)
 
-**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
-[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
 
@@ -38,7 +38,7 @@ When DeployR processes a user login, there are two key steps involved:
 
 DeployR access privileges are determined by the roles assigned to a user. In the case of basic authentication, an administrator simply assigns roles to a user within the DeployR Administration Console.
 
-**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/).
+>**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/).
 
 When you integrate with an external enterprise security solution, you want access privileges to be inherited from the external system. This is achieved with simple mappings in the DeployR configuration properties, which link external groups to internal roles.
 
@@ -46,8 +46,8 @@ When you integrate with an external enterprise security solution, you want acces
 
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
 
-**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.
-[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -144,9 +144,8 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
 2.  Apply the following configuration changes to the DeployR server system files:
 
-    -   [Non-Root Installs](#tab-4JGeNfULvqg-0)
-    -   [Root Installs](#tab-4JGeNfULvqg-1)
-
+    #### Non-Root Installs
+    
     **Preparing**
 
     1.  Before making any configuration changes to the server system files, stop the DeployR server:
@@ -195,45 +194,47 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
     1.  Update the DeployR `startAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-        A. Using your preferred editor, edit the file:
+        1.  Using your preferred editor, edit the file:
 
-            /home/deployr-user/deployr/8.0.0/startAll.sh
+            	/home/deployr-user/deployr/8.0.0/startAll.sh
 
-        B. Find the following line:
+        2.  Find the following line:
 
-            /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
+            	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
 
-        C. Change it to the following:
+        2.  Change it to the following:
 
-            sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
+            	sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
 
-        D. Restart the DeployR server:
+        3.  Restart the DeployR server:
 
-            cd /home/deployr-user/deployr/8.0.0
-            ./startAll.sh
+	            cd /home/deployr-user/deployr/8.0.0
+	            ./startAll.sh
 
-        E. Save this change and close the file in your editor.
+        4.  Save this change and close the file in your editor.
 
     2.  Update the DeployR `stopAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-        A. Using your preferred editor, edit the file:
+        1.  Using your preferred editor, edit the file:
 
-            /home/deployr-user/deployr/8.0.0/stopAll.sh
+            	/home/deployr-user/deployr/8.0.0/stopAll.sh
 
-        B. Find the following line:
+        2.  Find the following line:
 
-            /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
+            	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
 
-        C. Change it to the following:
+        3.  Change it to the following:
 
-            sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
+            	sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
 
-        D. Restart the DeployR server:
+        4.  Restart the DeployR server:
 
-            cd /home/deployr-user/deployr/8.0.0
-            ./stopAll.sh
+            	cd /home/deployr-user/deployr/8.0.0
+            	./stopAll.sh
 
-        E. Save this change and close the file in your editor.
+        5.	 Save this change and close the file in your editor.
+
+	#### Root Installs
 
     **Preparing**
 
@@ -279,13 +280,14 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
             cd /opt/deployr/8.0.0
             ./startAll.sh
 
-**** **Important:** If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
+>[!IMPORTANT]
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
 
 ### LDAP Authentication
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
-**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
 >[!NOTE]
 >The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
@@ -327,7 +329,8 @@ By default, the **LDAP** security provider is disabled. To enable LDAP authentic
 
 For more information, see the complete list of LDAP [configuration properties](#properties).
 
-**** **Important:** If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
+>[!IMPORTANT]
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
 
 ### Active Directory Authentication
 
@@ -336,7 +339,7 @@ By default, the Active Directory security provider is disabled. To enable Active
 >[!NOTE]
 >The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 
-**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
     /*
      * DeployR Active Directory Configuration Properties
@@ -378,7 +381,8 @@ By default, the Active Directory security provider is disabled. To enable Active
 
 For more information, see the complete list of [configuration properties](#properties).
 
-**** **Important:** If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#processcontrols).
+>[!IMPORTANT]
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#processcontrols).
 
 ### LDAP & Active Directory Configuration Properties
 
