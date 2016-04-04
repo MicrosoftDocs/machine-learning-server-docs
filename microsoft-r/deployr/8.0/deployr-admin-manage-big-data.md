@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "Managing External Directories for Big Data"
+description: "Big Data in DeployR - Managing External Directories for Big Data"
+keywords: "big data, DeployR"
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Managing External Directories for Big Data
 
 ## Introduction
