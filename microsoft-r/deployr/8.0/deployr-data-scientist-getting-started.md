@@ -1,4 +1,30 @@
-﻿# Getting Started - Data Scientists
+---
+
+# required metadata
+title: "Getting Started with DeployR for Data Scientists"
+description: "Getting started for Data Scientists: high level introduction to DeployR for Data Scientists"
+keywords: "Data Scientists, r programmer, DeployR"
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Getting Started - Data Scientists
 
 ## Introduction
 
