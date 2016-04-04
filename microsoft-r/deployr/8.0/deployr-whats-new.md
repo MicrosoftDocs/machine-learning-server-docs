@@ -1,3 +1,30 @@
+
+---
+
+# required metadata
+title: "What's New in DeployR"
+description: "Updates, improvements, and changes in this release of DeployR"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # DeployR Release Notes
 
 ## What's New in DeployR
