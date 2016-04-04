@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-﻿# About DeployR
+# About DeployR
 
 ## Overview
 
