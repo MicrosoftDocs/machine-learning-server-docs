@@ -1,4 +1,30 @@
-﻿# Enabling DeployR on Azure
+---
+
+# required metadata
+title: "Enabling DeployR on Azure"
+description: "How to Enable DeployR on Azure"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+# Enabling DeployR on Azure
 
 ## Introduction
 
