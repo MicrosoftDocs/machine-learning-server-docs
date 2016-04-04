@@ -3,11 +3,11 @@
 # required metadata
 title: " Security in DeployR"
 description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
-keywords: "scalability, throughput, DeployR"
+keywords: ""
 author: "jmartens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
 ms.assetid: ""
