@@ -1,3 +1,31 @@
+---
+
+# required metadata
+title: "Getting Started for DeployR Administrators"
+description: "Getting started for DeployR Administrators: high level introdution to DeployR for the server administrator"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+
+
 # Getting Started - Administrators
 
 ## Introduction
