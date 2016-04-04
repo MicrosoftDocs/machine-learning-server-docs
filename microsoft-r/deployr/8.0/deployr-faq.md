@@ -1,4 +1,31 @@
-﻿# Frequently Asked Questions
+---
+
+# required metadata
+title: "DeployR FAQs"
+description: "Frequently asked questions about DeployR"
+keywords: "FAQs, frequently asked questions, DeployR"
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
+
+# Frequently Asked Questions
 
 <a href="#answer1" class="faq-toggle">If I want to use the DeployR Web server for my Web application, where should I put my application files?</a>
 
