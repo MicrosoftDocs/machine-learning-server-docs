@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "Configuring CA Single Sign-On for DeployR"
+description: "How to configure CA Single Sign-On for DeployR"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "get-started-article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Configuring CA Single Sign-On for DeployR
 
 ## Introduction
