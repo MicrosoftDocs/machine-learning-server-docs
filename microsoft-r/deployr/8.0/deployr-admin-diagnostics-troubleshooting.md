@@ -141,7 +141,7 @@ Usage tips for the `setWebContext` script arguments:
 
 **To update the IP address specified for the Server Web Context:**
 
-#### For Linux
+#### For Linux / OS X
 
 1.  Run the `setWebContext.sh` script with the appropriate arguments (see preceding table):
 
@@ -201,6 +201,9 @@ If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open,
 
 However, if you upgraded or reinstalled and are now having issues, see below.
 
+>[!IMPORTANT]
+>For each DeployR Enterprise instance, the server and grid nodes should all run the same version of Microsoft R Server, Revolution R Open, or R.
+
 ### For DeployR Enterprise
 
 #### For Linux
@@ -215,6 +218,7 @@ Try the following:
 4.  Attempt to correct all issues reported in the [diagnostics log.](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles)
 5.  [Start DeployR on the machine in question.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
 6.  Run the diagnostics again.
+5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
 #### For Windows
 
@@ -226,17 +230,13 @@ Try the following:
 2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Microsoft R Server install directory, then you must reinstall as [described here](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/#reinstallr-pro).
 3.  If there are other issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles), attempt to fix them now.
 4.  Run the diagnostics again.
+5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
-----------------
 
-In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
-
->[!IMPORTANT]
->For each DeployR Enterprise instance, the server and grid nodes should all run the same version of Microsoft R Server, Revolution R Open, or R.
 
 ### For DeployR Open
 
-#### For Linux
+#### For Linux / OS X
 
 If the issue is that Rserve is not running on a machine, then you'll need to restart it.
 
@@ -248,6 +248,7 @@ Try the following:
 4.  Attempt to correct all issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles).
 5.  [Start DeployR.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
 6.  Run the diagnostics again.
+7.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
 #### For Windows
 
@@ -259,13 +260,7 @@ Try the following:
 2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Revolution R Open or R install directory, then you must reinstall as [described here](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/#reinstallr-comm).
 3.  If RServe is present and running, and there are other issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles), attempt to fix them now.
 4.  Run the diagnostics again.
-
-------------------
-
-In the event that you need additional support and have purchased a support agreement, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
-
->![Important]
-> For each DeployR Enterprise instance, the server and grid nodes should all run the same version of Microsoft R Server, Revolution R Open, or R.
+5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
 ### Upping R Session Memory Limits
 
