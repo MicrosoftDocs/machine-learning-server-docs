@@ -1,10 +1,10 @@
 # Configuring CA Single Sign-On for DeployR
 
-## Configuring CA Single Sign-On
+## Introduction
 
 This document is written as a guide for CA Single Sign-On (formerly known as SiteMinder) administrators interested in configuring CA Single Sign-On policies for use with DeployR. It is not meant to be a complete step-by-step manual, but rather offer enough instruction to permit experienced administrators to perform the necessary steps to configure for DeployR. Please consult the [CA website](http://support.ca.com/) for the complete CA Single Sign-On documentation.
 
-### Create the Agent
+## Create the Agent
 
 The first step to configuring CA Single Sign-On for DeployR is to create an agent.
 
@@ -26,7 +26,7 @@ The first step to configuring CA Single Sign-On for DeployR is to create an agen
 
 7.  Click **Submit**.
 
-### Create the Agent Group
+## Create the Agent Group
 
 The second step is to create an Agent Group.
 
@@ -58,7 +58,7 @@ The second step is to create an Agent Group.
 
 11. Click **Submit**.
 
-### Create Agent Configuration Object
+## Create Agent Configuration Object
 
 **To create agent configuration objects:**
 
@@ -114,7 +114,7 @@ The second step is to create an Agent Group.
 
 13. Click **Submit** to save all changes.
 
-### Create the Domain
+## Create the Domain
 
 A domain is a logical grouping of resources associated with one or more user directories.
 
@@ -136,7 +136,7 @@ A domain is a logical grouping of resources associated with one or more user dir
 
 6.  Click **Submit**.
 
-### Create the Realm & Sub-Realms
+## Create the Realm & Sub-Realms
 
 A realm defines a group of resources with the same security or personalization requirements. Each realm can only be associated with one agent/agent group and with one authorization scheme.
 
@@ -170,7 +170,7 @@ Conceptually, a realm is the door that protects the resources.
 | `deployrLogoutRealm`    | `/r/user/logout`                 |
 | `deployrAboutRealm`     | `/r/user/about`                  |
 
-### Create Responses
+## Create Responses
 
 A response returns information to the web agent or redirects the user to another site and must be paired with a rule. It can be a static response or a value from Active Directory. Responses are only available to protected resources.
 
@@ -192,7 +192,7 @@ A response returns information to the web agent or redirects the user to another
 
 6.  Click **Submit**.
 
-### Create Response Groups
+## Create Response Groups
 
 1.  Click **Policies** -&gt; **Domain** -&gt; **Response Groups**.
 
@@ -212,7 +212,7 @@ A response returns information to the web agent or redirects the user to another
 
 7.  Click **Submit**.
 
-### Create the Policy
+## Create the Policy
 
 Policies define how users can interact with resources. When a user creates policies in the **Policy Server User Interface**, he or she links together (binds) objects that identify users, resources, and actions associated with the resources.
 
