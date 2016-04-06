@@ -34,7 +34,7 @@ By default, DeployR supports basic authentication. Users simply provide plain te
 
 While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
 
->**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
+>**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
@@ -52,7 +52,7 @@ DeployR ships with security providers for the following enterprise security solu
 -   [Active Directory Services](#activedir)
 -   [R Session Process Controls](#processcontrols)
 
->**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.
+>**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.    
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
@@ -72,7 +72,7 @@ When you integrate with an external enterprise security solution, you want acces
 
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
 
->**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.
+>**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.  
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
     /*
@@ -83,7 +83,7 @@ By default, the Basic Authentication security provider is enabled. The Basic Aut
 
 By default, the **CA Single Sign-On** (formerly known as SiteMinder) security provider is disabled. To enable CA Single Sign-On support, you must first update CA Single Sign-On Policy Server configuration. Then, you must update the relevant properties in your DeployR external configuration file.
 
-**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
 **To enable CA Single Sign-On support:**
 
@@ -94,8 +94,6 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
 
     -   Your CA Single Sign-On Policy Server is properly configured and running
     -   You understand which header files are being used by your policy server
-
-<!-- -->
 
       /*
        * Siteminder Single Sign-On (Pre-Authentication) Policy Properties
@@ -139,7 +137,7 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
 
-**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
 1.  Update the following properties in your DeployR external configuration file, `deployr.groovy`:
 
@@ -459,7 +457,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 
 ### R Session Process Controls
 
-**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) on **Linux platforms** only.
+>**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) on **Linux platforms** only.
 
 By default, R sessions executing on the DeployR grid are not authorized to access files or directories outside of the R working directory. To enable broader file system access for a given R session to files or directories based on specific authenticated user ID and group ID credentials, you must first do ONE of the following:
 
@@ -510,10 +508,11 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
 #### Step 2: Make System-Level Configuration Changes to Every Node
 
-**Before You Begin!** Make sure you've enabled the appropriate process control properties before beginning this step.
+>[!WARNING]
+>**Before You Begin!** Make sure you've enabled the appropriate process control properties before beginning this step.
 
--   [Non-Root Installs](#tab-VkXeEG8Lvce-0)
--   [Root Installs](#tab-VkXeEG8Lvce-1)
+
+##### Non-Root Installs
 
 >[!IMPORTANT]
 >Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
@@ -527,101 +526,100 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
 2.  Grant `deployr-user` permission to execute a command as a `sudo` user so that the RServe process can be launched. This is required so that the DeployR server can enforce R session process controls.
 
-    A. Log in as `root`.
+    1.  Log in as `root`.
 
-    B. Using your preferred editor, edit the file:
+    2.  Using your preferred editor, edit the file:
 
         /etc/sudoers
 
-    C. Find the following section:
+    3.  Find the following section:
 
-        ## Command Aliases
+			## Command Aliases
 
-    D. Add the following line to this section:
+    4.  Add the following line to this section:
 
-        Cmnd_Alias DEPLOYRRSERVE = /home/deployr-user/deployr/8.0.0/rserve/rserve.sh
+			Cmnd_Alias DEPLOYRRSERVE = /home/deployr-user/deployr/8.0.0/rserve/rserve.sh
 
-    E. Find the following section:
+    5.  Find the following section:
 
-        ## Allow root to run any commands anywhere
+			## Allow root to run any commands anywhere
 
-    F. Add or append `DEPLOYRRSERVE` for `%deployr-user` to this section:
+    6.  Add or append `DEPLOYRRSERVE` for `%deployr-user` to this section:
 
-        ## If an entry for %deployr-user is not found, add this line:
-        %deployr-user      ALL = DEPLOYRRSERVE
-        ## Otherwise append as shown:
-        %deployr-user      ALL = DEPLOYRTOMCAT,DEPLOYRRSERVE
+			## If an entry for %deployr-user is not found, add this line:
+			%deployr-user      ALL = DEPLOYRRSERVE
+			## Otherwise append as shown:
+			%deployr-user      ALL = DEPLOYRTOMCAT,DEPLOYRRSERVE
 
-    G. Save these changes and close the file in your editor.
+    7.  Save these changes and close the file in your editor.
 
-    H. Log out `root`.
+    8.  Log out `root`.
 
 3.  Update the DeployR `startAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-    A. Log in as `deployr-user`.
+    1.  Log in as `deployr-user`.
 
-    B. Using your preferred editor, edit the file:
+    2.  Using your preferred editor, edit the file:
 
-        /home/deployr-user/deployr/8.0.0/startAll.sh
+			/home/deployr-user/deployr/8.0.0/startAll.sh
 
-    C. Find the following line:
+    3.  Find the following line:
 
-        /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
+			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
 
-    D. Change it to the following:
+    4.  Change it to the following:
 
-        sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
+			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
 
-    E. Save this change and close the file in your editor.
+    5.  Save this change and close the file in your editor.
 
 4.  Update the DeployR `stopAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-    A. Using your preferred editor, edit the file:
+    1.  Using your preferred editor, edit the file:
 
-        /home/deployr-user/deployr/8.0.0/stopAll.sh
+			/home/deployr-user/deployr/8.0.0/stopAll.sh
 
-    B. Find the following line:
+    2.  Find the following line:
 
-        /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
+			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
 
-    C. Change it to the following:
+    3.  Change it to the following:
 
-        sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
+			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
 
-    D. Save this change and close the file in your editor.
+    4.  Save this change and close the file in your editor.
 
 5.  Set group privileges on the user directory containing the DeployR grid node install directory.
 
-    A. Log in as `root`.
+    1.  Log in as `root`.
 
-    B. Set group privileges.
+    2.  Set group privileges.
 
-         cd /home
-         chmod -R g+rwx deployr-user
+			cd /home
+			chmod -R g+rwx deployr-user
 
 6.  Add each user that will authenticate with the server to the `deployr-user` group.
 
-    A. Log in as `root`.
+    1.  Log in as `root`.
 
-    B. Execute the following command to add each user to the `deployr-user` group.
+    2.  Execute the following command to add each user to the `deployr-user` group.
 
-        usermod -a -G deployr-user <some-username>
+			usermod -a -G deployr-user <some-username>
 
-    C. Repeat step **B.** for each user that will authenticate with the server.
+    3.  Repeat step **B.** for each user that will authenticate with the server.
 
-    D. Log out `root`.
+    4.  Log out `root`.
 
 7.  Restart Rserve and any other DeployR-related services on the machine hosting the DeployR grid node:
 
-    A. Log in as `deployr-user`.
+    1.  Log in as `deployr-user`.
 
-    B. Start Rserve and any other DeployR-related services:
+    2.  Start Rserve and any other DeployR-related services:
 
-        cd /home/deployr-user/deployr/8.0.0
-        ./startAll.sh
+			cd /home/deployr-user/deployr/8.0.0
+			./startAll.sh
 
->[!IMPORTANT]
->Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
+##### Root Installs
 
 **On each machine hosting a grid node:**
 
@@ -634,25 +632,25 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
 3.  Grant `root` permission to launch the RServe process. This is required so that each DeployR grid node can enforce R session process controls.
 
-    A. Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
+    1.  Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
 
-    -   On Redhat/CentOS platforms, find the following section:
+		-   On Redhat/CentOS platforms, find the following section:
+		
+		        daemon --user "apache"
+		
+		    and, change `apache` to `root` as follows:
+		
+		        daemon --user "root"
 
-            daemon --user "apache"
+		-   On SLES platforms, find the following section:
+		
+		        start_daemon -u r "apache"
+		
+		    and, change `apache` to `root` as follows:
+		
+		        start_daemon -u r "root"
 
-        and, change `apache` to `root` as follows:
-
-            daemon --user "root"
-
-    -   On SLES platforms, find the following section:
-
-            start_daemon -u r "apache"
-
-        and, change `apache` to `root` as follows:
-
-            start_daemon -u r "root"
-
-    B. Save this change and close the file in your editor.
+    2.  Save this change and close the file in your editor.
 
 4.  Set group privileges on the DeployR install directory.
 
@@ -687,13 +685,11 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
     -   If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup.
         (If you do not have one, skip to the next bullet to define a temporary certificate.)
-
-        -   [Linux](#tab-4yNeVz8Uvqe-0)
-        -   [OS X](#tab-4yNeVz8Uvqe-1)
-        -   [Windows](#tab-4yNeVz8Uvqe-2)
-
-        >[!NOTE]
->This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
+		
+		#### For Linux:
+		
+		>[!NOTE]  
+		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
         1.  Go to the directory in which the keystore is stored.
 
@@ -701,8 +697,10 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
                 cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
+		#### For OS X:
+
         >[!NOTE]
->This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
+		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
         1.  Go to the directory in which the keystore is stored.
 
@@ -710,23 +708,23 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
                 cp .keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
+		#### For Windows:
+
         1.  Go to the directory in which the keystore is stored.
 
         2.  Launch a command window as administrator and type the following at the prompt:
 
                 copy .keystore  C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\bin\.keystore
 
-        ------------------------------------------------------------------------
+        ---------------------------------------------------
 
     -   If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine.
         Be sure to specify the correct Tomcat path for the `-keystore` argument.
 
-        -   [Linux](#tab-VJBgNfIID5x-0)
-        -   [OS X](#tab-VJBgNfIID5x-1)
-        -   [Windows](#tab-VJBgNfIID5x-2)
+        #### For Linux:
 
         >[!NOTE]
->This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
+		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
         1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
 
@@ -734,14 +732,18 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
         2.  Provide the following information when prompted by the script:
 
+        #### OS X
+
         >[!NOTE]
->This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
+		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
         1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
 
                 $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
         2.  Provide the following information when prompted by the script:
+
+		#### Windows	
 
         1.  Launch a command window **as administrator**.
 
@@ -760,26 +762,23 @@ Once enabled your client applications can make API calls that connect over HTTPS
         -   For a key password for Tomcat, press the Return key to use `changeit`.
 
         >[!IMPORTANT]
->The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
+		>The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
-        <a href="" id="alertusers"></a>
-
-        **Alert Your Users!**
-        The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.
-        We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+		>[!WARNING]
+		>**Alert Your Users!**  
+        >The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
+        >We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
 
     ------------------------------------------------------------------------
 
 2.  **Enable SSL support for Tomcat.**
 
-    -   [Linux](#tab-Nk8gNzLIwcl-0)
-    -   [OS X](#tab-Nk8gNzLIwcl-1)
-    -   [Windows](#tab-Nk8gNzLIwcl-2)
+    ##### For Linux:
 
     1.  Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
 
             <!-- 
             <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
@@ -788,7 +787,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
     2.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
 
             <!-- 
             <security-constraint>
@@ -816,12 +815,14 @@ Once enabled your client applications can make API calls that connect over HTTPS
     3.  Be sure to open the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
+        >If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
+
+	##### For OS X:
 
     1.  Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
 
             <!-- 
             <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
@@ -830,7 +831,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
     2.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
 
             <!-- 
             <security-constraint>
@@ -858,7 +859,10 @@ Once enabled your client applications can make API calls that connect over HTTPS
     3.  Be sure to open the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
+
+
+	##### For Windows:
 
     1.  Enable the HTTPS connector/channel on Tomcat by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\conf\server.xml`.
 
@@ -894,15 +898,13 @@ Once enabled your client applications can make API calls that connect over HTTPS
     3.  Be sure to open the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 7401.
 
     ------------------------------------------------------------------------
 
 3.  **Enable SSL support for DeployR.**
 
-    -   [Linux](#tab-VyvgNGUIPqg-0)
-    -   [OS X](#tab-VyvgNGUIPqg-1)
-    -   [Windows](#tab-VyvgNGUIPqg-2)
+    ##### For Linux:
 
     1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
@@ -914,6 +916,8 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
             /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
 
+	##### For OS X:
+
     1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/Users/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
             grails.plugins.springsecurity.auth.forceHttps = false
@@ -923,6 +927,8 @@ Once enabled your client applications can make API calls that connect over HTTPS
         Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
             /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
+
+	###### For Windows:
 
     1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR\8.0\deployr/deployr.groovy`:
 
@@ -934,8 +940,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
             C:\Program Files\Microsoft\DeployR\8.0\deployr\tools\setWebContext.bat -https true
 
-     
-    Upon completion of this script with `-https true`, the following changes will have been made to the server policies in the Administration Console:
+	Upon completion of this script with `-https true`, the following changes will have been made to the server policies in the Administration Console:
 
     -   The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
     -   The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
@@ -962,26 +967,24 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
 1.  **Disable SSL support for Tomcat.**
 
-    -   [Linux](#tab-Nk_gEzUIwcx-0)
-    -   [OS X](#tab-Nk_gEzUIwcx-1)
-    -   [Windows](#tab-Nk_gEzUIwcx-2)
+    #### For Linux:
 
     1.  Disable the HTTPS connector on Tomcat by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
 
             <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
 
     2.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
 
     3.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
 
             <security-constraint>
               <web-resource-collection>
@@ -1004,22 +1007,24 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
               </user-data-constraint>
             </security-constraint>
 
+	#### For OS X:
+
     1.  Disable the HTTPS connector on Tomcat by **commenting out** the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
 
             <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
 
     2.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
 
     3.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
         >[!NOTE]
->This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
 
             <security-constraint>
               <web-resource-collection>
@@ -1041,6 +1046,8 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
                   <transport-guarantee>NONE</transport-guarantee>
               </user-data-constraint>
             </security-constraint>
+
+	#### For Windows:
 
     1.  Disable the HTTPS connector/channel on Tomcat by **commenting out** the following code in the file `C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\conf\server.xml`.
 
@@ -1049,7 +1056,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
     2.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
         >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
 
     3.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\conf\web.xml`.
 
@@ -1078,9 +1085,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
 2.  **Disable SSL support for DeployR.**
 
-    -   [Linux](#tab-VyFeNfIIvcg-0)
-    -   [OS X](#tab-VyFeNfIIvcg-1)
-    -   [Windows](#tab-VyFeNfIIvcg-2)
+    #### For Linux:
 
     1.  Disable SSL support on the Administration Console by changing `true` to `false` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
@@ -1092,6 +1097,8 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
             /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https false
 
+	#### For OS X:
+
     1.  Disable SSL support on the Administration Console by changing `true` to `false` in the following line of the DeployR external configuration file, `/Users/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
             grails.plugins.springsecurity.auth.forceHttps = true
@@ -1101,6 +1108,8 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
         Run the `setWebContext.sh` script and specify the value of `false` for the `https` argument:
 
             /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https false
+
+	#### For Windows:
 
     1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR\8.0\deployr/deployr.groovy`:
 
