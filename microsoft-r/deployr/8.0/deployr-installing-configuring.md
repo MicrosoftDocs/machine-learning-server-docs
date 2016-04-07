@@ -25,38 +25,30 @@ ms.custom: ""
 ---
 # Installing & Configuring DeployR
 
+>**Get More DeployR Power:**  
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+
 ## System Requirements for DeployR
 
 Before you begin installing DeployR, make sure the computer meets the minimum hardware and software requirements.
 
-### DeployR Enterprise
+**Operating System (all 64-bit processor)**. 
++ DeployR Enterprise is supported on:
+	- SUSE Linux Enterprise Server 11 (SP2)
+	- RHEL/CentOS 5.8, 6.x
+	- Windows Server 2008 (R2 SP1), 2012
 
-**Supported platforms (all 64-bit processor)**.
++ DeployR Open
+	- Supported Platforms.
+		-   SUSE Linux Enterprise Server 11 (SP2)
+		-   RHEL/CentOS 5.8, 6.x, 7.0
+		-   Windows Server 2008 (R2 SP1), 2012
 
--   SUSE Linux Enterprise Server 11 (SP2)
--   RHEL/CentOS 5.8, 6.x
--   Windows Server 2008 (R2 SP1), 2012
-
-### DeployR Open
-
->**Get More DeployR Power:**  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
-
-**Supported platforms (all 64-bit processor)**.
-
--   SUSE Linux Enterprise Server 11 (SP2)
--   RHEL/CentOS 5.8, 6.x, 7.0
--   Windows Server 2008 (R2 SP1), 2012
-
-**Experimental platforms (all 64-bit processor)**.
-While DeployR Open can run on these OS, they are neither fully tested nor officially supported. Not recommended for production environments.
-
--   OpenSUSE 13.1
--   Ubuntu 12.04, 14.04
--   Mac OS X Mavericks (10.9), Yosemite (10.10)
--   Windows 7.0 (SP1), 8.1, 10
-
----
+	- Experimental platforms. While DeployR Open can run on these OS, they are neither fully tested nor officially supported. Not recommended for production environments.
+		-   OpenSUSE 13.1
+		-   Ubuntu 12.04, 14.04
+		-   Mac OS X Mavericks (10.9), Yosemite (10.10)
+		-   Windows 7.0 (SP1), 8.1, 10
 
 **Hardware**. Intel Pentium®-class processor; 3.0 GHz recommended
 
