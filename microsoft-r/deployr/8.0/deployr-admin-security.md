@@ -95,38 +95,40 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
     -   Your CA Single Sign-On Policy Server is properly configured and running
     -   You understand which header files are being used by your policy server
 
-      /*
-       * Siteminder Single Sign-On (Pre-Authentication) Policy Properties
-      */
+    Relevant snippet from `deployr.groovy` file shown here:
 
-      deployr.security.siteminder.preauth.enabled = false
+         /*
+          * Siteminder Single Sign-On (Pre-Authentication) Policy Properties
+          */
+       
+         deployr.security.siteminder.preauth.enabled = false
 
-      // deployr.security.preauth.username.header
-      // Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
-      deployr.security.preauth.username.header = 'HTTP_SM_USER'
+         // deployr.security.preauth.username.header
+         // Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
+         deployr.security.preauth.username.header = 'HTTP_SM_USER'
 
-      // deployr.security.preauth.group.header
-      // Identify Siteminder groups header.
-      deployr.security.preauth.group.header = 'SM_USER_GROUP'
+         // deployr.security.preauth.group.header
+         // Identify Siteminder groups header.
+         deployr.security.preauth.group.header = 'SM_USER_GROUP'
 
-      // deployr.security.preauth.group.separator
-      // Identify Siteminder groups delimiter header.
-      deployr.security.preauth.group.separator = '^'
+         // deployr.security.preauth.group.separator
+         // Identify Siteminder groups delimiter header.
+         deployr.security.preauth.group.separator = '^'
 
-      // deployr.security.preauth.groups.map
-      // Allows you to map Siteminder group names to DeployR role names.
-      // NOTE: Siteminder group names must be defined using the distinguished
-      // name for the group. Group distinguished names are case sensitive.
-      // For example, your Siteminder distinguished group name
-      // "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
-      // "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
-      // begin with ROLE_ and must always be upper case.
-      deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
+         // deployr.security.preauth.groups.map
+         // Allows you to map Siteminder group names to DeployR role names.
+         // NOTE: Siteminder group names must be defined using the distinguished
+         // name for the group. Group distinguished names are case sensitive.
+         // For example, your Siteminder distinguished group name
+         // "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
+         // "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
+         // begin with ROLE_ and must always be upper case.
+         deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
                                           'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
 
-      // deployr.security.preauth.default.role
-      // Optional, grant default DeployR Role to all Siteminder authenticated users:
-      deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
+         // deployr.security.preauth.default.role
+         // Optional, grant default DeployR Role to all Siteminder authenticated users:
+         deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
 
 ### PAM Authentication
 
@@ -517,7 +519,7 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 >[!IMPORTANT]
 >Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
 
-**On each machine hosting a grid node:**
+On each machine hosting a grid node:
 
 1.  Before making any configuration changes to system files, you must stop Rserve and any other DeployR-related services:
 
@@ -621,7 +623,7 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
 ##### Root Installs
 
-**On each machine hosting a grid node:**
+On each machine hosting a grid node:
 
 1.  Log in as `root`.
 
@@ -682,84 +684,62 @@ Once enabled your client applications can make API calls that connect over HTTPS
  
 
 1.  **Provide an SSL certificate.**
-
-    -   If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup.
-        (If you do not have one, skip to the next bullet to define a temporary certificate.)
-		
-		#### For Linux:
-		
-		>[!NOTE]  
-		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
-
-        1.  Go to the directory in which the keystore is stored.
-
-        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
-
-                cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-
-		#### For OS X:
-
+    + If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup. (If you do not have one, skip to the next bullet to define a temporary certificate.)
+       
+        
         >[!NOTE]
+                >Be sure to specify the correct Tomcat path for the `-keystore` argument.
 		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
-        1.  Go to the directory in which the keystore is stored.
+        + For Linux:
+	        1.  Go to the directory in which the keystore is stored.
+	        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
+            cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
-        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
-
+	+ For OS X:
+	        1.  Go to the directory in which the keystore is stored.
+	        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
                 cp .keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
-		#### For Windows:
+	+ For Windows:
 
-        1.  Go to the directory in which the keystore is stored.
-
-        2.  Launch a command window as administrator and type the following at the prompt:
-
+	        1.  Go to the directory in which the keystore is stored.
+        	2.  Launch a command window as administrator and type the following at the prompt:
                 copy .keystore  C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\bin\.keystore
 
-        ---------------------------------------------------
-
-    -   If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine.
-        Be sure to specify the correct Tomcat path for the `-keystore` argument.
-
-        #### For Linux:
-
+    + If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine.
+       
+        
         >[!NOTE]
+                >Be sure to specify the correct Tomcat path for the `-keystore` argument.
 		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
-        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
-
+        + For Linux:
+	        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
                 $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
-        2.  Provide the following information when prompted by the script:
+        	2.  Provide the following information when prompted by the script:
 
-        #### OS X
-
-        >[!NOTE]
-		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
-
-        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
+        + OS X:
+	        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
 
                 $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
 
-        2.  Provide the following information when prompted by the script:
+        	2.  Provide the following information when prompted by the script:
 
-		#### Windows	
+        + Windows:	
 
-        1.  Launch a command window **as administrator**.
-
-        2.  Run the `keytool` to generate a temporary keystore file. At the prompt, type:
+	        1.  Launch a command window **as administrator**.
+	
+	        2.  Run the `keytool` to generate a temporary keystore file. At the prompt, type:
 
                 "%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\bin\.keystore
 
-        3.  Provide the following information when prompted by the script:
-
-        -   For the keystore password, enter `changeit` and confirm this password.
-
-        -   For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
-
-        -   When presented with the summary of your responses, enter `yes` to accept these entries.
-
-        -   For a key password for Tomcat, press the Return key to use `changeit`.
+	        3.  Provide the following information when prompted by the script:
+        	    + For the keystore password, enter `changeit` and confirm this password.
+        	    + For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
+        	    + When presented with the summary of your responses, enter `yes` to accept these entries.
+        	    + For a key password for Tomcat, press the Return key to use `changeit`.
 
         >[!IMPORTANT]
 		>The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
