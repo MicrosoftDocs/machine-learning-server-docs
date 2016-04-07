@@ -1,674 +1,3 @@
----
-
-# required metadata
-title: " Security in DeployR"
-description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
-keywords: ""
-author: "jmartens"
-manager: "Paulette.McKay"
-ms.date: "03/17/2016"
-ms.topic: "article"
-ms.prod: "deployr"
-ms.service: ""
-ms.assetid: ""
-
-# optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.technology: ""
-ms.custom: ""
-
----
-
-# Security for DeployR
-
-## Overview
-
-DeployR is a server framework that exposes the R platform as a service to allow the integration of R statistics, analytics, and visualizations inside Web, desktop, and mobile applications. In addition to providing a simple yet powerful Web services API, the framework also supports a highly flexible, enterprise security model.
-
-By default, DeployR supports basic authentication. Users simply provide plain text username and password credentials, which are then matched against user account data stored in the DeployR database. User accounts are created and managed by an administrator using the DeployR Administration Console. Given these credentials are passed from client to server as plain text, we strongly recommend, in your production environments, that you enable and use HTTPS connections every time your application attempts to authenticate with DeployR. For more information, see [Working with HTTPS](#httpson).
-
-While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
-
->**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
-
-The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
-
-The following sections in this document detail how to work with these configuration properties to achieve your preferred security implementation.
-
-## Authentication and Authorization
-
-DeployR ships with security providers for the following enterprise security solutions:
-
--   [Basic Authentication](#basic)
--   [CA Single Sign-On](#sitemind)
--   [PAM Authentication Services](#pam)
--   [LDAP Authentication](#ldap)
--   [Active Directory Services](#activedir)
--   [R Session Process Controls](#processcontrols)
-
->**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.    
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
-
-The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
-
-When DeployR processes a user login, there are two key steps involved:
-
-1.  Credentials must be authenticated
-2.  Access privileges must be determined
-
-DeployR access privileges are determined by the roles assigned to a user. In the case of basic authentication, an administrator simply assigns roles to a user within the DeployR Administration Console.
-
->**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/).
-
-When you integrate with an external enterprise security solution, you want access privileges to be inherited from the external system. This is achieved with simple mappings in the DeployR configuration properties, which link external groups to internal roles.
-
-### Basic Authentication
-
-By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
-
->**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
-
-    /*
-     * DeployR Basic Authentication Policy Properties
-     */
-
-### CA Single Sign-On (SiteMinder) Pre-Authentication
-
-By default, the **CA Single Sign-On** (formerly known as SiteMinder) security provider is disabled. To enable CA Single Sign-On support, you must first update CA Single Sign-On Policy Server configuration. Then, you must update the relevant properties in your DeployR external configuration file.
-
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
-
-**To enable CA Single Sign-On support:**
-
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](https://deployr.revolutionanalytics.com/documents/admin/security/docs/#siteminder).
-
-2.  Update the relevant properties in your DeployR external configuration file.
-    This step assumes that:
-
-    -   Your CA Single Sign-On Policy Server is properly configured and running
-    -   You understand which header files are being used by your policy server
-
-    Relevant snippet from `deployr.groovy` file shown here:
-
-         /*
-          * Siteminder Single Sign-On (Pre-Authentication) Policy Properties
-          */
-       
-         deployr.security.siteminder.preauth.enabled = false
-
-         // deployr.security.preauth.username.header
-         // Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
-         deployr.security.preauth.username.header = 'HTTP_SM_USER'
-
-         // deployr.security.preauth.group.header
-         // Identify Siteminder groups header.
-         deployr.security.preauth.group.header = 'SM_USER_GROUP'
-
-         // deployr.security.preauth.group.separator
-         // Identify Siteminder groups delimiter header.
-         deployr.security.preauth.group.separator = '^'
-
-         // deployr.security.preauth.groups.map
-         // Allows you to map Siteminder group names to DeployR role names.
-         // NOTE: Siteminder group names must be defined using the distinguished
-         // name for the group. Group distinguished names are case sensitive.
-         // For example, your Siteminder distinguished group name
-         // "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
-         // "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
-         // begin with ROLE_ and must always be upper case.
-         deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
-                                          'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
-
-         // deployr.security.preauth.default.role
-         // Optional, grant default DeployR Role to all Siteminder authenticated users:
-         deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
-
-### PAM Authentication
-
-By default, the **PAM** security provider is disabled. To enable PAM authentication support, you must:
-
-1.  Update the relevant properties in your DeployR external configuration file, deployr.groovy.
-2.  Follow the DeployR server system files configuration changes outlined below.
-
-PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
-
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
-
-1.  Update the following properties in your DeployR external configuration file, `deployr.groovy`:
-
-    -   deployr.security.pam.authentication.enabled
-    -   deployr.security.pam.groups.map
-    -   deployr.security.pam.default.role
-
-    Relevant snippet from `deployr.groovy` file shown here:
-
-         /*
-          * DeployR PAM Authentication Policy Properties
-          */
-
-         deployr.security.pam.authentication.enabled = false
-
-         // deployr.security.pam.groups.map
-         // Allows you to map PAM user group names to DeployR role names.
-         // NOTE: PAM group names are case sensitive. For example, your
-         // PAM group named "finance" must appear in the map as "finance".
-         // DeployR role names must begin with ROLE_ and must always be
-         // upper case.
-         deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
-                                           'engineering' : 'ROLE_POWER_USER' ]
-
-         // deployr.security.pam.default.role
-         // Optional, grant default DeployR Role to all PAM authenticated users:
-         deployr.security.pam.default.role = 'ROLE_BASIC_USER'
-
-2.  Apply the following configuration changes to the DeployR server system files:
-
-    #### Non-Root Installs
-    
-    **Preparing**
-
-    1.  Before making any configuration changes to the server system files, stop the DeployR server:
-
-            cd /home/deployr-user/deployr/8.0.0
-            ./stopAll.sh
-
-    2.  Log in as `root` on your DeployR server.
-
-    **Grant Permissions**
-
-    The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
-
-    1.  Using your preferred editor, edit the file:
-
-            /etc/sudoers
-
-    2.  Find the following section:
-
-            ## Command Aliases
-
-    3.  Add the following line to this section:
-
-            Cmnd_Alias DEPLOYRTOMCAT = /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh
-
-    4.  Find the following section:
-
-            ## Allow root to run any commands anywhere
-
-    5.  Add the following line to this section:
-
-            %deployr-user      ALL = DEPLOYRTOMCAT
-
-        Your file should now look like this, where the order is important:
-
-            root    ALL=(ALL)       ALL
-            %deployr-user   ALL = DEPLOYRTOMCAT
-
-    6.  Save these changes and close the file in your editor.
-
-    7.  Log out `root` from your DeployR server.
-
-    8.  Log in as `deployr-user` to your DeployR server.
-
-    **Update the `startAll` and `stopAll` Scripts**
-
-    1.  Update the DeployR `startAll.sh` shell script to take advantage of the `sudo` command configured above.
-
-        1.  Using your preferred editor, edit the file:
-
-            	/home/deployr-user/deployr/8.0.0/startAll.sh
-
-        2.  Find the following line:
-
-            	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-
-        2.  Change it to the following:
-
-            	sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-
-        3.  Restart the DeployR server:
-
-	            cd /home/deployr-user/deployr/8.0.0
-	            ./startAll.sh
-
-        4.  Save this change and close the file in your editor.
-
-    2.  Update the DeployR `stopAll.sh` shell script to take advantage of the `sudo` command configured above.
-
-        1.  Using your preferred editor, edit the file:
-
-            	/home/deployr-user/deployr/8.0.0/stopAll.sh
-
-        2.  Find the following line:
-
-            	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-
-        3.  Change it to the following:
-
-            	sudo /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-
-        4.  Restart the DeployR server:
-
-            	cd /home/deployr-user/deployr/8.0.0
-            	./stopAll.sh
-
-        5.	 Save this change and close the file in your editor.
-
-	#### Root Installs
-
-    **Preparing**
-
-    1.  Before making any configuration changes to the server system files, stop the DeployR server:
-
-            cd /opt/deployr/8.0.0
-            ./stopAll.sh
-
-    2.  Log in as `root` on your DeployR server.
-
-    **Grant Permissions**
-
-    The following steps grant `root` permission to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
-
-    1.  Using your preferred editor, edit the file:
-
-            /opt/deployr/8.0.0/tomcat/tomcat7.sh
-
-    2.  Find the following section:
-
-        -   On Redhat/CentOS platforms:
-
-                daemon --user "apache" ${START_TOMCAT}
-
-        -   On SLES platforms:
-
-                start_daemon -u r "apache" ${START_TOMCAT}
-
-    3.  Change `"apache"` to `"root"` as follows:
-
-        -   On Redhat/CentOS platforms:
-
-                daemon --user "root" ${START_TOMCAT}
-
-        -   On SLES platforms:
-
-                start_daemon -u r "root" ${START_TOMCAT}
-
-    4.  Save this change and close the file in your editor.
-
-    5.  Restart the DeployR server:
-
-            cd /opt/deployr/8.0.0
-            ./startAll.sh
-
->[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
-
-### LDAP Authentication
-
-By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
-
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
-
->[!NOTE]
->The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
-
-    /*
-     * DeployR LDAP Authentication Configuration Properties
-     */
-    grails.plugin.springsecurity.ldap.context.managerDn = 'dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.context.managerPassword = 'secret'
-    grails.plugin.springsecurity.ldap.context.server = 'ldap://localhost:10389/'
-    grails.plugin.springsecurity.ldap.context.anonymousReadOnly = true
-    grails.plugin.springsecurity.ldap.search.base = 'ou=people,dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.search.searchSubtree = true
-    grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
-    grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=people,dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.authorities.defaultRole = "ROLE_BASIC_USER"
-    grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
-
-    // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
-    // grails.plugin.springsecurity.password.algorithm = 'xxx'
-
-    // deployr.security.ldap.user.properties.map
-    // Allows you to map between LDAP user property names to DeployR user property names:
-    deployr.security.ldap.user.properties.map = ['displayName':'cn',
-                                                 'email':'mail',
-                                                 'uid' : 'uidNumber',
-                                                 'gid' : 'gidNumber']
-
-    // deployr.security.ldap.roles.map property
-    // Allows you to map between LDAP group names to DeployR role names.
-    // NOTE, while LDAP group names can be defined on the LDAP server using
-    // any mix of upper and lower case, such as finance, Finance or FINANCE,
-    // the LDAP group names that appear in the map must have ROLE_ appended
-    // and be capitialized. For example, an LDAP group named "finance" should
-    // appear in the map as ROLE_FINANCE. DeployR role names must
-    // begin with ROLE_ and must always be upper case.
-    deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
-                                       'ROLE_ENGINEERING':'ROLE_POWER_USER']
-
-For more information, see the complete list of LDAP [configuration properties](#properties).
-
->[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
-
-### Active Directory Authentication
-
-By default, the Active Directory security provider is disabled. To enable Active Directory authentication support you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your Active Directory Directory Information Tree (DIT).
-
->[!NOTE]
->The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
-
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
-
-    /*
-     * DeployR Active Directory Configuration Properties
-     */
-
-    grails.plugin.springsecurity.ldap.context.managerDn = 'dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.context.managerPassword = 'secret'
-    grails.plugin.springsecurity.ldap.context.server = 'ldap://locahost:10389/'
-    grails.plugin.springsecurity.ldap.authorities.ignorePartialResultException = true
-    grails.plugin.springsecurity.ldap.search.base = 'ou=people,dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.search.searchSubtree = true
-    grails.plugin.springsecurity.ldap.search.attributesToReturn = ['mail', 'displayName'] 
-    grails.plugin.springsecurity.ldap.search.filter="sAMAccountName={0}"
-    grails.plugin.springsecurity.ldap.auth.hideUserNotFoundExceptions = false
-    grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
-    grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
-    grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=group,dc=example,dc=com'
-
-    // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
-    // grails.plugin.springsecurity.password.algorithm = 'xxx'
-
-    // deployr.security.ldap.user.properties.map
-    // Allows you to map between LDAP user property names to DeployR user property names:
-    deployr.security.ldap.user.properties.map = ['displayName':'cn',
-                                                 'email':'mail',
-                                                 'uid' : 'uidNumber',
-                                                 'gid' : 'gidNumber']
-
-    // deployr.security.ldap.roles.map property
-    // Allows you to map between LDAP group names to DeployR role names.
-    // NOTE, while LDAP group names can be defined on the LDAP server using
-    // any mix of upper and lower case, such as finance, Finance or FINANCE,
-    // the LDAP group names that appear in the map must have ROLE_ appended
-    // and be capitialized. For example, an LDAP group named "finance" should
-    // appear in the map as ROLE_FINANCE. DeployR role names must
-    // begin with ROLE_ and must always be upper case.
-    deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
-                                       'ROLE_ENGINEERING':'ROLE_POWER_USER']
-
-For more information, see the complete list of [configuration properties](#properties).
-
->[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#processcontrols).
-
-### LDAP & Active Directory Configuration Properties
-
-The following table presents the complete list of LDAP and Active Directory configuration properties.
-
->[!IMPORTANT]
->To use one of these configuration properties in the `deployr.groovy` external configuration file, you must prefix the property name with `grails.plugin.springsecurity`. For example, to use the `ldap.context.server='ldap://localhost:389'` property in `deploy.groovy`, you must write the property as such: `grails.plugin.springsecurity.ldap.context.server='ldap://localhost:389'`
-
-### Context Properties
-
-| Property                                | Default Value                  | Description                                                                                                   |
-|-----------------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------|
-| ldap.context.server                     | 'ldap://localhost:389'         | Address of the LDAP server.                                                                                   |
-| ldap.context.managerDn                  | "'cn=admin,dc=example,dc=com'" | DN to authenticate with.                                                                                      |
-| ldap.context.managerPassword            | secret'                        | Manager password to authenticate with.                                                                        |
-| ldap.context.baseEnvironmentProperties  | None                           | Extra context properties.                                                                                     |
-| ldap.context.cacheEnvironmentProperties | TRUE                           | Whether environment properties should be cached between requests.                                             |
-| ldap.context.anonymousReadOnly          | FALSE                          | Whether an anonymous environment should be used for read-only operations.                                     |
-| ldap.context.referral                   | null ('ignore')                | The method to handle referrals. Can be 'ignore' or 'follow' to enable referrals to be automatically followed. |
-
-### Search Properties
-
-| Property                              | Default Value                  | Description                                                                                                                                         |
-|---------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| ldap.search.base                      | "'ou=users,dc=example,dc=com'" | "Context name to search in, relative to the base of the configured ContextSource, e.g. 'ou=users,dc=example,dc=com'."                               |
-| ldap.search.searchSubtree             | TRUE                           | "If true then searches the entire subtree as identified by context, if false (the default) then only searches the level identified by the context." |
-| ldap.search.filter                    | '(uid={0})'                    | The filter expression used in the user search.                                                                                                      |
-| ldap.search.derefLink                 | FALSE                          | Enables/disables link dereferencing during the search.                                                                                              |
-| ldap.search.timeLimit                 | 0 (unlimited)                  | The time to wait before the search fails.                                                                                                           |
-| ldap.search.attributesToReturn        | null (all)                     | The attributes to return as part of the search.                                                                                                     |
-| ldap.authenticator.dnPatterns         | null (none)                    | "Optional pattern(s) used to create DN search patterns, e.g. \[""cn={0},ou=people""\]."                                                             |
-| ldap.authenticator.attributesToReturn | null (all)                     | Names of attribute ids to return; use null to return all and an empty list to return none.                                                          |
-
-### Authorities Properties
-
-| Property                                      | Default Value                   | Description                                                                                                                                                  |
-|-----------------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ldap.authorities.retrieveGroupRoles           | TRUE                            | Whether to infer roles based on group membership.                                                                                                            |
-| ldap.authorities.retrieveDatabaseRoles        | FALSE                           | Whether to retrieve additional roles from the database using the User/Role many-to-many.                                                                     |
-| ldap.authorities.groupRoleAttribute           | 'cn'                            | The ID of the attribute which contains the role name for a group.                                                                                            |
-| ldap.authorities.groupSearchFilter            | 'uniquemember={0}'              | The pattern to be used for the user search. {0} is the user's DN.                                                                                            |
-| ldap.authorities.searchSubtree                | TRUE                            | "If true a subtree scope search will be performed, otherwise a single-level search is used."                                                                 |
-| ldap.authorities.groupSearchBase              | "'ou=groups,dc=example,dc=com'" | The base DN from which the search for group membership should be performed.                                                                                  |
-| ldap.authorities.ignorePartialResultException | FALSE                           | " Whether PartialResultExceptions should be ignored in searches, typically used with Active Directory since AD servers often have a problem with referrals." |
-| ldap.authorities.defaultRole                  | None                            | An optional default role to be assigned to all users.                                                                                                        |
-| ldap.mapper.roleAttributes                    | Null                            | Optional names of role attributes.                                                                                                                           |
-| ldap.mapper.convertToUpperCase                | TRUE                            | "Whether to uppercase retrieved role names (will also be prefixed with ""ROLE\_"")"                                                                          |
-
-### R Session Process Controls
-
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) on **Linux platforms** only.
-
-By default, R sessions executing on the DeployR grid are not authorized to access files or directories outside of the R working directory. To enable broader file system access for a given R session to files or directories based on specific authenticated user ID and group ID credentials, you must first do ONE of the following:
-
--   Enable [PAM authentication](#pam), or
--   Enable [LDAP authentication](#ldap), or
--   Enable [Active Directory authentication](#activedir)
-
-Once you have enabled PAM, LDAP, or AD authentication, you must (Step 1) update the relevant process controls properties on the server **and then** (Step 2) apply system-level configuration changes to every single node on your DeployR grid, as follows:
-
-### Step 1: Update Process Control Properties
-
-After you've enabled either PAM, LDAP, or Active Directory authentication, you can update the relevant process control properties in your DeployR server external configuration file, `deployr.groovy`, on the main DeployR server:
-
--   deployr.security.r.session.process.controls.enabled
--   deployr.security.r.session.process.default.uid
--   deployr.security.r.session.process.default.gid
-
-    Relevant snippet from deployr.groovy file shown here:
-
-        /*
-        * DeployR R Session Process Controls Policy Configuration
-        *
-        * By default, each R session on the DeployR grid executes
-        * with permissions inherited from the master RServe process
-        * that was responsible for launching it.
-        *
-        * Enable deployr.security.r.session.process.controls to force
-        * each individual R session process to execute with the
-        * permissions of the end-user requesting the R session,
-        * using their authenticated user ID and group ID.
-        *
-        * If this property is enabled but the uid/gid associated with
-        * the end-user requesting the R session is not available,
-        * then the R session process will execute using the default[uid,gid]
-        * indicated on the following properties.
-        *
-        * The default[uid,gid] values indicated on these policy
-        * configuration properties must correspond to a valid user and
-        * group ID configured on each node on the DeployR grid.
-        *
-        * For example, if you installed DeployR as deployr-user then
-        * we recommend using the uid/gid for deployr-user for these
-        * default property values.
-        */
-        deployr.security.r.session.process.controls.enabled=false
-        deployr.security.r.session.process.default.uid=9999
-        deployr.security.r.session.process.default.gid=9999
-
-#### Step 2: Make System-Level Configuration Changes to Every Node
-
->[!WARNING]
->**Before You Begin!** Make sure you've enabled the appropriate process control properties before beginning this step.
-
-
-##### Non-Root Installs
-
->[!IMPORTANT]
->Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
-
-On each machine hosting a grid node:
-
-1.  Before making any configuration changes to system files, you must stop Rserve and any other DeployR-related services:
-
-        cd /home/deployr-user/deployr/8.0.0
-        ./stopAll.sh
-
-2.  Grant `deployr-user` permission to execute a command as a `sudo` user so that the RServe process can be launched. This is required so that the DeployR server can enforce R session process controls.
-
-    1.  Log in as `root`.
-
-    2.  Using your preferred editor, edit the file:
-
-        /etc/sudoers
-
-    3.  Find the following section:
-
-			## Command Aliases
-
-    4.  Add the following line to this section:
-
-			Cmnd_Alias DEPLOYRRSERVE = /home/deployr-user/deployr/8.0.0/rserve/rserve.sh
-
-    5.  Find the following section:
-
-			## Allow root to run any commands anywhere
-
-    6.  Add or append `DEPLOYRRSERVE` for `%deployr-user` to this section:
-
-			## If an entry for %deployr-user is not found, add this line:
-			%deployr-user      ALL = DEPLOYRRSERVE
-			## Otherwise append as shown:
-			%deployr-user      ALL = DEPLOYRTOMCAT,DEPLOYRRSERVE
-
-    7.  Save these changes and close the file in your editor.
-
-    8.  Log out `root`.
-
-3.  Update the DeployR `startAll.sh` shell script to take advantage of the `sudo` command configured above.
-
-    1.  Log in as `deployr-user`.
-
-    2.  Using your preferred editor, edit the file:
-
-			/home/deployr-user/deployr/8.0.0/startAll.sh
-
-    3.  Find the following line:
-
-			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
-
-    4.  Change it to the following:
-
-			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
-
-    5.  Save this change and close the file in your editor.
-
-4.  Update the DeployR `stopAll.sh` shell script to take advantage of the `sudo` command configured above.
-
-    1.  Using your preferred editor, edit the file:
-
-			/home/deployr-user/deployr/8.0.0/stopAll.sh
-
-    2.  Find the following line:
-
-			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
-
-    3.  Change it to the following:
-
-			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
-
-    4.  Save this change and close the file in your editor.
-
-5.  Set group privileges on the user directory containing the DeployR grid node install directory.
-
-    1.  Log in as `root`.
-
-    2.  Set group privileges.
-
-			cd /home
-			chmod -R g+rwx deployr-user
-
-6.  Add each user that will authenticate with the server to the `deployr-user` group.
-
-    1.  Log in as `root`.
-
-    2.  Execute the following command to add each user to the `deployr-user` group.
-
-			usermod -a -G deployr-user <some-username>
-
-    3.  Repeat step **B.** for each user that will authenticate with the server.
-
-    4.  Log out `root`.
-
-7.  Restart Rserve and any other DeployR-related services on the machine hosting the DeployR grid node:
-
-    1.  Log in as `deployr-user`.
-
-    2.  Start Rserve and any other DeployR-related services:
-
-			cd /home/deployr-user/deployr/8.0.0
-			./startAll.sh
-
-##### Root Installs
-
-On each machine hosting a grid node:
-
-1.  Log in as `root`.
-
-2.  Before making any configuration changes to system files, stop Rserve and any other DeployR-related services:
-
-        cd /opt/deployr/8.0.0
-        ./stopAll.sh
-
-3.  Grant `root` permission to launch the RServe process. This is required so that each DeployR grid node can enforce R session process controls.
-
-    1.  Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
-
-		-   On Redhat/CentOS platforms, find the following section:
-		
-		        daemon --user "apache"
-		
-		    and, change `apache` to `root` as follows:
-		
-		        daemon --user "root"
-
-		-   On SLES platforms, find the following section:
-		
-		        start_daemon -u r "apache"
-		
-		    and, change `apache` to `root` as follows:
-		
-		        start_daemon -u r "root"
-
-    2.  Save this change and close the file in your editor.
-
-4.  Set group privileges on the DeployR install directory.
-
-        cd /opt
-        chown -R apache.apache deployr
-        chmod -R g+rwx deployr
-
-5.  Execute the following command to add each user to the `apache` group.
-    **Repeat for each user that will authenticate with the server.**
-
-        usermod -a -G apache <some-username>
-
-6.  Restart Rserve and any other DeployR-related services:
-
-        cd /home/deployr-user/deployr/8.0.0
-        ./startAll.sh
 
 ## Enable Server SSL / HTTPS
 
@@ -793,6 +122,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
         >If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 8001.
 
     + For OS X:
+        >[!NOTE]
 		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
 	 1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
@@ -825,9 +155,8 @@ Once enabled your client applications can make API calls that connect over HTTPS
                  </security-constraint>
                  -->
 
-	 3.  Be sure to open the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
+	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
-        >[!IMPORTANT]
 		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 8001.
 
     + For Windows:
@@ -865,47 +194,41 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
-        >[!IMPORTANT]
 		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 8001.
 
 
 3.  **Enable SSL support for DeployR.**
 
-    ##### For Linux:
+    + For Linux:
 
-    1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
+	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
-                    grails.plugins.springsecurity.auth.forceHttps = false
+                 grails.plugins.springsecurity.auth.forceHttps = false
 
-    2.  Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.
 
-        Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
+	 1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.  Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
-                    /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
+                 /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
 
-	##### For OS X:
+    + For OS X:
 
-    1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/Users/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
+	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/Users/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
-                    grails.plugins.springsecurity.auth.forceHttps = false
+                 grails.plugins.springsecurity.auth.forceHttps = false
 
-    2.  Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.
+	 1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
-        Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
+                 /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
 
-                    /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
+    + For Windows:
 
-	###### For Windows:
+	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR\8.0\deployr/deployr.groovy`:
 
-    1.  Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR\8.0\deployr/deployr.groovy`:
+                 grails.plugins.springsecurity.auth.forceHttps = false
 
-                    grails.plugins.springsecurity.auth.forceHttps = false
+	 1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
 
-    2.  Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.
-
-        Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
-
-                    C:\Program Files\Microsoft\DeployR\8.0\deployr\tools\setWebContext.bat -https true
+                 C:\Program Files\Microsoft\DeployR\8.0\deployr\tools\setWebContext.bat -https true
 
 	Upon completion of this script with `-https true`, the following changes will have been made to the server policies in the Administration Console:
 
@@ -914,12 +237,12 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
     [Learn more about server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm).
 
-    ------------------------------------------------------------------------
-
 4.  **Restart DeployR** by [stopping and starting all its services](https://deployr.revolutionanalytics.com/documents/admin/common/#server) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
      
 
 5.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
+
+
 
 ## Disable Server SSL / HTTPS
 
@@ -930,49 +253,42 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
 ### To disable SSL support on the DeployR server:
 
- 
-
 1.  **Disable SSL support for Tomcat.**
 
-    #### For Linux:
+		>[!NOTE]
+		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector. For another user,also use the appropriate filepath to `web.xml`.
 
-    1.  Disable the HTTPS connector on Tomcat by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
+    + For Linux:
+    	1.  Disable the HTTPS connector on Tomcat by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
-        >[!NOTE]
-		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector.
+                 <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
 
-            <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
+    	1.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
-    2.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 8001.
 
-        >[!IMPORTANT]
-		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
+    	1.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
-    3.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
-
-        >[!NOTE]
-		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `web.xml`.
-
-            <security-constraint>
-              <web-resource-collection>
-                  <web-resource-name>HTTPSOnly</web-resource-name>
-                  <url-pattern>/*</url-pattern>
-              </web-resource-collection>
-              <user-data-constraint>
-                  <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-              </user-data-constraint>
-            </security-constraint>
-            <security-constraint>
-              <web-resource-collection>
-                  <web-resource-name>HTTPSOrHTTP</web-resource-name>
-                  <url-pattern>*.ico</url-pattern>
-                  <url-pattern>/img/*</url-pattern>
-                  <url-pattern>/css/*</url-pattern>
-              </web-resource-collection>
-              <user-data-constraint>
-                  <transport-guarantee>NONE</transport-guarantee>
-              </user-data-constraint>
-            </security-constraint>
+                 <security-constraint>
+                   <web-resource-collection>
+                       <web-resource-name>HTTPSOnly</web-resource-name>
+                       <url-pattern>/*</url-pattern>
+                   </web-resource-collection>
+                   <user-data-constraint>
+                       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+                   </user-data-constraint>
+                 </security-constraint>
+                 <security-constraint>
+                   <web-resource-collection>
+                       <web-resource-name>HTTPSOrHTTP</web-resource-name>
+                       <url-pattern>*.ico</url-pattern>
+                       <url-pattern>/img/*</url-pattern>
+                       <url-pattern>/css/*</url-pattern>
+                   </web-resource-collection>
+                   <user-data-constraint>
+                       <transport-guarantee>NONE</transport-guarantee>
+                   </user-data-constraint>
+                 </security-constraint>
 
 	#### For OS X:
 
@@ -1020,10 +336,10 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
             <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\bin\.keystore" />
 
-    2.  Be sure to close the Tomcat HTTPS port (7401) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
+    2.  Be sure to close the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
         >[!IMPORTANT]
-		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 7401.
+		>If you are provisioning your server on a cloud service such as Azure or AWS, then you must also remove endpoints for port 8001.
 
     3.  Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\conf\web.xml`.
 
