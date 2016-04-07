@@ -7,101 +7,94 @@
 + **For Non-Root Installs:**  Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node:
 
 	1.  Before making any configuration changes to system files, you must stop Rserve and any other DeployR-related services:
-
-		cd /home/deployr-user/deployr/8.0.0
-		./stopAll.sh
+	
+			cd /home/deployr-user/deployr/8.0.0
+			./stopAll.sh
 
 	2.  Grant `deployr-user` permission to execute a command as a `sudo` user so that the RServe process can be launched. This is required so that the DeployR server can enforce R session process controls.
+	    1.  Log in as `root`.
+	   
+	    1.  Using your preferred editor, edit the file `/etc/sudoers`.
+	    
+	    1.  Find the following section:
 
-    		1.  Log in as `root`.
+                 ## Command Aliases
 
-    		2.  Using your preferred editor, edit the file:
+	    1.  Add the following line to this section:
 
-			/etc/sudoers
+                 Cmnd_Alias DEPLOYRRSERVE = /home/deployr-user/deployr/8.0.0/rserve/rserve.sh
 
-    		3.  Find the following section:
+	    1.  Find the following section:
 
-			## Command Aliases
+                 ## Allow root to run any commands anywhere
 
-    		4.  Add the following line to this section:
+	    1.  Add or append `DEPLOYRRSERVE` for `%deployr-user` to this section:
 
-			Cmnd_Alias DEPLOYRRSERVE = /home/deployr-user/deployr/8.0.0/rserve/rserve.sh
+                 ## If an entry for %deployr-user is not found, add this line:
+                 %deployr-user      ALL = DEPLOYRRSERVE
+                 ## Otherwise append as shown:
+                 %deployr-user      ALL = DEPLOYRTOMCAT,DEPLOYRRSERVE
 
-    		5.  Find the following section:
+	    1.  Save these changes and close the file in your editor.
 
-			## Allow root to run any commands anywhere
-
-    		6.  Add or append `DEPLOYRRSERVE` for `%deployr-user` to this section:
-
-			## If an entry for %deployr-user is not found, add this line:
-			%deployr-user      ALL = DEPLOYRRSERVE
-			## Otherwise append as shown:
-			%deployr-user      ALL = DEPLOYRTOMCAT,DEPLOYRRSERVE
-
-    		7.  Save these changes and close the file in your editor.
-
-    		8.  Log out `root`.
+	    1.  Log out `root`.
 
 	3.  Update the DeployR `startAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-    		1.  Log in as `deployr-user`.
+	    1.  Log in as `deployr-user`.
 
-    		2.  Using your preferred editor, edit the file:
+	    1. Using your preferred editor, edit the file `/home/deployr-user/deployr/8.0.0/startAll.sh`.
 
-			/home/deployr-user/deployr/8.0.0/startAll.sh
+	    1. Find the following line:
 
-    		3.  Find the following line:
+                 /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
 
-			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
+	    1. Change it to the following:
 
-    		4.  Change it to the following:
+                 sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
 
-			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
-
-    		5.  Save this change and close the file in your editor.
+	    1. Save this change and close the file in your editor.
 
 	4.  Update the DeployR `stopAll.sh` shell script to take advantage of the `sudo` command configured above.
 
-    		1.  Using your preferred editor, edit the file:
+	    1. Using your preferred editor, edit the file `/home/deployr-user/deployr/8.0.0/stopAll.sh`.
 
-			/home/deployr-user/deployr/8.0.0/stopAll.sh
+	    1. Find the following line:
 
-    		2.  Find the following line:
+                 /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
 
-			/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
+	    1. Change it to the following:
 
-    		3.  Change it to the following:
+                 sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
 
-			sudo /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
-
-    		4.  Save this change and close the file in your editor.
+	    1. Save this change and close the file in your editor.
 
 	5.  Set group privileges on the user directory containing the DeployR grid node install directory.
 
-    		1.  Log in as `root`.
+	    1. Log in as `root`.
 
-    		2.  Set group privileges.
+	    1. Set group privileges.
 
-			cd /home
-			chmod -R g+rwx deployr-user
+                 cd /home
+                 chmod -R g+rwx deployr-user
 
 	6.  Add each user that will authenticate with the server to the `deployr-user` group.
 
-    		1.  Log in as `root`.
+	    1. Log in as `root`.
 
-    		2.  Execute the following command to add each user to the `deployr-user` group.
+	    1. Execute the following command to add each user to the `deployr-user` group.
 
 			usermod -a -G deployr-user <some-username>
 
-    		3.  Repeat step **B.** for each user that will authenticate with the server.
+	    1. Repeat step **B.** for each user that will authenticate with the server.
 
-    		4.  Log out `root`.
+	    1. Log out `root`.
 
 	7.  Restart Rserve and any other DeployR-related services on the machine hosting the DeployR grid node:
 
-    		1.  Log in as `deployr-user`.
+	    1. Log in as `deployr-user`.
 
-    		2.  Start Rserve and any other DeployR-related services:
+	    1. Start Rserve and any other DeployR-related services:
 
 			cd /home/deployr-user/deployr/8.0.0
 			./startAll.sh
