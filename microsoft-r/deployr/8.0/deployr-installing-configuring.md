@@ -1,4 +1,3 @@
-
 ---
 
 # required metadata
@@ -24,7 +23,6 @@ ms.technology: ""
 ms.custom: ""
 
 ---
-
 # Installing & Configuring DeployR
 
 ## System Requirements for DeployR
@@ -280,9 +278,9 @@ After installing the [main server for DeployR Enterprise](#install-main), instal
 
 2.  Install Microsoft R Server and RServe [as described here](#preparing-win) on the grid node machine.
 
-3.  Download the node installer file, `DeployR-Enterprise-8.0.0.exe`, which can be found in the Microsoft R Server package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
+3.  Download the node installer file, `DeployR-Enterprise-node-8.0.0.exe`, which can be found in the Microsoft R Server package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
 
-4.  Launch the installer, `DeployR-Enterprise-8.0.0.exe`.
+4.  Launch the installer, `DeployR-Enterprise-node-8.0.0.exe`.
 
 5.  If a message appears onscreen during installation asking whether you want to *“allow the following program to make changes to this computer”*, click **Continue**.
 
