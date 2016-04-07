@@ -71,10 +71,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
         	    + For a key password for Tomcat, press the Return key to use `changeit`.
 
 
-        >[!IMPORTANT]
-		>The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
-
-.
+      **The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
 
 		>[!WARNING]
 		>**Alert Your Users!**  
