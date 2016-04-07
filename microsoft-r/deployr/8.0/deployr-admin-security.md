@@ -100,7 +100,7 @@
                  ./startAll.sh
 
 
-+ **For Root Installs**  Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node:
++ **For Root Installs**:  Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node:
 
 	1. Log in as `root`.
 
@@ -111,42 +111,40 @@
 
 	1. Grant `root` permission to launch the RServe process. This is required so that each DeployR grid node can enforce R session process controls.
 
-	    1. Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
+	    + On Redhat/CentOS platforms:
+	    
+	       1. Open the file `/opt/deployr/8.0.0/rserve/rserve.sh`.
 
-                + On Redhat/CentOS platforms, find the following section:
-		
-		        daemon --user "apache"
-		
-		    and, change `apache` to `root` as follows:
-		
-		        daemon --user "root"
+	       1. Find the following section `daemon --user "apache"`.
 
-		-   On SLES platforms, find the following section:
-		
-		        start_daemon -u r "apache"
-		
-		    and, change `apache` to `root` as follows:
-		
-		        start_daemon -u r "root"
+	       1. Change `apache` to `root` as follows `daemon --user "root"`.
 
-    2.  Save this change and close the file in your editor.
+	       1. Save this change and close the file in your editor.	       
 
-4.  Set group privileges on the DeployR install directory.
+	    + On SLES platforms:
+	    
+	       1. Open the file `/opt/deployr/8.0.0/rserve/rserve.sh`.
 
-        cd /opt
-        chown -R apache.apache deployr
-        chmod -R g+rwx deployr
+	       1. Find the following section `start_daemon -u r "apache"`.
 
-5.  Execute the following command to add each user to the `apache` group.
-    **Repeat for each user that will authenticate with the server.**
+	       1. Change `apache` to `root` as follows `start_daemon -u r "root"`.
 
-        usermod -a -G apache <some-username>
+	       1. Save this change and close the file in your editor.
 
-6.  Restart Rserve and any other DeployR-related services:
+	1. Set group privileges on the DeployR install directory.
 
-        cd /home/deployr-user/deployr/8.0.0
-        ./startAll.sh
+                 cd /opt
+                 chown -R apache.apache deployr
+                 chmod -R g+rwx deployr
 
+	1. Execute the following command to add each user to the `apache` group. **Repeat for each user that will authenticate with the server.**
+
+                 usermod -a -G apache <some-username>
+
+	1. Restart Rserve and any other DeployR-related services:
+
+                 cd /home/deployr-user/deployr/8.0.0
+                 ./startAll.sh
 
 
 ## Enable Server SSL / HTTPS
