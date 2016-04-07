@@ -84,7 +84,7 @@
 
 	    1. Execute the following command to add each user to the `deployr-user` group.
 
-			usermod -a -G deployr-user <some-username>
+                 usermod -a -G deployr-user <some-username>
 
 	    1. Repeat step **B.** for each user that will authenticate with the server.
 
@@ -96,25 +96,24 @@
 
 	    1. Start Rserve and any other DeployR-related services:
 
-			cd /home/deployr-user/deployr/8.0.0
-			./startAll.sh
+                 cd /home/deployr-user/deployr/8.0.0
+                 ./startAll.sh
 
-** For Root Installs**
 
-On each and every machine hosting a grid node:
++ **For Root Installs**  Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node:
 
-1.  Log in as `root`.
+	1. Log in as `root`.
 
-2.  Before making any configuration changes to system files, stop Rserve and any other DeployR-related services:
+	1. Before making any configuration changes to system files, stop Rserve and any other DeployR-related services:
 
-        cd /opt/deployr/8.0.0
-        ./stopAll.sh
+			cd /opt/deployr/8.0.0
+			./stopAll.sh
 
-3.  Grant `root` permission to launch the RServe process. This is required so that each DeployR grid node can enforce R session process controls.
+	1. Grant `root` permission to launch the RServe process. This is required so that each DeployR grid node can enforce R session process controls.
 
-    1.  Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
+	    1. Using your preferred editor, edit the file `/opt/deployr/8.0.0/rserve/rserve.sh` as follows:
 
-		-   On Redhat/CentOS platforms, find the following section:
+                + On Redhat/CentOS platforms, find the following section:
 		
 		        daemon --user "apache"
 		
