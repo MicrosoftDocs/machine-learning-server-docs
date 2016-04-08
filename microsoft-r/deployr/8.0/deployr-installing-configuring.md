@@ -1,3 +1,241 @@
+---
+
+# required metadata
+title: "Installing and Configuring DeployR"
+description: "How to install, migrate, and configure DeployR"
+keywords: "install, installation, DeployR, configuration, configure"
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+# Installing & Configuring DeployR
+
+>**Get More DeployR Power:**  
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+
+## System Requirements for DeployR
+
+Before you begin installing DeployR, make sure the computer meets the minimum hardware and software requirements.
+
+**Operating System (all 64-bit processor)**. 
+
+|DeployR Enterprise|DeployR Open|
+|------------------------------------------------------|--------------|
+|Supported Platforms.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;SUSE&nbsp;Linux&nbsp;Enterprise&nbsp;Server&nbsp;11&nbsp;(SP2)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;RHEL/CentOS 5.8, 6.x<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Windows Server 2008 (R2 SP1), 2012|Supported Platforms.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- SUSE Linux Enterprise Server 11 (SP2)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- RHEL/CentOS 5.8, 6.x, 7.0<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Windows Server 2008 (R2 SP1), 2012<br/>Experimental platforms. While DeployR Open can run on these OS, they are neither fully tested nor officially supported. Not recommended for production environments.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- OpenSUSE 13.1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Ubuntu 12.04, 14.04<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Mac OS X Mavericks (10.9), Yosemite (10.10)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Windows 7.0 (SP1), 8.1, 10
+
+**Hardware**. Intel Pentium®-class processor; 3.0 GHz recommended
+
+**Free disk space**. 250 GB or more recommended
+
+**RAM**. 4 GB or more is recommended
+
+**Java JVM heap size**. 1 GB or more in production
+
+**Swap space**. 8 GB or more for larger data sets is recommended
+
+**Internet access**. To download DeployR and software dependencies as well as to interact with the Repository Manager, Administration Console, API Explorer Tool, and this comprehensive website. If using Microsoft Internet Explorer, use version 8 or later.
+
+>[!IMPORTANT]
+>We highly recommend installing DeployR on a *dedicated server machine*.
+
+## Software Dependencies
+
+DeployR depends on the installation and configuration of a number of software dependencies. The list and steps depend on the platform onto which you are installing.
+
+See the DeployR dependencies for your OS:
+
+-   [Windows](#installing-on-Windows)
+-   [Linux](#installing-on-linux)
+-   [Mac / OS X](#installing-on-mac-os-x)
+
+## Installing on Windows
+
+>[!IMPORTANT]  
+>
+>1.  Install the DeployR main server first **before** installing any grid nodes.
+>2.  We highly recommend installing DeployR on a dedicated server machine.
+>3.  Review the [system requirements & supported operating systems list](#sysreq) before you continue.
+>4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrade) before continuing.
+>5.  You may need to temporarily disable your anti-virus software to install DeployR. Turn it back on as soon as you are finished.
+
+### Dependencies
+
+Before you can install DeployR on the main server machine or any additional grid node (DeployR Enterprise only), you must manually install the following dependencies. All other dependencies will be installed for you.
+
+#### DeployR Enterprise Dependencies
+
+DeployR Enterprise depends on the manual installation and configuration of these dependencies.
+
+| Dependency Name                                                                                                                                                                                                    | DeployR Server | DeployR Grid Node |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-------------------|
+| Java™ Runtime Environment 8 or 7u13 (or later)                                                                                                                                                                     | Yes            | No                |
+| Revolution R Enterprise for Windows 8.0 and its dependencies                                                                                                                                                       | Yes            | Yes               |
+| DeployR Rserve 7.4.2                                                                                                                                                                                               | Yes            | Yes               |
+| MongoDB 2.6.7<br />MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).  | Yes            | No                |
+
+**To install the required dependencies for DeployR Enterprise:**
+
+1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
+
+	>Java is only required on the DeployR server, not on any [grid node machines](#install-node).
+
+2.  Install **[Revolution R Enterprise for Windows](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies.** [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
+
+3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
+
+    -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
+		1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+		2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
+		3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+		4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
+		5.  Click **Open** to install it.
+    -   Alternatively, install using the command prompt:
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+		2.  Open a Command Prompt window **as Administrator**.
+		3.  Run the following command to install DeployR Rserve 7.4.2:
+
+				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
+
+        `<PATH_TO_R>` is the path to the directory that contains the R executable, by default `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2`.
+        And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
+
+        Example: A user with administrator privileges might run these commands for example.
+
+            cd "C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64"
+            R CMD INSTALL -l "C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library" "%homepath%\Downloads\"
+
+4.  Download and unzip the **MongoDB 2.6.7** contents into `%TEMP%\MONGODB_DEPLOYR` directory as described in the following steps. Applies to DeployR Enterprise only.
+
+	>MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
+
+    1.  Download [MongoDB 2.6.7](http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7.zip).
+
+    2.  In Windows Explorer, type `%TEMP%` into the file path field and press **Enter**.
+
+		>This path varies from one Windows version to another.  
+		>For example, on Windows Server 2012, it might appear as: `C:\Users\<username>\AppData\Local\Temp\2`.
+
+		![File Path](./media/deployr-installing-configuring/mongodb-1.png)
+
+    3.  Create a directory named `MONGODB_DEPLOYR` under the path you just revealed.
+
+    4.  Go to the new `MONGODB_DEPLOYR` directory.
+
+    5.  To capture the path to this directory to use when unzipping later, copy the file path to your clipboard.
+        To see the full path, click inside the file path field.
+
+         ![File Path](./media/deployr-installing-configuring/mongodb-3.png)
+
+    6.  Extract the contents of the MongoDB 2.6.7 zip file into the new `MONGODB_DEPLOYR` directory.
+
+**-- The prerequisites for DeployR Enterprise are now installed. You can begin installing the main server for DeployR Enterprise now. --**
+
+#### DeployR Open Dependencies
+
+DeployR Open depends on the manual installation and configuration of these dependencies.
+
+| Dependency Name                                                                                                      | DeployR Server | DeployR Grid Node |
+|----------------------------------------------------------------------------------------------------------------------|----------------|-------------------|
+| Java™ Runtime Environment 8 or 7u13 (or later)                                                                       | Yes            | No                |
+| [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. | Yes            | Yes               |
+| DeployR Rserve 7.4.2                                                                                                 | Yes            | Yes               |
+
+**To install the required dependencies for DeployR Open**
+
+1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
+
+>Java is only required on the DeployR server, not on any [grid node machines](#install-node).
+
+2.  Install either [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) is the enhanced distribution of R from Microsoft.
+
+3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
+
+    -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+    	2.  Launch `Rgui.exe` for the version of R you just installed.
+    	3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+    	4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
+    	5.  Click **Open** to install it.
+
+    -   Alternatively, install using the command prompt:
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+    	2.  Open a Command Prompt window **as Administrator**.
+    	3.  Run the following command to install DeployR Rserve 7.4.2:
+
+				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
+	
+	        `<PATH_TO_R>` is the path to the directory containing the R executable you just installed.  
+			And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
+
+		Example: A user with administrator privileges might run these commands for example.
+
+            cd "C:\Program Files\RRO\R-3.2.2\bin\x64"
+            R CMD INSTALL -l "C:\Program Files\RRO\R-3.2.2\library" "%homepath%\Downloads\"
+
+**-- The prerequisites for DeployR Open are now installed. You can begin installing the main server for DeployR Open now. --**
+ 
+### Basic DeployR Install
+
+The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#install-node) for optimized workload distribution.
+
+>**DeployR Enterprise Only:**  
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+
+After installing [these prerequisites](#preparing-win), install DeployR as follows:
+
+1.  To install properly on Windows, you must have administrator privileges. Log in as a user with administrator rights. Also, you may need to temporarily turn off or disable your anti-virus software to complete the installation process. Please turn it back on as soon as you are finished.
+
+2.  Download and launch the DeployR installer files.
+
+    -   For **DeployR Enterprise**, download `DeployR-Enterprise-8.0.0.exe`, which can be found in the Microsoft R Server package, and launch this installer. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
+
+    -   For **DeployR Open**, [download `DeployR-Open-8.0.0.exe`](https://deployr.revolutionanalytics.com/download/os/) and launch the installer.
+
+3.  If a message appears onscreen during installation asking whether you want to *“allow the following program to make changes to this computer”*, click **Continue**.
+
+4.  When prompted, accept the installation of any missing [dependencies](#depend) required for this version of DeployR.
+
+5.  When prompted, choose to accept the default installation directory or enter a unique directory path for this version of DeployR.
+
+6.  Follow the onscreen prompts to complete the installation. When the setup completes, a script is launched to finalize the installation. This step can take a few minutes. This script will generate backup copies of the files that will be changed. Each backup file uses the original name but with the suffix `YYYY-MM-DD\_HH-MM` such as `deployr.groovy.2016-02-16_08-05`. Additionally, the script will generate a log file called `%TEMP%\DeployR-configuration.log` containing the steps taken during this configuration process.
+
+7.  When the script is complete, press the **Enter** key to exit the window.
+
+8.  If you are provisioning your server on a cloud service such as [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure) or [AWS EC2 instance](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup), you must:
+
+    -   Set the DeployR [server Web context](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#set-context-azure) | [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) ).
+
+    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#endpoints) | [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) ).
+
+    -   Open the same DeployR ports [in Windows Firewall](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#firewall).
+
+**-- The basic installation of DeployR is now complete --**
+
+>**What's Next After Installing?**
+>
+>1.  Verify your install by running a [diagnostic check of the server](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#run-diagnostics) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+>2.  [Add any additional grid nodes](#install-node) (DeployR Enterprise only).
+>3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
+>4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
+>5.  [Create new user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
+>6.  Review the [Administrator Getting Started](https://deployr.revolutionanalytics.com/documents/getting-started/administrator/) to get up and running quickly. Also available are the [Data Scientist Getting Started](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist/) guide and the [Application Developer Getting Started](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/) guide.
+
+
 
 ### Grid Node Install
 
@@ -220,7 +458,7 @@ After installing [these prerequisites](#preparing), install DeployR Open as foll
 
 2.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
->Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -273,7 +511,7 @@ After installing the main [DeployR server](#install-deployr-linux), install each
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
->Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -309,7 +547,7 @@ DeployR Enterprise on Linux supports the installation of a remote database for D
 
 2.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
->Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -342,7 +580,7 @@ Install DeployR as follows:
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
->Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
