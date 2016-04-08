@@ -1,4 +1,4 @@
-# [R at Microsoft](index.md)
+# [Microsoft R Server](index.md)
 # R Server
 ## 8.0
 ### Install Docs
