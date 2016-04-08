@@ -50,7 +50,6 @@
 #### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
 #### [Installation](deployr/8.0/deployr-installing-configuring.md)
 #### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
-#### Administration Console Help
 #### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
 #### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
 #### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md)
