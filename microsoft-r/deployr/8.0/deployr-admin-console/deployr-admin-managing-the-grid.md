@@ -181,7 +181,7 @@ You can force the termination of a current operation on slot, by clicking the *
 While many default node settings are preconfigured during the installation process, you still need to declare and configure each node individually in the Administration Console. For more information about installing, see the installation instructions for your server operating system.
  
 >[!IMPORTANT]
-**>DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+>**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
 
 To create a new node (DeployR Enterprise only):
 
