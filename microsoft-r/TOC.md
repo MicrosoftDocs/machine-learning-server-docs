@@ -60,15 +60,15 @@
 #### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
 #### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md)
 #### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
-#### [Administration Console Help
+#### Administration Console Help
 ##### [About DeployR Administration Console](deployr/8.0/deployr-admin-console/deployr-admin-console-about.md)
-##### [Managing R Scripts](deployr/8.0/deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
-##### [Managing Permissions with Roles](deployr/8.0/deployr-admin-console/deployr-admin-console-permisssions-with-roles.md)
 ##### [Creating & Managing User Accounts](deployr/8.0/deployr-admin-console/deployr-admin-console-user-accounts.md)
-##### [Managing Access with IP Filters](deployr/8.0/deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
+##### [Managing Permissions with Roles](deployr/8.0/deployr-admin-console/deployr-admin-console-permisssions-with-roles.md)
+##### [Managing R Scripts](deployr/8.0/deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
 ##### [Managing R Boundaries](deployr/8.0/deployr-admin-console/deployr-admin-managing-r-boundaries.md)
-##### [Managing Server Policies](deployr/8.0/deployr-admin-console/deployr-admin-managing-server-policies.md)
+##### [Managing Access with IP Filters](deployr/8.0/deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
 ##### [Managing the Grid](deployr/8.0/deployr-admin-console/deployr-admin-managing-the-grid.md)
+##### [Managing Server Policies](deployr/8.0/deployr-admin-console/deployr-admin-managing-server-policies.md)
 ##### [Monitoring Events](deployr/8.0/deployr-admin-console/deployr-admin-monitoring-events.md)
 #### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md)
 ### Application Developers
