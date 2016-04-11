@@ -40,8 +40,7 @@
 ## [RevoScaleR ODBC Data Import Guide](rserver/8.0/rserver-scaler-odbc.md)
 # RevoPemaR Docs
 ## [RevoPemaR Getting Started Guide](rserver/8.0/rserver-pemar-getting-started.md)
-# DeployR Docs
-## [About DeployR](deployr/8.0/deployr-about.md)
+# [DeployR Docs](deployr/8.0/deployr-about.md)
 ## [What's New](deployr/8.0/deployr-whats-new.md)
 ## Administrators
 ### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
