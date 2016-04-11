@@ -69,8 +69,11 @@
 ## Application Developers
 ### [Getting Started for Application Developers](deployr/8.0/deployr-application-developer-getting-started.md)
 ### Repository Manager Help
+#### [About Repository Manager](deployr/8.0/deployr-repository-manager/deployr-repository-manager-about.md)
+#### [Working with Directories](deployr/8.0/deployr-repository-manager/deployr-repository-manager-directories.md)
+#### [Working with Files](deployr/8.0/deployr-repository-manager/deployr-repository-manager-files.md)
+#### [Testing and Debugging Scripts](deployr/8.0/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 ## Data Scientists
 ### [Getting Started for Data Scientists](deployr/8.0/deployr-data-scientist-getting-started.md)
 ### [Writing Portable R Code](deployr/8.0/deployr-data-scientist-write-portable-r-code.md)
-### Repository Manager Help
 ## [Frequently Asked Questions](deployr/8.0/deployr-faq.md)
