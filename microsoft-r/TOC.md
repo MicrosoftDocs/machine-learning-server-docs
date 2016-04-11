@@ -4,13 +4,13 @@
 ## [Install R Server on a Hadoop Cluster](rserver/8.0/rserver-install-hadoop.md)
 ## [Install R Server on a Teradata Server](rserver/8.0/rserver-install-teradata-server.md)
 ## [Install R Server on a Teradata Client](rserver/8.0/rserver-install-teradata-client.md)
-# R Server General
+# R Server General Docs
 ## [Getting Started Guide](rserver/8.0/rserver-getting-started.md)
 ## [New Features Guide](rserver/8.0/rserver-new-features.md)
-# R Productivity Environment IDE
+# R Productivity Environment IDE Docs
 ## [RPE Getting Started Guide](rserver/8.0/RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](rserver/8.0/RevoRPE_Users_Guide.md)
-# RevoScaleR Documentation
+# RevoScaleR Docs
 ## [RevoScaleR Getting Started Guide](rserver/8.0/rserver-scaler-getting-started.md)
 ## RevoScaleR User's Guide
 ### [Introduction](rserver/8.0/rserver-scaler-user-guide-1-introduction.md)
@@ -38,9 +38,9 @@
 ## [RevoScaleR Hadoop Getting Started Guide](rserver/8.0/rserver-scaler-hadoop-getting-started.md)
 ## [RevoScaleR Teradata Getting Started Guide](rserver/8.0/rserver-scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import Guide](rserver/8.0/rserver-scaler-odbc.md)
-# RevoPemaR Documentation
+# RevoPemaR Docs
 ## [RevoPemaR Getting Started Guide](rserver/8.0/rserver-pemar-getting-started.md)
-# DeployR 8.0 Documentation
+# DeployR Docs
 ## [About DeployR](deployr/8.0/deployr-about.md)
 ## [What's New](deployr/8.0/deployr-whats-new.md)
 ## Administrators
