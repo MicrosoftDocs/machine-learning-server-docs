@@ -123,9 +123,7 @@ The ability to view, load, and download files you do not own is also determined 
                 </tr>
             </tbody>
         </table>
-**If this table, we assume that a non-owner has access rights to the file.*
-
-![](media/deployr-repository-manager-about/.png)  
+**In this table, we assume that a non-owner has access rights to the file.*
 
 ## Supplemental Help
 
