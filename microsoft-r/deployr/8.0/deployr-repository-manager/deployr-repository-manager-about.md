@@ -41,7 +41,8 @@ The Repository Manager is accessible from the main menu of the DeployR landing p
 
 1.  If you are not already logged into DeployR, log in now as follows:
 	1.  Provide your username and password. Contact the DeployR administrator if you require assistance with your username or password.
-	2.  Click **Log In**. The **Files** tab appears. This is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as all of the repository-managed files to which you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+
+	1.  Click **Log In**. The **Files** tab appears. This is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as all of the repository-managed files to which you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
 
 **To log out of DeployR:**
 
@@ -55,11 +56,11 @@ The operations you can perform in the DeployR Repository Manager and on the APIs
 
 **Permissions**. The answers to the following questions determine most of the operations you can perform on a file.
 
-	1.  Are you an [owner](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) of the file? See possible owner [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
+1.  Are you an [owner](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) of the file? See possible owner [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
 
-	1.  Do you have shared, restricted, or public [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) on the file? See possible [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
+1.  Do you have shared, restricted, or public [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) on the file? See possible [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
 
-	1.  Were you assigned the **POWER_USER** role by the administrator? If so, you can run arbitrary code selections on the scripts you own in **Source** pane in the **Test** page.
+1.  Were you assigned the **POWER_USER** role by the administrator? If so, you can run arbitrary code selections on the scripts you own in **Source** pane in the **Test** page.
 
 **Policies**. The ability to view, load, and download files you do not own is also determined by the server-wide policies set by your administrator. One such policy affects whether a non-owner with access rights to a file is permitted to see or load the contents of that file. See the table below to learn about which operations are available to you with the default policy and those permitted if the policy is changed by your administrator.
 
@@ -67,60 +68,15 @@ _Table: Owner Policies_
 
 |Default Policy|Owner-Only Policy|
 |------------------------------------|------------------------------------|
-|- See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|
+|- See the file listed under **My Files**<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|
 
-<table>
-	<tbody>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>Default Policy</td>
-                    <td>Owner-Only Policy</td>
-                </tr>
-                <tr>
-                    <td>Owners</td>
-                    <td>
-                        <ul>
-                            <li>See the file listed under <strong>My Files</strong></li>
-                            <li>See the file properties</li>
-                            <li>Download the file</li>
-                            <li>Load the file into the R session</li>
-                            <li>If a script, view and edit the source code</li>
-                            <li>If a script, test and debug the script</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>See the file listed under <strong>My Files</strong></li>
-                            <li>See the file properties</li>
-                            <li>Download the file</li>
-                            <li>Load the file into the R session</li>
-                            <li>If a script, view and edit the source code</li>
-                            <li>If a script, test and debug the script</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Non-owners*</td>
-                    <td>
-                        <ul>
-                            <li>See restricted, shared and public files under <strong>Other Files</strong> </li>
-                            <li>See the file properties</li>
-                            <li>Load the file into the R session</li>
-                            <li>If a script, view the source code</li>
-                            <li>If a script, test the script</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>See restricted, shared and public files listed under <strong>Other Files</strong></li>
-                            <li>See the file properties</li>
-                            <li>If a script, test the script</li>
-                        </ul>
-                   </td>
-                </tr>
-            </tbody>
-        </table>
-**In this table, we assume that a non-owner has access rights to the file.*
+_Table: Non-Owner Policies_
+
+In this table, we assume that a non-owner has access rights to the file.
+
+|Default Policy|Owner-Only Policy|
+|------------------------------------|------------------------------------|
+|- See restricted, shared and public files under **Other Files**<br/>- See the file properties<br/>- Load the file into the R session<br/>- If a script, view the source code<br/>- If a script, test the script|See restricted, shared and public files listed under **Other Files**<br/>- See the file properties<br/>- If a script, test the script|
 
 ## Supplemental Help
 
