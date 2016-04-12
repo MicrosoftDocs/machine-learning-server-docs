@@ -129,12 +129,12 @@ These constraints govern limits for processor and memory usage at runtime.
 
 ### RServe Runtime and Security Configuration
 
-After a default installation of DeployR_, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR_ is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
+After a default installation of DeployR, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
 
 |Properties|Description|
 |---|---|
 |`Port`|This property lists the port defined during installation on which RServe is listening.|
-|`Console output size limit`|This is the upper limit, expressed in bytes, imposed on the communication between DeployR_ server and the Rserve session.|
+|`Console output size limit`|This is the upper limit, expressed in bytes, imposed on the communication between DeployR server and the Rserve session.|
 |`Username`|If a username was defined in Rserv.conf, enter it here.|
 |`Password`|If a password was defined in Rserv.conf, enter it here.|
 
