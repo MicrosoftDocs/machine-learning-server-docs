@@ -30,6 +30,7 @@ You can review, edit, and assign custom roles. System roles cannot be edited.
 **To view and edit a role:**
 
 1.  From the main menu, click **Roles**. The **Role List** page appears.
+
 2.  In the **Role List** table, click the role you want to review or edit. The **Role Details** page displays the role’s name and description as well as the names of any users to which the role is assigned.
 
 	>The list of scripts to which a role may be assigned does not appear on this page.
@@ -40,6 +41,7 @@ You can review, edit, and assign custom roles. System roles cannot be edited.
 
 3.  To edit a custom role, do the following:
     1.  Click **Edit**.
+
     2.  Change the name or description as needed. If you change the name of role, it is updated throughout the console.
     
         >You cannot edit a system role delivered with the product. 
@@ -49,9 +51,13 @@ You can review, edit, and assign custom roles. System roles cannot be edited.
 **To assign a role to a user:**
 
 1.  From the main menu, click **Users**. The **User List** page appears.
+
 2.  Click the account name you want to edit. The **User Details** page appears.
+ 
 3.  Click **Edit**. The **Edit User** page appears.
+
 4.  Select all applicable roles.
+
 5.  Click **Update** to save the changes.
 
 ## Creating Custom Roles
@@ -63,6 +69,7 @@ Any script author can set the access rights to his or her script to **Restricted
 **To create a custom role:**
 
 1.  From the main menu, click **Roles**. The **Role List** page appears.
+
 2.  From the **Role List** page, click **New Role** in the menu. The **New Role** page appears.
 
 	_Figure: New Role page_
@@ -70,6 +77,7 @@ Any script author can set the access rights to his or her script to **Restricted
 	![](media/deployr-admin-console-permisssions-with-roles/0300000F.png)  
 
 3. Enter a **Role name** and **Description** for the new role.
+
 4. Click **Create** to save the new role. You can now assign this role to users or scripts in the console. To assign a role, edit the user or script and select the role(s).
  
 ## Deleting Custom Roles
@@ -78,8 +86,11 @@ While you cannot delete any of the system roles, you can delete a custom role. I
 To delete a custom role:
 
 1. From the main menu, click **Roles**. The **Role List** page appears.
+
 2. Click name of the custom role you want to delete. The **Role Details** page appears.
+
 3. Click **Delete**.
+
 4. Click **OK** to confirm that you want to delete.
 
 ## Exporting Roles
@@ -93,8 +104,11 @@ _Figure: Export Roles page_
 **To export:**
 
 1. From the main menu, click **Roles**.
+
 2. From the **Role List**, click **Export Roles**.
+
 3. Select the role(s) to be exported.
+
 4. Click **Export to File** and save the file.
 
 ## Importing Roles
@@ -108,8 +122,13 @@ _Figure: Import Roles page_
 **To import:**
 
 1. From the main menu, click **Roles**.
+
 2. From the **Role List**, click **Import Roles**.
+
 3. Click **Browse** and select the file to be imported. By default, the file has the CSV extension.
+
 4. Click **Load**.
+
 5. Choose which role(s) to import.
+
 6. Click **Import**. If a role by the same name already exists, a message appears to inform you that the incoming role was rejected.
