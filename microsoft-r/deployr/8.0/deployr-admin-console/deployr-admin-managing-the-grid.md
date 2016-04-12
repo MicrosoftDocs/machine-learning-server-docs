@@ -102,6 +102,7 @@ Common validation issues include:
 
 ##Node Properties
 
+<br/>
 **Basic Settings**
 
 |Properties|Description|
@@ -113,8 +114,8 @@ Common validation issues include:
 |`Operating type`|This is the type of node operation mode: authenticated, anonymous, asynchronous, or mixed.|
 |`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-workload-distribution.htm#namedcluster).|
 
-.
 
+<br/>
 **Runtime Constraints**
 
 These constraints govern limits for processor and memory usage at runtime.
@@ -124,7 +125,7 @@ These constraints govern limits for processor and memory usage at runtime.
 |`Slot limit`|This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.  You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory.<br />*Note*: For DeployR Open, a fixed slot limit of 12 is imposed. Upgrade to DeployR Enterprise to unlock slot limits.|
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
-
+<br/>
 **RServe Runtime and Security Configuration**
 
 After a default installation of DeployR, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
@@ -136,29 +137,23 @@ After a default installation of DeployR, it is highly unlikely that these setti
 |`Username`|If a username was defined in Rserv.conf, enter it here.|
 |`Password`|If a password was defined in Rserv.conf, enter it here.|
 
-.
 
+<br/>
 **External Directory Configuration (DeployR Enterprise Only)**
 
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 
-Property: `Storage context`
+|Properties|Description|
+|---|---|
+|`Storage context`|This setting must reflect the full path on that node’s machine to the directory defined for external data usage. (DeployR Enterprise only)|
 
-Description: This setting must reflect the full path on that node’s machine to the directory defined for external data usage. (DeployR Enterprise only)
++ On **Linux**, update this path for each node as follows. If a node was installed by:
+	-  The non-root user, deployr-user, then the full path is `/home/deployr-user/deployr/8.0.0/deployr/external/data`
+	- `root`, then the full path is `/opt/deployr/8.0.0/deployr/external/data`
 
-+ Linux: For each new node, update this path. If a node was installed by:
-	-  The non-root user, deployr-user, then the path would be:
++ On **Windows** , update this path for each node to `C:/Revolution/DeployR-Node-8.0/deployr/external/data`
 
-		/home/deployr-user/deployr/8.0.0/deployr/external/data
-
-	- `root`, then the full path would be:
-
-		/opt/deployr/8.0.0/deployr/external/data
-
-+ Windows: For each new node, update the path to: 
-
-		C:/Revolution/DeployR-Node-8.0/deployr/external/data
-
+<br/>
 **Slots in Use**
 
 You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:
