@@ -7,6 +7,7 @@ Each user has an account with [properties](user-properties.htm) such as their us
 When you click <span class="UIElementChar">Users</span> in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click <span class="UIElementChar">Next</span> to proceed to the remaining accounts.
 
 _Figure: User List page_
+
 ![](media/deployr-admin-console-user-accounts/03000008.png)
 
 >You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you must log in to each one in a separate brand of browser. For example, to log in to the DeployR Administration Console with <span class="Code_1">admin</span> account and into the API Explorer tool with another user account, you could open one in Google Chrome™ and the other in Mozilla® Firefox®.
@@ -46,6 +47,7 @@ For each user, there are a number of properties that can be defined. The propert
 2.  In the **User List** table, click the name of the user whose account you want to review or edit. The **User Details** page appears.
  
 	_Figure: User Details page_
+
         ![](media/deployr-admin-console-user-accounts/userdetails.png)  
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
