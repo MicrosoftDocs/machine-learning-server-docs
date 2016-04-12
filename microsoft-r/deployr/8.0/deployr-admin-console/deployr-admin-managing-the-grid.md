@@ -79,7 +79,7 @@ When all of the nodes of a custom cluster are busy, any additional requests for 
 
 For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
 
-Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name** [field](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-properties.htm). Custom cluster names are not case-sensitive.
+Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**  [field](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-properties.htm). Custom cluster names are not case-sensitive.
 
 ## Node Validation and Errors
 
@@ -125,7 +125,7 @@ These constraints govern limits for processor and memory usage at runtime.
 |`Slot limit`|This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.  You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory.<br />*Note*: For DeployR Open, a fixed slot limit of 12 is imposed. Upgrade to DeployR Enterprise to unlock slot limits.|
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
-.
+
 
 ### RServe Runtime and Security Configuration
 
@@ -166,7 +166,7 @@ For each new node, update the path to: 
 
 ### Slots in Use
 
-You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:|
+You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:
 
 |Slot Details|Description|
 |---|---|
