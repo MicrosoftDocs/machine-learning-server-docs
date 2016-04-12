@@ -1,4 +1,4 @@
-# [About Microsoft R Server 2016](index.md)
+# [About Microsoft R Server](index.md)
 # R Server Install Docs
 ## [Install R Server on a Linux Server](rserver/8.0/rserver-install-linux-server.md)
 ## [Install R Server on a Hadoop Cluster](rserver/8.0/rserver-install-hadoop.md)
