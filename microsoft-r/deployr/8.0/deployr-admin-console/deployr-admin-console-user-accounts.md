@@ -44,6 +44,7 @@ For each user, there are a number of properties that can be defined. The propert
 **To view and edit a user account:**
 
 1.  From the main menu, click **Users**. The **User List** page appears.
+
 2.  In the **User List** table, click the name of the user whose account you want to review or edit. The **User Details** page appears.
  
 	_Figure: User Details page_
@@ -51,7 +52,9 @@ For each user, there are a number of properties that can be defined. The propert
         ![](media/deployr-admin-console-user-accounts/userdetails.png)  
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
+
 4.  Make your changes to the [user properties](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-properties.htm).
+
 5.  Click **Update** to save the changes.
 
 
@@ -60,6 +63,7 @@ For each user, there are a number of properties that can be defined. The propert
 **To create a new user:**
 
 1.  From the main menu, click **Users**.  The **User List** page appears.
+
 2.  Click **New User** in the menu bar. The New User page appears.
 
 	_Figure: New User page_
@@ -67,6 +71,7 @@ For each user, there are a number of properties that can be defined. The propert
        ![](media/deployr-admin-console-user-accounts/usernew.png)  
 
 3.  In the **New User** page, enter all required [properties](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-properties.htm) for the user account as well as any optional details.
+
 4.  Click **Create** to save the new user.
 
 ## Deleting User Accounts
@@ -74,8 +79,11 @@ For each user, there are a number of properties that can be defined. The propert
 **To delete a user account:**
 
 1. From the main menu, click **Users**. The **User List** page appears.
+
 2. In the **User List** table, click the name of the user whose account you want to delete. The **User Details** page appears and displays the account.
+
 3. Click **Delete**.
+
 4. Click **OK** to confirm that you want to delete the user account.
 
 ## Exporting User Accounts
@@ -90,8 +98,11 @@ _Figure: Export User Accounts page_
 **To export:**
 
 1. From the main menu, click **Users**. The **User List** appears.
+
 2. Click **Export User Accounts**.
+
 3. Select the account(s) to be exported.
+
 4. Click **Export to File** and download the file.
 
 ## Importing User Accounts
@@ -103,17 +114,22 @@ Importing allows you to retrieve all of the accounts from a previously exported 
 **To import:**
 
 1. From the main menu, click **Users**.
+
 2. From the **User List**, click **Import User Accounts**.
+
 3. Click **Browse** and select the CSV file to be imported.
+
 4. Click **Load**.
  
 	_Figure: Import User Accounts page_
         ![](media/deployr-admin-console-user-accounts/0300000C_624x252.png)  
 
 5. To disable user accounts so that they do not have access to the server until you are ready, select the **Disable user account** option. You can always enable or disable user accounts individually later.
+
 6. If desired, select the option to **Automatically grant POWER_USER permissions to user accounts on this import**.  It is not always prudent to assign this role to all users so weigh this option carefully. Note that all imported users are automatically assigned to the BASIC_USER role.
 
 	>The `ADMINISTRATOR` and `POWER_USER` roles have implicit permissions to install R packages. The `BASIC_USER` role does not have permissions to manage R packages. To allow a user that was assigned only to the `BASIC_USER` role the rights to install an R package, you must edit the user account after importing and assign the `PACKAGE_MANAGER` role.
 
 7. Choose the account(s) to import.
+
 8. Click **Import**. If a user account by the same name already exists, a message appears to inform you that the incoming account was rejected.
