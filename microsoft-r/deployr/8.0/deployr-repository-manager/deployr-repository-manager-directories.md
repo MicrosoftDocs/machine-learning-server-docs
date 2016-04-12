@@ -73,7 +73,7 @@ When you no longer need one of your user directories and the files it contains, 
 
 ## Directory Naming: Dos and Don'ts
 
-### Dos
+**Dos**
 
 1. Do choose from alphanumeric and special characters when naming your user directories.
 
@@ -81,7 +81,7 @@ When you no longer need one of your user directories and the files it contains, 
 
 3. Do use spaces if desired.
 
-### Don'ts
+**Don'ts**
 
 1. Don't use these special characters when naming your directories : " * ? \ / . < >
 
