@@ -102,8 +102,7 @@ Common validation issues include:
 
 ##Node Properties
 
-
-### Basic Settings
+**Basic Settings**
 
 |Properties|Description|
 |---|---|
@@ -116,7 +115,7 @@ Common validation issues include:
 
 .
 
-### Runtime Constraints
+**Runtime Constraints**
 
 These constraints govern limits for processor and memory usage at runtime.
 
@@ -126,8 +125,7 @@ These constraints govern limits for processor and memory usage at runtime.
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
 
-
-### RServe Runtime and Security Configuration
+**RServe Runtime and Security Configuration**
 
 After a default installation of DeployR, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
 
@@ -140,7 +138,7 @@ After a default installation of DeployR, it is highly unlikely that these setti
 
 .
 
-### External Directory Configuration (DeployR Enterprise Only)
+**External Directory Configuration (DeployR Enterprise Only)**
 
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 
@@ -148,24 +146,20 @@ Property: `Storage context`
 
 Description: This setting must reflect the full path on that node’s machine to the directory defined for external data usage. (DeployR Enterprise only)
 
-#### New node on Linux
-
--  For each new node, update this path. If a node was installed by:
-	The non-root user, deployr-user, then the path would be:
++ Linux: For each new node, update this path. If a node was installed by:
+	-  The non-root user, deployr-user, then the path would be:
 
 		/home/deployr-user/deployr/8.0.0/deployr/external/data
 
-- `root`, then the full path would be:
+	- `root`, then the full path would be:
 
 		/opt/deployr/8.0.0/deployr/external/data
 
-#### New nodes on Windows: 
++ Windows: For each new node, update the path to: 
 
-For each new node, update the path to: 
+		C:/Revolution/DeployR-Node-8.0/deployr/external/data
 
-	C:/Revolution/DeployR-Node-8.0/deployr/external/data
-
-### Slots in Use
+**Slots in Use**
 
 You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:
 
