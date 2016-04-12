@@ -62,21 +62,23 @@ The operations you can perform in the DeployR Repository Manager and on the APIs
 
 1.  Were you assigned the **POWER_USER** role by the administrator? If so, you can run arbitrary code selections on the scripts you own in **Source** pane in the **Test** page.
 
+<br/>
 **Policies**. The ability to view, load, and download files you do not own is also determined by the server-wide policies set by your administrator. One such policy affects whether a non-owner with access rights to a file is permitted to see or load the contents of that file. See the table below to learn about which operations are available to you with the default policy and those permitted if the policy is changed by your administrator.
 
 _Table: Owner Policies_
 
 |Default Policy|Owner-Only Policy|
 |------------------------------------|------------------------------------|
-|- See the file listed under **My Files**<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|
+|- See the file listed under **My Files**<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|- See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|
 
+<br/>
 _Table: Non-Owner Policies_
 
 In this table, we assume that a non-owner has access rights to the file.
 
 |Default Policy|Owner-Only Policy|
 |------------------------------------|------------------------------------|
-|- See restricted, shared and public files under **Other Files**<br/>- See the file properties<br/>- Load the file into the R session<br/>- If a script, view the source code<br/>- If a script, test the script|See restricted, shared and public files listed under **Other Files**<br/>- See the file properties<br/>- If a script, test the script|
+|- See restricted, shared and public files under **Other Files**<br/>- See the file properties<br/>- Load the file into the R session<br/>- If a script, view the source code<br/>- If a script, test the script|- See restricted, shared and public files listed under **Other Files**<br/>- See the file properties<br/>- If a script, test the script|
 
 ## Supplemental Help
 
