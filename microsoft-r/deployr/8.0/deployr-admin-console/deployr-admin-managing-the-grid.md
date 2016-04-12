@@ -2,7 +2,6 @@
 
 >Only the **DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. The **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, **DeployR Default Node**. While most of the grid instructions apply only to DeployR Enterprise, most node properties apply to both editions and should still be reviewed and fine-tuned. For enterprise grade deployments, upgrade to DeployR Enterprise today.
 
-
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
 With the **DeployR Enterprise**, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-workload-distribution.htm) across the set of enabled nodes. Or, you can [create custom node clusters](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-workload-distribution.htm#namedcluster) tuned for specific operation types and resource requirements.
@@ -153,7 +152,7 @@ Description: This setting must reflect the full path on that node’s machine 
 -  For each new node, update this path. If a node was installed by:
 	The non-root user, deployr-user, then the path would be:
 
-			/home/deployr-user/deployr/8.0.0/deployr/external/data
+		/home/deployr-user/deployr/8.0.0/deployr/external/data
 
 - `root`, then the full path would be:
 
@@ -206,7 +205,7 @@ While many default node settings are preconfigured during the installation proce
 6. Specify the **Operating Type**. The [operating mode](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) you define for a grid node has an impact on the operations you can perform on that node.
 
 7. Under **External directory** configuration, set the [**Storage Context**](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/policies-properties.htm) to reflect the full path to the external data directory on that node’s machine. The default path is:
-	-  For Windows: C:\Program Files\Microsoft\DeployR\8.0\deployr/external/data
+	-  For Windows: C:\Program Files\Microsoft\DeployR-8.0\deployr/external/data
 	-  For Linux (user deployr-user): /home/deployr-user/deployr/8.0.0/deployr/external/data`
 
 8.  Click **Create** to save the new node.  The node configuration is [validated](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-validation.htm). If the configuration works, then it is saved. If not, an [error message](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-validation.htm) will appear.
