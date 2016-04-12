@@ -8,8 +8,9 @@ You can also create custom roles to constrain access to certain scripts. Once yo
 
 You can view the available roles by clicking **Roles** in the main menu. Clicking a role in the list reveals the list of users assigned to this role.
 
+_Figure: Role List page_
+
 ![](media/deployr-admin-console-permisssions-with-roles/0300000D_624x290.png)  
-*Role List page*
 
 ## Predefined System Roles
 
@@ -26,33 +27,37 @@ The following DeployR system roles are shipped with DeployR and can be assigned 
 
 You can review, edit, and assign custom roles. System roles cannot be edited.
 
-To view and edit a role:
+**To view and edit a role:**
 
 1.  From the main menu, click **Roles**. The **Role List** page appears.
+
 2.  In the **Role List** table, click the role you want to review or edit. The **Role Details** page displays the role’s name and description as well as the names of any users to which the role is assigned.
 
-	>[!NOTE]
 	>The list of scripts to which a role may be assigned does not appear on this page.
 	
+	_Figure: Role Details page_
+	
 	![](media/deployr-admin-console-permisssions-with-roles/0300000E_624x207.png)  
-	*Role Details page*
-
 
 3.  To edit a custom role, do the following:
     1.  Click **Edit**.
+
     2.  Change the name or description as needed. If you change the name of role, it is updated throughout the console.
     
-        >[!NOTE]
         >You cannot edit a system role delivered with the product. 
         
     3.  Click **Update** to save the changes.
 
-To assign a role to a user:
+**To assign a role to a user:**
 
 1.  From the main menu, click **Users**. The **User List** page appears.
+
 2.  Click the account name you want to edit. The **User Details** page appears.
+ 
 3.  Click **Edit**. The **Edit User** page appears.
+
 4.  Select all applicable roles.
+
 5.  Click **Update** to save the changes.
 
 ## Creating Custom Roles
@@ -61,15 +66,18 @@ While the system roles will suffice in many cases, there are times when it might
 
 Any script author can set the access rights to his or her script to **Restricted** and specify one or more roles. Then, only the users assigned to one of the specified roles are permitted to execute that script. For more details on defining access rights for scripts, refer the online help for the *DeployRRepository Manager*.
 
-To create a custom role:
+**To create a custom role:**
 
 1.  From the main menu, click **Roles**. The **Role List** page appears.
+
 2.  From the **Role List** page, click **New Role** in the menu. The **New Role** page appears.
 
+	_Figure: New Role page_
+        
 	![](media/deployr-admin-console-permisssions-with-roles/0300000F.png)  
-	*New Role page*
 
 3. Enter a **Role name** and **Description** for the new role.
+
 4. Click **Create** to save the new role. You can now assign this role to users or scripts in the console. To assign a role, edit the user or script and select the role(s).
  
 ## Deleting Custom Roles
@@ -78,35 +86,49 @@ While you cannot delete any of the system roles, you can delete a custom role. I
 To delete a custom role:
 
 1. From the main menu, click **Roles**. The **Role List** page appears.
+
 2. Click name of the custom role you want to delete. The **Role Details** page appears.
+
 3. Click **Delete**.
+
 4. Click **OK** to confirm that you want to delete.
 
 ## Exporting Roles
+
 You can export roles in a CSV file. Exporting can be useful when you want to copy the roles to another machine or to preserve them as a backup, for example. You can later import the contents of this file to this server or across multiple server deployments.
 
-![](media/deployr-admin-console-permisssions-with-roles/03000010_624x306.png)  
-*Export Roles page*
+_Figure: Export Roles page_
 
-To export:
+![](media/deployr-admin-console-permisssions-with-roles/03000010_624x306.png)  
+
+**To export:**
 
 1. From the main menu, click **Roles**.
+
 2. From the **Role List**, click **Export Roles**.
+
 3. Select the role(s) to be exported.
+
 4. Click **Export to File** and save the file.
 
 ## Importing Roles
 
 Importing into the server database allows you to retrieve all of the roles from a previously exported CSV file. Alternately, you can also import a CSV file you have created yourself using the proper format.
 
-![](media/deployr-admin-console-permisssions-with-roles/03000011_624x288.png)  
-*Import Roles page*
+_Figure: Import Roles page_
 
-To import:
+![](media/deployr-admin-console-permisssions-with-roles/03000011_624x288.png)  
+
+**To import:**
 
 1. From the main menu, click **Roles**.
+
 2. From the **Role List**, click **Import Roles**.
+
 3. Click **Browse** and select the file to be imported. By default, the file has the CSV extension.
+
 4. Click **Load**.
+
 5. Choose which role(s) to import.
+
 6. Click **Import**. If a role by the same name already exists, a message appears to inform you that the incoming role was rejected.

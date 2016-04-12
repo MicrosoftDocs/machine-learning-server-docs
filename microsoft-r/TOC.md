@@ -44,7 +44,7 @@
 ## [What's New](deployr/8.0/deployr-whats-new.md)
 ## Administrators
 ### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
-### [Installation](deployr/8.0/deployr-installing-configuring.md)
+### [Installing & Configuring](deployr/8.0/deployr-installing-configuring.md)
 ### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
 ### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
 ### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
@@ -58,7 +58,7 @@
 ### Administration Console Help
 #### [About DeployR Administration Console](deployr/8.0/deployr-admin-console/deployr-admin-console-about.md)
 #### [Creating & Managing User Accounts](deployr/8.0/deployr-admin-console/deployr-admin-console-user-accounts.md)
-#### [Managing Permissions with Roles](deployr/8.0/deployr-admin-console/deployr-admin-console-permisssions-with-roles.md)
+#### [Managing Permissions with Roles](deployr/8.0/deployr-admin-console/deployr-admin-console-permissions-with-roles.md)
 #### [Managing R Scripts](deployr/8.0/deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
 #### [Managing R Boundaries](deployr/8.0/deployr-admin-console/deployr-admin-managing-r-boundaries.md)
 #### [Managing Access with IP Filters](deployr/8.0/deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
@@ -76,4 +76,9 @@
 ## Data Scientists
 ### [Getting Started for Data Scientists](deployr/8.0/deployr-data-scientist-getting-started.md)
 ### [Writing Portable R Code](deployr/8.0/deployr-data-scientist-write-portable-r-code.md)
+### Repository Manager Help
+#### [About Repository Manager](deployr/8.0/deployr-repository-manager/deployr-repository-manager-about.md)
+#### [Working with Directories](deployr/8.0/deployr-repository-manager/deployr-repository-manager-directories.md)
+#### [Working with Files](deployr/8.0/deployr-repository-manager/deployr-repository-manager-files.md)
+#### [Testing and Debugging Scripts](deployr/8.0/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 ## [Frequently Asked Questions](deployr/8.0/deployr-faq.md)

@@ -143,7 +143,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
     6.  Extract the contents of the MongoDB 2.6.7 zip file into the new `MONGODB_DEPLOYR` directory.
 
-**-- The prerequisites for DeployR Enterprise are now installed. You can begin installing the main server for DeployR Enterprise now. --**
+**-- The prerequisites for DeployR Enterprise are installed. You can now install the main server for DeployR Enterprise. --**
 
 #### DeployR Open Dependencies
 
@@ -159,7 +159,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
->Java is only required on the DeployR server, not on any [grid node machines](#install-node).
+	>Java is only required on the DeployR server, not on any [grid node machines](#install-node).
 
 2.  Install either [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) is the enhanced distribution of R from Microsoft.
 

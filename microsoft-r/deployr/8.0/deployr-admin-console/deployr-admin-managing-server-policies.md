@@ -7,8 +7,9 @@ The **Server Policies** tab contains [the policies governing the DeployR server]
 - Runtime policies governing authenticated, asynchronous, and anonymous operations
 - Runtime policies governing concurrent operation limits, file upload limits, and event stream access
 
+_Figure: Server Policies tab_
+
 ![](media/deployr-admin-managing-server-policies/03000022_624x429.png)  
-*Server Policies tab*
 
 ## Server Policy Properties
 
@@ -23,6 +24,7 @@ There are a number of settings that can be defined for each server. They are gro
 -  [Event Stream Access Policies](#event-stream-access-policies)
 -  [Server Runtime Policies](#server-runtime-policies)
 
+<br/>
 ### Basic Settings
 
 |Properties|Description|
@@ -33,6 +35,7 @@ There are a number of settings that can be defined for each server. They are gro
 |`Default R boundary`| Name of an R boundary to be applied as the system-wide default. Grid node boundaries takes precedence over boundaries associated with users. Likewise, grid node R boundaries and user R boundaries take precedence over this default R boundary. If no other boundary is specified, then the default system-wide boundary is applied.|
 |`Console idle timeout`|The length of idle time in seconds before a session in the Administration Console expires.
 
+<br/>
 ### Authenticated Operation Policies
 
 These policies govern how [authenticated operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
@@ -43,6 +46,7 @@ These policies govern how [authenticated operations](https://deployr.revolution
 |`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds that an authenticated user can remain idle while connected to the server before the HTTP session is automatically timed-out and disconnected. 
 
+<br/>
 ### Asynchronous Operation Policies
 
 These policies govern how [asynchronous operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
@@ -52,6 +56,7 @@ These policies govern how [asynchronous operations](https://deployr.revolutiona
 |`HTTPS encrypted`|By default this option is unchecked, which sets it to False, where calls on the API can be made over a plain HTTP connection. If set to true, the server will only accept API calls over an encrypted channel (HTTPS). For more information, see the Security for DeployR guide for your version on the product website.<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
 |`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 
+<br/>
 ### Anonymous Operation Policies
 
 These policies govern how [anonymous operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
@@ -62,6 +67,7 @@ These policies govern how [anonymous operations](https://deployr.revolutionanal
 |`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds an anonymous operation remains live on the grid before it is automatically terminated. The automatic termination will release all resources associated with that operation.|
 
+<br/>
 ### Project Persistence Policies
 
 These policies govern certain project behaviors and limits.
@@ -72,6 +78,7 @@ These policies govern certain project behaviors and limits.
 |`History depth limit`|The maximum depth of the execution command history retained for each project. When the limit is reached, each new execution will flush the oldest one from the history. When an execution is flushed from the history, all associated plots and R console output are permanently deleted.|
 |`Autosave temporary projects`|By default, this is unchecked, which sets the value to `False`, where temporary projects are not auto-saved when a project is closed or when a user logs out or times out on their connection. When `True`, temporary projects become candidates for auto-saving. Whether projects are auto-saved on close, logout, or timeout depends on the value of the `autosave` flag set when a user logs in on the API. For more information on autosaving, see the *API Reference Guide*.
 
+<br/>
 ### Concurrent Operation Policies
 
 These policies govern the runtime grid usage limits on the number of concurrent operations that can be run simultaneously in the system by a given user.
@@ -90,6 +97,7 @@ While leaving them disabled is typically recommended, enabling the policies can 
 |`Per-user asynchronous limit`|This value limits the number of scheduled jobs that a given authenticated user can run simultaneously on the grid. Whenever the number of scheduled jobs awaiting execution exceeds this limit for a given user, every pending job for that user remains queued until one or more of the currently running jobs complete.|
 |`Per HTTP anonymous limit`|The value specified here limits the number of concurrent R scripts that an anonymous user at a given HTTP address can run simultaneously on the grid. Where the number of executing R scripts reaches this limit all further requests by the user to execute R scripts will be rejected on the API until one or more of the existing R script executions complete.|
 
+<br/>
 ### Event Stream Access Policies
 
 These settings limit access to the event streams. There are three distinct event streams pushed by DeployR.
@@ -104,6 +112,7 @@ These settings limit access to the event streams. There are three distinct event
 |`Disable anonymous event stream`|When selected, the anonymous event stream is off.  When this checkbox is unselected, the anonymous stream pushes events to anonymous users.|
 |`Management event stream restriction`|Only those authenticated users assigned to the role defined here can access the management event stream. By default, only `admin` can access this stream.|
 
+<br/>
 ### Server Runtime Policies
 
 |Properties|Description|
@@ -112,13 +121,18 @@ These settings limit access to the event streams. There are three distinct event
 |`Generate relative URLs`|When enabled/true, the URLs returned in the API response markup are relative URLs. By default or when disabled, the URLs returned in the response markup are absolute URLs.|
 |`Log level`|Specifies the server logging level. Options are: **WARN**, **INFO**, and **DEBUG**. If you change this setting, the new level will take effect immediately. Any changes you make here persist until the server is restarted. After the server is restarted, the log level reverts to the default log level specified in the external configuration file, `deployr.groovy`.|
 
+<br/>
 ## Viewing and Editing Server Policies
 
-To view and edit server-wide settings:
+**To view and edit server-wide settings:**
 
 1. From the main menu, click **Server Policies**.
-2. From the **Server Policies** page, review the settings currently in place.
-3. To edit one or more defaults:
-	- Click **Edit**. The **Edit Server Policies** page appears.
-	- Make any changes.
-	- Click **Update** to save the changes.
+
+1. From the **Server Policies** page, review the settings currently in place.
+
+1. To edit one or more defaults:
+	1. Click **Edit**. The **Edit Server Policies** page appears.
+
+	1. Make any changes.
+
+	1. Click **Update** to save the changes.
