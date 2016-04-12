@@ -58,7 +58,7 @@ _Figure: Boundary List page_
 
 2.  From the **R Boundary List** page, click the name of the boundary you want to view or edit in the table. The **R Boundary Details** page appears.
 
-        _Figure: R Boundary Details page_
+	_Figure: R Boundary Details page_
         
 	![](media/deployr-admin-managing-r-boundaries/03000017.png)  
 
