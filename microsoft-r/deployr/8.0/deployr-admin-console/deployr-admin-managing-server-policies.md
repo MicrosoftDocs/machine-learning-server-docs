@@ -7,8 +7,9 @@ The **Server Policies** tab contains [the policies governing the DeployR server]
 - Runtime policies governing authenticated, asynchronous, and anonymous operations
 - Runtime policies governing concurrent operation limits, file upload limits, and event stream access
 
+_Figure: Server Policies tab_
+
 ![](media/deployr-admin-managing-server-policies/03000022_624x429.png)  
-*Server Policies tab*
 
 ## Server Policy Properties
 
