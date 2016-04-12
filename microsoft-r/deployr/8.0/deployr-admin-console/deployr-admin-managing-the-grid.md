@@ -142,6 +142,7 @@ After a default installation of DeployR_, it is highly unlikely that these sett
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 
 Property: `Storage context`
+
 Description: This setting must reflect the full path on that node’s machine to the directory defined for external data usage. (DeployR Enterprise only)
 
 #### New node on Linux
