@@ -248,7 +248,6 @@ In the **Grid Node Details** page, you can review the slot activity.
 
 Additionally, you can shut down slots in order to terminate activity.This is a last resort for unwanted activity on the server.
 
->[!IMPORTANT]
 >This list is not updated in real-time. Refresh your page to see the latest activity.
 
 To review the slot activity for a node and shutdown slots:
@@ -256,8 +255,11 @@ To review the slot activity for a node and shutdown slots:
 1. From the main menu, click **The Grid**. The **Grid Node List** page appears.
 	- **DeployR Open**: The **Grid Node Details** page for the **Default Grid Node** appears.
 	- **DeployR Enterprise**: In the **Grid Node List**, click the node whose slot activity you want to monitor. The **Grid Node Details** page appears.
+
 2. Look at the **Slots in Use** section at the bottom. Click a slot link to see details about a particular slot.
+
 3. To terminate all of the activity on the selected node, click **Shutdown** in the toolbar to terminate all R sessions.
+
 4. To terminate the activity on a specific slot, do the following:
 	- In the **Grid Node Details** page, click the slot whose activity you want to see and terminate.
 	- In the **Slot Details** page, click **Shutdown** to terminate the activity and release the slot.
