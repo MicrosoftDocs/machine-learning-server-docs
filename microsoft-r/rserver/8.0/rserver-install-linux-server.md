@@ -34,7 +34,7 @@ This section describes a quick install process that assumes the following:
 -   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
 -   You are installing as root.
 
-If any of these conditions does not hold, you should first verify that your system meets the system requirements and satisfies the package prerequisites described in [Prerequisites and Dependencies](http://), then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installatio](http://)n.
+If any of these conditions does not hold, you should first verify that your system meets the system requirements and satisfies the package prerequisites described in [Prerequisites and Dependencies](#prerequisites-and-dependencies), then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation][#managing-your-microsoft-r-server-installation].
 
 Installation of Microsoft R Server consists of two distinct steps:
 
