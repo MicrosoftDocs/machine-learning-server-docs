@@ -34,7 +34,7 @@ This section describes a quick install process that assumes the following:
 -   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
 -   You are installing as root.
 
-If any of these conditions does not hold, you should first verify that your system meets the system requirements and satisfies the package prerequisites described in [Prerequisites and Dependencies](#prerequisites-and-dependencies), then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation][##managing-your-microsoft-r-server-installation].
+If any of these conditions does not hold, you should first verify that your system meets the system requirements and satisfies the package prerequisites described in [Prerequisites and Dependencies](#prerequisites-and-dependencies), then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
 
 Installation of Microsoft R Server consists of two distinct steps:
 
@@ -44,7 +44,7 @@ Installation of Microsoft R Server consists of two distinct steps:
 
 To download and install Microsoft R Server:
 
-1.  Log in as root or a user with sudo privileges. If the latter, precede commands requiring root privileges with sudo. (If you do not have root access or sudo privileges, you can install as a non-root user. See Section 3.2 for details.)
+1.  Log in as root or a user with sudo privileges. If the latter, precede commands requiring root privileges with sudo. (If you do not have root access or sudo privileges, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for details.)
 
 2.  Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
 
@@ -92,9 +92,9 @@ To download and install Microsoft R Server:
 
 		popd
 
-On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the RRE installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409).
+On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the RRE installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
 
-If you receive messages about uninstalled dependencies, see Prerequisites and Dependencies.
+If you receive messages about uninstalled dependencies, see [Prerequisites and Dependencies](#prerequisites-and-dependencies).
 
 ## Prerequisites and Dependencies
 
@@ -209,7 +209,7 @@ If you use the Quick Install steps, the installed files are all owned by root. F
 
 	(Here we show the default path /usr/lib64/MRO-for-MRS-8.0.03; if you have specified an alternate installation path, use that in this command as well.)
 
-You can also run the installer as a non-root user, even without sudo privileges. For details, see Section 3.2, Non-Root Installs.
+You can also run the installer as a non-root user, even without sudo privileges. For details, see [Non-Root Installs](#non-root-installs).
 
 ### Non-Root Installs
 
