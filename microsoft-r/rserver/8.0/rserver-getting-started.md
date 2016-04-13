@@ -111,7 +111,7 @@ On Windows 8 and Windows Server 2012, you start Revolution R Enterprise as follo
 
 - Click **Start**, point to **All apps**, point to **Revolution R**, and then click **Revolution R Enterprise 8.x (64)**.
 
-The Revolution R Enterprise R Productivity Environment opens, as shown in the figure below. For more information on using the R Productivity Environment, see the following manuals: *R Productivity Environment Getting Started Guide* (RevoRPE\_Getting\_Started.pdf) and *R Productivity Environment User’s Guide* (RevoRPE\_Users\_Guide.pdf).
+The Revolution R Enterprise R Productivity Environment opens, as shown in the figure below. For more information on using the R Productivity Environment, see the following manuals: [*R Productivity Environment Getting Started Guide*](RevoRPE_Getting_Started.md) and [*R Productivity Environment User’s Guide*](RevoRPE_Users_Guide.md).
 
 ![](media/rserver-getting-started/image4.JPG)
 
@@ -655,7 +655,7 @@ The *biglm* package, available on CRAN, also estimates linear and generalized li
 
 Using more cores and more computers (nodes) is the key to scaling computations to really big data. Since data analysis algorithms tend to be I/O bound when data cannot fit into memory, the use of multiple hard drives can be even more important than the use of multiple cores.
 
-The **RevoScaleR** analysis functions are written to automatically compute in parallel on available cores, and can also be used to automatically distribute computations across the nodes of a cluster. These functions combine the advantages of external memory algorithms (see ‘Process Data in Chunks’ above) with the advantages of High Performance Computing. That is, these are Parallel External Memory Algorithm’s (PEMA’s)—external memory algorithms that have been parallelized. Such algorithms process data a chunk at a time in parallel, storing intermediate results from each chunk and combining them at the end. Iterative algorithms repeat this process until convergence is determined. Any external memory algorithm that is not “inherently sequential” can be parallelized; results for one chunk of data cannot depend upon prior results. Dependence on data from a prior chunk is OK, but must be handled specially. The plot below shows an example of how using multiple computers can dramatically increase speed, in this case taking advantage of memory caching on the nodes to achieve super-linear speedups.
+The **RevoScaleR** analysis functions are written to automatically compute in parallel on available cores, and can also be used to automatically distribute computations across the nodes of a cluster. These functions combine the advantages of external memory algorithms (see [Process Data in Chunks](#process-data-in-chunks) above) with the advantages of High Performance Computing. That is, these are Parallel External Memory Algorithm’s (PEMA’s)—external memory algorithms that have been parallelized. Such algorithms process data a chunk at a time in parallel, storing intermediate results from each chunk and combining them at the end. Iterative algorithms repeat this process until convergence is determined. Any external memory algorithm that is not “inherently sequential” can be parallelized; results for one chunk of data cannot depend upon prior results. Dependence on data from a prior chunk is OK, but must be handled specially. The plot below shows an example of how using multiple computers can dramatically increase speed, in this case taking advantage of memory caching on the nodes to achieve super-linear speedups.
 
 ![](media/rserver-getting-started/image13.jpeg)
 
@@ -1014,12 +1014,12 @@ Next, you should be aware of the R Core Team manuals, included with every R dist
 
 Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this chapter will help point you in the right direction. If you are looking for...
 
-- **Introductory material.** See Section 7.1.
-- **Information on analyzing data with R.** See Section 7.2.
-- **Information on programming with R.** See Section 7.3.
-- **Information on getting data into and out of R.** See Section 7.4.
-- **Information on creating graphics with R.** See Section 7.5.
-- **Information on parallel programming with R.** See Section 7.6.
+- [**Introductory material.**](#introductory-material).
+- [**Information on analyzing data with R.**](#information-on-data-analysis-and-statistics).
+- [**Information on programming with R.**](#information-on-programming-with-r).
+- [**Information on getting data into and out of R.**](#information-on-getting-data-into-and-out-of-r).
+- [**Information on creating graphics with R.**](#information-on-creating-graphics-with-r).
+- [**Information on parallel programming with R.**](#information-on-parallel-programming-with-r).
 
 ### Introductory Material
 
