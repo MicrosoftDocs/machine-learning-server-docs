@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Repository Manager Help"
+description: "Introduction in the DeployR Repository Manager"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # About DeployR's Repository Manager
 
 The DeployR Repository Manager is a Web interface that serves as a bridge between the scripts, models, and data created by the R programmer, or data scientist, in his or her existing analytics tools and the deployment of that work into the DeployR repository to enable the application developer to create DeployR-powered client applications and integrations.
