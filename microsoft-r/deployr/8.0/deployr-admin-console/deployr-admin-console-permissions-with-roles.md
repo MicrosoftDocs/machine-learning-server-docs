@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Administration Console Help"
+description: "Managing Roles in the DeployR Administration Console"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Managing Permissions with Roles
 
 Users are granted permissions to perform operations on the DeployR Web services API by the role(s) assigned to them. Having clearly defined roles in this console simplifies the process of granting permissions to new or existing users.
