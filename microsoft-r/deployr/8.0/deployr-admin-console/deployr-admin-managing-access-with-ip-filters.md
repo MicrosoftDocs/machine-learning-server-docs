@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Administration Console Help"
+description: "Managing Access with IP Filters in the DeployR Administration Console"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Managing Access with IP Filters
 
 Access to most DeployR services requires that the user be authenticated and have the proper permissions, which are determined by the system role(s) granted to that user. Access can be further restricted with an IP filter, which are managed in the **IP Filters** tab in this console.
