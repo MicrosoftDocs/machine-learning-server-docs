@@ -4,10 +4,10 @@
 ## [Install R Server on a Hadoop Cluster](rserver/8.0/rserver-install-hadoop.md)
 ## [Install R Server on a Teradata Server](rserver/8.0/rserver-install-teradata-server.md)
 ## [Install R Server on a Teradata Client](rserver/8.0/rserver-install-teradata-client.md)
-# [R Server - Get Started](rserver/8.0/rserver-getting-started.md)
-# [R Server - What's New](rserver/8.0/rserver-new-features.md)
+# [R Server Getting Started](rserver/8.0/rserver-getting-started.md)
+# [R Server What's New](rserver/8.0/rserver-new-features.md)
 # R Productivity Environment IDE
-## [RPE Get Started](rserver/8.0/RevoRPE_Getting_Started.md)
+## [RPE Getting Started](rserver/8.0/RevoRPE_Getting_Started.md)
 ## [Using RPE](rserver/8.0/RevoRPE_Users_Guide.md)
 # RevoScaleR
 ## [RevoScaleR Get Started](rserver/8.0/rserver-scaler-getting-started.md)
@@ -33,12 +33,12 @@
 ### [Visualizing Huge Data Sets](rserver/8.0/rserver-scaler-user-guide-19-visualize-huge-data-sets.md)
 ### [Bibliography](rserver/8.0/rserver-scaler-user-guide-20-bibliography.md)
 ## [RevoScaleR Distributed Computing](rserver/8.0/rserver-scaler-distributed-computing.md)
-## [RevoScaleR SQL Server - Get Started](rserver/8.0/rserver-scaler-sql-server-getting-started.md)
-## [RevoScaleR Hadoop - Get Started](rserver/8.0/rserver-scaler-hadoop-getting-started.md)
-## [RevoScaleR Teradata - Get Started](rserver/8.0/rserver-scaler-teradata-getting-started.md)
+## [RevoScaleR SQL Server Getting Started](rserver/8.0/rserver-scaler-sql-server-getting-started.md)
+## [RevoScaleR Hadoop Getting Started](rserver/8.0/rserver-scaler-hadoop-getting-started.md)
+## [RevoScaleR Teradata Getting Started](rserver/8.0/rserver-scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](rserver/8.0/rserver-scaler-odbc.md)
 # RevoPemaR 
-## [Getting Started with RevoPemaR](rserver/8.0/rserver-pemar-getting-started.md)
+## [RevoPemaR Getting Started](rserver/8.0/rserver-pemar-getting-started.md)
 # [DeployR](deployr/8.0/deployr-about.md)
 ## [What's New](deployr/8.0/deployr-whats-new.md)
 ## Administrators
