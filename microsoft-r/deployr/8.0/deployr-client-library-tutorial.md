@@ -32,43 +32,43 @@ The DeployR API exposes a wide range of R analytics services to client applicati
 
 To further simplify the integration of DeployR services within client applications several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 
-**Try Out Our Examples!** Explore the client library examples for [Java,](https://github.com/deployr/java-example-client-basics) [Javascript,](https://github.com/deployr/js-client-library/releases) and [.NET.](https://github.com/deployr/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
+>**Try Out Our Examples!** Explore the client library examples for [Java,](https://github.com/deployr/java-example-client-basics) [Javascript,](https://github.com/deployr/js-client-library/releases) and [.NET.](https://github.com/deployr/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
 
-**Tip!** Check out the [*RBroker Framework*](https://deployr.revolutionanalytics.com/docanddown/#rbroker) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
+>[!TIP]
+>Check out the [*RBroker Framework*](https://deployr.revolutionanalytics.com/docanddown/#rbroker) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
 
 This section briefly introduces the top-level R analytics services exposed on the DeployR API:
 
--   **User Services @ /r/user/\***
+-   **User Services @ /r/user/***
 
     Providing the basic authentication mechanisms for end-users and client applications that need to avail of [*authenticated services*](#authservices) on the API.
 
-<!-- -->
 
--   **Project Services @ /r/project/\***
+
+-   **Project Services @ /r/project/***
 
     Providing [*authenticated services*](#authservices) related to stateful, and optionally persistent, R session environments and analytics Web service execution.
 
-<!-- -->
 
--   **Background Job Services @ /r/job/\***
+
+-   **Background Job Services @ /r/job/***
 
     Providing [*authenticated services*](#authservices) related to persistent R session environments for scheduled or periodic analytics Web service executions.
 
--   **Repository Services @ /r/repository/\***
+-   **Repository Services @ /r/repository/***
 
     Providing [*authenticated services*](#authservices) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonservices) related to analytics Web service execution.
 
-**Note!** All services on the DeployR API are documented in detail in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc).
+>[!NOTE]
+>All services on the DeployR API are documented in detail in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc).
 
 ### Hello World Example
 
 The following code snippets provide the ubiquituous "Hello World" example for the client libraries, demonstrating the basic programming model used when working with the client libraries in Java and JavaScript, and C\# respectively.
 
--   [Java](#tab-NJSGIUwqx-0)
--   [JavaScript](#tab-NJSGIUwqx-1)
--   [C\#](#tab-NJSGIUwqx-2)
+**Java:**
 
     //
     // 1. Establish a connection to DeployR.
@@ -98,6 +98,8 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
+**JavaScript:**
+
     //
     // 1. Establish a connection to DeployR.
     //
@@ -122,6 +124,8 @@ The following code snippets provide the ubiquituous "Hello World" example for th
          var files = exec.artifacts;
          var objects = workspace.objects;
       });
+
+**C#:**
 
     //
     // 1. Establish a connection to DeployR.
@@ -150,15 +154,13 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
-**Try Out Our Examples!** After downloading the client library, you can find basic examples that complement this tutorial under the `rbroker/examples` directory. Additionally, find more comprehensive examples on [GitHub](http://github.com/deployr).
+>**Try Out Our Examples!** After downloading the client library, you can find basic examples that complement this tutorial under the `rbroker/examples` directory. Additionally, find more comprehensive examples on [GitHub](http://github.com/deployr).
 
 ## Getting Connected
 
 The first step for any client application developer using the client libraries is to establish a connection with the DeployR server. A connection is established as follows:
 
--   [Java](#tab-NyxSf8LD9x-0)
--   [JavaScript](#tab-NyxSf8LD9x-1)
--   [C\#](#tab-NyxSf8LD9x-2)
+**Java:**
 
     //
     // 1. Establish a connection to DeployR.
@@ -170,6 +172,8 @@ The first step for any client application developer using the client libraries i
     //
     String deployrEndpoint = "http://localhost:8000/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
+
+**JavaScript:**
 
     //
     // 1. Establish a connection to DeployR.
@@ -190,9 +194,12 @@ The first step for any client application developer using the client libraries i
     // Node.js -  No CORS is needed in Node.js
     //
 
+**C#:**
+
     #!/usr/bin/env node
     deployr.configure( { host: 'http://localhost:8000' });
     deployr.configure( { host: 'http://DIFFERENT_DOMAIN:8000' });
+
 
     //
     // 1. Establish a connection to DeployR.
@@ -213,9 +220,7 @@ If *authenticated project*, *background job* or *repository* management services
 
 The following code snippets demonstrate how to authenticate using the client libraries:
 
--   [Java](#tab-4kbHzIUP5g-0)
--   [JavaScript](#tab-4kbHzIUP5g-1)
--   [C\#](#tab-4kbHzIUP5g-2)
+**Java:**
 
     //
     // 1. Authenticate an end-user or client application.
@@ -225,6 +230,8 @@ The following code snippets demonstrate how to authenticate using the client lib
     //
     RAuthentication authToken = new RBasicAuthentication("george", "s3cret");
     RUser rUser = rClient.login(authToken);
+
+**JavaScript:**
 
     //
     // Same Origin Request
@@ -250,6 +257,8 @@ The following code snippets demonstrate how to authenticate using the client lib
            var rUser = res.deployr.response.user;
       });
 
+**C#:**
+
     //
     // 1. Authenticate an end-user or client application.
     //
@@ -259,7 +268,8 @@ The following code snippets demonstrate how to authenticate using the client lib
     RAuthentication authToken = new RBasicAuthentication("george", "s3cret");
     RUser rUser = rClient.login(authToken);
 
-**Important!** Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models and data files stored in the repository compared to *anonymous* users.
+>[!IMPORTANT]
+>Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models and data files stored in the repository compared to *anonymous* users.
 
 ## Authenticated Services
 
@@ -283,7 +293,8 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
 
-**Tip!** See the [Authenticated Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#authenticatedprojects) chapter in the *API Reference Guide* for further details.
+>[!TIP]
+>See the [Authenticated Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#authenticatedprojects) chapter in the *API Reference Guide* for further details.
 
 Project Services are most easily understood when considered as a collection of related services:
 
@@ -295,13 +306,11 @@ Project Services are most easily understood when considered as a collection of r
 
 The following sections demonstrate working with some of the key features associated with each family of services within the client libraries.
 
-### 1. Project Creation Services
+#### 1. Project Creation Services
 
 These services support the creation of *authenticated projects*. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-4yMSzIID9e-0)
--   [JavaScript](#tab-4yMSzIID9e-1)
--   [C\#](#tab-4yMSzIID9e-2)
+**Java:**
 
     //
     // 1. Create a temporary project.
@@ -332,6 +341,8 @@ These services support the creation of *authenticated projects*. The following c
     // can be used to custom initialize all projects in the pool.
     //
     List<RProject> projectPool = rUser.createProjectPool(poolSize, options);
+
+**JavaScript:**
 
     //
     // 1. Create a temporary project.
@@ -378,6 +389,8 @@ These services support the creation of *authenticated projects*. The following c
            var projectPool = res.deployr.response.projects;
       });
 
+**C#:**
+
     //
     // 1. Create a temporary project.
     //
@@ -408,13 +421,12 @@ These services support the creation of *authenticated projects*. The following c
     //
     List<RProject> projectPool = rUser.createProjectPool(poolSize, options);
 
-### 2. Project Execution Services
+#### 2. Project Execution Services
 
 These services support the execution of analytics Web services on *authenticated projects*. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-V1QSfLUwce-0)
--   [JavaScript](#tab-V1QSfLUwce-1)
--   [C\#](#tab-V1QSfLUwce-2)
+
+**Java:**
 
     //
     // 1. Execute an analytics Web service based on a repository-managed
@@ -446,6 +458,8 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectResult> plots = exec.about().results;
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
+
+**Java:**
 
     //
     // 1. Execute an analytics Web service based on a repository-managed
@@ -495,6 +509,8 @@ These services support the execution of analytics Web services on *authenticated
     var files = about.execution.artifacts;
     var objects = about.workspace.objects;
 
+**Java:**
+#  #
     //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
@@ -526,15 +542,15 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
-**Tip!** All executions services support a [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+>[!TIP]
+>All executions services support a [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
 
-### 3. Project Workspace Services
+#### 3. Project Workspace Services
 
 These services support the manipulation and management of R workspace objects within *authenticated projects*. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-4k4HzUIvqe-0)
--   [JavaScript](#tab-4k4HzUIvqe-1)
--   [C\#](#tab-4k4HzUIvqe-2)
+
+**Java:**
 
     //
     // 1. Create R object data in the workspace by executing an arbitrary
@@ -567,6 +583,9 @@ These services support the manipulation and management of R workspace objects wi
     RRepositoryFile repositoryFile =
         rProject.storeObject("samplev", "Object data description.",
                                          true, null, false, false);
+
+
+**JavaScript:**
 
     // **Sequential execution while remaining asynchronous**
 
@@ -612,6 +631,8 @@ These services support the manipulation and management of R workspace objects wi
       })
       .end();
 
+**C#:**
+
     //
     // 1. Create R object data in the workspace by executing an arbitrary
     // block of R code.
@@ -642,13 +663,12 @@ These services support the manipulation and management of R workspace objects wi
     RRepositoryFile repositoryFile = rProject.storeObject("samplev", "Object data description.",
                                          true, false, false, null);
 
-### 4. Project Directory Services
+#### 4. Project Directory Services
 
 These services support the manipulation and management of R working directory files within *authenticated projects*. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-VkrHzLIwql-0)
--   [JavaScript](#tab-VkrHzLIwql-1)
--   [C\#](#tab-VkrHzLIwql-2)
+
+**Java:**
 
     //
     // 1. Transfer a url-addressable file into the working directory.
@@ -668,6 +688,8 @@ These services support the manipulation and management of R working directory fi
         rUser.fetchFile("data.csv", "demo", "george", null);
     RProjectFile projectFile = rProject.loadFile(repoFile);
 
+**JavaScript:**
+
     //
     // 1. Transfer a url-addressable file into the working directory.
     //
@@ -685,6 +707,8 @@ These services support the manipulation and management of R working directory fi
       .data({ project: rProject, filename: 'data.csv' }) 
       .end();
 
+**C#:**
+
     //
     // 1. Transfer a url-addressable file into the working directory.
     //
@@ -697,13 +721,12 @@ These services support the manipulation and management of R working directory fi
     RRepositoryFile repoFile = rUser.fetchFile("data.csv", "demo", "george", "");
     RProjectFile projectFile = rProject.loadFile(repoFile);
 
-### 5. Project Package Services
+#### 5. Project Package Services
 
 These services support the manipulation and management of R packages within *authenticated projects*. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-EkIrzULvcl-0)
--   [JavaScript](#tab-EkIrzULvcl-1)
--   [C\#](#tab-EkIrzULvcl-2)
+
+**Java:**
 
     //
     // 1. List R packages attached on the project.
@@ -714,6 +737,8 @@ These services support the manipulation and management of R packages within *aut
     // 2. Attach an R package to the project.
     //
     List<RProjectPackage> pkgs = rProject.attachPackage("ggplot2", "???");
+
+**JavaScript:**
 
     //
     // 1. List R packages attached on the project.
@@ -733,6 +758,8 @@ These services support the manipulation and management of R packages within *aut
          var pkgs = res.deployr.response.packages;
       });
 
+**C#:**
+
     //
     // 1. List R packages attached on the project.
     //
@@ -747,15 +774,14 @@ These services support the manipulation and management of R packages within *aut
 
 A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
-**Tip!** By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#authprojects) chapter of this guide.
+>[!TIP]
+>By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#authprojects) chapter of this guide.
 
 Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
 
 The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-4JvrfU8P9e-0)
--   [JavaScript](#tab-4JvrfU8P9e-1)
--   [C\#](#tab-4JvrfU8P9e-2)
+**Java:**
 
     //
     // 1. Submit a background job for scheduled execution of an analytics Web
@@ -803,6 +829,8 @@ The following code snippets demonstrate some of the ways the client libraries ma
         //
         RProject project = rUser.getProject(details.project);
     }
+
+**JavaScript:**
 
     //
     // 1. Submit a background job for scheduled execution of an analytics Web
@@ -870,6 +898,8 @@ The following code snippets demonstrate some of the ways the client libraries ma
          }
       });
 
+**C#:**
+
     //
     // 1. Submit a background job for scheduled execution of an analytics Web
     // service based on a repository-managed R script: /george/demo/regression.R.
@@ -915,7 +945,9 @@ The following code snippets demonstrate some of the ways the client libraries ma
     }
     }
 
-**Tip!** All executions services support the [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+
+>[!TIP]
+>All executions services support the [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
 
 ### Repository Services
 
@@ -923,9 +955,8 @@ The [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/
 
 That tool uses the full range of *repository services* on the DeployR API to deliver it's many *file* and *directory* related functionalities. Your own applications can also leverage these sames services as needed. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
--   [Java](#tab-VJurMILv9l-0)
--   [JavaScript](#tab-VJurMILv9l-1)
--   [C\#](#tab-VJurMILv9l-2)
+
+**Java:**
 
     //
     // 1. List repository-managed directories belonging to the authenticated
@@ -969,6 +1000,9 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.directory = "examples";
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fis, options);
+
+
+**JavaScript:**
 
     //
     // 1. List repository-managed directories belonging to the authenticated user.
@@ -1054,6 +1088,8 @@ That tool uses the full range of *repository services* on the DeployR API to del
       .end(function(res) {
         var repoFile = res.deployr.repository.file;
       });
+
+**C#:**
 
     //
     // 1. List repository-managed directories belonging to the authenticated
