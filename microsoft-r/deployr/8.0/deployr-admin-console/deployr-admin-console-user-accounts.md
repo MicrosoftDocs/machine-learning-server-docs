@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Administration Console Help"
+description: "Managing Users in the DeployR Administration Console"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Creating & Managing User Accounts
 
 User accounts, which are [created](role-new.htm) and [managed](role-view-edit.htm) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the <span class="Code_1">admin</span> account, user accounts represent script authors, client application developers, or client application end-users.
