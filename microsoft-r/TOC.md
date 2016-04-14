@@ -43,17 +43,13 @@
 ## [What's New](deployr/8.0/deployr-whats-new.md)
 ## Administrators
 ### [Getting Started for Administrators](deployr/8.0/deployr-administrator-getting-started.md)
-### [Installing & Configuring](deployr/8.0/deployr-installing-configuring.md)
-### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
-### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
-### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
-### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md)
-### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md)
-### [Setting up DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md)
-### [Setting Up DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md)
-### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
-### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md)
-### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
+### [Installing](deployr/8.0/deployr-installing-configuring.md)
+### Configuring
+#### [Scale & Throughput](deployr/8.0/deployr-admin-scale-and-throughput.md)
+#### [DeployR on AWS](deployr/8.0/deployr-admin-configure-for-aws.md)
+#### [DeployR on Azure](deployr/8.0/deployr-admin-configure-for-azure.md)
+#### [Server, Grid & Database High Availability](deployr/8.0/deployr-admin-configure-high-availability.md)
+#### [Using Hadoop Impersonation & DeployR](deployr/8.0/deployr-admin-hadoop-impersonation.md)
 ### Administration Console Help
 #### [About DeployR Administration Console](deployr/8.0/deployr-admin-console/deployr-admin-console-about.md)
 #### [Creating & Managing User Accounts](deployr/8.0/deployr-admin-console/deployr-admin-console-user-accounts.md)
@@ -64,7 +60,12 @@
 #### [Managing the Grid](deployr/8.0/deployr-admin-console/deployr-admin-managing-the-grid.md)
 #### [Managing Server Policies](deployr/8.0/deployr-admin-console/deployr-admin-managing-server-policies.md)
 #### [Monitoring Events](deployr/8.0/deployr-admin-console/deployr-admin-monitoring-events.md)
+### [Security on DeployR](deployr/8.0/deployr-admin-security.md)
+### [R Package Management for Administrators](deployr/8.0/deployr-admin-r-package-management.md)
+### [Managing Big Data](deployr/8.0/deployr-admin-manage-big-data.md)
 ### [Reinstalling or Upgrading the R Dependency ](deployr/8.0/deployr-admin-configure-reinstall-r.md)
+### [Troubleshooting & Diagnostics](deployr/8.0/deployr-admin-diagnostics-troubleshooting.md)
+### [Common Administrative Tasks](deployr/8.0/deployr-common-administration-tasks.md)
 ## Application Developers
 ### [Getting Started for Application Developers](deployr/8.0/deployr-application-developer-getting-started.md)
 ### Repository Manager Help
