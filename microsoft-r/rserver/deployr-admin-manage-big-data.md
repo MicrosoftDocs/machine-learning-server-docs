@@ -30,7 +30,7 @@ ms.custom: ""
 
 Whenever the data files with which your users need to work are too big to be copied from the Web or copied from their local machines to the server, those files can be stored in 'big data' external directories on the DeployR main server. It is your responsibility as the DeployR administrator to configure and manage these 'big data' external directories and the data files within them.
 
-Once you put the big data files in the external directories, data scientists can use [the `deployrExternal` function](#addfiles) from the `deployrUtils` package in their R code to reference these files in such a way that they can be found whether the R code is run locally or on the DeployR server. Additionally, these external directories can also be referenced in R code without the overhead of replicating the big data itself for each individual project.
+Once you put the big data files in the external directories, data scientists can use [the `deployrExternal` function](#adding-files-to-external-directories) from the `deployrUtils` package in their R code to reference these files in such a way that they can be found whether the R code is run locally or on the DeployR server. Additionally, these external directories can also be referenced in R code without the overhead of replicating the big data itself for each individual project.
 
 ## Setting up NFS Setup
 
@@ -53,17 +53,17 @@ To benefit from external directory support in a multi-grid node DeployR environm
 
 1. Log into the operating system as `root`.
 
-1. Install NFS.
+2. Install NFS.
 
-	> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-	> ```Redhat
-	> yum install -y nfs-utils nfs-utils-lib
-	> ```
-	> ```SLES
-	> zypper install -y nfs-kernel-server
-	> ```
+	For Redhat:
+
+		yum install -y nfs-utils nfs-utils-lib
+
+	For SLES:
+
+		zypper install -y nfs-kernel-server
        
-1. Open the file `/etc/sysconfig/nfs` and add these lines to the end of the file:
+3. Open the file `/etc/sysconfig/nfs` and add these lines to the end of the file:
 
         RQUOTAD_PORT=10000
         LOCKD_TCPPORT=10001
@@ -73,17 +73,17 @@ To benefit from external directory support in a multi-grid node DeployR environm
         STATD_OUTGOING_PORT=10005
         RDMA_PORT=10006
 
-1. In IPTABLES, open the following ports for NFS for external directory support:
+4. In IPTABLES, open the following ports for NFS for external directory support:
 
     -   `111`
     -   `2049`
     -   `10000:10006`
 
-1. Restart IPTABLES.
+5. Restart IPTABLES.
 
         service iptables restart
 
-1. Set up the automatic start of NFS and `portmap/rpcbind` at boot time. At the prompt, type:
+6. Set up the automatic start of NFS and `portmap/rpcbind` at boot time. At the prompt, type:
 
    -   For both the main server and any grid machines on Redhat 5, type:
 
@@ -109,7 +109,7 @@ To benefit from external directory support in a multi-grid node DeployR environm
             /etc/init.d/rpcbind start 
             /etc/init.d/nfs start
 
-1. To create a new NFS directory share, run the following commands. To update an existing NFS share, see the next step instead.
+7. To create a new NFS directory share, run the following commands. To update an existing NFS share, see the next step instead.
 
     -   On the DeployR main server:
 
@@ -117,7 +117,7 @@ To benefit from external directory support in a multi-grid node DeployR environm
 
                 /home/deployr-user/deployr/8.0.0/deployr/external/data *(rw,sync,insecure,all_squash,anonuid=48,anongid=48)
 
-        1.  Broadcast the new directory. At the prompt, type:
+        2.  Broadcast the new directory. At the prompt, type:
 
                 exportfs -r
 
@@ -132,13 +132,13 @@ To benefit from external directory support in a multi-grid node DeployR environm
                 mount -a
                 df -k
 
-1. To use an existing NFS directory share, do the following for the main server and each grid node.
+8. To use an existing NFS directory share, do the following for the main server and each grid node.
 
     1.  Add the following line to `/etc/fstab`, where `<nfs_share_hostname>` and `<nfs_share_directory>` is the IP or hostname and directory of the machine where the NFS share site exists:
 
             <nfs_share_hostname>:/<nfs_share_directory>   /deployr/external/data  nfs  rw   0   0
 
-    1.  Try to mount the contents of the file and verify the NFS points to the correct address. At the prompt, type:
+    2.  Try to mount the contents of the file and verify the NFS points to the correct address. At the prompt, type:
 
             mount -a
             df -k
