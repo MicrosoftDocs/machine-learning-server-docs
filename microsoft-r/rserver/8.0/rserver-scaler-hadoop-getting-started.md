@@ -743,27 +743,30 @@ which results in:
 
 ### Prediction on Large Data
 
-You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In this example we will compute predicted values and their residuals for the logistic regression in the previous section. We can update the airData to include the predicted values and residuals by not specifying an *outData* argument, which is *NULL* by default.
+You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In this example we will compute predicted values and their residuals for the logistic regression in the previous section. These new prediction variables will be output to a new composite XDF in HDFS.(As in an earlier example, the second “user” in the airDataPredDir path should be changed to the actual user name of your Hadoop user.)
 
-	rxPredict(modelObject=logitObj, data=airData,
-		computeResiduals=TRUE, overwrite=TRUE)
+	airDataPredDir <- "/user/RevoShare/user/airDataPred"
+    airDataPred <- RxXdfData(airDataPredDir, fileSystem=hdfsFS)
+    rxPredict(modelObject=logitObj, data=airData, outData=airDataPred,
+		computeResiduals=TRUE)
 
-By putting in a call to *rxGetVarInfo* we can see that two additional variables, *ArrDel15\_Pred* and *ArrDel15\_Resid* were added to the *airData* composite XDF.
+By putting in a call to *rxGetVarInfo* we see that two variables, *ArrDel15\_Pred* and *ArrDel15\_Resid* were written to the *airDataPred* composite XDF. If, in addition to the prediction variables, we wanted to have the variables used in the model written to our *outData* we would need to add the *writeModelVars=TRUE* to our *rxPredict* call.
 
-If instead we wanted to have a separate output data set containing the predicted values and residuals, we could set the *outData* to an XDF data source and set *writeModelVars=TRUE* to retain the variables included in the model. An *RxTextData* object can be used as the input data for *rxPredict* on Hadoop, but only XDF can be written to HDFS. Moreover, when using a CSV file or directory of CSV files as the input data the *outData* argument must be set to an *RxXdfData* object.
+Alternatively, we can update the *airData* to include the predicted values and residuals by not specifying an *outData* argument, which is *NULL* by default. Since the *airData* composite XDF already exists we would need to add *overwrite=TRUE* to the *rxPredict* call.
+
+Note that an *RxTextData* object can be used as the input data for *rxPredict* on Hadoop, but only XDF can be written to HDFS. When using a CSV file or directory of CSV files as the input data to *rxPredict* the *outData* argument must be set to an *RxXdfData* object.
 
 ### Performing Data Operations on Large Data
 
-To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function. Suppose we want to repeat the analyses with a “cleaner” version of the large airline dataset. To do this we will first need to remove the new prediction variables that we added in the previous section and keep only the flights having arrival delay information and flights that did not depart more than one hour early. We can put a call to *rxDataStep* to output a new composite XDF to HDFS. (As in an earlier example, the second “user” in the newAirDir path should be changed to the actual user name of your Hadoop user.)
+To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function. Suppose we want to repeat the analyses with a “cleaner” version of the large airline dataset. To do this we will keep only the flights having arrival delay information and flights that did not depart more than one hour early. We can put a call to *rxDataStep* to output a new composite XDF to HDFS. (As in an earlier example, the second “user” in the newAirDir path should be changed to the actual user name of your Hadoop user.)
 
 	newAirDir <- "/user/RevoShare/user/newAirData"
 	newAirXdf <- RxXdfData(newAirDir,fileSystem=hdfsFS)
 	
 	rxDataStep(inData = airData, outFile = newAirXdf,
-	           varsToDrop=c("ArrDel15_Pred","ArrDel15_Resid"),
 	           rowSelection = !is.na(ArrDelay) & (DepDelay > -60))
 
-As with *rxPredict*, an *RxTextData* object can be used as the input data for *rxDataStep* on Hadoop, but only a composite XDF can be written out. In this case, an *outFile* must be specified. To modify an existing composite XDF using *rxDataStep* set the *overwrite* argument to *TRUE* and either omit the *outFile* argument or set it to the same composite XDF data source specified for *inData*.
+To modify an existing composite XDF using *rxDataStep* set the *overwrite* argument to *TRUE* and either omit the *outFile* argument or set it to the same data source specified for *inData*.
 
 ### Writing to CSV in HDFS
 
@@ -823,6 +826,19 @@ Equivalently, you can use nTree together with rxExec’s timesToRun argument:
 In this example, using *scheduleOnce* can be up to 45 times faster than the default, and so we recommend it for decision forests with small to moderate-sized data sets.
 
 Similarly, the *rxPredict* methods for *rxDForest* and *rxBTrees* objects include the *scheduleOnce* argument, and should be used when using these methods on small to moderate-sized data sets.
+
+## Cleaning up Data
+
+You can run the following commands to clean up data in this tutorial:
+
+	rxHadoopRemoveDir("/share/AirlineDemoSmall")
+    rxHadoopRemoveDir("/share/airOnTime12")
+    rxHadoopRemoveDir("/share/claimsXdf")
+    rxHadoopRemoveDir("/user/RevoShare/<user>/AirlineOnTime2012")
+    rxHadoopRemoveDir("/user/RevoShare/<user>/airDataCsv")
+    rxHadoopRemoveDir("/user/RevoShare/<user>/airDataCsvRows")
+    rxHadoopRemoveDir("/user/RevoShare/<user>/newAirData")
+    rxHadoopRemoveDir("/user/RevoShare/<user>/airDataPred")
 
 ## Continuing with Distributed Computing
 

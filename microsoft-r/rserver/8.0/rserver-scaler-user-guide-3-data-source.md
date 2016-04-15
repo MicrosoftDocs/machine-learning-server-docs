@@ -41,7 +41,7 @@ To create data sources directly, use the constructors listed in the following ta
 | Teradata Database                                      | RxTeradata                  |
 | .xdf data files                                        | RxXdfData                   |
 
-For simple data import, you do not need to create a data source—you can simply specify a file of the appropriate type and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you will want to refer to the data source’s documentation; in this case creating a data source will be useful. (For more information on accessing databases via ODBC, see the *RevoScaleR ODBC Import Guide* (RevoScaleR\_ODBC.pdf).)
+For simple data import, you do not need to create a data source—you can simply specify a file of the appropriate type and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you will want to refer to the data source’s documentation; in this case creating a data source will be useful. (For more information on accessing databases via ODBC, see the [*RevoScaleR ODBC Import Guide*](rserver-scaler-odbc.md).)
 
 ## Specifying Delimiters
 

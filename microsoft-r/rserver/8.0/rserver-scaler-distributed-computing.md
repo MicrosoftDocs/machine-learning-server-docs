@@ -70,13 +70,13 @@ The principal compute contexts are the following:
 
 - RxLocalSeq: the default compute context described above. This compute context is available on all platforms.
 
-- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the *RevoScaleR Hadoop Getting Started Guide* (RevoScaleR_Hadoop_Getting_Started.pdf).
+- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md).
 
-- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the *RevoScaleR Teradata Getting Started Guide* (RevoScaleR_Teradata_Getting_Started.pdf).
+- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [*RevoScaleR Teradata Getting Started Guide*](rserver-scaler-teradata-getting-started.md).
 
-The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the *RevoScaleR Sql Server Getting Started Guide* (RevoScaleR_SqlServer_Getting_Started.pdf).
+The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR Sql Server Getting Started Guide*](rserver-scaler-sql-server-getting-started.md).
 
-Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in Chapter 6.
+Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
 
 ### Compute Contexts and Data Sources 
 
@@ -93,11 +93,11 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Teradata database (RxTeradata) | X |   | X |   |
 | SQL Server database (RxSqlServerData) |   |   |   | X |
 
-Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. (See the *RevoScaleR Hadoop Getting Started Guide* (RevoScaleR_Hadoop_Getting_Started.pdf) for details.) Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. (See Chapter 8, Managing Distributed Data, for details.)
+Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. (See the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md) for details.) Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. (See ["Managing Distributed Data"](#managing-distributed-data) for details.)
 
 ### Waiting and Non-waiting Compute Contexts 
 
-By default, compute contexts are *waiting* (or *blocking*), that is, your R session waits for results from the job before returning control to you. For most RevoScaleR jobs, which return in a few seconds to perhaps a minute for a large data logistic regression, this is an appropriate choice. However, when running a big job (several minutes to several hours) on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session.  In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. To set the compute context object to run “no wait” jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see Chapter 4.
+By default, compute contexts are *waiting* (or *blocking*), that is, your R session waits for results from the job before returning control to you. For most RevoScaleR jobs, which return in a few seconds to perhaps a minute for a large data logistic regression, this is an appropriate choice. However, when running a big job (several minutes to several hours) on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session.  In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. To set the compute context object to run “no wait” jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters; you define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from  all the jobs.
 
@@ -312,7 +312,7 @@ which yields:
 
 ### Computing a Covariance or Correlation Matrix 
 
-The rxCovCor function is used to compute covariance and correlation matrices; the convenience functions rxCov, rxCor, and rxSSCP all depend upon it and are usually used in practical situations. (See the *[RevoScaleR User’s Guide](http://go.microsoft.com/fwlink/?LinkID=698566&clcid=0x409)* for examples.) The following example shows how the main function can be used directly:
+The rxCovCor function is used to compute covariance and correlation matrices; the convenience functions rxCov, rxCor, and rxSSCP all depend upon it and are usually used in practical situations. (See the [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-15-covcor.md) for examples.) The following example shows how the main function can be used directly:
 
     covForm <- ~ DepDelayMinutes + ArrDelayMinutes + AirTime
     cov <- rxCovCor(formula = covForm, data = airData, type = "Cov")
@@ -1295,7 +1295,7 @@ Recall that the idea was to run a specified number of kmeans fits, then find the
 
 There are several basic approaches to data management in distributed computing: 
 
-1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see Section 8.1, Distributing Data with rxSplit).
+1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see ["Distributing Data with rxSplit"](#distributing-data-with-rxsplit)).
 
 2.	In the Hadoop Distributed File System, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend “composite” .xdf files, which are specialized files designed to be managed by HDFS. 
 
@@ -1405,7 +1405,7 @@ The output data is also split, in this case holding fitted values, residuals, an
 
 ### Creating Split Training and Test Data Sets 
 
-One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see Section 6.5), the split becomes reproducible:
+One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see ["Parallel Random Number Generation"](#parallel-random-number-generation)), the split becomes reproducible:
 
 	rxExec(rxSplit, inData="C:/data/distributed/DistAirlineData.xdf", 
 		outFilesBase="airlineData", 

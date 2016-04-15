@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Fitting Logistic Regression Models
 
-Logistic regression is a standard tool for modeling data with a binary response variable. In R, you fit a logistic regression using the *glm* function, specifying a binomial family and the logit link function. In RevoScaleR, you can use *rxGlm* in the same way (see Chapter 10[, Fitting Generalized Linear Models](#_Fitting_Generalized_Linear)) or you can fit a logistic regression using the optimized *rxLogit* function; because this function is specific to logistic regression, you need not specify a family or link function.
+Logistic regression is a standard tool for modeling data with a binary response variable. In R, you fit a logistic regression using the *glm* function, specifying a binomial family and the logit link function. In RevoScaleR, you can use *rxGlm* in the same way (see [Fitting Generalized Linear Models](rserver-scaler-user-guide10-generalized-linear-model.md)) or you can fit a logistic regression using the optimized *rxLogit* function; because this function is specific to logistic regression, you need not specify a family or link function.
 
 ### A Simple Logistic Regression Example
 
@@ -116,7 +116,7 @@ We can specify a stepwise model using rxLogit and rxStepControl as follows:
 	  Start       -0.20651005
 	  Number       0.41060119
 
-The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see section 8.8 and the rxStepControl help file for more details.
+The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](#stepwise-variable-selection) and the rxStepControl help file for more details.
 
 #### Plotting Model Coefficients
 
