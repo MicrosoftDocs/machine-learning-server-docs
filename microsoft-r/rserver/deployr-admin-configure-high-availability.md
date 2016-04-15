@@ -101,7 +101,7 @@ The DeployR grid is designed to deliver high-availability at runtime, supporting
 
 In this way, the DeployR grid can be said to be `self-healing`, capable of automatically adjusting to system failures and recoveries at runtime, ensuring maximum uptime and responsiveness.
 
-> **RBroker High Availability!** The `7.4.0` release of the [RBroker Framework](https://deployr.revolutionanalytics.com/docanddown#rbroker) introduced a new fault-tolerant implementation of the `PooledTaskBroker`. Tasks executing on the new PooledTaskBroker that fail due to grid failures at runtime are automatically detected and re-executed without requiring client application intervention.
+> **RBroker High Availability!** The `7.4.0` release of the [RBroker Framework](deployr-rbroker-framework-tutorial.md) introduced a new fault-tolerant implementation of the `PooledTaskBroker`. Tasks executing on the new PooledTaskBroker that fail due to grid failures at runtime are automatically detected and re-executed without requiring client application intervention.
 
 ## Database High Availability
 
@@ -158,10 +158,10 @@ For each standalone MongoDB instance, do the following:
 
 1.  Log on to the machine that will host the secondary MongoDB instance.
 
-2.  [Install MongoDB database](https://deployr.revolutionanalytics.com/documents/admin/install/#install-deployr-custom).
+2.  [Install MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
 
     >[!IMPORTANT]
->Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](https://deployr.revolutionanalytics.com/documents/admin/install/#install-linux).)
+>Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](deployr-installing-configuring.md#installing-on-linux).)
 
 3.  Change the default password for this secondary MongoDB instance to the password defined in `DeployR MongoDB Configuration Override` section of the `<INSTALL_DIR>/deployr/deployr.groovy` file on the primary host machine.
 
