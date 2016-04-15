@@ -76,7 +76,7 @@ _Figure: IP Filter list_
 
 ## Applying Filters
 
-You can apply a filter to a specific [node operating type](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) in the [**Server Policies**](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/policies-intro.htm) tab in this console so that all nodes designated for that type of operation inherit this IP filter automatically.
+You can apply a filter to a specific [node operating type](deployr-admin-managing-the-grid.md#node-operation-types.md) in the [**Server Policies**](deployr-admin-managing-server-policies.md) tab in this console so that all nodes designated for that type of operation inherit this IP filter automatically.
 
 ## Exporting Filters
 
