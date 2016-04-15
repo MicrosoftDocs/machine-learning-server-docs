@@ -28,7 +28,7 @@ ms.custom: ""
 
 Access to most DeployR services requires that the user be authenticated and have the proper permissions, which are determined by the system role(s) granted to that user. Access can be further restricted with an IP filter, which are managed in the **IP Filters** tab in this console.
 
-Once you create an IP filter, you can specify and assign the filter to authenticated, asynchronous, and anonymous grid operation modes in the [Server Policies](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/policies-intro.htm) page.
+Once you create an IP filter, you can specify and assign the filter to authenticated, asynchronous, and anonymous grid operation modes in the [Server Policies](deployr-admin-managing-server-policies.md) page.
 
 _Figure: IP Filter list_
 
