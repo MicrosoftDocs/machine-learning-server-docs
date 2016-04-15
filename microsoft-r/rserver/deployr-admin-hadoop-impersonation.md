@@ -276,7 +276,7 @@ This script runs a ScaleR algorithm as a MapReduce job in Hadoop. This RScript w
 
 **Update VB.NET code that executes all 3 examples**
 
-This is an update of the [code shown here](#clientapp) that now reads in and executes all three scripts.
+This is an update of the [code shown here](#create-deployr-client) that now reads in and executes all three scripts.
 
     Imports DeployR
 
