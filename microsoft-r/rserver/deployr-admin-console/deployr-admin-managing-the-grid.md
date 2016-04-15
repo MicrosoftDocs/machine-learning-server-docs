@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Administration Console Help"
+description: "Managing Grid Nodes in the DeployR Administration Console"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Managing the Grid
 
 >Only the **DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. The **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, **DeployR Default Node**. While most of the grid instructions apply only to DeployR Enterprise, most node properties apply to both editions and should still be reviewed and fine-tuned. For enterprise grade deployments, upgrade to DeployR Enterprise today.

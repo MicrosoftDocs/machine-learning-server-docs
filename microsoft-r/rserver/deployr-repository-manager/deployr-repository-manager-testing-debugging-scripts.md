@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Repository Manager Help"
+description: "Testing and Debugging the DeployR Repository Manager"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #Testing and Debugging Scripts
 
 For tips and guidance on how to develop portable R code using the deployrUtils package, see the [Writing Portable R Code](http://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/) guide on the DeployR website.

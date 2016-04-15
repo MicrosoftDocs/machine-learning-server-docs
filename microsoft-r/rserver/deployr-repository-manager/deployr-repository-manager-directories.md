@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR Repository Manager Help"
+description: "Working with Directories in the DeployR Repository Manager"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Working with Directories
 
 The DeployR repository files are organized into directories. In the Repository Manager, you can see the directories storing the files to which you have access on the left side of the **Files** tab. There are two kinds of directories – those containing files you own and those containing the files to which you have access rights.
