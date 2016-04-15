@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Quick Overview
 
-Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Services for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual *Microsoft R Services 7 Client Installation Manual for Teradata.*
+Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Services for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [*Microsoft R Services Client Installation Manual for Teradata.*](rserver-install-teradata-client.md)
 
 >[!NOTE]
 >Microsoft R Services for Teradata is required for running Microsoft R Services scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Services in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Services 7 Client Installation Manual for Teradata.*
@@ -49,6 +49,26 @@ Microsoft R Services for Teradata has the following system requirements:
 **Memory:** A minimum of 1GB of RAM is required; 4GB or more are recommended.
 
 **Disk Space:** A minimum of 500MB of disk space is required
+
+The following specific libraries must be installed on the Teradata appliance from the SLES 11 installation DVDs:
+
+* SLES-11-SP1-DVD-x86_64-GM-DVD1.iso/suse/x86_64/ghostscript-fonts-std-8.62-32.27.31.x86_64.rpm
+
+
+* SLES-11-SP1-DVD-x86_64-GM-DVD1.iso/suse/x86_64/libicu-4.0-7.24.11.x86_64.rpm
+
+
+* SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/libstdc++45-4.5.0_20100414-1.2.7.x86_64.rpm
+
+
+* SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/libgfortran43-4.3.4_20091019-0.7.35.x86_64.rpm
+
+
+* SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc43-fortran-4.3.4_20091019-0.7.35.x86_64.rpm
+
+
+* SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc-fortran-4.3-62.198.x86_64.rpm
+
 
 ## Installing the Microsoft R Server rpms
 
@@ -239,9 +259,9 @@ Note that memory limits that have been changed are in effect immediately, and no
 
 Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
-- **RevoJobs** – one row is added to this table for each job. Each job is assigned a job ID between 1 and 2,147,483,647. The table is not automatically cleaned up. If never cleaned up, it can grow to up to 2,147,483,647 rows. However, after reaching the maximum value, the job IDs cycle back to 1 (or a relatively low number) harmlessly.
+- **RevoJobs** – one row is added to this table for each job. Each job is assigned a job ID between 1 and 2,147,483,647. The table is not automatically cleaned up. If never cleaned up, it can grow to up to 2,147,483,647 rows. In version 8.0.0 and earlier, values did not recycle unless old rows were deleted, and the next ID was always computed as the max ID in the table plus 1, which could result in integer overflow. In version 8.0.1 and later, after reaching the maximum value, the job IDs cycle back to 1 (or a relatively low number) harmlessly.
 
-- **RevoAnalyticsJobResults** – multiple rows are added for each job. It is automatically cleaned up if wait = TRUE in RxInTeradata(), but not if wait = FALSE. If the job IDs have cycled, then any rows matching a recycled ID are deleted before the ID is reused.
+- **RevoAnalyticsJobResults** – multiple rows are added for each job. It is automatically cleaned up if wait = TRUE in RxInTeradata(), but not if wait = FALSE. In version 8.0.1 and later, if the job IDs have cycled, then any rows matching a recycled ID are deleted before the ID is reused.
 
 ## Installing Additional R Packages
 

@@ -40,14 +40,15 @@ There are three key components to running ***RevoScaleR*** high performance anal
 
 You can follow this guide from an R IDE of your choice.  On Windows, we recommend using the ***R Productivity Environment*** integrated development environment.  It is included with the client-side download of ***Microsoft R Services*** available for CTP3 customers. It has its own Getting Started Guide. More extensive general examples of using ***RevoScaleR*** can be found in the following guides included with ***Microsoft R Services***:
 
-- *RevoScaleR Getting Started Guide* (RevoScaleR_Getting_Started.pdf)
-- *RevoScaleR User’s Guide* (RevoScaleR_Users_Guide.pdf)
-- *RevoScaleR Distributed Computing Guide* (RevoScaleR_Distributed_Computing.pdf)
-- *RevoScaleR ODBC Data Import Guide* (RevoScaleR_ODBC.pdf)
+- [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
+- [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
+- [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md)
+- [*RevoScaleR ODBC Data Import Guide*](rserver-scaler-odbc.md)
 
 For information on other distributed computing compute contexts, see:
 
-- *RevoScaleR Hadoop Getting Started Guide* (RevoScaleR_Hadoop_Getting_Started.pdf)
+- [*RevoScaleR MapReduce Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)
+- [*RevoScaleR Spark Getting Started Guide*](rserver-scaler-spark-getting-started.md)
 
 ## Using a SQL Server Data Source and Compute Context 
 

@@ -414,7 +414,7 @@ After completing installation, do the following to verify that Microsoft R Servi
 
 2.  Start Microsoft R Services on a cluster node by typing Revo64 at a shell prompt.
 
-3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](http://packages.revolutionanalytics.com/doc/7.4.1/linux/RevoScaleR_Hadoop_Getting_Started.pdf)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
+3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
 		bigDataDirRoot <- "/share"
 		myHadoopCluster <- RxHadoopMR(consoleOutput=TRUE)
@@ -471,7 +471,7 @@ Next try to run a simple rxExec job:
 
 	rxExec(list.files)
 
-That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see section 0, Troubleshooting the Installation, for a few of the more common errors and how to fix them.
+That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshooting the Installation](#troubleshooting-the-installation), for a few of the more common errors and how to fix them.
 
 ## Troubleshooting the Installation
 
@@ -517,7 +517,7 @@ export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/path/to/libjvm.so
 
 ## Getting Started with Hadoop
 
-To get started with Microsoft R Services on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](http://go.microsoft.com/fwlink/?LinkId=698562&clcid=0x409) PDF. This provides a tutorial introduction to using RevoScaleR with Hadoop.
+To get started with Microsoft R Services on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
 
 ## Using HDFS Caching
 

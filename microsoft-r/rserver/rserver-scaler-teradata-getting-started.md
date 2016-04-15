@@ -40,18 +40,17 @@ There are three key components to running ***RevoScaleR*** high performance anal
 
 More detailed examples of using ***RevoScaleR*** can be found in the following guides included with ***Microsoft R Services***:
 
--   *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf)
--   *RevoScaleR User’s Guide* (RevoScaleR\_Users\_Guide.pdf)
--   *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf)
--   *RevoScaleR ODBC Data Import Guide* (RevoScaleR\_ODBC.pdf)
+-   [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
+-   [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
+-   [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md)
+-   [*RevoScaleR ODBC Data Import Guide*](rserver-scaler-odbc.md)
 
 On Windows, the ***R Productivity Environment*** integrated development environment is included with ***Microsoft R Services***. It has its own *Getting Started Guide*.
 
 For information on other distributed computing compute contexts, see:
 
--   *RevoScaleR Hadoop Getting Started Guide* (RevoScaleR\_Hadoop\_Getting\_Started.pdf)
--   *RevoScaleR HPC Server Getting Started Guide* (RevoScaleR\_HPC\_Server\_Getting\_Started.pdf)
--   *RevoScaleR LSF Cluster Getting Started Guide* (RevoScaleR\_LSF\_Cluster\_Getting\_Started.pdf)
+-   [*RevoScaleR MapReduce Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)
+-   [*RevoScaleR Spark Getting Started Guide*](rserver-scaler-spark-getting-started.md)
 
 ## Installation
 

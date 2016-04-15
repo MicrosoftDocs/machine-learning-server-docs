@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Quick Overview
 
-Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Services for Teradata in the Teradata data warehouse, see the companion manual *Microsoft R Services 7 Server Installation Manual for Teradata*.
+Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Services for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Services Server Installation Manual for Teradata*](rserver-install-teradata-client.md).
 
 > [!NOTE] 
 > Microsoft R Services for Teradata is required for running Microsoft R Services scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Services in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual. 
@@ -270,6 +270,10 @@ At the prompt “Enter one or more selections (separated by space):”, enter �
 
 This indicates that the necessary dependencies will also be installed.
 
+After installing the tptstream package, update your system LD_LIBRARY_PATH environment variable to include the path to the 64-bit version of libtelapi.so (typically /opt/teradata/client/15.00/tbuild/lib64) and the path to your unixODBC 2.3 libraries (typically /usr/lib64). (This is most effectively done in the /etc/profile file; be sure to source the file after making any changes to it.) Also, export the NLSPATH environment variable as follows:
+
+    export NLSPATH=/opt/teradata/client/15.00/tbuild/msg/%N:$NLSPATH
+
 #### Updating Your ODBC Driver Manager 
 
 Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you will be using Microsoft R Services exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you will be using Microsoft R Services with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
@@ -366,7 +370,7 @@ After installing your Teradata client software, you should test that you can com
 
 The connection string is typically quite long, but should remain contained on a single input line.
 
-The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the *[Microsoft R Services Server Installation Manual for Teradata](http://go.microsoft.com/fwlink/?LinkID=698571&clcid=0x409)*):
+The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Services Server Installation Manual for Teradata*](rserver-install-teradata-server.md):
 
 	query <- "SELECT tablename FROM dbc.tables WHERE databasename = 'RevoTestDB' order by tablename"
 	connectionString <- "Driver=Teradata;DBCNAME=157.54.160.204;Database=RevoTestDB;Uid=RevoTester;pwd=RevoTester;"
