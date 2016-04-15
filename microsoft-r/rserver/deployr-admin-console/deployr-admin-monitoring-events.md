@@ -35,7 +35,7 @@ _Figure: Home tab after login_
 
 - Grid activity events that include the starting and stopping of grid operations, such as stateless, temporary, persistent projects and/or jobs
 
-- Grid warning events that occur when the grid runs up against the limits that were defined in the **Concurrent Operation Policies** in the [Server Policies](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/policies-properties.htm) tab
+- Grid warning events that occur when the grid runs up against the limits that were defined in the **Concurrent Operation Policies** in the [Server Policies](deployr-admin-managing-server-policies.md#concurrent-operation-policies) tab
 
 - Grid heartbeat events that are pushed regularly and provide a detailed summary of slot activity across all nodes on the grid
 
