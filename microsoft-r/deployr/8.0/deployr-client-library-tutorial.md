@@ -1154,13 +1154,13 @@ There are two types of *anonymous project*:
 1.  Stateless Project - a stateless, transient R session that lives only for the duration of the analytics Web service execution.
 2.  HTTP Blackbox Project - a stateful, transient R session that lives only for the duration of the current user HTTP session.
 
-**Tip!** While *anonymous project services* are provided primarily for *anonymous* users, these same service calls are also available to *authenticated* users.
+>[!TIP]
+>While *anonymous project services* are provided primarily for *anonymous* users, these same service calls are also available to *authenticated* users.
 
 The following code snippets demonstrate how the client libraries make these services available.
 
--   [Java](#tab-EyKBMILDqg-0)
--   [JavaScript](#tab-EyKBMILDqg-1)
--   [C\#](#tab-EyKBMILDqg-2)
+
+**Java:**
 
     //
     // 1. Execute an analytics Web service based on a repository-managed
@@ -1188,6 +1188,8 @@ The following code snippets demonstrate how the client libraries make these serv
     // permissions by the DeployR administrator.
     //
     RScriptExecution exec = rClient.executeExternal(regressionURL, options);
+
+**JavaScript:**
 
     //
     // 1. Execute an analytics Web service based on a repository-managed
@@ -1228,6 +1230,8 @@ The following code snippets demonstrate how the client libraries make these serv
         var exec = res.deployr.repository.execution;
       });
 
+**C#:**
+
     //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R using a Stateless Project.
@@ -1254,7 +1258,8 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
-**Tip!** See the [Anonymous Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#anonymousprojects) chapter in the *API Reference Guide* for further details.
+>[!TIP]
+>See the [Anonymous Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#anonymousprojects) chapter in the *API Reference Guide* for further details.
 
 ## Standard Execution Model
 
@@ -1273,9 +1278,8 @@ Conceptually this standard set of parameters can be categorized into three group
 
 The *pre-execution* parameters allow the caller to *pre-heat* the R session with DeployR-encoded R data, binary R object data, and file data taken from a number of different sources. The following code snippets demonstrate how to use these parameters using the client libraries:
 
--   [Java](#tab-4Jqrz8IDqe-0)
--   [JavaScript](#tab-4Jqrz8IDqe-1)
--   [C\#](#tab-4Jqrz8IDqe-2)
+
+**Java:**
 
     //
     // ProjectExecutionOptions: used to pass standard execution model
@@ -1357,6 +1361,8 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     adoptionOptions.adoptWorkspace = null;
     adoptionOptions.adoptPackages = "PROJECT-4f9fe8bf-9425-4f2c-aa15-5d94818988f9";
     options.adoptionOptions = adoptionOptions;
+
+**JavaScript:**
 
     //
     // All options are supiled in a simple object literal hash and passed to the
@@ -1453,6 +1459,8 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     options.adoptworkspace = null;
     options.adoptpackages = 'PROJECT-4f9fe8bf-9425-4f2c-aa15-5d94818988f9';
 
+**C#:**
+
     //
     // ProjectExecutionOptions: used to pass standard execution model
     // parameters on execution calls. All fields are optional.
@@ -1528,9 +1536,8 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
 
 The *on-execution* parameters allow the caller to control certain aspects of the R session environment itself. The following code snippets demonstrate how to use these parameters using the client libraries:
 
--   [Java](#tab-4ksSGUUv9x-0)
--   [JavaScript](#tab-4ksSGUUv9x-1)
--   [C\#](#tab-4ksSGUUv9x-2)
+
+**Java:**
 
     //
     // ProjectExecutionOptions: used to pass standard execution model
@@ -1576,6 +1583,8 @@ The *on-execution* parameters allow the caller to control certain aspects of the
     // the default demensions for images on that device.
     //
     options.graphics = "svg";
+
+**JavaScript:**
 
     //
     // All options are supiled in a simple object literal hash and passed to the
@@ -1627,6 +1636,8 @@ The *on-execution* parameters allow the caller to control certain aspects of the
     //
     options.graphics = 'svg';
 
+**C#:**
+
     //
     // ProjectExecutionOptions: used to pass standard execution model
     // parameters on execution calls. All fields are optional.
@@ -1676,9 +1687,8 @@ The *on-execution* parameters allow the caller to control certain aspects of the
 
 The *post-execution* parameters allow the caller to retrieve data from the R session on the response markup and/or store data from the R session into the repository. It is important to note that the *post-execution* parameters that support storing data into the repository are only available to *authenticated* users on these calls. The following code snippets demonstrate how to use these parameters using the client libraries:
 
--   [Java](#tab-EJhBML8wqg-0)
--   [JavaScript](#tab-EJhBML8wqg-1)
--   [C\#](#tab-EJhBML8wqg-2)
+
+**Java:**
 
     //
     // ProjectExecutionOptions: used to pass standard execution model
@@ -1783,6 +1793,8 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
     options.infinity = ;
     options.nan = null;
     options.encodeDataFramePrimitiveAsVector = true;
+
+**JavaScript:**
 
     //
     // All options are supiled in a simple object literal hash and passed to the
@@ -1901,6 +1913,8 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
     options.infinity = ;
     options.nan = null;
     options.encodeDataFramePrimitiveAsVector = true;
+
+**C#:**
 
     //
     // ProjectExecutionOptions: used to pass standard execution model
@@ -2030,9 +2044,8 @@ DeployR-specific encodings are provided for the following classes of R object:
 
 The following code snippets demonstrate the mechanism for creating these types of encodings using the client libraries. The following code snippets demonstrate the mechanism for creating these types of encodings using the client libraries.
 
--   [Java](#tab-4yprMIIvcl-0)
--   [JavaScript](#tab-4yprMIIvcl-1)
--   [C\#](#tab-4yprMIIvcl-2)
+
+**Java:**
 
     //
     // 1. Encode an R logical value.
@@ -2162,6 +2175,8 @@ The following code snippets demonstrate the mechanism for creating these types o
     rfval.add("d");
     rfval.add("e");
     RFactor factor = RDataFactory.createFactor(name, rfval, false);
+
+**JavaScript:**
 
     var RInput = deployr.RInput;
 
@@ -2349,6 +2364,8 @@ The following code snippets demonstrate the mechanism for creating these types o
     deployr.io(...)
       .factor('rfval', rfval);
 
+**C#:**
+
     //
     // 1. Encode an R logical value.
     //
@@ -2469,7 +2486,8 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
-**Tip!** See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) chapter in the API Reference Guide for further details.
+>[!TIP]
+>See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) chapter in the API Reference Guide for further details.
 
 ## R Object Data Decoding
 
@@ -2484,9 +2502,8 @@ One or more R objects can be returned as DeployR-encoded objects in the response
 
 The following code snippets demonstrate the mechanism for requesting DeployR-encoded objects to be returned on these calls:
 
--   [Java](#tab-4JASzU8wcg-0)
--   [JavaScript](#tab-4JASzU8wcg-1)
--   [C\#](#tab-4JASzU8wcg-2)
+
+**Java:**
 
     //
     // ProjectExecutionOptions: use the _robjects_ parameter to request
@@ -2498,6 +2515,8 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
     //
     ProjectExecutionOptions options = new ProjectExecutionOptions();
     options.routputs = Arrays.asList("mtcars", "score");
+
+**JavaScript:**
 
     //
     // ProjectExecutionOptions: use the `robjects` or `robject` parameter to request
@@ -2515,6 +2534,8 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
     deployr.io(api)
      .routput('mtcars')
      .routput('score')
+
+**C#:**
 
     //
     // ProjectExecutionOptions: use the _robjects_ parameter to request
@@ -2534,9 +2555,8 @@ When working with temporary or persistent DeployR projects R objects can also be
 
 The following code snippet demonstrates the mechanism for requesting DeployR-encoded objects to be returned on this call:
 
--   [Java](#tab-VJkxHf8Uvcg-0)
--   [JavaScript](#tab-VJkxHf8Uvcg-1)
--   [C\#](#tab-VJkxHf8Uvcg-2)
+
+**Java:**
 
     //
     // RProject.getObject(String objectName)
@@ -2550,6 +2570,8 @@ The following code snippet demonstrates the mechanism for requesting DeployR-enc
     List<String> objectNames = Arrays.asList("mtcars", "score");
     List<RData> rDataList = rProject.getObject(objectNames, true);
 
+**JavaScript:**
+
     //
     // 
     // var obj = response.workspace(objectName);
@@ -2561,6 +2583,8 @@ The following code snippet demonstrates the mechanism for requesting DeployR-enc
     // In this example, following the execution the "mtcars" and the
     // "score" workspace objects will be returned on the call.
     //
+
+**C#:**
 
     deployr.io(api)
       .end(function(response) {
@@ -2589,9 +2613,8 @@ Encodings are provided for the following classes of R object:
 
 The method for decoding these DeployR-encoded objects within a client application depends on the specific client library being used. The following code snippets demonstrate the mechanism for decoding R objects in order to retrieve their values using the client libraries:
 
--   [Java](#tab-4yeerGUUPcl-0)
--   [JavaScript](#tab-4yeerGUUPcl-1)
--   [C\#](#tab-4yeerGUUPcl-2)
+
+**Java:**
 
     //
     // Java Client Library R Object Decoding
@@ -2647,6 +2670,8 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
     }
 
+**JavaScript:**
+
     //
     // JavaScript Client Library R Object Decoding
     // 
@@ -2681,6 +2706,8 @@ The method for decoding these DeployR-encoded objects within a client applicatio
       }
       // else..if..etc...
     }
+
+**C#:**
 
     //
     // .NET Client Library R Object Decoding
