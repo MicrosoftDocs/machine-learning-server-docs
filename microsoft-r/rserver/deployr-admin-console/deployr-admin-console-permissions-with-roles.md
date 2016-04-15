@@ -44,7 +44,7 @@ The following DeployR system roles are shipped with DeployR and can be assigned 
 
 |Role Name|Role Description|
 |---|---|
-|`ADMINISTRATOR`|The `ADMINISTRATOR` role identifies the user as an administrator. [There is only one administrator for the console](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-defaults.htm), and that is the user `admin`.|
+|`ADMINISTRATOR`|The `ADMINISTRATOR` role identifies the user as an administrator. [There is only one administrator for the console](deployr-admin-console-user-accounts.md#preconfigured-user-accounts), and that is the user `admin`.|
 |`POWER_USER`|Users with this role are granted permissions to access the full API and to install R packages. Full access includes the ability to execute scripts and arbitrary blocks of R code.|
 |`BASIC_USER`|Users with this role are granted permissions to access the full API with the exception of being able to execute arbitrary blocks of R code on the API. However, they can execute R scripts.|
 |`PACKAGE_MANAGER`|Users with this role are granted permissions to install R packages using the `install.packages()` command. By default, `ADMINISTRATOR` and `POWER_USER` have implicit `PACKAGE_MANAGER` rights, while `BASIC_USER` does not.|
