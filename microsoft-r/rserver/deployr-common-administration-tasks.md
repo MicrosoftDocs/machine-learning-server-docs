@@ -117,7 +117,7 @@ The `catalina.out` server log file is found at the following location:
 &nbsp;
 
 >[!NOTE]
->[Look here](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles) for more information on other log files associated with DeployR.
+>[Look here](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
 
 By default, the DeployR server logs at the `INFO` level, which is appropriate for production environments. The server emits `[DEPLOYR-EVENT]` log statements that provide a permanent record of the following:
 
@@ -249,7 +249,7 @@ Follow these steps to back up the data in the database used by DeployR.
 If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the following ports:
 
 >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#endpoints), [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine                                 | Ports                                 | Open Ports                                                                                      |
 |-----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -258,16 +258,16 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 | Remote grid node machines <sup>1</sup>  | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
 | Remote MongoDB host machine<sup>2</sup> | - `8003` (MongoDB port)               | To the public IP of the DeployR server                                                          |
 
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](https://deployr.revolutionanalytics.com/documents/admin/install/#install-deployr-nodes).
+<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
 
-<sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](https://deployr.revolutionanalytics.com/documents/admin/install/#install-deployr-custom).
+<sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
 
 ### For Windows
 
 During installation, the Windows firewall was updated to allow inbound communications to DeployR on the ports listed in the following table.
 
 >[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#endpoints), [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine                                | Ports                                 | Open Ports                                                                                      |
 |----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -275,10 +275,10 @@ During installation, the Windows firewall was updated to allow inbound communica
 | DeployR server machine                 | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
 | Remote grid node machines <sup>1</sup> | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
 
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](https://deployr.revolutionanalytics.com/documents/admin/install/#install-node).
+<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
 
 >**Notes:**
 >-   If you have made any changes to the port numbers designated for communications between DeployR and any of its dependencies, add those port numbers instead.
->-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](https://deployr.revolutionanalytics.com/documents/admin/bigdata/#configuration) document.
+>-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) document.
 
 

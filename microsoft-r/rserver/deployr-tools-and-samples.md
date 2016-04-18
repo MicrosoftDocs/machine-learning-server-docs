@@ -7,7 +7,7 @@
 
 The RBroker Framework provides a simple yet powerful API that supports the rapid integration of R Analytics inside any Java, JavaScript, or .NET application. Simply define an RTask, submit your task to an instance of RBroker and then retrieve your RTaskResult. It really is that simple.
 
-1.   Read the RBroker [Tutorial](https://deployr.revolutionanalytics.com/documents/dev/rbroker/)
+1.   Read the RBroker [Tutorial](deployr-rbroker-framework.md)
 
 2.   Continue with your preferred programming language:
 	- Java
@@ -28,7 +28,7 @@ The RBroker Framework provides a simple yet powerful API that supports the rapid
 
 The DeployR API exposes a wide range of R analytics services to client application developers. To simplify the integration of DeployR services within client applications, several client libraries are provided for Java, JavaScript and .NET developers.
 
-1.  Read the Client Library [Tutorial](https://deployr.revolutionanalytics.com/documents/dev/clientlib/)
+1.  Read the Client Library [Tutorial](deployr-client-library.md)
 
 2.  Continue with your preferred programming language:
 

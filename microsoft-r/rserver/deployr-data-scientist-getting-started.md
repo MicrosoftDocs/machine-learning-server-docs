@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Introduction
 
-This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with [application developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer).
+This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with [application developers](deployr-application-developer-getting-started.md).
 
 In a nutshell, DeployR makes your R analytics (R scripts, models, and data files) easily consumable by any application. The sections that follow explain the steps you'll take to prepare those analytics and make them available to those who need them. They are:
 
@@ -37,25 +37,25 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 3.  [Collaborate](#collaborate) with application developers to deliver powerful R analytic solutions
 
 >[!NOTE]
->For a general introduction to DeployR, read the [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Develop Analytics
 
-With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as the R Productivity Environment (RPE), RStudio, or StatET.
+With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as the R Productivity Environment (RPE), RStudio, or StatET.
 
-All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code):
+All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 
--   [The `deployrPackage` function](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/#pkgport) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
+-   [The `deployrPackage` function](deployr-data-scientist-write-portable-r-code.md#package-portability) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
 
--   [The `deployrInput` function](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/#inputport) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
+-   [The `deployrInput` function](deployr-data-scientist-write-portable-r-code.md#input-portability) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
 
--   [The `deployrExternal` function](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/#fileaccessport) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
+-   [The `deployrExternal` function](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
 
 You can install `deployrUtils` locally [from GitHub](https://github.com/deployr/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
     install_github('deployr/deployrUtils')
 
-Learn more on how to [write portable R code using these functions](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code).
+Learn more on how to [write portable R code using these functions](deployr-data-scientist-write-portable-r-code.md).
 
 ![Script in IDE](./media/deployr-data-scientist-getting-started/rstudio.png)
 
@@ -88,7 +88,7 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
     ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
-4.  [Upload](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-create-upload.htm) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/#webservices) that, with the proper permissions, can be consumed by any application.
+4.  [Upload](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-create-upload.htm) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
 
     ![Upload](./media/deployr-data-scientist-getting-started/upload.png)
 
@@ -116,7 +116,7 @@ How you share and collaborate on these R analytics depends on whether you plan t
 
 ![Collaborate](./media/deployr-data-scientist-getting-started/collaborate.png)
 
-This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the [Getting Started](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer) guide for application developers.
+This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the [Getting Started](deployr-application-developer-getting-started.md) guide for application developers.
 
 ### Guidance
 
@@ -202,7 +202,7 @@ Now the application developer(s) can review the files in the Repository Manager.
 
 ### Off-Server Collaboration
 
-If [application developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer) on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:
+If [application developers](deployr-application-developer-getting-started.md) on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:
 
 -   Sending the files directly to application developers via email, or
 -   Putting them on a secure shared resource such as shared NFS drive, OneDrive, or Dropbox.
@@ -220,21 +220,21 @@ This section provides a quick summary of useful links for data scientists workin
 
 ### DeployR Introduction & Download
 
--   [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about/) ~ Introductory guide on DeployR
+-   [About DeployR](deployr-about.md) ~ Introductory guide on DeployR
 -   [Download DeployR](https://deployr.revolutionanalytics.com/download/) ~ DeployR Open downloads
--   [Install & Configure DeployR](https://deployr.revolutionanalytics.com/documents/admin/install/) ~ Installation and configuration instructions
+-   [Install & Configure DeployR](deployr-installing-configuring.md) ~ Installation and configuration instructions
 
 ### Guides for Data Scientists
 
--   [Getting Started for Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/administrator/) ~ Learn about the Data Scientist's role in DeployR
--   [How to Write Portable R Code with deployrUtils](https://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code) ~ `deployrUtils` package documentation
+-   [Getting Started for Data Scientists](deployr-administrator-getting-started.md) ~ Learn about the Data Scientist's role in DeployR
+-   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](https://deployr.revolutionanalytics.com/documents/help/repo-man/) ~ Online help for the DeployR Repository Manager.
--   [About Throughput](https://deployr.revolutionanalytics.com/documents/admin/throughput/#throughput) ~ Learn how to optimize your throughput
+-   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 
 ### Other Getting Started Guides
 
--   [For Application Developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/)
--   [For Administrators](https://deployr.revolutionanalytics.com/documents/getting-started/administrator/)
+-   [For Application Developers](deployr-application-developer-getting-started.md)
+-   [For Administrators](deployr-administrator-getting-started.md)
 
 ### Support Channels
 

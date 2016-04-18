@@ -48,12 +48,12 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 
 DeployR offers these features and many more through a set of [Analytics Web Services](#webservices). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
-As an application developer, you typically leave R coding and model building to the [data scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://go.microsoft.com/fwlink/?LinkID=698301/documents/getting-started/) directly within your applications.
+As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://go.microsoft.com/fwlink/?LinkID=698301/documents/getting-started/) directly within your applications.
 
 The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
 >[!NOTE]
->For a general introduction to DeployR, read the [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Analytics Web Services
 
@@ -139,7 +139,7 @@ These repository access controls can be manipulated directly by the file owner o
 
 It's time to move from theory into practice. And for an application developer, that means writing code.
 
-The best place to begin is with the [RBroker Framework](https://deployr.revolutionanalytics.com/documents/dev/rbroker/). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
+The best place to begin is with the [RBroker Framework](deployr-rbroker-framework.md). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
 
 ### RBroker Framework
 
@@ -173,13 +173,13 @@ The framework handles all of the low-level details, including:
 -   Server-side task execution
 -   Asynchronous callbacks to your application on task completion
 
-If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](https://deployr.revolutionanalytics.com/documents/dev/rbroker/). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api).
+If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api).
 
 ### Client Library
 
 *What if the [RBroker Framework](#broker) doesn't give me everything I need?*
 
-They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](https://deployr.revolutionanalytics.com/documents/dev/clientlib/), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api).
+They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api).
 
 ### API Specification
 
@@ -201,7 +201,7 @@ To run these tutorials, you will need access to a live instance of the DeployR s
 
 The following tutorials are available:
 
--   The [RBroker Framework Basics](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](https://deployr.revolutionanalytics.com/documents/dev/rbroker/).
+-   The [RBroker Framework Basics](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](deployr-rbroker-framework.md).
 
 -   The [RBroker Framework Data I/O](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute tasks using the framework.
 
@@ -209,7 +209,7 @@ The following tutorials are available:
 
 The following tutorials are available:
 
--   The [Client Library Basics](https://github.com/deployr?utf8=%E2%9C%93&query=client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](https://deployr.revolutionanalytics.com/documents/dev/clientlib/).
+-   The [Client Library Basics](https://github.com/deployr?utf8=%E2%9C%93&query=client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](deployr-client-library.md).
 
 -   The [Client Library Data I/O](https://github.com/deployr?utf8=%E2%9C%93&query=client-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute R scripts or code using the client library.
 
@@ -245,7 +245,7 @@ The sample application is a classic application in the analytics space, a realti
 
 Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](https://deployr.revolutionanalytics.com/documents/dev/rbroker/#profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
-In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist) and an application developer wrote the application itself.
+In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
 The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
@@ -255,15 +255,15 @@ This section provides a quick summary of useful links for application developers
 
 ### DeployR Introduction & Download
 
--   [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about/)
+-   [About DeployR](deployr-about.md)
 -   [DeployR Server Download](https://deployr.revolutionanalytics.com/download/)
--   [Installation Guide](https://deployr.revolutionanalytics.com/documents/admin/install/)
--   [Getting Started for Application Developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/)
+-   [Installation Guide](deployr-installing-configuring.md)
+-   [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
 
 ### Tools Download
 
--   [RBroker Framework Download](https://deployr.revolutionanalytics.com/docanddown/#rbroker)
--   [Client Library Download](https://deployr.revolutionanalytics.com/docanddown/#clientlib)
+-   [RBroker Framework Download](deployr-tools-and-samples.md)
+-   [Client Library Download](deployr-tools-and-samples.md)
 -   [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc/)
 
 ### Helper Tools
@@ -274,18 +274,18 @@ This section provides a quick summary of useful links for application developers
 
 ### Tutorials & Sample Code on Github
 
--   [RBroker Framework Basics Tutorial](https://deployr.revolutionanalytics.com/documents/dev/rbroker/)
+-   [RBroker Framework Basics Tutorial](deployr-rbroker-framework.md)
 -   [RBroker Framework Basics Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-basics)
 -   [RBroker Framework Data I/O Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-data-io)
--   [Client Library Basics Tutorial](https://deployr.revolutionanalytics.com/documents/dev/clientlib/)
+-   [Client Library Basics Tutorial](deployr-client-library.md)
 -   [Client Library Basics Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=client-basics)
 -   [Client Library Data I/O Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=client-data-io)
 -   [Fraud Score Example Application](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score)
 
 ### Other Getting Started Guides
 
--   [For Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist)
--   [For Administrators](https://deployr.revolutionanalytics.com/documents/getting-started/administrator)
+-   [For Data Scientists](deployr-data-scientist-getting-started.md)
+-   [For Administrators](deployr-administrator-getting-started.md)
 
 ### Support Channels
 

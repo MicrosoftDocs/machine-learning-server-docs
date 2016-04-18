@@ -42,13 +42,13 @@ No other configuration changes are needed. Once you put your files there, your e
 
 ## I'm having issues after installing DeployR. Where do I go for answers?
 
-1.  Check out our [troubleshooting topics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#solutions).
-2.  Run the [diagnostics tests](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#run-diagnostics).
+1.  Check out our [troubleshooting topics](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
+2.  Run the [diagnostics tests](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
 3.  Join the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535) where you can post questions and find answers.
 
 ## Why can't I reach DeployR landing page anymore?
 
-If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](https://deployr.revolutionanalytics.com/documents/admin/install/#servernoconnect).
+If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](deployr-installing-configuring.md).
 
 ## How does DeployR compare to Shiny?
 
@@ -61,5 +61,5 @@ The following table contrasts the two solutions:
 | Supports            | R analysis integration inside any application                                                                                                                                                                                              | The building of interactive Web applications |
 | Primary Audience    | Application developers                                                                                                                                                                                                                     | Data scientists                              |
 | Required Skills     | Application programming skills                                                                                                                                                                                                             | R programming skills                         |
-| Developer Interface | [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/), [Client Libraries](https://deployr.revolutionanalytics.com/docanddown/#clientlib), [RBroker Framework](https://deployr.revolutionanalytics.com/docanddown/#rbroker) | R package                                    |
+| Developer Interface | [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/), [Client Libraries](deployr-tools-and-samples.md), [RBroker Framework](deployr-tools-and-samples.md) | R package                                    |
 | Optional Skills     | R programming skills                                                                                                                                                                                                                       | Web programming skills                       |

@@ -35,7 +35,7 @@ By default, DeployR supports basic authentication. Users simply provide plain te
 While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
@@ -53,7 +53,7 @@ DeployR ships with security providers for the following enterprise security solu
 -   [R Session Process Controls](#processcontrols)
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.    
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
 
@@ -73,7 +73,7 @@ When you integrate with an external enterprise security solution, you want acces
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
 
 >**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](https://deployr.revolutionanalytics.com/documents/admin/security) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -87,7 +87,7 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
 
 **To enable CA Single Sign-On support:**
 
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](https://deployr.revolutionanalytics.com/documents/admin/security/docs/#siteminder).
+1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](deployr-admin-configure-ca-sso.md).
 
 2.  Update the relevant properties in your DeployR external configuration file.
     This step assumes that:
@@ -893,7 +893,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
     [Learn more about server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm).
 
-4.  **Restart DeployR** by [stopping and starting all its services](https://deployr.revolutionanalytics.com/documents/admin/common/#server) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
+4.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
      
 
 5.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
@@ -1054,7 +1054,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     	[Learn more about server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm).
 
-3.  **Restart DeployR** by [stopping and starting all its services](https://deployr.revolutionanalytics.com/documents/admin/common/#server) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
+3.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
      
 
 4.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTP URL at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
@@ -1092,7 +1092,7 @@ CORS can be enabled or disabled in the DeployR external configuration file, `dep
 **To enable CORS support:**
 
 1.  Update the relevant properties in `deployr.groovy` by setting `cors.enabled = true`.
-2.  Stop and restart the DeployR server using [these instructions](https://deployr.revolutionanalytics.com/documents/admin/common/#server).
+2.  Stop and restart the DeployR server using [these instructions](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
 
 Optionally, to restrict cross-site HTTP requests to only those requests coming from a specific domain, specify a value for `Access-Control-Allow-Origin` on the `cors.headers` property.
 

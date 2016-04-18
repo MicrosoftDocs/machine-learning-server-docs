@@ -30,9 +30,9 @@ ms.custom: ""
 
 You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
 
--   Have the [minimum required disk space](#sysreq) (or more) for the [installation of DeployR](https://deployr.revolutionanalytics.com/documents/admin/install) software and its database
+-   Have the [minimum required disk space](#sysreq) (or more) for the [installation of DeployR](deployr-installing-configuring.md) software and its database
 
--   Update the [server Web context](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#set-context) or else you will not be able to access to the DeployR landing page or other DeployR components after installation
+-   Update the [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) or else you will not be able to access to the DeployR landing page or other DeployR components after installation
 
     -   Set the IP to an external, public IP address.
 
@@ -42,9 +42,9 @@ You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 i
 
     -   Open the external [DeployR ports](#update-firewall) `8000`, `8001`, and `8006` through the AWS console.
 
-    -   [Update the firewall](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#firewall).
+    -   [Update the firewall](deployr-admin-configure-for-azure.md#updating-the-firewall).
 
--   Consider enabling HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](https://deployr.revolutionanalytics.com/documents/admin/security/#httpson).
+-   Consider enabling HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](deployr-admin-security.md#enable-server-ssl-https).
 
 >[!IMPORTANT]
 >[Change all default DeployR user passwords](#change-pass), including the `admin` account, after installing DeployR.
