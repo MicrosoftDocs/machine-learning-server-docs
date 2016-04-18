@@ -145,7 +145,7 @@ To benefit from external directory support in a multi-grid node DeployR environm
 
 ## External Directory Structure
 
-While it suffices for users to store their local copy of the data in the current working directory of their R session, the external directory structure in the DeployR server environment is not transparent to the users. For this reason, you need to [put the files into the external directories for them](#addfiles).
+While it suffices for users to store their local copy of the data in the current working directory of their R session, the external directory structure in the DeployR server environment is not transparent to the users. For this reason, you need to [put the files into the external directories for them](#adding-files-to-external-directories).
 
 The external directory structure is really a tree of public and private directories hanging off a common base directory managed by you, the DeployR administrator.
 
