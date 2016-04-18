@@ -73,7 +73,7 @@ Let's begin with some sample R code demonstrating how to declare your required s
     ## Creates an integer variable named 'age' if it does not already exist
     deployrInput('{ "name": "age", "label": "Age", "render": "integer", "default": 6 } ')
 
-The R scripts you develop and deploy to the DeployR server environment are ultimately executed as [Analytics Web Services](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/#webservices) by client applications. Most commonly, these R scripts expect input data to be provided by this application upon execution. In order for these inputs to be provided, the application developer who is integrating the R scripts must first know which inputs are required.
+The R scripts you develop and deploy to the DeployR server environment are ultimately executed as [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) by client applications. Most commonly, these R scripts expect input data to be provided by this application upon execution. In order for these inputs to be provided, the application developer who is integrating the R scripts must first know which inputs are required.
 
 As a data scientist creating analytics for use in DeployR, you are responsible for providing the application developers not only with the necessary analytics, but also helping them understand the inputs required by those analytics.
 
@@ -148,10 +148,10 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
     ![Upload](./media/deployr-data-scientist-write-portable-r-code/upload.png)
 
-3.  [Verify](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist/#test) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) before handing it off to the application developer(s).
+3.  [Verify](deployr-data-scientist-getting-started.md#test-analytics) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) before handing it off to the application developer(s).
 
     >[!NOTE]
-	>If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](https://deployr.revolutionanalytics.com/documents/admin/r-package-mgmt/).
+	>If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](deployr-admin-r-package-management.md).
 	>
     >If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 

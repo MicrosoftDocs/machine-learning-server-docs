@@ -40,7 +40,7 @@ You can set up DeployR on **Microsoft Azure**. For each Azure instance, be sure 
 
 
 >[!IMPORTANT]
->[Change all default DeployR user passwords](https://deployr.revolutionanalytics.com/documents/admin/install/#change-pass), including the `admin` account, after installing DeployR.
+>[Change all default DeployR user passwords](deployr-installing-configuring.md#changing-default-passwords), including the `admin` account, after installing DeployR.
 
 ## Setting the Server Web Context
 
@@ -64,7 +64,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
 5.  Make sure that the MongoDB database is running. You can do so in the **Services** dialog by verifying that the database service has a status of `Started` or `Running`. The database must be running before you can proceed to the next step.
 
-6.  Set the appropriate public IP using the `setWebContext.bat` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#set-context).
+6.  Set the appropriate public IP using the `setWebContext.bat` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
 
         setWebContext -ip <ip_address>
 
@@ -74,7 +74,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
         setWebContext -disableauto
 
-9.  For this change to take effect [restart the Tomcat service](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+9.  For this change to take effect [restart the Tomcat service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 **On Linux:**
 
@@ -92,7 +92,7 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
         ps -ef | grep mongo
 
-5.  Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#set-context).
+5.  Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
 
         ./setWebContext.sh -ip <ip_address>
 
@@ -102,16 +102,16 @@ The DeployR server Web context must be updated to the Public IP address of the v
 
         ./setWebContext.sh -disableauto
 
-8.  For this change to take effect [restart the DeployR services](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+8.  For this change to take effect [restart the DeployR services](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 ---------
 
 >[!IMPORTANT]
->We highly recommended that you also enable HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](https://deployr.revolutionanalytics.com/documents/admin/security/#httpson).
+>We highly recommended that you also enable HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](deployr-admin-security.md#enable-server-ssl-https).
 
 ## Configuring Azure Endpoints
 
-When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](https://deployr.revolutionanalytics.com/documents/admin/install/#update-firewall). For DeployR 8.0.0, these ports are:
+When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](deployr-installing-configuring.md#updating-your-firewall). For DeployR 8.0.0, these ports are:
 
 -   DeployR HTTP port: 8000
 -   DeployR HTTPS port: 8001
@@ -160,7 +160,7 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 
 ## Updating the Firewall
 
-Updating your firewall is the last step. [Learn more about the DeployR ports](https://deployr.revolutionanalytics.com/documents/admin/install/#update-firewall)
+Updating your firewall is the last step. [Learn more about the DeployR ports](deployr-installing-configuring.md#updating-your-firewall)
 
 ### To update your firewall:
 

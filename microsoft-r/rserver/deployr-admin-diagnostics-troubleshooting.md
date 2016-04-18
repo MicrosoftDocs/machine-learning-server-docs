@@ -89,7 +89,7 @@ The following log files can be found in the resulting `diagnostics.tar.gz` file 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description                                                                                                                                                                                                                                                                                      |
 |--------------------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information.                                                                                                                                                    |
-| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](https://deployr.revolutionanalytics.com/documents/admin/common/#logs). [Learn more](https://deployr.revolutionanalytics.com/documents/admin/common/#logs) about this file. |
+| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             | - `catalina.out`<br />- `catalina.sh`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`| The log and configuration files for Tomcat.                                                                                                                                                                                                                                                      |
 | MongoDB            |-  `mongod.conf`<br />- `mongod-<IP_ADDRESS>.log`| The log and configuration files for the database used by DeployR. The IP address of the host of the MongoDB database is added to the filename for your convenience.                                                                                                                              |
 | RServe             | - `Rserv.conf`<br />- `Rserv-localhost.log`              | The log and configuration files for RServe.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
@@ -101,7 +101,7 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description                                                                                                                                                                                                                                                                                      |
 |--------------------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results |- `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information.                                                                                                                                                    |
-| DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](https://deployr.revolutionanalytics.com/documents/admin/common/#logs). [Learn more](https://deployr.revolutionanalytics.com/documents/admin/common/#logs) about this file. |
+| DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             |-  `catalina.out`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`                       | The log and configuration files for Tomcat.                                                                                                                                                                                                                                                      |
 | MongoDB            | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience.                                                                                                                                                                  |
 | RServe             | - `Rserv.cfg`                       | The configuration file for RServe. The IP address is added to the filename for your convenience.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
@@ -118,13 +118,13 @@ Use the following instructions if you have [run the diagnostic test](#run-diagno
 
 3.  If Server Web Context points to the wrong IP, [update it now](#set-context).
 
-    -   Set the DeployR [server Web context](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#set-context-azure) | [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](https://deployr.revolutionanalytics.com/documents/admin/install/azure/#endpoints) | [AWS](https://deployr.revolutionanalytics.com/documents/admin/install/aws-setup) ).
+    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
 <!-- -->
 
-1.  After making your corrections, [restart the component](https://deployr.revolutionanalytics.com/documents/admin/common/#server) in question. It may take a few minutes for a component to restart.
+1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#starting-and-stopping-deployr) in question. It may take a few minutes for a component to restart.
 
 2.  [Run the diagnostic test](#run-diagnostics) again to make sure all is running smoothly now.
 
@@ -162,7 +162,7 @@ Usage tips for the `setWebContext` script arguments:
 -   Use `-aws` to detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.
 -   Use `-ip <ip_address>` to specify a new IP address or DNS name for the DeployR Server Web Context.
 -   Use `-disableauto` to turn off the automatic IP detection. You can [turn this back on](https://deployr.revolutionanalytics.com/documents/help/admin-console//#..//Content/Topics/policies-properties.htm#basic) in the Administration Console.
--   Use `-https true|false` to enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](https://deployr.revolutionanalytics.com/documents/admin/security/#httpson).
+-   Use `-https true|false` to enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security.md#enable-server-ssl-https).
      
 
 **To update the IP address specified for the Server Web Context:**
@@ -173,7 +173,7 @@ Usage tips for the `setWebContext` script arguments:
 
         /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -query|-aws|-ip <ip_address>
 
-2.  For this change to take effect [restart the DeployR services](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+2.  For this change to take effect [restart the DeployR services](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 #### For Windows
 
@@ -183,7 +183,7 @@ Usage tips for the `setWebContext` script arguments:
 
         C:\Program Files\Microsoft\DeployR\8.0\deployr\tools\setWebContext.bat -query|-aws|-ip <ip_address>
 
-3.  For this change to take effect [restart the DeployR services](https://deployr.revolutionanalytics.com/documents/admin/common/#server). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+3.  For this change to take effect [restart the DeployR services](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 >If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#localhost-ie).
 
@@ -223,7 +223,7 @@ For example, to log into the DeployR Administration Console with admin account a
 
 ### Issues After Reinstalling Microsoft R or R
 
-If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open, then follow [these instructions precisely](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/#reinstallr-intro).
+If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open, then follow [these instructions precisely](deployr-admin-configure-reinstall-r.md).
 
 However, if you upgraded or reinstalled and are now having issues, see below.
 
@@ -238,11 +238,11 @@ If the issue is that Rserve is not running on a machine, then you'll need to res
 
 Try the following:
 
-1.  [Run the diagnostics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#health) to determine whether the issue is on the main server or a grid node.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
 2.  Make sure there is [no activity on the DeployR grid.](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-slot-activity.htm)
-3.  [Stop DeployR on the machine in question.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
-4.  Attempt to correct all issues reported in the [diagnostics log.](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles)
-5.  [Start DeployR on the machine in question.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
+3.  [Stop DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
+4.  Attempt to correct all issues reported in the [diagnostics log.](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)
+5.  [Start DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
 6.  Run the diagnostics again.
 5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
@@ -252,9 +252,9 @@ If Microsoft R Server, Revolution R Open, or R is not reinstalled as described a
 
 Try the following:
 
-1.  [Run the diagnostics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#health) to determine whether the issue is on the main server or a grid node.
-2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Microsoft R Server install directory, then you must reinstall as [described here](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/#reinstallr-pro).
-3.  If there are other issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles), attempt to fix them now.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
+2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Microsoft R Server install directory, then you must reinstall as [described here](deployr-admin-configure-reinstall-r.md#deployr-enterprise).
+3.  If there are other issues reported in the [diagnostics log](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files), attempt to fix them now.
 4.  Run the diagnostics again.
 5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
@@ -268,11 +268,11 @@ If the issue is that Rserve is not running on a machine, then you'll need to res
 
 Try the following:
 
-1.  [Run the diagnostics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#health) to confirm Rserve is not running.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to confirm Rserve is not running.
 2.  Make sure there is [no activity on the DeployR grid.](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-slot-activity.htm)
-3.  [Stop DeployR.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
-4.  Attempt to correct all issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles).
-5.  [Start DeployR.](https://deployr.revolutionanalytics.com/documents/admin/common/#server)
+3.  [Stop DeployR.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
+4.  Attempt to correct all issues reported in the [diagnostics log](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files).
+5.  [Start DeployR.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
 6.  Run the diagnostics again.
 7.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
@@ -282,9 +282,9 @@ If Revolution R Open or CRAN R is not reinstalled as described at the beginning 
 
 Try the following:
 
-1.  [Run the diagnostics](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#health) to confirm RServe is missing.
-2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Revolution R Open or R install directory, then you must reinstall as [described here](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/#reinstallr-comm).
-3.  If RServe is present and running, and there are other issues reported in the [diagnostics log](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#logfiles), attempt to fix them now.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to confirm RServe is missing.
+2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Revolution R Open or R install directory, then you must reinstall as [described here](deployr-admin-configure-reinstall-r.md#deployr-open).
+3.  If RServe is present and running, and there are other issues reported in the [diagnostics log](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files), attempt to fix them now.
 4.  Run the diagnostics again.
 5.  In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 

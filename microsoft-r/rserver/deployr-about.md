@@ -32,7 +32,7 @@ DeployR is an integration technology for deploying R analytics inside web, deskt
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-DeployR is available in two editions: DeployR Open and DeployR Enterprise. DeployR Open is a free, open source solution that is ideal for prototyping, building, and deploying non-critical business applications. DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](https://deployr.revolutionanalytics.com/documents/admin/security) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
+DeployR is available in two editions: DeployR Open and DeployR Enterprise. DeployR Open is a free, open source solution that is ideal for prototyping, building, and deploying non-critical business applications. DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 ### Basic Workflow
 
@@ -95,7 +95,7 @@ With DeployR, the recommended steps for a data scientist are both simple and fam
 2.  Test those analytics
 3.  Collaborate with the application developers
 
-Learn more in the [Getting Started Guide Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist).
+Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist-getting-started.md).
 
 ### Application Developers
 
@@ -113,22 +113,22 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 2.  Verify these dependencies in the Repository Manager by [testing](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#g_analyticswebservice).
 
-3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](https://deployr.revolutionanalytics.com/docanddown/) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
+3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
 4.  Build or extend your application to take full advantage of DeployR-powered analytics Web services.
 
-Learn more in the [Getting Started Guide for Application Developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer).
+Learn more in the [Getting Started Guide for Application Developers](deployr-application-developer-getting-started.md).
 
 ### System Administrators
 
 Not unlike the responsibilities typically associated with managing and maintaining other server software, DeployR system administrators are responsible for:
 
-1.  [Provisioning suitable hardware](https://deployr.revolutionanalytics.com/documents/admin/install/#sysreq) in preparation for a DeployR install.
-2.  Installing DeployR using [these instructions](https://deployr.revolutionanalytics.com/documents/admin/install/).
+1.  [Provisioning suitable hardware](deployr-installing-configuring.md) in preparation for a DeployR install.
+2.  Installing DeployR using [these instructions](deployr-installing-configuring.md).
 3.  Customizing DeployR [server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-intro.htm).
 4.  Creating and managing DeployR [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm).
-5.  Customizing DeployR [security policies](https://deployr.revolutionanalytics.com/documents/admin/security/).
-6.  Monitoring and [maintaining](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#health) your DeployR deployment.
+5.  Customizing DeployR [security policies](deployr-admin-security.md).
+6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
 [Consult the administration documentation](https://deployr.revolutionanalytics.com/admin/) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
@@ -137,9 +137,9 @@ DeployR supports a highly flexible, enterprise-grade security framework that ver
 
 Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
 
-Learn more about authentication, access controls, and privacy with DeployR in our [Security](https://deployr.revolutionanalytics.com/documents/admin/security) guide.
+Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security.md) guide.
 
-Learn more in the [Getting Started Guide for Administrators](https://deployr.revolutionanalytics.com/documents/getting-started/administrator).
+Learn more in the [Getting Started Guide for Administrators](deployr-administrator-getting-started.md).
 
 ## Architecture
 
@@ -151,7 +151,7 @@ Behaving like an on-demand R analytics engine, DeployR exposes a wide range of r
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](https://deployr.revolutionanalytics.com/dev).
 
-DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. On the other hand, DeployR Open supports a static grid framework of a single, local grid node with a fixed slot limit. For more on planning and provisioning your grid framework, see the [Scale & Throughput](https://deployr.revolutionanalytics.com/documents/admin/throughput) guide.
+DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. On the other hand, DeployR Open supports a static grid framework of a single, local grid node with a fixed slot limit. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
 

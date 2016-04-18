@@ -40,10 +40,10 @@ As an administrator, your key responsibilities are to ensure the DeployR server 
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to [troubleshoot](#trouble) your deployment. For that we provide diagnostic tools and numerous recommendations.
 
-But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available [here](https://deployr.revolutionanalytics.com/documents/admin/install).
+But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available [here](deployr-installing-configuring.md).
 
 >[!NOTE]
->For a general introduction to DeployR, read the [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Security Policies
 
@@ -51,17 +51,17 @@ User access to the DeployR server and the services offered on it's [API](https:/
 
 The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/role-intro.htm) on a user-by-user basis to expose further functionality and data on the server.
 
-However, basic user authentication and authorization are only one small part of the full set of [DeployR security](https://deployr.revolutionanalytics.com/documents/admin/security) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. [DeployR Enterprise edition](https://deployr.revolutionanalytics.com/download) also offers seamless integration with popular enterprise security solutions.
+However, basic user authentication and authorization are only one small part of the full set of [DeployR security](deployr-admin-security.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. [DeployR Enterprise edition](https://deployr.revolutionanalytics.com/download) also offers seamless integration with popular enterprise security solutions.
 
-The full set of DeployR security features available to you as a system administrator are detailed in this [Security guide](https://deployr.revolutionanalytics.com/documents/admin/security/).
+The full set of DeployR security features available to you as a system administrator are detailed in this [Security guide](deployr-admin-security.md).
 
 ## R Package Policies
 
 The primary function of the DeployR server is to support the execution of R code on behalf of client applications. One of your key objectives as a DeployR administrator is to ensure a reliable, consistent execution environment for that code.
 
-The R code developed and deployed by [data scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://go.microsoft.com/fwlink/?LinkID=698301), [github](https://github.com/), in your own local CRAN repository or elsewhere.
+The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://go.microsoft.com/fwlink/?LinkID=698301), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
-Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](https://deployr.revolutionanalytics.com/documents/admin/r-package-mgmt/).
+Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](deployr-admin-r-package-management.md).
 
 ## Runtime Policies
 
@@ -82,7 +82,7 @@ The full set of general policy options available with the **Server Policies** ta
 
 The DeployR product consists of a number of software components that combine to deliver the full capabilities of the R Integration Server: the server, the grid and the database. Each component can be configured for High Availability (HA) in order to deliver a robust, reliable runtime environment.
 
-For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](https://deployr.revolutionanalytics.com/documents/admin/highavail/).
+For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).
 
 ### Scalability & Throughput
 
@@ -94,7 +94,7 @@ In the context of a discussion on DeployR server runtime policies, the topics of
 
 The answer to these questions will ultimately depend on the configuration and size of the server and grid resources allocated to your deployment.
 
-For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](https://deployr.revolutionanalytics.com/documents/admin/throughput/).
+For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).
 
 ## Big Data Policies
 
@@ -104,19 +104,19 @@ When such files are stored in the DeployR Repository or at any network-accessibl
 
 To alleviate this overhead, the DeployR server supports a set of NFS-mounted directories dedicated to managing large data files. We refer to these directories as 'big data' external directories. As an administrator, you can enable this service by:
 
-1.  [Configuring](https://deployr.revolutionanalytics.com/documents/admin/bigdata/#configuration) the big data directories within your deployment.
+1.  [Configuring](deployr-admin-manage-big-data.md#setting-up-nfs-setup) the big data directories within your deployment.
 
-2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](https://deployr.revolutionanalytics.com/documents/admin/bigdata/#usage) in their R code to reference big data files within these directories.
+2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](deployr-admin-manage-big-data.md#external-directory-structure) in their R code to reference big data files within these directories.
 
-For the complete configuration and usage documentation, read the guide "[Managing External Directories for Big Data](https://deployr.revolutionanalytics.com/documents/admin/bigdata/)".
+For the complete configuration and usage documentation, read the guide "[Managing External Directories for Big Data](deployr-admin-manage-big-data.md)".
 
 ## Troubleshooting
 
 There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
-When those failures occur in the DeployR environment, we recommend you first turn to the [DeployR diagnostic testing tool](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot) to attempt to identify the underlying cause of the problem.
+When those failures occur in the DeployR environment, we recommend you first turn to the [DeployR diagnostic testing tool](deployr-admin-diagnostics-troubleshooting.md) to attempt to identify the underlying cause of the problem.
 
-Beyond the diagnostics tool, the [Troubleshooting](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot/#solutions) documentation offers suggestions and recommendations for common problems with known solutions.
+Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
 ## Further Reading
 
@@ -124,29 +124,29 @@ This section provides a quick summary of useful links for administrators working
 
 ### DeployR Introduction & Download
 
--   [About DeployR](https://deployr.revolutionanalytics.com/documents/getting-started/about/)
+-   [About DeployR](deployr-about.md)
 -   [DeployR Server Download](https://deployr.revolutionanalytics.com/download/)
--   [Installation & Configuration](https://deployr.revolutionanalytics.com/documents/admin/install/)
+-   [Installation & Configuration](deployr-installing-configuring.md)
 
 ### Administrator Guides
 
--   [Getting Started for Administrators](https://deployr.revolutionanalytics.com/documents/getting-started/administrator/)
--   [Security](https://deployr.revolutionanalytics.com/documents/admin/security)
--   [R Package Management](https://deployr.revolutionanalytics.com/documents/admin/r-package-mgmt)
+-   [Getting Started for Administrators](deployr-administrator-getting-started.md)
+-   [Security](deployr-admin-security.md)
+-   [R Package Management](deployr-admin-r-package-management.md)
 -   [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console)
--   [Server, Grid & Database High Availability](https://deployr.revolutionanalytics.com/documents/admin/highavail)
--   [Scale & Throughput](https://deployr.revolutionanalytics.com/documents/admin/throughput)
--   [Managing External Directories for Big Data](https://deployr.revolutionanalytics.com/documents/admin/bigdata)
--   [Diagnostic Testing & Troubleshooting](https://deployr.revolutionanalytics.com/documents/admin/troubleshoot)
--   [Upgrading & Migrating Data](https://deployr.revolutionanalytics.com/documents/admin/install/#upgrade)
--   [Common DeployR Administration Tasks](https://deployr.revolutionanalytics.com/documents/admin/common/)
--   [Reinstalling Microsoft R Server, Revolution R Open, or R](https://deployr.revolutionanalytics.com/documents/admin/reinstallr/)
--   [Using Hadoop Impersonation and DeployR](https://deployr.revolutionanalytics.com/documents/admin/hadoop-impersonation/)
+-   [Server, Grid & Database High Availability](deployr-admin-configure-high-availability.md)
+-   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
+-   [Managing External Directories for Big Data](deployr-admin-manage-big-data.md)
+-   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
+-   [Upgrading & Migrating Data](deployr-installing-configuring.md#upgrading-deployr)
+-   [Common DeployR Administration Tasks](deployr-common-administration-tasks.md)
+-   [Reinstalling Microsoft R Server, Revolution R Open, or R](deployr-admin-configure-reinstall-r.md)
+-   [Using Hadoop Impersonation and DeployR](deployr-admin-hadoop-impersonation.md)
 
 ### Other Getting Started Guides
 
--   [For Data Scientists](https://deployr.revolutionanalytics.com/documents/getting-started/data-scientist/)
--   [For Application Developers](https://deployr.revolutionanalytics.com/documents/getting-started/application-developer/)
+-   [For Data Scientists](deployr-data-scientist-getting-started.md)
+-   [For Application Developers](deployr-application-developer-getting-started.md)
 
 ### Support Channels
 
