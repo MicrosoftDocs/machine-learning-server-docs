@@ -80,7 +80,9 @@ The Repository Manager is accessible from the main menu of the DeployR landing p
 
 The operations you can perform in the DeployR Repository Manager and on the APIs is largely dependent on your permissions and the server policies.
 
-**Permissions**. The answers to the following questions determine most of the operations you can perform on a file.
+### Permissions
+
+The answers to the following questions determine most of the operations you can perform on a file.
 
 1.  Are you an [owner](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) of the file? See possible owner [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
 
@@ -88,8 +90,9 @@ The operations you can perform in the DeployR Repository Manager and on the APIs
 
 1.  Were you assigned the **POWER_USER** role by the administrator? If so, you can run arbitrary code selections on the scripts you own in **Source** pane in the **Test** page.
 
-<br/>
-**Policies**. The ability to view, load, and download files you do not own is also determined by the server-wide policies set by your administrator. One such policy affects whether a non-owner with access rights to a file is permitted to see or load the contents of that file. See the table below to learn about which operations are available to you with the default policy and those permitted if the policy is changed by your administrator.
+### Policies
+
+The ability to view, load, and download files you do not own is also determined by the server-wide policies set by your administrator. One such policy affects whether a non-owner with access rights to a file is permitted to see or load the contents of that file. See the table below to learn about which operations are available to you with the default policy and those permitted if the policy is changed by your administrator.
 
 _Table: Owner Policies_
 
