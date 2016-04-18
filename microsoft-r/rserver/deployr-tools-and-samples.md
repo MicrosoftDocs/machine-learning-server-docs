@@ -1,7 +1,7 @@
 # Developer Documentation & Downloads
 
 >**Get Started with DeployR!**  
->Use the **RBroker framework** and/or the **client libraries** to communicate with the DeployR server. On this page, you can download the framework/library in one of the available languages, follow their tutorials, and consult the comprehensive documentation.
+>Use the [**RBroker framework**](deployr-rbroker-framework.md) and/or the [**client libraries**](deployr-client-library.md) to communicate with the DeployR server. On this page, you can download the framework/library in one of the available languages, follow their tutorials, and consult the comprehensive documentation.
 
 ## RBroker Framework
 
