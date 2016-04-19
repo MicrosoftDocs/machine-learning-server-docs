@@ -118,7 +118,7 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
 3.  If Server Web Context points to the wrong IP, [update it now](#set-context).
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
     -   Open DeployR ports `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
