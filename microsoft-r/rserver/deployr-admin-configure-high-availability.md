@@ -101,7 +101,7 @@ The DeployR grid is designed to deliver high-availability at runtime, supporting
 
 In this way, the DeployR grid can be said to be `self-healing`, capable of automatically adjusting to system failures and recoveries at runtime, ensuring maximum uptime and responsiveness.
 
-> **RBroker High Availability!** The `7.4.0` release of the [RBroker Framework](deployr-rbroker-framework-tutorial.md) introduced a new fault-tolerant implementation of the `PooledTaskBroker`. Tasks executing on the new PooledTaskBroker that fail due to grid failures at runtime are automatically detected and re-executed without requiring client application intervention.
+> **RBroker High Availability!** The `7.4.0` release of the [RBroker Framework](deployr-rbroker-framework.md) introduced a new fault-tolerant implementation of the `PooledTaskBroker`. Tasks executing on the new PooledTaskBroker that fail due to grid failures at runtime are automatically detected and re-executed without requiring client application intervention.
 
 ## Database High Availability
 
