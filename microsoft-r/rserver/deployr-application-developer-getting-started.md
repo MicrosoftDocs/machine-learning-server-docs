@@ -46,7 +46,7 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 3.  Pass inputs (data, files, and so on) when executing those R scripts
 4.  Retrieve outputs (data, files, plots, and so on) following the execution of those R scripts
 
-DeployR offers these features and many more through a set of [Analytics Web Services](#webservices). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
+DeployR offers these features and many more through a set of [Analytics Web Services](#analytics-web-services). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
 As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://go.microsoft.com/fwlink/?LinkID=698301/documents/getting-started/) directly within your applications.
 
