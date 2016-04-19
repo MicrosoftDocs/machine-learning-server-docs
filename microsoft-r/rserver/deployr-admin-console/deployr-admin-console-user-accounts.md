@@ -28,7 +28,7 @@ ms.custom: ""
 
 User accounts, which are [created](role-new.htm) and [managed](role-view-edit.htm) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the <span class="Code_1">admin</span> account, user accounts represent script authors, client application developers, or client application end-users.
 
-Each user has an account with [properties](user-properties.htm) such as their username, password, permissions, and so on. A user can represent an individual or an entity such as a dedicated DeployR client application. The role(s) assigned to users determine their rights to access the console, their rights to access all or some of the API, and in some cases, their rights to access certain scripts. 
+Each user has an account with [properties](deployr-admin-console-user-accounts.md#user-account-properties) such as their username, password, permissions, and so on. A user can represent an individual or an entity such as a dedicated DeployR client application. The role(s) assigned to users determine their rights to access the console, their rights to access all or some of the API, and in some cases, their rights to access certain scripts. 
 
 When you click <span class="UIElementChar">Users</span> in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click <span class="UIElementChar">Next</span> to proceed to the remaining accounts.
 

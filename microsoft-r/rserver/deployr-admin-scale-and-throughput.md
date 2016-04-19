@@ -68,11 +68,11 @@ DeployR Enterprise offers the ability to expand and contract grid capacity to ef
 >**Grid Framework Support:**  
 >When you install DeployR main server, a single grid node is installed automatically for you.
 >
->-  With **DeployR Open**, this default node is installed on `localhost` with a [fixed slot limit](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-properties.htm). Expanding the grid with additional grid nodes to scale for increasing load is not supported for this edition.
+>-  With **DeployR Open**, this default node is installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). Expanding the grid with additional grid nodes to scale for increasing load is not supported for this edition.
 >
 >-  With **DeployR Enterprise**, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load.
 >
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
@@ -107,7 +107,7 @@ Where:
 &nbsp;
 
 >[!NOTE]
->For more on managing your grid, see the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm).
+>For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 **Example**
 
@@ -138,7 +138,7 @@ Where:
 &nbsp;
 
 >[!NOTE]
->For more on managing your grid, see the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-properties.htm).
+>For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 **Example**
 

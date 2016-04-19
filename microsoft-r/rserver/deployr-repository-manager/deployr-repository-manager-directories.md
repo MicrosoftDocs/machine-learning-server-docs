@@ -34,21 +34,21 @@ The directories under **My Files** are your private user directories. They conta
 
 The following directory management tasks are possible for your user directories in the Repository Manager:
 
-- [Create](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-create.htm) a new user directory
+- [Create](deployr-repository-manager-directories.md#creating-directories) a new user directory
 
-- [Rename](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-rename.htm) a user directory
+- [Rename](deployr-repository-manager-directories.md#renaming-directories) a user directory
 
-- [Delete](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-delete.htm) a user directory
+- [Delete](deployr-repository-manager-directories.md#deleting-directories) a user directory
 
-- [Move](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-move-dir.htm) files across user directories
+- [Move](deployr-repository-manager-files.md#moving-files) files across user directories
 
-- [Copy](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-copy.htm) files into another user directory
+- [Copy](deployr-repository-manager-files.md#copying-files) files into another user directory
 
-- [Delete](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-delete.htm) files from user directories
+- [Delete](deployr-repository-manager-files.md#deleting-files) files from user directories
 
 ## Directories for Other Files
 
-Under **Other Files** are several system-managed virtual directories containing those repository files you do not own but that have been made [accessible](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) to you by their owners. Since the files under **Other Files** belong to other users, you cannot copy, move, modify, or delete these files.  However, you can:
+Under **Other Files** are several system-managed virtual directories containing those repository files you do not own but that have been made [accessible](deployr-repository-manager-files.md#about-file-properties) to you by their owners. Since the files under **Other Files** belong to other users, you cannot copy, move, modify, or delete these files.  However, you can:
 
 - Integrate these files within your DeployR-enabled applications
 
@@ -63,7 +63,7 @@ The following virtual directories are available under **Other Files**:
 - **Public**: Files made accessible to anyone, including anonymous users, using the **Public** access right.
 
 
->[Access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) are one of the [file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm) you can set for the files you own.
+>[Access rights](deployr-repository-manager-files.md#about-file-properties) are one of the [file properties](deployr-repository-manager-files.md#about-file-properties) you can set for the files you own.
 
 ## Creating Directories
 
@@ -77,7 +77,7 @@ To help you organize your files into logical groups for use across projects, app
 
 2. From the menus, choose **New Directory**. The **New Directory** dialog appears.
 
-3. In the **New Directory** dialog, enter the name for the new directory. Learn about [Directory Naming: Dos and Don'ts](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-dosdonts.htm).
+3. In the **New Directory** dialog, enter the name for the new directory. Learn about [Directory Naming: Dos and Don'ts](deployr-repository-manager-directories.md#directory-naming-dos-and-don-ts).
 
 4. Click **Create**. The new user directory appears under **My Files**.
 
@@ -95,7 +95,7 @@ When you no longer need one of your user directories and the files it contains, 
 
 3. Click on the **Actions** menu dropdown and choose **Delete Directory**. The **Delete Directory** dialog appears.
 
-4. In the **Delete Directory** dialog, confirm you want to delete the directory and all of its files by clicking **Delete**. The dialog closes and the directory no longer appears in the tree. Learn more about [deleting files](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-delete.htm).
+4. In the **Delete Directory** dialog, confirm you want to delete the directory and all of its files by clicking **Delete**. The dialog closes and the directory no longer appears in the tree. Learn more about [deleting files](deployr-repository-manager-files.md#deleting-files).
 
 ## Directory Naming: Dos and Don'ts
 

@@ -26,7 +26,7 @@ ms.custom: ""
 # Installing & Configuring DeployR
 
 >**Get More DeployR Power:**  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ## System Requirements for DeployR
 
@@ -194,7 +194,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#install-node) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 After installing [these prerequisites](#preparing-win), install DeployR as follows:
 
@@ -239,9 +239,9 @@ After installing [these prerequisites](#preparing-win), install DeployR as follo
 
 ### Grid Node Install
 
-When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-properties.htm). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
+When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
 
-[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 >[!TIP]
 >-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
@@ -496,7 +496,7 @@ After installing [these prerequisites](#preparing), install DeployR Open as foll
 
 ### Grid Node Install
 
-When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-properties.htm). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using [`Option 1`](#install-deployr-linux) or [`Option 3`](#install-deployr-custom). [Learn more about the differences between DeployR Open and DeployR Enterprise](https://deployr.revolutionanalytics.com/download/).
+When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using [`Option 1`](#install-deployr-linux) or [`Option 3`](#install-deployr-custom). [Learn more about the differences between DeployR Open and DeployR Enterprise](https://deployr.revolutionanalytics.com/download/).
 
 >[!TIP]
 >-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
@@ -732,7 +732,7 @@ These migration steps apply to the following versions:
 
 >**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
 >
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ### Migrating to 8.0.0
 
@@ -885,14 +885,14 @@ To fix this issue, ensure that:
 ### Configuring the DeployR Grid
 
 >**More DeployR Power:**  
->DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and [configuring](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-new.htm) additional grid nodes.
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and [configuring](deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes) additional grid nodes.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 1.  Log into the **Administration Console** as described in the [preceding section](#change-pass).
 
 2.  Click **The Grid** in the main menu.
 
-3.  If any additional grid nodes were installed, besides the DeployR Default Node, click **New Grid Node** and configure the **Name**, **Host**, **Operating Type** and **External Directory** for each node [using these instructions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-new.htm).
+3.  If any additional grid nodes were installed, besides the DeployR Default Node, click **New Grid Node** and configure the **Name**, **Host**, **Operating Type** and **External Directory** for each node [using these instructions](deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes).
 
 >Grid node configurations are dependent on a specific version of DeployR; therefore, any migrated configurations are not forward compatible. You must redefine any grid nodes in the Administration Console.
 
