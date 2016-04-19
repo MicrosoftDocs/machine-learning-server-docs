@@ -132,14 +132,15 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 [Consult the administration documentation](https://deployr.revolutionanalytics.com/admin/) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
-**DeployR Security**  
-DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
-
-Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
-
-Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security.md) guide.
-
-Learn more in the [Getting Started Guide for Administrators](deployr-administrator-getting-started.md).
+>[!TIP]
+>**DeployR Security**  
+>DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
+>
+>Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
+>
+>Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security.md) guide.
+>
+>Learn more in the [Getting Started Guide for Administrators](deployr-administrator-getting-started.md).
 
 ## Architecture
 
@@ -154,8 +155,6 @@ The fact that DeployR is a standalone product means that any software solution, 
 DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. On the other hand, DeployR Open supports a static grid framework of a single, local grid node with a fixed slot limit. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
-
-[]()
 
 #### Analytics Web Service
 
