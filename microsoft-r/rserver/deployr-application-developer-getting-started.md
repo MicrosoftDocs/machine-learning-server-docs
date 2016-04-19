@@ -50,7 +50,7 @@ DeployR offers these features and many more through a set of [Analytics Web Serv
 
 As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://go.microsoft.com/fwlink/?LinkID=698301/documents/getting-started/) directly within your applications.
 
-The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
+The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
 >[!NOTE]
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
@@ -173,7 +173,7 @@ The framework handles all of the low-level details, including:
 -   Server-side task execution
 -   Asynchronous callbacks to your application on task completion
 
-If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api).
+If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api-specification).
 
 ### Client Library
 
