@@ -299,7 +299,7 @@ The Discrete Task Runtime acquires DeployR grid resources per RTask on-demand, w
 
 This type of runtime is well-suited to all forms of RBroker prototyping as well as for public facing production deployments. If you anticipate anonymous users making use of DeployR analytics Web services, then this runtime is for you.
 
-**Tip!** If that does not sound like a suitable RBroker runtime for your client application, then consider the [Pooled Task Runtime](#pooled) or the [Background Task Runtime](#background).
+**Tip!** If that does not sound like a suitable RBroker runtime for your client application, then consider the [Pooled Task Runtime](#pooled-task-runtime) or the [Background Task Runtime](#background-task-runtime).
 
 ### Discrete Task Runtime Programming Model
 
