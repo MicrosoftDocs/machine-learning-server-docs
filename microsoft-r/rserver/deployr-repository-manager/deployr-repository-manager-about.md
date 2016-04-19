@@ -48,7 +48,7 @@ The Repository Manager simplifies the management of repository files and directo
 
 Learn more about the main tasks you can perform in the Repository Manager, including:
 
--  [Upload files](deployr-repository-manager-files.md##uploading-files), including R scripts, to the repository
+-  [Upload files](deployr-repository-manager-files.md#uploading-files), including R scripts, to the repository
 -  [Manage](deployr-repository-manager-files.md) and [organize](deployr-repository-manager-directories.md) your files
 -  [Share and collaborate on files](deployr-repository-manager-files.md#about-file-properties)
 -  [Test scripts in a live debugging environment](deployr-repository-manager-testing-debugging-scripts.md)
