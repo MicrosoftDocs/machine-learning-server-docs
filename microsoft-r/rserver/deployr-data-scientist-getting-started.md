@@ -1,4 +1,4 @@
-﻿---
+---
 
 # required metadata
 title: "Getting Started with DeployR for Data Scientists"
@@ -32,8 +32,8 @@ This guide for data scientists offers a high-level introduction to DeployR. It h
 
 In a nutshell, DeployR makes your R analytics (R scripts, models, and data files) easily consumable by any application. The sections that follow explain the steps you'll take to prepare those analytics and make them available to those who need them. They are:
 
-1.  [Develop](#develop) your R scripts and other analytics with portability in mind
-2.  [Test](#test) those analytics inside and outside of DeployR
+1.  [Develop](#develop-analytics) your R scripts and other analytics with portability in mind
+2.  [Test](#Test-Analytics) those analytics inside and outside of DeployR
 3.  [Collaborate](#collaborate) with application developers to deliver powerful R analytic solutions
 
 >[!NOTE]
@@ -59,7 +59,7 @@ Learn more on how to [write portable R code using these functions](deployr-data-
 
 ![Script in IDE](./media/deployr-data-scientist-getting-started/rstudio.png)
 
-Once your R code, models, and data files are ready, you can [verify](#test) their behavior in a DeployR server environment.
+Once your R code, models, and data files are ready, you can [verify](#Test-Analytics) their behavior in a DeployR server environment.
  
 
 >**Reproducibility Tip:** Use the `checkpoint` package to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Revolution R Open, and also available on CRAN. [Learn more...](http://go.microsoft.com/fwlink/?LinkID=698301/documents/rro/reproducibility/#timemachine)
@@ -112,7 +112,7 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
 Collaboration with the application developers on your team makes it possible to deliver sophisticated software solutions powered by R analytics. Whenever you develop new analytics or improve existing ones, you must inform the application developers on your team and hand off those analytics as described in this section.
 
-How you share and collaborate on these R analytics depends on whether you plan to do so [on-server](#howtoshare), which requires access to a common DeployR server instance, or [off-server](#noaccess).
+How you share and collaborate on these R analytics depends on whether you plan to do so [on-server](#On-Server-Collaboration), which requires access to a common DeployR server instance, or [off-server](#Off-Server-Collaboration).
 
 ![Collaborate](./media/deployr-data-scientist-getting-started/collaborate.png)
 
@@ -190,7 +190,7 @@ When the application developers have access to the same DeployR server instance 
 
     3.  Optionally, add notes to the application developers in the **Description** field. For example, you could let them know which values should be retrieved.
 
-    4.  Click **Add/Remove** to [add application developers as owners](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) of the file.
+    4.  Click **Add/Remove** to [add application developers as owners](deployr-repository-manager/deployr-repository-manager-files.md#adding-and-removing-owners) of the file.
 
     	![Add Owners](./media/deployr-data-scientist-getting-started/addowner.png)
 
