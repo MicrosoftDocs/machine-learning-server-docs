@@ -69,8 +69,8 @@ See the DeployR dependencies for your OS:
 >
 >1.  Install the DeployR main server first **before** installing any grid nodes.
 >2.  We highly recommend installing DeployR on a dedicated server machine.
->3.  Review the [system requirements & supported operating systems list](#sysreq) before you continue.
->4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrade) before continuing.
+>3.  Review the [system requirements & supported operating systems list](#system-requirements-for-deployr) before you continue.
+>4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrading-deployr) before continuing.
 >5.  You may need to temporarily disable your anti-virus software to install DeployR. Turn it back on as soon as you are finished.
 
 ### Dependencies
@@ -92,7 +92,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#install-node).
+	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
 2.  Install **[Revolution R Enterprise for Windows](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies.** [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
 
@@ -191,7 +191,7 @@ DeployR Open depends on the manual installation and configuration of these depen
  
 ### Basic DeployR Install
 
-The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#install-node) for optimized workload distribution.
+The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
