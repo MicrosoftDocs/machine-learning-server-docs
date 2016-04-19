@@ -193,7 +193,7 @@ As long as your development environment can establish HTTP(S) connections and co
 
 ## Tutorials
 
-In the [Developer Tools](#tools) section, you began your move from theory into practice through the introduction of the core tools and some initial fragments of sample code. To further bootstrap the learning process, we've written some more code for you. In fact, we've written a lot of code for you in the form of tutorials with which you can see the key concepts put into practice.
+In the [Developer Tools](#developer-tools) section, you began your move from theory into practice through the introduction of the core tools and some initial fragments of sample code. To further bootstrap the learning process, we've written some more code for you. In fact, we've written a lot of code for you in the form of tutorials with which you can see the key concepts put into practice.
 
 To run these tutorials, you will need access to a live instance of the DeployR server. To download and install DeployR, see [here](https://deployr.revolutionanalytics.com/download/).
 
@@ -243,7 +243,7 @@ The sample application is a classic application in the analytics space, a realti
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](https://deployr.revolutionanalytics.com/documents/dev/rbroker/#profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
