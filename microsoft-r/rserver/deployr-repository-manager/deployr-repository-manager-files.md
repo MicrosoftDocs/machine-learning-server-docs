@@ -30,6 +30,31 @@ The Files tab is the main tab in the Repository Manager and where all work begin
 
 The set of file management tasks and interactions available to you depend not only on whether you [own](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) the file or whether you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights), but also on the [policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) governing the server.
 
+## About File Properties
+
+Each repository-managed file has a set of file properties. While the following file properties are available for each version of a file in the Repository Manager, only the *Latest* version of a file can be edited by its owners.
+
+File properties can be broken down into three categories: basic file properties, ownership properties, and access control properties.
+
+1.  **Basic file properties** that identify the file, which are:
+
+	-  **Name.** The path and name of the file. This name was defined when it was created and is not editable.
+	-  **Keywords.** Words used to tag a file.
+	-  **Description.** An optional annotation that describes this particular version of the file. This description can make it easier to identify the file in the Files list and useful to developers when they are trying to learn about the file.
+	-  **Version.** The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.
+
+2.  Access Rights properties that allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.
+
+	-  **Private** allows only the file owners to see the file. And in the case of scripts, only the owner(s) can execute the script on the API.
+	-  **Restricted** constrains access to the file using roles. By associating one or more roles with a file, you can constrain access and allow only those users who were granted at least one of the associated roles the ability to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API. For example, if you associate a custom role called **Marketing Dept** with your script, then all users with the **Marketing Dept** role can access that script. If none of the existing roles fit your needs, the DeployR administrator can create a new custom role for this purpose. If you choose this access right, you must enter one or more role(s).
+	-  **Shared** allows authenticated users to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API.
+	-  **Public** allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the Repository Manager interface.
+
+3.  **Ownership properties** that support collaborative development. The **Owners** field lists the owners that can collaborate on that particular version of a file. You can [add or remove owners](#adding-and-removing-owners) to the Latest version of your file. Adding an owner does more than just allow a user to view a file or execute a script; it also allows that new owner to edit the file's content as well as add or remove owners from the file. If your objective is to permit other users and/or applications to execute a script, we recommend setting the appropriate access rights as a means of controlling that access. In general, we do not recommend having multiple owners when a file is in production.
+
+>[!NOTE]
+>Only a file's owners can [edit its file properties](#editing-file-properties). Changes are saved automatically.
+
 ## The Files You Own
 
 When you own a file you are permitted to do almost anything to that file, including:
@@ -58,7 +83,7 @@ If you have [access rights](https://deployr.revolutionanalytics.com/documents/he
 ## Uploading Files
 
 
->See the [Writing Portable R Code](http://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/) guide on to learn how to make your code run consistently both locally and on the DeployR server.
+>See the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on to learn how to make your code run consistently both locally and on the DeployR server.
 
 While small revisions are possible through the Repository Manager, the bulk of your script development should take place outside of DeployR prior to uploading. Once ready, you can use the Repository Manager to upload the files needed for your applications to the DeployR server repository. To upload several files, first put them in a zip file and then upload the zip.
 
@@ -71,19 +96,19 @@ If you attempt to upload a file into a directory containing a file by the same n
 
 1. Go to the **Files** tab.
 
-1. Click the **Actions** menu drop list.
+2. Click the **Actions** menu drop list.
 
-1. From the menus, choose **Upload File**. The **Upload** dialog appears.
+3. From the menus, choose **Upload File**. The **Upload** dialog appears.
 
-1. Select the file you want to upload from your local machine using the **Browse** button. Choose an individual file or a zip of several files.
+4. Select the file you want to upload from your local machine using the **Browse** button. Choose an individual file or a zip of several files.
 
-1. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-create.htm) before coming back here to upload the file.
+5. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-create.htm) before coming back here to upload the file.
 
-1. If you are uploading a zip file, choose whether to extract files upon upload. Choices are:
+6. If you are uploading a zip file, choose whether to extract files upon upload. Choices are:
 	-  **Extract files into directory**. All files, regardless of the directory structure in the zip file, will be extracted into a single directory.
 	-  **Upload the zip file without extracting files**. The zip file will be uploaded as a zip file.
 
-1. Click **Upload**.
+7. Click **Upload**.
 
 ## Downloading Files
 
@@ -196,6 +221,37 @@ By default, an R Script or any other repository-managed file is visible on the A
 1.  **Specify access rights on a file**. You can set the [access level](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) (**Private**, **Restricted**, **Shared**, or **Public**) on a file to control who can access it or, in the case of a script, execute the script.
  
 	>To learn more about other file properties, [read here](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+
+## Adding and Removing Owners
+
+If you are an owner of a file, you can add additional owners to support collaboration during the file's development.
+
+Granting ownership does more than just allow a user to view or download a file, or even to execute a script; it also allows the user to edit the file, grant others ownership or revoke those rights, and even delete the file. For example, you might want add someone else as an owner so they can provide feedback on your script.  Or, as another example, you might grant ownership of an R script or any other file to permit development to continue while you are away on vacation.
+
+If your objective is to permit other users and/or applications to see files and/or execute scripts, we recommend setting the appropriate [access rights](#about-file-properties) using the **Restricted**, **Shared** or **Public** access rights as a means of controlling that access.
+
+>[!NOTE]
+>Owners are also referred to as authors on API calls.
+
+>[!IMPORTANT]
+>In general, we do not recommend having multiple owners for a script, when it is in production, since calling applications are required to reference scripts using the file name, its directory, and its owner (author).
+
+To add or remove owners:
+
+1.  [Open](#opening-files) the Latest version of a file you own.
+
+2.  In the **File Properties** page, click **Add/Remove**. To learn more about other properties, [read here](#about-file-properties).
+
+3.  In the **Add/Remove Owners** dialog, edit the list of owners as appropriate.
+
+	-  To add owners, type the username(s) to which you want to grant ownership into the field.
+
+		>[!IMPORTANT]
+		>If you attempt to add an owner that already has a file by the same name in the same directory, then you will not be permitted to add that owner.
+
+	-  To remove owners from a file, click the **x** next to the name. The name disappears from the list of owners. If that user was an owner before you started this task, the file will no longer be in any of his or her directories under **My Files**.
+
+4.  Once the list reflect the owners who should be able to collaborate on this file, click **OK**. The dialog closes.
  
 ## Working with Historical Versions
 

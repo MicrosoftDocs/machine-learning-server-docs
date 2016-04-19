@@ -106,7 +106,7 @@ If the issue is that Rserve is not running on a machine, then you'll need to res
 Try the following:
 
 1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
-2.  Make sure there is [no activity on the DeployR grid.](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-slot-activity.htm)
+2.  Make sure there is [no activity on the DeployR grid.](deployr-admin-console/deployr-admin-managing-the-grid.md#viewing-or-stopping-slot-activity)
 3.  [Stop DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
 4.  Attempt to correct all issues reported in the [diagnostics log.](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)
 5.  [Start DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
@@ -141,7 +141,7 @@ If the issue is that Rserve is not running on a machine, then you'll need to res
 Try the following:
 
 1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to confirm Rserve is not running.
-2.  Make sure there is [no activity on the DeployR grid.](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-slot-activity.htm)
+2.  Make sure there is [no activity on the DeployR grid.](deployr-admin-console/deployr-admin-managing-the-grid.md#viewing-or-stopping-slot-activity)
 3.  [Stop DeployR.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
 4.  Attempt to correct all issues reported in the [diagnostics log](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files).
 5.  [Start DeployR.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)

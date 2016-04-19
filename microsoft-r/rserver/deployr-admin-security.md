@@ -35,7 +35,7 @@ By default, DeployR supports basic authentication. Users simply provide plain te
 While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
@@ -53,7 +53,7 @@ DeployR ships with security providers for the following enterprise security solu
 -   [R Session Process Controls](#processcontrols)
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.    
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
 
@@ -64,7 +64,7 @@ When DeployR processes a user login, there are two key steps involved:
 
 DeployR access privileges are determined by the roles assigned to a user. In the case of basic authentication, an administrator simply assigns roles to a user within the DeployR Administration Console.
 
->**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/).
+>**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md).
 
 When you integrate with an external enterprise security solution, you want access privileges to be inherited from the external system. This is achieved with simple mappings in the DeployR configuration properties, which link external groups to internal roles.
 
@@ -73,7 +73,7 @@ When you integrate with an external enterprise security solution, you want acces
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
 
 >**Get More DeployR Power:** Basic Authentication is available for all Deployr configurations and editions.  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/node-grid-intro.htm). Note that DeployR Enterprise is part of Microsoft R Server.
+>[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -1069,7 +1069,7 @@ Under the [**Server Policies**](https://deployr.revolutionanalytics.com/document
 
 For example, you can make your DeployR server instance accessible only from IP addresses on the local LAN or VPN, such as `192.168.1.xxx` or `10.xxx.xxx.xxx`. Note that it is possible to achieve these same kinds of access controls with an appropriate configuration on your firewall and/or routers.
 
-Refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/) for further details on IP filters and server policies.
+Refer to the [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md) for further details on IP filters and server policies.
 
 ### Cross-Origin Resource Sharing
 
@@ -1182,7 +1182,7 @@ Repository-managed R scripts can be exposed as an executable on the API. Since r
 However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
 
 >[!NOTE]
->For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-properties.htm).
+>For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 ### Repository Script Download Controls
 

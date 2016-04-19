@@ -76,29 +76,29 @@ Testing locally involves running your R code within your local R integrated deve
 
 ### Testing Remotely
 
-Testing remotely involves executing your R scripts in the DeployR server environment. Doing so is easy when you use the web-based [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/repo-man) that ships with DeployR. In just a few clicks, you can upload and test your R scripts, models, and data files via the Repository Manager. Here's how:
+Testing remotely involves executing your R scripts in the DeployR server environment. Doing so is easy when you use the web-based [Repository Manager](deployr-admin-console/deployr-repository-manager-about.md) that ships with DeployR. In just a few clicks, you can upload and test your R scripts, models, and data files via the Repository Manager. Here's how:
 
-1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the web-based DeployR landing page.
+1.  [Log into](deployr-admin-console/deployr-repository-manager-about.md#logging-in-and-out) the web-based DeployR landing page.
 
     ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
-3.  [Create a directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#b-dir-create.htm) that you can use to store your development copies of your R analytics. In our example, we'll call this directory you'll use for development and testing in DeployR, `fraud-score-dev`. These copies of your R analytics won't be shared with the application developers. We'll do that in a later step in the [Collaboration](#collaborate) section.
+3.  [Create a directory](deployr-admin-console/deployr-repository-manager-directories.md#creating-directories) that you can use to store your development copies of your R analytics. In our example, we'll call this directory you'll use for development and testing in DeployR, `fraud-score-dev`. These copies of your R analytics won't be shared with the application developers. We'll do that in a later step in the [Collaboration](#collaborate) section.
 
     ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
-4.  [Upload](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-create-upload.htm) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
+4.  [Upload](deployr-admin-console/deployr-repository-manager-files.md#uploading-files) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
 
     ![Upload](./media/deployr-data-scientist-getting-started/upload.png)
 
-5.  [Open the R script](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm) you want to test.
+5.  [Open the R script](deployr-admin-console/deployr-repository-manager-files.md#opening-files) you want to test.
 
     ![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
-6.  [Click **Test**](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) on the right of the **File Properties** page to open the **Test** page. The **Test** page acts as a live debugging environment.
+6.  [Click **Test**](deployr-admin-console/deployr-repository-manager-testing-debugging-scripts.md) on the right of the **File Properties** page to open the **Test** page. The **Test** page acts as a live debugging environment.
 
-7.  [Click **Run**](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-run.htm) in the upper-right hand pane to execute the R script. As the script executes, you'll see the [console output](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-2-console.htm) in the bottom left pane. After execution, you can review the [response markup](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test-4-artifacts.htm) in the bottom right pane.
+7.  [Click **Run**](deployr-admin-console/deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) in the upper-right hand pane to execute the R script. As the script executes, you'll see the [console output](deployr-admin-console/deployr-repository-manager-testing-debugging-scripts.md#reviewing-debug-console-output) in the bottom left pane. After execution, you can review the [response markup](deployr-admin-console/deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) in the bottom right pane.
 
     ![Test Page](./media/deployr-data-scientist-getting-started/testpage.png)
 
@@ -149,13 +149,13 @@ Once you share a snapshot with application developers, you must let them know th
 
 When the application developers have access to the same DeployR server instance as you, you can share stable, tested R analytics snapshots there.
 
-1.  [Log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#a-login.htm) the web-based [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/repo-man).
+1.  [Log into](deployr-admin-console/deployr-repository-manager-about.md#logging-in-and-out) the web-based [Repository Manager](deployr-admin-console/deployr-repository-manager-about.md).
 
     ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
-3.  [Create a snapshot directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#b-dir-create.htm) for collaboration in which you'll share the snapshots of your R analytics with application developers. Keep in mind that each snapshot should be a stable and tested version of your R analytics.
+3.  [Create a snapshot directory](deployr-admin-console/deployr-repository-manager-directories.md#creating-directories) for collaboration in which you'll share the snapshots of your R analytics with application developers. Keep in mind that each snapshot should be a stable and tested version of your R analytics.
 
     >[!TIP]
     >We recommend that you follow a convention when naming your project directories that enables those directories to be easily associated. In our example, the directory we used to upload and test these R analytics in DeployR before sharing them is called `fraud-score-dev`. And here, we'll name the snapshot directory `fraud-score`.
@@ -164,7 +164,7 @@ When the application developers have access to the same DeployR server instance 
 
 4.  Create a copy of each file from your development directory to the newly created project directory:
 
-    1.  [Open each file](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm). The **File Properties** page appears.
+    1.  [Open each file](deployr-admin-console/deployr-repository-manager-files.md#opening-files). The **File Properties** page appears.
 
     	![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
@@ -186,11 +186,11 @@ When the application developers have access to the same DeployR server instance 
 
     	![Contents of New Directory](./media/deployr-data-scientist-getting-started/newdir2contents.png)
 
-    2.  [Open each file](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#c-file-open.htm) in the new directory. The **File Properties** page appears.
+    2.  [Open each file](deployr-admin-console/deployr-repository-manager-files.md#opening-files) in the new directory. The **File Properties** page appears.
 
     3.  Optionally, add notes to the application developers in the **Description** field. For example, you could let them know which values should be retrieved.
 
-    4.  Click **Add/Remove** to [add application developers as owners](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#e-file-properties-owners.htm) of the file.
+    4.  Click **Add/Remove** to [add application developers as owners](deployr-admin-console/deployr-repository-manager-files.md#about-file-properties) of the file.
 
     	![Add Owners](./media/deployr-data-scientist-getting-started/addowner.png)
 
@@ -212,7 +212,7 @@ Keep in mind that:
 -   It is critical that you provide the application developers with any details that can help them integrate those analytics.
 -   The files you share should be stable and tested snapshots of your R analytics.
 
-Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/repo-man/), using client libraries, or via the [raw API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](deployr-admin-console/deployr-repository-manager-about.md), using client libraries, or via the [raw API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
 
 ## Further Reading
 
@@ -228,7 +228,7 @@ This section provides a quick summary of useful links for data scientists workin
 
 -   [Getting Started for Data Scientists](deployr-administrator-getting-started.md) ~ Learn about the Data Scientist's role in DeployR
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
--   [Repository Manager Help](https://deployr.revolutionanalytics.com/documents/help/repo-man/) ~ Online help for the DeployR Repository Manager.
+-   [Repository Manager Help](deployr-admin-console/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 
 ### Other Getting Started Guides

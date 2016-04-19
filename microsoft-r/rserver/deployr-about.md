@@ -125,7 +125,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 1.  [Provisioning suitable hardware](deployr-installing-configuring.md) in preparation for a DeployR install.
 2.  Installing DeployR using [these instructions](deployr-installing-configuring.md).
-3.  Customizing DeployR [server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-intro.htm).
+3.  Customizing DeployR [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm).
 5.  Customizing DeployR [security policies](deployr-admin-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
@@ -167,7 +167,7 @@ In DeployR, we refer to any web service that exposes R analytics capabilities ov
 
 #### DeployR Administration Console
 
-The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](https://deployr.revolutionanalytics.com/documents/help/admin-console/).
+The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](deployr-admin-console/deployr-admin-console-about.md).
 
 []()
 

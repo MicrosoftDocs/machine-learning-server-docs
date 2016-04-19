@@ -47,7 +47,7 @@ But first, you must install the server. A comprehensive installation guide with 
 
 ## Security Policies
 
-User access to the DeployR server and the services offered on it's [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](https://deployr.revolutionanalytics.com/documents/help/admin-console) to create [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) for each member of your community.
+User access to the DeployR server and the services offered on it's [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](deployr-admin-console/deployr-admin-console-about.md) to create [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) for each member of your community.
 
 The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/role-intro.htm) on a user-by-user basis to expose further functionality and data on the server.
 
@@ -69,14 +69,14 @@ The DeployR server supports a wide range of runtime policies that affect many as
 
 ### General
 
-The [Administration Console](https://deployr.revolutionanalytics.com/documents/help/admin-console) offers a [Server Policies](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-intro.htm) tab within which can be found a wide range of policy configuration options, including:
+The [Administration Console](deployr-admin-console/deployr-admin-console-about.md) offers a [Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md) tab within which can be found a wide range of policy configuration options, including:
 
 -   Global settings such as server name, default server boundary, and so on
 -   Project persistence policies governing resource usage (sizes and autosave)
 -   Runtime policies governing authenticated, asynchronous, and anonymous operations
 -   Runtime policies governing concurrent operation limits, file upload limits, and event stream access
 
-The full set of general policy options available with the **Server Policies** tab are detailed in this [online help topic](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-intro.htm).
+The full set of general policy options available with the **Server Policies** tab are detailed in this [online help topic](deployr-admin-console/deployr-admin-managing-server-policies.md).
 
 ### Availability
 
@@ -133,7 +133,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Getting Started for Administrators](deployr-administrator-getting-started.md)
 -   [Security](deployr-admin-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
--   [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console)
+-   [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md)
 -   [Server, Grid & Database High Availability](deployr-admin-configure-high-availability.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Managing External Directories for Big Data](deployr-admin-manage-big-data.md)
