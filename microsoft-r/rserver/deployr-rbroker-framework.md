@@ -1470,13 +1470,13 @@ And to aid further in the measurement of analytics Web service runtime performan
 
 ## Client Application Profiling
 
-As we just learned, the [client application simulation](#client-application-simulation) feature of the RBroker framework helps you quickly answer key integration questions by supporting rapid, iterative experimentation and testing. The client application profiling feature extends these capabilities by helping you to accurately measure the runtime impact of each simulated test, which can greatly improve the quality of any integration.
+As we just learned, the [client application simulation](#client-application-simulations) feature of the RBroker framework helps you quickly answer key integration questions by supporting rapid, iterative experimentation and testing. The client application profiling feature extends these capabilities by helping you to accurately measure the runtime impact of each simulated test, which can greatly improve the quality of any integration.
 
 The client application profiling features are also available beyond simulations, so production environments can also make use of this feature, for example, to maintain audit logs that detail the runtime performance details of each analytics Web service invocation.
 
 As with most things in the RBroker framework, it is very simple to activate this feature. First, note that each RTaskResult has built-in profiling data. Second, each RBroker runtime generates runtime profiling events. By registering the appropriate asynchronous listener, a client application can receive these profiling events.
 
-The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulation) chapter with support for handling runtime profiling events.
+The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulations) chapter with support for handling runtime profiling events.
 
 
 **Java:**
