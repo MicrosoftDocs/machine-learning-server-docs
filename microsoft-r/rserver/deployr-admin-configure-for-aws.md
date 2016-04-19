@@ -34,7 +34,7 @@ For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rand
 
 -   Have the minimum required disk space (or more) for the [installation of DeployR](deployr-installing-configuring.md) software and its database
 
--   Update the [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) or else you will not be able to access to the DeployR landing page or other DeployR components after installation
+-   Update the [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context) or else you will not be able to access to the DeployR landing page or other DeployR components after installation
 
     -   Set the IP to an external, public IP address.
 
