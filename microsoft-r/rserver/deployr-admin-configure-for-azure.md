@@ -30,7 +30,7 @@ ms.custom: ""
 
 You can set up DeployR on **Microsoft Azure**. For each Azure instance, be sure to:
 
-1.  Set the [server Web context](#setting-the-server-webcontext) to an external, public IP address.
+1.  Set the [server Web context](#setting-the-server-web-context) to an external, public IP address.
 
 2.  Set the appropriate security permissions on the internal and external ports used by DeployR in the firewall:
 
