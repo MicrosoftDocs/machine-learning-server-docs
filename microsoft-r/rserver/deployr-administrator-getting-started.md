@@ -34,11 +34,11 @@ This guide is for system administrators of DeployR, the *R Integration Server*. 
 
 As an administrator, your key responsibilities are to ensure the DeployR server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
 
--   Server [security policies](#security), which include user authentication and authorization
--   Server [R package management policies](#package)
--   Server [runtime policies](#runtime), which affect availability, scalability, and throughput
+-   Server [security policies](#security-policies), which include user authentication and authorization
+-   Server [R package management policies](#r-packagepolicies)
+-   Server [runtime policies](#runtime-policies), which affect availability, scalability, and throughput
 
-Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to [troubleshoot](#trouble) your deployment. For that we provide diagnostic tools and numerous recommendations.
+Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to [troubleshoot](#troubleshooting) your deployment. For that we provide diagnostic tools and numerous recommendations.
 
 But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available [here](deployr-installing-configuring.md).
 
