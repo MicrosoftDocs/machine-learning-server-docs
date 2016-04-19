@@ -31,10 +31,10 @@ ms.custom: ""
 
 This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
 
--   [Release 8.0.0](#v0800)
--   [Release 7.4.1](#v0741)
--   [Release 7.4.0](#v0740)
--   [Release 7.3](#v0730)
+-   [Release 8.0.0](#version-8-0-0)
+-   [Release 7.4.1](#version-7-4-1)
+-   [Release 7.4.0](#version-7-4-0)
+-   [Release 7.3](#version-7-3)
 
 ### Version 8.0.0
 
