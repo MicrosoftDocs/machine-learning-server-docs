@@ -73,6 +73,7 @@
 #### [Getting Started for Application Developers](rserver/deployr-application-developer-getting-started.md)
 #### [Client Library Tutorial](rserver/deployr-client-library.md)
 #### [RBroker Framework Tutorial](rserver/deployr-rbroker-framework.md)
+#### [API Reference Guide](rserver/deployr-api-reference.md)
 #### Repository Manager Help
 ##### [About Repository Manager](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 ##### [Working with Directories](rserver/deployr-repository-manager/deployr-repository-manager-directories.md)
