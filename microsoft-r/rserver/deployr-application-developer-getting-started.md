@@ -177,9 +177,9 @@ If you are a Java, JavaScript or .NET developer, start with the official [RBroke
 
 ### Client Library
 
-*What if the [RBroker Framework](#broker) doesn't give me everything I need?*
+*What if the [RBroker Framework](#rbroker-framework) doesn't give me everything I need?*
 
-They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api).
+They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api-specification).
 
 ### API Specification
 
@@ -237,7 +237,7 @@ Install and use the CLI as follows:
 
 ## Real World Example
 
-The [Developer Tools](#tools) section introduced the available tool set and some initial fragments of sample code. In the [Tutorials](#tutorials) section, you were introduced to more complete sample code that highlighted some important design patterns when working with DeployR. In this section you will be introduced to a complete sample application that demonstrates one approach to building an end-to-end solution using DeployR.
+The [Developer Tools](#developer-tools) section introduced the available tool set and some initial fragments of sample code. In the [Tutorials](#tutorials) section, you were introduced to more complete sample code that highlighted some important design patterns when working with DeployR. In this section you will be introduced to a complete sample application that demonstrates one approach to building an end-to-end solution using DeployR.
 
 The sample application is a classic application in the analytics space, a realtime scoring engine powered by DeployR. The example scenario mimics a real world application where employees at a fictitious bank can request fraud scores for one or more bank account records on-demand in order to help detect fraudulent account activity:
 
