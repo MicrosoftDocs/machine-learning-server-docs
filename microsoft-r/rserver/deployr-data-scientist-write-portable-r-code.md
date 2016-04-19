@@ -30,9 +30,9 @@ ms.custom: ""
 
 As a data scientist, you need to aware of several R portability issues that arise when developing R analytics for use in your local R environment and in the DeployR server environment. They are:
 
-1.  [Package portability](#pkgport)
-2.  [Input portability](#inputport)
-3.  [Portable access to data files](#fileaccessport)
+1.  [Package portability](#package-portability)
+2.  [Input portability](#input-portability)
+3.  [Portable access to data files](#portable-access-to-data-files)
 
 These portability issues can be solved when you use the functions in the `deployrUtils` package.
 
