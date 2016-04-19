@@ -292,8 +292,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 | DeployR Rserve 7.4.2                                                                                                                                                                                               | Yes                                                                                     | Yes                                                                                     |
 | MongoDB 2.6.7 for DeployR Enterprise<Br />MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).  | Yes                                                                                     | No                                                                                      |
 | make, gcc, gfortran                                                                                                                                                                                                | Yes                                                                                     | Yes                                                                                     |
-| nfs-utils and nfs-utils-lib                                                                                                                                                                                        
- Note: On Ubuntu, install nfs-common to get nfs-utils.                                                                                                                                                               | Yes, for [external directories](deployr-admin-manage-big-data.md)  | Yes, for [external directories](deployr-admin-manage-big-data.md)  |
+| nfs-utils and nfs-utils-lib<br />Note: On Ubuntu, install nfs-common to get nfs-utils.                                                                                                                                                               | Yes, for [external directories](deployr-admin-manage-big-data.md)  | Yes, for [external directories](deployr-admin-manage-big-data.md)  |
 
 **To install the required dependencies:**
 
@@ -537,7 +536,7 @@ After installing the main [DeployR server](#install-deployr-linux), install each
 
 ### DeployR Install with Remote Database
 
-DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#dependancies-for-linux) followed by DeployR on a second machine.
+DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#dependencies-for-linux) followed by DeployR on a second machine.
 
 #### Part A: Installing the Remote Database for DeployR (Option 2)
 
@@ -822,7 +821,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 | DeployR server machine     |- `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup>|
 | Remote grid node machines<sup>1</sup>  | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
 | Remote MongoDB host machine<sup>2</sup> | - `8003` (MongoDB port)               | To the public IP of the DeployR server|
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
+<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](#grid-node-install-for-linux).
 
 <sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
 
