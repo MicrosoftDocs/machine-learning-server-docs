@@ -49,6 +49,6 @@ For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rand
 -   Consider enabling HTTPS support for DeployR to secure the communications to the server. See these instructions for [enabling HTTPS](deployr-admin-security.md#enable-server-ssl-https).
 
 >[!IMPORTANT]
->[Change all default DeployR user passwords](#change-pass), including the `admin` account, after installing DeployR.
+>Change all default DeployR user passwords, including the `admin` account, after installing DeployR.
 
 
