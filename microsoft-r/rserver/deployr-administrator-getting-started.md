@@ -47,9 +47,9 @@ But first, you must install the server. A comprehensive installation guide with 
 
 ## Security Policies
 
-User access to the DeployR server and the services offered on it's [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](deployr-admin-console/deployr-admin-console-about.md) to create [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) for each member of your community.
+User access to the DeployR server and the services offered on it's [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](deployr-admin-console/deployr-admin-console-about.md) to create [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) for each member of your community.
 
-The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/role-intro.htm) on a user-by-user basis to expose further functionality and data on the server.
+The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](deployr-admin-console/deployr-admin-console-permissions-with-roles.md) on a user-by-user basis to expose further functionality and data on the server.
 
 However, basic user authentication and authorization are only one small part of the full set of [DeployR security](deployr-admin-security.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. [DeployR Enterprise edition](https://deployr.revolutionanalytics.com/download) also offers seamless integration with popular enterprise security solutions.
 

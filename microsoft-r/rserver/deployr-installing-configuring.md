@@ -232,7 +232,7 @@ After installing [these prerequisites](#preparing-win), install DeployR as follo
 >2.  [Add any additional grid nodes](#install-node) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
->5.  [Create new user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
+>5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
 
@@ -491,7 +491,7 @@ After installing [these prerequisites](#preparing), install DeployR Open as foll
 >2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
->5.  [Create new user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
+>5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
 ### Grid Node Install
@@ -617,7 +617,7 @@ Install DeployR as follows:
 >2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
->5.  [Create new user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
+>5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
 ## Installing on Mac OS X
@@ -711,7 +711,7 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 >1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 >2.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
 >3.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
->4.  [Create new user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
+>4.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >5.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
 ## Upgrading DeployR
@@ -864,7 +864,7 @@ DeployR is delivered with two user accounts: `admin` and `testuser`. You must ch
 
 3.  Enter a new password and confirm this new password for `admin`.
 
-	>To manage and create new user accounts, log into the **Administration Console** as `admin` and go to the **Users** tab and [use these instructions](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-new-account.htm). We also recommend that you change the passwords to the other [default user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-defaults.htm).
+	>To manage and create new user accounts, log into the **Administration Console** as `admin` and go to the **Users** tab and [use these instructions](deployr-admin-console/deployr-admin-console-user-accounts.md#creating-new-user-accounts). We also recommend that you change the passwords to the other [default user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
 
 ### Configuring Public Access
 
@@ -878,7 +878,7 @@ To fix this issue, ensure that:
 
 **To make changes to the IP address:**
 
--   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/policies-properties.htm#admin-web-context) tab. Log into the **Administration Console** as described in the [preceding section](#change-pass).
+-   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#change-pass).
 
 -   Or, you can run the [server Web context script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
 
