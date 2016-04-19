@@ -101,7 +101,7 @@ Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist
 
 #### Role
 
-Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#g_analyticswebservice) into their applications. The hand-off occurs in the [Repository Manager](#g_repoman). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
+Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#analytics-web-service) into their applications. The hand-off occurs in the [Repository Manager](#DeployR-Repository-Manager). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
 
 There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](https://deployr.revolutionanalytics.com/dev/), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/) guide details everything you'd need to know.
 
