@@ -31,7 +31,7 @@ ms.custom: ""
 
 The RBroker Framework is the simplest way to integrate DeployR-enabled analytics Web services inside any Java, JavaScript or .NET application. This document introduces the basic building blocks exposed by the framework, explains the programming model encouraged by the framework, and demonstrates the framework in action using language-specific code samples.
 
-**Important!** The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the \[DeployR Client Libraries](deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
+**Important!** The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the [DeployR Client Libraries](deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
 
 >**Try Out Our Examples!** Explore the RBroker Framework examples for [Java,](https://github.com/deployr/java-example-rbroker-basics) [Javascript,](https://github.com/deployr/js-rbroker-framework) and [.NET.](https://github.com/deployr/dotnet-rbroker-framework) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
 
@@ -266,8 +266,8 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 Currently, there are three RBroker runtimes available. These runtimes are identified as:
 
-1.  [Discrete Task Runtime](#discrete)
-2.  [Pooled Task Runtime](#pooled)
+1.  [Discrete Task Runtime](#discrete-task-runtime)
+2.  [Pooled Task Runtime](#pooled-task-runtime)
 3.  [Background Task Runtime](#background)
 
 >[!IMPORTANT]
