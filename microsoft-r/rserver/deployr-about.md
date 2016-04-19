@@ -1,4 +1,4 @@
-﻿---
+---
 
 # required metadata
 title: "About DeployR"
@@ -171,6 +171,6 @@ The Administration Console is a tool, delivered as an easy-to-use Web interface,
 
 #### DeployR Repository Manager
 
-The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-managerabout.md).
+The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-manager-about.md).
 
 
