@@ -30,14 +30,14 @@ ms.custom: ""
 
 DeployR is a server framework that exposes the R platform as a service to allow the integration of R statistics, analytics, and visualizations inside Web, desktop, and mobile applications. In addition to providing a simple yet powerful Web services API, the framework also supports a highly flexible, enterprise security model.
 
-By default, DeployR supports basic authentication. Users simply provide plain text username and password credentials, which are then matched against user account data stored in the DeployR database. User accounts are created and managed by an administrator using the DeployR Administration Console. Given these credentials are passed from client to server as plain text, we strongly recommend, in your production environments, that you enable and use HTTPS connections every time your application attempts to authenticate with DeployR. For more information, see [Working with HTTPS](#httpson).
+By default, DeployR supports basic authentication. Users simply provide plain text username and password credentials, which are then matched against user account data stored in the DeployR database. User accounts are created and managed by an administrator using the DeployR Administration Console. Given these credentials are passed from client to server as plain text, we strongly recommend, in your production environments, that you enable and use HTTPS connections every time your application attempts to authenticate with DeployR. For more information, see [Working with HTTPS](#enable-server-ssl-https).
 
 While basic authentication provides a simple and reliable authentication solution, the ability to deliver a seamless integration with existing enterprise security solutions is often paramount. The DeployR enterprise security model can easily be configured to "plug" into a number of widely adopted enterprise security solutions.
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
-The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authauth). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
+The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](#authentication-and-authorization). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
 The following sections in this document detail how to work with these configuration properties to achieve your preferred security implementation.
 
@@ -45,12 +45,12 @@ The following sections in this document detail how to work with these configurat
 
 DeployR ships with security providers for the following enterprise security solutions:
 
--   [Basic Authentication](#basic)
--   [CA Single Sign-On](#sitemind)
--   [PAM Authentication Services](#pam)
--   [LDAP Authentication](#ldap)
--   [Active Directory Services](#activedir)
--   [R Session Process Controls](#processcontrols)
+-   [Basic Authentication](#basic-authentication)
+-   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
+-   [PAM Authentication Services](#pam-authentication)
+-   [LDAP Authentication](#ldap-authentication)
+-   [Active Directory Services](#active-directory-authentication)
+-   [R Session Process Controls](#r-session-process-controls)
 
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.    
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
@@ -307,7 +307,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
             ./startAll.sh
 
 >[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### LDAP Authentication
 
@@ -315,9 +315,9 @@ By default, the **LDAP** security provider is disabled. To enable LDAP authentic
 
 >**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
-.
+&nbsp;
 
->The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
+>The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#ldap-active-directory-configuration-properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 
     /*
      * DeployR LDAP Authentication Configuration Properties
@@ -354,10 +354,10 @@ By default, the **LDAP** security provider is disabled. To enable LDAP authentic
     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
 
-For more information, see the complete list of LDAP [configuration properties](#properties).
+For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
 
 >[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### Active Directory Authentication
 
@@ -367,7 +367,7 @@ By default, the Active Directory security provider is disabled. To enable Active
 
 .
 
->The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
+>The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#ldap-active-directory-configuration-properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 
 
     /*
@@ -408,10 +408,10 @@ By default, the Active Directory security provider is disabled. To enable Active
     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
 
-For more information, see the complete list of [configuration properties](#properties).
+For more information, see the complete list of [configuration properties](#ldap-active-directory-configuration-properties).
 
 >[!IMPORTANT]
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#processcontrols).
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### LDAP & Active Directory Configuration Properties
 
@@ -467,9 +467,9 @@ The following table presents the complete list of LDAP and Active Directory conf
 
 By default, R sessions executing on the DeployR grid are not authorized to access files or directories outside of the R working directory. To enable broader file system access for a given R session to files or directories based on specific authenticated user ID and group ID credentials, you must first do ONE of the following:
 
--   Enable [PAM authentication](#pam), or
--   Enable [LDAP authentication](#ldap), or
--   Enable [Active Directory authentication](#activedir)
+-   Enable [PAM authentication](#pam-authentication), or
+-   Enable [LDAP authentication](#ldap-authentication), or
+-   Enable [Active Directory authentication](#active-directory-authentication)
 
 Once you have enabled PAM, LDAP, or AD authentication, you must (Step 1) update the relevant process controls properties on the server **and then** (Step 2) apply system-level configuration changes to every single node on your DeployR grid, as follows:
 
@@ -732,11 +732,12 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 
       **The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
-
+		
+		<a id="alertusers"></a>
 		>[!WARNING]
 		>**Alert Your Users!**  
-        >The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
-        >We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+        	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
+        	>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
 
 
 2.  **Next, enable SSL support for Tomcat.**
@@ -1177,7 +1178,7 @@ The repository file download controls provide fine-grain control over who can do
 
 ### Repository Scripts Access Controls
 
-Repository-managed R scripts can be exposed as an executable on the API. Since repository-managed R scripts are a type of repository-managed file, all information in the [previous section](#repofileaccess) also applies to repository-managed scripts.
+Repository-managed R scripts can be exposed as an executable on the API. Since repository-managed R scripts are a type of repository-managed file, all information in the [previous section](#repository-file-access-controls) also applies to repository-managed scripts.
 
 However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
 
