@@ -1,4 +1,4 @@
-﻿---
+---
 
 # required metadata
 title: "DeployR Client Library Tutorial"
@@ -43,23 +43,23 @@ This section briefly introduces the top-level R analytics services exposed on th
 
 -   **User Services @ /r/user/***
 
-    Providing the basic authentication mechanisms for end-users and client applications that need to avail of [*authenticated services*](#authservices) on the API.
+    Providing the basic authentication mechanisms for end-users and client applications that need to avail of [*authenticated services*](#authenticated-services) on the API.
 
 
 
 -   **Project Services @ /r/project/***
 
-    Providing [*authenticated services*](#authservices) related to stateful, and optionally persistent, R session environments and analytics Web service execution.
+    Providing [*authenticated services*](#authenticated-services) related to stateful, and optionally persistent, R session environments and analytics Web service execution.
 
 
 
 -   **Background Job Services @ /r/job/***
 
-    Providing [*authenticated services*](#authservices) related to persistent R session environments for scheduled or periodic analytics Web service executions.
+    Providing [*authenticated services*](#authenticated-services) related to persistent R session environments for scheduled or periodic analytics Web service executions.
 
 -   **Repository Services @ /r/repository/***
 
-    Providing [*authenticated services*](#authservices) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonservices) related to analytics Web service execution.
+    Providing [*authenticated services*](#authenticated-services) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonymous-services) related to analytics Web service execution.
 
 >All services on the DeployR API are documented in detail in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc).
 
@@ -213,9 +213,9 @@ The first step for any client application developer using the client libraries i
 
 ## Authentication
 
-Once a connection to the DeployR server has been established the next step for a client application developer is to decide if end-users or the application itself needs access to [*authenticated services*](#overview) on the API.
+Once a connection to the DeployR server has been established the next step for a client application developer is to decide if end-users or the application itself needs access to [*authenticated services*](#api-overview) on the API.
 
-If *authenticated project*, *background job* or *repository* management services are needed by the application then the application must first authenticate. If an application only uses [*anonymous services*](#anonservices) then the application can operate *anonymously*, without ever authenticating.
+If *authenticated project*, *background job* or *repository* management services are needed by the application then the application must first authenticate. If an application only uses [*anonymous services*](#anonymous-services) then the application can operate *anonymously*, without ever authenticating.
 
 The following code snippets demonstrate how to authenticate using the client libraries:
 
@@ -274,9 +274,9 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 An *authenticated* user or simply an authenticated client application has access to the full range of *authenticated services* offered on the DeployR API. These services are categorized as follows:
 
-1.  [Authenticated Project Services](#authprojects)
-2.  [Background Job Services](#background)
-3.  [Repository Management Services](#repository)
+1.  [Authenticated Project Services](#project-services)
+2.  [Background Job Services](#background-job-services)
+3.  [Repository Management Services](#repository-services)
 
 The following sections introduce the services themselves and demonstrate how the client libraries make these services available.
 
@@ -774,7 +774,7 @@ These services support the manipulation and management of R packages within *aut
 A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
 >[!TIP]
->By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#authprojects) chapter of this guide.
+>By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) chapter of this guide.
 
 Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
 
@@ -1139,7 +1139,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
 
 ## Anonymous Services
 
-An *anonymous* user, being any user that has not authenticated with the DeployR server, only has access to *anonymous services* offered on the DeployR API. There is just one single services category for *anonymous services*, which is [Anonymous Project Services](#anonprojects)
+An *anonymous* user, being any user that has not authenticated with the DeployR server, only has access to *anonymous services* offered on the DeployR API. There is just one single services category for *anonymous services*, which is [Anonymous Project Services](#anonymous-services)
 
 A project is simply a DeployR-managed R session. Any project created by an anonymous user is known as an *anonymous project*. In practice, anonymous projects are automatically created by DeployR on behalf of anonymous users each time they execute an analytics Web service.
 
@@ -2026,7 +2026,7 @@ Encoded R object data can be sent on the *inputs* parameter on the following cal
 -   [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
 -   [/r/project/workspace/push](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacepush)
 
-See the [Standard Execution Model](#execmodel) section of this documentation for details describing how DeployR-encoded R object data can be sent using the *inputs* parameter on these calls.
+See the [Standard Execution Model](#standard-execution-model) section of this documentation for details describing how DeployR-encoded R object data can be sent using the *inputs* parameter on these calls.
 
 DeployR-specific encodings are provided for the following classes of R object:
 
