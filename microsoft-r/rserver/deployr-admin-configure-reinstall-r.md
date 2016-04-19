@@ -55,7 +55,7 @@ On the main DeployR server machine:
 3.  Uninstall Microsoft R Server using the instructions provided with your existing version of Microsoft R Server.
 4.  Install Microsoft R Server and all its prerequisites as described in the instructions provided with that version of Microsoft R Server.
 5.  [Reinstall the DeployR main server](deployr-installing-configuring.md#basic-deployr-install).
-6.  [Restore the DeployR database](deployr-common-administration-tasks.md#restoring-database-data).
+6.  [Restore the DeployR database](deployr-common-administration-tasks.md#backing-up-and-restoring-data).
 
 On each DeployR grid node machine:
 
