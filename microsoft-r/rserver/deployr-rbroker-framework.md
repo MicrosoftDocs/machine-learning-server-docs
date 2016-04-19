@@ -258,7 +258,7 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     //
     RTaskResult rTaskResult = rTaskToken.getResult();
 
-**'Try Out Our Examples!** After downloading the RBroker Framework, you can find basic examples that complement this tutorial under the `deployr/examples` directory. Additionally, find more comprehensive examples on [GitHub](http://github.com/deployr).
+**Try Out Our Examples!** After downloading the RBroker Framework, you can find basic examples that complement this tutorial under the `deployr/examples` directory. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
 ## RBroker Runtime Options
 
