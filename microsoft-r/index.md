@@ -4,4 +4,4 @@ Microsoft R Server is the most broadly deployable enterprise-class analytics pla
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
-To learn more, we encourage you to read the documentation on this site and visit the [product web page](https://www.microsoft.com/en-us/server-cloud/products/r-server/).
+To learn more, read the documentation on this site and visit the [product web page](https://www.microsoft.com/en-us/server-cloud/products/r-server/).
