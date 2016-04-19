@@ -73,6 +73,7 @@ See the DeployR dependencies for your OS:
 >4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrading-deployr) before continuing.
 >5.  You may need to temporarily disable your anti-virus software to install DeployR. Turn it back on as soon as you are finished.
 
+<a id="preparing-win"></a>
 ### Dependencies
 
 Before you can install DeployR on the main server machine or any additional grid node (DeployR Enterprise only), you must manually install the following dependencies. All other dependencies will be installed for you.
