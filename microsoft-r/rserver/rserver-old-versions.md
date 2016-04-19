@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR and R Server Documentation Archives"
+description: "DeployR and R Server Documentation Archives"
+keywords: ""
+author: "jmartens"
+manager: "Paulette.McKay"
+ms.date: "03/17/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #Archived Product Documentation
 
 Prior to Microsoft R Server 2016, the product was called Revolution R Enterprise (RRE). DeployR has not changed names.
