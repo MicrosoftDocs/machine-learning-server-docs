@@ -458,7 +458,7 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
-**Java:**
+**JavaScript:**
 
     //
     // 1. Execute an analytics Web service based on a repository-managed
@@ -508,8 +508,8 @@ These services support the execution of analytics Web services on *authenticated
     var files = about.execution.artifacts;
     var objects = about.workspace.objects;
 
-**Java:**
-#  #
+**C#:**
+
     //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
