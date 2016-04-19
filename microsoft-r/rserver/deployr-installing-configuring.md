@@ -500,7 +500,7 @@ When you install the DeployR server, one local grid node is installed automatica
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Install each grid node on a separate host machine.
 
-After installing the main [DeployR server](#basic-deployr-install), install each grid node on a separate machine as follows:
+After installing the main [DeployR server](#basic-deployr-install-for-linux), install each grid node on a separate machine as follows:
 
 1.  Log into the operating system on the machine on which you will install the grid node.
 
