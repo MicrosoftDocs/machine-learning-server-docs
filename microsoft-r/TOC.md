@@ -66,8 +66,8 @@
 ### [Troubleshooting & Diagnostics](rserver/deployr-admin-diagnostics-troubleshooting.md)
 ### [Common Administrative Tasks](rserver/deployr-common-administration-tasks.md)
 ## Application Developers
-### [Developer Docs & Downloads](rserver/deployr-tools-and-samples.md)
 ### [Getting Started for Application Developers](rserver/deployr-application-developer-getting-started.md)
+### [API Docs & Downloads](rserver/deployr-tools-and-samples.md)
 ### [Client Library Tutorial](rserver/deployr-client-library.md)
 ### [RBroker Framework Tutorial](rserver/deployr-rbroker-framework.md)
 ### [API Reference Guide](rserver/deployr-api-reference.md)
