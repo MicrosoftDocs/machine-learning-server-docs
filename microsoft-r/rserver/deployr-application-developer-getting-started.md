@@ -107,7 +107,7 @@ For example:
     RRepositoryDirectory dir = rUser.createDirectory("demo");
     List<RRepositoryFile> files = rUser.listFiles(RSCRIPT, dir);
 
-These services are available on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
+These services are available on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-managerabout.md), which ships with DeployR.
 
 It is also simple for your application to request files be moved from the repository to your R sessions and from your R sessions back into the repository. Perhaps most importantly, any R script stored in the repository is automatically exposed as a live, executable Analytics Web service. This means your R scripts can be executed on request by your application just by referencing that script by name.
 
@@ -126,14 +126,14 @@ The fact that repository-managed R scripts are automatically exposed as live, ex
 
 *"How can you enforce access controls on this type of Web service?"*
 
-The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#introusers) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
+The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#introusers) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-managerfiles.md#about-file-properties) in the repository. The access control options available on repository files are:
 
 -   `Private`, allows access only to the file's owner.
 -   `Restricted`, allows access only to those users who were granted at least one of the associated roles
 -   `Shared`, allows access only to authenticated users
 -   `Public`, allows access to any authenticated or anonymous user
 
-These repository access controls can be manipulated directly by the file owner on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
+These repository access controls can be manipulated directly by the file owner on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-managerabout.md) that ships with DeployR.
 
 ## Developer Tools
 
@@ -269,7 +269,7 @@ This section provides a quick summary of useful links for application developers
 ### Helper Tools
 
 -   [DeployR Command Line Tool (CLI)](https://github.com/deployr/deployr-cli)
--   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
+-   [Repository Manager](deployr-repository-manager/deployr-repository-managerabout.md), available on the DeployR landing page following an install.
 -   [API Interactive Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/explorer.html), available on the DeployR landing page following an install.
 
 ### Tutorials & Sample Code on Github
