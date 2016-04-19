@@ -28,9 +28,11 @@ ms.custom: ""
 
 ## DeployR on AWS
 
-You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
+You can set up DeployR on **Amazon Web Services** (AWS).
 
--   Have the [minimum required disk space](#sysreq) (or more) for the [installation of DeployR](deployr-installing-configuring.md) software and its database
+For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
+
+-   Have the minimum required disk space (or more) for the [installation of DeployR](deployr-installing-configuring.md) software and its database
 
 -   Update the [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) or else you will not be able to access to the DeployR landing page or other DeployR components after installation
 
@@ -40,7 +42,7 @@ You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 i
 
 -   Set the appropriate security permissions on both the **internal** and **external** ports used by DeployR in the firewall:
 
-    -   Open the external [DeployR ports](#update-firewall) `8000`, `8001`, and `8006` through the AWS console.
+    -   Open the external DeployR ports `8000`, `8001`, and `8006` through the AWS console.
 
     -   [Update the firewall](deployr-admin-configure-for-azure.md#updating-the-firewall).
 
