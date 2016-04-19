@@ -73,8 +73,7 @@ See the DeployR dependencies for your OS:
 >4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrading-deployr) before continuing.
 >5.  You may need to temporarily disable your anti-virus software to install DeployR. Turn it back on as soon as you are finished.
 
-<a id="preparing-win"></a>
-### Dependencies
+### Dependencies for Windows
 
 Before you can install DeployR on the main server machine or any additional grid node (DeployR Enterprise only), you must manually install the following dependencies. All other dependencies will be installed for you.
 
@@ -93,9 +92,9 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
+	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install-for-windows).
 
-2.  Install **[Revolution R Enterprise for Windows](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies.** [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
+2.  Install **[Revolution R Enterprise for Windows](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies**. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
 
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
@@ -160,7 +159,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#install-node).
+	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install-for-windows).
 
 2.  Install either [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) is the enhanced distribution of R from Microsoft.
 
@@ -190,14 +189,14 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 **-- The prerequisites for DeployR Open are now installed. You can begin installing the main server for DeployR Open now. --**
  
-### Basic DeployR Install
+### Basic DeployR Install for Windows
 
-The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install) for optimized workload distribution.
+The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install-for-windows) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
-After installing [these prerequisites](#preparing-win), install DeployR as follows:
+After installing [these prerequisites](#dependencies-for-windows), install DeployR as follows:
 
 1.  To install properly on Windows, you must have administrator privileges. Log in as a user with administrator rights. Also, you may need to temporarily turn off or disable your anti-virus software to complete the installation process. Please turn it back on as soon as you are finished.
 
@@ -209,7 +208,7 @@ After installing [these prerequisites](#preparing-win), install DeployR as follo
 
 3.  If a message appears onscreen during installation asking whether you want to *“allow the following program to make changes to this computer”*, click **Continue**.
 
-4.  When prompted, accept the installation of any missing [dependencies](#depend) required for this version of DeployR.
+4.  When prompted, accept the installation of any missing [dependencies](#software-dependencies) required for this version of DeployR.
 
 5.  When prompted, choose to accept the default installation directory or enter a unique directory path for this version of DeployR.
 
@@ -219,9 +218,9 @@ After installing [these prerequisites](#preparing-win), install DeployR as follo
 
 8.  If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md) or [AWS EC2 instance](deployr-admin-configure-for-aws.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
     -   Open the same DeployR ports [in Windows Firewall](deployr-admin-configure-for-azure.md#updating-the-firewall).
 
@@ -229,16 +228,14 @@ After installing [these prerequisites](#preparing-win), install DeployR as follo
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
->2.  [Add any additional grid nodes](#install-node) (DeployR Enterprise only).
->3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
+>1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+>2.  [Add any additional grid nodes](#grid-node-install-for-windows) (DeployR Enterprise only).
+>3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
-
-
-### Grid Node Install
+### Grid Node Install for Windows
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
 
@@ -249,11 +246,11 @@ When you install the DeployR server, one local grid node is installed automatica
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Install each grid node on a separate host machine.
 
-After installing the [main server for DeployR Enterprise](#install-main), install each grid node on a separate machine as follows:
+After installing the [main server for DeployR Enterprise](#basic-deployr-install-for-windows), install each grid node on a separate machine as follows:
 
 1.  Log into the machine on which you will install the grid node with administrator rights.
 
-2.  Install Microsoft R Server and RServe [as described here](#preparing-win) on the grid node machine.
+2.  Install Microsoft R Server and RServe [as described here](#dependencies-for-windows) on the grid node machine.
 
 3.  Download the node installer file, `DeployR-Enterprise-node-8.0.0.exe`, which can be found in the Microsoft R Server package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
 
@@ -267,7 +264,7 @@ After installing the [main server for DeployR Enterprise](#install-main), instal
 
 8.  When the installer completes, log into the DeployR landing page as `admin` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
-    1.  Go to the Adminstrative Console and [configure each grid node](#config-grid).
+    1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
     2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
 
 **-- The grid node installation is now complete --**
@@ -278,11 +275,11 @@ After installing the [main server for DeployR Enterprise](#install-main), instal
 >
 >1.  Always install the DeployR main server first before installing any grid nodes.
 >2.  We highly recommend installing DeployR on a dedicated server machine.
->3.  Review the [system requirements & supported operating systems list](#sysreq) before you continue.
->4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrade) before continuing.
+>3.  Review the [system requirements & supported operating systems list](#system-requirements-for-deployr) before you continue.
+>4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrading-deployr) before continuing.
 >5.  The Ubuntu and OpenSUSE releases of DeployR Open are experimental and not officially supported. They are **not** available for DeployR Enterprise.
 
-### Dependencies
+### Dependencies for Linux
 
 Before you can install DeployR on the main server machine, a remote database (DeployR Enterprise only), or any additional grid node (DeployR Enterprise only), you must manually install the following dependencies. All other dependencies will be installed for you.
 
@@ -410,15 +407,15 @@ DeployR depends on the manual installation and configuration of these dependenci
 **-- The prerequisites are now installed. You can begin installing DeployR now. --**
 
  
-### Basic DeployR Install
+### Basic DeployR Install for Linux
 
 The basic installation of DeployR will install the DeployR main server and configure a local MongoDB database on the same machine.
 
->**DeployR Enterprise Only:** In addition to this basic installation, DeployR Enterprise customers can also use a [remote database for DeployR](#install-deployr-custom) or install [additional grid nodes](#install-deployr-nodes) for optimized workload distribution.
+>**DeployR Enterprise Only:** In addition to this basic installation, DeployR Enterprise customers can also use a [remote database for DeployR](#deployr-install-with-remote-database) or install [additional grid nodes](#grid-node-install-for-Linux) for optimized workload distribution.
 
 #### DeployR Enterprise
 
-After installing [these prerequisites](#preparing), install DeployR Enterprise as follows:
+After installing [these prerequisites](#dependencies-for-linux), install DeployR Enterprise as follows:
 
 1.  Log into the operating system.
 
@@ -447,13 +444,13 @@ After installing [these prerequisites](#preparing), install DeployR Enterprise a
 
     -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
 **-- The basic installation of DeployR is now complete --**
 
 #### DeployR Open
 
-After installing [these prerequisites](#preparing), install DeployR Open as follows:
+After installing [these prerequisites](#dependencies-for-linux), install DeployR Open as follows:
 
 1.  Log into the operating system.
 
@@ -482,20 +479,20 @@ After installing [these prerequisites](#preparing), install DeployR Open as foll
 
     -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
 **-- The basic installation of DeployR is now complete --**
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+>1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 >2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
->3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
+>3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
-### Grid Node Install
+### Grid Node Install for Linux
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using [`Option 1`](#install-deployr-linux) or [`Option 3`](#install-deployr-custom). [Learn more about the differences between DeployR Open and DeployR Enterprise](https://deployr.revolutionanalytics.com/download/).
 
@@ -508,7 +505,7 @@ After installing the main [DeployR server](#install-deployr-linux), install each
 
 1.  Log into the operating system on the machine on which you will install the grid node.
 
-2.  Install Microsoft R Server and RServe [as described here](#preparing) on the grid node machine.
+2.  Install Microsoft R Server and RServe [as described here](#dependencies-for-linux) on the grid node machine.
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
@@ -533,16 +530,16 @@ After installing the main [DeployR server](#install-deployr-linux), install each
 
 9.  When the installer completes, log into the DeployR landing page as `admin` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
-    1.  Go to the Adminstrative Console and [configure each grid node](#config-grid).
+    1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
     2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
 **-- The grid node installation is now complete --**
 
 ### DeployR Install with Remote Database
 
-DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#preparing) followed by DeployR on a second machine.
+DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#dependancies-for-linux) followed by DeployR on a second machine.
 
-### Part A: Installing the Remote Database for DeployR (Option 2)
+#### Part A: Installing the Remote Database for DeployR (Option 2)
 
 1.  Log into the operating system on the machine on which you will install the database.
 
@@ -567,7 +564,7 @@ DeployR Enterprise on Linux supports the installation of a remote database for D
 
 7.  Enter the directory path in which to install. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
-8.  If using [IPTABLES firewall](#update-firewall), add the MongoDB port to the firewall settings to allow communications from the DeployR main server. For this release, add `8003`.
+8.  If using [IPTABLES firewall](#updating-your-firewall), add the MongoDB port to the firewall settings to allow communications from the DeployR main server. For this release, add `8003`.
 
 9.  Once the database has been installed, go to the machine on which you will install DeployR and follow the steps in the next section.
 
@@ -575,7 +572,7 @@ DeployR Enterprise on Linux supports the installation of a remote database for D
 
 Install DeployR as follows:
 
-1.  Install [these prerequisites](#preparing).
+1.  Install [these prerequisites](#dependancies-for-linux).
 
 2.  Log into the operating system on the machine on which you want to install DeployR.
 
@@ -608,15 +605,15 @@ Install DeployR as follows:
 
     -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
 **-- The installation of the remote database and DeployR is now complete --**
 
 >**What's Next After Installing?**
 >
->1. Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help.
+>1. Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help.
 >2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
->3.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
+>3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
@@ -626,7 +623,7 @@ Install DeployR as follows:
 >[!IMPORTANT]
 >
 >1.  We highly recommend installing DeployR on a dedicated server machine.
->2.  The Mac OS X release of DeployR is experimental, and therefore not officially supported. It is not available for DeployR Enterprise. See the list of [supported OS](#sysreq) for more.
+>2.  The Mac OS X release of DeployR is experimental, and therefore not officially supported. It is not available for DeployR Enterprise. See the list of [supported OS](#system-requirements-for-deployr) for more.
 
 ### Dependencies
 
@@ -678,7 +675,7 @@ Before you can install DeployR on the main server machine, you must manually ins
 	
 	            R CMD INSTALL deployrRserve_7.4.2_for_R_3.1.x.tgz
 
-### Installing DeployR
+### Installing DeployR for Mac OS X
 
 After installing [these prerequisites](#preparing-osx), install DeployR Open as follows:
 
@@ -709,8 +706,8 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#change-pass) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
->2.  [Finish configuring DeployR](#after). Follow the topics in that section in the order in which they are presented.
+>1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+>2.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >3.  [Download DeployR client-side developer tools](https://deployr.revolutionanalytics.com/dev/), including the RBroker framework and client libraries.
 >4.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >5.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
@@ -721,12 +718,12 @@ Please carefully follow these migration instructions before you install a more r
 
 These migration steps apply to the following versions:
 
--   [DeployR 7.4.1](#migrate)
--   [DeployR 7.4.0](#migrate)
--   [DeployR 7.3](#migrate)
--   [DeployR 7.2](#migrate)
--   [DeployR 7.1](#migrate)
--   [RevoDeployR 7.0](#migrate)
+-   [DeployR 7.4.1](#migrating-to-8-0-0)
+-   [DeployR 7.4.0](#migrating-to-8-0-0)
+-   [DeployR 7.3](#migrating-to-8-0-0)
+-   [DeployR 7.2](#migrating-to-8-0-0)
+-   [DeployR 7.1](#migrating-to-8-0-0)
+-   [RevoDeployR 7.0](#migrating-to-8-0-0)
 
 >[!IMPORTANT]
 >If you want to upgrade or reinstall your version or R or Microsoft R Server, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
@@ -743,7 +740,7 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
 1.  Be sure to review the following:
 
-    -   **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the [data migration](#migrate).
+    -   **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the [data migration](#migrating-to-8-0-0).
 
     -   While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you **dedicate one machine for each server instance** that is *in production* so as to avoid resource contention.
 
@@ -751,7 +748,7 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
 2.  Ensure your previous version of DeployR is running and that all users are logged out of the version.
 
-3.  Install and configure DeployR 8.0.0 and all its dependencies for your operating system ( [Linux](#install-linux) | [Windows](#install-win) | [Mac OS X](#install-osx) ).
+3.  Install and configure DeployR 8.0.0 and all its dependencies for your operating system ( [Linux](#installing-on-linux) | [Windows](#installing-on-windows) | [Mac OS X](#installing-on-mac-os-x) ).
 
 4.  Ensure that all users are logged out of DeployR 8.0.0 as well.
 
@@ -879,7 +876,7 @@ To fix this issue, ensure that:
 
 **To make changes to the IP address:**
 
--   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#change-pass).
+-   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
 -   Or, you can run the [server Web context script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
 
@@ -889,7 +886,7 @@ To fix this issue, ensure that:
 >DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and [configuring](deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes) additional grid nodes.
 >[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
-1.  Log into the **Administration Console** as described in the [preceding section](#change-pass).
+1.  Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
 2.  Click **The Grid** in the main menu.
 
