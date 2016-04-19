@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Introduction
 
-This document describes how to run and interpret the DeployR diagnostic test. Additionally, this document offers solutions to issues that you might be [troubleshooting](#solutions) after installing or during your use of DeployR.
+This document describes how to run and interpret the DeployR diagnostic test. Additionally, this document offers solutions to issues that you might be [troubleshooting](#troubleshooting) after installing or during your use of DeployR.
 
 ## Diagnostic Testing
 
@@ -38,7 +38,7 @@ You can assess the state and health of your DeployR environment by running the d
 
 -   Identifies unresponsive components, such as the server, grid nodes, or the database
 
--   Gathers all relevant [log and configuration files](#logfiles)
+-   Gathers all relevant [log and configuration files](#inspecting-diagnostic-log-files)
 
 Armed with this information, you will be able to investigate and resolve most issues. And, in the event that you need additional support, you can send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
@@ -46,7 +46,7 @@ Behind the scenes, the script evaluates the system and creates the `logs` subdir
 
 -   The resulting log file (`diagnostics.log`), which provides details, including the state of all components, plus pertinent configuration and environment information.
 
--   Copies of each [log and configuration file](#logfiles)
+-   Copies of each [log and configuration file](#inspecting-diagnostic-log-files)
 
 The results are also printed to the screen.
 
@@ -108,11 +108,11 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 
 ### Resolving Issues
 
-Use the following instructions if you have [run the diagnostic test](#run-diagnostics) and a problem was indicated.
+Use the following instructions if you have [run the diagnostic test](#running-the-diagnostic-check) and a problem was indicated.
 
 **To resolve component issues:**
 
-1.  Look through the [log and configuration files](#logfiles) for each component that was identified in the diagnostic report.
+1.  Look through the [log and configuration files](#inspecting-diagnostic-log-files) for each component that was identified in the diagnostic report.
 
 2.  If the log file indicates an error, then fix it.
 
@@ -120,19 +120,19 @@ Use the following instructions if you have [run the diagnostic test](#run-diagno
 
     -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
 
-    -   Open [DeployR ports](#update-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open DeployR ports `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
 
 <!-- -->
 
 1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#starting-and-stopping-deployr) in question. It may take a few minutes for a component to restart.
 
-2.  [Run the diagnostic test](#run-diagnostics) again to make sure all is running smoothly now.
+2.  [Run the diagnostic test](#running-the-diagnostic-check) again to make sure all is running smoothly now.
 
 3.  If problem persists:
 
     -   After trying the first time, repeat steps 1-4.
 
-    -   Review the other [Troubleshooting](#solutions) topics.
+    -   Review the other [Troubleshooting](#troubleshooting) topics.
 
     -   Post your questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
@@ -144,7 +144,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 ### Landing Page Cannot Be Reached
 
-If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#run-diagnostics). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
+If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
 
 ![Landing Page Inaccessible](./media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
 
@@ -185,13 +185,13 @@ Usage tips for the `setWebContext` script arguments:
 
 3.  For this change to take effect [restart the DeployR services](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
->If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#localhost-ie).
+>If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
 ### Landing Page Blocked in I.E. 11
 
 >**Windows only:** This issue applies only to Internet Explorer 11 on Windows.
 
-If you are attempting to access the DeployR landing page using `http://localhost:8000/deployr/landing` in Internet Explorer (I.E.) 11 and the [diagnostic tests](#health) have turned up nothing, you may find that the landing page is blocked. This may be due to some default settings in I.E. 11.
+If you are attempting to access the DeployR landing page using `http://localhost:8000/deployr/landing` in Internet Explorer (I.E.) 11 and the [diagnostic tests](#diagnostic-testing) have turned up nothing, you may find that the landing page is blocked. This may be due to some default settings in I.E. 11.
 
 **To solve this issue:**
 
