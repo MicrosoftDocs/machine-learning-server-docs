@@ -37,8 +37,7 @@
 ## [RevoScaleR Hadoop Getting Started](rserver/rserver-scaler-hadoop-getting-started.md)
 ## [RevoScaleR Teradata Getting Started](rserver/rserver-scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](rserver/rserver-scaler-odbc.md)
-# RevoPemaR
-## [RevoPemaR Getting Started](rserver/rserver-pemar-getting-started.md)
+# [RevoPemaR](rserver/rserver-pemar-getting-started.md)
 # [DeployR](rserver/deployr-about.md)
 ## [What's New](rserver/deployr-whats-new.md)
 ## Administrators
