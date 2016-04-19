@@ -800,7 +800,7 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
     6.  Click **Import**.
 
-9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.0, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://deployr.revolutionanalytics.com/documents/dev/client-jsdoc/).
+9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.0, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
 ## Configuring DeployR
 

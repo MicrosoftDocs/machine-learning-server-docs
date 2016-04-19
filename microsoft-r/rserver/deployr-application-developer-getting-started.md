@@ -59,7 +59,7 @@ The sections that follow explain [Analytics Web Services](#webservices) in great
 
 The DeployR R Integration server exposes a rich set of services to application developers through a public Web services API. These services are collectively known as DeployR Analytics Web services.
 
-While the complete technical specification for all available services can be found [here](https://deployr.revolutionanalytics.com/documents/dev/api-doc/), this *Getting Started* guide for application developers focuses on introducing the core services.
+While the complete technical specification for all available services can be found [here](deployr-api-reference.md), this *Getting Started* guide for application developers focuses on introducing the core services.
 
 ### R Session Services
 
@@ -81,7 +81,7 @@ For example:
     // on which your application can immediately start executing R tasks.
     rBroker.submit(task);
 
-DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#introprojects).
+DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](deployr-api-reference.md).
 
 Depending on the specific needs of your application, the R sessions created by your application can be:
 
@@ -264,7 +264,7 @@ This section provides a quick summary of useful links for application developers
 
 -   [RBroker Framework Download](deployr-tools-and-samples.md)
 -   [Client Library Download](deployr-tools-and-samples.md)
--   [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc/)
+-   [API Reference Guide](deployr-api-reference.md)
 
 ### Helper Tools
 

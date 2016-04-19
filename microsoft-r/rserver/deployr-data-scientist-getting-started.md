@@ -212,7 +212,7 @@ Keep in mind that:
 -   It is critical that you provide the application developers with any details that can help them integrate those analytics.
 -   The files you share should be stable and tested snapshots of your R analytics.
 
-Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), using client libraries, or via the [raw API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), using client libraries, or via the [raw API](deployr-api-reference.md).
 
 ## Further Reading
 
