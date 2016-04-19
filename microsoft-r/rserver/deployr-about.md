@@ -111,7 +111,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 1.  Consult with the data scientists responsible for developing the R analytics outputs in order to determine your application's analytics dependencies (inputs and outputs).
 
-2.  Verify these dependencies in the Repository Manager by [testing](https://deployr.revolutionanalytics.com/documents/help/repo-man/index.html#j-script-test.htm) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#g_analyticswebservice).
+2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#Analytics-Web-Service).
 
 3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
@@ -163,13 +163,11 @@ In DeployR, we refer to any web service that exposes R analytics capabilities ov
 
 *Note*: When you upload an R script into the [Repository Manager](#g_repoman), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
 
-[]()
 
 #### DeployR Administration Console
 
 The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](deployr-admin-console/deployr-admin-console-about.md).
 
-[]()
 
 #### DeployR Repository Manager
 
