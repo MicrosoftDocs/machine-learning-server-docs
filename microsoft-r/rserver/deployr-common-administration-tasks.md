@@ -103,18 +103,18 @@ To stop the services individually on the main server (not nodes), type the follo
 
 The `catalina.out` server log file is found at the following location:
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-> ```Linux
-> /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
-> ```
-> ```Windows
-> C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\logs\catalina.out
-> ```
-> ```Mac OS X
-> /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
-> ```
+**For Linux:**
 
-&nbsp;
+	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
+
+**For Windows:**
+
+	C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\logs\catalina.out
+
+**For Mac OS X:**
+
+	/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
+
 
 >[!NOTE]
 >[Look here](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
