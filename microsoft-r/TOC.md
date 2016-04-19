@@ -85,3 +85,5 @@
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 ## [Frequently Asked Questions](rserver/deployr-faq.md)
+## [Additional Resources](rserver/rserver-more-resources.md)
+## [Archived Documentation](rserver/rserver-old-versions.md)
