@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Overview
 
-DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](deployr-application-developer-getting-started.md#analytics-web-services), so R code can be easily executed by applications running on a secure server.
+DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
@@ -71,9 +71,9 @@ While this scenario is provided as an example only, it highlights how DeployR ac
 
 In this section, you will find a description of the roles and responsibilities of each actor in DeployR:
 
--   [Data scientists](#rprogrammers)
--   [Application developers](#appdevelopers)
--   [System administrators](#administrators)
+-   [Data scientists](#data-scientists)
+-   [Application developers](#application-developers)
+-   [System administrators](#system-administrators)
 
 This diagram depicts how data scientists and application developers collaborate when working with DeployR.
 
@@ -85,7 +85,7 @@ This diagram depicts how data scientists and application developers collaborate 
 
 Data scientists, sometimes referred to as R programmers, typically focus on developing analytics solutions using their existing analytics tool chain—the R Productivity Environment (RPE), RStudio, StatET, and others. To maximize the impact of these data scientists, DeployR is designed to encourage minimal change in this workflow. Therefore, data scientists can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern themselves with how these outputs are eventually used by application developers in their software solutions.
 
-In DeployR, there is but one tool for the data scientists -- the [Repository Manager](#g_repoman). The Repository Manager is a web-based tool that serves as a bridge between the data scientist’s work and the deployment of that work into the DeployR repository. When the data scientist uploads his or her R scripts, models, and data files into the Repository Manager, they turn into [analytics Web services](#g_analyticswebservice) that can be consumed by any software solution. Once deployed, application developers can create DeployR-powered client applications and integrations.
+In DeployR, there is but one tool for the data scientists -- the [Repository Manager](#deployr-repository-manager). The Repository Manager is a web-based tool that serves as a bridge between the data scientist’s work and the deployment of that work into the DeployR repository. When the data scientist uploads his or her R scripts, models, and data files into the Repository Manager, they turn into [analytics Web services](#analytics-web-service) that can be consumed by any software solution. Once deployed, application developers can create DeployR-powered client applications and integrations.
 
 #### Responsibilities
 
