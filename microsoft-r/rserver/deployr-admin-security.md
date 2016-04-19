@@ -1,4 +1,4 @@
----
+﻿---
 
 # required metadata
 title: " Security in DeployR"
@@ -1128,7 +1128,7 @@ If the owner of a repository-managed file wants to grant read-only access to tha
 
 -   `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
 
-You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](deployr-admin-console/deployr-repository-manager-files.md#about-file-properties).
+You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
 
 For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
 
