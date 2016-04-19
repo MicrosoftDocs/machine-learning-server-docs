@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Working with Files
 
-The Files tab is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as any other users' repository-managed files to which you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights).
+The Files tab is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as any other users' repository-managed files to which you have [access rights](deployr-repository-manager-files.md#about-file-properties).
 
-The set of file management tasks and interactions available to you depend not only on whether you [own](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) the file or whether you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights), but also on the [policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) governing the server.
+The set of file management tasks and interactions available to you depend not only on whether you [own](deployr-repository-manager-files.md#adding-and-removing-owners) the file or whether you have [access rights](deployr-repository-manager-files.md#about-file-properties), but also on the [policies](deployr-repository-manager-about.md#permissions-policies) governing the server.
 
 ## About File Properties
 
@@ -59,26 +59,26 @@ File properties can be broken down into three categories: basic file properties,
 
 When you own a file you are permitted to do almost anything to that file, including:
 
-- [Download](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-download.htm) files from directories
-- [Copy](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-copy.htm) and [move](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-move-dir.htm) files across directories
-- [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) files for viewing or [editing](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-edit.htm)
-- [Share files and collaborate](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-share.htm) with others
-- [View](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm), [compare](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-compare.htm), and [revert](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-revert.htm) versions in the file's history
-- [Test scripts](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm) in a live debugging environment (R scripts only)
-- [Close](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-close.htm) files
-- [Delete](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-delete.htm) files from directories
+- [Download](deployr-repository-manager-files.md#downloading-files) files from directories
+- [Copy](deployr-repository-manager-files.md#copying-files) and [move](deployr-repository-manager-files.md#moving-files) files across directories
+- [Open](deployr-repository-manager-files.md#opening-files) files for viewing or [editing](deployr-repository-manager-files.md#editing-file-properties)
+- [Share files and collaborate](deployr-repository-manager-files.md#sharing-files-with-others) with others
+- [View](deployr-repository-manager-files.md#working-with-historical-versions), [compare](deployr-repository-manager-files.md#comparing-version-differences), and [revert](deployr-repository-manager-files.md#reverting-a-past-version-to-the-latest-version) versions in the file's history
+- [Test scripts](deployr-repository-manager-testing-debugging-scripts.md) in a live debugging environment (R scripts only)
+- [Close](deployr-repository-manager-files.md#closing-files) files
+- [Delete](deployr-repository-manager-files.md#deleting-files) files from directories
 
 ## The Files You Don't Own
 
-If you do not own a file and do not have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) to it either, then you will never be able to see or interact with that file.
+If you do not own a file and do not have [access rights](deployr-repository-manager-files.md#about-file-properties) to it either, then you will never be able to see or interact with that file.
 
-If you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) to a particular file you don't own, then you will see that file in one of directories under Other Files in the Files tab. Despite the fact that you do not own the file, you can still access the file in read-only mode. Possible operations include:
+If you have [access rights](deployr-repository-manager-files.md#about-file-properties) to a particular file you don't own, then you will see that file in one of directories under Other Files in the Files tab. Despite the fact that you do not own the file, you can still access the file in read-only mode. Possible operations include:
 
-- [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) files and [review the file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm) of the Latest version
-- [Test R scripts](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm), including the review of [source code*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-1-code.htm), [loading*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-load-data.htm) of files into the R session, and testing of [modified input values*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm) in a debug environment (R scripts only)*
-- [Close](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-close.htm) files
+- [Open](deployr-repository-manager-files.md#opening-files) files and [review the file properties](deployr-repository-manager-files.md#about-file-properties) of the Latest version
+- [Test R scripts](deployr-repository-manager-testing-debugging-scripts.md), including the review of [source code*](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code), [loading*](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) of files into the R session, and testing of [modified input values*](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) in a debug environment (R scripts only)*
+- [Close](deployr-repository-manager-files.md#closing-files) files
 
-*Certain [server policies ](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm)can affect your ability to see, download, and load files that aren't yours.
+*Certain [server policies ](deployr-repository-manager-about.md#permissions-policies)can affect your ability to see, download, and load files that aren't yours.
 
 ## Uploading Files
 
@@ -87,7 +87,7 @@ If you have [access rights](https://deployr.revolutionanalytics.com/documents/he
 
 While small revisions are possible through the Repository Manager, the bulk of your script development should take place outside of DeployR prior to uploading. Once ready, you can use the Repository Manager to upload the files needed for your applications to the DeployR server repository. To upload several files, first put them in a zip file and then upload the zip.
 
-If you attempt to upload a file into a directory containing a file by the same name, then a new version of the file will be created in the repository. For example, let's say you decide to upload file test.R from your local file system to the directory Samples, but the directory Samples already has a file by that same name, test.R. In that case, upon upload the contents of your local test.R becomes the new [*Latest*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) version of test.R in the directory Samples. The owners, keywords, and description of the file test.R remain unchanged. To see the contents of file test.R as they were before the upload, look in the [version history](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm).
+If you attempt to upload a file into a directory containing a file by the same name, then a new version of the file will be created in the repository. For example, let's say you decide to upload file test.R from your local file system to the directory Samples, but the directory Samples already has a file by that same name, test.R. In that case, upon upload the contents of your local test.R becomes the new [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of test.R in the directory Samples. The owners, keywords, and description of the file test.R remain unchanged. To see the contents of file test.R as they were before the upload, look in the [version history](deployr-repository-manager-files.md#working-with-historical-versions).
 
 
 >Since you cannot rename a file upon upload, make any changes to the name of a file before uploading.
@@ -102,7 +102,7 @@ If you attempt to upload a file into a directory containing a file by the same n
 
 4. Select the file you want to upload from your local machine using the **Browse** button. Choose an individual file or a zip of several files.
 
-5. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-create.htm) before coming back here to upload the file.
+5. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](deployr-repository-manager-directories.md#creating-directories) before coming back here to upload the file.
 
 6. If you are uploading a zip file, choose whether to extract files upon upload. Choices are:
 	-  **Extract files into directory**. All files, regardless of the directory structure in the zip file, will be extracted into a single directory.
@@ -112,9 +112,9 @@ If you attempt to upload a file into a directory containing a file by the same n
 
 ## Downloading Files
 
-You can download any [version](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) of a file you own. When you download a file, whether it is the Latest version or previous version, a file is created on your local file system with a copy of the contents of the selected file version.
+You can download any [version](deployr-repository-manager-files.md#working-with-historical-versions) of a file you own. When you download a file, whether it is the Latest version or previous version, a file is created on your local file system with a copy of the contents of the selected file version.
 
->The [properties of the file](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm) (access rights, keywords, and so on), which are managed by the repository, are not included in the download.
+>The [properties of the file](deployr-repository-manager-files.md#about-file-properties) (access rights, keywords, and so on), which are managed by the repository, are not included in the download.
 
 **To download the Latest version of a file you own:**
 
@@ -136,13 +136,13 @@ You can download any [version](https://deployr.revolutionanalytics.com/documents
 
 ## Copying Files
 
-You can make a copy of any file you own. When you copy a file, whether it is the [*Latest*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) version or previous version, a new file is created in the specified user directory in the repository. You can then see that file in the **Files** tab. The contents of your new file is a duplicate of the contents of the version of the file you copied. Your new file will have the same file properties as the version of the file being copied except you will be its sole owner. And, since this is a new file, the file will not have any previous versions.
+You can make a copy of any file you own. When you copy a file, whether it is the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version or previous version, a new file is created in the specified user directory in the repository. You can then see that file in the **Files** tab. The contents of your new file is a duplicate of the contents of the version of the file you copied. Your new file will have the same file properties as the version of the file being copied except you will be its sole owner. And, since this is a new file, the file will not have any previous versions.
 
-If you copy a file into a directory in which a file by the same name already exists, then a copy of the Latest version of the selected file becomes the Latest version of the file in the destination directory. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to copy the file from directory X and save it in directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. The file is directory X remains unchanged. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
+If you copy a file into a directory in which a file by the same name already exists, then a copy of the Latest version of the selected file becomes the Latest version of the file in the destination directory. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to copy the file from directory X and save it in directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. The file is directory X remains unchanged. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](deployr-repository-manager-files.md#working-with-historical-versions) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
 
 **To copy a file:**
 
-1. [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) the file in the Repository Manager.
+1. [Open](deployr-repository-manager-files.md#opening-files) the file in the Repository Manager.
 
 2. In the **File Properties** page, choose **Copy** from the **File** menu. The **Copy File** dialog opens.
 
@@ -156,7 +156,7 @@ If you copy a file into a directory in which a file by the same name already exi
 
 You can move the files under **My Files** for which you are the sole owner from one user directory to another. If there are multiple users on a file, it cannot be moved.
 
-If you move a file into a directory in which a file by the same name already exists, then the Latest version of the moved file becomes the [*Latest version*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) of the file in the destination directory and the file histories are merged. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to move the file from directory X to directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
+If you move a file into a directory in which a file by the same name already exists, then the Latest version of the moved file becomes the [*Latest version*](deployr-repository-manager-files.md#working-with-historical-versions) of the file in the destination directory and the file histories are merged. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to move the file from directory X to directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](deployr-repository-manager-files.md#working-with-historical-versions) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
 
 
 >You cannot change the directory of files you co-own with other users. Files for which you are the sole owner can be moved to another directory; however, files owned by multiple users must remain under the original directory for as long as there are multiple owners.
@@ -173,15 +173,15 @@ If you move a file into a directory in which a file by the same name already exi
 
 ## Opening Files
 
-If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) and also by [server policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm).
+If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](deployr-repository-manager-files.md#about-file-properties) and also by [server policies](deployr-repository-manager-about.md#permissions-policies).
 
->If two owners are editing a file at the same time, you will be writing over each other's work. It is essential to coordinate with the [other owners](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm).
+>If two owners are editing a file at the same time, you will be writing over each other's work. It is essential to coordinate with the [other owners](deployr-repository-manager-files.md#adding-and-removing-owners).
 
 **To open the Latest version of a file:**
 
 1. In the **Files** tab of the Repository Manager, navigate to the directory containing the file you want to open.
 
-1. Click the name of the file. A new file tab opens and displays the [file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+1. Click the name of the file. A new file tab opens and displays the [file properties](deployr-repository-manager-files.md#about-file-properties).
 
 **To open a prior version of a file:**
 
@@ -191,36 +191,36 @@ If you see a file in the Files tab, you can open it. Your right to access, edit,
 
 1. Click the icon in the **History** column for that file. The **Version History** table appears in the **Files** tab.
 
-1. Click the number to the left of the version you want to open. A new file tab opens and displays the [file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+1. Click the number to the left of the version you want to open. A new file tab opens and displays the [file properties](deployr-repository-manager-files.md#about-file-properties).
 
->To learn more about a version without opening a file, you can also [compare](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-compare.htm) a historical version to the Latest version of a file.
+>To learn more about a version without opening a file, you can also [compare](deployr-repository-manager-files.md#comparing-version-differences) a historical version to the Latest version of a file.
 
 ## Editing File Properties
 
-Only the [file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm) of the [*Latest*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) version of a file can be edited since all others in the file history are read-only. Furthermore, only an owner can edit a file.
+Only the [file properties](deployr-repository-manager-files.md#about-file-properties) of the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of a file can be edited since all others in the file history are read-only. Furthermore, only an owner can edit a file.
 
 **To edit file properties:**
 
-1. [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) the *Latest* version of a file you own.
+1. [Open](deployr-repository-manager-files.md#opening-files) the *Latest* version of a file you own.
 
-1. Make any desired changes to the following [file properties](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm). Changes are automatically saved. Note that you cannot change a file's name or version information.
+1. Make any desired changes to the following [file properties](deployr-repository-manager-files.md#about-file-properties). Changes are automatically saved. Note that you cannot change a file's name or version information.
 	1.  Edit the keywords or file description.
 
-	1.  Update the list of [owners](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) collaborating on this file.
+	1.  Update the list of [owners](deployr-repository-manager-files.md#adding-and-removing-owners) collaborating on this file.
 
-	1.  Change the [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) on the file to control how the file is deployed.
+	1.  Change the [access rights](deployr-repository-manager-files.md#about-file-properties) on the file to control how the file is deployed.
 
 ## Sharing Files with Others
 
 By default, an R Script or any other repository-managed file is visible on the API only to the owners, referred to as authors in API calls, of that file. However, you can make files visible to other authenticated and/or anonymous users on the API and in the Repository Manager in the following ways.
 
-1.  **Grant ownership to others**. You can [grant (or revoke) ownership](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) to other authenticated users so that they can edit and manage that file. 
+1.  **Grant ownership to others**. You can [grant (or revoke) ownership](deployr-repository-manager-files.md#adding-and-removing-owners) to other authenticated users so that they can edit and manage that file. 
 
 	>An R script is always available for execution on the API to all of its owners.
 
-1.  **Specify access rights on a file**. You can set the [access level](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) (**Private**, **Restricted**, **Shared**, or **Public**) on a file to control who can access it or, in the case of a script, execute the script.
+1.  **Specify access rights on a file**. You can set the [access level](deployr-repository-manager-files.md#about-file-properties) (**Private**, **Restricted**, **Shared**, or **Public**) on a file to control who can access it or, in the case of a script, execute the script.
  
-	>To learn more about other file properties, [read here](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+	>To learn more about other file properties, [read here](deployr-repository-manager-files.md#about-file-properties).
 
 ## Adding and Removing Owners
 
@@ -263,11 +263,11 @@ The current working version of a file is referred to as the ***Latest* version**
 
 For any file you own, you can access the file's version history. From this version history, you can:
 
-- [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) a version
-- [Compare](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-compare.htm) one past version to the Latest version of the file
-- [Revert](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-revert.htm) a past version to the *Latest* version of the file
+- [Open](deployr-repository-manager-files.md#opening-files) a version
+- [Compare](deployr-repository-manager-files.md#comparing-version-differences) one past version to the Latest version of the file
+- [Revert](deployr-repository-manager-files.md#reverting-a-past-version-to-the-latest-version) a past version to the *Latest* version of the file
 
->You cannot delete an individual version from the version history. If you [delete a file](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-delete.htm), all of its version history is also deleted.
+>You cannot delete an individual version from the version history. If you [delete a file](deployr-repository-manager-files.md#deleting-files), all of its version history is also deleted.
 
 **To see the version history of a file you own:**
 
@@ -296,11 +296,11 @@ When a file has two or more versions, you can compare the differences between on
 
 1. Review the differences between the past version, which is referenced by its ID, and the Latest version.
 
-1. If desired, you can click **Revert** to [revert](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-revert.htm) the past version to *Latest*.
+1. If desired, you can click **Revert** to [revert](deployr-repository-manager-files.md#reverting-a-past-version-to-the-latest-version) the past version to *Latest*.
 
 ### Reverting a Past Version to the Latest Version
 
-If you want to restore a historical version to Latest version of a file, you can [revert that version](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions-compare.htm). Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
+If you want to restore a historical version to Latest version of a file, you can [revert that version](deployr-repository-manager-files.md#comparing-version-differences). Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
 
 <br/>
 _Figure: Workflow for Restoring Files_
@@ -313,7 +313,7 @@ Only the sole owner of a file can delete the file (and all of its previous versi
 
 When you attempt to delete a file you own, DeployR checks to see if there are other owners. If there are other owners, then you are removed as an owner and the file is no longer editable by you; however the file and its version history remain available in the repository to the other owners. But, if you are the sole owner at the time you attempt to delete this file, the file and all its versions will be permanently deleted from the repository.
 
-After you delete a file, you may see that file under **Other Files** in the Files tab. If so, this is due to the fact that the file had multiple owners and the file's [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) were set to **Restricted**, **Shared**, or **Public**. In this case, you might be able to see the file in your **Files** tab, but you will not be able to edit that file since you are no longer its owner.
+After you delete a file, you may see that file under **Other Files** in the Files tab. If so, this is due to the fact that the file had multiple owners and the file's [access rights](deployr-repository-manager-files.md#about-file-properties) were set to **Restricted**, **Shared**, or **Public**. In this case, you might be able to see the file in your **Files** tab, but you will not be able to edit that file since you are no longer its owner.
 
 <br/>
 _Figure: Workflow for Deleting Files_
@@ -338,7 +338,7 @@ You can close one file at any time.
 
 1. Go to the tab of the file you would like to close.
 
-1. From the **Manage** menu on the right, choose **Close**. If there are any unsaved code changes, you will be prompted to [save](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-save.htm) or discard those changes. The tab disappears and the **Files** tab appears onscreen.
+1. From the **Manage** menu on the right, choose **Close**. If there are any unsaved code changes, you will be prompted to [save](deployr-repository-manager-testing-debugging-scripts.md#saving-script-changes) or discard those changes. The tab disappears and the **Files** tab appears onscreen.
 
 >Alternately, hover over the filename in the tab at the top of the screen and click the **x**.
  

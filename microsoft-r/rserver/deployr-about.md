@@ -111,7 +111,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 1.  Consult with the data scientists responsible for developing the R analytics outputs in order to determine your application's analytics dependencies (inputs and outputs).
 
-2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#Analytics-Web-Service).
+2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager-/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#Analytics-Web-Service).
 
 3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
@@ -126,7 +126,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 1.  [Provisioning suitable hardware](deployr-installing-configuring.md) in preparation for a DeployR install.
 2.  Installing DeployR using [these instructions](deployr-installing-configuring.md).
 3.  Customizing DeployR [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
-4.  Creating and managing DeployR [user accounts](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-intro.htm).
+4.  Creating and managing DeployR [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md).
 5.  Customizing DeployR [security policies](deployr-admin-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
@@ -161,7 +161,7 @@ DeployR Enterprise supports a scalable grid framework, providing load balancing 
 
 In DeployR, we refer to any web service that exposes R analytics capabilities over the network as an analytics web service. While “web services” is commonly used in the context of browser-based web applications, these services—in particular, analytics web services—can just as easily be integrated inside desktop, mobile, and dashboard applications, as well as backend systems. For example, when you upload an R script into the DeployR Repository Manager, the script may then be executed as an analytics web service by any application with appropriate permissions.
 
-*Note*: When you upload an R script into the [Repository Manager](#g_repoman), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
+*Note*: When you upload an R script into the [Repository Manager](#DeployR-Repository-Manager), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
 
 
 #### DeployR Administration Console
@@ -171,6 +171,6 @@ The Administration Console is a tool, delivered as an easy-to-use Web interface,
 
 #### DeployR Repository Manager
 
-The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](https://deployr.revolutionanalytics.com/documents/help/repo-man/).
+The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-manager-about.md).
 
 

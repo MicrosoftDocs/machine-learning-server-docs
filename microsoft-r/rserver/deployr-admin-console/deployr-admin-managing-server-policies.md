@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Managing Server Policies
 
-The **Server Policies** tab contains [the policies governing the DeployR server](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/policies-properties.htm), including:
+The **Server Policies** tab contains [the policies governing the DeployR server](deployr-admin-managing-server-policies.md#server-policy-properties), including:
 
 - Global settings such as name, default server boundary, and console timeout
 - Project persistence policies governing resource usage (sizes and autosave)
@@ -64,33 +64,33 @@ There are a number of settings that can be defined for each server. They are gro
 <br/>
 ### Authenticated Operation Policies
 
-These policies govern how [authenticated operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
+These policies govern how [authenticated operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
 
 |Properties|Description|
 |---|---|
 |`HTTPS encrypted`|By default this option is unchecked, which sets it to False, where incoming calls on the API can be made over a plain HTTP connection. If set to True, the server only accepts incoming API calls over an encrypted channel (HTTPS). For more information, see the [Security for DeployR](../deployr-admin-security.md#enable-server-ssl-https) guide for your version on the product website.<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds that an authenticated user can remain idle while connected to the server before the HTTP session is automatically timed-out and disconnected. 
 
 <br/>
 ### Asynchronous Operation Policies
 
-These policies govern how [asynchronous operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
+These policies govern how [asynchronous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
 
 |Properties|Description|
 |---|---|
 |`HTTPS encrypted`|By default this option is unchecked, which sets it to False, where calls on the API can be made over a plain HTTP connection. If set to true, the server will only accept API calls over an encrypted channel (HTTPS). For more information, see the Security for DeployR guide for your version on the product website.<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 
 <br/>
 ### Anonymous Operation Policies
 
-These policies govern how [anonymous operations](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/node-operations.htm) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
+These policies govern how [anonymous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
 
 |Properties|Description|
 |---|---|
 |`HTTPS encrypted`|By default this option is unchecked, which sets it to False, where scripts can be executed over a plain HTTP connection. If set to true, the server only accepts script execution requests over an encrypted channel (HTTPS). For more information, see the [Security for DeployR](../deployr-admin-security.md#enable-server-ssl-https) guide for your version on the product website.<br /><br />**Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/filter-intro.htm) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds an anonymous operation remains live on the grid before it is automatically terminated. The automatic termination will release all resources associated with that operation.|
 
 <br/>

@@ -33,20 +33,20 @@ Use the **Test** page to do the following to repository-managed scripts:
 - Test and verify the functioning of scripts you own
 - Debug and fix the functioning of scripts you own
 - Test and verify the functioning of scripts to which you have access rights
-- Debug the functioning of scripts to which you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights)
+- Debug the functioning of scripts to which you have [access rights](deployr-repository-manager-files.md#about-file-properties)
 
 
 ##Test Page Panes
 
 The **Test** page is divided into four panes:
 
-+ **Source** pane (1):  displays the actual R [source code](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-1-code.htm) contained in the script file
++ **Source** pane (1):  displays the actual R [source code](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code) contained in the script file
 
-+ **Debug Console Output** pane (2): displays the R session [console output](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-2-console.htm) generated during the execution of a script
++ **Debug Console Output** pane (2): displays the R session [console output](deployr-repository-manager-testing-debugging-scripts.md#reviewing-debug-console-output) generated during the execution of a script
 
-+ **Script Execution Parameters** pane (3): allows you to interact with the [inputs](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm) defined in the code and define simple [inputs on-the-fly](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm#QuickInputs).
++ **Script Execution Parameters** pane (3): allows you to interact with the [inputs](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) defined in the code and define simple [inputs on-the-fly](deployr-repository-manager-testing-debugging-scripts.md#quick-on-the-fly-inputs).
 
-+ **Artifacts** pane (4): allows you to see the [files and plots](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-4-artifacts.htm) produced when the code was last executed as well as inspect the API [request and response](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-4-artifacts.htm) markup.
++ **Artifacts** pane (4): allows you to see the [files and plots](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) produced when the code was last executed as well as inspect the API [request and response](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) markup.
 
  ![](media/deployr-repository-manager-testing-debugging-scripts/testpagepanes.png)
 
@@ -56,22 +56,22 @@ The **Test** page is divided into four panes:
 
 -  Open a script and click the **Test** button on the right of the **File Properties** page. The **Test** page opens.
 
->Each time you log into the Repository Manager, you are automatically allocated a dedicated R session, which supports all of your R script testing and debugging within the Repository Manager. This R session lives for the duration of your HTTP session, until you logout or timeout, at which point it is released. You can [load data ](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-load-data.htm)into the R session as well as [clear the workspace and working directory](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-clear-data.htm).
+>Each time you log into the Repository Manager, you are automatically allocated a dedicated R session, which supports all of your R script testing and debugging within the Repository Manager. This R session lives for the duration of your HTTP session, until you logout or timeout, at which point it is released. You can [load data ](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session)into the R session as well as [clear the workspace and working directory](deployr-repository-manager-testing-debugging-scripts.md#clearing-the-r-session-working-directory-or-workspace).
 
 ## Inspecting the Source Code
 
-The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm).
+The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](deployr-repository-manager-about.md#permissions-policies).
 Viewing R Code
 
 ###Viewing R Code
 
 In this pane, you can view and scroll through the source code of the R script. Code elements are color-coded for your convenience.
 
->If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm#Policies) was changed by your administrator. An onscreen alert will also appear.
+>If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](deployr-repository-manager-about.md#policies) was changed by your administrator. An onscreen alert will also appear.
 
 ###Editing R Code
 
-Only the owners of a file can edit the source code of the [*Latest*](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
+Only the owners of a file can edit the source code of the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
 
 **To edit the R code:**
 
@@ -79,27 +79,27 @@ Only the owners of a file can edit the source code of the [*Latest*](https://dep
 
 1. Type your edits directly into the pane.
 
-1. [Save](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-save.htm) your script and [run it](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-run.htm) to test the changes.
+1. [Save](deployr-repository-manager-testing-debugging-scripts.md#saving-script-changes) your script and [run it](deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) to test the changes.
 
->Only file owners who were assigned the [**POWER_USER**](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) role by the administrator have the permissions to run snippets of code in the **Source** pane. If you are a file owner assigned the **POWER_USER** role, you can select and run snippets from the **Source** pane and inspect the workspace in the **Debug Console Output** pane to see the R objects within and their values.
+>Only file owners who were assigned the [**POWER_USER**](deployr-repository-manager-about.md#permissions-policies) role by the administrator have the permissions to run snippets of code in the **Source** pane. If you are a file owner assigned the **POWER_USER** role, you can select and run snippets from the **Source** pane and inspect the workspace in the **Debug Console Output** pane to see the R objects within and their values.
 
 ## Running Scripts in Test Page
 
-Any DeployR user who can access a script can also test that script by running the script, changing the [input values](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm), and then running it again in the **Test** page.
+Any DeployR user who can access a script can also test that script by running the script, changing the [input values](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values), and then running it again in the **Test** page.
 
->When debugging a script, you may need to [interrupt an execution](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-run-interrupt.htm).
+>When debugging a script, you may need to [interrupt an execution](deployr-repository-manager-testing-debugging-scripts.md#interrupting-code-executions).
 
 ### Running Entire Scripts with Default Inputs or No Inputs
 
-You can run a script in the **Test** page using the script's source code as-is regardless of whether or not any inputs were defined using [deployrInput()](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm).
+You can run a script in the **Test** page using the script's source code as-is regardless of whether or not any inputs were defined using [deployrInput()](deployr-repository-manager-testing-debugging-scripts.md).
 
 **To run a script with the default values and inputs:**
 
-1. [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) the script and go to the [**Test** page](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm).
+1. [Open](deployr-repository-manager-files.md#opening-files) the script and go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
 1. Make no changes in the **Script Execution Parameters** pane.
 
-1. Click **Run** in the toolbar. This script is run in its entirety. Any [artifacts](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-4-artifacts.htm) are then displayed in the Artifacts pane.
+1. Click **Run** in the toolbar. This script is run in its entirety. Any [artifacts](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) are then displayed in the Artifacts pane.
 
 <br/>
 ### Running Entire Scripts with Modified Inputs
@@ -108,36 +108,36 @@ You can supply new and modified input values for a script, and then pass those i
 
 Supply new input values in the following ways:
 
-- Defining temporary [primitive input values](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm#QuickInputs) on-the-fly
+- Defining temporary [primitive input values](deployr-repository-manager-testing-debugging-scripts.md#quick-on-the-fly-inputs) on-the-fly
 
-- Modifying the value of any [deployrInput()](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm#R%C2%A0Code) widgets
+- Modifying the value of any [deployrInput()](deployr-repository-manager-testing-debugging-scripts.md#r-code-inputs-deployrinput-) widgets
 
-- Editing the [source code](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-1-code.htm) to add, remove, or update any deployrInput() functions (available to script-owners only)
+- Editing the [source code](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code) to add, remove, or update any deployrInput() functions (available to script-owners only)
 
 For tips and guidance on how to develop portable R code using the deployrInput function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on the DeployR website.
 
 **To run a script new and modified input values:**
 
-1. [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) the script.
+1. [Open](deployr-repository-manager-files.md#opening-files) the script.
 
-1. Go to the [**Test** page](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm).
+1. Go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
-1. [Supply input values](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-3-inputs.htm).
+1. [Supply input values](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values).
 
 1. In the **Script Execution Parameters** pane, click **Run** in the toolbar. The input values are passed along from this pane, and the script is run in its entirety.
 
 <br/>
 ### Running Snippets of Code
 
-If you own the script and have [**POWER_USER**](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) permissions, you can run a snippet of code directly from the **Source** pane. In this way, you can make small changes to your R code and run only the lines you want to test. You can even select a variable name, for example, and run that to see its contents.
+If you own the script and have [**POWER_USER**](deployr-repository-manager-about.md#permissions-policies) permissions, you can run a snippet of code directly from the **Source** pane. In this way, you can make small changes to your R code and run only the lines you want to test. You can even select a variable name, for example, and run that to see its contents.
 
 >Running code from the Source pane will run the selected code as-is without taking into account any modified values or **Quick Inputs** defined in the **Script Execution Parameters** pane.
 
 **To run code selections:**
 
-1. [Open](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-open.htm) the script
+1. [Open](deployr-repository-manager-files.md#opening-files) the script
 
-1. Go to the [**Test** page](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm).
+1. Go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
 1. In the **Source** pane, select the code that you want to run. If no code is selected, the current line is used.
 
@@ -173,16 +173,16 @@ Each time you log into the Repository Manager, you are automatically allocated a
 
 To help you test and debug your scripts, you can manipulate this underlying R session by:
 
-- [Loading](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-load-data.htm) and moving data into the R session to be used by one or more of the scripts you are debugging
-- [Clearing](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-clear-data.htm) the working directory or workspace of that underlying R session
-- [Retrieving DeployR-encoded R objects](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-robjects.htm) from the workspace
+- [Loading](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) and moving data into the R session to be used by one or more of the scripts you are debugging
+- [Clearing](deployr-repository-manager-testing-debugging-scripts.md#clearing-the-r-session-working-directory-or-workspace) the working directory or workspace of that underlying R session
+- [Retrieving DeployR-encoded R objects](deployr-repository-manager-testing-debugging-scripts.md#retrieving-r-objects) from the workspace
 
 <br/>
 ### Loading Data into the R Session
 
 You can load data into the underlying R session from the **Test** page of any open script. Any type of data file can be loaded into the working directory of the underlying R session. For example, you could load a .CSV file that will be read by your script. However, only files containing binary R objects, typically with a .rData file extension, can be loaded directly into the workspace from this page.
 
-You choose to load data files and binary R objects from the repository or from your local machine. You can always load your files; however, your ability to load data files that you do not own from the repository is determined by [server policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm#Policies).
+You choose to load data files and binary R objects from the repository or from your local machine. You can always load your files; however, your ability to load data files that you do not own from the repository is determined by [server policies](deployr-repository-manager-about.md#policies).
 
 **To load data into the underlying R session:**
 
@@ -231,9 +231,9 @@ To help you test your script, you can supply temporary input values in the **Scr
 
 -  Change any values displayed in the `deployrInput()` widgets
 -  Define some primitive values on-the-fly
--  [Run](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-run.htm) the entire script with the values and quick inputs shown in this pane
+-  [Run](deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) the entire script with the values and quick inputs shown in this pane
 
->You can also [load data](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-sess-load-data.htm) into the underlying R session to be used by any script. For example, you might create a model, save that in an .rData file, and then load it into the workspace so your script can use the model to score new data.
+>You can also [load data](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) into the underlying R session to be used by any script. For example, you might create a model, save that in an .rData file, and then load it into the workspace so your script can use the model to score new data.
 
 ### R Code Inputs (deployrInput)
 
@@ -242,9 +242,9 @@ Any inputs defined in the R code using the deployrInput() function, and their de
 For tips and guidance on how to develop portable R code using this function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on the DeployR website.
 Refer to the deployrUtils package help for more details and examples.
 
->If you do not own this file and cannot see the R code in the **Source** pane, then the deployrInput() functions [cannot be rendered](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) either.
+>If you do not own this file and cannot see the R code in the **Source** pane, then the deployrInput() functions [cannot be rendered](deployr-repository-manager-about.md#permissions-policies) either.
 
-By default, if you can access this file in the Repository Manager, then you are permitted to see any `deployrInput` widgets in this pane regardless of whether you own the file or not. However, if you do not own this file but know there are `deployrInput` declarations in the code and cannot see them here, it may be due a change in the server configuration [policies](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-permissions-policies.htm) by the DeployR administrator that prohibits the loading and downloading of files that may contain code into an R session.
+By default, if you can access this file in the Repository Manager, then you are permitted to see any `deployrInput` widgets in this pane regardless of whether you own the file or not. However, if you do not own this file but know there are `deployrInput` declarations in the code and cannot see them here, it may be due a change in the server configuration [policies](deployr-repository-manager-about.md#permissions-policies) by the DeployR administrator that prohibits the loading and downloading of files that may contain code into an R session.
 
 ### Quick 'on-the-fly' Inputs
 
@@ -266,10 +266,10 @@ On the **Test** page, you can retrieve and inspect DeployR encoding for R object
 
 The following kinds of artifacts might be present after you execute code:
 
--  Unnamed and named [plots](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-4-artifacts.htm) from the R graphics device and non-image files that were written to the working directory
+-  Unnamed and named [plots](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) from the R graphics device and non-image files that were written to the working directory
 -  DeployR encodings of R objects from the workspace
 
-You can use the **R Objects** field to request that R object(s) in the workspace be returned as a DeployR-encoded object(s) in the [response](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test-4-artifacts.htm) markup.
+You can use the **R Objects** field to request that R object(s) in the workspace be returned as a DeployR-encoded object(s) in the [response](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) markup.
 
 ![](media/deployr-repository-manager-testing-debugging-scripts/robjects.png)
 
@@ -339,6 +339,6 @@ The changes you make to the source code of your own scripts in the Repository Ma
 
 1.  In the submenu, choose one of the following:
 	-  **Overwrite Latest version** to replace in the current working copy of the script.
-	-  **Save as new version** to save the changes as the [*Latest* version](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/d-file-versions.htm) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
+	-  **Save as new version** to save the changes as the [*Latest* version](deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
 
 	>`Ctrl-S` on Windows/Linux or `Command-S` on MAC will save and overwrite the *Latest* version.

@@ -1,4 +1,4 @@
----
+﻿---
 
 # required metadata
 title: " Security in DeployR"
@@ -891,7 +891,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
     -   The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
     -   The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
 
-    [Learn more about server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm).
+    [Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 4.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
      
@@ -1052,7 +1052,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     	+ The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are disabled.
 
-    	[Learn more about server policies](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm).
+    	[Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 3.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
      
@@ -1065,7 +1065,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
 While access to DeployR is typically controlled by the authentication mechanisms discussed in this document, DeployR also supports access controls based on IP address filters.
 
-Under the [**Server Policies**](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm) tab in the DeployR Administration Console, you have a mechanism to configure your IP address filter policy. The `Operation Policies` for authenticated, asynchronous, and anonymous operations each support an [IP filter](https://deployr.revolutionanalytics.com/documents/help/admin-console//#Topics/policies-properties.htm) property. If you assign an IP filter to this property, then any attempt by a client application to connect from outside of the IP address range on that filter will be automatically rejected.
+Under the [**Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab in the DeployR Administration Console, you have a mechanism to configure your IP address filter policy. The `Operation Policies` for authenticated, asynchronous, and anonymous operations each support an [IP filter](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) property. If you assign an IP filter to this property, then any attempt by a client application to connect from outside of the IP address range on that filter will be automatically rejected.
 
 For example, you can make your DeployR server instance accessible only from IP addresses on the local LAN or VPN, such as `192.168.1.xxx` or `10.xxx.xxx.xxx`. Note that it is possible to achieve these same kinds of access controls with an appropriate configuration on your firewall and/or routers.
 
@@ -1128,7 +1128,7 @@ If the owner of a repository-managed file wants to grant read-only access to tha
 
 -   `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
 
-You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](https://deployr.revolutionanalytics.com/documents/help/repo-man//#e-file-properties.htm).
+You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
 
 For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
 
@@ -1305,7 +1305,7 @@ To manage locked user accounts, the administrator has two choices. The chosen be
 
     deployr.security.tally.login.lock.timeout = 1800
 
-If the `lock.timeout` value is set to 0, then locked user accounts must be manually unlocked by the administrator in the [Users tab](https://deployr.revolutionanalytics.com/documents/help/admin-console/#Topics/user-view-edit.htm) of the Administration Console.
+If the `lock.timeout` value is set to 0, then locked user accounts must be manually unlocked by the administrator in the [Users tab](deployr-admin-console/deployr-admin-console-user-accounts.md#viewing-and-editing-user-accounts) of the Administration Console.
 
 If the `lock.timeout` value (measured in seconds), is set to any non-zero, positive value then a locked user account will be automatically *unlocked* by DeployR once the `lock.timeout` period of time has elapsed without further activity on the account.
 

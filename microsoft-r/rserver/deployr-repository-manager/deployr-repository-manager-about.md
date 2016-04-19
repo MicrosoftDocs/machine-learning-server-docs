@@ -48,12 +48,12 @@ The Repository Manager simplifies the management of repository files and directo
 
 Learn more about the main tasks you can perform in the Repository Manager, including:
 
--  [Upload files](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-create-upload.htm), including R scripts, to the repository
--  [Manage](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm) and [organize](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/b-dir-intro.htm) your files
--  [Share and collaborate on files](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm)
--  [Test scripts in a live debugging environment](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-script-test.htm)
+-  [Upload files](deployr-repository-manager-files.md##uploading-files), including R scripts, to the repository
+-  [Manage](deployr-repository-manager-files.md) and [organize](deployr-repository-manager-directories.md) your files
+-  [Share and collaborate on files](deployr-repository-manager-files.md#about-file-properties)
+-  [Test scripts in a live debugging environment](deployr-repository-manager-testing-debugging-scripts.md)
 
-In order to [log into](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/a-login.htm) the Repository Manager, you must have a DeployR user account.
+In order to [log into](deployr-repository-manager-about.md#logging-in-and-out) the Repository Manager, you must have a DeployR user account.
 
 ## Logging In and Out
 
@@ -68,7 +68,7 @@ The Repository Manager is accessible from the main menu of the DeployR landing p
 1.  If you are not already logged into DeployR, log in now as follows:
 	1.  Provide your username and password. Contact the DeployR administrator if you require assistance with your username or password.
 
-	1.  Click **Log In**. The **Files** tab appears. This is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as all of the repository-managed files to which you have [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm).
+	1.  Click **Log In**. The **Files** tab appears. This is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as all of the repository-managed files to which you have [access rights](deployr-repository-manager-files.md#about-file-properties).
 
 **To log out of DeployR:**
 
@@ -84,9 +84,9 @@ The operations you can perform in the DeployR Repository Manager and on the APIs
 
 The answers to the following questions determine most of the operations you can perform on a file.
 
-1.  Are you an [owner](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties-owners.htm) of the file? See possible owner [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
+1.  Are you an [owner](deployr-repository-manager-files.md#adding-and-removing-owners) of the file? See possible owner [operations](deployr-repository-manager-files.md).
 
-1.  Do you have shared, restricted, or public [access rights](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/e-file-properties.htm#AccessRights) on the file? See possible [operations](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/c-file-intro.htm).
+1.  Do you have shared, restricted, or public [access rights](deployr-repository-manager-files.md#about-file-properties) on the file? See possible [operations](deployr-repository-manager-files.md).
 
 1.  Were you assigned the **POWER_USER** role by the administrator? If so, you can run arbitrary code selections on the scripts you own in **Source** pane in the **Test** page.
 

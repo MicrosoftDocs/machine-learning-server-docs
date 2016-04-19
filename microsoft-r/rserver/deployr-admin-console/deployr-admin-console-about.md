@@ -28,14 +28,14 @@ ms.custom: ""
 
 The DeployR Administration Console, which is delivered with DeployR, is an easy-to-use web interface that facilitates the proper management and administration of your DeployR deployment. Accordingly, the following functions are supported in the console:
 
--   The creation and management of [user accounts](user-intro.htm)
--   The creation and management of [roles](role-intro.htm), which are used to grant users permissions and to restrict access to R scripts
--   The import and export of [R scripts](script-intro.htm)
+-   The creation and management of [user accounts](deployr-admin-console-user-accounts.md)
+-   The creation and management of [roles](deployr-admin-console-permissions-with-roles.md), which are used to grant users permissions and to restrict access to R scripts
+-   The import and export of [R scripts](deployr-admin-console-managing-r-scripts.md)
 -   The creation and management of [R boundaries](../deployr-admin-managing-r-boundaries.md), which are used to constrain runtime resource usage
 -   The creation and management of [IP filters](filter-intro.htm)
--   The management of node resources on the DeployR [grid](node-grid-intro.htm)
--   The management of DeployR [server policies](policies-intro.htm)
--   The [monitoring of events on the grid](tasks-intro.htm)
+-   The management of node resources on the DeployR [grid](deployr-admin-managing-the-grid.md)
+-   The management of DeployR [server policies](deployr-admin-managing-server-policies.md)
+-   The [monitoring of events on the grid](deployr-admin-monitoring-events.md)
 
 ## Who Can Access the Administration Console
 
@@ -57,7 +57,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 
 	where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR machine and where `<PORT>` is the port number used during installation. 
 
-2.  Click **Administration Console Log In** in the upper right to log in.  If this is your first time using the Administration Console, try one of the [preconfigured users](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-defaults.htm).
+2.  Click **Administration Console Log In** in the upper right to log in.  If this is your first time using the Administration Console, try one of the [preconfigured users](deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
 
 3. Click **Log In**.
 

@@ -144,7 +144,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 ### Landing Page Cannot Be Reached
 
-If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#run-diagnostics). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](https://deployr.revolutionanalytics.com/documents/help/admin-console//#..//Content/Topics/policies-properties.htm#basic).
+If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#run-diagnostics). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
 
 ![Landing Page Inaccessible](./media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
 
@@ -161,7 +161,7 @@ Usage tips for the `setWebContext` script arguments:
 -   Use `-query` to see which IP is currently defined as the Server Web Context.
 -   Use `-aws` to detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.
 -   Use `-ip <ip_address>` to specify a new IP address or DNS name for the DeployR Server Web Context.
--   Use `-disableauto` to turn off the automatic IP detection. You can [turn this back on](https://deployr.revolutionanalytics.com/documents/help/admin-console//#..//Content/Topics/policies-properties.htm#basic) in the Administration Console.
+-   Use `-disableauto` to turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.
 -   Use `-https true|false` to enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security.md#enable-server-ssl-https).
      
 

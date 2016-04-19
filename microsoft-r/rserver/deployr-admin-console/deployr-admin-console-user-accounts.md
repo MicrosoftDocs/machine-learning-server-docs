@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Creating & Managing User Accounts
 
-User accounts, which are [created](role-new.htm) and [managed](role-view-edit.htm) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the <span class="Code_1">admin</span> account, user accounts represent script authors, client application developers, or client application end-users.
+User accounts, which are [created](deployr-admin-console-permissions-with-roles.md#creating-custom-roles) and [managed](deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the <span class="Code_1">admin</span> account, user accounts represent script authors, client application developers, or client application end-users.
 
 Each user has an account with [properties](deployr-admin-console-user-accounts.md#user-account-properties) such as their username, password, permissions, and so on. A user can represent an individual or an entity such as a dedicated DeployR client application. The role(s) assigned to users determine their rights to access the console, their rights to access all or some of the API, and in some cases, their rights to access certain scripts. 
 
@@ -62,8 +62,8 @@ For each user, there are a number of properties that can be defined. The propert
 |`Password / Verify Password`|Enter the new password and re-enter it a second time to confirm.|
 |`Password Expired`|Whenever this checkbox is selected, the user will be redirected to the DeployR Account Password Reset page the next time the user attempts to login so that they can define a new password. This applies only to basic authentication.|
 |`Account Locked`|When this checkbox is selected, the user account is locked. The user will not be permitted to log into the console. This applies only to basic authentication.|
-|`R boundary`|Optionally, assign a [boundary](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/boundaries-intro.htm) to the user. Boundaries impose a set of runtime constraints on the user when he or she executes code or scripts on the API.<br />**Note**: Grid node boundaries take precedence over user boundaries, and user boundaries take precedence over the server-wide default boundary.|
-|`Roles`|Assign [roles](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/role-intro.htm) in order to grant the user permissions to execute API calls, access the Administration Console, access some or all of the event streams, and access certain scripts. If you do not specify any roles, then the `BASIC_USER` is automatically assigned.|
+|`R boundary`|Optionally, assign a [boundary](deployr-admin-managing-r-boundaries.md) to the user. Boundaries impose a set of runtime constraints on the user when he or she executes code or scripts on the API.<br />**Note**: Grid node boundaries take precedence over user boundaries, and user boundaries take precedence over the server-wide default boundary.|
+|`Roles`|Assign [roles](deployr-admin-managing-server-policies.md) in order to grant the user permissions to execute API calls, access the Administration Console, access some or all of the event streams, and access certain scripts. If you do not specify any roles, then the `BASIC_USER` is automatically assigned.|
 
 ## Viewing and Editing User Accounts
 
@@ -79,7 +79,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
 
-4.  Make your changes to the [user properties](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-properties.htm).
+4.  Make your changes to the [user properties](deployr-admin-console-user-accounts.md##user-account-properties).
 
 5.  Click **Update** to save the changes.
 
@@ -96,7 +96,7 @@ For each user, there are a number of properties that can be defined. The propert
 	
        ![](media/deployr-admin-console-user-accounts/usernew.png)  
 
-3.  In the **New User** page, enter all required [properties](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/user-properties.htm) for the user account as well as any optional details.
+3.  In the **New User** page, enter all required [properties](deployr-admin-console-user-accounts.md##user-account-properties) for the user account as well as any optional details.
 
 4.  Click **Create** to save the new user.
 
@@ -116,7 +116,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 You can export user accounts into a CSV file. Exporting can be used to copy the accounts to another machine or to preserve them as a backup.
 
->When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](https://deployr.revolutionanalytics.com/documents/help/admin-console/Content/Topics/role-intro.htm) individually later. 
+>When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](deployr-admin-managing-server-policies.md) individually later. 
  
 _Figure: Export User Accounts page_
 ![](media/deployr-admin-console-user-accounts/userexport.png)  
