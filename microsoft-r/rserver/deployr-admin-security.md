@@ -365,7 +365,7 @@ By default, the Active Directory security provider is disabled. To enable Active
 
 >**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
 
-.
+&nbsp;
 
 >The LDAP and Active Directory security providers are, in fact, one and the same, and only their [configuration properties](#ldap-active-directory-configuration-properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 
