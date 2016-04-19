@@ -46,11 +46,11 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 3.  Pass inputs (data, files, and so on) when executing those R scripts
 4.  Retrieve outputs (data, files, plots, and so on) following the execution of those R scripts
 
-DeployR offers these features and many more through a set of [Analytics Web Services](#Analytics-Web-Services). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
+DeployR offers these features and many more through a set of [Analytics Web Services](#webservices). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
 As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://go.microsoft.com/fwlink/?LinkID=698301/documents/getting-started/) directly within your applications.
 
-The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#Developer-Tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#Real-World-Example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
+The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
 >[!NOTE]
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
@@ -173,13 +173,13 @@ The framework handles all of the low-level details, including:
 -   Server-side task execution
 -   Asynchronous callbacks to your application on task completion
 
-If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#API-Specification).
+If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api).
 
 ### Client Library
 
 *What if the [RBroker Framework](#broker) doesn't give me everything I need?*
 
-They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#API-Specification).
+They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api).
 
 ### API Specification
 
@@ -193,7 +193,7 @@ As long as your development environment can establish HTTP(S) connections and co
 
 ## Tutorials
 
-In the [Developer Tools](#Developer-Tools) section, you began your move from theory into practice through the introduction of the core tools and some initial fragments of sample code. To further bootstrap the learning process, we've written some more code for you. In fact, we've written a lot of code for you in the form of tutorials with which you can see the key concepts put into practice.
+In the [Developer Tools](#tools) section, you began your move from theory into practice through the introduction of the core tools and some initial fragments of sample code. To further bootstrap the learning process, we've written some more code for you. In fact, we've written a lot of code for you in the form of tutorials with which you can see the key concepts put into practice.
 
 To run these tutorials, you will need access to a live instance of the DeployR server. To download and install DeployR, see [here](https://deployr.revolutionanalytics.com/download/).
 
@@ -243,8 +243,7 @@ The sample application is a classic application in the analytics space, a realti
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](deployr-rbroker-framework
-.md#Client-Application-Profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](https://deployr.revolutionanalytics.com/documents/dev/rbroker/#profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
