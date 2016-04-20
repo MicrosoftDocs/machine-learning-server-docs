@@ -730,6 +730,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
         	    + When presented with the summary of your responses, enter `yes` to accept these entries.
         	    + For a key password for Tomcat, press the Return key to use `changeit`.
 
+
 	**The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
 		
 	<a id="alertusers"></a>
@@ -741,8 +742,9 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 2.  **Next, enable SSL support for Tomcat.**
     + For Linux:
-        >[!NOTE]
+    
 		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
+
 	 1.  Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
                  <!-- 
@@ -779,8 +781,9 @@ Once enabled your client applications can make API calls that connect over HTTPS
         >If you are provisioning your server on a cloud service such as Azure or AWS, then you must also add endpoints for port 8001.
 
     + For OS X:
-        >[!NOTE]
+
 		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
+
 	 1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
                  <!-- 
@@ -860,7 +863,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
 	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
 
                  grails.plugins.springsecurity.auth.forceHttps = false
-
 
 	 1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.  Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
