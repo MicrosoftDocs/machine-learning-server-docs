@@ -730,14 +730,13 @@ Once enabled your client applications can make API calls that connect over HTTPS
         	    + When presented with the summary of your responses, enter `yes` to accept these entries.
         	    + For a key password for Tomcat, press the Return key to use `changeit`.
 
-
-      **The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
+	**The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
 		
-		<a id="alertusers"></a>
-		>[!WARNING]
-		>**Alert Your Users!**  
-        	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
-        	>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+	<a id="alertusers"></a>
+	>[!WARNING]
+	>**Alert Your Users!**  
+	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
+	>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
 
 
 2.  **Next, enable SSL support for Tomcat.**
