@@ -116,7 +116,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 You can export user accounts into a CSV file. Exporting can be used to copy the accounts to another machine or to preserve them as a backup.
 
->When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](deployr-admin-managing-server-policies.md) individually later. 
+>When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](deployr-admin-console-permissions-with-roles.md) individually later. 
  
 _Figure: Export User Accounts page_
 ![](media/deployr-admin-console-user-accounts/userexport.png)  
