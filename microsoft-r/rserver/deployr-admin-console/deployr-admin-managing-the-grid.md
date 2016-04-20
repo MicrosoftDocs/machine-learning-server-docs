@@ -179,7 +179,7 @@ If the external data directories are properly configured across all grid nodes a
 
 + On **Windows** , update this path for each node to `C:/Revolution/DeployR-Node-8.0/deployr/external/data`
 
-<br/>
+<br/><a id="slots-in-use"></a>
 **Slots in Use**
 
 You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:
@@ -296,7 +296,8 @@ To delete a node (DeployR Enterprise Only):
 
 You can export one or more node configurations into one CSV file. Exporting can be used to copy the basic node configurations to another machine or to preserve them as a backup. 
  
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+>**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed 
+>slot limit, the information in this topic does not apply.
 
 _Figure: Export Grid Configuration page_
 
