@@ -4,7 +4,7 @@
 title: " Scale & Throughput in DeployR"
 description: "Understanding Scale and Throughput in DeployR"
 keywords: "scalability, throughput, DeployR"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

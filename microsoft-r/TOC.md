@@ -40,7 +40,7 @@
 # [RevoPemaR](rserver/rserver-pemar-getting-started.md)
 # [DeployR](rserver/deployr-about.md)
 ## [What's New](rserver/deployr-whats-new.md)
-## Administrators
+## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Installing](rserver/deployr-installing-configuring.md)
 ### Configuring
@@ -49,7 +49,7 @@
 #### [DeployR on Azure](rserver/deployr-admin-configure-for-azure.md)
 #### [Server, Grid & Database High Availability](rserver/deployr-admin-configure-high-availability.md)
 #### [Using Hadoop Impersonation & DeployR](rserver/deployr-admin-hadoop-impersonation.md)
-### Administration Console Help
+### [Administration Console Help](rserver/deployr-admin-console/deployr-admin-console-about.md)
 #### [About DeployR Administration Console](rserver/deployr-admin-console/deployr-admin-console-about.md)
 #### [Creating & Managing User Accounts](rserver/deployr-admin-console/deployr-admin-console-user-accounts.md)
 #### [Managing Permissions with Roles](rserver/deployr-admin-console/deployr-admin-console-permissions-with-roles.md)
@@ -62,24 +62,24 @@
 ### [Security on DeployR](rserver/deployr-admin-security.md)
 ### [R Package Management for Administrators](rserver/deployr-admin-r-package-management.md)
 ### [Managing Big Data](rserver/deployr-admin-manage-big-data.md)
-### [Reinstalling or Upgrading the R Dependency ](rserver/deployr-admin-configure-reinstall-r.md)
+### [Reinstalling or Upgrading the R Dependency](rserver/deployr-admin-configure-reinstall-r.md)
 ### [Troubleshooting & Diagnostics](rserver/deployr-admin-diagnostics-troubleshooting.md)
 ### [Common Administrative Tasks](rserver/deployr-common-administration-tasks.md)
-## Application Developers
+## [Application Developers](rserver/deployr-application-developer-getting-started.md)
 ### [Getting Started for Application Developers](rserver/deployr-application-developer-getting-started.md)
 ### [API Docs & Downloads](rserver/deployr-tools-and-samples.md)
 ### [Client Library Tutorial](rserver/deployr-client-library.md)
 ### [RBroker Framework Tutorial](rserver/deployr-rbroker-framework.md)
 ### [API Reference Guide](rserver/deployr-api-reference.md)
-### Repository Manager Help
+### [Repository Manager Help](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [About Repository Manager](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [Working with Directories](rserver/deployr-repository-manager/deployr-repository-manager-directories.md)
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
-## Data Scientists
+## [Data Scientists](rserver/deployr-data-scientist-getting-started.md)
 ### [Getting Started for Data Scientists](rserver/deployr-data-scientist-getting-started.md)
 ### [Writing Portable R Code](rserver/deployr-data-scientist-write-portable-r-code.md)
-### Repository Manager Help
+### [Repository Manager Help](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [About Repository Manager](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [Working with Directories](rserver/deployr-repository-manager/deployr-repository-manager-directories.md)
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)

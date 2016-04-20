@@ -4,7 +4,7 @@
 title: "DeployR FAQs"
 description: "Frequently asked questions about DeployR"
 keywords: "FAQs, frequently asked questions, DeployR"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

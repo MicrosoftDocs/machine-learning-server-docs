@@ -4,7 +4,7 @@
 title: "DeployR Repository Manager Help"
 description: "Introduction in the DeployR Repository Manager"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

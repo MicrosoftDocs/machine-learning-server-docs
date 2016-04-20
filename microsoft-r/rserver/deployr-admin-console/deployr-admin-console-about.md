@@ -4,7 +4,7 @@
 title: "DeployR Administration Console Help"
 description: "Intro to DeployR Administration Console Help"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

@@ -4,7 +4,7 @@
 title: "Getting Started with DeployR for Application Developers"
 description: "Getting started for Application Developers: high level introduction to DeployR for Application Developers"
 keywords: "Application Developers, r programmer, DeployR"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

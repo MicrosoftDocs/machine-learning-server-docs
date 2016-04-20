@@ -4,7 +4,7 @@
 title: "Configuring CA Single Sign-On for DeployR"
 description: "How to configure CA Single Sign-On for DeployR"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

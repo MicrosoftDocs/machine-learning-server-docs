@@ -5,7 +5,7 @@
 title: "What's New in DeployR"
 description: "Updates, improvements, and changes in this release of DeployR"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

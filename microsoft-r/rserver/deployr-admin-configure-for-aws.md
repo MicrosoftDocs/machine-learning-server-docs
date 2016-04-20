@@ -4,7 +4,7 @@
 title: "Enabling DeployR on AWS"
 description: "How to Enable DeployR on AWS"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

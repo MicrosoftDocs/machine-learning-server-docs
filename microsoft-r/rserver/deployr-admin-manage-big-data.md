@@ -4,7 +4,7 @@
 title: "Managing External Directories for Big Data"
 description: "Big Data in DeployR - Managing External Directories for Big Data"
 keywords: "big data, DeployR"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
