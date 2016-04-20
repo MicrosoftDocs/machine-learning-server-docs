@@ -26,7 +26,7 @@ ms.custom: ""
 
 #Testing and Debugging Scripts
 
-For tips and guidance on how to develop portable R code using the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on the DeployR website.
+For tips and guidance on how to develop portable R code using the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 
 Use the **Test** page to do the following to repository-managed scripts:
 
@@ -114,7 +114,7 @@ Supply new input values in the following ways:
 
 - Editing the [source code](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code) to add, remove, or update any deployrInput() functions (available to script-owners only)
 
-For tips and guidance on how to develop portable R code using the deployrInput function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on the DeployR website.
+For tips and guidance on how to develop portable R code using the deployrInput function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 
 **To run a script new and modified input values:**
 
@@ -151,7 +151,7 @@ While this pane bears some resemblance to R's console, the **Debug Console Outpu
 
 If you are an owner assigned the **POWER_USER** role, you can select and run elements from the **Source** pane and inspect the workspace here to see the objects and their values.
 
-Although you cannot type anything into the console, you can still [clear the pane, the working directory, or the workspace](https://deployr.revolutionanalytics.com/documents/help/repo-man/Content/j-manipulate-session.htm).
+Although you cannot type anything into the console, you can still [clear the pane, the working directory, or the workspace](#manipulating-the-underlying-r-session).
 
 ## Reviewing Execution Artifacts
 
@@ -222,7 +222,7 @@ To clear the pane, workspace or working directory:
 
 There are two kinds of inputs to your script. They are:
 
-1.  The values for the [`deployrInput()`](../deployr-data-scientist-write-portable-r-code) widgets
+1.  The values for the [`deployrInput()`](../deployr-data-scientist-write-portable-r-code.md) widgets
 2.  Primitive name-value pairs in the **Quick Inputs** field
 
 ![Examples of deployrInput() widgets and Quick Inputs](media/deployr-repository-manager-testing-debugging-scripts/inputs.png)  
@@ -239,7 +239,7 @@ To help you test your script, you can supply temporary input values in the **Scr
 
 Any inputs defined in the R code using the deployrInput() function, and their default values, appear at the top in this pane. The default values defined in the R code are preselected here for you. You can change the value of an input here, run to test your code using the new value, and then evaluate the outcome.
 
-For tips and guidance on how to develop portable R code using this function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on the DeployR website.
+For tips and guidance on how to develop portable R code using this function from the deployrUtils package, see the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 Refer to the deployrUtils package help for more details and examples.
 
 >If you do not own this file and cannot see the R code in the **Source** pane, then the deployrInput() functions [cannot be rendered](deployr-repository-manager-about.md#permissions-policies) either.

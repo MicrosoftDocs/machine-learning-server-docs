@@ -138,7 +138,7 @@ You can download any [version](deployr-repository-manager-files.md#working-with-
 
 You can make a copy of any file you own. When you copy a file, whether it is the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version or previous version, a new file is created in the specified user directory in the repository. You can then see that file in the **Files** tab. The contents of your new file is a duplicate of the contents of the version of the file you copied. Your new file will have the same file properties as the version of the file being copied except you will be its sole owner. And, since this is a new file, the file will not have any previous versions.
 
-If you copy a file into a directory in which a file by the same name already exists, then a copy of the Latest version of the selected file becomes the Latest version of the file in the destination directory. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to copy the file from directory X and save it in directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. The file is directory X remains unchanged. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](deployr-repository-manager-files.md#working-with-historical-versions) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
+If you copy a file into a directory in which a file by the same name already exists, then a copy of the *Latest* version of the selected file becomes the Latest version of the file in the destination directory. For example, let's say you own two files of the same name in different directories (directory X and directory Y). You decide to copy the file from directory X and save it in directory Y, but directory Y already has a file by that same name. In that case, the contents and file properties (access rights, keyword, description) of the Latest version of the file from directory X become the new Latest version of the file by the same name in directory Y. The file is directory X remains unchanged. If you want to see the contents of the file in directory Y before the move, you would now need to look in the [version history](deployr-repository-manager-files.md#working-with-historical-versions) to find it. In this case, all of the history for the file that was originally in directory X is also kept in the history of the file in directory Y.
 
 **To copy a file:**
 
@@ -146,7 +146,7 @@ If you copy a file into a directory in which a file by the same name already exi
 
 2. In the **File Properties** page, choose **Copy** from the **File** menu. The **Copy File** dialog opens.
 
-3. Enter a name for the file in the **Name** field. If a file by that name already exists, this will become the new Latest version of that file.
+3. Enter a name for the file in the **Name** field. If a file by that name already exists, this will become the new *Latest* version of that file.
 
 4. Select a directory in the repository in which the file should be stored from the **Directory** drop down list.
 
@@ -224,7 +224,7 @@ By default, an R Script or any other repository-managed file is visible on the A
 
 ## Adding and Removing Owners
 
-If you are an owner of a file, you can add additional owners to support collaboration during the file's development.
+If you are an owner of a file, you can add additional owners to *support collaboration* during the file's development.
 
 Granting ownership does more than just allow a user to view or download a file, or even to execute a script; it also allows the user to edit the file, grant others ownership or revoke those rights, and even delete the file. For example, you might want add someone else as an owner so they can provide feedback on your script.  Or, as another example, you might grant ownership of an R script or any other file to permit development to continue while you are away on vacation.
 
@@ -238,7 +238,7 @@ If your objective is to permit other users and/or applications to see files and/
 
 To add or remove owners:
 
-1.  [Open](#opening-files) the Latest version of a file you own.
+1.  [Open](#opening-files) the *Latest* version of a file you own.
 
 2.  In the **File Properties** page, click **Add/Remove**. To learn more about other properties, [read here](#about-file-properties).
 
@@ -281,7 +281,7 @@ For any file you own, you can access the file's version history. From this versi
 
 When a file has two or more versions, you can compare the differences between one previous version and the Latest version of that file.
 
-- **For scripts**, you can compare the R code itself. The differences are highlighted in color to help you identify what is in the previous version and what is from the Latest version of that script.
+- **For scripts**, you can compare the R code itself. The differences are highlighted in color to help you identify what is in the previous version and what is from the *Latest* version of that script.
 - **For other files**, you can compare the version dates, comments, and file sizes.
  
 **To compare two file versions:**
