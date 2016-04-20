@@ -75,7 +75,7 @@ For each user, there are a number of properties that can be defined. The propert
  
 	_Figure: User Details page_
 
-        ![](media/deployr-admin-console-user-accounts/userdetails.png)  
+	![](media/deployr-admin-console-user-accounts/userdetails.png)  
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
 
