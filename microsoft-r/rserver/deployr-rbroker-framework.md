@@ -4,7 +4,7 @@
 title: "DeployR RBroker Framework Tutorial"
 description: "The tutorial for DeployR's RBroker framework"
 keywords: "DeployR, tutorial, RBroker, framework"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

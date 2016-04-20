@@ -4,7 +4,7 @@
 title: "Getting Started for DeployR Administrators"
 description: "Getting started for DeployR Administrators: high level introdution to DeployR for the server administrator"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

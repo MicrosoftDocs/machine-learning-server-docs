@@ -4,7 +4,7 @@
 title: "DeployR API Reference Guide"
 description: "DeployR API Reference Guide"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

@@ -4,7 +4,7 @@
 title: "About DeployR"
 description: "DeployR introduction and overview."
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

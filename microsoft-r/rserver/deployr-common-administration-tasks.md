@@ -4,7 +4,7 @@
 title: "Common DeployR Administration Tasks"
 description: "Common DeployR Administration Tasks: Starting and Stopping DeployR, Inspecting Server Logs, Database Management "
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"

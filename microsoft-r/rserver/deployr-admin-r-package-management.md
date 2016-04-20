@@ -4,7 +4,7 @@
 title: "R Package Management Guide"
 description: "Managing R Packages in DeployR - for DeployR administrators"
 keywords: "r packages, DeployR"
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"

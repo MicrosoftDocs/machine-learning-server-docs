@@ -4,7 +4,7 @@
 title: "DeployR Administration Console Help"
 description: "Managing R Boundaries in the DeployR Administration Console"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
