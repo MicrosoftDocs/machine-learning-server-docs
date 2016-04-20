@@ -26,11 +26,11 @@ ms.custom: ""
 
 # Managing the Grid
 
->Only the **DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. The **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, **DeployR Default Node**. While most of the grid instructions apply only to DeployR Enterprise, most node properties apply to both editions and should still be reviewed and fine-tuned. For enterprise grade deployments, upgrade to DeployR Enterprise today.
+>Only the **DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. The **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, **DeployR Default Node**. While most of the grid instructions apply only to DeployR Enterprise, most [node properties](#node-properties) apply to both editions and should still be [reviewed](#viewing-and-editing-nodes) and fine-tuned. For enterprise grade deployments, upgrade to DeployR Enterprise today.
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
-With the **DeployR Enterprise**, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](deployr-admin-managing-the-grid.md#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](deployr-admin-managing-the-grid.md#grid-workload-distribution) tuned for specific operation types and resource requirements.
+With the **DeployR Enterprise**, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](#node-properties) tuned for specific operation types and resource requirements.
 
 When configuring the grid, you should begin by gaining an understanding of the anticipated workload for the grid. With that workload in mind, you can then scale the grid to handle the load. **DeployR Open** administrators can add additional resources to the single default grid node. **DeployR Enterprise** administrators can add additional resources to existing grid nodes or add additional grid nodes.
 
@@ -65,12 +65,12 @@ Each operation type has a distinct set of [server policies](deployr-admin-managi
 
 There are two workload distribution models supported by the DeployR grid:
 
-1.  [Operation-cluster model](deployr-admin-managing-the-grid.md#operation-clusters-workload-distribution)
-2.  [Named-cluster model](deployr-admin-managing-the-grid.md#grid-workload-distribution)
+1.  [Operation-cluster model](#operation-clusters-workload-distribution)
+2.  [Named-cluster model](#named-clusters-workload-distribution)
 
-Each node on the grid is assigned an [operation type](deployr-admin-managing-the-grid.md#node-operation-types): authenticated, asynchronous, anonymous, or mixed mode. The operation type for a node indicates the types of operations that the node will accept at runtime. For example, a grid node configured for authenticated operations will only accept authenticated (project) operations at runtime and never accept asynchronous or anonymous operations. A grid node configured for 'mixed mode' accepts all types of operations.
+Each node on the grid is assigned an [operation type](#node-operation-types): authenticated, asynchronous, anonymous, or mixed mode. The operation type for a node indicates the types of operations that the node will accept at runtime. For example, a grid node configured for authenticated operations will only accept authenticated (project) operations at runtime and never accept asynchronous or anonymous operations. A grid node configured for 'mixed mode' accepts all types of operations.
 
-The operation type assigned to a node and the cluster named for the request (if one was named) are the biggest determinants in how the workload is distributed. In the absence of a specified custom cluster name, the workload is automatically spread across nodes of the same operation type using the [operation-cluster model](deployr-admin-managing-the-grid.md#operation-clusters-workload-distribution). However, you can further optimize that distribution by allowing a custom cluster to be named for an operation, which then follows the [named-cluster](deployr-admin-managing-the-grid.md#grid-workload-distribution) workload distribution model.
+The operation type assigned to a node and the cluster named for the request (if one was named) are the biggest determinants in how the workload is distributed. In the absence of a specified custom cluster name, the workload is automatically spread across nodes of the same operation type using the [operation-cluster model](#operation-clusters-workload-distribution). However, you can further optimize that distribution by allowing a custom cluster to be named for an operation, which then follows the [named-cluster](#named-clusters-workload-distribution) workload distribution model.
 
 ### Operation-Clusters Workload Distribution
 
@@ -89,7 +89,7 @@ For example, if the grid determines that a request is made for an asynchronous j
 
 ### Named-Clusters Workload Distribution
 
-While the default [operation-cluster model](deployr-admin-managing-the-grid.md#operation-clusters-workload-distribution) works well in many cases, there are some limitations to that model when operations within a single operation-cluster do not share the exact same runtime characteristics. To address this situation, the named-cluster workload distribution model was introduced in DeployR 7.4 to allow administrators to assign [custom cluster names](deployr-admin-managing-the-grid.md#node-operation-types) to nodes.
+While the default [operation-cluster model](#operation-clusters-workload-distribution) works well in many cases, there are some limitations to that model when operations within a single operation-cluster do not share the exact same runtime characteristics. To address this situation, the named-cluster workload distribution model was introduced in DeployR 7.4 to allow administrators to assign [custom cluster names](#node-properties) to nodes.
 
 As an example, it is not uncommon that authenticated operations that would otherwise execute on the same authenticated operation-cluster differ in need from one another. Some authenticated operations may require nodes that deliver fast processing power, while other authenticated operations may require nodes that deliver large amounts of memory. Named-cluster workload distribution solves this problem by allowing the administrator to designate a custom cluster name for an individual or groups of nodes on the grid that are intended for special purpose operations, such as "high-cpu" or "high-mem". Once a custom cluster has been designate to at least one node in the grid, individual operations can be targeted for execution within that named custom cluster, which ensures suitable runtime resources are available on the node where an operation eventually executes.
 
@@ -105,7 +105,7 @@ When all of the nodes of a custom cluster are busy, any additional requests for 
 
 For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
 
-Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**  [field](deployr-admin-managing-the-grid.md#node-operation-types). Custom cluster names are not case-sensitive.
+Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**  [field](#node-properties). Custom cluster names are not case-sensitive.
 
 ## Node Validation and Errors
 
@@ -138,7 +138,7 @@ Common validation issues include:
 |`Description`|This optional node description is visible only in the node list.|
 |`Host`|This is the hostname or IP on which the node is configured.<br />*Note:* For DeployR Open, the default node cannot be changed from localhost. Upgrade to DeployR Enterprise to configure remote grid nodes.|
 |`Operating type`|This is the type of node operation mode: authenticated, anonymous, asynchronous, or mixed.|
-|`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](deployr-admin-managing-the-grid.md#grid-workload-distribution).|
+|`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](#grid-workload-distribution).|
 
 
 <br/>
@@ -212,19 +212,19 @@ While many default node settings are preconfigured during the installation proce
 
 	![](media/deployr-admin-managing-the-grid/0300001F_537x272.png)  
 
-3. In the **New Grid Node** page, define the applicable [properties for the node](deployr-admin-managing-the-grid.md#node-operation-types), such as the **Name**, **Host**, **Operating Type**, and **Storage Context**.
+3. In the **New Grid Node** page, define the applicable [properties for the node](#node-operation-types), such as the **Name**, **Host**, **Operating Type**, and **Storage Context**.
 
 4. Enter a name in the **Name** field.
 
 5. Enter an IP address in the **Host** field. Hostname or IP on which the node is configured. The DeployR Default Node is configured on localhost.
 
-6. Specify the **Operating Type**. The [operating mode](deployr-admin-managing-the-grid.md#node-operation-types) you define for a grid node has an impact on the operations you can perform on that node.
+6. Specify the **Operating Type**. The [operating mode](#node-operation-types) you define for a grid node has an impact on the operations you can perform on that node.
 
 7. Under **External directory** configuration, set the [**Storage Context**](deployr-admin-managing-server-policies.md#server-policy-properties) to reflect the full path to the external data directory on that node’s machine. The default path is:
 	-  For Windows: C:\Program Files\Microsoft\DeployR-8.0\deployr/external/data
 	-  For Linux (user deployr-user): /home/deployr-user/deployr/8.0.0/deployr/external/data`
 
-8.  Click **Create** to save the new node.  The node configuration is [validated](deployr-admin-managing-the-grid.md#node-validation-and-errors). If the configuration works, then it is saved. If not, an [error message](deployr-admin-managing-the-grid.md#node-validation-and-errors) will appear.
+8.  Click **Create** to save the new node.  The node configuration is [validated](#node-validation-and-errors). If the configuration works, then it is saved. If not, an [error message](#node-validation-and-errors) will appear.
 
 ## Viewing and Editing Nodes
 
@@ -318,7 +318,7 @@ You can import node configurations into the server from a CSV file you previousl
  
 >**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
 
-Grid node configurations are [validated](deployr-admin-managing-the-grid.md#node-validation-and-errors) upon import. If the configuration works, then the node configuration is imported. If not, an [error message](deployr-admin-managing-the-grid.md#node-validation-and-errors) will appear.
+Grid node configurations are [validated](#node-validation-and-errors) upon import. If the configuration works, then the node configuration is imported. If not, an [error message](#node-validation-and-errors) will appear.
 
 >You can only import these configurations into a server instance matching the same DeployR version from which they were exported.
 
@@ -340,4 +340,4 @@ Grid node configurations are [validated](deployr-admin-managing-the-grid.md#node
 
 6. Choose the nodes to import.
 
-7. Click **Import**. If a node by the same name already exists, the incoming node configuration is skipped. The node configuration settings are [validated](deployr-admin-managing-the-grid.md#node-validation-and-errors). If the configuration works, then it is saved. If not, an error message will appear.
+7. Click **Import**. If a node by the same name already exists, the incoming node configuration is skipped. The node configuration settings are [validated](#node-validation-and-errors). If the configuration works, then it is saved. If not, an error message will appear.
