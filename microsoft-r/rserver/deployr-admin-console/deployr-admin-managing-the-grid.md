@@ -105,7 +105,7 @@ When all of the nodes of a custom cluster are busy, any additional requests for 
 
 For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
 
-Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name** &nbsp;[field](#node-properties). Custom cluster names are not case-sensitive.
+Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**&nbsp;[field](#node-properties). Custom cluster names are not case-sensitive.
 
 ## Node Validation and Errors
 
@@ -138,7 +138,7 @@ Common validation issues include:
 |`Description`|This optional node description is visible only in the node list.|
 |`Host`|This is the hostname or IP on which the node is configured.<br />*Note:* For DeployR Open, the default node cannot be changed from localhost. Upgrade to DeployR Enterprise to configure remote grid nodes.|
 |`Operating type`|This is the type of node [operation mode](#node-operation-types): authenticated, anonymous, asynchronous, or mixed.|
-|`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](#named-cluster-workload-distribution).|
+|`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](#named-clusters-workload-distribution).|
 
 
 <br/>
@@ -212,7 +212,7 @@ While many default node settings are preconfigured during the installation proce
 
 	![](media/deployr-admin-managing-the-grid/0300001F_537x272.png)  
 
-3. In the **New Grid Node** page, define the applicable [properties for the node](#node-operation-types), such as the **Name**, **Host**, **Operating Type**, and **Storage Context**.
+3. In the **New Grid Node** page, define the applicable [properties for the node](#node-properties), such as the **Name**, **Host**, **Operating Type**, and **Storage Context**.
 
 4. Enter a name in the **Name** field.
 
