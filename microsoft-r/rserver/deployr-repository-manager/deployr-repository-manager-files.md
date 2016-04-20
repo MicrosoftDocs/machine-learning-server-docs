@@ -83,7 +83,7 @@ If you have [access rights](deployr-repository-manager-files.md#about-file-prope
 ## Uploading Files
 
 
->See the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code) guide on to learn how to make your code run consistently both locally and on the DeployR server.
+>See the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code.md) guide on to learn how to make your code run consistently both locally and on the DeployR server.
 
 While small revisions are possible through the Repository Manager, the bulk of your script development should take place outside of DeployR prior to uploading. Once ready, you can use the Repository Manager to upload the files needed for your applications to the DeployR server repository. To upload several files, first put them in a zip file and then upload the zip.
 
