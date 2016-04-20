@@ -238,7 +238,7 @@ While many default node settings are preconfigured during the installation proce
 
 3. Make your changes.
 
-4. Click **Update** to save the changes.  The node configuration is validated. If the configuration works, then it is saved. If not, an error message will appear.
+4. Click **Update** to save the changes.  The node configuration is [validated](#node-validation-and-errors). If the configuration works, then it is saved. If not, an [error message](#node-validation-and-errors) will appear.
 
 ## Enabling or Disabling Nodes
 
@@ -272,7 +272,7 @@ To review the slot activity for a node and shutdown slots:
 	- **DeployR Open**: The **Grid Node Details** page for the **Default Grid Node** appears.
 	- **DeployR Enterprise**: In the **Grid Node List**, click the node whose slot activity you want to monitor. The **Grid Node Details** page appears.
 
-2. Look at the **Slots in Use** section at the bottom. Click a slot link to see details about a particular slot.
+2. Look at the **Slots in Use** section at the bottom. Click a slot link to [see details](#slots-in-use) about a particular slot.
 
 3. To terminate all of the activity on the selected node, click **Shutdown** in the toolbar to terminate all R sessions.
 
