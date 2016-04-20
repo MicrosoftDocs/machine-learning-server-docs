@@ -105,7 +105,7 @@ When all of the nodes of a custom cluster are busy, any additional requests for 
 
 For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
 
-Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**  [field](#node-properties). Custom cluster names are not case-sensitive.
+Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name** [field](#node-properties). Custom cluster names are not case-sensitive.
 
 ## Node Validation and Errors
 
