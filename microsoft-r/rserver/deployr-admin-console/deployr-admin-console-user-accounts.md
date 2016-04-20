@@ -1,4 +1,4 @@
----
+﻿---
 
 # required metadata
 title: "DeployR Administration Console Help"
@@ -79,7 +79,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
 
-4.  Make your changes to the [user properties](deployr-admin-console-user-accounts.md##user-account-properties).
+4.  Make your changes to the [user properties]\(deployr-admin-console-user-accounts.md#user-account-properties).
 
 5.  Click **Update** to save the changes.
 
@@ -96,7 +96,7 @@ For each user, there are a number of properties that can be defined. The propert
 	
        ![](media/deployr-admin-console-user-accounts/usernew.png)  
 
-3.  In the **New User** page, enter all required [properties](deployr-admin-console-user-accounts.md##user-account-properties) for the user account as well as any optional details.
+3.  In the **New User** page, enter all required [properties]\(deployr-admin-console-user-accounts.md#user-account-properties) for the user account as well as any optional details.
 
 4.  Click **Create** to save the new user.
 
