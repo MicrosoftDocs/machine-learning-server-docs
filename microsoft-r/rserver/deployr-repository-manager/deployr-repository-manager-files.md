@@ -132,7 +132,7 @@ You can download any [version](deployr-repository-manager-files.md#working-with-
 
 3. Click the number to the left of the version you want to download. A new file tab opens.
 
-4. In the Manage dropdown menu on the far right, choose Download.
+4. In the **Manage** dropdown menu on the far right, choose **Download**.
 
 ## Copying Files
 
