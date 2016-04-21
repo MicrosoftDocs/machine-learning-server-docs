@@ -58,7 +58,7 @@ On Windows 10, you start Revolution R Enterprise as follows:
 
 The Revolution R Enterprise user interface appears as follows:
 
-![Revolution R Enterprise user interface](media/revorpe_users_guide/rev_r_ent_ui.jpg)
+![Revolution R Enterprise user interface](media/RevoRPE_Users_Guide/rev_r_ent_ui.jpg)
 
 To stop the Revolution R Enterprise productivity environment, do either of the following:
 
@@ -74,7 +74,7 @@ You may use the q() function from the R Console prompt to exit the RPE, but any 
 
 When you first open Revolution R Enterprise, you see a window with menus and toolbars and four open tool windows: the Solution Explorer, the R Console, the Output window, and the Object Browser, as shown on the previous page. The standard toolbar appears as follows:
 
-![Standard Toolbar](media/revorpe_users_guide/stand_tb.jpg)
+![Standard Toolbar](media/RevoRPE_Users_Guide/stand_tb.jpg)
 
 From left to right, the buttons are as follows:
 
@@ -104,7 +104,7 @@ The remaining options work as in most Windows applications.
 
 The Text Edit toolbar appears as shown below whenever you have a script window open:
 
-![Text Edit Toolbar](media/revorpe_users_guide/text_edit_tb.jpg)
+![Text Edit Toolbar](media/RevoRPE_Users_Guide/text_edit_tb.jpg)
 
 Left to right, its buttons are as follows:
 
@@ -124,7 +124,7 @@ Left to right, its buttons are as follows:
 
 The Debug toolbar appears as shown below when the visual debugger is running:
 
-![Debug Toolbar](media/revorpe_users_guide/debug_tb.jpg)
+![Debug Toolbar](media/RevoRPE_Users_Guide/debug_tb.jpg)
 
 Left to right, its buttons are as follows:
 
@@ -205,7 +205,7 @@ When a line in a script is edited, a yellow highlight appears in the left margin
 
 ### Running a Script 
 
-Now, run your script by clicking the Run button ![Run Button](media/revorpe_users_guide/run_button.jpg) on the Revolution R Enterprise standard toolbar. The commands and the output are printed in the R Console window, as shown:
+Now, run your script by clicking the Run button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) on the Revolution R Enterprise standard toolbar. The commands and the output are printed in the R Console window, as shown:
 
     >  x <- 1:20
     >  x
@@ -218,7 +218,7 @@ Now, run your script by clicking the Run button ![Run Button](media/revorpe_user
 
 (Notice that your y variable differs from the one you created earlier, as well as from the one shown here. This again is because of the call to rnorm. Also notice that the Script window now shows a green highlight in the left margin; this is because the script is saved to disk before it is run.)
 
-It is sometimes convenient to run only a portion of a script. To do this, select the portion of the script you want to run, for example, the lines that define and display the y variable, and then choose **Run Line or Selection** from the **Edit** menu (or, alternatively, click the **Run Line or Selection** button ![Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg) in the Revolution R Enterprise standard toolbar). Again, the output is sent to the R Console window:
+It is sometimes convenient to run only a portion of a script. To do this, select the portion of the script you want to run, for example, the lines that define and display the y variable, and then choose **Run Line or Selection** from the **Edit** menu (or, alternatively, click the **Run Line or Selection** button ![Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) in the Revolution R Enterprise standard toolbar). Again, the output is sent to the R Console window:
 
     >  y <- 2 + .2*x + rnorm(20)
     >  y
@@ -264,7 +264,7 @@ To fit the linear model:
 
 5.	Press ENTER to exit the Code Snippet.
 
-6.	Click the Run button ![Run Button](media/revorpe_users_guide/run_button.jpg) to run the script.
+6.	Click the Run button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to run the script.
 
 ### Completing Code with IntelliSense 
 
@@ -280,7 +280,7 @@ For example, having created your linear model lmObj, you may want to view the mo
  
 4.	Double-click lmObj and then type a closing parenthesis. 
 
-5.	Select the line containing residuals(lmObj) and click Run Line or Selection ![Run Line or Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg) to see the residuals of your fitted model.
+5.	Select the line containing residuals(lmObj) and click Run Line or Selection ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) to see the residuals of your fitted model.
 
 ### Examining R Objects with the Object Browser 
 
@@ -308,13 +308,13 @@ To obtain R language help, use the R ? operator in the R Console window, or do t
 
 1.	From the **Help** menu, click S**earch R Help…**. The **Search R Help** dialog appears as shown:
 
-	![Search R Help Dialog](media/revorpe_users_guide/search_r_help_dialog.jpg)
+	![Search R Help Dialog](media/RevoRPE_Users_Guide/search_r_help_dialog.jpg)
 
 2.	In the **Search for** text box, enter a search term.
 
 3.	Click **Search R Help**. R help topics matching your search term are shown in the **Results** list. If an exact match is found, the exact match topic is listed above the **Results** table:
 
-	![Search R Help Dialog with Results](media/revorpe_users_guide/search_r_help_dialog_results.jpg)
+	![Search R Help Dialog with Results](media/RevoRPE_Users_Guide/search_r_help_dialog_results.jpg)
 
 4.	To show the help topic without closing the search dialog, click the exact match topic, or select an entry from the list and click **Display R Help**. To show the help topic and close the dialog, select an entry from the list and click **OK**.
 
@@ -340,7 +340,7 @@ By default, the Object Browser is open whenever you start Revolution R Enterpris
 
 To open the Object Browser, do either of the following:
 
--	Click the Object Browser button ![Object Browser Button](media/revorpe_users_guide/object_browser_button.jpg) in the Standard toolbar
+-	Click the Object Browser button ![Object Browser Button](media/RevoRPE_Users_Guide/object_browser_button.jpg) in the Standard toolbar
 
 --or--
 
@@ -352,7 +352,7 @@ To open the Object Browser, do either of the following:
 
 The Object Browser appears as follows:
 
-![Object Browser](media/revorpe_users_guide/object_browser.jpg)
+![Object Browser](media/RevoRPE_Users_Guide/object_browser.jpg)
 
 The Object Browser consists of three panes. The left pane is a tree showing your global environment, all loaded packages (that is, packages in your current R search path), and all installed packages. When you click on an environment or package in the left pane, the top right pane shows all the objects in that environment or package.  For example, if you click **.GlobalEnv**, you see all the objects in your current R workspace. When you are in debug mode, you can see the variables in the local environment by examining **_Browser_Call**.
 
@@ -380,7 +380,7 @@ To edit a data object:
 
 2.	In the context menu that appears, click **Edit Object**. The R data editor appears, for the **myDataFrame** example, as shown at the top of the next page.
 
-3.	Edit values as appropriate, then close the data editor by clicking the Close button ![Close Button](media/revorpe_users_guide/close_button.jpg). The edited object is assigned to your global environment.
+3.	Edit values as appropriate, then close the data editor by clicking the Close button ![Close Button](media/RevoRPE_Users_Guide/close_button.jpg). The edited object is assigned to your global environment.
 
 To edit a function:
 
@@ -390,7 +390,7 @@ To edit a function:
 
 3.	Edit the function as desired, then save and close the file. The edited function is assigned to your global environment.
 
-	![Data Editor Dialog](media/revorpe_users_guide/data_editor_dialog.jpg)
+	![Data Editor Dialog](media/RevoRPE_Users_Guide/data_editor_dialog.jpg)
 
 ### Plotting Objects in the Object Browser 
 
@@ -455,7 +455,7 @@ An R script is simply a text file containing R expressions. To create an R scrip
 
 		print("Hello, World")
 
-To run your script, click the **Run** button ![Run Button](media/revorpe_users_guide/run_button.jpg). The command in your script is echoed to the R Console window, and the R output is shown:
+To run your script, click the **Run** button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg). The command in your script is echoed to the R Console window, and the R output is shown:
 
 	> print("Hello, World")
 	[1] "Hello, World"
@@ -506,7 +506,7 @@ Now we’ll make use of the data in our script:
 
 3.	Double-click **import data**. A code snippet appears in your script as follows: 
 
-	![Code Snippet](media/revorpe_users_guide/code_snippet.jpg)
+	![Code Snippet](media/RevoRPE_Users_Guide/code_snippet.jpg)
 
 4.	Type **SAT** to replace **myDataFrame**, and then press TAB.
 
@@ -518,7 +518,7 @@ Now we’ll make use of the data in our script:
 
 8.	Press Enter to exit the code snippet.
 
-9.	Press the **Run** button ![Run Button](media/revorpe_users_guide/run_button.jpg) to run your script. The data is imported, and a new data object **SAT** appears in the Object Browser.
+9.	Press the **Run** button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to run your script. The data is imported, and a new data object **SAT** appears in the Object Browser.
 
 It is generally a good idea to have a graphical look at the data before proceeding to analysis, and the Object Browser lets us do that easily.
 
@@ -528,7 +528,7 @@ It is generally a good idea to have a graphical look at the data before proceedi
 
 The **SAT** data is displayed as a scatterplot matrix, as shown.
 
-![Scatterplot Matrix](media/revorpe_users_guide/scatterplot_matrix.jpg)
+![Scatterplot Matrix](media/RevoRPE_Users_Guide/scatterplot_matrix.jpg)
 
 The plot of **ExpPerPupil** versus **AveSAT** seems counter-intuitive; it appears to show that average SAT scores fall as expenditure per pupil increases. But notice also that there appears to be a strong negative correlation between the average SAT scores and the percentage of eligible students in a state taking the SAT. Perhaps taking this into account will help explain the seeming anomaly.
 
@@ -568,7 +568,7 @@ We will try to explore this using a *conditioning plot*, a feature of R availabl
 
 Notice that the Script window checks the syntax of your R expressions; comments appear green, character strings appear red, numbers and keywords appear blue. If you have syntactical errors in your code, these are underlined in red.
 
-Run your script by clicking Run ![Run Button](media/revorpe_users_guide/run_button.jpg).
+Run your script by clicking Run ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg).
 
 You can then call your function by adding the following lines to your script:
 
@@ -582,7 +582,7 @@ You can then call your function by adding the following lines to your script:
 
 Select those seven lines, right-click, and then click Run Line or Selection. The conditioning plot is produced as follows:
 
-![Conditioning Plot](media/revorpe_users_guide/conditioning_plot.jpg)
+![Conditioning Plot](media/RevoRPE_Users_Guide/conditioning_plot.jpg)
 
 From this we see that when the percentage of students taking the SAT is taken into account, the expected relationship between expenditure per pupil and average SAT score seems to hold.
 
@@ -602,28 +602,28 @@ The options available in each location differ somewhat, and sometimes have diffe
 
 #### Running Scripts from the Standard Toolbar 
 
-There are two buttons for running scripts on the standard toolbar. The first, ![Run Button](media/revorpe_users_guide/run_button.jpg),  (Run), runs the current or active script. The second, ![Run Line or Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg), runs the currently selected text or, if no text is selected, the line containing the cursor.
+There are two buttons for running scripts on the standard toolbar. The first, ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg),  (Run), runs the current or active script. The second, ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg), runs the currently selected text or, if no text is selected, the line containing the cursor.
 
 #### Running Scripts from the Edit Menu 
 
 The **Edit** menu includes three options for running scripts:
 
-- **Run Line or Selection** runs the currently selected text. This is equivalent to the ![Run Line or Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg) toolbar button.
+- **Run Line or Selection** runs the currently selected text. This is equivalent to the ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) toolbar button.
 - **Run to Cursor** runs the current script from the top of the script to the cursor location.
-- **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/revorpe_users_guide/run_button.jpg) toolbar button.
+- **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
 #### Running Scripts from the Debug Menu 
 
-- **Debug Line or Selection** runs the currently selected text or, if no text is selected, the line containing the cursor. This is equivalent to the ![Run Line or Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg) toolbar button.
-- **Start Debugging** runs the currently open script.  This is equivalent to the ![Run Button](media/revorpe_users_guide/run_button.jpg) toolbar button.
+- **Debug Line or Selection** runs the currently selected text or, if no text is selected, the line containing the cursor. This is equivalent to the ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) toolbar button.
+- **Start Debugging** runs the currently open script.  This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
 #### Running Scripts from the Script Window Context Menu 
 
 The Script window context menu is available by right-clicking in the Script window, and it has three options for running scripts:
 
-- **Run Line or Selection** runs the currently selected text. This is equivalent to the ![Run Line or Selection Button](media/revorpe_users_guide/run_line_selection_button.jpg) toolbar button.
+- **Run Line or Selection** runs the currently selected text. This is equivalent to the ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) toolbar button.
 - **Run to Cursor** runs the current script from the top of the script to the cursor location.
-- **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/revorpe_users_guide/run_button.jpg) toolbar button.
+- **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
 #### Running Scripts from the Solution Explorer Context Menu 
 
@@ -679,7 +679,7 @@ Document windows contain scripts. By default, they are tabbed. To instead use mu
 
 2.	Under **Environment**, click **General**. The **Options** dialog appears as follows:
 
-	![Options Dialog](media/revorpe_users_guide/options_dialog.jpg)
+	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog.jpg)
 
 3.	Under **Windows layout**, select **Multiple documents**.
 
@@ -696,17 +696,17 @@ The RPE’s default window positioning has the tabbed Script windows in the uppe
 
 1.	Click the R Console windows title bar, and begin to drag the cursor. The screen appears as shown below:
 
-	![R Console Window](media/revorpe_users_guide/r_console_window.jpg)
+	![R Console Window](media/RevoRPE_Users_Guide/r_console_window.jpg)
  
 	Note the cluster of arrows in the center:
 
-	![Cluster of Arrows](media/revorpe_users_guide/cluster_of_arrows.jpg)
+	![Cluster of Arrows](media/RevoRPE_Users_Guide/cluster_of_arrows.jpg)
  
 2.	Move the cursor to the left pointing arrow in the cluster and release the mouse button.
 
 3.	The R Console window now occupies the left portion of the application window, as shown:
 
-	![Moved R Console Window](media/revorpe_users_guide/moved_r_console_window.jpg)
+	![Moved R Console Window](media/RevoRPE_Users_Guide/moved_r_console_window.jpg)
  
 Your window positions are saved automatically when you close Revolution R Enterprise. There are two sets of window positions, corresponding to the two solution configurations, Release and Debug.
 
@@ -726,7 +726,7 @@ To add line numbers to your scripts:
 
 2.	Click **General**. The **Options** dialog appears as follows: 
 
-	![Options Dialog](media/revorpe_users_guide/options_dialog_2.jpg)
+	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_2.jpg)
 
 3.	Under **Display**, click twice in the **Line numbers** check box to select the option.
 
@@ -740,7 +740,7 @@ To modify the tab settings for the Script window:
 
 2.	Click **Tabs**. The **Options** dialog appears as follows:
 
-	![Options Dialog](media/revorpe_users_guide/options_dialog_3.jpg)
+	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_3.jpg)
  
 3.	Specify the desired indenting for new lines, as follows:
 
@@ -766,7 +766,7 @@ To change the font characteristics for a window:
 
 3.	Under **Environment**, click **Fonts and Colors**. The dialog appears as follows: 
 
-	![Options Dialog](media/revorpe_users_guide/options_dialog_4.jpg)
+	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_4.jpg)
 
 4.	Under **Show settings for**, choose the type of window. Choose **Text Editor** to change the settings for the Script window, **Output Window** to change the settings for the Output or R Console window.
 
@@ -798,7 +798,7 @@ To assign a keyboard shortcut:
 
 1.	In the **Options** dialog box, expand **Environment** and then click **Keyboard**. The **Options** dialog appears as follows:
 
-	![Options Dialog](media/revorpe_users_guide/options_dialog_5.jpg)
+	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_5.jpg)
  
 2.	In the **Show commands containing** text box, type a word or command (such as Delete or Tile). A list of commands containing the word is shown.
 
@@ -853,11 +853,11 @@ The first function, myVar, is a “from the definition” implementation of a va
 
 If you type these lines into your script (or copy and paste them from this document), you see that the script editor does not complain of syntax errors. So our first job is to run the script using the debugger. To do this, use the Solution Configurations dropdown menu to select **Debug**, as shown:
 
-![Select Debug](media/revorpe_users_guide/select_debug.jpg)
+![Select Debug](media/RevoRPE_Users_Guide/select_debug.jpg)
 
-Next, click the **Run Script** button ![Run Script](media/revorpe_users_guide/run_button.jpg). The script runs, and the objects myVar and regressYOnX are created in your global environment, as you can see by looking at the Object Browser:
+Next, click the **Run Script** button ![Run Script](media/RevoRPE_Users_Guide/run_button.jpg). The script runs, and the objects myVar and regressYOnX are created in your global environment, as you can see by looking at the Object Browser:
 
-![Object Browser](media/revorpe_users_guide/object_browser_2.jpg)
+![Object Browser](media/RevoRPE_Users_Guide/object_browser_2.jpg)
 
 To test myVar, which should be equivalent to the built-in R function var, we simply need to create a vector x and see if the output of myVar is equivalent to the output of var. So we add the following lines to the script and re-run the script:
 
@@ -879,17 +879,17 @@ The R Console window shows the following results, which indicates that our funct
 
 To see what the problem is, we set a breakpoint in our script at the line that calls myVar, by clicking in the gray left margin of the script window, as shown:
 
-![Visual Debugger](media/revorpe_users_guide/visual_debugger_breakpoint.jpg)
+![Visual Debugger](media/RevoRPE_Users_Guide/visual_debugger_breakpoint.jpg)
 
-Click ![Run Button](media/revorpe_users_guide/run_button.jpg) to run the script again. When the line containing the breakpoint is reached, execution halts, and the breakpoint shows an arrow, as shown:
+Click ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to run the script again. When the line containing the breakpoint is reached, execution halts, and the breakpoint shows an arrow, as shown:
 
-![Visual Debugger](media/revorpe_users_guide/visual_debugger_debugging.jpg)
+![Visual Debugger](media/RevoRPE_Users_Guide/visual_debugger_debugging.jpg)
 
-Click the Step Into button ![Step Into Button](media/revorpe_users_guide/step_into_button.jpg) to step into the function. The cursor moves to the first line of our myVar function:
+Click the Step Into button ![Step Into Button](media/RevoRPE_Users_Guide/step_into_button.jpg) to step into the function. The cursor moves to the first line of our myVar function:
 
-![Visual Debugger](media/revorpe_users_guide/visual_debugger_step_into.jpg)
+![Visual Debugger](media/RevoRPE_Users_Guide/visual_debugger_step_into.jpg)
 
-The line “n <- length(x)” seems OK, so click the Step Over button ![Step Over Button](media/revorpe_users_guide/step_over_button.jpg) to step to the next line. The cursor (and the yellow arrow) moves to the next line. The error should stare us in the face—we forgot to sum the squares of the individual variations, so we were returning a vector instead of a scalar. Click ![Run Button](media/revorpe_users_guide/run_button.jpg) to complete the debugging session, and then edit myVar to read as follows:
+The line “n <- length(x)” seems OK, so click the Step Over button ![Step Over Button](media/RevoRPE_Users_Guide/step_over_button.jpg) to step to the next line. The cursor (and the yellow arrow) moves to the next line. The error should stare us in the face—we forgot to sum the squares of the individual variations, so we were returning a vector instead of a scalar. Click ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to complete the debugging session, and then edit myVar to read as follows:
 
 	myVar <- function(x){
 		n <- length(x)
@@ -897,7 +897,7 @@ The line “n <- length(x)” seems OK, so click the Step Over button ![Step Ove
 		var
 	}
 
-Remove the breakpoint in your script by clicking it, and then click ![Run Button](media/revorpe_users_guide/run_button.jpg) to run the corrected script. The results in the R Console window confirm the fix:
+Remove the breakpoint in your script by clicking it, and then click ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to run the corrected script. The results in the R Console window confirm the fix:
 
     > x <- rnorm(25)
     > var(x)
@@ -911,16 +911,16 @@ Turning our attention to the regressYOnX function, the simplest test sets are th
 
 	regressYOnX(1:5, 1:5)
 
-This should result in the line with intercept 0 and slope 1. But after adding this line and clicking ![Run Button](media/revorpe_users_guide/run_button.jpg) as usual, our results are disappointing:
+This should result in the line with intercept 0 and slope 1. But after adding this line and clicking ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) as usual, our results are disappointing:
 
     > regressYOnX(1:5, 1:5)
     Error in regressYOnX(1:5, 1:5) : object 'n' not found
 
-But, we now know what to do: set a breakpoint in the script at the newly added line, and then step into the function by clicking ![Step Into Button](media/revorpe_users_guide/step_into_button.jpg) when processing stops at the breakpoint.
+But, we now know what to do: set a breakpoint in the script at the newly added line, and then step into the function by clicking ![Step Into Button](media/RevoRPE_Users_Guide/step_into_button.jpg) when processing stops at the breakpoint.
 
-Click ![Step Over Button](media/revorpe_users_guide/step_over_button.jpg) four times to arrive at the line where b is defined. To see the local variables defined at this point, click **_Browser_Call** in the left pane of the Object Browser. The top right pane then shows the local variables:
+Click ![Step Over Button](media/RevoRPE_Users_Guide/step_over_button.jpg) four times to arrive at the line where b is defined. To see the local variables defined at this point, click **_Browser_Call** in the left pane of the Object Browser. The top right pane then shows the local variables:
 
-![Object Browser](media/revorpe_users_guide/object_browser_3.jpg)
+![Object Browser](media/RevoRPE_Users_Guide/object_browser_3.jpg)
 
 All of the variables needed to produce our value b are there except one—there is no n. We copied the formula from the text, but neglected to tell our function what n was. We just need one more line before the line that defines b, and that is a line defining n:
 
@@ -1006,7 +1006,7 @@ To open the Call Stack window, do either of the following:
 
 The Call Stack window appears as follows:
 
-![Call Stack Window](media/revorpe_users_guide/call_stack_window.jpg)
+![Call Stack Window](media/RevoRPE_Users_Guide/call_stack_window.jpg)
 
 Once you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed. 
  
@@ -1057,7 +1057,7 @@ To define a macro:
 
 2.	Perform the actions you want to record in the macro.
 
-3.	When you are finished, click the **Stop Recording** button ![Stop Recording Button](media/revorpe_users_guide/stop_recording_button.jpg) in the Macro Recorder Toolbar.
+3.	When you are finished, click the **Stop Recording** button ![Stop Recording Button](media/RevoRPE_Users_Guide/stop_recording_button.jpg) in the Macro Recorder Toolbar.
 
 As the name of the menu item suggests, any macro you create is initially a temporary macro. You can play the temporary macro or save it for permanent use.
 
@@ -1113,7 +1113,7 @@ Now edit the script files. Any content you add to your project template is autom
 
 		# Define numeric constants here
 
-By default, when you click the Run/Continue button ![Run/Continue Button](media/revorpe_users_guide/run_button.jpg), Revolution R Enterprise runs all the scripts in the current project folder in alphabetical order. Thus, your file **constants.R** is run before **functions.R**, and so you can safely use constants defined in that file in your function definitions.
+By default, when you click the Run/Continue button ![Run/Continue Button](media/RevoRPE_Users_Guide/run_button.jpg), Revolution R Enterprise runs all the scripts in the current project folder in alphabetical order. Thus, your file **constants.R** is run before **functions.R**, and so you can safely use constants defined in that file in your function definitions.
 
 Now you’re ready to create a project template:
 
@@ -1411,7 +1411,7 @@ To create an R Package Project:
 
 The new package project appears in your **Solution Explorer** as shown below:
 
-![Solution Explorer](media/revorpe_users_guide/solution_explorer.jpg)
+![Solution Explorer](media/RevoRPE_Users_Guide/solution_explorer.jpg)
 
 As you add functions to your R script, you can create help files for them:
 

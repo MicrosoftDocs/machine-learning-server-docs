@@ -81,7 +81,7 @@ In this initial chapter, we take a quick walk through the five feature areas des
 
 ### Accessing External Data Sets
 
-The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the RevoScaleR sample data directory. (More examples using this data file are available in the [*Getting Started Guide*](rserver-scaler-getting-started.md].) The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
+The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the RevoScaleR sample data directory. (More examples using this data file are available in the [*Getting Started Guide*](rserver-scaler-getting-started.md).) The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
 
 	######################################################## 
 	# Chapter 1: Introduction
