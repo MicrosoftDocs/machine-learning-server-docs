@@ -709,7 +709,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
         	2.  Provide the following information when prompted by the script:
 
-        + OS X:
+	+ OS X:
 	        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
 	        
                     $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
@@ -718,7 +718,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
         + Windows:	
 
-	        1.  Launch a command window **as administrator**.
+		1.  Launch a command window **as administrator**.
 	
 	        2.  Run the `keytool` to generate a temporary keystore file. At the prompt, type:
 
@@ -730,10 +730,10 @@ Once enabled your client applications can make API calls that connect over HTTPS
         	    + When presented with the summary of your responses, enter `yes` to accept these entries.
         	    + For a key password for Tomcat, press the Return key to use `changeit`.
 
-
 	**The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
 		
 	<a id="alertusers"></a>
+
 	>[!WARNING]
 	>**Alert Your Users!**  
 	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
