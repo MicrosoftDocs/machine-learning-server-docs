@@ -51,7 +51,7 @@ All it takes to prepare your R code for use in DeployR is a few simple portabili
 
 -   [The `deployrExternal` function](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
 
-You can install `deployrUtils` locally [from GitHub](https://github.com/deployr/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
+You can install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
     install_github('deployr/deployrUtils')
 

@@ -1118,7 +1118,7 @@ DeployR introduced a type of secure, temporary project called a *blackbox projec
 
 If the owner of a project wants to grant read-only access to that project to other authenticated users, then the owner can set the access level for the project to `Shared`. You can change the access level on a project using the `/r/project/about/update` API call.
 
->Anonymous users are not permitted access to projects. For more information, refer to the [API Reference Help](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+>Anonymous users are not permitted access to projects. For more information, refer to the [API Reference Help](deployr-api-reference.md).
 
 ### Repository File Access Controls
 
@@ -1138,7 +1138,7 @@ If the owner of a repository-managed file wants to grant read-only access to tha
 
 You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
 
-For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](deployr-api-reference.md).
 
 ### Repository File Download Controls
 

@@ -56,15 +56,15 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide walks application developers through their role and resources
 -   New [Administrator Getting Started](deployr-administrator-getting-started.md) guide walks DeployR admins through their role and resources
 -   New [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md) guide was added for data scientists.
--   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/deployr/deployrUtils/releases).
+-   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
 ### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
 
 -   New [R Session Process Controls](deployr-admin-security.md#r-session-process-controls) introduce fine-grain file system access controls for R sessions on Linux platforms.
--   New [DeployR Command Line Tool (CLI)](https://github.com/deployr/deployr-cli) with initial support for running DeployR-enabled example applications.
--   New and updated Web service API support as detailed in the [API Reference Guide change history](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/74changehistory.html).
+-   New [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployrUtils/releases) with initial support for running DeployR-enabled example applications.
+-   New and updated Web service API support.
 -   Updated [Java, JavaScript and .NET RBroker Framework](https://github.com/deployr?query=rbroker) with additional features, patches and updated change history.
 -   Updated [Java, JavaScript and .NET client libraries](https://github.com/deployr?query=client) with additional features, patches and updated change history.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
@@ -76,7 +76,7 @@ The following list highlights the major changes and improvements to DeployR 7.3.
 -   Support for DeployR Enterprise and DeployR Open.
 -   Support for this new DeployR website providing documentation and downloads.
 -   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
--   New and updated API support as detailed in the [API Reference Guide change history](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/73changehistory.html).
+-   New and updated API support.
 -   New user account password and user account locking policies as detailed in the [Security Guide](deployr-admin-security.md).
 -   New Administrator Diagnostic Tools that the `admin` can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.
 -   New [Server Log Events](deployr-common-administration-tasks.md#inspecting-server-logs) are now captured in the DeployR server log files. These log events provide a permanent record of API call/response events, authentication events, HTTP session events, and grid R session events.

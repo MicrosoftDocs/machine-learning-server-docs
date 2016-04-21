@@ -134,7 +134,7 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
     -   Review the other [Troubleshooting](#troubleshooting) topics.
 
-    -   Post your questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+    -   Post your questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
     -   After the second time, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 

@@ -42,7 +42,7 @@ One such approach is to use a master R script that contains all required package
 
 1.  In your local environment:
 
-    1.  Install `deployrUtils` locally [from GitHub](https://github.com/deployr/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
+    1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
             install_github('deployr/deployrUtils')
 

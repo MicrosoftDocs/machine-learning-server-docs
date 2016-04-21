@@ -99,13 +99,13 @@ DeployR Enterprise depends on the manual installation and configuration of these
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
     -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
-		1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+		1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
 		2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
 		3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
 		4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
 		5.  Click **Open** to install it.
     -   Alternatively, install using the command prompt:
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
 		2.  Open a Command Prompt window **as Administrator**.
 		3.  Run the following command to install DeployR Rserve 7.4.2:
 
@@ -166,14 +166,14 @@ DeployR Open depends on the manual installation and configuration of these depen
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
     -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
     	2.  Launch `Rgui.exe` for the version of R you just installed.
     	3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
     	4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
     	5.  Click **Open** to install it.
 
     -   Alternatively, install using the command prompt:
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/deployr/deployr-rserve/releases/).
+    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
     	2.  Open a Command Prompt window **as Administrator**.
     	3.  Run the following command to install DeployR Rserve 7.4.2:
 
@@ -315,7 +315,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 
 3.  Install **DeployR Rserve 7.4.2**, a dependency of DeployR, after Microsoft R Server, Revolution R Open, or R is installed as follows:
 
-    1.  [Download the Linux tar file for DeployR Rserve 7.4.2, `deployrRserve_7.4.2.tar.gz`](https://github.com/deployr/deployr-rserve/releases/).
+    1.  [Download the Linux tar file for DeployR Rserve 7.4.2, `deployrRserve_7.4.2.tar.gz`](https://github.com/Microsoft/deployr-rserve/releases/).
 
     2.  Run the following command to install RServe:
 
@@ -658,7 +658,7 @@ Before you can install DeployR on the main server machine, you must manually ins
 
 4.  Install **DeployR Rserve 7.4.2** after Revolution R Open or R as follows:
 
-    1.  [Download](https://github.com/deployr/deployr-rserve/releases/) the Mac OS X file of DeployR Rserve 7.4.2. **Choose the file version for the version of R or RRO you installed in the previous step.**
+    1.  [Download](https://github.com/Microsoft/deployr-rserve/releases/) the Mac OS X file of DeployR Rserve 7.4.2. **Choose the file version for the version of R or RRO you installed in the previous step.**
 
     2.  Change to the directory where the file was downloaded.
 

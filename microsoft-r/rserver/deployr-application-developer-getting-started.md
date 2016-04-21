@@ -94,7 +94,7 @@ A key takeaway here is that DeployR is very flexible in the services that it off
 
 ### Repository Services
 
-Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#introrepository) in the API Reference Guide.
+Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services in the API Reference Guide](deployr-api-reference.md).
 
 You can think of the DeployR repository as a file system that is owned and managed by the DeployR server. As an application developer, you can:
 
@@ -132,7 +132,7 @@ The answer is simple. DeployR supports a broad set of access controls ranging fr
 -   `Shared`, allows access only to authenticated users
 -   `Public`, allows access to any authenticated or anonymous user
 
-These repository access controls can be manipulated directly by the file owner on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
+These repository access controls can be manipulated directly by the file owner on the [API](deployr-api-reference.md) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
 
 ## Developer Tools
 
@@ -214,7 +214,7 @@ The following tutorials are available:
 
 ### Command Line Interface
 
-While each of the DeployR code tutorials found on github provide their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/deployr/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on github.
+While each of the DeployR code tutorials found on github provide their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/Microsoft/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on github.
 
 Install and use the CLI as follows:
 
@@ -258,7 +258,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 ### Helper Tools
 
--   [DeployR Command Line Tool (CLI)](https://github.com/deployr/deployr-cli)
+-   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
 -   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
 -   [API Interactive Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/explorer.html), available on the DeployR landing page following an install.
 

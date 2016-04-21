@@ -122,7 +122,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 **Part 1. In your local environment:**
 
-1.  Install `deployrUtils` locally [from GitHub](https://github.com/deployr/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
+1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
         install_github('deployr/deployrUtils')
 
