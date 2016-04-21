@@ -40,6 +40,7 @@
 # [RevoPemaR](rserver/rserver-pemar-getting-started.md)
 # [foreach/iterators](rserver/rserver-foreach.md)
 # [DeployR](rserver/deployr-about.md)
+## [About DeployR](rserver/deployr-about.md)
 ## [What's New](rserver/deployr-whats-new.md)
 ## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
