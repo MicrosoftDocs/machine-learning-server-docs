@@ -118,38 +118,24 @@ When those failures occur in the DeployR environment, we recommend you first tur
 
 Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
-## Further Reading
+
+## More Resources
 
 This section provides a quick summary of useful links for administrators working with DeployR.
 
-### DeployR Introduction & Download
+### Key Documents
+Here are some key documents. 
 
 -   [About DeployR](deployr-about.md)
--   [DeployR Server Download](https://deployr.revolutionanalytics.com/download/)
 -   [Installation & Configuration](deployr-installing-configuring.md)
-
-### Administrator Guides
-
--   [Getting Started for Administrators](deployr-administrator-getting-started.md)
 -   [Security](deployr-admin-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
--   [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md)
--   [Server, Grid & Database High Availability](deployr-admin-configure-high-availability.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
--   [Managing External Directories for Big Data](deployr-admin-manage-big-data.md)
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
--   [Upgrading & Migrating Data](deployr-installing-configuring.md#upgrading-deployr)
 -   [Common DeployR Administration Tasks](deployr-common-administration-tasks.md)
--   [Reinstalling Microsoft R Server, Revolution R Open, or R](deployr-admin-configure-reinstall-r.md)
--   [Using Hadoop Impersonation and DeployR](deployr-admin-hadoop-impersonation.md)
 
-### Other Getting Started Guides
-
--   [For Data Scientists](deployr-data-scientist-getting-started.md)
--   [For Application Developers](deployr-application-developer-getting-started.md)
+**Use the table of contents to find all of the guides and documentation needed by the administrator.**
 
 ### Support Channels
 
--   [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535)
-
-
+-   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
