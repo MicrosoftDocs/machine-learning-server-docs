@@ -246,7 +246,7 @@ Note, as this is a sample application the Web browser UI component has been impl
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
-The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 ## More Resources
 

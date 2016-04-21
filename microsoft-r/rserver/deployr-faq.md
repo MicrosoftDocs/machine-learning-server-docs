@@ -44,7 +44,7 @@ No other configuration changes are needed. Once you put your files there, your e
 
 1.  Check out our [troubleshooting topics](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
 2.  Run the [diagnostics tests](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
-3.  Join the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535) where you can post questions and find answers.
+3.  Join the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr) where you can post questions and find answers.
 
 ## Why can't I reach DeployR landing page anymore?
 

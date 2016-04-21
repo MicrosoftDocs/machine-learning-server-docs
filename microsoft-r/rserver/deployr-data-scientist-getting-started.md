@@ -238,6 +238,6 @@ This section provides a quick summary of useful links for data scientists workin
 
 ### Support Channels
 
--   [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535)
+-   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
 
 
