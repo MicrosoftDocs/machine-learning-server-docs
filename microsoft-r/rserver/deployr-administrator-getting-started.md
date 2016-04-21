@@ -132,7 +132,6 @@ Here are some key documents.
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
--   [Common DeployR Administration Tasks](deployr-common-administration-tasks.md)
 
 **Use the table of contents to find all of the guides and documentation needed by the administrator.**
 
