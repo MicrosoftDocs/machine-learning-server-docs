@@ -31,7 +31,7 @@ ms.custom: ""
 
 ## RBroker Framework
 
-The RBroker Framework provides a simple yet powerful API that supports the rapid integration of R Analytics inside any Java, JavaScript, or .NET application. Simply define an RTask, submit your task to an instance of RBroker and then retrieve your RTaskResult. It really is that simple.
+The RBroker Framework is the simplest way to integrate R Analytics into any Java, JavaScript or .NET application. Submit as many R tasks as your application needs. No need to manage client-side request queues or block for results. Let this framework handle all of the complexity while you enjoy effortless scale. Simply define an RTask, submit your task to an instance of RBroker and then retrieve your RTaskResult. It really is that simple.
 
 1.   [Read the **RBroker Tutorial**](deployr-rbroker-framework.md)
 
@@ -50,7 +50,7 @@ The RBroker Framework provides a simple yet powerful API that supports the rapid
 
 ## Client Libraries
 
-The DeployR API exposes a wide range of R analytics services to client application developers. To simplify the integration of DeployR services within client applications, several client libraries are provided for Java, JavaScript and .NET developers.
+The DeployR API exposes a wide range of R analytics services to client application developers. If the RBroker Framework doesn't give you exactly what you need then you can get access to the full DeployR API using our client libraries. We currently provide native client library support for Java, JavaScript or .NET developers.
 
 1.  [Read the **Client Library Tutorial**](deployr-client-library.md)
 
@@ -67,6 +67,11 @@ The DeployR API exposes a wide range of R analytics services to client applicati
 		-  [Download Library from GitHub](https://github.com/Microsoft/dotnet-client-library/releases)
 
 1.  Explore the client library examples for [Java](https://github.com/Microsoft/java-example-client-basics), [JavaScript](https://github.com/Microsoft/js-client-library/releases), and [.NET](https://github.com/Microsoft/dotnet-client-library). Find them under the `examples` directory of each Github repository.
+
+## API Reference Guide
+
+Need to integrate DeployR-powered R Analytics using a different programming language? The [API Reference guide](deployr-api-reference.md) details everything you need to know to get up and running. Also described is the API Explorer used to interactively learn the DeployR API. 
+
 
 ## Examples
 
