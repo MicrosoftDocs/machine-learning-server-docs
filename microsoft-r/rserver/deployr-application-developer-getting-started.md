@@ -52,7 +52,6 @@ As an application developer, you typically leave R coding and model building to 
 
 The sections that follow explain [Analytics Web Services](#webservices) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
->[!NOTE]
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Analytics Web Services
@@ -249,21 +248,12 @@ In keeping with the recommended approach to building DeployR-enabled solutions, 
 
 The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
-## Further Reading
+## More Resources
 
-This section provides a quick summary of useful links for application developers working with DeployR.
+Use the table of contents to find all of the guides and documentation needed by Application Developers.
 
-### DeployR Introduction & Download
-
--   [About DeployR](deployr-about.md)
--   [DeployR Server Download](https://deployr.revolutionanalytics.com/download/)
--   [Installation Guide](deployr-installing-configuring.md)
--   [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
-
-### Tools Download
-
--   [RBroker Framework Download](deployr-tools-and-samples.md)
--   [Client Library Download](deployr-tools-and-samples.md)
+###API Docs, Tools, and Samples
+-   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
 -   [API Reference Guide](deployr-api-reference.md)
 
 ### Helper Tools
@@ -272,23 +262,6 @@ This section provides a quick summary of useful links for application developers
 -   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
 -   [API Interactive Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/explorer.html), available on the DeployR landing page following an install.
 
-### Tutorials & Sample Code on Github
-
--   [RBroker Framework Basics Tutorial](deployr-rbroker-framework.md)
--   [RBroker Framework Basics Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-basics)
--   [RBroker Framework Data I/O Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=rbroker-data-io)
--   [Client Library Basics Tutorial](deployr-client-library.md)
--   [Client Library Basics Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=client-basics)
--   [Client Library Data I/O Sample Code](https://github.com/deployr?utf8=%E2%9C%93&query=client-data-io)
--   [Fraud Score Example Application](https://github.com/deployr?utf8=%E2%9C%93&query=example-fraud-score)
-
-### Other Getting Started Guides
-
--   [For Data Scientists](deployr-data-scientist-getting-started.md)
--   [For Administrators](deployr-administrator-getting-started.md)
-
 ### Support Channels
 
--   [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535)
-
-
+-   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
