@@ -387,7 +387,7 @@ RevoScaleR assumes you have data; configuring databases is beyond the scope of t
 ### Getting Started Documentation
 
 -   **SQLite**: <http://www.sqlite.org/quickstart.html>
--   **MySQL**: <http://dev.mysql.com/tech-resources/articles/mysql_intro.html>
+-   **MySQL**: <http://dev.mysql.com/doc>
 -   **SQL Server**: <http://technet.microsoft.com/en-us/library/bb500434.aspx>
 -   **Oracle Express**: <http://download.oracle.com/docs/cd/B25329_01/doc/admin.102/b25610/toc.htm>
 -   **Sybase**: <http://download.sybase.com/pdfdocs/asg1150e/tutorial.pdf>

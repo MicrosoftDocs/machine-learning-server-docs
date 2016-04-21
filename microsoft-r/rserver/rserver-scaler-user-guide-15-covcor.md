@@ -369,7 +369,7 @@ You may have noticed that we supplied the flag cor=TRUE in the call to princomp;
 
 ### A Large Data Principal Components Analysis
 
-Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <http://www.infochimps.com/datasets/nyse-daily-1970-2010-open-close-high-low-and-volume/downloads/15407>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into an .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the *Getting Started Guide* to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
+Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <https://github.com/thebigjc/HackReduce/blob/master/datasets/nyse/daily_prices/NYSE_daily_prices_subset.csv>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into an .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the *Getting Started Guide* to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
 
 	#  A Large Data Principal Components Analysis
 	

@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Bibliography
 
-Alexander, J. T., Davern, M., & Stevenson, B. (2009). *Inaccurate Age and Sex Data in the Census PUMS Files: Evidence and Implications.* http://bpp.wharton.upenn.edu/betseys/papers/Inaccurate%20Age%20and%20Sex%20Data%20in%20Census%20PUMS%20Files.pdf.
+Alexander, J. T., Davern, M., & Stevenson, B. (2009). *Inaccurate Age and Sex Data in the Census PUMS Files: Evidence and Implications.* http://www.nber.org/papers/w15703.pdf
 
 Ben-Haim, Y., & Tom-Tov, E. (2010). A streaming parallel decision tree algorithm. *Journal of Machine Learning Research*, 849-872.
 
