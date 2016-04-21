@@ -194,7 +194,7 @@ As long as your development environment can establish HTTP(S) connections and co
 
 In the [Developer Tools](#developer-tools) section, you began your move from theory into practice through the introduction of the core tools and some initial fragments of sample code. To further bootstrap the learning process, we've written some more code for you. In fact, we've written a lot of code for you in the form of tutorials with which you can see the key concepts put into practice.
 
-To run these tutorials, you will need access to a live instance of the DeployR server. To download and install DeployR, see [here](https://deployr.revolutionanalytics.com/download/).
+To run these tutorials, you will need access to a live instance of the DeployR server. 
 
 ### RBroker Framework Tutorials
 

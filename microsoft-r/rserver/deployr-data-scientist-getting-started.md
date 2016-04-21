@@ -221,7 +221,6 @@ This section provides a quick summary of useful links for data scientists workin
 ### DeployR Introduction & Download
 
 -   [About DeployR](deployr-about.md) ~ Introductory guide on DeployR
--   [Download DeployR](https://deployr.revolutionanalytics.com/download/) ~ DeployR Open downloads
 -   [Install & Configure DeployR](deployr-installing-configuring.md) ~ Installation and configuration instructions
 
 ### Guides for Data Scientists

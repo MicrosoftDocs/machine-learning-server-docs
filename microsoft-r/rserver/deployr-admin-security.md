@@ -83,7 +83,7 @@ By default, the Basic Authentication security provider is enabled. The Basic Aut
 
 By default, the **CA Single Sign-On** (formerly known as SiteMinder) security provider is disabled. To enable CA Single Sign-On support, you must first update CA Single Sign-On Policy Server configuration. Then, you must update the relevant properties in your DeployR external configuration file.
 
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for DeployR Enterprise only.
 
 **To enable CA Single Sign-On support:**
 
@@ -139,7 +139,7 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
 
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for DeployR Enterprise only.
 
 1.  Update the following properties in your DeployR external configuration file, `deployr.groovy`:
 
@@ -313,7 +313,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for DeployR Enterprise only.
 
 &nbsp;
 
@@ -363,7 +363,7 @@ For more information, see the complete list of LDAP [configuration properties](#
 
 By default, the Active Directory security provider is disabled. To enable Active Directory authentication support you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your Active Directory Directory Information Tree (DIT).
 
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** This form of security is available for DeployR Enterprise only.
 
 &nbsp;
 
@@ -463,7 +463,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 
 ### R Session Process Controls
 
->**Get More DeployR Power:** This form of security is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) on **Linux platforms** only.
+>**Get More DeployR Power:** This form of security is available for DeployR Enterprise on **Linux platforms** only.
 
 By default, R sessions executing on the DeployR grid are not authorized to access files or directories outside of the R working directory. To enable broader file system access for a given R session to files or directories based on specific authenticated user ID and group ID credentials, you must first do ONE of the following:
 

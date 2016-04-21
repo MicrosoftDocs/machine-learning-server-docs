@@ -38,8 +38,6 @@ This topic presents the changes and new features in DeployR version 8.0.0 as wel
 
 ### Version 8.0.0
 
-> DeployR 8.0.0 is now available for [download](https://deployr.revolutionanalytics.com/download).
-
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
 ## Past Releases
@@ -75,7 +73,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 
 The following list highlights the major changes and improvements to DeployR 7.3.
 
--   Support for [DeployR Enterprise and DeployR Open](https://deployr.revolutionanalytics.com/download).
+-   Support for DeployR Enterprise and DeployR Open.
 -   Support for this new DeployR website providing documentation and downloads.
 -   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
 -   New and updated API support as detailed in the [API Reference Guide change history](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/73changehistory.html).

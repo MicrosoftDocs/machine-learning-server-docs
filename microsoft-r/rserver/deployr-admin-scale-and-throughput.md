@@ -42,7 +42,7 @@ The information in this document will help you familiarize yourself with the cen
 
 While this document is primarily intended for DeployR administrators, the section [About Throughput](#about-throughput) also helps application and R script developers optimize their throughput.
 
->**Get More DeployR Power:** Multiple grid node support is available for [DeployR Enterprise](https://deployr.revolutionanalytics.com/download/) only.
+>**Get More DeployR Power:** Multiple grid node support is available for DeployR Enterprise only.
 
 ## Tuning Server Capacity
 

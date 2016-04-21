@@ -130,7 +130,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 5.  Customizing DeployR [security policies](deployr-admin-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
-[Consult the administration documentation](https://deployr.revolutionanalytics.com/admin/) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
+[Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
 >[!TIP]
 >**DeployR Security**  
@@ -150,7 +150,7 @@ Behaving like an on-demand R analytics engine, DeployR exposes a wide range of r
 
 ![DeployR Workflow](./media/deployr-about/architecture.png)
 
-The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](https://deployr.revolutionanalytics.com/dev).
+The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-sample.md).
 
 DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. On the other hand, DeployR Open supports a static grid framework of a single, local grid node with a fixed slot limit. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
