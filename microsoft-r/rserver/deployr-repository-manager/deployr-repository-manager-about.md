@@ -113,4 +113,4 @@ In this table, we assume that a non-owner has access rights to the file.
 
 In addition to this comprehensive documentation, onscreen tips and descriptions are provided within the Repository Manager interface. In many cases, a short description of the tab or section you are visiting is available by expanding or collapsing the page tip using the icon in the upper right of the screen. However, in some cases, additional descriptions are available by hovering your mouse over an element in the user interface.
 
-Additionally, all file management tasks supported within the Repository Manager are also directly supported on the DeployR API. You can learn more about working with the repository-managed files and directories using the DeployR API by reading the online [API Reference Guide](deployr-api-reference.md).
+Additionally, all file management tasks supported within the Repository Manager are also directly supported on the DeployR API. You can learn more about working with the repository-managed files and directories using the DeployR API by reading the online [API Reference Guide](../deployr-api-reference.md).
