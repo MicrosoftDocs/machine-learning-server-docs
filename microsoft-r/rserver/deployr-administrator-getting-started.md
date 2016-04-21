@@ -42,7 +42,6 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available [here](deployr-installing-configuring.md).
 
->[!NOTE]
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Security Policies
@@ -124,7 +123,6 @@ Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-tro
 This section provides a quick summary of useful links for administrators working with DeployR.
 
 ### Key Documents
-Here are some key documents. 
 
 -   [About DeployR](deployr-about.md)
 -   [Installation & Configuration](deployr-installing-configuring.md)
@@ -133,7 +131,11 @@ Here are some key documents.
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
 
-**Use the table of contents to find all of the guides and documentation needed by the administrator.**
+>Use the table of contents to find all of the guides and documentation needed by the administrator.
+
+###Other Getting Started Guides
+-   [Application Developers](deployr-application-developer-getting-started.md)
+-   [Data Scientists](deployr-data-scientist-getting-started.md)
 
 ### Support Channels
 

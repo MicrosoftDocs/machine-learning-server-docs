@@ -36,7 +36,6 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 2.  [Test](#Test-Analytics) those analytics inside and outside of DeployR
 3.  [Collaborate](#collaborate) with application developers to deliver powerful R analytic solutions
 
->[!NOTE]
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Develop Analytics
@@ -214,29 +213,21 @@ Keep in mind that:
 
 Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), using client libraries, or via the [raw API](deployr-api-reference.md).
 
-## Further Reading
+## More Resources
 
-This section provides a quick summary of useful links for data scientists working with DeployR.
+Use the table of contents to find all of the guides and documentation needed by data scientists working with DeployR.
 
-### DeployR Introduction & Download
+### Key Documents
 
--   [About DeployR](deployr-about.md) ~ Introductory guide on DeployR
--   [Install & Configure DeployR](deployr-installing-configuring.md) ~ Installation and configuration instructions
-
-### Guides for Data Scientists
-
--   [Getting Started for Data Scientists](deployr-administrator-getting-started.md) ~ Learn about the Data Scientist's role in DeployR
+-   [About DeployR](deployr-about.md)
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
+-   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
+-   [Getting Started For Administrators](deployr-administrator-getting-started.md)
 
-### Other Getting Started Guides
-
--   [For Application Developers](deployr-application-developer-getting-started.md)
--   [For Administrators](deployr-administrator-getting-started.md)
+>Use the table of contents to find all of the guides and documentation needed by the data scientist, administrator, or application developer.
 
 ### Support Channels
 
 -   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
-

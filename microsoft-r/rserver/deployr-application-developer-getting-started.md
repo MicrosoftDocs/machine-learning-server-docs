@@ -256,6 +256,10 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
 -   [API Reference Guide](deployr-api-reference.md)
 
+###Other Getting Started Guides
+-   [Administrators](deployr-administrator-getting-started.md)
+-   [Data Scientists](deployr-data-scientist-getting-started.md)
+
 ### Helper Tools
 
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
@@ -265,3 +269,4 @@ Use the table of contents to find all of the guides and documentation needed by 
 ### Support Channels
 
 -   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+
