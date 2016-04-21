@@ -26,7 +26,7 @@ ms.custom: ""
 # Installing & Configuring DeployR
 
 >**Get More DeployR Power:**  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ## System Requirements for DeployR
 
@@ -152,7 +152,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 | Dependency Name                                                                                                      | DeployR Server | DeployR Grid Node |
 |----------------------------------------------------------------------------------------------------------------------|----------------|-------------------|
 | Java™ Runtime Environment 8 or 7u13 (or later)                                                                       | Yes            | No                |
-| [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. | Yes            | Yes               |
+| [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. | Yes            | Yes               |
 | DeployR Rserve 7.4.2                                                                                                 | Yes            | Yes               |
 
 **To install the required dependencies for DeployR Open**
@@ -161,7 +161,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install-for-windows).
 
-2.  Install either [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) is the enhanced distribution of R from Microsoft.
+2.  Install either [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://mran.microsoft.com) is the enhanced distribution of R from Microsoft.
 
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
@@ -194,7 +194,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install-for-windows) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 After installing [these prerequisites](#dependencies-for-windows), install DeployR as follows:
 
@@ -239,7 +239,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
 
-[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 >[!TIP]
 >-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
@@ -288,7 +288,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 | Dependency                                                                                                                                                                                                         | DeployR Server                                                                          | DeployR Grid Node                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | Java™ Runtime Environment 8 or 7u13 (or later)                                                                                                                                                                     | Yes                                                                                     | No                                                                                      |
-| R Engine:<br />- DeployR Enterprise:                                                                                                                                                                                              <br />[Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=698527) 8.0 and its dependencies<br />- DeployR Open:<br />    [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2                                                                                            | Yes                                                                                     | Yes                                                                                     |
+| R Engine:<br />- DeployR Enterprise:                                                                                                                                                                                              <br />[Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=698527) 8.0 and its dependencies<br />- DeployR Open:<br />    [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2                                                                                            | Yes                                                                                     | Yes                                                                                     |
 | DeployR Rserve 7.4.2                                                                                                                                                                                               | Yes                                                                                     | Yes                                                                                     |
 | MongoDB 2.6.7 for DeployR Enterprise<Br />MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).  | Yes                                                                                     | No                                                                                      |
 | make, gcc, gfortran                                                                                                                                                                                                | Yes                                                                                     | Yes                                                                                     |
@@ -309,9 +309,9 @@ DeployR depends on the manual installation and configuration of these dependenci
 
 2.  Install R, another dependency, for your edition of DeployR.
 
-    -   **DeployR Enterprise 8.0.0** requires [Microsoft R Server 8.0](http://go.microsoft.com/fwlink/?LinkID=698527), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server to install it as well as any of its dependencies.** [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server.
+    -   **DeployR Enterprise 8.0.0** requires [Microsoft R Server 8.0.0](http://go.microsoft.com/fwlink/?LinkID=698527), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server to install it as well as any of its dependencies.** [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server.
 
-    -   **DeployR Open 8.0.0** requires either [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) is the enhanced distribution of R from Microsoft.
+    -   **DeployR Open 8.0.0** requires either [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://mran.microsoft.com) is the enhanced distribution of R from Microsoft.
 
 3.  Install **DeployR Rserve 7.4.2**, a dependency of DeployR, after Microsoft R Server, Revolution R Open, or R is installed as follows:
 
@@ -646,7 +646,7 @@ Before you can install DeployR on the main server machine, you must manually ins
 
             export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
 
-2.  Install [Revolution R Open](http://go.microsoft.com/fwlink/?LinkID=698301) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2 on the DeployR Open host.
+2.  Install [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2 on the DeployR Open host.
 
 3.  If you intend to use CRAN R for DeployR, you must explicitly define your preferred R mirror address as follows:
 
@@ -729,7 +729,7 @@ These migration steps apply to the following versions:
 
 >**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
 >
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ### Migrating to 8.0.0
 
@@ -883,7 +883,7 @@ To fix this issue, ensure that:
 
 >**More DeployR Power:**  
 >DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and [configuring](deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes) additional grid nodes.
->[Get DeployR Enterprise today](http://go.microsoft.com/fwlink/?LinkID=698525) to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 1.  Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 

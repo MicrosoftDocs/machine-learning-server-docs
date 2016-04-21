@@ -61,7 +61,7 @@ Learn more on how to [write portable R code using these functions](deployr-data-
 Once your R code, models, and data files are ready, you can [verify](#Test-Analytics) their behavior in a DeployR server environment.
  
 
->**Reproducibility Tip:** Use the `checkpoint` package to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Revolution R Open, and also available on CRAN. [Learn more...](http://go.microsoft.com/fwlink/?LinkID=698301/documents/rro/reproducibility/#timemachine)
+>**Reproducibility Tip:** Use the `checkpoint` package to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Revolution R Open, and also available on CRAN. [Learn more...](http://mran.microsoft.com/documents/rro/reproducibility/#timemachine)
 
 ## Test Analytics
 
