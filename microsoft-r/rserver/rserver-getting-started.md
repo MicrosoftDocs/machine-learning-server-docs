@@ -607,7 +607,7 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 	wnloaded\_packages'
 	Updating HTML index of packages in '.Library'
 
-(On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Services. Microsoft R Services sets the default repository to a versioned source repository maintained by Revolution Analytics at [packages.revolutionanalytics.com](http://packages.revolutionanalytics.com). An alternative is to point to one of the daily CRAN snapshots maintained at [mran.revolutionanalytics.com](http://mran.revolutionanalytics.com).)
+(On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Services. Microsoft R Services sets the default repository to a versioned source repository maintained by Revolution Analytics at [packages.revolutionanalytics.com](http://packages.revolutionanalytics.com). An alternative is to point to one of the daily CRAN snapshots maintained at [mran.microsoft.com](http://mran.microsoft.com).)
 
 >*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Revolution R Enterprise, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 

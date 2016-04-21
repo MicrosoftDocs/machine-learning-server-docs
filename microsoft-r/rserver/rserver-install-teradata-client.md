@@ -346,7 +346,7 @@ If you will be using RxOdbcData with a DSN, you need to define an appropriate DS
 
 #### Installing RODBC 
 
-The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the Revolution Analytics source package repository at [http://mran.revolutionanalytics.com](http://mran.revolutionanalytics.com/).
+The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the Revolution Analytics source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
 
 ## Installing Microsoft R Services on the Client 
 

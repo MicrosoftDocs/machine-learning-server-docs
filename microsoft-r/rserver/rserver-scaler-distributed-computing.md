@@ -184,7 +184,7 @@ We begin with the data source we created in our getting started guide, airData. 
 
 	airData <- RxXdfData("AirOnTime2012.xdf")
 
-where we assume AirOntime2012.xdf is in your dataPath. This file, together with a number of other large data files, is available from [the Revolution Analytics data set download site](http://packages.revolutionanalytics.com/datasets).)
+where we assume AirOntime2012.xdf is in your dataPath. This file, together with a number of other large data files, is available from the [data set download site](http://packages.revolutionanalytics.com/datasets).)
 
 On a five-node HPC Server cluster, the call to *rxGetInfo* returns the following:
 

@@ -38,7 +38,7 @@
 ## [RevoScaleR Teradata Getting Started](rserver/rserver-scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](rserver/rserver-scaler-odbc.md)
 # [RevoPemaR](rserver/rserver-pemar-getting-started.md)
-# [foreach/iterators](rserver/rserver-foreach.md)
+# [Parallelizing Loops: foreach/iterators](rserver/rserver-foreach.md)
 # [DeployR](rserver/deployr-about.md)
 ## [About DeployR](rserver/deployr-about.md)
 ## [What's New](rserver/deployr-whats-new.md)

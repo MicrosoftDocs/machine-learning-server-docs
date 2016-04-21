@@ -265,13 +265,13 @@ Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
 ## Installing Additional R Packages
 
-The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Services for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Services for Teradata. Microsoft’s MRAN archive (<http://mran.revolutionanalytics.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are completely external to Teradata.
+The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Services for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Services for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are completely external to Teradata.
 
 In most cases, the natural place to install additional R packages is to the client workstation. Installation to the Teradata data warehouse is required only if you plan to use the package’s functions as transform functions inside RevoScaleR functions, in which case the packages will actually need to be loaded in-database. If you need a package for this purpose, you can do so as follows:
 
 To manually distribute and install the package:
 
-  1.  Download the package and any required dependencies from <http://mran.revolutionanalytics.com/>.
+  1.  Download the package and any required dependencies from <http://mran.microsoft.com/>.
   2.  Copy the downloaded packages to each node of your data warehouse.
   3.  For each package, run the command “R CMD INSTALL *package.*tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
 
