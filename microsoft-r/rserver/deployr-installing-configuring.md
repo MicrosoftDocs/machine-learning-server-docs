@@ -123,7 +123,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 	>MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
 
-    1.  Download [MongoDB 2.6.7](http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7.zip).
+	1.  Download [MongoDB 2.6.7](http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7.zip).
 
     2.  In Windows Explorer, type `%TEMP%` into the file path field and press **Enter**.
 
@@ -264,8 +264,8 @@ After installing the [main server for DeployR Enterprise](#basic-deployr-install
 
 8.  When the installer completes, log into the DeployR landing page as `admin` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
-    1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
-    2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+	1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
+	2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
 
 **-- The grid node installation is now complete --**
 
