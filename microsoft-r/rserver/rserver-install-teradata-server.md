@@ -33,9 +33,6 @@ Microsoft R Services for Teradata is an R-based analytical engine embedded in yo
 >[!NOTE]
 >Microsoft R Services for Teradata is required for running Microsoft R Services scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Services in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Services 7 Client Installation Manual for Teradata.*
 
->[!IMPORTANT]
->**ATTENTION TERADATA EMPLOYEES AND CONTRACTORS.  Do not proceed to download or install this software if you are an employee, contractor or other representative of Teradata Corporation or any of its affiliates,* except when installing this software on a system owned by, and for the internal use of,* Teradata Corporation or any of its affiliates.  **
-
 ## System Requirements
 
 Microsoft R Services for Teradata has the following system requirements:
