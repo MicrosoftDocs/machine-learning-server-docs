@@ -26,11 +26,11 @@ ms.custom: ""
 
 # Creating & Managing User Accounts
 
-User accounts, which are [created](deployr-admin-console-permissions-with-roles.md#creating-custom-roles) and [managed](deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the <span class="Code_1">admin</span> account, user accounts represent script authors, client application developers, or client application end-users.
+User accounts, which are [created](deployr-admin-console-permissions-with-roles.md#creating-custom-roles) and [managed](deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the `admin` account, user accounts represent script authors, client application developers, or client application end-users.
 
 Each user has an account with [properties](deployr-admin-console-user-accounts.md#user-account-properties) such as their username, password, permissions, and so on. A user can represent an individual or an entity such as a dedicated DeployR client application. The role(s) assigned to users determine their rights to access the console, their rights to access all or some of the API, and in some cases, their rights to access certain scripts. 
 
-When you click <span class="UIElementChar">Users</span> in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click <span class="UIElementChar">Next</span> to proceed to the remaining accounts.
+When you click **Users** in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click **Next** to proceed to the remaining accounts.
 
 _Figure: User List page_
 
@@ -44,10 +44,10 @@ The following table presents the preconfigured DeployR user accounts and their d
 
 >Change the password **immediately** after installing to prevent unauthorized access.
 
-| Name                                 | Default Password | Description and Recommendations                                                                                                    |
-|--------------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `admin`    | changeme         | A default system administrator account for immediate access to the console.  This account cannot be renamed, disabled, or deleted. |
-| `testuser` | changeme         | A default test account for client developers. We strongly recommend that you disable this account in production deployments.       |
+| Name                                 | Description and Recommendations                                                                                                    |
+|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `admin`    | A default system administrator account for immediate access to the console.  This account cannot be renamed, disabled, or deleted. |
+| `testuser` | A default test account for client developers. We strongly recommend that you disable this account in production deployments.       |
 
 
 ## User Account Properties
@@ -59,7 +59,7 @@ For each user, there are a number of properties that can be defined. The propert
 |`Enabled`|When **Enabled** is selected, the user account is active, thereby allowing this user to access DeployR services on the API. If you uncheck this box, the account is disabled and the user will not have access to the console or the API calls.|
 |`Username`|Enter a unique name consisting of at least three alphanumeric characters, but no spaces or symbols.|
 |`Display name`|Enter a display name of any combination of up to 50 alphanumeric characters or spaces. When the user logs into the Administration Console, this name appears in the upper right.|
-|`Password / Verify Password`|Enter the new password and re-enter it a second time to confirm.|
+|`Password&nbsp;/&nbsp;Verify&nbsp;Password`|Enter the new password and re-enter it a second time to confirm.|
 |`Password Expired`|Whenever this checkbox is selected, the user will be redirected to the DeployR Account Password Reset page the next time the user attempts to login so that they can define a new password. This applies only to basic authentication.|
 |`Account Locked`|When this checkbox is selected, the user account is locked. The user will not be permitted to log into the console. This applies only to basic authentication.|
 |`R boundary`|Optionally, assign a [boundary](deployr-admin-managing-r-boundaries.md) to the user. Boundaries impose a set of runtime constraints on the user when he or she executes code or scripts on the API.<br />**Note**: Grid node boundaries take precedence over user boundaries, and user boundaries take precedence over the server-wide default boundary.|
@@ -79,7 +79,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 3.  To edit the account, click **Edit**. The **Edit User** page appears.
 
-4.  Make your changes to the [user properties]\(deployr-admin-console-user-accounts.md#user-account-properties).
+4.  Make your changes to the [user properties](deployr-admin-console-user-accounts.md#user-account-properties).
 
 5.  Click **Update** to save the changes.
 
@@ -96,7 +96,7 @@ For each user, there are a number of properties that can be defined. The propert
 	
        ![](media/deployr-admin-console-user-accounts/usernew.png)  
 
-3.  In the **New User** page, enter all required [properties]\(deployr-admin-console-user-accounts.md#user-account-properties) for the user account as well as any optional details.
+3.  In the **New User** page, enter all required [properties](deployr-admin-console-user-accounts.md#user-account-properties) for the user account as well as any optional details.
 
 4.  Click **Create** to save the new user.
 

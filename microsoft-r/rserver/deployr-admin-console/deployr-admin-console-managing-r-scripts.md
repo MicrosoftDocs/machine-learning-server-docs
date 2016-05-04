@@ -32,7 +32,7 @@ You can import and export scripts through the **R Scripts** tab in the Administr
 
 In this tab, you can export shared or published R scripts on this server to a CSV file as a way to backup scripts or as the first step in migrating R script data between two or more DeployR-server instances. You can also import R scripts into the repository on this server instance from a previously exported R script CSV file. 
 
-Users can also manage their repository scripts as well as other repository files in the *DeployR Repository Manager*.
+Users can also manage their repository scripts as well as other repository files in the [DeployR Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md). 
 
 _Figure: R Script List page_
 
