@@ -160,8 +160,8 @@ After a default installation of DeployR, it is highly unlikely that these setti
 |---|---|
 |`Port`|This property lists the port defined during installation on which RServe is listening.|
 |`Console output size limit`|This is the upper limit, expressed in bytes, imposed on the communication between DeployR server and the Rserve session.|
-|`Username`|If a username was defined in Rserv.conf, enter it here.|
-|`Password`|If a password was defined in Rserv.conf, enter it here.|
+|`Username`|If a username was defined in `Rserv.cfg`, enter it for each node. <br>Note: `Rserv.cfg` is under `<PATH TO R>\bin\x64`, such as `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.|
+|`Password`|If a password was defined in `Rserv.cfg`, enter it for each node. |
 
 
 <br/>
