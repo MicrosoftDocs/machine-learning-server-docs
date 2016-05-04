@@ -30,7 +30,7 @@ Users are granted permissions to perform operations on the DeployR Web services 
 
 DeployR is delivered with predefined system roles you can assign to users. These predefined system roles determine user permissions within DeployR by granting individual users access to the console or programmatic access on the API.
 
-You can also create custom roles to constrain access to certain scripts. Once you have created a custom role for that purpose, a script author can set a script’s access rights to **Restricted** and specify one or more new custom roles. Then, only those users assigned to at least one of the roles specified for that script are permitted to execute the script. You can manage the access rights to a file in the *DeployR Repository Manager*. For more information, refer the online help for the *DeployR Repository Manager*.
+You can also create custom roles to constrain access to certain scripts. Once you have created a custom role for that purpose, a script author can set a script’s access rights to **Restricted** and specify one or more new custom roles. Then, only those users assigned to at least one of the roles specified for that script are permitted to execute the script. You can manage the access rights to a file in the [DeployR Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md). 
 
 You can view the available roles by clicking **Roles** in the main menu. Clicking a role in the list reveals the list of users assigned to this role.
 
@@ -42,7 +42,7 @@ _Figure: Role List page_
 
 The following DeployR system roles are shipped with DeployR and can be assigned to user accounts.
 
-|Role Name|Role Description|
+|Role&nbsp;Name|Role&nbsp;Description|
 |---|---|
 |`ADMINISTRATOR`|The `ADMINISTRATOR` role identifies the user as an administrator. [There is only one administrator for the console](deployr-admin-console-user-accounts.md#preconfigured-user-accounts), and that is the user `admin`.|
 |`POWER_USER`|Users with this role are granted permissions to access the full API and to install R packages. Full access includes the ability to execute scripts and arbitrary blocks of R code.|
@@ -90,7 +90,7 @@ You can review, edit, and assign custom roles. System roles cannot be edited.
 
 While the system roles will suffice in many cases, there are times when it might be beneficial to create custom roles to constrain access to certain scripts according to a specific organizational, departmental, or functional need.
 
-Any script author can set the access rights to his or her script to **Restricted** and specify one or more roles. Then, only the users assigned to one of the specified roles are permitted to execute that script. For more details on defining access rights for scripts, refer the online help for the *DeployRRepository Manager*.
+Any script author can set the access rights to his or her script to **Restricted** and specify one or more roles. Then, only the users assigned to one of the specified roles are permitted to execute that script. For more details on defining access rights for scripts, refer the [DeployR Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) documentation. 
 
 **To create a custom role:**
 
