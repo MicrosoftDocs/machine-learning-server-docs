@@ -26,15 +26,15 @@ ms.custom: ""
 
 # Managing the Grid
 
->Only the **DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. The **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, **DeployR Default Node**. While most of the grid instructions apply only to DeployR Enterprise, most [node properties](#node-properties) apply to both editions and should still be [reviewed](#viewing-and-editing-nodes) and fine-tuned. For enterprise grade deployments, upgrade to DeployR Enterprise today.
+DeployR Enterprise supports an extensible grid framework, providing load balancing capabilities across a network of node resources. 
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
-With the **DeployR Enterprise**, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](#named-clusters-workload-distribution) tuned for specific operation types and resource requirements.
+With the DeployR Enterprise, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](#named-clusters-workload-distribution) tuned for specific operation types and resource requirements. Note that DeployR Open supports only a static grid framework of a single, local grid node with a fixed slot limit. 
 
-When configuring the grid, you should begin by gaining an understanding of the anticipated workload for the grid. With that workload in mind, you can then scale the grid to handle the load. **DeployR Open** administrators can add additional resources to the single default grid node. **DeployR Enterprise** administrators can add additional resources to existing grid nodes or add additional grid nodes.
+When configuring the grid, you should begin by gaining an understanding of the anticipated workload for the grid. With that workload in mind, you can then scale the grid to handle the load by adding or changing the resources of each grid node.
 
-A well-configured grid maximizes throughput while minimizing resource contention. The server and grid deployment model is described as `Server[1] -> Node[1..N]` where `N` is defined as the total number of nodes on the grid. For more on planning and provisioning, see the *Scale & Throughput* documentation on the product website.
+A well-configured grid maximizes throughput while minimizing resource contention. The server and grid deployment model is described as `Server[1] -> Node[1..N]` where `N` is defined as the total number of nodes on the grid. For more on planning and provisioning, see the [Scale & Throughput Guide](../deployr-admin-scale-and-throughput.md).
 
 _Figure: Node List page_
 
@@ -61,7 +61,7 @@ Each operation type has a distinct set of [server policies](deployr-admin-managi
 
 ## Grid Workload Distribution
 
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+DeployR Enterprise supports an extensible grid framework, providing load balancing capabilities across a network of node resources. 
 
 There are two workload distribution models supported by the DeployR grid:
 
@@ -113,7 +113,7 @@ The Administration Console performs a verification of node configurations whenev
 
 - Display the **Grid** tab
 - Create or update a grid node configuration
-- Import a grid node configuration (DeployR Enterprise only)
+- Import a grid node configuration
 
 When you visit the **Grid** tab, any enabled nodes found to be unresponsive are highlighted to help you visually identify that these nodes are not operating properly.
 
@@ -133,10 +133,10 @@ Common validation issues include:
 
 |Properties|Description|
 |---|---|
-|`Enabled`|If checked, the node is available for processing operations on the grid. (DeployR Enterprise only)|
+|`Enabled`|If checked, the node is available for processing operations on the grid.|
 |`Name`|This name is displayed in the node list in the Administration Console.|
 |`Description`|This optional node description is visible only in the node list.|
-|`Host`|This is the hostname or IP on which the node is configured.<br />*Note:* For DeployR Open, the default node cannot be changed from localhost. Upgrade to DeployR Enterprise to configure remote grid nodes.|
+|`Host`|This is the hostname or IP on which the node is configured.|
 |`Operating type`|This is the type of node [operation mode](#node-operation-types): authenticated, anonymous, asynchronous, or mixed.|
 |`Cluster name`|This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the [named-cluster workload distribution model](#named-clusters-workload-distribution).|
 
@@ -148,7 +148,7 @@ These constraints govern limits for processor and memory usage at runtime.
 
 |Properties|Description|
 |---|---|
-|`Slot limit`|This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.  You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory.<br />*Note*: For DeployR Open, a fixed slot limit of 12 is imposed. Upgrade to DeployR Enterprise to unlock slot limits.|
+|`Slot limit`|This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.  You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory.<br />*Note*: For DeployR Open, a fixed slot limit of 12 is imposed.|
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
 <br/>
@@ -160,24 +160,18 @@ After a default installation of DeployR, it is highly unlikely that these setti
 |---|---|
 |`Port`|This property lists the port defined during installation on which RServe is listening.|
 |`Console output size limit`|This is the upper limit, expressed in bytes, imposed on the communication between DeployR server and the Rserve session.|
-|`Username`|If a username was defined in Rserv.conf, enter it here.|
-|`Password`|If a password was defined in Rserv.conf, enter it here.|
+|`Username`|If a username was defined in `Rserv.cfg`, enter it for each node. <br>Note: `Rserv.cfg` is under `<PATH TO R>\bin\x64`, such as `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.|
+|`Password`|If a password was defined in `Rserv.cfg`, enter it for each node. |
 
 
 <br/>
-**External Directory Configuration (DeployR Enterprise Only)**
+**External Directory Configuration**
 
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 
 |Properties|Description|
 |---|---|
-|`Storage context`|This setting must reflect the full path on that node’s machine to the directory defined for external data usage. (DeployR Enterprise only)|
-
-+ On **Linux**, update this path for each node as follows. If a node was installed by:
-	-  The non-root user, deployr-user, then the full path is `/home/deployr-user/deployr/8.0.0/deployr/external/data`
-	- `root`, then the full path is `/opt/deployr/8.0.0/deployr/external/data`
-
-+ On **Windows** , update this path for each node to `C:/Revolution/DeployR-Node-8.0/deployr/external/data`
+|`Storage context`|This setting must reflect the full path on that node’s machine to the directory defined for external data usage such as `$DEPLOYR_HOME/deployr/external/data` where `$DEPLOYR_HOME` is the installation directory.|
 
 <br/><a id="slots-in-use"></a>
 **Slots in Use**
@@ -197,12 +191,9 @@ You can force the termination of a current operation on slot, by clicking the *
 
 ## Creating New Nodes
 
-While many default node settings are preconfigured during the installation process, you still need to declare and configure each node individually in the Administration Console. For more information about installing, see the installation instructions for your server operating system.
+While many default node settings are preconfigured during the installation process, the DeployR Enterprise administrator must still declare and configure each node individually in the Administration Console. For more information about installing, see the installation instructions for your server operating system.
 
-
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
-
-**To create a new node (DeployR Enterprise only):**
+**To create a new node:**
 
 1.  From the main menu, click **The Grid**.
 
@@ -220,9 +211,7 @@ While many default node settings are preconfigured during the installation proce
 
 6. Specify the **Operating Type**. The [operating mode](#node-operation-types) you define for a grid node has an impact on the operations you can perform on that node.
 
-7. Under **External directory** configuration, set the [**Storage Context**](deployr-admin-managing-server-policies.md#server-policy-properties) to reflect the full path to the external data directory on that node’s machine. The default path is:
-	-  For Windows: C:\Program Files\Microsoft\DeployR-8.0\deployr/external/data
-	-  For Linux (user deployr-user): /home/deployr-user/deployr/8.0.0/deployr/external/data`
+7. Under **External directory** configuration, set the [**Storage Context**](deployr-admin-managing-server-policies.md#server-policy-properties) to reflect the full path to the external data directory on that node’s machine, such as `$DEPLOYR_HOME/deployr/external/data` where `$DEPLOYR_HOME` is the installation directory.
 
 8.  Click **Create** to save the new node.  The node configuration is [validated](#node-validation-and-errors). If the configuration works, then it is saved. If not, an [error message](#node-validation-and-errors) will appear.
 
@@ -231,8 +220,10 @@ While many default node settings are preconfigured during the installation proce
 **To view and edit a node:**
 
 1. From the main menu, click **The Grid**.
-	- **DeployR Open**: The **Grid Node Details** page for the **Default Grid Node** appears.
-	- **DeployR Enterprise**: In the **Grid Node List**, click the node you want to view or edit. The **Grid Node Details** page appears.
+
+1. In the **Grid Node List**, click the node you want to view or edit. 
+
+1. The **Grid Node Details** page appears.
 
 2.  Click **Edit**.
 
@@ -244,7 +235,7 @@ While many default node settings are preconfigured during the installation proce
 
 You can choose whether or not a configured node will be active in the grid or inactive using the **Enable** checkbox in the **Grid Node Details** page. When disabled, the node is no longer available to process any requests from DeployR and it will appear highlighted in the main grid node list.
  
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+>The **Default Grid Node** cannot be disabled.
 
 **To enable or disable a node (DeployR Enterprise Only):**
 
@@ -262,15 +253,15 @@ You can choose whether or not a configured node will be active in the grid or in
 
 In the **Grid Node Details** page, you can review the slot activity.
 
-Additionally, you can shut down slots in order to terminate activity.This is a last resort for unwanted activity on the server.
+Additionally, you can shut down slots in order to terminate activity. This is a last resort for unwanted activity on the server.
 
 >This list is not updated in real-time. Refresh your page to see the latest activity.
 
 To review the slot activity for a node and shutdown slots:
 
 1. From the main menu, click **The Grid**. The **Grid Node List** page appears.
-	- **DeployR Open**: The **Grid Node Details** page for the **Default Grid Node** appears.
-	- **DeployR Enterprise**: In the **Grid Node List**, click the node whose slot activity you want to monitor. The **Grid Node Details** page appears.
+
+1. In the **Grid Node List**, click the node whose slot activity you want to monitor. The **Grid Node Details** page appears.
 
 2. Look at the **Slots in Use** section at the bottom. Click a slot link to [see details](#slots-in-use) about a particular slot.
 
@@ -282,9 +273,9 @@ To review the slot activity for a node and shutdown slots:
 
 ## Deleting Nodes
 
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+>The **Default Grid Node** cannot be deleted.
 
-To delete a node (DeployR Enterprise Only):
+To delete a node:
 
 1. From the main menu, click **The Grid**. The **Grid Node List** page appears.
 
@@ -295,15 +286,12 @@ To delete a node (DeployR Enterprise Only):
 ## Exporting Node Configurations
 
 You can export one or more node configurations into one CSV file. Exporting can be used to copy the basic node configurations to another machine or to preserve them as a backup. 
- 
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed 
->slot limit, the information in this topic does not apply.
 
 _Figure: Export Grid Configuration page_
 
 ![](media/deployr-admin-managing-the-grid/03000020_576x294.png)  
 
-**To export node configurations (DeployR Enterprise Only):**
+**To export node configurations:**
 
 1. From the main menu, click **The Grid**. The **Grid Node List** page appears.
 
@@ -317,13 +305,11 @@ _Figure: Export Grid Configuration page_
 
 You can import node configurations into the server from a CSV file you previously exported. You can import the contents of this file to same server from which it was exported or across multiple server deployments.
  
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
-
 Grid node configurations are [validated](#node-validation-and-errors) upon import. If the configuration works, then the node configuration is imported. If not, an [error message](#node-validation-and-errors) will appear.
 
 >You can only import these configurations into a server instance matching the same DeployR version from which they were exported.
 
-**To import (DeployR Enterprise Only):**
+**To import:**
 
 1. From the main menu, click **The Grid**. The **Grid Node List** page appears.
 
