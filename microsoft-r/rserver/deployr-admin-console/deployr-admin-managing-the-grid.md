@@ -26,11 +26,11 @@ ms.custom: ""
 
 # Managing the Grid
 
-**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. 
+DeployR Enterprise supports an extensible grid framework, providing load balancing capabilities across a network of node resources. 
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
-With the **DeployR Enterprise**, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](#named-clusters-workload-distribution) tuned for specific operation types and resource requirements. Note that **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit. 
+With the DeployR Enterprise, you can dynamically scale the overall workload capacity by enabling and disabling the number of available grid nodes, and by designating these nodes to specific modes of operation. The grid can then automatically [distribute the workload](#grid-workload-distribution) across the set of enabled nodes. Or, you can [create custom node clusters](#named-clusters-workload-distribution) tuned for specific operation types and resource requirements. Note that DeployR Open supports only a static grid framework of a single, local grid node with a fixed slot limit. 
 
 When configuring the grid, you should begin by gaining an understanding of the anticipated workload for the grid. With that workload in mind, you can then scale the grid to handle the load by adding or changing the resources of each grid node.
 
@@ -61,7 +61,7 @@ Each operation type has a distinct set of [server policies](deployr-admin-managi
 
 ## Grid Workload Distribution
 
->**DeployR Enterprise** supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the **DeployR Open** supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.
+DeployR Enterprise supports an extensible grid framework, providing load balancing capabilities across a network of node resources. 
 
 There are two workload distribution models supported by the DeployR grid:
 

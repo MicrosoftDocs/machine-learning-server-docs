@@ -59,7 +59,7 @@ For each user, there are a number of properties that can be defined. The propert
 |`Enabled`|When **Enabled** is selected, the user account is active, thereby allowing this user to access DeployR services on the API. If you uncheck this box, the account is disabled and the user will not have access to the console or the API calls.|
 |`Username`|Enter a unique name consisting of at least three alphanumeric characters, but no spaces or symbols.|
 |`Display name`|Enter a display name of any combination of up to 50 alphanumeric characters or spaces. When the user logs into the Administration Console, this name appears in the upper right.|
-|`Password&nbsp;/&nbsp;Verify&nbsp;Password`|Enter the new password and re-enter it a second time to confirm.|
+|`Password/Verify Password`|Enter the new password and re-enter it a second time to confirm.|
 |`Password Expired`|Whenever this checkbox is selected, the user will be redirected to the DeployR Account Password Reset page the next time the user attempts to login so that they can define a new password. This applies only to basic authentication.|
 |`Account Locked`|When this checkbox is selected, the user account is locked. The user will not be permitted to log into the console. This applies only to basic authentication.|
 |`R boundary`|Optionally, assign a [boundary](deployr-admin-managing-r-boundaries.md) to the user. Boundaries impose a set of runtime constraints on the user when he or she executes code or scripts on the API.<br />**Note**: Grid node boundaries take precedence over user boundaries, and user boundaries take precedence over the server-wide default boundary.|
