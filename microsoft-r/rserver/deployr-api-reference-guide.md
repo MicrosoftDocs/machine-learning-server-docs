@@ -1,31 +1,7 @@
----
-
-# required metadata
-title: "DeployR API Reference Guide"
-description: "DeployR API Reference Guide"
-keywords: ""
-author: "j-martens"
-manager: "Paulette.McKay"
-ms.date: "05/05/2016"
-ms.topic: "article"
-ms.prod: "deployr"
-ms.service: ""
-ms.assetid: ""
-
-# optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.technology: ""
-ms.custom: ""
-
----
 # DeployR API Reference Guide
 
-## Overview
+## About the DeployR API
+
 The DeployR API exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the DeployR server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments.
 
 With the advent of DeployR, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
@@ -160,8 +136,8 @@ Temporary projects are useful when an application needs to maintain the same R s
 
 A user can create a temporary project by omitting the name parameter on the [/r/project/create](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) call or they can create a pool of temporary projects using the [/r/project/pool call](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool).
 
-
->All unnamed projects are temporary projects.
+>[!IMPORTANT]
+>All unnamed projects are temporary projects .
 
 **User Blackbox Projects**
 
@@ -233,6 +209,7 @@ At times a project owner may also wish to grant read-write access on a project t
 
 To facilitate these kinds of workflows a project owner can now grant authorship rights on a project to one or more *authenticated* users using the [/r/project/grant](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectgrant) call. Once a user has been granted authorship rights on a project they effectively co-own the project and can view, modify and even delete the project. Where mutiple users have been granted authorship rights on a project the server ensures that only one user can be actively working on the project at any one time.
 
+>[!IMPORTANT]
 >Deleting a project with multiple authors simply revokes authorship rights to the project for the caller. After the call, all other authors on the project still have full access to the project. If the last remaining author deletes a project, then the project is permanently deleted.
 
 ### Jobs on the API
@@ -283,6 +260,8 @@ To facilitate this kind of collaborative workflow a user can now grant authorshi
 
 >[!IMPORTANT]
 >When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.
+
+>[!IMPORTANT]
 >Deleting a repository-managed file with multiple authors simply revokes authorship rights to the file for the caller. After the call all other authors on the file will still have full access to the file. If the last remaining author deletes a repository-managed file, then the file is permanently deleted.
 
 **Repository-Managed Scripts**
@@ -297,6 +276,7 @@ Scripts can be created, managed and deployed using the standard Repository APIs 
 
 Refer to the section [Working with Repository Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for a detailed description of repository-managed script-specific APIs.
 
+>[!IMPORTANT]
 >Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) are available to create and manage repository-managed scripts.
 
 **Repository-Managed Shell Scripts**
