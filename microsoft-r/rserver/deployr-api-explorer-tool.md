@@ -107,35 +107,35 @@ The functionality found under these tabs allows you to interact with APIs on the
 >[!IMPORTANT]
 >Clearing the active selection in the list of projects displayed under the Projects tab will automatically disable the complete set of project-specific tabs.
 
-3. Console Tab
+**3. Console Tab**
 
 The Console tab offers access to the full set of [Project Execution APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecution).
 
-4. Workspace Tab
+**4. Workspace Tab**
 
 The Workspace tab offers access to the full set of [Project Workspace APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspace).
 
-5. Directory Tab
+**5. Directory Tab**
 
 The Directory tab offers access to the full set of [Project Directory APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectory).
 
-6. Packages Tab
+**6. Packages Tab**
 
 The Packages tab offers access to the full set of [Project Package APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpackages).
 
-7. About Tab
+**7. About Tab**
 
 The About tab offers access to the [/r/project/about](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectabout) and [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
 
-8. Repo Files Tab
+**8. Repo Files Tab**
 
 The Repo Files tab offers access to the full set of [Repository File APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles).
 
-9. Jobs Tab
+**9. Jobs Tab**
 
 The Jobs tab offers access to the full set of [Job APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs).
 
-10. Repo Scripts Tab
+**10. Repo Scripts Tab**
 
 The Repo Scripts tab offers access to the full set of [Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
 
