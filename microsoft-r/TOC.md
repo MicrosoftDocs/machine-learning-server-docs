@@ -74,6 +74,7 @@
 ### [Client Library Tutorial](rserver/deployr-client-library.md)
 ### [RBroker Framework Tutorial](rserver/deployr-rbroker-framework.md)
 ### [API Reference Guide](rserver/deployr-api-reference.md)
+### [API Explorer Tool](rserver/deployr-api-explorer-tool.md)
 ### [Repository Manager Help](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [About Repository Manager](rserver/deployr-repository-manager/deployr-repository-manager-about.md)
 #### [Working with Directories](rserver/deployr-repository-manager/deployr-repository-manager-directories.md)
