@@ -233,6 +233,7 @@ To facilitate these kinds of workflows a project owner can now grant authorship 
 ### Jobs on the API
 
 Working with R interactively in an R console window or working with projects on the API are both examples of synchronous working environments where a user can make a request that will be blocked until processing completes and an appropriate response is generated and returned. When working with R interactively, the response is displayed as output in the R console window. When working with projects on the API, the response is well-formed markup on the response stream.
+
 However, there are times when it can be advantageous to permit users to make requests without requiring that they wait for responses. For example, consider long-running operations that could take hours or even days to complete.
 
 The DeployR environment supports these types of long-running operations by introducing the concept of *jobs* on the API. DeployR managed jobs support the execution of commands in the background on behalf of users.
@@ -436,7 +437,8 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
-To understand how grid resource errors occur please refer to the sections ***Managing the Grid*** and ***Managing Server Policies*** in the ***DeployR Administration Console Users Guide***.
+>[!NOTE]
+>To understand how grid resource errors occur please refer to the sections ***Managing the Grid*** and ***Managing Server Policies*** in the ***DeployR Administration Console Users Guide***.
 
 *Sample API (JSON) response markup indicating error on call:*
 
