@@ -31,7 +31,7 @@ These global preferences are described as follows:
 -  ***DEV*** : this preference specifies the default device for rendering plots in R: PNG or SVG
 -  ***DLD*** : this preference specifies whether file downloads are saved as attachments or rendered directly in the Web browser.
 
-** The API Tabs Panel**
+**The API Tabs Panel**
 
 The center section of the API Explorer window contains the API tabs panel:
 
@@ -39,7 +39,7 @@ The center section of the API Explorer window contains the API tabs panel:
 
 Each tab contains functionality you can use to interact with and invoke a subset of the full API. To learn more about the functionality in each tab, refer to the section [Learning the API](#learning-the-api).
 
-** The API Request Panel**
+**The API Request Panel**
 
 The lower left area of the API Explorer window contains the API Request Panel. Each time you make an API call, this panel automatically displays details of that call, including the following:
 
