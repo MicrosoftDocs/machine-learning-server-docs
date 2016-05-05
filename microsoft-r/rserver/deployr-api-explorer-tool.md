@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "DeployR API Explorer Tool"
+description: "DeployR API Reference Guide"
+keywords: ""
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "05/05/2016"
+ms.topic: "article"
+ms.prod: "deployr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #  The API Explorer Tool
 
 The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference-guide.md#users-on-the-api), [projects](deployr-api-reference-guide.md#projects-on-the-api), [jobs](deployr-api-reference-guide.md#jobs-on-the-api) and the [repository](deployr-api-reference-guide.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
