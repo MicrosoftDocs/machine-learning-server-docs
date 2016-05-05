@@ -3,21 +3,8 @@
 ## About the DeployR API
 
 The DeployR API exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the DeployR server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments.
-For an overview of additions and updates to the API for the latest release please refer to the section [API Change History](#api-change-history) for details.
 
-### About R
-
-**Open Source R**
-
-During the last decade, the momentum coming from both academia and industry has lifted the R programming language to become the single most important tool for computational statistics, visualization and data science. Worldwide, millions of statisticians and data scientists use R to solve their most challenging problems in fields ranging from computational biology to quantitative marketing.
-
-**Microsoft R Services & Microsoft R Open**
-
-Microsoft R Services is a production-grade analytics software built upon the powerful open source R statistics language.
-
-Microsoft R Open is the enhanced distribution of open source R from Microsoft.
-
-With the advent of DeployR, the full statistics, analytics and visualization capabilities of R (through Microsoft R Open, Microsoft R Services, or CRAN R) can now be directly leveraged inside Web, desktop and mobile applications.
+With the advent of DeployR, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
 ### R for Application Developers
 
@@ -56,8 +43,7 @@ To sign-in a user must provide username and password credentials. These credenti
 
 If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
 
->[!NOTE]
->Please refer to the section [Working with User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers) for a detailed description of all user-related APIs.
+Refer to the section [Working with User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers) for a detailed description of all user-related APIs.
 
 **Pre-Authenticated Users**
 
@@ -69,7 +55,7 @@ While many applications require the security and controls associated with *authe
 
 In such situations we say that the user is an *anonymous* user. Typically an *anonymous* user is an unauthenticated visitor to a DeployR-enabled Web application.
 
-*Anonymous* users are only granted access to a single API call, [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute). Please refer to section [Working with Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for more details.
+*Anonymous* users are only granted access to a single API call, [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute). Refer to section [Working with Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for more details.
 
 ### Projects on the API
 
@@ -94,7 +80,6 @@ An *anonymous project* is a project created by an *anonymous user*. There are tw
 1.  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) | Executes a repository-managed script on an anonymous project
 2.  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) | Executes a repository-managed script on an anonymous project and renders outputs to HTML
 
->[!NOTE]
 >*Anonymous* users are not permitted to work directly with the [Project APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#overviewprojects), those APIs are only available to *authenticated* users.
 
 **Stateless Projects**
@@ -143,7 +128,6 @@ An *authenticated project* is a project created by an authenticated user. There 
 
 *Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode) and [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript) calls and retrieve the R command history for the project using the [/r/project/execute/history](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutehistory) call.
 
->[!NOTE]
 >Given an *authenticated* user can do everything an *anonymous* user can do on the API it is possible for an *authenticated* user to create and work with *anonymous* projects as described in the section [Anonymous Projects](#anonymous-projects).
 
 **Temporary Projects**
@@ -205,11 +189,9 @@ The server stores the following state for each persistent project:
 
 An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the /r/project/create call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectsave) which has the effect of naming the project.
 
->[!IMPORTANT]
->All *named* projects are *persistent* projects .
+All *named* projects are *persistent* projects.
 
->[!NOTE]
->Please refer to the section [Working with Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects) for a detailed description of all *authenticated project* related APIs.
+Refer to the section [Working with Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects) for a detailed description of all *authenticated project* related APIs.
 
 #### Project Ownership & Collaboration
 
@@ -238,8 +220,7 @@ However, there are times when it can be advantageous to permit users to make req
 
 The DeployR environment supports these types of long-running operations by introducing the concept of *jobs* on the API. DeployR managed jobs support the execution of commands in the background on behalf of users.
 
->[!NOTE]
->Please refer to the section [Working with Jobs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs) for a detailed description of all job related APIs.
+Refer to the section [Working with Jobs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs) for a detailed description of all job related APIs.
 
 ### Repository on the API
 
@@ -257,8 +238,7 @@ Conversely, objects in a project workspace and files in a project working direct
 
 Repository-managed files can also be loaded directly into the workspace or working directory ahead of executing code on [anonymous projects](#anonymous-projects) or an *asynchronous job*.
 
->[!NOTE]
->Please refer to the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) for further details.
+Refer to the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) for further details.
 
 **Repository File Ownership & Collaboration**
 
@@ -290,12 +270,11 @@ Repository-managed scripts are a special type of repository-managed file. Any fi
 
 These scripts are essentially blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.
 
-Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Please refer to the ***Repository Manager Help*** guide for further details.
+Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](rserver/deployr-repository-manager/deployr-repository-manager-about.md) for further details.
 
 *Authenticated* users can execute scripts within the context of any project using the /r/project/execute/script call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) and [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) calls.
 
->[!NOTE]
->Please refer to the section [Working with Repository Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for a detailed description of repository-managed script-specific APIs.
+Refer to the section [Working with Repository Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for a detailed description of repository-managed script-specific APIs.
 
 >[!IMPORTANT]
 >Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) are available to create and manage repository-managed scripts.
@@ -312,15 +291,13 @@ Due to the special security concerns associated with excuting shell scripts on t
 
 Access to repository-managed shell scripts is controlled by the standard set of private, restricted, shared and public DeployR repository access controls on a file-by-file basis.
 
->[!NOTE]
->Please refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
+Refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
 
 ### Event Stream
 
 The event stream API is unique within the DeployR API as it supports push notifications from the DeployR server to client applications. Notifications correspond to discrete events that occur within the DeployR server. Rather than periodically polling the server for updates a client application can simply subscribe once to the event stream and then receive event notifications pushed by the server.
 
->[!NOTE]
->Please refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
+Refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
 
 ## DeployR Web Services API Overview
 
@@ -340,22 +317,19 @@ This document describes the DeployR Public API and the complete set of API servi
 
 **DeployR Administration Console**
 
-The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Please refer to the DeployR Administration Console Users Guide for further details.
+The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](rserver/deployr-admin-console/deployr-admin-console-about.md) for further details.
 
 **DeployR Grid Management Framework**
 
-The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.
-
->[!NOTE]
->For further details, refer to section **Managing the Grid** in the **DeployR Administration Console Users Guide**.
+The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](rserver/deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 **Spring 3 Framework & J2EE Container**
 
 The Spring Framework is a lightweight, modular framework for building enterprise Java applications. The DeployR server builds on top of the Spring Framework in order to deliver advanced R-based analytics services on-demand in a secure, robust manner.
 
-**MongoDB NoSQL Database**
+**Database**
 
-The DeployR server leverages the MongoDB NoSQL database to manage the reliable persistence of all user, project and repository data. The MongoDB database is a scalable, high-performance, open source NoSQL database.
+The DeployR server leverages a database to manage the reliable persistence of all user, project and repository data. 
 
 ### Architecture Overview
 
@@ -437,8 +411,7 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
->[!NOTE]
->To understand how grid resource errors occur please refer to the sections ***Managing the Grid*** and ***Managing Server Policies*** in the ***DeployR Administration Console Users Guide***.
+To understand how grid resource errors occur, refer to the sections [Managing the Grid](rserver/deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](rserver/deployr-admin-console/deployr-admin-managing-server-policies.md).
 
 *Sample API (JSON) response markup indicating error on call:*
 
@@ -458,12 +431,11 @@ The ***error*** property provides a plain text message describing the underlying
 
 To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
->[!NOTE]
->Please refer to the section [The API Explorer Tool](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#explorer) for more details.
+Refer to the documentation on the [API Explorer Tool](rserver/deployr-api-explorer-tool.md) for more details.
 
 ### API Call Overview
 
-Each of the following *"Working with"* sections in this API Reference Guide details the individual API calls by category. For each call described in this reference guide, you can review the following information:
+Each of the following *"Working with"* sections in the API Reference detail the individual API calls by category. For each call described in this reference guide, you can review the following information:
 
 -  Call REST Endpoint
 
@@ -554,7 +526,6 @@ When encoded objects are sent as parameters to the server, the client must name 
 		}
 	}
 
->[!NOTE]
 >In the case of primitive encodings the type property is optional and can therefore be omitted from the markup being sent to the server.
 
 **DeployR Encoding Types**
@@ -1538,7 +1509,7 @@ This change applies across all execution APIs:
 
 #### Grid Cluster Targeted Executions
 
-Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](http://go.microsoft.com/fwlink/?LinkId=708543), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu".
+Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](rserver/deployr-admin-console/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 
@@ -1556,7 +1527,6 @@ By identifying a value on a new *cluster* parameter client applications can requ
 
 Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same cluster. If the cluster indicated on any of these calls fails to match a actual cluster name assigned by the admin on the DeployR grid the call will be rejected.
 
-This feature is DeployR Enterprise only.
 
 #### Project Phantom Executions
 
@@ -1567,9 +1537,7 @@ Client applications can request tasks be executed as phantom executions by enabl
 
 -  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
 
-Note, a phantom execution will not appear in the project history returned by the /r/project/execute/history call.
-
-This feature is supported by DeployR Open and DeployR Enterprise.
+> A phantom execution will not appear in the project history returned by the /r/project/execute/history call.
 
 #### External Repository Support
 
@@ -1579,7 +1547,6 @@ Unlike the default repository which is backed by the MongoDB database, the new e
 
 Managing files in the external repository is as simple as creating, editing, copying, moving and deleting files on disk. All interactions with the external repository on the API are read-only, so files and scripts can be listed, loaded and even executed but not modified in any way on the API.
 
->[!NOTE]
 >The DeployR External Repository can be used to provide a seamless bridge between existing file control systems, such as git and svn, and the DeployR server.
 
 Listing external repository-managed files and scripts is supported using a new external parameter on the following set of APIs:
@@ -1630,9 +1597,7 @@ Each user can maintain private, shared and public files in the external reposito
 
 A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#explorer).
 
-For more information about working with the new DeployR External Repository please post your questions to the [DeployR Google Group](https://groups.google.com/forum/#!forum/deployr).
-
-This feature is supported by DeployR Open and DeployR Enterprise.
+For more information about working with the new DeployR External Repository please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 #### Default and External Repository Filters
 
@@ -1667,7 +1632,6 @@ Using the *directory* and *categoryFilter* independently or together the results
 	directory=external:public:testuser:plot
 	categoryFilter=script
 
-This feature is supported by DeployR Open and DeployR Enterprise.
 
 #### Repository Shell Script Execution
 
@@ -1675,9 +1639,8 @@ The following new Repository Shell API has been added:
 
 1.  [/r/repository/shell/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshellexecute) | Executes a repository-managed shell script on the DeployR server.
 
-For more information about working with this new API please post your questions to the [DeployR Google Group](https://groups.google.com/forum/#!forum/deployr).
+For more information about working with this new API please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
-This feature is supported by DeployR Open and DeployR Enterprise.
 
 ### DeployR 7.3
 
