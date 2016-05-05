@@ -60,6 +60,7 @@
 #### [Managing Access with IP Filters](rserver/deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
 #### [Managing the Grid](rserver/deployr-admin-console/deployr-admin-managing-the-grid.md)
 #### [Managing Server Policies](rserver/deployr-admin-console/deployr-admin-managing-server-policies.md)
+#### [Restoring & Backing Up the Database](rserver/deployr-admin-console/deployr-admin-console-database.md)
 #### [Monitoring Events](rserver/deployr-admin-console/deployr-admin-monitoring-events.md)
 ### [Security on DeployR](rserver/deployr-admin-security.md)
 ### [R Package Management for Administrators](rserver/deployr-admin-r-package-management.md)
