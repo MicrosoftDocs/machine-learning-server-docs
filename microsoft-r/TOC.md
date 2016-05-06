@@ -44,12 +44,14 @@
 ## [What's New](rserver/deployr-whats-new.md)
 ## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
-### [Installing](rserver/deployr-installing-configuring.md)
+### Installing
+#### [DeployR 8.0.5 - Windows](rserver/deployr-install-on-windows.md)
+#### [DeployR 8.0.5 - Linux](rserver/deployr-install-on-linux.md)
+#### [DeployR 8.0.0 - All Platforms](rserver/deployr-installing-configuring.md)
 ### Configuring
 #### [Scale & Throughput](rserver/deployr-admin-scale-and-throughput.md)
-#### [DeployR on AWS](rserver/deployr-admin-configure-for-aws.md)
-#### [DeployR on Azure](rserver/deployr-admin-configure-for-azure.md)
-#### [Server, Grid & Database High Availability](rserver/deployr-admin-configure-high-availability.md)
+#### [DeployR in the Cloud](rserver/deployr-admin-install-in-cloud.md)
+#### [Server & Grid High Availability](rserver/deployr-admin-configure-high-availability.md)
 #### [Using Hadoop Impersonation & DeployR](rserver/deployr-admin-hadoop-impersonation.md)
 ### [Administration Console Help](rserver/deployr-admin-console/deployr-admin-console-about.md)
 #### [About DeployR Administration Console](rserver/deployr-admin-console/deployr-admin-console-about.md)

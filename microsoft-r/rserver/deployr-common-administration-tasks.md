@@ -28,9 +28,33 @@ ms.custom: ""
 
 ## Starting and Stopping DeployR
 
-### Starting DeployR Services
+### For DeployR 8.0.5
 
-#### For Linux:
+To start or stop all DeployR-related services on the main server (not nodes) at once, use the administrator utility. 
+
+1. Launch the DeployR administrator utility script with administrator privileges:
+    + On Windows:
+      ```
+      cd C:\Program Files\Microsoft\DeployR-<version>\deployr\tools\
+      adminUtility.bat
+      ```
+
+    + On Linux:
+      ```
+      cd /home/deployr-user/deployr/<version>/deployr/tools/ 
+      ./adminUtility.sh
+      ```
+
+1. From the main menu, choose option **Start/Stop Server**. 
+
+1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter your choice`R`. It may take some time for the Tomcat process to terminate and restart.
+
+
+### For DeployR 8.0.0
+
+#### Starting DeployR Services
+
+**For Linux:**
 
 To start all DeployR-related services on the main server (not nodes) at once, type the following command:
 
@@ -42,7 +66,7 @@ To start the DeployR-related services individually on the main server (not nodes
     /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
     /home/deployr-user/deployr/8.0.0/mongo/mongod.sh start
 
-#### For Windows:
+**For Windows:**
 
 At the DOS command prompt, type:
 
@@ -50,7 +74,7 @@ At the DOS command prompt, type:
     net start RServe7.4
     net start MongoDB-DeployR-8.0
 
-#### For Mac OS X
+**For Mac OS X:**
 
 To start all DeployR-related services on the main server (not nodes) at once, type the following command:
 
@@ -62,11 +86,11 @@ To start the DeployR-related services individually on the main server (not nodes
     /Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start
     /Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start
 
-### Stopping DeployR Services
+#### Stopping DeployR Services
 
 To stop DeployR-related services, type the following:
 
-#### For Linux:
+**For Linux:**
 
 To stop all services on the main server (not nodes) at once, type the following command:
 
@@ -78,7 +102,7 @@ To stop the services individually on the main server (not nodes), type the follo
     /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
     /home/deployr-user/deployr/8.0.0/mongo/mongod.sh stop
 
-#### For Windows
+**For Windows**
 
 At the DOS command prompt, type:
 
@@ -86,7 +110,7 @@ At the DOS command prompt, type:
     net stop RServe7.4
     net stop MongoDB-DeployR-8.0
 
-#### For Mac OS X
+**For Mac OS X**
 
 To stop all services on the main server (not nodes) at once, type the following command:
 
@@ -105,15 +129,15 @@ The `catalina.out` server log file is found at the following location:
 
 **For Linux:**
 
-	/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
+	/home/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out
 
 **For Windows:**
 
-	C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat\logs\catalina.out
+	C:\Program Files\Microsoft\DeployR-<version>\Apache_Tomcat\logs\catalina.out
 
-**For Mac OS X:**
+**For Mac OS X:** (DeployR Open only)
 
-	/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/logs/catalina.out
+	/Users/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out
 
 
 >[!NOTE]
@@ -203,9 +227,40 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 
 ## Backing Up and Restoring Data
 
+
+### For DeployR 8.0.5
+
+**Back up and restore your {{lookup 'brand'}} data**
+
+1. Log into the DeployR landing page.
+
+1. From the landing page, open the **Administration Console**.
+
+1. [Follow these instructions](rserver/deployr-admin-console/deployr-admin-console-database.md).
+
+### For DeployR 8.0.0
 Follow these instructions to back up  and restore your DeployR data or to reset the database to its initial post-installation state.
 
-### On Linux/OS X
+**On Windows**
+
+Follow these steps to back up the data in the database used by DeployR.
+
+1. Log into the machine as a user with administrator privileges.
+
+1. Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
+
+1.  Run the database utility script as follows:
+
+          cd C:\Program Files\Microsoft\DeployR-8.0\deployr\tools
+          databaseUtils.bat
+
+1.  When prompted by the script:
+    -  To reinitialize the database, choose option `2`.
+    -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
+    -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
+
+
+**On Linux/OS X**
 
 Follow these steps to back up the data in the database used by DeployR.
 
@@ -223,60 +278,7 @@ Follow these steps to back up the data in the database used by DeployR.
     -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
     -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
 
-### On Windows
-
-Follow these steps to back up the data in the database used by DeployR.
-
-1. Log into the machine as a user with administrator privileges.
-
-1. Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
-
-1.  Run the database utility script as follows:
-
-          cd C:\Program Files\Microsoft\DeployR\8.0\deployr\tools
-          databaseUtils.bat
-
-1.  When prompted by the script:
-    -  To reinitialize the database, choose option `2`.
-    -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
-    -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
-
 
 ## Opening DeployR Ports
 
-### For Linux / Mac OS X
-
-If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the following ports:
-
->[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
-
-| Machine                                 | Ports                                 | Open Ports                                                                                      |
-|-----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
-| DeployR server machine                  | Tomcat ports:<br />- `8000` (Tomcat default port)<br />- `8001` (Tomcat HTTPS port)           | To the outside                                                                                  |
-| DeployR server machine                  | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
-| Remote grid node machines <sup>1</sup>  | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
-| Remote MongoDB host machine<sup>2</sup> | - `8003` (MongoDB port)               | To the public IP of the DeployR server                                                          |
-
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
-
-<sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
-
-### For Windows
-
-During installation, the Windows firewall was updated to allow inbound communications to DeployR on the ports listed in the following table.
-
->[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
-
-| Machine                                | Ports                                 | Open Ports                                                                                      |
-|----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
-| DeployR server machine                 | Tomcat ports:<br />- `8000` (Tomcat default port)<br />- `8001` (Tomcat HTTPS port)           | To the outside                                                                                  |
-| DeployR server machine                 | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
-| Remote grid node machines <sup>1</sup> | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
-
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
-
->**Notes:**
->-   If you have made any changes to the port numbers designated for communications between DeployR and any of its dependencies, add those port numbers instead.
->-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) document.
+To learn more about the ports you need to open, refer to the Installation Guide for your operating system and DeployR version.

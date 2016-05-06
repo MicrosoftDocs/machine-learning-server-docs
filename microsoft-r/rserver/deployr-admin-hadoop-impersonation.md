@@ -41,7 +41,7 @@ This document assumes we are working with a Kerberos secured cluster.
 
 The rest of the document will focus on the steps needed to get Hadoop Impersonation to work with DeployR.
 
-## RServe
+## DeployR RServe
 
 ### Creating the 'rserve' User
 

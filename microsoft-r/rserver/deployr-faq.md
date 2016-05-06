@@ -32,7 +32,7 @@ ms.custom: ""
 If I want to use the DeployR Web server for my Web application, where should I put my application files?
  + **Linux / OS X:** For product evaluation purposes, you can put your Web application files under the directory &lt;DEPLOYR-INSTALL-DIR&gt;/www/apps/&lt;YOUR-EVALUATION-APP&gt;, such as: `     /home/deployr-user/deployr/8.0.0/www/apps/my-demo-application/     `
 
- + **For Windows:** For product evaluation purposes, you can put your Web application files under the directory &lt;DEPLOYR-INSTALL-DIR&gt;\\www\\apps\\&lt;YOUR-EVALUATION-APP&gt;, such as: `     C:\Program Files\Microsoft\DeployR\8.0\www\apps\my-demo-application\     `
+ + **For Windows:** For product evaluation purposes, you can put your Web application files under the directory &lt;DEPLOYR-INSTALL-DIR&gt;\\www\\apps\\&lt;YOUR-EVALUATION-APP&gt;, such as: `     C:\Program Files\Microsoft\DeployR-8.0\www\apps\my-demo-application\     `
 
 No other configuration changes are needed. Once you put your files there, your evaluation application becomes live. Using the previous example, you could see your application files at this Web address: `http://<DEPLOYR-SERVER-IP:8000>/apps/my-demo-application/one-of-my-files.html`  
  

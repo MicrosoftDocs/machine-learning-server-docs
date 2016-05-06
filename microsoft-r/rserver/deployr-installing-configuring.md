@@ -23,10 +23,7 @@ ms.technology: ""
 ms.custom: ""
 
 ---
-# Installing & Configuring DeployR
-
->**Get More DeployR Power:**  
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+# Installing & Configuring DeployR 8.0.0
 
 ## System Requirements for DeployR
 
@@ -50,7 +47,6 @@ Before you begin installing DeployR, make sure the computer meets the minimum ha
 
 **Internet access**. To download DeployR and software dependencies as well as to interact with the Repository Manager, Administration Console, API Explorer Tool, and this comprehensive website. If using Microsoft Internet Explorer, use version 8 or later.
 
->[!IMPORTANT]
 >We highly recommend installing DeployR on a *dedicated server machine*.
 
 ## Software Dependencies
@@ -216,13 +212,13 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 7.  When the script is complete, press the **Enter** key to exit the window.
 
-8.  If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md) or [AWS EC2 instance](deployr-admin-configure-for-aws.md), you must:
+8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
-    -   Open the same DeployR ports [in Windows Firewall](deployr-admin-configure-for-azure.md#updating-the-firewall).
+    -   Open the same DeployR ports [in Windows Firewall](../deployr-admin-install-in-cloud.md#updating-the-firewall).
 
 **-- The basic installation of DeployR is now complete --**
 
@@ -439,11 +435,11 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 7.  Follow the onscreen installer prompts. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
-8.  If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md) or [AWS EC2 instance](deployr-admin-configure-for-aws.md), you must:
+8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
 **-- The basic installation of DeployR is now complete --**
 
@@ -474,11 +470,11 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 7.  Follow the remaining onscreen installer prompts. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
-8.  If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md) or [AWS EC2 instance](deployr-admin-configure-for-aws.md), you must:
+8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
 **-- The basic installation of DeployR is now complete --**
 
@@ -600,11 +596,11 @@ Install DeployR as follows:
 
 10. Enter the port number for Tomcat or accept the default.
 
-11. If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md) or [AWS EC2 instance](deployr-admin-configure-for-aws.md), you must:
+11. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
 **-- The installation of the remote database and DeployR is now complete --**
 
@@ -715,16 +711,8 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 
 Please carefully follow these migration instructions before you install a more recent version of DeployR to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
-These migration steps apply to the following versions:
+These migration steps apply to RevoDeployR 7.0 and DeployR 7.1 - 7.4.1:
 
--   [DeployR 7.4.1](#migrating-to-8-0-0)
--   [DeployR 7.4.0](#migrating-to-8-0-0)
--   [DeployR 7.3](#migrating-to-8-0-0)
--   [DeployR 7.2](#migrating-to-8-0-0)
--   [DeployR 7.1](#migrating-to-8-0-0)
--   [RevoDeployR 7.0](#migrating-to-8-0-0)
-
->[!IMPORTANT]
 >If you want to upgrade or reinstall your version or R or Microsoft R Server, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
 
 >**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
@@ -803,7 +791,6 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
 After you install DeployR, please review the following topics.
 
->[!IMPORTANT]
 >For the best results, respect the order in which the following information is presented when configuring DeployR.
 
 ### Updating Your Firewall
@@ -812,8 +799,7 @@ After you install DeployR, please review the following topics.
 
 If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the following ports:
 
->[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine         | Ports      | Open Ports                                                                                      |
 |-----------------------------------------|-------------------|-------------------------------------------------|
@@ -829,8 +815,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 
 During installation, the Windows firewall was updated to allow inbound communications to DeployR on the ports listed in the following table.
 
->[!IMPORTANT]
->If you are provisioning your server on a cloud service such as [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints), [AWS](deployr-admin-configure-for-aws.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [[Azure or AWS EC2](../deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine                                | Ports                                 | Open Ports                                                                                      |
 |----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -869,7 +854,7 @@ When the wrong IP is defined, you will not be able to access to the DeployR land
 
 To fix this issue, ensure that:
 
-1.  The appropriate external server IP address and port number are defined as the **Server web context**. For Azure & AWS services: Set the server Web context to the external **Public IP**. (Learn more: [Azure setup](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS setup](deployr-admin-configure-for-aws.md) ).
+1.  The appropriate external server IP address and port number are defined as the **Server web context**. For Azure & AWS services: Set the server Web context to the external **Public IP**. (Learn more: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
 2.  The autodetection of the IP address is disabled.
 
@@ -913,7 +898,6 @@ Follow the instructions provided for your operating system.
 
 Remember to uninstall DeployR on both the main server and any other grid node machines.
 
->[!IMPORTANT]
 >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
 **To uninstall the DeployR main server:**
@@ -963,13 +947,12 @@ Repeat these steps on each grid node machine.
 
 2.  Remove DeployR using the Windows instructions for uninstalling a program specific to your version of Windows. For example, on Windows 8, choose **Control Panel &gt; Programs & Features &gt; Uninstall**.
 
-3.  **Manually remove the DeployR install directory**, by default `C:\Program Files\Microsoft\DeployR\8.0\`.
+3.  **Manually remove the DeployR install directory**, by default `C:\Program Files\Microsoft\DeployR-8.0\`.
 
 >Remember to uninstall DeployR on both the main server and any other grid node machines.
 
 ### Uninstalling on Mac OS X
 
->[!IMPORTANT]
 >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
 **To uninstall the DeployR:**

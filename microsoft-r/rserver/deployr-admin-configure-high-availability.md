@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# DeployR Server, Grid & Database High Availability
+# DeployR Server and Grid High Availability
 
 ## Server High Availability
 
@@ -103,6 +103,7 @@ In this way, the DeployR grid can be said to be `self-healing`, capable of autom
 
 > **RBroker High Availability!** The `7.4.0` release of the [RBroker Framework](deployr-rbroker-framework.md) introduced a new fault-tolerant implementation of the `PooledTaskBroker`. Tasks executing on the new PooledTaskBroker that fail due to grid failures at runtime are automatically detected and re-executed without requiring client application intervention.
 
+<!-- This was for MongoDB & DeployR 8.0.0
 ## Database High Availability
 
 We highly recommended that serious consideration be given to deploying [MongoDB replica sets](http://www.mongodb.org/) for MongoDB in DeployR production environments. Through the use of replica sets, the MongoDB database is capable of supporting data synchronization across multiple database servers. These replica sets provide data redundancy and increase data availability.
@@ -160,8 +161,7 @@ For each standalone MongoDB instance, do the following:
 
 2.  [Install MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
 
-    >[!IMPORTANT]
->Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](deployr-installing-configuring.md#installing-on-linux).)
+    >Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](deployr-installing-configuring.md#installing-on-linux).)
 
 3.  Change the default password for this secondary MongoDB instance to the password defined in `DeployR MongoDB Configuration Override` section of the `<INSTALL_DIR>/deployr/deployr.groovy` file on the primary host machine.
 
@@ -367,4 +367,4 @@ Once the DeployR server restarts, the server will now be using a highly availabl
 
         <INSTALL_DIR>/tomcat/tomcat7.sh start
 
-
+-->

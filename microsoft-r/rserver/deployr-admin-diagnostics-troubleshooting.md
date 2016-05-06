@@ -73,7 +73,7 @@ There are two ways to run the diagnostic tests:
 
     If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
 
-         cd C:\Program Files\Microsoft\DeployR\8.0\deployr\diagnostics 
+         cd C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics 
          diagnostics.bat
 
     All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.zip`.
@@ -96,7 +96,7 @@ The following log files can be found in the resulting `diagnostics.tar.gz` file 
 
 #### For Windows
 
-The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR\8.0\deployr\diagnostics\logs` directly on the DeployR host.
+The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics\logs` directly on the DeployR host.
 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description                                                                                                                                                                                                                                                                                      |
 |--------------------|---------------------------------------------------|------------------------------------------------------------------------|
@@ -118,9 +118,9 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
 3.  If Server Web Context points to the wrong IP, [update it now](#set-context).
 
-    -   Set the DeployR [server Web context](#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure](deployr-admin-configure-for-azure.md#setting-the-server-web-context) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Set the DeployR [server Web context](#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (See doc for [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
 
-    -   Open DeployR ports `8000`, `8001`, and `8006`:  (Setup: [Azure](deployr-admin-configure-for-azure.md#configuring-azure-endpoints) | [AWS](deployr-admin-configure-for-aws.md) ).
+    -   Open DeployR ports `8000`, `8001`, and `8006`:  
 
 <!-- -->
 
@@ -181,7 +181,7 @@ Usage tips for the `setWebContext` script arguments:
 
 2.  Run the `setWebContext.bat` script with the appropriate arguments (see preceding table):
 
-        C:\Program Files\Microsoft\DeployR\8.0\deployr\tools\setWebContext.bat -query|-aws|-ip <ip_address>
+        C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -query|-aws|-ip <ip_address>
 
 3.  For this change to take effect [restart the DeployR services](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
@@ -391,7 +391,7 @@ If you run into conflicts with other applications, consider changing the port nu
 
 #### For Windows:
 
--  In the `C:\Program Files\Microsoft\DeployR\8.0\Apache_Tomcat` directory, open the file `server.xml`.
+-  In the `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat` directory, open the file `server.xml`.
 
 -  Find: `port=”8000”`
 

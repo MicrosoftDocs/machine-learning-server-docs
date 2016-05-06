@@ -34,7 +34,6 @@ Once you put the big data files in the external directories, data scientists can
 
 ## Setting up NFS Setup
 
->[!IMPORTANT]
 >NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. 
 
 To benefit from external directory support in a multi-grid node DeployR environment, you (the administrator) must install and configure a Network File System (NFS) shared directory on the DeployR main server as well as any grid node from which they want to access to this big data files.
@@ -42,13 +41,12 @@ To benefit from external directory support in a multi-grid node DeployR environm
 ### Configure NFS on Windows
 
 1.  NFS mount the `<INSTALL_DIR>/deployr/external` directory on both the DeployR main server and each grid node.
-    `<INSTALL_DIR>` is the full path to directory into which you installed DeployR, which is `C:\Program Files\Microsoft\DeployR\8.0\` by default.
+    `<INSTALL_DIR>` is the full path to directory into which you installed DeployR, which is `C:\Program Files\Microsoft\DeployR-<version>\` by default.
 
 2.  Open the Windows firewall ports as described in the Windows NFS documentation for your platform.
 
 ### Configure NFS on Linux
 
->[!IMPORTANT]
 >If you do not have access to the Internet, you’ll have to copy the install files to this machine using another method.
 
 1. Log into the operating system as `root`.
@@ -113,9 +111,9 @@ To benefit from external directory support in a multi-grid node DeployR environm
 
     -   On the DeployR main server:
 
-        1.  Add a line to the file `/etc/exports`.
+        1.  Add a line to the file `/etc/exports` as follows where <VERSION> is the installed version of DeployR.
 
-                /home/deployr-user/deployr/8.0.0/deployr/external/data *(rw,sync,insecure,all_squash,anonuid=48,anongid=48)
+                /home/deployr-user/deployr/<VERSION>/deployr/external/data *(rw,sync,insecure,all_squash,anonuid=48,anongid=48)
 
         2.  Broadcast the new directory. At the prompt, type:
 
@@ -149,38 +147,20 @@ While it suffices for users to store their local copy of the data in the current
 
 The external directory structure is really a tree of public and private directories hanging off a common base directory managed by you, the DeployR administrator.
 
-### For Linux:
+The default base directory for the external directory structure might be:
++ On Windows, `C:/Program Files/Microsoft/DeployR-<version>/deployr/external/data/`
++ On Linux, `/home/deployr-user/deployr/<version>/deployr/external/data`
++ On Mac OS X (DeployR Open only), `/Users/deployr-user/deployr/<version>/deployr/external/data`
 
-For example, if the base directory is `/home/deployr-user/deployr/8.0.0/deployr/external/data`, then the base external directory structure might look:
--   `/home/deployr-user/deployr/8.0.0/deployr/external/data/public`
--   `/home/deployr-user/deployr/8.0.0/deployr/external/data/testuser`
--   `/home/deployr-user/deployr/8.0.0/deployr/external/data/user1`
--   `/home/deployr-user/deployr/8.0.0/deployr/external/data/{private_user_dir}`
+Two external subdirectories are automatically created by the server the first time the corresponding user logs into the system. The first directory is called `/public` and contains the files that can be read by any authenticated users on the server. 
 
-### For Windows:
+The second directory is the user’s private directory. Each private external directory can be found at `<DeployR_Install_Dir>/external/data/{deployr_username_private_directory}`. Files in each private directory are available only to that authenticated user during a live session. The administrator can also manually create these subdirectories in advance. The names of the directories are case-sensitive.
 
-For example, if the base directory on the main server is `C:/Program Files/Microsoft/DeployR/8.0/deployr/external/data/`, then the base external directory structure might look:
--   `C:/Program Files/Microsoft/DeployR/8.0/deployr/external/data/public`
--   `C:/Program Files/Microsoft/DeployR/8.0/deployr/external/data/testuser`
--   `C:/Program Files/Microsoft/DeployR/8.0/deployr/external/data/user1`
--   `C:/Program Files/Microsoft/DeployR/8.0/deployr/external/data/{private_user_dir}`
+For example, 
 
-### For Mac OS X:
-
-For example, if the base directory is `/Users/deployr-user/deployr/8.0.0/deployr/external/data`, then the base external directory structure might look:
--   `/Users/deployr-user/deployr/8.0.0/deployr/external/data/public`
--   `/Users/deployr-user/deployr/8.0.0/deployr/external/data/testuser`
--   `/Users/deployr-user/deployr/8.0.0/deployr/external/data/user1`
--   `/Users/deployr-user/deployr/8.0.0/deployr/external/data/{private_user_dir}`
-
-&nbsp;
-
-Two directories are automatically created by the server the first time the corresponding user logs into the system. The first directory is called `/public` and contains the files that can be read by any authenticated users on the server. The second directory is the user’s private directory. Each private external directory can be found at `<DeployR_Install_Dir>/external/data/{deployr_username}`. Files in each private directory are available only to that authenticated user during a live session. The administrator can also manually create these subdirectories in advance. The names of the directories are case-sensitive.
-
-For example, the user `testuser` will have access to the files under:
-
--   The private external directory, `<DeployR_Install_Dir>/external/data/testuser`
--   The `/public` directory, `<DeployR_Install_Dir>/external/data/public`.
++ The user `testuser` would have access to the files under:
+        -   The private external directory, `<DeployR_Install_Dir>/deployr/external/data/testuser`
+        -   The `/public` directory, `<DeployR_Install_Dir>/deployr/external/data/public`.
 
 It is up to the administrator to inform each user of which files are available in the `/public` directory and which files are in their private directory.
 
