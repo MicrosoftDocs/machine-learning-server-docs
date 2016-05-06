@@ -6,7 +6,7 @@ description: "Big Data in DeployR - Managing External Directories for Big Data"
 keywords: "big data, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -35,7 +35,7 @@ Once you put the big data files in the external directories, data scientists can
 ## Setting up NFS Setup
 
 >[!IMPORTANT]
->NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. DeployR Open administrators can skip this step.
+>NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. 
 
 To benefit from external directory support in a multi-grid node DeployR environment, you (the administrator) must install and configure a Network File System (NFS) shared directory on the DeployR main server as well as any grid node from which they want to access to this big data files.
 

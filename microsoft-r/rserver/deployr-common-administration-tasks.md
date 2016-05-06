@@ -280,5 +280,3 @@ During installation, the Windows firewall was updated to allow inbound communica
 >**Notes:**
 >-   If you have made any changes to the port numbers designated for communications between DeployR and any of its dependencies, add those port numbers instead.
 >-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) document.
-
-
