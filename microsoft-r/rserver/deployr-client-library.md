@@ -6,7 +6,7 @@ description: "DeployR Client Library Tutorial"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -34,7 +34,6 @@ To further simplify the integration of DeployR services within client applicatio
 
 >**Try Out Our Examples!** Explore the client library examples for [Java,](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
->[!TIP]
 >Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
@@ -74,7 +73,7 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:8000/deployr";
+    String deployrEndpoint = "http://localhost:<PORT>/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
     //
@@ -104,7 +103,7 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    deployr.configure({ host: 'http://localhost:8000' });
+    deployr.configure({ host: 'http://localhost:<PORT>' });
 
     // 
     // 2. Execute an analytics Web service based on a repository-managed
@@ -169,7 +168,7 @@ The first step for any client application developer using the client libraries i
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:8000/deployr";
+    String deployrEndpoint = "http://localhost:<PORT>/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
 **JavaScript:**
@@ -180,14 +179,14 @@ The first step for any client application developer using the client libraries i
     // deployr.configure( { host: '' } ) is provided to simplify the establishment 
     // of client connections.
     //
-    // This example assumes the DeployR server is running on http://localhost:8000.
+    // This example assumes the DeployR server is running on http://localhost:<PORT>.
     //
 
     //
     // Browser - Same Origin does not need the deployr.configure({ host: '' }) step.
     // Browser - Cross-origin resource sharing (CORS) requests do.
     // 
-    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:8000', cors: true });
+    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>', cors: true });
 
     //
     // Node.js -  No CORS is needed in Node.js
@@ -196,8 +195,8 @@ The first step for any client application developer using the client libraries i
 **C#:**
 
     #!/usr/bin/env node
-    deployr.configure( { host: 'http://localhost:8000' });
-    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:8000' });
+    deployr.configure( { host: 'http://localhost:<PORT>' });
+    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>' });
 
 
     //
@@ -249,7 +248,7 @@ The following code snippets demonstrate how to authenticate using the client lib
     //
     // Cross-origin resource sharing (CORS) Request
     //
-    deployr.configure( { host: 'http://dhost:8000', cors: true })
+    deployr.configure( { host: 'http://dhost:<PORT>', cors: true })
       .io('/r/user/login')
       .data({ username: 'george', password: 's3cret' })
       .end(function(res) {
@@ -267,7 +266,6 @@ The following code snippets demonstrate how to authenticate using the client lib
     RAuthentication authToken = new RBasicAuthentication("george", "s3cret");
     RUser rUser = rClient.login(authToken);
 
->[!IMPORTANT]
 >Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models and data files stored in the repository compared to *anonymous* users.
 
 ## Authenticated Services
@@ -1148,7 +1146,6 @@ There are two types of *anonymous project*:
 1.  Stateless Project - a stateless, transient R session that lives only for the duration of the analytics Web service execution.
 2.  HTTP Blackbox Project - a stateful, transient R session that lives only for the duration of the current user HTTP session.
 
->[!TIP]
 >While *anonymous project services* are provided primarily for *anonymous* users, these same service calls are also available to *authenticated* users.
 
 The following code snippets demonstrate how the client libraries make these services available.
@@ -1252,8 +1249,7 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
->[!TIP]
->See the [Anonymous Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#anonymousprojects) chapter in the *API Reference Guide* for further details.
+>See the [Anonymous Projects](deployr-api-reference#r-for-application-developers) in the section *API Reference Guide* for further details.
 
 ## Standard Execution Model
 

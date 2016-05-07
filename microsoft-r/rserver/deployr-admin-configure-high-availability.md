@@ -6,7 +6,7 @@ description: "How to Configure High Availability HA for DeployR Server, Grid & D
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""

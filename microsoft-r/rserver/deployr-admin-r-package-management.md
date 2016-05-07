@@ -6,7 +6,7 @@ description: "Managing R Packages in DeployR - for DeployR administrators"
 keywords: "r packages, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
 ms.prod: "deployr"
 ms.service: ""
@@ -44,7 +44,7 @@ One such approach is to use a master R script that contains all required package
 
     1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
-            install_github('deployr/deployrUtils')
+            install_github('Microsoft/deployrUtils')
 
     2.  Create a master R script that you'll use to install the package dependencies across the DeployR grid.
 

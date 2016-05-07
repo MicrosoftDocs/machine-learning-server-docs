@@ -6,7 +6,7 @@ description: "Understanding Scale and Throughput in DeployR"
 keywords: "scalability, throughput, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
 ms.prod: "deployr"
 ms.service: ""
@@ -63,16 +63,7 @@ All server resources are allocated on the Java Virtual Machine (JVM) heap, which
 
 ## Tuning Grid Capacity
 
-DeployR Enterprise offers the ability to expand and contract grid capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.
-
->**Grid Framework Support:**  
->When you install DeployR main server, a single grid node is installed automatically for you.
->
->-  With **DeployR Open**, this default node is installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). Expanding the grid with additional grid nodes to scale for increasing load is not supported for this edition.
->
->-  With **DeployR Enterprise**, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load.
->
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+DeployR Enterprise offers the ability to expand and contract grid capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.  With DeployR Enterprise, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load.
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
@@ -101,12 +92,10 @@ Where:
 -   `Max. Concurrent Projects` is the maximum number of projects a single user can work on concurrently. The system administrator can control the concurrent project limit using the Per-user authenticated limit setting in the **Server Policies** tab of the DeployR Administration Console.
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
->[!IMPORTANT]
 >To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
 
 &nbsp;
 
->[!NOTE]
 >For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 **Example**
