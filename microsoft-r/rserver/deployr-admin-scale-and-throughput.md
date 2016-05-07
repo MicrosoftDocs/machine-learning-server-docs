@@ -92,11 +92,10 @@ Where:
 -   `Max. Concurrent Projects` is the maximum number of projects a single user can work on concurrently. The system administrator can control the concurrent project limit using the Per-user authenticated limit setting in the **Server Policies** tab of the DeployR Administration Console.
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
+For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
+
 >To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
 
-&nbsp;
-
->For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 **Example**
 
@@ -121,13 +120,10 @@ Where:
 
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
->[!IMPORTANT]
+For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
+
 >To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.
 
-&nbsp;
-
->[!NOTE]
->For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 **Example**
 
@@ -159,7 +155,6 @@ To illustrate the nature of a task, let’s begin with a summary of the basic wo
 
 4.  When the job execution completes, the server captures a complete snapshot of the R session associated with that slot. Then, the server saves the snapshot as a persistent project in the server database and releases the slot so it is available for further tasks.
 
->[!TIP]
 > By default, a snapshot of the R session is saved as a persistent DeployR project once a job has finished executing. As an alternative, use the `storenoproject` parameter when scheduling a job to instruct the server not to save a persistent project. If you specify that no project should be saved using the `storenoproject` parameter, you can still store specific artifacts to the repository. In certain scenarios, storing these artifacts to the repository rather than creating a persistent project can result in greatly improved throughput.
 
 ### Example
@@ -211,7 +206,6 @@ Enabling these configuration properties results in a number of direct consequenc
 
 2.  Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
 
->[!IMPORTANT]
 >Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
 
 
