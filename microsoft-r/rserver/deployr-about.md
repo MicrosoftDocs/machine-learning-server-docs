@@ -6,7 +6,7 @@ description: "DeployR introduction and overview."
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
 ms.prod: "deployr"
 ms.service: ""
@@ -32,7 +32,7 @@ DeployR is an integration technology for deploying R analytics inside web, deskt
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-DeployR is available in two editions: DeployR Open and DeployR Enterprise. DeployR Open is a free, open source solution that is ideal for prototyping, building, and deploying non-critical business applications. DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 ### Basic Workflow
 
@@ -131,15 +131,12 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 [Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
->[!TIP]
 >**DeployR Security**  
 >DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
 >
 >Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
 >
 >Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security.md) guide.
->
->Learn more in the [Getting Started Guide for Administrators](deployr-administrator-getting-started.md).
 
 ## Architecture
 
@@ -151,7 +148,7 @@ Behaving like an on-demand R analytics engine, DeployR exposes a wide range of r
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-sample.md).
 
-DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. On the other hand, DeployR Open supports a static grid framework of a single, local grid node with a fixed slot limit. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
+DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
 
