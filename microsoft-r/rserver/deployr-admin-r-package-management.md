@@ -60,8 +60,8 @@ One such approach is to use a master R script that contains all required package
 
 ## Decentralized Management
 
-Another option is to [assign permissions](deployr-admin-console/deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) for R package installation to select users. Then, these select users can install the packages they need directly within their code. When you've explicitly assigned the 'PACKAGE\_MANAGER' role to users, they are granted permissions to install R packages via `deployrUtils::deployrPackage()`.
+Another option is to [assign permissions](deployr-admin-console/deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) for R package installation to select users. Then, these select users can install the packages they need directly within their code. When you've explicitly assigned the `PACKAGE_MANAGER` role to users, they are granted permissions to install R packages via `deployrUtils::deployrPackage()`.
 
 ![Login](./media/deployr-admin-r-package-management/packagemgr.png)
 
-Also note that the 'ADMINISTRATOR' and 'POWER\_USER' roles have implicit 'PACKAGE\_MANAGER' rights, while 'BASIC\_USER' does not. [Read more on default roles...](deployr-admin-console/deployr-admin-console-permissions-with-roles.md#predefined-system-roles)
+Also note that the `ADMINISTRATOR` and `POWER_USER` roles have implicit `PACKAGE_MANAGER` rights, while `BASIC_USER` does not. [Read more on default roles...](deployr-admin-console/deployr-admin-console-permissions-with-roles.md#predefined-system-roles)
