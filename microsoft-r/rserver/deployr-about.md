@@ -90,9 +90,9 @@ In DeployR, there is but one tool for the data scientists -- the [Repository Man
 
 With DeployR, the recommended steps for a data scientist are both simple and familiar:
 
-1.  Develop your analytics
-2.  Test those analytics
-3.  Collaborate with the application developers
+1. Develop your R scripts and other analytics with portability in mind
+1. Test those analytics inside and outside of DeployR
+1. Collaborate with application developers to deliver powerful R analytic solutions
 
 Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist-getting-started.md).
 
