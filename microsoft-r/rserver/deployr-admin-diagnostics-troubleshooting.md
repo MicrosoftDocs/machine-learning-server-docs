@@ -196,6 +196,7 @@ Usage tips for the `setWebContext` script arguments:
 
  
 **On Windows:**
+
 1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
 1. Open a Command Window with **“Run as Administrator”**.
 1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
@@ -210,12 +211,15 @@ Usage tips for the `setWebContext` script arguments:
    ```           
 
 **On Linux:**
+
 1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
    ```
    cd $DEPLOYR_HOME/deployr/tools/
    ./setWebContext.sh -ip <ip_address>
    ```
+
 1. Confirm the IP address you entered.
+
 1. Disable any automatic IP detection that might overwrite the IP you just assigned.
    ```
    ./setWebContext.sh -disableauto
@@ -345,44 +349,43 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 
 If you run into conflicts with other applications, consider changing the port numbers. You only need to change the port numbers of those applications that are actively conflicting. Consequently, not all of the following steps may apply to your situation.
 
-#### For Linux / OS X
+**For Windows:**
 
-1.  Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
-
-2.  Find the port number value by searching for:
-    + For DeployR 8.0.5: `<Connector port="8050"`
-    + For DeployR 8.0.0: `<Connector port="8000"`
-
-3.  Replace the port value with a new, unique port number.
-
-4.  Save the file.
-
-5.  Restart Tomcat for the changes to take effect. At the prompt, type:
-
-        /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh stop
-        /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh start
-
-6.  Verify that the port changes are working as expected. At the prompt, type:
-
-        netstat -p --listening --numeric-ports --numeric-hosts | grep -i java
-
-#### For Windows:
-
--  In the `C:\Program Files\Microsoft\DeployR-<DEPLOYR_VERSION>\Apache_Tomcat` directory, open the file `server.xml`.
-
--  Find: 
+1. In the `C:\Program Files\Microsoft\DeployR-<DEPLOYR_VERSION>\Apache_Tomcat` directory, open the file `server.xml`.
+1. Find: 
     + For DeployR 8.0.5: `port="8050"`
     + For DeployR 8.0.0: `port="8000"`
-
--  Replace the port value with a new, unique port number.
-
--  Save the file.
-
--  Restart Tomcat for the changes to take effect.
+1. Replace the port value with a new, unique port number.
+1. Save the file.
+1. Restart Tomcat for the changes to take effect.
     + For DeployR 8.0.5:
-	    net stop Apache-Tomcat-for-DeployR-8.0.5
-	    net start Apache-Tomcat-for-DeployR-8.0.5
-    
+      ```
+      net stop Apache-Tomcat-for-DeployR-8.0.5
+      net start Apache-Tomcat-for-DeployR-8.0.5
+      ```
+      
     + For DeployR 8.0.0:
-	    net stop Apache-Tomcat-for-DeployR-8.0
-	    net start Apache-Tomcat-for-DeployR-8.0
+      ```
+      net stop Apache-Tomcat-for-DeployR-8.0
+      net start Apache-Tomcat-for-DeployR-8.0
+      ```
+
+**For Linux / OS X**
+
+1. Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
+1. Find the port number value by searching for:
+   + For DeployR 8.0.5: `<Connector port="8050"`
+   + For DeployR 8.0.0: `<Connector port="8000"`
+1. Replace the port value with a new, unique port number.
+1. Save the file.
+1. Restart Tomcat for the changes to take effect. At the prompt, type:
+   ```
+   /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh stop
+   /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh start
+   ```
+   
+1.  Verify that the port changes are working as expected. At the prompt, type:
+   ```
+   netstat -p --listening --numeric-ports --numeric-hosts | grep -i java
+   ```      
+      
