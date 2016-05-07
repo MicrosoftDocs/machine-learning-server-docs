@@ -122,6 +122,8 @@ Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-tro
 
 This section provides a quick summary of useful links for administrators working with DeployR.
 
+>Use the table of contents to find all of the guides and documentation needed by the administrator.
+
 **Key Documents**
 -   [About DeployR](deployr-about.md)
 -   [Installation & Configuration](deployr-installing-configuring.md)
@@ -129,8 +131,6 @@ This section provides a quick summary of useful links for administrators working
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
-
->Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Other Getting Started Guides**
 -   [Application Developers](deployr-application-developer-getting-started.md)
