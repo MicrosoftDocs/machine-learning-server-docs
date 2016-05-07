@@ -6,7 +6,7 @@ description: "DeployR and Hadoop Impersonation"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -61,11 +61,11 @@ If DeployR was installed as user `root`, do the following:
 
 2.  Go to the directory where DeployR is installed. For example:
 
-        cd /opt/deploy/8.0.0
+        cd /opt/deploy/<version>
 
 3.  Go the `rserve` sub-directory and open `rserve.sh` in an editor. For example:
 
-        vi /opt/deploy/8.0.0/rserve/rserve.sh
+        vi /opt/deploy/<version>/rserve/rserve.sh
 
 4.  Replace all instances of `apache` with `rserve`. 
 
@@ -73,7 +73,7 @@ If DeployR was installed as user `root`, do the following:
 
 5.  Give full write permissions to directory `workdir`. For example:
 
-        chmod 777 /opt/deployr/8.0.0/rserve/workdir
+        chmod 777 /opt/deployr/<version>/rserve/workdir
 
 6.  Edit `/etc/group` and add `rserve` as a member of group `apache`. For example:
 
@@ -81,7 +81,7 @@ If DeployR was installed as user `root`, do the following:
 
 7.  Restart Rserve.
 
-        cd /opt/deploy/8.0.0/rserve
+        cd /opt/deploy/<version>/rserve
         ./rserve.sh stop
         ./rserve.sh start
 
