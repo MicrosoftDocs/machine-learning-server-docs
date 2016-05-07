@@ -6,7 +6,7 @@ description: "Getting started for Application Developers: high level introductio
 keywords: "Application Developers, r programmer, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
 ms.prod: "deployr"
 ms.service: ""
@@ -252,21 +252,18 @@ The application design overview, source code in both Java and JavaScript, and th
 
 Use the table of contents to find all of the guides and documentation needed by Application Developers.
 
-###API Docs, Tools, and Samples
+**API Docs, Tools, and Samples**
 -   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
 -   [API Reference Guide](deployr-api-reference.md)
 
-###Other Getting Started Guides
+**Other Getting Started Guides**
 -   [Administrators](deployr-administrator-getting-started.md)
 -   [Data Scientists](deployr-data-scientist-getting-started.md)
 
-### Helper Tools
-
+**Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
 -   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
--   [API Interactive Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/explorer.html), available on the DeployR landing page following an install.
+-   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
-### Support Channels
-
+**Support Channels**
 -   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-

@@ -217,8 +217,7 @@ Once you've shared those files, the application developers can upload the files 
 
 Use the table of contents to find all of the guides and documentation needed by data scientists working with DeployR.
 
-### Key Documents
-
+**Key Documents**
 -   [About DeployR](deployr-about.md)
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
@@ -228,6 +227,5 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 >Use the table of contents to find all of the guides and documentation needed by the data scientist, administrator, or application developer.
 
-### Support Channels
-
+**Support Channel**
 -   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
