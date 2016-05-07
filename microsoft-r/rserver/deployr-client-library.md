@@ -130,7 +130,7 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:7300/deployr";
+    String deployrEndpoint = "http://localhost:8050/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
     //
@@ -207,7 +207,7 @@ The first step for any client application developer using the client libraries i
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:7300/deployr";
+    String deployrEndpoint = "http://localhost:8050/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
 ## Authentication
@@ -290,7 +290,6 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
 
->[!TIP]
 >See the [Authenticated Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#authenticatedprojects) chapter in the *API Reference Guide* for further details.
 
 Project Services are most easily understood when considered as a collection of related services:
@@ -539,7 +538,6 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
->[!TIP]
 >All executions services support a [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
 
 #### 3. Project Workspace Services
@@ -771,7 +769,6 @@ These services support the manipulation and management of R packages within *aut
 
 A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
->[!TIP]
 >By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) chapter of this guide.
 
 Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
@@ -942,8 +939,6 @@ The following code snippets demonstrate some of the ways the client libraries ma
     }
     }
 
-
->[!TIP]
 >All executions services support the [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
 
 ### Repository Services
@@ -1132,7 +1127,6 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fileName, options);
 
->[!TIP]
 >See the [Working with the Repository APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) chapter in the *API Reference Guide* for detailed information regarding working with repository-managed files and directories.
 
 ## Anonymous Services
@@ -2476,7 +2470,6 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
->[!TIP]
 >See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) chapter in the API Reference Guide for further details.
 
 ## R Object Data Decoding
