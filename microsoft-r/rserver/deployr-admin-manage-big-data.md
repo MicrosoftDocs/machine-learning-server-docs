@@ -156,11 +156,9 @@ Two external subdirectories are automatically created by the server the first ti
 
 The second directory is the user’s private directory. Each private external directory can be found at `<DeployR_Install_Dir>/external/data/{deployr_username_private_directory}`. Files in each private directory are available only to that authenticated user during a live session. The administrator can also manually create these subdirectories in advance. The names of the directories are case-sensitive.
 
-For example, 
-
-+ The user `testuser` would have access to the files under:
-        -   The private external directory, `<DeployR_Install_Dir>/deployr/external/data/testuser`
-        -   The `/public` directory, `<DeployR_Install_Dir>/deployr/external/data/public`.
+For example, the user `testuser` would have access to the files under:
++ The private external directory, `<DeployR_Install_Dir>/deployr/external/data/testuser`
++ The `/public` directory, `<DeployR_Install_Dir>/deployr/external/data/public`
 
 It is up to the administrator to inform each user of which files are available in the `/public` directory and which files are in their private directory.
 
