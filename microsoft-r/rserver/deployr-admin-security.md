@@ -306,7 +306,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
             cd /opt/deployr/8.0.0
             ./startAll.sh
 
->[!IMPORTANT]
+
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### LDAP Authentication
@@ -356,7 +356,6 @@ By default, the **LDAP** security provider is disabled. To enable LDAP authentic
 
 For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
 
->[!IMPORTANT]
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### Active Directory Authentication
@@ -410,14 +409,12 @@ By default, the Active Directory security provider is disabled. To enable Active
 
 For more information, see the complete list of [configuration properties](#ldap-active-directory-configuration-properties).
 
->[!IMPORTANT]
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ### LDAP & Active Directory Configuration Properties
 
 The following table presents the complete list of LDAP and Active Directory configuration properties.
 
->[!IMPORTANT]
 >To use one of these configuration properties in the `deployr.groovy` external configuration file, you must prefix the property name with `grails.plugin.springsecurity`. For example, to use the `ldap.context.server='ldap://localhost:389'` property in `deploy.groovy`, you must write the property as such: `grails.plugin.springsecurity.ldap.context.server='ldap://localhost:389'`
 
 ### Context Properties
@@ -663,7 +660,6 @@ Relevant snippet from deployr.groovy file shown here:
 
 The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. Since we cannot ship SSL certificates for you, SSL on DeployR is disabled by default.
 
->[!IMPORTANT]
 >We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
 
 Once enabled your client applications can make API calls that connect over HTTPS.
@@ -673,9 +669,8 @@ Once enabled your client applications can make API calls that connect over HTTPS
 1.  **Provide an SSL certificate.**
     + If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup. (If you do not have one, skip to the next bullet to define a temporary certificate.)
         
-        >[!NOTE]
-                >Be sure to specify the correct Tomcat path for the `-keystore` argument.
-		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
+        >Be sure to specify the correct Tomcat path for the `-keystore` argument.
+	>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
          + For Linux:
 	        1.  Go to the directory in which the keystore is stored.
@@ -698,7 +693,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
        
     + If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine.
         
-        >[!NOTE]
                 >Be sure to specify the correct Tomcat path for the `-keystore` argument.
 		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
@@ -734,7 +728,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
 		
 	<a id="alertusers"></a>
 
-	>[!WARNING]
 	>**Alert Your Users!**  
 	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
 	>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
@@ -875,7 +868,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
                  grails.plugins.springsecurity.auth.forceHttps = false
 
-		2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
+	2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
                  /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
 
@@ -885,7 +878,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
                  grails.plugins.springsecurity.auth.forceHttps = false
 
-		2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
+	2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
 
                  C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https true
 
@@ -906,7 +899,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. By default, SSL on DeployR is disabled. If you have enabled SSL at some time and you now wish to disable SSL, follow the steps in this section.
 
->[!IMPORTANT]
 >We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
 
 ### To disable SSL support on the DeployR server:
@@ -951,7 +943,6 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     + For OS X:
 
-		>[!NOTE]
 		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector. For another user,also use the appropriate filepath to `web.xml`.
 
     	1. Disable the HTTPS connector on Tomcat by **commenting out** the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
@@ -987,7 +978,6 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     + For Windows:
 
-		>[!NOTE]
 		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` as well as the `keystoreFile` property on the Connector. For another user,also use the appropriate filepath to `web.xml`.
 
     	1. Disable the HTTPS connector/channel on Tomcat by **commenting out** the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\server.xml`.
@@ -1189,7 +1179,6 @@ Repository-managed R scripts can be exposed as an executable on the API. Since r
 
 However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
 
->[!NOTE]
 >For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 ### Repository Script Download Controls
