@@ -59,10 +59,10 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 #### For DeployR 8.0.5
 + **On Windows**: 
     1. Launch the DeployR administrator utility script with administrator privileges:
-    ```
-    cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-    adminUtility.bat
-    ```       
+       ```
+       cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+       adminUtility.bat
+       ```       
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
@@ -70,10 +70,10 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 + **On Linux / OS X**:
     1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
-    ```
-    cd $DEPLOYR_HOME/deployr/tools/ 
-    ./adminUtility.sh
-    ```       
+       ```
+       cd $DEPLOYR_HOME/deployr/tools/ 
+       ./adminUtility.sh
+       ```       
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
@@ -100,18 +100,6 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 A copy of the following log and configuration files are bundled together during the diagnostic check. Review the log and configuration files for any component that was identified as experiencing issues.
 
-**For Linux / OS X**
-
-The following log files can be found in the resulting `diagnostics.tar.gz` file as well as under `$DEPLOYR_HOME/deployr/diagnostics/logs` directly on the DeployR host.
-
-| Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description |
-|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
-| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
-| Tomcat             | - `catalina.out`<br />- `catalina.sh`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`| The log and configuration files for Tomcat.|
-| MongoDB<br><small>(DeployR 8.0.0 only)</small> |-  `mongod.conf`<br />- `mongod-<IP_ADDRESS>.log`| The log and configuration files for the database used by DeployR. The IP address of the host of the MongoDB database is added to the filename for your convenience.                                                                                                                              |
-| DeployR RServe             | - `Rserv.conf`<br />- `Rserv-localhost.log`              | The log and configuration files for RServe.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
-
 **For Windows**
 
 The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics\logs` directly on the DeployR host.
@@ -123,6 +111,18 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 | Tomcat             |-  `catalina.out`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`                       | The log and configuration files for Tomcat.|
 | MongoDB  <br><small>(DeployR 8.0.0 only)</small>          | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience.                                                                                                                                                                  |
 | DeployR RServe             | - `Rserv.cfg`                       | The configuration file for the DeployR RServe component. The IP address is added to the filename for your convenience.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
+
+**For Linux / OS X**
+
+The following log files can be found in the resulting `diagnostics.tar.gz` file as well as under `$DEPLOYR_HOME/deployr/diagnostics/logs` directly on the DeployR host.
+
+| Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
+| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
+| Tomcat             | - `catalina.out`<br />- `catalina.sh`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`| The log and configuration files for Tomcat.|
+| MongoDB<br><small>(DeployR 8.0.0 only)</small> |-  `mongod.conf`<br />- `mongod-<IP_ADDRESS>.log`| The log and configuration files for the database used by DeployR. The IP address of the host of the MongoDB database is added to the filename for your convenience.                                                                                                                              |
+| DeployR RServe             | - `Rserv.conf`<br />- `Rserv-localhost.log`              | The log and configuration files for RServe.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
 
 ### Resolving Issues
 
@@ -181,44 +181,49 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
 1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 1. Exit the utility.  
          
-#### Updating the Web Content for DeployR 8.0.5
+#### Updating the Web Content for DeployR 8.0.0
 Run the `setWebContext` script to update the IP address in the DeployR Server Web Context.
 
 Usage tips for the `setWebContext` script arguments:
 
--   Use `-query` to see which IP is currently defined as the Server Web Context.
--   Use `-aws` to detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.
--   Use `-ip <ip_address>` to specify a new IP address or DNS name for the DeployR Server Web Context.
--   Use `-disableauto` to turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.
--   Use `-https true|false` to enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security.md#enable-server-ssl-https).
+|Arguments|Description|
+|------------|---------------------------------|
+|`query`| To see which IP is currently defined as the Server Web Context.|
+|`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
+|`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
+|`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
+|`https true|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security.md#enable-server-ssl-https).|
+
  
-+ On Windows:
-    1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
-    1.  Open a Command Window with **“Run as Administrator”**.
-    1.  Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
-    ```
-    cd $DEPLOYR_HOME\deployr\tools\
-    setWebContext -ip <ip_address>  -disableauto
-    ```
-    1.  Confirm the IP address you entered.
-    1.  Disable any automatic IP detection that might overwrite the IP you just assigned.
-    ```
-    setWebContext -disableauto
-    ```           
-+ On Linux:
-    1.  Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
-    ```
-    cd $DEPLOYR_HOME/deployr/tools/
-    ./setWebContext.sh -ip <ip_address>
-    ```
-    1.  Confirm the IP address you entered.
-    1.  Disable any automatic IP detection that might overwrite the IP you just assigned.
-    ```
-    ./setWebContext.sh -disableauto
-    ```
+**On Windows:**
+1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
+1. Open a Command Window with **“Run as Administrator”**.
+1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+   ```
+   cd $DEPLOYR_HOME\deployr\tools\
+   setWebContext -ip <ip_address>
+   ```
+1. Confirm the IP address you entered.
+1. Disable any automatic IP detection that might overwrite the IP you just assigned.
+   ```
+   setWebContext -disableauto
+   ```           
+
+**On Linux:**
+1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+   ```
+   cd $DEPLOYR_HOME/deployr/tools/
+   ./setWebContext.sh -ip <ip_address>
+   ```
+1. Confirm the IP address you entered.
+1. Disable any automatic IP detection that might overwrite the IP you just assigned.
+   ```
+   ./setWebContext.sh -disableauto
+   ```
+
 >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
-    
->If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
+
+If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
 ### Landing Page Blocked in I.E. 11
 
@@ -345,8 +350,8 @@ If you run into conflicts with other applications, consider changing the port nu
 1.  Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
 
 2.  Find the port number value by searching for:
-    + For DeployR 8.0.5: `<Connector port=”8050`
-    + For DeployR 8.0.0: `<Connector port=”8000`
+    + For DeployR 8.0.5: `<Connector port="8050"`
+    + For DeployR 8.0.0: `<Connector port="8000"`
 
 3.  Replace the port value with a new, unique port number.
 
@@ -367,7 +372,7 @@ If you run into conflicts with other applications, consider changing the port nu
 
 -  Find: 
     + For DeployR 8.0.5: `port="8050"`
-    + For DeployR 8.0.0: `port=”8000”`
+    + For DeployR 8.0.0: `port="8000"`
 
 -  Replace the port value with a new, unique port number.
 
