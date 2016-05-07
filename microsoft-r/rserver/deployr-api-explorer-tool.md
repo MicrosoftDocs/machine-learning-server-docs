@@ -30,6 +30,8 @@ The DeployR API is extensive, providing a wide range of services related to [use
 
 >You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. For example, to log into the DeployR Administration Console with admin account and into the API Explorer tool with another user account, open one in Google Chrome™ and the other in Mozilla® Firefox®.
 
+>Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
+
 ##Accessing the API Explorer
 
 The API Explorer is accessible after auto-installing DeployR. With a manual installation on Linux, make sure you install the API Explorer software. For more information, refer to the DeployR Installation Guide for your OS.
@@ -65,40 +67,39 @@ The center section of the API Explorer window contains the API tabs panel:
 
 Each tab contains functionality you can use to interact with and invoke a subset of the full API. 
 
-**The DeployR Tab** is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers).  When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API tabs panel. In order to gain access to additional tabs you must first sign-in to DeployR. Once you successfully authenticate with DeployR the following tabs are activated:
+The **DeployR** tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers).  When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API tabs panel. In order to gain access to additional tabs you must first sign-in to DeployR. Once you successfully authenticate with DeployR the following tabs are activated:
 - DeployR
 - Projects
 - Repo Files
 - Jobs
 
->When you sign out of DeployR, most tabs are automatically disabled except the default DeployR tab and the Repo Scripts tab, which are always enabled.
+When you sign out of DeployR, most tabs are automatically disabled except the default DeployR tab and the Repo Scripts tab, which are always enabled.
 
-**The Projects Tab** provides access to the full set of [Project Management APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects).  Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:
+The **Projects** tab provides access to the full set of [Project Management APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects).  Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:
 - Console
 - Workspace
 - Directory
 - Packages
 - About
 
->Clearing the active selection in the list of projects displayed under the Projects tab will automatically disable the complete set of project-specific tabs.
+Clearing the active selection in the list of projects displayed under the Projects tab will automatically disable the complete set of project-specific tabs.
 
-**The Console Tab** offers access to the full set of [Project Execution APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecution).
+The **Console** tab offers access to the full set of [Project Execution APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecution).
 
-**The Workspace Tab** offers access to the full set of [Project Workspace APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspace).
+The **Workspace** tab offers access to the full set of [Project Workspace APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspace).
 
-**The Directory Tab** offers access to the full set of [Project Directory APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectory).
+The **Directory** tab offers access to the full set of [Project Directory APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectory).
 
-**vPackages Tab** offers access to the full set of [Project Package APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpackages).
+The **Packages** tab offers access to the full set of [Project Package APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpackages).
 
-**The About Tab** offers access to the [/r/project/about](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectabout) and [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
+The **About** tab* offers access to the [/r/project/about](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectabout) and [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
 
-**The Repo Files Tab** offers access to the full set of [Repository File APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles).
+The **Repo Files** tab offers access to the full set of [Repository File APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles).
 
-**The Jobs Tab** offers access to the full set of [Job APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs).
+The **Jobs** tab offers access to the full set of [Job APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs).
 
-**The Repo Scripts Tab** offers access to the full set of [Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
+The **Repo Scripts** tab offers access to the full set of [Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
 
->Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
 
 ###The API Request Panel
 
