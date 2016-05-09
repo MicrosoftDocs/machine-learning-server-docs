@@ -75,4 +75,4 @@ Need to integrate DeployR-powered R Analytics using a different programming lang
 
 ## Examples
 
-Check out additional sample applications that use the client library or RBroker for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
+Check out additional sample applications that use the client library or RBroker for [Java](https://github.com/Microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/Microsoft/?utf8=✓&query=js-example).

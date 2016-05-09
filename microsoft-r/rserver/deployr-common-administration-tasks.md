@@ -236,7 +236,7 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 
 1. From the landing page, open the **Administration Console**.
 
-1. [Follow these instructions](rserver/deployr-admin-console/deployr-admin-console-database.md).
+1. [Follow these instructions](deployr-admin-console/deployr-admin-console-database.md).
 
 ### For DeployR 8.0.0
 Follow these instructions to back up  and restore your DeployR data or to reset the database to its initial post-installation state.

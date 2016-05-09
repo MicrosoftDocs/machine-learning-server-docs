@@ -772,7 +772,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 	 
-        >If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
+        >If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
     + For OS X:
 

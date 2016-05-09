@@ -60,7 +60,7 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing [*authenticated services*](#authenticated-services) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonymous-services) related to analytics Web service execution.
 
->All services on the DeployR API are documented in detail in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc).
+>All services on the DeployR API are documented in detail in the [API Reference Guide](deployr-api-reference.md).
 
 ### Hello World Example
 
@@ -290,7 +290,7 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
 
->See the [Authenticated Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#authenticatedprojects) chapter in the *API Reference Guide* for further details.
+>See the [Authenticated Projects](deployr-api-reference.md#authenticatedprojects) section for further details.
 
 Project Services are most easily understood when considered as a collection of related services:
 
@@ -1127,7 +1127,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fileName, options);
 
->See the [Working with the Repository APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) chapter in the *API Reference Guide* for detailed information regarding working with repository-managed files and directories.
+>See the [Working with the Repository APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) chapter for detailed information regarding working with repository-managed files and directories.
 
 ## Anonymous Services
 
@@ -1243,7 +1243,7 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
->See the [Anonymous Projects](deployr-api-reference#r-for-application-developers) in the section *API Reference Guide* for further details.
+>See the [Anonymous Projects](deployr-api-reference.md#r-for-application-developers) section for further details.
 
 ## Standard Execution Model
 
@@ -2470,7 +2470,7 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
->See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) chapter in the API Reference Guide for further details.
+>See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) section for further details.
 
 ## R Object Data Decoding
 
