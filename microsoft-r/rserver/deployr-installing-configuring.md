@@ -799,7 +799,7 @@ After you install DeployR, please review the following topics.
 
 If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the following ports:
 
->If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine         | Ports      | Open Ports                                                                                      |
 |-----------------------------------------|-------------------|-------------------------------------------------|
@@ -815,7 +815,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 
 During installation, the Windows firewall was updated to allow inbound communications to DeployR on the ports listed in the following table.
 
->If you are provisioning your server on a cloud service such as [[Azure or AWS EC2](../deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
+>If you are provisioning your server on a cloud service such as [[Azure or AWS EC2](deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
 | Machine                                | Ports                                 | Open Ports                                                                                      |
 |----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -854,7 +854,7 @@ When the wrong IP is defined, you will not be able to access to the DeployR land
 
 To fix this issue, ensure that:
 
-1.  The appropriate external server IP address and port number are defined as the **Server web context**. For Azure & AWS services: Set the server Web context to the external **Public IP**. (Learn more: [Azure or AWS EC2](../deployr-admin-install-in-cloud.md)).
+1.  The appropriate external server IP address and port number are defined as the **Server web context**. For Azure & AWS services: Set the server Web context to the external **Public IP**. (Learn more: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
 2.  The autodetection of the IP address is disabled.
 
