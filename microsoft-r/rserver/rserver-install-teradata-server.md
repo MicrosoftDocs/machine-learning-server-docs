@@ -134,9 +134,7 @@ To get started, do the following:
 
 		cd /var/opt/teradata/customermodepkgs
 
-  11. Point your Java-enabled browser to the following URL:
-
-	[https://&lt;HOSTIP&gt;:8443/put](https://<HOSTIP>:8443/put)
+  11. Point your Java-enabled browser to the following URL, https://&lt;HOSTIP&gt;:8443/put
 
 	where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
