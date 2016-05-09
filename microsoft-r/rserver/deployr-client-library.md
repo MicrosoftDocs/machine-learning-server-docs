@@ -32,7 +32,7 @@ The DeployR API exposes a wide range of R analytics services to client applicati
 
 To further simplify the integration of DeployR services within client applications several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 
->**Try Out Our Examples!** Explore the client library examples for [Java,](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
+>**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
 >Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
@@ -44,13 +44,9 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing the basic authentication mechanisms for end-users and client applications that need to avail of [*authenticated services*](#authenticated-services) on the API.
 
-
-
 -   **Project Services @ /r/project/***
 
     Providing [*authenticated services*](#authenticated-services) related to stateful, and optionally persistent, R session environments and analytics Web service execution.
-
-
 
 -   **Background Job Services @ /r/job/***
 
@@ -60,7 +56,7 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing [*authenticated services*](#authenticated-services) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonymous-services) related to analytics Web service execution.
 
->All services on the DeployR API are documented in detail in the [API Reference Guide](deployr-api-reference.md).
+All services on the DeployR API are documented in detail in the [API Reference Guide](deployr-api-reference.md).
 
 ### Hello World Example
 
@@ -68,7 +64,6 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **Java:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
@@ -98,7 +93,6 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **JavaScript:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
@@ -125,7 +119,6 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **C#:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
@@ -160,7 +153,6 @@ The first step for any client application developer using the client libraries i
 
 **Java:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // The RClientFactory is provided to simplify the establishment and
@@ -173,14 +165,12 @@ The first step for any client application developer using the client libraries i
 
 **JavaScript:**
 
-    //
     // 1. Establish a connection to DeployR.
     // 
     // deployr.configure( { host: '' } ) is provided to simplify the establishment 
     // of client connections.
     //
     // This example assumes the DeployR server is running on http://localhost:<PORT>.
-    //
 
     //
     // Browser - Same Origin does not need the deployr.configure({ host: '' }) step.
@@ -198,8 +188,6 @@ The first step for any client application developer using the client libraries i
     deployr.configure( { host: 'http://localhost:<PORT>' });
     deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>' });
 
-
-    //
     // 1. Establish a connection to DeployR.
     //
     // The RClientFactory is provided to simplify the establishment and
@@ -220,7 +208,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **Java:**
 
-    //
     // 1. Authenticate an end-user or client application.
     //
     // The RBasicAuthentication supports basic username/password authentication.
@@ -231,7 +218,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **JavaScript:**
 
-    //
     // Same Origin Request
     //
     // 1. Authenticate an end-user or client application.
@@ -257,7 +243,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **C#:**
 
-    //
     // 1. Authenticate an end-user or client application.
     //
     // The RBasicAuthentication supports basic username/password authentication.
@@ -280,7 +265,7 @@ The following sections introduce the services themselves and demonstrate how the
 
 ### Project Services
 
-A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an *authenticated project*. There are three types of *authenticated project*:
+A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an [Authenticated Project](deployr-api-reference.md#authenticatedprojects). There are three types of *authenticated project*:
 
 1.  Temporary Project - a stateful, transient R session offering unrestricted API access that lives only for the duration of the current user HTTP session or until explicitly closed.
 
@@ -289,8 +274,6 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 3.  Persistent Project - a stateful, persistent R session offering unrestricted API access can can live indefiitely, across multiple user HTTP sessions.
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
-
->See the [Authenticated Projects](deployr-api-reference.md#authenticatedprojects) section for further details.
 
 Project Services are most easily understood when considered as a collection of related services:
 
@@ -340,7 +323,6 @@ These services support the creation of *authenticated projects*. The following c
 
 **JavaScript:**
 
-    //
     // 1. Create a temporary project.
     //
     deployr.io('/r/project/create')  
@@ -387,7 +369,6 @@ These services support the creation of *authenticated projects*. The following c
 
 **C#:**
 
-    //
     // 1. Create a temporary project.
     //
     RProject blac = rUser.createProject();
@@ -424,7 +405,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **Java:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -457,7 +437,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **JavaScript:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -507,7 +486,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **C#:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -722,7 +700,7 @@ These services support the manipulation and management of R packages within *aut
 
 
 **Java:**
-
+```
     //
     // 1. List R packages attached on the project.
     //
@@ -732,7 +710,7 @@ These services support the manipulation and management of R packages within *aut
     // 2. Attach an R package to the project.
     //
     List<RProjectPackage> pkgs = rProject.attachPackage("ggplot2", "???");
-
+```
 **JavaScript:**
 
     //
@@ -2599,7 +2577,7 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
 **Java:**
 
-    //
+```
     // Java Client Library R Object Decoding
     // 
     // The Java client library always returns DeployR-encoded objects
@@ -2652,10 +2630,11 @@ The method for decoding these DeployR-encoded objects within a client applicatio
       // else..if..etc...
 
     }
+```
 
 **JavaScript:**
 
-    //
+```
     // JavaScript Client Library R Object Decoding
     // 
     // The Java client library always returns DeployR-encoded objects as object 
@@ -2689,10 +2668,11 @@ The method for decoding these DeployR-encoded objects within a client applicatio
       }
       // else..if..etc...
     }
+```
 
 **C#:**
 
-    //
+```
     // .NET Client Library R Object Decoding
     // 
     // The .NET client library always returns DeployR-encoded objects
@@ -2743,5 +2723,5 @@ The method for decoding these DeployR-encoded objects within a client applicatio
         }
         // else..if..etc...
     }
-
+```
 
