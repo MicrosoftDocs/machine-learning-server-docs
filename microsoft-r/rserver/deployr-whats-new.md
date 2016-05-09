@@ -40,10 +40,6 @@ This topic presents the changes and new features in DeployR version 8.0.0 as wel
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
-## Past Releases
-
-For historical purposes, we've included the list of changes and additions from several releases prior to DeployR 8.0.0.
-
 ### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.

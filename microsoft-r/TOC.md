@@ -2,6 +2,7 @@
 # [R Server Getting Started](rserver/rserver-getting-started.md)
 # [R Server New Features](rserver/rserver-new-features.md)
 # R Server Installation
+## [Install R Server on Windows](rserver/rserver-install-windows.md)
 ## [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
 ## [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
 ## [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
@@ -90,6 +91,5 @@
 #### [Working with Directories](rserver/deployr-repository-manager/deployr-repository-manager-directories.md)
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
-## [Frequently Asked Questions](rserver/deployr-faq.md)
 # [Additional Resources](rserver/rserver-more-resources.md)
 # [Archived Documentation](rserver/rserver-old-versions.md)

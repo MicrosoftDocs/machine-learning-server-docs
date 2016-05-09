@@ -26,121 +26,57 @@ ms.custom: ""
 
 # Common DeployR Administration Tasks
 
-## Starting and Stopping DeployR
-
-### For DeployR 8.0.5
+## Starting and Stopping DeployR 8.0.5
 
 To start or stop all DeployR-related services on the main server (not nodes) at once, use the administrator utility. 
 
 1. Launch the DeployR administrator utility script with administrator privileges:
-    + On Windows:
-      ```
-      cd C:\Program Files\Microsoft\DeployR-<version>\deployr\tools\
-      adminUtility.bat
-      ```
+   + On Windows:
+     ```
+     cd C:\Program Files\Microsoft\DeployR-<version>\deployr\tools\
+     adminUtility.bat
+     ```
 
-    + On Linux:
-      ```
-      cd /home/deployr-user/deployr/<version>/deployr/tools/ 
-      ./adminUtility.sh
-      ```
+   + On Linux:
+     ```
+     cd /home/deployr-user/deployr/<version>/deployr/tools/ 
+     ./adminUtility.sh
+     ```
 
 1. From the main menu, choose option **Start/Stop Server**. 
 
 1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter your choice`R`. It may take some time for the Tomcat process to terminate and restart.
 
+## Starting and Stopping DeployR 8.0.0
 
-### For DeployR 8.0.0
+To start or stop all DeployR-related services on the main server (not nodes) use the following commands.
 
-#### Starting DeployR Services
+_Table: Starting DeployR 8.0.0_
 
-**For Linux:**
+|Operating System   |Commands|
+|----|-----|
+|Windows|<code>net start Apache-Tomcat-for-DeployR-8.0<br>net start RServe7.4<br>net start MongoDB-DeployR-8.0</code>|
+|Linux|To start the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br>To start all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/startAll.sh</code>|
+|Mac OS X|To start the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br>To start all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/startAll.sh</code>|
 
-To start all DeployR-related services on the main server (not nodes) at once, type the following command:
+_Table: Stopping DeployR 8.0.0_
 
-    /home/deployr-user/deployr/8.0.0/startAll.sh
-
-To start the DeployR-related services individually on the main server (not nodes), type the following commands:
-
-    /home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-    /home/deployr-user/deployr/8.0.0/rserve/rserve.sh start
-    /home/deployr-user/deployr/8.0.0/mongo/mongod.sh start
-
-**For Windows:**
-
-At the DOS command prompt, type:
-
-    net start Apache-Tomcat-for-DeployR-8.0
-    net start RServe7.4
-    net start MongoDB-DeployR-8.0
-
-**For Mac OS X:**
-
-To start all DeployR-related services on the main server (not nodes) at once, type the following command:
-
-    /Users/deployr-user/deployr/8.0.0/startAll.sh
-
-To start the DeployR-related services individually on the main server (not nodes), type the following commands:
-
-    /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start
-    /Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start
-    /Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start
-
-#### Stopping DeployR Services
-
-To stop DeployR-related services, type the following:
-
-**For Linux:**
-
-To stop all services on the main server (not nodes) at once, type the following command:
-
-    /home/deployr-user/deployr/8.0.0/stopAll.sh
-
-To stop the services individually on the main server (not nodes), type the following commands:
-
-    /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/bin/shutdown.sh
-    /home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
-    /home/deployr-user/deployr/8.0.0/mongo/mongod.sh stop
-
-**For Windows**
-
-At the DOS command prompt, type:
-
-    net stop Apache-Tomcat-for-DeployR-8.0
-    net stop RServe7.4
-    net stop MongoDB-DeployR-8.0
-
-**For Mac OS X**
-
-To stop all services on the main server (not nodes) at once, type the following command:
-
-    /Users/deployr-user/deployr/8.0.0/stopAll.sh
-
-To stop the services individually on the main server (not nodes), type the following commands:
-
-    /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/bin/shutdown.sh
-    /Users/deployr-user/deployr/8.0.0/rserve/rserve.sh stop
-    /Users/deployr-user/deployr/8.0.0/mongo/mongod.sh stop
-
+|Operating System   |Commands|
+|----|-----|
+|Windows|<code>net stop Apache-Tomcat-for-DeployR-8.0<br>net stop RServe7.4<br>net stop MongoDB-DeployR-8.0</code>|
+|Linux|To stop the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br>To stop all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/stopAll.sh</code>|
+|Mac OS X|To stop the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br>To stop all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/stopAll.sh</code>|
 
 ## Inspecting Server Logs
 
 The `catalina.out` server log file is found at the following location:
 
-**For Linux:**
+|Operating System   |Location|
+|----|-----|
+|Windows|<code>C:\Program Files\Microsoft\DeployR-<version>\Apache_Tomcat\logs\catalina.out</code>|
+|Linux|<code>/home/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
+|Mac OS X|<code>/Users/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
 
-	/home/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out
-
-**For Windows:**
-
-	C:\Program Files\Microsoft\DeployR-<version>\Apache_Tomcat\logs\catalina.out
-
-**For Mac OS X:** (DeployR Open only)
-
-	/Users/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out
-
-
->[!NOTE]
 >[Look here](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
 
 By default, the DeployR server logs at the `INFO` level, which is appropriate for production environments. The server emits `[DEPLOYR-EVENT]` log statements that provide a permanent record of the following:
@@ -154,7 +90,7 @@ Each `[DEPLOYR-EVENT]` is rendered to the log file in a fixed format, which simp
 
 The following section describes the different `[DEPLOYR-EVENT]` that can be found in the server log file.
 
-### 1. API Call / Response Events
+### API Call / Response Events
 
 The log file captures the following events related to API calls:
 
@@ -162,6 +98,7 @@ The log file captures the following events related to API calls:
 -   `[RESPONSE]` - denoting the response generated for the call.
 -   `[API-POST]` - denoting the end of an API call.
 
+<br>
 For example:
 
     [ INFO 08:29:15:218] ServerFilters DEPLOYR-EVENT[API-PRE][66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][testuser][/deployr/r/project/create][format:json]
@@ -170,39 +107,42 @@ For example:
 
     [ INFO 08:29:15:295] ServerFilters DEPLOYR-EVENT[API-POST][66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][testuser][/deployr/r/project/create]
 
-### 2. Authentication Events
+###  Authentication Events
 
 The log file captures the following events related to user authentications:
 
 -   `[SECURITY][AuthenticationSuccessEvent]` - denoting a successful user authentication.
 -   `[SECURITY][AuthenticationFailureBadCredentialsEvent]` - denoting a failed user authentication.
 
+<br>
 For example:
 
     [ INFO 08:29:20:296] SecurityEventLogger DEPLOYR-EVENT[SECURITY][AuthenticationSuccessEvent][testuser]
 
     [ INFO 01:52:00:694] SecurityEventLogger DEPLOYR-EVENT[SECURITY][AuthenticationFailureBadCredentialsEvent][testuser]
 
-### 3. HTTP Session Events
+### HTTP Session Events
 
 The log file captures the following events related to HTTP session creation and release:
 
--   `[HTTP-SESSION]: CREATED` - denoting the creation of a HTTP session.
--   `[HTTP-SESSION]: RELEASED` - denoting the release of a HTTP session.
+-   `[HTTP-SESSION]: CREATED` - denoting the creation of a HTTP session
+-   `[HTTP-SESSION]: RELEASED` - denoting the release of a HTTP session
 
+<br>
 For example:
 
     [ INFO 01:51:58:967] HttpSessionListener DEPLOYR-EVENT[HTTP-SESSION]: CREATED [E5B10C188FE7DC25EA804CDF932AC85B]
 
     [ INFO 01:53:45:952] HttpSessionListener DEPLOYR-EVENT[HTTP-SESSION]: RELEASED [E5B10C188FE7DC25EA804CDF932AC85B][Mon Jun 30 01:51:58 EDT 2014][Mon Jun 30 01:53:27 EDT 2014][1]
 
-### 4. Grid R Session Events
+### Grid R Session Events
 
 The log file captures the following events related to R session creation and release:
 
--   `[GRID-SESSION]: CREATED` - denoting the creation of an R session on the grid.
--   `[GRID-SESSION]: RELEASED` - denoting the release of an R session on the grid.
+-   `[GRID-SESSION]: CREATED` - denoting the creation of an R session on the grid
+-   `[GRID-SESSION]: RELEASED` - denoting the release of an R session on the grid
 
+<br>
 For example:
 
     [ INFO 08:29:15:287] LiveEngineService DEPLOYR-EVENT[GRID-SESSION]: CREATED LiveToken[E]: [66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][PROJECT-bb21452e-9f4b-490e-9f1d-90c1ac7f9487][testuser] [Temporary Project false null NODE-6fb4583c-fa25-4854-b8ba-0600c30ec195 DeployR Default Node Authenticated ]
@@ -230,7 +170,7 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 
 ### For DeployR 8.0.5
 
-**Back up and restore your {{lookup 'brand'}} data**
+To back up and restore your Deployr data:
 
 1. Log into the DeployR landing page.
 
@@ -241,8 +181,6 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 ### For DeployR 8.0.0
 Follow these instructions to back up  and restore your DeployR data or to reset the database to its initial post-installation state.
 
-**On Windows**
-
 Follow these steps to back up the data in the database used by DeployR.
 
 1. Log into the machine as a user with administrator privileges.
@@ -250,30 +188,19 @@ Follow these steps to back up the data in the database used by DeployR.
 1. Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
 
 1.  Run the database utility script as follows:
-
+    + On Windows:
+      ```
           cd C:\Program Files\Microsoft\DeployR-8.0\deployr\tools
           databaseUtils.bat
-
-1.  When prompted by the script:
-    -  To reinitialize the database, choose option `2`.
-    -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
-    -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.
-
-
-**On Linux/OS X**
-
-Follow these steps to back up the data in the database used by DeployR.
-
-1.  Log into the machine as a user with administrator privileges.
-
-2.  Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the **Grid** tab of the Administration Console.
-
-3.  Run the database utility script as follows:
-
+      ```
+      
+    + On Linux:
+      ```
          cd /home/deployr-user/deployr/8.0.0/deployr/tools
-        ./databaseUtils.sh
-
-4.  When prompted by the script:
+         ./databaseUtils.sh
+      ```
+      
+1.  When prompted by the script:
     -  To reinitialize the database, choose option `2`.
     -  To back up the database, choose option `3` and enter the path in which the database backup should be saved. Verify that the backup was successful by checking the contents of the directory where you dumped the database.
     -  To restore the database, choose option `4` and enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder `deployr`.

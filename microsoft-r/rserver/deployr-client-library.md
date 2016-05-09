@@ -700,7 +700,7 @@ These services support the manipulation and management of R packages within *aut
 
 
 **Java:**
-```
+
     //
     // 1. List R packages attached on the project.
     //
@@ -710,7 +710,7 @@ These services support the manipulation and management of R packages within *aut
     // 2. Attach an R package to the project.
     //
     List<RProjectPackage> pkgs = rProject.attachPackage("ggplot2", "???");
-```
+
 **JavaScript:**
 
     //
@@ -2577,7 +2577,7 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
 **Java:**
 
-```
+    //
     // Java Client Library R Object Decoding
     // 
     // The Java client library always returns DeployR-encoded objects
@@ -2630,11 +2630,10 @@ The method for decoding these DeployR-encoded objects within a client applicatio
       // else..if..etc...
 
     }
-```
 
 **JavaScript:**
 
-```
+    //
     // JavaScript Client Library R Object Decoding
     // 
     // The Java client library always returns DeployR-encoded objects as object 
@@ -2668,11 +2667,10 @@ The method for decoding these DeployR-encoded objects within a client applicatio
       }
       // else..if..etc...
     }
-```
 
 **C#:**
 
-```
+    //
     // .NET Client Library R Object Decoding
     // 
     // The .NET client library always returns DeployR-encoded objects
@@ -2723,5 +2721,5 @@ The method for decoding these DeployR-encoded objects within a client applicatio
         }
         // else..if..etc...
     }
-```
+
 

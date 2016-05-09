@@ -124,7 +124,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
-        install_github('deployr/deployrUtils')
+        install_github('Microsoft/deployrUtils')
 
 2.  Declare package dependencies using `deployrPackage()` at the top of your script in your preferred IDE. Consult the package help for more details.
 

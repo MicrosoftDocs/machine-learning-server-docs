@@ -40,7 +40,7 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 
 ## Develop Analytics
 
-With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as the R Productivity Environment (RPE), RStudio, or StatET.
+With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as  RStudio or StatET.
 
 All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 
@@ -52,7 +52,7 @@ All it takes to prepare your R code for use in DeployR is a few simple portabili
 
 You can install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
-    install_github('deployr/deployrUtils')
+    install_github('Microsoft/deployrUtils')
 
 Learn more on how to [write portable R code using these functions](deployr-data-scientist-write-portable-r-code.md).
 
@@ -215,7 +215,7 @@ Once you've shared those files, the application developers can upload the files 
 
 ## More Resources
 
-Use the table of contents to find all of the guides and documentation needed by data scientists working with DeployR.
+Use the table of contents to find all of the guides and documentation needed by the data scientist, administrator, or application developer.
 
 **Key Documents**
 -   [About DeployR](deployr-about.md)
@@ -224,8 +224,6 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 -   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
 -   [Getting Started For Administrators](deployr-administrator-getting-started.md)
-
->Use the table of contents to find all of the guides and documentation needed by the data scientist, administrator, or application developer.
 
 **Support Channel**
 -   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
