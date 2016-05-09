@@ -2,6 +2,7 @@
 # [R Server Getting Started](rserver/rserver-getting-started.md)
 # [R Server New Features](rserver/rserver-new-features.md)
 # R Server Installation
+## [Install R Server on Windows](rserver/rserver-install-windows.md)
 ## [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
 ## [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
 ## [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
