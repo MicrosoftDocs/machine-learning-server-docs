@@ -198,28 +198,30 @@ Once enabled your client applications can make API calls that connect over HTTPS
    + For Linux / OS X:
 
      1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`:
-
-                 grails.plugins.springsecurity.auth.forceHttps = false
-
+        ```
+        grails.plugins.springsecurity.auth.forceHttps = false
+        ```
+        
      1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.  Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
-
-                 $DEPLOYR_HOME/deployr/tools/setWebContext.sh -https true
+        ```
+        $DEPLOYR_HOME/deployr/tools/setWebContext.sh -https true
+        ```
 
    + For Windows:
 
      1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR-8.0\deployr/deployr.groovy`:
-
-                 grails.plugins.springsecurity.auth.forceHttps = false
-
+        ```
+        grails.plugins.springsecurity.auth.forceHttps = false
+        ```
+        
      1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
-
-                 C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https true
-
-	Upon completion of this script with `-https true`, the following changes will have been made to the server policies in the Administration Console:
-        + The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
-        + The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
-
-        [Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
+        ```
+        C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https true
+        ```
+        
+     Upon completion of this script with `-https true`, the following changes will have been made to the [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
+     + The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
+     + The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
 
 4.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
 
@@ -265,7 +267,6 @@ If you do not have a trusted SSL certificate from a registered authority, you'll
      where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
 	
    1. Provide the information when prompted by the script as described below in this topic.   
-
 
 When prompted by the script, provide the following information when prompted by the script:
 
@@ -437,11 +438,8 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
         C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https false
         ```
         
-    	Upon completion of the `setWebContext` script with `-https false`, the following changes will have been made to the server policies in the Administration Console:
+Upon completion of the `setWebContext` script with `-https false`, the following changes will have been made to the [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
 
-    	+ The server web context now ressembles `http://xx.xx.xx.xx:8000/deployr`.
++ The server web context now ressembles `http://xx.xx.xx.xx:8000/deployr`.
 
-    	+ The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are disabled.
-
-    	[Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
-
++ The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are disabled.
