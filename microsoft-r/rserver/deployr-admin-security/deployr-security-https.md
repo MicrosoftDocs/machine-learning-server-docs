@@ -257,7 +257,7 @@ If you do not have a trusted SSL certificate from a registered authority, you'll
 	
    1. Provide the information when prompted by the script as described below in this topic.   
 
-**For Mac OS X:** (DeployR 8.0.0 Open only)
++ **For Mac OS X:** (DeployR 8.0.0 Open only)
 
   1. Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
      ```
@@ -270,10 +270,10 @@ If you do not have a trusted SSL certificate from a registered authority, you'll
 
 When prompted by the script, provide the following information when prompted by the script:
 
-      + For the keystore password, enter `changeit` and confirm this password.
-      + For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
-      + When presented with the summary of your responses, enter `yes` to accept these entries.
-      + For a key password for Tomcat, press the Return key to use `changeit`.
++ For the keystore password, enter `changeit` and confirm this password.
++ For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
++ When presented with the summary of your responses, enter `yes` to accept these entries.
++ For a key password for Tomcat, press the Return key to use `changeit`.
 
 <a href="" id="alertusers"></a>
 >**Alert Your Users!**
