@@ -65,7 +65,7 @@
 #### [Managing Server Policies](rserver/deployr-admin-console/deployr-admin-managing-server-policies.md)
 #### [Restoring & Backing Up the Database](rserver/deployr-admin-console/deployr-admin-console-database.md)
 #### [Monitoring Events](rserver/deployr-admin-console/deployr-admin-monitoring-events.md)
-### [Security on DeployR](rserver/deployr-admin-security.md)
+### [OLD Security on DeployR](rserver/deployr-admin-security.md)
 ### [Security on DeployR](rserver/deployr-admin-security/deployr-security.md)
 #### [Authentication and Authorization](rserver/deployr-admin-security/deployr-security-authentication.md)
 #### [Enabling & Disabling HTTPS](rserver/deployr-admin-security/deployr-security-https.md)
