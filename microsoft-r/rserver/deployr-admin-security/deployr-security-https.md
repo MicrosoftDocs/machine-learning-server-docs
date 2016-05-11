@@ -44,14 +44,16 @@ Once enabled your client applications can make API calls that connect over HTTPS
 2.  Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
 
     + For Linux
-      
-        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        ./adminUtility.sh
+      ```
+      cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
+      ./adminUtility.sh
+      ```
 
    + For Windows:
-
-        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-        adminUtility.bat
+      ```
+      cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+      adminUtility.bat
+      ```
 
 3.  From the main menu, choose option **Web Context and Security**.
 
@@ -63,35 +65,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
     >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
-    If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine. Be sure to specify the correct Tomcat path for the `-keystore` argument.
-
-    **To generate a temporary keystore on Linux:**
-
-    + For Linux: Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
-
-        %JAVA_HOME%/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
-
-    Where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
-	
-    + For Windows: Launch a command window **as administrator** and run the `keytool` to generate a temporary keystore file. At the prompt, type:
-
-        "<JAVA_HOME>\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
-
-    Where `<JAVA_HOME>` is the path to the supported version of JAVA and `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
-
-    When prompted by the script, provide the following information when prompted by the script:
-
-    -   For the keystore password, enter `changeit` and confirm this password.
-    -   For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
-    -   When presented with the summary of your responses, enter `yes` to accept these entries.
-    -   For a key password for Tomcat, press the Return key to use `changeit`.
-
-    <a href="" id="alertusers"></a>
-    >**Alert Your Users!**
-    >
-    >If using a self-signed certificates, then alert your users.When they attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari).
-    >
-    >We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+    If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
 
 7.  When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
 
@@ -104,94 +78,60 @@ Once enabled your client applications can make API calls that connect over HTTPS
 11. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 
-
-
-
-
-
 ### Enabling for DeployR 8.0.0
-
 
 1.  **Provide an SSL certificate.**
     + If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup. (If you do not have one, skip to the next bullet to define a temporary certificate.)
         
-        >Be sure to specify the correct Tomcat path for the `-keystore` argument.
-	>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
-
-         + For Linux:
-	        1.  Go to the directory in which the keystore is stored.
-	        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
-	        
-                    cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-      
-	 + For OS X:
-	        1.  Go to the directory in which the keystore is stored.
-	        2.  Copy the certificate keystore to the Tomcat directory. At the prompt, type:
-
-                    cp .keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-       
-	 + For Windows:
-
-	        1.  Go to the directory in which the keystore is stored.
-        	2.  Launch a command window as administrator and type the following at the prompt:
-
-                    copy .keystore  C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore
-       
-    + If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine.
-        
-                >Be sure to specify the correct Tomcat path for the `-keystore` argument.
-		>This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
-
-        + For Linux:
-	        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
-	        
-                    $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-
-        	2.  Provide the following information when prompted by the script:
-
-	+ OS X:
-	        1.  Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
-	        
-                    $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-
-        	2.  Provide the following information when prompted by the script:
-
-        + Windows:	
-
-		1.  Launch a command window **as administrator**.
+      >Be sure to specify the correct Tomcat path for the `-keystore` argument.
 	
-	        2.  Run the `keytool` to generate a temporary keystore file. At the prompt, type:
+      + For Linux:
 
-                    "%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore
+        >This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
-	        3.  Provide the following information when prompted by the script:
-        	    + For the keystore password, enter `changeit` and confirm this password.
-        	    + For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
-        	    + When presented with the summary of your responses, enter `yes` to accept these entries.
-        	    + For a key password for Tomcat, press the Return key to use `changeit`.
+        1. Go to the directory in which the keystore is stored.
 
-	**The temporary keystore has now been is created. We recommend that you use a trusted SSL certificate from a registered authority AS SOON as possible**.
-		
-	<a id="alertusers"></a>
+        2. Copy the certificate keystore to the Tomcat directory. At the prompt, type:
+           ```
+           cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
+           ```
+           
+      + For OS X:
+      
+        1. Go to the directory in which the keystore is stored.
 
-	>**Alert Your Users!**  
-	>The following browser warning applies ONLY for self-signed certificates. When DeployR users attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari). Please inform your users accordingly.  
-	>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+        1. Copy the certificate keystore to the Tomcat directory. At the prompt, type:
+           ```
+           cp .keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
+           ```
+           
+      + For Windows:
+
+        1. Go to the directory in which the keystore is stored.
+
+        1. Launch a command window as administrator and type the following at the prompt:
+           ```           
+           copy .keystore  C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore
+           ```
+           
+    + If you do not yet have a trusted SSL certificate from a registered authority, then create a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine. [Learn how to create a temporary keystore](#temporary-keystore).
 
 
-2.  **Next, enable SSL support for Tomcat.**
+2. **Next, enable SSL support for Tomcat.**
 
-    + For Linux:
+   + For Linux:
     
-		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
+     >This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
 
-	 1.  Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
+     1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
 
-                 <!-- 
-                 <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
-                 -->
+        ```
+        <!-- 
+        <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
+        -->
+        ```
 
-	 2.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
+     1. Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
 
                  <!-- 
                  <security-constraint>
@@ -216,9 +156,9 @@ Once enabled your client applications can make API calls that connect over HTTPS
                  </security-constraint>
                  -->
 
-	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
+      1. Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 	 
-        >If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
+      1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
     + For OS X:
 
@@ -261,7 +201,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
     + For Windows:
 
-	 1.  Enable the HTTPS connector/channel on Tomcat by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\server.xml`.
+	 1. Enable the HTTPS connector/channel on Tomcat by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\server.xml`.
 
                  <!-- 
                  <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore" />
@@ -339,6 +279,72 @@ Once enabled your client applications can make API calls that connect over HTTPS
      
 
 5.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
+
+<a href="" id="temporary-keystore"></a>
+
+### Generating a Temporary Keystore
+
+If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine. Be sure to specify the correct Tomcat path for the `-keystore` argument.
+
++ **For Windows:**
+
+   1. Launch a command window **as administrator** 
+
+   1. Run the `keytool` to generate a temporary keystore file. At the prompt, type:
+
+      ```
+      "<JAVA_HOME>\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
+      ```
+
+      where `<JAVA_HOME>` is the path to the supported version of JAVA and `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
+
+   1. Provide the information when prompted by the script as described below in this topic.   
+      
++ **For Linux:**
+
+  1. Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
+     ```
+     %JAVA_HOME%/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
+     ```
+     where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
+	
+   1. Provide the information when prompted by the script as described below in this topic.   
+
+**For Mac OS X:** (DeployR 8.0.0 Open only)
+
+  1. Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
+     ```
+     $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore 
+     /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
+     ```
+     where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
+	
+   1. Provide the information when prompted by the script as described below in this topic.   
+
+
+When prompted by the script, provide the following information when prompted by the script:
+
+      + For the keystore password, enter `changeit` and confirm this password.
+      + For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
+      + When presented with the summary of your responses, enter `yes` to accept these entries.
+      + For a key password for Tomcat, press the Return key to use `changeit`.
+
+<a href="" id="alertusers"></a>
+>**Alert Your Users!**
+>
+>If using a self-signed certificates, then alert your users.When they attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari).
+>
+>We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+
+
+
+
+
+
+
+
+
+
 
 
 ## Disable Server SSL / HTTPS
