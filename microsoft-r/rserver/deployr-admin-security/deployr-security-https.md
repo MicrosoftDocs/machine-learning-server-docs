@@ -25,15 +25,92 @@ ms.custom: ""
 ---
 
 
-## Enable Server SSL / HTTPS
+# Enabling and Disabling Server SSL / HTTPS for DeployR
 
 The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. Since we cannot ship SSL certificates for you, SSL on DeployR is disabled by default.
 
 >We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
 
+
+## Enabling SSL Support
 Once enabled your client applications can make API calls that connect over HTTPS.
 
-### To enable SSL support on the DeployR server:
+### Enabling for DeployR 8.0.5
+
+1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
+
+    >If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
+
+2.  Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
+
+    + For Linux
+      
+        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
+        ./adminUtility.sh
+
+   + For Windows:
+
+        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+        adminUtility.bat
+
+3.  From the main menu, choose option **Web Context and Security**.
+
+4.  From the sub-menu, choose option **Configure Server SSL/HTTPS**.
+
+5.  When prompted, answer `Y` to the question **Enable SSL?**
+
+6.  When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file.
+
+    >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
+
+    If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. This temporary keystore will contain a “self-signed” certificate for Tomcat SSL on the server machine. Be sure to specify the correct Tomcat path for the `-keystore` argument.
+
+    **To generate a temporary keystore on Linux:**
+
+    + For Linux: Run the `keytool` to generate a temporary keystore file. At a terminal prompt, type:
+
+        %JAVA_HOME%/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
+
+    Where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
+	
+    + For Windows: Launch a command window **as administrator** and run the `keytool` to generate a temporary keystore file. At the prompt, type:
+
+        "<JAVA_HOME>\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore <PATH-TO-KEYSTORE>
+
+    Where `<JAVA_HOME>` is the path to the supported version of JAVA and `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
+
+    When prompted by the script, provide the following information when prompted by the script:
+
+    -   For the keystore password, enter `changeit` and confirm this password.
+    -   For your name, organization, and location, either provide the information or press the Return key to skip to the next question.
+    -   When presented with the summary of your responses, enter `yes` to accept these entries.
+    -   For a key password for Tomcat, press the Return key to use `changeit`.
+
+    <a href="" id="alertusers"></a>
+    >**Alert Your Users!**
+    >
+    >If using a self-signed certificates, then alert your users.When they attempt to open the DeployR landing page, Administration Console, or Repository Manager in their Web browser, they will be prompted to acknowledge and accept your self-signed certificate as a security precaution. Each browser prompts in a different way, such as requiring users to acknowledge "I Understand the Risks” (Firefox), or to click “Advanced” (Chrome) or click “Continue” (Safari).
+    >
+    >We strongly recommend that you use a trusted SSL certificate from a registered authority in your production environments.
+
+7.  When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
+
+8.  Return to the main menu and choose option **2. Start/Stop Server**. You must restart DeployR so that the changes can take effect.
+
+9.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
+
+10. Exit the utility.
+
+11. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+
+
+
+
+
+
+
+### Enabling for DeployR 8.0.0
+
 
 1.  **Provide an SSL certificate.**
     + If you have a trusted SSL certificate from a registered authority, then copy it to the Tomcat directory so it can be deployed at startup. (If you do not have one, skip to the next bullet to define a temporary certificate.)
@@ -266,9 +343,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 ## Disable Server SSL / HTTPS
 
-The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. By default, SSL on DeployR is disabled. If you have enabled SSL at some time and you now wish to disable SSL, follow the steps in this section.
-
->We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
 
 ### To disable SSL support on the DeployR server:
 
@@ -421,260 +495,49 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     	[Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
-3.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
-     
 
-4.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTP URL at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
-## Server Access Controls
 
-### Working with IP Address Filters
 
-While access to DeployR is typically controlled by the authentication mechanisms discussed in this document, DeployR also supports access controls based on IP address filters.
 
-Under the [**Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab in the DeployR Administration Console, you have a mechanism to configure your IP address filter policy. The `Operation Policies` for authenticated, asynchronous, and anonymous operations each support an [IP filter](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) property. If you assign an IP filter to this property, then any attempt by a client application to connect from outside of the IP address range on that filter will be automatically rejected.
 
-For example, you can make your DeployR server instance accessible only from IP addresses on the local LAN or VPN, such as `192.168.1.xxx` or `10.xxx.xxx.xxx`. Note that it is possible to achieve these same kinds of access controls with an appropriate configuration on your firewall and/or routers.
 
-Refer to the [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md) for further details on IP filters and server policies.
 
-### Cross-Origin Resource Sharing
 
-Cross-Origin Resource Sharing (CORS) enables your client application to freely communicate and make cross-site HTTP requests for resources from a domain other than where the DeployR is hosted.
+## Disable Server SSL / HTTPS
 
-CORS can be enabled or disabled in the DeployR external configuration file, `deployr.groovy`:
+The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. By default, SSL on DeployR is disabled. If you have enabled SSL at some time and you now wish to disable SSL, follow the steps in this section.
 
--   In **DeployR Enterprise**, support for CORS is disabled by default.
--   In **DeployR Open**, support for CORS is enabled by default.
+>[!IMPORTANT]
+>We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
 
-<!-- -->
+### To disable SSL support on the DeployR server:
 
-    /*
-     * DeployR CORS Policy Configuration
-     *
-     * cors.headers = [ 'Access-Control-Allow-Origin': 'http://app.example.com']
-     */
-    cors.enabled = false
+1.  In the firewall, be sure to close the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
-**To enable CORS support:**
+    >[!IMPORTANT]
+    >If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8051.
 
-1.  Update the relevant properties in `deployr.groovy` by setting `cors.enabled = true`.
-2.  Stop and restart the DeployR server using [these instructions](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+2.  Launch the DeployR administrator utility script with administrator privileges to disable HTTPS:
 
-Optionally, to restrict cross-site HTTP requests to only those requests coming from a specific domain, specify a value for `Access-Control-Allow-Origin` on the `cors.headers` property.
+    For Linux:
 
-## Project and Repository File Access Controls
+        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
+        ./adminUtility.sh
 
-DeployR enforces a consistent security model across projects and repository-managed files. This model is based on two simple precepts: ownership and access levels.
+	For Windows:
 
-### Project Access Controls
+        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+        adminUtility.bat
 
-When a project is created, it is privately owned by default, meaning it is visible only to its owner. Such user-based privacy is a central aspect of the DeployR security model.
+    1.  From the main menu, choose option **3. Web Context and Security**.
 
-The owner of a temporary or persistent project has, by default, full read-write access to that project and use of the full set of project-related APIs.
+    2.  From the sub-menu, choose option **B. Configure Server SSL/HTTPS**.
 
-DeployR introduced a type of secure, temporary project called a *blackbox project*. Blackbox projects restrict access to the underlying R session. In this case, the project owner can use only a small subset of the project-related APIs, collectively known as the “Blackbox API Controls”.
+    3.  When prompted, answer `Y` to the question **Disable SSL?**
 
-If the owner of a project wants to grant read-only access to that project to other authenticated users, then the owner can set the access level for the project to `Shared`. You can change the access level on a project using the `/r/project/about/update` API call.
+    4.  Return to the main menu and choose option **2. Start/Stop Server**. You must restart DeployR so that the change can take effect.
 
->Anonymous users are not permitted access to projects. For more information, refer to the [API Reference Help](deployr-api-reference.md).
+    5.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
-### Repository File Access Controls
-
-When a repository-managed file is created, it is privately owned by default, meaning it is visible only to its owner. Such user-based privacy is a central aspect of the DeployR security model.
-
-The owner of a repository-managed file has full read-write access to that file and use of the full set of repository-related APIs.
-
-If the owner of a repository-managed file wants to grant read-only access to that file to other users, then the owner can set the file’s access level to one of the following values:
-
--   `Private` - the default access level, the file is visible to its author(s) only.
-
--   `Restricted` - the file is visible to authenticated users that have been granted one or more of the roles indicated on the restricted property of the file.
-
--   `Shared` - the file is visible to all authenticated users when the shared property is true.
-
--   `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
-
-You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
-
-For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](deployr-api-reference.md).
-
-### Repository File Download Controls
-
-The repository file download controls provide fine-grain control over who can download repository file data. It is important to tailor the configuration of these controls in your DeployR external configuration file in order to enforce your preferred download policy for repository-managed files.
-
-    /*
-     * DeployR Repository File Download Controls
-     *
-     * The repository file download controls provide fine
-     * grain control over user access to repository file data
-     * returned on the following API call:
-     *
-     * /r/repository/file/download
-     *
-     * The default repository file download policy is shown
-     * for each of the supported repository file access levels:
-     *
-     * [Private, Restricted, Shared, Public]
-     *
-     * - Files with private access can be downloaded by authors only.
-     * - Files with restriced access can be downloaded by authors
-     *   and by authenticated users with sufficient privileges.
-     * - Files with shared access can be downloaded by authors
-     *   and by authenticated users.
-     * - Files with public access can be downloaded by authors
-     *   and by authenticated users.
-     * - Regardless of access level, by default anonymous users
-     *   can not download repository files.
-     *
-     * Enable file.author.only.download to ensure only authors
-     * can download a repository-managed file. When this
-     * property is enabled the file.anonymous.download option
-     * is ignored.
-     *
-     * Enable file.anonymous.download to allow anonymous
-     * users to download files with public access.
-     *
-     * Note: The repository file download controls apply to
-     * all repository-managed files excluding R scripts.
-     *
-     */
-    deployr.security.repository.file.author.only.download=false
-    deployr.security.repository.file.anonymous.download=false
-
-### Repository Scripts Access Controls
-
-Repository-managed R scripts can be exposed as an executable on the API. Since repository-managed R scripts are a type of repository-managed file, all information in the [previous section](#repository-file-access-controls) also applies to repository-managed scripts.
-
-However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
-
->For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
-
-### Repository Script Download Controls
-
-The repository script download controls provide fine-grain control over who can download repository script data. It is important to tailor the configuration of these controls in your DeployR external configuration file in order to enforce your preferred download policy for repository-managed scripts.
-
-    /*
-     * DeployR Repository Script Download Controls
-     *
-     * The repository script download controls apply to
-     * repository-managed scripts [*.R/r] and markdown
-     * files [*.Rmd/rmd] only.
-     *
-     * The repository script download controls provide fine
-     * grain control over user access to repository script data
-     * returned on the following API call:
-     *
-     * /r/repository/file/download
-     *
-     * Note: Script download controls do not intefere with
-     * permissions to execute a script. Execution permissions are
-     * entirely determined by the file access level assigned to
-     * the script by it's author.
-     *
-     * The default repository script download policy is shown
-     * for each of the supported repository script access levels:
-     *
-     * [Private, Restricted, Shared, Public]
-     *
-     * - Scripts with private access can be downloaded by authors only.
-     * - Scripts with restriced access can be downloaded by authors
-     *   and by authenticated users with sufficient privileges.
-     * - Scripts with shared access can be downloaded by authors
-     *   and by authenticated users.
-     * - Scripts with public access can be downloaded by authors
-     *   and by authenticated users.
-     * - Regardless of access level, by default anonymous users
-     *   can not download repository scripts.
-     *
-     * Enable script.author.only.download to ensure only authors
-     * can download a repository-managed script. When this
-     * property is enabled the script.anonymous.download option
-     * is ignored.
-     *
-     * Enable script.anonymous.download to allow anonymous
-     * users to download scripts with public access.
-     *
-     * Enabled script.list.authenticate to prevent anonymous
-     * users from calling the /r/repository/script/list API.
-     *
-     */
-    deployr.security.repository.script.author.only.download=false
-    deployr.security.repository.script.anonymous.download=false
-    deployr.security.repository.script.list.authenticate=false
-
-### File Type Black List Controls
-
-The file type black-list controls provide fine-grain control over the types of files that can be:
-
--   Uploaded, transferred and written into the repository or
--   Uploaded, transferred, written and loaded into the working directory of a project (R session).
-
-These controls are particularly useful if an administrator wants to ensure malicious executable files or shell scripts are not uploaded and executed on the DeployR server.
-
-    /*
-     * DeployR File Type Black List Policy Configuration
-     *
-     * Files with the following extensions are forbidden
-     * on upload, transfer, and write calls on:
-     * 1. Project (R sesesion) directories
-     * 2. The Repository
-     * These files are also forbidden from participating on
-     * prelaodfile* parameters on all calls that adhere to
-     * the DeployR standard execution model.
-     *
-     * ADMINISTRATORs are not subject to these restrictions.
-     */
-    deployr.file.type.black.list = [ "exe", "sh", "bat", "bash", "csh", "tcsh" ]
-
-## Password Policies
-
-To customize password constraints on user account passwords adjust the password policy configuration properties.
-
-The `deployr.security.password.min.characters` property enforces a minimum length for any basic authentication password. The `deployr.security.password.upper.case` property, when enabled, enforces the requirement for user passwords to contain at least a single uppercase character. The `deployr.security.password.alphanumeric`property, when enabled, enforces the requirement for user passwords to contain both alphabetic and numeric characters.
-
-    /*
-     * DeployR Password Policy Configuration
-     *
-     * Note: enable password.upper.case if basic-auth users
-     * are required to have at least one upper case character
-     * in their password.
-     */
-    deployr.security.password.min.characters = 8
-    deployr.security.password.upper.case = true
-    deployr.security.password.alphanumeric = true
-
-These policies affect basic authentication only and have no impact on CA Single Sign On, LDAP/AD or PAM authentication where passwords are maintained and managed outside of the DeployR database.
-
-## Account Locking Policies
-
-To protect against brute force techniques that can be used to try and "guess" passwords on *basic authentication* and *PAM authenticated* user accounts, DeployR enforces automatic account locking when repeated authentication attempts fail within a given period of time for a given user account:
-
-    /*
-     * DeployR Authentication Failure Lockout Policy Configuration
-     */
-    deployr.security.tally.login.failures.enabled = true
-    deployr.security.tally.login.failures.limit = 10
-    deployr.security.tally.login.lock.timeout = 1800
-
-By default, automatic account locking is enabled and activates following 10 failed attempts at authentication on a given user account. To disable this feature, set the following configuration property to `false`:
-
-    deployr.security.tally.login.failures.enabled = false
-
-When enabled, a count of failed authentication attempts is maintained by DeployR for each user account. The count is compared to the value specified on the following configuration property:
-
-    deployr.security.tally.login.failures.limit = 10
-
-If the count exceeds the `failures.limit` value, then the user account is locked and any further attempts to authentication on that account will be rejected with an error indicating that the account has been temporarily locked.
-
-To manage locked user accounts, the administrator has two choices. The chosen behavior is determined by the value assigned to the following configuration property:
-
-    deployr.security.tally.login.lock.timeout = 1800
-
-If the `lock.timeout` value is set to 0, then locked user accounts must be manually unlocked by the administrator in the [Users tab](deployr-admin-console/deployr-admin-console-user-accounts.md#viewing-and-editing-user-accounts) of the Administration Console.
-
-If the `lock.timeout` value (measured in seconds), is set to any non-zero, positive value then a locked user account will be automatically *unlocked* by DeployR once the `lock.timeout` period of time has elapsed without further activity on the account.
-
-By default, automatic account *unlocking* is enabled and occurs 30 minutes after the last failed attempt at authentication on an account.
-
-
+3.  Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at https://&lt;DEPLOYR\_SERVER\_IP&gt;:8051/deployr/landing. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
