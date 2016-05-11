@@ -39,9 +39,9 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
 
-    >If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
+1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
 
-2.  Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
+2. Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
 
     + For Linux
       ```
@@ -63,9 +63,9 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 6.  When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file.
 
-    >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
-
     If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
+
+    >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
 7.  When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
 
@@ -85,7 +85,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
         
       >Be sure to specify the correct Tomcat path for the `-keystore` argument.
 	
-      + For Linux:
+      + For Linux / OS X:
 
         >This example is written for user `deployr-user`. For another user, use the appropriate filepath to the `.keystore`.
 
@@ -93,16 +93,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
         2. Copy the certificate keystore to the Tomcat directory. At the prompt, type:
            ```
-           cp .keystore /home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
-           ```
-           
-      + For OS X:
-      
-        1. Go to the directory in which the keystore is stored.
-
-        1. Copy the certificate keystore to the Tomcat directory. At the prompt, type:
-           ```
-           cp .keystore /Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore
+           cp .keystore $DEPLOYR_HOME/tomcat/tomcat7/.keystore
            ```
            
       + For Windows:
@@ -119,152 +110,109 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 2. **Next, enable SSL support for Tomcat.**
 
-   + For Linux:
+   + For Linux / OS X:
     
      >This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
 
-     1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
+     1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `$DEPLOYR_HOME/tomcat/tomcat7/conf/server.xml`.
 
         ```
         <!-- 
-        <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
+        <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="<$DEPLOYR_HOME>/tomcat/tomcat7/.keystore" />
         -->
         ```
 
-     1. Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/home/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
+     1. Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `$DEPLOYR_HOME/tomcat/tomcat7/conf/web.xml`.
 
-                 <!-- 
-                 <security-constraint>
-                   <web-resource-collection>
-                       <web-resource-name>HTTPSOnly</web-resource-name>
-                       <url-pattern>/*</url-pattern>
-                   </web-resource-collection>
-                   <user-data-constraint>
-                       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-                   </user-data-constraint>
-                 </security-constraint>
-                 <security-constraint>
-                       <web-resource-collection>
-                       <web-resource-name>HTTPSOrHTTP</web-resource-name>
-                       <url-pattern>*.ico</url-pattern>
-                       <url-pattern>/img/*</url-pattern>
-                       <url-pattern>/css/*</url-pattern>
-                   </web-resource-collection>
-                   <user-data-constraint>
-                       <transport-guarantee>NONE</transport-guarantee>
-                   </user-data-constraint>
-                 </security-constraint>
-                 -->
-
+        ```
+        <!-- 
+        <security-constraint>
+           <web-resource-collection>
+               <web-resource-name>HTTPSOnly</web-resource-name>
+               <url-pattern>/*</url-pattern>
+           </web-resource-collection>
+           <user-data-constraint>
+               <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+           </user-data-constraint>
+         </security-constraint>
+         <security-constraint>
+           <web-resource-collection>
+               <web-resource-name>HTTPSOrHTTP</web-resource-name>
+               <url-pattern>*.ico</url-pattern>
+               <url-pattern>/img/*</url-pattern>
+               <url-pattern>/css/*</url-pattern>
+           </web-resource-collection>
+           <user-data-constraint>
+               <transport-guarantee>NONE</transport-guarantee>
+           </user-data-constraint>
+        </security-constraint>
+        -->
+        ```
+        
       1. Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 	 
       1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
-    + For OS X:
+   + For Windows:
 
-		>This example is written for `deployr-user`. For another user, use the appropriate filepath to `server.xml` and `web.xml` as well as the `keystoreFile` property on the Connector.
+     1. Enable the HTTPS connector/channel on Tomcat by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\server.xml`.
 
-	 1. Enable the HTTPS connector on Tomcat by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/server.xml`.
+        ```
+        <!-- 
+        <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore" />
+        -->
+        ```
+        
+     1.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\web.xml`.
 
-                 <!-- 
-                 <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/.keystore" />
-                 -->
+        ```
+        <!-- 
+        <security-constraint>
+           <web-resource-collection>
+               <web-resource-name>HTTPSOnly</web-resource-name>
+               <url-pattern>/*</url-pattern>
+           </web-resource-collection>
+           <user-data-constraint>
+               <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+           </user-data-constraint>
+         </security-constraint>
+         <security-constraint>
+           <web-resource-collection>
+               <web-resource-name>HTTPSOrHTTP</web-resource-name>
+               <url-pattern>*.ico</url-pattern>
+               <url-pattern>/img/*</url-pattern>
+               <url-pattern>/css/*</url-pattern>
+           </web-resource-collection>
+           <user-data-constraint>
+               <transport-guarantee>NONE</transport-guarantee>
+           </user-data-constraint>
+        </security-constraint>
+        -->
+        ```
 
-	 2.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7/conf/web.xml`.
+     1. Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
-                 <!-- 
-                 <security-constraint>
-                   <web-resource-collection>
-                       <web-resource-name>HTTPSOnly</web-resource-name>
-                       <url-pattern>/*</url-pattern>
-                   </web-resource-collection>
-                   <user-data-constraint>
-                       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-                   </user-data-constraint>
-                 </security-constraint>
-                 <security-constraint>
-                   <web-resource-collection>
-                       <web-resource-name>HTTPSOrHTTP</web-resource-name>
-                       <url-pattern>*.ico</url-pattern>
-                       <url-pattern>/img/*</url-pattern>
-                       <url-pattern>/css/*</url-pattern>
-                   </web-resource-collection>
-                   <user-data-constraint>
-                       <transport-guarantee>NONE</transport-guarantee>
-                   </user-data-constraint>
-                 </security-constraint>
-                 -->
+     1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
-	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
+3. **Then, enable SSL support for DeployR.**
 
-		>If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
+   + For Linux / OS X:
 
-    + For Windows:
+     1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`:
 
-	 1. Enable the HTTPS connector/channel on Tomcat by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\server.xml`.
+        grails.plugins.springsecurity.auth.forceHttps = false
 
-                 <!-- 
-                 <Connector port="8001" protocol="org.apache.coyote.http11.Http11NioProtoocol" compression="1024" compressableMimeType="text/html,text/xml,text/json,text/plain,application/xml,application/json,image/svg+xml" SSLEnabled="true" maxthreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\bin\.keystore" />
-                 -->
+     1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.  Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
 
-	 2.  Force Tomcat to upgrade all HTTP connections to HTTPS connections by **removing the comments** around the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\web.xml`.
+         $DEPLOYR_HOME/deployr/tools/setWebContext.sh -https true
 
-                 <!-- 
-                 <security-constraint>
-                  <web-resource-collection>
-                      <web-resource-name>HTTPSOnly</web-resource-name>
-                      <url-pattern>/*</url-pattern>
-                  </web-resource-collection>
-                  <user-data-constraint>
-                      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-                  </user-data-constraint>
-                 </security-constraint>
-                 <security-constraint>
-                  <web-resource-collection>
-                      <web-resource-name>HTTPSOrHTTP</web-resource-name>
-                      <url-pattern>*.ico</url-pattern>
-                      <url-pattern>/img/*</url-pattern>
-                      <url-pattern>/css/*</url-pattern>
-                  </web-resource-collection>
-                  <user-data-constraint>
-                      <transport-guarantee>NONE</transport-guarantee>
-                  </user-data-constraint>
-                 </security-constraint>
-                 -->
+   + For Windows:
 
-	 3.  Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
-
-		>If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
-
-3.  **Then, enable SSL support for DeployR.**
-
-    + For Linux:
-
-	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/home/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
+     1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR-8.0\deployr/deployr.groovy`:
 
                  grails.plugins.springsecurity.auth.forceHttps = false
 
-	 1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected.  Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
-
-                 /home/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
-
-    + For OS X:
-
-	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `/Users/deployr-user/deployr/8.0.0/deployr/deployr.groovy`:
-
-                 grails.plugins.springsecurity.auth.forceHttps = false
-
-	2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.sh` script and specify the value of `true` for the `https` argument:
-
-                 /Users/deployr-user/deployr/8.0.0/deployr/tools/setWebContext.sh -https true
-
-    + For Windows:
-
-	 1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR-8.0\deployr/deployr.groovy`:
-
-                 grails.plugins.springsecurity.auth.forceHttps = false
-
-	2. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
+     1. Enable HTTPS in the server policies so that any non-HTTPS connections to the server are automatically rejected. Run the `setWebContext.bat` script and specify the value of `true` for the `https` argument:
 
                  C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https true
 
@@ -276,7 +224,6 @@ Once enabled your client applications can make API calls that connect over HTTPS
     [Learn more about server policies](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 4.  **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#starting-and-stopping-deployr) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
-     
 
 5.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
 
