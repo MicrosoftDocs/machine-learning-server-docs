@@ -68,7 +68,7 @@
 ### [OLD Security on DeployR](rserver/deployr-admin-security.md)
 ### [Security on DeployR](rserver/deployr-admin-security/deployr-security.md)
 #### [Authentication & Authorization](rserver/deployr-admin-security/deployr-security-authentication.md)
-#### [HTTPS and SSL Support](rserver/deployr-admin-security/deployr-security-https.md)
+#### [HTTPS & SSL Support](rserver/deployr-admin-security/deployr-security-https.md)
 #### [Server Access Policies](rserver/deployr-admin-security/deployr-security-server-access.md)
 ### [R Package Management for Administrators](rserver/deployr-admin-r-package-management.md)
 ### [Managing Big Data](rserver/deployr-admin-manage-big-data.md)
