@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: " Security in DeployR"
+title: "Authentication and Authorization for DeployR"
 description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
 keywords: ""
 author: "j-martens"
@@ -62,7 +62,7 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
 
 **To enable CA Single Sign-On support:**
 
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](deployr-admin-configure-ca-sso.md).
+1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr-admin-configure-ca-sso.md).
 
 2.  Update the relevant properties in your DeployR external configuration file.
     This step assumes that:
@@ -70,39 +70,40 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
     -   Your CA Single Sign-On Policy Server is properly configured and running
     -   You understand which header files are being used by your policy server
 
+```
+/*
+* Siteminder Single Sign-On (Pre-Authentication) Policy Properties
+*/
 
-			/*
-			* Siteminder Single Sign-On (Pre-Authentication) Policy Properties
-			*/
+deployr.security.siteminder.preauth.enabled = false
+
+// deployr.security.preauth.username.header
+// Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
+deployr.security.preauth.username.header = 'HTTP_SM_USER'
+
+// deployr.security.preauth.group.header
+// Identify Siteminder groups header.
+deployr.security.preauth.group.header = 'SM_USER_GROUP'
+
+// deployr.security.preauth.group.separator
+// Identify Siteminder groups delimiter header.
+deployr.security.preauth.group.separator = '^'
+
+// deployr.security.preauth.groups.map
+// Allows you to map Siteminder group names to DeployR role names.
+// NOTE: Siteminder group names must be defined using the distinguished
+// name for the group. Group distinguished names are case sensitive.
+// For example, your Siteminder distinguished group name
+// "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
+// "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
+// begin with ROLE_ and must always be upper case.
+deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
+                                  'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
 			
-			deployr.security.siteminder.preauth.enabled = false
-			
-			// deployr.security.preauth.username.header
-			// Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
-			deployr.security.preauth.username.header = 'HTTP_SM_USER'
-			
-			// deployr.security.preauth.group.header
-			// Identify Siteminder groups header.
-			deployr.security.preauth.group.header = 'SM_USER_GROUP'
-			
-			// deployr.security.preauth.group.separator
-			// Identify Siteminder groups delimiter header.
-			deployr.security.preauth.group.separator = '^'
-			
-			// deployr.security.preauth.groups.map
-			// Allows you to map Siteminder group names to DeployR role names.
-			// NOTE: Siteminder group names must be defined using the distinguished
-			// name for the group. Group distinguished names are case sensitive.
-			// For example, your Siteminder distinguished group name
-			// "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
-			// "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
-			// begin with ROLE_ and must always be upper case.
-			deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
-			                                  'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
-			
-			// deployr.security.preauth.default.role
-			// Optional, grant default DeployR Role to all Siteminder authenticated users:
-			deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
+// deployr.security.preauth.default.role
+// Optional, grant default DeployR Role to all Siteminder authenticated users:
+deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
+```
 
 ## PAM Authentication
 
@@ -229,7 +230,6 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
           ```
           
         + Save this change and close the file in your editor.
-
 
    + For **root installs** of DeployR:  The following steps grant `root` permission to launch the Tomcat server. 
 
