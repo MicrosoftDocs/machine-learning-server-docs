@@ -37,7 +37,7 @@ While basic authentication provides a simple and reliable authentication solutio
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](deployr-security-authentication.md). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
-The following sections in this document detail how to work with these configuration properties to achieve your preferred security implementation.
+The following security topics detail how to work with these configuration properties to achieve your preferred security implementation.
 + [Authorization and Authentication](deployr-security-authentication.md)
 + [HTTPS and SSL Support](deployr-security-https.md)
 + [Server Access Policies](deployr-security-server-access.md)
