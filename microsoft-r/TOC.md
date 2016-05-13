@@ -43,13 +43,13 @@
 # [DeployR](rserver/deployr-about.md)
 ## [About DeployR](rserver/deployr-about.md)
 ## [What's New](rserver/deployr-whats-new.md)
+## Installation
+### [Install DeployR 8.0.5 (Windows)](rserver/deployr-install-on-windows.md)
+### [Install DeployR 8.0.5 (Linux)](rserver/deployr-install-on-linux.md)
+### [Install DeployR 8.0.0 (All Platforms)](rserver/deployr-installing-configuring.md)
 ## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
-### Installing
-#### [DeployR 8.0.5 - Windows](rserver/deployr-install-on-windows.md)
-#### [DeployR 8.0.5 - Linux](rserver/deployr-install-on-linux.md)
-#### [DeployR 8.0.0 - All Platforms](rserver/deployr-installing-configuring.md)
-### Configuring
+### Configuration
 #### [Scale & Throughput](rserver/deployr-admin-scale-and-throughput.md)
 #### [DeployR in the Cloud](rserver/deployr-admin-install-in-cloud.md)
 #### [Server & Grid High Availability](rserver/deployr-admin-configure-high-availability.md)
