@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Overview of Security for DeployR
+# Overview of DeployR Security
 
 DeployR is a server framework that exposes the R platform as a service to allow the integration of R statistics, analytics, and visualizations inside Web, desktop, and mobile applications. In addition to providing a simple yet powerful Web services API, the framework also supports a highly flexible, enterprise security model.
 
