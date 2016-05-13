@@ -362,86 +362,88 @@ Accordingly, to enable do the following:
 3. For each property, use the value matching your configuration:
 
    + For DeployR 8.0.5:
-   
-    /*
-     * DeployR Active Directory Configuration Properties
-     *
-     * To enable Active Directory uncomment the following
-     * properties and provide property values matching your LDAP DIT:
-     */
+     ```
+     /*
+      * DeployR Active Directory Configuration Properties
+      *
+      * To enable Active Directory uncomment the following
+      * properties and provide property values matching your LDAP DIT:
+      */
 
-    grails.plugin.springsecurity.ldap.active=false
-    /*
-    grails.plugin.springsecurity.providerNames = ['ldapAuthProvider1']
-    grails.plugin.springsecurity.ldap.server = 'ldap://localhost:389/'
-    grails.plugin.springsecurity.ldap.domain = "mydomain.com"
-
-    grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
-    grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=group,dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
-
-    // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
-    // grails.plugin.springsecurity.password.algorithm = 'xxx'
-
-    // deployr.security.ldap.user.properties.map
-    // Allows you to map LDAP user property names to DeployR user property names:
-    deployr.security.ldap.user.properties.map = ['displayName':'cn',
-                                                 'email':'mail',
-                                                 'uid' : 'uidNumber',
-                                                 'gid' : 'gidNumber']
-
-    // deployr.security.ldap.roles.map property
-    // Allows you to map between LDAP group names to DeployR role names.
-    // NOTE, LDAP group names can be defined on the LDAP server using
-    // any mix of upper and lower case, such as finance, Finance or FINANCE,
-    // For example, an LDAP group named "finance" should
-    // appear in the map fonance. DeployR role names must
-    // begin with ROLE_ and must always be upper case.
-    deployr.security.ldap.roles.map = ['FINANCE':'ROLE_BASIC_USER',
-                                       'Engineering':'ROLE_POWER_USER']
-
-    */
+      grails.plugin.springsecurity.ldap.active=false
+      /*
+      grails.plugin.springsecurity.providerNames = ['ldapAuthProvider1']
+      grails.plugin.springsecurity.ldap.server = 'ldap://localhost:389/'
+      grails.plugin.springsecurity.ldap.domain = "mydomain.com"
+ 
+      grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
+      grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=group,dc=example,dc=com'
+      grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
+  
+      // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
+      // grails.plugin.springsecurity.password.algorithm = 'xxx'
+ 
+      // deployr.security.ldap.user.properties.map
+      // Allows you to map LDAP user property names to DeployR user property names:
+      deployr.security.ldap.user.properties.map = ['displayName':'cn',
+                                                   'email':'mail',
+                                                   'uid' : 'uidNumber',
+                                                   'gid' : 'gidNumber']
+  
+      // deployr.security.ldap.roles.map property
+      // Allows you to map between LDAP group names to DeployR role names.
+      // NOTE, LDAP group names can be defined on the LDAP server using
+      // any mix of upper and lower case, such as finance, Finance or FINANCE,
+      // For example, an LDAP group named "finance" should
+      // appear in the map fonance. DeployR role names must
+      // begin with ROLE_ and must always be upper case.
+      deployr.security.ldap.roles.map = ['FINANCE':'ROLE_BASIC_USER',
+                                         'Engineering':'ROLE_POWER_USER']
+ 
+      */
+      ```
 
    + For DeployR 8.0.0
+     ```
+     /*
+      * DeployR Active Directory Configuration Properties
+      */
+     
+     grails.plugin.springsecurity.ldap.context.managerDn = 'dc=example,dc=com'
+     grails.plugin.springsecurity.ldap.context.managerPassword = 'secret'
+     grails.plugin.springsecurity.ldap.context.server = 'ldap://locahost:10389/'
+     grails.plugin.springsecurity.ldap.authorities.ignorePartialResultException = true
+     grails.plugin.springsecurity.ldap.search.base = 'ou=people,dc=example,dc=com'
+     grails.plugin.springsecurity.ldap.search.searchSubtree = true
+     grails.plugin.springsecurity.ldap.search.attributesToReturn = ['mail', 'displayName'] 
+     grails.plugin.springsecurity.ldap.search.filter="sAMAccountName={0}"
+     grails.plugin.springsecurity.ldap.auth.hideUserNotFoundExceptions = false
+     grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
+     grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
+     grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=group,dc=example,dc=com'
+     
+     // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
+     // grails.plugin.springsecurity.password.algorithm = 'xxx'
+     
+     // deployr.security.ldap.user.properties.map
+     // Allows you to map between LDAP user property names to DeployR user property names:
+     deployr.security.ldap.user.properties.map = ['displayName':'cn',
+                                                  'email':'mail',
+                                                  'uid' : 'uidNumber',
+                                                  'gid' : 'gidNumber']
     
-    /*
-     * DeployR Active Directory Configuration Properties
-     */
-    
-    grails.plugin.springsecurity.ldap.context.managerDn = 'dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.context.managerPassword = 'secret'
-    grails.plugin.springsecurity.ldap.context.server = 'ldap://locahost:10389/'
-    grails.plugin.springsecurity.ldap.authorities.ignorePartialResultException = true
-    grails.plugin.springsecurity.ldap.search.base = 'ou=people,dc=example,dc=com'
-    grails.plugin.springsecurity.ldap.search.searchSubtree = true
-    grails.plugin.springsecurity.ldap.search.attributesToReturn = ['mail', 'displayName'] 
-    grails.plugin.springsecurity.ldap.search.filter="sAMAccountName={0}"
-    grails.plugin.springsecurity.ldap.auth.hideUserNotFoundExceptions = false
-    grails.plugin.springsecurity.ldap.authorities.retrieveGroupRoles = true
-    grails.plugin.springsecurity.ldap.authorities.groupSearchFilter = 'member={0}'
-    grails.plugin.springsecurity.ldap.authorities.groupSearchBase = 'ou=group,dc=example,dc=com'
-    
-    // Optionally, specify LDAP password encryption algorithm: MD5, SHA-256
-    // grails.plugin.springsecurity.password.algorithm = 'xxx'
-    
-    // deployr.security.ldap.user.properties.map
-    // Allows you to map between LDAP user property names to DeployR user property names:
-    deployr.security.ldap.user.properties.map = ['displayName':'cn',
-                                                 'email':'mail',
-                                                 'uid' : 'uidNumber',
-                                                 'gid' : 'gidNumber']
-    
-    // deployr.security.ldap.roles.map property
-    // Allows you to map between LDAP group names to DeployR role names.
-    // NOTE, while LDAP group names can be defined on the LDAP server using
-    // any mix of upper and lower case, such as finance, Finance or FINANCE,
-    // the LDAP group names that appear in the map must have ROLE_ appended
-    // and be capitialized. For example, an LDAP group named "finance" should
-    // appear in the map as ROLE_FINANCE. DeployR role names must
-    // begin with ROLE_ and must always be upper case.
-    deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
-                                       'ROLE_ENGINEERING':'ROLE_POWER_USER']
-                                       
+     // deployr.security.ldap.roles.map property
+     // Allows you to map between LDAP group names to DeployR role names.
+     // NOTE, while LDAP group names can be defined on the LDAP server using
+     // any mix of upper and lower case, such as finance, Finance or FINANCE,
+     // the LDAP group names that appear in the map must have ROLE_ appended
+     // and be capitialized. For example, an LDAP group named "finance" should
+     // appear in the map as ROLE_FINANCE. DeployR role names must
+     // begin with ROLE_ and must always be upper case.
+     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
+                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
+     ```
+
 For more information, see the complete list of [configuration properties](#ldap-active-directory-configuration-properties).
 
 ## LDAP & Active Directory Configuration Properties
