@@ -237,28 +237,31 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
      2.  Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
 
-     3.  Find the following section:
+     3. Find the following section:
 
-        -   On Redhat/CentOS platforms:
+        - On Redhat/CentOS platforms:
+          ```
+          daemon --user "apache" ${START_TOMCAT}
+          ```
 
-                daemon --user "apache" ${START_TOMCAT}
+        - On SLES platforms:
+          ```
+          start_daemon -u r "apache" ${START_TOMCAT}
+          ```
 
-        -   On SLES platforms:
+     4. Change `"apache"` to `"root"` as follows:
 
-                start_daemon -u r "apache" ${START_TOMCAT}
+        - On Redhat/CentOS platforms:
+          ```
+          daemon --user "root" ${START_TOMCAT}
+          ```
 
-     4.  Change `"apache"` to `"root"` as follows:
-
-        -   On Redhat/CentOS platforms:
-
-                daemon --user "root" ${START_TOMCAT}
-
-        -   On SLES platforms:
-
-                start_daemon -u r "root" ${START_TOMCAT}
+        - On SLES platforms:
+          ```
+          start_daemon -u r "root" ${START_TOMCAT}
+          ```
 
      5.  Save this change and close the file in your editor.
-
 
 5. Restart the server. 
    1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
