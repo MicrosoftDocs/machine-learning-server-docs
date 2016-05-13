@@ -121,7 +121,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
     -   deployr.security.pam.default.role
 
     Relevant snippet from `deployr.groovy` file shown here:
-
+```
          /*
           * DeployR PAM Authentication Policy Properties
           */
@@ -140,6 +140,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
          // deployr.security.pam.default.role
          // Optional, grant default DeployR Role to all PAM authenticated users:
          deployr.security.pam.default.role = 'ROLE_BASIC_USER'
+```
 
 2.  Before making any configuration changes to the server system files, stop the DeployR server:
 
@@ -299,6 +300,7 @@ Accordingly, to enable do the following:
 2. Uncomment the LDAP properties  (make sure Active Directory  is commented out)
 3. For each property, use the value matching your LDAP DIT:
 
+```
     /*
      * DeployR LDAP Authentication Configuration Properties
      *
@@ -340,6 +342,7 @@ Accordingly, to enable do the following:
     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
     */
+```
 
 For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
 
