@@ -173,10 +173,10 @@ _Table: Default Ports by Version_
     ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
 
 4.  Enter the port number to the **Destination port range**.
-        -   For DeployR HTTP port.
-        -   For DeployR HTTPS port.
-        -   For DeployR event console port.
-        > See the bullets at the beginning of this section for the default ports for your version of DeployR.
+    -   For DeployR HTTP port.
+    -   For DeployR HTTPS port.
+    -   For DeployR event console port.
+    > See the bullets at the beginning of this section for the default ports for your version of DeployR.
 
 5.  Click **OK** to save your changes.
 
@@ -342,7 +342,7 @@ _Table: Inbound Rules for DeployR 8.0.5_
 
 <br>
 
-_Table: Inbound Rules for DeployR 8.0.5_
+_Table: Inbound Rules for DeployR 8.0.0_
    
 |Port Number|Inbound Rule Name|
 |----------|--------------|

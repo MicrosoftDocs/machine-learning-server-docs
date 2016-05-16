@@ -150,7 +150,7 @@ If DeployR was installed as user `root`, do the following:
 
 We can now upload the script to DeployR using the Repository Manager. In our example, user `testuser` will create a directory called `demo` in the DeployR Repository Manager and name our RScript `piperead.R`.
 
-## Create DeployR Client
+## Creating a DeployR Client
 
 Create a DeployR client application to control which user will be running the script.
 
