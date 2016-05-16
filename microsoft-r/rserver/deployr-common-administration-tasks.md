@@ -208,4 +208,4 @@ Follow these steps to back up the data in the database used by DeployR.
 
 ## Opening DeployR Ports
 
-To learn more about the ports you need to open, refer to the Installation Guide for your operating system and DeployR version.
+To learn more about the ports you need to open, refer to the DeployR Installation Guide for your operating system and DeployR version.

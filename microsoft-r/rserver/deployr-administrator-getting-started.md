@@ -137,4 +137,4 @@ This section provides a quick summary of useful links for administrators working
 -   [Data Scientists](deployr-data-scientist-getting-started.md)
 
 **Support Channel**
--   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+-   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

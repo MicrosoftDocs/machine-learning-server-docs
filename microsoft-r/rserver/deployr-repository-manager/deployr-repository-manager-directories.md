@@ -101,11 +101,9 @@ When you no longer need one of your user directories and the files it contains, 
 
 To help you organize your files, you can rename any of the directories under My Files except root. You must use a unique name for the directory. Learn about [Directory Naming: Dos and Don'ts](#directory-naming-dos-and-don-ts).
 
->[!IMPORTANT]
 >You cannot change the directory of files you co-own with other users. Files for which you are the sole owner can be moved to another directory; however, files owned by multiple users must remain under the original directory for as long as there are multiple owners. 
-
->[!NOTE]
->You cannot rename the root or any directories under Other Files.
+>
+>Nor can you rename the root or any directories under Other Files.
 
 To rename a directory:
 

@@ -264,4 +264,4 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
 **Support Channels**
--   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+-   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

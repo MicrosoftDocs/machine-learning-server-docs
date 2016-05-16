@@ -226,4 +226,4 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [Getting Started For Administrators](deployr-administrator-getting-started.md)
 
 **Support Channel**
--   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+-   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

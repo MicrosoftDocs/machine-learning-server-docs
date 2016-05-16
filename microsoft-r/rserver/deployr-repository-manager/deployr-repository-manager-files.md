@@ -36,23 +36,31 @@ Each repository-managed file has a set of file properties. While the following f
 
 File properties can be broken down into three categories: basic file properties, ownership properties, and access control properties.
 
-1.  **Basic file properties** that identify the file, which are:
+**Basic file properties** 
+
+These properties identify the file:
 
 	-  **Name.** The path and name of the file. This name was defined when it was created and is not editable.
 	-  **Keywords.** Words used to tag a file.
 	-  **Description.** An optional annotation that describes this particular version of the file. This description can make it easier to identify the file in the Files list and useful to developers when they are trying to learn about the file.
 	-  **Version.** The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.
 
-2.  **Access Rights properties** that allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.
+<br>
+**Access Rights properties** 
+
+These properties allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.
 
 	-  **Private** allows only the file owners to see the file. And in the case of scripts, only the owner(s) can execute the script on the API.
 	-  **Restricted** constrains access to the file using roles. By associating one or more roles with a file, you can constrain access and allow only those users who were granted at least one of the associated roles the ability to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API. For example, if you associate a custom role called *Marketing Dept* with your script, then all users with the *Marketing Dept* role can access that script. If none of the existing roles fit your needs, the DeployR administrator can create a new custom role for this purpose. If you choose this access right, you must enter one or more role(s).
 	-  **Shared** allows authenticated users to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API.
 	-  **Public** allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the Repository Manager interface.
 
-3.  **Ownership properties** that support collaborative development. The **Owners** field lists the owners that can collaborate on that particular version of a file. You can [add or remove owners](#adding-and-removing-owners) to the Latest version of your file. Adding an owner does more than just allow a user to view a file or execute a script; it also allows that new owner to edit the file's content as well as add or remove owners from the file. If your objective is to permit other users and/or applications to execute a script, we recommend setting the appropriate access rights as a means of controlling that access. In general, we do not recommend having multiple owners when a file is in production.
+<br>
+**Ownership properties** 
 
->[!NOTE]
+These properties support collaborative development. The **Owners** field lists the owners that can collaborate on that particular version of a file. You can [add or remove owners](#adding-and-removing-owners) to the Latest version of your file. Adding an owner does more than just allow a user to view a file or execute a script; it also allows that new owner to edit the file's content as well as add or remove owners from the file. If your objective is to permit other users and/or applications to execute a script, we recommend setting the appropriate access rights as a means of controlling that access. In general, we do not recommend having multiple owners when a file is in production.
+
+
 >Only a file's owners can [edit its file properties](#editing-file-properties). Changes are saved automatically.
 
 ## The Files You Own
@@ -230,11 +238,9 @@ Granting ownership does more than just allow a user to view or download a file, 
 
 If your objective is to permit other users and/or applications to see files and/or execute scripts, we recommend setting the appropriate [access rights](#about-file-properties) using the **Restricted**, **Shared** or **Public** access rights as a means of controlling that access.
 
->[!NOTE]
->Owners are also referred to as authors on API calls.
-
->[!IMPORTANT]
->In general, we do not recommend having multiple owners for a script, when it is in production, since calling applications are required to reference scripts using the file name, its directory, and its owner (author).
+>**Important!** Owners are also referred to as authors on API calls.
+>
+>Also, we do not generally recommend having multiple owners for a script when it is in production, since calling applications are required to reference scripts using the file name, its directory, and its owner (author).
 
 To add or remove owners:
 
@@ -246,13 +252,13 @@ To add or remove owners:
 
 	-  To add owners, type the username(s) to which you want to grant ownership into the field.
 
-		>[!IMPORTANT]
 		>If you attempt to add an owner that already has a file by the same name in the same directory, then you will not be permitted to add that owner.
 
 	-  To remove owners from a file, click the **x** next to the name. The name disappears from the list of owners. If that user was an owner before you started this task, the file will no longer be in any of his or her directories under **My Files**.
 
 4.  Once the list reflect the owners who should be able to collaborate on this file, click **OK**. The dialog closes.
  
+<br>
 ## Working with Historical Versions
 
 The DeployR repository supports a versioned file system, thereby offering you a full version history for each of your repository files and access to any version upon request pending proper authentication. The Repository Manager simplifies certain interactions with each version of the file you have had over time.
@@ -276,7 +282,8 @@ For any file you own, you can access the file's version history. From this versi
 1. Identify the file whose version history you want to see.
 
 1. Click the icon in the **History** column for that file. The **Version History** table appears in the **Files** tab.
-
+ 
+<br>
 ### Comparing Version Differences
 
 When a file has two or more versions, you can compare the differences between one previous version and the Latest version of that file.
@@ -298,6 +305,8 @@ When a file has two or more versions, you can compare the differences between on
 
 1. If desired, you can click **Revert** to [revert](deployr-repository-manager-files.md#reverting-a-past-version-to-the-latest-version) the past version to *Latest*.
 
+ 
+<br>
 ### Reverting a Past Version to the Latest Version
 
 If you want to restore a historical version to Latest version of a file, you can [revert that version](deployr-repository-manager-files.md#comparing-version-differences). Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
@@ -307,6 +316,8 @@ _Figure: Workflow for Restoring Files_
 
 ![](media/deployr-repository-manager-files/workflowrestorefile.png)
 
+ 
+<br>
 ## Deleting Files
 
 Only the sole owner of a file can delete the file (and all of its previous versions) permanently.
@@ -330,6 +341,8 @@ _Figure: Workflow for Deleting Files_
 
 1. Confirm that you want to delete the file(s). If you are not the sole owner, then you will be stripped of your ownership rights and the file(s) will no longer appear in any directory under **My Files**.
 
+ 
+<br>
 ## Closing Files
 
 You can close one file at any time.
