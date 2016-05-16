@@ -60,7 +60,7 @@ Before you can install DeployR, you must manually install and configure the foll
 | Dependency                                                                                      | DeployR Server                                                                      | DeployR Grid Node                                                                   |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | Java™ Runtime Environment 8                                                                     | Yes                                                                                 | No                                                                                  |
-| [Microsoft R Services 2016](http://go.microsoft.com/fwlink/?LinkID=698527) and its dependencies | Yes                                                                                 | Yes                                                                                 |
+| [Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527) and its dependencies | Yes                                                                                 | Yes                                                                                 |
 | DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
 | make, gcc, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
 | nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
@@ -192,7 +192,7 @@ _After installing the [main server for DeployR Enterprise](#install-deployr-serv
 
 1.  Log into the operating system on the machine on which you will install the grid node as `root` or a user with `sudo` permissions.
 
-2.  Install Microsoft R Services 2016 and the DeployR Rserve component [as described here](#install-dependencies) on the grid node machine.
+2.  Install Microsoft R Server 2016 and the DeployR Rserve component [as described here](#install-dependencies) on the grid node machine.
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
@@ -440,7 +440,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
->If you want to upgrade or reinstall your version or R or Microsoft R Services 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
+>If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
 
 ### From Previous DeployR Version to DeployR 8.0.5:
 
