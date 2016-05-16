@@ -148,7 +148,7 @@ Importing allows you to retrieve all of the accounts from a previously exported 
 4. Click **Load**.
  
 	_Figure: Import User Accounts page_
-        ![](media/deployr-admin-console-user-accounts/0300000C_624x252.png)  
+    ![](media/deployr-admin-console-user-accounts/0300000C_624x252.png)  
 
 5. To disable user accounts so that they do not have access to the server until you are ready, select the **Disable user account** option. You can always enable or disable user accounts individually later.
 
