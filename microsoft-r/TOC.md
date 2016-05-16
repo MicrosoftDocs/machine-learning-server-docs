@@ -42,7 +42,7 @@
 # [Parallelizing Loops: foreach/iterators](rserver/rserver-foreach.md)
 # [DeployR](rserver/deployr-about.md)
 ## [About DeployR](rserver/deployr-about.md)
-## [What's New](rserver/deployr-whats-new.md)
+## [What's New in DeployR](rserver/deployr-whats-new.md)
 ## Installation
 ### [Install DeployR 8.0.5 (Windows)](rserver/deployr-install-on-windows.md)
 ### [Install DeployR 8.0.5 (Linux)](rserver/deployr-install-on-linux.md)
