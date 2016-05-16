@@ -70,9 +70,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
 1.  Install dependencies as `root` or a user with `sudo` permissions.
 
-2.  On the main DeployR server, install **Java™ Runtime Environment 8**, a dependency of DeployR, as follows. For more help installing Java or setting the path, refer to oracle.com.
-
-    >Java is only required on the main DeployR server.
+2.  **ONLY** the main DeployR server, install **Java™ Runtime Environment 8**, a dependency of DeployR, as follows. For more help installing Java or setting the path, refer to oracle.com.
 
     -   [Download the tar file from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install it **OR** install using your local package manager.
 
@@ -81,9 +79,9 @@ Before you can install DeployR, you must manually install and configure the foll
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Services 2016](http://go.microsoft.com/fwlink/?LinkID=698527), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Services 2016 to install it as well as any of its dependencies.**  [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Services 2016.
+3.  Install [Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server 2016 to install it as well as any of its dependencies.**  [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
-4.  Install **DeployR Rserve 8.0.5**, a dependency of DeployR, after Microsoft R Services 2016 as follows:
+4.  Install **DeployR Rserve 8.0.5**, a dependency of DeployR, after Microsoft R Server 2016 as follows:
 
     A. [Download the Linux tar file for DeployR Rserve 8.0.5, `deployrRserve_8.0.5.tar.gz`](https://github.com/Microsoft/deployr-rserve/releases/).
 
@@ -93,54 +91,56 @@ Before you can install DeployR, you must manually install and configure the foll
 
 5.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
-
-		sudo yum clean all
-
+      ```
+      sudo yum clean all
+      ```
+      
     + For Ubuntu:
-
-		sudo apt-get update
-
+      ```
+      sudo apt-get update
+      ```
+      
     + For OpenSUSE / SLES:
-
-	sudo zypper clean --all
-
+      ```
+      sudo zypper clean --all
+      ```
+      
 6.  Install the following packages (`make`, `gcc`, `gfortran`, `cairo-devel`, `libicu`, and `libicu-devel`) if any of them are missing as follows:
 
     >Install packages as `root` or a user with `sudo` permissions.
 
-	For Redhat / CentOS:
+	+ For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
+      ```
+      #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
+      yum list make gcc gfortran cairo-devel libicu libicu-devel
+      
+      #INSTALL ALL MISSING PACKAGES
+  
+      #ONE LINE PER MISSING PACKAGE
+      yum install <missing_package_name>
+      ```
+    	
+	+ For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
+      ```
+      #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
+      dpkg -l make gcc gfortran cairo-devel libicu libicu-devel
+      
+      #INSTALL ALL MISSING PACKAGES
+  
+      #ONE LINE PER MISSING PACKAGE
+      sudo apt-get install <missing-package-name>
+      ```
 
-    1.  For each package name, run the following command to check if the required package is already installed:
-
-            yum list make gcc gfortran cairo-devel libicu libicu-devel
-
-    2.  For each missing package, run the following command:
-
-            # ONE LINE PER MISSING PACKAGE
-            yum install <missing_package_name>
-	
-	For Ubuntu:
-
-    1.  For each package name, run the following command to check if the required package is already installed:
-
-            dpkg -l make gcc gfortran cairo-devel libicu libicu-devel
-
-    2.  For each missing package, run the following command:
-
-            # ONE LINE PER MISSING PACKAGE
-            sudo apt-get install <missing-package-name>
-
-	For OpenSUSE / SLES:
-
-    1.  For each package name, run the following command to check if the required package is already installed:
-
-            sudo zypper search -i <package-name>
-
-    2.  For each missing package, run the following command:
-
-            # ONE LINE PER MISSING PACKAGE
-            sudo zypper install <missing-package-name>
-
+	+ For SLES, check if the required packages are already installed and install any missing packages as follows:
+      ```
+      #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
+      sudo zypper search -i <package-name>
+      
+      #INSTALL ALL MISSING PACKAGES
+  
+      #ONE LINE PER MISSING PACKAGE
+      sudo zypper install <missing-package-name>
+      ```
 
 ## Install DeployR Server
 
@@ -231,7 +231,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     1.  Click **New Grid Node**.
 
-    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** [using these instructions](./deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes). 
+    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** [ using these instructions](./deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes). 
     
     3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](./deployr-admin-console/deployr-admin-managing-the-grid.md#node-validation-and-errors)
 
