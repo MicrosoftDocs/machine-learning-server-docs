@@ -192,7 +192,7 @@ Usage tips for the `setWebContext` script arguments:
 |`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
 |`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
 |`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
-|`https true|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security.md#enable-server-ssl-https).|
+|`https true|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
 
  
 **On Windows:**
