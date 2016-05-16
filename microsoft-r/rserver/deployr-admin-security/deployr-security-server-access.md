@@ -24,7 +24,6 @@ ms.custom: ""
 
 ---
 
-
 #Server Access Controls
 
 ## Working with IP Address Filters
@@ -43,12 +42,14 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
 
 CORS can be enabled or disabled in the DeployR external configuration file, `deployr.groovy`. In DeployR Enterprise, support for CORS is disabled by default.
 
+    ```
     /*
      * DeployR CORS Policy Configuration
      *
      * cors.headers = [ 'Access-Control-Allow-Origin': 'http://app.example.com']
      */
     cors.enabled = false
+    ```
 
 **To enable CORS support:**
 
