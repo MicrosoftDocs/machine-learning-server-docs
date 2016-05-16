@@ -49,7 +49,7 @@ To manage locked user accounts, the administrator has two choices. The chosen be
 
     deployr.security.tally.login.lock.timeout = 1800
 
-If the `lock.timeout` value is set to 0, then locked user accounts must be manually unlocked by the administrator in the [Users tab](deployr-admin-console/deployr-admin-console-user-accounts.md#viewing-and-editing-user-accounts) of the Administration Console.
+If the `lock.timeout` value is set to 0, then locked user accounts must be manually unlocked by the administrator in the [Users tab](../deployr-admin-console/deployr-admin-console-user-accounts.md#viewing-and-editing-user-accounts) of the Administration Console.
 
 If the `lock.timeout` value (measured in seconds), is set to any non-zero, positive value then a locked user account will be automatically *unlocked* by DeployR once the `lock.timeout` period of time has elapsed without further activity on the account.
 
