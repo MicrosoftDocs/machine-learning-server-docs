@@ -6,7 +6,7 @@ description: "Security in DeployR: Authentication, HTTPS, SSL, and access contro
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/10/2016"
+ms.date: "05/16/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -114,13 +114,14 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
 
-1.  Update the following properties in your DeployR external configuration file, `deployr.groovy`:
+** Step 1.  Update the DeployR external configuration file**
+Update the following properties in your DeployR external configuration file, `deployr.groovy`:
 
     -   deployr.security.pam.authentication.enabled
     -   deployr.security.pam.groups.map
     -   deployr.security.pam.default.role
 
-    Relevant snippet from `deployr.groovy` file shown here:
+Relevant snippet from `deployr.groovy` file shown here:
 ```
          /*
           * DeployR PAM Authentication Policy Properties
@@ -142,7 +143,9 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
          deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 ```
 
-2.  Before making any configuration changes to the server system files, stop the DeployR server:
+**Step 2: Update the DeployR server system files configuration changes:**
+
+1.  Before making any configuration changes to the server system files, stop the DeployR server:
 
     1. Launch the DeployR administrator utility script with administrator privileges as `root` or a user with `sudo` permissions:
        + On Windows:
@@ -161,7 +164,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
     1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
 
-3. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
+1. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
     
    + For **non-root installs** of DeployR:  The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. 
 
@@ -264,7 +267,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
      5.  Save this change and close the file in your editor.
 
-5. Restart the server. 
+1. Restart the server. 
    1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
        + On Windows:
           ```
@@ -454,7 +457,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 
 <sup>\*</sup> These properties are for Active Directory.
 
-### Context Properties
+**Context Properties**
 
 | Property                                | Default Value                  | Description                                                                                                   |
 |-----------------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -468,7 +471,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 | ldap.context.anonymousReadOnly          | FALSE                          | Whether an anonymous environment should be used for read-only operations.                                     |
 | ldap.context.referral                   | null ('ignore')                | The method to handle referrals. Can be 'ignore' or 'follow' to enable referrals to be automatically followed. |
 
-### Search Properties
+**Search Properties**
 
 | Property                              | Default Value                  | Description                                                                                                                                         |
 |---------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -480,7 +483,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 | ldap.authenticator.dnPatterns         | null (none)                    | "Optional pattern(s) used to create DN search patterns, e.g. \[""cn={0},ou=people""\]."                                                             |
 | ldap.authenticator.attributesToReturn | null (all)                     | Names of attribute ids to return; use null to return all and an empty list to return none.                                                          |
 
-### Authorities Properties
+**Authorities Properties**
 
 | Property                                         | Default Value                   | Description                                                                                  |
 |--------------------------------------------------|---------------------------------|----------------------------------------------------------------------------------------------|
@@ -512,7 +515,7 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 -   deployr.security.r.session.process.default.uid
 -   deployr.security.r.session.process.default.gid
 
-    Relevant snippet from deployr.groovy file shown here:
+Relevant snippet from deployr.groovy file shown here:
 
         /*
         * DeployR R Session Process Controls Policy Configuration
@@ -551,7 +554,7 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
 >Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
 
-**On each machine hosting a grid node:**
+On each machine hosting a grid node:
 
 1.  Before making any configuration changes to system files, you must stop Rserve and any other DeployR-related services:
 
@@ -653,12 +656,13 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
         cd /home/deployr-user/deployr/8.0.5
         ./startAll.sh
 
+1. Repeat these steps for each grid node.
+
 **For Root Installs**
 
->[!IMPORTANT]
 >Apply the following configuration changes on **each and every node** on your DeployR grid, including the default grid node.
 
-**On each machine hosting a grid node:**
+On each machine hosting a grid node:
 
 1.  Log in as `root`.
 
@@ -704,3 +708,5 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 
         cd /home/deployr-user/deployr/8.0.5
         ./startAll.sh
+        
+1. Repeat these steps for each grid node.
