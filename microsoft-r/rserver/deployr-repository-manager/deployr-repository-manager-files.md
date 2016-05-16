@@ -40,20 +40,26 @@ File properties can be broken down into three categories: basic file properties,
 
 These properties identify the file:
 
-	-  **Name.** The path and name of the file. This name was defined when it was created and is not editable.
-	-  **Keywords.** Words used to tag a file.
-	-  **Description.** An optional annotation that describes this particular version of the file. This description can make it easier to identify the file in the Files list and useful to developers when they are trying to learn about the file.
-	-  **Version.** The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.
+-  **Name.** The path and name of the file. This name was defined when it was created and is not editable.
+
+-  **Keywords.** Words used to tag a file.
+
+-  **Description.** An optional annotation that describes this particular version of the file. This description can make it easier to identify the file in the Files list and useful to developers when they are trying to learn about the file.
+
+-  **Version.** The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.
 
 <br>
 **Access Rights properties** 
 
 These properties allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.
 
-	-  **Private** allows only the file owners to see the file. And in the case of scripts, only the owner(s) can execute the script on the API.
-	-  **Restricted** constrains access to the file using roles. By associating one or more roles with a file, you can constrain access and allow only those users who were granted at least one of the associated roles the ability to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API. For example, if you associate a custom role called *Marketing Dept* with your script, then all users with the *Marketing Dept* role can access that script. If none of the existing roles fit your needs, the DeployR administrator can create a new custom role for this purpose. If you choose this access right, you must enter one or more role(s).
-	-  **Shared** allows authenticated users to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API.
-	-  **Public** allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the Repository Manager interface.
+-  **Private** allows only the file owners to see the file. And in the case of scripts, only the owner(s) can execute the script on the API.
+
+-  **Restricted** constrains access to the file using roles. By associating one or more roles with a file, you can constrain access and allow only those users who were granted at least one of the associated roles the ability to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API. For example, if you associate a custom role called *Marketing Dept* with your script, then all users with the *Marketing Dept* role can access that script. If none of the existing roles fit your needs, the DeployR administrator can create a new custom role for this purpose. If you choose this access right, you must enter one or more role(s).
+
+-  **Shared** allows authenticated users to view the file in the Repository Manager and on the API. And, in the case of scripts, execute that script on the API.
+
+-  **Public** allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the Repository Manager interface.
 
 <br>
 **Ownership properties** 
