@@ -192,19 +192,23 @@ Usage tips for the `setWebContext` script arguments:
 |`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
 |`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
 |`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
-|`https true|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
+|`https true\|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
 
  
 **On Windows:**
 
 1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
+
 1. Open a Command Window with **“Run as Administrator”**.
+
 1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
    ```
    cd $DEPLOYR_HOME\deployr\tools\
    setWebContext -ip <ip_address>
    ```
+
 1. Confirm the IP address you entered.
+
 1. Disable any automatic IP detection that might overwrite the IP you just assigned.
    ```
    setWebContext -disableauto
@@ -319,8 +323,8 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 
 1.  Check the status of the **DeployR Default Node** in the DeployR landing page at `http://<DEPLOYR_SERVER_IP>:<PORT>/deployr/landing`. If it appears **Inactive**, continue to the next step.
 
-2.  Verify the status of the DeployR Rserve service in the **Services** dialog box. If it appears as `Started`, continue to the next step. If not, start it now and go back to step 1.
-    Tip: Go to **Start &gt; Control Panel**. Search for `admin` and select **Administrative Tools** from the results. Choose **Services** to open the **Services** dialog box.
+2.  Verify the status of the DeployR Rserve service in the **Services** dialog box. If it appears as `Started`, continue to the next step. If not, start it now and go back to step 1.  
+    **Tip:** Go to **Start &gt; Control Panel**. Search for `admin` and select **Administrative Tools** from the results. Choose **Services** to open the **Services** dialog box.
 
 3.  At a DOS command prompt, go to the `bin\x64` directory for R and start RServe. Pay particular attention to the messages printed to the window. For example:
 
@@ -330,9 +334,13 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 4.  If you see the message "R\_HOME must be set in the environment or Registry", then you must define that environment variable as follows:
 
     1.  Go to **Start &gt; Control Panel**.
+    
     2.  Search for `sys` and select **Edit the system environment variables** from the results.
+    
     3.  Click the **Environment Variables...** button to open the **Environment Variables** dialog box.
+    
     4.  Click **New...** and enter `R_HOME` as the **Variable name** and the path to R (such as `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\`) as the **Variable value**.
+    
     5.  Click **OK** to create the variable.
 
 5.  Reboot your machine.
@@ -352,11 +360,15 @@ If you run into conflicts with other applications, consider changing the port nu
 **For Windows:**
 
 1. In the `C:\Program Files\Microsoft\DeployR-<DEPLOYR_VERSION>\Apache_Tomcat` directory, open the file `server.xml`.
+
 1. Find: 
     + For DeployR 8.0.5: `port="8050"`
     + For DeployR 8.0.0: `port="8000"`
+
 1. Replace the port value with a new, unique port number.
+
 1. Save the file.
+
 1. Restart Tomcat for the changes to take effect.
     + For DeployR 8.0.5:
       ```
@@ -373,11 +385,15 @@ If you run into conflicts with other applications, consider changing the port nu
 **For Linux / OS X**
 
 1. Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
+
 1. Find the port number value by searching for:
    + For DeployR 8.0.5: `<Connector port="8050"`
    + For DeployR 8.0.0: `<Connector port="8000"`
+
 1. Replace the port value with a new, unique port number.
+
 1. Save the file.
+
 1. Restart Tomcat for the changes to take effect. At the prompt, type:
    ```
    /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh stop
@@ -387,5 +403,4 @@ If you run into conflicts with other applications, consider changing the port nu
 1.  Verify that the port changes are working as expected. At the prompt, type:
    ```
    netstat -p --listening --numeric-ports --numeric-hosts | grep -i java
-   ```      
-      
+   ``` 
