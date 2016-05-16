@@ -31,7 +31,7 @@ You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be 
 1. Update the [firewall](#updating-the-firewall) to set the appropriate security permissions on the internal and external ports used by DeployR:
 1. Have the minimum required disk space (or more) for the installation of DeployR. Refer to the installation guide for your DeployR version and operating system. 
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security.md#enable-server-ssl-https) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 ## Enabling DeployR on Azure
 
@@ -101,7 +101,7 @@ You must update the server Web context or else you will not be able to access to
                 ```
          >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security.md#enable-server-ssl-https) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 ### Configuring Azure Endpoints
 
@@ -247,7 +247,7 @@ If custom ports were defined during installation, enable those instead.
 
 Updating your firewall is the last step. 
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security.md#enable-server-ssl-https) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 **To update your firewall on Linux:**
 

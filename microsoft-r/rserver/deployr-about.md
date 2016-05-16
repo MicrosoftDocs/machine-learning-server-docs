@@ -32,7 +32,7 @@ DeployR is an integration technology for deploying R analytics inside web, deskt
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security-authentication.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 ### Basic Workflow
 
@@ -126,7 +126,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 2.  Installing DeployR using [these instructions](deployr-installing-configuring.md).
 3.  Customizing DeployR [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md).
-5.  Customizing DeployR [security policies](deployr-admin-security.md).
+5.  Customizing DeployR [security policies](deployr-admin-security/deployr-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
 [Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
@@ -136,7 +136,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 >
 >Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
 >
->Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security.md) guide.
+>Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security/deployr-security.md) guide.
 
 ## Architecture
 

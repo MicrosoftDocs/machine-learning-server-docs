@@ -190,7 +190,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install-for-windows) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 After installing [these prerequisites](#dependencies-for-windows), install DeployR as follows:
 
@@ -235,7 +235,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
 
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 >[!TIP]
 >-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
@@ -717,7 +717,7 @@ These migration steps apply to RevoDeployR 7.0 and DeployR 7.1 - 7.4.1:
 
 >**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
 >
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ### Migrating to 8.0.0
 
@@ -868,7 +868,7 @@ To fix this issue, ensure that:
 
 >**More DeployR Power:**  
 >DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and [configuring](deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes) additional grid nodes.
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+>Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 1.  Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
