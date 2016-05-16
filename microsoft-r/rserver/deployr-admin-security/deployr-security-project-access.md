@@ -48,23 +48,20 @@ The owner of a repository-managed file has full read-write access to that file a
 
 If the owner of a repository-managed file wants to grant read-only access to that file to other users, then the owner can set the file’s access level to one of the following values:
 
--   `Private` - the default access level, the file is visible to its author(s) only.
++ `Private` - the default access level, the file is visible to its author(s) only.
 
--   `Restricted` - the file is visible to authenticated users that have been granted one or more of the roles indicated on the restricted property of the file.
++ `Restricted` - the file is visible to authenticated users that have been granted one or more of the roles indicated on the restricted property of the file.
 
--   `Shared` - the file is visible to all authenticated users when the shared property is true.
++ `Shared` - the file is visible to all authenticated users when the shared property is true.
 
--   `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
++ `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
 
-You can change the access level on a repository-managed file using the `/r/repository/file/update` API call or using the [Repository Manager](../deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
-
-For more information, refer to the section Introducing the Repository on the API in the [API Reference Help](../deployr-api-reference.md).
+You can change the access level on a repository-managed file using the `/r/repository/file/update` [API call](../deployr-api-reference.md#repository-on-the-api) or using the [Repository Manager](../deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
 
 ## Repository File Download Controls
 
 The repository file download controls provide fine-grain control over who can download repository file data. It is important to tailor the configuration of these controls in your DeployR external configuration file in order to enforce your preferred download policy for repository-managed files.
 
-    ```
     /*
      * DeployR Repository File Download Controls
      *
@@ -103,7 +100,6 @@ The repository file download controls provide fine-grain control over who can do
      */
     deployr.security.repository.file.author.only.download=false
     deployr.security.repository.file.anonymous.download=false
-    ```
     
 ## Repository Scripts Access Controls
 
@@ -117,56 +113,56 @@ However, repository-managed R scripts deserve special mention since scripts can 
 
 The repository script download controls provide fine-grain control over who can download repository script data. It is important to tailor the configuration of these controls in your DeployR external configuration file in order to enforce your preferred download policy for repository-managed scripts.
 
-    ``` 
-    /*
-     * DeployR Repository Script Download Controls
-     *
-     * The repository script download controls apply to
-     * repository-managed scripts [*.R/r] and markdown
-     * files [*.Rmd/rmd] only.
-     *
-     * The repository script download controls provide fine
-     * grain control over user access to repository script data
-     * returned on the following API call:
-     *
-     * /r/repository/file/download
-     *
-     * Note: Script download controls do not intefere with
-     * permissions to execute a script. Execution permissions are
-     * entirely determined by the file access level assigned to
-     * the script by it's author.
-     *
-     * The default repository script download policy is shown
-     * for each of the supported repository script access levels:
-     *
-     * [Private, Restricted, Shared, Public]
-     *
-     * - Scripts with private access can be downloaded by authors only.
-     * - Scripts with restriced access can be downloaded by authors
-     *   and by authenticated users with sufficient privileges.
-     * - Scripts with shared access can be downloaded by authors
-     *   and by authenticated users.
-     * - Scripts with public access can be downloaded by authors
-     *   and by authenticated users.
-     * - Regardless of access level, by default anonymous users
-     *   can not download repository scripts.
-     *
-     * Enable script.author.only.download to ensure only authors
-     * can download a repository-managed script. When this
-     * property is enabled the script.anonymous.download option
-     * is ignored.
-     *
-     * Enable script.anonymous.download to allow anonymous
-     * users to download scripts with public access.
-     *
-     * Enabled script.list.authenticate to prevent anonymous
-     * users from calling the /r/repository/script/list API.
-     *
-     */
-    deployr.security.repository.script.author.only.download=false
-    deployr.security.repository.script.anonymous.download=false
-    deployr.security.repository.script.list.authenticate=false
-    ```
+``` 
+/*
+* DeployR Repository Script Download Controls
+*
+* The repository script download controls apply to
+* repository-managed scripts [*.R/r] and markdown
+* files [*.Rmd/rmd] only.
+*
+* The repository script download controls provide fine
+* grain control over user access to repository script data
+* returned on the following API call:
+*
+* /r/repository/file/download
+*
+* Note: Script download controls do not intefere with
+* permissions to execute a script. Execution permissions are
+* entirely determined by the file access level assigned to
+* the script by it's author.
+*
+* The default repository script download policy is shown
+* for each of the supported repository script access levels:
+*
+* [Private, Restricted, Shared, Public]
+*
+* - Scripts with private access can be downloaded by authors only.
+* - Scripts with restriced access can be downloaded by authors
+*   and by authenticated users with sufficient privileges.
+* - Scripts with shared access can be downloaded by authors
+*   and by authenticated users.
+* - Scripts with public access can be downloaded by authors
+*   and by authenticated users.
+* - Regardless of access level, by default anonymous users
+*   can not download repository scripts.
+*
+* Enable script.author.only.download to ensure only authors
+* can download a repository-managed script. When this
+* property is enabled the script.anonymous.download option
+* is ignored.
+*
+* Enable script.anonymous.download to allow anonymous
+* users to download scripts with public access.
+*
+* Enabled script.list.authenticate to prevent anonymous
+* users from calling the /r/repository/script/list API.
+*
+*/
+deployr.security.repository.script.author.only.download=false
+deployr.security.repository.script.anonymous.download=false
+deployr.security.repository.script.list.authenticate=false
+```
     
 ## File Type Black List Controls
 
@@ -177,19 +173,19 @@ The file type black-list controls provide fine-grain control over the types of f
 
 These controls are particularly useful if an administrator wants to ensure malicious executable files or shell scripts are not uploaded and executed on the DeployR server.
 
-    ```
-    /*
-     * DeployR File Type Black List Policy Configuration
-     *
-     * Files with the following extensions are forbidden
-     * on upload, transfer, and write calls on:
-     * 1. Project (R sesesion) directories
-     * 2. The Repository
-     * These files are also forbidden from participating on
-     * prelaodfile* parameters on all calls that adhere to
-     * the DeployR standard execution model.
-     *
-     * ADMINISTRATORs are not subject to these restrictions.
-     */
-    deployr.file.type.black.list = [ "exe", "sh", "bat", "bash", "csh", "tcsh" ]
-    ```
+```
+/*
+* DeployR File Type Black List Policy Configuration
+*
+* Files with the following extensions are forbidden
+* on upload, transfer, and write calls on:
+* 1. Project (R sesesion) directories
+* 2. The Repository
+* These files are also forbidden from participating on
+* prelaodfile* parameters on all calls that adhere to
+* the DeployR standard execution model.
+*
+* ADMINISTRATORs are not subject to these restrictions.
+*/
+deployr.file.type.black.list = [ "exe", "sh", "bat", "bash", "csh", "tcsh" ]
+```
