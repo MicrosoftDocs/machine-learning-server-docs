@@ -104,12 +104,12 @@ A copy of the following log and configuration files are bundled together during 
 
 The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\diagnostics\logs` directly on the DeployR host.
 
-| Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description|
-|--------------------|---------------------------------------------------|------------------------------------------------------------------------|
+| Component| Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description|
+|----------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results |- `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
 | DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             |-  `catalina.out`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`                       | The log and configuration files for Tomcat.|
-| MongoDB  <br><small>(DeployR 8.0.0 only)</small>          | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience.                                                                                                                                                                  |
+| MongoDB  <br><small>(DeployR 8.0.0 only)</small>          | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience. |
 | DeployR RServe             | - `Rserv.cfg`                       | The configuration file for the DeployR RServe component. The IP address is added to the filename for your convenience.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
 
 **For Linux / OS X**
@@ -131,14 +131,22 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 **To resolve component issues:**
 
 1.  Look through the [log and configuration files](#inspecting-diagnostic-log-files) for each component that was identified in the diagnostic report.
+
 1.  If the log file indicates an error, then fix it.
+
 1.  If Server Web Context points to the wrong IP, [update it now](#set-context).
+
 1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#starting-and-stopping-deployr) in question. It may take a few minutes for a component to restart.
+
 1.  [Re-run the diagnostic test](#running-the-diagnostic-check) again to make sure all is running smoothly now.
      If problem persists:
+
     + After trying the first time, repeat steps 1-4.
+
     + Review the other [Troubleshooting](#troubleshooting) topics.
+
     + Post your questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+
     + After the second time, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
 
 ## Troubleshooting
@@ -172,13 +180,21 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
     cd $DEPLOYR_HOME/deployr/tools/
     ./adminUtility.sh 
     ```         
+
 1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
+
 1. Return to the main menu, choose option **Web Context and Security**. 
+
 1. From the sub-menu, choose option **Specify New IP or Fully Qualified Domain Name (FQDN)**.
+
 1. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
+
 1. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
+
 1. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
+
 1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
+
 1. Exit the utility.  
          
 #### Updating the Web Content for DeployR 8.0.0
@@ -187,7 +203,7 @@ Run the `setWebContext` script to update the IP address in the DeployR Server We
 Usage tips for the `setWebContext` script arguments:
 
 |Arguments|Description|
-|------------|---------------------------------|
+|---------|---------------------------------|
 |`query`| To see which IP is currently defined as the Server Web Context.|
 |`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
 |`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
