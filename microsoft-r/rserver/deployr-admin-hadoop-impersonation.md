@@ -26,8 +26,6 @@ ms.custom: ""
 
 # Using Hadoop Impersonation and DeployR
 
-## Introduction
-
 Typically when invoking system commands from R, those commands will run as the user that started R. In the case of Hadoop, if user `abc` logs into a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, will run as user `abc`. File permissions in HDFS will be honored accordingly, for example user `abc` will not be able to access files in HDFS if that user does not have proper permissions.
 
 However when using DeployR, every R session is started as the same user. This is an artifact of the Rserve component that was used to create and interact with R sessions. In order to work around this circumstance, [Hadoop Impersonation](https://issues.apache.org/jira/browse/HADOOP-8561) will be used. Hadoop impersonation is employed by standard Hadoop services like Hue and WebHDFS.
@@ -41,17 +39,20 @@ This document assumes we are working with a Kerberos secured cluster.
 
 The rest of the document will focus on the steps needed to get Hadoop Impersonation to work with DeployR.
 
-## DeployR RServe
+## Creating the 'rserve' User
 
-### Creating the 'rserve' User
-
-Since, Rserve runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
+Since, the DeployR Rserve component runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
 
 -   Will be used when running Rserve
 -   Has a `home` directory
 -   Starts a bash shell
 
 In this example, we will create the user `rserve` and change which user used to run Rserve.
+
+**Non Root Installation**
+
+If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
+
 
 **Root Installation**
 
@@ -85,33 +86,26 @@ If DeployR was installed as user `root`, do the following:
         ./rserve.sh stop
         ./rserve.sh start
 
-**Non Root Installation**
 
-If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
-
-
-### Setting Up the Environment for User 'rserve'
+## Setting Up the Environment for the 'rserve' User
 
 
-**ScaleR**
++ **ScaleR**: If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
+  ```
+  . ./etc/profile.d/Revolution/bash_profile_additions
+  ```
+  
++ **Kerberos**: If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
 
-If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
+  Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
+  ```
+  su - rserve
+  kinit hdfs
+  ```
 
-    . ./etc/profile.d/Revolution/bash_profile_additions
-
-**Kerberos**
-
-If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
-
-Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
-
-    su - rserve
-    kinit hdfs
-
->[!Tip]
 >We recommend that you use a `cron` job or equivalent to renew this ticket periodically to keep it from expiring.
 
-### Testing the environment
+## Testing the Environment
 
 1.  Create a private file in HDFS. In the following example, user `revo` owns the file:
 
