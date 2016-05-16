@@ -68,7 +68,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 7.  When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
 
-8.  Return to the main menu and choose option **2. Start/Stop Server**. You must restart DeployR so that the changes can take effect.
+8.  Return to the main menu and choose the option **Start/Stop Server**. You must restart DeployR so that the changes can take effect.
 
 9.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
@@ -76,7 +76,7 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 11. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
-
+<br>
 ### Enabling for DeployR 8.0.0
 
 1. **Provide an SSL certificate.**
@@ -255,7 +255,7 @@ If you do not have a trusted SSL certificate from a registered authority, you'll
      ```
      where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
 	
-   1. Provide the information when prompted by the script as described below in this topic.   
+  1. Provide the information when prompted by the script as described below in this topic.   
 
 + **For Mac OS X:** (DeployR 8.0.0 Open only)
 
@@ -266,7 +266,7 @@ If you do not have a trusted SSL certificate from a registered authority, you'll
      ```
      where `<PATH-TO-KEYSTORE>` is the full file path to the temporary keystore file.
 	
-   1. Provide the information when prompted by the script as described below in this topic.   
+  1. Provide the information when prompted by the script as described below in this topic.   
 
 When prompted by the script, provide the following information when prompted by the script:
 
@@ -426,7 +426,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
         $DEPLOYR_HOME/deployr/tools/setWebContext.sh -https false
         ```
         
-    + For Windows:
+   + For Windows:
 
      1. Enable SSL support on the Administration Console by changing `false` to `true` in the following line of the DeployR external configuration file, `C:\Program Files\Microsoft\DeployR-8.0\deployr/deployr.groovy`:
         ```
