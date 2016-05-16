@@ -62,73 +62,73 @@ You must update the server Web context or else you will not be able to access to
 
 1. For **DeployR 8.0.5**:
 
-        1. Launch the DeployR administrator utility script with administrator privileges:
+   1. Launch the DeployR administrator utility script with administrator privileges:
 
-            + On Windows, run:
-               ```
-               cd $DEPLOYR_HOME\deployr\tools\ 
-               adminUtility.bat 
-               ```        
+      + On Windows, run:
+        ```
+        cd $DEPLOYR_HOME\deployr\tools\ 
+        adminUtility.bat 
+        ```        
 
-            + On Linux, run:
-               ```
-               cd $DEPLOYR_HOME/deployr/tools/
-               ./adminUtility.sh 
-               ```         
+      + On Linux, run:
+        ```
+        cd $DEPLOYR_HOME/deployr/tools/
+        ./adminUtility.sh 
+        ```         
 
-        1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
+   1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
 
-        1. Return to the main menu, choose option **Web Context and Security**. 
+   1. Return to the main menu, choose option **Web Context and Security**. 
 
-        1. From the sub-menu, choose option **Specify New IP or Fully Qualified Domain Name (FQDN)**.
+   1. From the sub-menu, choose option **Specify New IP or Fully Qualified Domain Name (FQDN)**.
 
-        1. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
+   1. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
 
-        1. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
+   1. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
 
-        1. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
+   1. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
 
-        1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
+   1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
-        1. Exit the utility.  
+   1. Exit the utility.  
          
 1. For **DeployR 8.0.0**:
     
-        + On Windows:
+   + On Windows:
     
-            1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
+     1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
     
-            1.  Open a Command Window with **“Run as Administrator”**.
+     1. Open a Command Window with **“Run as Administrator”**.
     
-            1.  Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
-                ```
-                cd $DEPLOYR_HOME\deployr\tools\
-                setWebContext -ip <ip_address>  -disableauto
-                ```
+     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+        ```
+        cd $DEPLOYR_HOME\deployr\tools\
+        setWebContext -ip <ip_address>  -disableauto
+        ```
     
-            1.  Confirm the IP address you entered.
+     1. Confirm the IP address you entered.
     
-            1.  Disable any automatic IP detection that might overwrite the IP you just assigned.
-                ```
-                setWebContext -disableauto
-                ```           
+     1. Disable any automatic IP detection that might overwrite the IP you just assigned.
+        ```
+        setWebContext -disableauto
+        ```           
     
-        + On Linux:
+   + On Linux:
     
-            1.  Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
-                ```
-               cd $DEPLOYR_HOME/deployr/tools/
-               ./setWebContext.sh -ip <ip_address>
-                ```
+     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+        ```
+        cd $DEPLOYR_HOME/deployr/tools/
+        ./setWebContext.sh -ip <ip_address>
+        ```
     
-            1.  Confirm the IP address you entered.
+     1. Confirm the IP address you entered.
     
-            1.  Disable any automatic IP detection that might overwrite the IP you just assigned.
-                ```
-                ./setWebContext.sh -disableauto
-                ```
+     1. Disable any automatic IP detection that might overwrite the IP you just assigned.
+        ```
+        ./setWebContext.sh -disableauto
+        ```
 
-         >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+   >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 >We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
@@ -137,15 +137,16 @@ You must update the server Web context or else you will not be able to access to
 
 When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](deployr-installing-configuring.md#updating-your-firewall). 
 
+If custom ports were defined during installation, enable those instead.
+
 _Table: Default Ports by Version_
    
 |Port Number|DeployR 8.0.0|DeployR 8.0.5|
-|----------|--------------|--------------|
+|----------|:--------------:|:--------------:|
 |DeployR HTTP port|8000|8050|
 |DeployR HTTPS port|8001|8051|
 |DeployR event console port|8006|8056|
-
-If custom ports were defined during installation, enable those instead.
+<br>
 
 **To configure Azure endpoints for DeployR:**
 
@@ -169,7 +170,7 @@ If custom ports were defined during installation, enable those instead.
 
 3.  Set the **Source Port Range** to the `*` character.
 
-        ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
+    ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
 
 4.  Enter the port number to the **Destination port range**.
         -   For DeployR HTTP port.
@@ -180,7 +181,7 @@ If custom ports were defined during installation, enable those instead.
 5.  Click **OK** to save your changes.
 
 6.  Repeat step 6 to add inbound rules for the other DeployR ports.
-        ![Rules](./media/deployr-admin-configure-for-azure/azure-inbound-rules.png)
+    ![Rules](./media/deployr-admin-configure-for-azure/azure-inbound-rules.png)
 
 >Don't forget to update the firewall as [described below](#updating-the-firewall).
 
@@ -284,15 +285,16 @@ You must update the server Web context or else you will not be able to access to
 
 When provisioning your DeployR server on AWS, you must set the appropriate security permissions on both the **internal** and **external** ports used by DeployR.
 
+If custom ports were defined during installation, enable those instead.
+
 _Table: Default Ports by Version_
    
 |Port Number|DeployR 8.0.0|DeployR 8.0.5|
-|----------|--------------|--------------|
+|----------|:--------------:|:--------------:|
 |DeployR HTTP port|8000|8050|
 |DeployR HTTPS port|8001|8051|
 |DeployR event console port|8006|8056|
-
-If custom ports were defined during installation, enable those instead.
+<br>
 
 >Don't forget to update the firewall as [described below](#updating-the-firewall).
 
@@ -327,6 +329,8 @@ In Windows Firewall, you must open the same DeployR ports as you configured as A
 1. Click **OK**.
 
 1. Repeat 4-7 for all three rules.   
+
+<br>
     
 _Table: Inbound Rules for DeployR 8.0.5_
    
