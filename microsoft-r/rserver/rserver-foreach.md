@@ -244,7 +244,7 @@ Loops” in the `foreach` package.
 
 ## Using Iterators
 
-An <span>*iterator*</span> is a special type of object that generalizes
+An *iterator* is a special type of object that generalizes
 the notion of a looping variable. When passed as an argument to a
 function that knows what to do with it, the iterator supplies a sequence
 of values. The iterator also maintains information about its state, in
@@ -343,7 +343,7 @@ has `iter` and `nextElem` methods. The purpose of the `iter` method is
 to return an iterator for the specified object. For iterators, that
 usually just means returning itself, which seems odd at first. But the
 `iter` method can be defined for other objects that don’t define a
-`nextElem` method. We call those objects <span>*iterables*</span>,
+`nextElem` method. We call those objects *iterables*,
 meaning that you can iterate over them. The `iterators` package defines
 `iter` methods for vectors, lists, matrices, and data frames, making
 those objects iterables. By defining an `iter` method for iterators,
@@ -465,11 +465,11 @@ that gets called by the `nextElem` method. This function not only
 accesses the values of the variables `x` and `times`, but it also
 modifies the value of `times`. This is accomplished by means of the
 `<<-` operator, and the magic of lexical scoping. Technically, this kind
-of function is called a <span>*closure*</span>, and is a somewhat
+of function is called a *closure*, and is a somewhat
 advanced feature of `R`. The important thing to remember is that
 `nextEl` is able to get the value of variables that were passed as
 arguments to `irep`, and it can modify those values using the `<<-`
-operator. These are <span>*not*</span> global variables: they are
+operator. These are *not* global variables: they are
 defined in the enclosing environment of the `nextEl` function. You can
 create as many iterators as you want using the `irep` function, and they
 will all work as expected without conflicts.
