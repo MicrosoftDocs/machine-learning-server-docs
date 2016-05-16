@@ -285,7 +285,7 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
    1. Save this change and close the file in your editor.
 
 
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#processcontrols).
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
 ## LDAP Authentication
 
