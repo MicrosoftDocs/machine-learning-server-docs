@@ -45,7 +45,7 @@ _Figure: Node List page_
 You must designate an operation type for each node on the grid. The following table describes the distinct types of operations recognized by the grid. 
 
 |Operation Type|Supported Operations|
-|---|---|
+|--------------|---|
 |`Authenticated`|Operations on projects requested by authenticated users|
 |`Asynchronous`|Operations from asynchronous jobs executing in the background on behalf of authenticated users|
 |`Anonymous`|Operations from users executing scripts anonymously<br />Tip: By limiting anonymous operations to one or more specific nodes, you can maintain complete control of the resources allocated to unauthenticated users, which in turn helps protect the system from malicious attacks.|
@@ -132,7 +132,7 @@ Common validation issues include:
 **Basic Settings**
 
 |Properties|Description|
-|---|---|
+|----------|---|
 |`Enabled`|If checked, the node is available for processing operations on the grid.|
 |`Name`|This name is displayed in the node list in the Administration Console.|
 |`Description`|This optional node description is visible only in the node list.|
@@ -147,7 +147,7 @@ Common validation issues include:
 These constraints govern limits for processor and memory usage at runtime.
 
 |Properties|Description|
-|---|---|
+|----------|---|
 |`Slot limit`|This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.  You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory.<br />*Note*: For DeployR Open, a fixed slot limit of 12 is imposed.|
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
@@ -157,7 +157,7 @@ These constraints govern limits for processor and memory usage at runtime.
 After a default installation of DeployR, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
 
 |Properties|Description|
-|---|---|
+|----------|---|
 |`Port`|This property lists the port defined during installation on which RServe is listening.|
 |`Console output size limit`|This is the upper limit, expressed in bytes, imposed on the communication between DeployR server and the Rserve session.|
 |`Username`|If a username was defined in `Rserv.cfg`, enter it for each node. <br>Note: `Rserv.cfg` is under `<PATH TO R>\bin\x64`, such as `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.|
@@ -170,7 +170,7 @@ After a default installation of DeployR, it is highly unlikely that these setti
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 
 |Properties|Description|
-|---|---|
+|----------|---|
 |`Storage context`|This setting must reflect the full path on that node’s machine to the directory defined for external data usage such as `$DEPLOYR_HOME/deployr/external/data` where `$DEPLOYR_HOME` is the installation directory.|
 
 <br/><a id="slots-in-use"></a>
@@ -179,7 +179,7 @@ If the external data directories are properly configured across all grid nodes a
 You can see which slots are currently in use and how they are being used by a particular node in the **Slots In Use** section. For each slot, you can review the following details:
 
 |Slot Details|Description|
-|---|---|
+|------------|---|
 |`Type`|Lists the slot’s operating mode, which is interesting for mixed-mode nodes|
 |`Context`|Provides the name of project, job, or script being executed|
 |`Started`|Specifies the time that has elapsed since execution commenced|
