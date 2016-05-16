@@ -114,7 +114,8 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
 
-** Step 1.  Update the DeployR external configuration file**
+**Step 1: Update the DeployR external configuration file**
+
 Update the following properties in your DeployR external configuration file, `deployr.groovy`:
 
     -   deployr.security.pam.authentication.enabled
@@ -123,27 +124,27 @@ Update the following properties in your DeployR external configuration file, `de
 
 Relevant snippet from `deployr.groovy` file shown here:
 ```
-         /*
-          * DeployR PAM Authentication Policy Properties
-          */
+/*
+* DeployR PAM Authentication Policy Properties
+*/
 
-         deployr.security.pam.authentication.enabled = false
+deployr.security.pam.authentication.enabled = false
 
-         // deployr.security.pam.groups.map
-         // Allows you to map PAM user group names to DeployR role names.
-         // NOTE: PAM group names are case sensitive. For example, your
-         // PAM group named "finance" must appear in the map as "finance".
-         // DeployR role names must begin with ROLE_ and must always be
-         // upper case.
-         deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
-                                           'engineering' : 'ROLE_POWER_USER' ]
+// deployr.security.pam.groups.map
+// Allows you to map PAM user group names to DeployR role names.
+// NOTE: PAM group names are case sensitive. For example, your
+// PAM group named "finance" must appear in the map as "finance".
+// DeployR role names must begin with ROLE_ and must always be
+// upper case.
+deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
+                                   'engineering' : 'ROLE_POWER_USER' ]
 
-         // deployr.security.pam.default.role
-         // Optional, grant default DeployR Role to all PAM authenticated users:
-         deployr.security.pam.default.role = 'ROLE_BASIC_USER'
+// deployr.security.pam.default.role
+// Optional, grant default DeployR Role to all PAM authenticated users:
+deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 ```
 
-**Step 2: Update the DeployR server system files configuration changes:**
+**Step 2: Update the DeployR server system files configuration changes**
 
 1.  Before making any configuration changes to the server system files, stop the DeployR server:
 

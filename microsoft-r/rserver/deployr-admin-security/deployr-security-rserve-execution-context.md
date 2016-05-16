@@ -32,7 +32,10 @@ DeployR provides various [API calls](../deployr-api-reference.md) that permit th
 
 All authentication takes place on the DeployR server, and the execution of the R code is managed through the DeployR RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the DeployR Server. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve will only accept socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
->The DeployR Server should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process. However, there exist several vulnerabilities of which you should be aware. They are:
+>[!Important]
+>The DeployR Server should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process. 
+>
+>However, there exist several vulnerabilities of which you should be aware. They are:
 >
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
