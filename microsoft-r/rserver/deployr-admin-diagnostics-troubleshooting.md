@@ -102,7 +102,7 @@ A copy of the following log and configuration files are bundled together during 
 
 **For Windows**
 
-The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics\logs` directly on the DeployR host.
+The following log files can be found in the resulting `diagnostics.zip` file as well as under `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\diagnostics\logs` directly on the DeployR host.
 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description|
 |--------------------|---------------------------------------------------|------------------------------------------------------------------------|

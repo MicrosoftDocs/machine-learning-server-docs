@@ -24,22 +24,30 @@ ms.custom: ""
 
 ---
 
-# DeployR Release Notes
-
-## What's New in DeployR
+# What's New in DeployR
 
 This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
 
+-   [Release 8.0.5](#version-8-0-5)
 -   [Release 8.0.0](#version-8-0-0)
 -   [Release 7.4.1](#version-7-4-1)
 -   [Release 7.4.0](#version-7-4-0)
 -   [Release 7.3](#version-7-3)
 
-### Version 8.0.0
+#### Version 8.0.5
+
+The following list highlights the major changes and improvements to DeployR 8.0.5.
+- Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
+- DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
+- DeployR Enterprise now has a simplified installer for a better customer experience.
+- Documentation is now available on MSDN.
+- This release is of DeployR Enterprise only.
+
+#### Version 8.0.0
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
-### Version 7.4.1
+#### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.
 
@@ -53,7 +61,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md) guide was added for data scientists.
 -   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
-### Version 7.4.0
+#### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
 
@@ -64,7 +72,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   Updated [Java, JavaScript and .NET client libraries](https://github.com/deployr?query=client) with additional features, patches and updated change history.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
 
-### Version 7.3
+#### Version 7.3
 
 The following list highlights the major changes and improvements to DeployR 7.3.
 
