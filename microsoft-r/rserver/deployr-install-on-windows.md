@@ -75,7 +75,29 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. Install **[Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
-1. If you have internet access while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. If you are installing while offline, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases).
+1. If you have internet access while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. If you are installing while offline, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases). 
+    -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
+		1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve\_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+		2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
+		3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+		4.  Select `deployrRserve_8.0.5.zip` from the folder into which it was downloaded.
+		5.  Click **Open** to install it.
+        
+    -   Alternatively, install using the command prompt:
+    	1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve\_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+		2.  Open a Command Prompt window **as Administrator**.
+		3.  Run the following command to install DeployR Rserve 8.0.5:
+
+				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_8.0.5.zip
+
+        `<PATH_TO_R>` is the path to the directory that contains the R executable, by default `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2`.
+        And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
+
+        Example: A user with administrator privileges might run these commands for example.
+
+            cd "C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64"
+            R CMD INSTALL -l "C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library" "%homepath%\Downloads\"
+
  
 ## Installing DeployR Server
 
