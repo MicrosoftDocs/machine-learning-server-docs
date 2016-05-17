@@ -7,6 +7,7 @@
 ## [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
 ## [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
 ## [Install R Server on a Teradata Client](rserver/rserver-install-teradata-client.md)
+## [Install R Client on Windows](install-rclient-windows.md)
 # R Productivity Environment IDE
 ## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
