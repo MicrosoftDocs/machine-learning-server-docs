@@ -39,23 +39,25 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 ##OPEN QUESTIONS
 
-Where do I get the release notes?
+1.  Where do I get the release notes?
 
-When to use Revo*** and when to drop it?
+1.  When to use Revo*** and when to drop it?
 
-Difference between RevoScaleR and ScaleR??
+1.  Difference between RevoScaleR and ScaleR??
 
-On which platforms is R Client supported 
+1.  When you start up R CLient what happens? A dialog? A windows? Nothing? 
 
-Do we say that Microsoft R Open for R Server is needed or will there be a new one called Microsoft R Open for R CLIENT
-
-If an offline install, what do they need to install themselves??
-
-What is the program file group?
-
-Do we still want to recommend the RevoIOQ package be run after install to check for problems?
-
-When you start up R CLient what happens? A dialog? A windows? Nothing? 
+1.  I didn’t see a EULA or consent to install RTVS in the powerpoint slides. Will there be one in the installer?
+ 
+2.       Are we limited to 64-bit only?
+ 
+3.       Unlike Microsoft R Server, R Client is NOT supported on Win Server 2008 or 2012, correct?
+ 
+4.       When you start up R CLient what happens? A dialog? A windows? Nothing?
+ 
+5.       For the offline install situation,
+·         What do they need to download and preinstall for R Open?
+·         What do they need to download and preinstall for RTVS?
 
 DeployR: We should put a link to the DeployR Rserve component in the EULA window in case they have an offline install?
 
@@ -78,19 +80,13 @@ Approximately 600MB free disk space is required for a full install of R Client, 
 
 1. Run **Microsoft R Client** setup.
 
-1. On the Installation tab, click New R Server (Standalone) installation .
+1. Accept the license terms for downloading and installing Microsoft R Client.
 
-1. Setup option for R Server Standalone
+1. In addition to **Microsoft R Client**, select the components to install. **Microsoft R Open**, the enhanced distribution of R, is required. You can also choose to install **R Tools for Visual Studio**.
 
-1. On the Feature Selection page, the following option should be already selected:
+1. Accept the license terms for downloading and installing **Microsoft R Open**.
 
-        R Server (Standalone)
-
-        This option installs shared features, including open source R tools and base packages, and the enhanced R packages and connectivity tools provided by Microsoft R Services.
-
-1. All other options can be ignored.
-
-1. Accept the license terms for downloading and installing Microsoft R Open.
+1. Accept the default installation path or choose another location.
 
 1. Setup of the R components used by Microsoft R Client requires an Internet connection for access to files that are provided either on the Microsoft Download Center or another trusted site. If you are performing an offline install, Microsoft R Client cannot access the links for installing required R components. To avoid this problem, you can download a copy of the installers locally and complete setup as described here:
 
@@ -139,6 +135,15 @@ Upgrading from an Older Version of Microsoft R Server
 
 ##Troubleshooting
 
+###Testing the Install
+The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. To run these tests, run the following commands from your R prompt:
+
+	library(RevoIOQ)
+	RevoIOQ()
+
+A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
+
+###Installation Errors
 1. **Installation fails with error "ERROR TEXT".**
 
 
@@ -169,12 +174,6 @@ After you have installed the software, you launch Microsoft R Client as follows.
 
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md). These provide tutorial introductions to working with Microsoft R Client.
 
-The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. To run these tests, run the following commands from your R prompt:
-
-	library(RevoIOQ)
-	RevoIOQ()
-
-A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
 
 ## Sample Data
 
