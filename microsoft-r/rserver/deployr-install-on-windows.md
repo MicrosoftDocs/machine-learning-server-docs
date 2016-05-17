@@ -64,16 +64,18 @@ DeployR Enterprise depends on the manual installation and configuration of these
 | Dependency Name                              | DeployR Server | DeployR Grid Node |
 |----------------------------------------------|----------------|-------------------|
 | Microsoft R Server 2016 and its dependencies | Yes            | Yes               |
-| Java™ Runtime Environment 8                  | Yes            | No                |
+| DeployR Rserve 8.0.5 (installed for you)     | Yes            | Yes               |
+| Java™ Runtime Environment 8 (64-bit)         | Yes            | No                |
 
 .
 
 **To install the required dependencies for DeployR Enterprise:**
 
-1.  On the DeployR server, [download](http://go.microsoft.com/fwlink/?LinkId=789397) and install **Java™ Runtime Environment 8**. Java is only required on the DeployR server, not on any grid node machines.
+1. On the DeployR server, [download](http://go.microsoft.com/fwlink/?LinkId=789397) and install **Java™ Runtime Environment 8**, `jre-8u<NUMBER>-windows-x64.exe`. Java is only required on the DeployR server, not on any grid node machines.
 
-2.  Install **[Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
+1. Install **[Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
+1. If you have internet access while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. If you are installing while offline, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases).
  
 ## Installing DeployR Server
 
