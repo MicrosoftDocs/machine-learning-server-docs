@@ -444,7 +444,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
         >[!WARNING]
         >Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR server, they appear highlighted in the Administration Console when you first start the server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log into the console.
 
-9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.5, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls]((https://microsoft.github.io/js-client-library)).
+9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.5, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
 ### From DeployR 8.0.5 to Another 8.0.5 Instance
 
