@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Getting Started Guide"
-description: "Microsoft R Services features and components overview."
+title: "Microsoft R Server and R Client Getting Started Guide"
+description: "Microsoft R features and components overview."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
@@ -24,15 +24,49 @@ ms.custom: ""
 
 ---
 
-# R Services 2016 Getting Started Guide
+# Microsoft R Getting Started Guide
 
-## What is Microsoft R Services?
+QUESTIONS:
+The install guide says: R Client for Windows includes RevoScaleR, RevoTreeView, and RevoPemaR.
+The document says: R Server includes DistributedR, ScaleR, ConnectR, DevelopR, DeployR
 
-This chapter provides an overview of the features and components of Microsoft R Services.
+Why is PemaR not mentioned in getting started?
+Why is RevoTreeView not mentioned?
 
-### R for the Enterprise
+Is it RevoScaleR or ScaleR?
 
-*Microsoft R Services*, simply put, is R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. The feature set provided by the **Microsoft R Services** software can be categorized as follows:
+Is DevelopR = RPE???
+
+I removed the DevelopR section below, should I have?
+
+Is the tutorial portion only applicable to ScaleR/RevoScaleR?
+
+Does the tutorial piece apply to R Client too?
+
+What about the content here: https://msdn.microsoft.com/en-us/library/mt671127.aspx
+It doesn't mention DistributedR or DevelopR.
+
+Is the getting started/start-up for windows still relevant?? Does that only exist for SQL Server?
+
+Could I get [rid of this section](#stopping-microsoft-r-services)?
+
+When you start up R CLient what happens? A dialog? A windows? Nothing? 
+
+##Microsoft R: R for the Enterprise
+
+*Microsoft R Server and Client*, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. The feature set provided by the **Microsoft R Server** and **Microsoft R Client** software can be categorized as follows:
+
+||Microsoft R Server|Microsoft R Client|
+|-------------|:------------:|:-----------:|
+|R Engine|||
+|Cores|1-????|1-3|
+|Parallel and distributed computing framework for ‘Big Data Big Analytics’|||
+|R Engine|||
+|R Engine|||
+|R Engine|||
+|DeployR|Optional add-on| N/A|
+
+
 
 - *Microsoft R Open*: High performance math libraries installed on top of a stable version of Open Source R (including Base and Recommended Packages)
 - *DistributedR*: Parallel and distributed computing framework for ‘Big Data Big Analytics’
@@ -41,25 +75,25 @@ This chapter provides an overview of the features and components of Microsoft R 
 - *DevelopR*: An integrated development environment (IDE) for R on Windows
 - *DeployR*: A web services software development kit for integrating R with third party products (including business intelligence, data visualization, rules engines, etc.)
 
-We briefly discuss each of these feature areas below, with a guide to where to find the corresponding component in **Microsoft R Services**.
+We briefly discuss each of these feature areas below, with a guide to where to find the corresponding component in **Microsoft R Server** and **Microsoft R Client**.
 
-### Microsoft R Open
+#### Microsoft R Open
 
-If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. **Microsoft R Services** connects to a version of **Microsoft R Open** that delivers Open Source R. This means that any of the amazing third-party packages that are available for that version of Open Source R should also work when you are in **Microsoft R Services**. And, of course, if you are one of those experts, you can create R packages using **Microsoft R Services**.
+If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. **Microsoft R Server** and **Microsoft R Client** each connect to a version of **Microsoft R Open** that delivers Open Source R. This means that any of the amazing third-party packages that are available for that version of Open Source R should also work when you are in **Microsoft R Server** and **Microsoft R Client**. And, of course, if you are one of those experts, you can create R packages using **Microsoft R Server** and **Microsoft R Client**.
 
 **Microsoft R Open** leverages high-performance, multi-threaded math libraries to deliver performance boosts. This means that functions in R that use, for example, matrix multiplication, will run faster out of the box.
 
-### DistributedR
+#### DistributedR
 
-One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The **Microsoft R Services** ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
+One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The **Microsoft R Server** and **Microsoft R Client** ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
 
-This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with *DistributedR*, it is the framework that allows **Microsoft R Services** to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
+This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with *DistributedR*, it is the framework that allows **Microsoft R Server** and **Microsoft R Client** to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
 
 *DistributedR* allows you to run the same R script on multiple platforms; you can create a model in one environment such as a workstation and then deploy it on a different environment such as an on-site Microsoft SQL Server, a Teradata platform, or a Hadoop cluster in the cloud. You just need to specify the information about where these computations should be performed and what data should be analyzed.
 
-This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of **Microsoft R Services**. For information on supported computing environments, look for the ‘compute contexts’ in the RevoScaleR package.
+This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of **Microsoft R Server** and **Microsoft R Client**. For information on supported computing environments, look for the ‘compute contexts’ in the RevoScaleR package.
 
-### ScaleR
+#### ScaleR
 
 The ‘Big Data Big Analytics’ functions built on *DistributedR* provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
 
@@ -67,9 +101,9 @@ RevoScaleR also provides traditional ‘high performance computing’ (HPC) tool
 
 R is a flexible and powerful statistical programming language. The RevoScaleR package provides efficient, scalable computational power. Combining the two allows for the development of ready-to-deploy suites of data processing and analytics with R.
 
-To learn more, look for the RevoScaleR ‘rx’ analysis and data manipulation functions and ‘rxExec’ for HPC functionality. If you are computing decision trees, also check out the included RevoTreeView package that allows you to interactively visualize your decision trees.
+To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-4-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-11-decision-tree.md) that allows you to interactively visualize your decision trees.
 
-### ConnectR
+#### ConnectR
 
 A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats: SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
 
@@ -79,24 +113,18 @@ A key to data analysis is, of course, the data. The RevoScaleR package provides 
 
 To learn more, look for data sources in the RevoScaleR package.
 
-### DevelopR
+#### DeployR
 
-**Microsoft R Services** provides a tool for the R developer to efficiently create sets of R scripts—the R Productivity Environment (RPE). Working on a Windows workstation with the RPE, the R developer has a full-featured Visual Studio-like integrated development environment for R, including an indispensable visual debugger for R. The RPE has a customizable workspace, including an enhanced Script Editor, an Object Browser, a Solution Explorer, and an R Command Console.
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for **Microsoft R Server** only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
 
-### DeployR
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. To expedite this effort, we now provide Accelerators for DeployR which are starter kits for integrating with some of our customers’ favorite tools including: Microsoft Excel, Tableau, Jaspersoft, and QlikView.
+## Starting Microsoft R
 
-## Microsoft R Services Basics
+### Starting Microsoft R Server
 
-This chapter describes the essentials of using Microsoft R Services: starting Microsoft R Services, stopping Microsoft R Services, and getting help in Microsoft R Services. If you are new to R, the next chapter gives a quick tutorial on what you might do between starting and stopping.
+**On Windows:**
 
-### Starting Microsoft R Services
-
-Exactly how you start Microsoft R Services depends on your operating system.
-
-#### Starting Microsoft R Services on Windows
-
+**On Linux:**
 On Windows 7 and Windows Server 2008, you start Microsoft R Services as follows:
 
 - Click **Start**, point to **All Programs**, point to **Revolution R**, point to **Enterprise 7.x**, and then click **Revolution R Enterprise 7.x (64)**.
@@ -150,6 +178,35 @@ On Linux systems, you start **Microsoft R Server** by opening a terminal or cons
 	PATH=$PATH:/path/to/Microsoft R Server
 	export PATH
 
+### Starting Microsoft R Client
+
+**On Windows 7 or Windows Server 2008:**
+
+Start Microsoft R Client as follows:
+1. Click **Start**.
+
+1. Choose **All Programs** > **Revolution R** > **Enterprise 7.x** > **Revolution R Enterprise 7.x (64)**.
+
+**On Windows 8.1 or Windows Server 2012:**
+
+Start Microsoft R Client as follows:
+
+1. Move your mouse to the lower left corner of the Desktop until **Start** pops up.
+
+1. Click **Start** to view the **Start** screen.
+
+1. Locate the tile for **Revolution R Enterprise 8.x (64).**
+
+**On Windows 10:**
+
+Start Microsoft R Client as follows:
+
+1. Click **Start**.
+
+1. Choose **All apps** > **Revolution R** > **Revolution R Enterprise 7.x (64)**.
+
+
+
 ### Stopping Microsoft R Services
 
 To stop the Revolution R Enterprise RPE, close the application window.
@@ -160,7 +217,7 @@ From any command-line version of R, the standard way to exit is by calling the q
 
 Whenever you quit R, you are asked if you want to save the workspace image; if you have created functions or data that you want to keep, saving the workspace image will preserve them for future use. (Most R users, however, create their functions and data in script files which can be read, or *sourced*, into R. If you follow this model, you will usually say “no” to saving the workspace image.)
 
-### Getting Help
+### Getting Function Help
 
 Know a function’s name, but not how to call it? Need examples of how to set up the data for a function? Help is just a few keystrokes away. R has two main functions for obtaining help: the ? operator and the help function. You can use the operator by simply typing a question mark at the prompt, followed by the name of the function you want to know about:
 

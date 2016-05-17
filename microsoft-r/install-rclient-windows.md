@@ -55,6 +55,8 @@ What is the program file group?
 
 Do we still want to recommend the RevoIOQ package be run after install to check for problems?
 
+When you start up R CLient what happens? A dialog? A windows? Nothing? 
+
 DeployR: We should put a link to the DeployR Rserve component in the EULA window in case they have an offline install?
 
 
