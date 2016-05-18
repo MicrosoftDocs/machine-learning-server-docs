@@ -42,7 +42,7 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 + **Internet access**:  To download R Client and any dependencies     
 
-
+<br>
 ##Install Microsoft R Client
 
 > You must install Microsoft R Client to a local drive on your computer. 
@@ -68,6 +68,9 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 1. When the installation finishes, click **Finish**.  
 
+   >[!WARNING]
+   >For help with any installation issues, please check out these [troubleshooting tips](#troubleshooting) or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+
 <!--1. Setup of the R components used by Microsoft R Client requires an Internet connection for access to files that are provided either on the Microsoft Download Center or another trusted site. If you are performing an offline install, Microsoft R Client cannot access the links for installing required R components. To avoid this problem, you can download a copy of the installers locally and complete setup as described here:
 
    1. Pause the Microsoft R Client setup wizard without closing it.
@@ -86,12 +89,6 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 <br>
 
->[!WARNING]
->For help with any installation issues, please check out these [troubleshooting tips](#troubleshooting) or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
-
-
-<br>
-
 **To launch Microsoft R Client**:
 
 After you have installed the software, you launch Microsoft R Client as follows.**
@@ -100,6 +97,7 @@ After you have installed the software, you launch Microsoft R Client as follows.
 
   + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
 
+<br>
 + For Windows 8.1:
 
   1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
@@ -109,13 +107,13 @@ After you have installed the software, you launch Microsoft R Client as follows.
   1. Locate and click the tile for **Microsoft R Client**.
 
 <br>
-##Learn More about Microsoft R Client
+##Learn about Microsoft R Client
 <br>
-###Tutorials and Getting Started Guides
+###Tutorials & Getting Started Guides
 
 You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
 <br>
-###What is Installed and Where to Find R Packages
+###What's Installed & Where to Find R Packages
 
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
@@ -139,7 +137,7 @@ If you did not install _RTVS_, it's not too late. You can always install and use
 
 <br>
 ##Troubleshooting
-<br>
+
 ###Testing the Install
 The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. To run these tests, run the following commands from your R prompt:
 
