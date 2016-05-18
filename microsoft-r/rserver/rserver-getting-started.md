@@ -26,7 +26,13 @@ ms.custom: ""
 
 # Microsoft R Getting Started Guide
 
-QUESTIONS:
+##QUESTIONS:
+
+
+1. Where do I get the release notes?
+ 
+- [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+
 The install guide says: R Client for Windows includes RevoScaleR, RevoTreeView, and RevoPemaR.
 The document says: R Server includes DistributedR, ScaleR, ConnectR, DevelopR, DeployR
 

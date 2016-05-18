@@ -32,22 +32,6 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 >Currently, Microsoft R Client is available only on Windows.
 
-##OPEN QUESTIONS
-
-1. What is R Client in a nutshell?
-
-1. Where do I get the release notes?
-
-1. When you start up R CLient what happens? A dialog? A windows? Nothing? 
-
-1. When you start up R CLient what happens? A dialog? A windows? Nothing?
- 
-1. For the offline install situation,
-   + What do they need to download and preinstall for R Open?
-   + What do they need to download and preinstall for RTVS?
-
-- [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
-
 ##System Requirements
 
 + **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
@@ -119,17 +103,17 @@ After you have installed the software, you launch Microsoft R Client as follows.
 + For Windows 8.1:
 
   1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+  
   1. Click **Start** to view the **Start** screen.
+
   1. Locate and click the tile for **Microsoft R Client**.
 
 <br>
 ##Learn More about Microsoft R Client
-
 <br>
 ###Tutorials and Getting Started Guides
 
 You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
-
 <br>
 ###What is Installed and Where to Find R Packages
 
