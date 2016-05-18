@@ -75,18 +75,20 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. Install **[Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
-1. If you have internet access while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. If you are installing while offline, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases). 
-    -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
-		1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve\_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-		2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
-		3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
-		4.  Select `deployrRserve_8.0.5.zip` from the folder into which it was downloaded.
-		5.  Click **Open** to install it.
+1. _If you have internet access_ while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. 
+
+   _If you are installing while offline_, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases). 
+    + Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
+	  1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+	  2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
+	  3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+	  4.  Select `deployrRserve_8.0.5.zip` from the folder into which it was downloaded.
+	  5.  Click **Open** to install it.
         
-    -   Alternatively, install using the command prompt:
-    	1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve\_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-		2.  Open a Command Prompt window **as Administrator**.
-		3.  Run the following command to install DeployR Rserve 8.0.5:
+    + Alternatively, install using the command prompt:
+	  1.  Download DeployR Rserve 8.0.5 for Windows, [deployrRserve_8.0.5.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+	  2.  Open a Command Prompt window **as Administrator**.
+	  3.  Run the following command to install DeployR Rserve 8.0.5:
 
 				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_8.0.5.zip
 
@@ -477,4 +479,3 @@ The following instructions describe how to uninstall DeployR on Windows.
 3.  Remove DeployR using the Windows instructions for uninstalling a program specific to your version of Windows. For example, on Windows 8, choose **Control Panel &gt; Programs & Features &gt; Uninstall**.
 
 4.  **Manually remove the DeployR install directory**, by default `C:\Program Files\Microsoft\DeployR-8.0.5\`.
-
