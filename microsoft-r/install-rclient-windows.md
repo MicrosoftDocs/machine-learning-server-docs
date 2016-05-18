@@ -26,45 +26,36 @@ ms.custom: ""
 
 #Install Microsoft R Client on Windows
 
-You can host distributed, high performance R solutions on a Windows desktop computer. You can also use Microsoft R Server to develop solutions for deployment to an instance of SQL Server that supports R script execution.
-
 When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in R Server.
-
->[!NOTE]
->Microsoft R Client is available only on Windows.
->
->If you have installed Microsoft R Client previously, you must uninstall it first. 
 
 This document assumes you have access to the Microsoft R Client installer, which is available either through your Volume Licensing agreement or an MSDN subscription.
 
+>Currently, Microsoft R Client is available only on Windows.
+
 ##OPEN QUESTIONS
 
-1.  Where do I get the release notes?
+1. What is R Client in a nutshell?
 
-1.  When to use Revo*** and when to drop it?
+1. Where do I get the release notes?
 
-1.  Difference between RevoScaleR and ScaleR??
+1. When you start up R CLient what happens? A dialog? A windows? Nothing? 
 
-1.  When you start up R CLient what happens? A dialog? A windows? Nothing? 
-
-1.  I didn’t see a EULA or consent to install RTVS in the powerpoint slides. Will there be one in the installer?
+1. When you start up R CLient what happens? A dialog? A windows? Nothing?
  
-2.       Are we limited to 64-bit only?
- 
-3.       Unlike Microsoft R Server, R Client is NOT supported on Win Server 2008 or 2012, correct?
- 
-4.       When you start up R CLient what happens? A dialog? A windows? Nothing?
- 
-5.       For the offline install situation,
-·         What do they need to download and preinstall for R Open?
-·         What do they need to download and preinstall for RTVS?
-
-DeployR: We should put a link to the DeployR Rserve component in the EULA window in case they have an offline install?
-
+1. For the offline install situation,
+   + What do they need to download and preinstall for R Open?
+   + What do they need to download and preinstall for RTVS?
 
 - [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
 
 ##System Requirements
+
++ **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
++ **Free disk space**: 600+ GB recommended, after installation of all prerequisites       
++ **RAM**: 4+ GB recommended
++ **Internet access**:  To download R Client and any dependencies     
+
+
 
 |System Requirement   |Value                                                              | 
 |---------------------|-------------------------------------------------------------------|
@@ -76,21 +67,22 @@ DeployR: We should put a link to the DeployR Rserve component in the EULA window
 
 ##Install Microsoft R Client
 
-> To install the files, you must be logged in with **Administrator** privileges, and you must install to a local drive on your computer. 
+> You must install Microsoft R Client to a local drive on your computer. 
 
-1. Log in to the machine with **Administrator** privileges.
+1. Log in to the machine with administrator privileges.
 
 1. Close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
 
-1. Run **Microsoft R Client** setup.
+1. Run Microsoft R Client setup.
 
-1. Accept the license terms for downloading and installing **Microsoft R Client**.
+1. Accept the license terms for downloading and installing Microsoft R Client.
 
-1. In addition to **Microsoft R Client**, select the components to install. 
+1. In addition to Microsoft R Client, select the components to install. 
    + **Microsoft R Open**, Microsoft's enhanced distribution of R, is a _required dependency_. 
+   
    + **R Tools for Visual Studio**, an integrated development environment, is an _optional dependency_. R Tools for Visual Studio is a free add-in for Visual Studio that works in all editions of Visual Studio. 
 
-1. Accept the license terms for downloading and installing **Microsoft R Open**.
+1. Accept the license terms for downloading and installing Microsoft R Open.
 
 1. Accept the default installation path or choose another location.
 
@@ -112,8 +104,10 @@ DeployR: We should put a link to the DeployR Rserve component in the EULA window
 1. On the **Ready to Install** page, verify your selections. Click **Install**.
 -->
 
+<br>
+
 >[!WARNING]
->For help with any installation issues, please check out these [troubleshooting tips] or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+>For help with any installation issues, please check out these [troubleshooting tips](#troubleshooting) or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 <br>
 ##Launching Microsoft R Client
@@ -124,43 +118,47 @@ After you have installed the software, you launch Microsoft R Client as follows.
 
   1. From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
 
+
 + **For Windows 8.1:**
 
   1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
   1. Click **Start** to view the **Start** screen.
   1. Locate and click the tile for **Microsoft R Client**.
 
-Check out the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md) for tutorial introductions to working with R.
+<br>
+##Learn More about Microsoft R Client
 
 <br>
+###Tutorials and Getting Started Guides
 
-##What is Installed and Where to Find R Packages
+You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
+
+<br>
+###What is Installed and Where to Find R Packages
 
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
 <br>
-###R packages
+####R packages
 
 The R libraries are installed under `C:\Program Files\Microsoft SQL Server\130\R_SERVER`.
 
-Additionally, in this section you will find documentation for the R base packages, sample data, and the R library.
-
-Do not use the R packages or utilities associated with the SQL Server instance. Always use the R tools and packages in the R_SERVER folder.
+Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
 <br>
-###R tools
+####R tools
 
-If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll have access to an integrated R development IDE. _R Tools for Visual Studio_ is a free add-in for all editions of _Visual Studio_.
-
-If you did not, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
-
-Additional tools aren't required in an installation of Microsoft R Client, as all the standard base R tools are included in `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin`:
+All the standard base R tools are included in `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin`:
 
 + **RTerm**: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
 
 + **RGui.exe**: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
 
 + **RScript**: A command-line tool for running R scripts in batch mode.
+
+If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll also have access to an integrated R development IDE. _RTVS_ is a free add-in for all editions of _Visual Studio_.
+
+If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
 >[!TIP]
 >**Need more help?** Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft SQL Server\R_SERVER\doc` and in `C:\Program Files\Microsoft SQL Server\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options.
