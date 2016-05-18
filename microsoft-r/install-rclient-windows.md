@@ -51,23 +51,19 @@ This document assumes you have access to the Microsoft R Client installer, which
 ##System Requirements
 
 + **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
+
 + **Free disk space**: 600+ GB recommended, after installation of all prerequisites       
+
 + **RAM**: 4+ GB recommended
+
 + **Internet access**:  To download R Client and any dependencies     
-
-
-
-|System Requirement   |Value                                                              | 
-|---------------------|-------------------------------------------------------------------|
-|Operating Systems    |64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10|
-|Free disk space      |600+ GB recommended, after installation of all prerequisites       |
-|RAM                  |4+ GB recommended                                                  |
-|Internet access      |To download R Client and any dependencies                          |
 
 
 ##Install Microsoft R Client
 
 > You must install Microsoft R Client to a local drive on your computer. 
+
+**To install Microsoft R Client**:
 
 1. Log in to the machine with administrator privileges.
 
@@ -109,17 +105,18 @@ This document assumes you have access to the Microsoft R Client installer, which
 >[!WARNING]
 >For help with any installation issues, please check out these [troubleshooting tips](#troubleshooting) or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
+
 <br>
-##Launching Microsoft R Client
+
+**To launch Microsoft R Client**:
 
 After you have installed the software, you launch Microsoft R Client as follows.**
 
-+ **For Windows 7 and Windows 10:**
++ For Windows 7 and Windows 10:
 
-  1. From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
 
-
-+ **For Windows 8.1:**
++ For Windows 8.1:
 
   1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
   1. Click **Start** to view the **Start** screen.
@@ -138,17 +135,13 @@ You can learn more and explore tutorial introductions to R in the [Microsoft R G
 
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
-<br>
 ####R packages
+The R libraries are installed under `C:\Program Files\Microsoft SQL Server\130\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
-The R libraries are installed under `C:\Program Files\Microsoft SQL Server\130\R_SERVER`.
-
-Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
-
-<br>
 ####R tools
+All the standard base R tools are included with Microsoft R Client under `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin`. Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft SQL Server\R_SERVER\doc` and in `C:\Program Files\Microsoft SQL Server\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options. 
 
-All the standard base R tools are included in `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin`:
+Those standard R tools are:
 
 + **RTerm**: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
 
@@ -160,12 +153,9 @@ If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Clien
 
 If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
->[!TIP]
->**Need more help?** Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft SQL Server\R_SERVER\doc` and in `C:\Program Files\Microsoft SQL Server\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options.
-
 <br>
 ##Troubleshooting
-
+<br>
 ###Testing the Install
 The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. To run these tests, run the following commands from your R prompt:
 
