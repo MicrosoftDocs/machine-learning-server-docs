@@ -66,9 +66,13 @@ DeployR: We should put a link to the DeployR Rserve component in the EULA window
 
 ##System Requirements
 
-R Client for Windows includes RevoScaleR, RevoTreeView, and RevoPemaR. This version is supported on 64-bit Windows 7, Windows 8.1, Windows 10, Windows Server 2008, and Windows Server 2012.
+|System Requirement   |Value                                                              | 
+|---------------------|-------------------------------------------------------------------|
+|Operating Systems    |64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10|
+|Free disk space      |600+ GB recommended, after installation of all prerequisites       |
+|RAM                  |4+ GB recommended                                                  |
+|Internet access      |To download R Client and any dependencies                          |
 
-Approximately 600MB free disk space is required for a full install of R Client, after installation of all prerequisites. We recommend at least 4GB of RAM to use R Client.
 
 ##Install Microsoft R Client
 
@@ -80,15 +84,19 @@ Approximately 600MB free disk space is required for a full install of R Client, 
 
 1. Run **Microsoft R Client** setup.
 
-1. Accept the license terms for downloading and installing Microsoft R Client.
+1. Accept the license terms for downloading and installing **Microsoft R Client**.
 
-1. In addition to **Microsoft R Client**, select the components to install. **Microsoft R Open**, the enhanced distribution of R, is required. You can also choose to install **R Tools for Visual Studio**.
+1. In addition to **Microsoft R Client**, select the components to install. 
+   + **Microsoft R Open**, Microsoft's enhanced distribution of R, is a _required dependency_. 
+   + **R Tools for Visual Studio**, an integrated development environment, is an _optional dependency_. R Tools for Visual Studio is a free add-in for Visual Studio that works in all editions of Visual Studio. 
 
 1. Accept the license terms for downloading and installing **Microsoft R Open**.
 
 1. Accept the default installation path or choose another location.
 
-1. Setup of the R components used by Microsoft R Client requires an Internet connection for access to files that are provided either on the Microsoft Download Center or another trusted site. If you are performing an offline install, Microsoft R Client cannot access the links for installing required R components. To avoid this problem, you can download a copy of the installers locally and complete setup as described here:
+1. When the installation finishes, click **Finish**.  
+
+<!--1. Setup of the R components used by Microsoft R Client requires an Internet connection for access to files that are provided either on the Microsoft Download Center or another trusted site. If you are performing an offline install, Microsoft R Client cannot access the links for installing required R components. To avoid this problem, you can download a copy of the installers locally and complete setup as described here:
 
    1. Pause the Microsoft R Client setup wizard without closing it.
 
@@ -101,38 +109,63 @@ Approximately 600MB free disk space is required for a full install of R Client, 
 
     http://go.microsoft.com/fwlink/?LinkId=733805&lcid=1033
 
-1. Installation of these components (and any prerequisites they might require) might take a while. When the Accept button becomes unavailable, you can click Next.
-
 1. On the **Ready to Install** page, verify your selections. Click **Install**.
+-->
 
+>[!WARNING]
+>For help with any installation issues, please check out these [troubleshooting tips] or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+
+<br>
+##Launching Microsoft R Client
+
+After you have installed the software, you launch Microsoft R Client as follows.**
+
++ **For Windows 7 and Windows 10:**
+
+  1. From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+
++ **For Windows 8.1:**
+
+  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+  1. Click **Start** to view the **Start** screen.
+  1. Locate and click the tile for **Microsoft R Client**.
+
+Check out the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md) for tutorial introductions to working with R.
+
+<br>
 
 ##What is Installed and Where to Find R Packages
 
-Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to **data sources including SQL Server and Hadoop.**
+Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
+<br>
 ###R packages
 
-The R libraries are installed together with other tools and utilities that are installed with Microsoft SQL Server 2016. For example:
-
-C:\Program Files\Microsoft SQL Server\130\R_SERVER
+The R libraries are installed under `C:\Program Files\Microsoft SQL Server\130\R_SERVER`.
 
 Additionally, in this section you will find documentation for the R base packages, sample data, and the R library.
 
-If you have installed an instance of SQL Server with R Services (In-Database) on the same computer, the R libraries and tools are installed into a different folder: C:\Program Files\Microsoft SQL Server\130\R_SERVER
-
 Do not use the R packages or utilities associated with the SQL Server instance. Always use the R tools and packages in the R_SERVER folder.
 
+<br>
 ###R tools
 
-An R development IDE is not installed as part of setup. You can install RStudio, R Tools for Visual Studio, or any other development environment you prefer.
+If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll have access to an integrated R development IDE. _R Tools for Visual Studio_ is a free add-in for all editions of _Visual Studio_.
 
-However, additional tools aren't required. All the standard base R tools are included in C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin.
+If you did not, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
-    For more information, see Setup or Configure R Tools.
+Additional tools aren't required in an installation of Microsoft R Client, as all the standard base R tools are included in `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin`:
 
-Upgrading from an Older Version of Microsoft R Server
++ **RTerm**: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
 
++ **RGui.exe**: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
 
++ **RScript**: A command-line tool for running R scripts in batch mode.
+
+>[!TIP]
+>**Need more help?** Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft SQL Server\R_SERVER\doc` and in `C:\Program Files\Microsoft SQL Server\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options.
+
+<br>
 ##Troubleshooting
 
 ###Testing the Install
@@ -145,36 +178,3 @@ A fresh install of Microsoft R Client should yield an error-free and failure-fre
 
 ###Installation Errors
 1. **Installation fails with error "ERROR TEXT".**
-
-
-##Launching Microsoft R Client
-
-After you have installed the software, you launch Microsoft R Client as follows.**
-
-+ **For Windows 7 and Windows Server 2008**
-
-  1. From the **Task Bar**, click **Start**.
-  1. Click **All Programs**.
-  1. Click **Revolution R**.
-  1. Click **Revolution R Enterprise 8.0 (64)**.
-
-+ **For Windows 8 and Windows Server 2012:**
-
-  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
-  1. Click **Start** to view the **Start** screen.
-  1. Locate and click the tile for **Revolution R Enterprise 8.0 (64)**.
-
-+ **For Windows 10**
-
-  1. From the **Task Bar**, click **Start**.
-  1. Click **All apps**.
-  1. Click **Revolution R**.
-  1. Click **Revolution R Enterprise 8.0 (64)**.
-
-
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md). These provide tutorial introductions to working with Microsoft R Client.
-
-
-## Sample Data
-
-Sample data sets for use with Revolution R Enterprise can be found [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
