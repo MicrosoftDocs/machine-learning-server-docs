@@ -62,15 +62,14 @@ When you start up R CLient what happens? A dialog? A windows? Nothing?
 
 *Microsoft R Server and Client*, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. The feature set provided by the **Microsoft R Server** and **Microsoft R Client** software can be categorized as follows:
 
-||Microsoft R Server|Microsoft R Client|
-|-------------|:------------:|:-----------:|
-|R Engine|||
-|Cores|1-????|1-3|
-|Parallel and distributed computing framework for ‘Big Data Big Analytics’|||
-|R Engine|||
-|R Engine|||
-|R Engine|||
-|DeployR|Optional add-on| N/A|
+|Feature|Microsoft R Open|Microsoft R Client|Microsoft R Server|
+|-------------|------------|-----------|-----------|
+|Cores|????|1-3|1-????|
+|Big Data|In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
+|Speed of Analysis|Multi-threaded when MKL is installed|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Parallel threading & processing|
+|Enterprise Readiness|Community support|Commercial support|Commercial support|
+|Analytic Breadth & Depth|7K+ analytic R packages|Open source R packages plus 'Big Data'-ready packages|Open source R packages plus 'Big Data'-ready + Multithreaded ready packages|
+|DeployR|N/A|N/A|Optional add-on|
 
 
 
@@ -123,6 +122,37 @@ To learn more, look for data sources in the RevoScaleR package.
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for **Microsoft R Server** only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
 
+##Differences in R Features between Microsoft R Products
+
+Microsoft R products are available in the following 'flavors':
+
+**Microsoft R Server**
+No restrictions. Optimized performance and scalability through parallelization and streaming.
+Includes setup of Microsoft R Server (Standalone), which can be used to set up a client computer.
+Supports resource governance of external scripts to customize server resource usage.
+**Microsoft R Clientr**
+No performance restrictions. However, model deployment for production is not supported.
+Microsoft R Server (Standalone) can be installed on a client computer to develop and test scenarios using remote compute context.
+Additionally, the End-User License Agreement permits one R Services Client to connect to a production instance of SQL Server 2016, for developing and testing solutions.
+**Microsoft R Open**
+Microsoft R Open is available across all editions.
+However, R script execution is single-threaded, like that of conventional packages. Data that can be processed is limited to the data that can fit in server memory.
+You cannot install Microsoft R Server (Standalone). You can install Microsoft R Client, which has some limitations, such as single-threaded execution and memory.
+
+###Microsoft R Server
+Performance of R solutions in SQL Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
+Users can also expect to see considerable differences in performance and scalability for the same R functions if run in Enterprise Edition vs. Standard Edition. Reasons include support for parallel processing, streaming, and increased threads available for R worker processing.
+However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running.
+We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
+We also recommend that you configure Resource Governor, a feature available only in Enterprise Edition, to customize they way that R jobs are prioritized or handled under heavy server workloads. You can define classifier functions to specify the source of the R job and prioritize certain workloads, limit the amount of memory used by SQL queries, and control the number of parallel processes used on a workload basis.
+###Microsoft R Client
+Developer Edition provides performance equivalent to that of Enterprise Edition; however, use of Developer Editions is not supported for production environments.
+While developing solutions, you can install Microsoft R Server (Standalone) on a remote client computer for use in developing and testing the solution.
+For systems in production, you can use Microsoft R Client to connect to any production instance.
+###Microsoft R Open
+Even Standard Edition should offer some performance benefit, in comparison to standard R packages, given the same hardware configuration.
+However, Standard Edition does not support Resource Governor. Using resource governance is the best way to customize server resources to support varied R workloads such as model training and scoring.
+Standard Edition also provides limited performance and scalability in comparison to Enterprise and Developer Editions. Specifically, all of the ScaleR functions and packages are included with Standard Edition, but the service that launches and manages R scripts is limited in the number of processes it can use. Moreover, data processed by the script must fit in memory.
 
 ## Starting Microsoft R
 

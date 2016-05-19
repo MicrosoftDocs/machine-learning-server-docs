@@ -1,16 +1,18 @@
-# [Microsoft R Server](index.md)
-# [R Server Getting Started](rserver/rserver-getting-started.md)
-# [R Server New Features](rserver/rserver-new-features.md)
-# R Server Installation
-## [Install R Server on Windows](rserver/rserver-install-windows.md)
-## [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
-## [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
-## [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
-## [Install R Server on a Teradata Client](rserver/rserver-install-teradata-client.md)
-## [Install R Client on Windows](install-rclient-windows.md)
-# R Productivity Environment IDE
-## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
-## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
+# [Microsoft R](index.md)
+# [Microsoft R Getting Started](rserver/rserver-getting-started.md)
+# [Microsoft R New Features](rserver/rserver-new-features.md)
+# Installation
+## [Install R Client](install-r-client-windows.md)
+## Install R Server
+### [Install R Server on Windows](rserver/rserver-install-windows.md)
+### [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
+### [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
+### [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
+### [Install R Server on a Teradata Client](rserver/rserver-install-teradata-client.md)
+## DeployR
+### [Install DeployR 8.0.5 (Windows)](rserver/deployr-install-on-windows.md)
+### [Install DeployR 8.0.5 (Linux)](rserver/deployr-install-on-linux.md)
+### [Install DeployR 8.0.0 (All Platforms)](rserver/deployr-installing-configuring.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](rserver/rserver-scaler-getting-started.md)
 ## RevoScaleR User's Guide
@@ -41,13 +43,12 @@
 ## [RevoScaleR ODBC Data Import](rserver/rserver-scaler-odbc.md)
 # [RevoPemaR](rserver/rserver-pemar-getting-started.md)
 # [Parallelizing Loops: foreach/iterators](rserver/rserver-foreach.md)
+# R Productivity Environment IDE
+## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
+## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
 # [DeployR](rserver/deployr-about.md)
 ## [About DeployR](rserver/deployr-about.md)
 ## [What's New in DeployR](rserver/deployr-whats-new.md)
-## Installation
-### [Install DeployR 8.0.5 (Windows)](rserver/deployr-install-on-windows.md)
-### [Install DeployR 8.0.5 (Linux)](rserver/deployr-install-on-linux.md)
-### [Install DeployR 8.0.0 (All Platforms)](rserver/deployr-installing-configuring.md)
 ## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
 ### Configuration
