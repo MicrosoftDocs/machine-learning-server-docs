@@ -39,8 +39,6 @@ The document says: R Server includes DistributedR, ScaleR, ConnectR, DeployR
 Why is PemaR not mentioned in getting started?
 Why is RevoTreeView not mentioned?
 
-Is it RevoScaleR or ScaleR?
-
 What about the content here: https://msdn.microsoft.com/en-us/library/mt671127.aspx
 
 
@@ -52,54 +50,76 @@ When you start up R CLient what happens? A dialog? A windows? Nothing?
 
 ##Microsoft R: Differences in R Features
 
-*Microsoft R Server and Client*, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. 
+Microsoft R Server and Client, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. 
 
-Microsoft also offers *Microsoft R Open*, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
+Microsoft also offers Microsoft R Open, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
-The feature set provided by **Microsoft R Server**, **Microsoft R Client** and **Microsoft R Open** can be categorized as follows:
+The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
 
 |Feature|Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |-------------|------------|-----------|-----------|
 |Cores|????|1-3|1-????|
 |Big Data|In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
-|Speed of Analysis|Multi-threaded when MKL is installed|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Parallel threading & processing|
+|Speed of Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
 |Enterprise Readiness|Community support|Commercial support|Commercial support|
 |Analytic Breadth & Depth|7K+ analytic R packages|Open source R packages plus 'Big Data'-ready packages|Open source R packages plus 'Big Data'-ready + Multithreaded ready packages|
 |DeployR|N/A|N/A|Optional add-on|
 
 
+If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. 
 
-- *Microsoft R Open*: High performance math libraries installed on top of a stable version of Open Source R (including Base and Recommended Packages)
+###Microsoft R Server
 
-- *DistributedR*: Parallel and distributed computing framework for ‘Big Data Big Analytics’
+Performance of R solutions in Microsoft R Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
 
-- *ScaleR*: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R
+Users can also expect to see considerable differences in performance and scalability for the same RevoScaleR functions if run in R Server versus being run locally in R Client. Reasons include support for chunking, increased threads available for R worker processing and parallel processing not only with standard R packages, but also with RevoScaleR functions. R Server offers optimized performance and scalability through parallelization and streaming.
 
-- *ConnectR*: Data connections for the ‘Big Data Big Analytics’
+However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running.
 
-- *DeployR*: A web services software development kit for integrating R with third party products (including business intelligence, data visualization, rules engines, etc.)
+We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
-We briefly discuss each of these feature areas below, with a guide to where to find the corresponding component in **Microsoft R Server** and **Microsoft R Client**.
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for **Microsoft R Server** only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
 
-#### Microsoft R Open
+###Microsoft R Client
 
-If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. **Microsoft R Server** and **Microsoft R Client** each connect to a version of **Microsoft R Open** that delivers Open Source R. This means that any of the amazing third-party packages that are available for that version of Open Source R should also work when you are in **Microsoft R Server** and **Microsoft R Client**. And, of course, if you are one of those experts, you can create R packages using **Microsoft R Server** and **Microsoft R Client**.
+Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. 
 
-**Microsoft R Open** leverages high-performance, multi-threaded math libraries to deliver performance boosts. This means that functions in R that use, for example, matrix multiplication, will run faster out of the box.
+On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. 
+
+R client is optimized to work with all Microsoft R Server versions. 
+
+###Microsoft R Open
+
+Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Based on the open source R engine, the most widely used statistics software in the world, makes Microsoft R Open fully compatibility with all packages, scripts and applications that work with that version of R. 
+
+Microsoft R Open delivers performance boosts, in comparison to the standard R distribution, given the same hardware configuration, since R Open leverages high-performance, multi-threaded math libraries.  This means that functions in R that use, for example, matrix multiplication, will run faster out of the box with Microsoft R Open. Microsoft R Open includes additional capabilities, over open source R, for improved reproducibility.   
+
+Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.
+
+On its own, Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the ScaleR functions and packages, which are included with Microsoft R Server and Microsoft R Client, are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open. So this means that any of the amazing third-party packages available for that version of R should also work when you are in Microsoft R Server and Microsoft R Client. 
+
+
+## What's in R Server and R Client
 
 #### DistributedR
 
-One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The **Microsoft R Server** and **Microsoft R Client** ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
+>**In a nutshell:**
+>Parallel and distributed computing framework for ‘Big Data Big Analytics’
 
-This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with *DistributedR*, it is the framework that allows **Microsoft R Server** and **Microsoft R Client** to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
+One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The Microsoft R ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
+
+This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with DistributedR, it is the framework that allows Microsoft R Server to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
 
 *DistributedR* allows you to run the same R script on multiple platforms; you can create a model in one environment such as a workstation and then deploy it on a different environment such as an on-site Microsoft SQL Server, a Teradata platform, or a Hadoop cluster in the cloud. You just need to specify the information about where these computations should be performed and what data should be analyzed.
 
-This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of **Microsoft R Server** and **Microsoft R Client**. For information on supported computing environments, look for the ‘compute contexts’ in the RevoScaleR package.
+This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](rserver-scaler-getting-started.md#computecontext).
 
 #### ScaleR
 
-The ‘Big Data Big Analytics’ functions built on *DistributedR* provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
+>**In a nutshell:**
+>High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R
+
+The ‘Big Data Big Analytics’ functions built on DistributedR provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
 
 RevoScaleR also provides traditional ‘high performance computing’ (HPC) tools if you prefer to construct your own distributed computations. In addition, in many environments, there are full-featured tools for data cleaning and manipulation.
 
@@ -109,54 +129,31 @@ To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation 
 
 #### ConnectR
 
+>**In a nutshell:**
+>Data connections for the ‘Big Data Big Analytics’, including SAS, SPSS, Teradata, ODBC, text, and HDFS.
+
 A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats: SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
 
   1.  keeping the data as is and analyzing it directly with RevoScaleR analysis functions,
   2.  extracting the data you want to analyze and storing it in the efficient and higher performance .xdf file format provided with the RevoScaleR package, or
   3.  bringing some or all of your data into memory as an R data frame to use with any R analysis function.
 
-To learn more, look for data sources in the RevoScaleR package.
+To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-2-data-import.md).
 
-#### DeployR
+####DeployR 
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for **Microsoft R Server** only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
+>**In a nutshell:**
+>The R Integration Server for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. 
 
-##Differences in R Features between Microsoft R Products
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
-Microsoft R products are available in the following 'flavors':
+DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
 
-**Microsoft R Server**
+Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-No restrictions. Optimized performance and scalability through parallelization and streaming.
-Includes setup of Microsoft R Server (Standalone), which can be used to set up a client computer.
-Supports resource governance of external scripts to customize server resource usage.
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security-authentication.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
-**Microsoft R Client**
-
-No performance restrictions. However, model deployment for production is not supported.
-Microsoft R Server (Standalone) can be installed on a client computer to develop and test scenarios using remote compute context.
-Additionally, the End-User License Agreement permits one R Services Client to connect to a production instance of SQL Server 2016, for developing and testing solutions.
-
-**Microsoft R Open**
-
-Microsoft R Open is available across all editions.
-However, R script execution is single-threaded, like that of conventional packages. Data that can be processed is limited to the data that can fit in server memory.
-You cannot install Microsoft R Server (Standalone). You can install Microsoft R Client, which has some limitations, such as single-threaded execution and memory.
-
-###Microsoft R Server
-Performance of R solutions in SQL Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
-Users can also expect to see considerable differences in performance and scalability for the same R functions if run in Enterprise Edition vs. Standard Edition. Reasons include support for parallel processing, streaming, and increased threads available for R worker processing.
-However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running.
-We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
-We also recommend that you configure Resource Governor, a feature available only in Enterprise Edition, to customize they way that R jobs are prioritized or handled under heavy server workloads. You can define classifier functions to specify the source of the R job and prioritize certain workloads, limit the amount of memory used by SQL queries, and control the number of parallel processes used on a workload basis.
-###Microsoft R Client
-Developer Edition provides performance equivalent to that of Enterprise Edition; however, use of Developer Editions is not supported for production environments.
-While developing solutions, you can install Microsoft R Server (Standalone) on a remote client computer for use in developing and testing the solution.
-For systems in production, you can use Microsoft R Client to connect to any production instance.
-###Microsoft R Open
-Even Standard Edition should offer some performance benefit, in comparison to standard R packages, given the same hardware configuration.
-However, Standard Edition does not support Resource Governor. Using resource governance is the best way to customize server resources to support varied R workloads such as model training and scoring.
-Standard Edition also provides limited performance and scalability in comparison to Enterprise and Developer Editions. Specifically, all of the ScaleR functions and packages are included with Standard Edition, but the service that launches and manages R scripts is limited in the number of processes it can use. Moreover, data processed by the script must fit in memory.
+[Learn more about DeployR...](deployr-about.md)
 
 ## Starting Microsoft R
 
@@ -244,8 +241,7 @@ Start Microsoft R Client as follows:
 
 
 
-### Stopping Microsoft R Services
-
+### Stopping Microsoft R
 
 From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
 
