@@ -34,23 +34,15 @@ ms.custom: ""
 - [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
 
 The install guide says: R Client for Windows includes RevoScaleR, RevoTreeView, and RevoPemaR.
-The document says: R Server includes DistributedR, ScaleR, ConnectR, DevelopR, DeployR
+The document says: R Server includes DistributedR, ScaleR, ConnectR, DeployR
 
 Why is PemaR not mentioned in getting started?
 Why is RevoTreeView not mentioned?
 
 Is it RevoScaleR or ScaleR?
 
-Is DevelopR = RPE???
-
-I removed the DevelopR section below, should I have?
-
-Is the tutorial portion only applicable to ScaleR/RevoScaleR?
-
-Does the tutorial piece apply to R Client too?
-
 What about the content here: https://msdn.microsoft.com/en-us/library/mt671127.aspx
-It doesn't mention DistributedR or DevelopR.
+
 
 Is the getting started/start-up for windows still relevant?? Does that only exist for SQL Server?
 
@@ -58,9 +50,13 @@ Could I get [rid of this section](#stopping-microsoft-r-services)?
 
 When you start up R CLient what happens? A dialog? A windows? Nothing? 
 
-##Microsoft R: R for the Enterprise
+##Microsoft R: Differences in R Features
 
-*Microsoft R Server and Client*, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. The feature set provided by the **Microsoft R Server** and **Microsoft R Client** software can be categorized as follows:
+*Microsoft R Server and Client*, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. 
+
+Microsoft also offers *Microsoft R Open*, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
+
+The feature set provided by **Microsoft R Server**, **Microsoft R Client** and **Microsoft R Open** can be categorized as follows:
 
 |Feature|Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |-------------|------------|-----------|-----------|
@@ -74,10 +70,13 @@ When you start up R CLient what happens? A dialog? A windows? Nothing?
 
 
 - *Microsoft R Open*: High performance math libraries installed on top of a stable version of Open Source R (including Base and Recommended Packages)
+
 - *DistributedR*: Parallel and distributed computing framework for ‘Big Data Big Analytics’
+
 - *ScaleR*: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R
+
 - *ConnectR*: Data connections for the ‘Big Data Big Analytics’
-- *DevelopR*: An integrated development environment (IDE) for R on Windows
+
 - *DeployR*: A web services software development kit for integrating R with third party products (including business intelligence, data visualization, rules engines, etc.)
 
 We briefly discuss each of these feature areas below, with a guide to where to find the corresponding component in **Microsoft R Server** and **Microsoft R Client**.
@@ -127,14 +126,19 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 Microsoft R products are available in the following 'flavors':
 
 **Microsoft R Server**
+
 No restrictions. Optimized performance and scalability through parallelization and streaming.
 Includes setup of Microsoft R Server (Standalone), which can be used to set up a client computer.
 Supports resource governance of external scripts to customize server resource usage.
-**Microsoft R Clientr**
+
+**Microsoft R Client**
+
 No performance restrictions. However, model deployment for production is not supported.
 Microsoft R Server (Standalone) can be installed on a client computer to develop and test scenarios using remote compute context.
 Additionally, the End-User License Agreement permits one R Services Client to connect to a production instance of SQL Server 2016, for developing and testing solutions.
+
 **Microsoft R Open**
+
 Microsoft R Open is available across all editions.
 However, R script execution is single-threaded, like that of conventional packages. Data that can be processed is limited to the data that can fit in server memory.
 You cannot install Microsoft R Server (Standalone). You can install Microsoft R Client, which has some limitations, such as single-threaded execution and memory.
@@ -175,9 +179,6 @@ On Windows 8 and Windows Server 2012, you start Revolution R Enterprise as follo
 
 - Click **Start**, point to **All apps**, point to **Revolution R**, and then click **Revolution R Enterprise 8.x (64)**.
 
-The Revolution R Enterprise R Productivity Environment opens, as shown in the figure below. For more information on using the R Productivity Environment, see the following manuals: [*R Productivity Environment Getting Started Guide*](RevoRPE_Getting_Started.md) and [*R Productivity Environment User’s Guide*](RevoRPE_Users_Guide.md).
-
-![](media/rserver-getting-started/image4.JPG)
 
 
 #### Starting Microsoft R Services on Linux
@@ -245,9 +246,8 @@ Start Microsoft R Client as follows:
 
 ### Stopping Microsoft R Services
 
-To stop the Revolution R Enterprise RPE, close the application window.
 
-From any command-line version of R, the standard way to exit is by calling the q function. (In the RPE, calling q is equivalent to using the Close box or File\(>\)Exit to exit.) All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
+From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
 
 	q()
 
@@ -1082,10 +1082,9 @@ Note that because we have specified an output file when importing the data, the 
 
 Having completed the **Microsoft R Services** tutorials, you are ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R Services, R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
-The obvious place to start is with the rest of the **Microsoft R Services** document set, which includes documentation on the **R Productivity Environment** (on Windows) and the **RevoScaleR** package for scalable data analysis (on all platforms):
+The obvious place to start is with the rest of the **Microsoft R Services** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms):
 
-- *Revolution R Enterprise R Productivity Environment Getting Started Guide* (RevoRPE\_Getting\_Started.pdf). A tutorial introduction to the RPE, which provides an integrated development environment together with a console interface to the R interpreter and features interactive debugging of your R code.
-- *Revolution R Enterprise R Productivity Environment User’s Guide* (RevoRPE\_Users\_Guide.pdf). A more detailed explanation of using the RPE.
+
 - *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf). A tutorial introduction to RevoScaleR, providing extended examples of using RevoScaleR to analyze huge data sets via parallel external memory algorithms.
 - *RevoScaleR User’s Guide* (RevoScaleR\_Users\_Guide.pdf). A more detailed explanation of the features of RevoScaleR, including data manipulation, linear models, logistic regression, generalized linear models, a contingency table analysis, and decision trees and forests.
 - *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf). A tutorial introduction to RevoScaleR’s distributed computing features (currently supported on Windows HPC Server, Hadoop, and Teradata).
