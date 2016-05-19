@@ -26,9 +26,9 @@ ms.custom: ""
 
 #Install Microsoft R Client on Windows
 
-When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in R Server.
+Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using ScaleR APIs.  When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a Microsoft R Server instance. 
 
-This document assumes you have access to the Microsoft R Client installer, which is available either through your Volume Licensing agreement or an MSDN subscription.
+R client is optimized to work with all Microsoft R Server versions. For a comparison of R Client and R Server, see the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
 
 >Currently, Microsoft R Client is available only on Windows.
 
@@ -45,7 +45,9 @@ This document assumes you have access to the Microsoft R Client installer, which
 <br>
 ##Install Microsoft R Client
 
-> You must install Microsoft R Client to a local drive on your computer. 
+>You must install Microsoft R Client to a local drive on your computer. 
+
+>These instructions assume that you have access to the Microsoft R Client installer, which is available through Visual Studio Dev Essentials.
 
 **To install Microsoft R Client**:
 
@@ -91,7 +93,7 @@ This document assumes you have access to the Microsoft R Client installer, which
 
 **To launch Microsoft R Client**:
 
-After you have installed the software, you launch Microsoft R Client as follows.**
+After you have installed the software, you launch Microsoft R Client as follows.
 
 + For Windows 7 and Windows 10:
 
@@ -139,12 +141,15 @@ If you did not install _RTVS_, it's not too late. You can always install and use
 ##Troubleshooting
 
 ###Testing the Install
-The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. To run these tests, run the following commands from your R prompt:
+The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
+
+**To run these tests:**
+
+Run the following commands from your `R` prompt:
 
 	library(RevoIOQ)
 	RevoIOQ()
 
-A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
-
 ###Installation Errors
+
 1. **Installation fails with error "ERROR TEXT".**
