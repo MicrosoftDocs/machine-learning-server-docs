@@ -32,8 +32,8 @@ A *data source* in RevoScaleR can be thought of as a small R object representing
 
 To create data sources directly, use the constructors listed in the following table:
 
-| **Source Data**                                        | **Data Source Constructor** |
 |--------------------------------------------------------|-----------------------------|
+| **Source Data**                                        | **Data Source Constructor** |
 | Text (fixed-format or delimited)                       | RxTextData                  |
 | SAS                                                    | RxSasData                   |
 | SPSS                                                   | RxSpssData                  |
@@ -75,17 +75,17 @@ In normal usage, the *delimiter* argument is a single character, such as *delimi
 
 In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, however your choice of data sources may be severely limited. The most extreme case is the RxInTeradata compute context, which supports only the RxTeradata data source – this makes sense, as the computations are being performed on data inside the Teradata database. Please refer to the table below to see which data sources are available for each compute context (x indicates available).
 
-      
-|                                |            | Compute Context |              |
-|--------------------------------|------------|-----------------|--------------|
-| Data Source                    | RxLocalSeq | RxHadoopMR      | RxInTeradata |
-| Delimited Text (RxTextData)    | x          | x               |              |
-| Fixed-Format Text (RxTextData) | x          |                 |              |
-| .xdf data files (RxXdfData)    | x          | x               |              |
-| SAS data files (RxSasData)     | x          |                 |              |
-| SPSS data files (RxSpssData)   | x          |                 |              |
-| ODBC data (RxOdbcData)         | x          |                 |              |
-| Teradata database (RxTeradata) | x          |                 | x            |
+| Compute Context →              
+                                 
+ Data Source↓                    | RxLocalSeq | RxHadoopMR | RxInTeradata |
+|--------------------------------|------------|------------|--------------|
+| Delimited Text (RxTextData)    | x          | x          |              |
+| Fixed-Format Text (RxTextData) | x          |            |              |
+| .xdf data files (RxXdfData)    | x          | x          |              |
+| SAS data files (RxSasData)     | x          |            |              |
+| SPSS data files (RxSpssData)   | x          |            |              |
+| ODBC data (RxOdbcData)         | x          |            |              |
+| Teradata database (RxTeradata) | x          |            | x            |
 
 Beyond the compute context, there may also be differences in availability within a single data source type depending on the file system. For example, the composite .xdf files that we discussed in section 2.13 created on the Hadoop File System are somewhat different from .xdf created in a non-distributed file system. Similarly, as discussed in Section 2.12, you may need to split and distribute your data across the available nodes of your cluster.
 
