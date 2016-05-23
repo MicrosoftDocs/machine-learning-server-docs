@@ -102,3 +102,4 @@
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 # [Additional Resources](rserver/rserver-more-resources.md)
 # [Archived Documentation](rserver/rserver-old-versions.md)
+# [Release Notes](notes/r-client-notes.md)
