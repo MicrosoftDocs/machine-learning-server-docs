@@ -89,6 +89,8 @@ R client is optimized to work with all Microsoft R Server versions. For a compar
 1. On the **Ready to Install** page, verify your selections. Click **Install**.
 -->
 
+>After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the RevoScaleR package. These APIs let you send R commands to a remote server for execution. Learn more in the [Getting Started Guide](rserver-getting-started.md).
+
 <br>
 
 **To launch Microsoft R Client**:

@@ -26,82 +26,49 @@ ms.custom: ""
 
 # Microsoft R Getting Started Guide
 
-##QUESTIONS:
+##Microsoft R Products
 
-
-1. Where do I get the release notes?
- 
-- [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
-
-The install guide says: R Client for Windows includes RevoScaleR, RevoTreeView, and RevoPemaR.
-The document says: R Server includes DistributedR, ScaleR, ConnectR, DeployR
-
-Why is PemaR not mentioned in getting started?
-Why is RevoTreeView not mentioned?
-
-What about the content here: https://msdn.microsoft.com/en-us/library/mt671127.aspx
-
-
-Is the getting started/start-up for windows still relevant?? Does that only exist for SQL Server?
-
-Could I get [rid of this section](#stopping-microsoft-r-services)?
-
-When you start up R CLient what happens? A dialog? A windows? Nothing? 
-
-##Microsoft R: Differences in R Features
+R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
 
 Microsoft R Server and Client, simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. 
 
 Microsoft also offers Microsoft R Open, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
-The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
-
-|Feature|Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|-------------|------------|-----------|-----------|
-|Cores|????|1-3|1-????|
-|Big Data|In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
-|Speed of Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
-|Enterprise Readiness|Community support|Commercial support|Commercial support|
-|Analytic Breadth & Depth|7K+ analytic R packages|Open source R packages plus 'Big Data'-ready packages|Open source R packages plus 'Big Data'-ready + Multithreaded ready packages|
-|DeployR|N/A|N/A|Optional add-on|
-
-
-If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. 
+For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [look here](index.md).
 
 ###Microsoft R Server
+Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 7000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
 Performance of R solutions in Microsoft R Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
 
 Users can also expect to see considerable differences in performance and scalability for the same RevoScaleR functions if run in R Server versus being run locally in R Client. Reasons include support for chunking, increased threads available for R worker processing and parallel processing not only with standard R packages, but also with RevoScaleR functions. R Server offers optimized performance and scalability through parallelization and streaming.
 
-However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running.
+However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
-We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
-
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for **Microsoft R Server** only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
 
 ###Microsoft R Client
 
-Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. 
+Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server.
 
-On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. 
+On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. 
 
 R client is optimized to work with all Microsoft R Server versions. 
 
 ###Microsoft R Open
 
-Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Based on the open source R engine, the most widely used statistics software in the world, makes Microsoft R Open fully compatibility with all packages, scripts and applications that work with that version of R. 
+Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Based on the open source R engine makes Microsoft R Open (and R Server and R Client) fully compatibility with all packages, scripts and applications that work with that version of R. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share. 
 
-Microsoft R Open delivers performance boosts, in comparison to the standard R distribution, given the same hardware configuration, since R Open leverages high-performance, multi-threaded math libraries.  This means that functions in R that use, for example, matrix multiplication, will run faster out of the box with Microsoft R Open. Microsoft R Open includes additional capabilities, over open source R, for improved reproducibility.   
+Microsoft R Open delivers performance boosts, in comparison to the standard R distribution, given the same hardware configuration, since R Open leverages high-performance, multi-threaded math libraries.  This means that functions in R that use, for example, matrix multiplication, will run faster out of the box with Microsoft R Open. Microsoft R Open is also enhanced in terms of [reproducibility](https://mran.microsoft.com/documents/rro/reproducibility/).   
 
-Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.
+Learn more about [Microsoft R Open...](https://mran.microsoft.com/open)
 
-On its own, Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the ScaleR functions and packages, which are included with Microsoft R Server and Microsoft R Client, are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open. So this means that any of the amazing third-party packages available for that version of R should also work when you are in Microsoft R Server and Microsoft R Client. 
+On its own, Microsoft R Open provides limited performance and scalability when compared to Microsoft R Server and Microsoft R Client. Specifically, none of the ScaleR functions and packages, which are included with Microsoft R Server and Microsoft R Client, are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open.  
 
 
 ## What's in R Server and R Client
 
-#### DistributedR
+### DistributedR
 
 >**In a nutshell:**
 >Parallel and distributed computing framework for ‘Big Data Big Analytics’
@@ -114,7 +81,7 @@ This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to proc
 
 This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](rserver-scaler-getting-started.md#computecontext).
 
-#### ScaleR
+### ScaleR
 
 >**In a nutshell:**
 >High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R
@@ -127,23 +94,23 @@ R is a flexible and powerful statistical programming language. The RevoScaleR pa
 
 To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-4-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-11-decision-tree.md) that allows you to interactively visualize your decision trees.
 
-#### ConnectR
+### ConnectR
 
 >**In a nutshell:**
->Data connections for the ‘Big Data Big Analytics’, including SAS, SPSS, Teradata, ODBC, text, and HDFS.
+>Move your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.
 
-A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats: SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
+A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats, such as SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
 
-  1.  keeping the data as is and analyzing it directly with RevoScaleR analysis functions,
-  2.  extracting the data you want to analyze and storing it in the efficient and higher performance .xdf file format provided with the RevoScaleR package, or
-  3.  bringing some or all of your data into memory as an R data frame to use with any R analysis function.
+1. Analyzing data in place directly with RevoScaleR analysis functions
+1. Loading it into your local R development environment using the efficient and performant .xdf file format
+1. Bringing some or all of your data into memory as an R data frame to use with any R analysis function
 
 To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-2-data-import.md).
 
-####DeployR 
+###DeployR 
 
 >**In a nutshell:**
->The R Integration Server for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. 
+>The R Integration Server is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. 
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
@@ -155,89 +122,41 @@ DeployR Enterprise scales for business-critical applications and offers support 
 
 [Learn more about DeployR...](deployr-about.md)
 
-## Starting Microsoft R
+## Starting & Stopping Microsoft R
 
-### Starting Microsoft R Server
+### Starting Microsoft R Server on Linux
 
-**On Windows:**
+**To launch Microsoft R Server**:
 
-**On Linux:**
-On Windows 7 and Windows Server 2008, you start Microsoft R Services as follows:
+1. Open a terminal or console window.
+1. At the prompt, type: 
+```
+Revo64
+```
 
-- Click **Start**, point to **All Programs**, point to **Revolution R**, point to **Enterprise 7.x**, and then click **Revolution R Enterprise 7.x (64)**.
-
-On Windows 8 and Windows Server 2012, you start Revolution R Enterprise as follows:
-
-- Move your mouse to the lower left corner of the Desktop until **Start** pops up.
-- Click **Start** to view the **Start** screen.
-- Locate the tile for **Revolution R Enterprise 8.x (64).**
-
-	On Windows 10, you start Revolution R Enterprise as follows:
-
-- Click **Start**, point to **All apps**, point to **Revolution R**, and then click **Revolution R Enterprise 8.x (64)**.
-
-
-
-#### Starting Microsoft R Services on Linux
-
-On Linux systems, you start **Microsoft R Server** by opening a terminal or console window, and typing Revo64. If all is well, you will see a welcome message followed by the **Microsoft R Services** &gt;:
-
-	R version 3.2.2 (2015-08-14) -- "Fire Safety"
-	Copyright (C) 2015 The R Foundation for Statistical Computing
-	Platform: x86_64-w64-mingw32/x64 (64-bit)
-
-	R is free software and comes with ABSOLUTELY NO WARRANTY.
-	You are welcome to redistribute it under certain conditions.
-	Type 'license()' or 'licence()' for distribution details.
-
-		Natural language support but running in an English locale
-
-	R is a collaborative project with many contributors.
-	Type 'contributors()' for more information and
-	'citation()' on how to cite R or R packages in publications.
-	
-	Type 'demo()' for some demos, 'help()' for on-line help, or
-	'help.start()' for an HTML browser interface to help.
-	Type 'q()' to quit R.
-
-	Microsoft R Server version 8.0: an enhanced distribution of R
-	Microsoft packages Copyright (C) 2015 Microsoft Corporation
-
-	Type 'readme()'for release notes.
-
-	>
-
- If you get the message “Revo64: Command not found," this means that **Microsoft R Server** is not in your search path. Check with your system administrator to find the correct path to your **Microsoft R Server** installation, then modify your search path (typically in your .bashrc file):
-
-	PATH=$PATH:/path/to/Microsoft R Server
-	export PATH
-
+If you get the message “Revo64: Command not found," this means that Microsoft R Server is not in your search path. Check with your system administrator to find the correct path to your R Server installation, then modify your search path (typically in your .bashrc file):
+```
+PATH=$PATH:/path/to/Microsoft R Server
+export PATH
+```
 ### Starting Microsoft R Client
 
-**On Windows 7 or Windows Server 2008:**
+**To launch Microsoft R Client**:
 
-Start Microsoft R Client as follows:
-1. Click **Start**.
+After you have installed the software, you launch Microsoft R Client as follows.
 
-1. Choose **All Programs** > **Revolution R** > **Enterprise 7.x** > **Revolution R Enterprise 7.x (64)**.
++ For Windows 7 and Windows 10:
 
-**On Windows 8.1 or Windows Server 2012:**
+  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
 
-Start Microsoft R Client as follows:
+<br>
++ For Windows 8.1:
 
-1. Move your mouse to the lower left corner of the Desktop until **Start** pops up.
+  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+  
+  1. Click **Start** to view the **Start** screen.
 
-1. Click **Start** to view the **Start** screen.
-
-1. Locate the tile for **Revolution R Enterprise 8.x (64).**
-
-**On Windows 10:**
-
-Start Microsoft R Client as follows:
-
-1. Click **Start**.
-
-1. Choose **All apps** > **Revolution R** > **Revolution R Enterprise 7.x (64)**.
+  1. Locate and click the tile for **Microsoft R Client**.
 
 
 
@@ -249,7 +168,8 @@ From any command-line version of R, the standard way to exit is by calling the q
 
 Whenever you quit R, you are asked if you want to save the workspace image; if you have created functions or data that you want to keep, saving the workspace image will preserve them for future use. (Most R users, however, create their functions and data in script files which can be read, or *sourced*, into R. If you follow this model, you will usually say “no” to saving the workspace image.)
 
-### Getting Function Help
+
+## Getting Function Help
 
 Know a function’s name, but not how to call it? Need examples of how to set up the data for a function? Help is just a few keystrokes away. R has two main functions for obtaining help: the ? operator and the help function. You can use the operator by simply typing a question mark at the prompt, followed by the name of the function you want to know about:
 
@@ -263,448 +183,13 @@ The help function is much the same:
 
 Most users will probably use ? because it is easy to type; help allows you to specify a number of arguments that can extend its usefulness.
 
-## An R Tutorial in 25 Functions or So
 
-To get you started with **Microsoft R Services**, this chapter gives a brief tutorial introduction in which you will learn 25 (or so) of the most commonly used R functions, learn to load your own small data sets into R, and begin to do useful analysis on them. We’ll also provide some initial tips on the next steps for performing scalable data analysis in R. The following two chapters go into greater depth on Big Data Big Analytics in R.
-
-### Creating Vectors
-
-R is an environment for analyzing data, so the natural starting point is with some data to analyze. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, it is simplest to use R’s *c* function to combine the data into a vector. Type the following at the &gt;  prompt at the beginning of the line:
-
-	c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
-	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
-
- When you type the closing parenthesis and press *Enter*, R responds as follows:
-
-	[1]  850  740  900 1070  930  850  950  	980  980  880  
-	[11]  1000 980  930  650  760  810 1000 1000  960  960
-
-This indicates that R has interpreted what you typed, created a vector with 20 elements, and returned that vector. But we have a problem. R hasn’t saved what we typed. If we want to use this vector again (and that’s the usual reason for creating a vector in the first place), we need to *assign* it. The R assignment operator has the suggestive form *&lt;-* to indicate a value is being assigned to a name. You can use most combinations of letters, numbers, and periods to form names (but note that names can’t begin with a number); here we’ll use michelson:
-
-	michelson <- c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
-	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
-
-Now R responds with a prompt; the vector is not automatically printed when it is assigned. But now we can view the vector we created by typing its name at the prompt:
-
-	michelson
-
-	[1]  850  740  900 1070  930  850  950  980   980  880
-	[11] 1000  980  930  650  760  810 1000 1000  960  960
-
-The `c` function is useful for typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors. For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using c as follows:
-
-	michelsonNew <- c(michelson, 850, 930, 940, 970, 870)
-	michelsonNew
-
-	[1]  850  740  900 1070  930  850  950  	980  980  880
-	[11] 1000  980  930  650  760  810 1000 1000  960  960
-	[21]  850  930  940  970  870
-
-Often for testing purposes you want to use randomly generated data. R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions. To obtain a set of numbers from a normal distribution, you use the *rnorm* function:
-
-	normalDat <- rnorm(25)
-	normalDat
-
-	[1] -0.66184983  1.71895416  2.12166699
-	[4]  1.49715368 -0.03614058  1.23194518
-	[7] -0.06488077  1.06899373 -0.37696531
-	[10]  1.04318309 -0.38282188  0.29942160
-	[13]  0.67423976 -0.29281632  0.48805336
-	[16]  0.88280182  1.86274898  1.61172529
-	[19]  0.13547954  1.08808601 -1.26681476
-	[22] -0.19858329  0.13886578 -0.27933600
-	[25]  0.70891942
-
- By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the `mean` and *sd* arguments to *rnorm* to specify a different normal distribution:
-	
-	normalSat <- rnorm(25, mean=450, sd=100)
-	normalSat
-
-	[1] 373.3390 594.3363 534.4879 410.0630 307.2232
-	[6] 307.8008 417.1772 478.4570 521.9336 493.2416
-	[11] 414.8075 479.7721 423.8568 580.8690 451.5870
-	[16] 406.8826 488.2447 454.1125 444.0776 320.3576
-	[21] 236.3024 360.6385 511.2733 508.2971 449.4118
-
-Similarly, you use the *runif* function to generate random data from a uniform distribution:
-
-	uniformDat <- runif(25)
-	uniformDat
-
-	[1] 0.03105927 0.18295065 0.96637386 0.71535963
-	[5] 0.16081450 0.15216891 0.07346868 0.15047337
-	[9] 0.49408599 0.35582231 0.70424152 0.63671421
-	[13] 0.20865305 0.20167994 0.37511929 0.54082887
-	[17] 0.86681824 0.23792988 0.44364083 0.88482396
-	[21] 0.41863803 0.42392873 0.24800036 0.22084038
-	[25] 0.48285406
-
-The default uniform distribution is that over the interval 0 to 1; you can specify alternatives by setting the *min* and *max* arguments:
-
-	uniformPerc <- runif(25, min=0, max=100)
-	uniformPerc
-
-	[1] 66.221400 12.270863 33.417174 21.985229
-	[5] 92.767213 17.911602  1.935963 53.551991
-	[9] 75.110760 22.436347 63.172258 95.977501
-	[13] 79.317351 56.767608 89.416080 79.546495
-	[17]  8.961152 49.315612 43.432128 68.871867
-	[21] 73.598221 63.888835 35.261694 54.481692
-	[25] 37.575176
-
-Another commonly used vector is the *sequence*, a uniformly-spaced run of numbers. For the common case of a run of integers, you can use the infix operator, :, as follows:
-
-	1:10
-
-	 [1]  1  2  3  4  5  6  7  8  9 10
-
-For more general sequences, use the *seq* function:
-
-	seq(length = 11, from = 10, to = 30)
-
-	[1] 10 12 14 16 18 20 22 24 26 28 30
-
-	seq(from = 10,length = 20, by = 4)
-
-	[1] 10 14 18 22 26 30 34 38 42 46 50 54 58 62 66 70 74
-	[18] 78 82 86
-
-> Big Data Big Analytics Tip: If you are working with big data, you’ll use vectors regularly to manipulate parameters and information about your data.  However, you’ll typically want to store your big data sets in the RevoScaleR high-performance .xdf file format.
-
-#### Exploratory Data Analysis
-
-Once you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the plot function, which provides a default graphical view of the data:
-
-	plot(michelson)
-	plot(normalDat)
-	plot(uniformPerc)
-	plot(1:10)
-
-For *numeric* vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:
-
-![](media/rserver-getting-started/image5.jpeg)
-
-For an exploration of the shape of the data, the usual tools are *stem* (to create a stemplot) and *hist* (to create a histogram):
-
-	stem(michelson)
-
-	 The decimal point is 2 digit(s) to the right of the |
-	  6 | 5
-	  7 | 46
-	  8 | 1558
-	  9 | 033566888
-	 10 | 0007
-
-	hist(michelson)
-
-The resulting histogram is shown as the left plot below. We can make the histogram look more like the stemplot by specifying the *nclass* argument to *hist*:
-
-	hist(michelson, nclass=5)
-
-The resulting histogram is shown as the right plot in the figure below.
-
-![](media/rserver-getting-started/image6.jpeg)
-
-From the histogram and stemplot, it appears that the Michelson-Morley observations are not obviously normal. A normal Q-Q plot gives a graphical test of whether a data set is normal:
-
-	qqnorm(michelson)
-
-The decided bend in the resulting plot confirms the suspicion that the data are not normal.
-
-![](media/rserver-getting-started/image7.jpeg)
-
-Another useful exploratory plot, especially for comparing two distributions, is the boxplot:
-
-	boxplot(normalDat, uniformDat)
-
-![](media/rserver-getting-started/image8.jpeg)
-
->*Big Data Big Analytics Tip*: These plots are great if you have a small data set in memory.  When working with big data, some plot types may not be very informative when working directly with the data (e.g., scatter plots can produce a big blob of ink) and others may be computational intensive (e.g., require sorting data).  A good starting place is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets.  And remember that RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
-
-### Summary Statistics
-
-While an informative graphic often gives the fullest description of a data set, numerical summaries provide a useful shorthand for describing certain features of the data. For example, estimators such as the mean and median help to locate the data set, and the standard deviation and variance measure the scale or spread of the data. R has a full set of summary statistics available:
-
-	> mean(michelson)
-	[1] 909
-	> median(michelson)
-	[1] 940
-	> sd(michelson)
-	[1] 104.9260
-	> var(michelson)
-	[1] 11009.47
-
- The generic summary function provides a meaningful summary of a data set; for a numeric vector it provides the five-number summary plus the mean:
-
-	summary(michelson)
-
-	 Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-	 650     850     940     909     980    1070
-
-> *Big Data Big Analytics Tip*: The *rxSummary* function in RevoScaleR will efficiently compute summary statistics for a data frame in memory or a large data file stored on disk.
-
-### Creating Multivariate Data Sets
-
-In most disciplines, meaningful data sets have multiple variables, typically observations of various quantities and qualities of individual subjects. Such data sets are typically represented as tables in which the columns correspond to variables and the rows correspond to subjects, or cases. In R, such tables can be created as *data frame* objects. For example, at the 2008 All-Star Break, the Seattle Mariners had five players who met the minimum qualifications to be considered for a batting title (that is, at least 3.1 at bats per game played by the team). Their statistics are shown in the following table:
-
-	Player          Games  AB   R    H   2B  3B   HR   TB  RBI   BA  OBP  SLG  OPS
-	"I. Suzuki"        95 391  63  119   11   3    3  145   21 .304 .366 .371 .737
-	"J. Lopez"         92 379  46  113   26   1    5  156   48 .298 .318 .412 .729
-	"R. Ibanez"        95 370  41  101   26   1   11  162   55 .273 .338 .438 .776
-	"Y. Betancourt"    90 326  34   87   22   2    3  122   29 .267 .278 .374 .656 
-	"A. Beltre"        92 352  46   91   16   0   16  155   46 .259 .329 .440 .769
-
-Copy and paste the table into a text editor (such as Notepad on Windows, or emacs or vi on Unix-type machines) and save the file as **msStats.txt** in the working directory returned by the *getwd* function, for example:
-
-	getwd()
-
-	 [1] "/Users/joe"
-
-You can then read the data into R using the *read.table* function. The argument *header=TRUE* specifies that the first line is a header of variable names:
-
-	msStats <- read.table("msStats.txt", header=TRUE)
-	msStats
-
-	> msStats
-	Player Games  AB  R   H X2B X3B HR  TB RBI
-	1	I. Suzuki     95 391 63 119  11   3  3 145  21
-	2	J. Lopez     92 379 46 113  26   1  5 156  48
-	3	R. Ibanez     95 370 41 101  26   1 11 162  55
-	4 	Y. Betancourt     90 326 34  87  22   2  3 122  29
-	5	A. Beltre     92 352 46  91  16   0 16 155  46
-    
-		BA   OBP   SLG   OPS
-	1 0.304 0.366 0.371 0.737
-	2 0.298 0.318 0.412 0.729
-	3 0.273 0.338 0.438 0.776
-	4 0.267 0.278 0.374 0.656
-	5 0.259 0.329 0.440 0.769
-
-(Notice how *read.table* changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.)
-
-Most small R data sets in daily use are data frames. The built-in package, *datasets,* is a rich source of data frames for further experimentation. In the next section, we turn our attention to the built-in data set *attitude*, part of the *datasets* package.
-
->*Big Data Big Analytics Tip*: Check out the *rxImport* function for an efficient and flexible way to bring data stored in a variety of data formats (e.g., text, SQL Server, ODBC, SAS, SPSS, Teradata) into a data frame in memory or an .xdf file.
-
-### Linear Models
-
-The *attitude* data set is a data frame with 30 observations on 7 variables, measuring the percent proportion of favorable responses to seven survey questions in each of 30 departments. The survey was conducted in a large financial organization; there were approximately 35 respondents in each department.
-
-We mentioned that the *plot* function could be used with virtually any data set to get an initial visualization; let’s see what it gives for the *attitude* data:
-
-	plot(attitude)
-
-The resulting plot is a pairwise scatter plot of the numeric variables in the data set.
-
-![](media/rserver-getting-started/image9.jpeg)
-
-The first two variables (*rating* and *complaints*) show a strong linear relationship. To model that relationship, we use the lm function:
-
-	attitudeLM1 <- lm(rating ~ complaints, data=attitude)
-
-To view a summary of the model, we can use the summary function:
-
-	summary(attitudeLM1)
-
-	Call:
-	lm(formula = rating ~ complaints, data = attitude)
-	Residuals:
-	   Min       1Q   Median       3Q      Max 
-	-12.8799  -5.9905   0.1783   6.2978   9.6294 
-	
-	Coefficients:
-		Estimate Std. Error t value Pr(>|t|)    
-	(Intercept) 14.37632    6.61999   2.172   0.0385 *  
-	complaints   0.75461    0.09753   7.737 1.99e-08 ***
-	---
-	Signif. codes:  0 *** 0.001 ** 0.01 * 0.05 . 0.1  1 
-
-	Residual standard error: 6.993 on 28 degrees of freedom
-	Multiple R-squared: 0.6813, Adjusted R-squared: 0.6699 
-	F-statistic: 59.86 on 1 and 28 DF,  p-value: 1.988e-08 
-
-We can also try to visualize the model using plot:
-
-	plot(attitudeLM1)
-
-The default plot for a fitted linear model is a set of four plots; by default they are shown one at a time, and you are prompted before each new plot is displayed. To view them all at once, use the *par* function with the *mfrow* parameter to specify a 2 x 2 layout:
-
-	par(mfrow=c(2,2))
-	plot(attitudeLM1)
-
-![](media/rserver-getting-started/image10.jpeg)
-
->**Big Data Big Analytics Tip**: The *rxLinMod* function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at *rxLogit* and *rxGlm* as alternatives to *glm*, *rxKmeans* as an alternative to *kmeans*, and *rxDTree* as an alternative to *rpart*.
-
-### Matrices and apply
-
-A *matrix* is a two-dimensional data array. Unlike data frames, which can have different data types in their columns, matrices may contain data of only one type. Most commonly, matrices are used to hold numeric data. You create matrices with the *matrix* function:
-
-	A <- matrix(c(3, 5, 7, 9, 13, 15, 8, 4, 2), ncol=3)
-	A
-
-	[,1] [,2] [,3]
-	[1,]    3    9    8
-	[2,]    5   13    4
-	[3,]    7   15    2
-
-	B <- matrix(c(4, 7, 9, 5, 8, 6), ncol=3)
-	B
-
-	[,1] [,2] [,3]
-	[1,]    4    9    8
-	[2,]    7    5    6
-
-Ordinary arithmetic acts *element-by-element* on matrices:
-
-	A + A
-
-	[,1] [,2] [,3]
-	[1,]    6   18   16
-	[2,]   10   26    8
-	[3,]   14   30    4
-
-	A * A
-
-	[,1] [,2] [,3]
-	[1,]    9   81   64
-	[2,]   25  169   16
-	[3,]   49  225    4
-
-Matrix multiplication in the linear algebra sense requires a special operator, *%*%:*
-
-	A %*% A
-
-	[,1] [,2] [,3]
-	[1,]  110  264   76
-	[2,]  108  274  100
-	[3,]  110  288  120
-
-Matrix multiplication requires two matrices to be *conformable*, which means that the number of *columns* of the first matrix is equal to the number of *rows* of the second:
-
-	B %*% A
-
-	[,1] [,2] [,3]
-	[1,]  113  273   84
-	[2,]   88  218   88
-
-	A %*% B
-
-	Error in A %*% B : non-conformable arguments
-
-When you need to manipulate the rows or columns of a matrix, an incredibly useful tool is the apply function. With *apply*, you can apply a function to all the rows or columns of matrix at once. For example, to find the column products of *A*, you could use *apply* as follows:
-
-	apply(A, 2, prod)
-
-	[1]  105 1755   64
-
-The row products are just as simple:
-
-	apply(A, 1, prod)
-
-	[1] 216 260 210
-
-To sort the columns of *A*, just replace *prod* with *sort*:
-
-	apply(A, 2, sort)
-
-		 [,1] [,2] [,3]
-	[1,]    3    9    2
-	[2,]    5   13    4
-	[3,]    7   15    8
-
-### Lists and *lapply*
-
-A *list* in R is a very flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
-
-For example, we can combine a character vector, a numeric vector, and a numeric matrix in a single list as follows:
-
-	list1 <- list(x = 1:10, y = c("Tami", "Victor", "Emily"), 
-	z = matrix(c(3, 5, 4, 7), nrow=2))
-	list1
-
-	$x
-	[1]  1  2  3  4  5  6  7  8  9 10
-	$y
-	[1] "Tami"   "Victor" "Emily" 
-	$z
-	[,1] [,2]
-	[1,]    3    4
-	[2,]    5    7
-
-The function *lapply* can be used to apply the same function to each component of a list in turn:
-
-	lapply(list1, length)
-
-	$x
-	[1] 10
-
-	$y
-	[1] 3
-
-	$z
-	[1] 4
-
->*Big Data Big Analytics Tip*: You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.  
-
-### Packages
-
-An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
-
-| stats      | graphics | grDevices | utils    |
-|------------|----------|-----------|----------|
-| datasets   | methods  | base      | -         |
-| KernSmooth | MASS     | Matrix    | boot     |
-| class      | cluster  | codetools | compiler |
-| foreign    | grid     | lattice   | mgcv     |
-| nlme       | nnet     | parallel  | rpart    |
-| spatial    | splines  | stats4    | survival |
-| tcltk      | tools    | boot      |  -        |
-
-The packages in the top two lines are automatically loaded when you start R. You can load other packages using the *library* function. For example, to load the *MASS* library, which contains functions and data sets used in the book *Modern Applied Statistics with S* by Venables and Ripley, you call *library* as follows:
-
-	library(MASS)
-
-Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the *install.packages* function:
-
-	install.packages("SuppDists")
-
-	trying URL 'http://cran.fhcrc.org/src/contrib/SuppDists\_1.1-8.tar.gz'
-	Content type 'application/x-gzip' length 139864 bytes (136 Kb)
-	opened URL
-	==================================================
-	downloaded 136 Kb
-	* installing *source* package 'SuppDists' ...
-	** libs
-	** arch - x86\_64
-	g++ -arch x86\_64  -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/includ
-	e -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/include/x86\_64  -I/usr
-	/local/include    -fPIC  -g -O2 -c dists.cc -o dists.o
-	g++ -arch x86\_64 -dynamiclib -Wl,-headerpad\_max\_install\_names -undefined dynamic
-	\_lookup -single\_module -multiply\_defined suppress -L/usr/local/lib -o SuppDists.
-	so dists.o -F/opt/REvolution/Revo-3.2/Revo64/R.framework/.. -framework R -Wl,-fr
-	amework -Wl,CoreFoundation
-	** R
-	** preparing package for lazy loading
-	** help
-	*** installing help indices
-	** building package indices ...
-	* DONE (SuppDists)
-
-	The downloaded packages are in
-		'/private/var/folders/cy/cy2tNRpEHrmxPZPrN1EINU+++TI/-Tmp-/RtmpZnKn6Z/do
-	wnloaded\_packages'
-	Updating HTML index of packages in '.Library'
-
-(On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Services. Microsoft R Services sets the default repository to a versioned source repository maintained by Revolution Analytics at [packages.revolutionanalytics.com](http://packages.revolutionanalytics.com). An alternative is to point to one of the daily CRAN snapshots maintained at [mran.microsoft.com](http://mran.microsoft.com).)
-
->*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Revolution R Enterprise, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
-
-### Using Microsoft R Services via Rscript and R CMD BATCH
+## Using Microsoft R Services via Rscript and R CMD BATCH
 
 **Microsoft R Services** is intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with **Microsoft R Services** with no modifications needed, but to get full advantage of the **Microsoft R Services** extensions with other command line invocations, you need to know a little bit about how **Microsoft R Services** works. **Microsoft R Services** is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with **Microsoft R Services**. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a **Microsoft R Services** script, be sure to add the flag *–default-packages=* to your call; this ensures that the **Microsoft R Services** default packages are loaded (including the methods package from base R).
 
 Similarly, you should avoid the –vanilla construction for invoking **Microsoft R Services**; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the **Microsoft R Services** extensions (except the MKL BLAS and LAPACK libraries).
+
 
 ## Tips on Computing with Big Data in R
 
@@ -1367,7 +852,7 @@ To create a 5GB object, make sure that the memory limit is high enough. (Allocat
 	 Maximum amount of memory allocated during this session is 5143 Mb
 	 Current limit for total allocation is 7678 Mb
 
-## Bibliography
+## Books on R
 
 Adler, J. (2010). *R in a Nutshell.* Sebastopol, CA: O'Reilly.
 
