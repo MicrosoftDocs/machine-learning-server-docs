@@ -32,7 +32,7 @@ R is the world’s most powerful, and preferred, programming language for statis
 
 Microsoft [R Server](#microsoft-r-server) and [R Client](#microsoft-r-client), simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. Microsoft also offers the free, open-source [Microsoft R Open](#microsoft-r-open), which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
-For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [look here](index.md).
+For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md).
 
 ###Microsoft R Server
 Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 7000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
@@ -66,6 +66,8 @@ On its own, Microsoft R Open provides limited performance and scalability when c
 
 ## What's in R Server and R Client
 
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md).
+
 **DistributedR: Parallel and distributed computing framework for _Big Data Big Analytics_.**
 
 One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The Microsoft R ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
@@ -76,6 +78,7 @@ This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to proc
 
 This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](rserver-scaler-getting-started.md#computecontext).
 
+<br>
 **ScaleR: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R.**
 
 The ‘Big Data Big Analytics’ functions built on DistributedR provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
@@ -86,6 +89,7 @@ R is a flexible and powerful statistical programming language. The RevoScaleR pa
 
 To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-4-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-11-decision-tree.md) that allows you to interactively visualize your decision trees.
 
+<br>
 **ConnectR: Move your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.**
 
 A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats, such as SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
@@ -96,12 +100,10 @@ A key to data analysis is, of course, the data. The RevoScaleR package provides 
 
 To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-2-data-import.md).
 
-###DeployR 
-
 <a name="deployr-intro"></a>
+<br>
+**DeployR, the R Integration Server, is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. **
 
->**In a nutshell:**
->The R Integration Server is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. 
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
@@ -986,88 +988,6 @@ Note that because we have specified an output file when importing the data, the 
 	Condition number of final variance-covariance matrix: 1.3005
 	Number of iterations: 9
 
-## Next Steps: A Roadmap to Documentation
-
-Having completed the tutorials, you are now ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
-
-The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
-
-Next, you should be aware of the R Core Team manuals, included with every R distribution:
-
-- *An Introduction to R* (R-intro.pdf). A more complete tutorial introduction to R, this manual gives an introduction to both the language itself and its use for statistics and graphics.
-- *The R Language Definition (Draft)* (R-lang.pdf). This still-incomplete manual describes the R programming language, giving detailed information on parsing, evaluation, and other specifics of the language itself.
-- *Writing R Extensions* (R-exts.pdf). This manual describes how to extend R by creating your own packages.
-- *R Data Import/Export* (R-data.pdf). This manual describes the various external data formats R can read from and write to, either using base R functions or additional packages.
-- *R Installation and Administration* (R-admin.pdf). This manual describes how to build and install R from source code; Revolution R users should not need to refer to this manual, but may find it of interest.
-- *R Internals* (R-int.pdf). This manual is a guide to R’s internal structures, and gives coding standard for the R core team.
-- *R Reference Index* (fullrefman.pdf). A compilation of the help files of the R standard and recommended packages, ready to print.
-
-Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this chapter will help point you in the right direction. If you are looking for...
-
-- [**Introductory material.**](#introductory-material).
-- [**Information on analyzing data with R.**](#information-on-data-analysis-and-statistics).
-- [**Information on programming with R.**](#information-on-programming-with-r).
-- [**Information on getting data into and out of R.**](#information-on-getting-data-into-and-out-of-r).
-- [**Information on creating graphics with R.**](#information-on-creating-graphics-with-r).
-- [**Information on parallel programming with R.**](#information-on-parallel-programming-with-r).
-
-### Introductory Material
-
-*R for Dummies* by Andrie de Vries and Joris Meys is an excellent starting place for those new to R, filled with examples and tips. O’Reilly’s *R Cookbook*, by Paul Teetor , is just what it claims to be–a book filled with recipes to help you accomplish very specific tasks. The *Essential R Reference* by Mark Gardener provides a dictionary-like reference to more than 400 R commands, including cross-references and examples.
-
-As mentioned above, you can also continue your tutorial with the R Core Group’s *An Introduction to R.* (R Development Core Team, 2008). Based on “Notes on S-Plus” by Bill Venables and David Smith, this has been the jumping off point for R documentation for years. It includes an extensive sample session as its Appendix A.
-
-The original S documentation consisting of the “Blue Book" (*The New S Language* by Rick Becker, John Chambers, and Allan Wilks ), the “White Book" (*Statistical Models in S*, edited by John Chambers and Trevor Hastie , and the “Green Book" contains much introductory material that is still useful in today’s R. However, there are some S functions that either are not available or work differently in R, and many of the example data sets are not available in R, so typing along with the examples is not always possible.
-
-Another very useful document that all R users should read is the R FAQ by Kurt Hornik (http://cran.r-project.org/doc/FAQ/R-FAQ.html).
-
-Users of SAS or SPSS who are new to R might usefully start with Robert Muenchen’s *R for SAS and SPSS Users* . Two other books that address both the SAS and R user communities are *SAS and R: Data Management, Statistical Analysis, and Graphics* by Ken Kleinman and Nicholas J. Horton and *Analysis of Correlated Data with SAS and R* by Mohamed M. Shoukri and Mohammad A. Chaudhary .
-
-### Information on Data Analysis and Statistics
-
-A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R* . After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
-
-For more advanced techniques, the obvious starting point is *Modern Applied Statistics with S* by Bill Venables and Brian Ripley . This book starts with four introductory chapters on R, then gets into statistics from univariate statistics (chapter 5) to optimization (chapter 16). Along the way, the authors touch on many widely used techniques, including linear models, generalized linear models, clustering, tree-based methods, survival analysis, and many others.
-
-Rapidly becoming *the* book for aspiring data scientists is *The Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and Jerome Friedman. This book covers a variety of statistical techniques important in big data analysis and machine learning, including various tree-based methods, support vector machines, graphical models, and more.
-
-Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies* , John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression* , and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill .
-
-Other useful books that take you into more advanced statistics are *R in Action* by Robert I. Kabacoff , *A Handbook of Statistical Analyses Using R* by Brian Everitt and Torsten Hothorn , *Data Analysis and Graphics Using R* by John Maindonald and John Braun , and *The R Book* by Michael Crawley .
-
-If you are interested in an overview of the multiple uses of big data analytics, the book *Big Data, Big Analytics* by Michael Minelli, Michele Chambers, and Ambiga Dhiraj will give you a an excellent start in understanding what big data is and how it is used in real-world business applications.
-
-### Information on Programming with R
-
-The newest book from John M. Chambers, *Software for Data Analysis: Programming with R* , gives a thorough description of programming in R, including tips on debugging, writing packages, creating classes and methods, and interfacing to code in other languages. It also includes a useful chapter describing how R works.
-
-*R in a Nutshell* by Joseph Adler is unlike most books on R in that it deals with R first and foremost as a programming language; it does touch on statistical topics, but that is not its main focus.
-
-The book *S Programming* by Venables and Ripley is a concise, readable guide to programming in the S family of languages. Most of their advice remains valid, but the book was published when R was still at a pre-release version (0.90.1),so some details have changed over time.
-
-The Blue Book, White Book, and Green Book all have one or more chapters devoted to programming in S, with different points of emphasis. The Blue Book focuses on basic function writing. The White Book describes the S Version 3 class system and how to define classes, generic functions, and methods in that system. The Green Book describes the S Version 4 class system and how to define classes and methods in that system.
-
-The manual *Writing R Extensions* by the R Core Team describes how to write complete R packages, including documentation.
-
-### Information on Getting Data Into and Out of R
-
-The manual *R Data Import/Export* by the R Core Team describes how to read data into R from a variety of sources using both built-in R tools and additional packages. The book Data Manipulation with R by Phil Spector includes information on reading and writing data, and also further manipulation within R. And, of course, be sure to look at the *RevoScaleR User’s Guide* for information on data import and export capabilities provided by **RevoScaleR**.
-
-### Information on Creating Graphics with R
-
-All of the references mentioned up to now contain at least some material on graphics, because graphical exploration is a primary motivation for using R in the first place. The Blue Book, in particular, describes in detail the “traditional S graphics" framework.
-
-A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis* . The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics* .
-
-The ggplot2 package is a high-level graphics package. For lower-level graphics functionality, the definitive reference is Paul Murrell’s *R Graphics* , which describes both the traditional S graphics framework (in particular, its implementation in R by Ross Ihaka) and the grid graphics framework developed by Murrell. It also describes the lattice system, developed by Deepayan Sarkar, that uses the grid framework to implement the Trellis graphics system developed by Rick Becker and Bill Cleveland. Serious users of the lattice system will also want to consult Sarkar’s book, *Lattice: Multivariate Data Visualization with R* .
-
-Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data* . Cleveland’s earlier book, now its second edition, *The Elements of Graphing Data* remains essential reading for anyone interested in data visualization.
-
-*Interactive and Dynamic Graphics for Data Analysis* by Dianne Cook and Deborah Swayne describes using R together with the GGobi visualization program for dynamic graphics.
-
-### Information on Parallel Programming in R
-
-While the *RevoScaleR Distributed Computing Guide* focuses on running computations over multiple nodes, it also includes basic examples of parallel programming that can be run on a multiple-core workstation. *Parallel R* by Q. Ethan McCallum and Stephen Weston describes some additional tools for parallel computing in R.
 
 ## Optimized Math Libraries
 
@@ -1269,80 +1189,12 @@ To create a 5GB object, make sure that the memory limit is high enough. (Allocat
 	 Maximum amount of memory allocated during this session is 5143 Mb
 	 Current limit for total allocation is 7678 Mb
 
-## More Books on R
+## Next Steps: A Roadmap to Documentation
 
-Adler, J. (2010). *R in a Nutshell.* Sebastopol, CA: O'Reilly.
+Having completed the tutorials, you are now ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
-Becker, R. A., Chambers, J. M., & Wilks, A. R. (1988). *The New S Language: A Programming Environment for Data Analysis and Graphics.* New York: Chapman and Hall.
+The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 
-Chambers, J. M. (1998). *Programming with Data: A Guide to the S Language.* New York: Springer.
+Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. 
 
-Chambers, J. M. (2008). *Software for Data Analysis: Programming with R.* New York: Springer.
-
-Chambers, J. M., & Hastie, T. J. (Eds.). (1992). *Statistical Models in S.* New York: Chapman and Hall.
-
-Cleveland, W. S. (1993). *Visualizing Data.* Summit, New Jersey: Hobart Press.
-
-Cleveland, W. S. (1994). *The Elements of Graphing Data* (second ed.). Summit, New Jersey: Hobart Press.
-
-Cook, D., & Swayne, D. F. (2008). *Interactive and Dynamic Graphics for Data Analysis: With R and GGobi.* New York: Springer.
-
-Crawley, M. J. (2013). *The R Book* (Second ed.). Chichester: John Wiley & Sons Ltd.
-
-Dalgaard, P. (2002). *Introductory Statistics with R.* New York: Springer.
-
-de Vries, A., & Meys, J. (2012). *R for Dummies.* Chichester: John Wiley & Sons.
-
-Everitt, B. S., & Hothorn, T. (2006). *A Handbook of Statistical Analyses Using R.* Boca Raton, Florida: Chapman & Hall/CRC.
-
-Fox, J. (2002). *An R and S-PLUS Companion to Applied Regression.* Thousand Oaks, CA: Sage.
-
-Fox, J. (2008). *Applied Regression Analysis and Generalized Linear Models.* Thousand Oaks, CA: Sage.
-
-Gardener, M. (2013). *The Essential R Reference.* Indianapolis, IN: John Wiley & Sons.
-
-Gelman, A., & Hill, J. (2007). *Data Analysis Using Regression and Multilevel/Hierarchical Models.* New York: Cambridge University Press.
-
-Goldberg, D. (1991). What every computer scientist should know about floating-point arithmetic. *ACM Comput. Surv., 23*(1), 5-48.
-
-Harrell, F. E. (2001). *Regression Model Strategies: with applications to linear models, logistic regression, and survival analysis.* New York: Springer.
-
-Hastie, T., Tibshirani, R., & Friedman, J. (2009). *The Elements of Statistical Learning: Data Mining, Inference, and Prediction* (2nd ed.). New York: Springer.
-
-Ihaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. *Journal of Computational and Graphical Statistics, 5*(3), 299-314.
-
-Kabacoff, R. I. (2011). *R in Action.* Shelter Island, NY: Manning.
-
-Kleinman, K., & Horton, N. J. (2010). *SAS and R: Data Management, Statistical Analysis, and Graphics.* Boca Raton, FL: Chapman & Hall/CRC.
-
-Maindonald, J., & Braun, J. (2007). *Data Analysis and Graphics Using R: An Example-based Approach* (second ed.). Cambridge: Cambridge University Press.
-
-Matloff, N. (2011). *The Art of R Programming.* San Francisco: no starch press.
-
-Minelli, M., Chambers, M., & Dhiraj, A. (2013). *Big Data, Big Analytics.* Hoboken, NJ: John Wiley & Sons.
-
-Muenchen, R. A. (2009). *R for SAS and SPSS Users.* New York: Springer.
-
-Murrell, P. (2006). *R Graphics.* Boca Raton, FL: Chapman & Hall/CRC.
-
-R Development Core Team. (2008). *R: A Language and Environment for Statistical Computing.* Vienna: R Foundation for Statistical Computing.
-
-R Development Core Team. (2008). *An Introduction to R.* Vienna: R Foundation for Statistical Computing.
-
-Sarkar, D. (2008). *Lattice: Multivariate Data Visualization with R.* New York: Springer.
-
-Shoukri, M. M., & Chaudhary, M. A. (2007). *Analysis of Correlated Data with SAS and R* (third ed.). Boca Raton, FL: Chapman & Hall/CRC.
-
-Spector, P. (2008). *Data Manipulation with R.* New York: Springer.
-
-Teetor, P. (2011). *R Cookbook.* Sebastopol, CA: O'Reilly.
-
-Venables, W. N., & Ripley, B. D. (1999). *S Programming.* New York: Springer.
-
-Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S* (Fourth Edition ed.). New York: Springer.
-
-Wickham, H. (2009). *ggplot2: Elegant Graphics for Data Analysis.* New York: Springer.
-
-Wilkinson, L. (2005). *The Grammar of Graphics* (second ed.). New York: Springer.
-
-Find [additional resources here](https://mran.microsoft.com/documents/getting-started/).
+Beyond the standard R manuals, there are many other resources. [Learn about them here](rserver-more-resources.md). 
