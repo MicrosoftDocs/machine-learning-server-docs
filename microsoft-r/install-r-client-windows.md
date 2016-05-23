@@ -73,7 +73,18 @@ R client is optimized to work with all Microsoft R Server versions. For a compar
 >After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the RevoScaleR package. These APIs let you send R commands to a remote server for execution. Learn more in the [Getting Started Guide](rserver-getting-started.md).
 
 <br>
+##Testing the Install
+The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
 
+**To run these tests:**
+
+Run the following commands from your `R` prompt:
+
+	library(RevoIOQ)
+	RevoIOQ()
+
+<br>
+##Launch Microsoft R Client
 **To launch Microsoft R Client**:
 
 After you have installed the software, you launch Microsoft R Client as follows.
@@ -90,11 +101,6 @@ After you have installed the software, you launch Microsoft R Client as follows.
   1. Click **Start** to view the **Start** screen.
 
   1. Locate and click the tile for **Microsoft R Client**.
-
-<br>
-##Tutorials & Getting Started Guides
-
-You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
 
 <br>
 ##What's Installed & Where to Find R Packages
@@ -120,12 +126,7 @@ If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Clien
 If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
 <br>
-##Testing the Install
-The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
+##Tutorials & Getting Started Guides
 
-**To run these tests:**
+You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
 
-Run the following commands from your `R` prompt:
-
-	library(RevoIOQ)
-	RevoIOQ()
