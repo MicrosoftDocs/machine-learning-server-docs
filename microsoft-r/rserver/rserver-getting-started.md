@@ -98,6 +98,8 @@ To learn more, look for [data sources in the RevoScaleR package](scaler-user-gui
 
 ###DeployR 
 
+<a name="deployr-intro"></a>
+
 >**In a nutshell:**
 >The R Integration Server is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. 
 
@@ -609,7 +611,7 @@ On Linux systems, you should not use CRAN as a source for third-party packages, 
 
 >*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Revolution R Enterprise, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 
-### Using Microsoft R Services via Rscript and R CMD BATCH
+### Using Microsoft R via Rscript and R CMD BATCH
 
 Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag *–default-packages=* to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
 
@@ -634,7 +636,7 @@ It is always best to start with the easiest things first, and in some cases gett
 
 ### Upgrade Your Software
 
-Some software is simply more optimized for use with big data. For instance, getting better math libraries can greatly speed some computations. R allows its core math libraries to be replaced, and in ***Microsoft R Services*** they are replaced with extremely fast, threaded libraries. And, of course, the ***RevoScaleR*** package provides the underlying high-performance compute engine used by its Big Data Big Analytics algorithms.
+Some software is simply more optimized for use with big data. For instance, getting better math libraries can greatly speed some computations. R allows its core math libraries to be replaced, and in Microsoft R Server and R Client they are replaced with extremely fast, threaded libraries. And, of course, the ***RevoScaleR*** package provides the underlying high-performance compute engine used by its Big Data Big Analytics algorithms.
 
 ### Minimize Copies of Data
 
@@ -733,7 +735,7 @@ In summary, by using the tips and tools outlined above you can have the best of 
 
 ## Getting Started with Big Data in R
 
-The **RevoScaleR** package included in **Microsoft R Services** provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
+The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
 
 ### Step 1: Accessing Your Data with *rxImport*
 

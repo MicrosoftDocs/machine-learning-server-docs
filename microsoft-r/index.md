@@ -16,8 +16,9 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 |Big Data|In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
 |Speed of Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
 |Enterprise Readiness|Community support|Commercial support|Commercial support|
-|Analytic Breadth & Depth|7K+ analytic R packages|Open source R packages plus 'Big Data'-ready packages|Open source R packages plus 'Big Data'-ready + Multithreaded ready packages|
-|DeployR|N/A|N/A|Optional add-on|
+|Analytic Breadth & Depth|7K+ analytic R packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
+|Commercial Viability|Risk of deployment to open source|Free for everyone|Commercial licenses|
+|[DeployR](rserver-getting-started.md#deployr-intro)|Not available|Not available|Optional add-on|
 
 <br>
 ###Microsoft R Server
@@ -33,7 +34,9 @@ Microsoft R Server delivers enterprise class performance and scalability for you
 
 Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. 
 
-On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound even with XDF files. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+
+
 
 ###Microsoft R Open
 
