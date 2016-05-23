@@ -195,7 +195,14 @@ You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 i
 
 You must update the server Web context or else you will not be able to access to the DeployR landing page or other DeployR components after installation.
 
-1. Take note of the **Public IP address**.
+1. Take note of the correct **Public IP address**.   
+
+   + On Linux, run the following command  and take note of the IP returned:
+     ```
+     curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//
+     ```
+
+   + On Windows, visit this URL in your browser (http://checkip.dyndns.org/) and take note of the IP returned.
 
 1. If DeployR was installed on a virtual machine, remote desktop or SSH into that machine.
 
