@@ -29,6 +29,7 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
+Get started with Microsoft R Server now and read this [Getting Started](rserver-getting-started.md) guide.
 
 ##Microsoft R Client
 
@@ -36,6 +37,7 @@ Microsoft R Client is a free tool to enable data scientists to connect to and ex
 
 On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound even with XDF files. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
+Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](rserver-getting-started.md) guide.
 
 
 ##Microsoft R Open
@@ -45,6 +47,8 @@ Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. I
 Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries.    
 
 On its own, Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the ScaleR functions and packages included with Microsoft R Server and Microsoft R Client are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Since Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open, all of the amazing third-party packages available for that version of R should also work when you are in Microsoft R Server and Microsoft R Client. 
+
+Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
 
 
 ##Learn more
