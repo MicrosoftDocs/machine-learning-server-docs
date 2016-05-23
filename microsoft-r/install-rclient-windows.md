@@ -70,8 +70,6 @@ R client is optimized to work with all Microsoft R Server versions. For a compar
 
 1. When the installation finishes, click **Finish**.  
 
-   >[!WARNING]
-   >For help with any installation issues, please check out these [troubleshooting tips](#troubleshooting) or post questions on the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 <!--1. Setup of the R components used by Microsoft R Client requires an Internet connection for access to files that are provided either on the Microsoft Download Center or another trusted site. If you are performing an offline install, Microsoft R Client cannot access the links for installing required R components. To avoid this problem, you can download a copy of the installers locally and complete setup as described here:
 
