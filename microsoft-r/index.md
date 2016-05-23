@@ -6,12 +6,12 @@ Microsoft R Server and Client, simply put, are R for the Enterprise. Microsoft p
 
 Microsoft also offers Microsoft R Open, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
-##Product Differentiation
+##The Microsoft R Family
 
 The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
 
 |Feature     |Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|------------|------------|-----------|-----------|
+|------------|----------------|------------------|-----------|
 |Cores       |????|1-3|1-????|
 |Big Data    |In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
 |Speed of<br>Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
