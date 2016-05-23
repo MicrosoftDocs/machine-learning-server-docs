@@ -10,18 +10,18 @@ Microsoft also offers Microsoft R Open, which provides high performance math lib
 
 The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
 
-|Feature   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|----------|------------|-----------|-----------|
-|Cores     |????|1-3|1-????|
-|Big Data  |In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
-|Speed of Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
-|Enterprise Readiness|Community support|Commercial support|Commercial support|
-|Analytic Breadth & Depth|7K+ analytic R packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
-|Commercial Viability|Risk of deployment to open source|Free for everyone|Commercial licenses|
-|[DeployR](rserver-getting-started.md#deployr-intro)    |Not available|Not available|Optional add-on|
+|Feature     |Microsoft R Open|Microsoft R Client|Microsoft R Server|
+|------------|------------|-----------|-----------|
+|Cores       |????|1-3|1-????|
+|Big Data    |In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
+|Speed of<br>Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
+|Enterprise<br>Readiness|Community support|Commercial support|Commercial support|
+|Analytic<br>Breadth <br>& Depth|7K+ analytic R packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
+|Commercial<br>Viability|Risk of deployment to open source|Free for everyone|Commercial licenses|
+|[DeployR](rserver-getting-started.md#deployr-intro)     |Not available|Not available|Optional add-on|
 
 <br>
-###Microsoft R Server
+##Microsoft R Server
 
 Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. Supporting a variety of big data statistics, predictive modeling and machine learning capabilities, R Server supports the full range of analytics – exploration, analysis, visualization and modeling based on open source R. 
 
@@ -30,7 +30,7 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
 
-###Microsoft R Client
+##Microsoft R Client
 
 Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. 
 
@@ -38,7 +38,7 @@ On its own, R Client is limited to a single compute thread for RevoScaleR functi
 
 
 
-###Microsoft R Open
+##Microsoft R Open
 
 Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Based on the open source R engine, the most widely used statistics software in the world, makes Microsoft R Open fully compatibility with all packages, scripts and applications that work with that version of R. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.
 
