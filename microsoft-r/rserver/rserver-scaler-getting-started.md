@@ -1224,6 +1224,7 @@ The output should look like the following if you are using the large data files:
 	4         713       15           5   6236 2000       0
 	5         689       10           5   6817 2000       0
 
+
 ### Computing Summary Statistics 
 
 Use the *rxSummary* function to compute summary statistics for the variables in the data set, setting the *blocksPerRead* to *2*.
@@ -1294,6 +1295,7 @@ You will see timings for each iteration and the final results printed. The resul
 	Condition number of final variance-covariance matrix: 6.685 
 	Number of iterations: 10
 
+<a name="computecontext"></a>
 ### Computing a Logistic Regression with Many Parameters 
 
 If you are using the large *mortDefault* data set, you can continue and estimate a logistic regression with many parameters.
