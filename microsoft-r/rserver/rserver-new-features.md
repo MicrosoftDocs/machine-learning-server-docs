@@ -639,7 +639,7 @@ Now let’s fit a linear model with the variable y as the dependent variable, us
 	
 	
 	Regression Results 
-	**********************************************************
+	**************************************************************************************
 	Dependent Variable: y
 	Total independent variables: 4
 	Number of valid observations: 1000000
@@ -652,7 +652,7 @@ Now let’s fit a linear model with the variable y as the dependent variable, us
 	Residual standard error: 300.3035 (999996 d.f.)
 	F-statistic: 101.3886 (3 and 999996 d.f.), p-value: 0.0000
 	Condition number: 1.0042
-	**********************************************************
+	**************************************************************************************
 
 You may have noticed when we created the data set that y was not dependent on *x2, x4,* or *x6*, so it is not surprising to see that the final model estimated excludes these variables.
 
@@ -679,11 +679,11 @@ If you want a stepwise selection that is more SAS-like, you can specify *stepCri
 	Coefficients:
 			Estimate Std. Error t value Pr(>|t|)
 	(Intercept) -0.2357 0.3003 -0.785 0.433
-	x1 1.5454 0.3003 5.146 2.67e-07 **
-	x5 3.6523 0.3006 12.151 2.22e-16 **
-	x3 3.4185 0.3001 11.391 2.22e-16 **
+	x1 1.5454 0.3003 5.146 2.67e-07 ***
+	x5 3.6523 0.3006 12.151 2.22e-16 ***
+	x3 3.4185 0.3001 11.391 2.22e-16 ***
 	---
-	Signif. codes: 0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes: 0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 300.3 on 999996 degrees of freedom
 	Multiple R-squared: 0.0003041
@@ -769,11 +769,11 @@ Note that the above examples uses a small model with a very small data set. By d
 	Coefficients:
 	            Estimate Std. Error z value Pr(>|z|)    
 	(Intercept) 0.006970   0.002959   2.356   0.0185 *  
-	x2          1.746061   0.004247 411.095 2.22e-16 **
-	x4          1.744448   0.004248 410.673 2.22e-16 **
-	x6          1.746682   0.004243 411.698 2.22e-16 **
+	x2          1.746061   0.004247 411.095 2.22e-16 ***
+	x4          1.744448   0.004248 410.673 2.22e-16 ***
+	x6          1.746682   0.004243 411.698 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 5.2431 
 	Number of iterations: 7
@@ -814,17 +814,17 @@ We can recast this as a stepwise model by specifying a variableSelection argumen
 	Residual deviance: 18.0433 (on 116 degrees of freedom)
 	Coefficients:
 			Estimate Std. Error t value Pr(>|t|)
-	(Intercept) 0.0040354 0.0004661 8.657 3.24e-14 **
+	(Intercept) 0.0040354 0.0004661 8.657 3.24e-14 ***
 	car.age=0-3 Dropped Dropped Dropped Dropped
 	car.age=4-7 0.0003568 0.0004037 0.884 0.37868
 	car.age=8-9 0.0011825 0.0004688 2.522 0.01302 *
-	car.age=10+ 0.0035478 0.0006853 5.177 9.57e-07 **
+	car.age=10+ 0.0035478 0.0006853 5.177 9.57e-07 ***
 	type=A Dropped Dropped Dropped Dropped
 	type=B -0.0004512 0.0005519 -0.818 0.41528
 	type=C -0.0004135 0.0005558 -0.744 0.45837
-	type=D -0.0016307 0.0004923 -3.313 0.00123 **
+	type=D -0.0016307 0.0004923 -3.313 0.00123 ***
 	---
-	Signif. codes: 0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes: 0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	(Dispersion parameter for Gamma family taken to be 0.2249467)
 
@@ -1157,17 +1157,17 @@ By using the frequency weights argument, we can use many of the RevoScaleR analy
 	 
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)         -3.19458    0.20413 -15.650 2.22e-16 **
-	CRSDepTime           0.97862    0.01126  86.948 2.22e-16 **
-	DayOfWeek=Monday     2.08100    0.18602  11.187 2.22e-16 **
-	DayOfWeek=Tuesday    1.34015    0.19881   6.741 1.58e-11 **
+	(Intercept)         -3.19458    0.20413 -15.650 2.22e-16 ***
+	CRSDepTime           0.97862    0.01126  86.948 2.22e-16 ***
+	DayOfWeek=Monday     2.08100    0.18602  11.187 2.22e-16 ***
+	DayOfWeek=Tuesday    1.34015    0.19881   6.741 1.58e-11 ***
 	DayOfWeek=Wednesday  0.15155    0.19679   0.770    0.441    
-	DayOfWeek=Thursday  -1.32301    0.19518  -6.778 1.22e-11 **
-	DayOfWeek=Friday     4.80042    0.19452  24.679 2.22e-16 **
-	DayOfWeek=Saturday   2.18965    0.19229  11.387 2.22e-16 **
+	DayOfWeek=Thursday  -1.32301    0.19518  -6.778 1.22e-11 ***
+	DayOfWeek=Friday     4.80042    0.19452  24.679 2.22e-16 ***
+	DayOfWeek=Saturday   2.18965    0.19229  11.387 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
 	
 	Residual standard error: 40.39 on 582620 degrees of freedom
 	Multiple R-squared: 0.01465 
@@ -1192,17 +1192,17 @@ Using the full data set, we get the following results:
 	 
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)         -3.19458    0.20413 -15.650 2.22e-16 **
-	CRSDepTime           0.97862    0.01126  86.948 2.22e-16 **
-	DayOfWeek=Monday     2.08100    0.18602  11.187 2.22e-16 **
-	DayOfWeek=Tuesday    1.34015    0.19881   6.741 1.58e-11 **
+	(Intercept)         -3.19458    0.20413 -15.650 2.22e-16 ***
+	CRSDepTime           0.97862    0.01126  86.948 2.22e-16 ***
+	DayOfWeek=Monday     2.08100    0.18602  11.187 2.22e-16 ***
+	DayOfWeek=Tuesday    1.34015    0.19881   6.741 1.58e-11 ***
 	DayOfWeek=Wednesday  0.15155    0.19679   0.770    0.441    
-	DayOfWeek=Thursday  -1.32301    0.19518  -6.778 1.22e-11 **
-	DayOfWeek=Friday     4.80042    0.19452  24.679 2.22e-16 **
-	DayOfWeek=Saturday   2.18965    0.19229  11.387 2.22e-16 **
+	DayOfWeek=Thursday  -1.32301    0.19518  -6.778 1.22e-11 ***
+	DayOfWeek=Friday     4.80042    0.19452  24.679 2.22e-16 ***
+	DayOfWeek=Saturday   2.18965    0.19229  11.387 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
 	
 	Residual standard error: 40.39 on 582620 degrees of freedom
 	Multiple R-squared: 0.01465 
@@ -1279,20 +1279,20 @@ Similarly, we can have the output from rxPredict directed to a delimited text fi
 	 
 	Coefficients: (1 not defined because of singularities)
 	            Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)  48.9879     0.9176  53.387 2.22e-16 **
-	xnum1         1.7360     0.2616   6.636 2.45e-09 **
-	xfac1=10     -7.1529     1.2543  -5.703 1.52e-07 **
-	xfac1=7     -20.9900     1.1915 -17.616 2.22e-16 **
-	xfac1=8     -15.7206     1.1134 -14.119 2.22e-16 **
-	xfac1=9     -10.8970     1.4761  -7.382 7.89e-11 **
-	xfac1=13      3.7270     1.2613   2.955 0.004002 ** 
-	xfac1=11     -4.3737     1.2130  -3.606 0.000513 **
-	xfac1=6     -23.1175     1.2993 -17.792 2.22e-16 **
-	xfac1=14      8.0012     1.1416   7.009 4.45e-10 **
-	xfac1=5     -28.2305     1.2627 -22.357 2.22e-16 **
+	(Intercept)  48.9879     0.9176  53.387 2.22e-16 ***
+	xnum1         1.7360     0.2616   6.636 2.45e-09 ***
+	xfac1=10     -7.1529     1.2543  -5.703 1.52e-07 ***
+	xfac1=7     -20.9900     1.1915 -17.616 2.22e-16 ***
+	xfac1=8     -15.7206     1.1134 -14.119 2.22e-16 ***
+	xfac1=9     -10.8970     1.4761  -7.382 7.89e-11 ***
+	xfac1=13      3.7270     1.2613   2.955 0.004002 ***
+	xfac1=11     -4.3737     1.2130  -3.606 0.000513 ***
+	xfac1=6     -23.1175     1.2993 -17.792 2.22e-16 ***
+	xfac1=14      8.0012     1.1416   7.009 4.45e-10 ***
+	xfac1=5     -28.2305     1.2627 -22.357 2.22e-16 ***
 	xfac1=12     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 2.554 on 89 degrees of freedom
 	Multiple R-squared: 0.9612 

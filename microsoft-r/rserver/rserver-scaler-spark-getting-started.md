@@ -449,16 +449,16 @@ The resulting output is:
 	 
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)          10.3318     0.1330  77.673 2.22e-16 **
-	DayOfWeek=Monday      1.6938     0.1872   9.049 2.22e-16 **
-	DayOfWeek=Tuesday     0.9620     0.2001   4.809 1.52e-06 **
+	(Intercept)          10.3318     0.1330  77.673 2.22e-16 ***
+	DayOfWeek=Monday      1.6938     0.1872   9.049 2.22e-16 ***
+	DayOfWeek=Tuesday     0.9620     0.2001   4.809 1.52e-06 ***
 	DayOfWeek=Wednesday  -0.1753     0.1980  -0.885    0.376    
-	DayOfWeek=Thursday   -1.6738     0.1964  -8.522 2.22e-16 **
-	DayOfWeek=Friday      4.4725     0.1957  22.850 2.22e-16 **
-	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 **
+	DayOfWeek=Thursday   -1.6738     0.1964  -8.522 2.22e-16 ***
+	DayOfWeek=Friday      4.4725     0.1957  22.850 2.22e-16 ***
+	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -592,15 +592,15 @@ You should see the following results:
 	 
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
-	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 ** | 901592
-	DayOfWeek=Tues  1.80696    0.03835   47.12 2.22e-16 ** | 855805
-	DayOfWeek=Wed   2.19424    0.03807   57.64 2.22e-16 ** | 868505
-	DayOfWeek=Thur  4.65502    0.03757  123.90 2.22e-16 ** | 891674
-	DayOfWeek=Fri   5.64402    0.03747  150.62 2.22e-16 ** | 896495
-	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 ** | 732944
-	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 ** | 858366
+	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
+	DayOfWeek=Tues  1.80696    0.03835   47.12 2.22e-16 *** | 855805
+	DayOfWeek=Wed   2.19424    0.03807   57.64 2.22e-16 *** | 868505
+	DayOfWeek=Thur  4.65502    0.03757  123.90 2.22e-16 *** | 891674
+	DayOfWeek=Fri   5.64402    0.03747  150.62 2.22e-16 *** | 896495
+	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
+	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
@@ -666,15 +666,15 @@ You should see the following results (which should match the results we found fo
 	 
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
-	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 ** | 901592
-	DayOfWeek=Tues  1.80696    0.03835   47.12 2.22e-16 ** | 855805
-	DayOfWeek=Wed   2.19424    0.03807   57.64 2.22e-16 ** | 868505
-	DayOfWeek=Thur  4.65502    0.03757  123.90 2.22e-16 ** | 891674
-	DayOfWeek=Fri   5.64402    0.03747  150.62 2.22e-16 ** | 896495
-	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 ** | 732944
-	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 ** | 858366
+	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
+	DayOfWeek=Tues  1.80696    0.03835   47.12 2.22e-16 *** | 855805
+	DayOfWeek=Wed   2.19424    0.03807   57.64 2.22e-16 *** | 868505
+	DayOfWeek=Thur  4.65502    0.03757  123.90 2.22e-16 *** | 891674
+	DayOfWeek=Fri   5.64402    0.03747  150.62 2.22e-16 *** | 896495
+	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
+	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)

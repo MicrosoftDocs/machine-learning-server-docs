@@ -378,41 +378,41 @@ We can then view a summary of the results as follows:
  
 	Coefficients: (2 not defined because of singularities)
 	                  Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)      3.570e+00  2.053e-01  17.389 2.22e-16 **
-	DayOfWeek=Mon    1.014e+00  5.320e-02  19.061 2.22e-16 **
-	DayOfWeek=Tues  -7.077e-01  5.389e-02 -13.131 2.22e-16 **
-	DayOfWeek=Wed   -3.503e-01  5.369e-02  -6.524 6.85e-11 **
-	DayOfWeek=Thur   2.122e+00  5.334e-02  39.782 2.22e-16 **
-	DayOfWeek=Fri    3.089e+00  5.327e-02  57.976 2.22e-16 **
-	DayOfWeek=Sat   -1.343e+00  5.615e-02 -23.925 2.22e-16 **
+	(Intercept)      3.570e+00  2.053e-01  17.389 2.22e-16 ***
+	DayOfWeek=Mon    1.014e+00  5.320e-02  19.061 2.22e-16 ***
+	DayOfWeek=Tues  -7.077e-01  5.389e-02 -13.131 2.22e-16 ***
+	DayOfWeek=Wed   -3.503e-01  5.369e-02  -6.524 6.85e-11 ***
+	DayOfWeek=Thur   2.122e+00  5.334e-02  39.782 2.22e-16 ***
+	DayOfWeek=Fri    3.089e+00  5.327e-02  57.976 2.22e-16 ***
+	DayOfWeek=Sat   -1.343e+00  5.615e-02 -23.925 2.22e-16 ***
 	DayOfWeek=Sun      Dropped    Dropped Dropped  Dropped    
-	F_CRSDepTime=0  -2.283e+00  4.548e-01  -5.020 5.17e-07 **
-	F_CRSDepTime=1  -3.277e+00  6.035e-01  -5.429 5.65e-08 **
-	F_CRSDepTime=2  -4.926e+00  1.223e+00  -4.028 5.63e-05 **
+	F_CRSDepTime=0  -2.283e+00  4.548e-01  -5.020 5.17e-07 ***
+	F_CRSDepTime=1  -3.277e+00  6.035e-01  -5.429 5.65e-08 ***
+	F_CRSDepTime=2  -4.926e+00  1.223e+00  -4.028 5.63e-05 ***
 	F_CRSDepTime=3  -2.316e+00  1.525e+00  -1.519 0.128881    
-	F_CRSDepTime=4  -5.063e+00  1.388e+00  -3.648 0.000265 **
-	F_CRSDepTime=5  -7.178e+00  2.377e-01 -30.197 2.22e-16 **
-	F_CRSDepTime=6  -7.317e+00  2.065e-01 -35.441 2.22e-16 **
-	F_CRSDepTime=7  -6.397e+00  2.065e-01 -30.976 2.22e-16 **
-	F_CRSDepTime=8  -4.907e+00  2.061e-01 -23.812 2.22e-16 **
-	F_CRSDepTime=9  -4.211e+00  2.074e-01 -20.307 2.22e-16 **
-	F_CRSDepTime=10 -2.857e+00  2.070e-01 -13.803 2.22e-16 **
-	F_CRSDepTime=11 -2.537e+00  2.069e-01 -12.262 2.22e-16 **
-	F_CRSDepTime=12 -9.556e-01  2.073e-01  -4.609 4.05e-06 **
+	F_CRSDepTime=4  -5.063e+00  1.388e+00  -3.648 0.000265 ***
+	F_CRSDepTime=5  -7.178e+00  2.377e-01 -30.197 2.22e-16 ***
+	F_CRSDepTime=6  -7.317e+00  2.065e-01 -35.441 2.22e-16 ***
+	F_CRSDepTime=7  -6.397e+00  2.065e-01 -30.976 2.22e-16 ***
+	F_CRSDepTime=8  -4.907e+00  2.061e-01 -23.812 2.22e-16 ***
+	F_CRSDepTime=9  -4.211e+00  2.074e-01 -20.307 2.22e-16 ***
+	F_CRSDepTime=10 -2.857e+00  2.070e-01 -13.803 2.22e-16 ***
+	F_CRSDepTime=11 -2.537e+00  2.069e-01 -12.262 2.22e-16 ***
+	F_CRSDepTime=12 -9.556e-01  2.073e-01  -4.609 4.05e-06 ***
 	F_CRSDepTime=13  1.180e-01  2.070e-01   0.570 0.568599    
-	F_CRSDepTime=14  1.470e+00  2.073e-01   7.090 2.22e-16 **
-	F_CRSDepTime=15  2.147e+00  2.076e-01  10.343 2.22e-16 **
-	F_CRSDepTime=16  2.701e+00  2.074e-01  13.023 2.22e-16 **
-	F_CRSDepTime=17  3.447e+00  2.065e-01  16.688 2.22e-16 **
-	F_CRSDepTime=18  4.080e+00  2.080e-01  19.614 2.22e-16 **
-	F_CRSDepTime=19  3.649e+00  2.079e-01  17.553 2.22e-16 **
-	F_CRSDepTime=20  4.216e+00  2.119e-01  19.895 2.22e-16 **
-	F_CRSDepTime=21  3.276e+00  2.151e-01  15.225 2.22e-16 **
+	F_CRSDepTime=14  1.470e+00  2.073e-01   7.090 2.22e-16 ***
+	F_CRSDepTime=15  2.147e+00  2.076e-01  10.343 2.22e-16 ***
+	F_CRSDepTime=16  2.701e+00  2.074e-01  13.023 2.22e-16 ***
+	F_CRSDepTime=17  3.447e+00  2.065e-01  16.688 2.22e-16 ***
+	F_CRSDepTime=18  4.080e+00  2.080e-01  19.614 2.22e-16 ***
+	F_CRSDepTime=19  3.649e+00  2.079e-01  17.553 2.22e-16 ***
+	F_CRSDepTime=20  4.216e+00  2.119e-01  19.895 2.22e-16 ***
+	F_CRSDepTime=21  3.276e+00  2.151e-01  15.225 2.22e-16 ***
 	F_CRSDepTime=22 -1.729e-01  2.284e-01  -0.757 0.449026    
 	F_CRSDepTime=23    Dropped    Dropped Dropped  Dropped    
-	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 **
+	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.27 on 6005349 degrees of freedom
 	Multiple R-squared: 0.01372 
@@ -443,41 +443,41 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	 
 	Coefficients:
 	                  Estimate Std. Error  z value Pr(>|z|)    
-	(Intercept)     -1.740e+00  1.492e-02 -116.602 2.22e-16 **
-	DayOfWeek=Mon    7.852e-02  4.060e-03   19.341 2.22e-16 **
-	DayOfWeek=Tues  -5.222e-02  4.202e-03  -12.428 2.22e-16 **
-	DayOfWeek=Wed   -4.431e-02  4.178e-03  -10.606 2.22e-16 **
-	DayOfWeek=Thur   1.593e-01  4.023e-03   39.596 2.22e-16 **
-	DayOfWeek=Fri    2.225e-01  3.981e-03   55.875 2.22e-16 **
-	DayOfWeek=Sat   -8.336e-02  4.425e-03  -18.839 2.22e-16 **
+	(Intercept)     -1.740e+00  1.492e-02 -116.602 2.22e-16 ***
+	DayOfWeek=Mon    7.852e-02  4.060e-03   19.341 2.22e-16 ***
+	DayOfWeek=Tues  -5.222e-02  4.202e-03  -12.428 2.22e-16 ***
+	DayOfWeek=Wed   -4.431e-02  4.178e-03  -10.606 2.22e-16 ***
+	DayOfWeek=Thur   1.593e-01  4.023e-03   39.596 2.22e-16 ***
+	DayOfWeek=Fri    2.225e-01  3.981e-03   55.875 2.22e-16 ***
+	DayOfWeek=Sat   -8.336e-02  4.425e-03  -18.839 2.22e-16 ***
 	DayOfWeek=Sun      Dropped    Dropped  Dropped  Dropped    
-	F_CRSDepTime=0  -2.537e-01  3.555e-02   -7.138 2.22e-16 **
-	F_CRSDepTime=1  -3.852e-01  4.916e-02   -7.836 2.22e-16 **
-	F_CRSDepTime=2  -4.118e-01  1.032e-01   -3.989 6.63e-05 **
+	F_CRSDepTime=0  -2.537e-01  3.555e-02   -7.138 2.22e-16 ***
+	F_CRSDepTime=1  -3.852e-01  4.916e-02   -7.836 2.22e-16 ***
+	F_CRSDepTime=2  -4.118e-01  1.032e-01   -3.989 6.63e-05 ***
 	F_CRSDepTime=3  -1.046e-01  1.169e-01   -0.895 0.370940    
-	F_CRSDepTime=4  -4.402e-01  1.202e-01   -3.662 0.000251 **
-	F_CRSDepTime=5  -9.115e-01  2.008e-02  -45.395 2.22e-16 **
-	F_CRSDepTime=6  -8.934e-01  1.553e-02  -57.510 2.22e-16 **
-	F_CRSDepTime=7  -6.559e-01  1.536e-02  -42.716 2.22e-16 **
-	F_CRSDepTime=8  -4.608e-01  1.518e-02  -30.364 2.22e-16 **
-	F_CRSDepTime=9  -3.657e-01  1.525e-02  -23.975 2.22e-16 **
-	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 **
-	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 **
-	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 **
-	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ** 
-	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 **
-	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 **
-	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 **
-	F_CRSDepTime=17  3.468e-01  1.489e-02   23.284 2.22e-16 **
-	F_CRSDepTime=18  4.008e-01  1.498e-02   26.762 2.22e-16 **
-	F_CRSDepTime=19  4.023e-01  1.497e-02   26.875 2.22e-16 **
-	F_CRSDepTime=20  4.484e-01  1.520e-02   29.489 2.22e-16 **
-	F_CRSDepTime=21  3.767e-01  1.543e-02   24.419 2.22e-16 **
-	F_CRSDepTime=22  8.995e-02  1.656e-02    5.433 5.55e-08 **
+	F_CRSDepTime=4  -4.402e-01  1.202e-01   -3.662 0.000251 ***
+	F_CRSDepTime=5  -9.115e-01  2.008e-02  -45.395 2.22e-16 ***
+	F_CRSDepTime=6  -8.934e-01  1.553e-02  -57.510 2.22e-16 ***
+	F_CRSDepTime=7  -6.559e-01  1.536e-02  -42.716 2.22e-16 ***
+	F_CRSDepTime=8  -4.608e-01  1.518e-02  -30.364 2.22e-16 ***
+	F_CRSDepTime=9  -3.657e-01  1.525e-02  -23.975 2.22e-16 ***
+	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 ***
+	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 ***
+	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 ***
+	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ***
+	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 ***
+	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 ***
+	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 ***
+	F_CRSDepTime=17  3.468e-01  1.489e-02   23.284 2.22e-16 ***
+	F_CRSDepTime=18  4.008e-01  1.498e-02   26.762 2.22e-16 ***
+	F_CRSDepTime=19  4.023e-01  1.497e-02   26.875 2.22e-16 ***
+	F_CRSDepTime=20  4.484e-01  1.520e-02   29.489 2.22e-16 ***
+	F_CRSDepTime=21  3.767e-01  1.543e-02   24.419 2.22e-16 ***
+	F_CRSDepTime=22  8.995e-02  1.656e-02    5.433 5.55e-08 ***
 	F_CRSDepTime=23    Dropped    Dropped  Dropped  Dropped    
-	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 **
+	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 445.2487 
 	Number of iterations: 5
@@ -496,13 +496,13 @@ Then, rerunning our previous example results in much more verbose output:
 
 	======  CLUSTER-HEAD2  ( process  1 ) has started run at 
 	Thu Aug 11 15:56:10 2011  ====== 
-	*********************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE10' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.791 2011 
-	*********************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE11' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.757 2011 
-	*********************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE12' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.769 2011 
-	*********************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE13' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.889 2011 
 	 
 	 
@@ -532,23 +532,23 @@ Then, rerunning our previous example results in much more verbose output:
 	COMPUTE12: Rows Read: 2400000, Total Rows Processed: 24556949, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE13' has completed its task successfully. Thu Aug 11 15:56:11.341 2011 
 	Elapsed time: 0.453 secs. 
-	*********************************************** 
+	**********************************************************************  
 	 
 	Worker Node 'COMPUTE12' has completed its task successfully. Thu Aug 11 15:56:11.221 2011 
 	Elapsed time: 0.453 secs. 
-	*********************************************** 
+	**********************************************************************  
 	 
 	COMPUTE10: Rows Read: 2351983, Total Rows Processed: 24672124, Total Chunk Time: 0.078 seconds 
 	COMPUTE11: Rows Read: 2400000, Total Rows Processed: 24707495, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE10' has completed its task successfully. Thu Aug 11 15:56:11.244 2011 
 	Elapsed time: 0.453 secs. 
-	*********************************************** 
+	**********************************************************************  
 	 
 	Worker Node 'COMPUTE11' has completed its task successfully. Thu Aug 11 15:56:11.209 2011 
 	Elapsed time: 0.453 secs. 
-	*********************************************** 
+	**********************************************************************  
 	 
-	*********************************************** 
+	**********************************************************************  
 	Master node [CLUSTER-HEAD2] is starting a task.... Thu Aug 11 15:56:10.961 2011 
 	CLUSTER-HEAD2: Rows Read: 4461826, Total Rows Processed: 4461826, Total Chunk Time: 0.038 seconds 
 	CLUSTER-HEAD2: Rows Read: 4452096, Total Rows Processed: 8913922, Total Chunk Time: 0.071 seconds 
@@ -558,7 +558,7 @@ Then, rerunning our previous example results in much more verbose output:
 	CLUSTER-HEAD2: Rows Read: 2400000, Total Rows Processed: 24602940, Total Chunk Time: 0.072 seconds 
 	Master node [CLUSTER-HEAD2] has completed its task successfully. Thu Aug 11 15:56:11.410 2011 
 	Elapsed time: 0.449 secs. 
-	*********************************************** 
+	**********************************************************************  
 	Time to compute summary on all servers: 0.461 secs. 
 	Processing results on client ... 
 	Computation time: 0.471 seconds. 
@@ -729,16 +729,16 @@ We obtain the following results:
 	 
 	Coefficients:
 	                      Estimate Std. Error  t value Pr(>|t|)    
-	(Intercept)         -1.4691555  0.0002209 -6651.17 2.22e-16 **
-	DayOfWeek=Monday    -0.0083930  0.0003088   -27.18 2.22e-16 **
-	DayOfWeek=Tuesday   -0.0559740  0.0003115  -179.67 2.22e-16 **
-	DayOfWeek=Wednesday  0.0386048  0.0003068   125.82 2.22e-16 **
-	DayOfWeek=Thursday   0.1862203  0.0003006   619.41 2.22e-16 **
-	DayOfWeek=Friday     0.2388796  0.0002985   800.14 2.22e-16 **
-	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 **
+	(Intercept)         -1.4691555  0.0002209 -6651.17 2.22e-16 ***
+	DayOfWeek=Monday    -0.0083930  0.0003088   -27.18 2.22e-16 ***
+	DayOfWeek=Tuesday   -0.0559740  0.0003115  -179.67 2.22e-16 ***
+	DayOfWeek=Wednesday  0.0386048  0.0003068   125.82 2.22e-16 ***
+	DayOfWeek=Thursday   0.1862203  0.0003006   619.41 2.22e-16 ***
+	DayOfWeek=Friday     0.2388796  0.0002985   800.14 2.22e-16 ***
+	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 ***
 	DayOfWeek=Sunday       Dropped    Dropped  Dropped  Dropped    
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 78.6309 
 	Number of iterations: 2

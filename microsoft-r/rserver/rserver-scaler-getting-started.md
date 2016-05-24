@@ -309,16 +309,16 @@ The resulting output is:
 	 
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)          10.3318     0.1330  77.673 2.22e-16 **
-	DayOfWeek=Monday      1.6938     0.1872   9.049 2.22e-16 **
-	DayOfWeek=Tuesday     0.9620     0.2001   4.809 1.52e-06 **
+	(Intercept)          10.3318     0.1330  77.673 2.22e-16 ***
+	DayOfWeek=Monday      1.6938     0.1872   9.049 2.22e-16 ***
+	DayOfWeek=Tuesday     0.9620     0.2001   4.809 1.52e-06 ***
 	DayOfWeek=Wednesday  -0.1753     0.1980  -0.885    0.376    
-	DayOfWeek=Thursday   -1.6738     0.1964  -8.522 2.22e-16 **
-	DayOfWeek=Friday      4.4725     0.1957  22.850 2.22e-16 **
-	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 **
+	DayOfWeek=Thursday   -1.6738     0.1964  -8.522 2.22e-16 ***
+	DayOfWeek=Friday      4.4725     0.1957  22.850 2.22e-16 ***
+	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -350,15 +350,15 @@ You should see the following output:
 	 
 	Coefficients:
 	                    Estimate Std. Error t value Pr(>|t|)     | Counts
-	DayOfWeek=Monday     12.0256     0.1317   91.32 2.22e-16 ** |  95298
-	DayOfWeek=Tuesday    11.2938     0.1494   75.58 2.22e-16 ** |  74011
-	DayOfWeek=Wednesday  10.1565     0.1467   69.23 2.22e-16 ** |  76786
-	DayOfWeek=Thursday    8.6580     0.1445   59.92 2.22e-16 ** |  79145
-	DayOfWeek=Friday     14.8043     0.1436  103.10 2.22e-16 ** |  80142
-	DayOfWeek=Saturday   11.8753     0.1404   84.59 2.22e-16 ** |  83851
-	DayOfWeek=Sunday     10.3318     0.1330   77.67 2.22e-16 ** |  93395
+	DayOfWeek=Monday     12.0256     0.1317   91.32 2.22e-16 *** |  95298
+	DayOfWeek=Tuesday    11.2938     0.1494   75.58 2.22e-16 *** |  74011
+	DayOfWeek=Wednesday  10.1565     0.1467   69.23 2.22e-16 *** |  76786
+	DayOfWeek=Thursday    8.6580     0.1445   59.92 2.22e-16 *** |  79145
+	DayOfWeek=Friday     14.8043     0.1436  103.10 2.22e-16 *** |  80142
+	DayOfWeek=Saturday   11.8753     0.1404   84.59 2.22e-16 *** |  83851
+	DayOfWeek=Sunday     10.3318     0.1330   77.67 2.22e-16 *** |  93395
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 (as if intercept included)
@@ -540,11 +540,11 @@ You should see the following results:
 	 
 	Coefficients:
 	              Estimate Std. Error z value Pr(>|z|)    
-	(Intercept) -2.0990076  0.0104460 -200.94 2.22e-16 **
-	DepHour      0.0790215  0.0007671  103.01 2.22e-16 **
-	Night       -0.3027030  0.0109914  -27.54 2.22e-16 **
+	(Intercept) -2.0990076  0.0104460 -200.94 2.22e-16 ***
+	DepHour      0.0790215  0.0007671  103.01 2.22e-16 ***
+	Night       -0.3027030  0.0109914  -27.54 2.22e-16 ***
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 3.0178 
 	Number of iterations: 4
@@ -755,10 +755,10 @@ It yields the following:
 	DayOfWeekWed   -1.1981     2.8600  -0.419    0.675    
 	DayOfWeekThur   0.1201     2.7041   0.044    0.965    
 	DayOfWeekFri    0.7377     2.7149   0.272    0.786    
-	DayOfWeekSat   14.2302     2.8876   4.928 9.74e-07 **
+	DayOfWeekSat   14.2302     2.8876   4.928 9.74e-07 ***
 	DayOfWeekSun    0.2874     2.9688   0.097    0.923    
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 23.58 on 985 degrees of freedom
 	  (8 observations deleted due to missingness)
@@ -1284,22 +1284,22 @@ You will see timings for each iteration and the final results printed. The resul
 	 
 	Coefficients:
 	              Estimate Std. Error z value Pr(>|z|)    
-	(Intercept) -7.294e+00  7.773e-02  -93.84 2.22e-16 **
-	F_year=2000 -3.996e+00  3.428e-02 -116.57 2.22e-16 **
-	F_year=2001 -2.722e+00  2.148e-02 -126.71 2.22e-16 **
-	F_year=2002 -3.865e+00  3.236e-02 -119.43 2.22e-16 **
-	F_year=2003 -4.182e+00  3.661e-02 -114.24 2.22e-16 **
-	F_year=2004 -4.721e+00  4.625e-02 -102.09 2.22e-16 **
-	F_year=2005 -4.903e+00  4.930e-02  -99.45 2.22e-16 **
-	F_year=2006 -4.442e+00  4.098e-02 -108.39 2.22e-16 **
-	F_year=2007 -3.209e+00  2.546e-02 -126.02 2.22e-16 **
-	F_year=2008 -7.228e-01  1.240e-02  -58.28 2.22e-16 **
+	(Intercept) -7.294e+00  7.773e-02  -93.84 2.22e-16 ***
+	F_year=2000 -3.996e+00  3.428e-02 -116.57 2.22e-16 ***
+	F_year=2001 -2.722e+00  2.148e-02 -126.71 2.22e-16 ***
+	F_year=2002 -3.865e+00  3.236e-02 -119.43 2.22e-16 ***
+	F_year=2003 -4.182e+00  3.661e-02 -114.24 2.22e-16 ***
+	F_year=2004 -4.721e+00  4.625e-02 -102.09 2.22e-16 ***
+	F_year=2005 -4.903e+00  4.930e-02  -99.45 2.22e-16 ***
+	F_year=2006 -4.442e+00  4.098e-02 -108.39 2.22e-16 ***
+	F_year=2007 -3.209e+00  2.546e-02 -126.02 2.22e-16 ***
+	F_year=2008 -7.228e-01  1.240e-02  -58.28 2.22e-16 ***
 	F_year=2009    Dropped    Dropped Dropped  Dropped    
-	creditScore -6.761e-03  1.062e-04  -63.67 2.22e-16 **
-	yearsEmploy -2.736e-01  2.698e-03 -101.41 2.22e-16 **
-	ccDebt       1.365e-03  3.922e-06  348.02 2.22e-16 **
+	creditScore -6.761e-03  1.062e-04  -63.67 2.22e-16 ***
+	yearsEmploy -2.736e-01  2.698e-03 -101.41 2.22e-16 ***
+	ccDebt       1.365e-03  3.922e-06  348.02 2.22e-16 ***
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 6.685 
 	Number of iterations: 10
@@ -1335,7 +1335,7 @@ The results of the estimation are:
 	 
 	Coefficients:
 	                Estimate Std. Error  z value Pr(>|z|)    
-	(Intercept)   -8.889e+00  2.043e-01  -43.515 2.22e-16 **
+	(Intercept)   -8.889e+00  2.043e-01  -43.515 2.22e-16 ***
 	F_houseAge=0  -4.160e-01  2.799e-01   -1.486 0.137262    
 	F_houseAge=1  -1.712e-01  2.526e-01   -0.678 0.497815    
 	F_houseAge=2  -3.593e-01  2.433e-01   -1.477 0.139775    
@@ -1349,49 +1349,49 @@ The results of the estimation are:
 	F_houseAge=10  2.850e-01  1.954e-01    1.459 0.144683    
 	F_houseAge=11  4.472e-01  1.936e-01    2.310 0.020911 *  
 	F_houseAge=12  4.951e-01  1.929e-01    2.567 0.010266 *  
-	F_houseAge=13  7.642e-01  1.918e-01    3.985 6.75e-05 **
-	F_houseAge=14  9.484e-01  1.911e-01    4.963 6.93e-07 **
-	F_houseAge=15  1.141e+00  1.905e-01    5.991 2.09e-09 **
-	F_houseAge=16  1.305e+00  1.902e-01    6.863 6.76e-12 **
-	F_houseAge=17  1.481e+00  1.899e-01    7.797 2.22e-16 **
-	F_houseAge=18  1.622e+00  1.897e-01    8.552 2.22e-16 **
-	F_houseAge=19  1.821e+00  1.895e-01    9.610 2.22e-16 **
-	F_houseAge=20  1.895e+00  1.893e-01   10.012 2.22e-16 **
-	F_houseAge=21  2.063e+00  1.893e-01   10.893 2.22e-16 **
-	F_houseAge=22  2.056e+00  1.894e-01   10.859 2.22e-16 **
-	F_houseAge=23  2.094e+00  1.894e-01   11.056 2.22e-16 **
-	F_houseAge=24  2.052e+00  1.895e-01   10.831 2.22e-16 **
-	F_houseAge=25  1.980e+00  1.896e-01   10.440 2.22e-16 **
-	F_houseAge=26  1.901e+00  1.898e-01   10.014 2.22e-16 **
-	F_houseAge=27  1.748e+00  1.901e-01    9.193 2.22e-16 **
-	F_houseAge=28  1.613e+00  1.906e-01    8.466 2.22e-16 **
-	F_houseAge=29  1.397e+00  1.913e-01    7.304 2.22e-16 **
-	F_houseAge=30  1.340e+00  1.919e-01    6.987 2.82e-12 **
-	F_houseAge=31  1.127e+00  1.930e-01    5.840 5.23e-09 **
-	F_houseAge=32  8.557e-01  1.951e-01    4.386 1.15e-05 **
-	F_houseAge=33  6.801e-01  1.976e-01    3.442 0.000576 **
-	F_houseAge=34  6.015e-01  2.002e-01    3.004 0.002666 ** 
+	F_houseAge=13  7.642e-01  1.918e-01    3.985 6.75e-05 ***
+	F_houseAge=14  9.484e-01  1.911e-01    4.963 6.93e-07 ***
+	F_houseAge=15  1.141e+00  1.905e-01    5.991 2.09e-09 ***
+	F_houseAge=16  1.305e+00  1.902e-01    6.863 6.76e-12 ***
+	F_houseAge=17  1.481e+00  1.899e-01    7.797 2.22e-16 ***
+	F_houseAge=18  1.622e+00  1.897e-01    8.552 2.22e-16 ***
+	F_houseAge=19  1.821e+00  1.895e-01    9.610 2.22e-16 ***
+	F_houseAge=20  1.895e+00  1.893e-01   10.012 2.22e-16 ***
+	F_houseAge=21  2.063e+00  1.893e-01   10.893 2.22e-16 ***
+	F_houseAge=22  2.056e+00  1.894e-01   10.859 2.22e-16 ***
+	F_houseAge=23  2.094e+00  1.894e-01   11.056 2.22e-16 ***
+	F_houseAge=24  2.052e+00  1.895e-01   10.831 2.22e-16 ***
+	F_houseAge=25  1.980e+00  1.896e-01   10.440 2.22e-16 ***
+	F_houseAge=26  1.901e+00  1.898e-01   10.014 2.22e-16 ***
+	F_houseAge=27  1.748e+00  1.901e-01    9.193 2.22e-16 ***
+	F_houseAge=28  1.613e+00  1.906e-01    8.466 2.22e-16 ***
+	F_houseAge=29  1.397e+00  1.913e-01    7.304 2.22e-16 ***
+	F_houseAge=30  1.340e+00  1.919e-01    6.987 2.82e-12 ***
+	F_houseAge=31  1.127e+00  1.930e-01    5.840 5.23e-09 ***
+	F_houseAge=32  8.557e-01  1.951e-01    4.386 1.15e-05 ***
+	F_houseAge=33  6.801e-01  1.976e-01    3.442 0.000576 ***
+	F_houseAge=34  6.015e-01  2.002e-01    3.004 0.002666 ***
 	F_houseAge=35  5.077e-01  2.050e-01    2.477 0.013239 *  
 	F_houseAge=36  2.856e-01  2.098e-01    1.361 0.173455    
 	F_houseAge=37  1.988e-01  2.192e-01    0.907 0.364336    
 	F_houseAge=38  1.050e-01  2.311e-01    0.454 0.649508    
 	F_houseAge=39  1.778e-01  2.422e-01    0.734 0.462974    
 	F_houseAge=40    Dropped    Dropped  Dropped  Dropped    
-	F_year=2000   -4.111e+00  3.482e-02 -118.075 2.22e-16 **
-	F_year=2001   -2.802e+00  2.185e-02 -128.261 2.22e-16 **
-	F_year=2002   -3.972e+00  3.282e-02 -121.025 2.22e-16 **
-	F_year=2003   -4.307e+00  3.711e-02 -116.064 2.22e-16 **
-	F_year=2004   -4.852e+00  4.676e-02 -103.770 2.22e-16 **
-	F_year=2005   -5.019e+00  4.973e-02 -100.921 2.22e-16 **
-	F_year=2006   -4.563e+00  4.152e-02 -109.901 2.22e-16 **
-	F_year=2007   -3.303e+00  2.587e-02 -127.649 2.22e-16 **
-	F_year=2008   -7.461e-01  1.261e-02  -59.171 2.22e-16 **
+	F_year=2000   -4.111e+00  3.482e-02 -118.075 2.22e-16 ***
+	F_year=2001   -2.802e+00  2.185e-02 -128.261 2.22e-16 ***
+	F_year=2002   -3.972e+00  3.282e-02 -121.025 2.22e-16 ***
+	F_year=2003   -4.307e+00  3.711e-02 -116.064 2.22e-16 ***
+	F_year=2004   -4.852e+00  4.676e-02 -103.770 2.22e-16 ***
+	F_year=2005   -5.019e+00  4.973e-02 -100.921 2.22e-16 ***
+	F_year=2006   -4.563e+00  4.152e-02 -109.901 2.22e-16 ***
+	F_year=2007   -3.303e+00  2.587e-02 -127.649 2.22e-16 ***
+	F_year=2008   -7.461e-01  1.261e-02  -59.171 2.22e-16 ***
 	F_year=2009      Dropped    Dropped  Dropped  Dropped    
-	creditScore   -6.987e-03  1.079e-04  -64.747 2.22e-16 **
-	yearsEmploy   -2.821e-01  2.746e-03 -102.729 2.22e-16 **
-	ccDebt         1.406e-03  4.092e-06  343.586 2.22e-16 **
+	creditScore   -6.987e-03  1.079e-04  -64.747 2.22e-16 ***
+	yearsEmploy   -2.821e-01  2.746e-03 -102.729 2.22e-16 ***
+	ccDebt         1.406e-03  4.092e-06  343.586 2.22e-16 ***
 	---
-	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 5254.541 
 	Number of iterations: 10
