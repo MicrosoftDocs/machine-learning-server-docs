@@ -107,10 +107,12 @@ After you have installed the software, you launch Microsoft R Client as follows.
 
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
-###R packages
+<br>
+####R packages
 The R libraries are installed under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
-###R tools
+<br>
+####R tools
 All the standard base R tools are included with Microsoft R Client under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\bin`. Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc` and in `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options. 
 
 Those standard R tools are:
@@ -121,12 +123,13 @@ Those standard R tools are:
 
 + **RScript**: A command-line tool for running R scripts in batch mode.
 
-If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll also have access to an integrated R development IDE. _RTVS_ is a free add-in for all editions of _Visual Studio_.
+The R Integrated Development Environment (IDE) options:
 
-If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
++ If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll also have access to an integrated R development environment. _RTVS_ is a free add-in for all editions of _Visual Studio_.
+
++ If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
 <br>
 ##Tutorials & Getting Started Guides
 
 You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
-
