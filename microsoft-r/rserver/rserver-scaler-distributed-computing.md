@@ -34,7 +34,12 @@ With **RevoScaleR** 2.0-0 and later, distributed computing capabilities are buil
 
 **RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
->Microsoft R Client is limited to three cores-- one thread for reading and two for processing RevoScaleR HPA functions.
+>[!IMPORTANT]
+>**Microsoft R Client** has several limitations to consider:
+>
+>1. Maximum of three cores avaiable -- one thread for reading and two for processing RevoScaleR HPA functions. 
+>
+>2. Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksperread` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can workaround this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
 
 
 ### Distributed Computing: A Primer 
