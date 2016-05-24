@@ -10,15 +10,15 @@ Microsoft also offers Microsoft R Open, which provides high performance math lib
 
 The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
 
-|Feature     |Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|------------|----------------|------------------|-----------|
-|Cores       |????|1-3|1-????|
-|Big Data    |In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
+|Feature   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
+|----------|----------------|------------------|-----------|
+|Cores     |????|1-3|1-????|
+|Big Data  |In-memory bound|In-memory bound<br>Operates on large volumes when connected to R Server|Hybrid memory & disk scalability<br>Operates on bigger volumes & factors|
 |Speed of<br>Analysis|Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
 |Enterprise<br>Readiness|Community support|Commercial support|Commercial support|
 |Analytic<br>Breadth <br>& Depth|7K+ analytic R packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
 |Commercial<br>Viability|Risk of deployment to open source|Free for everyone|Commercial licenses|
-|[DeployR](rserver-getting-started.md#deployr-intro)     |Not available|Not available|Optional add-on|
+|[DeployR](rserver-getting-started.md#deployr-intro)   |Not available|Not available|Optional add-on|
 
 <br>
 ##Microsoft R Server
