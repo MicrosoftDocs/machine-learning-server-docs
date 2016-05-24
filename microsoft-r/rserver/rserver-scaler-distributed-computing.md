@@ -34,6 +34,9 @@ With **RevoScaleR** 2.0-0 and later, distributed computing capabilities are buil
 
 **RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
+>Microsoft R Client is limited to three cores-- one thread for reading and two for processing RevoScaleR HPA functions.
+
+
 ### Distributed Computing: A Primer 
 
 Distributed computing is everywhere these days, with much buzz in the media about “cloud computing,” distributed file systems such as Hadoop, and distributed databases such as the Teradata data warehouse. As enterprises attempt to extract business intelligence from ever growing data sources, distributed computing provides the best hope for successfully harnessing adequate computing power to perform the necessary analyses.
