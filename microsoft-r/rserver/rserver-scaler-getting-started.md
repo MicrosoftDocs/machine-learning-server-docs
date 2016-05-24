@@ -44,6 +44,9 @@ Additional examples of using **RevoScaleR** can be found in the following manual
 
 The bulk of this guide shows using **RevoScaleR** with our **R Productivity Environment for Windows**; that component has its own Getting Started Guide accessible from its help menu. If you plan to use **RevoScaleR** in a Linux environment, the details for loading the package will differ, but the actual R commands used to call **RevoScaleR** functions will be identical.
 
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+
 ## Installation 
 
 The **RevoScaleR** package is installed as part of Microsoft R Server and R Client on both Windows and Linux. The package is automatically loaded when you start Microsoft R Server and R Client.
@@ -69,6 +72,9 @@ When downloading these files, put them in a directory where you can easily acces
 ### Creating a New Solution for Your Examples 
 
 If you are using the R Productivity Environment, you will probably want to create a new Solution.  Then you can then easily store your example R commands in scripts along with data files you create.  To do this, select **New Project** from the **File** menu.  Your working directory will automatically be reset to the location of the new solution. A new project has a single script *Script.R* by default; to open it, double-click the script name in the **Solution Explorer**.
+
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
 
 Each of the commands below can be put into your script.  After putting in a new set of commands, you can select and run the added code.
 
@@ -576,6 +582,9 @@ You should see the following information:
 	5       -2   6.416667    Monday FALSE       6 FALSE 0.1645331
 
 ## Using Code Snippets for RevoScaleR 
+
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
 
 If you are using our R Productivity Environment, you can use Code Snippets to increase your productivity with **RevoScaleR**. Code Snippets provide a “fill-in-the-blanks” approach to script writing and are provided for most **RevoScaleR** functions. For example, to create our ADS file using Code Snippets, proceed as follows:
 

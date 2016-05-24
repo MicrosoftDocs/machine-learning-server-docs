@@ -26,6 +26,9 @@ ms.custom: ""
 
 # R Productivity Environment User’s Guide 
 
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+
 ## A Tutorial Introduction 
 
 Revolution R Enterprise for Windows combines the popular R data analysis environment with the power of Microsoft’s Visual Studio Shell to create a full-featured R Productivity Environment™ for data analysis and graphics. This chapter introduces you to the Revolution R Enterprise productivity environment by means of a brief tutorial that walks you through the following basic operations:

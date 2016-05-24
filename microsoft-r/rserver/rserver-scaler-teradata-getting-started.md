@@ -67,7 +67,7 @@ If you plan to perform large computations alongside **Teradata**, Microsoft R Se
 -   A fast hard drive with at least 100 GB available– enough disk space to temporarily store the data being analyzed if desired
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10 [If you are using Teradata 14.0, the in-Teradata computation functionality will not be available.]
 
-More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). Note that the R Productivity Environment client (an Integrated Development Environment for R) runs on Windows workstations only.
+More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). 
 
 ## Setting Up the Sample Data
 

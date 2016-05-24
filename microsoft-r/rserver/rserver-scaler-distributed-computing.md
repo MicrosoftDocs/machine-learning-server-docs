@@ -126,6 +126,9 @@ which gives the following output:
 
 If you are using our R Productivity Environment, you can obtain the same information simply by typing the constructor’s name and an opening parenthesis in the R Console window or hovering over the constructor’s name in the Script window. More details about the parameters can be obtained from the constructor’s help file.
 
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+
 You can modify an existing compute context and set the modified context as the current compute context by calling *rxSetComputeContext*. For example, if you have defined *myCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call *rxSetComputeContext* as follows:
 
 	rxSetComputeContext(myCluster, wait=FALSE)
@@ -645,6 +648,9 @@ Calling rxGetJobStatus again a few seconds later shows us that the job has compl
 If we are using our R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
 
 ![Object Browser](media/rserver-scaler-distributed-computing/object_browser_1.png)
+
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
  
 We can then call rxGetJobResults to obtain the actual computation results:
 

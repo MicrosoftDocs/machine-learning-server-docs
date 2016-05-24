@@ -87,7 +87,7 @@
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 ## [Frequently Asked Questions](rserver/deployr-faq.md)
-# R Productivity Environment IDE
+# R Productivity Environment (Revolution R Enterprise)
 ## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
 # [Additional Resources](rserver/rserver-more-resources.md)
