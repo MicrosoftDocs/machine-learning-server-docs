@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Getting Started Guide"
-description: "Microsoft R Services features and components overview."
+title: "Microsoft R Server and R Client Getting Started Guide"
+description: "Microsoft R features and components overview."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "03/17/2016"
+ms.date: "05/23/2016"
 ms.topic: "get-started-article"
 ms.prod: "rserver"
 ms.service: ""
@@ -24,143 +24,142 @@ ms.custom: ""
 
 ---
 
-# R Services 2016 Getting Started Guide
+# Microsoft R Getting Started Guide
 
-## What is Microsoft R Services?
+##Microsoft R Products
 
-This chapter provides an overview of the features and components of Microsoft R Services.
+R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
 
-### R for the Enterprise
+Microsoft [R Server](#microsoft-r-server) and [R Client](#microsoft-r-client), simply put, are R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. Microsoft also offers the free, open-source [Microsoft R Open](#microsoft-r-open), which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
-*Microsoft R Services*, simply put, is R for the Enterprise. Microsoft provides the software, services, and support that combine to make the very popular R statistical computing environment a compelling tool not only for academia, exploration, and prototyping, but for deployment within an enterprise. The feature set provided by the **Microsoft R Services** software can be categorized as follows:
+For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md).
 
-- *Microsoft R Open*: High performance math libraries installed on top of a stable version of Open Source R (including Base and Recommended Packages)
-- *DistributedR*: Parallel and distributed computing framework for ‘Big Data Big Analytics’
-- *ScaleR*: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R
-- *ConnectR*: Data connections for the ‘Big Data Big Analytics’
-- *DevelopR*: An integrated development environment (IDE) for R on Windows
-- *DeployR*: A web services software development kit for integrating R with third party products (including business intelligence, data visualization, rules engines, etc.)
+###Microsoft R Server
+Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 7000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
-We briefly discuss each of these feature areas below, with a guide to where to find the corresponding component in **Microsoft R Services**.
+Performance of R solutions in Microsoft R Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
 
-### Microsoft R Open
+Users can also expect to see considerable differences in performance and scalability for the same RevoScaleR functions if run in R Server versus being run locally in R Client. Reasons include support for chunking, increased threads available for R worker processing and parallel processing not only with standard R packages, but also with RevoScaleR functions. R Server offers optimized performance and scalability through parallelization and streaming.
 
-If you are reading this document, you probably already know that R is the preferred statistical language for experts in a multitude of specialized disciplines—and that those experts frequently provide tools incorporating their expertise in the form of R packages. **Microsoft R Services** connects to a version of **Microsoft R Open** that delivers Open Source R. This means that any of the amazing third-party packages that are available for that version of Open Source R should also work when you are in **Microsoft R Services**. And, of course, if you are one of those experts, you can create R packages using **Microsoft R Services**.
+However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
-**Microsoft R Open** leverages high-performance, multi-threaded math libraries to deliver performance boosts. This means that functions in R that use, for example, matrix multiplication, will run faster out of the box.
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
 
-### DistributedR
+###Microsoft R Client
 
-One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The **Microsoft R Services** ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
+Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server.
 
-This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with *DistributedR*, it is the framework that allows **Microsoft R Services** to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
+On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+
+###Microsoft R Open
+
+Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Based on the open source R engine makes Microsoft R Open (and R Server and R Client) fully compatibility with all packages, scripts and applications that work with that version of R. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share. 
+
+Microsoft R Open delivers performance boosts, in comparison to the standard R distribution, given the same hardware configuration, since R Open leverages high-performance, multi-threaded math libraries.  This means that functions in R that use, for example, matrix multiplication, will run faster out of the box with Microsoft R Open. Microsoft R Open is also enhanced in terms of [reproducibility](https://mran.microsoft.com/documents/rro/reproducibility/).   
+
+On its own, Microsoft R Open provides limited performance and scalability when compared to Microsoft R Server and Microsoft R Client. Specifically, none of the ScaleR functions and packages, which are included with Microsoft R Server and Microsoft R Client, are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open.  
+
+Learn more about [Microsoft R Open...](https://mran.microsoft.com/open)
+
+## What's in R Server and R Client
+
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md).
+
+**DistributedR: Parallel and distributed computing framework for _Big Data Big Analytics_.**
+
+One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The Microsoft R ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
+
+This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to process computations in parallel and, if available, distribute them across nodes of a distributed compute environment such as clusters or Massively Parallel Processing (MPP) databases. While you don’t interact directly with DistributedR, it is the framework that allows Microsoft R Server to break through the technology barriers in R to deliver blindingly fast results on enterprise compute platforms.
 
 *DistributedR* allows you to run the same R script on multiple platforms; you can create a model in one environment such as a workstation and then deploy it on a different environment such as an on-site Microsoft SQL Server, a Teradata platform, or a Hadoop cluster in the cloud. You just need to specify the information about where these computations should be performed and what data should be analyzed.
 
-This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of **Microsoft R Services**. For information on supported computing environments, look for the ‘compute contexts’ in the RevoScaleR package.
+This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](rserver-scaler-getting-started.md#computecontext).
 
-### ScaleR
+<br>
+**ScaleR: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R.**
 
-The ‘Big Data Big Analytics’ functions built on *DistributedR* provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
+The ‘Big Data Big Analytics’ functions built on DistributedR provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
 
 RevoScaleR also provides traditional ‘high performance computing’ (HPC) tools if you prefer to construct your own distributed computations. In addition, in many environments, there are full-featured tools for data cleaning and manipulation.
 
 R is a flexible and powerful statistical programming language. The RevoScaleR package provides efficient, scalable computational power. Combining the two allows for the development of ready-to-deploy suites of data processing and analytics with R.
 
-To learn more, look for the RevoScaleR ‘rx’ analysis and data manipulation functions and ‘rxExec’ for HPC functionality. If you are computing decision trees, also check out the included RevoTreeView package that allows you to interactively visualize your decision trees.
+To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-4-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-11-decision-tree.md) that allows you to interactively visualize your decision trees.
 
-### ConnectR
+<br>
+**ConnectR: Move your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.**
 
-A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats: SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
+A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats, such as SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
 
-  1.  keeping the data as is and analyzing it directly with RevoScaleR analysis functions,
-  2.  extracting the data you want to analyze and storing it in the efficient and higher performance .xdf file format provided with the RevoScaleR package, or
-  3.  bringing some or all of your data into memory as an R data frame to use with any R analysis function.
+1. Analyzing data in place directly with RevoScaleR analysis functions
+1. Loading it into your local R development environment using the efficient and performant .xdf file format
+1. Bringing some or all of your data into memory as an R data frame to use with any R analysis function
 
-To learn more, look for data sources in the RevoScaleR package.
+To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-2-data-import.md).
 
-### DevelopR
-
-**Microsoft R Services** provides a tool for the R developer to efficiently create sets of R scripts—the R Productivity Environment (RPE). Working on a Windows workstation with the RPE, the R developer has a full-featured Visual Studio-like integrated development environment for R, including an indispensable visual debugger for R. The RPE has a customizable workspace, including an enhanced Script Editor, an Object Browser, a Solution Explorer, and an R Command Console.
-
-### DeployR
-
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. To expedite this effort, we now provide Accelerators for DeployR which are starter kits for integrating with some of our customers’ favorite tools including: Microsoft Excel, Tableau, Jaspersoft, and QlikView.
-
-## Microsoft R Services Basics
-
-This chapter describes the essentials of using Microsoft R Services: starting Microsoft R Services, stopping Microsoft R Services, and getting help in Microsoft R Services. If you are new to R, the next chapter gives a quick tutorial on what you might do between starting and stopping.
-
-### Starting Microsoft R Services
-
-Exactly how you start Microsoft R Services depends on your operating system.
-
-#### Starting Microsoft R Services on Windows
-
-On Windows 7 and Windows Server 2008, you start Microsoft R Services as follows:
-
-- Click **Start**, point to **All Programs**, point to **Revolution R**, point to **Enterprise 7.x**, and then click **Revolution R Enterprise 7.x (64)**.
-
-On Windows 8 and Windows Server 2012, you start Revolution R Enterprise as follows:
-
-- Move your mouse to the lower left corner of the Desktop until **Start** pops up.
-- Click **Start** to view the **Start** screen.
-- Locate the tile for **Revolution R Enterprise 8.x (64).**
-
-	On Windows 10, you start Revolution R Enterprise as follows:
-
-- Click **Start**, point to **All apps**, point to **Revolution R**, and then click **Revolution R Enterprise 8.x (64)**.
-
-The Revolution R Enterprise R Productivity Environment opens, as shown in the figure below. For more information on using the R Productivity Environment, see the following manuals: [*R Productivity Environment Getting Started Guide*](RevoRPE_Getting_Started.md) and [*R Productivity Environment User’s Guide*](RevoRPE_Users_Guide.md).
-
-![](media/rserver-getting-started/image4.JPG)
+<a name="deployr-intro"></a>
+<br>
+**DeployR, the R Integration Server, is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. **
 
 
-#### Starting Microsoft R Services on Linux
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
-On Linux systems, you start **Microsoft R Server** by opening a terminal or console window, and typing Revo64. If all is well, you will see a welcome message followed by the **Microsoft R Services** &gt;:
+DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
 
-	R version 3.2.2 (2015-08-14) -- "Fire Safety"
-	Copyright (C) 2015 The R Foundation for Statistical Computing
-	Platform: x86_64-w64-mingw32/x64 (64-bit)
+Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-	R is free software and comes with ABSOLUTELY NO WARRANTY.
-	You are welcome to redistribute it under certain conditions.
-	Type 'license()' or 'licence()' for distribution details.
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security-authentication.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
-		Natural language support but running in an English locale
+[Learn more about DeployR...](deployr-about.md)
 
-	R is a collaborative project with many contributors.
-	Type 'contributors()' for more information and
-	'citation()' on how to cite R or R packages in publications.
-	
-	Type 'demo()' for some demos, 'help()' for on-line help, or
-	'help.start()' for an HTML browser interface to help.
-	Type 'q()' to quit R.
+## Starting & Stopping Microsoft R
 
-	Microsoft R Server version 8.0: an enhanced distribution of R
-	Microsoft packages Copyright (C) 2015 Microsoft Corporation
+### Starting Microsoft R
 
-	Type 'readme()'for release notes.
+**To launch Microsoft R Server on Linux**:
 
-	>
+1. Open a terminal or console window.
+1. At the prompt, type: 
+```
+Revo64
+```
 
- If you get the message “Revo64: Command not found," this means that **Microsoft R Server** is not in your search path. Check with your system administrator to find the correct path to your **Microsoft R Server** installation, then modify your search path (typically in your .bashrc file):
+If you get the message “Revo64: Command not found," this means that Microsoft R Server is not in your search path. Check with your system administrator to find the correct path to your R Server installation, then modify your search path (typically in your .bashrc file):
+```
+PATH=$PATH:/path/to/Microsoft R Server
+export PATH
+```
 
-	PATH=$PATH:/path/to/Microsoft R Server
-	export PATH
+<br>
+**To launch Microsoft R Client**:
 
-### Stopping Microsoft R Services
+After you have installed the software, you launch Microsoft R Client as follows.
 
-To stop the Revolution R Enterprise RPE, close the application window.
++ For Windows 7 and Windows 10:
 
-From any command-line version of R, the standard way to exit is by calling the q function. (In the RPE, calling q is equivalent to using the Close box or File\(>\)Exit to exit.) All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
+  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+
+<br>
++ For Windows 8.1:
+
+  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+  
+  1. Click **Start** to view the **Start** screen.
+
+  1. Locate and click the tile for **Microsoft R Client**.
+
+
+
+### Stopping Microsoft R
+
+From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
 
 	q()
 
 Whenever you quit R, you are asked if you want to save the workspace image; if you have created functions or data that you want to keep, saving the workspace image will preserve them for future use. (Most R users, however, create their functions and data in script files which can be read, or *sourced*, into R. If you follow this model, you will usually say “no” to saving the workspace image.)
 
-### Getting Help
+
+## Getting Function Help
 
 Know a function’s name, but not how to call it? Need examples of how to set up the data for a function? Help is just a few keystrokes away. R has two main functions for obtaining help: the ? operator and the help function. You can use the operator by simply typing a question mark at the prompt, followed by the name of the function you want to know about:
 
@@ -176,7 +175,7 @@ Most users will probably use ? because it is easy to type; help allows you to sp
 
 ## An R Tutorial in 25 Functions or So
 
-To get you started with **Microsoft R Services**, this chapter gives a brief tutorial introduction in which you will learn 25 (or so) of the most commonly used R functions, learn to load your own small data sets into R, and begin to do useful analysis on them. We’ll also provide some initial tips on the next steps for performing scalable data analysis in R. The following two chapters go into greater depth on Big Data Big Analytics in R.
+To get you started with Microsoft R Server and R Client, this brief tutorial will present you with 25 (or so) of the most commonly used R functions. You can learn to load your own small data sets into R, and begin to do useful analysis on them. We’ll also provide some initial tips on the next steps for performing scalable data analysis in R. 
 
 ### Creating Vectors
 
@@ -607,15 +606,16 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 	wnloaded\_packages'
 	Updating HTML index of packages in '.Library'
 
-(On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Services. Microsoft R Services sets the default repository to a versioned source repository maintained by Revolution Analytics at [packages.revolutionanalytics.com](http://packages.revolutionanalytics.com). An alternative is to point to one of the daily CRAN snapshots maintained at [mran.microsoft.com](http://mran.microsoft.com).)
+On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
 
 >*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Revolution R Enterprise, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 
-### Using Microsoft R Services via Rscript and R CMD BATCH
+### Using Microsoft R via Rscript and R CMD BATCH
 
-**Microsoft R Services** is intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with **Microsoft R Services** with no modifications needed, but to get full advantage of the **Microsoft R Services** extensions with other command line invocations, you need to know a little bit about how **Microsoft R Services** works. **Microsoft R Services** is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with **Microsoft R Services**. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a **Microsoft R Services** script, be sure to add the flag *–default-packages=* to your call; this ensures that the **Microsoft R Services** default packages are loaded (including the methods package from base R).
+Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag *–default-packages=* to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
 
-Similarly, you should avoid the –vanilla construction for invoking **Microsoft R Services**; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the **Microsoft R Services** extensions (except the MKL BLAS and LAPACK libraries).
+Similarly, you should avoid the –vanilla construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
+
 
 ## Tips on Computing with Big Data in R
 
@@ -625,7 +625,7 @@ The use of the R statistical programming language has seen phenomenal growth bec
 
 If you are used to working with smaller data sets in R, you will want to think differently about how you perform your analyses when using big data. If you are used to working in a High Performance Computing (HPC) environment, you will also want to think differently when you add analysis of big data to the picture. High Performance Computing is CPU centric, typically focusing on using many cores to perform lots of processing on small amounts of data. High Performance Analytics (HPA) is data centric. The focus is on feeding data to the cores—on disk I/O, data locality, efficient threading, and data management in RAM.
 
-The **RevoScaleR** package that is included with **Microsoft R Services** provides tools and examples for addressing the speed and capacity issues involved in High Performance Analytics. It provides data management and analysis functionality that scales from small, in-memory data sets to huge data sets stored on disk. The analysis functions are threaded to use multiple cores, and computations can be distributed across multiple computers (nodes) on a cluster or in the cloud.
+The **RevoScaleR** package that is included with Microsoft R Server and Microsoft R Client provides tools and examples for addressing the speed and capacity issues involved in High Performance Analytics. It provides data management and analysis functionality that scales from small, in-memory data sets to huge data sets stored on disk. The analysis functions are threaded to use multiple cores, and computations can be distributed across multiple computers (nodes) on a cluster or in the cloud.
 
 Here are some tips for handling big data with R:
 
@@ -635,7 +635,7 @@ It is always best to start with the easiest things first, and in some cases gett
 
 ### Upgrade Your Software
 
-Some software is simply more optimized for use with big data. For instance, getting better math libraries can greatly speed some computations. R allows its core math libraries to be replaced, and in ***Microsoft R Services*** they are replaced with extremely fast, threaded libraries. And, of course, the ***RevoScaleR*** package provides the underlying high-performance compute engine used by its Big Data Big Analytics algorithms.
+Some software is simply more optimized for use with big data. For instance, getting better math libraries can greatly speed some computations. R allows its core math libraries to be replaced, and in Microsoft R Server and R Client they are replaced with extremely fast, threaded libraries. And, of course, the ***RevoScaleR*** package provides the underlying high-performance compute engine used by its Big Data Big Analytics algorithms.
 
 ### Minimize Copies of Data
 
@@ -734,7 +734,7 @@ In summary, by using the tips and tools outlined above you can have the best of 
 
 ## Getting Started with Big Data in R
 
-The **RevoScaleR** package included in **Microsoft R Services** provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
+The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
 
 ### Step 1: Accessing Your Data with *rxImport*
 
@@ -985,105 +985,12 @@ Note that because we have specified an output file when importing the data, the 
 	Condition number of final variance-covariance matrix: 1.3005
 	Number of iterations: 9
 
-## Next Steps: A Roadmap to Documentation
-
-Having completed the **Microsoft R Services** tutorials, you are ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R Services, R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
-
-The obvious place to start is with the rest of the **Microsoft R Services** document set, which includes documentation on the **R Productivity Environment** (on Windows) and the **RevoScaleR** package for scalable data analysis (on all platforms):
-
-- *Revolution R Enterprise R Productivity Environment Getting Started Guide* (RevoRPE\_Getting\_Started.pdf). A tutorial introduction to the RPE, which provides an integrated development environment together with a console interface to the R interpreter and features interactive debugging of your R code.
-- *Revolution R Enterprise R Productivity Environment User’s Guide* (RevoRPE\_Users\_Guide.pdf). A more detailed explanation of using the RPE.
-- *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf). A tutorial introduction to RevoScaleR, providing extended examples of using RevoScaleR to analyze huge data sets via parallel external memory algorithms.
-- *RevoScaleR User’s Guide* (RevoScaleR\_Users\_Guide.pdf). A more detailed explanation of the features of RevoScaleR, including data manipulation, linear models, logistic regression, generalized linear models, a contingency table analysis, and decision trees and forests.
-- *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf). A tutorial introduction to RevoScaleR’s distributed computing features (currently supported on Windows HPC Server, Hadoop, and Teradata).
-- *RevoScaleR ODBC Import Guide* (RevoScaleR\_ODBC.pdf). Additional information on accessing ODBC data from RevoScaleR.
-- *RevoScaleR HPC Server Getting Started Guide* (RevoScaleR\_HPC\_Server\_Getting\_Started.pdf) A tutorial introduction using RevoScaleR’s distributed computing features on Microsoft HPC Server.
-- *RevoScaleR Hadoop Getting Started Guide* (RevoScaleR\_Hadoop\_Getting\_Started.pdf). A tutorial introduction using RevoScaleR’s distributed computing features on Hadoop.
-- *RevoScaleR Teradata Getting Started Guide* (RevoScaleR\_Teradata\_Getting\_Started.pdf). A tutorial introduction using RevoScaleR’s high-speed Teradata connection and distributed computing features in Teradata.
-- If you are planning to integrate R analysis with a third party package, there is also a complete set of RevoDeployR documentation: *DeployR Administration Console Guide* (DeployR\_Administration\_Console\_Guide.pdf)*,* *DeployR Deployment Planning Guide* (DeployR\_Deployment\_Planning\_Guide.pdf), *DeployR Enterprise Security Guide* (DeployR\_Enterprise\_Security\_Guide.pdf), *DeployR Migration Guide* (DeployR\_Migration\_Guide.pdf), and *DeployR Overview Guide* (DeployR\_Overview\_Guide.pdf).
-
-Next, you should be aware of the R Core Team manuals, included with every R distribution:
-
-- *An Introduction to R* (R-intro.pdf). A more complete tutorial introduction to R, this manual gives an introduction to both the language itself and its use for statistics and graphics.
-- *The R Language Definition (Draft)* (R-lang.pdf). This still-incomplete manual describes the R programming language, giving detailed information on parsing, evaluation, and other specifics of the language itself.
-- *Writing R Extensions* (R-exts.pdf). This manual describes how to extend R by creating your own packages.
-- *R Data Import/Export* (R-data.pdf). This manual describes the various external data formats R can read from and write to, either using base R functions or additional packages.
-- *R Installation and Administration* (R-admin.pdf). This manual describes how to build and install R from source code; Revolution R users should not need to refer to this manual, but may find it of interest.
-- *R Internals* (R-int.pdf). This manual is a guide to R’s internal structures, and gives coding standard for the R core team.
-- *R Reference Index* (fullrefman.pdf). A compilation of the help files of the R standard and recommended packages, ready to print.
-
-Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this chapter will help point you in the right direction. If you are looking for...
-
-- [**Introductory material.**](#introductory-material).
-- [**Information on analyzing data with R.**](#information-on-data-analysis-and-statistics).
-- [**Information on programming with R.**](#information-on-programming-with-r).
-- [**Information on getting data into and out of R.**](#information-on-getting-data-into-and-out-of-r).
-- [**Information on creating graphics with R.**](#information-on-creating-graphics-with-r).
-- [**Information on parallel programming with R.**](#information-on-parallel-programming-with-r).
-
-### Introductory Material
-
-*R for Dummies* by Andrie de Vries and Joris Meys is an excellent starting place for those new to R, filled with examples and tips. O’Reilly’s *R Cookbook*, by Paul Teetor , is just what it claims to be–a book filled with recipes to help you accomplish very specific tasks. The *Essential R Reference* by Mark Gardener provides a dictionary-like reference to more than 400 R commands, including cross-references and examples.
-
-As mentioned above, you can also continue your tutorial with the R Core Group’s *An Introduction to R.* (R Development Core Team, 2008). Based on “Notes on S-Plus” by Bill Venables and David Smith, this has been the jumping off point for R documentation for years. It includes an extensive sample session as its Appendix A.
-
-The original S documentation consisting of the “Blue Book" (*The New S Language* by Rick Becker, John Chambers, and Allan Wilks ), the “White Book" (*Statistical Models in S*, edited by John Chambers and Trevor Hastie , and the “Green Book" contains much introductory material that is still useful in today’s R. However, there are some S functions that either are not available or work differently in R, and many of the example data sets are not available in R, so typing along with the examples is not always possible.
-
-Another very useful document that all R users should read is the R FAQ by Kurt Hornik (http://cran.r-project.org/doc/FAQ/R-FAQ.html).
-
-Users of SAS or SPSS who are new to R might usefully start with Robert Muenchen’s *R for SAS and SPSS Users* . Two other books that address both the SAS and R user communities are *SAS and R: Data Management, Statistical Analysis, and Graphics* by Ken Kleinman and Nicholas J. Horton and *Analysis of Correlated Data with SAS and R* by Mohamed M. Shoukri and Mohammad A. Chaudhary .
-
-### Information on Data Analysis and Statistics
-
-A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R* . After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
-
-For more advanced techniques, the obvious starting point is *Modern Applied Statistics with S* by Bill Venables and Brian Ripley . This book starts with four introductory chapters on R, then gets into statistics from univariate statistics (chapter 5) to optimization (chapter 16). Along the way, the authors touch on many widely used techniques, including linear models, generalized linear models, clustering, tree-based methods, survival analysis, and many others.
-
-Rapidly becoming *the* book for aspiring data scientists is *The Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and Jerome Friedman. This book covers a variety of statistical techniques important in big data analysis and machine learning, including various tree-based methods, support vector machines, graphical models, and more.
-
-Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies* , John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression* , and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill .
-
-Other useful books that take you into more advanced statistics are *R in Action* by Robert I. Kabacoff , *A Handbook of Statistical Analyses Using R* by Brian Everitt and Torsten Hothorn , *Data Analysis and Graphics Using R* by John Maindonald and John Braun , and *The R Book* by Michael Crawley .
-
-If you are interested in an overview of the multiple uses of big data analytics, the book *Big Data, Big Analytics* by Michael Minelli, Michele Chambers, and Ambiga Dhiraj will give you a an excellent start in understanding what big data is and how it is used in real-world business applications.
-
-### Information on Programming with R
-
-The newest book from John M. Chambers, *Software for Data Analysis: Programming with R* , gives a thorough description of programming in R, including tips on debugging, writing packages, creating classes and methods, and interfacing to code in other languages. It also includes a useful chapter describing how R works.
-
-*R in a Nutshell* by Joseph Adler is unlike most books on R in that it deals with R first and foremost as a programming language; it does touch on statistical topics, but that is not its main focus.
-
-The book *S Programming* by Venables and Ripley is a concise, readable guide to programming in the S family of languages. Most of their advice remains valid, but the book was published when R was still at a pre-release version (0.90.1),so some details have changed over time.
-
-The Blue Book, White Book, and Green Book all have one or more chapters devoted to programming in S, with different points of emphasis. The Blue Book focuses on basic function writing. The White Book describes the S Version 3 class system and how to define classes, generic functions, and methods in that system. The Green Book describes the S Version 4 class system and how to define classes and methods in that system.
-
-The manual *Writing R Extensions* by the R Core Team describes how to write complete R packages, including documentation.
-
-### Information on Getting Data Into and Out of R
-
-The manual *R Data Import/Export* by the R Core Team describes how to read data into R from a variety of sources using both built-in R tools and additional packages. The book Data Manipulation with R by Phil Spector includes information on reading and writing data, and also further manipulation within R. And, of course, be sure to look at the *RevoScaleR User’s Guide* for information on data import and export capabilities provided by **RevoScaleR**.
-
-### Information on Creating Graphics with R
-
-All of the references mentioned up to now contain at least some material on graphics, because graphical exploration is a primary motivation for using R in the first place. The Blue Book, in particular, describes in detail the “traditional S graphics" framework.
-
-A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis* . The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics* .
-
-The ggplot2 package is a high-level graphics package. For lower-level graphics functionality, the definitive reference is Paul Murrell’s *R Graphics* , which describes both the traditional S graphics framework (in particular, its implementation in R by Ross Ihaka) and the grid graphics framework developed by Murrell. It also describes the lattice system, developed by Deepayan Sarkar, that uses the grid framework to implement the Trellis graphics system developed by Rick Becker and Bill Cleveland. Serious users of the lattice system will also want to consult Sarkar’s book, *Lattice: Multivariate Data Visualization with R* .
-
-Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data* . Cleveland’s earlier book, now its second edition, *The Elements of Graphing Data* remains essential reading for anyone interested in data visualization.
-
-*Interactive and Dynamic Graphics for Data Analysis* by Dianne Cook and Deborah Swayne describes using R together with the GGobi visualization program for dynamic graphics.
-
-### Information on Parallel Programming in R
-
-While the *RevoScaleR Distributed Computing Guide* focuses on running computations over multiple nodes, it also includes basic examples of parallel programming that can be run on a multiple-core workstation. *Parallel R* by Q. Ethan McCallum and Stephen Weston describes some additional tools for parallel computing in R.
 
 ## Optimized Math Libraries
 
-One feature of Microsoft R Services is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
+One feature of Microsoft R Server and R Client is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
 
-Matrix multiplication, eigenvalue calculations, and singular value decompositions are significantly faster using these optimized libraries. For example, we ran the following computations, first with R built from source using the standard R BLAS, then with Microsoft R Services built with the optimized math libraries:
+Matrix multiplication, eigenvalue calculations, and singular value decompositions are significantly faster using these optimized libraries. For example, we ran the following computations, first with R built from source using the standard R BLAS, then with Microsoft R Server and R Client built with the optimized math libraries:
 
 	set.seed(14)
 	x <- matrix(rnorm(1000000),nrow=1000)
@@ -1167,7 +1074,7 @@ Many of the performance optimizations try to
 
 Both approaches often require blocking or otherwise re-ordering computations, for example to fit in a small cache.
 
-Because floating-point arithmetic always involves approximation, and the exact nature of the approximation depends upon the particular algorithms used, it is possible that the results from the highly-tuned numerics available in Microsoft R Services differ from results computed by other implementations of R, just as results can differ across system architectures. These computational differences typically manifest themselves on the order of machine epsilon.
+Because floating-point arithmetic always involves approximation, and the exact nature of the approximation depends upon the particular algorithms used, it is possible that the results from the highly-tuned numerics available in Microsoft R Server and R Client differ from results computed by other implementations of R, just as results can differ across system architectures. These computational differences typically manifest themselves on the order of machine epsilon.
 
 Some high-performance numerics routines, including those that use x86 SIMD vector instructions (SSE, etc.), require that their input data be loaded into memory addresses divisible by 16 bytes. Unfortunately, R does not presently guarantee alignment of data on 16-byte boundaries. Therefore, it is possible that, depending on data alignment, parts of some computations may be grouped off differently (for less efficient computation). This alignment-dependent blocking of some computations can also result in differences from run to run on the order of machine epsilon.
 
@@ -1179,7 +1086,7 @@ This chapter discusses several tools available in Windows versions of R to help 
 
 The primary advantage 64-bit architectures bring to R is an increase in the amount of memory available to a given R process. The first benefit of that increase is an increase in the size of data objects you can create. For example, on most 32-bit versions of R, the largest data object you can create is roughly 3GB; attempts to create 4GB objects result in errors with the message “cannot allocate vector of length *xxxx*.” On 64-bit versions of R, you can generally create larger data objects. From R 3.0.0 onward, the old limitation of \(2^{31} - 1\) elements in a vector (about 2 billion elements) has been removed (except for character vectors).
 
-The functions *memory.size* and *memory.limit* help you manage the memory used by Windows versions of R. In 64-bit Microsoft R Services, R sets the memory limit by default to the amount of physical RAM minus half a gigabyte, so that, for example, on a machine with 8GB of RAM, the default memory limit is 7.5GB:
+The functions *memory.size* and *memory.limit* help you manage the memory used by Windows versions of R. In 64-bit Microsoft R Server and R Client, R sets the memory limit by default to the amount of physical RAM minus half a gigabyte, so that, for example, on a machine with 8GB of RAM, the default memory limit is 7.5GB:
 
 	memory.limit()
 
@@ -1279,78 +1186,12 @@ To create a 5GB object, make sure that the memory limit is high enough. (Allocat
 	 Maximum amount of memory allocated during this session is 5143 Mb
 	 Current limit for total allocation is 7678 Mb
 
-## Bibliography
+## Next Steps: A Roadmap to Documentation
 
-Adler, J. (2010). *R in a Nutshell.* Sebastopol, CA: O'Reilly.
+Having completed the tutorials, you are now ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
-Becker, R. A., Chambers, J. M., & Wilks, A. R. (1988). *The New S Language: A Programming Environment for Data Analysis and Graphics.* New York: Chapman and Hall.
+The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 
-Chambers, J. M. (1998). *Programming with Data: A Guide to the S Language.* New York: Springer.
+Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. 
 
-Chambers, J. M. (2008). *Software for Data Analysis: Programming with R.* New York: Springer.
-
-Chambers, J. M., & Hastie, T. J. (Eds.). (1992). *Statistical Models in S.* New York: Chapman and Hall.
-
-Cleveland, W. S. (1993). *Visualizing Data.* Summit, New Jersey: Hobart Press.
-
-Cleveland, W. S. (1994). *The Elements of Graphing Data* (second ed.). Summit, New Jersey: Hobart Press.
-
-Cook, D., & Swayne, D. F. (2008). *Interactive and Dynamic Graphics for Data Analysis: With R and GGobi.* New York: Springer.
-
-Crawley, M. J. (2013). *The R Book* (Second ed.). Chichester: John Wiley & Sons Ltd.
-
-Dalgaard, P. (2002). *Introductory Statistics with R.* New York: Springer.
-
-de Vries, A., & Meys, J. (2012). *R for Dummies.* Chichester: John Wiley & Sons.
-
-Everitt, B. S., & Hothorn, T. (2006). *A Handbook of Statistical Analyses Using R.* Boca Raton, Florida: Chapman & Hall/CRC.
-
-Fox, J. (2002). *An R and S-PLUS Companion to Applied Regression.* Thousand Oaks, CA: Sage.
-
-Fox, J. (2008). *Applied Regression Analysis and Generalized Linear Models.* Thousand Oaks, CA: Sage.
-
-Gardener, M. (2013). *The Essential R Reference.* Indianapolis, IN: John Wiley & Sons.
-
-Gelman, A., & Hill, J. (2007). *Data Analysis Using Regression and Multilevel/Hierarchical Models.* New York: Cambridge University Press.
-
-Goldberg, D. (1991). What every computer scientist should know about floating-point arithmetic. *ACM Comput. Surv., 23*(1), 5-48.
-
-Harrell, F. E. (2001). *Regression Model Strategies: with applications to linear models, logistic regression, and survival analysis.* New York: Springer.
-
-Hastie, T., Tibshirani, R., & Friedman, J. (2009). *The Elements of Statistical Learning: Data Mining, Inference, and Prediction* (2nd ed.). New York: Springer.
-
-Ihaka, R., & Gentleman, R. (1996). R: A language for data analysis and graphics. *Journal of Computational and Graphical Statistics, 5*(3), 299-314.
-
-Kabacoff, R. I. (2011). *R in Action.* Shelter Island, NY: Manning.
-
-Kleinman, K., & Horton, N. J. (2010). *SAS and R: Data Management, Statistical Analysis, and Graphics.* Boca Raton, FL: Chapman & Hall/CRC.
-
-Maindonald, J., & Braun, J. (2007). *Data Analysis and Graphics Using R: An Example-based Approach* (second ed.). Cambridge: Cambridge University Press.
-
-Matloff, N. (2011). *The Art of R Programming.* San Francisco: no starch press.
-
-Minelli, M., Chambers, M., & Dhiraj, A. (2013). *Big Data, Big Analytics.* Hoboken, NJ: John Wiley & Sons.
-
-Muenchen, R. A. (2009). *R for SAS and SPSS Users.* New York: Springer.
-
-Murrell, P. (2006). *R Graphics.* Boca Raton, FL: Chapman & Hall/CRC.
-
-R Development Core Team. (2008). *R: A Language and Environment for Statistical Computing.* Vienna: R Foundation for Statistical Computing.
-
-R Development Core Team. (2008). *An Introduction to R.* Vienna: R Foundation for Statistical Computing.
-
-Sarkar, D. (2008). *Lattice: Multivariate Data Visualization with R.* New York: Springer.
-
-Shoukri, M. M., & Chaudhary, M. A. (2007). *Analysis of Correlated Data with SAS and R* (third ed.). Boca Raton, FL: Chapman & Hall/CRC.
-
-Spector, P. (2008). *Data Manipulation with R.* New York: Springer.
-
-Teetor, P. (2011). *R Cookbook.* Sebastopol, CA: O'Reilly.
-
-Venables, W. N., & Ripley, B. D. (1999). *S Programming.* New York: Springer.
-
-Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S* (Fourth Edition ed.). New York: Springer.
-
-Wickham, H. (2009). *ggplot2: Elegant Graphics for Data Analysis.* New York: Springer.
-
-Wilkinson, L. (2005). *The Grammar of Graphics* (second ed.). New York: Springer.
+Beyond the standard R manuals, there are many other resources. [Learn about them here](rserver-more-resources.md). 
