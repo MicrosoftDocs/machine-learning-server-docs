@@ -1,14 +1,13 @@
-# [Microsoft R Server](index.md)
-# [R Server Getting Started](rserver/rserver-getting-started.md)
-# [R Server New Features](rserver/rserver-new-features.md)
-# R Server Installation
-## [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
-## [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
-## [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
-## [Install R Server on a Teradata Client](rserver/rserver-install-teradata-client.md)
-# R Productivity Environment IDE
-## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
-## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
+# [Microsoft R](index.md)
+# [Microsoft R Getting Started](rserver/rserver-getting-started.md)
+# Installation
+## [Install R Client](install-r-client-windows.md)
+## Install R Server
+### [Install R Server on Windows](rserver/rserver-install-windows.md)
+### [Install R Server on a Linux Server](rserver/rserver-install-linux-server.md)
+### [Install R Server on a Hadoop Cluster](rserver/rserver-install-hadoop.md)
+### [Install R Server on a Teradata Server](rserver/rserver-install-teradata-server.md)
+### [Install R Server on a Teradata Client](rserver/rserver-install-teradata-client.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](rserver/rserver-scaler-getting-started.md)
 ## RevoScaleR User's Guide
@@ -41,7 +40,7 @@
 # [Parallelizing Loops: foreach/iterators](rserver/rserver-foreach.md)
 # [DeployR](rserver/deployr-about.md)
 ## [About DeployR](rserver/deployr-about.md)
-## [What's New](rserver/deployr-whats-new.md)
+## [What's New in DeployR](rserver/deployr-whats-new.md)
 ## [Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](rserver/deployr-administrator-getting-started.md)
 ### [Installing](rserver/deployr-installing-configuring.md)
@@ -88,5 +87,9 @@
 #### [Working with Files](rserver/deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](rserver/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 ## [Frequently Asked Questions](rserver/deployr-faq.md)
+# R Productivity Environment IDE
+## [RPE Getting Started](rserver/RevoRPE_Getting_Started.md)
+## [RPE User's Guide](rserver/RevoRPE_Users_Guide.md)
 # [Additional Resources](rserver/rserver-more-resources.md)
 # [Archived Documentation](rserver/rserver-old-versions.md)
+# [Release Notes](notes/r-client-notes.md)
