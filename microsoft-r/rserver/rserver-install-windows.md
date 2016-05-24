@@ -24,7 +24,12 @@ ms.custom: ""
 
 ---
 
-# Revolution R Enterprise 2016 Windows Installation Instructions
+# Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
+
+>
+>**Microsoft R Server 2016**
+>For the latest Windows installation documentation for Microsoft R Server 2016, [go here](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
+>
 
 ## Documentation and GPL Source
 
@@ -73,7 +78,7 @@ Revolution R Enterprise 2016 for Windows is installed in two steps: first, you i
 -   Click **Revolution R**.
 -   Click **Revolution R Enterprise 8.0 (64)**.
 
-The Revolution R Productivity Environment opens. The Revolution R program group includes a variety of documents, including the Microsoft R Services Getting Started Guide and the RevoScaleR Getting Started Guide. These provide tutorial introductions to working with Revolution R Enterprise.
+The Revolution R Productivity Environment opens. The Revolution R program group includes a variety of documents, including the Microsoft R Getting Started Guide and the RevoScaleR Getting Started Guide. These provide tutorial introductions to working with Microsoft R Server or R Client.
 
 The RevoIOQ package provides a set of tests to verify correct installation and operation of Revolution R Enterprise. To run these tests, run the following commands from your R prompt:
 

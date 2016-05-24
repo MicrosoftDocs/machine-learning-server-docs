@@ -28,11 +28,11 @@ ms.custom: ""
 
 ## Introduction
 
-Microsoft R Services is the scalable data analytics solution, and it is designed to work seamlessly whether your computing environment is a single-user workstation, a local network of connected servers, or a cluster in the cloud. This manual is intended for those who need to configure a Hadoop cluster for use with Microsoft R Services.
+Microsoft R Server is the scalable data analytics solution, and it is designed to work seamlessly whether your computing environment is a single-user workstation, a local network of connected servers, or a cluster in the cloud. This manual is intended for those who need to configure a Hadoop cluster for use with Microsoft R Server.
 
 ### Obtaining the Software
 
-Microsoft R Services consists of two parts: Microsoft R Open for Microsoft R Server, and Microsoft R Server 2016. These parts are downloaded from separate locations:
+Microsoft R Server consists of two parts: Microsoft R Open for Microsoft R Server, and Microsoft R Server 2016. These parts are downloaded from separate locations:
 
 - [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409)
 - Microsoft R Server 2016 is available through the following distribution channels, depending upon how you purchased the product:
@@ -45,29 +45,29 @@ Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if yo
 
 ### System Requirements
 
-Microsoft R Services works with the following Hadoop distributions:
+Microsoft R Server works with the following Hadoop distributions:
 
 - Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 - HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 - MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA-30600; contact MapR to obtain the patch), MapR 4.1
 
-Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Services. See your Hadoop documentation for information on installing this package. The Hadoop distribution must be installed on Red Hat Enterprise Linux 5 or 6, or fully compatible operating system. Microsoft R Services should be installed on all nodes of the cluster.
+Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package. The Hadoop distribution must be installed on Red Hat Enterprise Linux 5 or 6, or fully compatible operating system. Microsoft R Server should be installed on all nodes of the cluster.
 
-Microsoft R Services requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS) (for HDP 1.3.0 and MapR 3.x installations), or HDFS, Hadoop YARN, and Hadoop MapReduce2 for CDH5, HDP 2.x, and MapR 4.x installations. The HDFS, YARN, and MapReduce clients must be installed on all nodes on which you plan to run Microsoft R Services, as must Microsoft R Services itself.
+Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS) (for HDP 1.3.0 and MapR 3.x installations), or HDFS, Hadoop YARN, and Hadoop MapReduce2 for CDH5, HDP 2.x, and MapR 4.x installations. The HDFS, YARN, and MapReduce clients must be installed on all nodes on which you plan to run Microsoft R Server, as must Microsoft R Server itself.
 
-Minimum system configuration requirements for Microsoft R Services are as follows:
+Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
 **Operating System:** Red Hat Enterprise Linux 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, or 6.7. Only 64-bit operating systems are supported. (For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.)
 
-**Memory:** A minimum of 4GB of RAM is required for Microsoft R Services; 8GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations
+**Memory:** A minimum of 4GB of RAM is required for Microsoft R Server; 8GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations
 
 **Disk Space:** A minimum of 500MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Package Dependencies:** Microsoft R Services, like most Linux applications, depends upon a number of Linux packages. A few of these, listed in Table 1, are explicitly required by Microsoft R Services. The remainder are in turn required by these dependencies. These are automatically installed while the automated script is running. These are listed in Table 2.
+**Package Dependencies:** Microsoft R Server, like most Linux applications, depends upon a number of Linux packages. A few of these, listed in Table 1, are explicitly required by Microsoft R Server. The remainder are in turn required by these dependencies. These are automatically installed while the automated script is running. These are listed in Table 2.
 
-Table 1. Packages Explicitly Required by Microsoft R Services
+Table 1. Packages Explicitly Required by Microsoft R Server
 
 | ed                | cairo-devel     |
 |-------------------|-----------------|
@@ -82,7 +82,7 @@ Table 1. Packages Explicitly Required by Microsoft R Services
 | libSM-devel       | libicu-devel    |
 | libXmu-devel      | bzip2-devel     |
 
-Table 2. Secondary Dependencies Installed for Microsoft R Services
+Table 2. Secondary Dependencies Installed for Microsoft R Server
 
 | cloog-ppl         | cpp                      |
 |-------------------|--------------------------|
@@ -139,9 +139,9 @@ We assume you have already installed Hadoop on your cluster. If not, use the doc
 - [MapR 3.x install](http://go.microsoft.com/fwlink/?LinkId=699469&clcid=0x409)
 - [MapR 4.1](http://go.microsoft.com/fwlink/?LinkId=699471&clcid=0x409)
 
-If you are using Cloudera Manager, it is important to know if your installation was via packages or parcels; the Microsoft R Services Cloudera Manager parcel can be used only with parcel installs. If you have installed Cloudera Manager via *packages*, do not attempt to use the RRE Cloudera Manager parcel; use the standard Microsoft R Services for Linux installer instead.
+If you are using Cloudera Manager, it is important to know if your installation was via packages or parcels; the Microsoft R Server Cloudera Manager parcel can be used only with parcel installs. If you have installed Cloudera Manager via *packages*, do not attempt to use the RRE Cloudera Manager parcel; use the standard Microsoft R Server for Linux installer instead.
 
-It is useful to confirm that Hadoop itself is running correctly before attempting to install Microsoft R Services on the cluster. Hadoop comes with example programs that you can run to verify that your Hadoop installation is running properly, in the jar file hadoop-mapreduce-examples.jar. The following command should display a list of the available examples:
+It is useful to confirm that Hadoop itself is running correctly before attempting to install Microsoft R Server on the cluster. Hadoop comes with example programs that you can run to verify that your Hadoop installation is running properly, in the jar file hadoop-mapreduce-examples.jar. The following command should display a list of the available examples:
 
 	hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar
 
@@ -151,7 +151,7 @@ The following runs the pi example, which uses Monte Carlo sampling to estimate p
 
 	hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 5 300
 
-If you can successfully run one or more of the Hadoop examples, your Hadoop installation was successful and you are ready to install Microsoft R Services.
+If you can successfully run one or more of the Hadoop examples, your Hadoop installation was successful and you are ready to install Microsoft R Server.
 
 ### Adjusting Hadoop Memory Limits (Hadoop 2.x Systems Only)
 
@@ -190,15 +190,15 @@ If you have trouble restarting your Hadoop cluster after enabling Kerberos authe
 
 The MapR distribution also supports Kerberos authentication, but most MapR installations use that distribution’s *wire-level security* feature. See the [MapR Security Guide](http://doc.mapr.com/display/MapR/Security+Guide) for details.
 
-## Installing Microsoft R Services on a Cluster
+## Installing Microsoft R Server on a Cluster
 
-It is highly recommended that you install Microsoft R Services as root on each node of your Hadoop cluster. This ensures that all users will have access to it by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
+It is highly recommended that you install Microsoft R Server as root on each node of your Hadoop cluster. This ensures that all users will have access to it by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
 
 If you are installing on a Cloudera Manager system using a parcel install, skip to Section 3.6, Installing on a Cloudera Manager System Using a Cloudera Manager Parcel.
 
 ### Standard Command Line Install
 
-For most users, installing on the cluster means simply running the standard Microsoft R Services installers on each node of the cluster:
+For most users, installing on the cluster means simply running the standard Microsoft R Server installers on each node of the cluster:
 
 1.  Log in as root or a user with sudo privileges. If the latter, precede commands requiring root privileges with sudo.
 2.  Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server:
@@ -241,7 +241,7 @@ For most users, installing on the cluster means simply running the standard Micr
 		./install.sh –a –y -p /usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2
 		popd
 
-This installs Microsoft R Services with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
+This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
 ### Distributed Installation
 
@@ -249,7 +249,7 @@ If you have multiple nodes, you can automate the installation across nodes using
 
 Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in Section 3.1, steps 3 through 8.
 
-The following commands use pdsh and pdcp to distribute and install Microsoft R Services (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
+The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
 		alias pdshw=’pdsh -w\`cat myhosts.txt\` -R ssh’
 		alias pdcpw=’pdcp -w\`cat myhosts.txt\` -R ssh’
@@ -267,21 +267,21 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		> cd rrent;./install.sh -y -a -p /usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2
 		> exit
 
-### Installing the Microsoft R Services JAR File
+### Installing the Microsoft R Server JAR File
 
-Using Microsoft R Services in Hadoop requires the presence of the Microsoft R Services Java Archive (JAR) file scaleR-hadoop-0.1-SNAPSHOT.jar. This file is installed in the scripts directory of your Microsoft R Services installation (typically at /usr/lib64/MRS-8.0/scripts), and is typically linked to the standard Hadoop jar file location (typically $HADOOP\_HOME/lib or $HADOOP\_PREFIX/lib).
+Using Microsoft R Server in Hadoop requires the presence of the Microsoft R Server Java Archive (JAR) file scaleR-hadoop-0.1-SNAPSHOT.jar. This file is installed in the scripts directory of your Microsoft R Server installation (typically at /usr/lib64/MRS-8.0/scripts), and is typically linked to the standard Hadoop jar file location (typically $HADOOP\_HOME/lib or $HADOOP\_PREFIX/lib).
 
 If you are installing RRE as a non-root user, you may need to obtain root access to link this file appropriately.
 
 ### Environment Variables for Hadoop
 
-The file RevoHadoopEnvVars.site in the scripts directory of your Microsoft R Services installation (typically at /usr/lib64/MRS-8.0/scripts) should be sourced by all users, by adding the following line to the .bash\_profile file:
+The file RevoHadoopEnvVars.site in the scripts directory of your Microsoft R Server installation (typically at /usr/lib64/MRS-8.0/scripts) should be sourced by all users, by adding the following line to the .bash\_profile file:
 
 	. /usr/lib64/MRS-8.0/scripts/RevoHadoopEnvVars.site
 
 (The period (“.”) at the beginning is part of the command, and must be included.)
 
-This file sets the following environment variables for use by Microsoft R Services:
+This file sets the following environment variables for use by Microsoft R Server:
 
 **HADOOP_HOME** This should be set to the directory containing the Hadoop files.
 
@@ -297,7 +297,7 @@ This file sets the following environment variables for use by Microsoft R Servic
 
 These environment variables are written to the file automatically on installation, but can be edited by hand if necessary.
 
-### Creating Directories for Microsoft R Services
+### Creating Directories for Microsoft R Server
 
 
 Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following commands:
@@ -314,21 +314,21 @@ The HDFS directory can also be created in a user’s R session (provided the top
 
 ### Installing on a Cloudera Manager System Using a Cloudera Manager Parcel
 
-If you are running a Cloudera Hadoop cluster managed by Cloudera Manager, and if Cloudera itself was installed via a Cloudera Manager parcel , you can use the Microsoft R Services Cloudera Manager parcels to install Microsoft R Services on all the nodes of your cluster. Two parcels are required:
+If you are running a Cloudera Hadoop cluster managed by Cloudera Manager, and if Cloudera itself was installed via a Cloudera Manager parcel , you can use the Microsoft R Server Cloudera Manager parcels to install Microsoft R Server on all the nodes of your cluster. Two parcels are required:
 
 - Microsoft R Open parcel—installs open-source R and additional open-source components on the nodes of your Cloudera cluster
-- Microsoft R Services parcel—installs proprietary Revolution components on the nodes of your Cloudera cluster
+- Microsoft R Server parcel—installs proprietary Revolution components on the nodes of your Cloudera cluster
 
-Microsoft R Services requires several packages that may not be in a default Red Hat Enterprise Linux installation, run the following yum command as root to install them:
+Microsoft R Server requires several packages that may not be in a default Red Hat Enterprise Linux installation, run the following yum command as root to install them:
 
 	yum install gcc-gfortran cairo-devel python-devel \\
 		tk-devel libicu-devel
 
-Run this command on all the nodes of your cluster that will be running Microsoft R Services. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in section 3.2; this alias includes the list of host names and specifies the use of ssh):
+Run this command on all the nodes of your cluster that will be running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in section 3.2; this alias includes the list of host names and specifies the use of ssh):
 
 	pdshw yum install gcc-gfortran cairo-devel python-devel tk-devel libicu-devel
 
-Once you have installed the Microsoft R Services prerequisites, install the Cloudera Manager parcels as follows:
+Once you have installed the Microsoft R Server prerequisites, install the Cloudera Manager parcels as follows:
 
 1.  [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409) (Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.)
 
@@ -369,9 +369,9 @@ Once you have installed the Microsoft R Services prerequisites, install the Clou
 
 10.  Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
 
-11.  Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Services will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+11.  Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
-12.  Click **Activate**. Activation prepares Microsoft R Services to be used by the cluster.
+12.  Click **Activate**. Activation prepares Microsoft R Server to be used by the cluster.
 
 When you have installed the parcels, download, install, and run the Revolution Custom Service Descriptor as follows:
 
@@ -408,11 +408,11 @@ As part of this process make sure to check that the base directories /user and /
 
 ## Verifying Installation
 
-After completing installation, do the following to verify that Microsoft R Services will actually run commands in Hadoop:
+After completing installation, do the following to verify that Microsoft R Server will actually run commands in Hadoop:
 
 1.  If the cluster is security-enabled, obtain a ticket using kinit (for Kerberos authentication) or mapr password (for MapR wire security).
 
-2.  Start Microsoft R Services on a cluster node by typing Revo64 at a shell prompt.
+2.  Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
 
 3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
@@ -434,7 +434,7 @@ After completing installation, do the following to verify that Microsoft R Servi
 			data = airDS)
 		adsSummary
 
-If you installed Microsoft R Services in a non-default location, you must specify the location using both the hadoopRPath and revoPath arguments to RxHadoopMR:
+If you installed Microsoft R Server in a non-default location, you must specify the location using both the hadoopRPath and revoPath arguments to RxHadoopMR:
 
 	myHadoopCluster <- RxHadoopMR(hadoopRPath=/path/to/Revo64,
 		revoPath=/path/to/Revo64)
@@ -475,11 +475,11 @@ That should return a list of files in the native file system. If either the call
 
 ## Troubleshooting the Installation
 
-No two Hadoop installations are exactly alike, but most are quite similar. This section brings together a number of common errors seen in attempting to run Microsoft R Services commands on Hadoop clusters, and the most likely causes of such errors from our experience.
+No two Hadoop installations are exactly alike, but most are quite similar. This section brings together a number of common errors seen in attempting to run Microsoft R Server commands on Hadoop clusters, and the most likely causes of such errors from our experience.
 
 ### No Valid Credentials
 
-If you see a message such as “No valid credentials provided”, this means you do not have a valid Kerberos ticket. Quit Microsoft R Services, obtain a Kerberos ticket using kinit, and then restart Microsoft R Services.
+If you see a message such as “No valid credentials provided”, this means you do not have a valid Kerberos ticket. Quit Microsoft R Server, obtain a Kerberos ticket using kinit, and then restart Microsoft R Server.
 
 ### Unable to Load Class RevoScaleR
 
@@ -517,7 +517,7 @@ export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/path/to/libjvm.so
 
 ## Getting Started with Hadoop
 
-To get started with Microsoft R Services on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
+To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
 
 ## Using HDFS Caching
 
@@ -535,9 +535,9 @@ You can then add the path to /share/AirlineDemoSmall to the pool with an addDire
 
 ## Creating an R Package Parcel for Cloudera Manager
 
-If you are using Cloudera Manager to manage your Cloudera Hadoop cluster, you can use the Microsoft R Services Parcel Generator to create a Cloudera Manager parcel containing additional R packages, and use the resulting parcel to distribute those packages across all the nodes of your cluster.
+If you are using Cloudera Manager to manage your Cloudera Hadoop cluster, you can use the Microsoft R Server Parcel Generator to create a Cloudera Manager parcel containing additional R packages, and use the resulting parcel to distribute those packages across all the nodes of your cluster.
 
-The Microsoft R Services Parcel Generator is a Python script that takes a library of R packages and creates a Cloudera Manager parcel that **excludes any base or recommended packages, or packages included with the standard Microsoft R Services distribution**. Make sure to consider any dependencies your packages might have and be sure to include those in your library. If you installed Microsoft R Services with Cloudera Manager parcels, you will find the Parcel Generator in the *Revo.home()/scripts* directory. (You may need to ensure that the script has execute permission using the chmod command, or you can call it as “python generate\_r\_parcel.py”.)
+The Microsoft R Server Parcel Generator is a Python script that takes a library of R packages and creates a Cloudera Manager parcel that **excludes any base or recommended packages, or packages included with the standard Microsoft R Server distribution**. Make sure to consider any dependencies your packages might have and be sure to include those in your library. If you installed Microsoft R Server with Cloudera Manager parcels, you will find the Parcel Generator in the *Revo.home()/scripts* directory. (You may need to ensure that the script has execute permission using the chmod command, or you can call it as “python generate\_r\_parcel.py”.)
 
 When you call the script, you must provide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
 

@@ -2,7 +2,7 @@
 
 # required metadata
 title: "RevoScaleR Distributed Computing Guide"
-description: "Microsoft R Services in-database and cluster computing."
+description: "Microsoft R Server in-database and cluster computing."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
@@ -28,11 +28,11 @@ ms.custom: ""
 
 ## Introduction 
 
-*Parallel computing* is the process of breaking a given job into computationally independent components and running those independent components on separate threads, cores, or computers and then combining the results into a single returned result. Since its first release, ***RevoScaleR*** has performed parallel computing on any computer with multiple computing cores. *Distributed computing* is often used as a synonym for parallel computing, but in ***RevoScaleR*** we make the following distinction: *distributed computing* always refers to computations distributed over more than one computer, while *parallel computing* can occur on one computer or many.
+*Parallel computing* is the process of breaking a given job into computationally independent components and running those independent components on separate threads, cores, or computers and then combining the results into a single returned result. Since its first release, **RevoScaleR** has performed parallel computing on any computer with multiple computing cores. *Distributed computing* is often used as a synonym for parallel computing, but in **RevoScaleR** we make the following distinction: *distributed computing* always refers to computations distributed over more than one computer, while *parallel computing* can occur on one computer or many.
 
-With ***RevoScaleR*** 2.0-0 and later, distributed computing capabilities are built in. This means that you can develop complex analysis scripts on your local computer, create one or more *compute contexts* for use with distributed computing resources, and then seamlessly move between executing scripts on the local computer and in a distributed context. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific *data source* along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
+With **RevoScaleR** 2.0-0 and later, distributed computing capabilities are built in. This means that you can develop complex analysis scripts on your local computer, create one or more *compute contexts* for use with distributed computing resources, and then seamlessly move between executing scripts on the local computer and in a distributed context. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific *data source* along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
 
-***RevoScaleR***’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same ***RevoScaleR*** commands to manage your data, analyze data, and control computations in all frameworks.
+**RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
 ### Distributed Computing: A Primer 
 
@@ -40,11 +40,11 @@ Distributed computing is everywhere these days, with much buzz in the media abou
 
 The essence of distributed computing, and parallel computing in general, is finding a way to break down a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Over the past thirty years, a number of mechanisms for distributed computing have been proposed and implemented, including PVM (Parallel Virtual Machine), MPI (Message-Passing Interface), and Linda (an example of a shared virtual memory model). Most such mechanisms were optimized to share tasks among the various computing resources, but could be slowed if large amounts of data needed to be transferred. These mechanisms are frequently discussed together under the general term *high-performance computing (HPC)*. HPC mechanisms are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. Common tasks tackled with HPC mechanisms include the family of *embarrassingly parallel* problems, such as element-by-element computations on arrays, or computation of membership in the Mandelbrot set. This family of problems also includes many types of simulation, where each individual run is independent of any others being computed.
 
-To effectively deal with large data, a different paradigm is required. *High-performance analytics (HPA)* typically require less processing on a given chunk of data but focus on efficiently feeding data to the cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. ***RevoScaleR***, which is designed to process large data a chunk at a time, was built from the ground up so that each chunk of data could be processed independently, and so the extension to distributed computing is completely natural. ***RevoScaleR*** also provides a mechanism for processing distributed data, so that each computing resource needs access only to that portion of the total data source required for its particular computation.
+To effectively deal with large data, a different paradigm is required. *High-performance analytics (HPA)* typically require less processing on a given chunk of data but focus on efficiently feeding data to the cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. **RevoScaleR**, which is designed to process large data a chunk at a time, was built from the ground up so that each chunk of data could be processed independently, and so the extension to distributed computing is completely natural. **RevoScaleR** also provides a mechanism for processing distributed data, so that each computing resource needs access only to that portion of the total data source required for its particular computation.
 
 ### Distributed Computing with RevoScaleR 
 
-***RevoScaleR*** provides two main approaches for distributed computing. The first, the *master node* path, exemplifies the high-performance analytics approach: by simply establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following ***RevoScaleR*** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
+**RevoScaleR** provides two main approaches for distributed computing. The first, the *master node* path, exemplifies the high-performance analytics approach: by simply establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
 
 - rxSummary
 - rxLinMod
@@ -58,13 +58,13 @@ To effectively deal with large data, a different paradigm is required. *High-per
 - rxBTrees
 - rxNaiveBayes
 
-In the master node approach, you submit a job by calling a ***RevoScaleR*** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results. Examples of using the master node approach can be found in Chapter 3 and Chapter 4.
+In the master node approach, you submit a job by calling a **RevoScaleR** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results. Examples of using the master node approach can be found in Chapter 3 and Chapter 4.
 
-The second approach is via the ***RevoScaleR*** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the tradition high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. Examples of this approach can be found in Chapter 6.
+The second approach is via the **RevoScaleR** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the tradition high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. Examples of this approach can be found in Chapter 6.
 
 ## About Compute Contexts 
 
-A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ***RevoScaleR***. The default compute context tells ***RevoScaleR*** to compute on the local computer. In the default compute context, high-performance analytics (HPA) functions such as *rxLinMod* are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via *rxExec* are done sequentially. If you have supported distributed computing resources available to you, you can create a compute context object for those distributed computing resources, set your compute context using *rxOptions*, and then use those distributed computing resources in subsequent calls to ***RevoScaleR***. You can create multiple compute context objects, and switch between them easily. You can also easily update existing compute context objects, for example, to add new computers as they come online.
+A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with **RevoScaleR**. The default compute context tells **RevoScaleR** to compute on the local computer. In the default compute context, high-performance analytics (HPA) functions such as *rxLinMod* are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via *rxExec* are done sequentially. If you have supported distributed computing resources available to you, you can create a compute context object for those distributed computing resources, set your compute context using *rxOptions*, and then use those distributed computing resources in subsequent calls to **RevoScaleR**. You can create multiple compute context objects, and switch between them easily. You can also easily update existing compute context objects, for example, to add new computers as they come online.
 
 The principal compute contexts are the following:
 
@@ -124,7 +124,7 @@ which gives the following output:
 	    autoCleanup = TRUE, dataDistType = "all", packagesToLoad = NULL, 
 	    email = NULL, resultsTimeout = 15, groups = "ComputeNodes") 
 
-If you are using the Revolution R Enterprise R Productivity Environment, you can obtain the same information simply by typing the constructor’s name and an opening parenthesis in the R Console window or hovering over the constructor’s name in the Script window. More details about the parameters can be obtained from the constructor’s help file.
+If you are using our R Productivity Environment, you can obtain the same information simply by typing the constructor’s name and an opening parenthesis in the R Console window or hovering over the constructor’s name in the Script window. More details about the parameters can be obtained from the constructor’s help file.
 
 You can modify an existing compute context and set the modified context as the current compute context by calling *rxSetComputeContext*. For example, if you have defined *myCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call *rxSetComputeContext* as follows:
 
@@ -172,7 +172,7 @@ Once you have registered a distributed compute context, any of the following fun
 - rxNaiveBayes
 - rxExec
 
-We refer, here and elsewhere, to these functions (except *rxExec*) as the ***RevoScaleR*** *high-performance analytics*, or HPA functions. The exception, *rxExec*, is used to execute an arbitrary function on specified nodes (or cores) of your compute context; it can be used for traditional high-performance computing functions. The *rxExec* function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. We defer further discussion of *rxExec* until the Chapter 6.
+We refer, here and elsewhere, to these functions (except *rxExec*) as the **RevoScaleR** *high-performance analytics*, or HPA functions. The exception, *rxExec*, is used to execute an arbitrary function on specified nodes (or cores) of your compute context; it can be used for traditional high-performance computing functions. The *rxExec* function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. We defer further discussion of *rxExec* until the Chapter 6.
 
 Another class of distributed computing functions is the informational functions, such as *rxGetInfo* and *rxGetVarInfo*. Before beginning our data analysis, we first want to check to make sure that the data set we will be using is available on the compute resources. As a very simple example, we will ask each node for basic information about our data set using the *rxGetInfo* function. (In this chapter, we assume a simple compute context that takes default values for everything except the five site- and user-specific parameters; in particular, this makes all jobs waiting jobs, that is, the R prompt does not return until the job is completed.) 
 
@@ -227,7 +227,7 @@ This confirms that our data set is in fact available on all nodes of our cluster
 
 ### Obtaining A Data Summary 
 
-When you run one of ***RevoScaleR***’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. Again, in the simplest case, the job is considered *blocking*, so that control is not returned until the computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
+When you run one of **RevoScaleR**’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. Again, in the simplest case, the job is considered *blocking*, so that control is not returned until the computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
 
 For example, we start by taking a summary of three variables from the airline data:
 
@@ -375,41 +375,41 @@ We can then view a summary of the results as follows:
  
 	Coefficients: (2 not defined because of singularities)
 	                  Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)      3.570e+00  2.053e-01  17.389 2.22e-16 ***
-	DayOfWeek=Mon    1.014e+00  5.320e-02  19.061 2.22e-16 ***
-	DayOfWeek=Tues  -7.077e-01  5.389e-02 -13.131 2.22e-16 ***
-	DayOfWeek=Wed   -3.503e-01  5.369e-02  -6.524 6.85e-11 ***
-	DayOfWeek=Thur   2.122e+00  5.334e-02  39.782 2.22e-16 ***
-	DayOfWeek=Fri    3.089e+00  5.327e-02  57.976 2.22e-16 ***
-	DayOfWeek=Sat   -1.343e+00  5.615e-02 -23.925 2.22e-16 ***
+	(Intercept)      3.570e+00  2.053e-01  17.389 2.22e-16 **
+	DayOfWeek=Mon    1.014e+00  5.320e-02  19.061 2.22e-16 **
+	DayOfWeek=Tues  -7.077e-01  5.389e-02 -13.131 2.22e-16 **
+	DayOfWeek=Wed   -3.503e-01  5.369e-02  -6.524 6.85e-11 **
+	DayOfWeek=Thur   2.122e+00  5.334e-02  39.782 2.22e-16 **
+	DayOfWeek=Fri    3.089e+00  5.327e-02  57.976 2.22e-16 **
+	DayOfWeek=Sat   -1.343e+00  5.615e-02 -23.925 2.22e-16 **
 	DayOfWeek=Sun      Dropped    Dropped Dropped  Dropped    
-	F_CRSDepTime=0  -2.283e+00  4.548e-01  -5.020 5.17e-07 ***
-	F_CRSDepTime=1  -3.277e+00  6.035e-01  -5.429 5.65e-08 ***
-	F_CRSDepTime=2  -4.926e+00  1.223e+00  -4.028 5.63e-05 ***
+	F_CRSDepTime=0  -2.283e+00  4.548e-01  -5.020 5.17e-07 **
+	F_CRSDepTime=1  -3.277e+00  6.035e-01  -5.429 5.65e-08 **
+	F_CRSDepTime=2  -4.926e+00  1.223e+00  -4.028 5.63e-05 **
 	F_CRSDepTime=3  -2.316e+00  1.525e+00  -1.519 0.128881    
-	F_CRSDepTime=4  -5.063e+00  1.388e+00  -3.648 0.000265 ***
-	F_CRSDepTime=5  -7.178e+00  2.377e-01 -30.197 2.22e-16 ***
-	F_CRSDepTime=6  -7.317e+00  2.065e-01 -35.441 2.22e-16 ***
-	F_CRSDepTime=7  -6.397e+00  2.065e-01 -30.976 2.22e-16 ***
-	F_CRSDepTime=8  -4.907e+00  2.061e-01 -23.812 2.22e-16 ***
-	F_CRSDepTime=9  -4.211e+00  2.074e-01 -20.307 2.22e-16 ***
-	F_CRSDepTime=10 -2.857e+00  2.070e-01 -13.803 2.22e-16 ***
-	F_CRSDepTime=11 -2.537e+00  2.069e-01 -12.262 2.22e-16 ***
-	F_CRSDepTime=12 -9.556e-01  2.073e-01  -4.609 4.05e-06 ***
+	F_CRSDepTime=4  -5.063e+00  1.388e+00  -3.648 0.000265 **
+	F_CRSDepTime=5  -7.178e+00  2.377e-01 -30.197 2.22e-16 **
+	F_CRSDepTime=6  -7.317e+00  2.065e-01 -35.441 2.22e-16 **
+	F_CRSDepTime=7  -6.397e+00  2.065e-01 -30.976 2.22e-16 **
+	F_CRSDepTime=8  -4.907e+00  2.061e-01 -23.812 2.22e-16 **
+	F_CRSDepTime=9  -4.211e+00  2.074e-01 -20.307 2.22e-16 **
+	F_CRSDepTime=10 -2.857e+00  2.070e-01 -13.803 2.22e-16 **
+	F_CRSDepTime=11 -2.537e+00  2.069e-01 -12.262 2.22e-16 **
+	F_CRSDepTime=12 -9.556e-01  2.073e-01  -4.609 4.05e-06 **
 	F_CRSDepTime=13  1.180e-01  2.070e-01   0.570 0.568599    
-	F_CRSDepTime=14  1.470e+00  2.073e-01   7.090 2.22e-16 ***
-	F_CRSDepTime=15  2.147e+00  2.076e-01  10.343 2.22e-16 ***
-	F_CRSDepTime=16  2.701e+00  2.074e-01  13.023 2.22e-16 ***
-	F_CRSDepTime=17  3.447e+00  2.065e-01  16.688 2.22e-16 ***
-	F_CRSDepTime=18  4.080e+00  2.080e-01  19.614 2.22e-16 ***
-	F_CRSDepTime=19  3.649e+00  2.079e-01  17.553 2.22e-16 ***
-	F_CRSDepTime=20  4.216e+00  2.119e-01  19.895 2.22e-16 ***
-	F_CRSDepTime=21  3.276e+00  2.151e-01  15.225 2.22e-16 ***
+	F_CRSDepTime=14  1.470e+00  2.073e-01   7.090 2.22e-16 **
+	F_CRSDepTime=15  2.147e+00  2.076e-01  10.343 2.22e-16 **
+	F_CRSDepTime=16  2.701e+00  2.074e-01  13.023 2.22e-16 **
+	F_CRSDepTime=17  3.447e+00  2.065e-01  16.688 2.22e-16 **
+	F_CRSDepTime=18  4.080e+00  2.080e-01  19.614 2.22e-16 **
+	F_CRSDepTime=19  3.649e+00  2.079e-01  17.553 2.22e-16 **
+	F_CRSDepTime=20  4.216e+00  2.119e-01  19.895 2.22e-16 **
+	F_CRSDepTime=21  3.276e+00  2.151e-01  15.225 2.22e-16 **
 	F_CRSDepTime=22 -1.729e-01  2.284e-01  -0.757 0.449026    
 	F_CRSDepTime=23    Dropped    Dropped Dropped  Dropped    
-	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 ***
+	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 **
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.27 on 6005349 degrees of freedom
 	Multiple R-squared: 0.01372 
@@ -440,41 +440,41 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	 
 	Coefficients:
 	                  Estimate Std. Error  z value Pr(>|z|)    
-	(Intercept)     -1.740e+00  1.492e-02 -116.602 2.22e-16 ***
-	DayOfWeek=Mon    7.852e-02  4.060e-03   19.341 2.22e-16 ***
-	DayOfWeek=Tues  -5.222e-02  4.202e-03  -12.428 2.22e-16 ***
-	DayOfWeek=Wed   -4.431e-02  4.178e-03  -10.606 2.22e-16 ***
-	DayOfWeek=Thur   1.593e-01  4.023e-03   39.596 2.22e-16 ***
-	DayOfWeek=Fri    2.225e-01  3.981e-03   55.875 2.22e-16 ***
-	DayOfWeek=Sat   -8.336e-02  4.425e-03  -18.839 2.22e-16 ***
+	(Intercept)     -1.740e+00  1.492e-02 -116.602 2.22e-16 **
+	DayOfWeek=Mon    7.852e-02  4.060e-03   19.341 2.22e-16 **
+	DayOfWeek=Tues  -5.222e-02  4.202e-03  -12.428 2.22e-16 **
+	DayOfWeek=Wed   -4.431e-02  4.178e-03  -10.606 2.22e-16 **
+	DayOfWeek=Thur   1.593e-01  4.023e-03   39.596 2.22e-16 **
+	DayOfWeek=Fri    2.225e-01  3.981e-03   55.875 2.22e-16 **
+	DayOfWeek=Sat   -8.336e-02  4.425e-03  -18.839 2.22e-16 **
 	DayOfWeek=Sun      Dropped    Dropped  Dropped  Dropped    
-	F_CRSDepTime=0  -2.537e-01  3.555e-02   -7.138 2.22e-16 ***
-	F_CRSDepTime=1  -3.852e-01  4.916e-02   -7.836 2.22e-16 ***
-	F_CRSDepTime=2  -4.118e-01  1.032e-01   -3.989 6.63e-05 ***
+	F_CRSDepTime=0  -2.537e-01  3.555e-02   -7.138 2.22e-16 **
+	F_CRSDepTime=1  -3.852e-01  4.916e-02   -7.836 2.22e-16 **
+	F_CRSDepTime=2  -4.118e-01  1.032e-01   -3.989 6.63e-05 **
 	F_CRSDepTime=3  -1.046e-01  1.169e-01   -0.895 0.370940    
-	F_CRSDepTime=4  -4.402e-01  1.202e-01   -3.662 0.000251 ***
-	F_CRSDepTime=5  -9.115e-01  2.008e-02  -45.395 2.22e-16 ***
-	F_CRSDepTime=6  -8.934e-01  1.553e-02  -57.510 2.22e-16 ***
-	F_CRSDepTime=7  -6.559e-01  1.536e-02  -42.716 2.22e-16 ***
-	F_CRSDepTime=8  -4.608e-01  1.518e-02  -30.364 2.22e-16 ***
-	F_CRSDepTime=9  -3.657e-01  1.525e-02  -23.975 2.22e-16 ***
-	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 ***
-	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 ***
-	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 ***
+	F_CRSDepTime=4  -4.402e-01  1.202e-01   -3.662 0.000251 **
+	F_CRSDepTime=5  -9.115e-01  2.008e-02  -45.395 2.22e-16 **
+	F_CRSDepTime=6  -8.934e-01  1.553e-02  -57.510 2.22e-16 **
+	F_CRSDepTime=7  -6.559e-01  1.536e-02  -42.716 2.22e-16 **
+	F_CRSDepTime=8  -4.608e-01  1.518e-02  -30.364 2.22e-16 **
+	F_CRSDepTime=9  -3.657e-01  1.525e-02  -23.975 2.22e-16 **
+	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 **
+	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 **
+	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 **
 	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ** 
-	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 ***
-	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 ***
-	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 ***
-	F_CRSDepTime=17  3.468e-01  1.489e-02   23.284 2.22e-16 ***
-	F_CRSDepTime=18  4.008e-01  1.498e-02   26.762 2.22e-16 ***
-	F_CRSDepTime=19  4.023e-01  1.497e-02   26.875 2.22e-16 ***
-	F_CRSDepTime=20  4.484e-01  1.520e-02   29.489 2.22e-16 ***
-	F_CRSDepTime=21  3.767e-01  1.543e-02   24.419 2.22e-16 ***
-	F_CRSDepTime=22  8.995e-02  1.656e-02    5.433 5.55e-08 ***
+	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 **
+	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 **
+	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 **
+	F_CRSDepTime=17  3.468e-01  1.489e-02   23.284 2.22e-16 **
+	F_CRSDepTime=18  4.008e-01  1.498e-02   26.762 2.22e-16 **
+	F_CRSDepTime=19  4.023e-01  1.497e-02   26.875 2.22e-16 **
+	F_CRSDepTime=20  4.484e-01  1.520e-02   29.489 2.22e-16 **
+	F_CRSDepTime=21  3.767e-01  1.543e-02   24.419 2.22e-16 **
+	F_CRSDepTime=22  8.995e-02  1.656e-02    5.433 5.55e-08 **
 	F_CRSDepTime=23    Dropped    Dropped  Dropped  Dropped    
-	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 ***
+	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 **
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 445.2487 
 	Number of iterations: 5
@@ -493,13 +493,13 @@ Then, rerunning our previous example results in much more verbose output:
 
 	======  CLUSTER-HEAD2  ( process  1 ) has started run at 
 	Thu Aug 11 15:56:10 2011  ====== 
-	********************************************************************** 
+	*********************************************** 
 	Worker Node 'COMPUTE10' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.791 2011 
-	********************************************************************** 
+	*********************************************** 
 	Worker Node 'COMPUTE11' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.757 2011 
-	********************************************************************** 
+	*********************************************** 
 	Worker Node 'COMPUTE12' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.769 2011 
-	********************************************************************** 
+	*********************************************** 
 	Worker Node 'COMPUTE13' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.889 2011 
 	 
 	 
@@ -529,23 +529,23 @@ Then, rerunning our previous example results in much more verbose output:
 	COMPUTE12: Rows Read: 2400000, Total Rows Processed: 24556949, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE13' has completed its task successfully. Thu Aug 11 15:56:11.341 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	*********************************************** 
 	 
 	Worker Node 'COMPUTE12' has completed its task successfully. Thu Aug 11 15:56:11.221 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	*********************************************** 
 	 
 	COMPUTE10: Rows Read: 2351983, Total Rows Processed: 24672124, Total Chunk Time: 0.078 seconds 
 	COMPUTE11: Rows Read: 2400000, Total Rows Processed: 24707495, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE10' has completed its task successfully. Thu Aug 11 15:56:11.244 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	*********************************************** 
 	 
 	Worker Node 'COMPUTE11' has completed its task successfully. Thu Aug 11 15:56:11.209 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	*********************************************** 
 	 
-	********************************************************************** 
+	*********************************************** 
 	Master node [CLUSTER-HEAD2] is starting a task.... Thu Aug 11 15:56:10.961 2011 
 	CLUSTER-HEAD2: Rows Read: 4461826, Total Rows Processed: 4461826, Total Chunk Time: 0.038 seconds 
 	CLUSTER-HEAD2: Rows Read: 4452096, Total Rows Processed: 8913922, Total Chunk Time: 0.071 seconds 
@@ -555,7 +555,7 @@ Then, rerunning our previous example results in much more verbose output:
 	CLUSTER-HEAD2: Rows Read: 2400000, Total Rows Processed: 24602940, Total Chunk Time: 0.072 seconds 
 	Master node [CLUSTER-HEAD2] has completed its task successfully. Thu Aug 11 15:56:11.410 2011 
 	Elapsed time: 0.449 secs. 
-	********************************************************************** 
+	*********************************************** 
 	Time to compute summary on all servers: 0.461 secs. 
 	Processing results on client ... 
 	Computation time: 0.471 seconds. 
@@ -642,7 +642,7 @@ Calling rxGetJobStatus again a few seconds later shows us that the job has compl
 	
 	[1] "finished" 
 
-If we are using the Revolution R Enterprise R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
+If we are using our R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
 
 ![Object Browser](media/rserver-scaler-distributed-computing/object_browser_1.png)
  
@@ -676,7 +676,7 @@ As in the blocking case, this gives the following results:
 
 ### Capturing the Job Information 
 
-If you forget to assign the job information object when you first submit your job, don’t panic. ***RevoScaleR*** saves the job information for the last pending job as the object *rxgLastPendingJob*. You can assign this value to a more specific name at any time until you submit another non-blocking job.
+If you forget to assign the job information object when you first submit your job, don’t panic. **RevoScaleR** saves the job information for the last pending job as the object *rxgLastPendingJob*. You can assign this value to a more specific name at any time until you submit another non-blocking job.
  
 	rxOptions(computeContext=myNoWaitCluster)
 	rxLinMod(ArrDelay ~ DayOfWeek, data="AirlineData87to08.xdf",  
@@ -723,23 +723,23 @@ We obtain the following results:
 	 
 	Coefficients:
 	                      Estimate Std. Error  t value Pr(>|t|)    
-	(Intercept)         -1.4691555  0.0002209 -6651.17 2.22e-16 ***
-	DayOfWeek=Monday    -0.0083930  0.0003088   -27.18 2.22e-16 ***
-	DayOfWeek=Tuesday   -0.0559740  0.0003115  -179.67 2.22e-16 ***
-	DayOfWeek=Wednesday  0.0386048  0.0003068   125.82 2.22e-16 ***
-	DayOfWeek=Thursday   0.1862203  0.0003006   619.41 2.22e-16 ***
-	DayOfWeek=Friday     0.2388796  0.0002985   800.14 2.22e-16 ***
-	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 ***
+	(Intercept)         -1.4691555  0.0002209 -6651.17 2.22e-16 **
+	DayOfWeek=Monday    -0.0083930  0.0003088   -27.18 2.22e-16 **
+	DayOfWeek=Tuesday   -0.0559740  0.0003115  -179.67 2.22e-16 **
+	DayOfWeek=Wednesday  0.0386048  0.0003068   125.82 2.22e-16 **
+	DayOfWeek=Thursday   0.1862203  0.0003006   619.41 2.22e-16 **
+	DayOfWeek=Friday     0.2388796  0.0002985   800.14 2.22e-16 **
+	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 **
 	DayOfWeek=Sunday       Dropped    Dropped  Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '**' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 78.6309 
 	Number of iterations: 2
 
 ## Cleaning Up after Distributed Computing 
 
-Normally, whenever a waiting job completes or whenever you call *rxGetJobResults* to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the *autoCleanup* flag to the compute context constructor, which defaults to *TRUE*.) However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But ***RevoScaleR*** also supplies a number of tools to help you remove any accumulated artifacts.
+Normally, whenever a waiting job completes or whenever you call *rxGetJobResults* to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the *autoCleanup* flag to the compute context constructor, which defaults to *TRUE*.) However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But **RevoScaleR** also supplies a number of tools to help you remove any accumulated artifacts.
 
 The first of these, *rxGetJobs*, allows you to get a list of all the jobs associated with a given compute context. By default, it matches just the head node (if available) and shared directory specified in the compute context; if you re-use these two specifications, ALL the jobs associated with that head node and shared directory are returned:
 
@@ -769,7 +769,7 @@ You can also use *rxCleanupJobs* to clean up individual jobs:
 
 ## Parallel Computing with rxExec 
 
-While the ***RevoScaleR*** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the *rxExec* function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class* described in Chapter 1. In this chapter, we will use parallel computations to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering. 
+While the **RevoScaleR** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the *rxExec* function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class* described in Chapter 1. In this chapter, we will use parallel computations to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering. 
 
 In general, the only required arguments to rxExec are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation. Most of these are introduced in the examples of this chapter, and the remainder are discussed in Section 6.10. The rxExec help file discusses all of these arguments in detail.
 
@@ -923,7 +923,7 @@ The resulting plot is shown below (not all graphics devices support the useRaste
 
 ### Naïve Parallel k-Means Clustering 
 
-***RevoScaleR*** has a built-in analysis function, *rxKmeans*, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context. 
+**RevoScaleR** has a built-in analysis function, *rxKmeans*, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context. 
 
 The kmeans function implements several *iterative relocation* algorithms for clustering. An iterative relocation algorithm starts from an initial classification and then iteratively moves data points from one cluster to another to reduce sums of squares. One possible starting point is to simply pick cluster centers at random and then assign points to each cluster so that the sum of squares is minimized. If this procedure is repeated many times for different sets of centers, the set with the smallest error can be chosen.
 
@@ -1212,7 +1212,7 @@ The *continueOnFailure* argument is used to say that a computation should contin
 
 ## Using RevoScaleR with foreach: Package doRSR 
 
-The foreach package provides a for-loop-like approach to parallel computing that has proven quite popular. Developed by Microsoft, foreach is an open source package that is bundled with Microsoft R Services but is also available on the Comprehensive R Archive Network, CRAN. Parallel backends have been written for a variety of parallel computing packages, including nws, snow, and rmpi. If you need to share parallel code with users of other R distributions, writing that code using foreach provides considerable flexibility. To execute that code in Microsoft R Services using your distributed computing resources, you can use the doRSR package.
+The foreach package provides a for-loop-like approach to parallel computing that has proven quite popular. Developed by Microsoft, foreach is an open source package that is bundled with Microsoft R but is also available on the Comprehensive R Archive Network, CRAN. Parallel backends have been written for a variety of parallel computing packages, including nws, snow, and rmpi. If you need to share parallel code with users of other R distributions, writing that code using foreach provides considerable flexibility. To execute that code in Microsoft R using your distributed computing resources, you can use the doRSR package.
 
 The doRSR package is a parallel backend for RevoScaleR, built on top of rxExec, and included with all RevoScaleR distributions. To get started using it, simply load the doRSR package and register the backend:
 
@@ -1317,7 +1317,7 @@ By default, *rxSplit* simply appends a number in the sequence from 1 to *numOutF
 	basenames <- file.path("C:", nodepaths, "DistAirlineData")
 	rxSplit(bigAirlineData, outFilesBase=basenames)
 
-This creates the four directories C:/compute10, etc., and creates a file named “DistAirlineData.xdf” in each directory. You will want to do something like this when using distributed data with the standard ***RevoScaleR*** analysis functions such as rxLinMod and rxLogit.
+This creates the four directories C:/compute10, etc., and creates a file named “DistAirlineData.xdf” in each directory. You will want to do something like this when using distributed data with the standard **RevoScaleR** analysis functions such as rxLinMod and rxLogit.
 
 You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
 

@@ -28,24 +28,22 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to high-performance ‘big data’ analytics for ***Teradata*** using ***RevoScaleR***, an R package included with ***Microsoft R Services***. ***Teradata Platforms*** running the ***Teradata Database*** provide high-performance, high-capacity data storage capabilities that are a great match for the ***RevoScaleR*** high-performance analytics.
+This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server and R Client. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
 
-There are three key components to running ***RevoScaleR*** high performance analytics:
+There are three key components to running **RevoScaleR** high performance analytics:
 
 -   The name and arguments of the analysis function: What analysis do you want to perform?
 -   The specification of your data source(s): Where is your data and what are its characteristics? And, if you are creating new data, for example with scoring, where does the new data go?
 -   The specification for your compute context: Where do you want to perform the computations?
 
-***RevoScaleR*** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions. This guide focuses on analyzing Teradata data in-database. That is, the data is located in a Teradata database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the Teradata database, taking advantage of the Teradata Parallel Transporter (TPT), and computations are performed on a computer alongside the Teradata Platform.
+**RevoScaleR** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions. This guide focuses on analyzing Teradata data in-database. That is, the data is located in a Teradata database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the Teradata database, taking advantage of the Teradata Parallel Transporter (TPT), and computations are performed on a computer alongside the Teradata Platform.
 
-More detailed examples of using ***RevoScaleR*** can be found in the following guides included with ***Microsoft R Services***:
+More detailed examples of using **RevoScaleR** can be found in the following articles in this documentation set:
 
 -   [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
 -   [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
 -   [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md)
 -   [*RevoScaleR ODBC Data Import Guide*](rserver-scaler-odbc.md)
-
-On Windows, the ***R Productivity Environment*** integrated development environment is included with ***Microsoft R Services***. It has its own *Getting Started Guide*.
 
 For information on other distributed computing compute contexts, see:
 
@@ -54,14 +52,14 @@ For information on other distributed computing compute contexts, see:
 
 ## Installation
 
-The ***RevoScaleR*** package is installed as part of ***Microsoft R Services*** on Windows, Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES). The package is automatically loaded when you start ***Microsoft R Services***. On your client machine, you will need:
+The **RevoScaleR** package is installed as part of Microsoft R Server and R Client. The package is automatically loaded when you start Microsoft R Server and R Client. On your client machine, you will need:
 
--   ***Microsoft R Services*** installed.
+-   Microsoft R Server or R Client installed.
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10
 
-If you plan to do in-database computations in ***Teradata***, you will need ***Microsoft R Services*** installed on all of the nodes of the ***Teradata Platform***.
+If you plan to do in-database computations in **Teradata**, you will need Microsoft R Server installed on all of the nodes of the **Teradata Platform**.
 
-If you plan to perform large computations alongside ***Teradata***, ***Microsoft R Services*** should be installed on a server or powerful workstation with access to your ***Teradata Database*** with the following specification:
+If you plan to perform large computations alongside **Teradata**, Microsoft R Server should be installed on a server or powerful workstation with access to your **Teradata Database** with the following specification:
 
 -   Red Hat Enterprise Linux 5.x or 6.x, SLES 11, or a recent version of Windows (post-XP)
 -   At least 4 fast cores
@@ -69,7 +67,7 @@ If you plan to perform large computations alongside ***Teradata***, ***Microsoft
 -   A fast hard drive with at least 100 GB available– enough disk space to temporarily store the data being analyzed if desired
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10 [If you are using Teradata 14.0, the in-Teradata computation functionality will not be available.]
 
-More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Services Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). Note that the R Productivity Environment client (an Integrated Development Environment for R) runs on Windows workstations only.
+More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). Note that the R Productivity Environment client (an Integrated Development Environment for R) runs on Windows workstations only.
 
 ## Setting Up the Sample Data
 
@@ -88,7 +86,7 @@ You can use the ‘fastload’ Teradata command to load the data sets into your 
 
 ## Using a Teradata Data Source and ComputeContext
 
-The ***RevoScaleR*** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions. In this guide we’ll be focusing on analyzing data that is located in a ***Teradata Database***. The first step is to create a *data source* R object that contains information about the data that will be analyzed.
+The **RevoScaleR** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions. In this guide we’ll be focusing on analyzing data that is located in a **Teradata Database**. The first step is to create a *data source* R object that contains information about the data that will be analyzed.
 
 ### Creating an RxTeradata Data Source
 
@@ -106,7 +104,7 @@ We use this information to create an RxTeradata data source object:
 	teradataDS <- RxTeradata(connectionString = tdConnString, 
 		sqlQuery = tdQuery, rowsPerRead = 50000)
 
-Note that we have also specified *rowsPerRead*. This parameter is important for handling memory usage and efficient computations. Most of the ***RevoScaleR*** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read. The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing. If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data. On some systems, setting *rowsPerRead* to too small a value can also provide slower performance. You may want to experiment with this setting on your system.
+Note that we have also specified *rowsPerRead*. This parameter is important for handling memory usage and efficient computations. Most of the **RevoScaleR** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read. The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing. If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data. On some systems, setting *rowsPerRead* to too small a value can also provide slower performance. You may want to experiment with this setting on your system.
 
 ### Extracting Basic Information about Your Data
 
@@ -181,14 +179,14 @@ Teradata has a limit of 30 bytes for table and column names, and sometimes creat
 
 ### Creating an RxInTeradata Compute Context
 
-Since we want to perform ***RevoScaleR*** analytic computations in-database, the next step is to create an *RxInTeradata* compute context. You will need basic information about your Teradata platform. Since the computations are tied to the database, a connection string is required for the *RxInTeradata* compute context. As when specifying an *RxTeradata* data source, the connection string can contain information about your driver, your Teradata ID, your database name, your user ID, and your password. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
+Since we want to perform **RevoScaleR** analytic computations in-database, the next step is to create an *RxInTeradata* compute context. You will need basic information about your Teradata platform. Since the computations are tied to the database, a connection string is required for the *RxInTeradata* compute context. As when specifying an *RxTeradata* data source, the connection string can contain information about your driver, your Teradata ID, your database name, your user ID, and your password. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
 	
 	tdConnString <- "DRIVER=Teradata;DBCNAME=machineNameOrIP;
 		DATABASE=RevoTestDB;UID=myUserID;PWD=myPassword;"
 
-Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them. The data source (*RxTeradata*) tells us where the data is; the compute context (*RxInTeradata*) tells us where the computations are to take place. Note that the compute context only determines where the ***RevoScaleR*** high- performance analytics computations take place; it does not affect other standard R computations that you are performing on the client machine.
+Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them. The data source (*RxTeradata*) tells us where the data is; the compute context (*RxInTeradata*) tells us where the computations are to take place. Note that the compute context only determines where the **RevoScaleR** high- performance analytics computations take place; it does not affect other standard R computations that you are performing on the client machine.
 
-The compute context also requires information about your shared directory, both locally and remotely, and the path where ***Microsoft R Services*** is installed on each of the nodes of the ***Teradata*** platform. Specify the appropriate information here:
+The compute context also requires information about your shared directory, both locally and remotely, and the path where Microsoft R Server is installed on each of the nodes of the **Teradata** platform. Specify the appropriate information here:
 
 	tdShareDir <- paste("c:\\AllShare\\", Sys.getenv("USERNAME"), sep="")
 	tdRemoteShareDir <- "/tmp/revoJobs"
@@ -312,7 +310,7 @@ Again, recreate a Teradata data source, adding the additional column information
 
 The *rxHistogram* function will show us the distribution of any of the variables in our data set. For example, let’s look at *creditLine* by *gender*. First we’ll set the compute context back to *tdCompute* so that all of our analytics computations will be performed in Teradata rather than alongside: `rxSetComputeContext(tdCompute)`
 
-Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the ***RevoScaleR*** *rxCube* analytics function, which will perform the required computations in-database in Teradata and return the results to your local workstation for plotting:
+Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the **RevoScaleR** *rxCube* analytics function, which will perform the required computations in-database in Teradata and return the results to your local workstation for plotting:
 
 	rxHistogram(~creditLine|gender, data = teradataDS,	
 		histType = "Percent")
@@ -356,12 +354,12 @@ As long as we have not changed the compute context, the computations will be per
 	 
 	Coefficients: (1 not defined because of singularities)
 	               Estimate Std. Error  t value Pr(>|t|)    
-	(Intercept)   3109.8508     2.2856 1360.647 2.22e-16 ***
+	(Intercept)   3109.8508     2.2856 1360.647 2.22e-16 **
 	gender=Male      3.2671     2.5091    1.302    0.193    
 	gender=Female   Dropped    Dropped  Dropped  Dropped    
-	creditLine     109.2620     0.1264  864.080 2.22e-16 ***
+	creditLine     109.2620     0.1264  864.080 2.22e-16 **
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3856 on 9999997 degrees of freedom
 	Multiple R-squared: 0.06948 
@@ -398,68 +396,68 @@ We get the following output:
 	 
 	Coefficients:
 	                       Estimate Std. Error  z value Pr(>|z|)    
-	(Intercept)          -8.524e+00  3.640e-02 -234.163 2.22e-16 ***
+	(Intercept)          -8.524e+00  3.640e-02 -234.163 2.22e-16 **
 	state=AK                Dropped    Dropped  Dropped  Dropped    
-	state=AL             -6.127e-01  3.840e-02  -15.956 2.22e-16 ***
-	state=AR             -1.116e+00  4.100e-02  -27.213 2.22e-16 ***
-	state=AZ             -1.932e-01  3.749e-02   -5.153 2.56e-07 ***
-	state=CA             -1.376e-01  3.591e-02   -3.831 0.000127 ***
-	state=CO             -3.314e-01  3.794e-02   -8.735 2.22e-16 ***
-	state=CT             -6.332e-01  3.933e-02  -16.101 2.22e-16 ***
-	state=DC             -7.717e-01  5.530e-02  -13.954 2.22e-16 ***
+	state=AL             -6.127e-01  3.840e-02  -15.956 2.22e-16 **
+	state=AR             -1.116e+00  4.100e-02  -27.213 2.22e-16 **
+	state=AZ             -1.932e-01  3.749e-02   -5.153 2.56e-07 **
+	state=CA             -1.376e-01  3.591e-02   -3.831 0.000127 **
+	state=CO             -3.314e-01  3.794e-02   -8.735 2.22e-16 **
+	state=CT             -6.332e-01  3.933e-02  -16.101 2.22e-16 **
+	state=DC             -7.717e-01  5.530e-02  -13.954 2.22e-16 **
 	state=DE             -4.316e-02  4.619e-02   -0.934 0.350144    
-	state=FL             -2.833e-01  3.626e-02   -7.814 2.22e-16 ***
+	state=FL             -2.833e-01  3.626e-02   -7.814 2.22e-16 **
 	state=GA              1.297e-02  3.676e-02    0.353 0.724215    
-	state=HI             -6.222e-01  4.395e-02  -14.159 2.22e-16 ***
-	state=IA             -1.284e+00  4.093e-02  -31.386 2.22e-16 ***
-	state=ID             -1.127e+00  4.427e-02  -25.456 2.22e-16 ***
-	state=IL             -7.355e-01  3.681e-02  -19.978 2.22e-16 ***
-	state=IN             -1.124e+00  3.842e-02  -29.261 2.22e-16 ***
-	state=KS             -9.614e-01  4.125e-02  -23.307 2.22e-16 ***
-	state=KY             -8.121e-01  3.908e-02  -20.778 2.22e-16 ***
-	state=LA             -1.231e+00  3.950e-02  -31.173 2.22e-16 ***
-	state=MA             -8.426e-01  3.810e-02  -22.115 2.22e-16 ***
-	state=MD             -2.378e-01  3.752e-02   -6.338 2.33e-10 ***
-	state=ME             -7.322e-01  4.625e-02  -15.829 2.22e-16 ***
-	state=MI             -1.250e+00  3.763e-02  -33.218 2.22e-16 ***
-	state=MN             -1.166e+00  3.882e-02  -30.030 2.22e-16 ***
-	state=MO             -7.618e-01  3.802e-02  -20.036 2.22e-16 ***
-	state=MS             -1.090e+00  4.096e-02  -26.601 2.22e-16 ***
-	state=MT             -1.049e+00  5.116e-02  -20.499 2.22e-16 ***
-	state=NB             -6.324e-01  4.270e-02  -14.808 2.22e-16 ***
-	state=NC             -1.135e+00  3.754e-02  -30.222 2.22e-16 ***
-	state=ND             -9.667e-01  5.675e-02  -17.033 2.22e-16 ***
-	state=NH             -9.966e-01  4.778e-02  -20.860 2.22e-16 ***
-	state=NJ             -1.227e+00  3.775e-02  -32.488 2.22e-16 ***
-	state=NM             -5.825e-01  4.092e-02  -14.235 2.22e-16 ***
-	state=NV             -2.222e-01  3.968e-02   -5.601 2.13e-08 ***
-	state=NY             -1.235e+00  3.663e-02  -33.702 2.22e-16 ***
-	state=OH             -6.004e-01  3.687e-02  -16.285 2.22e-16 ***
-	state=OK             -1.043e+00  4.005e-02  -26.037 2.22e-16 ***
-	state=OR             -1.284e+00  4.056e-02  -31.649 2.22e-16 ***
-	state=PA             -5.802e-01  3.673e-02  -15.797 2.22e-16 ***
-	state=RI             -7.197e-01  4.920e-02  -14.627 2.22e-16 ***
-	state=SC             -7.759e-01  3.878e-02  -20.008 2.22e-16 ***
-	state=SD             -8.295e-01  5.541e-02  -14.970 2.22e-16 ***
-	state=TN             -1.258e+00  3.861e-02  -32.589 2.22e-16 ***
-	state=TX             -6.103e-01  3.618e-02  -16.870 2.22e-16 ***
-	state=UT             -5.573e-01  4.036e-02  -13.808 2.22e-16 ***
-	state=VA             -7.069e-01  3.749e-02  -18.857 2.22e-16 ***
-	state=VT             -1.251e+00  5.944e-02  -21.051 2.22e-16 ***
-	state=WA             -1.297e-01  3.743e-02   -3.465 0.000530 ***
-	state=WI             -9.027e-01  3.843e-02  -23.488 2.22e-16 ***
-	state=WV             -5.708e-01  4.245e-02  -13.448 2.22e-16 ***
-	state=WY             -1.153e+00  5.769e-02  -19.987 2.22e-16 ***
+	state=HI             -6.222e-01  4.395e-02  -14.159 2.22e-16 **
+	state=IA             -1.284e+00  4.093e-02  -31.386 2.22e-16 **
+	state=ID             -1.127e+00  4.427e-02  -25.456 2.22e-16 **
+	state=IL             -7.355e-01  3.681e-02  -19.978 2.22e-16 **
+	state=IN             -1.124e+00  3.842e-02  -29.261 2.22e-16 **
+	state=KS             -9.614e-01  4.125e-02  -23.307 2.22e-16 **
+	state=KY             -8.121e-01  3.908e-02  -20.778 2.22e-16 **
+	state=LA             -1.231e+00  3.950e-02  -31.173 2.22e-16 **
+	state=MA             -8.426e-01  3.810e-02  -22.115 2.22e-16 **
+	state=MD             -2.378e-01  3.752e-02   -6.338 2.33e-10 **
+	state=ME             -7.322e-01  4.625e-02  -15.829 2.22e-16 **
+	state=MI             -1.250e+00  3.763e-02  -33.218 2.22e-16 **
+	state=MN             -1.166e+00  3.882e-02  -30.030 2.22e-16 **
+	state=MO             -7.618e-01  3.802e-02  -20.036 2.22e-16 **
+	state=MS             -1.090e+00  4.096e-02  -26.601 2.22e-16 **
+	state=MT             -1.049e+00  5.116e-02  -20.499 2.22e-16 **
+	state=NB             -6.324e-01  4.270e-02  -14.808 2.22e-16 **
+	state=NC             -1.135e+00  3.754e-02  -30.222 2.22e-16 **
+	state=ND             -9.667e-01  5.675e-02  -17.033 2.22e-16 **
+	state=NH             -9.966e-01  4.778e-02  -20.860 2.22e-16 **
+	state=NJ             -1.227e+00  3.775e-02  -32.488 2.22e-16 **
+	state=NM             -5.825e-01  4.092e-02  -14.235 2.22e-16 **
+	state=NV             -2.222e-01  3.968e-02   -5.601 2.13e-08 **
+	state=NY             -1.235e+00  3.663e-02  -33.702 2.22e-16 **
+	state=OH             -6.004e-01  3.687e-02  -16.285 2.22e-16 **
+	state=OK             -1.043e+00  4.005e-02  -26.037 2.22e-16 **
+	state=OR             -1.284e+00  4.056e-02  -31.649 2.22e-16 **
+	state=PA             -5.802e-01  3.673e-02  -15.797 2.22e-16 **
+	state=RI             -7.197e-01  4.920e-02  -14.627 2.22e-16 **
+	state=SC             -7.759e-01  3.878e-02  -20.008 2.22e-16 **
+	state=SD             -8.295e-01  5.541e-02  -14.970 2.22e-16 **
+	state=TN             -1.258e+00  3.861e-02  -32.589 2.22e-16 **
+	state=TX             -6.103e-01  3.618e-02  -16.870 2.22e-16 **
+	state=UT             -5.573e-01  4.036e-02  -13.808 2.22e-16 **
+	state=VA             -7.069e-01  3.749e-02  -18.857 2.22e-16 **
+	state=VT             -1.251e+00  5.944e-02  -21.051 2.22e-16 **
+	state=WA             -1.297e-01  3.743e-02   -3.465 0.000530 **
+	state=WI             -9.027e-01  3.843e-02  -23.488 2.22e-16 **
+	state=WV             -5.708e-01  4.245e-02  -13.448 2.22e-16 **
+	state=WY             -1.153e+00  5.769e-02  -19.987 2.22e-16 **
 	gender=Male             Dropped    Dropped  Dropped  Dropped    
-	gender=Female         6.131e-01  3.754e-03  163.306 2.22e-16 ***
+	gender=Female         6.131e-01  3.754e-03  163.306 2.22e-16 **
 	cardholder=Principal    Dropped    Dropped  Dropped  Dropped    
-	cardholder=Secondary  4.785e-01  9.847e-03   48.588 2.22e-16 ***
-	balance               3.828e-04  4.660e-07  821.534 2.22e-16 ***
-	numTrans              4.747e-02  6.649e-05  713.894 2.22e-16 ***
-	numIntlTrans          3.021e-02  1.776e-04  170.097 2.22e-16 ***
-	creditLine            9.491e-02  1.416e-04  670.512 2.22e-16 ***
+	cardholder=Secondary  4.785e-01  9.847e-03   48.588 2.22e-16 **
+	balance               3.828e-04  4.660e-07  821.534 2.22e-16 **
+	numTrans              4.747e-02  6.649e-05  713.894 2.22e-16 **
+	numIntlTrans          3.021e-02  1.776e-04  170.097 2.22e-16 **
+	creditLine            9.491e-02  1.416e-04  670.512 2.22e-16 **
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 2922.044 
 	Number of iterations: 8
@@ -649,7 +647,7 @@ Now we can set our compute context back to in-Teradata, and look at summary stat
 
 ### Performing Your Own ‘Chunking’ Analysis
 
-The *rxDataStep* function also allows us to write our own ‘chunking’ analysis. Reading the data in chunks on multiple AMPS in Teradata, we can process each chunk of data using the R language, and write out summary results for each chunk into a common Teradata data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into ***RevoScaleR***; this example is meant for instructional purposes only.)
+The *rxDataStep* function also allows us to write our own ‘chunking’ analysis. Reading the data in chunks on multiple AMPS in Teradata, we can process each chunk of data using the R language, and write out summary results for each chunk into a common Teradata data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into **RevoScaleR**; this example is meant for instructional purposes only.)
 
 The first step is to write a function to process each chunk of data. The data will automatically be fed into the function as a rectangular list of data columns. The function must also return a rectangular list of data columns (which a data frame is). In the example below, we’ll be summarizing the input data and returning a data frame with a single row.
 

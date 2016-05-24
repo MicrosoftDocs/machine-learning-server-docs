@@ -370,7 +370,7 @@ R has extensive facilities for managing random number generation, and these are 
 
 The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf) for complete details.
 
-RevoScaleR depends on a number of packages that are specified as “default packages” in Microsoft R Services. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
+RevoScaleR depends on a number of packages that are specified as “default packages” in Microsoft R Server and R Client. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
 
 The RevoScaleR package includes comprehensive help for all of its functions and data sets, along with an overview topic describing the package as a whole. To view this overview topic, use the R ? operator at the R prompt as follows:
 
