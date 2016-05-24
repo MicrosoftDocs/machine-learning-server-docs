@@ -49,9 +49,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 
 Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server.
 
-On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. 
-
-R client is optimized to work with all Microsoft R Server versions. 
+On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
 ###Microsoft R Open
 
@@ -59,10 +57,9 @@ Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. I
 
 Microsoft R Open delivers performance boosts, in comparison to the standard R distribution, given the same hardware configuration, since R Open leverages high-performance, multi-threaded math libraries.  This means that functions in R that use, for example, matrix multiplication, will run faster out of the box with Microsoft R Open. Microsoft R Open is also enhanced in terms of [reproducibility](https://mran.microsoft.com/documents/rro/reproducibility/).   
 
-Learn more about [Microsoft R Open...](https://mran.microsoft.com/open)
-
 On its own, Microsoft R Open provides limited performance and scalability when compared to Microsoft R Server and Microsoft R Client. Specifically, none of the ScaleR functions and packages, which are included with Microsoft R Server and Microsoft R Client, are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory unless connected with Microsoft R Server. Microsoft R Server and Microsoft R Client each connect to a custom version of Microsoft R Open.  
 
+Learn more about [Microsoft R Open...](https://mran.microsoft.com/open)
 
 ## What's in R Server and R Client
 
