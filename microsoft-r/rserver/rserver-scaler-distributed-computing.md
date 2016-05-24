@@ -791,7 +791,7 @@ While the **RevoScaleR** HPA functions are engineered to work in parallel automa
 
 In general, the only required arguments to rxExec are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation. Most of these are introduced in the examples of this chapter, and the remainder are discussed in Section 6.10. The rxExec help file discusses all of these arguments in detail.
 
-> ![IMPORTANT]
+>[!IMPORTANT]
 > Before trying the examples in this chapter, set your compute context to one of the following: RxLocalParallel, RxHpcServer, RxHadoopMR, or RxInTeradata (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE* if available; later in the chapter we will show how some of the examples can be rewritten to work in a non-blocking compute context, but start with the simpler, blocking case.
 
 ### Playing Dice: A Simulation 

@@ -55,6 +55,8 @@ First, we specify the name and location of the data set:
 
 Next, we can take a quick look at some basic demographic and socio-economic variables by calling *rxSummary.* (For more information on variables in the census data, see <http://usa.ipums.org/usa-action/variables/group>.) Throughout the analysis we will use the probability weighting variable, *perwt*, and restrict the analysis to people over the age of 20.
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+
 	rxSummary(~phone + speakeng + wkswork1 + incwelfr + incss + educrec + metro +
 		ownershd + marst + lingisol + nfams + yrsusa1 + movedin + racwht + age,
 	 	data = bigCensusData, blocksPerRead = 5, pweights = "perwt", 

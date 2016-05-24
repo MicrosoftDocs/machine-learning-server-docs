@@ -30,6 +30,10 @@ By combining the power and flexibility of the open-source R language with the fa
 
 This example focuses on a basic demographic pattern: in general, more boys than girls are born and the death rate is higher for males at every age. So, typically we observe a decline in the ratio of males to females as age increases.
 
+<a name="chunking"></a>
+>**Important!**  Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
+
+
 ### Examining the Data
 
 We can examine this pattern in the United States using the 5% Public Use Microdata Sample (PUMS) of the 2000 United States Census, stored in an .xdf file of about 12 gigabytes.[1] Using the rxGetInfo function, we can get a quick summary of the data set:
@@ -55,6 +59,8 @@ First let’s use the rxCube function to count the number of males and females f
 
 	ageSex <- rxCube(~F(age):sex, pweights = "perwt", data = bigCensusData, 
 	blocksPerRead = 15)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 In the computation, we’re treating age as a categorical variable so we’ll get counts for each age. Since we’ll be converting this factor data back to integers on a regular basis, we’ll write a function to do the conversion:
 
@@ -285,6 +291,9 @@ We can test the transform function by reading in a small number of rows of data.
 	  8  55       0     1      TRUE        62      -7
 	  
 To create the new data set, we’ll use the transformation function with *rxDataStep*. Observations for males living with female spouses will be written to a new data .xdf file named *spouseCensus2000.xdf*. It will include information about the age of their spouse.
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 
 	spouseCensusXdf <- "spouseCensus2000"
 	rxDataStep(inData = bigCensusData, outFile=spouseCensusXdf, 

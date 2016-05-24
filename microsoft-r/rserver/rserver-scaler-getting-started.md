@@ -42,6 +42,10 @@ Additional examples of using **RevoScaleR** can be found in the following manual
 - *RevoScaleR Getting Started with Hadoop* (RevoScaleR_Hadoop_Getting_Started.pdf)
 - *RevoScaleR Getting Started with Teradata* (RevoScaleR_Teradata_Getting_Started.pdf)
 
+
+<a name="chunking"></a>
+>**Important!**  Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
+
 ## Installation 
 
 The **RevoScaleR** package is installed as part of Microsoft R Server and R Client on both Windows and Linux. The package is automatically loaded when you start Microsoft R Server and R Client.
@@ -737,6 +741,8 @@ In the next section you will see how you can analyze a data set that is too big 
 
 The RevoScaleR compute engine is designed to work very efficiently with .xdf files, particularly with factor data. When working with larger data sets, the *blocksPerRead* argument is important in controlling how much data is processed in memory at one time.  If too many blocks are read in at one time, you may run out of memory.  If too few blocks are read in at one time, you may experience slower total processing time. You can experiment with *blocksPerRead* on your system and  time the estimation of a linear model as follows:
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 	system.time(
 		delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS, 
 		    cube = TRUE, blocksPerRead = 30)
@@ -802,12 +808,16 @@ You should see the following plot for the full data set:
 
 By default, **RevoScaleR** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 	delayDep <- rxLinMod(DepDelay ~ DayOfWeek, data = bigAirDS, 
 		cube = TRUE, blocksPerRead = 30, reportProgress = 0)
 
 ### Handling Larger Linear Models 
 
 The data set contains a variable *UniqueCarrier* which contains airline codes for 29 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 29 instead of 7 factor levels. 
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier, 
 		data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -856,6 +866,9 @@ which results in:
 ### Estimating Linear Models with Many Independent Variables 
 
 One ambitious question we could ask is to what extent the difference in delays is due to the differences in origins and destinations of the flights. To control for Origin and Destination we would need to add over 700 dummy variables in the full data set to represent the factor levels of *Origin* and *Dest*. The RevoScaleR Compute Engine is particularly efficient at handling this type of problem, so we can in fact run the regression:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 
 	delayCarrierLoc <- rxLinMod(ArrDelay ~ UniqueCarrier + Origin+Dest,
 	    data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -960,6 +973,8 @@ Now you can re-run the large scale regression from Section 6.6, this time just s
 	
 	delayCarrierLocDist <- rxLinMod(ArrDelay ~ UniqueCarrier+Origin+Dest,
 	    data = dataFile, cube = TRUE, blocksPerRead = 30)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 The computations are automatically distributed over all the nodes of the cluster.
 
@@ -1199,6 +1214,8 @@ The output should look like the following if you are using the large data files:
 
 Use the *rxSummary* function to compute summary statistics for the variables in the data set, setting the *blocksPerRead* to *2*.
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 	rxSummary(~., data = mortDS, blocksPerRead = 2)
 
 The following output is returned (for the large data set):
@@ -1222,6 +1239,8 @@ The following output is returned (for the large data set):
 ### Computing a Logistic Regression 
 
 Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables.  Year is an integer value, so that if we include it “as is” in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults. Instead we can treat year as a categorical or factor variable by using the F function.  Then we will get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates - controlling for the other variables in the regression. The logistic regression is specified as follows:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	logitObj <- rxLogit(default~F(year) + creditScore + 
 	       yearsEmploy + ccDebt,
@@ -1450,6 +1469,8 @@ The Process Data step is performed within a *transformFunc* that is called by *r
 The AggregateResults function shown below combines the UpdateResults and ProcessResults tasks.  The summary data set is simply read into memory and the columns are summed.
  
 To try this out, create a new script *chunkTable.R* with the following contents:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	chunkTable <- function(inDataSource, iroDataSource, varsToKeep = NULL, 
 	     blocksPerRead = 1 )

@@ -262,6 +262,8 @@ In this example, we’ll use a subsample from the 5% sample of the U.S. 2000 cen
 	  Number of blocks: 10
 	  Compression type: zlib
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+
 An Xdf data source representing the new data file is returned. The new data file has over 5 million observations.
 
 Let’s do one more step in data cleaning. The variable *region* has some very long factor level character strings, and it also has a number of levels for which there are no observations. We can see this using *rxSummary*:
