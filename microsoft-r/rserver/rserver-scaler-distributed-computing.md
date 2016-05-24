@@ -34,12 +34,12 @@ With **RevoScaleR** 2.0-0 and later, distributed computing capabilities are buil
 
 **RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
->[!IMPORTANT]
->**Microsoft R Client** has several limitations to consider:
+<a name="chunking"></a>
+>**Important!** Microsoft R Client has several limitations to consider:
 >
->1. Maximum of three cores avaiable -- one thread for reading and two for processing RevoScaleR HPA functions. 
+>1. There are a maximum of three available cores -- one thread for reading and two for processing RevoScaleR HPA functions. 
 >
->2. Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksperread` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can workaround this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
+>2. Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
 
 
 ### Distributed Computing: A Primer 
@@ -235,6 +235,8 @@ This confirms that our data set is in fact available on all nodes of our cluster
 
 When you run one of **RevoScaleR**’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. Again, in the simplest case, the job is considered *blocking*, so that control is not returned until the computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 For example, we start by taking a summary of three variables from the airline data:
 
 	rxSummary(~ ArrDelay + CRSDepTime + DayOfWeek, data=airData, 
@@ -275,6 +277,8 @@ We can perform an rxCube computation using the same data set to compute the aver
 
 	delayArrCube <- rxCube(ArrDelay ~ F(CRSDepTime):DayOfWeek, 
 		data=airData, blocksPerRead=30) 
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 Notice that in this case we have returned an *rxCube* object.  We can use this object locally to, for example, extract a data frame and plot the results:
 
@@ -489,6 +493,9 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 
 You may notice when running distributed computations that you get virtually no feedback while running waiting jobs. Since the computations are in general not running on the same computer as your R Console, the “usual” feedback is not returned by default. However, you can set the *consoleOutput* parameter in your compute context to TRUE to enable return of console output from all the nodes. For example, here we update our compute context *myCluster* to include *consoleOutput=TRUE*:
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
+
 	myCluster <- RxHpcServer(myCluster, consoleOutput=TRUE)
 	rxOptions(computeContext=myCluster)
 
@@ -692,6 +699,8 @@ If you forget to assign the job information object when you first submit your jo
 		cube=TRUE, blocksPerRead=30)
 	delayArrJobInfo <- rxgLastPendingJob
 	rxGetJobStatus(delayArrJobInfo)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 Also, as in all R sessions, the last value returned can be accessed as *.Last.value;* if you remember immediately that you forgot to assign the result, you can simply assign *.Last.value* to your desired job name and be done. 
 
@@ -1355,6 +1364,8 @@ We are now ready to fit a simple linear model:
 	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek, 
 		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
 
 	Call:
@@ -1410,6 +1421,8 @@ You can predict (or score) from a fitted model in a distributed context, but in 
 	rxPredict(AirlineLmDist, data="DistAirlineData.xdf", 	outData="errDistAirlineData.xdf",
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 The output data is also split, in this case holding fitted values, residuals, and standard errors for the predicted values.
 
 ### Creating Split Training and Test Data Sets 
@@ -1433,6 +1446,8 @@ The result is two new data files, airlineData.testSplitVar.Train.xdf and airline
 	rxPredict(AirlineLmDist, data="airlineData.testSplitVar.Test.xdf", 
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 ### Performing Data Operations on Each Node 
 
 To create or modify data on each node, use the data manipulation functions within rxExec. For example, suppose that after looking at the airline data we decide to create a “cleaner” version of it by keeping only the flights where: there is information on the arrival delay,  the flight did not depart more than one hour early, and the actual and scheduled flight time is positive. We can put a call to *rxDataStep* (and any other code we want processed) into a function to be processed on each node via *rxExec*:
@@ -1446,6 +1461,8 @@ To create or modify data on each node, use the data manipulation functions withi
 			blocksPerRead = 20, overwrite = TRUE)
 	}
 	rxExec( newAirData )
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 ### Installing Packages on Each Node 
 
