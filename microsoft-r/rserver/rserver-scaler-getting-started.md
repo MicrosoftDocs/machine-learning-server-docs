@@ -42,11 +42,6 @@ Additional examples of using **RevoScaleR** can be found in the following manual
 - *RevoScaleR Getting Started with Hadoop* (RevoScaleR_Hadoop_Getting_Started.pdf)
 - *RevoScaleR Getting Started with Teradata* (RevoScaleR_Teradata_Getting_Started.pdf)
 
-The bulk of this guide shows using **RevoScaleR** with our **R Productivity Environment for Windows**; that component has its own Getting Started Guide accessible from its help menu. If you plan to use **RevoScaleR** in a Linux environment, the details for loading the package will differ, but the actual R commands used to call **RevoScaleR** functions will be identical.
-
->[!IMPORTANT]
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
-
 ## Installation 
 
 The **RevoScaleR** package is installed as part of Microsoft R Server and R Client on both Windows and Linux. The package is automatically loaded when you start Microsoft R Server and R Client.
@@ -70,11 +65,6 @@ When downloading these files, put them in a directory where you can easily acces
 	bigDataDir <- "C:/MRS/Data"
 
 ### Creating a New Solution for Your Examples 
-
-If you are using the R Productivity Environment, you will probably want to create a new Solution.  Then you can then easily store your example R commands in scripts along with data files you create.  To do this, select **New Project** from the **File** menu.  Your working directory will automatically be reset to the location of the new solution. A new project has a single script *Script.R* by default; to open it, double-click the script name in the **Solution Explorer**.
-
->[!IMPORTANT]
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
 
 Each of the commands below can be put into your script.  After putting in a new set of commands, you can select and run the added code.
 
@@ -581,35 +571,6 @@ You should see the following information:
 	4        1  11.750000    Monday FALSE      11 FALSE 0.2262214
 	5       -2   6.416667    Monday FALSE       6 FALSE 0.1645331
 
-## Using Code Snippets for RevoScaleR 
-
->[!IMPORTANT]
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
-
-If you are using our R Productivity Environment, you can use Code Snippets to increase your productivity with **RevoScaleR**. Code Snippets provide a “fill-in-the-blanks” approach to script writing and are provided for most **RevoScaleR** functions. For example, to create our ADS file using Code Snippets, proceed as follows:
-
-1.	Right-click on an empty line in the Script window.
-
-2.	Click **Insert Snippet...**.
-
-3.	Double-click **RevoScaleR**.
-
-4.	Double-click **data**.
-
-5.	Double-click **import to .xdf or data frame**. The Code Snippet is inserted as shown:
-
-![Code Snippet](media/rserver-scaler-getting-started/code_snippet_1.png)
-
-1.	Highlighting indicates the current selection. Press TAB to keep *myData* as the returned object and move to the next entry. Notice that *myfile.csv* now shows the blue highlight.
-
-2.	Type *file.path(sampleDataDir,"AirlineDemoSmall.csv")* as the *inData* argument, then press TAB again to move to the next entry. 
-
-3.	Enter *"ADSSnippet"* as the *outFile* name. 
-
-4.	Press ENTER to exit the Code Snippet.
-
-5.	Select the lines of code inserted by the Code Snippet, and press the Run Selection button ![Run Selection Button](media/rserver-scaler-getting-started/run_selection_button.png).
-
 ## Analyzing a Large Data Set with RevoScaleR 
 
 ### Getting Set Up to Use Your XDF File 
@@ -800,15 +761,15 @@ You should see the following results for the full data set:
 	 
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     |   Counts
-	DayOfWeek=Mon  6.365682   0.006810   934.7 2.22e-16 ** | 21414640
-	DayOfWeek=Tues 5.472585   0.006846   799.4 2.22e-16 ** | 21191074
-	DayOfWeek=Wed  6.538511   0.006832   957.1 2.22e-16 ** | 21280844
-	DayOfWeek=Thur 8.401000   0.006821  1231.7 2.22e-16 ** | 21349128
-	DayOfWeek=Fri  8.977519   0.006815  1317.3 2.22e-16 ** | 21386294
-	DayOfWeek=Sat  3.756762   0.007298   514.7 2.22e-16 ** | 18645919
-	DayOfWeek=Sun  6.062001   0.006993   866.8 2.22e-16 ** | 20308838
+	DayOfWeek=Mon  6.365682   0.006810   934.7 2.22e-16 *** | 21414640
+	DayOfWeek=Tues 5.472585   0.006846   799.4 2.22e-16 *** | 21191074
+	DayOfWeek=Wed  6.538511   0.006832   957.1 2.22e-16 *** | 21280844
+	DayOfWeek=Thur 8.401000   0.006821  1231.7 2.22e-16 *** | 21349128
+	DayOfWeek=Fri  8.977519   0.006815  1317.3 2.22e-16 *** | 21386294
+	DayOfWeek=Sat  3.756762   0.007298   514.7 2.22e-16 *** | 18645919
+	DayOfWeek=Sun  6.062001   0.006993   866.8 2.22e-16 *** | 20308838
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 31.52 on 145576730 degrees of freedom
 	Multiple R-squared: 0.002585 (as if intercept included)

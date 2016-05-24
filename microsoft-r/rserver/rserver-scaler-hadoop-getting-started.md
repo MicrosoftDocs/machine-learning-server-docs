@@ -18,7 +18,7 @@ audience: ""
 ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
-ms.tgt_pltfrm: ""
+ms.tgt_pltfrm: "
 ms.technology: ""
 ms.custom: ""
 
@@ -28,11 +28,11 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to using the ***RevoScaleR*** package in a Hadoop distributed computing environment. ***RevoScaleR*** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ***RevoScaleR***’s HPA ‘big data’ capabilities in the Hadoop environment.
+This guide is an introduction to using the **RevoScaleR** package in a Hadoop distributed computing environment. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using **RevoScaleR**’s HPA ‘big data’ capabilities in the Hadoop environment.
 
-While ***RevoScaleR*** makes use of the Hadoop MapReduce framework, you need have no experience or detailed knowledge of that framework to use ***RevoScaleR*** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
+While **RevoScaleR** makes use of the Hadoop MapReduce framework, you need have no experience or detailed knowledge of that framework to use **RevoScaleR** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
 
-The data manipulation and analysis functions in ***RevoScaleR*** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for ***RevoScaleR*** because ***RevoScaleR*** is based on the concept of operating on chunks of data and using *updating algorithms.*
+The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms.*
 
 The RevoScaleR high performance analysis functions are portable. The same high performance functions work on a variety of computing platforms, including Windows and RHEL workstations and servers and distributed computing platforms including Hadoop. So, for example, you can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it. For those interested in the underlying architecture, on Hadoop the RevoScaleR analysis functions go through the following steps.
 
@@ -44,21 +44,21 @@ The RevoScaleR high performance analysis functions are portable. The same high p
 
 When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example of this is shown in Section 5.6 on *Using a Local Compute Context with HDFS Data*.
 
-More detailed examples of using ***RevoScaleR*** can be found in the following provided with ***RevoScaleR***:
+More detailed examples of using **RevoScaleR** can be found in the following provided with **RevoScaleR**:
 
 -   *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf)
 -   *RevoScaleR User’s Guide* (RevoScaleR\_Users\_Guide.pdf)
 -   *RevoScaleR Distributed Computing Guide* [RevoScaleR\_Distributed\_Computing.pdf; see this guide for HPC examples]
 -   *RevoScaleR ODBC Data Import Guide* (RevoScaleR\_ODBC.pdf)
 
-If you would like information on using other ***RevoScaleR*** distributed computing contexts, see:
+If you would like information on using other **RevoScaleR** distributed computing contexts, see:
 
 -   *RevoScaleR LSF Cluster Getting Started Guide* (RevoScaleR\_LSF\_Cluster\_GettingStarted.pdf)
 -   *RevoScaleR HPC Server Getting Started Guide* (RevoScaleR\_HPC\_Server\_Getting\_Started.pdf)
 
 ## Data Sources and Functions Supported in Hadoop
 
-The ***RevoScaleR*** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The ***RevoScaleR*** package also provides a set of data manipulation functions that are typically available in a local compute context.
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
 
 Of course, not all data source types are available on all compute contexts. For the Hadoop compute context used in this Guide, named *RxHadoopMR*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). As noted later in this Guide, the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
@@ -116,7 +116,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Before you can use Microsoft R Server (which contains the ***RevoScaleR*** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL5 or RHEL6 operating systems:
+Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL5 or RHEL6 operating systems:
 
 -   Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 -   HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
@@ -137,7 +137,7 @@ You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=6
 
 ## A Tutorial Introduction to RevoScaleR in Hadoop
 
-This section contains a detailed introduction to the most important high performance analytics features of ***RevoScaleR*** using data stored on your Hadoop cluster. The following tasks are performed***:***
+This section contains a detailed introduction to the most important high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster. The following tasks are performed***:***
 
 1.  Starting Microsoft R Services
 2.  Specify the NameNode.
@@ -179,7 +179,7 @@ On Windows 10, you start Microsoft R Server as follows:
 
 ### Creating a Compute Context for Hadoop MapReduce
 
-A *compute context* specifies the computing resources to be used by ***RevoScaleR***’s distributable computing functions. In this manual, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
+A *compute context* specifies the computing resources to be used by **RevoScaleR**’s distributable computing functions. In this manual, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
 
 #### Defining a Compute Context on the Cluster
 
@@ -209,7 +209,7 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 
 #### Using Microsoft R Services as a Hadoop Client
 
-If you are running Microsoft R Services from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run ***RevoScaleR*** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Microsoft R Services from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 	mySshUsername <- "user1"
 	#public facing cluster IP address
@@ -465,7 +465,7 @@ When running all but the shortest analyses in Hadoop, it can be convenient to le
 	myHadoopNoWaitCluster <- RxHadoopMR(myHadoopCluster, wait = FALSE)
 	rxSetComputeContext(myHadoopNoWaitCluster)
 
-Once you have set your compute context to non-waiting, distributed ***RevoScaleR*** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
+Once you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
 
 	job1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxGetJobStatus(job1)

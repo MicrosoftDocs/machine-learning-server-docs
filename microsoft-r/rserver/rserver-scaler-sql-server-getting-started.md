@@ -368,12 +368,12 @@ As long as we have not changed the compute context, the computations will be per
 	 
 	Coefficients: (1 not defined because of singularities)
 	              Estimate Std. Error t value Pr(>|t|)    
-	(Intercept)   3253.575     71.194  45.700 2.22e-16 **
+	(Intercept)   3253.575     71.194  45.700 2.22e-16 ***
 	gender=Male    -88.813     78.360  -1.133    0.257    
 	gender=Female  Dropped    Dropped Dropped  Dropped    
-	creditLine      95.379      3.862  24.694 2.22e-16 **
+	creditLine      95.379      3.862  24.694 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3812 on 9997 degrees of freedom
 	Multiple R-squared: 0.05765 
@@ -407,7 +407,7 @@ We get the following output:
 	 
 	Coefficients:
 	                       Estimate Std. Error z value Pr(>|z|)    
-	(Intercept)          -8.627e+00  1.319e+00  -6.538 6.22e-11 **
+	(Intercept)          -8.627e+00  1.319e+00  -6.538 6.22e-11 ***
 	state=AK                Dropped    Dropped Dropped  Dropped    
 	state=AL             -1.043e+00  1.383e+00  -0.754   0.4511    
 	state=AR             -1.216e+00  1.425e+00  -0.853   0.3935    
@@ -460,15 +460,15 @@ We get the following output:
 	state=WV             -1.175e-01  1.439e+00  -0.082   0.9349    
 	state=WY             -1.319e+01  5.339e+02  -0.025   0.9803    
 	gender=Male             Dropped    Dropped Dropped  Dropped    
-	gender=Female         7.226e-01  1.217e-01   5.936 2.92e-09 **
+	gender=Female         7.226e-01  1.217e-01   5.936 2.92e-09 ***
 	cardholder=Principal    Dropped    Dropped Dropped  Dropped    
 	cardholder=Secondary  5.635e-01  3.403e-01   1.656   0.0977 .  
-	balance               3.962e-04  1.564e-05  25.335 2.22e-16 **
-	numTrans              4.950e-02  2.202e-03  22.477 2.22e-16 **
-	numIntlTrans          3.414e-02  5.318e-03   6.420 1.36e-10 **
-	creditLine            1.042e-01  4.705e-03  22.153 2.22e-16 **
+	balance               3.962e-04  1.564e-05  25.335 2.22e-16 ***
+	numTrans              4.950e-02  2.202e-03  22.477 2.22e-16 ***
+	numIntlTrans          3.414e-02  5.318e-03   6.420 1.36e-10 ***
+	creditLine            1.042e-01  4.705e-03  22.153 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘**’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 3997.308 
 	Number of iterations: 15
