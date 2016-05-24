@@ -49,7 +49,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 
 Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server.
 
-On its own, R Client is limited to a single compute thread for RevoScaleR functions, a single IO thread, and is in-memory bound. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files.  However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
 ###Microsoft R Open
 
