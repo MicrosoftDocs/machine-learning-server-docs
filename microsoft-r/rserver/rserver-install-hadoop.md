@@ -317,7 +317,7 @@ The HDFS directory can also be created in a user’s R session (provided the top
 If you are running a Cloudera Hadoop cluster managed by Cloudera Manager, and if Cloudera itself was installed via a Cloudera Manager parcel , you can use the Microsoft R Server Cloudera Manager parcels to install Microsoft R Server on all the nodes of your cluster. Two parcels are required:
 
 - Microsoft R Open parcel—installs open-source R and additional open-source components on the nodes of your Cloudera cluster
-- Microsoft R Server parcel—installs proprietary Revolution components on the nodes of your Cloudera cluster
+- Microsoft R Server parcel—installs proprietary components on the nodes of your Cloudera cluster
 
 Microsoft R Server requires several packages that may not be in a default Red Hat Enterprise Linux installation, run the following yum command as root to install them:
 

@@ -438,7 +438,7 @@ This class generator cannot be used directly. A child class generator must be cr
 
 ## Debugging *RevoPemaR* Code
 
-The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class. R Reference Classes can also be debugged using the visual debugger provided by the **R Productivity Environment** that is included with **Revolution R Enterprise for Windows**.
+The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class. 
 
 The *PemaBaseClass* provides a simple way of printing trace output that is particularly useful in debugging code in a distributed environment. Calls to the *outputTrace* method within other methods will print the specified text if the *traceLevel* field value exceeds or is equal to the *outTraceLevel* argument:
 

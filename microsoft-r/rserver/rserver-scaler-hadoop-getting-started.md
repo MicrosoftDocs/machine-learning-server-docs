@@ -116,13 +116,13 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Before you can use ***Microsoft R Services*** (which contains the ***RevoScaleR*** package) with Hadoop, you must have a Hadoop cluster configured. ***Microsoft R Services*** is currently supported on the following Hadoop distributions with the RHEL5 or RHEL6 operating systems:
+Before you can use Microsoft R Server (which contains the ***RevoScaleR*** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL5 or RHEL6 operating systems:
 
 -   Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 -   HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 -   MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA30600; contact MapR to obtain the patch), MapR 4.1
 
-If you have such a Hadoop cluster and would like to install ***Microsoft R Services***, follow the instructions in the [*Microsoft R Services Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
+If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Services Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
 
 ## Running the Examples in the Getting Started Guide
 
@@ -133,7 +133,7 @@ Section 5 uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData dire
 You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 >[!NOTE]
-> RevoScaleR (and this manual) assumes the existence of directories “/var/RevoShare” and “/var/RevoShare/$USER” in the native file system and “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster. Other writable directories may be substituted, but some examples may need to be modified. This manual also assumes the existence of a writable directory “/share” on the Hadoop Distributed File System. If this directory does not exist, or is not writable by ***Microsoft R Services*** users, another writable directory must be substituted in the examples.
+> RevoScaleR (and this manual) assumes the existence of directories “/var/RevoShare” and “/var/RevoShare/$USER” in the native file system and “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster. Other writable directories may be substituted, but some examples may need to be modified. This manual also assumes the existence of a writable directory “/share” on the Hadoop Distributed File System. If this directory does not exist, or is not writable by Microsoft R Server users, another writable directory must be substituted in the examples.
 
 ## A Tutorial Introduction to RevoScaleR in Hadoop
 
@@ -149,11 +149,11 @@ This section contains a detailed introduction to the most important high perform
 
 ### Starting Microsoft R Services
 
-How you start ***Microsoft R Services*** depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start ***Microsoft R Services*** by typing the following at the shell prompt:
+How you start Microsoft R Server depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start Microsoft R Server by typing the following at the shell prompt:
 
 	Revo64
 
-On Windows 7 and earlier, you start ***Microsoft R Services*** as follows:
+On Windows 7 and earlier, you start Microsoft R Server as follows:
 
 1.  From the Task Bar, click **Start**.
 2.  Click **All Programs**.
@@ -161,13 +161,13 @@ On Windows 7 and earlier, you start ***Microsoft R Services*** as follows:
 4.  Click **Enterprise 8.0**.
 5.  Click **Revolution R Enterprise 8.0 (64)**.
 
-On Windows 8 and Windows Server 2012, you start ***Microsoft R Services*** as follows:
+On Windows 8 and Windows Server 2012, you start Microsoft R Server as follows:
 
 1.  Move your mouse to the lower left corner of the Desktop until **Start** pops up.
 2.  Click **Start** to view the Start screen.
 3.  Locate the tile for **Revolution R Enterprise 8.0 (64)**.
 
-On Windows 10, you start ***Microsoft R Services*** as follows:
+On Windows 10, you start Microsoft R Server as follows:
 
 1.  From the Task Bar, click **Start**.
 
