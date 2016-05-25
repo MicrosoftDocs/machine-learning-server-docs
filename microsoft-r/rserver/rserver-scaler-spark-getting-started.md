@@ -458,7 +458,7 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -600,7 +600,7 @@ You should see the following results:
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
@@ -674,7 +674,7 @@ You should see the following results (which should match the results we found fo
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
