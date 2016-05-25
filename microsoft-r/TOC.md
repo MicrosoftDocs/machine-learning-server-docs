@@ -1,6 +1,5 @@
 # [Microsoft R](index.md)
 # [Microsoft R Getting Started](rserver/microsoft-r-getting-started.md)
-# [Microsoft R New Features](rserver/microsoft-r-new-features.md)
 # Installation
 ## [Install R Client](install-r-client-windows.md)
 ## Install R Server
