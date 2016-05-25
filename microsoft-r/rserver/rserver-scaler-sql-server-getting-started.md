@@ -373,7 +373,7 @@ As long as we have not changed the compute context, the computations will be per
 	gender=Female  Dropped    Dropped Dropped  Dropped    
 	creditLine      95.379      3.862  24.694 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3812 on 9997 degrees of freedom
 	Multiple R-squared: 0.05765 
