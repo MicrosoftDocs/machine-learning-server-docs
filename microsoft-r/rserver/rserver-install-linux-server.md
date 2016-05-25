@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# R Services Installation Guide for Linux System
+# R Server Installation Guide for Linux System
 
 ## Quick Overview
 

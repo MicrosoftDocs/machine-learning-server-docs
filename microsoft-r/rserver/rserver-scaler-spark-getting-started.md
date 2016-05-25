@@ -28,11 +28,11 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to using the ***RevoScaleR*** package with Apache Spark (Spark) running on a Hadoop cluster. ***RevoScaleR*** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ***RevoScaleR***’s HPA ‘big data’ capabilities in the Hadoop environment with Spark.
+This guide is an introduction to using the **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using **RevoScaleR**’s HPA ‘big data’ capabilities in the Hadoop environment with Spark.
 
-While ***RevoScaleR*** makes use of the Spark computing framework, you need have no experience or detailed knowledge of that framework to use ***RevoScaleR*** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
+While **RevoScaleR** makes use of the Spark computing framework, you need have no experience or detailed knowledge of that framework to use **RevoScaleR** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
 
-The data manipulation and analysis functions in ***RevoScaleR*** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for ***RevoScaleR*** because ***RevoScaleR*** is based on the concept of operating on chunks of data and using *updating algorithms.*
+The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms.*
 
 The RevoScaleR high performance analysis functions are portable. The same high performance functions work on a variety of computing platforms, including Windows and RHEL workstations and servers and distributed computing platforms including Hadoop. So, for example, you can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it. For those interested in the underlying architecture, on Hadoop the RevoScaleR analysis functions go through the following steps.
 
@@ -44,7 +44,7 @@ The RevoScaleR high performance analysis functions are portable. The same high p
 
 When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example of this is shown in Section 5.6 on *Using a Local Compute Context with HDFS Data*.
 
-More detailed examples of using ***RevoScaleR*** can be found in the following provided with ***RevoScaleR***:
+More detailed examples of using **RevoScaleR** can be found in the following provided with **RevoScaleR**:
 
 -   *RevoScaleR Getting Started Guide* 
 -   *RevoScaleR User’s Guide* 
@@ -55,7 +55,7 @@ More detailed examples of using ***RevoScaleR*** can be found in the following p
 
 ## Data Sources and Functions Supported in Spark
 
-The ***RevoScaleR*** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The ***RevoScaleR*** package also provides a set of data manipulation functions that are typically available in a local compute context.
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
 
 Of course, not all data source types are available on all compute contexts. For the Spark compute context used in this Guide, named *RxSpark*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). As noted later in this Guide, the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
@@ -113,13 +113,13 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Before you can use ***Microsoft R Services*** (which contains the ***RevoScaleR*** package) with Hadoop, you must have a Hadoop cluster configured. ***Microsoft R Services*** is currently supported on the following Hadoop distributions with the RHEL6 operating systems:
+Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL6 operating systems:
 
 -   Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 -   HortonWorks HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 -   MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA30600; contact MapR to obtain the patch), MapR 4.1
 
-If you have such a Hadoop cluster and would like to install ***Microsoft R Services***, follow the instructions in the [*Microsoft R Services Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
+If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Server Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
 
 ## Running the Examples in the Getting Started Guide
 
@@ -130,13 +130,13 @@ Section 5 uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData dire
 You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 >[!NOTE]
-> RevoScaleR (and this manual) assumes the existence of directories “/var/RevoShare” and “/var/RevoShare/$USER” in the native file system and “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster. Other writable directories may be substituted, but some examples may need to be modified. This manual also assumes the existence of a writable directory “/share” on the Hadoop Distributed File System. If this directory does not exist, or is not writable by ***Microsoft R Services*** users, another writable directory must be substituted in the examples.
+> RevoScaleR (and this manual) assumes the existence of directories “/var/RevoShare” and “/var/RevoShare/$USER” in the native file system and “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster. Other writable directories may be substituted, but some examples may need to be modified. This manual also assumes the existence of a writable directory “/share” on the Hadoop Distributed File System. If this directory does not exist, or is not writable by Microsoft R Server users, another writable directory must be substituted in the examples.
 
 ## A Tutorial Introduction to RevoScaleR in Spark
 
-This section contains a detailed introduction to the most important high performance analytics features of ***RevoScaleR*** using data stored on your Hadoop cluster. The following tasks are performed***:***
+This section contains a detailed introduction to the most important high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster. The following tasks are performed**:**
 
-1.  Starting Microsoft R Services
+1.  Starting Microsoft R Server
 2.  Specify the NameNode.
 3.  Create a compute context for Spark.
 4.  Copy a data set into the Hadoop Distributed File System.
@@ -144,13 +144,13 @@ This section contains a detailed introduction to the most important high perform
 6.  Summarize your data.
 7.  Fit a linear model to the data.
 
-### Starting Microsoft R Services
+### Starting Microsoft R Server
 
-How you start ***Microsoft R Services*** depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start ***Microsoft R Services*** by typing the following at the shell prompt:
+How you start Microsoft R Server depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start Microsoft R Server by typing the following at the shell prompt:
 
 	Revo64
 
-On Windows 7 and earlier, you start ***Microsoft R Services*** as follows:
+On Windows 7 and earlier, you start Microsoft R Server as follows:
 
 1.  From the Task Bar, click **Start**.
 2.  Click **All Programs**.
@@ -158,13 +158,13 @@ On Windows 7 and earlier, you start ***Microsoft R Services*** as follows:
 4.  Click **Enterprise 8.0**.
 5.  Click **Revolution R Enterprise 8.0 (64)**.
 
-On Windows 8 and Windows Server 2012, you start ***Microsoft R Services*** as follows:
+On Windows 8 and Windows Server 2012, you start Microsoft R Server as follows:
 
 1.  Move your mouse to the lower left corner of the Desktop until **Start** pops up.
 2.  Click **Start** to view the Start screen.
 3.  Locate the tile for **Revolution R Enterprise 8.0 (64)**.
 
-On Windows 10, you start ***Microsoft R Services*** as follows:
+On Windows 10, you start Microsoft R Server as follows:
 
 1.  From the Task Bar, click **Start**.
 
@@ -176,7 +176,7 @@ On Windows 10, you start ***Microsoft R Services*** as follows:
 
 ### Creating a Compute Context for Spark
 
-A *compute context* specifies the computing resources to be used by ***RevoScaleR***’s distributable computing functions. In this manual, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
+A *compute context* specifies the computing resources to be used by **RevoScaleR**’s distributable computing functions. In this manual, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
 
 #### Defining a Compute Context on the Cluster
 
@@ -204,9 +204,9 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", 
 	    port = 8020)
 
-#### Using Microsoft R Services as a Hadoop Client
+#### Using Microsoft R Server as a Hadoop Client
 
-If you are running Microsoft R Services from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run ***RevoScaleR*** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 	mySshUsername <- "user1"
 	#public facing cluster IP address
@@ -275,7 +275,7 @@ If persistentRun mode is enabled, then the RxSpark compute context cannot be a N
 
 ### Copying a Data File into the Hadoop Distributed File System
 
-For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Services distribution. You can verify that it is on your local system as follows:
+For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
 
 	file.exists(system.file("SampleData/AirlineDemoSmall.csv", 
 	    package="RevoScaleR"))
@@ -458,7 +458,7 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -473,7 +473,7 @@ When running all but the shortest analyses in Hadoop, it can be convenient to le
 	myHadoopNoWaitCluster <- RxSpark(myHadoopCluster, wait = FALSE)
 	rxSetComputeContext(myHadoopNoWaitCluster)
 
-Once you have set your compute context to non-waiting, distributed ***RevoScaleR*** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
+Once you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
 
 	job1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxGetJobStatus(job1)
@@ -600,7 +600,7 @@ You should see the following results:
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
@@ -674,7 +674,7 @@ You should see the following results (which should match the results we found fo
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)

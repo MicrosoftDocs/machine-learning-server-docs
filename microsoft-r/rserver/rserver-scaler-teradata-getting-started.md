@@ -28,24 +28,22 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to high-performance ‘big data’ analytics for ***Teradata*** using ***RevoScaleR***, an R package included with ***Microsoft R Services***. ***Teradata Platforms*** running the ***Teradata Database*** provide high-performance, high-capacity data storage capabilities that are a great match for the ***RevoScaleR*** high-performance analytics.
+This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server and R Client. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
 
-There are three key components to running ***RevoScaleR*** high performance analytics:
+There are three key components to running **RevoScaleR** high performance analytics:
 
 -   The name and arguments of the analysis function: What analysis do you want to perform?
 -   The specification of your data source(s): Where is your data and what are its characteristics? And, if you are creating new data, for example with scoring, where does the new data go?
 -   The specification for your compute context: Where do you want to perform the computations?
 
-***RevoScaleR*** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions. This guide focuses on analyzing Teradata data in-database. That is, the data is located in a Teradata database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the Teradata database, taking advantage of the Teradata Parallel Transporter (TPT), and computations are performed on a computer alongside the Teradata Platform.
+**RevoScaleR** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions. This guide focuses on analyzing Teradata data in-database. That is, the data is located in a Teradata database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the Teradata database, taking advantage of the Teradata Parallel Transporter (TPT), and computations are performed on a computer alongside the Teradata Platform.
 
-More detailed examples of using ***RevoScaleR*** can be found in the following guides included with ***Microsoft R Services***:
+More detailed examples of using **RevoScaleR** can be found in the following articles in this documentation set:
 
 -   [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
 -   [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
 -   [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md)
 -   [*RevoScaleR ODBC Data Import Guide*](rserver-scaler-odbc.md)
-
-On Windows, the ***R Productivity Environment*** integrated development environment is included with ***Microsoft R Services***. It has its own *Getting Started Guide*.
 
 For information on other distributed computing compute contexts, see:
 
@@ -54,14 +52,14 @@ For information on other distributed computing compute contexts, see:
 
 ## Installation
 
-The ***RevoScaleR*** package is installed as part of ***Microsoft R Services*** on Windows, Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES). The package is automatically loaded when you start ***Microsoft R Services***. On your client machine, you will need:
+The **RevoScaleR** package is installed as part of Microsoft R Server and R Client. The package is automatically loaded when you start Microsoft R Server and R Client. On your client machine, you will need:
 
--   ***Microsoft R Services*** installed.
+-   Microsoft R Server or R Client installed.
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10
 
-If you plan to do in-database computations in ***Teradata***, you will need ***Microsoft R Services*** installed on all of the nodes of the ***Teradata Platform***.
+If you plan to do in-database computations in **Teradata**, you will need Microsoft R Server installed on all of the nodes of the **Teradata Platform**.
 
-If you plan to perform large computations alongside ***Teradata***, ***Microsoft R Services*** should be installed on a server or powerful workstation with access to your ***Teradata Database*** with the following specification:
+If you plan to perform large computations alongside **Teradata**, Microsoft R Server should be installed on a server or powerful workstation with access to your **Teradata Database** with the following specification:
 
 -   Red Hat Enterprise Linux 5.x or 6.x, SLES 11, or a recent version of Windows (post-XP)
 -   At least 4 fast cores
@@ -69,7 +67,7 @@ If you plan to perform large computations alongside ***Teradata***, ***Microsoft
 -   A fast hard drive with at least 100 GB available– enough disk space to temporarily store the data being analyzed if desired
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10 [If you are using Teradata 14.0, the in-Teradata computation functionality will not be available.]
 
-More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Services Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). Note that the R Productivity Environment client (an Integrated Development Environment for R) runs on Windows workstations only.
+More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). 
 
 ## Setting Up the Sample Data
 
@@ -88,7 +86,7 @@ You can use the ‘fastload’ Teradata command to load the data sets into your 
 
 ## Using a Teradata Data Source and ComputeContext
 
-The ***RevoScaleR*** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions. In this guide we’ll be focusing on analyzing data that is located in a ***Teradata Database***. The first step is to create a *data source* R object that contains information about the data that will be analyzed.
+The **RevoScaleR** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions. In this guide we’ll be focusing on analyzing data that is located in a **Teradata Database**. The first step is to create a *data source* R object that contains information about the data that will be analyzed.
 
 ### Creating an RxTeradata Data Source
 
@@ -106,7 +104,7 @@ We use this information to create an RxTeradata data source object:
 	teradataDS <- RxTeradata(connectionString = tdConnString, 
 		sqlQuery = tdQuery, rowsPerRead = 50000)
 
-Note that we have also specified *rowsPerRead*. This parameter is important for handling memory usage and efficient computations. Most of the ***RevoScaleR*** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read. The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing. If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data. On some systems, setting *rowsPerRead* to too small a value can also provide slower performance. You may want to experiment with this setting on your system.
+Note that we have also specified *rowsPerRead*. This parameter is important for handling memory usage and efficient computations. Most of the **RevoScaleR** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read. The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing. If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data. On some systems, setting *rowsPerRead* to too small a value can also provide slower performance. You may want to experiment with this setting on your system.
 
 ### Extracting Basic Information about Your Data
 
@@ -181,14 +179,14 @@ Teradata has a limit of 30 bytes for table and column names, and sometimes creat
 
 ### Creating an RxInTeradata Compute Context
 
-Since we want to perform ***RevoScaleR*** analytic computations in-database, the next step is to create an *RxInTeradata* compute context. You will need basic information about your Teradata platform. Since the computations are tied to the database, a connection string is required for the *RxInTeradata* compute context. As when specifying an *RxTeradata* data source, the connection string can contain information about your driver, your Teradata ID, your database name, your user ID, and your password. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
+Since we want to perform **RevoScaleR** analytic computations in-database, the next step is to create an *RxInTeradata* compute context. You will need basic information about your Teradata platform. Since the computations are tied to the database, a connection string is required for the *RxInTeradata* compute context. As when specifying an *RxTeradata* data source, the connection string can contain information about your driver, your Teradata ID, your database name, your user ID, and your password. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
 	
 	tdConnString <- "DRIVER=Teradata;DBCNAME=machineNameOrIP;
 		DATABASE=RevoTestDB;UID=myUserID;PWD=myPassword;"
 
-Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them. The data source (*RxTeradata*) tells us where the data is; the compute context (*RxInTeradata*) tells us where the computations are to take place. Note that the compute context only determines where the ***RevoScaleR*** high- performance analytics computations take place; it does not affect other standard R computations that you are performing on the client machine.
+Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them. The data source (*RxTeradata*) tells us where the data is; the compute context (*RxInTeradata*) tells us where the computations are to take place. Note that the compute context only determines where the **RevoScaleR** high- performance analytics computations take place; it does not affect other standard R computations that you are performing on the client machine.
 
-The compute context also requires information about your shared directory, both locally and remotely, and the path where ***Microsoft R Services*** is installed on each of the nodes of the ***Teradata*** platform. Specify the appropriate information here:
+The compute context also requires information about your shared directory, both locally and remotely, and the path where Microsoft R Server is installed on each of the nodes of the **Teradata** platform. Specify the appropriate information here:
 
 	tdShareDir <- paste("c:\\AllShare\\", Sys.getenv("USERNAME"), sep="")
 	tdRemoteShareDir <- "/tmp/revoJobs"
@@ -312,7 +310,7 @@ Again, recreate a Teradata data source, adding the additional column information
 
 The *rxHistogram* function will show us the distribution of any of the variables in our data set. For example, let’s look at *creditLine* by *gender*. First we’ll set the compute context back to *tdCompute* so that all of our analytics computations will be performed in Teradata rather than alongside: `rxSetComputeContext(tdCompute)`
 
-Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the ***RevoScaleR*** *rxCube* analytics function, which will perform the required computations in-database in Teradata and return the results to your local workstation for plotting:
+Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the **RevoScaleR** *rxCube* analytics function, which will perform the required computations in-database in Teradata and return the results to your local workstation for plotting:
 
 	rxHistogram(~creditLine|gender, data = teradataDS,	
 		histType = "Percent")
@@ -361,7 +359,7 @@ As long as we have not changed the compute context, the computations will be per
 	gender=Female   Dropped    Dropped  Dropped  Dropped    
 	creditLine     109.2620     0.1264  864.080 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3856 on 9999997 degrees of freedom
 	Multiple R-squared: 0.06948 
@@ -459,7 +457,7 @@ We get the following output:
 	numIntlTrans          3.021e-02  1.776e-04  170.097 2.22e-16 ***
 	creditLine            9.491e-02  1.416e-04  670.512 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 2922.044 
 	Number of iterations: 8
@@ -649,7 +647,7 @@ Now we can set our compute context back to in-Teradata, and look at summary stat
 
 ### Performing Your Own ‘Chunking’ Analysis
 
-The *rxDataStep* function also allows us to write our own ‘chunking’ analysis. Reading the data in chunks on multiple AMPS in Teradata, we can process each chunk of data using the R language, and write out summary results for each chunk into a common Teradata data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into ***RevoScaleR***; this example is meant for instructional purposes only.)
+The *rxDataStep* function also allows us to write our own ‘chunking’ analysis. Reading the data in chunks on multiple AMPS in Teradata, we can process each chunk of data using the R language, and write out summary results for each chunk into a common Teradata data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into **RevoScaleR**; this example is meant for instructional purposes only.)
 
 The first step is to write a function to process each chunk of data. The data will automatically be fed into the function as a rectangular list of data columns. The function must also return a rectangular list of data columns (which a data frame is). In the example below, we’ll be summarizing the input data and returning a data frame with a single row.
 

@@ -40,6 +40,8 @@ The first thing to know about RevoScaleR’s statistical algorithms is that they
 
 An important consideration in using external memory algorithms is deciding how big a *chunk* of data is. You want to use a chunk size that’s as large as possible while still allowing the process data step to complete without swapping. All of the RevoScaleR modeling functions allow you to specify a *blocksPerRead* argument. To make effective use of this, you need to know how many blocks your data file contains and how large the data file is. The number of blocks can be obtained using the *rxGetInfo* function.
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+
 ### Formulas in RevoScaleR
 
 RevoScaleR uses a variant of the Wilkinson-Rogers formula notation that is similar to, but not exactly the same as, that used in the standard R modeling functions. The response, or dependent, variables are separated from the predictor, or independent, variables by a tilde (~). In most of the modeling functions, multiple response variables are permitted, specified using the *cbind* function to combine them.

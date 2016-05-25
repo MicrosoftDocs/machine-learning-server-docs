@@ -28,17 +28,17 @@ ms.custom: ""
 
 ## Overview 
 
-This guide is an introduction to high-performance ‘big data’ analytics for ***SQL Server 2016*** using ***RevoScaleR***, an R package included with ***Microsoft R Services***.  A preview of this functionality is included in Microsoft SQL Server 2016 Community Technology Preview 3 (CTP3). This guide is primarily intended for users who are already have a basic familiarity with the R language and would like to understand more about using the RevoScaleR package with SQL Server. It is also useful to have basic familiarity with SQL Server: knowing how to create databases and tables and load data.
+This guide is an introduction to high-performance ‘big data’ analytics for **SQL Server 2016** using **RevoScaleR**, an R package included with **Microsoft R Server**.  A preview of this functionality is included in Microsoft SQL Server 2016 Community Technology Preview 3 (CTP3). This guide is primarily intended for users who are already have a basic familiarity with the R language and would like to understand more about using the RevoScaleR package with SQL Server. It is also useful to have basic familiarity with SQL Server: knowing how to create databases and tables and load data.
 
-There are three key components to running ***RevoScaleR*** high performance analytics:
+There are three key components to running **RevoScaleR** high performance analytics:
 
 - The name and arguments of the analysis function: What analysis do you want to perform?
 - The specification of your data source(s): Where is your data and what are its characteristics?  And, if you are creating new data, for example with scoring, where does the new data go?
 - The specification for your compute context: Where do you want to perform the computations?
 
-***RevoScaleR*** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions.  This guide focuses on analyzing SQL Server data in-database.  That is, the data is located in a SQL Server database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the SQL Server database using an ODBC connection and computations are performed on a computer alongside the SQL Server Platform.
+**RevoScaleR** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions.  This guide focuses on analyzing SQL Server data in-database.  That is, the data is located in a SQL Server database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the SQL Server database using an ODBC connection and computations are performed on a computer alongside the SQL Server Platform.
 
-You can follow this guide from an R IDE of your choice.  On Windows, we recommend using the ***R Productivity Environment*** integrated development environment.  It is included with the client-side download of ***Microsoft R Services*** available for CTP3 customers. It has its own Getting Started Guide. More extensive general examples of using ***RevoScaleR*** can be found in the following guides included with ***Microsoft R Services***:
+You can follow this guide from an R IDE of your choice.  More extensive general examples of using **RevoScaleR** can be found in the following guides included with **Microsoft R Server**:
 
 - [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
 - [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
@@ -52,7 +52,7 @@ For information on other distributed computing compute contexts, see:
 
 ## Using a SQL Server Data Source and Compute Context 
 
-The ***RevoScaleR*** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis.  Even if you are relatively new to R, you can get started with just a few basic functions.  In this guide we’ll be focusing on analyzing data that is located in a ***SQL Server Database***. 
+The **RevoScaleR** package provides a framework for quickly writing start-to-finish, scalable R code for data analysis.  Even if you are relatively new to R, you can get started with just a few basic functions.  In this guide we’ll be focusing on analyzing data that is located in a **SQL Server Database**. 
 
 For all of the examples in this guide you will need permission to read from the database specified.  To put the sample data in the database and to run some of the examples in this guide, you will need DDL admin privileges. This can be set in SQL Server Management Studio with the following commands, modified for the appropriate user name and password:
 
@@ -63,17 +63,17 @@ For all of the examples in this guide you will need permission to read from the 
 	ALTER ROLE [db_datareader] ADD MEMBER [MyUser]
 	ALTER ROLE [db_ddladmin] ADD MEMBER [MyUser]
 
-Note that an R script containing the R code used in this Guide is available in the *inst/demoScripts* directory of your ***RevoScaleR*** package installation. This directory can be found by running the following R code: *rxGetOption("demoScriptsDir")*.
+Note that an R script containing the R code used in this Guide is available in the *inst/demoScripts* directory of your **RevoScaleR** package installation. This directory can be found by running the following R code: *rxGetOption("demoScriptsDir")*.
 
 In the next section you will be guided through the first step to performing your R analysis in SQL Server –  creating a *data source* R object that contains information about the data that will be analyzed.
 
 ### Creating an RxSqlServerData Data Source 
 
-To create a SQL Server data source for use in ***RevoScaleR***, you will need basic information about your database connection. Using an R script, modify the code below to specify the connection string appropriate to your setup:
+To create a SQL Server data source for use in **RevoScaleR**, you will need basic information about your database connection. Using an R script, modify the code below to specify the connection string appropriate to your setup:
 
 	sqlConnString <- "Driver=SQL Server;Server=.; Database=RevoTestDB;Uid=myUser;Pwd=myPassword"
 
-Then we need a table argument identify the data we want to use.  We’ll be using 2 datasets comprised of simulated credit card fraud data: one for estimating models (*ccFraudSmall.csv*) and the other for scoring (*ccFraudScore.csv*). These are available in the sample data directory of the ***RevoScaleR*** package in comma delimited format, each containing 10,000 rows. This directory can be found by running the following R code: *rxGetOption("sampleDataDir")*. Much larger versions with 10 million observations are also available for download.  See Appendix A if you would like to experiment with using a large data set.  
+Then we need a table argument identify the data we want to use.  We’ll be using 2 datasets comprised of simulated credit card fraud data: one for estimating models (*ccFraudSmall.csv*) and the other for scoring (*ccFraudScore.csv*). These are available in the sample data directory of the **RevoScaleR** package in comma delimited format, each containing 10,000 rows. This directory can be found by running the following R code: *rxGetOption("sampleDataDir")*. Much larger versions with 10 million observations are also available for download.  See Appendix A if you would like to experiment with using a large data set.  
 
 We’ll begin by setting up the data source in SQL Server. Specify the name of the table in SQL Server that will hold the data we will use for modeling:
 
@@ -85,7 +85,7 @@ We use this information to create an *RxSqlServerData* data source object:
 	sqlFraudDS <- RxSqlServerData(connectionString = sqlConnString, 
 	     table = sqlFraudTable, rowsPerRead = sqlRowsPerRead)
 
-Note that we have also specified *rowsPerRead*.  This parameter is important for handling memory usage and efficient computations.  Most of the ***RevoScaleR*** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read.  The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing.  If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data.  On some systems, setting *rowsPerRead* to too small a value can also provide slower performance.  You may want to experiment with this setting on your system when you are working with a large data set. 
+Note that we have also specified *rowsPerRead*.  This parameter is important for handling memory usage and efficient computations.  Most of the **RevoScaleR** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read.  The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing.  If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data.  On some systems, setting *rowsPerRead* to too small a value can also provide slower performance.  You may want to experiment with this setting on your system when you are working with a large data set. 
  
 Similarly, we will set up the data source we will use for scoring:
 
@@ -196,11 +196,11 @@ If we get the variable information for the new data source, we can see that the 
 
 ### Creating an RxInSqlServer Compute Context 
 
-Since we want to perform ***RevoScaleR*** analytic computations in-database, the next step is to create an *RxInSqlServer* compute context. You will need basic information about your SQL Server platform.  Since the computations are tied to the database, a connection string is required for the *RxInSqlServer* compute context. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
+Since we want to perform **RevoScaleR** analytic computations in-database, the next step is to create an *RxInSqlServer* compute context. You will need basic information about your SQL Server platform.  Since the computations are tied to the database, a connection string is required for the *RxInSqlServer* compute context. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
 
 	sqlConnString <- "Driver=SQL Server;Server=.; Database=RevoTestDB;Uid=myUser;Pwd=myPassword"
 
-Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them.  The data source (*RxSqlServerData*) tells us where the data is; the compute context (*RxInSqlServer*) tells us where the computations are to take place. Note that the compute context only determines where the ***RevoScaleR*** high- performance analytics computations take place; if you execute R code that is not part of the ***RevoScaleR*** package, it will execute on the client machine.
+Although the data source and compute context have overlapping information (and similar names), be sure to distinguish between them.  The data source (*RxSqlServerData*) tells us where the data is; the compute context (*RxInSqlServer*) tells us where the computations are to take place. Note that the compute context only determines where the **RevoScaleR** high- performance analytics computations take place; if you execute R code that is not part of the **RevoScaleR** package, it will execute on the client machine.
 
 The compute context also requires information about a local shared directory that is used to serialize R objects back and forth between the client and SQL Server.
  
@@ -241,7 +241,7 @@ If you encounter difficulties while using the *RxInSqlServer* context, you may f
 
 ### Computing Summary Statistics in SQL Server 
 
-Let’s start by computing summary statistics on our *sqlFraudDS* data source, performing the computations in-database. The next step is to change the active compute context.  When you run *rxSetComputeContext* with *sqlCompute* as its argument, all subsequent ***RevoScaleR*** analytics computations will take place in-database in SQL Server (until the compute context is reset to a different compute environment).
+Let’s start by computing summary statistics on our *sqlFraudDS* data source, performing the computations in-database. The next step is to change the active compute context.  When you run *rxSetComputeContext* with *sqlCompute* as its argument, all subsequent **RevoScaleR** analytics computations will take place in-database in SQL Server (until the compute context is reset to a different compute environment).
 
 	# Set the compute context to compute in SQL Server
 	rxSetComputeContext(sqlCompute)
@@ -284,7 +284,7 @@ If you want to set the compute context back to your client machine, enter:
 
 ### Refining the RxSqlServerData Data Source 
 
-The computed summary statistics provide useful information about our data that can be put in the data source for use in further computations.  For example, ***RevoScaleR*** uses minimum and maximum values in computing histograms, and can very efficiently convert integer data to categorical factor data “on-the-fly” using the F function.  You can include the specification of high and low values in an *RxSqlServerData* data source.  We can add this information for *balance*, *numTrans*, *numIntlTrans*, and *creditLine* to the *colInfo* used to create the data source:
+The computed summary statistics provide useful information about our data that can be put in the data source for use in further computations.  For example, **RevoScaleR** uses minimum and maximum values in computing histograms, and can very efficiently convert integer data to categorical factor data “on-the-fly” using the F function.  You can include the specification of high and low values in an *RxSqlServerData* data source.  We can add this information for *balance*, *numTrans*, *numIntlTrans*, and *creditLine* to the *colInfo* used to create the data source:
 
 	sumDF <- sumOut$sDataFrame
 	var <- sumDF$Name 
@@ -323,7 +323,7 @@ The *rxHistogram* function will show us the distribution of any of the variables
 
 	rxSetComputeContext(sqlCompute)
 
-Next we’ll call *rxHistogram*.  Internally, *rxHistogram* will call the ***RevoScaleR** rxCube* analytics function, which will perform the required computations in-database in SQL Server and return the results to your local workstation for plotting: 
+Next we’ll call *rxHistogram*.  Internally, *rxHistogram* will call the **RevoScaleR** rxCube* analytics function, which will perform the required computations in-database in SQL Server and return the results to your local workstation for plotting: 
 
 	rxHistogram(~creditLine|gender, data = sqlFraudDS, 
 	histType = "Percent")
@@ -373,7 +373,7 @@ As long as we have not changed the compute context, the computations will be per
 	gender=Female  Dropped    Dropped Dropped  Dropped    
 	creditLine      95.379      3.862  24.694 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3812 on 9997 degrees of freedom
 	Multiple R-squared: 0.05765 
@@ -655,7 +655,7 @@ Now we can set our compute context back to in-SQL Server, and look at summary st
 
 ### Performing Your Own ‘Chunking’ Analysis 
 
-The *rxDataStep* function also allows us to write our own ‘chunking’ analysis.  Reading the data in chunks, we can process each chunk of data using the R language, and write out summary results for each chunk into a common SQL Server data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into ***RevoScaleR***; this example is meant for instructional purposes only.)
+The *rxDataStep* function also allows us to write our own ‘chunking’ analysis.  Reading the data in chunks, we can process each chunk of data using the R language, and write out summary results for each chunk into a common SQL Server data source. Let’s look at an example using the *table* function in R, which computes a contingency table. (If you actually have data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into **RevoScaleR**; this example is meant for instructional purposes only.)
 
 The first step is to write a function to process each chunk of data.  The data will automatically be fed into the function as a rectangular list of data columns.  The function must also return a rectangular list of data columns (which a data frame is).  In the example below, we’ll be summarizing the input data and returning a data frame with a single row.  
 

@@ -2,7 +2,7 @@
 
 # required metadata
 title: "RevoScaleR ODBC Data Import Guide"
-description: "Microsoft R Services data import with ODBC."
+description: "Microsoft R Server data import with ODBC."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
@@ -32,7 +32,7 @@ RevoScaleR allows you to read data from virtually any database for which you can
 
 ODBC connectivity is managed by an ODBC *Driver Manager*. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, there are two commonly available ODBC driver managers, unixODBC and iodbc, along with commercial implementations of the Windows ODBC driver manager which are sometimes distributed with commercial database drivers. *RevoScaleR works and has been tested with unixODBC, but not iodbc.* It is important that the version of unixODBC you install be compatible with the databases you need to connect to. See the section Configuring unixODBC for complete details.
 
-This guide is not intended for use with Teradata—if you need to connect to a Teradata data warehouse, see the manual [*Microsoft R Services Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
+This guide is not intended for use with Teradata—if you need to connect to a Teradata data warehouse, see the manual [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
 
 Internally, we have tested the following databases:
 

@@ -28,13 +28,13 @@ ms.custom: ""
 
 ## Overview 
 
-This guide is an introduction to ***RevoScaleR***, an R package providing both High Performance Computing (HPC) and High Performance Analytics (HPA) capabilities for R.  HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds big data to the challenge.  ***RevoScaleR*** provides functions for performing scalable and extremely high performance data management, analysis, and visualization.  This guide focuses on these HPA ‘big data’ capabilities. R, along with many other statistical analysis products, is challenged by problems of capacity and speed.  Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis.  In R this is often a problem because copies of data are frequently made during analysis.  Even without a capacity limit, computation may be too slow to be useful. The ***RevoScaleR*** package not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products. 
+This guide is an introduction to **RevoScaleR**, an R package providing both High Performance Computing (HPC) and High Performance Analytics (HPA) capabilities for R.  HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds big data to the challenge.  **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization.  This guide focuses on these HPA ‘big data’ capabilities. R, along with many other statistical analysis products, is challenged by problems of capacity and speed.  Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis.  In R this is often a problem because copies of data are frequently made during analysis.  Even without a capacity limit, computation may be too slow to be useful. The **RevoScaleR** package not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products. 
 
-The data manipulation and analysis functions in ***RevoScaleR*** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for ***RevoScaleR*** because ***RevoScaleR*** is based on the concept of operating on chunks of data and using *updating algorithms*.
+The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms*.
 
-The ***RevoScaleR*** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. ***RevoScaleR*** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
+The **RevoScaleR** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. **RevoScaleR** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
  
-Additional examples of using ***RevoScaleR*** can be found in the following manuals provided with ***RevoScaleR***:
+Additional examples of using **RevoScaleR** can be found in the following manuals provided with **RevoScaleR**:
 
 - *RevoScaleR User’s Guide* (RevoScaleR_Users_Guide.pdf)
 - *RevoScaleR Distributed Computing Guide* [RevoScaleR_Distributed_Computing.pdf;  see this guide for HPC examples]
@@ -42,11 +42,13 @@ Additional examples of using ***RevoScaleR*** can be found in the following manu
 - *RevoScaleR Getting Started with Hadoop* (RevoScaleR_Hadoop_Getting_Started.pdf)
 - *RevoScaleR Getting Started with Teradata* (RevoScaleR_Teradata_Getting_Started.pdf)
 
-The bulk of this guide shows using ***RevoScaleR*** with the ***Revolution R Enterprise R Productivity Environment for Windows***; that component has its own Getting Started Guide accessible from its help menu. If you plan to use ***RevoScaleR*** in a Linux environment, the details for loading the package will differ, but the actual R commands used to call ***RevoScaleR*** functions will be identical.
+
+<a name="chunking"></a>
+>**Important!**  Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
 
 ## Installation 
 
-The ***RevoScaleR*** package is installed as part of Microsoft R Services on both Windows and Linux. The package is automatically loaded when you start Microsoft R Services.
+The **RevoScaleR** package is installed as part of Microsoft R Server and R Client on both Windows and Linux. The package is automatically loaded when you start Microsoft R Server and R Client.
 
 ## Running the Examples in the Getting Started Guide 
 
@@ -68,8 +70,6 @@ When downloading these files, put them in a directory where you can easily acces
 
 ### Creating a New Solution for Your Examples 
 
-If you are using the R Productivity Environment, you will probably want to create a new Solution.  Then you can then easily store your example R commands in scripts along with data files you create.  To do this, select **New Project** from the **File** menu.  Your working directory will automatically be reset to the location of the new solution. A new project has a single script *Script.R* by default; to open it, double-click the script name in the **Solution Explorer**.
-
 Each of the commands below can be put into your script.  After putting in a new set of commands, you can select and run the added code.
 
 Note that if you want to skip the step of typing in R commands, demo scripts are available containing code very similar to what you see in this guide.  These scripts are located in the *demoScripts* subdirectory of your **RevoScaleR** installation. On Windows, this is typically:
@@ -80,7 +80,7 @@ A copy of a demo script can be easily added to your current solution by right-cl
 
 ## A Tutorial Introduction to RevoScaleR 
 
-This section contains a more detailed introduction to the most important high performance analytics features of ***RevoScaleR***, focusing on larger data stored in .xdf files.  The following tasks are performed:
+This section contains a more detailed introduction to the most important high performance analytics features of **RevoScaleR**, focusing on larger data stored in .xdf files.  The following tasks are performed:
 
 1.	Convert text data to the .xdf data file format.
 
@@ -98,11 +98,11 @@ This section contains a more detailed introduction to the most important high pe
 
 ### Importing Text Data into the .xdf Data File Format 
 
-The ***RevoScaleR*** package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert a text file into the .xdf data format, use the function *rxImport*. 
+The **RevoScaleR** package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert a text file into the .xdf data format, use the function *rxImport*. 
 
 For example, the SampleData folder of the RevoScaleR package contains a file *AirlineDemoSmall.csv* containing three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. When we import the data, we want to convert the strings to a categorical or factor variable. The file contains 600,000 rows of data in addition to a first row with variable names. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
  
-The location of the sample data directory is stored as an option.  It is initialized to the location of the *SampleData* directory included in the ***RevoScaleR*** package. You can use the ***rxGetOption*** function to retrieve this location:
+The location of the sample data directory is stored as an option.  It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
 
 	sampleDataDir <- rxGetOption("sampleDataDir")
 
@@ -312,7 +312,7 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -352,7 +352,7 @@ You should see the following output:
 	DayOfWeek=Saturday   11.8753     0.1404   84.59 2.22e-16 *** |  83851
 	DayOfWeek=Sunday     10.3318     0.1330   77.67 2.22e-16 *** |  93395
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 (as if intercept included)
@@ -538,7 +538,7 @@ You should see the following results:
 	DepHour      0.0790215  0.0007671  103.01 2.22e-16 ***
 	Night       -0.3027030  0.0109914  -27.54 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 3.0178 
 	Number of iterations: 4
@@ -574,32 +574,6 @@ You should see the following information:
 	3       -2  13.750000    Monday FALSE      13 FALSE 0.2550745
 	4        1  11.750000    Monday FALSE      11 FALSE 0.2262214
 	5       -2   6.416667    Monday FALSE       6 FALSE 0.1645331
-
-## Using Code Snippets for RevoScaleR 
-
-If you are using the Revolution R Enterprise R Productivity Environment, you can use Code Snippets to increase your productivity with ***RevoScaleR***. Code Snippets provide a “fill-in-the-blanks” approach to script writing and are provided for most ***RevoScaleR*** functions. For example, to create our ADS file using Code Snippets, proceed as follows:
-
-1.	Right-click on an empty line in the Script window.
-
-2.	Click **Insert Snippet...**.
-
-3.	Double-click **RevoScaleR**.
-
-4.	Double-click **data**.
-
-5.	Double-click **import to .xdf or data frame**. The Code Snippet is inserted as shown:
-
-![Code Snippet](media/rserver-scaler-getting-started/code_snippet_1.png)
-
-1.	Highlighting indicates the current selection. Press TAB to keep *myData* as the returned object and move to the next entry. Notice that *myfile.csv* now shows the blue highlight.
-
-2.	Type *file.path(sampleDataDir,"AirlineDemoSmall.csv")* as the *inData* argument, then press TAB again to move to the next entry. 
-
-3.	Enter *"ADSSnippet"* as the *outFile* name. 
-
-4.	Press ENTER to exit the Code Snippet.
-
-5.	Select the lines of code inserted by the Code Snippet, and press the Run Selection button ![Run Selection Button](media/rserver-scaler-getting-started/run_selection_button.png).
 
 ## Analyzing a Large Data Set with RevoScaleR 
 
@@ -749,7 +723,7 @@ It yields the following:
 	DayOfWeekSat   14.2302     2.8876   4.928 9.74e-07 ***
 	DayOfWeekSun    0.2874     2.9688   0.097    0.923    
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 23.58 on 985 degrees of freedom
 	  (8 observations deleted due to missingness)
@@ -761,11 +735,13 @@ But this is only 1/148,619 of the rows contained in the full data set. If we try
 	# testDF <- rxReadXdf(file=dataName, varsToKeep = c("ArrDelay", 
 	#    "DepDelay", "DayOfWeek"))
 
-In the next section you will see how you can analyze a data set that is too big to fit into memory by using ***RevoScaleR*** functions.
+In the next section you will see how you can analyze a data set that is too big to fit into memory by using **RevoScaleR** functions.
 
 ### Estimating a Linear Model with a Huge Data Set 
 
 The RevoScaleR compute engine is designed to work very efficiently with .xdf files, particularly with factor data. When working with larger data sets, the *blocksPerRead* argument is important in controlling how much data is processed in memory at one time.  If too many blocks are read in at one time, you may run out of memory.  If too few blocks are read in at one time, you may experience slower total processing time. You can experiment with *blocksPerRead* on your system and  time the estimation of a linear model as follows:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	system.time(
 		delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS, 
@@ -830,7 +806,9 @@ You should see the following plot for the full data set:
 
 ### Turning Off Progress Reports 
 
-By default, ***RevoScaleR*** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
+By default, **RevoScaleR** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	delayDep <- rxLinMod(DepDelay ~ DayOfWeek, data = bigAirDS, 
 		cube = TRUE, blocksPerRead = 30, reportProgress = 0)
@@ -838,6 +816,8 @@ By default, ***RevoScaleR*** reports on the progress of the model fitting so tha
 ### Handling Larger Linear Models 
 
 The data set contains a variable *UniqueCarrier* which contains airline codes for 29 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 29 instead of 7 factor levels. 
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier, 
 		data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -886,6 +866,9 @@ which results in:
 ### Estimating Linear Models with Many Independent Variables 
 
 One ambitious question we could ask is to what extent the difference in delays is due to the differences in origins and destinations of the flights. To control for Origin and Destination we would need to add over 700 dummy variables in the full data set to represent the factor levels of *Origin* and *Dest*. The RevoScaleR Compute Engine is particularly efficient at handling this type of problem, so we can in fact run the regression:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 
 	delayCarrierLoc <- rxLinMod(ArrDelay ~ UniqueCarrier + Origin+Dest,
 	    data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -959,7 +942,6 @@ The three expected delays are calculated (using the full data set) as:
 	[1] 17.02454 
 	[1] 1.647433
 
-<a name="computecontext"></a>
 ### Computing a Large Scale Regression Using a Compute Cluster 
 
 Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the *RevoScaleR Distributed Computing Guide* (RevoScaleR_Distributed_Computing.pdf).
@@ -967,8 +949,8 @@ Up to now, all of our examples have assumed you are running your computations on
 To make the connection to an HPC Server cluster, you need to know the following pieces of information about your cluster (all of which can be obtained from your system administrator):
 
 - The name of the cluster’s head node. 
-- The name of the network share directory created for use by Microsoft R Services, and the subdirectory of that network share created for your use.
-- The path to the Microsoft R Services bin\x64 directory.
+- The name of the network share directory created for use by Microsoft R Server or R Client, and the subdirectory of that network share created for your use.
+- The path to the Microsoft R Server or R Client bin\x64 directory.
 - The name of the data directory created to hold .xdf files on each of the nodes.
 
 Once you have this information, you can create your distributed compute context object by calling RxHpcServer, substituting in the information for your setup in as appropriate:
@@ -979,7 +961,7 @@ Once you have this information, you can create your distributed compute context 
 		revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
 		dataPath="C:\\data")
 
-Here *headNode* should be the name of the cluster’s head node, *shareDir* should be your subdirectory of the network share directory, *revoPath* is the path to the Microsoft R Services bin\x64 directory, and *dataPath* is the path to the data directory on each node containing copies of the .xdf files you will be using. You can then make the cluster connection object active by using *rxSetComputContext*:
+Here *headNode* should be the name of the cluster’s head node, *shareDir* should be your subdirectory of the network share directory, *revoPath* is the path to the Microsoft R Server or R Client bin\x64 directory, and *dataPath* is the path to the data directory on each node containing copies of the .xdf files you will be using. You can then make the cluster connection object active by using *rxSetComputContext*:
 
 	rxSetComputeContext( myCluster)
 
@@ -991,6 +973,8 @@ Now you can re-run the large scale regression from Section 6.6, this time just s
 	
 	delayCarrierLocDist <- rxLinMod(ArrDelay ~ UniqueCarrier+Origin+Dest,
 	    data = dataFile, cube = TRUE, blocksPerRead = 30)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 The computations are automatically distributed over all the nodes of the cluster.
 
@@ -1141,7 +1125,7 @@ This example uses simulated data at the individual level to analyze loan default
 - *houseAge* – the age (in years) of the house
 - *year* – the year the data was collected
 
-Small versions of the data sets are included with the ***RevoScaleR*** package:
+Small versions of the data sets are included with the **RevoScaleR** package:
 
 	mortDefaultSmall2000.csv
 	mortDefaultSmall2001.csv
@@ -1225,9 +1209,12 @@ The output should look like the following if you are using the large data files:
 	4         713       15           5   6236 2000       0
 	5         689       10           5   6817 2000       0
 
+
 ### Computing Summary Statistics 
 
 Use the *rxSummary* function to compute summary statistics for the variables in the data set, setting the *blocksPerRead* to *2*.
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	rxSummary(~., data = mortDS, blocksPerRead = 2)
 
@@ -1252,6 +1239,8 @@ The following output is returned (for the large data set):
 ### Computing a Logistic Regression 
 
 Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables.  Year is an integer value, so that if we include it “as is” in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults. Instead we can treat year as a categorical or factor variable by using the F function.  Then we will get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates - controlling for the other variables in the regression. The logistic regression is specified as follows:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	logitObj <- rxLogit(default~F(year) + creditScore + 
 	       yearsEmploy + ccDebt,
@@ -1290,11 +1279,12 @@ You will see timings for each iteration and the final results printed. The resul
 	yearsEmploy -2.736e-01  2.698e-03 -101.41 2.22e-16 ***
 	ccDebt       1.365e-03  3.922e-06  348.02 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 6.685 
 	Number of iterations: 10
 
+<a name="computecontext"></a>
 ### Computing a Logistic Regression with Many Parameters 
 
 If you are using the large *mortDefault* data set, you can continue and estimate a logistic regression with many parameters.
@@ -1360,7 +1350,7 @@ The results of the estimation are:
 	F_houseAge=31  1.127e+00  1.930e-01    5.840 5.23e-09 ***
 	F_houseAge=32  8.557e-01  1.951e-01    4.386 1.15e-05 ***
 	F_houseAge=33  6.801e-01  1.976e-01    3.442 0.000576 ***
-	F_houseAge=34  6.015e-01  2.002e-01    3.004 0.002666 ** 
+	F_houseAge=34  6.015e-01  2.002e-01    3.004 0.002666 ***
 	F_houseAge=35  5.077e-01  2.050e-01    2.477 0.013239 *  
 	F_houseAge=36  2.856e-01  2.098e-01    1.361 0.173455    
 	F_houseAge=37  1.988e-01  2.192e-01    0.907 0.364336    
@@ -1381,7 +1371,7 @@ The results of the estimation are:
 	yearsEmploy   -2.821e-01  2.746e-03 -102.729 2.22e-16 ***
 	ccDebt         1.406e-03  4.092e-06  343.586 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 5254.541 
 	Number of iterations: 10
@@ -1461,7 +1451,7 @@ The results should be printed to your console, with the highest default rate at 
 
 All of the main analysis functions in RevoScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms, that is, they analyze each chunk of data separately, combining intermediate results. When all the data has been processed, final results can be calculated and the analysis is complete. Because all of the data does not need to be in memory at one time, you can analyze huge data sets with this type of algorithm.
 
-You can create your own chunking algorithms, using the *rxDataStep* function to automatically chunk through your data set, and for each chunk using arbitrary R functions to process your data. In this section, we will show a simple chunking algorithm for tabulating data implemented using *rxDataStep*. (If you actually have huge data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into ***RevoScaleR***; this example is meant for instructional purposes only.)
+You can create your own chunking algorithms, using the *rxDataStep* function to automatically chunk through your data set, and for each chunk using arbitrary R functions to process your data. In this section, we will show a simple chunking algorithm for tabulating data implemented using *rxDataStep*. (If you actually have huge data sets to tabulate, use the *rxCrossTabs* or *rxCube* functions built into **RevoScaleR**; this example is meant for instructional purposes only.)
 
 (The Microsoft package RevoPemaR provides another, more systematic way to create R applications using your own parallel external memory algorithms. See the [RevoPemaR Getting Started Guide](http://go.microsoft.com/fwlink/?LinkID=698568&clcid=0x409).)
 
@@ -1479,6 +1469,8 @@ The Process Data step is performed within a *transformFunc* that is called by *r
 The AggregateResults function shown below combines the UpdateResults and ProcessResults tasks.  The summary data set is simply read into memory and the columns are summed.
  
 To try this out, create a new script *chunkTable.R* with the following contents:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 	chunkTable <- function(inDataSource, iroDataSource, varsToKeep = NULL, 
 	     blocksPerRead = 1 )

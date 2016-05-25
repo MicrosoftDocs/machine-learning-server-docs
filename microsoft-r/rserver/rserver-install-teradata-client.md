@@ -24,18 +24,18 @@ ms.custom: ""
 
 ---
 
-# R Services™ Client Installation Guide for Teradata 
+# R Server Client Installation Guide for Teradata 
 
 ## Quick Overview
 
-Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Services for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Services Server Installation Manual for Teradata*](rserver-install-teradata-client.md).
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Server for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Server Server Installation Manual for Teradata*](rserver-install-teradata-client.md).
 
 > [!NOTE] 
-> Microsoft R Services for Teradata is required for running Microsoft R Services scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Services in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual. 
+> Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual. 
 
 ## System Requirements 
 
-Microsoft R Services for Windows has the following system requirements:
+Microsoft R Server for Windows has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
@@ -47,7 +47,7 @@ Microsoft R Services for Windows has the following system requirements:
 
 **Disk Space:** A minimum of 500MB of disk space is required.
 
-Microsoft R Services on Linux systems has the following system requirements:
+Microsoft R Server on Linux systems has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
@@ -167,7 +167,7 @@ By default, yum installs ksh into /bin/ksh, but the Teradata setup script expect
 
 	ln –s /bin/ksh /usr/bin/ksh
 
-Verify that the zip program is installed, as this is required by Microsoft R Services InTeradata operation:
+Verify that the zip program is installed, as this is required by Microsoft R Server InTeradata operation:
 
 	yum –y install zip
 
@@ -244,7 +244,7 @@ By default, yum installs ksh into /bin/ksh, but the Teradata setup script expect
 
 	ln –s /bin/ksh /usr/bin/ksh
 
-Verify that the zip program is installed, as this is required by Microsoft R Services InTeradata operation:
+Verify that the zip program is installed, as this is required by Microsoft R Server InTeradata operation:
 
 	yum –y install zip
 
@@ -274,7 +274,7 @@ After installing the tptstream package, update your system LD_LIBRARY_PATH envir
 
 #### Updating Your ODBC Driver Manager 
 
-Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you will be using Microsoft R Services exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you will be using Microsoft R Services with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
+Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you will be using Microsoft R Server exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you will be using Microsoft R Server with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
 
 ##### Configuring the Teradata ODBC Driver Manager 
 
@@ -344,11 +344,11 @@ If you will be using RxOdbcData with a DSN, you need to define an appropriate DS
 
 #### Installing RODBC 
 
-The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the Revolution Analytics source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
+The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the MRAN source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
 
-## Installing Microsoft R Services on the Client 
+## Installing Microsoft R Server on the Client 
 
-To download and install Microsoft R Services, you will need an MSDN subscription or a Microsoft Volume License Center sign-in.
+To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in.
 
 If your client machine is running Windows, you will need to obtain Revolution R Enterprise 8 for Windows. Installing the client software is a two-step process, described in the following documents:
 
@@ -368,7 +368,7 @@ After installing your Teradata client software, you should test that you can com
 
 The connection string is typically quite long, but should remain contained on a single input line.
 
-The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Services Server Installation Manual for Teradata*](rserver-install-teradata-server.md):
+The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Server Server Installation Manual for Teradata*](rserver-install-teradata-server.md):
 
 	query <- "SELECT tablename FROM dbc.tables WHERE databasename = 'RevoTestDB' order by tablename"
 	connectionString <- "Driver=Teradata;DBCNAME=157.54.160.204;Database=RevoTestDB;Uid=RevoTester;pwd=RevoTester;"

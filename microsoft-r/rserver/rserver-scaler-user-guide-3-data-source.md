@@ -255,6 +255,8 @@ To use the function, we first open the data file. For example, we can again use 
 		varsToKeep = c("DayOfWeek", "DepDelay","ArrDelay"), blocksPerRead = 15)
 	rxOpen(dataSource)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+
 Then we will time the computation, doing the regression for all the rows— 148,619,655 if you are using the full data set. (Note that in this case it will take at least 5 minutes, even on a very fast machine.)
 
 	system.time(bigLmRes <- biglmxdf(dataSource, ArrDelay~DayOfWeek))

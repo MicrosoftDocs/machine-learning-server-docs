@@ -28,19 +28,19 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to using the ***RevoPemaR*** package to write customized scalable and distributable analytics in R. *PEMA* stands for *P*arallel *E*xternal *M*emory *A*lgorithm. An external memory algorithm is one that does not require all of the data to be in memory at one time; that is, the data can be processed in chunks. Parallel external memory algorithms are those where the chunks of data can be processed in parallel, perhaps on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The ***RevoPemaR*** package provides a framework for writing parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
+This guide is an introduction to using the **RevoPemaR** package to write customized scalable and distributable analytics in R. *PEMA* stands for *P*arallel *E*xternal *M*emory *A*lgorithm. An external memory algorithm is one that does not require all of the data to be in memory at one time; that is, the data can be processed in chunks. Parallel external memory algorithms are those where the chunks of data can be processed in parallel, perhaps on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The **RevoPemaR** package provides a framework for writing parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
 
-The custom PEMA functions created using the ***RevoPemaR*** framework are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory, 2) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data, and 3) to perform computations distributed over nodes in a cluster,
+The custom PEMA functions created using the **RevoPemaR** framework are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory, 2) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data, and 3) to perform computations distributed over nodes in a cluster,
 
-The RevoPemaR framework is portable. The goal is to be able to have code written using R on a desktop be deployed using the ***RevoScaleR*** package on a high performance platform, such as Hadoop.
+The RevoPemaR framework is portable. The goal is to be able to have code written using R on a desktop be deployed using the **RevoScaleR** package on a high performance platform, such as Hadoop.
 
 ## Installation
 
-The ***RevoPemaR*** package is included with ***Microsoft R Services 2016*** (which also contains the ***RevoScaleR*** package). The ***RevoPemaR*** package can also be installed with a standard download of R 3.2.2
+The **RevoPemaR** package is included with Microsoft R Server and R Client (which also contains the **RevoScaleR** package). The **RevoPemaR** package can also be installed with a standard download of R 3.2.2
 
 ## Some Tips on R Reference Classes
 
-The PEMA classes used in ***RevoPemaR*** are based on R Reference Classes. We include a brief overview of some tips for using R Reference Classes here, before moving to the specifics of the PEMA classes.
+The PEMA classes used in **RevoPemaR** are based on R Reference Classes. We include a brief overview of some tips for using R Reference Classes here, before moving to the specifics of the PEMA classes.
 
 R Reference Class objects are created using a generator function. This function has four important pieces of information:
 
@@ -61,11 +61,11 @@ When working with reference class, here are a few tips to keep in mind:
 
 ## A Tutorial Introduction to RevoPemaR 
 
-This section contains an overview of a simple example of estimating the mean of a variable using the ***RevoPemaR*** framework. The key step is in creating a *PemaMean* reference class generator function that provides the fields and methods for computing the mean using a parallel external memory algorithm. This includes creating methods to compute the sum and number of observations for each chunk of data, to update these “intermediate results”, and at the end to use the intermediate results to compute the mean.
+This section contains an overview of a simple example of estimating the mean of a variable using the **RevoPemaR** framework. The key step is in creating a *PemaMean* reference class generator function that provides the fields and methods for computing the mean using a parallel external memory algorithm. This includes creating methods to compute the sum and number of observations for each chunk of data, to update these “intermediate results”, and at the end to use the intermediate results to compute the mean.
 
 ### Using setPemaClass to Create a Class Generator
 
-Start by making sure that the ***RevoPemaR*** package is loaded:
+Start by making sure that the **RevoPemaR** package is loaded:
 
 	library(RevoPemaR)
 
@@ -208,7 +208,7 @@ The *getVarsToUse* method specifies the names of the variables in the dataset th
 
 #### Instantiating and Exploring a PemaMean Object
 
-A version of the code in the previous section is contained within the ***RevoPemaR*** package and exported, so we can directly work with the *PemaMean* generator without first running the code. We can show the names of all the methods, including those that are explicitly overridden by the *PemaMean* class:
+A version of the code in the previous section is contained within the **RevoPemaR** package and exported, so we can directly work with the *PemaMean* generator without first running the code. We can show the names of all the methods, including those that are explicitly overridden by the *PemaMean* class:
 
 	PemaMean$methods()
 	
@@ -290,7 +290,7 @@ Next we’ll generate a default *PemaMean* object, and print out the values of i
 	[1] ""
 
 
-We can also print out the code for a specific method using an instantiated object. For example, the initialize method of the *PemaMean* object in the ***RevoPemaR*** package is:
+We can also print out the code for a specific method using an instantiated object. For example, the initialize method of the *PemaMean* object in the **RevoPemaR** package is:
 
 	meanPemaObj$initialize
 	
@@ -314,7 +314,7 @@ We can also print out the code for a specific method using an instantiated objec
 
 #### Using a *PemaMean* Object with the *pemaCompute* Function
 
-The *pemaCompute* function takes two required arguments: an “analysis” object and a data source object. The analysis object must be generated by *setPemaClass* and inherit (directly or indirectly) from *PemaBaseClass*. The data source object must be either a data frame or a data source object supported by the ***RevoScaleR*** package if it is available. The ellipses will take any additional information used in the *initialize* method.
+The *pemaCompute* function takes two required arguments: an “analysis” object and a data source object. The analysis object must be generated by *setPemaClass* and inherit (directly or indirectly) from *PemaBaseClass*. The data source object must be either a data frame or a data source object supported by the **RevoScaleR** package if it is available. The ellipses will take any additional information used in the *initialize* method.
 
 Let’s compute a mean of some random numbers:
 	
@@ -382,7 +382,7 @@ Note that the number of total valid observations is now 2000.
 
 #### Using a *RevoScaleR* Data Source with the *pemaCompute* Function
 
-In the previous section we analysed data in memory. The ***RevoScaleR*** package provides a data source framework that allows data to be automatically extracted in chunks from data on disk or in a database. It also provides the *.xdf* file format that can very efficiently extract chunks of data.
+In the previous section we analysed data in memory. The **RevoScaleR** package provides a data source framework that allows data to be automatically extracted in chunks from data on disk or in a database. It also provides the *.xdf* file format that can very efficiently extract chunks of data.
 
 We can use a sample .xdf file provided with the package. First we will create a data source for this file:
 
@@ -402,7 +402,7 @@ You can control the amount of progress reported to the console using the *report
 
 #### Using *pemaCompute* in a Distributed Compute Context
 
-***RevoScaleR*** provides a number of distributed compute contexts, such as Hadoop clusters (Cloudera and Hortonworks). Use of the same PEMA reference class object on these platforms is experimental. It can be tried with data on those platforms by specifying the *computeContext* in the *pemaCompute* function.
+**RevoScaleR** provides a number of distributed compute contexts, such as Hadoop clusters (Cloudera and Hortonworks). Use of the same PEMA reference class object on these platforms is experimental. It can be tried with data on those platforms by specifying the *computeContext* in the *pemaCompute* function.
 
 ## Additional Examples Using RevoPemaR
 
@@ -417,7 +417,7 @@ Two PEMA text mining analyses are provided as examples.
 -   *PemaPopularWords* will accumulate the words used in a variable containing character data. The initialize method provides a variety of arguments to fine-tune the processing. The code for the reference class generator is provided in *PemaPopularWords.R*, and examples using it in *PemaPopularWordsEx.R*.
 -   *PemaWordCount* will count instances of specified words in a variable containing character data. The code for the reference class generator is provided in *PemaWordCount.R*, and examples using it in *PemaWordCountEx.R*.
 
-If you are using ***RevoScaleR*** and are interested in exploring text mining with a large dataset, instructions for downloading and code for importing Amazon reviews of fine foods is contained in the script *finefoodsImport.R*
+If you are using **RevoScaleR** and are interested in exploring text mining with a large dataset, instructions for downloading and code for importing Amazon reviews of fine foods is contained in the script *finefoodsImport.R*
 
 ### Performing By-Group Computations
 
@@ -438,7 +438,7 @@ This class generator cannot be used directly. A child class generator must be cr
 
 ## Debugging *RevoPemaR* Code
 
-The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class. R Reference Classes can also be debugged using the visual debugger provided by the ***R Productivity Environment*** that is included with ***Revolution R Enterprise for Windows***.
+The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class. 
 
 The *PemaBaseClass* provides a simple way of printing trace output that is particularly useful in debugging code in a distributed environment. Calls to the *outputTrace* method within other methods will print the specified text if the *traceLevel* field value exceeds or is equal to the *outTraceLevel* argument:
 

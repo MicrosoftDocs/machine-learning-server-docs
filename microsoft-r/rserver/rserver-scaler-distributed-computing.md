@@ -2,7 +2,7 @@
 
 # required metadata
 title: "RevoScaleR Distributed Computing Guide"
-description: "Microsoft R Services in-database and cluster computing."
+description: "Microsoft R Server in-database and cluster computing."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
@@ -33,6 +33,14 @@ ms.custom: ""
 With **RevoScaleR** 2.0-0 and later, distributed computing capabilities are built in. This means that you can develop complex analysis scripts on your local computer, create one or more *compute contexts* for use with distributed computing resources, and then seamlessly move between executing scripts on the local computer and in a distributed context. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific *data source* along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
 
 **RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
+
+<a name="chunking"></a>
+>**Important!** Microsoft R Client has several limitations to consider:
+>
+>1. There are a maximum of three available cores -- one thread for reading and two for processing RevoScaleR HPA functions. 
+>
+>2. Since Microsoft R Client is in-memory bound, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
+
 
 ### Distributed Computing: A Primer 
 
@@ -123,8 +131,6 @@ which gives the following output:
 	    minElems = -1, maxElems = -1, priority = 2, exclusive = FALSE, 
 	    autoCleanup = TRUE, dataDistType = "all", packagesToLoad = NULL, 
 	    email = NULL, resultsTimeout = 15, groups = "ComputeNodes") 
-
-If you are using the Revolution R Enterprise R Productivity Environment, you can obtain the same information simply by typing the constructor’s name and an opening parenthesis in the R Console window or hovering over the constructor’s name in the Script window. More details about the parameters can be obtained from the constructor’s help file.
 
 You can modify an existing compute context and set the modified context as the current compute context by calling *rxSetComputeContext*. For example, if you have defined *myCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call *rxSetComputeContext* as follows:
 
@@ -229,6 +235,8 @@ This confirms that our data set is in fact available on all nodes of our cluster
 
 When you run one of **RevoScaleR**’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. Again, in the simplest case, the job is considered *blocking*, so that control is not returned until the computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 For example, we start by taking a summary of three variables from the airline data:
 
 	rxSummary(~ ArrDelay + CRSDepTime + DayOfWeek, data=airData, 
@@ -269,6 +277,8 @@ We can perform an rxCube computation using the same data set to compute the aver
 
 	delayArrCube <- rxCube(ArrDelay ~ F(CRSDepTime):DayOfWeek, 
 		data=airData, blocksPerRead=30) 
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 Notice that in this case we have returned an *rxCube* object.  We can use this object locally to, for example, extract a data frame and plot the results:
 
@@ -409,7 +419,7 @@ We can then view a summary of the results as follows:
 	F_CRSDepTime=23    Dropped    Dropped Dropped  Dropped    
 	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.27 on 6005349 degrees of freedom
 	Multiple R-squared: 0.01372 
@@ -461,7 +471,7 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 ***
 	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 ***
 	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 ***
-	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ** 
+	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ***
 	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 ***
 	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 ***
 	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 ***
@@ -474,7 +484,7 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	F_CRSDepTime=23    Dropped    Dropped  Dropped  Dropped    
 	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 445.2487 
 	Number of iterations: 5
@@ -482,6 +492,9 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 ### Viewing Console Output 
 
 You may notice when running distributed computations that you get virtually no feedback while running waiting jobs. Since the computations are in general not running on the same computer as your R Console, the “usual” feedback is not returned by default. However, you can set the *consoleOutput* parameter in your compute context to TRUE to enable return of console output from all the nodes. For example, here we update our compute context *myCluster* to include *consoleOutput=TRUE*:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 
 	myCluster <- RxHpcServer(myCluster, consoleOutput=TRUE)
 	rxOptions(computeContext=myCluster)
@@ -493,13 +506,13 @@ Then, rerunning our previous example results in much more verbose output:
 
 	======  CLUSTER-HEAD2  ( process  1 ) has started run at 
 	Thu Aug 11 15:56:10 2011  ====== 
-	********************************************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE10' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.791 2011 
-	********************************************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE11' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.757 2011 
-	********************************************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE12' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.769 2011 
-	********************************************************************** 
+	**********************************************************************  
 	Worker Node 'COMPUTE13' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.889 2011 
 	 
 	 
@@ -529,23 +542,23 @@ Then, rerunning our previous example results in much more verbose output:
 	COMPUTE12: Rows Read: 2400000, Total Rows Processed: 24556949, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE13' has completed its task successfully. Thu Aug 11 15:56:11.341 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	**********************************************************************  
 	 
 	Worker Node 'COMPUTE12' has completed its task successfully. Thu Aug 11 15:56:11.221 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	**********************************************************************  
 	 
 	COMPUTE10: Rows Read: 2351983, Total Rows Processed: 24672124, Total Chunk Time: 0.078 seconds 
 	COMPUTE11: Rows Read: 2400000, Total Rows Processed: 24707495, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE10' has completed its task successfully. Thu Aug 11 15:56:11.244 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	**********************************************************************  
 	 
 	Worker Node 'COMPUTE11' has completed its task successfully. Thu Aug 11 15:56:11.209 2011 
 	Elapsed time: 0.453 secs. 
-	********************************************************************** 
+	**********************************************************************  
 	 
-	********************************************************************** 
+	**********************************************************************  
 	Master node [CLUSTER-HEAD2] is starting a task.... Thu Aug 11 15:56:10.961 2011 
 	CLUSTER-HEAD2: Rows Read: 4461826, Total Rows Processed: 4461826, Total Chunk Time: 0.038 seconds 
 	CLUSTER-HEAD2: Rows Read: 4452096, Total Rows Processed: 8913922, Total Chunk Time: 0.071 seconds 
@@ -555,7 +568,7 @@ Then, rerunning our previous example results in much more verbose output:
 	CLUSTER-HEAD2: Rows Read: 2400000, Total Rows Processed: 24602940, Total Chunk Time: 0.072 seconds 
 	Master node [CLUSTER-HEAD2] has completed its task successfully. Thu Aug 11 15:56:11.410 2011 
 	Elapsed time: 0.449 secs. 
-	********************************************************************** 
+	**********************************************************************  
 	Time to compute summary on all servers: 0.461 secs. 
 	Processing results on client ... 
 	Computation time: 0.471 seconds. 
@@ -642,9 +655,12 @@ Calling rxGetJobStatus again a few seconds later shows us that the job has compl
 	
 	[1] "finished" 
 
-If we are using the Revolution R Enterprise R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
+If we are using our R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
 
 ![Object Browser](media/rserver-scaler-distributed-computing/object_browser_1.png)
+
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
  
 We can then call rxGetJobResults to obtain the actual computation results:
 
@@ -683,6 +699,8 @@ If you forget to assign the job information object when you first submit your jo
 		cube=TRUE, blocksPerRead=30)
 	delayArrJobInfo <- rxgLastPendingJob
 	rxGetJobStatus(delayArrJobInfo)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 Also, as in all R sessions, the last value returned can be accessed as *.Last.value;* if you remember immediately that you forgot to assign the result, you can simply assign *.Last.value* to your desired job name and be done. 
 
@@ -732,14 +750,14 @@ We obtain the following results:
 	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 ***
 	DayOfWeek=Sunday       Dropped    Dropped  Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 78.6309 
 	Number of iterations: 2
 
 ## Cleaning Up after Distributed Computing 
 
-Normally, whenever a waiting job completes or whenever you call *rxGetJobResults* to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the *autoCleanup* flag to the compute context constructor, which defaults to *TRUE*.) However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But ***RevoScaleR*** also supplies a number of tools to help you remove any accumulated artifacts.
+Normally, whenever a waiting job completes or whenever you call *rxGetJobResults* to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the *autoCleanup* flag to the compute context constructor, which defaults to *TRUE*.) However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But **RevoScaleR** also supplies a number of tools to help you remove any accumulated artifacts.
 
 The first of these, *rxGetJobs*, allows you to get a list of all the jobs associated with a given compute context. By default, it matches just the head node (if available) and shared directory specified in the compute context; if you re-use these two specifications, ALL the jobs associated with that head node and shared directory are returned:
 
@@ -773,7 +791,7 @@ While the **RevoScaleR** HPA functions are engineered to work in parallel automa
 
 In general, the only required arguments to rxExec are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation. Most of these are introduced in the examples of this chapter, and the remainder are discussed in Section 6.10. The rxExec help file discusses all of these arguments in detail.
 
-> ![IMPORTANT]
+>[!IMPORTANT]
 > Before trying the examples in this chapter, set your compute context to one of the following: RxLocalParallel, RxHpcServer, RxHadoopMR, or RxInTeradata (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE* if available; later in the chapter we will show how some of the examples can be rewritten to work in a non-blocking compute context, but start with the simpler, blocking case.
 
 ### Playing Dice: A Simulation 
@@ -923,7 +941,7 @@ The resulting plot is shown below (not all graphics devices support the useRaste
 
 ### Naïve Parallel k-Means Clustering 
 
-***RevoScaleR*** has a built-in analysis function, *rxKmeans*, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context. 
+**RevoScaleR** has a built-in analysis function, *rxKmeans*, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context. 
 
 The kmeans function implements several *iterative relocation* algorithms for clustering. An iterative relocation algorithm starts from an initial classification and then iteratively moves data points from one cluster to another to reduce sums of squares. One possible starting point is to simply pick cluster centers at random and then assign points to each cluster so that the sum of squares is minimized. If this procedure is repeated many times for different sets of centers, the set with the smallest error can be chosen.
 
@@ -1176,7 +1194,7 @@ If you are using random numbers in the local parallel context, be aware that rxE
 	x2 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
 	all.equal(x1, x2)
 
-> ![NOTE]
+>[!NOTE]
 >HPA functions are not affected by the RxLocalParallel compute context; they will run locally and in the usual internally distributed fashion when the RxLocalParallel compute context is in effect.
 
 ### Using rxExec with foreach Back Ends 
@@ -1194,7 +1212,7 @@ For example, here is how you might start a SNOW-like cluster connection with the
 
 You then call rxExec as usual. The computations are automatically directed to the registered foreach back end.
 
-> ![WARNING]
+>[!WARNING]
 > HPA functions are not usually affected by the RxForeachDoPar compute context; they will run locally and in the usual internally distributed fashion when the RxForeachDoPar compute context is in effect. The one exception is when HPA functions are called within rxExec; in this case it is possible that the internal threading of the HPA functions can be affected by the launch mechanism of the parallel backend workers. The doMC backend and the multicore-like backend of doParallel both use forking to launch their workers; this is known to be incompatible with the HPA functions.
 
 ### Controlling rxExec Computations 
@@ -1207,12 +1225,12 @@ If *oncePerElem* is *TRUE* and *elemType="nodes"*, *rxExec*’s results are retu
 
 The *continueOnFailure* argument is used to say that a computation should continue even if one or more of the compute elements fails for some reason; this is useful, for example, if you are running several thousand independent simulations and It doesn’t matter if you get results for all of them. Using *continueOnFailure=TRUE* (the default), you will get results for all compute elements that finish the simulation and error messages for the compute elements that fail.
 
-> ![NOTE]
+>[!NOTE]
 > The arguments *elemType*, *consoleOutput*, *autoCleanup*, *continueOnFailure*, and *oncePerElem* are ignored by the special compute contexts RxLocalParallel and RxForeachDoPar. 
 
 ## Using RevoScaleR with foreach: Package doRSR 
 
-The foreach package provides a for-loop-like approach to parallel computing that has proven quite popular. Developed by Microsoft, foreach is an open source package that is bundled with Microsoft R Services but is also available on the Comprehensive R Archive Network, CRAN. Parallel backends have been written for a variety of parallel computing packages, including nws, snow, and rmpi. If you need to share parallel code with users of other R distributions, writing that code using foreach provides considerable flexibility. To execute that code in Microsoft R Services using your distributed computing resources, you can use the doRSR package.
+The foreach package provides a for-loop-like approach to parallel computing that has proven quite popular. Developed by Microsoft, foreach is an open source package that is bundled with Microsoft R but is also available on the Comprehensive R Archive Network, CRAN. Parallel backends have been written for a variety of parallel computing packages, including nws, snow, and rmpi. If you need to share parallel code with users of other R distributions, writing that code using foreach provides considerable flexibility. To execute that code in Microsoft R using your distributed computing resources, you can use the doRSR package.
 
 The doRSR package is a parallel backend for RevoScaleR, built on top of rxExec, and included with all RevoScaleR distributions. To get started using it, simply load the doRSR package and register the backend:
 
@@ -1317,7 +1335,7 @@ By default, *rxSplit* simply appends a number in the sequence from 1 to *numOutF
 	basenames <- file.path("C:", nodepaths, "DistAirlineData")
 	rxSplit(bigAirlineData, outFilesBase=basenames)
 
-This creates the four directories C:/compute10, etc., and creates a file named “DistAirlineData.xdf” in each directory. You will want to do something like this when using distributed data with the standard ***RevoScaleR*** analysis functions such as rxLinMod and rxLogit.
+This creates the four directories C:/compute10, etc., and creates a file named “DistAirlineData.xdf” in each directory. You will want to do something like this when using distributed data with the standard **RevoScaleR** analysis functions such as rxLinMod and rxLogit.
 
 You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
 
@@ -1345,6 +1363,8 @@ We are now ready to fit a simple linear model:
 
 	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek, 
 		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
 
@@ -1401,6 +1421,8 @@ You can predict (or score) from a fitted model in a distributed context, but in 
 	rxPredict(AirlineLmDist, data="DistAirlineData.xdf", 	outData="errDistAirlineData.xdf",
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 The output data is also split, in this case holding fitted values, residuals, and standard errors for the predicted values.
 
 ### Creating Split Training and Test Data Sets 
@@ -1424,6 +1446,8 @@ The result is two new data files, airlineData.testSplitVar.Train.xdf and airline
 	rxPredict(AirlineLmDist, data="airlineData.testSplitVar.Test.xdf", 
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+
 ### Performing Data Operations on Each Node 
 
 To create or modify data on each node, use the data manipulation functions within rxExec. For example, suppose that after looking at the airline data we decide to create a “cleaner” version of it by keeping only the flights where: there is information on the arrival delay,  the flight did not depart more than one hour early, and the actual and scheduled flight time is positive. We can put a call to *rxDataStep* (and any other code we want processed) into a function to be processed on each node via *rxExec*:
@@ -1437,6 +1461,8 @@ To create or modify data on each node, use the data manipulation functions withi
 			blocksPerRead = 20, overwrite = TRUE)
 	}
 	rxExec( newAirData )
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 ### Installing Packages on Each Node 
 

@@ -161,6 +161,8 @@ We can then fit a logistic regression model to the training data and predict wit
 	rxPredict(logitObj, data = targetDataFileName, 
 		outData = targetDataFileName, computeResiduals = TRUE)
 	
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+
 To view the first 30 rows of the output data file, use rxGetInfo as follows:
 
 	rxGetInfo(targetDataFileName, numRows = 30)
@@ -175,6 +177,8 @@ You can use rxPredict to obtain prediction standard errors and confidence interv
 	logitObj2 <- rxLogit(default ~ year + creditScore + yearsEmploy + ccDebt,
 		data = trainingDataFileName, blocksPerRead = 2, verbose = 1, 
 		reportProgress=2, covCoef=TRUE)
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
 
 You then specify `computeStdErr=TRUE` to obtain prediction standard errors; if this is TRUE, you can also specify `interval="confidence"` to obtain a confidence interval:
 
@@ -250,6 +254,8 @@ At the other extreme, let’s draw an ROC curve for our great model:
 With perfect predictions, we see the the True Positive Rate is 1 for all thresholds, and the AUC is 1. We’d expect a random guess ROC curve to lie along with white diagonal line.
 
 Now let’s use actual model predictions in an ROC curve. We’ll use the small mortgage default sample data to estimate a logistic model and them compute predicted values:
+
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
 
 	# Using mortDefaultSmall for predictions and an ROC curve
 	  

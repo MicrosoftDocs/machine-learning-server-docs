@@ -125,6 +125,7 @@ As with decision trees, scaling decision forests to very large data sets should 
 
 As an example of a large data classification forest, consider the following simple model using the 7% subsample of the full airline data (this uses the variable *ArrDel15* indicating flights with an arrival delay of 15 minutes or more):
 
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
 	  
 	#  Large Data Tree Models
 	  

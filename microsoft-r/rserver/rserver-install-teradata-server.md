@@ -28,14 +28,14 @@ ms.custom: ""
 
 ## Quick Overview
 
-Microsoft R Services for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Services client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Services for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [*Microsoft R Services Client Installation Manual for Teradata.*](rserver-install-teradata-client.md)
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [*Microsoft R Server Client Installation Manual for Teradata.*](rserver-install-teradata-client.md)
 
 >[!NOTE]
->Microsoft R Services for Teradata is required for running Microsoft R Services scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Services in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Services 7 Client Installation Manual for Teradata.*
+>Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Server 7 Client Installation Manual for Teradata.*
 
 ## System Requirements
 
-Microsoft R Services for Teradata has the following system requirements:
+Microsoft R Server for Teradata has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
@@ -69,9 +69,9 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 ## Installing the Microsoft R Server rpms
 
-In this chapter, we discuss the basics of using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Services rpms.
+In this chapter, we discuss the basics of using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms.
 
-PUT is a browser-based utility, and we recommend that you upgrade to the latest version (3.06.01). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Services.
+PUT is a browser-based utility, and we recommend that you upgrade to the latest version (3.06.01). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
 
 To get started, do the following:
 
@@ -116,7 +116,7 @@ To get started, do the following:
 
 		tar -zxf Microsoft-R-Server-8.0.0-TERA14S11.tar.gz
 
-  8. Change directory to the Revolution-R-Enterprise-7.4.1-TERA14Sxx directory created in Step 7:
+  8. Change directory to the one directory created in Step 7:
 
 		cd Microsoft-R-Server-8.0.0-TERA14S10
 
@@ -128,15 +128,13 @@ To get started, do the following:
 
 		./install.py
 
-	This script asks you to accept the Microsoft R Services license, and, if you are a Teradata employee, to acknowledge that, if you are installing the software, it is on a system owned by and for the internal use of Teradata Corporation or any of its affiliates.
+	This script asks you to accept the Microsoft R Server license, and, if you are a Teradata employee, to acknowledge that, if you are installing the software, it is on a system owned by and for the internal use of Teradata Corporation or any of its affiliates.
 
   10. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs
 
-  11. Point your Java-enabled browser to the following URL, https://&lt;HOSTIP&gt;:8443/put
-
-	where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+  11. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
@@ -172,7 +170,7 @@ After you have installed the rpms, change directory to the "teradata" directory 
 
 Enter the parent user database name and password at the prompts. Do not modify this script, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in Chapter 5, Adding and Configuring Users.
 
-If you have previously run Microsoft R Services on your Teradata database, restart the database before proceeding.
+If you have previously run Microsoft R Server on your Teradata database, restart the database before proceeding.
 
 ## Adding and Configuring Users
 
@@ -234,7 +232,7 @@ You will often want to allow a user account to run jobs on data in other databas
 
 ## Managing Memory in In-Teradata Computations
 
-Because a Teradata cluster node typically has many worker processes (AMPs) running constantly, it is important to limit how much memory a distributed analysis consumes. Revolution Analytics provides stored procedures in the revoAnalytics\_Zqht2 scheduler database that allow a database administrator to set the memory limits for master and worker processes working on a RevoScaleR job. By default, the master process memory limit is 2000 MB (approximately 2GB) and the worker process memory limit is 1000MB (approximately 1GB).
+Because a Teradata cluster node typically has many worker processes (AMPs) running constantly, it is important to limit how much memory a distributed analysis consumes. Microsoft R Server provides stored procedures in the revoAnalytics\_Zqht2 scheduler database that allow a database administrator to set the memory limits for master and worker processes working on a RevoScaleR job. By default, the master process memory limit is 2000 MB (approximately 2GB) and the worker process memory limit is 1000MB (approximately 1GB).
 
 These limits may be customized by a database administrator using the SetMasterMemoryLimitMB() and SetWorkerMemoryLimitMB() stored procedures, defined in the revoAnalytics\_Zqht2 database created on installation.
 
@@ -250,7 +248,7 @@ The current memory limits can be viewed in the revoAnalytics\_Zqht2.Properties 
 
 Note that memory limits that have been changed are in effect immediately, and no restart of the database is required.
 
-## Maintaining the Revolution Analytics Database
+## Maintaining the Revolution Database
 
 Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
@@ -260,7 +258,7 @@ Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
 ## Installing Additional R Packages
 
-The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Services for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Services for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are completely external to Teradata.
+The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Server for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Server for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are completely external to Teradata.
 
 In most cases, the natural place to install additional R packages is to the client workstation. Installation to the Teradata data warehouse is required only if you plan to use the package’s functions as transform functions inside RevoScaleR functions, in which case the packages will actually need to be loaded in-database. If you need a package for this purpose, you can do so as follows:
 
@@ -270,9 +268,9 @@ To manually distribute and install the package:
   2.  Copy the downloaded packages to each node of your data warehouse.
   3.  For each package, run the command “R CMD INSTALL *package.*tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
 
-## Removing Revolution R
+## Removing Microsoft R Server
 
-To remove Microsoft R Services from your computer, run the following commands:
+To remove Microsoft R Server from your computer, run the following commands:
 
 	psh rpm –e Microsoft-R-Server
 	psh rpm –e MRO-for-MRS

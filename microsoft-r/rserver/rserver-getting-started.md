@@ -49,7 +49,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 
 Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server.
 
-On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files.  However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files. However, when you push the compute context to a production instance of Microsoft R Server, you can benefit from the hybrid memory, disk scalability, performance and speed offered by Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
 ###Microsoft R Open
 
@@ -608,7 +608,7 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 
 On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
 
->*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Revolution R Enterprise, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
+>*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 
 ### Using Microsoft R via Rscript and R CMD BATCH
 
@@ -884,7 +884,7 @@ We get the following output:
 
 So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz). After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
 
-	# bigDataDir <- "C:/Revolution/Data" # Specify the location
+	# bigDataDir <- "C:/MicrosoftR/Data" # Specify the location
 	inDataFile <- file.path(bigDataDir, "mortDefault",
 		"mortDefault2000.csv")
 	outFile <- "myMortData.xdf"
@@ -903,7 +903,7 @@ Note that because we have specified an output file when importing the data, the 
 	# Some quick information about my data
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=5)
 
-		File name: C:\\Revolution\\Data\\myMortData.xdf
+		File name: C:\\MicrosoftR\\Data\\myMortData.xdf
 		Number of observations: 1e+06
 		Number of variables: 6
 		Number of blocks: 2
@@ -1064,7 +1064,7 @@ For a good introduction to the pitfalls involving numeric computation, see the e
 
 ### Performance Optimization and Numerics
 
-Many of the most widely-used and compute-intensive linear algebra and arithmetic operations performed by R are computed by low-level numerics libraries, including the basic linear algebra subroutine (BLAS) library. Revolution R includes highly-tuned low-level numerics libraries that are optimized for speed on a wide variety of x86, x86-64 and IA-64 processor architectures.
+Many of the most widely-used and compute-intensive linear algebra and arithmetic operations performed by R are computed by low-level numerics libraries, including the basic linear algebra subroutine (BLAS) library. Microsoft R includes highly-tuned low-level numerics libraries that are optimized for speed on a wide variety of x86, x86-64 and IA-64 processor architectures.
 
 Many of the performance optimizations try to
 
