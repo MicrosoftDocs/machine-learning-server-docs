@@ -414,7 +414,7 @@ After completing installation, do the following to verify that Microsoft R Serve
 
 2.  Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
 
-3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
+3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
 		bigDataDirRoot <- "/share"
 		myHadoopCluster <- RxHadoopMR(consoleOutput=TRUE)
@@ -517,7 +517,7 @@ export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/path/to/libjvm.so
 
 ## Getting Started with Hadoop
 
-To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
+To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
 
 ## Using HDFS Caching
 

@@ -34,7 +34,7 @@
 ### [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
-## [RevoScaleR Distributed Computing](rserver-scaler-distributed-computing.md)
+## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
 ## [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
 ## [RevoScaleR Hadoop Getting Started](scaler-hadoop-getting-started.md)
 ## [RevoScaleR Teradata Getting Started](scaler-teradata-getting-started.md)
