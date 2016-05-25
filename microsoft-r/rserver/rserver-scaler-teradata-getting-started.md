@@ -359,7 +359,7 @@ As long as we have not changed the compute context, the computations will be per
 	gender=Female   Dropped    Dropped  Dropped  Dropped    
 	creditLine     109.2620     0.1264  864.080 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 3856 on 9999997 degrees of freedom
 	Multiple R-squared: 0.06948 
@@ -457,7 +457,7 @@ We get the following output:
 	numIntlTrans          3.021e-02  1.776e-04  170.097 2.22e-16 ***
 	creditLine            9.491e-02  1.416e-04  670.512 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 2922.044 
 	Number of iterations: 8
