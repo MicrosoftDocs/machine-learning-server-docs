@@ -1194,7 +1194,7 @@ If you are using random numbers in the local parallel context, be aware that rxE
 	x2 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
 	all.equal(x1, x2)
 
-> ![NOTE]
+>[!NOTE]
 >HPA functions are not affected by the RxLocalParallel compute context; they will run locally and in the usual internally distributed fashion when the RxLocalParallel compute context is in effect.
 
 ### Using rxExec with foreach Back Ends 
@@ -1212,7 +1212,7 @@ For example, here is how you might start a SNOW-like cluster connection with the
 
 You then call rxExec as usual. The computations are automatically directed to the registered foreach back end.
 
-> ![WARNING]
+>[!WARNING]
 > HPA functions are not usually affected by the RxForeachDoPar compute context; they will run locally and in the usual internally distributed fashion when the RxForeachDoPar compute context is in effect. The one exception is when HPA functions are called within rxExec; in this case it is possible that the internal threading of the HPA functions can be affected by the launch mechanism of the parallel backend workers. The doMC backend and the multicore-like backend of doParallel both use forking to launch their workers; this is known to be incompatible with the HPA functions.
 
 ### Controlling rxExec Computations 
@@ -1225,7 +1225,7 @@ If *oncePerElem* is *TRUE* and *elemType="nodes"*, *rxExec*’s results are retu
 
 The *continueOnFailure* argument is used to say that a computation should continue even if one or more of the compute elements fails for some reason; this is useful, for example, if you are running several thousand independent simulations and It doesn’t matter if you get results for all of them. Using *continueOnFailure=TRUE* (the default), you will get results for all compute elements that finish the simulation and error messages for the compute elements that fail.
 
-> ![NOTE]
+>[!NOTE]
 > The arguments *elemType*, *consoleOutput*, *autoCleanup*, *continueOnFailure*, and *oncePerElem* are ignored by the special compute contexts RxLocalParallel and RxForeachDoPar. 
 
 ## Using RevoScaleR with foreach: Package doRSR 
