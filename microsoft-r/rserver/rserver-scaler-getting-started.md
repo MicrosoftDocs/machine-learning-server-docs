@@ -312,7 +312,7 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 
@@ -352,7 +352,7 @@ You should see the following output:
 	DayOfWeek=Saturday   11.8753     0.1404   84.59 2.22e-16 *** |  83851
 	DayOfWeek=Sunday     10.3318     0.1330   77.67 2.22e-16 *** |  93395
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 (as if intercept included)
@@ -538,7 +538,7 @@ You should see the following results:
 	DepHour      0.0790215  0.0007671  103.01 2.22e-16 ***
 	Night       -0.3027030  0.0109914  -27.54 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 3.0178 
 	Number of iterations: 4
@@ -723,7 +723,7 @@ It yields the following:
 	DayOfWeekSat   14.2302     2.8876   4.928 9.74e-07 ***
 	DayOfWeekSun    0.2874     2.9688   0.097    0.923    
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Residual standard error: 23.58 on 985 degrees of freedom
 	  (8 observations deleted due to missingness)
@@ -1279,7 +1279,7 @@ You will see timings for each iteration and the final results printed. The resul
 	yearsEmploy -2.736e-01  2.698e-03 -101.41 2.22e-16 ***
 	ccDebt       1.365e-03  3.922e-06  348.02 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 6.685 
 	Number of iterations: 10
@@ -1371,7 +1371,7 @@ The results of the estimation are:
 	yearsEmploy   -2.821e-01  2.746e-03 -102.729 2.22e-16 ***
 	ccDebt         1.406e-03  4.092e-06  343.586 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 5254.541 
 	Number of iterations: 10
