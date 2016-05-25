@@ -419,7 +419,7 @@ We can then view a summary of the results as follows:
 	F_CRSDepTime=23    Dropped    Dropped Dropped  Dropped    
 	Distance        -4.220e-04  2.476e-05 -17.043 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.27 on 6005349 degrees of freedom
 	Multiple R-squared: 0.01372 
@@ -471,7 +471,7 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	F_CRSDepTime=10 -2.305e-01  1.514e-02  -15.220 2.22e-16 ***
 	F_CRSDepTime=11 -1.868e-01  1.512e-02  -12.359 2.22e-16 ***
 	F_CRSDepTime=12 -6.100e-02  1.509e-02   -4.041 5.32e-05 ***
-	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 ***
+	F_CRSDepTime=13  4.476e-02  1.503e-02    2.979 0.002896 **
 	F_CRSDepTime=14  1.573e-01  1.501e-02   10.480 2.22e-16 ***
 	F_CRSDepTime=15  2.218e-01  1.500e-02   14.786 2.22e-16 ***
 	F_CRSDepTime=16  2.718e-01  1.498e-02   18.144 2.22e-16 ***
@@ -484,7 +484,7 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	F_CRSDepTime=23    Dropped    Dropped  Dropped  Dropped    
 	Distance         1.336e-04  1.829e-06   73.057 2.22e-16 ***
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘***’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 	
 	Condition number of final variance-covariance matrix: 445.2487 
 	Number of iterations: 5
@@ -508,11 +508,11 @@ Then, rerunning our previous example results in much more verbose output:
 	Thu Aug 11 15:56:10 2011  ====== 
 	**********************************************************************  
 	Worker Node 'COMPUTE10' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.791 2011 
-	**********************************************************************  
+	********************************************************************** 
 	Worker Node 'COMPUTE11' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.757 2011 
-	**********************************************************************  
+	********************************************************************** 
 	Worker Node 'COMPUTE12' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.769 2011 
-	**********************************************************************  
+	********************************************************************** 
 	Worker Node 'COMPUTE13' has received a task from Master Node 'CLUSTER-HEAD2'.... Thu Aug 11 15:56:10.889 2011 
 	 
 	 
@@ -542,23 +542,23 @@ Then, rerunning our previous example results in much more verbose output:
 	COMPUTE12: Rows Read: 2400000, Total Rows Processed: 24556949, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE13' has completed its task successfully. Thu Aug 11 15:56:11.341 2011 
 	Elapsed time: 0.453 secs. 
-	**********************************************************************  
+	********************************************************************** 
 	 
 	Worker Node 'COMPUTE12' has completed its task successfully. Thu Aug 11 15:56:11.221 2011 
 	Elapsed time: 0.453 secs. 
-	**********************************************************************  
+	********************************************************************** 
 	 
 	COMPUTE10: Rows Read: 2351983, Total Rows Processed: 24672124, Total Chunk Time: 0.078 seconds 
 	COMPUTE11: Rows Read: 2400000, Total Rows Processed: 24707495, Total Chunk Time: 0.078 seconds 
 	Worker Node 'COMPUTE10' has completed its task successfully. Thu Aug 11 15:56:11.244 2011 
 	Elapsed time: 0.453 secs. 
-	**********************************************************************  
+	********************************************************************** 
 	 
 	Worker Node 'COMPUTE11' has completed its task successfully. Thu Aug 11 15:56:11.209 2011 
 	Elapsed time: 0.453 secs. 
-	**********************************************************************  
+	********************************************************************** 
 	 
-	**********************************************************************  
+	********************************************************************** 
 	Master node [CLUSTER-HEAD2] is starting a task.... Thu Aug 11 15:56:10.961 2011 
 	CLUSTER-HEAD2: Rows Read: 4461826, Total Rows Processed: 4461826, Total Chunk Time: 0.038 seconds 
 	CLUSTER-HEAD2: Rows Read: 4452096, Total Rows Processed: 8913922, Total Chunk Time: 0.071 seconds 
@@ -568,7 +568,7 @@ Then, rerunning our previous example results in much more verbose output:
 	CLUSTER-HEAD2: Rows Read: 2400000, Total Rows Processed: 24602940, Total Chunk Time: 0.072 seconds 
 	Master node [CLUSTER-HEAD2] has completed its task successfully. Thu Aug 11 15:56:11.410 2011 
 	Elapsed time: 0.449 secs. 
-	**********************************************************************  
+	********************************************************************** 
 	Time to compute summary on all servers: 0.461 secs. 
 	Processing results on client ... 
 	Computation time: 0.471 seconds. 
@@ -750,7 +750,7 @@ We obtain the following results:
 	DayOfWeek=Saturday  -0.1785315  0.0003285  -543.45 2.22e-16 ***
 	DayOfWeek=Sunday       Dropped    Dropped  Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '***' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 	
 	Condition number of final variance-covariance matrix: 78.6309 
 	Number of iterations: 2
