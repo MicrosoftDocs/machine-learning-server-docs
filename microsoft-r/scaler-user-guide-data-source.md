@@ -41,7 +41,7 @@ To create data sources directly, use the constructors listed in the following ta
 | Teradata Database                                      | RxTeradata                  |
 | .xdf data files                                        | RxXdfData                   |
 
-For simple data import, you do not need to create a data source—you can simply specify a file of the appropriate type and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you will want to refer to the data source’s documentation; in this case creating a data source will be useful. (For more information on accessing databases via ODBC, see the [*RevoScaleR ODBC Import Guide*](rserver-scaler-odbc.md).)
+For simple data import, you do not need to create a data source—you can simply specify a file of the appropriate type and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you will want to refer to the data source’s documentation; in this case creating a data source will be useful. (For more information on accessing databases via ODBC, see the [*RevoScaleR ODBC Import Guide*](scaler-odbc.md).)
 
 ## Specifying Delimiters
 
@@ -255,7 +255,7 @@ To use the function, we first open the data file. For example, we can again use 
 		varsToKeep = c("DayOfWeek", "DepDelay","ArrDelay"), blocksPerRead = 15)
 	rxOpen(dataSource)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 Then we will time the computation, doing the regression for all the rows— 148,619,655 if you are using the full data set. (Note that in this case it will take at least 5 minutes, even on a very fast machine.)
 

@@ -78,11 +78,11 @@ The principal compute contexts are the following:
 
 - RxLocalSeq: the default compute context described above. This compute context is available on all platforms.
 
-- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md).
+- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md).
 
-- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [*RevoScaleR Teradata Getting Started Guide*](rserver-scaler-teradata-getting-started.md).
+- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [*RevoScaleR Teradata Getting Started Guide*](scaler-teradata-getting-started.md).
 
-The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR Sql Server Getting Started Guide*](rserver-scaler-sql-server-getting-started.md).
+The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR Sql Server Getting Started Guide*](scaler-sql-server-getting-started.md).
 
 Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
 
@@ -101,7 +101,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Teradata database (RxTeradata) | X |   | X |   |
 | SQL Server database (RxSqlServerData) |   |   |   | X |
 
-Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. (See the [*RevoScaleR Hadoop Getting Started Guide*](rserver-scaler-hadoop-getting-started.md) for details.) Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. (See ["Managing Distributed Data"](#managing-distributed-data) for details.)
+Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. (See the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md) for details.) Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. (See ["Managing Distributed Data"](#managing-distributed-data) for details.)
 
 ### Waiting and Non-waiting Compute Contexts 
 
@@ -322,7 +322,7 @@ which yields:
 
 ### Computing a Covariance or Correlation Matrix 
 
-The rxCovCor function is used to compute covariance and correlation matrices; the convenience functions rxCov, rxCor, and rxSSCP all depend upon it and are usually used in practical situations. (See the [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-15-covcor.md) for examples.) The following example shows how the main function can be used directly:
+The rxCovCor function is used to compute covariance and correlation matrices; the convenience functions rxCov, rxCor, and rxSSCP all depend upon it and are usually used in practical situations. (See the [*RevoScaleR User’s Guide*](scaler-user-guide-covcor.md) for examples.) The following example shows how the main function can be used directly:
 
     covForm <- ~ DepDelayMinutes + ArrDelayMinutes + AirTime
     cov <- rxCovCor(formula = covForm, data = airData, type = "Cov")

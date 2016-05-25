@@ -1194,4 +1194,4 @@ The obvious place to start is with the rest of the **Microsoft R** document set,
 
 Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. 
 
-Beyond the standard R manuals, there are many other resources. [Learn about them here](rserver-more-resources.md). 
+Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 
