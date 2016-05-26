@@ -29,7 +29,7 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
-Get started with Microsoft R Server now and read this [Getting Started](getting-started.md) guide.
+Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
 
 ##Microsoft R Client
 
