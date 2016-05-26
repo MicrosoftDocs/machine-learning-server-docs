@@ -84,7 +84,7 @@ RevoScaleR also provides traditional ‘high performance computing’ (HPC) tool
 
 R is a flexible and powerful statistical programming language. The RevoScaleR package provides efficient, scalable computational power. Combining the two allows for the development of ready-to-deploy suites of data processing and analytics with R.
 
-To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-4-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-11-decision-tree.md) that allows you to interactively visualize your decision trees.
+To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-decision-tree.md) that allows you to interactively visualize your decision trees.
 
 <br>
 **ConnectR: Move your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.**
@@ -95,7 +95,7 @@ A key to data analysis is, of course, the data. The RevoScaleR package provides 
 1. Loading it into your local R development environment using the efficient and performant .xdf file format
 1. Bringing some or all of your data into memory as an R data frame to use with any R analysis function
 
-To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-2-data-import.md).
+To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-data-import.md).
 
 <a name="deployr-intro"></a>
 <br>
