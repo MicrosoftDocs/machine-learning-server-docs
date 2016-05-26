@@ -4,7 +4,7 @@
 
 The following release notes apply to Microsoft R Client.
 
-**New Features in this Release**
+**Features in this Release**
 
 + Microsoft R Client is a data science tool that allows you to work with production data locally and produce  high performance analytics using the full set of RevoScaleR functions.  
 
