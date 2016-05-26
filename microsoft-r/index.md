@@ -37,7 +37,7 @@ Microsoft R Client is a free tool to enable data scientists to connect to and ex
 
 On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
-Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](getting-started.md) guide.
+Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](microsoft-r-getting-started.md) guide.
 
 
 ##Microsoft R Open
