@@ -6,6 +6,7 @@ Microsoft R Server and Client, simply put, are R for the Enterprise. Microsoft p
 
 Microsoft also offers Microsoft R Open, which provides high performance math libraries installed on top of a stable version of Open Source R including Base and Recommended Packages.
 
+<a name="compare-prods"></a>
 ##The Microsoft R Family
 
 The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
@@ -33,9 +34,9 @@ Get started with Microsoft R Server now and read this [Getting Started](microsof
 
 ##Microsoft R Client
 
-Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using the powerful ScaleR APIs. When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. 
+Microsoft R Client is a free, data science tool that runs locally on your computer and allows you to do high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
-On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
+R Client allows you to work with production data locally using the full set of RevoScaleR functions, but there are some constraints.  On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR high power analytical functions. R Client is also in-memory bound, even with XDF files. And while R Client can be used on its own, you can overcome these constraints and benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server or work with SQL Server R Services and R Server for Hadoop. R client is optimized to work with all Microsoft R Server versions. 
 
 Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](microsoft-r-getting-started.md) guide.
 

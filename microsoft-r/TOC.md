@@ -91,4 +91,6 @@
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)
 # [Additional Resources](microsoft-r-more-resources.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
-# [Release Notes](notes/r-client-notes.md)
+# Release Notes
+## [R Client](notes/r-client-notes.md)
+## [R Server & DeployR](notes/r-server-notes.md)
