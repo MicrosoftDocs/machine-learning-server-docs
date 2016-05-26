@@ -34,7 +34,7 @@ The Naïves Bayes classification method is simple, effective, and robust. This m
 
 ### A Simple Naïve Bayes Classifier
 
-In["Logistic Regression Models"](rserver-scaler-user-guide-9-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data and in ["Decision Trees"](rserver-scaler-user-guide-11-decision-tree.md) and ["Decision Forests"](rserver-scaler-user-guide-12-decision-forest.md) we used the kyphosis data again to create classification and regression trees. We can use the same data with our Naïve Bayes classifier to see which patients are more likely to acquire Kyphosis based on age, number, and start. We can train and test our classifier on the kyphosis data for the sake of illustration. We use the *rxNaiveBayes* function to construct a classifier for the kyphosis data:
+In["Logistic Regression Models"](scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data and in ["Decision Trees"](scaler-user-guide-decision-tree.md) and ["Decision Forests"](scaler-user-guide-decision-forest.md) we used the kyphosis data again to create classification and regression trees. We can use the same data with our Naïve Bayes classifier to see which patients are more likely to acquire Kyphosis based on age, number, and start. We can train and test our classifier on the kyphosis data for the sake of illustration. We use the *rxNaiveBayes* function to construct a classifier for the kyphosis data:
 
 	######################################################## 
 	# Chapter 14: Naïve Bayes Classifier

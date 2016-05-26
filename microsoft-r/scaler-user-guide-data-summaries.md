@@ -459,7 +459,7 @@ To view the categorical variables, we access the categorical component:
 	1   Male 189344
 	2 Female 161777
 
-Another key piece of data exploration for wide data is looking at the relationships between variables to find variables that are measuring the same information or variables that are correlated. With variables that are measuring the same information perhaps one stands out as being representative of the group. During data exploration, you will want to use your domain knowledge to group variables into related sets or prioritize variables that are important based on the field or industry. Paring the data set down to related sets will allow you to look more closely at redundancy and relatedness within each set. When looking for correlation between variables the function *rxCrosstabs* is extremely useful. In [Crosstabs](rserver-scaler-user-guide-7-crosstabs.md) you will see how to use rxCrosstabs and rxLinePlot to graph the relationship between two variables. Graphs allow for a really quick view of the relationship between two variables, which may come in handy when you have many variables to consider.
+Another key piece of data exploration for wide data is looking at the relationships between variables to find variables that are measuring the same information or variables that are correlated. With variables that are measuring the same information perhaps one stands out as being representative of the group. During data exploration, you will want to use your domain knowledge to group variables into related sets or prioritize variables that are important based on the field or industry. Paring the data set down to related sets will allow you to look more closely at redundancy and relatedness within each set. When looking for correlation between variables the function *rxCrosstabs* is extremely useful. In [Crosstabs](scaler-user-guide-crosstabs.md) you will see how to use rxCrosstabs and rxLinePlot to graph the relationship between two variables. Graphs allow for a really quick view of the relationship between two variables, which may come in handy when you have many variables to consider.
 
 ## Computing and Plotting Lorenz Curves
 
@@ -483,7 +483,7 @@ The returned object contains the cumulative values and the percentages. Using th
 
 	plot(lorenzOut)
 
-![](media/rserver-scaler-user-guide-6-data-summaries/image4.png)
+![](media/rserver-scaler-user-guide-data-summaries/image4.png)
 
 The Gini coefficient is often used as a summary statistic for Lorenz curves. It is computed by estimating the ratio of the area between the line of equality and the Lorenz curve to the total area under the line of equality (using trapezoidal integration). The Gini coefficient can range from 0 to 1, with 0 representing perfect equality. We can compute it from using the output from rxLorenz:
 

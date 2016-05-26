@@ -73,7 +73,7 @@ This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to proc
 
 *DistributedR* allows you to run the same R script on multiple platforms; you can create a model in one environment such as a workstation and then deploy it on a different environment such as an on-site Microsoft SQL Server, a Teradata platform, or a Hadoop cluster in the cloud. You just need to specify the information about where these computations should be performed and what data should be analyzed.
 
-This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](rserver-scaler-getting-started.md#computecontext).
+This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](scaler-getting-started.md#computecontext).
 
 <br>
 **ScaleR: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R.**
@@ -1194,4 +1194,4 @@ The obvious place to start is with the rest of the **Microsoft R** document set,
 
 Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. 
 
-Beyond the standard R manuals, there are many other resources. [Learn about them here](rserver-more-resources.md). 
+Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 

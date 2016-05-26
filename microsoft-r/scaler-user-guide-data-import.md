@@ -543,7 +543,7 @@ If your .xdf file is relatively small, you may want to set *outFilesBase = ""* s
 
 ## Importing Data as Composite Xdf Files
 
-The .xdf file format has been modified for analyses on Hadoop to store data on HDFS in a composite set of files rather than a single file. The composite set consists of a named directory with two subdirectories, ‘data’ and ‘metadata’, containing split ‘.xdfd’ files and a metadata ‘.xdfm’ files respectively. Data is split into individual ‘.xdfd’ files such that each file remains within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB). The ‘.xdfm’ file contains the metadata for all of the .xdfd files. For more in depth information about the composite XDF format and its use within a Hadoop compute context see the [*RevoScaleR MapReduce Getting Started Guide*](rserver-scaler-hadoop-getting-started.md).
+The .xdf file format has been modified for analyses on Hadoop to store data on HDFS in a composite set of files rather than a single file. The composite set consists of a named directory with two subdirectories, ‘data’ and ‘metadata’, containing split ‘.xdfd’ files and a metadata ‘.xdfm’ files respectively. Data is split into individual ‘.xdfd’ files such that each file remains within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB). The ‘.xdfm’ file contains the metadata for all of the .xdfd files. For more in depth information about the composite XDF format and its use within a Hadoop compute context see the [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md).
 
 In most cases, a single .xdf file will be the most efficient way to store and analyze your data in a local compute context, unless you are using data from HDFS as input .(discussed in the next section). However, you can still read, write and analyze a set of composite XDF files in a local compute context.
 
@@ -608,7 +608,7 @@ As a more complete example, consider again the mortgage default example from *se
 
 Note that in this example we set the file system to HDFS globally so we did not need to specify the file system within the data source constructors.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](rserver-scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 ### Note on Using RevoScaleR with rhdfs
 

@@ -40,15 +40,15 @@ There are three key components to running **RevoScaleR** high performance analyt
 
 You can follow this guide from an R IDE of your choice.  More extensive general examples of using **RevoScaleR** can be found in the following guides included with **Microsoft R Server**:
 
-- [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md)
-- [*RevoScaleR User’s Guide*](rserver-scaler-user-guide-1-introduction.md)
-- [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md)
-- [*RevoScaleR ODBC Data Import Guide*](rserver-scaler-odbc.md)
+- [*RevoScaleR Getting Started Guide*](scaler-getting-started.md)
+- [*RevoScaleR User’s Guide*](scaler-user-guide-introduction.md)
+- [*RevoScaleR Distributed Computing Guide*](scaler-distributed-computing.md)
+- [*RevoScaleR ODBC Data Import Guide*](scaler-odbc.md)
 
 For information on other distributed computing compute contexts, see:
 
-- [*RevoScaleR MapReduce Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)
-- [*RevoScaleR Spark Getting Started Guide*](rserver-scaler-spark-getting-started.md)
+- [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md)
+- [*RevoScaleR Spark Getting Started Guide*](scaler-spark-getting-started.md)
 
 ## Using a SQL Server Data Source and Compute Context 
 

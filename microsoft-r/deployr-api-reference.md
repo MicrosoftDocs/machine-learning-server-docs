@@ -291,7 +291,7 @@ Repository-managed scripts are a special type of repository-managed file. Any fi
 
 These scripts are essentially blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.
 
-Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](rserver/deployr-repository-manager/deployr-repository-manager-about.md) for further details.
+Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) for further details.
 
 *Authenticated* users can execute scripts within the context of any project using the /r/project/execute/script call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) and [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) calls.
 
@@ -337,11 +337,11 @@ This document describes the DeployR Public API and the complete set of API servi
 
 **DeployR Administration Console**
 
-The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](rserver/deployr-admin-console/deployr-admin-console-about.md) for further details.
+The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](deployr-admin-console/deployr-admin-console-about.md) for further details.
 
 **DeployR Grid Management Framework**
 
-The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](rserver/deployr-admin-console/deployr-admin-managing-the-grid.md).
+The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 **Spring 3 Framework & J2EE Container**
 
@@ -431,7 +431,7 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
-To understand how grid resource errors occur, refer to the sections [Managing the Grid](rserver/deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](rserver/deployr-admin-console/deployr-admin-managing-server-policies.md).
+To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
 
 *Sample API (JSON) response markup indicating error on call:*
 
@@ -451,7 +451,7 @@ To understand how grid resource errors occur, refer to the sections [Managing th
 
 To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
-Refer to the documentation on the [API Explorer Tool](rserver/deployr-api-explorer-tool.md) for more details.
+Refer to the documentation on the [API Explorer Tool](deployr-api-explorer-tool.md) for more details.
 
 ### API Call Overview
 
@@ -1529,7 +1529,7 @@ This change applies across all execution APIs:
 
 #### Grid Cluster Targeted Executions
 
-Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](rserver/deployr-admin-console/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
+Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](deployr-admin-console/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 

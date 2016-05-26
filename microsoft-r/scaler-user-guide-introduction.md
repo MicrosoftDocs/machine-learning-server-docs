@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Why RevoScaleR?
 
-RevoScaleR™ provides tools for both High Performance Computing (HPC) and High Performance Analytics (HPA) with R. HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds ‘big data’ to the challenge. This guide focuses on these HPA ‘big data’ capabilities. (See the [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md) for information on both HPC and HPA capabilities in a distributed context.)
+RevoScaleR™ provides tools for both High Performance Computing (HPC) and High Performance Analytics (HPA) with R. HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds ‘big data’ to the challenge. This guide focuses on these HPA ‘big data’ capabilities. (See the [*RevoScaleR Distributed Computing Guide*](scaler-distributed-computing.md) for information on both HPC and HPA capabilities in a distributed context.)
 
 RevoScaleR provides tools for scalable data management and analysis. These tools can be used with data sets in memory, and applied the same way to huge data sets stored on disk. It includes functionality for:
 
@@ -69,19 +69,19 @@ All of the main analysis functions in RevoScaleR use updating or external memory
 
 ## Getting Started
 
-In this initial chapter, we take a quick walk through the five feature areas described above using a sample data set. More detailed information about the functions used is available in the other chapters of this manual. We then briefly describe other sample data available for use with RevoScaleR. Finally, we describe the online help available. For additional introductory material, see the [*RevoScaleR Getting Started Guide*](rserver-scaler-getting-started.md). For information on using RevoScaleR for distributing computations over more than one computer, see the [*RevoScaleR Distributed Computing Guide*](rserver-scaler-distributed-computing.md) and the various Getting Started guides for particular distributed computing platforms:
+In this initial chapter, we take a quick walk through the five feature areas described above using a sample data set. More detailed information about the functions used is available in the other chapters of this manual. We then briefly describe other sample data available for use with RevoScaleR. Finally, we describe the online help available. For additional introductory material, see the [*RevoScaleR Getting Started Guide*](scaler-getting-started.md). For information on using RevoScaleR for distributing computations over more than one computer, see the [*RevoScaleR Distributed Computing Guide*](scaler-distributed-computing.md) and the various Getting Started guides for particular distributed computing platforms:
 
- [*RevoScaleR MapReduce Getting Started Guide*](rserver-scaler-hadoop-getting-started.md)
+ [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md)
  
- [*RevoScaleR Spark Getting Started Guide*](rserver-scaler-spark-getting-started.md)
+ [*RevoScaleR Spark Getting Started Guide*](scaler-spark-getting-started.md)
 
- [*RevoScaleR Teradata Getting Started Guide*](rserver-scaler-teradata-getting-started.md)
+ [*RevoScaleR Teradata Getting Started Guide*](scaler-teradata-getting-started.md)
 
- For more information on accessing databases via ODBC, see the [*RevoScaleR ODBC Import Guide*](rserver-scaler-odbc.md).
+ For more information on accessing databases via ODBC, see the [*RevoScaleR ODBC Import Guide*](scaler-odbc.md).
 
 ### Accessing External Data Sets
 
-The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the RevoScaleR sample data directory. (More examples using this data file are available in the [*Getting Started Guide*](rserver-scaler-getting-started.md).) The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
+The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the RevoScaleR sample data directory. (More examples using this data file are available in the [*Getting Started Guide*](scaler-getting-started.md).) The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
 
 	######################################################## 
 	# Chapter 1: Introduction

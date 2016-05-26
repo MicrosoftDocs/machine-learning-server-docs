@@ -18,7 +18,7 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 |Enterprise<br>Readiness|Community support|Commercial support|Commercial support|
 |Analytic<br>Breadth <br>& Depth|7K+ analytic R packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
 |Commercial<br>Viability|Risk of deployment to open source|Free for everyone|Commercial licenses|
-|[DeployR](rserver-getting-started.md#deployr-intro)   |Not available|Not available|Optional add-on|
+|[DeployR](microsoft-r-getting-started.md#deployr-intro)   |Not available|Not available|Optional add-on|
 
 <br>
 ##Microsoft R Server
@@ -29,7 +29,7 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
-Get started with Microsoft R Server now and read this [Getting Started](rserver-getting-started.md) guide.
+Get started with Microsoft R Server now and read this [Getting Started](getting-started.md) guide.
 
 ##Microsoft R Client
 
@@ -37,7 +37,7 @@ Microsoft R Client is a free tool to enable data scientists to connect to and ex
 
 On its own, R Client is limited to three cores -- one thread for reading and two for processing RevoScaleR HPA functions. R Client is also in-memory bound, even with XDF files. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a production instance of Microsoft R Server. R client is optimized to work with all Microsoft R Server versions. 
 
-Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](rserver-getting-started.md) guide.
+Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](getting-started.md) guide.
 
 
 ##Microsoft R Open
@@ -54,14 +54,14 @@ Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Micros
 ##Learn more
 
 Start learning about Microsoft R today:
-+ [Microsoft R Getting Started](rserver/rserver-getting-started.md)
++ [Microsoft R Getting Started](microsoft-r-getting-started.md)
 
-+ [DeployR Getting Started](rserver/deployr-about.md)
++ [DeployR Getting Started](deployr-about.md)
 
 + [Microsoft R Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
 
 + [Product Web Page](https://www.microsoft.com/en-us/server-cloud/products/r-server/) 
 
-+ [Additional Resources](rserver/rserver-more-resources.md)
++ [Additional Resources](microsoft-r-more-resources.md)
 
-+ [Documentation Archives](rserver/rserver-old-versions.md)
++ [Documentation Archives](microsoft-r-old-versions.md)
