@@ -34,11 +34,11 @@ Microsoft R Client is a free, data science tool that runs locally on your comput
 
 + **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
 
-+ **Free disk space**: 600+ GB recommended, after installation of all prerequisites       
++ **Free disk space**: 600+ MB recommended, after installation of all prerequisites       
 
 + **RAM**: 4+ GB recommended
 
-+ **Internet access**:  To download R Client and any dependencies     
++ **Internet access**:  Needed to download R Client and any dependencies     
 
 <br>
 ##Install Microsoft R Client
@@ -47,18 +47,20 @@ Microsoft R Client is a free, data science tool that runs locally on your comput
 
 >These instructions assume that you have access to the Microsoft R Client installer, which is available through Visual Studio Dev Essentials.
 
+>You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
+
 **To install Microsoft R Client**:
 
 1. Log in to the machine with administrator privileges.
 
-1. Close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
+1. Close any other programs running on the system. 
 
-1. Run Microsoft R Client setup.
+1. Run **Microsoft R Client** setup.
 
-1. Accept the license terms for downloading and installing Microsoft R Client.
+1. Accept the Microsoft R Client license terms.
 
 1. In addition to Microsoft R Client, select the components to install. 
-   + **Microsoft R Open**, Microsoft's enhanced distribution of R, is a _required dependency_. 
+   + [**Microsoft R Open**](index.md#mro), Microsoft's enhanced distribution of R, is a _required dependency_. 
    
    + **R Tools for Visual Studio**, an integrated development environment, is an _optional dependency_. R Tools for Visual Studio is a free add-in for Visual Studio that works in all editions of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.
 
@@ -66,23 +68,14 @@ Microsoft R Client is a free, data science tool that runs locally on your comput
 
 1. Accept the default installation path or choose another location.
 
-1. When the installation finishes, click **Finish**.  
+1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
 
->After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the RevoScaleR package. These APIs let you send R commands to a remote server for execution. Learn more in the [Getting Started Guide](microsoft-r-getting-started.md).
+>After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the `RevoScaleR` package. The functions and APIs in this package enable you to send R commands to a remote server for execution. Learn more in the [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
 
-<br>
-##Testing the Install
-The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
-
-**To run these tests:**
-
-Run the following commands from your `R` prompt:
-
-	library(RevoIOQ)
-	RevoIOQ()
 
 <br>
 ##Launch Microsoft R Client
+
 **To launch Microsoft R Client**:
 
 After you have installed the software, you launch Microsoft R Client as follows.
@@ -99,6 +92,17 @@ After you have installed the software, you launch Microsoft R Client as follows.
   1. Click **Start** to view the **Start** screen.
 
   1. Locate and click the tile for **Microsoft R Client**.
+
+<br>
+##Testing the Install
+The `RevoIOQ` package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
+
+**To run these tests:**
+
+Run the following commands from your `R` prompt:
+
+	library(RevoIOQ)
+	RevoIOQ()
 
 <br>
 ##What's Installed & Where to Find R Packages
