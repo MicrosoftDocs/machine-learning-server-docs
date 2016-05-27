@@ -1,8 +1,6 @@
-#Microsoft R Release Notes
+#Microsoft R Server 2016 Release notes
 
-##Microsoft R Client 2016
-
-The following release notes apply to Microsoft R Client.
+The following release notes apply to Microsoft R Server.
 
 **New Features in this Release**
 
