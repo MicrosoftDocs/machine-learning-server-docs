@@ -110,23 +110,25 @@ Run the following commands from your `R` prompt:
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
 <br>
-####R packages
-The R libraries are installed under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+**R packages**
+The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
 <br>
-####R tools
-All the standard base R tools are included with Microsoft R Client under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\bin`. Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc` and in `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options. 
+**R command-line tools and GUI editor**
+All of tools for the standard base R are included with Microsoft R Client under `<R-Client-Install-Directory>\bin`. Documentation for these tools can be found in the setup folder: `<R-Client-Install-Directory>\doc` and in `<R-Client-Install-Directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. 
 
 Those standard R tools are:
 
-+ **RTerm**: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
++ `RTerm`: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
 
-+ **RGui.exe**: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
++ `RGui.exe`: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
 
-+ **RScript**: A command-line tool for running R scripts in batch mode.
++ `RScript`: A command-line tool for running R scripts in batch mode.
 
-The R Integrated Development Environment (IDE) options:
+<br>
+**The R Integrated Development Environment (IDE)**
 
+The R IDE options are:
 + If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll also have access to an integrated R development environment. _RTVS_ is a free add-in for all editions of _Visual Studio_.
 
 + If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
