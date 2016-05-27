@@ -6,7 +6,6 @@ The Microsoft R product family includes:
 + <a href="#mrs">Microsoft R Server</a>, R for the Enterprise
 + <a href="#mrc">Microsoft R Client</a>, high performance analytics run locally
 + <a href="#mro">Microsoft R Open</a>, the enhanced distribution of R
-+ <a href="#mrs">SQL Server R Services</a>, R for the Enterprise
 
 See the Microsoft R product [comparison here](#compare-prods).
 
@@ -18,6 +17,14 @@ Microsoft R Server is the most broadly deployable enterprise-class analytics pla
 By using and extending open source R, Microsoft R Server is fully compatible with R scripts, functions and CRAN packages, to analyze data at enterprise scale. We also address the in-memory limitations of open source R by adding parallel and chunked processing of data in Microsoft R Server, enabling users to run analytics on data much bigger than what fits in main memory. And since R Server is built on top of Microsoft R Open, you can use any open source R packages to build your analytics. 
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
+
+|Microsoft R Server Editions|Description                                                          |Install Doc|ScaleR Get Started|
+|---------------------------|---------------------------------------------------------------------|-----------|---------------|
+|[R Services in SQL Server](https://msdn.microsoft.com/en-us/library/mt604845.aspx)   |Develop intelligent applications that uncover new insights using your SQL Server data. Keep your analytics close to the data and eliminate the costs and security risks associated with data movement.|[Link](https://msdn.microsoft.com/en-us/library/mt671127.aspx)|[Link](scaler-sql-server-getting-started.md)|
+|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Link](rserver-install-hadoop.md)|[Link](scaler-hadoop-getting-started.md)|
+|R Server for Teradata      |Run advanced analytics in-database for seamless data analysis|[Link](rserver-install-teradata-server.md)|[Link](scaler-teradata-getting-started.md)|
+|R Server for Red Hat       |Bring predictive and prescriptive analytics power to your Red Hat environments|[Link](rserver-install-linux-server.md)|[Link](scaler-getting-started.md)|
+|R Server for SUSE Linux    |Enable advanced analytics while making the most of your open-source investments|[Link](rserver-install-linux-server.md)|[Link](scaler-getting-started.md)|
 
 Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
 
@@ -38,17 +45,6 @@ Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. I
 Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the proprietary ScaleR functions and packages included with Microsoft R Server and Microsoft R Client are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory.
 
 Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
-
-<br>
-<a name="sqlr"></a>
-##SQL Server R Services
-
-SQL Server R Services provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open source packages to create models and generate predictions using your SQL Server data. Because SQL Server R Services integrates the R language with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
-
-SQL Server R Services combines R with a comprehensive set of SQL Server tools and technologies that offer superior performance, security, reliability and manageability. You can deploy R solutions using convenient, familiar tools, and your production applications can call the R runtime and retrieve predictions and visuals using Transact-SQL. With Enterprise Edition, you also get the ScaleR libraries to overcome R’s inherent performance and scale limitations.
-
-Learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
-
 
 <br>
 <a name="compare-prods"></a>
