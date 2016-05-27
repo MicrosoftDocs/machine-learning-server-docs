@@ -26,9 +26,7 @@ ms.custom: ""
 
 #Install Microsoft R Client on Windows
 
-Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using ScaleR APIs.  When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a Microsoft R Server instance. 
-
-R client is optimized to work with all Microsoft R Server versions. For a comparison of R Client and R Server, see the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
+Microsoft R Client is a free, data science tool that runs locally on your computer and allows you to do high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. R client is optimized to work with all Microsoft R Server versions. For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
 
 >Currently, Microsoft R Client is available only on Windows.
 

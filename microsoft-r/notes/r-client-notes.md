@@ -8,6 +8,8 @@ The following release notes apply to Microsoft R Client.
 
 + Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
-+ With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server or work with SQL Server R Services and R Server for Hadoop in order to benefit from the hybrid memory, disk scalability, greater performance and speed. 
++ R Client is in-memory bound, meaning that it can only process datasets that fit into the available local memory. Processing is also limited to up to two threads for ScaleR functions.
+
++ With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server or work with SQL Server R Services and R Server for Hadoop in order to benefit from disk scalability, greater performance and speed. 
 
 [See here](../index.md#compare-prods) for a comparison between R Client and R Server. 
