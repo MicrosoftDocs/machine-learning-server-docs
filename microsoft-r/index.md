@@ -6,10 +6,10 @@ The Microsoft R product family includes:
 + <a href="#mrs">Microsoft R Server</a>, R for the Enterprise
 + <a href="#mrc">Microsoft R Client</a>, high performance analytics run locally
 + <a href="#mro">Microsoft R Open</a>, the enhanced distribution of R
++ <a href="#mrs">SQL Server R Services</a>, R for the Enterprise
 
 See a comparison of these products [here](#compare-prods).
 
-<br>
 <a name="mrs"></a>
 ##Microsoft R Server
 
@@ -39,10 +39,22 @@ Microsoft R Open provides limited performance and scalability in comparison to M
 
 Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
 
+<br>
+<a name="sqlr"></a>
+##SQL Server R Services
+
+SQL Server R Services provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open source packages to create models and generate predictions using your SQL Server data. Because SQL Server R Services integrates the R language with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
+
+SQL Server R Services combines R with a comprehensive set of SQL Server tools and technologies that offer superior performance, security, reliability and manageability. You can deploy R solutions using convenient, familiar tools, and your production applications can call the R runtime and retrieve predictions and visuals using Transact-SQL. With Enterprise Edition, you also get the ScaleR libraries to overcome R’s inherent performance and scale limitations.
+
+Learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
+
+
+
 <a name="compare-prods"></a>
 ##The Microsoft R Family
 
-The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as follows:
+The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. For information on SQL Server R Services, see the [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx).
 
 |Feature   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |----------|----------------|------------------|-----------|
@@ -64,7 +76,9 @@ Start learning about Microsoft R today:
 
 + [Microsoft R Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
 
-+ [Product Web Page](https://www.microsoft.com/en-us/server-cloud/products/r-server/) 
++ [Microsoft R Product Web Page](https://www.microsoft.com/en-us/server-cloud/products/r-server/) 
+
++ [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) 
 
 + [Additional Resources](microsoft-r-more-resources.md)
 
