@@ -18,13 +18,13 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
-|Microsoft R Server Editions|Description                                                          |Install Doc|ScaleR Get Started|
-|---------------------------|---------------------------------------------------------------------|-----------|---------------|
-|[R Services in SQL Server](https://msdn.microsoft.com/en-us/library/mt604845.aspx)   |Develop intelligent applications that uncover new insights using your SQL Server data. Keep your analytics close to the data and eliminate the costs and security risks associated with data movement.|[Link](https://msdn.microsoft.com/en-us/library/mt671127.aspx)|[Link](scaler-sql-server-getting-started.md)|
-|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Link](rserver-install-hadoop.md)|[Link](scaler-hadoop-getting-started.md)|
-|R Server for Teradata      |Run advanced analytics in-database for seamless data analysis|[Link](rserver-install-teradata-server.md)|[Link](scaler-teradata-getting-started.md)|
-|R Server for Red Hat       |Bring predictive and prescriptive analytics power to your Red Hat environments|[Link](rserver-install-linux-server.md)|[Link](scaler-getting-started.md)|
-|R Server for SUSE Linux    |Enable advanced analytics while making the most of your open-source investments|[Link](rserver-install-linux-server.md)|[Link](scaler-getting-started.md)|
+|Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
+|---------------------------|---------------------------------------------------------------------|-------|------------------|
+|[R Services in SQL Server](https://msdn.microsoft.com/en-us/library/mt604845.aspx)   |Develop intelligent applications that uncover new insights using your SQL Server data. Keep your analytics close to the data and eliminate the costs and security risks associated with data movement.|[Doc](https://msdn.microsoft.com/en-us/library/mt671127.aspx)|[Doc](scaler-sql-server-getting-started.md)|
+|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
+|R Server for Teradata      |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
+|R Server for Red Hat       |Bring predictive and prescriptive analytics power to your Red Hat environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
+|R Server for SUSE Linux    |Enable advanced analytics while making the most of your open-source investments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
 Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
 
