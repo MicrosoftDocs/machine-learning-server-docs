@@ -7,7 +7,7 @@ The Microsoft R product family includes:
 + <a href="#mrc">Microsoft R Client</a>, high performance analytics run locally
 + <a href="#mro">Microsoft R Open</a>, the enhanced distribution of R
 
-See the Microsoft R product [comparison here](#compare-prods).
+To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 
 <a name="mrs"></a>
 ##Microsoft R Server
@@ -18,15 +18,16 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
+Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
+
+
 |Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
-|---------------------------|---------------------------------------------------------------------|-------|------------------|
-|[R Services in SQL Server](https://msdn.microsoft.com/en-us/library/mt604845.aspx)   |Develop intelligent applications that uncover new insights using your SQL Server data. Keep your analytics close to the data and eliminate the costs and security risks associated with data movement.|[Doc](https://msdn.microsoft.com/en-us/library/mt671127.aspx)|[Doc](scaler-sql-server-getting-started.md)|
+|---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
+|[SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)   |Develop intelligent applications that uncover new insights using your SQL Server data. Keep your analytics close to the data and eliminate the costs and security risks associated with data movement.|[Doc](https://msdn.microsoft.com/en-us/library/mt671127.aspx)|[Doc](scaler-sql-server-getting-started.md)|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
 |R Server for Teradata      |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
 |R Server for Red Hat       |Bring predictive and prescriptive analytics power to your Red Hat environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 |R Server for SUSE Linux    |Enable advanced analytics while making the most of your open-source investments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
-
-Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
 
 <a name="mrc"></a>
 ##Microsoft R Client
@@ -41,7 +42,8 @@ Learn how to [install Microsoft R Client](install-r-client-windows.md) and check
 <a name="mro"></a>
 ##Microsoft R Open
 
-Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.   
+Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.
+   
 Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the proprietary ScaleR functions and packages included with Microsoft R Server and Microsoft R Client are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory.
 
 Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
