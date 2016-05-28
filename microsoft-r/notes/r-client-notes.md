@@ -10,6 +10,6 @@ The following release notes apply to Microsoft R Client.
 
 + R Client is in-memory bound, meaning that it can only process datasets that fit into the available local memory. Processing is also limited to up to two threads for ScaleR functions.
 
-+ With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server or work with SQL Server R Services and R Server for Hadoop in order to benefit from disk scalability, greater performance and speed. 
++ With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop in order to benefit from disk scalability, greater performance and speed. 
 
 [See here](../index.md#compare-prods) for a comparison between R Client and R Server. 

@@ -10,6 +10,7 @@ The Microsoft R product family includes:
 
 To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 
+<br>
 <a name="mrs"></a>
 ##Microsoft R Server
 
@@ -27,6 +28,7 @@ Get started with Microsoft R Server now and read this [Getting Started](microsof
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
+<br>
 <a name="mrc"></a>
 ##Microsoft R Client
 
@@ -36,7 +38,7 @@ R Client allows you to work with production data locally using the full set of S
 
 Learn how to [install Microsoft R Client](install-r-client-windows.md) and check out this [Getting Started](microsoft-r-getting-started.md) guide.
 
-
+<br>
 <a name="mro"></a>
 ##Microsoft R Open
 
