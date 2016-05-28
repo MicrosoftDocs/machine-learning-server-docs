@@ -3,10 +3,10 @@
 R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
 
 The Microsoft R product family includes:
-+ <a href="#mrs">Microsoft R Server</a>, R for the Enterprise
-+ <a href="#mrc">Microsoft R Client</a>, high performance analytics run locally
-+ <a href="#mro">Microsoft R Open</a>, the enhanced distribution of R
-+ <a href="#mrs">SQL Server R Services</a>, R for the Enterprise
++ <a href="#mrs">Microsoft R Server</a>
++ <a href="#mrc">Microsoft R Client</a>
++ <a href="#mro">Microsoft R Open</a>
++ <a href="#mrs">SQL Server R Services</a>
 
 To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 
@@ -32,7 +32,7 @@ Get started with Microsoft R Server now and read this [Getting Started](microsof
 <a name="mrc"></a>
 ##Microsoft R Client
 
-Microsoft R Client is a free, data science tool that runs locally on your computer and allows you to do high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop. R client is optimized to work with all Microsoft R Server versions. 
 
