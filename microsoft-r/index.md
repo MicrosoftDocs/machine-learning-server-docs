@@ -21,13 +21,11 @@ Microsoft R Server delivers enterprise class performance and scalability for you
 
 Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
 
-
 |Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
 |---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
-|R Server for Teradata      |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
-|R Server for Red Hat       |Bring predictive and prescriptive analytics power to your Red Hat environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
-|R Server for SUSE Linux    |Enable advanced analytics while making the most of your open-source investments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
+|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
+|R Server for Linux         |Bring predictive and prescriptive analytics power to your Red Hat environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
 <a name="mrc"></a>
 ##Microsoft R Client
