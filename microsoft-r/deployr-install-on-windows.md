@@ -198,7 +198,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-1. **Set up grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
+1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
@@ -207,6 +207,12 @@ The following steps outline what you need to do after running the DeployR instal
 1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+
+1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#update-your-firewall). 
+
+1. **Review security documentation ** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the **[Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
+
+   >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
 1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configuring-public-access) now.
 
@@ -224,7 +230,13 @@ For the best results, complete these configuration topics in the order in which 
 
 ### Update Your Firewall
 
-During installation, the Windows firewall was automatically updated to allow inbound communications to DeployR on the following ports:
+During installation, the Windows firewall was automatically updated. Several new inbound rules were added for  inbound communications to DeployR on the ports listed in the table.
+
+>[!IMPORTANT]
+>For your security, the inbound rules created during installation are disabled by default and set to a `Private` profile. To make DeployR accessible to remote users, you can edit these inbound rules in the Windows Firewall and set the profile to `Public` or `Domain`. In the Properties dialog for each inbound rule, you can enable the rule and, in the Advanced tab, change its profile according to your organizational needs. 
+> - `Domain` is for networks at a workplace that are attached to a domain. 
+> - `Private` is for networks at home or work where you known and trust the people and devices on the network. 
+> - `Public` is  for networks in public places such as airports and coffee shops.
 
 | Machine                   | Ports                                 | Open Ports                                                                          |
 |---------------------------|---------------------------------------|-------------------------------------------------------------------------------------|
@@ -278,15 +290,9 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
 1.  Install and configure SQL Server as described for that product.
 
-2.  Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`.
+1.  Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`.
 
-3.  [Download the Microsoft JDBC Driver 4.2 for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=11774) and copy it under **both** of the following folders:
-
-    -   `$DEPLOYR_HOME\Apache_Tomcat\lib`
-
-    -   `$DEPLOYR_HOME\deployr\tools\lib`
-
-4.  If you are using Windows Authentication for login:
+1.  If you are using Windows Authentication for login:
 
     1.  [Download a JDBC authentication library, `sqljdbc_auth.dll`,](https://msdn.microsoft.com/library/mt590198.aspx) and copy it under **both** of the following folders:
 

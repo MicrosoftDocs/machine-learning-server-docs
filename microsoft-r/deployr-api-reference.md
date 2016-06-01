@@ -327,7 +327,7 @@ While it is not necessary to understand the internal architecture of the DeployR
 
 **R User Web, Desktop, Mobile Apps**
 
-The R user web, desktop and mobile apps represent client applications built using the DeployR API. The API is a fully standardized Web services interface using JSON and XML over HTTP. This means that any piece of software that is both capable of connecting to the server and parsing either JSON or XML can become a client.
+The R user web, desktop and mobile apps represent client applications built using the DeployR API. The API is a fully standardized Web services interface using JSON over HTTP. This means that any piece of software that is both capable of connecting to the server and parsing either JSON can become a client.
 
 To make life easier for the client developers using this API, DeployR also provides several client libraries. These client libraries, currently available for Java, JavaScript and .NET developers, simplify making calls, encoding data and handling response markup on the API.
 
@@ -359,7 +359,7 @@ The DeployR API exposes a set of services via a Web service interface using HTTP
 
 - HTTP POST method is required when submitting, updating or deleting data on the API
 
-Most API calls respond with well-formed markup. On such calls you can request the response markup in either JSON or XML format. Some API calls return binary data such as image plots, structured data like CSV files or gzip compressed archives. In all cases the type of data being returned will always be indicated by the *Content-Type* header on the response.
+Most API calls respond with well-formed markup. On such calls you can request the response markup in JSON format. Some API calls return binary data such as image plots, structured data like CSV files or gzip compressed archives. In all cases the type of data being returned will always be indicated by the *Content-Type* header on the response.
 
 Additionally, each request will return a meaningful HTTP status code on the response. For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section [API Response Codes](#api-response-code-overview).
 
@@ -367,9 +367,11 @@ Additionally, each request will return a meaningful HTTP status code on the resp
 
 For each service call, there is a documented list of required and optional parameters. Parameter values are expected to be UTF-8 compliant and URL-encoded.
 
-The DeployR API currently supports both JSON and XML formats for data exchange. Consequently, each method requires the use of the ***format*** parameter in order to specify how the request and response data on the call will be encoded.
+The DeployR API currently supports the JSON format for data exchange. Consequently, each method requires the use of the ***format*** parameter in order to specify how the request and response data on the call will be encoded.
 
-While all parameters are specified as a name/value pair, some parameter values require complex data. Whenever complex data is required, a JSON/XML schema defines how these values are to be encoded. For more information on the schema definitions and specific examples of relevant service calls, refer to section [Web Service API Data Encodings](#encode-r-object-data-for-use-on-the-api).
+>In the next release, the XML format will been deprecated. 
+
+While all parameters are specified as a name/value pair, some parameter values require complex data. Whenever complex data is required, a JSON schema defines how these values are to be encoded. For more information on the schema definitions and specific examples of relevant service calls, refer to section [Web Service API Data Encodings](#encode-r-object-data-for-use-on-the-api).
 
 ### API Response Code Overview
 
@@ -471,8 +473,6 @@ Each of the following *"Working with"* sections in the API Reference detail the 
 
 -  Example Call Response Markup (JSON)
 
--  Example Call Response Markup (XML)
-
 ## Encode R Object Data for use on the API
 
 DeployR-specific encodings are used to encode R object data for use on the API.
@@ -568,7 +568,7 @@ The complete list of supported DeployR-encoding types is shown here. As indicate
 
 **Sample DeployR Encodings**
 
-The following R code is provided for demonstration purposes. The code creates a wide range of R objects. After the following code, you will find sample JSON and XML response markup that demonstrates how each of the objects generated here is encoded on the API.
+The following R code is provided for demonstration purposes. The code creates a wide range of R objects. After the following code, you will find sample JSON response markup that demonstrates how each of the objects generated here is encoded on the API.
 
 	# primitive character
 	x_character <- "c"
@@ -893,278 +893,6 @@ The following response markup contains annotations that describe each of the sup
 		}
 	}
 
-**XML Encodings on API Response Markup**
-
-The following response markup contains annotations that describe each of the supported DeployR R object encodings:
-
-	<deployr>
-	  <response>
-		<success>true</success>
-		<workspace>
-		  <objects>
-		  //
-		  //  DeployR Primitive Encodings 
-		  //
-
-		  <object>
-			<name>x_character</name>
-			<type>primitive</type>
-			<rclass>character</rclass>
-			<value>c</value>
-		  </object>
-
-		  <object>
-			<name>x_integer</name>
-			<type>primitive</type>
-			<rclass>integer</rclass>
-			<value>10</value>
-		  </object>
-
-		  <object>
-			<name>x_numeric</name>
-			<type>primitive</type>
-			<rclass>numeric</rclass>
-			<value>5.0</value>
-		  </object>
-
-		  <object>
-			<name>x_logical</name>
-			<type>primitive</type>
-			<rclass>logical</rclass>
-			<value>true</value>
-		  </object>
-
-
-		  //
-		  //  DeployR Date Encodings 
-		  //
-
-		  <object>
-			<name>x_date</name>
-			<type>date</type>
-			<rclass>date</rclass>
-			<value>2011-10-04</value>
-			<format>yyyy-MM-dd</format>
-		  </object>
-
-		  <object>
-			<name>x_posixct</name>
-			<type>date</type>
-			<rclass>POSIXct</rclass>
-			<value>2011-10-05</value>
-		<format>yyyy-MM-dd HH:mm:ss Z</format>
-		  </object>
-
-
-		  //
-		  //  DeployR Vector Encodings 
-		  //
-
-		  <object>
-			<name>x_character_vector</name>
-			<type>vector</type>
-			<rclass>character</rclass>
-			<values>
-			  <value>a</value>
-			  <value>b</value>
-			  <value>c</value>
-			</values>
-		  </object>
-
-		  <object>
-			<name>x_integer_vector</name>
-			<type>vector</type>
-			<rclass>integer</rclass>
-			<values>
-			  <value>10</value>
-			  <value>11</value>
-			  <value>12</value>
-			  <value>13</value>
-			  <value>14</value>
-			  <value>15</value>
-			</values>
-		  </object>
-
-		  <object>
-			<name>x_numeric_vector</name>
-			<type>vector</type>
-			<rclass>numeric</rclass>
-			<values>
-			  <value>10</value>
-			  <value>11</value>
-			  <value>12</value>
-			  <value>13</value>
-			  <value>14</value>
-			  <value>15</value>
-			</values>
-		  </object>
-
-
-		  //
-		  //  DeployR Matrix Encodings 
-		  //
-
-		  <object>
-			<name>x_matrix</name>
-			<type>matrix</type>
-			<rclass>matrix</rclass>
-			<values>
-			  <value>1.0, 3.0, 12.0</value>
-			  <value>2.0, 11.0, 13.0</value>
-			</values>
-		  </object>
-
-
-		  //
-		  //  DeployR Factor Encodings 
-		  //
-
-		  <object>
-			<name>x_ordered_factor</name>
-			<type>factor</type>
-			<rclass>ordered</rclass>
-			<ordered>true</ordered>
-			<values>
-			  <value>s</value>
-			  <value>t</value>
-			  <value>a</value>
-			  <value>t</value>
-			  <value>i</value>
-			  <value>s</value>
-			  <value>t</value>
-			  <value>i</value>
-			  <value>c</value>
-			  <value>s</value>
-			</values>
-			<labels>
-			  <label>s</label>
-			  <label>t</label>
-			  <label>a</label>
-			  <label>c</label>
-			  <label>i</label>
-			</labels>
-		  </object>
-
-		  <object>
-			<name>x_unordered_factor</name>
-			<type>factor</type>
-			<rclass>factor</rclass>
-			<values>
-			  <value>s</value>
-			  <value>t</value>
-			  <value>a</value>
-			  <value>t</value>
-			  <value>i</value>
-			  <value>s</value>
-			  <value>t</value>
-			  <value>i</value>
-			  <value>c</value>
-			  <value>s</value>
-			</values>
-			<labels>
-			  <label>s</label>
-			  <label>t</label>
-			  <label>a</label>
-			  <label>c</label>
-			  <label>i</label>
-			</labels>
-			<ordered/>
-		  </object>
-
-
-		  //
-		  //  DeployR List Encodings 
-		  //
-
-		  <object>
-			<type>list</type>
-			<rclass>list</rclass>
-			<values>
-			  <value>
-				<name>1</name>
-				<type>vector</type>
-				<rclass>numeric</rclass>
-				<values>
-				  <value>10</value>
-				  <value>11</value>
-				  <value>12</value>
-				  <value>13</value>
-				  <value>14</value>
-				  <value>15</value>
-				</values>
-			  </value>
-			  <value>
-				<name>2</name>
-				<type>vector</type>
-				<rclass>numeric</rclass>
-				<values>
-				  <value>40</value>
-				  <value>41</value>
-				  <value>42</value>
-				  <value>43</value>
-				  <value>44</value>
-				  <value>45</value>
-				</values>
-			  </value>
-			</values>
-			<name>x_list</name>
-		  </object>
-
-		  //
-		  //  DeployR Dataframe Encodings 
-		  //
-
-		  <object>
-			<name>x_dataframe</name>
-			<type>dataframe</type>
-			<rclass>data.frame</rclass>
-			<values>
-			  <value>
-				<name>c.10.15.</name>
-				<type>vector</type>
-				<rclass>numeric</rclass>
-				<values>
-				  <value>10</value>
-				  <value>11</value>
-				  <value>12</value>
-				  <value>13</value>
-				  <value>14</value>
-				  <value>15</value>
-				</values>
-			  </value>
-			  <value>
-				<name>c.40.45.</name>
-				<type>vector</type>
-				<rclass>numeric</rclass>
-				<values>
-				  <value>40</value>
-				  <value>41</value>
-				  <value>42</value>
-				  <value>43</value>
-				  <value>44</value>
-				  <value>45</value>
-				</values>
-			  </value>
-			</values>
-		  </object>
-
-		  </objects>
-		</workspace>
-		<call>/r/project/workspace/get</call>
-		<project>
-		  <projectPROJECT-00c512b6-84a4-45ff-b94a-134cca8e0584</project>
-		  <name/>
-		  <descr/>
-		  <longdescr/>
-		  <live>true</live>
-		  <ispublic/>
-		  <projectcookie/>
-		  <origin>Project original.</origin>
-		  <owner>testuser</owner>
-		  <lastmodified>Wed, 5 Oct 2011 06:39:52 +0000</lastmodified>
-		</project>
-	  </response>
-	</deployr>
 
 **Sample JSON Encodings for Input Parameters on API**
 
@@ -1328,174 +1056,7 @@ The following response markup contains annotations that describe each of the sup
 		}
 	}
 
-**Sample XML Encodings for Input Parameters on API**
 
-	<inputs>
-		<object>
-			<name>x_character</name>
-			<type>character</type>
-			<value>c</value>
-		</object>
-		<object>
-			<name>x_integer</name>
-			<type>numeric</type>
-			<value>10</value>
-		</object>
-		<object>
-			<name>x_double</name>
-			<type>numeric</type>
-			<value>5.5</value>
-		</object>
-		<object>
-			<name>x_logical</name>
-			<type>logical</type>
-			<value>true</value>
-		</object>
-		<object>
-			<name>x_date</name>
-			<type>date</type>
-			<rclass>date</rclass>
-			<value>2011-10-04</value>
-			<format>yyyy-MM-dd</format>
-		</object>
-		<object>
-			<name>x_posixct</name>
-			<type>date</type>
-			<rclass>POSIXct</rclass>
-			<value>2011-10-05 12:13:14 -0800</value>
-			<format>yyyy-MM-dd HH:mm:ss Z</format>
-		</object>
-		<object>
-			<name>x_character_vector</name>
-			<type>vector</type>
-			<rclass>numeric</rclass>
-			<values>
-				<value>a</value>
-				<value>b</value>
-				<value>c</value>
-			</values>
-		</object>
-		<object>
-			<name>x_numeric_vector</name>
-			<type>vector</type>
-			<rclass>numeric</rclass>
-			<values>
-				<value>10</value>
-				<value>11</value>
-				<value>12</value>
-			</values>
-		</object>
-		<object>
-			<name>x_matrix</name>
-			<type>matrix</type>
-			<rclass>numeric</rclass>
-			<values>
-				<value>10,110</value>
-				<value>11,111</value>
-				<value>12,122</value>
-			</values>
-		</object>
-		<object>
-			<name>x_ordered_factor</name>
-			<type>factor</type>
-			<ordered>true</ordered>
-			<values>
-				<value>s</value>
-				<value>t</value>
-				<value>a</value>
-				<value>t</value>
-				<value>i</value>
-				<value>s</value>
-				<value>t</value>
-				<value>i</value>
-				<value>c</value>
-				<value>s</value>
-			</values>
-			<labels>
-				<label>s</label>
-				<label>t</label>
-				<label>a</label>
-				<label>c</label>
-				<label>i</label>
-			</labels>
-		</object>
-		<object>
-			<name>x_unordered_factor</name>
-			<type>factor</type>
-			<ordered>false</ordered>
-			<values>
-				<value>s</value>
-				<value>t</value>
-				<value>a</value>
-				<value>t</value>
-				<value>i</value>
-				<value>s</value>
-				<value>t</value>
-				<value>i</value>
-				<value>c</value>
-				<value>s</value>
-			</values>
-			<labels>
-				<label>s</label>
-				<label>t</label>
-				<label>a</label>
-				<label>c</label>
-				<label>i</label>
-			</labels>
-		</object>
-		<object>
-			<name>x_list</name>
-			<type>list</type>
-			<values>
-				<value>
-					<name>first</name>
-					<type>vector</type>
-					<rclass>numeric</rclass>
-					<values>
-						<value>10</value>
-						<value>11</value>
-						<value>12</value>
-					</values>
-				</value>
-				<value>
-					<name>second</name>
-					<type>vector</type>
-					<rclass>numeric</rclass>
-					<values>
-						<value>40</value>
-						<value>41</value>
-						<value>42</value>
-					</values>
-				</value>
-			</values>
-		</object>
-		<object>
-			<name>x_dataframe</name>
-			<type>dataframe</type>
-			<values>
-				<value>
-					<name>first</name>
-					<type>vector</type>
-					<rclass>numeric</rclass>
-					<values>
-						<value>10</value>
-						<value>11</value>
-						<value>12</value>
-					</values>
-				</value>
-				<value>
-					<name>second</name>
-					<type>vector</type>
-					<rclass>numeric</rclass>
-					<values>
-						<value>40</value>
-						<value>41</value>
-						<value>42</value>
-					</values>
-				</value>
-			</values>
-		</object>
-	</inputs>
 
 **DeployR Encodings Made Easy**
 

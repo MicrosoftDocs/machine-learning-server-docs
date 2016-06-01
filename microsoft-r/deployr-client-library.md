@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Introduction
 
-The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON/XML and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.
+The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.
 
 To further simplify the integration of DeployR services within client applications several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 

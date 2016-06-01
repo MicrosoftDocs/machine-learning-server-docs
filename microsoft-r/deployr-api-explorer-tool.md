@@ -55,7 +55,7 @@ At the top of the API Explorer window, you can find the Preferences Panel. Prefe
 
 These global preferences are described as follows:
 
--  ***API*** : this preference specifies whether JSON or XML encodings should be used on API calls.
+-  ***API*** : this preference specifies whether JSON encodings should be used on API calls.
 -  ***DEV*** : this preference specifies the default device for rendering plots in R: PNG or SVG
 -  ***DLD*** : this preference specifies whether file downloads are saved as attachments or rendered directly in the Web browser.
 

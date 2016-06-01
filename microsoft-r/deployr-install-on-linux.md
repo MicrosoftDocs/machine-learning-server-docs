@@ -265,7 +265,7 @@ The following steps outline what you need to do after running the DeployR instal
     
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-1. **Set up grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
+1. **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
@@ -274,6 +274,10 @@ The following steps outline what you need to do after running the DeployR instal
 1. [Optional] If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+
+1. **Review [Security documentation](deployr-admin-security/deployr-security.md)** and consider **[enabling HTTPs](deployr-admin-security/deployr-security-https.md)**.
+
+   >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
 1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configuring-public-access) now.
 

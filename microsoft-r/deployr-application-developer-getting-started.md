@@ -186,7 +186,7 @@ They may be times when you need direct access to some of the lower-level service
 
 Then, the answer is the [underlying technical specification](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
 
-As long as your development environment can establish HTTP(S) connections and consumes either JSON or XML, then you can integrate directly with DeployR services using the public [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
 
 ## Tutorials
 
