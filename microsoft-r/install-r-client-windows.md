@@ -26,9 +26,9 @@ ms.custom: ""
 
 #Install Microsoft R Client on Windows
 
-Microsoft R Client is a free tool to enable data scientists to connect to and explore production data as well as create models and algorithms using ScaleR APIs.  When you install R Client, you get the same enhanced R packages and connectivity tools that are provided in Microsoft R Server. And while R Client can be used on its own, you can benefit from the hybrid memory, disk scalability, performance and speed when you push the compute context to a Microsoft R Server instance. 
+Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
-R client is optimized to work with all Microsoft R Server versions. For a comparison of R Client and R Server, see the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
+R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. R client is optimized to work with all Microsoft R Server versions. 
 
 >Currently, Microsoft R Client is available only on Windows.
 
@@ -36,45 +36,66 @@ R client is optimized to work with all Microsoft R Server versions. For a compar
 
 + **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
 
-+ **Free disk space**: 600+ GB recommended, after installation of all prerequisites       
++ **Free disk space**: 600+ MB recommended, after installation of all prerequisites       
 
 + **RAM**: 4+ GB recommended
 
-+ **Internet access**:  To download R Client and any dependencies     
++ **Internet access**:  Needed to download R Client and any dependencies     
 
 <br>
 ##Install Microsoft R Client
 
 >You must install Microsoft R Client to a local drive on your computer. 
 
->These instructions assume that you have access to the Microsoft R Client installer, which is available through Visual Studio Dev Essentials.
+>These instructions assume that you have downloaded the Microsoft R Client installer, available through Visual Studio Dev Essentials.
+
+>You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
 **To install Microsoft R Client**:
 
 1. Log in to the machine with administrator privileges.
 
-1. Close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
+1. Close any other programs running on the system. 
 
-1. Run Microsoft R Client setup.
+1. Run **Microsoft R Client** setup.
 
-1. Accept the license terms for downloading and installing Microsoft R Client.
+1. Accept the Microsoft R Client license terms.
 
-1. In addition to Microsoft R Client, select the components to install. 
-   + **Microsoft R Open**, Microsoft's enhanced distribution of R, is a _required dependency_. 
-   
-   + **R Tools for Visual Studio**, an integrated development environment, is an _optional dependency_. R Tools for Visual Studio is a free add-in for Visual Studio that works in all editions of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.
+1. To install Microsoft R Client, you'll need [Microsoft R Open](index.md#mro), Microsoft's enhanced distribution of R. The setup will install it for you automatically.
 
-1. Accept the license terms for downloading and installing Microsoft R Open.
+1. You also have the option of installing R Tools for Visual Studio, an integrated development environment. [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) is a free add-in for Visual Studio that works in all editions of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.
 
-1. Accept the default installation path or choose another location.
+1. Accept the license terms for downloading and installing Microsoft R Open. Also accept the terms for R Tools for Visual Studio if you've selected to install it as well.
 
-1. When the installation finishes, click **Finish**.  
+1. Accept the default installation path for Microsoft R Client or choose another location.
 
->After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the RevoScaleR package. These APIs let you send R commands to a remote server for execution. Learn more in the [Getting Started Guide](microsoft-r-getting-started.md).
+1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
+
+>After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the `RevoScaleR` package. The functions and APIs in this package enable you to send R commands to a remote server for execution. Learn more in the [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
+
+
+<br>
+##Launch Microsoft R Client
+
+**To launch Microsoft R Client**:
+
+After you have installed the software, you launch Microsoft R Client as follows.
+
+For Windows 7 and Windows 10:
+
++ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+
+For Windows 8.1:
+
+1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+  
+1. Click **Start** to view the **Start** screen.
+
+1. Locate and click the tile for **Microsoft R Client**.
 
 <br>
 ##Testing the Install
-The RevoIOQ package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
+The `RevoIOQ` package provides a set of tests to verify correct installation and operation of R Client. A fresh install of Microsoft R Client should yield an error-free and failure-free report in your Web browser, though there may be some _Deactivated Tests_.
 
 **To run these tests:**
 
@@ -83,53 +104,42 @@ Run the following commands from your `R` prompt:
 	library(RevoIOQ)
 	RevoIOQ()
 
-<br>
-##Launch Microsoft R Client
-**To launch Microsoft R Client**:
 
-After you have installed the software, you launch Microsoft R Client as follows.
-
-+ For Windows 7 and Windows 10:
-
-  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
-
-<br>
-+ For Windows 8.1:
-
-  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
-  
-  1. Click **Start** to view the **Start** screen.
-
-  1. Locate and click the tile for **Microsoft R Client**.
-
-<br>
 ##What's Installed & Where to Find R Packages
 
 Setup for Microsoft R Client installs the R base packages and a set of enhanced R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop.
 
 <br>
-####R packages
-The R libraries are installed under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+**R packages**
+
+The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
 <br>
-####R tools
-All the standard base R tools are included with Microsoft R Client under `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\bin`. Documentation for these tools can be found in the setup folder: `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc` and in `C:\Program Files\Microsoft\Microsoft R Client\R_SERVER\doc\manual`. One easy way to open these files is to open RGui, click Help, and select one of the options. 
+**R command-line tools and GUI editor**
+
+All of tools for the standard base R are included with Microsoft R Client under `<R-Client-Install-Directory>\bin`. Documentation for these tools can be found in the setup folder: `<R-Client-Install-Directory>\doc` and in `<R-Client-Install-Directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. 
 
 Those standard R tools are:
 
-+ **RTerm**: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
++ `RTerm`: A command-line tool for running R scripts. Rterm.exe can allocate more memory when running in 64-bit Windows.
 
-+ **RGui.exe**: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
++ `RGui.exe`: A simple interactive editor for R. The command-line arguments are the same for RGui.exe and RTerm.
 
-+ **RScript**: A command-line tool for running R scripts in batch mode.
++ `RScript`: A command-line tool for running R scripts in batch mode.
 
-The R Integrated Development Environment (IDE) options:
+<br>
+**The R Integrated Development Environment (IDE)**
 
+The R IDE options are:
 + If you installed _R Tools for Visual Studio (RTVS)_ along with Microsoft R Client, then you'll also have access to an integrated R development environment. _RTVS_ is a free add-in for all editions of _Visual Studio_.
 
-+ If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more on installing R Tools for Visual Studio...](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
++ If you did not install _RTVS_, it's not too late. You can always install and use _RTVS_, _RStudio_, or any other development environment. [Learn more about installing R Tools for Visual Studio.](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1)
 
 <br>
 ##Tutorials & Getting Started Guides
 
-You can learn more and explore tutorial introductions to R in the [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) and the [RevoScaleR Getting Started Guide](scaler-getting-started.md).
+You can learn more and explore tutorial introductions to R in:
+
++ The [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) 
+
++ The [RevoScaleR Getting Started Guide](scaler-getting-started.md)

@@ -26,6 +26,9 @@ ms.custom: ""
 
 # R Productivity Environment Getting Started Guide
 
+>[!IMPORTANT]
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+
 ## Overview
 
 This guide is intended as your introduction to Revolution R Enterprise and its R Productivity Environment. For new users, this interface includes a number of aids to usability including IntelliSense for automatic word completion, code snippets to simplify programming, and an Object Browser with editing and plotting capabilities. For experienced R programmers, this interface includes a full-featured integrated development environment with a built-in visual debugger. This Getting Started Guide walks you through the most useful features of the new interface.

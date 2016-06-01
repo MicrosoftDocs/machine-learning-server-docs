@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Upgrading or Reinstalling and R
+# Upgrading or Reinstalling R
 
 ## On Windows
 

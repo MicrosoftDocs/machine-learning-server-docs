@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server and R Client. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
+This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
 
 There are three key components to running **RevoScaleR** high performance analytics:
 
@@ -52,9 +52,9 @@ For information on other distributed computing compute contexts, see:
 
 ## Installation
 
-The **RevoScaleR** package is installed as part of Microsoft R Server and R Client. The package is automatically loaded when you start Microsoft R Server and R Client. On your client machine, you will need:
+The **RevoScaleR** package is installed as part of Microsoft R Server. The package is automatically loaded when you start Microsoft R Server. On your client machine, you will need:
 
--   Microsoft R Server or R Client installed.
+-   Microsoft R Server installed.
 -   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10
 
 If you plan to do in-database computations in **Teradata**, you will need Microsoft R Server installed on all of the nodes of the **Teradata Platform**.
