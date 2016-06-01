@@ -294,22 +294,17 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
 1.  If you are using Windows Authentication for login:
 
-    1.  [Download a JDBC authentication library, `sqljdbc_auth.dll`,](https://msdn.microsoft.com/library/mt590198.aspx) and copy it under **both** of the following folders:
-
-        -   `$DEPLOYR_HOME\Apache_Tomcat\bin`
-
-        -   `$DEPLOYR_HOME\deployr\tools`
-
-    2.  Log into the SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`,
-    3.  In the Object Explorer pane, right click **Security &gt; Logins**.
+    1.  Log into the SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`.
+    
+    1.  In the Object Explorer pane, right click **Security &gt; Logins**.
     
         ![Login](./media/deployr-install-on-windows/sqlserver-new-login.png)
 
-    4.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
+    1.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
     
         ![Login](./media/deployr-install-on-windows/sqlserver-login-dialog.png)
 
-    5.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
+    1.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
     
     6.  Choose the **User Mapping** page on the left and select the checkbox for the database for DeployR, which in our example is called `deployr` and for the Database role member, select `db_owner` and `public`.
     
