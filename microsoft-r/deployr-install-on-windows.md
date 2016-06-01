@@ -119,6 +119,107 @@ After installing the [prerequisites](#install-dependencies) above, install Deplo
 
 1.  Review and follow these critical [post-installation steps](#post-installation-steps). You will not be able to log into the server until you set a password.
 
+##Post Installation Steps
+
+The following steps outline what you need to do after running the DeployR installer. 
+
+1.  **Set the administrator's password** so you can log into the server and its landing page.
+
+    1. Launch the DeployR Administrator Utility script with **administrator privileges**:
+       ```
+       cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+       adminUtility.bat
+       ```
+       
+    1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
+    
+    1. Enter a password for this account. Passwords must be **8-16 characters** long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), **and** 1 or more special character(s).
+    
+    1. Confirm the password.
+
+1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
+
+1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
+
+1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
+
+1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#using-a-sql-server-database).
+
+1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
+
+1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+
+1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#update-your-firewall). 
+
+1. **Review security documentation ** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the **[Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
+
+   >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
+
+1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configuring-public-access) now.
+
+1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](deployr-tools-and-samples.md).
+
+1. **Create accounts for your users** in the [Administration Console](./deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
+
+1. **Learn more**. Read the [Administrator Getting Started](deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guides.    
+
+<br>
+
+## Configuring DeployR
+
+For the best results, complete these configuration topics in the order in which they are presented.
+
+### Update Your Firewall
+
+During installation, the Windows firewall was automatically updated. Several new inbound rules were added for  inbound communications to DeployR on the ports listed in the table.
+
+>[!IMPORTANT]
+>For your security, the inbound rules created during installation are disabled by default and set to a `Private` profile. 
+>To make DeployR accessible to remote users, you can edit these inbound rules in the Windows Firewall and set the profile to `Public` or `Domain`. 
+>You can enable each rule in the Properties dialog as well as change the profile in the Advanced tab.
+
+| Machine                   | Ports                                 | Open Ports                                                                          |
+|---------------------------|---------------------------------------|-------------------------------------------------------------------------------------|
+| DeployR server machine    | Tomcat ports:<br />- `8050` (Tomcat default port)<br />- `8051` (Tomcat HTTPS port)           | To the outside|
+| DeployR server machine    | - `8056` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine |
+| Remote grid node machines | RServe ports:<br />- `8054` (RServe connection port)<br />- `8055` (RServe cancel port)          | To the public IP of the DeployR server |
+
+
+If any of the following cases exist, update your firewall manually:
+
+-   Whenever you use **non-default port numbers** for communications between DeployR and its dependencies, add those port numbers instead of those in the table above.
+
+-   If connecting to a **remote database**, be sure to open the database port to the public IP of the DeployR server.
+
+-   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
+
+>If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
+
+
+### Configuring Public Access
+
+When the wrong IP is defined, you will not be able to access to the DeployR landing page or other DeployR components after installation or reboot. In some cases, the wrong IP address may be automatically assigned during installation or when the machine is rebooted, and that address may not be the only IP address for this machine or may not be publicly accessible. If this case, you must update the server Web context address.
+
+To fix this issue, you must define the appropriate external server IP address and port number for the **Server web context** and disable the autodetection of the IP address.
+
+**To make changes to the IP address:**
+
+1.  Launch the DeployR administrator utility script with administrator privileges:
+
+           cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+           adminUtility.bat
+
+2.  From the main menu, choose the option to configure the Web Context and Security options for DeployR.
+
+3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
+
+4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
+
+5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
+
+6.  Return to the main menu.
+
+7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
 ##Install DeployR Grid Nodes
 
@@ -177,109 +278,6 @@ After installing DeployR Enterprise server and any grid node machines, you must 
     5. Repeat these steps for each grid node.
 
     6. Remember to go back and enable all the grid nodes you want to use when you are done testing.
-
-##Post Installation Steps
-
-The following steps outline what you need to do after running the DeployR installer. 
-
-1.  **Set the administrator's password** so you can log into the server and its landing page.
-
-    1. Launch the DeployR Administrator Utility script with **administrator privileges**:
-       ```
-       cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-       adminUtility.bat
-       ```
-       
-    1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
-    
-    1. Enter a password for this account. Passwords must be **8-16 characters** long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), **and** 1 or more special character(s).
-    
-    1. Confirm the password.
-
-1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
-
-1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
-
-1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
-
-1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#using-a-sql-server-database).
-
-1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
-
-1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
-
-1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#update-your-firewall). 
-
-1. **Review security documentation ** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the **[Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
-
-   >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
-
-1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configuring-public-access) now.
-
-1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](deployr-tools-and-samples.md).
-
-1. **Create accounts for your users** in the [Administration Console](./deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
-
-1. **Learn more**. Read the [Administrator Getting Started](deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guides.    
-
-<br>
-
-## Configuring DeployR
-
-For the best results, complete these configuration topics in the order in which they are presented.
-
-### Update Your Firewall
-
-During installation, the Windows firewall was automatically updated. Several new inbound rules were added for  inbound communications to DeployR on the ports listed in the table.
-
->[!IMPORTANT]
->For your security, the inbound rules created during installation are disabled by default and set to a `Private` profile. To make DeployR accessible to remote users, you can edit these inbound rules in the Windows Firewall and set the profile to `Public` or `Domain`. In the Properties dialog for each inbound rule, you can enable the rule and, in the Advanced tab, change its profile according to your organizational needs. 
-> - `Domain` is for networks at a workplace that are attached to a domain. 
-> - `Private` is for networks at home or work where you known and trust the people and devices on the network. 
-> - `Public` is  for networks in public places such as airports and coffee shops.
-
-| Machine                   | Ports                                 | Open Ports                                                                          |
-|---------------------------|---------------------------------------|-------------------------------------------------------------------------------------|
-| DeployR server machine    | Tomcat ports:<br />- `8050` (Tomcat default port)<br />- `8051` (Tomcat HTTPS port)           | To the outside|
-| DeployR server machine    | - `8056` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine |
-| Remote grid node machines | RServe ports:<br />- `8054` (RServe connection port)<br />- `8055` (RServe cancel port)          | To the public IP of the DeployR server |
-
-
-If any of the following cases exist, update your firewall manually:
-
--   Whenever you use **non-default port numbers** for communications between DeployR and its dependencies, add those port numbers instead of those in the table above.
-
--   If connecting to a **remote database**, be sure to open the database port to the public IP of the DeployR server.
-
--   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
-
->If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
-
-
-### Configuring Public Access
-
-When the wrong IP is defined, you will not be able to access to the DeployR landing page or other DeployR components after installation or reboot. In some cases, the wrong IP address may be automatically assigned during installation or when the machine is rebooted, and that address may not be the only IP address for this machine or may not be publicly accessible. If this case, you must update the server Web context address.
-
-To fix this issue, you must define the appropriate external server IP address and port number for the **Server web context** and disable the autodetection of the IP address.
-
-**To make changes to the IP address:**
-
-1.  Launch the DeployR administrator utility script with administrator privileges:
-
-           cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-           adminUtility.bat
-
-2.  From the main menu, choose the option to configure the Web Context and Security options for DeployR.
-
-3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
-
-4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
-
-5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
-
-6.  Return to the main menu.
-
-7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
 
 ### Using a SQL Server Database
