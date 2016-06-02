@@ -34,7 +34,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 ## Enabling SSL Support
 Once enabled your client applications can make API calls that connect over HTTPS.
 
-### Enabling for DeployR 8.0.5
+### Enabling for DeployR for Microsoft R Server 2016
 
 1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
 
@@ -293,7 +293,7 @@ When prompted by the script, provide the following information when prompted by 
 
 ## Disabling SSL Support
 
-### Disabling for DeployR 8.0.5
+### Disabling for DeployR for Microsoft R Server 2016
 
 The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. By default, SSL on DeployR is disabled. If you have enabled SSL at some time and you now wish to disable SSL, follow the steps in this section.
 

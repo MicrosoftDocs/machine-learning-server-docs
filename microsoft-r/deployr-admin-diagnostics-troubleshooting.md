@@ -56,7 +56,7 @@ The easiest way to run diagnostics is to launch it from the **Diagnostics** tab 
 
 However, if you cannot reach the landing page, the `admin` can log into the server and manually run it using the following commands:
 
-#### For DeployR 8.0.5
+#### For DeployR for Microsoft R Server 2016
 + **On Windows**: 
     1. Launch the DeployR administrator utility script with administrator privileges:
        ```
@@ -249,7 +249,7 @@ This problem can arise for various reasons, including:
 It can be solved by updating the IP address in the DeployR Server Web Context.
 
 <a id="set-context"></a>
-#### Updating the Web Content for DeployR 8.0.5
+#### Updating the Web Content for DeployR for Microsoft R Server 2016
 To fix this issue, update the IP address in the DeployR Server Web Context as follows:
 
 1. Launch the DeployR administrator utility script with administrator privileges:
@@ -461,7 +461,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. In the `C:\Program Files\Microsoft\DeployR-<DEPLOYR_VERSION>\Apache_Tomcat` directory, open the file `server.xml`.
 
 1. Find: 
-    + For DeployR 8.0.5: `port="8050"`
+    + For DeployR for Microsoft R Server 2016: `port="8050"`
     + For DeployR 8.0.0: `port="8000"`
 
 1. Replace the port value with a new, unique port number.
@@ -469,7 +469,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Save the file.
 
 1. Restart Tomcat for the changes to take effect.
-    + For DeployR 8.0.5:
+    + For DeployR for Microsoft R Server 2016:
       ```
       net stop Apache-Tomcat-for-DeployR-8.0.5
       net start Apache-Tomcat-for-DeployR-8.0.5
@@ -486,7 +486,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
 
 1. Find the port number value by searching for:
-   + For DeployR 8.0.5: `<Connector port="8050"`
+   + For DeployR for Microsoft R Server 2016: `<Connector port="8050"`
    + For DeployR 8.0.0: `<Connector port="8000"`
 
 1. Replace the port value with a new, unique port number.

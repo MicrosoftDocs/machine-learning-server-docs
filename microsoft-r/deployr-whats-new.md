@@ -28,15 +28,15 @@ ms.custom: ""
 
 This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
 
--   [Release 8.0.5](#version-8-0-5)
+-   [DeployR for Microsoft R Server 2016](#version-8-0-5)
 -   [Release 8.0.0](#version-8-0-0)
 -   [Release 7.4.1](#version-7-4-1)
 -   [Release 7.4.0](#version-7-4-0)
 -   [Release 7.3](#version-7-3)
 
-#### Version 8.0.5
+#### DeployR for Microsoft R Server 2016
 
-The following list highlights the major changes and improvements to DeployR 8.0.5.
+The following list highlights the major changes and improvements to DeployR for Microsoft R Server 2016.
 - Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
 - DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
 - DeployR Enterprise now has a simplified installer for a better customer experience.

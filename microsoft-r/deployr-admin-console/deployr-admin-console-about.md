@@ -26,7 +26,7 @@ ms.custom: ""
 
 # About DeployR Administration Console
 
-<!--**THIS TOPIC APPLIES TO:** ![](../media/checkmark.jpeg) DeployR Enterprise for R Server 2016 (8.0.5) ![](../media/checkmark.jpeg) DeployR Enterprise and Open (8.0.0)-->
+<!--**THIS TOPIC APPLIES TO:** ![](../media/checkmark.jpeg) DeployR for Microsoft R Server 2016 (8.0.5) ![](../media/checkmark.jpeg) DeployR Enterprise and Open (8.0.0)-->
 
 The DeployR Administration Console, which is delivered with DeployR, is an easy-to-use web interface that facilitates the proper management and administration of your DeployR deployment. Accordingly, the following functions are supported in the console:
 

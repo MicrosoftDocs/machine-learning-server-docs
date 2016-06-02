@@ -27,7 +27,7 @@ ms.custom: ""
 # Password Policies
 
 >[!Important]
->This topic does not apply to DeployR Enterprise 8.0.5
+>This topic does not apply to DeployR for Microsoft R Server 2016 
 
 To customize password constraints on user account passwords adjust the password policy configuration properties.
 

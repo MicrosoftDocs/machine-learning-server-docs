@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install DeployR 8.0.5 on Windows"
+title: "Install DeployR for Microsoft R Server 2016 on Windows"
 description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
 author: "j-martens"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Installing DeployR (8.0.5) on Windows
+# Installing DeployR for Microsoft R Server 2016 (8.0.5) on Windows
 
 ##Before You Begin
 
@@ -169,7 +169,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 For the best results, complete these configuration topics in the order in which they are presented.
 
-### Update Your Firewall
+### Updating Your Firewall
 
 During installation, the Windows firewall was automatically updated. Several new inbound rules were added for  inbound communications to DeployR on the ports listed in the table.
 
@@ -221,7 +221,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
-##Install DeployR Grid Nodes
+##Installing DeployR Grid Nodes
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and configuring additional grid nodes.
 
@@ -239,7 +239,7 @@ _After installing_ the [main DeployR Enterprise server](#install-deployr-server)
 
 2.  Install Microsoft R Server 2016 [as described here](#install-dependencies) on the grid node machine.
 
-3.  Download the node installer file, `DeployR-Enterprise-Node-8.0.5.exe`, which can be found in the Microsoft R Server 2016 package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
+3.  Download the DeployR node installer file, `DeployR-Enterprise-Node-8.0.5.exe`, which can be found in the Microsoft R Server 2016 package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
 
 4.  Launch the installer, `DeployR-Enterprise-Node-8.0.5.exe`.
 
@@ -379,13 +379,13 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     6.  Exit the utility.
 
 
-### Set Password on Testuser Account
+### Setting Password on Testuser Account
 
 In addition to the `admin` account, DeployR is delivered with the `testuser` account you can use to interact with our examples. This account is disabled by default.
 
 1.  Log in as `admin` to the DeployR landing page. If you haven't set a password for `admin` user yet, [do so now](#install-deployr-server).
 
-    After installing DeployR 8.0.5 and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+    After installing DeployR for Microsoft R Server 2016  and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 2.  Go to the **Administration Console**.
 
@@ -397,25 +397,25 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 
 
-## Migrating to DeployR 8.0.5
+## Migrating to DeployR for Microsoft R Server 2016 
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
 >If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
 
-### From Previous DeployR Version to DeployR 8.0.5
+### From Previous DeployR Version to DeployR for Microsoft R Server 2016 
 
-The following instructions will walk you through a migration of DeployR 8.0.0 or earlier to DeployR 8.0.5.
+The following instructions will walk you through a migration of DeployR 8.0.0 or earlier to DeployR for Microsoft R Server 2016.
 
 1.  **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the data migration.
 
 2.  Ensure your previous version of DeployR is running and that all users are logged out of the version.
 
-3.  [Install and configure](#installing-deployr) DeployR 8.0.5 and all its dependencies.
+3.  [Install and configure](#installing-deployr) DeployR for Microsoft R Server 2016 and all its dependencies.
 
-4.  Ensure that all users are logged out of DeployR 8.0.5 as well.
+4.  Ensure that all users are logged out of DeployR for Microsoft R Server 2016 as well.
 
-5.  _If the MongoDB database is on a different machine than the one on which you installed DeployR 8.0.5_, then you must copy both `MongoMigration.jar` and the MongoDB migration tool, `exportMongoDB.bat`:  
+5.  _If the MongoDB database is on a different machine than the one on which you installed DeployR for Microsoft R Server 2016_, then you must copy both `MongoMigration.jar` and the MongoDB migration tool, `exportMongoDB.bat`:  
     *from*: &nbsp; `C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\mongoMigration`  
     *to*: &nbsp; `$DEPLOYR_HOME_OLD_VERSION\deployr\tools\mongoMigration` on the machine running MongoDB
 
@@ -426,11 +426,11 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 
 7.  Download `db_backup.zip`.
 
-8.  Restore that data into the DeployR 8.0.5 Administration Console.
+8.  Restore that data into the DeployR for Microsoft R Server 2016 Administration Console.
 
-    1.  Log into the DeployR 8.0.5 landing page, `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
+    1.  Log into the DeployR for Microsoft R Server 2016 landing page, `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-    2.  From the landing page, open the DeployR 8.0.5 Administration Console.
+    2.  From the landing page, open the Administration Console.
 
     3.  In the **Database** tab, click **Restore DeployR Database**.
 
@@ -445,11 +445,11 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
         >[!WARNING]
         >Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR server, they appear highlighted in the Administration Console when you first start the server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log into the console.
 
-9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.5, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
+9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR for Microsoft R Server 2016, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
-### From DeployR 8.0.5 to Another 8.0.5 Instance
+### From DeployR for Microsoft R Server 2016 to Another Instance of This Version
 
-1.  Log into the landing page for the DeployR instance containing the data you wish to migrate. After installing DeployR 8.0.5 and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+1.  Log into the landing page for the DeployR instance containing the data you wish to migrate. After installing DeployR for Microsoft R Server 2016 and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 1.  From the landing page, open the Administration Console.
 

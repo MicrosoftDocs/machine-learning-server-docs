@@ -38,7 +38,7 @@ On the main DeployR server machine:
 2.  [Uninstall the DeployR main server](deployr-install-on-windows.md#uninstalling-deployr).
 3.  Uninstall Microsoft R Server 2016 using the instructions provided with your existing version of Microsoft R Server 2016.
 4.  Install Microsoft R Server 2016 and all its prerequisites as described in the instructions provided with that version of Microsoft R Server 2016.
-5.  Reinstall the DeployR main server on [DeployR 8.0.5](deployr-install-on-windows.md#install-deployr-server) | [DeployR 8.0.0](deployr-installing-configuring.md#basic-deployr-install)
+5.  Reinstall the DeployR main server on [DeployR for Microsoft R Server 2016](deployr-install-on-windows.md#install-deployr-server) | [DeployR 8.0.0](deployr-installing-configuring.md#basic-deployr-install)
 6.  [Restore the DeployR database](deployr-common-administration-tasks.md#backing-up-and-restoring-data).
 
 On each DeployR grid node machine:
@@ -46,7 +46,7 @@ On each DeployR grid node machine:
 1.  [Uninstall the DeployR grid node](deployr-install-on-windows.md#uninstalling-deployr).
 2.  Uninstall Microsoft R Server 2016 using the instructions provided with your existing version of Microsoft R Server 2016.
 3.  Install Microsoft R Server 2016 and all its prerequisites as described in the instructions provided with that version of Microsoft R Server 2016.
-4.  Install the DeployR grid node on [DeployR 8.0.5](deployr-install-on-windows.md#install-deployr-grid-nodes) | [DeployR 8.0.0](deployr-installing-configuring.md#grid-node-install).
+4.  Install the DeployR grid node on [DeployR for Microsoft R Server 2016](deployr-install-on-windows.md#install-deployr-grid-nodes) | [DeployR 8.0.0](deployr-installing-configuring.md#grid-node-install).
 
 >For each DeployR Enterprise instance, the server and grid nodes should all run the same version of R.
 
@@ -82,7 +82,7 @@ In the event that you need additional support, send the diagnostics tar/zip file
 
 ### Reinstalling Microsoft R Server for DeployR Enterprise
 
-Carefully follow the order presented whenever you reinstall Microsoft R Server 2016 on a Linux machine hosting DeployR Enterprise 8.0.5:
+Carefully follow the order presented whenever you reinstall Microsoft R Server 2016 on a Linux machine hosting DeployR for Microsoft R Server 2016:
 
 On the main DeployR server machine:
 
@@ -93,10 +93,10 @@ On the main DeployR server machine:
 
 On each DeployR grid node machine:
 
-1. Uninstall the DeployR grid node on [DeployR 8.0.5](deployr-install-on-linux.md#uninstalling-deployr) | [DeployR 8.0.0](deployr-installing-configuring.md#uninstalling-deployr).
+1. Uninstall the DeployR grid node on [DeployR for Microsoft R Server 2016](deployr-install-on-linux.md#uninstalling-deployr) | [DeployR 8.0.0](deployr-installing-configuring.md#uninstalling-deployr).
 2.  Uninstall Microsoft R Server 2016 using the instructions provided with that product.
 3.  Install Microsoft R Server 2016 and all its prerequisites as described in that product's instructions.
-4.  [Install the DeployR grid node](). on [DeployR 8.0.5](deployr-install-on-linux.md#install-deployr-grid-nodes) | [DeployR 8.0.0](deployr-installing-configuring.md#grid-node-install).
+4.  [Install the DeployR grid node](). on [DeployR for Microsoft R Server 2016](deployr-install-on-linux.md#install-deployr-grid-nodes) | [DeployR 8.0.0](deployr-installing-configuring.md#grid-node-install).
 
 >For each DeployR Enterprise instance, the server and grid nodes should all run the same version of R.
 

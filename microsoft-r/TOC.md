@@ -9,8 +9,8 @@
 ### [Install R Server on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ## DeployR
-### [Install DeployR 8.0.5 (Windows)](deployr-install-on-windows.md)
-### [Install DeployR 8.0.5 (Linux)](deployr-install-on-linux.md)
+### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
+### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0 (All Platforms)](deployr-installing-configuring.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)

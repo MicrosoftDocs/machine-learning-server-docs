@@ -365,7 +365,7 @@ Accordingly, to enable do the following:
 2. Uncomment only the Active Directory properties (make sure LDAP is commented out)
 3. For each property, use the value matching your configuration:
 
-   + For DeployR 8.0.5:
+   + For DeployR for Microsoft R Server 2016:
      ```
      /*
       * DeployR Active Directory Configuration Properties
