@@ -6,7 +6,7 @@ The Microsoft R product family includes:
 + <a href="#mrs">Microsoft R Server</a>
 + <a href="#mrc">Microsoft R Client</a>
 + <a href="#mro">Microsoft R Open</a>
-+ <a href="#mrs">SQL Server R Services</a>
++ <a href="#sqlr">SQL Server R Services</a>
 
 To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 
