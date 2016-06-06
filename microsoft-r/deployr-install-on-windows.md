@@ -73,7 +73,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. On the DeployR server, [download](http://go.microsoft.com/fwlink/?LinkId=789397) and install **Java™ Runtime Environment 8**, `jre-8u<NUMBER>-windows-x64.exe`. Java is only required on the DeployR server, not on any grid node machines.
 
-1. Install **[Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=698527)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
+1. Install **[Microsoft R Server 2016](https://msdn.microsoft.com/en-us/library/mt671127.aspx)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with R Server to install it as well as any of its dependencies.** [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
 1. _If you have internet access_ while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. 
 
@@ -289,6 +289,8 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 1.  Install and configure SQL Server as described for that product.
 
 1.  Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`.
+
+>The JDBC drivers are installed with DeployR. 
 
 1.  If you are using Windows Authentication for login:
 

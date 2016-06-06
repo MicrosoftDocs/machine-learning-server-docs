@@ -56,241 +56,6 @@ By default, the Basic Authentication security provider is enabled. The Basic Aut
      * DeployR Basic Authentication Policy Properties
      */
 
-## CA Single Sign-On (SiteMinder) Pre-Authentication
-
-By default, the **CA Single Sign-On** (formerly known as SiteMinder) security provider is disabled. To enable CA Single Sign-On support, you must first update CA Single Sign-On Policy Server configuration. Then, you must update the relevant properties in your DeployR external configuration file.
-
-**To enable CA Single Sign-On support:**
-
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr-admin-configure-ca-sso.md).
-
-2.  Update the relevant properties in your DeployR external configuration file.
-    This step assumes that:
-
-    -   Your CA Single Sign-On Policy Server is properly configured and running
-    -   You understand which header files are being used by your policy server
-
-```
-/*
-* Siteminder Single Sign-On (Pre-Authentication) Policy Properties
-*/
-
-deployr.security.siteminder.preauth.enabled = false
-
-// deployr.security.preauth.username.header
-// Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
-deployr.security.preauth.username.header = 'HTTP_SM_USER'
-
-// deployr.security.preauth.group.header
-// Identify Siteminder groups header.
-deployr.security.preauth.group.header = 'SM_USER_GROUP'
-
-// deployr.security.preauth.group.separator
-// Identify Siteminder groups delimiter header.
-deployr.security.preauth.group.separator = '^'
-
-// deployr.security.preauth.groups.map
-// Allows you to map Siteminder group names to DeployR role names.
-// NOTE: Siteminder group names must be defined using the distinguished
-// name for the group. Group distinguished names are case sensitive.
-// For example, your Siteminder distinguished group name
-// "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
-// "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
-// begin with ROLE_ and must always be upper case.
-deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
-                                  'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
-			
-// deployr.security.preauth.default.role
-// Optional, grant default DeployR Role to all Siteminder authenticated users:
-deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
-```
-
-## PAM Authentication
-
-By default, the **PAM** security provider is disabled. To enable PAM authentication support, you must:
-
-1.  Update the relevant properties in your DeployR external configuration file, deployr.groovy.
-2.  Follow the DeployR server system files configuration changes outlined below.
-
-PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
-
-**Step 1: Update the DeployR external configuration file**
-
-Update the following properties in your DeployR external configuration file, `deployr.groovy`:
-
-    -   deployr.security.pam.authentication.enabled
-    -   deployr.security.pam.groups.map
-    -   deployr.security.pam.default.role
-
-Relevant snippet from `deployr.groovy` file shown here:
-```
-/*
-* DeployR PAM Authentication Policy Properties
-*/
-
-deployr.security.pam.authentication.enabled = false
-
-// deployr.security.pam.groups.map
-// Allows you to map PAM user group names to DeployR role names.
-// NOTE: PAM group names are case sensitive. For example, your
-// PAM group named "finance" must appear in the map as "finance".
-// DeployR role names must begin with ROLE_ and must always be
-// upper case.
-deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
-                                   'engineering' : 'ROLE_POWER_USER' ]
-
-// deployr.security.pam.default.role
-// Optional, grant default DeployR Role to all PAM authenticated users:
-deployr.security.pam.default.role = 'ROLE_BASIC_USER'
-```
-
-**Step 2: Update the DeployR server system files configuration changes**
-
-1.  Before making any configuration changes to the server system files, stop the DeployR server:
-
-    1. Launch the DeployR administrator utility script with administrator privileges as `root` or a user with `sudo` permissions:
-       + On Windows:
-          ```
-          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtility.bat
-          ```
-    
-       + On Linux:
-          ```
-          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtility.sh
-          ```
-
-    1.  Choose option **Start/Stop Server**.
-
-    1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
-
-1. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
-    
-   + For **non-root installs** of DeployR:  The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. 
-
-     1. Log in as `root` your the DeployR server.
-
-     1. In the file `/etc/sudoers`, find the following section:
-        ```
-        ## Command Aliases
-        ```
-        
-     1. Add the following line to this section:
-        ```
-        Cmnd_Alias DEPLOYRTOMCAT = /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh
-        ```
-	
-     1. Find the following section:
-        ```
-        ## Allow root to run any commands anywhere
-        ```
-
-     1. Add the following line to this section:
-        ```
-        %deployr-user      ALL = DEPLOYRTOMCAT
-        ```
-        
-        Your file should now look like this, where the order is important:
-
-        ```
-        root    ALL=(ALL)       ALL
-        %deployr-user   ALL = DEPLOYRTOMCAT
-        ```
-        
-     1. Save these changes and close the file in your editor.
-
-     1. Log out `root` from your DeployR server.
-
-     1. Log in as `deployr-user` to your DeployR server.
-     
-     1. Update the DeployR start shell script, `/home/deployr-user/deployr/8.0.5/startAll.sh`, to take advantage of the `sudo` command configured above.
-
-        + Find the following line:
-
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Save this change and close the file in your editor.
-
-     1. Update the DeployR `/home/deployr-user/deployr/8.0.5/stopAll.sh` shell script to take advantage of the `sudo` command configured above.
-    
-        + Find the following line:
-          
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Save this change and close the file in your editor.
-
-   + For **root installs** of DeployR:  The following steps grant `root` permission to launch the Tomcat server. 
-
-     1.  Log in as `root` on your DeployR server.
-
-     2.  Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
-
-     3. Find the following section:
-
-        - On Redhat/CentOS platforms:
-          ```
-          daemon --user "apache" ${START_TOMCAT}
-          ```
-
-        - On SLES platforms:
-          ```
-          start_daemon -u r "apache" ${START_TOMCAT}
-          ```
-
-     4. Change `"apache"` to `"root"` as follows:
-
-        - On Redhat/CentOS platforms:
-          ```
-          daemon --user "root" ${START_TOMCAT}
-          ```
-
-        - On SLES platforms:
-          ```
-          start_daemon -u r "root" ${START_TOMCAT}
-          ```
-
-     5.  Save this change and close the file in your editor.
-
-1. Restart the server. 
-   1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
-       + On Windows:
-          ```
-          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtility.bat
-          ```
-    
-       + On Linux:
-          ```
-          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtility.sh
-          ```
-
-   1. Choose option **Start/Stop Server**.
-
-   1. Enter `R` to restart the server. It may take some time for the Tomcat process to terminate and restart.
-
-   1. Save this change and close the file in your editor.
-
-
->If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
-
 ## LDAP Authentication
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
@@ -497,6 +262,251 @@ The following table presents the complete list of LDAP and Active Directory conf
 | ldap.authorities.defaultRole                     | None                            | An optional default role to be assigned to all users.                                        |
 | ldap.mapper.roleAttributes                       | Null                            | Optional names of role attributes.                                                           |
 | ldap.mapper.convertToUpperCase                   | TRUE                            | "Whether to uppercase retrieved role names (will also be prefixed with ""ROLE\_"")"          |
+
+
+## PAM Authentication
+
+By default, the **PAM** security provider is disabled. To enable PAM authentication support, you must:
+
+1.  Update the relevant properties in your DeployR external configuration file, deployr.groovy.
+2.  Follow the DeployR server system files configuration changes outlined below.
+
+PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
+
+**Step 1: Update the DeployR external configuration file**
+
+Update the following properties in your DeployR external configuration file, `deployr.groovy`:
+
+    -   deployr.security.pam.authentication.enabled
+    -   deployr.security.pam.groups.map
+    -   deployr.security.pam.default.role
+
+Relevant snippet from `deployr.groovy` file shown here:
+```
+/*
+* DeployR PAM Authentication Policy Properties
+*/
+
+deployr.security.pam.authentication.enabled = false
+
+// deployr.security.pam.groups.map
+// Allows you to map PAM user group names to DeployR role names.
+// NOTE: PAM group names are case sensitive. For example, your
+// PAM group named "finance" must appear in the map as "finance".
+// DeployR role names must begin with ROLE_ and must always be
+// upper case.
+deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
+                                   'engineering' : 'ROLE_POWER_USER' ]
+
+// deployr.security.pam.default.role
+// Optional, grant default DeployR Role to all PAM authenticated users:
+deployr.security.pam.default.role = 'ROLE_BASIC_USER'
+```
+
+**Step 2: Update the DeployR server system files configuration changes**
+
+1.  Before making any configuration changes to the server system files, stop the DeployR server:
+
+    1. Launch the DeployR administrator utility script with administrator privileges as `root` or a user with `sudo` permissions:
+       + On Windows:
+          ```
+          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+          adminUtility.bat
+          ```
+    
+       + On Linux:
+          ```
+          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
+          ./adminUtility.sh
+          ```
+
+    1.  Choose option **Start/Stop Server**.
+
+    1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
+
+1. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
+    
+   + For **non-root installs** of DeployR:  The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. 
+
+     1. Log in as `root` your the DeployR server.
+
+     1. In the file `/etc/sudoers`, find the following section:
+        ```
+        ## Command Aliases
+        ```
+        
+     1. Add the following line to this section:
+        ```
+        Cmnd_Alias DEPLOYRTOMCAT = /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh
+        ```
+	
+     1. Find the following section:
+        ```
+        ## Allow root to run any commands anywhere
+        ```
+
+     1. Add the following line to this section:
+        ```
+        %deployr-user      ALL = DEPLOYRTOMCAT
+        ```
+        
+        Your file should now look like this, where the order is important:
+
+        ```
+        root    ALL=(ALL)       ALL
+        %deployr-user   ALL = DEPLOYRTOMCAT
+        ```
+        
+     1. Save these changes and close the file in your editor.
+
+     1. Log out `root` from your DeployR server.
+
+     1. Log in as `deployr-user` to your DeployR server.
+     
+     1. Update the DeployR start shell script, `/home/deployr-user/deployr/8.0.5/startAll.sh`, to take advantage of the `sudo` command configured above.
+
+        + Find the following line:
+
+          ```
+          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
+          ```
+
+        + Change it to the following:
+
+          ```
+          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
+          ```
+
+        + Save this change and close the file in your editor.
+
+     1. Update the DeployR `/home/deployr-user/deployr/8.0.5/stopAll.sh` shell script to take advantage of the `sudo` command configured above.
+    
+        + Find the following line:
+          
+          ```
+          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
+          ```
+          
+        + Change it to the following:
+
+          ```
+          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
+          ```
+          
+        + Save this change and close the file in your editor.
+
+   + For **root installs** of DeployR:  The following steps grant `root` permission to launch the Tomcat server. 
+
+     1.  Log in as `root` on your DeployR server.
+
+     2.  Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
+
+     3. Find the following section:
+
+        - On Redhat/CentOS platforms:
+          ```
+          daemon --user "apache" ${START_TOMCAT}
+          ```
+
+        - On SLES platforms:
+          ```
+          start_daemon -u r "apache" ${START_TOMCAT}
+          ```
+
+     4. Change `"apache"` to `"root"` as follows:
+
+        - On Redhat/CentOS platforms:
+          ```
+          daemon --user "root" ${START_TOMCAT}
+          ```
+
+        - On SLES platforms:
+          ```
+          start_daemon -u r "root" ${START_TOMCAT}
+          ```
+
+     5.  Save this change and close the file in your editor.
+
+1. Restart the server. 
+   1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
+       + On Windows:
+          ```
+          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+          adminUtility.bat
+          ```
+    
+       + On Linux:
+          ```
+          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
+          ./adminUtility.sh
+          ```
+
+   1. Choose option **Start/Stop Server**.
+
+   1. Enter `R` to restart the server. It may take some time for the Tomcat process to terminate and restart.
+
+   1. Save this change and close the file in your editor.
+
+
+>If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
+
+
+
+## CA Single Sign-On (SiteMinder) Pre-Authentication
+
+By default, the **CA Single Sign-On** (formerly known as SiteMinder) security provider is disabled. To enable CA Single Sign-On support, you must first update CA Single Sign-On Policy Server configuration. Then, you must update the relevant properties in your DeployR external configuration file.
+
+**To enable CA Single Sign-On support:**
+
+1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr-admin-configure-ca-sso.md).
+
+2.  Update the relevant properties in your DeployR external configuration file.
+    This step assumes that:
+
+    -   Your CA Single Sign-On Policy Server is properly configured and running
+    -   You understand which header files are being used by your policy server
+
+```
+/*
+* Siteminder Single Sign-On (Pre-Authentication) Policy Properties
+*/
+
+deployr.security.siteminder.preauth.enabled = false
+
+// deployr.security.preauth.username.header
+// Identify Siteminder username header, defaults to HTTP_SM_USER as used by Siteminder Tomcat 7 Agent.
+deployr.security.preauth.username.header = 'HTTP_SM_USER'
+
+// deployr.security.preauth.group.header
+// Identify Siteminder groups header.
+deployr.security.preauth.group.header = 'SM_USER_GROUP'
+
+// deployr.security.preauth.group.separator
+// Identify Siteminder groups delimiter header.
+deployr.security.preauth.group.separator = '^'
+
+// deployr.security.preauth.groups.map
+// Allows you to map Siteminder group names to DeployR role names.
+// NOTE: Siteminder group names must be defined using the distinguished
+// name for the group. Group distinguished names are case sensitive.
+// For example, your Siteminder distinguished group name
+// "CN=finance,OU=company,DC=acme,DC=com" must appear in the map as
+// "CN=finance,OU=company,DC=acme,DC=com". DeployR role names must
+// begin with ROLE_ and must always be upper case.
+deployr.security.preauth.groups.map = [ 'CN=finance,OU=company,DC=acme,DC=com' : 'ROLE_BASIC_USER',
+                                  'CN=engineering,OU=company,DC=acme,DC=com' : 'ROLE_POWER_USER' ]
+			
+// deployr.security.preauth.default.role
+// Optional, grant default DeployR Role to all Siteminder authenticated users:
+deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
+```
+
+
+
+
+
+
+
 
 ## R Session Process Controls
 

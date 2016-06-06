@@ -375,7 +375,7 @@ To remove Microsoft R Server from your computer, delete the directory containing
 
 	rm –rf /usr/lib64/MRS-8.0
 
-To remove Microsoft R Open, follow the [instructions online](http://go.microsoft.com/fwlink/?LinkID=698527&clcid=0x409).
+To remove Microsoft R Open, follow the [instructions online](rserver-install-linux-server.md).
 
 ## Managing Multiple R Installations
 

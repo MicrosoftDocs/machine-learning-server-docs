@@ -44,6 +44,7 @@
 # [DeployR](deployr-about.md)
 ## [About DeployR](deployr-about.md)
 ## [What's New in DeployR](deployr-whats-new.md)
+## [Installing DeployR](deployr-installation.md)
 ## [Administrators](deployr-administrator-getting-started.md)
 ### [Getting Started for Administrators](deployr-administrator-getting-started.md)
 ### Configuration

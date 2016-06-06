@@ -41,6 +41,7 @@ The following list highlights the major changes and improvements to DeployR for 
 - DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
 - DeployR Enterprise now has a simplified installer for a better customer experience.
 - Documentation is now available on MSDN.
+- The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
 - This release is of DeployR Enterprise only.
 
 #### Version 8.0.0
