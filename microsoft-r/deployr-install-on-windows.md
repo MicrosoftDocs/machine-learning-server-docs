@@ -125,11 +125,11 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
+1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#updating-your-firewall). 
+
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
-1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#update-your-firewall). 
-
-1. **Review security documentation ** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the **[Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
+1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
 
    >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
@@ -149,14 +149,17 @@ For the best results, complete these configuration topics in the order in which 
 
 ### Updating Your Firewall
 
-During installation, the Windows firewall was automatically updated. Several new inbound rules were added for  inbound communications to DeployR on the ports listed in the table.
+During installation, the Windows firewall was automatically updated with several new inbound rules for  inbound communications to DeployR. For your security, those inbound rules are disabled by default and set to a `Private` profile. 
 
->[!IMPORTANT]
->For your security, the inbound rules created during installation are disabled by default and set to a `Private` profile. 
->To make DeployR accessible to remote users, you can edit these inbound rules in the Windows Firewall and set the profile to `Public` or `Domain`. 
->You can enable each rule in the Properties dialog as well as change the profile in the Advanced tab.
+**To make DeployR accessible to remote users:**
 
-| Machine                   | Ports                                 | Open Ports                                                                          |
+1. Edit the inbound rules in the Windows Firewall.
+
+1. In the Properties dialog, enable each rule.
+
+1. In the Advanced tab of that dialog, set the profile to `Public` or `Domain`. 
+
+| Machine                   | Default Ports                         | Open Ports                                                                          |
 |---------------------------|---------------------------------------|-------------------------------------------------------------------------------------|
 | DeployR server machine    | Tomcat ports:<br />- `8050` (Tomcat default port)<br />- `8051` (Tomcat HTTPS port)           | To the outside|
 | DeployR server machine    | Event Console port:<br />- `8056` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine |
@@ -164,6 +167,8 @@ During installation, the Windows firewall was automatically updated. Several new
 
 
 If any of the following cases exist, update your firewall manually:
+
+-   Whenever you want DeployR to be accessible from another machine, edit the rules as described above in this topic.
 
 -   Whenever you use **non-default port numbers** for communications between DeployR and its dependencies, add those port numbers instead of those in the table above.
 

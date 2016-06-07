@@ -369,7 +369,7 @@ For each service call, there is a documented list of required and optional param
 
 The DeployR API currently supports the JSON format for data exchange. Consequently, each method requires the use of the ***format*** parameter in order to specify how the request and response data on the call will be encoded.
 
->In the next release, the XML format will been deprecated. 
+>In the next release, the XML format will no longer be supported. 
 
 While all parameters are specified as a name/value pair, some parameter values require complex data. Whenever complex data is required, a JSON schema defines how these values are to be encoded. For more information on the schema definitions and specific examples of relevant service calls, refer to section [Web Service API Data Encodings](#encode-r-object-data-for-use-on-the-api).
 

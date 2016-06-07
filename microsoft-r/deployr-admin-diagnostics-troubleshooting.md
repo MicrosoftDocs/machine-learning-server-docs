@@ -193,7 +193,7 @@ During the installation of DeployR on Windows, if you get the error `DeployR RSe
 Manually install DeployR RServe package as [described here](#manual-package-install).
 
 <br>
-####Could Not Stop the Service Apache-Tomcat-for-DeployR-&gt;version&lt;
+####Could Not Stop the Service Apache-Tomcat-for-DeployR-&lt;version&gt;
 
 During the installation of DeployR on Windows, you may get the error `Could not stop the service Apache-Tomcat-for-DeployR-<version>` if Windows could not stop the service completely.
 
@@ -203,14 +203,14 @@ If this should occur, do the following:
    ```
    sc delete Apache-Tomcat-for-DeployR-<version> 
    ```
-   where &gt;version&lt; is the package version number such as, Apache-Tomcat-for-DeployR-8.0.5.
+   where &lt;version&gt; is the package version number such as, Apache-Tomcat-for-DeployR-8.0.5.
 
 1. If the installer is still open, click **Try Again** in installer. If the installer was canceled, try to install again.
 
 1. If the error persists, reboot the Windows machine on which you are installing and launch the installer again.
 
 <br>
-####Could Not Stop the Service RServe&gt;version&lt;
+####Could Not Stop the Service RServe&lt;version&gt;
 
 During the installation of DeployR on Windows, the error `Could not stop the service RServe<version>` can appear if Windows could not stop the service completely.
 
@@ -220,7 +220,7 @@ If this should occur, do the following:
    ```
    sc delete RServe<version>
    ```
-   where &gt;version&lt; is the package version number such as, RServe8.0.5.
+   where &lt;version&gt; is the package version number such as, RServe8.0.5.
    
 1. If the installer is still open, click ‘Try Again’ in installer. If the installer was canceled, try to install again.
 

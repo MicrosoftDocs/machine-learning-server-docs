@@ -6,7 +6,7 @@ description: "Common DeployR Administration Tasks: Starting and Stopping DeployR
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "06/07/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -209,4 +209,4 @@ Follow these steps to back up the data in the database used by DeployR.
 
 ## Opening DeployR Ports
 
-To learn more about the ports you need to open, refer to the DeployR Installation Guide for your operating system and DeployR version.
+To learn more about the ports you need to open, refer to the [DeployR Installation Guide](deployr-installation.md) for your operating system and DeployR version.
