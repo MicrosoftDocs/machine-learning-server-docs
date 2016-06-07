@@ -56,6 +56,6 @@ cors.enabled = false
 **To enable CORS support:**
 
 1.  Update the relevant properties in `deployr.groovy` by setting `cors.enabled = true`.
-2.  Stop and restart the DeployR server using [these instructions](../deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+2.  Stop and restart the DeployR server using [these instructions](../deployr-common-administration-tasks.md#startstop).
 
 Optionally, to restrict cross-site HTTP requests to only those requests coming from a specific domain, specify a value for `Access-Control-Allow-Origin` on the `cors.headers` property.

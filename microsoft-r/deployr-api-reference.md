@@ -323,7 +323,7 @@ Refer to the section [Working with Repository Shell Scripts](https://deployr.rev
 
 While it is not necessary to understand the internal architecture of the DeployR server in order to use this API the following overview is provided in order to lend context to server administrators intending to support the API and to client application developers intending to use the API.
 
-![](media/deployr-api-reference-guide/deployr-api-reference-guide-1.png)
+![](media/deployr-media/deployr-architecture.png)
 
 **R User Web, Desktop, Mobile Apps**
 

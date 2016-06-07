@@ -11,7 +11,7 @@
 ## DeployR
 ### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
-### [Install DeployR 8.0.0 (All Platforms)](deployr-installing-configuring.md)
+### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
@@ -78,7 +78,7 @@
 ### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ## [Application Developers](deployr-application-developer-getting-started.md)
 ### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
-### [API Docs & Downloads](deployr-tools-and-samples.md)
+### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 ### [Client Library Tutorial](deployr-client-library.md)
 ### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
 ### [API Reference Guide](deployr-api-reference.md)

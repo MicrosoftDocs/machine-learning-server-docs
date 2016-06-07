@@ -144,7 +144,7 @@ DeployR is a standalone server product, potentially sitting alongside but never 
 
 Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](deployr-api-reference.md).
 
-![DeployR Workflow](./media/deployr-about/architecture.png)
+![](media/deployr-media/deployr-architecture.png)
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-samples.md).
 

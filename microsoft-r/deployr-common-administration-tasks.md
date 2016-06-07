@@ -26,6 +26,7 @@ ms.custom: ""
 
 # Common DeployR Administration Tasks
 
+<a name="startstop"></a>
 ## Starting and Stopping DeployR for Microsoft R Server 2016
 
 To start or stop all DeployR-related services on the main server (not nodes) at once, use the administrator utility. 

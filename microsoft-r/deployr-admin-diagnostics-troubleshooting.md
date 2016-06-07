@@ -136,7 +136,7 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
 1.  If Server Web Context points to the wrong IP, [update it now](#set-context).
 
-1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#starting-and-stopping-deployr) in question. It may take a few minutes for a component to restart.
+1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#startstop) in question. It may take a few minutes for a component to restart.
 
 1.  [Re-run the diagnostic test](#running-the-diagnostic-check) again to make sure all is running smoothly now.
      If problem persists:
@@ -165,9 +165,10 @@ During the installation of DeployR on Windows, if you get the error `DeployR RSe
 + Download is disabled on machine for reasons such as corporate policy
 
 Check your connectivity and firewall rules, and click **Try Again** in the DeployR setup installer.
-<a name="manual-package-install"></a>
+
 If this does not fix the issue, then manually install the supported DeployR Rserve package as follows:
 
+<a name="manual-package-install"></a>
 1. Download zip from https://github.com/deployr/deployr-rserve/releases/download/v8.0.5/deployrRserve_8.0.5.zip
 
 1. Open a Command Window with **“Run as Administrator”** and run the following:
@@ -328,7 +329,7 @@ Usage tips for the `setWebContext` script arguments:
    ./setWebContext.sh -disableauto
    ```
 
->For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#starting-and-stopping-deployr). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+>For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
