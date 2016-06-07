@@ -34,6 +34,7 @@ This topic presents the changes and new features in DeployR version 8.0.0 as wel
 -   [Release 7.4.0](#version-7-4-0)
 -   [Release 7.3](#version-7-3)
 
+<br />
 #### DeployR for Microsoft R Server 2016
 
 The following list highlights the major changes and improvements to DeployR for Microsoft R Server 2016.
@@ -44,10 +45,12 @@ The following list highlights the major changes and improvements to DeployR for 
 - The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
 - This release is of DeployR Enterprise only.
 
+<br />
 #### Version 8.0.0
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
+<br />
 #### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.
@@ -62,6 +65,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md) guide was added for data scientists.
 -   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
+<br />
 #### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
@@ -73,10 +77,10 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   Updated [Java, JavaScript and .NET client libraries](https://github.com/deployr?query=client) with additional features, patches and updated change history.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
 
+<br />
 #### Version 7.3
 
 The following list highlights the major changes and improvements to DeployR 7.3.
-
 -   Support for DeployR Enterprise and DeployR Open.
 -   Support for this new DeployR website providing documentation and downloads.
 -   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
