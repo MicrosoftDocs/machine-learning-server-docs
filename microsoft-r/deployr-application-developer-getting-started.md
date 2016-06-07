@@ -26,8 +26,6 @@ ms.custom: ""
 
 # Getting Started - Application Developers
 
-## Introduction
-
 This guide for application developers introduces DeployR, the *R Integration Server*. If you are an application developer or a systems integrator, then this guide explains what DeployR can do for you.
 
 DeployR exists to solve a number of fundamental integration problems faced by application developers. For example, have you ever wondered how you might execute an R script from within a Web-based dashboard, an Excel spreadsheet, an enterprise middleware solution, or a mobile application? DeployR makes it simple:

@@ -28,8 +28,6 @@ ms.custom: ""
 
 # Getting Started - Administrators
 
-## Introduction
-
 This guide is for system administrators of DeployR, the *R Integration Server*. If you are responsible for creating or maintaining an evaluation or a production deployment of the DeployR server, then this guide is for you.
 
 As an administrator, your key responsibilities are to ensure the DeployR server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
