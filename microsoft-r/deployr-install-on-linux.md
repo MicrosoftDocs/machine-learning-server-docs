@@ -79,7 +79,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Server 2016](rserver-install-linux-server), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server 2016 to install it as well as any of its dependencies.**  [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
+3.  Install [Microsoft R Server 2016](rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server 2016 to install it as well as any of its dependencies.**  [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
 4.  Install **DeployR Rserve 8.0.5**, a dependency of DeployR, after Microsoft R Server 2016 as follows:
 
