@@ -157,42 +157,42 @@ This section contains pointers to help you troubleshoot some problems that can o
 ### Windows Installation Errors
 
 <br>
-####Error: DeployR RServe package download failed.
+####DeployR RServe Package Download Failed
 
 During the installation of DeployR on Windows, if you get the error `DeployR RServe package download failed`, this may be due to several potential issues, including:
 + Unavailable or poor network connectivity
 + The package zip could not be found in Github
 + Download is disabled on machine for reasons such as corporate policy
 
-Check your connectivity and firewall rules, and click **Try Again** in the DeployR setup installer.
+1. Check your connectivity and firewall rules, and click **Try Again** in the DeployR setup installer.
 
-If this does not fix the issue, then manually install the supported DeployR Rserve package as follows:
+1. If this does not fix the issue, then manually install the supported DeployR Rserve package as follows:
 
 <a name="manual-package-install"></a>
-1. Download zip from https://github.com/deployr/deployr-rserve/releases/download/v8.0.5/deployrRserve_8.0.5.zip
+   1. Download zip from https://github.com/deployr/deployr-rserve/releases/download/v8.0.5/deployrRserve_8.0.5.zip
 
-1. Open a Command Window with **“Run as Administrator”** and run the following:
-   ```
-   cd “c:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64”
-   R.exe CMD INSTALL -l "c:\Program Files\Microsoft SQL Server\130\R_SERVER\library"   <PATH-TO-DOWNLOADED-deployrRserve-ZIP>
-   ```
+   1. Open a Command Window with **“Run as Administrator”** and run the following:
+      ```
+      cd “C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64”
+      R.exe CMD INSTALL -l "C:\Program Files\Microsoft SQL Server\130\R_SERVER\library"   <PATH-TO-DOWNLOADED-deployrRserve-ZIP>
+      ```
 
-1. Confirm the package was installed by verifying that `c:\Program Files\Microsoft SQL Server\130\R_SERVER\library\deployrRserve\Rserve.exe` is present.
+   1. Confirm the package was installed by verifying that `C:\Program Files\Microsoft SQL Server\130\R_SERVER\library\deployrRserve\Rserve.exe` is present.
 
-1. Click ‘Try Again’ in installer or re-run the installer.
+   1. Click **Try Again** in installer or re-run the installer.
 
 <br>
-####Error: DeployR RServe package installation failed.
+####DeployR RServe Package Installation Failed
 
 During the installation of DeployR on Windows, if you get the error `DeployR RServe package installation failed`, this may be due to several potential issues, including:
 
 + The package could not be installed in the correct location due to insufficient privileges.
 + The package download was corrupted or interrupted.
 
-Manually install DeployR RServe package as [described here](#manual-package-install)
+Manually install DeployR RServe package as [described here](#manual-package-install).
 
 <br>
-####Error: Could not stop the service Apache-Tomcat-for-DeployR-<version>
+####Could Not Stop the Service Apache-Tomcat-for-DeployR-&gt;version&lt;
 
 During the installation of DeployR on Windows, you may get the error `Could not stop the service Apache-Tomcat-for-DeployR-<version>` if Windows could not stop the service completely.
 
@@ -202,16 +202,16 @@ If this should occur, do the following:
    ```
    sc delete Apache-Tomcat-for-DeployR-<version> 
    ```
-   where <version> is the package version number such as, Apache-Tomcat-for-DeployR-8.0.5.
+   where &gt;version&lt; is the package version number such as, Apache-Tomcat-for-DeployR-8.0.5.
 
-1. If the installer is still open, click ‘Try Again’ in installer. If the installer was canceled, try to install again.
+1. If the installer is still open, click **Try Again** in installer. If the installer was canceled, try to install again.
 
 1. If the error persists, reboot the Windows machine on which you are installing and launch the installer again.
 
 <br>
-####Error: Could not stop the service RServe<version>
+####Could Not Stop the Service RServe&gt;version&lt;
 
-During the installation of DeployR on Windows, you may get the error `Could not stop the service RServe<version>` if Windows could not stop the service completely.
+During the installation of DeployR on Windows, the error `Could not stop the service RServe<version>` can appear if Windows could not stop the service completely.
 
 If this should occur, do the following:
 
@@ -219,14 +219,14 @@ If this should occur, do the following:
    ```
    sc delete RServe<version>
    ```
-   where <version> is the package version number such as, RServe8.0.5.
+   where &gt;version&lt; is the package version number such as, RServe8.0.5.
    
 1. If the installer is still open, click ‘Try Again’ in installer. If the installer was canceled, try to install again.
 
 1. If the error persists, reboot the Windows machine on which you are installing and launch the installer again.
 
 <br>
-####Other errors during installation
+####Other Errors During Installation
 
 If you should encounter any other errors while running the DeployR Windows installer, we recommend that you:
 + Contact Microsoft support (DeployR Enterprise users only)
@@ -234,9 +234,7 @@ If you should encounter any other errors while running the DeployR Windows insta
 + Provide the installation logs `DeployR-*.log` found in the `%temp%` directory.
  
  
- 
- 
-
+<br>
 ### Landing Page Cannot Be Reached
 
 If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
