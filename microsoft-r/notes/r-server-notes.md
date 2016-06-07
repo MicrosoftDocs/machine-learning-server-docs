@@ -7,8 +7,11 @@ The following release notes apply to Microsoft R Server.
 **New in this Release**
 
 + The R Productivity Environment (RPE), a custom IDE for Revolution R Enterprise, is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE. 
+
   + These R packages that were previously included to support the RPE have also been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`. 
+  
   + These R functions, which had been modified to work with the RPE on Windows, have been returned to their original state: `q`, `quit`, `?`, `.tryHelp`, `print.help_files_with_topic`, and `timestamp`. 
+  
   + These R functions, which were modified and renamed for use in the RPE on Windows, are now defunct: `revoFix`, `revoPlot`, `revoPlot.default`, `revoPlot.ts`, `revoPlot.matrix`, `revoPlot.data.frame`, and `revoSource`.
  
 + Microsoft R documentation has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
@@ -19,17 +22,21 @@ The following release notes apply to Microsoft R Server.
 
 + Installation on Hadoop clusters has been simplified.
 
-+ DeployR includes the following changes and improvements:
-    - Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
-    - DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
-    - DeployR Enterprise now has a simplified installer for a better customer experience.
-    - Documentation is now available on MSDN.
-    - The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
-    - This release is of DeployR Enterprise only.
++ DeployR Enterprise includes the following changes and improvements:
+
+  + Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
+
+  + DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
+
+  + DeployR Enterprise now has a simplified installer for a better customer experience.
+
+  + The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
 
 
 **Bug Fixes**
 
+
+<br />
 ##Microsoft R Server 8.0.0
 
 **New Features in this Release**
