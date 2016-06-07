@@ -16,7 +16,7 @@ The following release notes apply to Microsoft R Server.
  
 + Microsoft R documentation has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
 
-+ Microsoft R licenses and Third Party Notices files are now included in the new “MicrosoftR” package. The Revo.home() function now points to the location of this directory, and Revo.home(“licenses”) points to the “licenses” directory within. The Revo.home(“doc”) component is now defunct.
++ Microsoft R licenses and Third Party Notices files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
 
 + Linux installers are now composed of RPM packages that can be installed via a top-level install script or as individual RPM packages. This can be convenient for Enterprise IT departments managing extensive deployments.
 
