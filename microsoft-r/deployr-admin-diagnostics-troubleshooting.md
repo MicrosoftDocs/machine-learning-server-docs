@@ -164,17 +164,18 @@ During the installation of DeployR on Windows, if you get the error `DeployR RSe
 + The package zip could not be found in Github
 + Download is disabled on machine for reasons such as corporate policy
 
+If this should occur, do the following:
+
 1. Check your connectivity and firewall rules, and click **Try Again** in the DeployR setup installer.
 
-1. If this does not fix the issue, then manually install the supported DeployR Rserve package as follows:
+1. If this does not fix the issue, then manually install the supported DeployR Rserve package as follows: <a name="manual-package-install"></a>
 
-<a name="manual-package-install"></a>
    1. Download zip from https://github.com/deployr/deployr-rserve/releases/download/v8.0.5/deployrRserve_8.0.5.zip
 
    1. Open a Command Window with **“Run as Administrator”** and run the following:
       ```
       cd “C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64”
-      R.exe CMD INSTALL -l "C:\Program Files\Microsoft SQL Server\130\R_SERVER\library"   <PATH-TO-DOWNLOADED-deployrRserve-ZIP>
+      R.exe CMD INSTALL -l "C:\Program Files\Microsoft SQL Server\130\R_SERVER\library"   <PATH-TO-deployrRserve-ZIP>
       ```
 
    1. Confirm the package was installed by verifying that `C:\Program Files\Microsoft SQL Server\130\R_SERVER\library\deployrRserve\Rserve.exe` is present.
