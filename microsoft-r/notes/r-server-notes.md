@@ -32,6 +32,7 @@ The following release notes apply to Microsoft R Server.
 
   + The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
 
+For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 **Bug Fixes**
 
