@@ -18,7 +18,7 @@ audience: ""
 ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
-ms.tgt_pltfrm: "
+ms.tgt_pltfrm: ""
 ms.technology: ""
 ms.custom: ""
 
@@ -46,15 +46,10 @@ When running on Hadoop, the RevoScaleR analysis functions process data contained
 
 More detailed examples of using **RevoScaleR** can be found in the following provided with **RevoScaleR**:
 
--   *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf)
--   *RevoScaleR User’s Guide* (RevoScaleR\_Users\_Guide.pdf)
--   *RevoScaleR Distributed Computing Guide* [RevoScaleR\_Distributed\_Computing.pdf; see this guide for HPC examples]
--   *RevoScaleR ODBC Data Import Guide* (RevoScaleR\_ODBC.pdf)
-
-If you would like information on using other **RevoScaleR** distributed computing contexts, see:
-
--   *RevoScaleR LSF Cluster Getting Started Guide* (RevoScaleR\_LSF\_Cluster\_GettingStarted.pdf)
--   *RevoScaleR HPC Server Getting Started Guide* (RevoScaleR\_HPC\_Server\_Getting\_Started.pdf)
+-   [RevoScaleR Getting Started Guide](scaler-getting-started.md)
+-   [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
+-   [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which includes HPC examples
+-   [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
 
 ## Data Sources and Functions Supported in Hadoop
 
@@ -504,7 +499,7 @@ As before, our first step is to copy the data into HDFS. We specify the location
 	rxHadoopMakeDir(airDataDir)
 	rxHadoopCopyFromLocal("/tmp/airOT2012*.csv", airDataDir)
 	
-The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf):
+The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md):
 
 	airlineColInfo <- list(
 	     MONTH = list(newName = "Month", type = "integer"),
@@ -842,6 +837,6 @@ You can run the following commands to clean up data in this tutorial:
 
 ## Continuing with Distributed Computing
 
-With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the Hadoop platform. You are now ready to continue with the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
+With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the Hadoop platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
 
 The *Distributed Computing Guide* also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.
