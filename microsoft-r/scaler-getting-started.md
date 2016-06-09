@@ -473,7 +473,7 @@ The results show that in this data set “late” flights are on average over 10
 
 ### Creating a New Data Set with Variable Transformations 
 
-Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](../scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time. 
+Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time. 
 
 In the example below, three new variables are created.  The variable *Late* is a logical variable set to *TRUE* (or *1*) if the flight was more than 15 minutes late in arriving. The variable *DepHour* is an integer variable indicating the hour of the departure.  The variable *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M. 
 
