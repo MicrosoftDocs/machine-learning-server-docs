@@ -117,7 +117,7 @@ Before you can use Microsoft R Server (which contains the **RevoScaleR** package
 -   HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 -   MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA30600; contact MapR to obtain the patch), MapR 4.1
 
-If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Services Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
+If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Server Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
 
 ## Running the Examples in the Getting Started Guide
 
@@ -134,7 +134,7 @@ You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=6
 
 This section contains a detailed introduction to the most important high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster. The following tasks are performed***:***
 
-1.  Starting Microsoft R Services
+1.  Starting Microsoft R Server
 2.  Specify the NameNode.
 3.  Create a compute context for Hadoop.
 4.  Copy a data set into the Hadoop Distributed File System.
@@ -142,7 +142,7 @@ This section contains a detailed introduction to the most important high perform
 6.  Summarize your data.
 7.  Fit a linear model to the data.
 
-### Starting Microsoft R Services
+### Starting Microsoft R Server
 
 How you start Microsoft R Server depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start Microsoft R Server by typing the following at the shell prompt:
 
@@ -202,9 +202,9 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server", 
 	    port = 8020)
 
-#### Using Microsoft R Services as a Hadoop Client
+#### Using Microsoft R Server as a Hadoop Client
 
-If you are running Microsoft R Services from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 	mySshUsername <- "user1"
 	#public facing cluster IP address
@@ -262,7 +262,7 @@ Now that you have defined your compute context, make it the active compute conte
 
 ### Copying a Data File into the Hadoop Distributed File System
 
-For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Services distribution. You can verify that it is on your local system as follows:
+For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
 
 	file.exists(system.file("SampleData/AirlineDemoSmall.csv", 
 	    package="RevoScaleR"))

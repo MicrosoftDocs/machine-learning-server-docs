@@ -34,14 +34,12 @@ The data manipulation and analysis functions in **RevoScaleR** are appropriate f
 
 The **RevoScaleR** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. **RevoScaleR** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
  
-Additional examples of using **RevoScaleR** can be found in the following manuals provided with **RevoScaleR**:
-
-- *RevoScaleR User’s Guide* (RevoScaleR_Users_Guide.pdf)
-- *RevoScaleR Distributed Computing Guide* [RevoScaleR_Distributed_Computing.pdf;  see this guide for HPC examples]
-- *RevoScaleR ODBC Data Import Guide* (RevoScaleR_ODBC.pdf)
-- *RevoScaleR Getting Started with Hadoop* (RevoScaleR_Hadoop_Getting_Started.pdf)
-- *RevoScaleR Getting Started with Teradata* (RevoScaleR_Teradata_Getting_Started.pdf)
-
+Additional examples of using **RevoScaleR** can be found here:
+- [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
+- [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md); see this guide for HPC examples
+- [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
+- [RevoScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
+- [RevoScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)
 
 <a name="chunking"></a>
 >**Important!**  Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). 
@@ -475,7 +473,7 @@ The results show that in this data set “late” flights are on average over 10
 
 ### Creating a New Data Set with Variable Transformations 
 
-Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  [See the User’s Guide (RevoScaleR_Users_Guide.pdf) for information on doing more complex transformations using a transform function.] Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time. 
+Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](../scaler-users-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time. 
 
 In the example below, three new variables are created.  The variable *Late* is a logical variable set to *TRUE* (or *1*) if the flight was more than 15 minutes late in arriving. The variable *DepHour* is an integer variable indicating the hour of the departure.  The variable *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M. 
 
@@ -944,7 +942,7 @@ The three expected delays are calculated (using the full data set) as:
 
 ### Computing a Large Scale Regression Using a Compute Cluster 
 
-Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the *RevoScaleR Distributed Computing Guide* (RevoScaleR_Distributed_Computing.pdf).
+Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md).
 
 To make the connection to an HPC Server cluster, you need to know the following pieces of information about your cluster (all of which can be obtained from your system administrator):
 

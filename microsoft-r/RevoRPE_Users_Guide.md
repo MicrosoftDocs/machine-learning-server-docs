@@ -176,7 +176,7 @@ To create a plot of y versus x, use the plot command:
 
 A scatter plot is created in separate graphics window.
 
-For further examples of using the R Console, try working through the tutorial in *Revolution R Enterprise Getting Started Guide* (RevoRPE_Getting_Started.pdf), or by working through the sample session in the R manual *An Introduction to R* (R-intro.pdf).
+For further examples of using the R Console, try working through the tutorial in the RPE Getting Started Guide, or by working through the sample session in the R manual *An Introduction to R* (R-intro.pdf).
 
 ### Creating an R Project 
 

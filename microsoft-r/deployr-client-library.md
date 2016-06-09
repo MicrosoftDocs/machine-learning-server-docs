@@ -747,7 +747,7 @@ These services support the manipulation and management of R packages within *aut
 
 A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
->By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) chapter of this guide.
+>By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) section.
 
 Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
 

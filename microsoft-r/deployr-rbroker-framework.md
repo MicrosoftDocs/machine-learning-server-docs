@@ -1468,7 +1468,7 @@ The client application profiling features are also available beyond simulations,
 
 As with most things in the RBroker framework, it is very simple to activate this feature. First, note that each RTaskResult has built-in profiling data. Second, each RBroker runtime generates runtime profiling events. By registering the appropriate asynchronous listener, a client application can receive these profiling events.
 
-The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulations) chapter with support for handling runtime profiling events.
+The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulations) section with support for handling runtime profiling events.
 
 
 **Java:**

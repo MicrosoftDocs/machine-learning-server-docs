@@ -142,21 +142,25 @@ export PATH
 
 After you have installed the software, you launch Microsoft R Client as follows.
 
-+ For Windows 7 and Windows 10:
+For Windows 10:
 
-  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
++ Choose **All Apps > Microsoft R Client > Rgui**.
 
-<br>
-+ For Windows 8.1:
 
-  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+For Windows 8.1:
+
+1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
   
-  1. Click **Start** to view the **Start** screen.
+1. Click **Start** to view the **Start** screen.
 
-  1. Locate and click the tile for **Microsoft R Client**.
+1. Locate and click the tile for **Microsoft R Client**.
 
 
+For Windows 7:
 
++ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+
+<br />
 ### Stopping Microsoft R
 
 From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
@@ -1087,7 +1091,7 @@ Some high-performance numerics routines, including those that use x86 SIMD vecto
 
 ## R Memory Limits in Windows
 
-This chapter discusses several tools available in Windows versions of R to help you monitor and manage memory usage.
+There are several tools available in the Windows versions of R to help you monitor and manage memory usage.
 
 ### 64-bit R Memory Limits
 

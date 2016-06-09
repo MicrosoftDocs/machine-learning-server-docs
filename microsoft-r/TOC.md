@@ -8,7 +8,7 @@
 ### [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md)
 ### [Install R Server on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-## DeployR
+## Install DeployR
 ### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)

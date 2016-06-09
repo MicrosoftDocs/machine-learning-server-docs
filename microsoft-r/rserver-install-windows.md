@@ -26,14 +26,14 @@ ms.custom: ""
 
 # Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
 
->
+
 >**Microsoft R Server 2016**
 >For the latest Windows installation documentation for Microsoft R Server 2016, [go here](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
->
+
 
 ## Documentation and GPL Source
 
-- [**Download the Release Notes**](http://packages.revolutionanalytics.com/doc/8.0.0/README_RevoEnt_Windows_8.0.0.pdf) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+- [**Release Notes**](./notes/r-server-nodes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
 
 - The [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB). This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
 

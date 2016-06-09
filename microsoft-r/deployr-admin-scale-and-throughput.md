@@ -135,7 +135,7 @@ If each grid node is configured with sufficient resources for `30` slots, then t
 
 ## About Throughput
 
-This chapter presents a description along with some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. **Artifacts** are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
+In this section, we present you with a description and some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. **Artifacts** are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
 
 ### Understanding Throughput
 
