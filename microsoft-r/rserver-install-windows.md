@@ -33,7 +33,7 @@ ms.custom: ""
 
 ## Documentation and GPL Source
 
-- [**Release Notes**](./notes/r-server-nodes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+- [**Release Notes**](./notes/r-server-notes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
 
 - The [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB). This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
 
