@@ -8,8 +8,8 @@ This release is for DeployR Enterprise only.
 
 |Operating System        |Installation & Configuration Guide|
 |------------------------|:----------------:|
-|Windows                 |[Guide](deployr-install-on-windows.md)|
-|Linux                   |[Guide](deployr-install-on-linux.md)|
+|Windows                 |[Read](deployr-install-on-windows.md)|
+|Linux                   |[Read](deployr-install-on-linux.md)|
 
 
 <br />
@@ -17,4 +17,4 @@ This release is for DeployR Enterprise only.
 
 |Operating System        |Installation & Configuration Guide|
 |------------------------|:----------------:|
-|Windows, Linux, Mac OS X|[Guide](deployr-installing-configuring.md)|
+|Windows, Linux, Mac OS X|[Read](deployr-installing-configuring.md)|
