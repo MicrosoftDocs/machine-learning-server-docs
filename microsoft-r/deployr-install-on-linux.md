@@ -161,10 +161,10 @@ The following steps are for installing DeployR Enterprise after installing [thes
 
 3.  Download the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz`, using the link in your customer welcome letter.
 
-4.  Unzip the tar file contents, go the `installFiles` directory, and launch the installation script. At the prompt, type:
+4.  Unzip the tar file contents, go the `deployrInstall/installFiles` directory, and launch the installation script. At the prompt, type:
 
         tar -xzf DeployR-Enterprise-Linux-8.0.5.tar.gz
-        cd installFiles
+        cd deployrInstall/installFiles
         ./installDeployREnterprise.sh
 
 5.  When the installer starts, accept the terms of the agreement to continue.

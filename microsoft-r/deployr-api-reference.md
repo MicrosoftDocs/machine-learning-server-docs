@@ -6,7 +6,7 @@ description: "DeployR API Reference Guide"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/05/2016"
+ms.date: "06/09/2016"
 ms.topic: "article"
 ms.prod: "deployr"
 ms.service: ""
@@ -441,31 +441,6 @@ The Repository Script APIs provide some script-specific functionality for reposi
 Scripts are blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, scripts differ from other repository-managed files as they perform a very specific function that can be exposed as an executable on the API.
 
 >Important! Repository-managed scripts are files in the repository so all API calls described in the section Working with Repository Files are available to create and manage repository-managed scripts.
-
-
-###Repository-Managed Shell Scripts
-
-The Repository Shell Script APIs provide some shell script-specific functionality for repository-managed shell scripts.
-
-Shell scripts can be .sh, .csh, .bash, or .bat files.
-
-While shell scripts are technically also repository-managed files, shell scripts differ from other repository-managed files as they are executable on the DeployR server.
-
-Due to the special security concerns associated with excuting shell scripts on the DeployR server only shell scripts owned by ADMINISTRATOR users can be executed on this API call. Any attempt to execute a shell script stored in the repository that is not owned by an ADMINISTRATOR user will be rejected.
-
-Access to repository-managed shell scripts is controlled by the standard set of private, restricted, shared and public DeployR repository access controls on a file-by-file basis.
-
-####Working with the Repository Shell Script APIs
-
-The Repository Shell Script APIs provide some shell script-specific functionality for repository-managed shell scripts.
-Shell scripts can be .sh, .csh, .bash, or .bat files.
-
-While shell scripts are technically also repository-managed files, shell scripts differ from other repository-managed files as they are executable on the DeployR server.
-
-Due to the special security concerns associated with excuting shell scripts on the DeployR server only shell scripts owned by ADMINISTRATOR users can be executed on this API call. Any attempt to execute a shell script stored in the repository that is not owned by an ADMINISTRATOR user will be rejected.
-
-Access to repository-managed shell scripts is controlled by the standard set of private, restricted, shared and public DeployR repository access controls on a file-by-file basis.
-
 
 
 ## Event Stream
@@ -1275,7 +1250,7 @@ To simplify life for those client developers using The DeployR API, we provide s
 
 ### DeployR for Microsoft R Server 2016
 
-+ `/r/repository/shell/execute` is no longer supported.
++ Repository Shell Script APIs are no longer supported. `/r/repository/shell/execute` has been deprecated.
 
  
 ### DeployR 7.4.1

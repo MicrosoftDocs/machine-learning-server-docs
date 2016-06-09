@@ -126,8 +126,6 @@ The input .csv file uses the letter M to represent missing values, rather than t
 
 Notice that once we supply the *colInfo* argument, we no longer need to specify *stringsAsFactors*; *DayOfWeek* is our only factor variable.
 
-[^1]: missingValueString is actually an argument to the rxTextToXdf function which is called by rxImport when reading most delimited text files.
-
 ### Examining Your New Data File 
 
 Using the small *airDS* object representing the ADS.xdf file, we can apply some standard R methods to get basic information about the data set:
