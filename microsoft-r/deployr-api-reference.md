@@ -59,6 +59,8 @@ To simplify integration of R analytics Web services using the DeployR API, we pr
 
 ### Users on the API
 
+The User APIs exist principally to facilitate user authentication with the DeployR server. Additionally, the `/r/user/autosave` call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.
+
 **Authenticated Users**
 
 One of the first steps for most typical applications using this API is to provide a mechanism for users to authenticate with the DeployR server by signing-in and signing-out of the application.
@@ -83,26 +85,29 @@ In such situations we say that the user is an *anonymous* user. Typically an *an
 
 ### Projects on the API
 
-A *project* on the DeployR API represents an R session.
+A *project* on the DeployR API represents an R session.  
 
-Most R users are accustomed to working with R interactively in an R console window. In this environment users can input commands to manipulate, analyze, visualize and interpret object and file data in the R session. The set of objects in the R session are collectively known as the *workspace*. The set of files in the R session are collectively known as the *working directory*. The R session environment also supports libraries, which allows the functionality found in R packages to be loaded by the user on-demand.
+Most R users are accustomed to working with R interactively in an R console window. In this environment, users can input commands to manipulate, analyze, visualize and interpret object and file data in the R session. The set of objects in the R session are collectively known as the *workspace*. The set of files in the R session are collectively known as the *working directory*. The R session environment also supports libraries, which allows the functionality found in R packages to be loaded by the user on-demand.
 
-The DeployR environment supports these same set of functionalities by introducing the concept of *projects* on the API. As with working in an R console window, all operations on project APIs are synchronous, where requests are processed serially and blocked until completion.
+The DeployR environment supports these same set of functionalities by introducing the concept of *projects* on the API. As with working in an R console window, all operations on project APIs are synchronous, where requests are processed serially and blocked until completion. The project management APIs facilitate basic lifecycle management for projects.
 
-DeployR supports a number of different types of projects, each of which is designed to support distinct workflows within client applications. The following sections discuss the different types of projects available:
+DeployR supports a number of different types of projects, each of which is designed to support distinct workflows within client applications. 
+
+
+
+The following sections discuss the different types of projects available:
 
 #### Anonymous Projects
 
 An *anonymous project* is a project created by an *anonymous user*. There are two types of *anonymous* project:
 
-1.  Stateless Project
-
-2.  HTTP Blackbox Project
++ Stateless Projects
++ HTTP Blackbox Projects
 
 *Stateless and HTTP Blackbox* projects can be created using the following API calls:
 
-1.  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) | Executes a repository-managed script on an anonymous project
-2.  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) | Executes a repository-managed script on an anonymous project and renders outputs to HTML
++ [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) | Executes a repository-managed script on an anonymous project
++ [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) | Executes a repository-managed script on an anonymous project and renders outputs to HTML
 
 >*Anonymous* users are not permitted to work directly with the [Project APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#overviewprojects), those APIs are only available to *authenticated* users.
 
@@ -114,11 +119,7 @@ Stateless projects are useful when an application needs to make a one-off reques
 
 With the introduction of HTTP *blackbox* projects, stateful R sessions are now available to *anonymous* users. HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an *anonymous* user's HTTP session. Once the HTTP session expires or the server detects that the *anonymous* user has been idle (default: 15 minutes idle timeout) the HTTP blackbox project and all associated state are permanently deleted by the server. There can only be one HTTP blackbox project live on a HTTP session at any given time.
 
-To execute an R script on a HTTP blackbox project, enable the ***blackbox*** parameter on the following calls:
-
-1.  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) | Executes a repository-managed script on an anonymous project
-
-2.  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) | Executes a repository-managed script on an anonymous project and renders outputs to HTML
+To execute an R script on a HTTP blackbox project, enable the ***blackbox*** parameter on the following calls: `/r/repository/script/execute` and `/r/repository/script/render`
 
 There are two types of data that can be returned when executing an R script on a HTTP blackbox project:
 
@@ -130,9 +131,7 @@ All files in a HTTP blackbox project's working directory are completely hidden f
 
 These calls also support a ***recycle*** parameter that can be used when working with HTTP blackbox projects. When this parameter is enabled the underlying R session is recycled before the execution occurs. Recycling an R session deletes all R objects from the workspace and all files from the working directory. The ability to *recycle* a HTTP blackbox project gives an *anonymous* user control over the R session lifecycle.
 
-To interrupt an execution on the HTTP blackbox project on the current HTTP session use the following call:
-
-1.  [/r/repository/script/interrupt](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptinterrupt) | Interrupts an execution on a HTTP blackbox project
+To interrupt an execution on the HTTP blackbox project on the current HTTP session use the `/r/repository/script/interrupt`.
 
 #### Authenticated Projects
 
@@ -175,11 +174,11 @@ There are two types of data that can be returned when executing an R script on a
 
 All files in a user blackbox project's working directory are completely hidden from the user.
 
-User blackbox projects can be created using the blackbox parameter on the following API calls:
+User blackbox projects can be created using the `blackbox` parameter on the following API calls:
 
-1.  [/r/project/create](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) | Creates a new project
++ [/r/project/create](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) | Creates a new project
 
-2.  [/r/project/pool](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool) | Creates a pool of temporary projects
++ [/r/project/pool](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool) | Creates a pool of temporary projects
 
 User blackbox projects permit only the following subset of project-related API calls:
 
@@ -203,19 +202,59 @@ Persistent projects are useful when an application needs to maintain the same R 
 
 The server stores the following state for each persistent project:
 
-- Project workspace.
-
-- Project working directory.
-
-- Project package dependencies.
-
-- Project R command history and associated results.
+- Project workspace
+- Project working directory
+- Project package dependencies
+- Project R command history and associated results
 
 An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the /r/project/create call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectsave) which has the effect of naming the project.
 
 All *named* projects are *persistent* projects.
 
 Refer to the section [Working with Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects) for a detailed description of all *authenticated project* related APIs.
+
+#### Live Projects on the Grid
+
+A  **live project**  is any project, temporary or persistent, that is actively in use on the [DeployR grid](#architecture). By definition, all temporary projects are live projects. A user can have zero, one or more projects live on the grid at any one time. 
+
+To ensure a fair distribution of server runtime resources across all users, the DeployR administrator can limit the number of live projects permitted for a given user at any one time. When a user reaches his or her live project limit all further API calls on new projects are rejected until one or more of that user's current live projects are closed using the `/r/project/close` call. Calls that are rejected due to live project limits will indicate an appropriate [Grid Resource Error](#codes) on the response code.
+
+#### Working with Project Management APIs
+
+**Creating Projects**
+
+There are a number of ways to create projects on the API, including the following:
+
+|API Call             |Description                                                     |
+|---------------------|----------------------------------------------------------------|
+|[`/r/project/create`]()|Create a new project|
+|[`/r/project/saveas`]()|Clone an existing project|
+|[`/r/project/import`]()|Import a project archive|
+
+**Saving Projects**
+
+There are a number of ways to save projects on the API, including the following:
+
+|API Call             |Description                                                     |
+|---------------------|----------------------------------------------------------------|
+|[`/r/project/save`]()|Save an existing project|
+|[`/r/project/saveas`]()|Clone an existing project|
+|[`/r/project/export`]()|Export a project archive|
+
+
+**Closing Projects**
+
+To close a live project use the  [`/r/project/close`]() API call. Closing a live project (temporary or persistent) deactivates the project, which in turn removes it from the grid and releases all associated server runtime resources. Remember, that closing a temporary project will permanently delete that project.
+
+**Deleting Projects**
+
+To delete a persistent project, use the [`/r/project/delete`]() API call.
+
+**Project Archives**
+
+A project archive is generated by exporting the entire state of a persistent project into a compressed archive file using the [`/r/project/export`]() API call. Once exported, this file resides outside of the DeployR server. Project archives are useful both as a general backup mechanism and as a means of sharing work between colleagues, particularly colleagues working on different DeployR installations.
+
+A user can import a project archive back into any compatible DeployR server in order to produce a new, persistent project using the [`/r/project/import`]() API call.
 
 #### Project Ownership & Collaboration
 
@@ -319,6 +358,7 @@ The event stream API is unique within the DeployR API as it supports push notifi
 
 Refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
 
+<a name="architecture"></a>
 ## DeployR Web Services API Overview
 
 While it is not necessary to understand the internal architecture of the DeployR server in order to use this API the following overview is provided in order to lend context to server administrators intending to support the API and to client application developers intending to use the API.
@@ -373,6 +413,7 @@ The DeployR API currently supports the JSON format for data exchange. Consequent
 
 While all parameters are specified as a name/value pair, some parameter values require complex data. Whenever complex data is required, a JSON schema defines how these values are to be encoded. For more information on the schema definitions and specific examples of relevant service calls, refer to section [Web Service API Data Encodings](#encode-r-object-data-for-use-on-the-api).
 
+<a name="codes"></a>
 ### API Response Code Overview
 
 Each DeployR API call will respond with a meaningful HTTP status code. Applications using this API should be implemented to handle each of these status codes as appropriate.
