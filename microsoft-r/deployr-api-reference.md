@@ -309,11 +309,49 @@ The following diagram provides an overview of the full set of Job APIs and indic
 
 ## Repository on the API
 
-The DeployR environment offers *authenticated* users versioned file storage by introducing the concept of a repository on the API. The repository provides a persistent store for user files of any type, including binary object files, plot image files, data files, simple text files and files containing blocks of R code which are referred to as [repository-managed scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
+The DeployR environment offers each *authenticated* user their own versioned file storage by introducing the concept of a repository on the API. The repository provides a persistent store for user files of any type, including binary object files, plot image files, data files, simple text files and files containing blocks of R code which are referred to as [repository-managed scripts](#reposcripts).
 
 Because the repository supports a versioned file system a full version history for each file is maintained and any version of a file can be retrieved upon request.
 
-**Repository-Managed Files**
+By default, each private repository store exposes a single repository directory, known as the root directory.
+
+Users can store files in and retrieve files from their root directory. In addition, users can manage their own set of custom and archived directories. Working with the root , custom and archived directories is detailed in the following section.
+
+###Repository Directories
+The Repository Directory APIs facilitate working with repository-managed directories. Repository-managed directories fall into two distinct categories:
++ User Directories
++ System Directories
+
+####User Directories
+Each authenticated user maintains their own set of private user directories. The set of user directories can be further divided into the following user directory types:
+
++ Root directory
++ Custom directories
++ Archived directories
+
+By default, each authenticated user has access to their own root directory in the repository. When working with repository Files, all API calls default to operating on the root directory if a specific custom or archived directory is not specified on the directory parameter.
+
+Each authenticated user can also create zero, one or more custom directories. Each custom directory becomes a sub-directory of the root directory. Custom directories can be very useful to help manage logical groups of files across multiple projects, customers, applications etc.
+
+Users can also archive the contents of their root directory or the contents of any of their custom directories within archived directories. This can be a very useful way to preserve old but valuable files over time while reducing day-to-day directory clutter.
+
+By default, archived directories do not appear in the response markup when a user makes a call to `/r/repository/directory/list`. However, when the `archived` parameter is enabled on that call, any archived directories belonging to the user will appear in the response markup.
+
+####System Directories
+
+System directories are virtual directories that exist only in the context of the response markup on the `/r/repository/directory/list` call. These directories are provided as a convenient way for a user working with the Repository Directory APIs to get access to repository-managed files that are shared or made public by other users.
+
+There are just three system directories:
+
++ Restricted directory. The Restricted system directory maintains a list of files that have been shared-with-restrictions by other authenticated users. These files will have had their access controls set to restricted access.
+
++ Shared directory. The Shared system directory maintains a list of files that have been shared by other authenticated users. These files will have had their access controls set to shared access.
+
++ Public directory. The Public system directory maintains a list of files that have been published by other authenticated users. These files will have had their access controls set to public access.
+
+>Important: As all files appearing in the system directories belong to other users, these files can not be copied, moved, modified, archived or deleted using the Repository Directory APIs.
+
+###Repository-Managed Files
 
 Each user has access to a private repository store. Each file placed in that store will be maintained indefinitely by the server unless it is explicitly deleted by the user.
 
@@ -347,7 +385,43 @@ To facilitate this kind of collaborative workflow a user can now grant authorshi
 >When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.
 >Deleting a repository-managed file with multiple authors simply revokes authorship rights to the file for the caller. After the call all other authors on the file will still have full access to the file. If the last remaining author deletes a repository-managed file, then the file is permanently deleted.
 
-**Repository-Managed Scripts**
+####Working with the Repository File APIs
+
+The Repository File APIs facilitate working with repository-managed files. Because the repository supports versioned file storage, multiple versions of any file can exist at any one time and any version can be retrieved upon request.
+
+Each repository-managed file is uniquely identified on the API by the following parameters:
++ filename - repository file name
++ author - repository file author
++ directory - (optional) repository directory name, if omitted, defaults to root directory.
++ version - (optional) repository file version
+
+Access to each repository-managed file is controlled by a set of properties on the file: restricted , shared and published respectively. These properties can be used to control the visibility of the file to other users, both authenticated and anonymous users. There are four distinct access control levels:
+
++ Private - the default access level, the file is visible to it's author(s) only.
++ Restricted - the file is visible to authenticated users that have been granted one or more of the roles indicated on the restricted property of the file.
++ Shared - the file is visible to all authenticated users when the shared property is true.
++ Public - the file is visible to all authenticated and all anonymous users when the published property is true.
+
+**Repository File Retrieval**
+
+Retrieve a list of the files in the repository using the `/r/repository/file/list` call.
+Retrieve individual files in the repository using the `/r/repository/file/download` call.
+Retrieve a list of files per repository-managed directory using the `/r/repository/directory/list` call.
+Retrieve one or more files from a repository-managed directory using the `/r/repository/directory/download` call.
+
+**Repository File Creation**
+Upload a file into the repository from the users computer using the `/r/repository/file/upload` call.
+Transfer a file into the repository from a URL using the `/r/repository/file/transfer` call.
+Write a text file into the repository using the `/r/repository/file/write` call.
+
+**Repository File Version Control**
+Retrieve a list of all versions of a specific file in the repository using the `/r/repository/file/list` call.
+Retrieve a generated diff between any version of a text-based file and the latest version of that file using the `/r/repository/file/diff` call.
+Revert to an older version of specific file in the repository using the `/r/repository/file/revert` call.
+
+
+<a name="reposcripts"></a>
+###Repository-Managed Scripts
 
 Repository-managed scripts are a special type of repository-managed file. Any file with a .r or a .R extension will be identified by the server as a repository-managed script.
 
@@ -361,7 +435,15 @@ Refer to the section [Working with Repository Scripts](https://deployr.revolutio
 
 >Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) are available to create and manage repository-managed scripts.
 
-**Repository-Managed Shell Scripts**
+####Working with the Repository Script APIs
+
+The Repository Script APIs provide some script-specific functionality for repository-managed scripts.
+Scripts are blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, scripts differ from other repository-managed files as they perform a very specific function that can be exposed as an executable on the API.
+
+>Important! Repository-managed scripts are files in the repository so all API calls described in the section Working with Repository Files are available to create and manage repository-managed scripts.
+
+
+###Repository-Managed Shell Scripts
 
 The Repository Shell Script APIs provide some shell script-specific functionality for repository-managed shell scripts.
 
@@ -373,9 +455,20 @@ Due to the special security concerns associated with excuting shell scripts on t
 
 Access to repository-managed shell scripts is controlled by the standard set of private, restricted, shared and public DeployR repository access controls on a file-by-file basis.
 
-Refer to the section [Working with Repository Shell Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshell) for a detailed description of repository-managed shell script-specific APIs.
+####Working with the Repository Shell Script APIs
 
-### Event Stream
+The Repository Shell Script APIs provide some shell script-specific functionality for repository-managed shell scripts.
+Shell scripts can be .sh, .csh, .bash, or .bat files.
+
+While shell scripts are technically also repository-managed files, shell scripts differ from other repository-managed files as they are executable on the DeployR server.
+
+Due to the special security concerns associated with excuting shell scripts on the DeployR server only shell scripts owned by ADMINISTRATOR users can be executed on this API call. Any attempt to execute a shell script stored in the repository that is not owned by an ADMINISTRATOR user will be rejected.
+
+Access to repository-managed shell scripts is controlled by the standard set of private, restricted, shared and public DeployR repository access controls on a file-by-file basis.
+
+
+
+## Event Stream
 
 The event stream API is unique within the DeployR API as it supports push notifications from the DeployR server to client applications. Notifications correspond to discrete events that occur within the DeployR server. Rather than periodically polling the server for updates a client application can simply subscribe once to the event stream and then receive event notifications pushed by the server.
 
@@ -385,14 +478,14 @@ There are four distinct event categories:
 + Job Lifecycle events
 + Management events
 
-####Stream Lifecycle Events
+###Stream Lifecycle Events
 Stream lifecycle events occur when a client application successfully connects to or disconnects from an event stream on the server. There are two stream lifecycle events:
 
 + `streamConnectEvent`. The data passed on the streamConnectEvent allows the client application to determine the type of event stream connection established with the server: authenticated, anonymous, or management event stream. The nature of an event stream connection determines the nature of the events that can be delivered on that stream. More details can be found on event stream types below.
 
 + `streamDisconnectEvent`. The streamDisconnectEvent informs a client application that the event stream has been disconnected by the server. Following a streamDisconnectEvent no further events will arrive at the client on that event stream.
 
-####Execution Events
+###Execution Events
 Execution events occur when an R session is executing R code (on behalf of an anonymous project, authenticated project or on behalf of a job) or when an execute API call fails. There are three distinct types of Execution events:
 
 + `executionConsoleEvent`. An executionConsoleEvent pushes R console output generated by an R session to the event stream. Console events are automatically pushed to the event stream each time you execute R code.
@@ -405,37 +498,32 @@ Execution events occur when an R session is executing R code (on behalf of an an
    
 + `executionErrorEvent`. An executionErrorEvent pushes an error message when an execute API call fails for any reason. These events occur when the caller attempts to execute R code that is syntactically invalid or when parameters such as inputs or preloads passed on the call are invalid.
 
-####Job Lifecycle Events
+###Job Lifecycle Events
 Job lifecycle events occur each time a Job transitions to a new state in its lifecycle, for example when moving from QUEUED to RUNNING state or when moving from RUNNING to COMPLETED or FAILED state. 
 
 There is just one type of lifecycle event, `jobLifecycleEvent`. Job lifecycle events make it simple for client applications to track the progress of background jobs without having to continuously poll the server for status updates.
 
-####Management Events
+###Management Events
 Management events occur when important runtime conditions are detected by the server. These are the distinct types of Management events:
 
-+ `gridActivityEvent`
-+ `gridWarningEvent`
-+ `gridHeartbeatEvent`
-+ `securityLoginEvent`
-+ `securityLogoutEvent`
++ `gridActivityEvent`. A gridActivityEvent is pushed to the event stream when a slot on the grid is either activated or deactivated on behalf of an anonymous project, authenticated project or on behalf of a job. This type of event provides realtime visibility onto grid activity at runtime.
 
-A gridActivityEvent is pushed to the event stream when a slot on the grid is either activated or deactivated on behalf of an anonymous project, authenticated project or on behalf of a job. This type of event provides realtime visibility onto grid activity at runtime.
++ `gridWarningEvent`. A gridWarningEvent is pushed to the event stream when activity on the grid runs up against limits defined by the Concurrent Operation Policies under Server Policies in the DeployR Administration Console or whenever demands on the grid exceed available grid resources. This type of event signals resource contention and possibly even resource exhaustion and should therefore be of particular interest to the administrator for a DeployR instance.
 
-A gridWarningEvent is pushed to the event stream when activity on the grid runs up against limits defined by the Concurrent Operation Policies under Server Policies in the DeployR Administration Console or whenever demands on the grid exceed available grid resources. This type of event signals resource contention and possibly even resource exhaustion and should therefore be of particular interest to the administrator for a DeployR instance.
++ `gridHeartbeatEvent`. A gridHeartbeatEvent is pushed periodically by the server. This type of event provides a detailed summary of slot activity across all nodes on the grid. This event when used in conjunction with gridActivityEvent and gridWarningEvent provides 100% visibility across all live grid activity at runtime.
 
-A gridHeartbeatEvent is pushed periodically by the server. This type of event provides a detailed summary of slot activity across all nodes on the grid. This event when used in conjunction with gridActivityEvent and gridWarningEvent provides 100% visibility across all live grid activity at runtime.
++ `securityLoginEvent`. The securityLoginEvent is pushed to the event stream when users  logs in to the server.
 
-The securityLoginEvent and securityLogoutEvent events are pushed to the event stream when users login or logout of the server respectively.
++ `securityLogoutEvent`. The securityLogoutEvent is pushed to the event stream when users log out of the server.
 
-####Authenticated, Anonymous and Management Event Streams
-The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the /r/event/stream API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
+###Authenticated, Anonymous and Management Event Streams
+The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the `/r/event/stream` API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
 
-Authenticated event stream
-Anonymous event stream
-Management event stream
++ Authenticated event stream
++ Anonymous event stream
++ Management event stream
+
 All streams push a streamHandshakeEvent event when a connection if first established. The Authenticated event stream pushes execution and job lifecycle events related to a specific authenticated user . The Anonymous event stream pushes only execution events within the anonymous HTTP Session. The Management event stream pushes server-wide management events .
-
-
 
 
 <a name="architecture"></a>
@@ -1184,6 +1272,11 @@ The following response markup contains annotations that describe each of the sup
 To simplify life for those client developers using The DeployR API, we provide several client libraries for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they greatly simplify the creation of DeployR-encoded object data inputs to the server and the parsing of DeployR-encoded object data as outputs from the server.
 
 ## API Change History
+
+### DeployR for Microsoft R Server 2016
+
++ `/r/repository/shell/execute` is no longer supported.
+
  
 ### DeployR 7.4.1
 
