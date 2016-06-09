@@ -204,7 +204,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
-##Installing DeployR Grid Nodes
+###Installing DeployR Grid Nodes
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and configuring additional grid nodes.
 
