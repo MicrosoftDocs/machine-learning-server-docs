@@ -31,30 +31,13 @@ With the advent of DeployR, the full statistics, analytics and visualization cap
 
 ##R for Application Developers
 
-**R Analytics Web Services**
+While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to leverage R inside applications. The DeployR API exposes **R analytics Web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
-While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to leverage R inside applications. The DeployR API exposes R analytics Web services, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
+As an application developer integrating with **DeployR-managed analytics Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the [DeployR Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
-**Analytics Web Service Integration**
+Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a **project** on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on [*anonymous* or *authenticated* projects](#projects).
 
-As an application developer integrating with DeployR-managed analytics Web services, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the *DeployR Repository Manager* this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
-
-Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a ***project*** on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on *anonymous projects* or on *authenticated projects*.
-
-**[Anonymous Projects](#anonymous-projects)**
-
-1.  ***Stateless projects*** are useful when an application needs an R session to make a one-off request. It may help to think of a stateless project as a disposable R session, that is used once and then discarded. There are many types of application workflows that can benefit from working with stateless projects.
-2.  ***HTTP blackbox projects*** make stateful R sessions available to *anonymous* users. HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an anonymous user's HTTP session.
-
-**[Authenticated Projects](#authenticated-projects)**
-
-1.  ***Temporary projects*** are useful when an application needs to maintain the same R session for the duration of an *authenticated* user's session within the application.
-
-2.  ***User blackbox projects*** are a special type of temporary project that limits API access on the underlying R session. User blackbox projects are most useful when an application developer wants to associate a temporary project with a user without granting that user unfettered access to the underlying R session.
-
-3.  ***Persistent projects*** are useful when an application needs to maintain the same R session across multiple user sessions within the application. Each time a user executes R code on their persistent project the accumulated R objects in the workspace as well as files in the working directory from previous service executions are available. A persistent project remains available indefinitely to the user until they decide to explicitly delete it.
-
-To simplify integration of R analytics Web services using the DeployR API, we provide several client libraries, which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
+To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
 
 ##Users on the API
 
@@ -64,11 +47,9 @@ The User APIs exist principally to facilitate user authentication with the Deplo
 
 One of the first steps for most typical applications using this API is to provide a mechanism for users to authenticate with the DeployR server by signing-in and signing-out of the application.
 
-To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [/r/user/login](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
+To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [`/r/user/login`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
 
 If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
-
-Refer to the section [Working with User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers) for a detailed description of all user-related APIs.
 
 **Pre-Authenticated Users**
 
@@ -80,8 +61,9 @@ While many applications require the security and controls associated with *authe
 
 In such situations we say that the user is an *anonymous* user. Typically an *anonymous* user is an unauthenticated visitor to a DeployR-enabled Web application.
 
-*Anonymous* users are only granted access to a single API call, [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute). Refer to section [Working with Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for more details.
+*Anonymous* users are only granted access to a single API call, [`/r/repository/script/execute`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute). 
 
+<br /><a name="projects"></a>
 ##Projects on the API
 
 A *project* on the DeployR API represents an R session.  
@@ -98,21 +80,19 @@ The following sections discuss the different types of projects available:
 
 ###Anonymous Projects
 
-An *anonymous project* is a project created by an *anonymous user*. There are two types of *anonymous* project:
+An *anonymous project* is a project created by an *anonymous user*. There are two types of anonymous project: **stateless projects** and **HTTP blackbox projects**. The types of projects can be created using the following API calls:
 
-+ Stateless Projects
-+ HTTP Blackbox Projects
 
-*Stateless and HTTP Blackbox* projects can be created using the following API calls:
+|API Call                          |Description                                                     |
+|----------------------------------|----------------------------------------------------------------|
+|[`/r/repository/script/execute`]()|Executes a repository-managed script on an anonymous project    |
+|[`/r/repository/script/render`]() |Executes a repository-managed script on an anonymous project and renders outputs to HTML |
 
-+ [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) | Executes a repository-managed script on an anonymous project
-+ [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) | Executes a repository-managed script on an anonymous project and renders outputs to HTML
-
->*Anonymous* users are not permitted to work directly with the [Project APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#overviewprojects), those APIs are only available to *authenticated* users.
+*Anonymous* users are not permitted to work directly with the Project APIs. Those APIs are only available to *authenticated* users.
 
 **Stateless Projects**
 
-Stateless projects are useful when an application needs to make a one-off request on an R session. Once the service request has responded with the results of the execution the R session is shutdown and permanently deleted by the server.
+Stateless projects are useful when an application needs to make a one-off request on an R session. It may help to think of a stateless project as a disposable R session, that is used once and then discarded.  Once the service request has responded with the results of the execution the R session is shutdown and permanently deleted by the server.  There are many types of application workflows that can benefit from working with stateless projects.
 
 **HTTP Blackbox Projects**
 
@@ -141,13 +121,15 @@ An *authenticated project* is a project created by an authenticated user. There 
 
 *Authenticated projects* can be created using the following API calls:
 
-1.  [`/r/project/create`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) | Creates a new temporary, user blackbox or persistent project
 
-2.  [`/r/project/pool`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool) | Creates a pool of temporary projects
+|API Call               |Description                                                     |
+|-----------------------|----------------------------------------------------------------|
+|[`/r/project/create`]()|Creates a new temporary, user blackbox or persistent project    |
+|[`/r/project/pool`]()  |Creates a pool of temporary projects                            |
 
 *Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [`/r/project/execute/code`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode) and [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript) calls and retrieve the R command history for the project using the [`/r/project/execute/history`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutehistory) call.
 
->Given an *authenticated* user can do everything an *anonymous* user can do on the API it is possible for an *authenticated* user to create and work with *anonymous* projects as described in the section [Anonymous Projects](#anonymous-projects).
+>Given an *authenticated* user can do everything an *anonymous* user can do on the API, it is possible for an *authenticated* user to create and work with *anonymous* projects as described in the section [Anonymous Projects](#anonymous-projects).
 
 **Temporary Projects**
 
@@ -155,8 +137,7 @@ Temporary projects are useful when an application needs to maintain the same R s
 
 A user can create a temporary project by omitting the name parameter on the [`/r/project/create`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) call or they can create a pool of temporary projects using the [`/r/project/pool` call](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool).
 
-
->All unnamed projects are temporary projects.
+All unnamed projects are temporary projects.
 
 **User Blackbox Projects**
 
@@ -192,7 +173,11 @@ A user blackbox project also ensure that none of the R code from the R scripts t
 
 **Persistent Projects**
 
-Persistent projects are useful when an application needs to maintain the same R session across multiple user sessions within the application. A persistent project is stored indefinitely in the server unless it is explicitly deleted by the user. Whenever users return to the server their own persistent projects are available so that, users can pick up where they last left off. In this way, persistent projects can be developed over days, weeks, months even years.
+Persistent projects are useful when an application needs to maintain the same R session across multiple user sessions within the application. A persistent project is stored indefinitely in the server unless it is explicitly deleted by the user. 
+
+Each time a user executes R code on their persistent project, the accumulated R objects in the workspace and files in the working directory from previous service executions remain available.
+
+Whenever users return to the server, their own persistent projects are available so that users can pick up where they last left off. In this way, persistent projects can be developed over days, weeks, months even years.
 
 The server stores the following state for each persistent project:
 
@@ -204,8 +189,6 @@ The server stores the following state for each persistent project:
 An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the /r/project/create call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectsave) which has the effect of naming the project.
 
 All *named* projects are *persistent* projects.
-
-Refer to the section [Working with Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects) for a detailed description of all *authenticated project* related APIs.
 
 ###Live Projects on the Grid
 
@@ -278,18 +261,18 @@ The DeployR environment supports these types of long-running operations by intro
 
 The Job APIs facilitate working with DeployR managed jobs. Jobs support the execution of commands in the background on behalf of users.
 
-###Submitting Jobs v Scheduling Jobs
+####Submitting Versus Scheduling Jobs
 
 Jobs can be submitted for immediate background execution using the `/r/job/submit` call. Jobs can be scheduled for execution at some later date or on a recurring basis using the `/r/job/schedule` call.
 
-###Job Scheduling Priority
+####Job Scheduling Priority
 When a user submits or schedules a job they can identify a high, medium or low (default) priority for their job. Each priority level has it's own dedicated jobs queue managed by the jobs scheduler.
 
 Jobs in higher priority job queues are guaranteed to be executed on the grid ahead of jobs in lower priority job queues. Put another way, jobs in higher priority job queues are assigned free slots on the grid ahead of jobs on lower priority queues. Jobs on the same jobs queue are executed on the grid in the order in which they were submitted.
 
 High, medium and low priority job queues allow users to expedite higher priority jobs by 'jumping the queue', and to expedite jobs to best fit specific scheduling needs.
 
-###Retrieving Job Results
+####Retrieving Job Results
 Users can query the status of their jobs using the `/r/job/query` call which returns the current status for a given job. Users can cancel a scheduled job or an actively running job using the `/r/job/cancel` call.
 
 Regardless of whether a job runs to completion or whether a job is interrupted or aborted by the user the DeployR server will create a new project for the user by default. This project will be named after the job that created it and will contain a complete workspace, working directory, package dependencies, command history and associated results generated by that job. The user can then work with the full set of Project APIs to manipulate, analyze, visualize and interpret all of the objects, files and generated plots resulting from the job.
@@ -300,7 +283,7 @@ If the `storenoproject` parameter is not set to true then a project is always cr
 
 >All completed, interrupted and aborted jobs result in new projects for users.
 
-###Understanding the Jobs Lifecycle
+####Understanding the Jobs Lifecycle
 The following diagram provides an overview of the full set of Job APIs and indicates the lifecycle of jobs managed by those APIs:
 
 ![](media/deployr/deployr-api-asynch-jobs.png)
@@ -315,7 +298,7 @@ Because the repository supports a versioned file system a full version history f
 
 By default, each private repository store exposes a single repository directory, known as the root directory.
 
-Users can store files in and retrieve files from their root directory. In addition, users can manage their own set of custom and archived directories. Working with the root , custom and archived directories is detailed in the following section.
+Users can store files in and retrieve files from their root directory. In addition, users can manage their own set of custom and archived directories. Working with the root, custom and archived directories is detailed in the following section.
 
 ###Repository Directories
 The Repository Directory APIs facilitate working with repository-managed directories. Repository-managed directories fall into two distinct categories:
@@ -404,20 +387,28 @@ Access to each repository-managed file is controlled by a set of properties on t
 
 **Repository File Retrieval**
 
-Retrieve a list of the files in the repository using the `/r/repository/file/list` call.
-Retrieve individual files in the repository using the `/r/repository/file/download` call.
-Retrieve a list of files per repository-managed directory using the `/r/repository/directory/list` call.
-Retrieve one or more files from a repository-managed directory using the `/r/repository/directory/download` call.
+|API Call                              |Description                                                     |
+|--------------------------------------|----------------------------------------------------------------|
+|[`/r/repository/file/list`]()         |Retrieve a list of the files in the repository|
+|[`/r/repository/file/download`]()     |Retrieve individual files in the repository|
+|[`/r/repository/directory/list`]()    |Retrieve a list of files per repository-managed directory|
+|[`/r/repository/directory/download`]()|Retrieve one or more files from a repository-managed directory|
 
 **Repository File Creation**
-Upload a file into the repository from the users computer using the `/r/repository/file/upload` call.
-Transfer a file into the repository from a URL using the `/r/repository/file/transfer` call.
-Write a text file into the repository using the `/r/repository/file/write` call.
+
+|API Call                          |Description                                                     |
+|----------------------------------|----------------------------------------------------------------|
+|[`/r/repository/file/upload`]()   |Upload a file into the repository from the users computer|
+|[`/r/repository/file/transfer`]() |Transfer a file into the repository from a URL|
+|[`/r/repository/file/write`]()    |Write a text file into the repository|
 
 **Repository File Version Control**
-Retrieve a list of all versions of a specific file in the repository using the `/r/repository/file/list` call.
-Retrieve a generated diff between any version of a text-based file and the latest version of that file using the `/r/repository/file/diff` call.
-Revert to an older version of specific file in the repository using the `/r/repository/file/revert` call.
+
+|API Call                              |Description                                                     |
+|--------------------------------------|----------------------------------------------------------------|
+|[`/r/repository/file/list`]()         |Retrieve a list of the files in the repository|
+|[`/r/repository/file/diff`]()         |Retrieve a generated diff between any version of a text-based file and the latest version of that file|
+|[`/r/repository/file/revert`]()       |Revert to an older version of specific file in the repository|
 
 
 <a name="reposcripts"></a>
