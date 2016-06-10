@@ -176,75 +176,6 @@ The following steps are for installing DeployR Enterprise after installing [thes
 1.  Review and follow these critical [post-installation steps](#post-installation-steps). You will not be able to log into the server until you set a password.  
 
 
-## Install DeployR Grid Nodes
-
-When you install the DeployR server, one local grid node is installed automatically for you. You can also point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the main [DeployR server](#install-deployr-server).
-
->[!TIP]
->-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
->-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
->-   Always install the main DeployR server first.
->-   Install each grid node on a separate host machine.
-
-**To install DeployR grid nodes:**
-
-_After installing the [main server for DeployR Enterprise](#install-deployr-server)_, install each grid node on a separate machine as follows:
-
-1.  Log into the operating system on the machine on which you will install the grid node as `root` or a user with `sudo` permissions.
-
-2.  Install Microsoft R Server 2016 and the DeployR Rserve component [as described here](#install-dependencies) on the grid node machine.
-
-3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
-
-    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
-
-        mkdir /home/deployr-user/deployrdownload
-        cd /home/deployr-user/deployrdownload
-
-4.  Download the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz`, using the link in your customer welcome letter.
-
-5.  Unzip the tar file contents, go the `installFiles` directory, and launch the installation script. At the prompt, type:
-
-        tar -xzf DeployR-Enterprise-Linux-8.0.5.tar.gz
-        cd installFiles
-        ./installDeployREnterprise.sh
-
-6.  When the installer starts, accept the terms of the agreement to continue.
-
-7.  When prompted by the installer, choose installation option `2` and follow the onscreen installer prompts. This will install a remote grid node.
-
-8.  Enter the directory path in which to install. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
-
-<br>
-<br>
-**To configure & validate nodes:**
-
-After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
-
-1.  Log into the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
-
-2.  Go to the **Administration Console**.
-
-3.  Click **The Grid** in the main menu.
-
-4.  For each remote grid node you installed earlier, do the following: (You do not need to configure the DeployR Default Node.)
-
-    1.  Click **New Grid Node**.
-
-    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** [ using these instructions](./deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes). 
-    
-    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](./deployr-admin-console/deployr-admin-managing-the-grid.md#node-validation-and-errors)
-
-    4.  Run a diagnostic test of each grid node individually as follows:
-
-        1.  Enable **only** that node in the main **The Grid** tab.
-
-        2.  Return to the landing page to run the [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
-
-    5.  Repeat these steps for each grid node.
-
-    6.  Remember to go back and enable all the grid nodes you want to use when you are done testing.
-
 ##Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
@@ -336,6 +267,76 @@ To fix this issue, you must define the appropriate external server IP address an
 6.  Return to the main menu.
 
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
+
+### Install DeployR Grid Nodes
+
+When you install the DeployR server, one local grid node is installed automatically for you. You can also point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the main [DeployR server](#install-deployr-server).
+
+>[!TIP]
+>-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
+>-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
+>-   Always install the main DeployR server first.
+>-   Install each grid node on a separate host machine.
+
+**To install DeployR grid nodes:**
+
+_After installing the [main server for DeployR Enterprise](#install-deployr-server)_, install each grid node on a separate machine as follows:
+
+1.  Log into the operating system on the machine on which you will install the grid node as `root` or a user with `sudo` permissions.
+
+2.  Install Microsoft R Server 2016 and the DeployR Rserve component [as described here](#install-dependencies) on the grid node machine.
+
+3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
+
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+
+        mkdir /home/deployr-user/deployrdownload
+        cd /home/deployr-user/deployrdownload
+
+4.  Download the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz`, using the link in your customer welcome letter.
+
+5.  Unzip the tar file contents, go the `installFiles` directory, and launch the installation script. At the prompt, type:
+
+        tar -xzf DeployR-Enterprise-Linux-8.0.5.tar.gz
+        cd installFiles
+        ./installDeployREnterprise.sh
+
+6.  When the installer starts, accept the terms of the agreement to continue.
+
+7.  When prompted by the installer, choose installation option `2` and follow the onscreen installer prompts. This will install a remote grid node.
+
+8.  Enter the directory path in which to install. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
+
+<br>
+<br>
+**To configure & validate nodes:**
+
+After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
+
+1.  Log into the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
+
+2.  Go to the **Administration Console**.
+
+3.  Click **The Grid** in the main menu.
+
+4.  For each remote grid node you installed earlier, do the following: (You do not need to configure the DeployR Default Node.)
+
+    1.  Click **New Grid Node**.
+
+    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** [ using these instructions](./deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes). 
+    
+    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](./deployr-admin-console/deployr-admin-managing-the-grid.md#node-validation-and-errors)
+
+    4.  Run a diagnostic test of each grid node individually as follows:
+
+        1.  Enable **only** that node in the main **The Grid** tab.
+
+        2.  Return to the landing page to run the [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+
+    5.  Repeat these steps for each grid node.
+
+    6.  Remember to go back and enable all the grid nodes you want to use when you are done testing.
+
 
 ### Use a PostgreSQL Database
 

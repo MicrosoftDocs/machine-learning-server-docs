@@ -117,7 +117,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
+1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#installing-deployr-grid-nodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
