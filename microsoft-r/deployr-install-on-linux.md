@@ -527,7 +527,7 @@ Remember to uninstall DeployR on both the main server and any other grid node ma
 1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        ./adminUtility.sh
+        sudo ./adminUtility.sh
 
 2.  From the main menu, enter `2` to stop the server.
 
@@ -537,7 +537,7 @@ Remember to uninstall DeployR on both the main server and any other grid node ma
 
 5.  Remove DeployR, Tomcat and RServe directories. At the prompt, type:
 
-        rm -rf /home/deployr-user/deployr/8.0.5
+        sudo rm -rf /home/deployr-user/deployr/8.0.5
 
 6.  Remove extraneous files. At the prompt, type:
 
