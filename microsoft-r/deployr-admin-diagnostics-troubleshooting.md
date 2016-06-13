@@ -364,8 +364,6 @@ During the installation of DeployR on Windows, the 'Domain' profile is used to c
 
 You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser.
 
-For example, to log into the DeployR Administration Console with admin account and into the API explorer tool with another user account, open one in Google Chrome™ and the other in Mozilla® Firefox®.
-
 ### Issues After Reinstalling Microsoft R or R
 
 If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr-admin-configure-reinstall-r.md).
