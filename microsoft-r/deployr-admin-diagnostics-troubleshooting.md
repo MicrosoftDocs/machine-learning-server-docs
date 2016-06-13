@@ -66,9 +66,9 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
-   >All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.zip`.
+   >All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\tmp\logs\diagnostics.zip`.
 
-+ **On Linux / OS X**:
++ **On Linux**:
     1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
        ```
        cd $DEPLOYR_HOME/deployr/tools/ 
@@ -77,10 +77,10 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
-   >All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.tar.gz`.
+   >All output from the diagnostic test are stored into `$DEPLOYR_HOME/deployr/tmp/logs/diagnostics.zip`.
 
 #### For DeployR 8.0.0
-+ **On Windows**: Run the following commands. All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.zip`.
++ **On Windows**: Run the following commands. All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\logs\diagnostics.zip`.
    ```
    cd C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics 
    diagnostics.bat
@@ -88,7 +88,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
    > If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
 
-+ **On Linux / OS X**: Run the following commands. All output from the diagnostic test are stored in the `logs` subdirectory as well as bundled into `diagnostics.tar.gz`.
++ **On Linux / OS X**: Run the following commands. All output from the diagnostic test are stored in the `$DEPLOYR_HOME/deployr/logs/diagnostics.tar.gz`.
    ```
    cd $DEPLOYR_HOME/deployr/diagnostics 
    ./diagnostics.sh
@@ -114,7 +114,7 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 
 **For Linux / OS X**
 
-The following log files can be found in the resulting `diagnostics.tar.gz` file as well as under `$DEPLOYR_HOME/deployr/tmp/logs` directly on the DeployR host.
+The following log files can be found under `$DEPLOYR_HOME/deployr/tmp/logs` directly on the DeployR host.
 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -363,8 +363,6 @@ During the installation of DeployR on Windows, the 'Domain' profile is used to c
 ### Multiple User Sign-ins
 
 You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser.
-
-For example, to log into the DeployR Administration Console with admin account and into the API explorer tool with another user account, open one in Google Chrome™ and the other in Mozilla® Firefox®.
 
 ### Issues After Reinstalling Microsoft R or R
 

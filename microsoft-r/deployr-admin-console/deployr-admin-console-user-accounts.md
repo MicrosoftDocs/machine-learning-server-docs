@@ -1,4 +1,4 @@
-﻿---
+---
 
 # required metadata
 title: "DeployR Administration Console Help"
@@ -32,22 +32,23 @@ Each user has an account with [properties](deployr-admin-console-user-accounts.m
 
 When you click **Users** in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click **Next** to proceed to the remaining accounts.
 
+>[!IMPORTANT]
+>As an alternative, you can choose another form of [authentication for DeployR](../deployr-admin-security/deployr-security-authentication.md), such as Active Directory, LDAP, or PAM.
+
 _Figure: User List page_
 
 ![](media/deployr-admin-console-user-accounts/03000008.png)
 
->You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you must log in to each one in a separate brand of browser. For example, to log in to the DeployR Administration Console with `admin` account and into the API Explorer tool with another user account, you could open one in Google Chrome™ and the other in Mozilla® Firefox®.
+>You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you must log in to each one in a separate brand of browser. 
 
 ## Preconfigured User Accounts
 
 The following table presents the preconfigured DeployR user accounts and their default passwords.
 
->Change the password **immediately** after installing to prevent unauthorized access.
-
 | Name                                 | Description and Recommendations                                                                                                    |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `admin`    | A default system administrator account for immediate access to the console.  This account cannot be renamed, disabled, or deleted. |
-| `testuser` | A default test account for client developers. We strongly recommend that you disable this account in production deployments.       |
+| `testuser` | A default test account for client developers. We strongly recommend that you disable this account in production deployments. This account comes locked and you’ll need to set a password in order to use it.      |
 
 
 ## User Account Properties

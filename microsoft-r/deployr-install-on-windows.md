@@ -117,7 +117,10 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-1. **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#installing-deployr-grid-nodes).
+>[!IMPORTANT]
+>At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
+
+1. [Optional] **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#installing-deployr-grid-nodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
@@ -147,6 +150,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 For the best results, complete these configuration topics in the order in which they are presented.
 
+<a name="firewall"></a>
 ### Updating Your Firewall
 
 During installation, the Windows firewall was automatically updated with several new inbound rules for  inbound communications to DeployR. For your security, those inbound rules are disabled by default and set to a `Private` profile. 
@@ -237,6 +241,8 @@ _After installing_ the [main DeployR Enterprise server](#install-deployr-server)
 **To configure & validate nodes:**
 
 After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
+
+1. [Set the proper firewall rules](#firewall) to open the RServe ports ONLY to the public IP of the DeployR server.
 
 1. Log into the DeployR landing page as `admin` at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
