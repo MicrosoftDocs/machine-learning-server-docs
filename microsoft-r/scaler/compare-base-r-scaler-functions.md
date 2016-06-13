@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "ScaleR Functions"
+description: "ScaleR Functions"
+keywords: "RevoScaleR, ScaleR"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoftr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 # Comparison of Base R and ScaleR Functions
 
 This topic provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  

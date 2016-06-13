@@ -112,7 +112,7 @@
 #### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 #### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
-# R Productivity Environment (Revolution R Enterprise)
+# R Productivity Environment (RRE Only)
 ## [RPE Getting Started](RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)
 # [Additional Resources](microsoft-r-more-resources.md)

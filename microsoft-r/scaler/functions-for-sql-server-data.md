@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "ScaleR Functions"
+description: "ScaleR Functions"
+keywords: "RevoScaleR, ScaleR"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoftr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #ScaleR Functions for Working with SQL Server Data
 
 This topic provides an overview of the main ScaleR functions for use with SQL Server, along with comments on their syntax.

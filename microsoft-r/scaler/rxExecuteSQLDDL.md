@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "rxExecuteSQLDDL - ScaleR Functions"
+description: "ScaleR Functions: rxExecuteSQLDDL"
+keywords: "RevoScaleR, ScaleR, rxExecuteSQLDDL"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoftr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #rxExecuteSQLDDL
 
 Executes a DDL command to define, manipulate, or control SQL data, but not return data.

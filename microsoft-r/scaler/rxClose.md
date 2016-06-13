@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "rxClose - ScaleR Functions"
+description: "ScaleR Functions: rxClose"
+keywords: "RevoScaleR, ScaleR, rxClose"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoftr"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: ""
+ms.custom: ""
+
+---
+
 #rxClose
 
 Closes the connection to an RxDataSource object.
