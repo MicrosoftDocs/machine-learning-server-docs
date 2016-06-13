@@ -367,7 +367,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
     1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
             cd $DEPLOYR_HOME/deployr/tools/ 
-            ./adminUtility.sh
+            sudo ./adminUtility.sh
 
     2.  Choose the option **Start/Stop Server**.
 
@@ -403,7 +403,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
     1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
             cd $DEPLOYR_HOME/deployr/tools/ 
-            ./adminUtility.sh
+            sudo ./adminUtility.sh
 
     2.  From the main menu, choose the option **Test Database Connection**.
 
@@ -535,7 +535,7 @@ Remember to uninstall DeployR on both the main server and any other grid node ma
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
         sudo ./adminUtility.sh
 
-2.  From the main menu, enter `2` to stop the server.
+2.  From the main menu of the utility, choose the option to stop the server.
 
 3.  Stop the server and exit the utility.
 
@@ -563,10 +563,8 @@ Repeat these steps on each grid node machine.
 
 2.  Remove DeployR and RServe directories. At the prompt, type:
 
-        rm -rf /home/deployr-user/deployr/8.0.5
+        sudo rm -rf /home/deployr-user/deployr/8.0.5
 
 3.  Remove the extraneous files and directory. At the prompt, type:
 
         rm -rf /home/deployr-user/deployrdownload
-
-
