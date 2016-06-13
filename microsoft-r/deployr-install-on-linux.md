@@ -196,11 +196,14 @@ The following steps outline what you need to do after running the DeployR instal
     
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-1. **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
+>[!IMPORTANT]
+>At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
+
+1. [Optional] **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#install-deployr-grid-nodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
-1. [Optional] If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#using-a-postgresql-database).
+1. [Optional] If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
 1. [Optional] If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
@@ -222,6 +225,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 For the best results, complete these configuration topics in the order in which they are presented.
 
+<a name="firewall"></a>
 ### Update Your Firewall
 
 If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the following ports:
@@ -313,7 +317,9 @@ _After installing the [main server for DeployR Enterprise](#install-deployr-serv
 
 After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
 
-1.  Log into the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
+1. [Set the proper firewall rules](#firewall) to open the RServe ports ONLY to the public IP of the DeployR server.
+
+1. Log into the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
 2.  Go to the **Administration Console**.
 
@@ -337,7 +343,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     6.  Remember to go back and enable all the grid nodes you want to use when you are done testing.
 
-
+<a name="postgresql"></a>
 ### Use a PostgreSQL Database
 
 During the installation of DeployR, a local H2 database is automatically installed and configured for you. After installing DeployR, **but before using it**, you can configure DeployR to use a database in **PostgreSQL 9.1 or greater.**

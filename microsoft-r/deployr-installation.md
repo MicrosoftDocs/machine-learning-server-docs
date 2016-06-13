@@ -2,7 +2,7 @@
 
 The following guides are available to help you install and configure DeployR.
 
-### DeployR Enterprise for Microsoft R Server 2016
+### DeployR Enterprise for Microsoft R Server 2016 (released June 2016)
 
 This release is for DeployR Enterprise only.
 
@@ -13,7 +13,7 @@ This release is for DeployR Enterprise only.
 
 
 <br />
-### DeployR Enterprise and DeployR Open 8.0.0
+### DeployR Enterprise and DeployR Open 8.0.0 (released January 2016)
 
 |Operating System        |Installation & Configuration Guide|
 |------------------------|:----------------:|
