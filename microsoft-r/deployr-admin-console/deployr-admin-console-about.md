@@ -50,7 +50,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 
 ## How to Access the Administration Console
 
->You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you'll need to log in to each one in a separate brand of browser. For example, to log in to the DeployR Administration Console with admin account and into the API Explorer tool with another user account, you could open one in Google Chrome™ and the other in Mozilla® Firefox®.
+>You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you'll need to log in to each one in a separate brand of browser. 
 
 **To access and log in to the Administration Console after installation:**
 
