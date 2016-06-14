@@ -33,8 +33,8 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 
 |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle2.png)|![import](../media/scaler-puzzle3.png)|![import](../media/scaler-puzzle4.png)|![import](../media/scaler-puzzle5.png)|  
 |-|-|-|-|-|
-|**Import & Export**|**Process, Manipulate, Chunk**|**Visualize**|**Analyze, Learn, Predict**|**???**|
-|<!--COL-1-->[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->[`rxDataStep`]()<br />[`rxFactors`]() <br />[`rxSort`]() <br />[`rxMerge`]() <br />[`rxSplit`]()|<!--COL-3-->[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() |<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br /> _Statistical Modeling:_<br />[``]() <br />[``]() <br /> _Prediction:_<br />[`rxPredict`]()<br />[``]()|<!--COL-5-->**Predict**<br />[``]()|
+|**Import & Export**|**Manipulate, <br /> Process, Chunk**|**Visualize**|**Analyze, Learn, <br /> Predict**|**???**|
+|<!--COL-1-->[`rxImport()`](rxClose.md) <br /> [`rxXdfToText()`]() <br /> [`rxGetInfo()`]() <br /> [`rxSetInfo()`]() <br /> [`rxGetVarInfo()`]() <br /> [`rxSetVarInfo()`]() <br /> [`rxGetVarNames()`]() <br /> [`rxCompressXdf()`]() <br /> [`RxXdfData()`]()<br />[`RxTextData()`]() <br /> [`RxSasData()`]() <br /> [`RxSpssData()`]() <br /> [`RxOdbcData()`]()|<!--COL-2-->[`rxDataStep`]() <br /> [`rxFactors`]() <br /> [`rxSort`]() <br /> [`rxMerge`]() <br /> [`rxSplit`]()|<!--COL-3-->[``]() <br /> [``]() <br /> [``]() <br />[``]() <br />[``]() |<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_ <br /> [``]() <br />[``]() <br /> [``]() <br /> _Statistical Modeling:_ <br /> [``]() <br /> _Prediction:_ <br /> [`rxPredict`]() <br /> [``]()|<!--COL-5-->  |
 
 <br>
 <br>
@@ -46,7 +46,7 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
 |-|-|
 |**Compute Context**|**Others**|
-|<!--COL-1-->[`RxComputeContext()`]()<br />[`RxForeachDoPar()`]()<br />[`RxLocalParallel()`]()<br />[`RxLocalSeq()`]()<br />[`rxGetComputeContext()`](rxGetComputeContext.md)<br />[`rxSetComputeContext()`](rxSetComputeContext.md)|<!--COL-2-->[`rxGetAvailableNodes()`]()<br />[`rxGetNodeInfo()`]() <br />[`rxPingNodes()`]() <br />[`rxExec()`]() <br />[`rxGetJobStatus()`]() <br />[`rxGetJobResults()`]() <br />[`rxGetJobOutput()`]() <br />[`rxGetJobs()`]() <br />[`rxLocateFile()`]()| 
+|<!--COL-1-->[`RxComputeContext()`]() <br /> [`RxForeachDoPar()`]() <br /> [`RxLocalParallel()`]() <br /> [`RxLocalSeq()`]() <br /> [`rxGetComputeContext()`](rxGetComputeContext.md) <br /> [`rxSetComputeContext()`](rxSetComputeContext.md)|<!--COL-2--> [`rxGetAvailableNodes()`]() <br /> [`rxGetNodeInfo()`]() <br /> [`rxPingNodes()`]() <br /> [`rxExec()`]() <br /> [`rxGetJobStatus()`]() <br /> [`rxGetJobResults()`]() <br /> [`rxGetJobOutput()`]() <br /> [`rxGetJobs()`]() <br /> [`rxLocateFile()`]()| 
 
 
 
