@@ -136,7 +136,7 @@ _Figure: Export User Accounts page_
 
 Importing allows you to retrieve all of the accounts from a previously exported CSV file. Alternately, you can also import a CSV file you have created yourself using the proper format. Since role and boundary assignments cannot be exported, all imported user accounts are automatically assigned the `BASIC_USER` role at import time unless you choose to assign the `POWER_USER` role. You can, of course, manually add roles to users later after importing.
 
->For security reasons, user passwords are not exported. You can add a plain text password manually in the password field in the exported CSV file **prior to import**. If no password is defined manually, all users are automatically assigned the password ‘changeme’ upon import. We recommend changing that password as soon as possible.
+>For security reasons, user passwords are not exported. You can add a plain text password manually in the password field in the exported CSV file **prior to import**. 
 
 **To import:**
 
