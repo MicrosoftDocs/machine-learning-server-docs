@@ -37,9 +37,19 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |<!--COL-1-->[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->[`rxDataStep`]()<br />[`rxFactors`]() <br />[`rxSort`]() <br />[`rxMerge`]() <br />[`rxSplit`]()|<!--COL-3-->[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() |<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br /> _Statistical Modeling:_<br />[``]() <br />[``]() <br /> _Prediction:_<br />[`rxPredict`]()<br />[``]()|<!--COL-5-->**Predict**<br />[``]()|
 
 <br>
+<br>
 |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
 |-|-|
 |<!--COL-1-->**Data Sources**<br />[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->**Utility Functions**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()| 
+
+## High Powered Computing & Distributed Computing
+|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
+|-|-|
+|**Compute Context**|**Others**|
+|<!--COL-1-->[`RxComputeContext()`]()<br />[`RxForeachDoPar()`]()<br />[`RxLocalParallel()`]()<br />[`RxLocalSeq()`]()<br />[`rxGetComputeContext()`](rxGetComputeContext.md)<br />[`rxSetComputeContext()`](rxSetComputeContext.md)|<!--COL-2-->[`rxGetAvailableNodes()`]()<br />[`rxGetNodeInfo()`]() <br />[`rxPingNodes()`]() <br />[`rxExec()`]() <br />[`rxGetJobStatus()`]() <br />[`rxGetJobResults()`]() <br />[`rxGetJobOutput()`]() <br />[`rxGetJobs()`]() <br />[`rxLocateFile()`]()| 
+
+
+
 
 ##  <a name="bkmk_DataInputAndOutput"></a> Data Input and Output  
   
@@ -154,5 +164,3 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |rxGetJobs|Gets the available distributed computing job information objects||  
 |rxLocateFile|Gets the first occurrence of a specified input file in a set of specified paths||  
   
-## See Also  
- [SQL Server R Services Features and Tasks](https://msdn.microsoft.com/en-us/library/mt590811.aspx)  
