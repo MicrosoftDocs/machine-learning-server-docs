@@ -26,7 +26,30 @@ ms.custom: ""
 
 # ScaleR Functions
 
-The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-powered and distributed computing, and when working with Hadoop.
+The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-powered and distributed computing, and when working with Hadoop. About 180 functions can be called directly from the command-line.
+
+**To see the `RevoScaler` functions that can be called from the commands-line:**
+
+1. With Microsoft R Server or R Client installed, launch an R console.
+
+1. In the console, return the number of objects by typing the following at the R prompt `>`:
+   ```
+   > search()
+   ```
+
+1. Identify the position of the object you are interested in. In the case of our example, RevoScaleR is in the fifth position.
+
+1. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
+   ```
+   > objects(5)
+   ```
+
+   ![objects](../media/scaler-rconsole-obj.png)
+
+1. At the R prompt, type `?<function_name>` to open the help file for that function, such as:
+   ```
+   > ?rxXdfData
+   ```
 
 
 ## Data Analysis Functions
