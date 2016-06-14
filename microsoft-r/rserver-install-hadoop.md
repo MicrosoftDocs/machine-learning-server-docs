@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Server Hadoop Configuration Guide"
-description: "RevoScaleR Hadoop installation and configuration."
+title: "R Server Hadoop Configuration Guide for 8.0.0"
+description: "Hadoop installation and configuration for Microsoft R Server version 8.0.0."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "03/17/2016"
+ms.date: "06/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "rserver"
 ms.service: ""
@@ -24,15 +24,15 @@ ms.custom: ""
 
 ---
 
-# R Server Hadoop Configuration Guide
+# Hadoop Configuration Guide for Microsoft R Server 8.0.0
 
 ## Introduction
 
-Microsoft R Server is the scalable data analytics solution, and it is designed to work seamlessly whether your computing environment is a single-user workstation, a local network of connected servers, or a cluster in the cloud. This manual is intended for those who need to configure a Hadoop cluster for use with Microsoft R Server.
+Microsoft R Server is a scalable data analytics server that can be deployed as a single-user workstation, a local network of connected servers, or on a cluster in the cloud. This article explains how to configure a Hadoop cluster for use with Microsoft R Server 8.0.0.
 
-### Obtaining the Software
+### Download R Server
 
-Microsoft R Server consists of two parts: Microsoft R Open for Microsoft R Server, and Microsoft R Server 2016. These parts are downloaded from separate locations:
+Microsoft R Server consists of two parts: Microsoft R Open for Microsoft R Server (open source), and Microsoft R Server 2016 (proprietary). Each part is downloaded separately:
 
 - [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409)
 - Microsoft R Server 2016 is available through the following distribution channels, depending upon how you purchased the product:
@@ -41,7 +41,9 @@ Microsoft R Server consists of two parts: Microsoft R Open for Microsoft R Serve
     - [MSDN](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
     - [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
 
-Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file). Microsoft R Server is distributed in two different formats: if you obtain it via VLSC, it is in the form of a DVD img file; if you obtain it via MSDN or Dev Essentials, it is a tar.gz file.
+Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file). 
+
+Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
 
 ### System Requirements
 
