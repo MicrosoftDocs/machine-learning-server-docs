@@ -31,9 +31,14 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 
 ## Data Analysis Functions
 
-|![import](../media/scaler-puzzle1.png)|**Description**|**Nearest base R function**|  
-|-|-|-|  
-|[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />||| 
+|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
+|-|-|-|-|-|
+|<!--COL-1-->**Import & Export**<br />[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->**Process, Manipulate, Chunk**<br />[`rxDataStep`]()<br />[`rxFactors`]() <br />[`rxSort`]() <br />[`rxMerge`]() <br />[`rxSplit`]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()|<!--COL-3-->**Visualize & Graph**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()|<!--COL-4-->**Descriptive Statistics and Cross-Tabulation**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />**Statistical Modeling**<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()|<!--COL-5-->**Predict**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()| 
+
+
+|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
+|-|-|
+|<!--COL-1-->**Data Sources**<br />[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->**Utility Functions**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()| 
 
 ##  <a name="bkmk_DataInputAndOutput"></a> Data Input and Output  
   
