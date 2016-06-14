@@ -34,7 +34,7 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle2.png)|![import](../media/scaler-puzzle3.png)|![import](../media/scaler-puzzle4.png)|![import](../media/scaler-puzzle5.png)|  
 |-|-|-|-|-|
 |**Import & Export**|**Manipulate, <br /> Clean, & Chunk**|**Visualize**|**Analyze & Learn**|**Predict**|
-|<!--COL-1-->[`rxImport()`](rxClose.md) <br /> [`rxXdfToText()`]() <br /> [`rxGetInfo()`]() <br /> [`rxSetInfo()`]() <br /> [`rxGetVarInfo()`]() <br /> [`rxSetVarInfo()`]() <br /> [`rxGetVarNames()`]() <br /> [`rxCompressXdf()`]() <br /> [`RxXdfData()`]()<br />[`RxTextData()`]() <br /> [`RxSasData()`]() <br /> [`RxSpssData()`]() <br /> [`RxOdbcData()`]() <br />[`RxTeradata()`]() <br />[`rxOpen()`]() <br />[`rxReadNext()`]() <br /> [`rxSetFileSystem()`]() <br /> [`rxGetFileSystem()`]() <br />[`RxHdfsFileSystem()`]() <br /> [`RxNativeFileSystem()`]() <br /> The functions `rxDataStep()`, `rxXdfToDataFrame()`, and `rxReadXdf:Reads()` can also read an .XDF file into a data  frame.|<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]() <br /> [`rxSort()`]() <br /> [`rxMerge()`]() <br /> [`rxSplit()`]() <br /> Chunking is not available when running code locally with R Client.|<!--COL-3--> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() |<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_ <br /> [`()`]() <br />[`()`]() <br /> [`()`]() <br /> <br /> _Statistical Modeling:_ <br /> [`()`]()|<!--COL-5--> [`rxPredict()`]() |
+|<!--COL-1-->[`rxImport()`]() <br /> [`rxXdfToText()`]() <br /> [`rxGetInfo()`]() <br /> [`rxSetInfo()`]() <br /> [`rxGetVarInfo()`]() <br /> [`rxSetVarInfo()`]() <br /> [`rxGetVarNames()`]() <br /> [`rxCompressXdf()`]() <br /> [`RxXdfData()`]()<br />[`RxTextData()`]() <br /> [`RxSasData()`]() <br /> [`RxSpssData()`]() <br /> [`RxOdbcData()`]() <br />[`RxTeradata()`]() <br />[`rxOpen()`]() <br />[`rxReadNext()`]() <br /> [`rxSetFileSystem()`]() <br /> [`rxGetFileSystem()`]() <br />[`RxHdfsFileSystem()`]() <br /> [`RxNativeFileSystem()`]() <br /><br />  The functions `rxDataStep()`, `rxXdfToDataFrame()`, and `rxReadXdf:Reads()` can also read an .XDF file into a data  frame.|<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]() <br /> [`rxSort()`]() <br /> [`rxMerge()`]() <br /> [`rxSplit()`]() <br /> Chunking is not available when running code locally with R Client.|<!--COL-3--> [`rxHistogram()`]() <br />[`rxLinePlot()`]() <br /> [`rxLorenz()`]()  <br /> [`rxRocCurve()`]() <br />[`()`]() <br /> [`()`]() |<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_ <br /> [`rxSummary()`]() <br /> [`rxQuantile()`]() <br /> [`rxCrossTabs()`]() <br /> [`rxCube()`]() <br /> [`rxMarginals()`]()  <br /> [`rxChiSquaredTest()`]() <br /> [`rxFisherTest()`]() <br /> [`rxKendallCor()`]() <br /> [`rxPairwiseCrossTab()`]() <br /> [`rxRiskRatio()`]() <br /> [`rxOddsRatio()`]()<br /> <br /> _Statistical Modeling:_ <br /> [`rxLinMod()`]() <br /> [`rxCovCor()`]() <br />[`rxCov()`]() <br /> [`rxCor()`]()  <br /> [`rxSSCP()`]() <br />[`rxLogit()`]() <br /> [`rxRoc()`]()  <br /> [`rxGlm()`]() <br />[`rxDTree()`]() <br /> [`rxKmeans()`]()  <br /> [`()`]() <br />[`()`]() <br /> [`()`]()  <br /> [`()`]() <br />[`()`]() <br /> [`()`]()  <br /> [`()`]() <br />[`()`]() <br /> [`()`]() |<!--COL-5--> [`rxPredict()`]() |
 
 
 
@@ -44,7 +44,8 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |![import](../media/scaler-data.png)  |![import](../media/scaler-utility.png)|  
 |----------------------------------------|--------------------------------------|
 |**Data Sources**                        |**Utility Functions**                 |
-|<!--COL-1-->[`()`]()<br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() |<!--COL-2-->[`()`]()<br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]()| 
+|<!--COL-1--> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]()|<!--COL-2-->  [`rxOptions()`]()<br /> [`rxGetOption()`]() <br /> [`rxRngNewStream()`]() <br /> [`rxRngDelStream()`]() <br /> [`rxRngGetStream()`]() <br /> [`rxRngSetStream()`]() <br /> [`rxGetEnableThreadPool()`]() <br /> [`rxSetEnableThreadPool()`]()  <br /> [`rxStepControl()`]() | 
+
 
 
 <br>
@@ -57,13 +58,6 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |--------------------------------------|--------------------------------------|
 |**Compute Context**                   |**Others**                            |
 |<!--COL-1-->[`RxComputeContext()`]() <br /> [`RxForeachDoPar()`]() <br /> [`RxLocalParallel()`]() <br /> [`RxLocalSeq()`]() <br /> [`rxGetComputeContext()`](rxGetComputeContext.md) <br /> [`rxSetComputeContext()`](rxSetComputeContext.md)|<!--COL-2--> [`rxGetAvailableNodes()`]() <br /> [`rxGetNodeInfo()`]() <br /> [`rxPingNodes()`]() <br /> [`rxExec()`]() <br /> [`rxGetJobStatus()`]() <br /> [`rxGetJobResults()`]() <br /> [`rxGetJobOutput()`]() <br /> [`rxGetJobs()`]() <br /> [`rxLocateFile()`]() <br /> [`rxCancelJob()`]() <br /> [`rxCleanupJobs  ()`]() <br /> [`rxGetJobInfo()`]() <br /> [`rxDistributeJob()`]() <br /> [`rxLaunchClusterJobManager ()`]() <br /> [`rxWaitForJob ()`]()| 
-
-               
-           
-              
-           
-
-    <br /> [`()`]()
 
 
 ##Learn More
