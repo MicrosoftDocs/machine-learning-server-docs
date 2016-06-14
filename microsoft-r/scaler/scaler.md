@@ -31,7 +31,7 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 
 ## Data Analysis Functions
 
-|![import](./media/scaler-puzzle1.png)|**Description**|**Nearest base R function**|  
+|![import](../media/scaler-puzzle1.png)|**Description**|**Nearest base R function**|  
 |-|-|-|  
 |[rxImport]()<br />[rxXdfToText]()<br />[rxGetInfo]()<br />[rxSetInfo]()<br />[rxGetVarInfo]()<br />[rxSetVarInfo]()<br />[rxGetVarNames]()<br />[rxCompressXdf]()<br />[RxXdfData]()<br />[RxTextData]()<br />[RxSasData]()<br />[RxSpssData]()<br />[RxOdbcData]()<br />||| 
 
