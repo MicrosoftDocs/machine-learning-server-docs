@@ -39,9 +39,10 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 <br>
 <br>
 
-|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
-|-|-|
-|<!--COL-1-->**Data Sources**<br />[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->**Utility Functions**<br />[``]()<br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]() <br />[``]()| 
+|![import](../media/scaler-puzzle1.png)  |![import](../media/scaler-puzzle1.png)|  
+|----------------------------------------|------------------------------------------------|
+|**Data Sources**                        |**Utility Functions**|
+|<!--COL-1-->[`rxImport()`](rxClose.md)<br />[`rxXdfToText()`]()<br />[`rxGetInfo()`]()<br />[`rxSetInfo()`]()<br />[`rxGetVarInfo()`]()<br />[`rxSetVarInfo()`]()<br />[`rxGetVarNames()`]()<br />[`rxCompressXdf()`]()<br />[`RxXdfData()`]()<br />[`RxTextData()`]()<br />[`RxSasData()`]()<br />[`RxSpssData()`]()<br />[`RxOdbcData()`]()<br />|<!--COL-2-->[`()`]()<br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[``]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]() <br />[`()`]()| 
 
 
 <br>
@@ -51,8 +52,8 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 ## High Powered Computing & Distributed Computing
 
 |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
-|-|-|
-|**Compute Context**|**Others**|
+|--------------------------------------|--------------------------------------|
+|**Compute Context**                   |**Others**                            |
 |<!--COL-1-->[`RxComputeContext()`]() <br /> [`RxForeachDoPar()`]() <br /> [`RxLocalParallel()`]() <br /> [`RxLocalSeq()`]() <br /> [`rxGetComputeContext()`](rxGetComputeContext.md) <br /> [`rxSetComputeContext()`](rxSetComputeContext.md)|<!--COL-2--> [`rxGetAvailableNodes()`]() <br /> [`rxGetNodeInfo()`]() <br /> [`rxPingNodes()`]() <br /> [`rxExec()`]() <br /> [`rxGetJobStatus()`]() <br /> [`rxGetJobResults()`]() <br /> [`rxGetJobOutput()`]() <br /> [`rxGetJobs()`]() <br /> [`rxLocateFile()`]()| 
 
 
