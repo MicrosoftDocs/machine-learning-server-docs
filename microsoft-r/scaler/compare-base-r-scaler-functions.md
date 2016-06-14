@@ -126,9 +126,6 @@ This topic provides a list of the functions provided by the **RevoScaleR** packa
 |**rx function**|**Description**|**Nearest base R function**|  
 |-|-|-|  
 |RxComputeContext|Creates a compute context||  
-|RxHpcServer|Creates a Microsoft HPC Server compute context||  
-|RxAzureBurst|Creates an Azure Burst HPC Server compute context||  
-|RxLsfCluster|Creates an IBM Platform Computing LSF compute context||  
 |RxForeachDoPar|Creates a compute context for `rxExec` using the current **foreach** parallel back end||  
 |RxLocalParallel|Creates a local compute context for `rxExec` using the parallel package as back end||  
 |RxLocalSeq|Creates a local compute context for `rxExec` using sequential computations||  
