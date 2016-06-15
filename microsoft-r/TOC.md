@@ -36,6 +36,8 @@
 ### [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 ## [RevoScaleR Functions](scaler/scaler.md)
 ### [ScaleR Function Map](scaler/scaler.md)
+### [Function Map for R Server](scaler/scaler-fx-r-server.md)
+### [Function Map for R Client](scaler/scaler.md)
 ### [rxClose](scaler/rxClose.md)
 ### [RxComputeContext](scaler/rxComputeContext.md)
 ### [rxExecuteSQLDDL](scaler/rxExecuteSQLDDL.md)
