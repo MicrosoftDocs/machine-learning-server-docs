@@ -46,7 +46,7 @@ This topic is specific to Microsoft R Server. Here you can learn about the most 
 <br>
 ## Other Functions 
 
-|![import](../media/scaler-data.png)  |![import](../media/scaler-context.png)| ![import](../media/scaler-utility.png)| ![import](../media/scaler-utility.png)|  
+|![import](../media/source.png)  |![import](../media/scaler-context.png)| ![import](../media/utility.png)| ![import](../media/hpc.png)|  
 |----------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|
 |**Data Sources**                        |**Compute Context**                 |**Utility Functions**                 |**High Performance / Distributed Computing**  |
 |<!--COL-1--> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]()|<!--COL-2-->  |<!--COL-3--> [`rxOptions()`]()<br /> [`rxGetOption()`]() <br /> [`rxRngNewStream()`]() <br /> [`rxRngDelStream()`]() <br /> [`rxRngGetStream()`]() <br /> [`rxRngSetStream()`]() <br /> [`rxGetEnableThreadPool()`]() <br /> [`rxSetEnableThreadPool()`]()  <br /> [`rxStepControl()`]()  |<!--COL-4--> [`RxComputeContext()`](RxComputeContext.md) <br /> [`RxForeachDoPar()`]() <br /> [`RxLocalParallel()`]() <br /> [`RxLocalSeq()`]() <br /> [`rxGetComputeContext()`](rxGetComputeContext.md) <br /> [`rxSetComputeContext()`](rxSetComputeContext.md) <br /> [`RxInSqlServer()`](RxInSqlServer.md) |
