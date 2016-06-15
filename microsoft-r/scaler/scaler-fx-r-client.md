@@ -30,6 +30,14 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 
 This topic is specific to Microsoft R Server. Here you can learn about the most commonly used functions for Microsoft R Server users.  
 
+You can also learn about the functions recommended for these editions:
++ Microsoft R Client
++ [Microsoft R Server for Hadoop](scaler-fx-hadoop.md)
++ Microsoft R Server for Teradata
++ [SQL Server R Services](functions-for-sql-server-data.md)
+
+
+
 ## Functions for Data Analysis
 
 | |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle2.png)|![import](../media/scaler-puzzle3.png)|![import](../media/scaler-puzzle4.png)|  
@@ -39,7 +47,7 @@ This topic is specific to Microsoft R Server. Here you can learn about the most 
 |**Less Used <br />Functions**  |<!--COL-1--> [`RxNativeFileSystem()`]() |<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]()|<!--COL-3--> [`rxHistogram()`]()|<!--COL-4--> Something |
 
 >[!IMPORTANT]
->This is not an exhaustive list of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](scaler.md#findmore)
+>This is not an exhaustive list of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](#findmore)
 
 
 
@@ -59,3 +67,32 @@ This topic is specific to Microsoft R Server. Here you can learn about the most 
 [`rxSqlServerTableExists()`](rxSqlServerTableExists.md)
 [`rxWriteNext()`](rxWriteNext.md)
 <br>
+
+
+<a name="findmore"></a>
+##See All Functions and Help Files
+
+Get the set of public functions and see the associated help pages using the following steps.
+
+**To see the `RevoScaleR` functions that can be called from the commands-line:**
+
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe`, R Tools for Visual Studio, RStudio, or another IDE. 
+
+1. In the console, return the number of objects by typing the following at the R prompt `>`:
+   ```
+   > search()
+   ```
+
+1. Identify the position of the object you are interested in. In the case of our example, RevoScaleR is in the fifth position.
+
+1. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
+   ```
+   > objects(5)
+   ```
+
+   ![objects](../media/scaler-rconsole-obj.png)
+
+1. At the R prompt, type `?<function_name>` to open the help file for that function, such as:
+   ```
+   > ?rxXdfData
+   ```

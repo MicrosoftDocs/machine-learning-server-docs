@@ -24,49 +24,27 @@ ms.custom: ""
 
 ---
 
-# ScaleR Function Map
+# ScaleR Function Mapping
 
-The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-powered and distributed computing, and when working with Hadoop. About 180 functions can be called directly from the command-line.
+The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-performance and distributed computing, SQL Server, Hadoop, and Teradata. About 180 functions can be called directly from the command-line.
 
+This topic is specific to Microsoft R Server. Here you can learn about the most commonly used functions for Microsoft R Server users.  
 
-## Functions for Data Analysis
-
-|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle2.png)|![import](../media/scaler-puzzle3.png)|![import](../media/scaler-puzzle4.png)|![import](../media/scaler-puzzle5.png)|  
-|-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-|**Import & Export**    |**Manipulate,          <br /> Clean, & Chunk**|**Visualize**          |**Analyze & Learn**    |**Predict**    |
-|<!--COL-1-->[`rxImport()`]() <br /> [`rxXdfToText()`]() <br /> [`rxGetInfo()`]() <br /> [`rxSetInfo()`]() <br /> [`rxGetVarInfo()`]() <br /> [`rxSetVarInfo()`]() <br /> [`rxGetVarNames()`]() <br /> [`rxCompressXdf()`]() <br /> [`RxXdfData()`]()<br />[`RxTextData()`]() <br /> [`RxSasData()`]() <br /> [`RxSpssData()`]() <br /> [`RxOdbcData()`]() <br /> [`RxSqlServerData()`](RxSqlServerData.md) <br />[`RxTeradata()`]() <br />[`rxOpen()`](rxOpen.md) <br />[`rxClose()`](rxClose.md)  <br />[`rxReadNext()`](rxReadNext.md) <br /> [`rxSetFileSystem()`]() <br /> [`rxGetFileSystem()`]() <br />[`RxHdfsFileSystem()`]() <br /> [`RxNativeFileSystem()`]() <br /><br />  Functions `rxDataStep()`,<br/> `rxXdfToDataFrame()`, <br/>and `rxReadXdf:Reads()`<br/> can also read <br/>an .XDF file into <br/>a data  frame.|<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]() <br /> [`rxSort()`]() <br /> [`rxMerge()`]() <br /> [`rxSplit()`]() <br /> [`rxExecuteSQLDDL()`](rxExecuteSQLDDL.md)<br /> <br /> **Note:** Chunking is <br />not available when <br />running code <br />locally with the <br />R Client.|<!--COL-3--> [`rxHistogram()`]() <br />[`rxLinePlot()`]() <br /> [`rxLorenz()`]()  <br /> [`rxRocCurve()`]()|<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_ <br /> [`rxSummary()`]() <br /> [`rxQuantile()`]() <br /> [`rxCrossTabs()`]() <br /> [`rxCube()`]() <br /> [`rxMarginals()`]()  <br /> [`rxChiSquaredTest()`]() <br /> [`rxFisherTest()`]() <br /> [`rxKendallCor()`]() <br /> [`rxPairwiseCrossTab()`]() <br /> [`rxRiskRatio()`]() <br /> [`rxOddsRatio()`]()<br /> <br /> _Statistical Modeling:_ <br /> [`rxLinMod()`]() <br /> [`rxCovCor()`]() <br />[`rxCov()`]() <br /> [`rxCor()`]()  <br /> [`rxSSCP()`]() <br />[`rxLogit()`]() <br /> [`rxRoc()`]()  <br /> [`rxGlm()`]() <br />[`rxDTree()`]() <br /> [`rxKmeans()`]()  <br /> [`rxDForest()`]()|<!--COL-5--> [`rxPredict()`]() |
-
-
-
-<br>
-<br>
-
-|![import](../media/scaler-data.png)  |![import](../media/scaler-utility.png)|  
-|----------------------------------------|--------------------------------------|
-|**Data Sources**                        |**Utility Functions**                 |
-|<!--COL-1--> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]() <br /> [`()`]()|<!--COL-2-->  [`rxOptions()`]()<br /> [`rxGetOption()`]() <br /> [`rxRngNewStream()`]() <br /> [`rxRngDelStream()`]() <br /> [`rxRngGetStream()`]() <br /> [`rxRngSetStream()`]() <br /> [`rxGetEnableThreadPool()`]() <br /> [`rxSetEnableThreadPool()`]()  <br /> [`rxStepControl()`]() | 
+You can also learn about the functions recommended for these editions:
++ [Microsoft R Server Linux](scaler-fx-r-server.md)
++ [Microsoft R Client](scaler-fx-r-client.md)
++ [Microsoft R Server for Hadoop](scaler-fx-hadoop.md)
++ Microsoft R Server for Teradata
++ [SQL Server R Services](functions-for-sql-server-data.md)
 
 
+>[!IMPORTANT]
+>These are not exhaustive lists of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](#findmore)
 
-<br>
-[`rxIsOpen()`](rxIsOpen.md)
-[`rxSqlServerDropTable()`](rxSqlServerDropTable.md)     
-[`rxSqlServerTableExists()`](rxSqlServerTableExists.md)
-[`rxWriteNext()`](rxWriteNext.md)
-<br>
+<a name="findmore"></a>
+##See All Functions and Help Files
 
-
-## Functions for High Powered Computing & Distributed Computing
-
-|![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle1.png)|  
-|--------------------------------------|--------------------------------------|
-|**Compute Context**                   |**Others**                            |
-|<!--COL-1-->[`RxComputeContext()`](RxComputeContext.md) <br /> [`RxForeachDoPar()`]() <br /> [`RxLocalParallel()`]() <br /> [`RxLocalSeq()`]() <br /> [`rxGetComputeContext()`](rxGetComputeContext.md) <br /> [`rxSetComputeContext()`](rxSetComputeContext.md) <br /> [`RxInSqlServer()`](RxInSqlServer.md)|<!--COL-2--> [`rxGetAvailableNodes()`]() <br /> [`rxGetNodeInfo()`]() <br /> [`rxPingNodes()`]() <br /> [`rxExec()`]() <br /> [`rxGetJobStatus()`]() <br /> [`rxGetJobResults()`]() <br /> [`rxGetJobOutput()`]() <br /> [`rxGetJobs()`]() <br /> [`rxLocateFile()`]() <br /> [`rxCancelJob()`]() <br /> [`rxCleanupJobs  ()`]() <br /> [`rxGetJobInfo()`]() <br /> [`rxDistributeJob()`]() <br /> [`rxLaunchClusterJobManager()`]() <br /> [`rxWaitForJob ()`]()| 
-
-
-##Learn More
-
-Get the set of public functions and see the associated help pages using the following steps.
+See the list of public functions and see the associated help pages using the following steps.
 
 **To see the `RevoScaleR` functions that can be called from the commands-line:**
 
