@@ -1,5 +1,4 @@
 ---
-
 # required metadata
 title: "Create an R Package Parcel for Cloudera Manager"
 description: "Create an R Package Parcel for Cloudera Manager to distribute R across a Hadoop cluster."

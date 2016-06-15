@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "R Server Hadoop Configuration Guide for 8.0.0"
-description: "Hadoop installation and configuration for Microsoft R Server version 8.0.0."
+title: "Hadoop installation and configuration guide for Microsoft R Server"
+description: "Hadoop installation and configuration guide for Microsoft R Server version 8.0.0."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
+author: "HeidiSteen"
+manager: "paulettm"
 ms.date: "06/14/2016"
-ms.topic: "get-started-article"
+ms.topic: ""
 ms.prod: "rserver"
 ms.service: ""
 ms.assetid: ""
@@ -24,17 +24,18 @@ ms.custom: ""
 
 ---
 
-# Hadoop Configuration Guide for Microsoft R Server 8.0.0
-
-## Introduction
+# Hadoop installation and configuration guide for Microsoft R Server
 
 Microsoft R Server is a scalable data analytics server that can be deployed as a single-user workstation, a local network of connected servers, or on a cluster in the cloud. This article explains how to configure a Hadoop cluster for use with Microsoft R Server.
 
 ## Links
 
 [Install Microsoft R 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+
 [Adjust your Hadoop cluster configuration for R server workloads](rserver-install-hadoop-configuration-r-workloads.md)
-[Create an R package parcel for Hadoop cluster using Clouder Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
+
+[Create an R package parcel for Hadoop cluster using Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
+
 [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
 ## Download R Server
