@@ -37,10 +37,11 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 |**Most Popular <br />Functions**  |<!--COL-1-->[`rxImport()`]() <br /> [`rxXdfToText()`]() <br /> [`rxGetInfo()`]() <br /> [`rxSetInfo()`]() <br /> [`rxGetVarInfo()`]() <br /> [`rxSetVarInfo()`]() <br /> [`rxGetVarNames()`]() <br /> [`rxCompressXdf()`]() <br /> [`RxXdfData()`]()<br />[`RxTextData()`]() <br /> [`RxSasData()`]() <br /> [`RxSpssData()`]() <br /> [`RxOdbcData()`]() <br /> [`RxSqlServerData()`](RxSqlServerData.md) <br />[`RxTeradata()`]() <br />[`rxOpen()`](rxOpen.md) <br />[`rxClose()`](rxClose.md)  <br />[`rxReadNext()`](rxReadNext.md) <br /> [`rxSetFileSystem()`]() <br /> [`rxGetFileSystem()`]() <br />[`RxHdfsFileSystem()`]() <br /> [`RxNativeFileSystem()`]() <br /><br />  Functions `rxDataStep()`,<br/> `rxXdfToDataFrame()`, <br/>and `rxReadXdf:Reads()`<br/> can also read <br/>an .XDF file into <br/>a data  frame.|<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]() <br /> [`rxSort()`]() <br /> [`rxMerge()`]() <br /> [`rxSplit()`]() <br /> [`rxExecuteSQLDDL()`](rxExecuteSQLDDL.md)<br /> |<!--COL-3--> [`rxHistogram()`]() <br />[`rxLinePlot()`]() <br /> [`rxLorenz()`]()  <br /> [`rxRocCurve()`]()|<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_ <br /> [`rxSummary()`]() <br /> [`rxQuantile()`]() <br /> [`rxCrossTabs()`]() <br /> [`rxCube()`]() <br /> [`rxMarginals()`]()  <br /> [`rxChiSquaredTest()`]() <br /> [`rxFisherTest()`]() <br /> [`rxKendallCor()`]() <br /> [`rxPairwiseCrossTab()`]() <br /> [`rxRiskRatio()`]() <br /> [`rxOddsRatio()`]() <br /> <br /> _Statistical Modeling:_ <br /> [`rxLinMod()`]() <br /> [`rxCovCor()`]() <br />[`rxCov()`]() <br /> [`rxCor()`]()  <br /> [`rxSSCP()`]() <br />[`rxLogit()`]() <br /> [`rxRoc()`]()  <br /> [`rxGlm()`]() <br />[`rxDTree()`]() <br /> [`rxKmeans()`]()  <br /> [`rxDForest()`]() <br /> <br /> _Prediction:_ <br /> [`rxPredict()`]() |
 |**Less Used <br />Functions**  |<!--COL-1--> [`RxNativeFileSystem()`]() |<!--COL-2--> [`rxDataStep()`]() <br /> [`rxFactors()`]()|<!--COL-3--> [`rxHistogram()`]()|<!--COL-4--> Something |
 
+>[!IMPORTANT]
 >This is not an exhaustive list of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](#findmore)
 
 
-<br>
+
 <br>
 ## Other Functions 
 
@@ -60,7 +61,7 @@ The `RevoScaleR` package includes hundreds of functions you can use for data ana
 
 
 <a name="findmore"></a>
-##Learn More
+##See All Functions and Help Files
 
 Get the set of public functions and see the associated help pages using the following steps.
 
