@@ -32,54 +32,6 @@ This topic is specific to Microsoft R Server. Here you can learn about the most 
 
 ## Functions for Data Analysis
 
-
-![import](../media/scaler-puzzle1.png)
-![import](../media/scaler-puzzle2.png)
-![import](../media/scaler-puzzle3.png)
-![import](../media/scaler-puzzle4.png)
-
-
-###Import and Export Functions
-
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
-|[`rxImport()`]()       |![top](../media/award.png)|Move data from an ODBC source to the XDF file| See package|
-|[`rxXdfToText()`]()    |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
-|[`rxGetInfo()`]()      |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
-|[`rxSetInfo()`]()       |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
-|[`rxGetVarInfo()`]()    |  |      |[See package](scaler.md#findmore)|
-|[`rxSetVarInfo()`]()    |  |      |[See package](scaler.md#findmore)|
-|[`rxGetVarNames()`]()   |  |      |[See package](scaler.md#findmore)|
-|[`rxCompressXdf()`]()   |  |      |[See package](scaler.md#findmore)|
-|[`RxXdfData()`]()       |  |Create an XDF data object      |[See package](scaler.md#findmore)|
-|[`RxTextData()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxSasData()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxSpssData()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxOdbcData()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxSqlServerData()`](RxSqlServerData.md)    |   |      |[See package](scaler.md#findmore)|
-|[`RxTeradata()`]()     |  |      |[See package](scaler.md#findmore)|
-|[`rxOpen()`](rxOpen.md)     |  |Open a data source for reading|[See package](scaler.md#findmore)|
-|[`rxClose()`](rxClose.md)      |  |Close a data source      |[See package](scaler.md#findmore)|
-|[`rxReadNext()`](rxReadNext.md)      |  |Read data from a source      |[See package](scaler.md#findmore)|
-|[`rxSetFileSystem()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`rxGetFileSystem()`]()     |  |      |[See package](scaler.md#findmore)|
-|[`RxHdfsFileSystem()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxNativeFileSystem()`]()       |  |      |[See package](scaler.md#findmore)|
-|Functions `rxDataStep()`,<br/> `rxXdfToDataFrame()`, <br/>and `rxReadXdf:Reads()`<br/> can also read <br/>an .XDF file into <br/>a data  frame.    |  |      |[See package](scaler.md#findmore)|
-
-
-
-
-|<!--COL-2--> [`rxDataStep()`]()  [`rxFactors()`]()  [`rxSort()`]()  [`rxMerge()`]()  [`rxSplit()`]()  [`rxExecuteSQLDDL()`](rxExecuteSQLDDL.md) |<!--COL-3--> [`rxHistogram()`]() [`rxLinePlot()`]()  [`rxLorenz()`]()   [`rxRocCurve()`]()|<!--COL-4-->_Descriptive Statistics <br/>& Cross-Tabulation:_  [`rxSummary()`]()  [`rxQuantile()`]()  [`rxCrossTabs()`]()  [`rxCube()`]()  [`rxMarginals()`]()   [`rxChiSquaredTest()`]()  [`rxFisherTest()`]()  [`rxKendallCor()`]()  [`rxPairwiseCrossTab()`]()  [`rxRiskRatio()`]()  [`rxOddsRatio()`]()   _Statistical Modeling:_  [`rxLinMod()`]()  [`rxCovCor()`]() [`rxCov()`]()  [`rxCor()`]()   [`rxSSCP()`]() [`rxLogit()`]()  [`rxRoc()`]()   [`rxGlm()`]() [`rxDTree()`]()  [`rxKmeans()`]()   [`rxDForest()`]()   _Prediction:_  [`rxPredict()`]() |
-|**Less Used Functions**  |<!--COL-1--> [`RxNativeFileSystem()`]() |<!--COL-2--> [`rxDataStep()`]()  [`rxFactors()`]()|<!--COL-3--> [`rxHistogram()`]()|<!--COL-4--> Something |
-
-
-
-
-
-
-
-
 | |![import](../media/scaler-puzzle1.png)|![import](../media/scaler-puzzle2.png)|![import](../media/scaler-puzzle3.png)|![import](../media/scaler-puzzle4.png)|  
 |-----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 |                       |**Import / Export**    |**Manipulate / Clean / Transform**|**Visualize**          |**Analyze / Learn / Predict**    |
