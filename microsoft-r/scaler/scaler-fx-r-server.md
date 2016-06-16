@@ -79,8 +79,8 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 <br />
 ###Manipulate, Clean, and Transform
 
-|Function Name          |   |Description|Help|
-|-----------------------|---|-----------------------|-----------------------|
+|Function Name          | |Description|Help|
+|-----------------------|:-:|-----------------------|:--------------:||
 |[`rxDataStep()`]()       |![top](../media/award.png)|| See package|
 |[`rxFactors()`]()    |![top](../media/award.png)|      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxSplit()`]()    |  |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -93,8 +93,8 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 <br />
 ###Visualize
 
-|Function Name          |   |Description|Help|
-|-----------------------|---|-----------------------|-----------------------|
+|Function Name          | |Description|Help|
+|-----------------------|:-:|-----------------------|:--------------:||
 |[`rxHistogram()`]()       |![top](../media/award.png)|| See package|
 |[`rxLinePlot()`]()  |![top](../media/award.png)|      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 | [`rxLorenz()`]()      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -105,8 +105,8 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 <br />
 ###Analyze, Learn, and Predict
 
-|Function Name          |  |Description|Help|
-|-----------------------|--|-----------------------|-----------------------|
+|Function Name          | |Description|Help|
+|-----------------------|:-:|-----------------------|:--------------:||
 |[`rxQuantile()`]()  |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxSummary()`]()       |![top](../media/award.png)|| See package|
 |[`rxCrossTabs()`]()      |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -141,8 +141,8 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 ##Data Sources and Compute Contexts
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
-|Function Name          |  |Description|Help|
-|-----------------------|--|-----------------------|-----------------------|
+|Function Name          | |Description|Help|
+|-----------------------|:-:|-----------------------|:--------------:||
 |`RxComputeContext()`  |![top](../media/award.png) |      |[See Help](RxComputeContext.md)|
 |`rxGetComputeContext()`   | |      |[See Help](rxGetComputeContext.md)|
 |`rxSetComputeContext()`  | |      |[See Help](rxSetComputeContext.md)|
@@ -163,7 +163,7 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
 |Function Name          | |Description|Help|
-|-----------------------|--|-----------------------|-----------------------|
+|-----------------------|:-:|-----------------------|:--------------:||
 |`rxExec`  | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxRngNewStream()`]()   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxRngDelStream()`]()   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -176,7 +176,7 @@ These functions and many more can be used for high performance computing and dis
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 |Function Name          | |Description|Help|
-|-----------------------|--|-----------------------|-----------------------|
+|-----------------------|:-:|-----------------------|:--------------:||
 |[`rxOptions()`]()  |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxGetOption()`]()   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |[`rxGetEnableThreadPool()`]()   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
