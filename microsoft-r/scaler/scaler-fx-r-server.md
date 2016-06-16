@@ -34,7 +34,7 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 >This is not an exhaustive list of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](scaler.md#findmore)
 
 
-## Functions for Data Analysis
+## Data Analysis Functions
 
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
@@ -137,7 +137,7 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 
 
 <br />
-##Data Sources and Compute Contexts
+##Data Sources and Compute Context Functions
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 |Function Name          | |Description|Help|
@@ -156,7 +156,7 @@ This topic is presents the most commonly used functions by Microsoft R users. Th
 |   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 
 <br />
-##Distributed Computing Functions
+##HPC and Distributed Computing Functions
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
