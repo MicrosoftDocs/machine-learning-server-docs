@@ -47,8 +47,8 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
+|Function Name          |   |Description|Help|
+|-----------------------|---|-----------------------|-----------------------|
 |[`rxImport()`]()       |![top](../media/award.png)|Move data from an ODBC source to the XDF file| See package|
 |[`rxXdfToText()`]()    |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
 |[`rxGetInfo()`]()      |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
@@ -78,8 +78,8 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 <br />
 ###Manipulate, Clean, and Transform
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
+|Function Name          |   |Description|Help|
+|-----------------------|---|-----------------------|-----------------------|
 |[`rxDataStep()`]()       |![top](../media/award.png)|| See package|
 |[`rxFactors()`]()    |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
 |[`rxSplit()`]()    |  |      |[See package](scaler.md#findmore)|
@@ -92,8 +92,8 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 <br />
 ###Visualize
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
+|Function Name          |   |Description|Help|
+|-----------------------|---|-----------------------|-----------------------|
 |[`rxHistogram()`]()       |![top](../media/award.png)|| See package|
 |[`rxLinePlot()`]()  |![top](../media/award.png)|      |[See package](scaler.md#findmore)|
 | [`rxLorenz()`]()      | |      |[See package](scaler.md#findmore)|
@@ -104,8 +104,8 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 <br />
 ###Analyze, Learn, and Predict
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
+|Function Name          |  |Description|Help|
+|-----------------------|--|-----------------------|-----------------------|
 |[`rxQuantile()`]()  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
 |[`rxSummary()`]()       |![top](../media/award.png)|| See package|
 |[`rxCrossTabs()`]()      |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
@@ -136,56 +136,52 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 
 
 
-
-
-<br>
-## Other Functions 
-
-
-
 <br />
-###Data Sources and Compute Contexts
+##Data Sources and Compute Contexts
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
+|Function Name          |  |Description|Help|
+|-----------------------|--|-----------------------|-----------------------|
 |`RxComputeContext()`  |![top](../media/award.png) |      |[See Help](RxComputeContext.md)|
 |`rxGetComputeContext()`   | |      |[See Help](rxGetComputeContext.md)|
 |`rxSetComputeContext()`  | |      |[See Help](rxSetComputeContext.md)|
 |  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-
-<br />
-###Distributed Computing Functions
-
-These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
-
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
 |[`RxForeachDoPar()`]()   | |      |[See package](scaler.md#findmore)|
 |[`RxLocalParallel()`]()   | |      |[See package](scaler.md#findmore)|
 |[`RxLocalSeq()`]()   | |      |[See package](scaler.md#findmore)|
 |[`RxInSqlServer()`](RxInSqlServer.md)   | |      |[See help](RxInSqlServer.md)|
+|   | |      |[See package](scaler.md#findmore)|
+|   | |      |[See package](scaler.md#findmore)|
+|   | |      |[See package](scaler.md#findmore)|
+|   | |      |[See package](scaler.md#findmore)|
 
- 
 <br />
-###Utility Functions
+##Distributed Computing Functions
 
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
-|[`rxOptions()`]()  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
-|[`rxGetOption()`]()   | |      |[See package](scaler.md#findmore)|
+These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
+
+|Function Name          | |Description|Help|
+|-----------------------|--|-----------------------|-----------------------|
+|`rxExec`  | |      |[See package](scaler.md#findmore)|
 |[`rxRngNewStream()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxRngDelStream()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxRngGetStream()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxRngSetStream()`]()   | |      |[See package](scaler.md#findmore)|
+
+ 
+<br />
+##Utility Functions
+
+|Function Name          | |Description|Help|
+|-----------------------|--|-----------------------|-----------------------|
+|[`rxOptions()`]()  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
+|[`rxGetOption()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxGetEnableThreadPool()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxSetEnableThreadPool()`]()   | |      |[See package](scaler.md#findmore)|
 |[`rxStepControl()`]()   | |      |[See package](scaler.md#findmore)|
 
-
+ 
+<br />
+##Hadoop Convenience Functions
 
 
 
