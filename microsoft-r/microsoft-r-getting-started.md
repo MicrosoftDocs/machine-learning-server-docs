@@ -49,7 +49,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
-<a name="mrc"></a>
+
 ##Microsoft R Client
 
 Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
@@ -59,7 +59,6 @@ R Client allows you to work with production data locally using the full set of S
 Learn how to [install Microsoft R Client](install-r-client-windows.md).
 
 
-<a name="mro"></a>
 ##Microsoft R Open
 
 Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.   
