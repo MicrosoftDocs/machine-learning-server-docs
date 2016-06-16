@@ -111,25 +111,14 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 <br />
 ###Analyze, Learn, and Predict
 
+####Descriptive Statistics and Cross-Tabulations
+
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxQuantile()`  |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxSummary()`       |![top](../media/award.png)|| See package|
+|`rxSummary()`       |![top](../media/award.png)||<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxCrossTabs()`      |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxCube()`  |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxPredict()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxLinMod()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxCovCor()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxCov()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxCor()`    | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxSSCP()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxLogit()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxRoc()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxGlm()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxDTree()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxKmeans()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxDForest()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxHistogram()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxMarginals()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxChiSquaredTest()`    | |Used with smaller data sets, not XDF files.       |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxFisherTest()`   | |Used with smaller data sets, not XDF files.      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -137,10 +126,27 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxPairwiseCrossTab()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxRiskRatio()`    | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxOddsRatio()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+
+
+####Statistical Modeling
+
+|Function Name          | |Description|Help|
+|-----------------------|:-:|-----------------------|:--------------:||
+|`rxLinMod()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxLogit()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxGlm()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxCovCor()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxDTree()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxBTrees()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxDForest()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxPredict()`   |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxCov()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxCor()`    | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxSSCP()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxRoc()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxKmeans()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxHistogram()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-
-
-
 
 
 <br />
@@ -158,9 +164,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxLocalSeq()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxInSqlServer()` | |      |<small>[Help](RxInSqlServer.md)</small>|
 |`rxSpark`   |  |Hadoop specific.      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+
 
 <br />
 ##HPC and Distributed Computing Functions
