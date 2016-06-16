@@ -26,14 +26,20 @@ ms.custom: ""
 
 # ScaleR Function Map
 
-The `RevoScaleR` package includes hundreds of functions. 
+The `RevoScaleR` package includes hundreds of functions. Not all of these functions are useful to everyone and there are some functions that are very useful when switching your compute context to Hadoop, Teradata, or SQL Server.  
 
-This topic is presents the most commonly used functions by Microsoft R users. These functions can be called directly from the command-line. Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
+This topic is presents the most **commonly used functions by Microsoft R users**. These functions can be called directly from the command-line. 
+
+If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list:
++ [Computing on a Hadoop Cluster](scaler-fx-hadoop.md)
++ [Computing on a Teradata Datawarehouse](scaler-fx-teradata.md)
++ [Computing on SQL Server](functions-for-sql-server-data.md)
+
 
 >[!IMPORTANT]
 >This is not an exhaustive list of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](scaler.md#findmore)
 
-
+<br />
 ## Data Analysis Functions
 
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.

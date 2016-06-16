@@ -24,16 +24,15 @@ ms.custom: ""
 
 ---
 
-# ScaleR Function Mapping
+# RevoScaleR Functions
 
 The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-performance and distributed computing, SQL Server, Hadoop, and Teradata. About 180 functions can be called directly from the command-line.
-Here you can learn about the most commonly used functions for Microsoft R Server users.  
 
 ## Functions by Context
 
 Learn about the `RevoScaleR` functions recommended for your product edition or compute context:
 
-+ [Highlighted Function List](scaler-fx-r-server.md)
++ [Microsoft R Compute Contexts](scaler-fx-r-server.md)
 
 + [Computing on a Hadoop Cluster](scaler-fx-hadoop.md)
 
