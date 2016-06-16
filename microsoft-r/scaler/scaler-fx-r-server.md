@@ -45,6 +45,8 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 <br />
 ###Import and Export
 
+>Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
+
 |Function Name          |Most Used|Description|Help|
 |-----------------------|---------|-----------------------|-----------------------|
 |[`rxImport()`]()       |![top](../media/award.png)|Move data from an ODBC source to the XDF file| See package|
