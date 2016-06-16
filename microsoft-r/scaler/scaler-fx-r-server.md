@@ -60,11 +60,11 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 |[`RxSasData()`]()      |  |      |[See package](scaler.md#findmore)|
 |[`RxSpssData()`]()      |  |      |[See package](scaler.md#findmore)|
 |[`RxOdbcData()`]()      |  |      |[See package](scaler.md#findmore)|
-|[`RxSqlServerData()`](RxSqlServerData.md)    |   |      |[See package](scaler.md#findmore)|
+|`RxSqlServerData()`    |   |      |[See Help](RxSqlServerData.md)|
 |[`RxTeradata()`]()     |  |      |[See package](scaler.md#findmore)|
-|[`rxOpen()`](rxOpen.md)     |  |Open a data source for reading|[See package](scaler.md#findmore)|
-|[`rxClose()`](rxClose.md)      |  |Close a data source      |[See package](scaler.md#findmore)|
-|[`rxReadNext()`](rxReadNext.md)      |  |Read data from a source      |[See package](scaler.md#findmore)|
+|`rxOpen()`     |  |Open a data source for reading|[See Help](rxOpen.md)|
+|`rxClose()`      |  |Close a data source      |[See Help](rxClose.md)|
+|`rxReadNext()`      |  |Read data from a source      |[See Help](rxReadNext.md)|
 |[`rxSetFileSystem()`]()      |  |      |[See package](scaler.md#findmore)|
 |[`rxGetFileSystem()`]()     |  |      |[See package](scaler.md#findmore)|
 |[`RxHdfsFileSystem()`]()      |  |      |[See package](scaler.md#findmore)|
@@ -142,44 +142,30 @@ This topic is presents the most commonly used functions by Microsoft R Server us
 
 
 <br />
-###Data Sources
+###Data Sources and Compute Contexts
 
 |Function Name          |Most Used|Description|Help|
 |-----------------------|---------|-----------------------|-----------------------|
+|`RxComputeContext()`  |![top](../media/award.png) |      |[See Help](RxComputeContext.md)|
+|`rxGetComputeContext()`   | |      |[See Help](rxGetComputeContext.md)|
+|`rxSetComputeContext()`  | |      |[See Help](rxSetComputeContext.md)|
 |  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
 |   | |      |[See package](scaler.md#findmore)|
 |   | |      |[See package](scaler.md#findmore)|
 |   | |      |[See package](scaler.md#findmore)|
 |   | |      |[See package](scaler.md#findmore)|
 
-
-
 <br />
-###Compute Context
+###Distributed Computing Functions
 
-These functions allow you to move computations to another context, such as @@@@.
+These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
 |Function Name          |Most Used|Description|Help|
 |-----------------------|---------|-----------------------|-----------------------|
-|  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-|   | |      |[See package](scaler.md#findmore)|
-
-
-<br />
-###Other High Performance / Distributed Computing Functions
-
-|Function Name          |Most Used|Description|Help|
-|-----------------------|---------|-----------------------|-----------------------|
-|[`RxComputeContext()`](RxComputeContext.md)  |![top](../media/award.png) |      |[See package](scaler.md#findmore)|
 |[`RxForeachDoPar()`]()   | |      |[See package](scaler.md#findmore)|
 |[`RxLocalParallel()`]()   | |      |[See package](scaler.md#findmore)|
 |[`RxLocalSeq()`]()   | |      |[See package](scaler.md#findmore)|
-|[`rxGetComputeContext()`](rxGetComputeContext.md)   | |      |[See package](scaler.md#findmore)|
-|[`rxSetComputeContext()`](rxSetComputeContext.md)   | |      |[See package](scaler.md#findmore)|
-|[`RxInSqlServer()`](RxInSqlServer.md)   | |      |[See package](scaler.md#findmore)|
+|[`RxInSqlServer()`](RxInSqlServer.md)   | |      |[See help](RxInSqlServer.md)|
 
  
 <br />
