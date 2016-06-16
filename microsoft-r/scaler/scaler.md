@@ -44,7 +44,8 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
-###The Data Science Flow
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![import](../media/scaler-puzzle1.png)
 ![import](../media/scaler-puzzle2.png)
 ![import](../media/scaler-puzzle3.png)
@@ -68,11 +69,11 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxSasData()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxSpssData()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxOdbcData()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`RxSqlServerData()`    | |      |[See Help](RxSqlServerData.md)|
+|`RxSqlServerData()`    | |      |<small>[Help](RxSqlServerData.md)</small>|
 |`rxTeradata()`     | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxOpen()`     | |Open a data source for reading|[See Help](rxOpen.md)|
-|`rxClose()`      | |Close a data source      |[See Help](rxClose.md)|
-|`rxReadNext()`      | |Read data from a source      |[See Help](rxReadNext.md)|
+|`rxOpen()`     | |Open a data source for reading|<small>[Help](rxOpen.md)</small>|
+|`rxClose()`      | |Close a data source      |<small>[Help](rxClose.md)</small>|
+|`rxReadNext()`      | |Read data from a source      |<small>[Help](rxReadNext.md)</small>|
 |`rxSetFileSystem()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxGetFileSystem()`     | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxHdfsFileSystem()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -91,7 +92,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxSplit()`    |  |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxSort()`      | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxMerge()`       | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxExecuteSQLDDL()`](rxExecuteSQLDDL.md)    |  |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
+|`rxExecuteSQLDDL()`|  |SQL Server R Services only.      |<small>[Help](rxExecuteSQLDDL.md)</small>|
 |   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 
 
@@ -148,14 +149,14 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`RxComputeContext()`  |![top](../media/award.png) |      |[See Help](RxComputeContext.md)|
-|`rxGetComputeContext()`   | |      |[See Help](rxGetComputeContext.md)|
-|`rxSetComputeContext()`  | |      |[See Help](rxSetComputeContext.md)|
+|`RxComputeContext()`  |![top](../media/award.png) |      |<small>[Help](RxComputeContext.md)</small>|
+|`rxGetComputeContext()`   | |      |<small>[Help](rxGetComputeContext.md)</small>|
+|`rxSetComputeContext()`  | |      |<small>[Help](rxSetComputeContext.md)</small>|
 |  |![top](../media/award.png) |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxForeachDoPar()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxLocalParallel()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxLocalSeq()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-|`rxInSqlServer()`](RxInSqlServer.md)   | |      |[See help](RxInSqlServer.md)|
+|`rxInSqlServer()` | |      |<small>[Help](RxInSqlServer.md)</small>|
 |`rxSpark`   |  |Hadoop specific.      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
@@ -163,7 +164,6 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 <br />
 ##HPC and Distributed Computing Functions
->Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
@@ -187,7 +187,10 @@ These functions and many more can be used for high performance computing and dis
 |`rxGetEnableThreadPool()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
 |`rxStepControl()`   | |      |<small>[Find help in<br /> package](scaler.md#findmore)</small>|
-
+|`rxIsOpen()` | |      |<small>[Help](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable()`| |      |<small>[Help](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists()`| |      |<small>[Help](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext()`| |      |<small>[Help](rxWriteNext.md)</small>|
  
 <br />
 ##Hadoop Convenience Functions
@@ -196,10 +199,7 @@ These functions and many more can be used for high performance computing and dis
 
 
 <br>
-`rxIsOpen()`](rxIsOpen.md)
-`rxSqlServerDropTable()`](rxSqlServerDropTable.md)     
-`rxSqlServerTableExists()`](rxSqlServerTableExists.md)
-`rxWriteNext()`](rxWriteNext.md)
+
 <br>
 
 <a name="findmore"></a>
