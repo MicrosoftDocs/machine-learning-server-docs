@@ -1,8 +1,8 @@
 #Microsoft R Client
 
-The following release notes apply to Microsoft R Client.
+The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
 
-+ Microsoft R Client is a free, data science tool for building high performance analytics using the full set of ScaleR functions.  
++ Microsoft R Client is a free, community-supported, data science tool for building high performance analytics using the full set of ScaleR functions.  
 
 + R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. 
 
