@@ -29,7 +29,7 @@ ms.custom: ""
 The `RevoScaleR` package includes hundreds of functions you can use for data analysis, for high-performance and distributed computing, SQL Server, Hadoop, and Teradata. About 180 functions can be called directly from the command-line.
 Here you can learn about the most commonly used functions for Microsoft R Server users.  
 
-## Recommended Functions by Microsoft R Product
+## Most Common Functions by Microsoft R Product
 
 Learn about the `RevoScaleR` functions recommended for your Microsoft R product edition:
 
