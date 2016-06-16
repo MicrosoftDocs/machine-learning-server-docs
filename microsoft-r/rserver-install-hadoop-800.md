@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Microsoft R version 8.0.0 on Hadoop"
-description: "Install Microsoft R version 8.0.0 on Hadoop"
+title: "Install Microsoft R Server version 8.0.0 on Hadoop"
+description: "Install Microsoft R Server version 8.0.0 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
@@ -22,7 +22,7 @@ ms.technology: ""
 ms.custom: ""
 
 ---
-# Install Microsoft R 8.0.0 on Hadoop
+# Install Microsoft R Server 8.0.0 on Hadoop
 
 This article walks you through several methods of installing Microsoft R Server on a Hadoop cluster, for version 8.0.0 of R Server.
 
@@ -85,11 +85,10 @@ Table 2. Secondary Dependencies Installed for Microsoft R Server
 
 ## Download Microsoft R Components
 
-Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 3-part installation of the following software:
+Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 2-part installation of the following software in the order listed:
 
 Component | Download location |
 ----------|-------------------|
-Microsoft R Open | [Microsoft R Open 3.2.5](https://mran.revolutionanalytics.com/download/) |
 Microsoft R Open for Microsoft R Server | [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) <br /><br />Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file).|
 Microsoft R Server 2016 | Available through the following distribution channels, depending upon how you purchased the product:<br />[Volume Licensing Service Center](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) (VLSC)<br />[MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)<br />[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)<br /><br />Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
 
@@ -146,7 +145,7 @@ For most users, installing on the cluster means simply running the standard Micr
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
-### Distributed Installation
+## Distributed Installation
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh (“Dancer’s shell”)](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
