@@ -83,8 +83,15 @@ Table 2. Secondary Dependencies Installed for Microsoft R Server
 | tk                | xorg-x11-proto-devel     |
 | zlib-devel        | -                       |
 
+## Download Microsoft R Components
 
+Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 3-part installation of the following software:
 
+Component | Download location |
+----------|-------------------|
+Microsoft R Open | [Microsoft R Open 3.2.5](https://mran.revolutionanalytics.com/download/) |
+Microsoft R Open for Microsoft R Server | [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) <br /><br />Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file).|
+Microsoft R Server 2016 | Available through the following distribution channels, depending upon how you purchased the product:<br />[Volume Licensing Service Center](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) (VLSC)<br />[MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)<br />[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)<br /><br />Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
 
 ## Recommendations for Microsoft R Server on a Cluster
 
