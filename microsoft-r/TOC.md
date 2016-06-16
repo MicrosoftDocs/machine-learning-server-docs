@@ -6,6 +6,10 @@
 ### [Install R Server on Windows](rserver-install-windows.md)
 ### [Install R Server on a Linux Server](rserver-install-linux-server.md)
 ### [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md)
+#### [Install Microsoft R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+#### [Adjust your Hadoop cluster configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
+#### [Create an R package parcel for Hadoop cluster using Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
+#### [Troubleshoot Microsoft R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 ### [Install R Server on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ## Install DeployR
