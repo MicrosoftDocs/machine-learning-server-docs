@@ -71,11 +71,11 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxSasData()`      | |Creates a SAS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSpssData()`      | |Creates a SPSS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxOdbcData()`      | |Creates a ODBC data source object.|<small>[In package](scaler.md#findmore)</small>|
-|`RxSqlServerData()`    | |Creates a SQL Server data source object.|<small>[Help](RxSqlServerData.md)</small>|
+|`RxSqlServerData()`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
 |`rxTeradata()`     | |Creates a Teradata data source object.|<small>[In package](scaler.md#findmore)</small>|
-|`rxOpen()`     | |Opens a data source for reading.|<small>[Help](rxOpen.md)</small>|
-|`rxClose()`      | |Closes a data source.     |<small>[Help](rxClose.md)</small>|
-|`rxReadNext()`      | |Read data from a source      |<small>[Help](rxReadNext.md)</small>|
+|`rxOpen()`     | |Opens a data source for reading.|<small>[View](rxOpen.md)</small>|
+|`rxClose()`      | |Closes a data source.     |<small>[View](rxClose.md)</small>|
+|`rxReadNext()`      | |Read data from a source      |<small>[View](rxReadNext.md)</small>|
 |`rxSetFileSystem()`      | |Specify a file system type for data for import.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFileSystem()`     | |Retrieve the current file system type.|<small>[In package](scaler.md#findmore)</small>|
 |`rxHdfsFileSystem()`      | |Creates an HDFS file system object.|<small>[In package](scaler.md#findmore)</small>|
@@ -87,48 +87,48 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxDataStep()`       |![top](../media/award.png)|Transforms and subset data.| See package|
+|`rxDataStep()`       |![top](../media/award.png)|Transforms and subset data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSplit()`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSort()`      | |Multi-key sorting of the variables an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxMerge()`       | |Merges two .xdf files or data frames using avariety of merge types.|<small>[In package](scaler.md#findmore)</small>|
-|`rxExecuteSQLDDL()`|  |SQL Server R Services only.      |<small>[Help](rxExecuteSQLDDL.md)</small>|
+|`rxExecuteSQLDDL()`|  |SQL Server R Services only.      |<small>[View](rxExecuteSQLDDL.md)</small>|
 
 <br />
 ###Visualize
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxHistogram()`       |![top](../media/award.png)|Creates a histogram from data.| See package|
+|`rxHistogram()`       |![top](../media/award.png)|Creates a histogram from data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxLinePlot()`  |![top](../media/award.png)|Creates a line plot from data.|<small>[In package](scaler.md#findmore)</small>|
 | `rxLorenz()`      | |Computes a Lorenz curve which can be plotted.|<small>[In package](scaler.md#findmore)</small>|
 |`rxRocCurve()`  | |Computes and plots ROC curves from actual and predicted data.|<small>[In package](scaler.md#findmore)</small>|
 
 
-
+<br />
 <br />
 ###Analyze, Learn, and Predict
 
-<br />
 ####Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxQuantile()`  |![top](../media/award.png) |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxSummary()`       |![top](../media/award.png)||<small>[In package](scaler.md#findmore)</small>|
-|`rxCrossTabs()`      |![top](../media/award.png) |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxCube()`  |![top](../media/award.png) |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxMarginals()`   | |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxChiSquaredTest()`| |Used with smaller data sets, not XDF files. |<small>[In package](scaler.md#findmore)</small>|
-|`rxFisherTest()`   | |Used with smaller data sets, not XDF files.      |<small>[In package](scaler.md#findmore)</small>|
-|`rxKendallCor()`   | |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxPairwiseCrossTab()`   | |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxRiskRatio()`    | |      |<small>[In package](scaler.md#findmore)</small>|
-|`rxOddsRatio()`   | |      |<small>[In package](scaler.md#findmore)</small>|
+|`rxQuantile()`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting.|<small>[In package](scaler.md#findmore)</small>|
+|`rxSummary()`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group.|<small>[In package](scaler.md#findmore)</small>|
+|`rxCrossTabs()`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[In package](scaler.md#findmore)</small>|
+|`rxCube()`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for efficient representation.|<small>[In package](scaler.md#findmore)</small>|
+|`rxMarginals()`   | |Marginal summaries of cross-tabulations.|<small>[In package](scaler.md#findmore)</small>|
+|`as.xtabs()`   | |Converts cross tabulation results to an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxChiSquaredTest()`| |Performs Chi-squared Test on `xtabs` object. Used with smaller data sets, not XDF files. |<small>[In package](scaler.md#findmore)</small>|
+|`rxFisherTest()`   | |Performs Fisher's Exact Test on `xtabs` object. Used with smaller data sets, not XDF files.      |<small>[In package](scaler.md#findmore)</small>|
+|`rxKendallCor()`   | |Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPairwiseCrossTab()`   | |Apply a function to pairwise combinations of rows and columns of an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxRiskRatio()`    | |Calculate the relative risk on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxOddsRatio()`   | |Calculate the odds ratio on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 
-
+<br />
 ####Statistical Modeling
 
 |Function Name          | |Description|Help|
@@ -136,8 +136,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxLinMod()`   |![top](../media/award.png) |Fits a linear model to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxLogit()`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGlm()`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[In package](scaler.md#findmore)</small>|
-|`rxCovCor()`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product matrix
-for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
+|`rxCovCor()`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxDTree()`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxBTrees()`   |![top](../media/award.png) |Fits a classification or regression decision forest via stochastic gradient boosting.|<small>[In package](scaler.md#findmore)</small>|
 |`rxDForest()`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[In package](scaler.md#findmore)</small>|
@@ -145,11 +144,9 @@ for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCov()`   | |Calculate the covariance matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCor()`    | |Calculate the correlation matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSSCP()`   | |Calculate the sum of squares / cross-product matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
-|`rxRoc()`   | |Receiver Operating Characteristic (ROC) computations using actual and predicted values from
-binary classifier system.|<small>[In package](scaler.md#findmore)</small>|
+|`rxRoc()`   | |Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.|<small>[In package](scaler.md#findmore)</small>|
 |`rxKmeans()`   | |Performs k-means clustering.|<small>[In package](scaler.md#findmore)</small>|
 |`rxNaiveBayes()`   | |Performs Naive Bayes classification.|<small>[In package](scaler.md#findmore)</small>|
-|   | |      |<small>[In package](scaler.md#findmore)</small>|
 
 
 <br />
@@ -201,10 +198,10 @@ These functions and many more can be used for high performance computing and dis
 |`rxGetEnableThreadPool()`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool()`   | |Sets the thread pool state.|<small>[In package](scaler.md#findmore)</small>|
 |`rxStepControl()`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[In package](scaler.md#findmore)</small>|
-|`rxIsOpen()` | |      |<small>[Help](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable()`| |      |<small>[Help](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists()`| |      |<small>[Help](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext()`| |      |<small>[Help](rxWriteNext.md)</small>|
+|`rxIsOpen()` | |      |<small>[View](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable()`| |      |<small>[View](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists()`| |      |<small>[View](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext()`| |      |<small>[View](rxWriteNext.md)</small>|
  
 <br />
 ##Hadoop Convenience Functions
@@ -215,7 +212,7 @@ These functions and many more can be used for high performance computing and dis
 |`rxHadoopCommand()`| |Execute an arbitrary Hadoop command.|<small>[In package](scaler.md#findmore)</small>|
 |`rxHadoopCopy()`| |Copy a file in the Hadoop Distributed File System (HDFS).|<small>[In package](scaler.md#findmore)</small>|
 |`rxHadoopCopyFromLocal()`| |Copy a file from the native file system to HDFS.|<small>[In package](scaler.md#findmore)</small>|
-|`rxHadoopCopyFromClient()`| |Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.|<small>[In package](scaler.md#findmore)</small>|
+|`rxHadoopCopyFromClient()`| |Copy a file from a remote client to the Hadoop cluster's <br />local file system, and then to HDFS.|<small>[In package](scaler.md#findmore)</small>|
 |`rxHadoopCopyToLocal()`| |Copy a file from HDFS to the local file system.|<small>[In package](scaler.md#findmore)</small>|
 |`rxHadoopListFiles()`| |List files in an HDFS directory.|<small>[In package](scaler.md#findmore)</small>|
 |`rxHadoopMakeDir()`| |Make a directory in HDFS.|<small>[In package](scaler.md#findmore)</small>|
