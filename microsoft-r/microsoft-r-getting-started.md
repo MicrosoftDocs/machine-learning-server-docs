@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "paulette.mckay"
 ms.date: "06/09/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
