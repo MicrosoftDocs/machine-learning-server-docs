@@ -1,10 +1,9 @@
 # [Microsoft R](index.md)
 # [Microsoft R Getting Started](microsoft-r-getting-started.md)
 # What's New 
-## [R Client](notes/r-client-notes.md)
 ## [R Server & DeployR](notes/r-server-notes.md)
+## [R Client](notes/r-client-notes.md)
 # Installation
-## [Install R Client](install-r-client-windows.md)
 ## Install R Server
 ### [Install R Server on Windows](rserver-install-windows.md)
 ### [Install R Server on a Linux Server](rserver-install-linux-server.md)
@@ -15,7 +14,8 @@
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ### [Install R Server on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-## Install DeployR
+## [Install R Client](install-r-client-windows.md)
+## [Install DeployR](deployr-installation.md)
 ### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
@@ -42,9 +42,7 @@
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 ## [RevoScaleR Functions](scaler/scaler.md)
-### [ScaleR Function Map](scaler/scaler/scaler-fx-r-client.md)
-### [Function Map for R Server](scaler/scaler-fx-r-server.md)
-### [Function Map for R Client](scaler/scaler.md)
+### [ScaleR Function Map](scaler/scaler/scaler.md)
 ### [rxClose](scaler/rxClose.md)
 ### [RxComputeContext](scaler/rxComputeContext.md)
 ### [rxExecuteSQLDDL](scaler/rxExecuteSQLDDL.md)
