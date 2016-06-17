@@ -48,7 +48,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![import](../media/scaler/import.png)
 ![import](../media/scaler/manip.png)
-![import](../media/scaler/viz.png)
+![import](../media/scaler/viz.png)&nbsp;
 ![import](../media/scaler/analytics.png)
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![import](../media/scaler/data-science-labels.png)
 
