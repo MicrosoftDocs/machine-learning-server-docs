@@ -1,5 +1,8 @@
 # [Microsoft R](index.md)
 # [Microsoft R Getting Started](microsoft-r-getting-started.md)
+# What's New 
+## [R Client](notes/r-client-notes.md)
+## [R Server & DeployR](notes/r-server-notes.md)
 # Installation
 ## [Install R Client](install-r-client-windows.md)
 ## Install R Server
@@ -124,6 +127,3 @@
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)
 # [Additional Resources](microsoft-r-more-resources.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
-# Release Notes
-## [R Client](notes/r-client-notes.md)
-## [R Server & DeployR](notes/r-server-notes.md)

@@ -31,8 +31,8 @@ The `RevoScaleR` package includes hundreds of functions. Not all of these functi
 This topic is presents the a curated list of functions by Microsoft R users. These functions can be called directly from the command-line. 
 
 If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
-+ [Computing on a Hadoop Cluster](scaler-fx-hadoop.md)
-+ [Computing on a Teradata Datawarehouse](scaler-fx-teradata.md)
++ Computing on a Hadoop Cluster
++ Computing on a Teradata Datawarehouse
 + [Computing on SQL Server](functions-for-sql-server-data.md)
 
 
@@ -46,10 +46,11 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![import](../media/scaler-puzzle1.png)
-![import](../media/scaler-puzzle2.png)
-![import](../media/scaler-puzzle3.png)
-![import](../media/scaler-puzzle4.png)
+![import](../media/scaler/import.png)
+![import](../media/scaler/manip.png)
+![import](../media/scaler/viz.png)
+![import](../media/scaler/analytics.png)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![import](../media/scaler/data-science-labels.png)
 
 <br />
 ###Import and Export
