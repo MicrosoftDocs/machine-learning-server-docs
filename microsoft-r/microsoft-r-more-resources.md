@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
