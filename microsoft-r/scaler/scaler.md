@@ -57,10 +57,10 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source <br />(e.g. text, SAS, SPSS data files, ODBC or <br />Teradata connection, or data frame).|<small>[In package](scaler.md#findmore)</small>|
-|`rxDataStep()`      |![top](../media/award.png)|Creates an .xdf file, delimited text file, or data frame from an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, <br />SAS, SPSS data files, ODBC orTeradata connection,  <br />or data frame).|<small>[In package](scaler.md#findmore)</small>|
+|`rxDataStep()`      |![top](../media/award.png)|Creates an .xdf file, delimited text file, or data frame from  <br />an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetInfo()`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
-|`rxSetInfo()`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute in a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxSetInfo()`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute <br /> in a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetVarInfo()`    | |Retrieves variable information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetVarInfo()`    | |Modifies variable information in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetVarNames()`   | |Retrieves variable names from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
@@ -136,7 +136,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxLinMod()`   |![top](../media/award.png) |Fits a linear model to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxLogit()`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGlm()`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[In package](scaler.md#findmore)</small>|
-|`rxCovCor()`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
+|`rxCovCor()`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product  <br />matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxDTree()`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxBTrees()`   |![top](../media/award.png) |Fits a classification or regression decision forest via stochastic gradient boosting.|<small>[In package](scaler.md#findmore)</small>|
 |`rxDForest()`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[In package](scaler.md#findmore)</small>|
@@ -144,7 +144,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxCov()`   | |Calculate the covariance matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCor()`    | |Calculate the correlation matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSSCP()`   | |Calculate the sum of squares / cross-product matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
-|`rxRoc()`   | |Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.|<small>[In package](scaler.md#findmore)</small>|
+|`rxRoc()`   | |Receiver Operating Characteristic (ROC) computations using actual  <br />and predicted values from binary classifier system.|<small>[In package](scaler.md#findmore)</small>|
 |`rxKmeans()`   | |Performs k-means clustering.|<small>[In package](scaler.md#findmore)</small>|
 |`rxNaiveBayes()`   | |Performs Naive Bayes classification.|<small>[In package](scaler.md#findmore)</small>|
 
@@ -180,7 +180,7 @@ These functions and many more can be used for high performance computing and dis
 |`rxRngSetStream()`   | |Support for Parallel Random Number Generation.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetAvailableNodes()`| |Get all the available nodes on a distributed compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetNodeInfo()`| |Get information on nodes specified for a distributed compute context.|<small>[In package](scaler.md#findmore)</small>|
-|`rxPingNodes()`| |Test round trip from end user through computation node(s) in a cluster or cloud.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPingNodes()`| |Test round trip from end user through computation node(s) in <br /> a cluster or cloud.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobStatus()`| |Get the status of a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobResults()`| |Get the return object(s) of a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobOutput()`| |Get the console output from a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
