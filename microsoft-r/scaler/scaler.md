@@ -57,7 +57,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).|<small>[In package](scaler.md#findmore)</small>|
+|`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source <br />(e.g. text, SAS, SPSS data files, ODBC or <br />Teradata connection, or data frame).|<small>[In package](scaler.md#findmore)</small>|
 |`rxDataStep()`      |![top](../media/award.png)|Creates an .xdf file, delimited text file, or data frame from an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetInfo()`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetInfo()`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute in a data frame.|<small>[In package](scaler.md#findmore)</small>|
@@ -88,7 +88,7 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxDataStep()`       |![top](../media/award.png)|Transforms and subset data.|<small>[In package](scaler.md#findmore)</small>|
-|`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor<br /> in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSplit()`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[In package](scaler.md#findmore)</small>|
@@ -159,10 +159,10 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 |`rxGetComputeContext()`|![top](../media/award.png)|Gets the current compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxComputeContext()`|![top](../media/award.png)|Creates a compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxLocalSeq()`| |Creates a local compute context for `rxExec` using sequential computations.|<small>[In package](scaler.md#findmore)</small>|
-|`RxLocalParallel()`| |Creates a local compute context for `rxExec` using the `parallel` package as back end.|<small>[In package](scaler.md#findmore)</small>|
-|`rxForeachDoPar()`   | |Creates a compute context for `rxExec` using the current `foreach` parallel back end.|<small>[In package](scaler.md#findmore)</small>|
+|`RxLocalParallel()`| |Creates a local compute context for `rxExec` using <br />the `parallel` package as back end.|<small>[In package](scaler.md#findmore)</small>|
+|`rxForeachDoPar()`   | |Creates a compute context for `rxExec` using <br />the current `foreach` parallel back end.|<small>[In package](scaler.md#findmore)</small>|
 |`RxHadoopMR()`| |Creates an in-data, file-based Hadoop compute context.|<small>[In package](scaler.md#findmore)</small>|
-|`RxSpark()`| |Hadoop specific. Creates an in-data, file-based Spark compute context.|<small>[In package](scaler.md#findmore)</small>|
+|`RxSpark()`| |Creates an in-data, file-based Spark compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxInTeradata()`| |Creates an in-database compute context for Teradata.|<small>[In package](scaler.md#findmore)</small>|
 |`RxInSqlServer()`| |Creates an in-database compute context for SQL Server 2016.|<small>[In package](scaler.md#findmore)</small>|
 
@@ -195,7 +195,7 @@ These functions and many more can be used for high performance computing and dis
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxOptions()`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetOption()`   | |Retrieves a specific `RevoScaleR`-option.|<small>[In package](scaler.md#findmore)</small>|
-|`rxGetEnableThreadPool()`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[In package](scaler.md#findmore)</small>|
+|`rxGetEnableThreadPool()`   | |Gets the current state of the thread pool, which on Linux can be<br/> either persistent or on-demand.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool()`   | |Sets the thread pool state.|<small>[In package](scaler.md#findmore)</small>|
 |`rxStepControl()`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[In package](scaler.md#findmore)</small>|
 |`rxIsOpen()` | |      |<small>[View](rxIsOpen.md)</small>|
