@@ -146,7 +146,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
 The basic installation of DeployR will install the DeployR main server and configure a local H2 database on the same machine. If you wish to use a different database, you can configure DeployR to do so later as described in the steps below.
 
-In addition to this basic installation, DeployR Enterprise customers can also use a [remote database for DeployR](#using-a-postgresql-database) or install [additional grid nodes](#install-deployr-grid-nodes) for optimized workload distribution.
+In addition to this basic installation, DeployR Enterprise customers can also use a [remote database for DeployR](#postgresql) or install [additional grid nodes](#install-deployr-grid-nodes) for optimized workload distribution.
 
 The following steps are for installing DeployR Enterprise after installing [these dependencies](#install-dependencies):
 
