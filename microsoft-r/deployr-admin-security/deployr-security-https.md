@@ -31,9 +31,9 @@ Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor
 
 DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. 
 
-+ In DeployR 8.0.0, only SSL is supported.  
++ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), both the DeployR web server and APIs calls and utilities support TLS 1.2 and SSL by default. 
 
-+ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), both the  TLS 1.2 and SSL are supported. 
++ In DeployR 8.0.0, only SSL is supported.  
 
 For security reasons, we strongly recommended that SSL/TLS be enabled in **all production environments.**  Since we cannot ship SSL/TLS certificates for you, SSL/TLS protocols on DeployR are disabled by default.
 
@@ -83,11 +83,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
    1. Exit the utility.
 
-1. Enable SSL/TLS 1.2 for your database:
- 
-   + For the default H2 database:
-     
-     1. Do this.
+1. Enable SSL/TLS 1.2 for your remote database:
 
    + For a [SQL Server database](../deployr-install-on-windows.md#postgresql):
      
