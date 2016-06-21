@@ -63,7 +63,7 @@ Before you can install DeployR, you must manually install and configure the foll
 | Java™ Runtime Environment 8                                                                     | Yes                                                                                 | No                                                                                  |
 | [Microsoft R Server 2016](rserver-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
 | DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
-| make, gcc, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
+| make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
 | nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
 .
 
@@ -82,15 +82,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
 3.  Install [Microsoft R Server 2016](rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server 2016 to install it as well as any of its dependencies.**  [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
 
-4.  Install **DeployR Rserve 8.0.5**, a dependency of DeployR, after Microsoft R Server 2016 as follows:
-
-    A. [Download the Linux tar file for DeployR Rserve 8.0.5, `deployrRserve_8.0.5.tar.gz`](https://github.com/Microsoft/deployr-rserve/releases/).
-
-    B. Run the following command to install the DeployR Rserve component:
-
-        R CMD INSTALL deployrRserve_8.0.5.tar.gz
-
-5.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
+1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
       ```
       sudo yum clean all
@@ -105,15 +97,15 @@ Before you can install DeployR, you must manually install and configure the foll
       ```
       sudo zypper clean --all
       ```
-      
-6.  Install the following packages (`make`, `gcc`, `gfortran`, `cairo-devel`, `libicu`, and `libicu-devel`) if any of them are missing as follows:
+
+1.  Install the following packages (`make`, `gcc`, `gcc-c++`, `gfortran`, `cairo-devel`, `libicu`, and `libicu-devel`) if any of them are missing as follows:
 
     >Install packages as `root` or a user with `sudo` permissions.
 
 	+ For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
       ```
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
-      yum list make gcc gfortran cairo-devel libicu libicu-devel
+      yum list make gcc gcc-c++ gfortran cairo-devel libicu libicu-devel
       
       #INSTALL ALL MISSING PACKAGES
   
@@ -124,7 +116,7 @@ Before you can install DeployR, you must manually install and configure the foll
 	+ For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
       ```
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
-      dpkg -l make gcc gfortran cairo-devel libicu libicu-devel
+      dpkg -l make gcc gcc-c++ gfortran cairo-devel libicu libicu-devel
       
       #INSTALL ALL MISSING PACKAGES
   
@@ -142,6 +134,16 @@ Before you can install DeployR, you must manually install and configure the foll
       #ONE LINE PER MISSING PACKAGE
       sudo zypper install <missing-package-name>
       ```
+1.  Install **DeployR Rserve 8.0.5**, a dependency of DeployR, after Microsoft R Server 2016 as follows:
+
+    A. [Download the Linux tar file for DeployR Rserve 8.0.5, `deployrRserve_8.0.5.tar.gz`](https://github.com/Microsoft/deployr-rserve/releases/).
+
+    B. Run the following command to install the DeployR Rserve component:
+
+        R CMD INSTALL deployrRserve_8.0.5.tar.gz
+
+
+      
 
 ## Install DeployR Server
 
