@@ -42,7 +42,7 @@
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 ## [RevoScaleR Functions](scaler/scaler.md)
-### [ScaleR Function Map](scaler/scaler/scaler.md)
+### [ScaleR Function Map](scaler/scaler.md)
 ### [rxClose](scaler/rxClose.md)
 ### [RxComputeContext](scaler/rxComputeContext.md)
 ### [rxExecuteSQLDDL](scaler/rxExecuteSQLDDL.md)

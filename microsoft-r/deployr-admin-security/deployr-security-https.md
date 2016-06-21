@@ -89,11 +89,11 @@ Once enabled, your client applications can make API calls that connect over HTTP
      
      1. Do this.
 
-   + For a [SQL Server database](../deployr-install-on-linux/#postgresql):
+   + For a [SQL Server database](../deployr-install-on-windows.md/#postgresql):
      
      1. Do this.
 
-   + For a [PostgreSQL database](../deployr-install-on-linux/#postgresql): 
+   + For a [PostgreSQL database](../deployr-install-on-linux.md/#postgresql): 
      
      1. Do this.
 
