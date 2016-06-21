@@ -50,7 +50,9 @@ When you integrate with an external enterprise security solution, you want acces
 
 ## Basic Authentication
 
-By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
+By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is enabled by default and there are no additional security configuration properties for this provider.
+
+If you enable [Active Directory Services](#active-directory-authentication), [LDAP](#ldap-authentication), or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) scenarios, basic authentication remains enabled even with PAM enabled.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -272,6 +274,8 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 2.  Follow the DeployR server system files configuration changes outlined below.
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
+
+>Basic authentication remains enabled even with PAM enabled.
 
 **Step 1: Update the DeployR external configuration file**
 
