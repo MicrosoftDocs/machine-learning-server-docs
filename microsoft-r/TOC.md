@@ -67,8 +67,8 @@
 # [Parallelizing Loops: foreach/iterators](foreach.md)
 # [DeployR](deployr-about.md)
 ## Getting Started with DeployR
-## [About DeployR](deployr-about.md)
-## [What's New in DeployR](deployr-whats-new.md)
+### [About DeployR](deployr-about.md)
+### [What's New in DeployR](deployr-whats-new.md)
 ### [Getting Started for Administrators](deployr-administrator-getting-started.md)
 ### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
 ### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
