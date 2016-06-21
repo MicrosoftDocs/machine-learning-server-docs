@@ -9,12 +9,13 @@ The following guides are available to help you install and configure DeployR.
 
 <br />
 
-| |Supported Platforms |Install & Configuration Doc|Post-Install Steps|
+| |Supported Platforms |Installation Guide|Post-Installation Steps|
 |------------------------|:----------------:|:----------------:|:----------------:|
-|**_Windows_**                 |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-windows.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
-|**_Linux_**                   |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-linux.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
+|**_DeployR on Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_**                 |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-windows.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
+|**_DeployR on Linux_**                   |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-linux.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
 
 
+<br />
 <br />
 ### DeployR Enterprise and DeployR Open 8.0.0 (released January 2016)
 
