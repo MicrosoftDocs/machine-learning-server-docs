@@ -37,6 +37,7 @@ Read and follow these points before you begin the installation process.
 >-   While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you dedicate one machine for each server instance that is *in production* so as to avoid resource contention.
 >
 
+<a name="system-requirements"></a>
 ## System Requirements
 
 Verify that the computer meets the following minimum hardware and software requirements.

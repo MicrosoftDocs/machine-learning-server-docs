@@ -2,19 +2,22 @@
 
 The following guides are available to help you install and configure DeployR.
 
+<br />
 ### DeployR Enterprise for Microsoft R Server 2016 (released June 2016)
 
-This release is for DeployR Enterprise only.
+>This release is for DeployR Enterprise only.
 
-|Operating System        |Installation & Configuration Guide|
-|------------------------|:----------------:|
-|Windows                 |[Read](deployr-install-on-windows.md)|
-|Linux                   |[Read](deployr-install-on-linux.md)|
+<br />
+
+| |Supported Platforms |Install & Configuration Doc|Post-Install Steps|
+|------------------------|:----------------:|:----------------:|:----------------:|
+|**_Windows_**                 |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-windows.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
+|**_Linux_**                   |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-linux.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
 
 
 <br />
 ### DeployR Enterprise and DeployR Open 8.0.0 (released January 2016)
 
-|Operating System        |Installation & Configuration Guide|
+|        |Install & Configuration Guide|
 |------------------------|:----------------:|
-|Windows, Linux, Mac OS X|[Read](deployr-installing-configuring.md)|
+|**_Windows, Linux, Mac OS X_** - all supported platforms|[View](deployr-installing-configuring.md)|
