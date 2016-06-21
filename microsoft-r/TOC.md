@@ -91,7 +91,7 @@
 ### [Managing Big Data](deployr-admin-manage-big-data.md)
 ### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ### [Using Hadoop Impersonation & DeployR](deployr-admin-hadoop-impersonation.md)
-### [R Package Management for Administrators](deployr-admin-r-package-management.md)
+### [R Package Management](deployr-admin-r-package-management.md)
 ### [Reinstalling or Upgrading the R Dependency](deployr-admin-configure-reinstall-r.md)
 ### [Troubleshooting & Diagnostics](deployr-admin-diagnostics-troubleshooting.md)
 ## [Security on DeployR](deployr-admin-security/deployr-security.md)
