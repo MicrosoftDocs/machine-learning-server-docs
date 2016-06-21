@@ -303,7 +303,7 @@ deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
 deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 ```
 
-**Step 2: Update the DeployR server system files configuration changes**
+**Step 2: Apply Configuration Changes to DeployR Server System Files**
 
 1.  Before making any configuration changes to the server system files, stop the DeployR server:
 
@@ -324,96 +324,25 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
     1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
 
-1. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
-    
-   + For **non-root installs** of DeployR:  The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. 
+1. Grant `root` permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
 
-     1. Log in as `root` your the DeployR server.
+    1. Log in as `root` on your DeployR server.
 
-     1. In the file `/etc/sudoers`, find the following section:
-        ```
-        ## Command Aliases
-        ```
-        
-     1. Add the following line to this section:
-        ```
-        Cmnd_Alias DEPLOYRTOMCAT = /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh
-        ```
-	
-     1. Find the following section:
-        ```
-        ## Allow root to run any commands anywhere
-        ```
+    2. Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
 
-     1. Add the following line to this section:
-        ```
-        %deployr-user      ALL = DEPLOYRTOMCAT
-        ```
-        
-        Your file should now look like this, where the order is important:
-
-        ```
-        root    ALL=(ALL)       ALL
-        %deployr-user   ALL = DEPLOYRTOMCAT
-        ```
-        
-     1. Save these changes and close the file in your editor.
-
-     1. Log out `root` from your DeployR server.
-
-     1. Log in as `deployr-user` to your DeployR server.
-     
-     1. Update the DeployR start shell script, `/home/deployr-user/deployr/8.0.5/startAll.sh`, to take advantage of the `sudo` command configured above.
-
-        + Find the following line:
-
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Save this change and close the file in your editor.
-
-     1. Update the DeployR `/home/deployr-user/deployr/8.0.5/stopAll.sh` shell script to take advantage of the `sudo` command configured above.
-    
-        + Find the following line:
-          
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Save this change and close the file in your editor.
-
-   + For **root installs** of DeployR:  The following steps grant `root` permission to launch the Tomcat server. 
-
-     1.  Log in as `root` on your DeployR server.
-
-     2.  Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
-
-     3. Find the following section:
+    1. Find the following section:
 
         - On Redhat/CentOS platforms:
           ```
-          daemon --user "apache" ${START_TOMCAT}
+          daemon --user "tomcat2" ${START_TOMCAT}
           ```
 
         - On SLES platforms:
           ```
-          start_daemon -u r "apache" ${START_TOMCAT}
+          start_daemon -u r "tomcat2" ${START_TOMCAT}
           ```
 
-     4. Change `"apache"` to `"root"` as follows:
+    1. Change `"tomcat2"` to `"root"` as follows:
 
         - On Redhat/CentOS platforms:
           ```
@@ -425,7 +354,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
           start_daemon -u r "root" ${START_TOMCAT}
           ```
 
-     5.  Save this change and close the file in your editor.
+    1. Save this change and close the file in your editor.
 
 1. Restart the server. 
    1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
