@@ -29,10 +29,10 @@ ms.custom: ""
 DeployR ships with security providers for the following enterprise security solutions:
 
 -   [Basic Authentication](#basic-authentication)
--   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
--   [PAM Authentication Services](#pam-authentication)
 -   [LDAP Authentication](#ldap-authentication)
 -   [Active Directory Services](#active-directory-authentication)
+-   [PAM Authentication Services](#pam-authentication)
+-   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
 -   [R Session Process Controls](#r-session-process-controls)
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
