@@ -307,7 +307,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     1.  Launch the DeployR administrator utility script with administrator privileges:
 
             cd $DEPLOYR_HOME\deployr\tools\ 
-            adminUtility.bat
+            sudo adminUtility.bat
 
     2.  From the main menu, choose the option for **Start/Stop Server**.
 
@@ -354,7 +354,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     1.  Launch the DeployR administrator utility script with administrator privileges:
 
             cd $DEPLOYR_HOME\deployr\tools\ 
-            adminUtility.bat
+            sudo adminUtility.bat
 
     2.  From the main menu, choose the option **Test Database Connection**.
 
