@@ -54,13 +54,13 @@ Once enabled, your client applications can make API calls that connect over HTTP
       + For Linux
         ```
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        ./adminUtility.sh
+        sudo ./adminUtility.sh
         ```
 
      + For Windows:
         ```
         cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-        adminUtility.bat
+        sudo adminUtility.bat
         ```
 
    1. From the main menu, choose option **Web Context and Security**.
@@ -89,11 +89,11 @@ Once enabled, your client applications can make API calls that connect over HTTP
      
      1. Do this.
 
-   + For a [SQL Server database](../deployr-install-on-windows.md/#postgresql):
+   + For a [SQL Server database](../deployr-install-on-windows.md#postgresql):
      
-     1. Do this.
+     1. Do this. 
 
-   + For a [PostgreSQL database](../deployr-install-on-linux.md/#postgresql): 
+   + For a [PostgreSQL database](../deployr-install-on-linux.md#postgresql): 
      
      1. Do this.
 
