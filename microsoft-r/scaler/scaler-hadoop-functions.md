@@ -34,13 +34,11 @@ This guide presents a curated list of functions that might be particularly inter
 
 As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
-
-
 <br />
 ## Data Analysis Functions
 
 <br />
-###Import and Export
+####Import and Export
 
 
 |Function Name          | |Description|Help|
@@ -109,10 +107,9 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br />
-##Data Sources and Compute Context Functions
+<a name="compute"></a>
 
-<br/>
-**Hadoop Compute Contexts**
+##Compute Context Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -123,7 +120,9 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br/>
-**Data Sources**
+<a name="data"></a>
+
+##Data Source Functions
 
 Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used. 
 
