@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "05/16/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -29,10 +29,10 @@ ms.custom: ""
 DeployR ships with security providers for the following enterprise security solutions:
 
 -   [Basic Authentication](#basic-authentication)
--   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
--   [PAM Authentication Services](#pam-authentication)
 -   [LDAP Authentication](#ldap-authentication)
 -   [Active Directory Services](#active-directory-authentication)
+-   [PAM Authentication Services](#pam-authentication)
+-   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
 -   [R Session Process Controls](#r-session-process-controls)
 
 The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. If two or more enterprise security solutions are active, then user credentials are evaluated by each of the DeployR security providers in the order indicated in preceding list. If a security provider, at any depth in the provider-chain, establishes that the credentials are valid, then the login call succeeds. If the user credentials are not validated by any of the security providers in the provider-chain, then the login call fails.
@@ -50,7 +50,9 @@ When you integrate with an external enterprise security solution, you want acces
 
 ## Basic Authentication
 
-By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is always enabled and there are no additional security configuration properties for this provider.
+By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is enabled by default and there are no additional security configuration properties for this provider.
+
+If you enable [Active Directory Services](#active-directory-authentication), [LDAP](#ldap-authentication), or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) scenarios, basic authentication remains enabled even with PAM enabled.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -273,6 +275,8 @@ By default, the **PAM** security provider is disabled. To enable PAM authenticat
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
 
+>Basic authentication remains enabled even with PAM enabled.
+
 **Step 1: Update the DeployR external configuration file**
 
 Update the following properties in your DeployR external configuration file, `deployr.groovy`:
@@ -303,7 +307,7 @@ deployr.security.pam.groups.map = [ 'finance' : 'ROLE_BASIC_USER',
 deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 ```
 
-**Step 2: Update the DeployR server system files configuration changes**
+**Step 2: Apply Configuration Changes to DeployR Server System Files**
 
 1.  Before making any configuration changes to the server system files, stop the DeployR server:
 
@@ -324,96 +328,25 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
     1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
 
-1. Grant permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
-    
-   + For **non-root installs** of DeployR:  The following steps grant `deployr-user` permission to execute just one command as a `sudo` user, which launches the Tomcat server. 
+1. Grant `root` permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
 
-     1. Log in as `root` your the DeployR server.
+    1. Log in as `root` on your DeployR server.
 
-     1. In the file `/etc/sudoers`, find the following section:
-        ```
-        ## Command Aliases
-        ```
-        
-     1. Add the following line to this section:
-        ```
-        Cmnd_Alias DEPLOYRTOMCAT = /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh
-        ```
-	
-     1. Find the following section:
-        ```
-        ## Allow root to run any commands anywhere
-        ```
+    2. Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
 
-     1. Add the following line to this section:
-        ```
-        %deployr-user      ALL = DEPLOYRTOMCAT
-        ```
-        
-        Your file should now look like this, where the order is important:
-
-        ```
-        root    ALL=(ALL)       ALL
-        %deployr-user   ALL = DEPLOYRTOMCAT
-        ```
-        
-     1. Save these changes and close the file in your editor.
-
-     1. Log out `root` from your DeployR server.
-
-     1. Log in as `deployr-user` to your DeployR server.
-     
-     1. Update the DeployR start shell script, `/home/deployr-user/deployr/8.0.5/startAll.sh`, to take advantage of the `sudo` command configured above.
-
-        + Find the following line:
-
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-
-        + Save this change and close the file in your editor.
-
-     1. Update the DeployR `/home/deployr-user/deployr/8.0.5/stopAll.sh` shell script to take advantage of the `sudo` command configured above.
-    
-        + Find the following line:
-          
-          ```
-          /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Change it to the following:
-
-          ```
-          sudo /home/deployr-user/deployr/8.0.5/tomcat/tomcat7.sh start
-          ```
-          
-        + Save this change and close the file in your editor.
-
-   + For **root installs** of DeployR:  The following steps grant `root` permission to launch the Tomcat server. 
-
-     1.  Log in as `root` on your DeployR server.
-
-     2.  Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
-
-     3. Find the following section:
+    1. Find the following section:
 
         - On Redhat/CentOS platforms:
           ```
-          daemon --user "apache" ${START_TOMCAT}
+          daemon --user "tomcat2" ${START_TOMCAT}
           ```
 
         - On SLES platforms:
           ```
-          start_daemon -u r "apache" ${START_TOMCAT}
+          start_daemon -u r "tomcat2" ${START_TOMCAT}
           ```
 
-     4. Change `"apache"` to `"root"` as follows:
+    1. Change `"tomcat2"` to `"root"` as follows:
 
         - On Redhat/CentOS platforms:
           ```
@@ -425,7 +358,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
           start_daemon -u r "root" ${START_TOMCAT}
           ```
 
-     5.  Save this change and close the file in your editor.
+    1. Save this change and close the file in your editor.
 
 1. Restart the server. 
    1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:

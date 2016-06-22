@@ -1,7 +1,9 @@
 # [Microsoft R](index.md)
 # [Microsoft R Getting Started](microsoft-r-getting-started.md)
+# What's New 
+## [R Server & DeployR](notes/r-server-notes.md)
+## [R Client](notes/r-client-notes.md)
 # Installation
-## [Install R Client](install-r-client-windows.md)
 ## Install R Server
 ### [Install R Server on Windows](rserver-install-windows.md)
 ### [Install R Server on a Linux Server](rserver-install-linux-server.md)
@@ -12,7 +14,8 @@
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ### [Install R Server on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-## Install DeployR
+## [Install R Client](install-r-client-windows.md)
+## [Install DeployR](deployr-installation.md)
 ### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
@@ -38,8 +41,8 @@
 ### [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
-## [RevoScaleR Functions](scaler/compare-base-r-scaler-functions.md)
-### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
+## [RevoScaleR Functions](scaler/scaler.md)
+### [ScaleR Function Map](scaler/scaler.md)
 ### [rxClose](scaler/rxClose.md)
 ### [RxComputeContext](scaler/rxComputeContext.md)
 ### [rxExecuteSQLDDL](scaler/rxExecuteSQLDDL.md)
@@ -53,6 +56,7 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
+### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Useful Functions for SQL Server](scaler/functions-for-sql-server-data.md)
 ## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
 ## [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
@@ -101,7 +105,8 @@
 ### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 ### [Client Library Tutorial](deployr-client-library.md)
 ### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
-### [API Reference Guide](deployr-api-reference.md)
+### [API Overview](deployr-api-reference.md)
+### [API Reference Guide](deployr-apis.md)
 ### [API Explorer Tool](deployr-api-explorer-tool.md)
 ### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
 #### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
@@ -121,6 +126,3 @@
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)
 # [Additional Resources](microsoft-r-more-resources.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
-# Release Notes
-## [R Client](notes/r-client-notes.md)
-## [R Server & DeployR](notes/r-server-notes.md)

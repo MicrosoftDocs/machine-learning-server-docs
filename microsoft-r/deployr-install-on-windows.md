@@ -6,9 +6,9 @@ description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/16/2016"
+ms.date: "06/20/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -38,6 +38,7 @@ Read and follow these points before you begin the installation process.
 >-   While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you dedicate one machine for each server instance that is *in production* so as to avoid resource contention.
 >
 
+<a name="system-requirements"></a>
 ## System Requirements
 
 Verify that the computer meets the following minimum hardware and software requirements.
@@ -124,7 +125,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
-1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#using-a-sql-server-database).
+1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#sqlserver).
 
 1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
@@ -268,7 +269,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     6. Remember to go back and enable all the grid nodes you want to use when you are done testing.
 
-
+<a name="sqlserver"></a>
 ### Using a SQL Server Database
 
 During the installation of DeployR, a local H2 database is automatically installed and configured for you. After installing DeployR, **but before using it**, you can configure DeployR to use a database in **SQL Server Professional, Standard, or Express Version 2012 or greater**.

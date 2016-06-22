@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,10 +19,11 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
+
 # Enabling DeployR on the Cloud
 
 You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be sure to:

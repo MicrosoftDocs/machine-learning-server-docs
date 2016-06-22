@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "paulette.mckay"
 ms.date: "06/13/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
@@ -58,7 +58,7 @@ Get started with Microsoft R Server now and read this [Getting Started](microsof
 <a name="mrc"></a>
 ##Microsoft R Client
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop.
 
@@ -96,7 +96,7 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 |-----------|----------------|------------------|-----------|
 |Big Data   |In-memory bound<br>Can only process datasets that fit into the available memory|In-memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
 |Speed of<br>Analysis    |Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
-|Enterprise<br>Readiness   |Community support|Commercial support|Commercial support|
+|Enterprise<br>Readiness   |Community support|Community support|Commercial support|
 |Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
 |Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
 |[DeployR <br>Enterprise](microsoft-r-getting-started.md#deployr-intro)  |Not available|Not available|Included|

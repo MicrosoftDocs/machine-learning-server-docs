@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,20 +19,27 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
 
-# Enabling and Disabling Server SSL / HTTPS for DeployR
+# DeployR Server Support for SSL/TLS (HTTPS)
 
-The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. Since we cannot ship SSL certificates for you, SSL on DeployR is disabled by default.
+Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor **Secure Sockets Layer (SSL)** are commonly-used cryptographic protocols for managing the security of message transmissions on the Internet. 
 
->We strongly recommended that SSL/HTTPS be enabled in **all production environments.**
+DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. 
 
-## Enabling SSL Support
-Once enabled your client applications can make API calls that connect over HTTPS.
++ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), both the DeployR web server and APIs calls and utilities support TLS 1.2 and SSL by default. 
+
++ In DeployR 8.0.0, only SSL is supported.  
+
+For security reasons, we strongly recommended that SSL/TLS be enabled in **all production environments.**  Since we cannot ship SSL/TLS certificates for you, SSL/TLS protocols on DeployR are disabled by default.
+
+## Enabling SSL/TLS Support
+
+Once enabled, your client applications can make API calls that connect over HTTPS.
 
 ### Enabling for DeployR for Microsoft R Server 2016
 
@@ -40,41 +47,54 @@ Once enabled your client applications can make API calls that connect over HTTPS
 
 1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
 
-2. Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
+1. Enable HTTPS in the DeployR administrator utility:
 
-    + For Linux
-      ```
-      cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-      ./adminUtility.sh
-      ```
+   1. Launch the DeployR administrator utility script with administrator privileges to enable HTTPS:
 
-   + For Windows:
-      ```
-      cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-      adminUtility.bat
-      ```
+      + For Linux
+        ```
+        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
+        sudo ./adminUtility.sh
+        ```
 
-3.  From the main menu, choose option **Web Context and Security**.
+     + For Windows:
+        ```
+        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+        sudo adminUtility.bat
+        ```
 
-4.  From the sub-menu, choose option **Configure Server SSL/HTTPS**.
+   1. From the main menu, choose option **Web Context and Security**.
 
-5.  When prompted, answer `Y` to the question **Enable SSL?**
+   1. From the sub-menu, choose option **Configure Server SSL/HTTPS**.
 
-6.  When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file.
+   1. When prompted, answer `Y` to the question **Enable SSL?**
 
-    If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
+   1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file.
 
-    >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
+      If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
 
-7.  When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
+      >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
-8.  Return to the main menu and choose the option **Start/Stop Server**. You must restart DeployR so that the changes can take effect.
+   1. When prompted whether the certificate file is self-signed, answer `Y` if self-signed and `N` if you are using a trusted SSL certificate from a registered authority.
 
-9.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
+   1. Return to the main menu and choose the option **Start/Stop Server**. You must restart DeployR so that the changes can take effect.
 
-10. Exit the utility.
+   1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
-11. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+   1. Exit the utility.
+
+1. Enable SSL/TLS 1.2 for your remote database:
+
+   + For a [SQL Server database](../deployr-install-on-windows.md#postgresql):
+     
+     1. Do this. 
+
+   + For a [PostgreSQL database](../deployr-install-on-linux.md#postgresql): 
+     
+     1. Do this.
+
+
+1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 <br>
 ### Enabling for DeployR 8.0.0
