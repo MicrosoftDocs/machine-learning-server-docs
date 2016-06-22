@@ -47,7 +47,7 @@ _Table: System Requirements_
 
 |System&nbsp;Requirement|Value  | 
 |-------------------|--------------------------|
-|Operating Systems| Windows Server 2008 (R2 SP1), 2012<br><small>(64-bit processor only)</small>|
+|Operating Systems| Windows Server 2012<br><small>(64-bit processor only)</small>|
 |Hardware|Intel Pentium®-class processor; 3.0 GHz recommended|
 |Free disk space|250+ GB recommended|
 |RAM|4+ GB recommended|
