@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 # Supported Platforms for Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R Server, and Revolution R Workstation.
 
 ## Microsoft R Server 8.0.5
 
@@ -248,8 +248,8 @@ Revolution R Enterprise for Linux includes RevoScaleR and ParallelR. Approximate
 
 Supported 64-bit Linux platforms:
 
-•    Red Hat Enterprise Linux 5.x
-•    Red Hat Enterprise Linux 6.x
+- Red Hat Enterprise Linux 5.x
+- Red Hat Enterprise Linux 6.x
 
 Platform LSF 7 or later is required to use the distributed computing features of RevoScaleR.
 
