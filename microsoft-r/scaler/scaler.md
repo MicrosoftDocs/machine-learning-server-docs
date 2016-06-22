@@ -26,19 +26,14 @@ ms.custom: ""
 
 # RevoScaleR Functions
 
-The `RevoScaleR` package includes hundreds of functions. While most of these functions are of general application, some are specific to particular compute contexts such as Hadoop, Teradata, or SQL Server and some may not be fully supported in all compute contexts. 
+The `RevoScaleR` package includes hundreds of functions. This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  If you want to see the entire set of `RevoScaleR` functions,  [follow these steps.](#findmore)
 
-This topic presents a curated list of functions by Microsoft R users. These functions can be called directly from the command line. 
-
-If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
+While most of these functions are of general application, some are specific to particular compute contexts such as Hadoop, Teradata, or SQL Server and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](scaler-hadoop-functions.md)
 + Computing on a Teradata Datawarehouse
 + [Computing on SQL Server](functions-for-sql-server-data.md)
 
 >Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
-
->[!IMPORTANT]
->These are not exhaustive lists of functions in the RevoScaleR package. If you want to see the entire set of functions,  [follow these steps.](#findmore)
 
 <br />
 ## Data Analysis Functions
