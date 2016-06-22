@@ -40,7 +40,6 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 <br />
 ####Import and Export
 
-
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`RxXdfData`       |![top](../media/award.png)|Creates an efficient XDF data source object.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
@@ -76,10 +75,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br />
-<br />
-###Analyze, Learn, and Predict
-
-####Descriptive Statistics and Cross-Tabulations
+####Analyze with Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -88,10 +84,8 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
 |`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for efficient representation  returning ‘cube’ results. Writing output to .xdf file not supported.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
 
-
-
 <br />
-####Statistical Modeling
+####Analyze, Learn, and Predict with Statistical Modeling
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
