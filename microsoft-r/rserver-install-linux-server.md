@@ -1,14 +1,14 @@
 ---
 
 # required metadata
-title: "R Server Linux Server Install Guide"
-description: "Microsoft R Server Linux installation."
+title: "R Server installation for Linux systems"
+description: "Install Microsoft R Server version 8.0.0 and 8.0.5 on Linux."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
-ms.date: "03/17/2016"
+author: "HeidiSteen"
+manager: "paulettm"
+ms.date: "06/20/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,38 +19,120 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
 
-# R Server Installation Guide for Linux System
+# R Server Installation for Linux Systems
 
-## Quick Overview
+This article explains how to install versions 8.0.0 and 8.0.5 of Microsoft R Server on a Linux server. Version 8.0.5 is recommended because it includes an updated installer for deploying R Server in fewer steps, including a slipstream installation of **Microsoft R Open for R Server** that comes with most of its dependencies built into the package.
 
-This section describes a quick install process that assumes the following:
+You can only install one version of R Server. Side-by-side is not supported. If the server already has an existing installation, you should uninstall the current deployment before installing the new version. See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+
+The instructions for either version of R Server assume the following:
 
 -   Your system has Internet access
 -   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
--   You are installing as root.
+-   You are installing as root or as super user
 
-If any of these conditions does not hold, you should first verify that your system meets the system requirements and satisfies the package prerequisites described in [Prerequisites and Dependencies](#prerequisites-and-dependencies), then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
+If any of these conditions do not apply, you should first verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
+
+## System Requirements
+
+**Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+
+**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like Centos, or SUSE Linux Enterprise Server 11. Microsoft R Server has different operating system requirements depending on whether you install 8.0.0 or 8.0.5. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+
+**Memory:** A minimum of 2GB of RAM is required; 8GB or more are recommended.
+
+**Disk Space:** A minimum of 500MB of disk space is required.
+
+## Install R Server version 8.0.5 on Linux
+
+### Download Microsoft R software
+
+Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
+
+1. Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
+
+	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
+	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
+	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
+
+2.  Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
+
+		`mkdir /mnt/mrsimage
+		mount –o loop <filename> /mnt/mrsimage`
+
+	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+
+		[for RHEL/CENTOS systems]
+		`tar zxvf MRS80RHEL.tar.gz`
+
+		[for SLES systems]
+		`tar zxvf MRS80SLES.tar.gz`
+
+3.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
+
+		[From the mounted img file]
+		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+
+		[From the unpacked tar file]
+		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+
+4.  Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+
+		`cd /tmp
+		tar xvzf Microsoft-R-Server-<OS>.tar.gz`
+
+This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
+
+### Run the install script
+
+Microsoft R Server 8.0.5 for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
+
+Note that if your Linux server has Hadoop, the installer will detect the cluster and install the Hadoop component even if you don't specify it.
+
+1.  Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
+2.  Verify system repositories are up to date:
+		`[username] $ sudo yum clean all`
+3.  Change to the directory to which you downloaded the rpm (for example, /tmp):
+		`[username] $ cd /tmp`
+4. Run the script.
+		`[tmp] $ sudo bash install.sh`
+5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
+6. Installer output shows the packages and location of the log file.
+7. Check the version of Microsoft R Open using `rpm -qi`:
+		`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
+8. Check the version of the intel-mkl package:
+		`[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+
+Partial output is as follows (note version 8.0.5):
+		`Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
+		Version     : 8.0.5                         Vendor: Microsoft
+		. . . `
+
+## Install R Server version 8.0.0 on Linux
 
 Installation of Microsoft R Server consists of two distinct steps:
 
-1.  Install Microsoft R Open for Microsoft R Server 2016.
+- Install Microsoft R Open for Microsoft R Server 2016
+- Install Microsoft R Server 2016
 
-2.  Install Microsoft R Server 2016.
+To download and install Microsoft R Open and R Server:
 
-To download and install Microsoft R Server:
-
-1.  Log in as root or a user with sudo privileges. If the latter, precede commands requiring root privileges with sudo. (If you do not have root access or sudo privileges, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for details.)
+1.  Log in as root, or as a user with super user (sudo) privileges. Optionally, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for instructions.
 
 2.  Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
 
 3.  Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
 
-4.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+4.  Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
+
+	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
+	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
+	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
 
 5.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
@@ -66,17 +148,17 @@ To download and install Microsoft R Server:
 6.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
 		[From the mounted img file]
-		cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp
+		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
 		[From the unpacked tar file]
-		cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp
+		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
 7.  Unpack the tar file and run the installer script, as follows:
 
-		cd /tmp
+		`cd /tmp
 		tar xvzf Microsoft-R-Server-8.0.0-<OS>.tar.gz
 		pushd rrent
-		./install.sh
+		./install.sh`
 
 	The installer prompts you for the following:
 
@@ -94,104 +176,7 @@ To download and install Microsoft R Server:
 
 On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the RRE installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
 
-If you receive messages about uninstalled dependencies, see [Prerequisites and Dependencies](#prerequisites-and-dependencies).
-
-## Prerequisites and Dependencies
-
-This section describes the minimum and recommended system requirements for Microsoft R Server, and also lists all known package dependencies.
-
-### System Requirements
-
-Microsoft R Server for Linux has the following system requirements:
-
-**Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
-
-**Operating System:** Red Hat Enterprise Linux 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, or 6.6, or SUSE Linux Enterprise Server 11 SP1, SP2, or SP3. (SUSE Linux Enterprise Server installs require the libgfortran43 package; to our knowledge this is distributed only with SP1, but can be installed into later Service Packs. The required ISO images can be found at <https://download.suse.com/>.) Only 64-bit operating systems are supported.
-
-**Memory:** A minimum of 2GB of RAM is required; 8GB or more are recommended.
-
-**Disk Space:** A minimum of 500MB of disk space is required.
-
-Package Dependencies
---------------------
-
-Microsoft R Server, like most Linux applications, depends upon a number of Linux packages. If your system is not Internet-connected or not configured to use a package manager, you must ensure that these dependencies are installed by hand. Most of these, listed in Table 1 for RHEL systems and Table 2 for SLES 11 systems, are explicitly required by Microsoft R Server, either to build R itself or as a prerequisite for an additional Microsoft package. The remainder are in turn required by these dependencies. These are automatically installed while the automated script is running. These are listed in Table 3 for RHEL systems and Table 4 for SLES 11 systems. These dependency lists are based on default installs of RHEL 6 and SLES11; if you use a minimal install, additional packages may be required.
-
-Table 1. Packages Explicitly Required by Microsoft R Server on RHEL Systems
-
-|||
-|-------------------|-----------------|
-| ed                | cairo-devel     |
-| tk-devel          | make            |
-| gcc-objc          | gcc-c++         |
-| readline-devel    | libtiff-devel   |
-| ncurses-devel     | pango-devel     |
-| perl              | texinfo         |
-| libgfortran       | pango           |
-| libicu            | libjpeg\*-devel |
-| ghostscript-fonts | gcc-gfortran    |
-| libSM-devel       | libicu-devel    |
-| libXmu-devel      | bzip2-devel     |
-
-Table 2. Packages Explicitly Required by Microsoft R Server on SLES 11 Systems
-
-|||
-|-------------------|-----------------|
-| ed                   | cairo-devel           |
-| tk-devel             | make                  |
-| gcc-objc             | gcc-c++               |
-| readline-devel       | libtiff-devel         |
-| ncurses-devel        | pango-devel           |
-| perl                 | texinfo               |
-| libjpeg-devel        | ghostscript-fonts-std |
-| libgfortran43        | gcc-fortran           |
-| xorg-x11-libSM-devel | xorg-x11-libXmu-devel |
-| libpng-devel         |                       |
-
-Table 3. Secondary Dependencies Installed for Microsoft R Server on RHEL Systems
-
-|||
-|-------------------|-----------------|
-| cloog-ppl         | cpp                      |
-| font-config-devel | freetype                 |
-| freetype-devel    | gcc                      |
-| glib2-devel       | libICE-devel             |
-| libobjc           | libpng-devel             |
-| libstdc++-devel   | libX11-devel             |
-| libXau-devel      | libxcb-devel             |
-| libXext-devel     | libXft-devel             |
-| libXmu            | libXrender-devel         |
-| libXt-devel       | mpfr                     |
-| pixman-devel      | ppl glibc-headers        |
-| tcl gmp           | tcl-devel kernel-headers |
-| tk                | xorg-x11-proto-devel     |
-| zlib-devel        |                          |
-
-Table 4. Secondary Dependencies Installed for Microsoft R Server on SLES 11 Systems
-
-|||
-|-------------------|-----------------|
-| cpp43                     | fontconfig-devel             |
-| freetype2-devel           | gcc                          |
-| gcc43 libX11              | gcc43-c++                    |
-| gcc43-fortran             | gcc43-objc                   |
-| glib2-devel               | glibc-devel                  |
-| libobjc43 tcl             | libpciaccess0                |
-| libpciaccess0-devel       | libpixman-1-0-devel          |
-| libstdc++-devel           | libstdc++43-devel            |
-| libuuid-devel gmp         | linux-kernel-headers         |
-| pkg-config                | tack                         |
-| tcl-devel                 | xorg-x11-devel               |
-| xorg-x11-fonts-devel      | xorg-x11-libICE-devel        |
-| xorg-x11-libX11-devel     | xorg-x11-libXau-devel        |
-| xorg-x11-libXdmcp-devel   | xorg-x11-libXext-devel       |
-| xorg-x11-libXfixes-devel  | xorg-x11-libXp-devel         |
-| xorg-x11-libXpm-devel     | xorg-x11-libXprintUtil-devel |
-| xorg-x11-libXrender-devel | xorg-x11-libXt-devel         |
-| xorg-x11-libXv-devel      | xorg-x11-libfontenc-devel    |
-| xorg-x11-libxcb-devel     | xorg-x11-libxkbfile-devel    |
-| xorg-x11-proto-devel      | xorg-x11-util-devel          |
-| xorg-x11-xtrans-devel     | zlib-devel                   |
+If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
 ## Managing Your Microsoft R Server Installation
 
@@ -231,7 +216,7 @@ If all the prerequisites are installed, you complete the installation as follows
 		export MRS_RPM_DBPATH=$HOME/localmrsrpmdb && \
 		    rpm --dbpath $MRS_RPM_DBPATH --prefix $HOME \
 		        --nodeps -i MRO-for-MRS-*.rpm
-		
+
 3.  Download and unpack the Microsoft R Server tarball, then run the installer script, as follows (the tarball name may include an operating system ID; the complete name of the tarball will be in your download letter):
 
 		tar xvzf Microsoft-R-Server-8.0.0-*.tar.gz
@@ -408,7 +393,7 @@ RStudio (<http://www.rstudio.com/ide>) is an open-source, cross-platform integra
 To install and start the free version of RStudio Server, run the following commands at a shell prompt after installing Microsoft R Server:
 
 	# RHEL 6 only
-	sudo yum install openssl098e 
+	sudo yum install openssl098e
 	# on both RHEL5 and RHEL6
 	wget http://download2.rstudio.org/rstudio-server-0.98.1103-x86_64.rpm
 	sudo yum install --nogpgcheck rstudio-server-0.98.1103-x86_64.rpm
@@ -446,7 +431,7 @@ To install Eclipse, first download the desired 64-bit base IDE from <http://www.
 	eclipse-<lang>-juno-SR1-linux-gtk-x86_64.tar.gz
 
 where \<lang\> is one of cpp or java. The following commands should install and start Eclipse on your Linux system:
-	
+
 	tar zxvf eclipse-<lang>-luna-SR2-linux-gtk-x86_64.tar.gz
 	cd eclipse
 	./eclipse &
@@ -454,7 +439,7 @@ where \<lang\> is one of cpp or java. The following commands should install and 
 #### Installing StatET
 
 Before installing StatET, review the requirements at <http://www.walware.de/?page=/it/statet/installation.mframe>. Install the required packages rj and rj.gd by starting Microsoft R Server and calling install.packages as follows:
-	
+
 	install.packages(c("rj", "rj.gd"),
 		repos="http://download.walware.de/rj-2.0",
 		lib="/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R/library")
