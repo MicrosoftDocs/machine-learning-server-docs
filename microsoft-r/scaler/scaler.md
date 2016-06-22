@@ -186,7 +186,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br/>
 <a name="data"></a>
 
-##Data Sources
+##Data Source Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -233,8 +233,7 @@ These functions and many more can be used for high performance computing and dis
 |`rxIsOpen()` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|
 |`rxSqlServerDropTable()`| |Execute an SQL statement that drops a table.|<small>[View](rxSqlServerDropTable.md)</small>|  
 |`rxSqlServerTableExists()`| |Execute an SQL statement that checks for a table's existance.|<small>[View](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext()`| |Writes the next chunk when moving data between ScaleR data sources.
-|<small>[View](rxWriteNext.md)</small>|
+|`rxWriteNext()`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[View](rxWriteNext.md)</small>|
  
 
 <br>
