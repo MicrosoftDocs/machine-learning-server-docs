@@ -79,7 +79,7 @@ High performance computing is supported in Hadoop using:
 
 The Hadoop compute context also allows the following data manipulation functionality:
 
--   *rxDataStep*: Transform and subset data. Output can be an XDF data source, a comma delimited text data source (EXPERIMENTAL), or a data frame in memory (assuming you have sufficient memory to hold the output data).
+-   *rxDataStep*: Transform and subset data. Output can be an XDF data source, a comma delimited text data source, or a data frame in memory (assuming you have sufficient memory to hold the output data).
 -   *rxFactors*: Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.
 
 The following ‘helper’ functions to get basic information about your data source:
@@ -598,6 +598,7 @@ You should see the following results:
 
 Notice that the results indicate we have processed all the data, six million observations, using all the .csv files in the specified directory. Notice also that because we specified *cube = TRUE*, we have an estimated coefficient for each day of the week (and not the intercept).
 
+<a name="composite"></a>
 ### Importing Data As Composite XDF Files
 
 As we have seen, you can analyze CSV files directly with RevoScaleR on Hadoop, but the analysis can be done more quickly if the data is stored in a more efficient format. The RevoScaleR .xdf format is extremely efficient, but is modified somewhat for HDFS so that individual files remain within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB.) When you use rxImport on Hadoop, you specify an RxTextData data source such as bigAirDS as the inData and an RxXdfData data source with fileSystem set to an HDFS file system as the outFile argument to create a set of *composite .xdf files*. The RxXdfData object can then be used as the data argument in subsequent RevoScaleR analyses.
