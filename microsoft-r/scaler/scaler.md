@@ -72,7 +72,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, <br />SAS, SPSS data files, ODBC orTeradata connection,  <br />or data frame).|<small>[In package](scaler.md#findmore)</small>|
-|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited<br />text file, or data frame in memory (assuming you have sufficient <br />memory to hold the output data) from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output data) <br />from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetInfo()`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetInfo()`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute <br /> in a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetVarInfo()`    | |Retrieves variable information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
@@ -101,7 +101,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  <br />an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output data) <br />from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor<br /> in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[In package](scaler.md#findmore)</small>|
@@ -131,15 +131,15 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxQuantile()`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[In package](scaler.md#findmore)</small>|
-|`rxSummary()`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[In package](scaler.md#findmore)</small>|
+|`rxSummary()`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. <br />Writing by group computations to .xdf file not supported.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCrossTabs()`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[In package](scaler.md#findmore)</small>|
-|`rxCube()`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for efficient representation  returning ‘cube’ results. Writing output to .xdf file not supported.|<small>[In package](scaler.md#findmore)</small>|
+|`rxCube()`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for <br />efficient representation  returning ‘cube’ results. <br />Writing output to .xdf file not supported.|<small>[In package](scaler.md#findmore)</small>|
 |`rxMarginals()`   | |Marginal summaries of cross-tabulations.|<small>[In package](scaler.md#findmore)</small>|
 |`as.xtabs()`   | |Converts cross tabulation results to an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
-|`rxChiSquaredTest()`| |Performs Chi-squared Test on `xtabs` object. Used with smaller data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
-|`rxFisherTest()`   | |Performs Fisher's Exact Test on `xtabs` object. Used with smaller data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
+|`rxChiSquaredTest()`| |Performs Chi-squared Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
+|`rxFisherTest()`   | |Performs Fisher's Exact Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
 |`rxKendallCor()`   | |Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
-|`rxPairwiseCrossTab()`   | |Apply a function to pairwise combinations of rows and columns of an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPairwiseCrossTab()`   | |Apply a function to pairwise combinations of rows and columns<br /> of an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxRiskRatio()`    | |Calculate the relative risk on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxOddsRatio()`   | |Calculate the odds ratio on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 
@@ -155,12 +155,12 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxDTree()`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[In package](scaler.md#findmore)</small>|
 |`rxBTrees()`   |![top](../media/award.png) |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.|<small>[In package](scaler.md#findmore)</small>|
 |`rxDForest()`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[In package](scaler.md#findmore)</small>|
-|`rxPredict()`   |![top](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPredict()`   |![top](../media/award.png) |Calculates predictions for fitted models. <br />Output must be an XDF data source.|<small>[In package](scaler.md#findmore)</small>|
 |`rxKmeans()`   |![top](../media/award.png) |Performs k-means clustering.|<small>[In package](scaler.md#findmore)</small>|
 |`rxNaiveBayes()`   |![top](../media/award.png) |Performs Naive Bayes classification.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCov()`   | |Calculate the covariance matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCor()`    | |Calculate the correlation matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
-|`rxSSCP()`   | |Calculate the sum of squares / cross-product matrix for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
+|`rxSSCP()`   | |Calculate the sum of squares / cross-product matrix <br />for a set of variables.|<small>[In package](scaler.md#findmore)</small>|
 |`rxRoc()`   | |Receiver Operating Characteristic (ROC) computations using actual  <br />and predicted values from binary classifier system.|<small>[In package](scaler.md#findmore)</small>|
 
 
@@ -177,11 +177,13 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxHadoopMR()`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxSpark()`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxInTeradata()`|![top](../media/award.png) |Creates an in-database compute context for Teradata.|<small>[In package](scaler.md#findmore)</small>|
-|`RxInSqlServer()`| |Creates an in-database compute context for SQL Server 2016.|<small>[In package](scaler.md#findmore)</small>|
+|`RxInSqlServer()`| |Creates an in-database compute context for SQL Server.|<small>[In package](scaler.md#findmore)</small>|
 |`RxComputeContext()`||Creates a compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxLocalSeq()`| |Creates a local compute context for `rxExec` using sequential computations.|<small>[In package](scaler.md#findmore)</small>|
 |`RxLocalParallel()`| |Creates a local compute context for `rxExec` using <br />the `parallel` package as back end.|<small>[In package](scaler.md#findmore)</small>|
-|`rxForeachDoPar()`   | |Creates a compute context for `rxExec` using <br />the current `foreach` parallel back end.|<small>[In package](scaler.md#findmore)</small>|
+|`RxForeachDoPar()`   | |Creates a compute context for `rxExec` using <br />the current `foreach` parallel back end.|<small>[In package](scaler.md#findmore)</small>|
+|`rxInstalledPackages()`   | |Returns the list of installed packages for a compute context.|<small>[View](rxInstalledPackages.md)</small>|
+|`rxFindPackage()`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
 
 
 <br/><a name="data"></a>
@@ -211,7 +213,7 @@ These functions and many more can be used for high performance computing and dis
 |`rxRngSetStream()`   | |Support for Parallel Random Number Generation.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetAvailableNodes()`| |Get all the available nodes on a distributed compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetNodeInfo()`| |Get information on nodes specified for a distributed compute context.|<small>[In package](scaler.md#findmore)</small>|
-|`rxPingNodes()`| |Test round trip from end user through computation node(s) in <br /> a cluster or cloud.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPingNodes()`| |Test round trip from user through computation node(s) <br />in a cluster or cloud.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobStatus()`| |Get the status of a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobResults()`| |Get the return object(s) of a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetJobOutput()`| |Get the console output from a non-waiting distributed computing job.|<small>[In package](scaler.md#findmore)</small>|
@@ -229,10 +231,11 @@ These functions and many more can be used for high performance computing and dis
 |`rxGetEnableThreadPool()`   | |Gets the current state of the thread pool, which on Linux can be<br/> either persistent or on-demand.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool()`   | |Sets the thread pool state.|<small>[In package](scaler.md#findmore)</small>|
 |`rxStepControl()`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[In package](scaler.md#findmore)</small>|
-|`rxIsOpen()` | |      |<small>[View](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable()`| |      |<small>[View](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists()`| |      |<small>[View](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext()`| |      |<small>[View](rxWriteNext.md)</small>|
+|`rxIsOpen()` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable()`| |Execute an SQL statement that drops a table.|<small>[View](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists()`| |Execute an SQL statement that checks for a table's existance.|<small>[View](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext()`| |Writes the next chunk when moving data between ScaleR data sources.
+|<small>[View](rxWriteNext.md)</small>|
  
 
 <br>

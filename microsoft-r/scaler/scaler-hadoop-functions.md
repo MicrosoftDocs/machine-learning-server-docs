@@ -118,6 +118,8 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |-----------------------|:-:|-----------------------|:--------------:||
 |`RxHadoopMR()`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[In package](scaler.md#findmore)</small>|
 |`RxSpark()`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context.|<small>[In package](scaler.md#findmore)</small>|
+|`rxInstalledPackages()`   | |Returns the list of installed packages for a compute context.|<small>[View](rxInstalledPackages.md)</small>|
+|`rxFindPackage()`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
 
 
 <br/>
