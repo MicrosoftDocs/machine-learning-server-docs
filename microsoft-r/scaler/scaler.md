@@ -6,7 +6,7 @@ description: "ScaleR Functions"
 keywords: "RevoScaleR, ScaleR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "06/13/2016"
+ms.date: "06/22/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -256,7 +256,6 @@ See the list of public functions and see the associated help pages using the fol
 1. Identify the position of the object you are interested in. In the case of our example, RevoScaleR is in the fifth position.
 
    ![objects](../media/scaler-rconsole-obj.png)
-
 
 1. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
    ```
