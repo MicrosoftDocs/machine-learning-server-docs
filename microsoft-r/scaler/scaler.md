@@ -39,7 +39,6 @@ While most of these functions are of general application, some are specific to p
 
 <br />
 ## Data Analysis Functions
-
 <!--<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![import](../media/scaler/import.png)
@@ -66,7 +65,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
  + The [**data source**](#data), which is the data to be used
  
 <br />
-###Import and Export
+####Import and Export
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -96,7 +95,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 <br />
-###Manipulate, Clean, and Transform
+####Manipulate, Clean, and Transform 
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -110,7 +109,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxExecuteSQLDDL`|  |SQL Server R Services only. Runs an arbitrary SQL DDL command.     |<small>[View](rxExecuteSQLDDL.md)</small>|
 
 <br />
-###Visualize
+####Visualize
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -120,12 +119,9 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[In package](scaler.md#findmore)</small>|
 
 
-<br />
-<br />
-###Analyze, Learn, and Predict
 
-<a name="analytics"></a>
-####Descriptive Statistics and Cross-Tabulations
+<br />
+####Analyze with Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -143,7 +139,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxOddsRatio`   | |Calculate the odds ratio on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 
 <br />
-####Statistical Modeling
+####Analyze, Learn, and Predict with Statistical Modeling
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -165,7 +161,6 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <br />
 <a name="compute"></a>
-
 ##Compute Context Functions
 
 
@@ -187,7 +182,6 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <br/>
 <a name="data"></a>
-
 ##Data Source Functions
 
 |Function Name          | |Description|Help|
