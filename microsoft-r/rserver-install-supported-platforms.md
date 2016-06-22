@@ -29,15 +29,15 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 8.0.5
 
-**Operating Systems**
+**Operating Systems (64-Bit only)**
 
-- Red Hat Enterprise Linux (RHEL) 6.x and 7.x, or CentOS (64-Bit)  
-- SUSE Linux Enterprise Server 11 (SLES11) and later (64-Bit)
+- Red Hat Enterprise Linux (RHEL) 6.x and 7.x, or CentOS   
+- SUSE Linux Enterprise Server 11 (SLES11)
 
 **Microsoft R Server for Teradata**
 
 - Teradata Database 14.10, 15.00, 15.10
-- Operating System: SLES11 and later
+- Operating System: SLES11
 
 **Microsoft R Server for Hadoop**
 
