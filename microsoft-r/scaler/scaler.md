@@ -62,18 +62,17 @@ If you are looking for the functions optimized for Hadoop, Teradata, or SQL Serv
 
 
 Whenever you want to perform an analysis using `RevoScaleR` functions, you should specify three distinct pieces of information: 
- + The **compute context**, which specifies where the computations should take place
- + The **data source**, which is the data to be used
- + The **analytic function**, which specifies the analysis to be performed
-
+ + The [**analytic function**](#analytics), which specifies the analysis to be performed
+ + The [**compute context**](#compute), which specifies where the computations should take place
+ + The [**data source**](#data), which is the data to be used
+ 
 <br />
 ###Import and Export
-
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxImport()`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, <br />SAS, SPSS data files, ODBC orTeradata connection,  <br />or data frame).|<small>[In package](scaler.md#findmore)</small>|
-|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  <br />an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited<br />text file, or data frame in memory (assuming you have sufficient <br />memory to hold the output data) from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetInfo()`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSetInfo()`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute <br /> in a data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetVarInfo()`    | |Retrieves variable information from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
@@ -126,6 +125,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 ###Analyze, Learn, and Predict
 
+<a name="analytics"></a>
 ####Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
@@ -167,7 +167,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 ##Data Sources and Compute Context Functions
 
-<br/>
+<br/><a name="compute"></a>
 **Compute Contexts**
 
 |Function Name          | |Description|Help|
@@ -184,7 +184,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxForeachDoPar()`   | |Creates a compute context for `rxExec` using <br />the current `foreach` parallel back end.|<small>[In package](scaler.md#findmore)</small>|
 
 
-<br/>
+<br/><a name="data"></a>
 **Data Sources**
 
 |Function Name          | |Description|Help|
