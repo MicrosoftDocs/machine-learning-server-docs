@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "ScaleR Functions RxInSqlServer"
+description: "ScaleR Functions: RxInSqlServer"
+keywords: "RevoScaleR, ScaleR, RxInSqlServer"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "r-server"
+ms.custom: ""
+
+---
+
 # rxFindPackage
 
 Finds the path for one or more packages for a compute context.
