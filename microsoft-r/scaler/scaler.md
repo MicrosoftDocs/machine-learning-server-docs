@@ -238,9 +238,8 @@ These functions and many more can be used for high performance computing and dis
 |`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[View](rxWriteNext.md)</small>|
  
 
-<br>
-
-<br>
+<br />
+<br />
 
 <a name="findmore"></a>
 ##See All Functions and Help Files

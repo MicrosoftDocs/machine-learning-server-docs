@@ -141,25 +141,6 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 
 
 
-
-
-
-
-|`rxRngNewStream`   | |Support for Parallel Random Number Generation.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxRngDelStream`   | |Support for Parallel Random Number Generation.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxRngGetStream`   | |Support for Parallel Random Number Generation.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxRngSetStream`   | |Support for Parallel Random Number Generation.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxGetAvailableNodes`| |Get all the available nodes on a distributed compute context.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxGetNodeInfo`| |Get information on nodes specified for a distributed compute context.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxPingNodes`| |Test round trip from end user through computation node(s) in <br /> a cluster or cloud.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
-|`rxLocateFile`| |Get the first occurrence of a specified input file in a set of specified paths.|<small>[Look in <br />package help](scaler.md#findmore)</small>|
- 
-
-
-
-
-
-
 <br />
 ##Utility Functions
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
