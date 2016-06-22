@@ -80,8 +80,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxGetVarNames()`   | |Retrieves variable names from a data source or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCreateColInfo()`   | |Generates a 'colInfo' list from a data source.|<small>[In package](scaler.md#findmore)</small>|
 |`rxCompressXdf()`   | |Compresses an existing .xdf file, or a directory of .xdf files.|<small>[In package](scaler.md#findmore)</small>|
-|`RxXdfData()`       |![top](../media/award.png)|Creates an efficient XDF data source object.|<small>[In package](scaler.md#findmore)</small>|
-|`RxTextData()`      |![top](../media/award.png)|Creates a comma delimited text data source object.|<small>[In package](scaler.md#findmore)</small>|
+|`RxXdfData()`       | |Creates an efficient XDF data source object.|<small>[In package](scaler.md#findmore)</small>|
+|`RxTextData()`      | |Creates a comma delimited text data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`RxSasData()`      | |Creates a SAS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`RxSpssData()`      | |Creates a SPSS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`RxOdbcData()`      | |Creates a ODBC data source object.|<small>[In package](scaler.md#findmore)</small>|
@@ -101,8 +101,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output data) <br />from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
-|`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor<br /> in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxDataStep()`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output) <br />from  an .xdf file or a data frame.|<small>[In package](scaler.md#findmore)</small>|
+|`rxFactors()`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable <br />into a factor in an .xdf file or data frame.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[In package](scaler.md#findmore)</small>|
 |`rxSplit()`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[In package](scaler.md#findmore)</small>|
@@ -139,7 +139,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxChiSquaredTest()`| |Performs Chi-squared Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
 |`rxFisherTest()`   | |Performs Fisher's Exact Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[In package](scaler.md#findmore)</small>|
 |`rxKendallCor()`   | |Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
-|`rxPairwiseCrossTab()`   | |Apply a function to pairwise combinations of rows and columns<br /> of an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
+|`rxPairwiseCrossTab()`   | |Apply a function to pairwise combinations of rows <br />and columns of an `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxRiskRatio()`    | |Calculate the relative risk on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 |`rxOddsRatio()`   | |Calculate the odds ratio on a two-by-two `xtabs` object.|<small>[In package](scaler.md#findmore)</small>|
 
@@ -165,10 +165,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 <br />
-##Data Sources and Compute Context Functions
+<a name="compute"></a>
 
-<br/><a name="compute"></a>
-**Compute Contexts**
+##Compute Context Functions
+
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -186,8 +186,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxFindPackage()`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
 
 
-<br/><a name="data"></a>
-**Data Sources**
+<br/>
+<a name="data"></a>
+
+##Data Sources
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -196,8 +198,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxSasData()`      | |Creates a SAS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`RxSpssData()`      | |Creates a SPSS data source object.|<small>[In package](scaler.md#findmore)</small>|
 |`RxOdbcData()`      | |Creates a ODBC data source object.|<small>[In package](scaler.md#findmore)</small>|
-|`RxSqlServerData()`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
 |`RxTeradata()`     | |Creates a Teradata data source object.|<small>[In package](scaler.md#findmore)</small>|
+|`RxSqlServerData()`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
 
 <br />
 ##HPC and Distributed Computing Functions
