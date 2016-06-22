@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# RevoScaleR Functions
+# RevoScaleR Functions for Hadoop
 
 The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Hadoop compute contexts and some may not be fully supported in these compute contexts. 
 
