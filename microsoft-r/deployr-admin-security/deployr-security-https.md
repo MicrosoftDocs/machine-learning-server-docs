@@ -31,7 +31,7 @@ Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor
 
 DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. 
 
-+ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), both the DeployR web server and APIs calls and utilities support TLS 1.2 and SSL by default. 
++ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), the DeployR Web server as well as all APIs calls and utilities support TLS 1.2 and SSL. However, HTTPS is disabled by default.
 
 + In DeployR 8.0.0, only SSL is supported.  
 
@@ -43,7 +43,8 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 ### Enabling for DeployR for Microsoft R Server 2016
 
-####To enable TLS/SSL for the Web Server:
+<br />
+####Securing connections between the DeployR Web server and client
 
 1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
 
@@ -88,7 +89,9 @@ Once enabled, your client applications can make API calls that connect over HTTP
 1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 <br />
-####To enable for the database
+####Securing connections between DeployR Web server and the database
+
+If your corporate policies f you want one between web server and db. if company policy requires that, then use postgres or sql server
 
 1. Enable SSL/TLS 1.2 for your remote database:
 

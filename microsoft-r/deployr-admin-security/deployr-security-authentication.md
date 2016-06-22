@@ -52,7 +52,7 @@ When you integrate with an external enterprise security solution, you want acces
 
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is enabled by default and there are no additional security configuration properties for this provider.
 
-If you enable [Active Directory Services](#active-directory-authentication), [LDAP](#ldap-authentication), or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) scenarios, basic authentication remains enabled even with PAM enabled.
+If you enable [Active Directory Services](#active-directory-authentication) or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) and [LDAP](#ldap-authentication) scenarios, basic authentication remains enabled even with PAM or LDAP enabled.
 
     /*
      * DeployR Basic Authentication Policy Properties
@@ -61,6 +61,8 @@ If you enable [Active Directory Services](#active-directory-authentication), [LD
 ## LDAP Authentication
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
+
+>Basic authentication remains enabled even with LDAP enabled.
 
 **To enable LDAP:** 
 
