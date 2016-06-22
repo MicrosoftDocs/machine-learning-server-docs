@@ -34,7 +34,6 @@ This guide presents a curated list of functions that might be particularly inter
 
 As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
-<br />
 ## Data Analysis Functions
 <br />
 ####Import and Export
