@@ -66,6 +66,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Disk Space:** A minimum of 500 MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
+<a name="DownloadR"></a>
 ## Download Microsoft R Components
 
 Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 2-part installation of the following software in the order listed:
@@ -88,13 +89,13 @@ For most users, installing on the cluster means simply running the standard Micr
 
 1. Log in as root or a user with sudo privileges. If using sudo, precede commands requiring root privileges with `sudo`.
 2. Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server:
- 		*'sudo yum clean all'*'
+ 		sudo yum clean all
 3. [Download the Microsoft R Open for Microsoft R Server rpm](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409).
 4.  Change to the directory to which you downloaded the rpm (for example, /tmp):
 		cd /tmp
 5. Use the following command to install Microsoft R Open for Microsoft R Server:
 		yum install MRO-for-MRS-8.0.0.`*`.x86_64.rpm
-6. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+6. [Download and unpack the Microsoft R Server 2016 distribution](#DownloadR), which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 7. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
@@ -102,18 +103,18 @@ For most users, installing on the cluster means simply running the standard Micr
 
   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-  **For RHEL/CENTOS systems**:
+  For RHEL/CENTOS systems:
 		tar zxvf MRS80RHEL.tar.gz
 
-  **For SLES systems**:
+  For SLES systems:
 		tar zxvf MRS80SLES.tar.gz
 
 8. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-  **From the mounted img file**:
+  From the mounted img file:
 		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-  **From the unpacked tar file**:
+  From the unpacked tar file:
 		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
 9. Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
@@ -163,7 +164,7 @@ The file RevoHadoopEnvVars.site in the scripts directory of your Microsoft R Ser
 
 	. /usr/lib64/MRS-8.0/scripts/RevoHadoopEnvVars.site
 
-(The period (“.”) at the beginning is part of the command, and must be included.)
+The period (“.”) at the beginning is part of the command, and must be included.
 
 This file sets the following environment variables for use by Microsoft R Server:
 
@@ -228,10 +229,10 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 
 3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
-  **From the mounted img file**:
+  From the mounted img file:
 		cp /mnt/mrsimage/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
-  **From the unpacked tar file**:
+  From the unpacked tar file:
 		cp /tmp/MRS80HADOOP/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
 4. You should have the following files in your parcel repo:
