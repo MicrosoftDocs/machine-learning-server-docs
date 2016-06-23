@@ -65,14 +65,14 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
  + The [**data source**](#data), which is the data to be used
  
 <br />
-####Import and Export
+####Import and Export Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxImport`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, <br />SAS, SPSS data files, ODBC orTeradata connection,  <br />or data frame).|<small>[See package](scaler.md#findmore)</small>|
-|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output data) <br />from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxImport`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).|<small>[See package](scaler.md#findmore)</small>|
+|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetInfo`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSetInfo`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute <br /> in a data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxSetInfo`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute in a data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetVarInfo`    | |Retrieves variable information from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetVarInfo`    | |Modifies variable information in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetVarNames`   | |Retrieves variable names from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
@@ -83,8 +83,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxSasData`      | |Creates a SAS data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxSpssData`      | |Creates a SPSS data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxOdbcData`      | |Creates a ODBC data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
 |`RxTeradata`     | |Creates a Teradata data source object.|<small>[See package](scaler.md#findmore)</small>|
+|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
 |`rxOpen`     | |Opens a data source for reading.|<small>[View](rxOpen.md)</small>|
 |`rxClose`      | |Closes a data source.     |<small>[View](rxClose.md)</small>|
 |`rxReadNext`      | |Read data from a source      |<small>[View](rxReadNext.md)</small>|
@@ -95,12 +95,12 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 <br />
-####Manipulate, Clean, and Transform 
+####Manipulation, Cleansing, and Transformation Functions 
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
-|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a <br />comma-delimited text file, or data frame in memory (assuming <br />you have sufficient memory to hold the output) <br />from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxFactors`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable <br />into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxFactors`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSplit`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[See package](scaler.md#findmore)</small>|
@@ -109,7 +109,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxExecuteSQLDDL`|  |SQL Server R Services only. Runs an arbitrary SQL DDL command.     |<small>[View](rxExecuteSQLDDL.md)</small>|
 
 <br />
-####Visualize
+####Visualization Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -121,42 +121,42 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 <br />
-####Analyze with Descriptive Statistics and Cross-Tabulations
+####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxQuantile`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
-|`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. <br />Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
+|`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for <br />efficient representation  returning ‘cube’ results. <br />Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
+|`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for  efficient representation  returning ‘cube’ results.  Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 |`rxMarginals`   | |Marginal summaries of cross-tabulations.|<small>[See package](scaler.md#findmore)</small>|
 |`as.xtabs`   | |Converts cross tabulation results to an `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
-|`rxChiSquaredTest`| |Performs Chi-squared Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small>|
-|`rxFisherTest`   | |Performs Fisher's Exact Test on `xtabs` object. <br />Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small>|
+|`rxChiSquaredTest`| |Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small>|
+|`rxFisherTest`   | |Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small>|
 |`rxKendallCor`   | |Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
-|`rxPairwiseCrossTab`   | |Apply a function to pairwise combinations of rows <br />and columns of an `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
+|`rxPairwiseCrossTab`   | |Apply a function to pairwise combinations of rows and columns of an `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRiskRatio`    | |Calculate the relative risk on a two-by-two `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
 |`rxOddsRatio`   | |Calculate the odds ratio on a two-by-two `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
 
 <br />
-####Analyze, Learn, and Predict with Statistical Modeling
+####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxLinMod`   |![top](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxLogit`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGlm`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCovCor`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product  <br />matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
+|`rxCovCor`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product   matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
 |`rxDTree`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxBTrees`   |![top](../media/award.png) |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.|<small>[See package](scaler.md#findmore)</small>|
 |`rxDForest`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxPredict`   |![top](../media/award.png) |Calculates predictions for fitted models. <br />Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
+|`rxPredict`   |![top](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
 |`rxKmeans`   |![top](../media/award.png) |Performs k-means clustering.|<small>[See package](scaler.md#findmore)</small>|
 |`rxNaiveBayes`   |![top](../media/award.png) |Performs Naive Bayes classification.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCov`   | |Calculate the covariance matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCor`    | |Calculate the correlation matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSSCP`   | |Calculate the sum of squares / cross-product matrix <br />for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
-|`rxRoc`   | |Receiver Operating Characteristic (ROC) computations using actual  <br />and predicted values from binary classifier system.|<small>[See package](scaler.md#findmore)</small>|
+|`rxSSCP`   | |Calculate the sum of squares / cross-product matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
+|`rxRoc`   | |Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.|<small>[See package](scaler.md#findmore)</small>|
 
 
 <br />
@@ -174,8 +174,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxInSqlServer`| |Creates an in-database compute context for SQL Server.|<small>[See package](scaler.md#findmore)</small>|
 |`RxComputeContext`||Creates a compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxLocalSeq`| |Creates a local compute context for `rxExec` using sequential computations.|<small>[See package](scaler.md#findmore)</small>|
-|`RxLocalParallel`| |Creates a local compute context for `rxExec` using <br />the `parallel` package as back end.|<small>[See package](scaler.md#findmore)</small>|
-|`RxForeachDoPar`   | |Creates a compute context for `rxExec` using <br />the current `foreach` parallel back end.|<small>[See package](scaler.md#findmore)</small>|
+|`RxLocalParallel`| |Creates a local compute context for `rxExec` using the `parallel` package as back end.|<small>[See package](scaler.md#findmore)</small>|
+|`RxForeachDoPar`   | |Creates a compute context for `rxExec` using the current `foreach` parallel back end.|<small>[See package](scaler.md#findmore)</small>|
 |`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[View](rxInstalledPackages.md)</small>|
 |`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
 
@@ -208,7 +208,7 @@ These functions and many more can be used for high performance computing and dis
 |`rxRngSetStream`   | |Support for Parallel Random Number Generation.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetAvailableNodes`| |Get all the available nodes on a distributed compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetNodeInfo`| |Get information on nodes specified for a distributed compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`rxPingNodes`| |Test round trip from user through computation node(s) <br />in a cluster or cloud.|<small>[See package](scaler.md#findmore)</small>|
+|`rxPingNodes`| |Test round trip from user through computation node(s) in a cluster or cloud.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetJobStatus`| |Get the status of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetJobResults`| |Get the return object(s) of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetJobOutput`| |Get the console output from a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
@@ -223,7 +223,7 @@ These functions and many more can be used for high performance computing and dis
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxOptions`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetOption`   |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be<br/> either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
+|`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
 |`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
 |`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|

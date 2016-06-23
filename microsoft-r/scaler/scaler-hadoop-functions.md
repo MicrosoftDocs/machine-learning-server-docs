@@ -36,7 +36,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 ## Data Analysis Functions
 <br />
-####Import and Export
+####Import and Export Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -53,7 +53,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br />
-####Manipulate, Clean, and Transform 
+####Manipulation, Cleansing, and Transformation Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -62,7 +62,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br />
-####Visualize
+####Visualization Functions
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -73,7 +73,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 
 <br />
-####Analyze with Descriptive Statistics and Cross-Tabulations
+####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -83,7 +83,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for efficient representation  returning ‘cube’ results. Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 
 <br />
-####Analyze, Learn, and Predict with Statistical Modeling
+####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
@@ -150,10 +150,10 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
 |`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
-|`rxIsOpen` | |      |<small>[View](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable`| |      |<small>[View](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists`| |      |<small>[View](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext`| |      |<small>[View](rxWriteNext.md)</small>|
+|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[View](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[View](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[View](rxWriteNext.md)</small>|
  
 <br />
 ##Hadoop Convenience Functions
