@@ -2448,7 +2448,7 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
->See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) section for further details.
+>See the [Web Service API Data Encodings](deployr-api-reference.md#encoding) section for further details.
 
 ## R Object Data Decoding
 
