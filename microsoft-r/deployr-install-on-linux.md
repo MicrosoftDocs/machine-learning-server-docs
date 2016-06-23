@@ -475,8 +475,9 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 6.  On the **machine running MongoDB**, run `exportMongoDB.sh`, the DeployR MongoDB migration tool:
 
         cd $DEPLOYR_HOME/deployr/tools/mongoMigration    
-        ./exportMongoDB.sh -m "<DEPLOYR_HOME_OLD_VERSION>/mongo/mongo/bin/mongoexport" -p <Database_Password_for_MongoDB> -o db_backup.zip
-
+        ./exportMongoDB.sh -m "<DEPLOYR_HOME_OLD_VERSION>/mongo/mongo/bin/mongoexport" -p <MongoDB_Database_Password> -o db_backup.zip
+    Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file. 
+    
 7.  Download `db_backup.zip`.
 
 8.  Restore that data into the DeployR for Microsoft R Server 2016 Administration Console.
