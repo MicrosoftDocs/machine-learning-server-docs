@@ -96,18 +96,18 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 
   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-  [for RHEL/CENTOS systems]:
+  **For RHEL/CENTOS systems**:
   		tar zxvf MRS80RHEL.tar.gz
 
-  [for SLES systems]:
+  **For SLES systems**:
   		tar zxvf MRS80SLES.tar.gz
 
 3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
- [from the mounted img file]:
+  **From the mounted img file**:
  		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-  [from the unpacked tar file]
+  **From the unpacked tar file**:
 		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
 4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
@@ -122,13 +122,18 @@ This installs Microsoft R Server with the standard options (including loading th
 Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
-2. Verify system repositories are up to date: `[username] $ sudo yum clean all`
-3. Change to the directory to which you downloaded the rpm (for example, /tmp): `[username] $ cd /tmp`
-4. Run the script with the **-p** parameter, specifying the Hadoop component: `[tmp] $ sudo bash install.sh -p`
+2. Verify system repositories are up to date:
+		[username] $ sudo yum clean all
+3. Change to the directory to which you downloaded the rpm (for example, /tmp):
+		[username] $ cd /tmp
+4. Run the script with the **-p** parameter, specifying the Hadoop component:
+		[tmp] $ sudo bash install.sh -p
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
 6. Installer output shows the packages and location of the log file.
-7. Check the version of Microsoft R Open using `rpm -qi`: `[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
-8. Check the version of the intel-mkl package: `[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+7. Check the version of Microsoft R Open using `rpm -qi`:
+		[tmp] $ rpm -qi microsoft-r-server-mro-8.0
+8. Check the version of the intel-mkl package:
+		[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0
 
 Partial output is as follows (note version 8.0.5):
 
@@ -147,6 +152,7 @@ Run the Revo64 program to verify the installation.
 		[ltmp]$ hadoop fs -ls /share/SampleData
 
 **2. Start Revo64**
+
 		[tmp MRS_Linux]$ Revo64
 
 **3. Run a simple local computation**
