@@ -71,7 +71,7 @@ Use the functionality found under each tab in API Explorer to interact with and 
 
 **DeployR Tab**
 
-The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers).
+The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](deployr-api-reference.md#users).
 
 When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs you must first sign-in to DeployR.
 
@@ -88,7 +88,7 @@ Once you successfully authenticates with DeployR the following tabs are activate
 
 **Projects Tab**
 
-The Projects tab provides access to the full set of [Project Management APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects).
+The Projects tab provides access to the full set of [Project Management APIs](deployr-api-reference.md#projects).
 
 Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:
 
@@ -114,7 +114,7 @@ The Workspace tab offers access to the full set of [Project Workspace APIs](http
 
 **Directory Tab**
 
-The Directory tab offers access to the full set of [Project Directory APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectory).
+The Directory tab offers access to the full set of [Project Directory APIs](deployr-api-reference.md#repodir).
 
 **Packages Tab**
 
@@ -122,7 +122,7 @@ The Packages tab offers access to the full set of [Project Package APIs](https:/
 
 **About Tab**
 
-The About tab offers access to the [/r/project/about](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectabout) and [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
+The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/#_projectabout) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/#_projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
 
 **Repo Files Tab**
 

@@ -516,7 +516,7 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
->All executions services support a [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+>All executions services support a standard execution model defined on the DeployR API.
 
 #### 3. Project Workspace Services
 
@@ -917,7 +917,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
     }
     }
 
->All executions services support the [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+>All executions services support the standard execution model defined on the DeployR API.
 
 ### Repository Services
 
@@ -1105,7 +1105,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fileName, options);
 
->See the [Working with the Repository APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) chapter for detailed information regarding working with repository-managed files and directories.
+>See the [Working with the Repository APIs](deployr-api-reference.md#repository) chapter for detailed information regarding working with repository-managed files and directories.
 
 ## Anonymous Services
 
@@ -1227,12 +1227,12 @@ The following code snippets demonstrate how the client libraries make these serv
 
 The DeployR API supports a standard set of parameters across all execution APIs which are commonly know as the standard execution model. A summary of those execution APIs are shown here:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
--   [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
--   [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 Conceptually this standard set of parameters can be categorized into three groups: *pre-execution*, *on-execution* and *post-execution* parameters.
 
@@ -1986,13 +1986,13 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 Encoded R object data can be sent on the *inputs* parameter on the following calls:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
--   [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
--   [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
--   [/r/project/workspace/push](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacepush)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-   [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
 
 See the [Standard Execution Model](#standard-execution-model) section of this documentation for details describing how DeployR-encoded R object data can be sent using the *inputs* parameter on these calls.
 
@@ -2456,10 +2456,10 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 One or more R objects can be returned as DeployR-encoded objects in the response markup on any of the following execution calls:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
 The following code snippets demonstrate the mechanism for requesting DeployR-encoded objects to be returned on these calls:
 
@@ -2512,7 +2512,7 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
 
 When working with temporary or persistent DeployR projects R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:
 
--   [/r/project/workspace/get](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceget)
+-   [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
 
 The following code snippet demonstrates the mechanism for requesting DeployR-encoded objects to be returned on this call:
 

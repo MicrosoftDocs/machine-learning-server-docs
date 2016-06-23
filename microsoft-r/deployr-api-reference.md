@@ -39,6 +39,7 @@ Each time a service is executed on the API, the service makes use of an R sessio
 
 To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
 
+<a name="users"></a>
 ##Users on the API
 
 The User APIs exist principally to facilitate user authentication with the DeployR server. Additionally, the `/r/user/autosave` call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.
@@ -47,7 +48,7 @@ The User APIs exist principally to facilitate user authentication with the Deplo
 
 One of the first steps for most typical applications using this API is to provide a mechanism for users to authenticate with the DeployR server by signing-in and signing-out of the application.
 
-To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [`/r/user/login`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
+To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [`/r/user/login`](https://microsoft.github.io/deployr-api-docs/#_userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
 
 If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
 
@@ -61,7 +62,7 @@ While many applications require the security and controls associated with *authe
 
 In such situations we say that the user is an *anonymous* user. Typically an *anonymous* user is an unauthenticated visitor to a DeployR-enabled Web application.
 
-*Anonymous* users are only granted access to a single API call, [`/r/repository/script/execute`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute). 
+*Anonymous* users are only granted access to a single API call, [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute). 
 
 <br /><a name="projects"></a>
 ##Projects on the API
@@ -127,15 +128,15 @@ An *authenticated project* is a project created by an authenticated user. There 
 |[`/r/project/create`]()|Creates a new temporary, user blackbox or persistent project    |
 |[`/r/project/pool`]()  |Creates a pool of temporary projects                            |
 
-*Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [`/r/project/execute/code`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode) and [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript) calls and retrieve the R command history for the project using the [`/r/project/execute/history`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutehistory) call.
+*Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode) and [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) calls and retrieve the R command history for the project using the [`/r/project/execute/history`](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
 
 >Given an *authenticated* user can do everything an *anonymous* user can do on the API, it is possible for an *authenticated* user to create and work with *anonymous* projects as described in the section [Anonymous Projects](#anonymous-projects).
 
 **Temporary Projects**
 
-Temporary projects are useful when an application needs to maintain the same R session for the duration of an *authenticated* user's session within the application. Once the user makes an explicit call on [`/r/project/close`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectclose) or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.
+Temporary projects are useful when an application needs to maintain the same R session for the duration of an *authenticated* user's session within the application. Once the user makes an explicit call on [`/r/project/close`](https://microsoft.github.io/deployr-api-docs/#_projectclose) or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.
 
-A user can create a temporary project by omitting the name parameter on the [`/r/project/create`](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate) call or they can create a pool of temporary projects using the [`/r/project/pool` call](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool).
+A user can create a temporary project by omitting the name parameter on the [`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate) call or they can create a pool of temporary projects using the [`/r/project/pool` call](https://microsoft.github.io/deployr-api-docs/#_projectpool).
 
 All unnamed projects are temporary projects.
 
@@ -186,7 +187,7 @@ The server stores the following state for each persistent project:
 - Project package dependencies
 - Project R command history and associated results
 
-An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the /r/project/create call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectsave) which has the effect of naming the project.
+An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the `/r/project/create` call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://microsoft.github.io/deployr-api-docs/#_projectsave) which has the effect of naming the project.
 
 All *named* projects are *persistent* projects.
 
@@ -241,16 +242,17 @@ As noted, each *authenticated* user can create zero, one or more projects. Each 
 
 A project owner may wish to share a project by granting read-only access to fellow *authenticated* users on the same DeployR server. Once read-only access has been granted it facilitates discussions, demonstrations and so on.
 
-To facilitate these kinds of workflows the [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) call allows users to toggle the read-only "shared" access controls on any of their private projects. Using this call to enable shared/read-only access on a project makes the project visible to all authenticated users. Using this call to disable shared/read-only access on a project makes the project invisible to all but the project owner(s).
+To facilitate these kinds of workflows the [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/#_projectaboutupdate) call allows users to toggle the read-only "shared" access controls on any of their private projects. Using this call to enable shared/read-only access on a project makes the project visible to all authenticated users. Using this call to disable shared/read-only access on a project makes the project invisible to all but the project owner(s).
 
 **Persistent Project Read-Write Collaboration**
 
 At times a project owner may also wish to grant read-write access on a project to fellow *authenticated* users sharing the same DeployR server so they can actively collaborate on the development of a project. This type of project collaboration would be beneficial, for example, as part of a planned multistage development or simply to permit work on the project to continue when the original project owner goes on vacation.
 
-To facilitate these kinds of workflows a project owner can now grant authorship rights on a project to one or more *authenticated* users using the [/r/project/grant](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectgrant) call. Once a user has been granted authorship rights on a project they effectively co-own the project and can view, modify and even delete the project. Where mutiple users have been granted authorship rights on a project the server ensures that only one user can be actively working on the project at any one time.
+To facilitate these kinds of workflows a project owner can now grant authorship rights on a project to one or more *authenticated* users using the [/r/project/grant](https://microsoft.github.io/deployr-api-docs/#_projectgrant) call. Once a user has been granted authorship rights on a project they effectively co-own the project and can view, modify and even delete the project. Where mutiple users have been granted authorship rights on a project the server ensures that only one user can be actively working on the project at any one time.
 
 >Deleting a project with multiple authors simply revokes authorship rights to the project for the caller. After the call, all other authors on the project still have full access to the project. If the last remaining author deletes a project, then the project is permanently deleted.
 
+<a name="jobs"></a>
 ## Jobs on the API
 
 Working with R interactively in an R console window or working with projects on the API are both examples of synchronous working environments where a user can make a request that will be blocked until processing completes and an appropriate response is generated and returned. When working with R interactively, the response is displayed as output in the R console window. When working with projects on the API, the response is well-formed markup on the response stream.
@@ -289,7 +291,7 @@ The following diagram provides an overview of the full set of Job APIs and indic
 ![](media/deployr/deployr-api-asynch-jobs.png)
 
 
-
+<a name="repository"></a>
 ## Repository on the API
 
 The DeployR environment offers each *authenticated* user their own versioned file storage by introducing the concept of a repository on the API. The repository provides a persistent store for user files of any type, including binary object files, plot image files, data files, simple text files and files containing blocks of R code which are referred to as [repository-managed scripts](#reposcripts).
@@ -300,6 +302,7 @@ By default, each private repository store exposes a single repository directory,
 
 Users can store files in and retrieve files from their root directory. In addition, users can manage their own set of custom and archived directories. Working with the root, custom and archived directories is detailed in the following section.
 
+<a name="repodir"></a>
 ###Repository Directories
 The Repository Directory APIs facilitate working with repository-managed directories. Repository-managed directories fall into two distinct categories:
 + User Directories
@@ -338,13 +341,13 @@ There are just three system directories:
 
 Each user has access to a private repository store. Each file placed in that store will be maintained indefinitely by the server unless it is explicitly deleted by the user.
 
-Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [/r/project/workspace/load](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceload) call. A data file can be loaded directly into a project working directory using the [/r/project/directory/load](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectoryload) call.
+Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload) call. A data file can be loaded directly into a project working directory using the [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload) call.
 
-Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the [/r/project/workspace/store](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacestore) and [/r/project/directory/store](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectorystore) calls respectively.
+Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the [/r/project/workspace/store](https://microsoft.github.io/deployr-api-docs/#_projectworkspacestore) and [/r/project/directory/store](https://microsoft.github.io/deployr-api-docs/#_projectdirectorystore) calls respectively.
 
 Repository-managed files can also be loaded directly into the workspace or working directory ahead of executing code on [anonymous projects](#anonymous-projects) or an *asynchronous job*.
 
-Refer to the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) for further details.
+Refer to the section [Working with Repository Files](https://microsoft.github.io/deployr-api-docs/#_repositoryfiles) for further details.
 
 **Repository File Ownership & Collaboration**
 
@@ -354,7 +357,7 @@ By default, files in a user's private repository are visible only to that user. 
 
 A user may wish to share a file in their private repository by granting read-only access to fellow *authenticated* and/or *anonymous* users. Once read-only access has been granted to users they can download and view the file. In the case of a repository-managed script users can also execute the file.
 
-To facilitate these kinds of workflows the [/r/repository/file/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfileupdate) call allows users to toggle the read-only access controls on any of their repository-managed files.
+To facilitate these kinds of workflows the [/r/repository/file/update](https://microsoft.github.io/deployr-api-docs/#_repositoryfileupdate) call allows users to toggle the read-only access controls on any of their repository-managed files.
 
 Using this call to enable *shared* access on a file makes the file visible to *authenticated* users. Using this call to enable *published* access on a file makes the file visible to *authenticated* and *anonymous* users.
 
@@ -362,7 +365,7 @@ Using this call to enable *shared* access on a file makes the file visible to *a
 
 At times the owner of a repository-managed file may also wish to grant read-write access on a file so that fellow *authenticated* users who are sharing the same DeployR server can actively collaborate on the development of a file. For example, consider a situation where the owner of a repository-managed script wishes to collaborate more closely on it's design and implementation with a select group of *authenticated* users.
 
-To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more *authenticated* users using the [/r/repository/file/grant](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfilegrant) call. Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.
+To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more *authenticated* users using the [/r/repository/file/grant](https://microsoft.github.io/deployr-api-docs/#_repositoryfilegrant) call. Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.
 
 >[!IMPORTANT]
 >When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.
@@ -421,11 +424,11 @@ These scripts are essentially blocks of R code with well-defined inputs and outp
 
 Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) for further details.
 
-*Authenticated* users can execute scripts within the context of any project using the /r/project/execute/script call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute) and [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender) calls.
+*Authenticated* users can execute scripts within the context of any project using the /r/project/execute/script call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute) and [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender) calls.
 
-Refer to the section [Working with Repository Scripts](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts) for a detailed description of repository-managed script-specific APIs.
+Refer to the section [Working with Repository Scripts](https://microsoft.github.io/deployr-api-docs/#_repositoryscripts) for a detailed description of repository-managed script-specific APIs.
 
->Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles) are available to create and manage repository-managed scripts.
+>Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](https://microsoft.github.io/deployr-api-docs/#_repositoryfiles) are available to create and manage repository-managed scripts.
 
 ####Working with the Repository Script APIs
 
@@ -508,7 +511,7 @@ To make life easier for the client developers using this API, DeployR also provi
 
 **DeployR Public API**
 
-This document describes the DeployR Public API and the complete set of API services provided for [users](#users-on-the-api), [projects](#projects-on-the-api), [jobs](#jobs-on-the-api), [repository-managed](#repository-on-the-api) files and scripts and the [event stream](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingeventstream). Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
+This document describes the DeployR Public API and the complete set of API services provided for [users](#users-on-the-api), [projects](#projects-on-the-api), [jobs](#jobs-on-the-api), [repository-managed](#repository-on-the-api) files and scripts and the [event stream](https://microsoft.github.io/deployr-api-docs/#_workingeventstream). Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
 
 **DeployR Administration Console**
 
@@ -655,23 +658,23 @@ DeployR-specific encodings are used to encode R object data for use on the API.
 
 Encoded object data can be returned from the server in the response markup on the following calls:
 
--  [/r/project/workspace/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacelist)
+-  [/r/project/workspace/list](https://microsoft.github.io/deployr-api-docs/#_projectworkspacelist)
 
--  [/r/project/workspace/get](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceget)
+-  [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
 
--  [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
 Encoded object data can also be sent to the server as parameter values on the following calls:
 
--  [/r/project/workspace/push](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacepush)
+-  [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
 Each encoded object is defined by the following properties:
 
@@ -683,7 +686,7 @@ Each encoded object is defined by the following properties:
 
 - *value* - the data encapsulated by the encoded object
 
-When encoded objects are returned from the server in the response markup the purpose of the type property is to indicate to developers how to decode the encapsulated data for use within a client application. For example, an encoded vector object returned on the [/r/project/workspace/get](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceget) call will appear in the response markup as follows:
+When encoded objects are returned from the server in the response markup the purpose of the type property is to indicate to developers how to decode the encapsulated data for use within a client application. For example, an encoded vector object returned on the [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget) call will appear in the response markup as follows:
 
 	{
 		"name": "sample_vector",
@@ -698,7 +701,7 @@ When encoded objects are returned from the server in the response markup the pur
 
 In the preceding example, the encoded vector, named *sample_vector* , indicates a *type* property with a value of *vector*. This informs the client application that the *value* property on this encoded object will contain an array of values. Those values will match the values found in the vector object in the workspace.
 
-When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the *type* and *value* properties for each of those objects. The *rclass* property is determined automatically by the server and need not be specified by the client application. For example, passing both an encoded logical and an encoded matrix as *inputs* on the [/r/project/workspace/push](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacepush) call is achieved as follows:
+When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the *type* and *value* properties for each of those objects. The *rclass* property is determined automatically by the server and need not be specified by the client application. For example, passing both an encoded logical and an encoded matrix as *inputs* on the [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush) call is achieved as follows:
 
 	{
 		"sample_logical" : {
@@ -1255,17 +1258,17 @@ The DeployR API standard execution model has been updated. A new on-execution pa
 
 This change applies across all execution APIs:
 
--  [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 ### DeployR 7.4
 
@@ -1275,17 +1278,17 @@ Grid node "cluster" names, used to denote the runtime characteristics of a node,
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 
--  [/r/project/create](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate)
+-  [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
 
--  [/r/project/pool](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool)
+-  [/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same cluster. If the cluster indicated on any of these calls fails to match a actual cluster name assigned by the admin on the DeployR grid the call will be rejected.
 
@@ -1295,15 +1298,15 @@ Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same c
 Phantom executions are a special type of execution on a project that avoid per-execution meta-data being created by the server in the database. This helps avoid database resource exhaustion on the server when high-throughput, long-lived project pools are in use, such as pools used by the RBroker Framework.
 Client applications can request tasks be executed as phantom executions by enabling the value of the new phantom parameter on the following calls:
 
--  [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
 > A phantom execution will not appear in the project history returned by the /r/project/execute/history call.
 
 #### External Repository Support
 
-DeployR has always provided [API support](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingrepository) for working with repository-managed files and scripts that have been uploaded into the DeployR Default Repository . DeployR 7.4 server introduces support for a new repository store known as the DeployR External Repository .
+DeployR has always provided [API support](https://microsoft.github.io/deployr-api-docs/#_workingrepository) for working with repository-managed files and scripts that have been uploaded into the DeployR Default Repository . DeployR 7.4 server introduces support for a new repository store known as the DeployR External Repository .
 
 Unlike the default repository which is backed by the MongoDB database, the new external repository is simply a directory on disk from where the DeployR server can list and load files and execute scripts.
 
@@ -1313,29 +1316,29 @@ Managing files in the external repository is as simple as creating, editing, cop
 
 Listing external repository-managed files and scripts is supported using a new external parameter on the following set of APIs:
 
--  [/r/repository/file/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfilelist)
+-  [/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
 
--  [/r/repository/script/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptlist)
+-  [/r/repository/script/list](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptlist)
 
--  [/r/repository/directory/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositorydirectorylist)
+-  [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
 
 Loading and executing external repository-managed files and scripts use the existing set of filename , directory , and author parameters on the following calls:
 
--  [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [/r/project/directory/load](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectoryload)
+-  [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload)
 
--  [/r/project/workspace/load](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceload)
+-  [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 The base directory for the external repository can be found here on DeployR server:
 
@@ -1357,7 +1360,7 @@ Each user can maintain private, shared and public files in the external reposito
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/score.R
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/model.rData
 
-A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#explorer).
+A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](https://microsoft.github.io/deployr-api-docs/#_explorer).
 
 For more information about working with the new DeployR External Repository please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
@@ -1365,9 +1368,9 @@ For more information about working with the new DeployR External Repository plea
 
 Each of the following APIs have been updated to support more sophisticated filters on results:
 
--  [/r/repository/file/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfilelist)
+-  [/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
 
--  [/r/repository/directory/list](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositorydirectorylist)
+-  [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
 
 Using the *directory* and *categoryFilter* independently or together the results returned on these calls can be filtered to specific subsets of available files, for example:
 
@@ -1399,7 +1402,7 @@ Using the *directory* and *categoryFilter* independently or together the results
 
 The following new Repository Shell API has been added:
 
-1.  [/r/repository/shell/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryshellexecute) | Executes a repository-managed shell script on the DeployR server.
+1.  [/r/repository/shell/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryshellexecute) | Executes a repository-managed shell script on the DeployR server.
 
 For more information about working with this new API please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
@@ -1410,11 +1413,11 @@ For more information about working with this new API please post your questions 
 
 The following new User API has been added:
 
-1.  [/r/user/release](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#userrelease) | Releases server-wide grid resources held by the currently autheneticated user
+1.  [/r/user/release](https://microsoft.github.io/deployr-api-docs/#_userrelease) | Releases server-wide grid resources held by the currently autheneticated user
 
 #### Standard Execution Model Changes
 
-The DeployR API [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#standardexecutionmodel) has been updated. A new pre-execution parameter has been added:
+The DeployR API [standard execution model](https://microsoft.github.io/deployr-api-docs/#_standardexecutionmodel) has been updated. A new pre-execution parameter has been added:
 
 -  preloadbydirectory - (optional) comma-separated list of repository directory names from which to load the complete set of files in each directory into the working directory prior to execution
 
@@ -1426,20 +1429,20 @@ The introduction of the enableConsoleEvents is a breaking change for those using
 
 These two changes apply across all execution APIs:
 
--  [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 The new *preloadbydirectory* parameter is also supported on the following APIs:
 
--  [/r/project/create](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectcreate)
+-  [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
 
--  [/r/project/pool](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpool)
+-  [/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)
