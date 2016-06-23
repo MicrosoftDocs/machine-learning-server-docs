@@ -24,7 +24,11 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 8.0.0 on Hadoop
 
-This article walks you through several methods of installing Microsoft R Server on a Hadoop cluster, for version 8.0.0 of R Server.
+This article explains how to install Microsoft R Server, version 8.0.0, on a Hadoop cluster.
+
+Microsoft R Server should be installed on all nodes of the cluster. Of the nodes that have R Server, each one must have Hadoop MapReduce and the Hadoop Distributed File System (HDFS). Within a cluster, all nodes must have the same version of R Server. You cannot have multiple versions of R Server in the same cluster, nor can you run older and newer versions side-by-side on the same node. If you already have an older version and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+
+We recommend [installing Microsoft R Server version 8.0.5](rserver-install-hadoop-805.md) instead of 8.0.0. The 8.0.5 installer performs more system verification, installation, and configuration steps. Version 8.0.5 also includes the Generally Available (GA) version of rxSpark. If you already have 8.0.0 and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 ## System Requirements
 
@@ -38,6 +42,8 @@ Your cluster installation must include the C APIs contained in the libhdfs packa
 
 Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS) (for HDP 1.3.0 and MapR 3.x installations), or HDFS, Hadoop YARN, and Hadoop MapReduce2 for CDH5, HDP 2.x, and MapR 4.x installations. The HDFS, YARN, and MapReduce clients must be installed on all nodes on which you plan to run Microsoft R Server, as must Microsoft R Server itself.
 
+If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list.
+
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
@@ -48,41 +54,6 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Disk Space:** A minimum of 500MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Package Dependencies:** Microsoft R Server, like most Linux applications, depends upon a number of Linux packages. A few of these, listed in Table 1, are explicitly required by Microsoft R Server. The remainder are in turn required by these dependencies. These are automatically installed while the automated script is running. These are listed in Table 2.
-
-Table 1. Packages Explicitly Required by Microsoft R Server
-
-| ed                | cairo-devel     |
-|-------------------|-----------------|
-| tk-devel          | make            |
-| gcc-objc          | gcc-c++         |
-| readline-devel    | libtiff-devel   |
-| ncurses-devel     | pango-devel     |
-| perl              | texinfo         |
-| libgfortran       | pango           |
-| libicu            | libjpeg\*-devel |
-| ghostscript-fonts | gcc-gfortran    |
-| libSM-devel       | libicu-devel    |
-| libXmu-devel      | bzip2-devel     |
-
-Table 2. Secondary Dependencies Installed for Microsoft R Server
-
-| cloog-ppl         | cpp                      |
-|-------------------|--------------------------|
-| font-config-devel | freetype                 |
-| freetype-devel    | gcc                      |
-| glib2-devel       | libICE-devel             |
-| libobjc           | libpng-devel             |
-| libstdc++-devel   | libX11-devel             |
-| libXau-devel      | libxcb-devel             |
-| libXext-devel     | libXft-devel             |
-| libXmu            | libXrender-devel         |
-| libXt-devel       | mpfr                     |
-| pixman-devel      | ppl glibc-headers        |
-| tcl gmp           | tcl-devel kernel-headers |
-| tk                | xorg-x11-proto-devel     |
-| zlib-devel        | -                       |
-
 ## Download Microsoft R Components
 
 Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 2-part installation of the following software in the order listed:
@@ -92,64 +63,66 @@ Component | Download location |
 Microsoft R Open for Microsoft R Server | [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) <br /><br />Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file).|
 Microsoft R Server 2016 | Available through the following distribution channels, depending upon how you purchased the product:<br />[Volume Licensing Service Center](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) (VLSC)<br />[MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)<br />[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)<br /><br />Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
 
-## Recommendations for Microsoft R Server on a Cluster
+## Recommendations for Microsoft R Server on a Hadoop cluster
 
-It is highly recommended that you install Microsoft R Server as root on each node of your Hadoop cluster. This ensures that all users will have access to it by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
+We recommend installing Microsoft R Server as `root` on each node of your Hadoop cluster. This grants access to all users by default. Non-root installs are supported, but require adding the path to the R executable files to each user’s path.
 
-If you are installing on a Cloudera Manager system using a parcel install, skip to Section 3.6, Installing on a Cloudera Manager System Using a Cloudera Manager Parcel.
+If you are installing on a Cloudera Manager system using a parcel install, see [Installing on a Cloudera Manager System Using a Cloudera Manager Parcel](rserver-install-hadoop-create-r-package-cloudera-manager.md) for details.
 
+<a name="StandardCommandLineInstall"></a>
 ## Standard Command Line Install
 
 For most users, installing on the cluster means simply running the standard Microsoft R Server installers on each node of the cluster:
 
-1.  Log in as root or a user with sudo privileges. If the latter, precede commands requiring root privileges with sudo.
+1.  Log in as root or a user with sudo privileges. If using sudo, precede commands requiring root privileges with `sudo`.
 2.  Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server:
 
-	*sudo yum clean all*
+	'*'sudo yum clean all'*''
 
 3.  [Download the Microsoft R Open for Microsoft R Server rpm](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409).
 4.  Change to the directory to which you downloaded the rpm (for example, /tmp):
 
-		cd /tmp
+		'cd /tmp'
 5.  Use the following command to install Microsoft R Open for Microsoft R Server:
 
-		yum install MRO-for-MRS-8.0.0.*.x86_64.rpm
+		`yum install MRO-for-MRS-8.0.0.*.x86_64.rpm`
 6.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 7.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
-		mkdir /mnt/mrsimage
-		mount –o loop <filename> /mnt/mrsimage
+		`mkdir /mnt/mrsimage
+		mount –o loop <filename> /mnt/mrsimage`
 
 	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
 		[for RHEL/CENTOS systems]
-		tar zxvf MRS80RHEL.tar.gz
+		`tar zxvf MRS80RHEL.tar.gz`
 
 		[for SLES systems]
-		tar zxvf MRS80SLES.tar.gz
+		`tar zxvf MRS80SLES.tar.gz`
 8.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
 		[From the mounted img file]
-		cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp
+		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
 		[From the unpacked tar file]
-		cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp
+		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
 9.  Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
 
-		cd /tmp
+		`cd /tmp
 		tar xvzf Microsoft-R-Server-<OS>.tar.gz
 		pushd rrent
 		./install.sh –a –y -p /usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2
-		popd
+		popd`
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
+<a name="DistributedInstallation"><a/>
 ## Distributed Installation
 
-If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh (“Dancer’s shell”)](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
+If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh ("Dancer’s shell")](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
-Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in Section 3.1, steps 3 through 8.
+Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](#StandardCommandLineInstall) steps 3 through 8.
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
@@ -215,19 +188,19 @@ The HDFS directory can also be created in a user’s R session (provided the top
 
 ## Installing on a Cloudera Manager System Using a Cloudera Manager Parcel
 
-If you are running a Cloudera Hadoop cluster managed by Cloudera Manager, and if Cloudera itself was installed via a Cloudera Manager parcel , you can use the Microsoft R Server Cloudera Manager parcels to install Microsoft R Server on all the nodes of your cluster. Two parcels are required:
+If you are running a Cloudera Hadoop cluster managed by Cloudera Manager, and if Cloudera itself was installed via a Cloudera Manager parcel, you can use the Microsoft R Server Cloudera Manager parcels to install Microsoft R Server on all the nodes of your cluster. Two parcels are required:
 
 - Microsoft R Open parcel—installs open-source R and additional open-source components on the nodes of your Cloudera cluster
 - Microsoft R Server parcel—installs proprietary components on the nodes of your Cloudera cluster
 
-Microsoft R Server requires several packages that may not be in a default Red Hat Enterprise Linux installation, run the following yum command as root to install them:
+Microsoft R Server requires several packages that may not be in a default Red Hat Enterprise Linux installation. Run the following yum command as root to install them:
 
-	yum install gcc-gfortran cairo-devel python-devel \\
+		yum install gcc-gfortran cairo-devel python-devel \\
 		tk-devel libicu-devel
 
-Run this command on all the nodes of your cluster that will be running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in section 3.2; this alias includes the list of host names and specifies the use of ssh):
+Run this command on all the nodes of your cluster that will be running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in [Distributed Installation](#DistributedInstallation); this alias includes the list of host names and specifies the use of ssh):
 
-	pdshw yum install gcc-gfortran cairo-devel python-devel tk-devel libicu-devel
+		pdshw yum install gcc-gfortran cairo-devel python-devel tk-devel libicu-devel
 
 Once you have installed the Microsoft R Server prerequisites, install the Cloudera Manager parcels as follows:
 

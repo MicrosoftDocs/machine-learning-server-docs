@@ -21,6 +21,7 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: "deployr"
 ms.custom: ""
+redirect_url: "https://msdn.microsoft.com/en-us/microsoft-r/rserver/deployr-about"
 
 ---
 
@@ -48,21 +49,21 @@ The following real-world scenario demonstrates the key concepts introduced in pr
 
 While this scenario is provided as an example only, it highlights how DeployR acts as a effective bridge between data scientist and application developer workflows. By supporting a clean separation of concerns, DeployR delivers arbitrarily sophisticated R analytics to any network-enabled application, system or software solution.
 
->**The Scenario:** As a solutions provider at an insurance company, you have been tasked with enhancing an existing customer support system to deliver real-time, high-quality policy quotes to customers who contact your customer support center. 
+>**The Scenario:** As a solutions provider at an insurance company, you have been tasked with enhancing an existing customer support system to deliver real-time, high-quality policy quotes to customers who contact your customer support center.
 >
->**The Plan:** To deliver this solution, you decide to leverage the power of R-based predictive analytics with DeployR. The solution relies on a real-time scoring engine architecture to rapidly generate and return accurate scores to your existing customer support system. These scores can then be used to drive the customer experience to a successful conclusion. At a high-level, such a DeployR-powered solution can be realized as follows: 
+>**The Plan:** To deliver this solution, you decide to leverage the power of R-based predictive analytics with DeployR. The solution relies on a real-time scoring engine architecture to rapidly generate and return accurate scores to your existing customer support system. These scores can then be used to drive the customer experience to a successful conclusion. At a high-level, such a DeployR-powered solution can be realized as follows:
 >
->1. **Produce:** Data scientists begin by building an appropriate predictive model and scoring function for insurance policy quotes using their existing analytics tools and data sets. 
+>1. **Produce:** Data scientists begin by building an appropriate predictive model and scoring function for insurance policy quotes using their existing analytics tools and data sets.
 >
->2. **Upload:** Once the model and scoring function are ready, the data scientist uploads these files to the DeployR repository via the Repository Manager. Uploading the scoring function as an R script will automatically turn it into an analytics Web service. 
+>2. **Upload:** Once the model and scoring function are ready, the data scientist uploads these files to the DeployR repository via the Repository Manager. Uploading the scoring function as an R script will automatically turn it into an analytics Web service.
 >
->3. **Verify:** As a final step, the data scientist should test and verify the scoring function against a live DeployR server via the Repository Manager. 
+>3. **Verify:** As a final step, the data scientist should test and verify the scoring function against a live DeployR server via the Repository Manager.
 >
 >	>Handoff From Data Scientist to Application Developer  
 >
->4. **Integrate:** Application developers choose and download their preferred client application integration tool: RBroker framework, client library or working with the raw API. 
+>4. **Integrate:** Application developers choose and download their preferred client application integration tool: RBroker framework, client library or working with the raw API.
 >
->5. **Test:** With their tool selected, application developers implement the integration between the customer support system and the DeployR-powered analytics Web service. This can be an iterative process with testing at each stage of development. 
+>5. **Test:** With their tool selected, application developers implement the integration between the customer support system and the DeployR-powered analytics Web service. This can be an iterative process with testing at each stage of development.
 >
 >6. **Deploy:** Once application developers are confident their integration is completed, tested, and verified, it is time to deploy your enhanced customer support system to your live production environment.
 
@@ -167,5 +168,3 @@ The Administration Console is a tool, delivered as an easy-to-use Web interface,
 #### DeployR Repository Manager
 
 The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-manager-about.md).
-
-
