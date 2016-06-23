@@ -19,7 +19,9 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+ms.technology: 
+  - r-client
+  - deployr
 ms.custom: ""
 
 ---
