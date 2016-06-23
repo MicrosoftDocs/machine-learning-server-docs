@@ -96,24 +96,24 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 
   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-  **For RHEL/CENTOS systems**:
+For RHEL/CENTOS systems:
   		tar zxvf MRS80RHEL.tar.gz
 
-  **For SLES systems**:
+ For SLES systems:
   		tar zxvf MRS80SLES.tar.gz
 
 3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-  **From the mounted img file**:
+From the mounted img file:
  		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-  **From the unpacked tar file**:
+  From the unpacked tar file:
 		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
-4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by `<OS>`):
 
 		cd /tmp
-		tar xvzf Microsoft-R-Server-<OS>.tar.gz
+		tar xvzf Microsoft-R-Server-`<OS>`.tar.gz
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
@@ -135,7 +135,7 @@ Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script wi
 8. Check the version of the intel-mkl package:
 		[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0
 
-Partial output is as follows (note version 8.0.5):
+9. Check the output to verify version 8.0.5. Partial output appears as follows:
 
 		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
 		Version     : 8.0.5                         Vendor: Microsoft
@@ -145,17 +145,17 @@ Partial output is as follows (note version 8.0.5):
 
 Run the Revo64 program to verify the installation.
 
-**1. Send sample data to HDFS**
+1. Send sample data to HDFS.
 
 		[tmp]$ hadoop fs -mkdir -p /share/SampleData
 		[tmp]$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/8.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
 		[ltmp]$ hadoop fs -ls /share/SampleData
 
-**2. Start Revo64**
+2. Start Revo64.
 
 		[tmp MRS_Linux]$ Revo64
 
-**3. Run a simple local computation**
+3. Run a simple local computation.
 
 This step uses the proprietary Microsoft libraries.
 
@@ -168,7 +168,7 @@ Partial output is as follows (showing the first 4 lines).
 		Call:
 		rxSummary(formula = ~., data = iris)
 
-**4. Run a sample local job**
+4. Run a sample local job.
 
 This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
 
@@ -195,7 +195,7 @@ Partial output is as follows (showing the last 8 lines).
 		Saturday  86159
 		Sunday    94975
 
-**5. Run a sample Hadoop job**
+5. Run a sample Hadoop job.
 
 This step uses the sample dataset to run a Hadoop job.
 
@@ -230,11 +230,13 @@ Assuming that the packages for Microsoft R Open for R Server and Microsoft R Ser
 **RPM Installers**
 
 - `/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
+
 -`/var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
 
 **DEB Installers**
 
 -`/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
+
 -`var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
 
 **Cloudera Parcel Installers**
@@ -296,29 +298,32 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 1.  [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409) (Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.)
 
 2.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
-	If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+
+  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80HADOOP.img /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
 		tar zxvf MRS80HADOOP.tar.gz
 
 3.  Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
-		[From the mounted img file]
+  From the mounted img file:
 		cp /mnt/mrsimage/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
-		[From the unpacked tar file]
+  From the unpacked tar file:
 		cp /tmp/MRS80HADOOP/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
 4.  You should have the following files in your parcel repo:
-    MRO-3.2.2-1-el6.parcel
-    MRO-3.2.2-1-el6.parcel.sha
-    MRS-8.0.0-1-el6.parcel
-    MRS-8.0.0-1-el6.parcel.sha
-    Be sure all the files are owned by root and have 755 permissions (that is, read, write, execute permission for root, and read and execute permissions for group and others).
+
+	    MRO-3.2.2-1-el6.parcel
+	    MRO-3.2.2-1-el6.parcel.sha
+	    MRS-8.0.0-1-el6.parcel
+	    MRS-8.0.0-1-el6.parcel.sha
+
+  Be sure all the files are owned by root and have 755 permissions (that is, read, write, execute permission for root, and read and execute permissions for group and others).
 
 5.  In your browser, open Cloudera Manager.
 
@@ -336,15 +341,15 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 
 As a verification step, each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
 
-	hadoop fs -mkdir /user/RevoShare/$USER
-	hadoop fs -chmod uog+rwx /user/RevoShare/$USER
-	mkdir -p /var/RevoShare/$USER
-	chmod uog+rwx /var/RevoShare/$USER
+		hadoop fs -mkdir /user/RevoShare/$USER
+		hadoop fs -chmod uog+rwx /user/RevoShare/$USER
+		mkdir -p /var/RevoShare/$USER
+		chmod uog+rwx /var/RevoShare/$USER
 
-The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for “username”):
+The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"):
 
-	rxHadoopMakeDir("/user/RevoShare/username")
-	rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
+		rxHadoopMakeDir("/user/RevoShare/username")
+		rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
 
 As part of this process make sure to check that the base directories /user and /user/RevoShare have uog+rwx permissions as well.
 

@@ -50,6 +50,8 @@ If any of these conditions do not apply, you should first verify that your syste
 
 ## Install R Server version 8.0.5 on Linux
 
+This version of the installer consolidates the OS-specific .tar files into a single file. Specifically, MRS80RHEL.tar.gz and MRS80SLES.tar.gz are replaced with this file: MRS80LINUX.tar.gz
+
 ### Download Microsoft R software
 
 Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
@@ -62,46 +64,30 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 
 2. Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
 
-		`mkdir /mnt/mrsimage
-		mount –o loop <filename> /mnt/mrsimage`
+		mkdir /mnt/mrsimage
+		mount –o loop <filename> /mnt/mrsimage
 
 If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-[for RHEL/CENTOS systems]
-`tar zxvf MRS80RHEL.tar.gz`
-
-[for SLES systems]
-`tar zxvf MRS80SLES.tar.gz`
-
-3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
-
-[From the mounted img file]
-`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
-
-[From the unpacked tar file]
-`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
-
-4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
-
-`cd /tmp
-tar xvzf Microsoft-R-Server-<OS>.tar.gz`
-
-This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
+		tar zxvf MRS80LINUX.tar.gz
 
 ### Run the install script
 
 Microsoft R Server 8.0.5 for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
 
-Note that if your Linux server has Hadoop, the installer will detect the cluster and install the Hadoop component even if you don't specify it.
-
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
-2. Verify system repositories are up to date: `[username] $ sudo yum clean all`
-3. Change to the directory to which you downloaded the rpm (for example, /tmp): `[username] $ cd /tmp`
-4. Run the script. `[tmp] $ sudo bash install.sh`
+2. Verify system repositories are up to date:
+		[username] $ sudo yum clean all
+3. Change to the directory to which you downloaded the rpm (for example, /tmp):
+		[username] $ cd /tmp
+4. Run the script.
+		[tmp] $ sudo bash install.sh
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
 6. Installer output shows the packages and location of the log file.
-7. Check the version of Microsoft R Open using `rpm -qi`:`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
-8. Check the version of the intel-mkl package: `[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+7. Check the version of Microsoft R Open using `rpm -qi`:
+		[tmp] $ rpm -qi microsoft-r-server-mro-8.0
+8. Check the version of the intel-mkl package:
+		[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0
 
 Partial output is as follows (note version 8.0.5):
 
@@ -135,19 +121,19 @@ To download and install Microsoft R Open and R Server:
 	    mkdir /mnt/mrsimage
 	    mount –o loop <filename> /mnt/mrsimage
 
-		[for RHEL/CENTOS systems]
+  For RHEL/CENTOS systems;
 		tar zxvf MRS80RHEL.tar.gz
 
-		[for SLES systems]
+  For SLES systems;
 		tar zxvf MRS80SLES.tar.gz
 
 6.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-[From the mounted img file]
-`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+  From the mounted img file:
+		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-[From the unpacked tar file]
-`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+  From the unpacked tar file:
+		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
 7. Unpack the tar file and run the installer script, as follows:
 
@@ -188,9 +174,11 @@ If you use the Quick Install steps, the installed files are all owned by root. F
 
 Here we show the default path /usr/lib64/MRO-for-MRS-8.0.03; if you have specified an alternate installation path, use that in this command as well.
 
-You can also run the installer as a non-root user, even without sudo privileges. For details, see [Non-Root Installs](#non-root-installs).
+You can also run the installer as a non-root user, even without sudo privileges.
 
 ### Non-Root Installs
+
+*Applies to:* 8.0.0 only
 
 You can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:
 
@@ -225,24 +213,24 @@ Finally, you are asked to agree to the Microsoft R Server software license. Once
 
 The R installation is owned by the user who completed the installation; subsequent updates and uninstalls must be performed by the same user. In particular, multiple users can perform non-root installations–as long as the installations specify separate base installation directories, they will be completely independent. Non-root installations can be performed on systems that have had Microsoft R Server installed as root, and vice versa.
 
-In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file: `export PATH=/home/$USER/Revo-7.4/R-3.1.3/bin:$PATH`
+In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file: `export PATH=/home/$USER/Revo-8.0/R-3.1.3/bin:$PATH`
 
 ### Unattended Installs
 
 You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag (“yes” or “accept default” to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
 
-| Option  | Description                                                                              |
-|---------|------------------------------------------------------------------------------------------|
-| -p PATH | base path of the desired R installation directory                                        |
-| -h      | usage information                                                                        |
-| -a      | load rpart and lattice packages by default (default is no)                               |
-| -e PATH | base path of the desired Microsoft R Server installation directory (the location for Microsoft R Server documentation, license, and script files)  |
+flag | Option | Description
+-----|--------|------------
+ -a | --accept-eula | Accept all end user license agreements.
+ -d | --download-mro |  Download microsoft r open for distribution to an offline system.
+ -p | --hadoop-components | Install Hadoop components.
+ -s | --silent | Perform a silent, unattended install.
+ -u | --unattended | Perform an unattended install.
+ -h | --help | Print this help text.
 
-For a standard unattended install, install Microsoft R Open for Microsoft R Server using the commands in the previous section, and then run the Microsoft R Server install script in succession as follows (this assumes you have already extracted the rrent directory from its associated tarball. We also recommend loading rpart and lattice by default, so we pass the –a flag to install.sh):
+For a standard unattended install, run the follwoing script:
 
-	pushd rrent
-	./install.sh –a –y
-	popd
+	./install.sh –a –s
 
 ### File Permissions
 
