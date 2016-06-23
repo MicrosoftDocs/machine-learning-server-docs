@@ -38,9 +38,6 @@ This topic provides a list of the functions provided by the **RevoScaleR** packa
 |RxSpssData|Creates an SPSS data source object|`foreign::read.ssps()`|    
 |rxOpen|Opens a data source for reading|`read.table()` etc.|  
 |rxReadNext|Reads data from a data source|`read.table()`, etc.|  
-
-   
->  The functions `rxDataStep`, `rxXdfToDataFrame`, and `rxReadXdf:Reads` can also read an .XDF file into a data  frame.  
   
 ##  <a name="bkmk_DataManipulation"></a> Data Manipulation  and Chunking  
   

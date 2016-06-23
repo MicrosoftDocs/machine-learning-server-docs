@@ -169,7 +169,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxSetComputeContext`|![top](../media/award.png)|Sets a compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetComputeContext`|![top](../media/award.png)|Gets the current compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context.|<small>[See package](scaler.md#findmore)</small>|
+|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
 |`RxInTeradata`|![top](../media/award.png) |Creates an in-database compute context for Teradata.|<small>[See package](scaler.md#findmore)</small>|
 |`RxInSqlServer`| |Creates an in-database compute context for SQL Server.|<small>[See package](scaler.md#findmore)</small>|
 |`RxComputeContext`||Creates a compute context.|<small>[See package](scaler.md#findmore)</small>|

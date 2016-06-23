@@ -64,7 +64,6 @@ If you regularly move large amounts of data from a database to a local workstati
 + `rxImport` - Move data from an ODBC source to the XDF file
 + `RxXdfData` - Create an XDF data object
 + `RxDataStep` - Read data from XDF int a data frame
-+ `rxXdfToDataFrame` - Read data from XDF into a data frame
 + `rxReadXdf` - Reads data from XDF into a data frame
 
 For an example of how XDF files are used, see this tutorial:  [Data Science Deep Dive - Using the ScaleR Functions](https://msdn.microsoft.com/en-us/library/mt637368.aspx)

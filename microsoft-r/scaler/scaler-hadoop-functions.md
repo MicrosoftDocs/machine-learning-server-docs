@@ -30,6 +30,11 @@ The `RevoScaleR` package provides a set of portable, scalable, distributable dat
 
 This guide presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line. 
 
+RevoScaleR supports two Hadoop compute contexts:
++ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md).
++ `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
+
+
 >If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](scaler.md).
 
 As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
@@ -106,7 +111,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context.|<small>[See package](scaler.md#findmore)</small>|
+|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
 |`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[**View**](rxInstalledPackages.md)</small>|
 |`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[**View**](rxFindPackage.md)</small>|
 
