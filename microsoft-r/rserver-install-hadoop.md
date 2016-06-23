@@ -21,7 +21,6 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: "r-server"
 ms.custom: ""
-redirect_url: "https://msdn.microsoft.com/en-us/microsoft-r/rserver/rserver-install-hadoop"
 ---
 
 # Hadoop installation and configuration for Microsoft R Server
