@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "ScaleR Functions RxSpark"
+title: "RxSpark function (ScaleR)"
 description: "ScaleR Functions: RxSqlServerData"
-keywords: "RevoScaleR, ScaleR, RxSqlServerData"
+keywords: "RevoScaleR, ScaleR, RxSpark"
 author: "HeidiSteen"
 manager: "paulettm"
 ms.date: "06/23/2016"
@@ -30,40 +30,42 @@ Creates a compute context for use with a Spark cluster.
 
 ## Usage
 
-`RxSpark( <br />
-    object, <br />
-    hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ), <br />
-    shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ), <br />
-    clientShareDir = rxGetDefaultTmpDirByOS(), <br />
-    sshUsername = Sys.info()[["user"]], <br />
-    sshHostname = NULL, <br />
-    sshSwitches = "", <br />
-    sshProfileScript = NULL, <br />
-    sshClientDir = "", <br />
-    nameNode = rxGetOption("hdfsHost"), <br />
-    jobTrackerURL = NULL, <br />
-    port = rxGetOption("hdfsPort"), <br />
-    onClusterNode = NULL, <br />
-    wait = TRUE, <br />
-    numExecutors = 65535, <br />
-    executorCores = 2, <br />
-    executorMem = "4g", <br />
-    driverMem = "4g", <br />
-    executorOverheadMem = "4g", <br />
-    extraSparkConfig = "", <br />
-    persistentRun = FALSE, <br />
-    idleTimeout = 3600, <br />
-    suppressWarning = TRUE, <br />
-    consoleOutput = FALSE, <br />
-    showOutputWhileWaiting = TRUE, <br />
-    autoCleanup = TRUE, <br />
-    workingDir = NULL, <br />
-    dataPath = NULL, <br />
-    outDataPath = NULL, <br />
-    fileSystem = NULL, <br />
-    packagesToLoad = NULL, <br />
-    resultsTimeout = 15, <br />
-    ...)`
+~~~~
+    RxSpark(
+        object,
+        hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
+        shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
+        clientShareDir = rxGetDefaultTmpDirByOS(),
+        sshUsername = Sys.info()[["user"]],
+        sshHostname = NULL,
+        sshSwitches = "",
+        sshProfileScript = NULL,
+        sshClientDir = "",
+        nameNode = rxGetOption("hdfsHost"),
+        jobTrackerURL = NULL,
+        port = rxGetOption("hdfsPort"),
+        onClusterNode = NULL,
+        wait = TRUE,
+        numExecutors = 65535,
+        executorCores = 2,
+        executorMem = "4g",
+        driverMem = "4g",
+        executorOverheadMem = "4g",
+        extraSparkConfig = "",
+        persistentRun = FALSE,
+        idleTimeout = 3600,
+        suppressWarning = TRUE,
+        consoleOutput = FALSE,
+        showOutputWhileWaiting = TRUE,
+        autoCleanup = TRUE,
+        workingDir = NULL,
+        dataPath = NULL,
+        outDataPath = NULL,
+        fileSystem = NULL,
+        packagesToLoad = NULL,
+        resultsTimeout = 15,
+        ...)
+~~~~
 
 ## Arguments
 
