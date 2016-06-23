@@ -21,8 +21,6 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: "deployr"
 ms.custom: ""
-redirect_url: "https://msdn.microsoft.com/en-us/microsoft-r/rserver/deployr-about"
-
 ---
 
 # About DeployR
