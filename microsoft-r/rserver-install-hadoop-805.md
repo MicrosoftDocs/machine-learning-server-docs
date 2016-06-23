@@ -24,11 +24,11 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 8.0.5 on Hadoop
 
-This article explains how to install version 8.0.5 of Microsoft R Server on a Hadoop cluster. Version 8.0.5 includes updated installers for deploying R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R server** that comes with most of its dependencies built into the package. Version 8.0.5 has fewer post-install configuration requirements, and also includes the Generally Available (GA) version of rxSpark.
+This article explains how to install version 8.0.5 of Microsoft R Server on a Hadoop cluster.
 
-Microsoft R Server should be installed on all nodes of the cluster. Of the nodes that have R Server, each one must have Hadoop MapReduce and the Hadoop Distributed File System (HDFS). Optionally, you can run R Server with Spark version 1.5.0-1.6.1.
+## What's new in the 8.0.5 installer
 
-Within a cluster, all nodes must have the same version of R Server. You cannot have multiple versions of R Server in the same cluster, nor can you run older and newer versions side-by-side on the same node. If you already have an older version and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+Version 8.0.5 includes updated installers for deploying R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R server** that comes with most of its dependencies built into the package. Version 8.0.5 has fewer post-install configuration requirements, and also includes the Generally Available (GA) version of rxSpark. If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 A summary of setup tasks for version 8.0.5 is as follows:
 
@@ -45,7 +45,9 @@ The install script downloads and installs Microsoft R Open for R Server (microso
 
 ## Recommendations for installation
 
-Install Microsoft R Server as `root` on each node of your Hadoop cluster if you want all users to be granted access by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
+We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
+
+We recommend installing Microsoft R Server as `root` on each node of your Hadoop cluster if you want all users to be granted access by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
@@ -53,18 +55,21 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
-## Prerequisites
+## System requirements
 
-Setup verifies Red Hat Linux and the existence of a Hadoop cluster, but it doesn't check for specific distributions.
-Microsoft R Server 8.0.5 works with the following Hadoop distributions:
+R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
+
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0.5 works with the following Hadoop distributions:
 
 - Cloudera CDH 5.5-5.7
 - HortonWorks HDP 2.3-2.4
 - MapR 5.0-5.1
 
-The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6 or 7, SUSE SLES11, or a fully compatible operating system like Centos. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
+The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6 or 7, SUSE SLES11, or a fully compatible operating system like CentOS. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
-The installer should provide most of the dependencies required by R Server, but if a missing dependency error is reported, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS). Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
+
+In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if a missing dependency error is reported, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
@@ -212,6 +217,29 @@ Partial output is as follows (showing the first 10 lines).
 		INFO: DEBUG: allArgs = '[-Dmapred.reduce.tasks=1, -libjars=/usr/hdp/2.4.0.0-169/hadoop/conf,/usr/hdp/2.4.0.0-169/hadoop-mapreduce/hadoop-streaming.jar, /user/RevoShare/A73041E9D41041A18CB93FCCA16E013E/.input, /user/RevoShare/lukaszb/A73041E9D41041A18CB93FCCA16E013E/IRO.iro, /share/SampleData/AirlineDemoSmall.csv, default, 0, /usr/bin/Revo64-8]'
 		End of allArgs.
 		16/06/10 18:26:26 INFO impl.TimelineClientImpl: Timeline service address:
+
+<a name="ManualInstallation"><a/>
+## Manual Installation
+
+An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
+
+Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 8.0.5 are already installed, a manual or custom installation must accomplish the following:
+
+**RPM Installers**
+
+- `/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
+-`/var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
+
+**DEB Installers**
+
+-`/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
+-`var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
+
+**Cloudera Parcel Installers**
+
+	1. Create `/var/RevoShare/` and `hdfs://user/RevoShare`. Parcels cannot create them for you.
+	2. Give pull permission to both `/var/RevoShare/` and `hdfs://user/RevoShare`.
+	3. On Cloudera Manager, configure the location of the parcel-repo so parcels can be discovered in the correct location, and change the rate at which Cloudera Manager checks for new parcels.
 
 <a name="DistributedInstallation"><a/>
 ## Distributed Installation

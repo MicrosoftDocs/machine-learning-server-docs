@@ -24,23 +24,37 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 8.0.0 on Hadoop
 
-This article explains how to install Microsoft R Server, version 8.0.0, on a Hadoop cluster.
+This article explains how to install version 8.0.0 of Microsoft R Server on a Hadoop cluster.
 
-Microsoft R Server should be installed on all nodes of the cluster. Of the nodes that have R Server, each one must have Hadoop MapReduce and the Hadoop Distributed File System (HDFS). Within a cluster, all nodes must have the same version of R Server. You cannot have multiple versions of R Server in the same cluster, nor can you run older and newer versions side-by-side on the same node. If you already have an older version and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+## Recommendations for installation
 
-We recommend [installing Microsoft R Server version 8.0.5](rserver-install-hadoop-805.md) instead of 8.0.0. The 8.0.5 installer performs more system verification, installation, and configuration steps. Version 8.0.5 also includes the Generally Available (GA) version of rxSpark. If you already have 8.0.0 and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+For a first-time installation of Microsoft R Server 8, we recommend [installing Microsoft R Server version 8.0.5](rserver-install-hadoop-805.md) instead of 8.0.0. The 8.0.5 installer performs more system verification, installation, and configuration steps. Version 8.0.5 also includes the Generally Available (GA) version of rxSpark. If you already have 8.0.0 and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+
+We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
+
+We recommend installing Microsoft R Server as `root` on each node of your Hadoop cluster if you want all users to be granted access by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
+
+Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
+
+1. Sign in to [Azure Portal](https://ms.portal.azure.com).
+2. Click **New** in the top left side bar.
+3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
 ## System Requirements
 
-Microsoft R Server works with the following Hadoop distributions:
+R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
+
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0.5 works with the following Hadoop distributions:
 
 - Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 - HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 - MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA-30600; contact MapR to obtain the patch), MapR 4.1
 
-Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package. The Hadoop distribution must be installed on Red Hat Enterprise Linux 5 or 6, or fully compatible operating system. Microsoft R Server should be installed on all nodes of the cluster.
+The Hadoop distribution must be installed on Red Hat Enterprise Linux 5 or 6, or fully compatible operating system. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
 Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS) (for HDP 1.3.0 and MapR 3.x installations), or HDFS, Hadoop YARN, and Hadoop MapReduce2 for CDH5, HDP 2.x, and MapR 4.x installations. The HDFS, YARN, and MapReduce clients must be installed on all nodes on which you plan to run Microsoft R Server, as must Microsoft R Server itself.
+
+Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package.
 
 If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list.
 
