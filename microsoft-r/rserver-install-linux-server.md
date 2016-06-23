@@ -43,9 +43,9 @@ If any of these conditions do not apply, you should first verify that your syste
 
 **Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server 11. Microsoft R Server has different operating system requirements depending on whether you install 8.0.0 or 8.0.5. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
 
-**Memory:** A minimum of 2GB of RAM is required; 8GB or more are recommended.
+**Memory:** A minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
-**Disk Space:** A minimum of 500MB of disk space is required.
+**Disk Space:** A minimum of 500 MB of disk space is required.
 
 ## Install R Server version 8.0.5 on Linux
 
@@ -59,31 +59,31 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
 	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
 
-2.  Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
+2. Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		`mkdir /mnt/mrsimage
 		mount –o loop <filename> /mnt/mrsimage`
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		[for RHEL/CENTOS systems]
-		`tar zxvf MRS80RHEL.tar.gz`
+[for RHEL/CENTOS systems]
+`tar zxvf MRS80RHEL.tar.gz`
 
-		[for SLES systems]
-		`tar zxvf MRS80SLES.tar.gz`
+[for SLES systems]
+`tar zxvf MRS80SLES.tar.gz`
 
-3.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
+3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-		[From the mounted img file]
-		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+[From the mounted img file]
+`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
-		[From the unpacked tar file]
-		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+[From the unpacked tar file]
+`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
-4.  Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
 
-		`cd /tmp
-		tar xvzf Microsoft-R-Server-<OS>.tar.gz`
+`cd /tmp
+tar xvzf Microsoft-R-Server-<OS>.tar.gz`
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
@@ -93,24 +93,20 @@ Microsoft R Server 8.0.5 for Linux is deployed by running the install script wit
 
 Note that if your Linux server has Hadoop, the installer will detect the cluster and install the Hadoop component even if you don't specify it.
 
-1.  Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
-2.  Verify system repositories are up to date:
-		`[username] $ sudo yum clean all`
-3.  Change to the directory to which you downloaded the rpm (for example, /tmp):
-		`[username] $ cd /tmp`
-4. Run the script.
-		`[tmp] $ sudo bash install.sh`
+1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
+2. Verify system repositories are up to date: `[username] $ sudo yum clean all`
+3. Change to the directory to which you downloaded the rpm (for example, /tmp): `[username] $ cd /tmp`
+4. Run the script. `[tmp] $ sudo bash install.sh`
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
 6. Installer output shows the packages and location of the log file.
-7. Check the version of Microsoft R Open using `rpm -qi`:
-		`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
-8. Check the version of the intel-mkl package:
-		`[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+7. Check the version of Microsoft R Open using `rpm -qi`:`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
+8. Check the version of the intel-mkl package: `[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
 
 Partial output is as follows (note version 8.0.5):
-		`Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
+
+		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
 		Version     : 8.0.5                         Vendor: Microsoft
-		. . . `
+		. . .
 
 ## Install R Server version 8.0.0 on Linux
 
@@ -121,13 +117,13 @@ Installation of Microsoft R Server consists of two distinct steps:
 
 To download and install Microsoft R Open and R Server:
 
-1.  Log in as root, or as a user with super user (sudo) privileges. Optionally, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for instructions.
+1. Log in as root, or as a user with super user (sudo) privileges. Optionally, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for instructions.
 
-2.  Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
+2. Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
 
-3.  Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
+3. Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
 
-4.  Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
+4. Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
 
 	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
 	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
@@ -146,32 +142,30 @@ To download and install Microsoft R Open and R Server:
 
 6.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-		[From the mounted img file]
-		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+[From the mounted img file]
+`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
-		[From the unpacked tar file]
-		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+[From the unpacked tar file]
+`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
-7.  Unpack the tar file and run the installer script, as follows:
+7. Unpack the tar file and run the installer script, as follows:
 
-		`cd /tmp
+		cd /tmp
 		tar xvzf Microsoft-R-Server-8.0.0-<OS>.tar.gz
 		pushd rrent
-		./install.sh`
+		./install.sh
 
-	The installer prompts you for the following:
+The installer prompts you for the following:
 
-	a. the location of your R installation—if you installed Microsoft R Open for Microsoft R Server to the default location, you can simply press Enter and continue.
+a. Location of your R installation. If you installed Microsoft R Open for Microsoft R Server to the default location, you can simply press Enter and continue.
 
-	b.  where you would like to install additional Microsoft R Server files; these are files that are not part of specific R packages, such as documentation, licenses, and scripts.
+b. Location for installing additional Microsoft R Server files. These are files that are not part of specific R packages, such as documentation, licenses, and scripts.
 
-	c.  if you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
+c. Whether you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
 
-	d.  to agree to the Microsoft R Server software license.
+d. Agreement to the Microsoft R Server software license.
 
-8.  Once you have agreed to the license, the installation completes. Type the following to return to your original directory:
-
-		popd
+8.  Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
 
 On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the RRE installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
 
@@ -185,13 +179,13 @@ In this section, we discuss file management for your Microsoft R Server installa
 
 If you use the Quick Install steps, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it is often desirable to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an “RUser” account, and change ownership of the files to that user. You can do that as follows:
 
-1.  Install Microsoft R Server as root, as usual.
-2.  Create the “RUser” account if it does not already exist. Assign this user to a suitable group, if desired.
-3.  Use the chown command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
+1. Install Microsoft R Server as root, as usual.
+2. Create the “RUser” account if it does not already exist. Assign this user to a suitable group, if desired.
+3. Use the chown command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
 
 		chown -R RUser:dev /usr/lib64/MRO-for-MRS-8.0.0
 
-	(Here we show the default path /usr/lib64/MRO-for-MRS-8.0.03; if you have specified an alternate installation path, use that in this command as well.)
+Here we show the default path /usr/lib64/MRO-for-MRS-8.0.03; if you have specified an alternate installation path, use that in this command as well.
 
 You can also run the installer as a non-root user, even without sudo privileges. For details, see [Non-Root Installs](#non-root-installs).
 
@@ -206,35 +200,31 @@ The installer will check that the prerequisite packages are installed and inform
 
 If all the prerequisites are installed, you complete the installation as follows:
 
-1.  Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
+1. Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
 
-2.  Run the following commands to install the rpm file:
+2. Run the following commands to install the rpm file:
 
 		mkdir $HOME/localmrsrpmdb
 		rpm --initdb --dbpath $HOME/localmrsrpmdb
 		export MRS_RPM_DBPATH=$HOME/localmrsrpmdb && \
 		    rpm --dbpath $MRS_RPM_DBPATH --prefix $HOME \
-		        --nodeps -i MRO-for-MRS-*.rpm
+		        --nodeps -i MRO-for-MRS-`*`.rpm
 
-3.  Download and unpack the Microsoft R Server tarball, then run the installer script, as follows (the tarball name may include an operating system ID; the complete name of the tarball will be in your download letter):
+3. Download and unpack the Microsoft R Server tarball, then run the installer script, as follows (the tarball name may include an operating system ID; the complete name of the tarball will be in your download letter):
 
-		tar xvzf Microsoft-R-Server-8.0.0-*.tar.gz
+		tar xvzf Microsoft-R-Server-8.0.0-`*`.tar.gz
 		pushd rrent
 		./install.sh
 
-	At this point you are asked for the location of your R installation—be sure to use the same location you provided as the --prefix argument in step 2. You are also asked where you would like to install additional Microsoft R Server files; these are files that are not part of specific R packages, such as documentation, licenses, and scripts.
+At this point you are asked for the location of your R installation—be sure to use the same location you provided as the --prefix argument in step 2. You are also asked where you would like to install additional Microsoft R Server files; these are files that are not part of specific R packages, such as documentation, licenses, and scripts.
 
-	You are then asked if you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
+You are then asked if you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
 
-	Finally, you are asked to agree to the Microsoft R Server software license. Once you have agreed to the license, the installation completes. Type the following to return to your original directory:
-
-		popd
+Finally, you are asked to agree to the Microsoft R Server software license. Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
 
 The R installation is owned by the user who completed the installation; subsequent updates and uninstalls must be performed by the same user. In particular, multiple users can perform non-root installations–as long as the installations specify separate base installation directories, they will be completely independent. Non-root installations can be performed on systems that have had Microsoft R Server installed as root, and vice versa.
 
-In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file:
-
-	export PATH=/home/$USER/Revo-7.4/R-3.1.3/bin:$PATH
+In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file: `export PATH=/home/$USER/Revo-7.4/R-3.1.3/bin:$PATH`
 
 ### Unattended Installs
 
@@ -285,27 +275,27 @@ If your system already contains all the system prerequisites, this will normally
 
 Creating a repository from an MRAN snapshot is very straightforward:
 
-1.  Choose a location for your repository somewhere on your local network. If you have a corporate intranet, this is usually a good choice, provided URLs have the prefix http:// and not https://. Any file system that is mounted for all users can be used; file-based URLs of the form file:// are supported by the R functions. In this example, we suppose the file system /local is mounted on all systems and we will create our repository in the directory /local/repos.
+1. Choose a location for your repository somewhere on your local network. If you have a corporate intranet, this is usually a good choice, provided URLs have the prefix http:// and not https://. Any file system that is mounted for all users can be used; file-based URLs of the form file:// are supported by the R functions. In this example, we suppose the file system /local is mounted on all systems and we will create our repository in the directory /local/repos.
 
-2.  Start R and load the miniCRAN package:
+2. Start R and load the miniCRAN package:
 
 		library(miniCRAN)
 
-3.  Specify an MRAN snaphot:
+3. Specify an MRAN snaphot:
 
 		CRAN <- "http://mran.revolutionanalytics.com/snapshot/2015-11-30"
 
-4.  Set your MRAN snapshot as your CRAN repo:
+4. Set your MRAN snapshot as your CRAN repo:
 
 		r <- getOption("repos")
 		r["CRAN"] <- CRAN
 		options(repos=r)
 
-5.  Use miniCRAN’s pkgAvail function to obtain a list of (source) packages in your MRAN snapshot:
+5. Use miniCRAN’s pkgAvail function to obtain a list of (source) packages in your MRAN snapshot:
 
 		pkgs <- pkgAvail()[,1]
 
-6.  Use miniCRAN’s makeRepo function to create a repository of these packages in your /local/repos directory:
+6. Use miniCRAN’s makeRepo function to create a repository of these packages in your /local/repos directory:
 
 		makeRepo(pkgs, "/local/repos", type="source")
 

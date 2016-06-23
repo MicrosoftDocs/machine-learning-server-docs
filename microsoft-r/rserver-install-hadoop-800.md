@@ -64,9 +64,9 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Operating System:** Red Hat Enterprise Linux 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, or 6.7. Only 64-bit operating systems are supported. (For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.)
 
-**Memory:** A minimum of 4GB of RAM is required for Microsoft R Server; 8GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations
+**Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Disk Space:** A minimum of 500MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
+**Disk Space:** A minimum of 500 MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
 ## Download Microsoft R Components
 
@@ -88,46 +88,40 @@ If you are installing on a Cloudera Manager system using a parcel install, see [
 
 For most users, installing on the cluster means simply running the standard Microsoft R Server installers on each node of the cluster:
 
-1.  Log in as root or a user with sudo privileges. If using sudo, precede commands requiring root privileges with `sudo`.
-2.  Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server:
-
-	'*'sudo yum clean all'*''
-
-3.  [Download the Microsoft R Open for Microsoft R Server rpm](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409).
-4.  Change to the directory to which you downloaded the rpm (for example, /tmp):
-
-		'cd /tmp'
-5.  Use the following command to install Microsoft R Open for Microsoft R Server:
-
-		`yum install MRO-for-MRS-8.0.0.*.x86_64.rpm`
-6.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+1. Log in as root or a user with sudo privileges. If using sudo, precede commands requiring root privileges with `sudo`.
+2. Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server: `*'sudo yum clean all'*'`
+3. [Download the Microsoft R Open for Microsoft R Server rpm](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409).
+4.  Change to the directory to which you downloaded the rpm (for example, /tmp): `cd /tmp`
+5. Use the following command to install Microsoft R Open for Microsoft R Server: `yum install MRO-for-MRS-8.0.0.*.x86_64.rpm`
+6. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 7.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
-		`mkdir /mnt/mrsimage
-		mount –o loop <filename> /mnt/mrsimage`
+		mkdir /mnt/mrsimage
+		mount –o loop <filename> /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		[for RHEL/CENTOS systems]
-		`tar zxvf MRS80RHEL.tar.gz`
+[for RHEL/CENTOS systems]
+`tar zxvf MRS80RHEL.tar.gz`
 
-		[for SLES systems]
-		`tar zxvf MRS80SLES.tar.gz`
-8.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
+[for SLES systems]
+`tar zxvf MRS80SLES.tar.gz`
 
-		[From the mounted img file]
-		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+8. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-		[From the unpacked tar file]
-		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+[From the mounted img file]
+`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
-9.  Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+[From the unpacked tar file]
+`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
-		`cd /tmp
+9. Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+
+		cd /tmp
 		tar xvzf Microsoft-R-Server-<OS>.tar.gz
 		pushd rrent
 		./install.sh –a –y -p /usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2
-		popd`
+		popd
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
