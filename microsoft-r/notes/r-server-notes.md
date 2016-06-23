@@ -34,19 +34,30 @@ The following release notes apply to Microsoft R Server.
 
 + The R Productivity Environment (RPE), a custom IDE for Revolution R Enterprise, is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE. 
 
-  + These R packages that were previously included to support the RPE have also been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`. 
-  
-  + These R functions, which had been modified to work with the RPE on Windows, have been returned to their original state: `q`, `quit`, `?`, `.tryHelp`, `print.help_files_with_topic`, and `timestamp`. 
-  
-  + These R functions, which were modified and renamed for use in the RPE on Windows, are now defunct: `revoFix`, `revoPlot`, `revoPlot.default`, `revoPlot.ts`, `revoPlot.matrix`, `revoPlot.data.frame`, and `revoSource`.
- 
++ These R packages that were previously included to support the RPE have been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`. 
+   
 + Microsoft R documentation has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
 
 + Microsoft R licenses and Third Party Notices files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
 
 + Linux installers are now composed of RPM packages that can be installed via a top-level install script or as individual RPM packages. This can be convenient for Enterprise IT departments managing extensive deployments.
 
++ These `RevoScaleR` functions are now deprecated:
+	+ `rxImportToXdf` (use `rxImport`)
+	+ `rxDataStepXdf` (use `rxDataStep`)
+	+ `rxXdfToDataFrame` (use `rxDataStep`)
+	+ `rxDataFrameToXdf` (use `rxDataStep`)
+
++ These `RevoScaleR` functions are now defunct:
+	+ `rxGetVarInfoXdf` (use `rxGetVarInfo`)
+	+ `rxGetInfoXdf` (us `rxGetInfo`)
+	+ the `covariance` argument (only) to the `rxLinMod` function
+
++  An new internal variable, `.rxPredict` is available inside transformation functions to indicate that the data is being processed from a prediction rather than a model estimation.
+
 + Installation on Hadoop clusters has been simplified.
+
++ A new distributed compute context `RxSpark` is available, in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 + DeployR Enterprise includes the following changes and improvements:
 
@@ -62,6 +73,39 @@ For information on SQL Server R Services, please refer to the corresponding [rel
 
 **Bug Fixes**
 
++ `rxKmeans` now works with an `RxHadoopMR` compute context and an `RxTextData` data source.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, specifying `firstRowIsColNames` to `FALSE` in
+the output data source will now correctly result in no
+column names being written.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, setting `quoteMark` to `""` in the output data
+source will now result in no quote marks written around
+character data.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, setting `missingValueString` to `""` in the
+output data source will now result in empty strings for
+missing values.
+ 
++ Using `rxImport`, if `quotedDelimiters` was set to `TRUE`,
+transforms could not be processed.
+ 
++ `rxImport` of `RxTextData` now reports a warning instead of
+an error if mismatched quotes are encountered.
+ 
++ When using `rxImport` and appending to an `.xdf` file, a
+combination of the use of `newName` and `newLevels` for
+different variables in `colInfo` could result in `newLevels`
+being ignored, resulting in a different set of factor levels
+for the appended data.
+ 
++ When using `rxPredict`, with an in-formula transformation of
+the dependent variable, an error was given if the variable
+used in the transformation was not available in the
+prediction data set.
 
 <br />
 ##Microsoft R Server 8.0.0
@@ -83,13 +127,13 @@ algorithms for cleaning and analyzing text data.
     + Bug Fixes: 
         + When using rxDataStep, new variables created in a transformation no longer inherit the rxLowHigh attribute of the variable used to create them.
         + rxGetInfo was failing when an extended class of RxXdfData was used.
-        + rxGetVarInfo now respects the ‘newName’ element of colInfo for non-xdf data sources.
-        + If ‘inData’ for rxDataStep is a non-xdf data source that contains a colInfo specification using ‘newName’, the ‘newName’ should now be used for ‘varsToKeep’ and ‘varsToDrop’.
+        + rxGetVarInfo now respects the `newName` element of colInfo for non-xdf data sources.
+        + If `inData` for rxDataStep is a non-xdf data source that contains a colInfo specification using `newName`, the `newName` should now be used for `varsToKeep` and `varsToDrop`.
     + Deprecated and Defunct. 
-        + ‘NIEDERR’ is no longer supported as a type of random number generator.
-        + ‘scheduleOnce’ is now defunct for rxPredict.rxDForest and rxPredict.rxBTrees.
-        + The compute context ‘RxLsfCluster’ is now defunct.
-        + The compute context ‘RxHpcServer’ is now deprecated
+        + `NIEDERR` is no longer supported as a type of random number generator.
+        + `scheduleOnce` is now defunct for rxPredict.rxDForest and rxPredict.rxBTrees.
+        + The compute context `RxLsfCluster` is now defunct.
+        + The compute context `RxHpcServer` is now deprecated
 
 + DevelopR - The R Productivity Environment (the IDE provided with Revolution R Enterprise on Windows) is not deprecated, but it will be removed from future versions of Microsoft R Services.
 
