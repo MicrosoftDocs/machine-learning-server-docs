@@ -5,7 +5,7 @@ description: "Install Microsoft R Server version 8.0.5 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "06/21/2016"
+ms.date: "06/23/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -67,7 +67,7 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 
 The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6 or 7, SUSE SLES11, or a fully compatible operating system like CentOS. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
-Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS). Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
+Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
 
 In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if a missing dependency error is reported, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
@@ -75,11 +75,11 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
-**Operating System:** Red Hat Enterprise Linux 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, or 6.7. Only 64-bit operating systems are supported. (For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.)
+**Operating System:** Red Hat Enterprise Linux (RHEL) 6.x and 7.x (or a fully compatible operating system like CentOS), SUSE Linux Enterprise Server 11 (SLES11).
 
-**Memory:** A minimum of 4GB of RAM is required for Microsoft R Server; 8GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
+**Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Disk Space:** A minimum of 500MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
+**Disk Space:** A minimum of 500 MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
 ## Download Microsoft R software
 
@@ -91,31 +91,31 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
 	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
 
-2.  Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
+2. Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
 
-		`mkdir /mnt/mrsimage
-		mount –o loop <filename> /mnt/mrsimage`
+		mkdir /mnt/mrsimage
+		mount –o loop <filename> /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		[for RHEL/CENTOS systems]
-		`tar zxvf MRS80RHEL.tar.gz`
+[for RHEL/CENTOS systems]
+`tar zxvf MRS80RHEL.tar.gz`
 
-		[for SLES systems]
-		`tar zxvf MRS80SLES.tar.gz`
+[for SLES systems]
+`tar zxvf MRS80SLES.tar.gz`
 
-3.  In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
+3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-		[From the mounted img file]
-		`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+[From the mounted img file]
+`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
 
-		[From the unpacked tar file]
-		`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+[From the unpacked tar file]
+`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
 
-4.  Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
 
-		`cd /tmp
-		tar xvzf Microsoft-R-Server-<OS>.tar.gz`
+`cd /tmp
+tar xvzf Microsoft-R-Server-<OS>.tar.gz`
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
@@ -123,21 +123,17 @@ This installs Microsoft R Server with the standard options (including loading th
 
 Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
-1.  Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
-2.  Verify system repositories are up to date:
-		`[username] $ sudo yum clean all`
-3.  Change to the directory to which you downloaded the rpm (for example, /tmp):
-		`[username] $ cd /tmp`
-4. Run the script with the **-p** parameter, specifying the Hadoop component.
-		`[tmp] $ sudo bash install.sh -p`
+1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
+2. Verify system repositories are up to date: `[username] $ sudo yum clean all`
+3. Change to the directory to which you downloaded the rpm (for example, /tmp): `[username] $ cd /tmp`
+4. Run the script with the **-p** parameter, specifying the Hadoop component: `[tmp] $ sudo bash install.sh -p`
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
 6. Installer output shows the packages and location of the log file.
-7. Check the version of Microsoft R Open using `rpm -qi`:
-		`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
-8. Check the version of the intel-mkl package:
-		`[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+7. Check the version of Microsoft R Open using `rpm -qi`: `[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
+8. Check the version of the intel-mkl package: `[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
 
 Partial output is as follows (note version 8.0.5):
+
 		`Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
 		Version     : 8.0.5                         Vendor: Microsoft
 		. . . `
@@ -199,7 +195,7 @@ This step uses the sample dataset to run a Hadoop job.
 
 Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
 
-		**SetComputeContext(RxHadoopMR(consoleOutput=TRUE))**
+		SetComputeContext(RxHadoopMR(consoleOutput=TRUE))
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
 
 		colInfo <- list(DayOfWeek = list(type = "factor",
@@ -237,9 +233,9 @@ Assuming that the packages for Microsoft R Open for R Server and Microsoft R Ser
 
 **Cloudera Parcel Installers**
 
-	1. Create `/var/RevoShare/` and `hdfs://user/RevoShare`. Parcels cannot create them for you.
-	2. Give pull permission to both `/var/RevoShare/` and `hdfs://user/RevoShare`.
-	3. On Cloudera Manager, configure the location of the parcel-repo so parcels can be discovered in the correct location, and change the rate at which Cloudera Manager checks for new parcels.
+1. Create `/var/RevoShare/` and `hdfs://user/RevoShare`. Parcels cannot create them for you.
+2. Give pull permission to both `/var/RevoShare/` and `hdfs://user/RevoShare`.
+3. On Cloudera Manager, configure the location of the parcel-repo so parcels can be discovered in the correct location, and change the rate at which Cloudera Manager checks for new parcels.
 
 <a name="DistributedInstallation"><a/>
 ## Distributed Installation

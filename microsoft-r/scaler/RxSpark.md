@@ -107,9 +107,6 @@ The following table shows the arguments to RxSpark in order and their default va
 |resultsTimeout|A numeric value indicating for how long attempts should be made to retrieve results from the cluster. Under normal conditions, results are available immediately. However, under certain high load conditions, the processes on the nodes have reported as completed, but the results have not been fully committed to disk by the operating system. Increase this parameter if results retrieval is failing on high load clusters.|
 |...|Additional arguments to be passed directly to the Microsoft R Services Compute Engine.|
 
-## Remarks
-This compute context is supported for Cloudera, Hortonworks, and MapR Hadoop distributions on Red Hat Enterprise Linux 5 and 6.
-
 ## Return Value
 An object of class RxSpark.
 
