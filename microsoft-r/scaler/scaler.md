@@ -84,10 +84,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxSpssData`      | |Creates a SPSS data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxOdbcData`      | |Creates a ODBC data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxTeradata`     | |Creates a Teradata data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
-|`rxOpen`     | |Opens a data source for reading.|<small>[View](rxOpen.md)</small>|
-|`rxClose`      | |Closes a data source.     |<small>[View](rxClose.md)</small>|
-|`rxReadNext`      | |Read data from a source      |<small>[View](rxReadNext.md)</small>|
+|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[**View**](RxSqlServerData.md)</small>|
+|`rxOpen`     | |Opens a data source for reading.|<small>[**View**](rxOpen.md)</small>|
+|`rxClose`      | |Closes a data source.     |<small>[**View**](rxClose.md)</small>|
+|`rxReadNext`      | |Read data from a source      |<small>[**View**](rxReadNext.md)</small>|
 |`rxSetFileSystem`      | |Specify a file system type for data for import.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFileSystem`     | |Retrieve the current file system type.|<small>[See package](scaler.md#findmore)</small>|
 |`rxHdfsFileSystem`      | |Creates an HDFS file system object.|<small>[See package](scaler.md#findmore)</small>|
@@ -106,7 +106,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxSplit`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSort`      | |Multi-key sorting of the variables an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxMerge`       | |Merges two .xdf files or data frames using avariety of merge types.|<small>[See package](scaler.md#findmore)</small>|
-|`rxExecuteSQLDDL`|  |SQL Server R Services only. Runs an arbitrary SQL DDL command.     |<small>[View](rxExecuteSQLDDL.md)</small>|
+|`rxExecuteSQLDDL`|  |SQL Server R Services only. Runs an arbitrary SQL DDL command.     |<small>[**View**](rxExecuteSQLDDL.md)</small>|
 
 <br />
 ####Visualization Functions
@@ -176,8 +176,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxLocalSeq`| |Creates a local compute context for `rxExec` using sequential computations.|<small>[See package](scaler.md#findmore)</small>|
 |`RxLocalParallel`| |Creates a local compute context for `rxExec` using the `parallel` package as back end.|<small>[See package](scaler.md#findmore)</small>|
 |`RxForeachDoPar`   | |Creates a compute context for `rxExec` using the current `foreach` parallel back end.|<small>[See package](scaler.md#findmore)</small>|
-|`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[View](rxInstalledPackages.md)</small>|
-|`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
+|`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[**View**](rxInstalledPackages.md)</small>|
+|`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[**View**](rxFindPackage.md)</small>|
 
 
 <br/>
@@ -192,7 +192,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`RxSpssData`      | |Creates a SPSS data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxOdbcData`      | |Creates a ODBC data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxTeradata`     | |Creates a Teradata data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[View](RxSqlServerData.md)</small>|
+|`RxSqlServerData`    | |Creates a SQL Server data source object.|<small>[**View**](RxSqlServerData.md)</small>|
 
 <br />
 ##HPC and Distributed Computing Functions
@@ -226,10 +226,10 @@ These functions and many more can be used for high performance computing and dis
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
 |`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
-|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[View](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[View](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[View](rxWriteNext.md)</small>|
+|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[**View**](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[**View**](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[**View**](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[**View**](rxWriteNext.md)</small>|
  
 
 <br />

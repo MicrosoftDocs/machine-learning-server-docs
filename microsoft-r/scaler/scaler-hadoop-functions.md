@@ -107,8 +107,8 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |-----------------------|:-:|-----------------------|:--------------:||
 |`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[View](rxInstalledPackages.md)</small>|
-|`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[View](rxFindPackage.md)</small>|
+|`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[**View**](rxInstalledPackages.md)</small>|
+|`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[**View**](rxFindPackage.md)</small>|
 
 
 <br/>
@@ -150,10 +150,10 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
 |`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
-|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[View](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[View](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[View](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[View](rxWriteNext.md)</small>|
+|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[**View**](rxIsOpen.md)</small>|
+|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[**View**](rxSqlServerDropTable.md)</small>|  
+|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[**View**](rxSqlServerTableExists.md)</small>|
+|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[**View**](rxWriteNext.md)</small>|
  
 <br />
 ##Hadoop Convenience Functions
