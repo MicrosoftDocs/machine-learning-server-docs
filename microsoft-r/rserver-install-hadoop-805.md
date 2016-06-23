@@ -225,19 +225,12 @@ Partial output is as follows (showing the first 10 lines).
 
 An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
 
-Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 8.0.5 are already installed, a manual or custom installation must accomplish the following:
+Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 8.0.5 are already installed, a manual or custom installation must create the appropriate folders and set permissions.
 
-**RPM Installers**
+**RPM or DEB Installers**
 
 - `/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
-
--`/var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
-
-**DEB Installers**
-
--`/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
-
--`var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
+- `/var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
 
 **Cloudera Parcel Installers**
 
