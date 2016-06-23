@@ -87,31 +87,34 @@ If you are installing on a Cloudera Manager system using a parcel install, see [
 For most users, installing on the cluster means simply running the standard Microsoft R Server installers on each node of the cluster:
 
 1. Log in as root or a user with sudo privileges. If using sudo, precede commands requiring root privileges with `sudo`.
-2. Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server: `*'sudo yum clean all'*'`
+2. Make sure the system repositories are up to date prior to installing Microsoft R Open for Microsoft R Server:
+ 		*'sudo yum clean all'*'
 3. [Download the Microsoft R Open for Microsoft R Server rpm](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409).
-4.  Change to the directory to which you downloaded the rpm (for example, /tmp): `cd /tmp`
-5. Use the following command to install Microsoft R Open for Microsoft R Server: `yum install MRO-for-MRS-8.0.0.*.x86_64.rpm`
+4.  Change to the directory to which you downloaded the rpm (for example, /tmp):
+		cd /tmp
+5. Use the following command to install Microsoft R Open for Microsoft R Server:
+		yum install MRO-for-MRS-8.0.0.`*`.x86_64.rpm
 6. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
-7.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+7. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop <filename> /mnt/mrsimage
 
-If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-[for RHEL/CENTOS systems]
-`tar zxvf MRS80RHEL.tar.gz`
+  **For RHEL/CENTOS systems**:
+		tar zxvf MRS80RHEL.tar.gz
 
-[for SLES systems]
-`tar zxvf MRS80SLES.tar.gz`
+  **For SLES systems**:
+		tar zxvf MRS80SLES.tar.gz
 
 8. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-[From the mounted img file]
-`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+  **From the mounted img file**:
+		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-[From the unpacked tar file]
-`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+  **From the unpacked tar file**:
+		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
 9. Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
 
@@ -213,76 +216,79 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 1.  [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409) (Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.)
 
 2.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
-	If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+
+  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80HADOOP.img /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
 		tar zxvf MRS80HADOOP.tar.gz
 
-3.  Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
+3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
-		[From the mounted img file]
+  **From the mounted img file**:
 		cp /mnt/mrsimage/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
-		[From the unpacked tar file]
+  **From the unpacked tar file**:
 		cp /tmp/MRS80HADOOP/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
 
-4.  You should have the following files in your parcel repo:
-    MRO-3.2.2-1-el6.parcel
-    MRO-3.2.2-1-el6.parcel.sha
-    MRS-8.0.0-1-el6.parcel
-    MRS-8.0.0-1-el6.parcel.sha
-    Be sure all the files are owned by root and have 755 permissions (that is, read, write, execute permission for root, and read and execute permissions for group and others).
+4. You should have the following files in your parcel repo:
 
-5.  In your browser, open Cloudera Manager.
+	    MRO-3.2.2-1-el6.parcel
+	    MRO-3.2.2-1-el6.parcel.sha
+	    MRS-8.0.0-1-el6.parcel
+	    MRS-8.0.0-1-el6.parcel.sha
 
-6.  Click **Hosts** in the upper navigation bar to bring up the All Hosts page.
+  Be sure all the files are owned by root and have 755 permissions (that is, read, write, execute permission for root, and read and execute permissions for group and others).
 
-7.  Click **Parcels** to bring up the Parcels page.
+5. In your browser, open Cloudera Manager.
 
-8.  Click **Check for New Parcels**. MRO 3.2.2-1and MRS 8.0.0-1 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
+6. Click **Hosts** in the upper navigation bar to bring up the All Hosts page.
 
-9.  Click the MRO 3.2.2 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+7. Click **Parcels** to bring up the Parcels page.
 
-10.  Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
+8. Click **Check for New Parcels**. MRO 3.2.2-1and MRS 8.0.0-1 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
 
-11.  Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+9. Click the MRO 3.2.2 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
-12.  Click **Activate**. Activation prepares Microsoft R Server to be used by the cluster.
+10. Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
+
+11. Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+
+12. Click **Activate**. Activation prepares Microsoft R Server to be used by the cluster.
 
 When you have installed the parcels, download, install, and run the Revolution Custom Service Descriptor as follows:
 
-1.  Copy the Custom Service Descriptor file MRS\_CONFIG-8.0.jar from either your mounted image file or your unpacked MRS80HADOOP directory to the Cloudera CSD directory, typically /opt/cloudera/csd.
+1. Copy the Custom Service Descriptor file MRS\_CONFIG-8.0.jar from either your mounted image file or your unpacked MRS80HADOOP directory to the Cloudera CSD directory, typically /opt/cloudera/csd.
 
-2.  Stop and restart the cloudera-scm-server service using the following shell commands:
+2. Stop and restart the cloudera-scm-server service using the following shell commands:
 
 		service cloudera-scm-server stop
 		service cloudera-scm-server start
 
 3.  Confirm the CSD is installed by checking the Custom Service Descriptor list in Cloudera Manager at <hostname>/cmf/csd/list, where <hostname> is the host name of your Cloudera Manager server.
 
-4.  On the Cloudera Manager home page, click the dropdown beside the cluster name and click Add a Service.
+4.  On the Cloudera Manager home page, click the dropdown beside the cluster name and click **Add a Service**.
 
-5.  From the Add Service Wizard, select Revolution R and click Continue.
+5.  From the Add Service Wizard, select **Revolution R** and click **Continue**.
 
-6.  Select all hosts, and click Continue.
+6.  Select **all hosts**, and click **Continue**.
 
 7.  Accept defaults through the remainder of the wizard.
 
 Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
 
-	hadoop fs -mkdir /user/RevoShare/$USER
-	hadoop fs -chmod uog+rwx /user/RevoShare/$USER
-	mkdir -p /var/RevoShare/$USER
-	chmod uog+rwx /var/RevoShare/$USER
+		hadoop fs -mkdir /user/RevoShare/$USER
+		hadoop fs -chmod uog+rwx /user/RevoShare/$USER
+		mkdir -p /var/RevoShare/$USER
+		chmod uog+rwx /var/RevoShare/$USER
 
-The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for “username”):
+The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"):
 
-	rxHadoopMakeDir("/user/RevoShare/username")
-	rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
+		rxHadoopMakeDir("/user/RevoShare/username")
+		rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
 
 As part of this process make sure to check that the base directories /user and /user/RevoShare have uog+rwx permissions as well.
 
@@ -290,11 +296,11 @@ As part of this process make sure to check that the base directories /user and /
 
 After completing installation, do the following to verify that Microsoft R Server will actually run commands in Hadoop:
 
-1.  If the cluster is security-enabled, obtain a ticket using kinit (for Kerberos authentication) or mapr password (for MapR wire security).
+1. If the cluster is security-enabled, obtain a ticket using kinit (for Kerberos authentication) or mapr password (for MapR wire security).
 
-2.  Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
+2. Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
 
-3.  At the R prompt “> “, enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
+3. At the R prompt ">", enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
 		bigDataDirRoot <- "/share"
 		myHadoopCluster <- RxHadoopMR(consoleOutput=TRUE)
