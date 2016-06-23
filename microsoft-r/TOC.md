@@ -61,6 +61,7 @@
 ### [rxIsOpen](scaler/rxIsOpen.md)
 ### [rxOpen](scaler/rxOpen.md)
 ### [rxReadNext](scaler/rxReadNext.md)
+### [RxSpark](scaler/RxSpark.md)
 ### [RxSqlServerData](scaler/rxSqlServerData.md)
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)

@@ -88,7 +88,7 @@ The following ‘helper’ functions to get basic information about your data so
 -   *rxGetVarInfo*
 -   *rxGetVarNames*
 
-The RxSpark compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
+The [RxSpark](scaler/RxSpark.md) compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
 
 -   *rxGetJobStatus*: Get the status of a non-waiting distributed computing job.
 -   *rxGetJobResults*: Get the return object(s) of a non-waiting distributed computing job.
