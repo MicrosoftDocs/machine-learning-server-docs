@@ -65,8 +65,6 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 - HortonWorks HDP 2.3-2.4
 - MapR 5.0-5.1
 
-The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6 or 7, SUSE SLES11, or a fully compatible operating system like CentOS. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
-
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
 
 In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if a missing dependency error is reported, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
@@ -75,7 +73,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
-**Operating System:** Red Hat Enterprise Linux (RHEL) 6.x and 7.x (or a fully compatible operating system like CentOS), SUSE Linux Enterprise Server 11 (SLES11).
+**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6.x and 7.x (or a fully compatible operating system like CentOS), or SUSE Linux Enterprise Server 11 (SLES11). See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
@@ -96,26 +94,26 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 		mkdir /mnt/mrsimage
 		mount –o loop <filename> /mnt/mrsimage
 
-If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-[for RHEL/CENTOS systems]
-`tar zxvf MRS80RHEL.tar.gz`
+  [for RHEL/CENTOS systems]:
+  		tar zxvf MRS80RHEL.tar.gz
 
-[for SLES systems]
-`tar zxvf MRS80SLES.tar.gz`
+  [for SLES systems]:
+  		tar zxvf MRS80SLES.tar.gz
 
 3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-[From the mounted img file]
-`cp /mnt/mrsimage/Microsoft-R-Server-*.tar.gz /tmp`
+ [from the mounted img file]:
+ 		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-[From the unpacked tar file]
-`cp /tmp/MRS80*/Microsoft-R-Server-*.tar.gz /tmp`
+  [from the unpacked tar file]
+		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
 4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
 
-`cd /tmp
-tar xvzf Microsoft-R-Server-<OS>.tar.gz`
+		cd /tmp
+		tar xvzf Microsoft-R-Server-<OS>.tar.gz
 
 This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
 
@@ -134,15 +132,16 @@ Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script wi
 
 Partial output is as follows (note version 8.0.5):
 
-		`Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
+		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
 		Version     : 8.0.5                         Vendor: Microsoft
-		. . . `
+		. . .
 
 ## Verify install
 
 Run the Revo64 program to verify the installation.
 
 **1. Send sample data to HDFS**
+
 		[tmp]$ hadoop fs -mkdir -p /share/SampleData
 		[tmp]$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/8.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
 		[ltmp]$ hadoop fs -ls /share/SampleData
@@ -153,6 +152,7 @@ Run the Revo64 program to verify the installation.
 **3. Run a simple local computation**
 
 This step uses the proprietary Microsoft libraries.
+
 		> rxSummary(~., iris)
 
 Partial output is as follows (showing the first 4 lines).

@@ -50,8 +50,6 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 - HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
 - MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA-30600; contact MapR to obtain the patch), MapR 4.1
 
-The Hadoop distribution must be installed on Red Hat Enterprise Linux 5 or 6, or fully compatible operating system. See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
-
 Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File System (HDFS) (for HDP 1.3.0 and MapR 3.x installations), or HDFS, Hadoop YARN, and Hadoop MapReduce2 for CDH5, HDP 2.x, and MapR 4.x installations. The HDFS, YARN, and MapReduce clients must be installed on all nodes on which you plan to run Microsoft R Server, as must Microsoft R Server itself.
 
 Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package.
@@ -62,7 +60,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
-**Operating System:** Red Hat Enterprise Linux 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, or 6.7. Only 64-bit operating systems are supported. (For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.)
+**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux 6.x (or a fully compatible operating system like CentOS). For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
