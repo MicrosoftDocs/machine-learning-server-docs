@@ -44,13 +44,13 @@ To simplify integration of R analytics Web services using the DeployR API, we pr
 <a name="users"></a>
 ##Users on the API
 
-The User APIs exist principally to facilitate user authentication with the DeployR server. Additionally, the [`/r/user/autosave`](https://microsoft.github.io/deployr-api-docs/#_userautosave) call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.
+The User APIs exist principally to facilitate user authentication with the DeployR server. Additionally, the [/r/user/autosave](https://microsoft.github.io/deployr-api-docs/#_userautosave) call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.
 
 **Authenticated Users**
 
 One of the first steps for most typical applications using this API is to provide a mechanism for users to authenticate with the DeployR server by signing-in and signing-out of the application.
 
-To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [`/r/user/login`](https://microsoft.github.io/deployr-api-docs/#_userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
+To sign-in a user must provide username and password credentials. These credentials then need to be verified by the DeployR server using the [/r/user/login](https://microsoft.github.io/deployr-api-docs/#_userlogin) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory or PAM directory services.
 
 If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
 
@@ -64,7 +64,7 @@ While many applications require the security and controls associated with *authe
 
 In such situations we say that the user is an *anonymous* user. Typically an *anonymous* user is an unauthenticated visitor to a DeployR-enabled Web application.
 
-*Anonymous* users are only granted access to a single API call, [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute). 
+*Anonymous* users are only granted access to a single API call, [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute). 
 
 <br /><a name="projects"></a>
 ##Projects on the API
@@ -88,8 +88,8 @@ An *anonymous project* is a project created by an *anonymous user*. There are tw
 
 |API Call                          |Description                                                     |
 |----------------------------------|----------------------------------------------------------------|
-|[`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)|Executes a repository-managed script on an anonymous project    |
-|[`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender) |Executes a repository-managed script on an anonymous project and renders outputs to HTML |
+|[/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)|Executes a repository-managed script on an anonymous project    |
+|[/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender) |Executes a repository-managed script on an anonymous project and renders outputs to HTML |
 
 *Anonymous* users are not permitted to work directly with the Project APIs. Those APIs are only available to *authenticated* users.
 
@@ -101,7 +101,7 @@ Stateless projects are useful when an application needs to make a one-off reques
 
 With the introduction of HTTP *blackbox* projects, stateful R sessions are now available to *anonymous* users. HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an *anonymous* user's HTTP session. Once the HTTP session expires or the server detects that the *anonymous* user has been idle (default: 15 minutes idle timeout) the HTTP blackbox project and all associated state are permanently deleted by the server. There can only be one HTTP blackbox project live on a HTTP session at any given time.
 
-To execute an R script on a HTTP blackbox project, enable the ***blackbox*** parameter on the following calls: `/r/repository/script/execute`(https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute) and `/r/repository/script/render`(https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+To execute an R script on a HTTP blackbox project, enable the ***blackbox*** parameter on the following calls: [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute) and [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
 There are two types of data that can be returned when executing an R script on a HTTP blackbox project:
 
@@ -112,7 +112,7 @@ All files in a HTTP blackbox project's working directory are completely hidden f
 
 These calls also support a ***recycle*** parameter that can be used when working with HTTP blackbox projects. When this parameter is enabled the underlying R session is recycled before the execution occurs. Recycling an R session deletes all R objects from the workspace and all files from the working directory. The ability to *recycle* a HTTP blackbox project gives an *anonymous* user control over the R session lifecycle.
 
-To interrupt an execution on the HTTP blackbox project on the current HTTP session use the `/r/repository/script/interrupt`(https://microsoft.github.io/deployr-api-docs/#_repositoryscriptinterrupt).
+To interrupt an execution on the HTTP blackbox project on the current HTTP session use the [/r/repository/script/interrupt](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptinterrupt).
 
 ###Authenticated Projects
 
@@ -127,18 +127,18 @@ An *authenticated project* is a project created by an authenticated user. There 
 
 |API Call               |Description                                                     |
 |-----------------------|----------------------------------------------------------------|
-|[`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate)|Creates a new temporary, user blackbox or persistent project    |
-|[`/r/project/pool`](https://microsoft.github.io/deployr-api-docs/#_projectpool)  |Creates a pool of temporary projects|
+|[/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)|Creates a new temporary, user blackbox or persistent project    |
+|[/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)  |Creates a pool of temporary projects|
 
-*Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode) and [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) calls and retrieve the R command history for the project using the [`/r/project/execute/history`](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
+*Authenticated* users own projects. Each *authenticated* user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode) and [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) calls and retrieve the R command history for the project using the [/r/project/execute/history](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
 
 >Given an *authenticated* user can do everything an *anonymous* user can do on the API, it is possible for an *authenticated* user to create and work with *anonymous* projects as described in the section [Anonymous Projects](#anonymous-projects).
 
 **Temporary Projects**
 
-Temporary projects are useful when an application needs to maintain the same R session for the duration of an *authenticated* user's session within the application. Once the user makes an explicit call on [`/r/project/close`](https://microsoft.github.io/deployr-api-docs/#_projectclose) or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.
+Temporary projects are useful when an application needs to maintain the same R session for the duration of an *authenticated* user's session within the application. Once the user makes an explicit call on [/r/project/close](https://microsoft.github.io/deployr-api-docs/#_projectclose) or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.
 
-A user can create a temporary project by omitting the name parameter on the [`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate) call or they can create a pool of temporary projects using the [`/r/project/pool`](https://microsoft.github.io/deployr-api-docs/#_projectpool) call.
+A user can create a temporary project by omitting the name parameter on the [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate) call or they can create a pool of temporary projects using the [/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool) call.
 
 All unnamed projects are temporary projects.
 
@@ -157,18 +157,18 @@ User blackbox projects can be created using the `blackbox` parameter on the foll
 
 |API Call                  |Description                                                     |
 |--------------------------|----------------------------------------------------------------|
-|[`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate)   |Creates a new project|
-|[`/r/project/pool`](https://microsoft.github.io/deployr-api-docs/#_projectpool)     |Creates a pool of temporary projects |
+|[/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)   |Creates a new project|
+|[/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)     |Creates a pool of temporary projects |
 
 User blackbox projects permit only the following subset of project-related API calls:
 
 |API Call                          |Description                                                     |
 |----------------------------------|----------------------------------------------------------------|
-|[`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)   |Executes a script on project|
-|[`/r/project/execute/interrupt`](https://microsoft.github.io/deployr-api-docs/#_projectexecuteinterrupt)|Interrupts a code execution on project|
-|[`/r/project/ping`](https://microsoft.github.io/deployr-api-docs/#_projectping)|Pings a project|
-|[`/r/project/recycle`](https://microsoft.github.io/deployr-api-docs/#_projectrecycle)|Recycles a project R session|
-|[`/r/project/close`](https://microsoft.github.io/deployr-api-docs/#_projectclose) |Closes a project|
+|[/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)   |Executes a script on project|
+|[/r/project/execute/interrupt](https://microsoft.github.io/deployr-api-docs/#_projectexecuteinterrupt)|Interrupts a code execution on project|
+|[/r/project/ping](https://microsoft.github.io/deployr-api-docs/#_projectping)|Pings a project|
+|[/r/project/recycle](https://microsoft.github.io/deployr-api-docs/#_projectrecycle)|Recycles a project R session|
+|[/r/project/close](https://microsoft.github.io/deployr-api-docs/#_projectclose) |Closes a project|
 
 This set of API calls on user blackbox projects are collectively known as the *User Blackbox API Controls*.
 
@@ -189,7 +189,7 @@ The server stores the following state for each persistent project:
 - Project package dependencies
 - Project R command history and associated results
 
-An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the [`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate) call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [`/r/project/save`](https://microsoft.github.io/deployr-api-docs/#_projectsave) which has the effect of naming the project.
+An *authenticated* user can create a persistent project by specifying a value for the *name* parameter on the [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate) call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on [/r/project/save](https://microsoft.github.io/deployr-api-docs/#_projectsave) which has the effect of naming the project.
 
 All *named* projects are *persistent* projects.
 
@@ -197,7 +197,7 @@ All *named* projects are *persistent* projects.
 
 A  **live project**  is any project, temporary or persistent, that is actively in use on the [DeployR grid](#architecture). By definition, all temporary projects are live projects. A user can have zero, one or more projects live on the grid at any one time. 
 
-To ensure a fair distribution of server runtime resources across all users, the DeployR administrator can limit the number of live projects permitted for a given user at any one time. When a user reaches his or her live project limit all further API calls on new projects are rejected until one or more of that user's current live projects are closed using the [`/r/project/close`](https://microsoft.github.io/deployr-api-docs/#_projectclose) call. Calls that are rejected due to live project limits will indicate an appropriate [Grid Resource Error](#codes) on the response code.
+To ensure a fair distribution of server runtime resources across all users, the DeployR administrator can limit the number of live projects permitted for a given user at any one time. When a user reaches his or her live project limit all further API calls on new projects are rejected until one or more of that user's current live projects are closed using the [/r/project/close](https://microsoft.github.io/deployr-api-docs/#_projectclose) call. Calls that are rejected due to live project limits will indicate an appropriate [Grid Resource Error](#codes) on the response code.
 
 ###Working with Project Management APIs
 
@@ -207,9 +207,9 @@ There are a number of ways to create projects on the API, including the followin
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate)|Create a new project|
-|[`/r/project/saveas`](https://microsoft.github.io/deployr-api-docs/#_projectsaveas)|Clone an existing project|
-|[`/r/project/import`](https://microsoft.github.io/deployr-api-docs/#_projectimport)|Import a project archive|
+|[/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)|Create a new project|
+|[/r/project/saveas](https://microsoft.github.io/deployr-api-docs/#_projectsaveas)|Clone an existing project|
+|[/r/project/import](https://microsoft.github.io/deployr-api-docs/#_projectimport)|Import a project archive|
 
 **Saving Projects**
 
@@ -217,24 +217,24 @@ There are a number of ways to save projects on the API, including the following:
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/save`](https://microsoft.github.io/deployr-api-docs/#_projectsave)|Save an existing project|
-|[`/r/project/saveas`](https://microsoft.github.io/deployr-api-docs/#_projectsaveas)|Clone an existing project|
-|[`/r/project/export`](https://microsoft.github.io/deployr-api-docs/#_projectexport)|Export a project archive|
+|[/r/project/save](https://microsoft.github.io/deployr-api-docs/#_projectsave)|Save an existing project|
+|[/r/project/saveas](https://microsoft.github.io/deployr-api-docs/#_projectsaveas)|Clone an existing project|
+|[/r/project/export](https://microsoft.github.io/deployr-api-docs/#_projectexport)|Export a project archive|
 
 
 **Closing Projects**
 
-To close a live project use the  [`/r/project/close`](https://microsoft.github.io/deployr-api-docs/#_projectclose) API call. Closing a live project (temporary or persistent) deactivates the project, which in turn removes it from the grid and releases all associated server runtime resources. Remember, that closing a temporary project will permanently delete that project.
+To close a live project use the  [/r/project/close](https://microsoft.github.io/deployr-api-docs/#_projectclose) API call. Closing a live project (temporary or persistent) deactivates the project, which in turn removes it from the grid and releases all associated server runtime resources. Remember, that closing a temporary project will permanently delete that project.
 
 **Deleting Projects**
 
-To delete a persistent project, use the [`/r/project/delete`](https://microsoft.github.io/deployr-api-docs/#_projectdelete) API call.
+To delete a persistent project, use the [/r/project/delete](https://microsoft.github.io/deployr-api-docs/#_projectdelete) API call.
 
 **Project Archives**
 
-A project archive is generated by exporting the entire state of a persistent project into a compressed archive file using the [`/r/project/export`](https://microsoft.github.io/deployr-api-docs/#_projectexport) API call. Once exported, this file resides outside of the DeployR server. Project archives are useful both as a general backup mechanism and as a means of sharing work between colleagues, particularly colleagues working on different DeployR installations.
+A project archive is generated by exporting the entire state of a persistent project into a compressed archive file using the [/r/project/export](https://microsoft.github.io/deployr-api-docs/#_projectexport) API call. Once exported, this file resides outside of the DeployR server. Project archives are useful both as a general backup mechanism and as a means of sharing work between colleagues, particularly colleagues working on different DeployR installations.
 
-A user can import a project archive back into any compatible DeployR server in order to produce a new, persistent project using the [`/r/project/import`](https://microsoft.github.io/deployr-api-docs/#_projectimport) API call.
+A user can import a project archive back into any compatible DeployR server in order to produce a new, persistent project using the [/r/project/import](https://microsoft.github.io/deployr-api-docs/#_projectimport) API call.
 
 ###Project Ownership & Collaboration
 
@@ -264,22 +264,22 @@ Callers can use the project execution APIs to facilitate the execution of R code
 **R Code Execution**
 There are two ways to execute R code on a project:
 
-Execute a block of R code directly using the [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode) call.
-Execute a repository-managed script using the [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) call.
-Important! Any project execution can be interrupted using the [`/r/project/execute/interrupt`](https://microsoft.github.io/deployr-api-docs/#_projectexecuteinterrupt) call.
+Execute a block of R code directly using the [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode) call.
+Execute a repository-managed script using the [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) call.
+Important! Any project execution can be interrupted using the [/r/project/execute/interrupt](https://microsoft.github.io/deployr-api-docs/#_projectexecuteinterrupt) call.
 
 **R Code Execution History**
-To retrieve the R code execution history on a project, use the [`/r/project/execute/history`](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
+To retrieve the R code execution history on a project, use the [/r/project/execute/history](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
 
 **R Code Execution Artifacts**
 Artifacts are files, that are explicitly named in R code and written to the project's working directory.
 
-To retrieve an artifact on a project, use the [`/r/project/directory/download`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload) call.
+To retrieve an artifact on a project, use the [/r/project/directory/download](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload) call.
 
 **R Code Execution Results**
 Results are files, that are implicitly named in R code, generated by the R graphics device and stored as part of a project's execution history.
 
-To retrieve results on a project, use the [`/r/project/execute/result/download`](https://microsoft.github.io/deployr-api-docs/#_projectexecuteresultdownload) call.
+To retrieve results on a project, use the [/r/project/execute/result/download](https://microsoft.github.io/deployr-api-docs/#_projectexecuteresultdownload) call.
 
 
 <a name="project-workspace"></a>
@@ -289,21 +289,21 @@ The project workspace APIs facilitate working with objects found in the project 
 
 **Workspace Object Retrieval**
 
-Retrieve a summary list of objects found in the workspace using the [`/r/project/workspace/list`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacelist) call.
-Retrieve a DeployR-encoded representation of one or more objects found in the workspace using the [`/r/project/workspace/get`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget) call.
+Retrieve a summary list of objects found in the workspace using the [/r/project/workspace/list](https://microsoft.github.io/deployr-api-docs/#_projectworkspacelist) call.
+Retrieve a DeployR-encoded representation of one or more objects found in the workspace using the [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget) call.
 
 **Workspace Object Creation**
 
 Typically objects are created in the workspace when commands are executed. However, there are a number of APIs that allow the direct creation of objects in the workspace:
 
-Upload an object into the workspace from a file on the users computer using the [`/r/project/workspace/upload`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceupload) call.
-Transfer an object into the workspace from a URL using the [`/r/project/workspace/transfer`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacetransfer) call.
-Push an object into the workspace from a DeployR-encoded object using the [`/r/project/workspace/push`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush) call.
+Upload an object into the workspace from a file on the users computer using the [/r/project/workspace/upload](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceupload) call.
+Transfer an object into the workspace from a URL using the [/r/project/workspace/transfer](https://microsoft.github.io/deployr-api-docs/#_projectworkspacetransfer) call.
+Push an object into the workspace from a DeployR-encoded object using the [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush) call.
 
 **Workspace Objects and the Repository**
 
-Workspace objects can be stored directly to the repository using the [`/r/project/workspace/store`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacestore) call.
-Repository-managed files containing R binary objects can be loaded directly to the workspace using the [`/r/project/workspace/load`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload) call.
+Workspace objects can be stored directly to the repository using the [/r/project/workspace/store](https://microsoft.github.io/deployr-api-docs/#_projectworkspacestore) call.
+Repository-managed files containing R binary objects can be loaded directly to the workspace using the [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload) call.
 
 <a name="projdir"></a>
 ###Project Directory APIs
@@ -314,9 +314,9 @@ The project directory APIs facilitate working with files found in the project wo
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/directory/list`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorylist)|Retrieve a summary list of files found in the working directory|
-|[`/r/project/directory/download`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload)|Retrieve individual files found in the working directory|
-|[`/r/project/directory/download`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload)|Retrieve a compressed archive containing all files found in the working directory|
+|[/r/project/directory/list](https://microsoft.github.io/deployr-api-docs/#_projectdirectorylist)|Retrieve a summary list of files found in the working directory|
+|[/r/project/directory/download](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload)|Retrieve individual files found in the working directory|
+|[/r/project/directory/download](https://microsoft.github.io/deployr-api-docs/#_projectdirectorydownload)|Retrieve a compressed archive containing all files found in the working directory|
 
 
 **Directory File Creation**
@@ -326,17 +326,17 @@ Typically files are created in the working directory when commands are executed.
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/directory/upload`](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryupload)|Upload a file into the working directory from a file on the users computer|
-|[`/r/project/directory/transfer`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorytransfer)|Transfer a file into the working directory from a URL|
-|[`/r/project/directory/write`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorywrite)|Write a text file into the working directory|
+|[/r/project/directory/upload](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryupload)|Upload a file into the working directory from a file on the users computer|
+|[/r/project/directory/transfer](https://microsoft.github.io/deployr-api-docs/#_projectdirectorytransfer)|Transfer a file into the working directory from a URL|
+|[/r/project/directory/write](https://microsoft.github.io/deployr-api-docs/#_projectdirectorywrite)|Write a text file into the working directory|
 
 
 **Directory Files and the Repository**
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/directory/store`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorystore)|Store directory files directly to the repository|
-|[`/r/project/directory/load`](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload)|Load repository-managed files directly into the working directory|
+|[/r/project/directory/store](https://microsoft.github.io/deployr-api-docs/#_projectdirectorystore)|Store directory files directly to the repository|
+|[/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload)|Load repository-managed files directly into the working directory|
 
 
 <a name="projpkg"></a>
@@ -348,9 +348,9 @@ The project package APIs facilitate R package dependency management for projects
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
-|[`/r/project/package/list`](https://microsoft.github.io/deployr-api-docs/#_projectpackagelist)|Retrieve a list of all packages loaded for a project|
-|[`/r/project/package/attach`](https://microsoft.github.io/deployr-api-docs/#_projectpackageattach)|Load individual packages for a project|
-|[`/r/project/package/detach`](https://microsoft.github.io/deployr-api-docs/#_projectpackagedetach)|Unload individual packages for a project|
+|[/r/project/package/list](https://microsoft.github.io/deployr-api-docs/#_projectpackagelist)|Retrieve a list of all packages loaded for a project|
+|[/r/project/package/attach](https://microsoft.github.io/deployr-api-docs/#_projectpackageattach)|Load individual packages for a project|
+|[/r/project/package/detach](https://microsoft.github.io/deployr-api-docs/#_projectpackagedetach)|Unload individual packages for a project|
 
 
 
@@ -368,7 +368,7 @@ The Job APIs facilitate working with DeployR managed jobs. Jobs support the exec
 
 ####Submitting Versus Scheduling Jobs
 
-Jobs can be submitted for immediate background execution using the [`/r/job/submit`](https://microsoft.github.io/deployr-api-docs/#_jobsubmit) call. Jobs can be scheduled for execution at some later date or on a recurring basis using the [`/r/job/schedule`](https://microsoft.github.io/deployr-api-docs/#_jobschedule) call.
+Jobs can be submitted for immediate background execution using the [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit) call. Jobs can be scheduled for execution at some later date or on a recurring basis using the [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule) call.
 
 ####Job Scheduling Priority
 When a user submits or schedules a job they can identify a high, medium or low (default) priority for their job. Each priority level has it's own dedicated jobs queue managed by the jobs scheduler.
@@ -378,7 +378,7 @@ Jobs in higher priority job queues are guaranteed to be executed on the grid ahe
 High, medium and low priority job queues allow users to expedite higher priority jobs by 'jumping the queue', and to expedite jobs to best fit specific scheduling needs.
 
 ####Retrieving Job Results
-Users can query the status of their jobs using the [`/r/job/query`](https://microsoft.github.io/deployr-api-docs/#_jobquery) call which returns the current status for a given job. Users can cancel a scheduled job or an actively running job using the [`/r/job/cancel`](https://microsoft.github.io/deployr-api-docs/#_jobcancel) call.
+Users can query the status of their jobs using the [/r/job/query](https://microsoft.github.io/deployr-api-docs/#_jobquery) call which returns the current status for a given job. Users can cancel a scheduled job or an actively running job using the [/r/job/cancel](https://microsoft.github.io/deployr-api-docs/#_jobcancel) call.
 
 Regardless of whether a job runs to completion or whether a job is interrupted or aborted by the user the DeployR server will create a new project for the user by default. This project will be named after the job that created it and will contain a complete workspace, working directory, package dependencies, command history and associated results generated by that job. The user can then work with the full set of Project APIs to manipulate, analyze, visualize and interpret all of the objects, files and generated plots resulting from the job.
 
@@ -424,11 +424,11 @@ Each authenticated user can also create zero, one or more custom directories. Ea
 
 Users can also archive the contents of their root directory or the contents of any of their custom directories within archived directories. This can be a very useful way to preserve old but valuable files over time while reducing day-to-day directory clutter.
 
-By default, archived directories do not appear in the response markup when a user makes a call to [`/r/repository/directory/list`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist). However, when the `archived` parameter is enabled on that call, any archived directories belonging to the user will appear in the response markup.
+By default, archived directories do not appear in the response markup when a user makes a call to [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist). However, when the `archived` parameter is enabled on that call, any archived directories belonging to the user will appear in the response markup.
 
 ####System Directories
 
-System directories are virtual directories that exist only in the context of the response markup on the [`/r/repository/directory/list`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist) call. These directories are provided as a convenient way for a user working with the Repository Directory APIs to get access to repository-managed files that are shared or made public by other users.
+System directories are virtual directories that exist only in the context of the response markup on the [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist) call. These directories are provided as a convenient way for a user working with the Repository Directory APIs to get access to repository-managed files that are shared or made public by other users.
 
 There are just three system directories:
 
@@ -445,9 +445,9 @@ There are just three system directories:
 
 Each user has access to a private repository store. Each file placed in that store will be maintained indefinitely by the server unless it is explicitly deleted by the user.
 
-Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [`/r/project/workspace/load`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload) call. A data file can be loaded directly into a project working directory using the [`/r/project/directory/load`](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload) call.
+Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload) call. A data file can be loaded directly into a project working directory using the [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload) call.
 
-Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the [`/r/project/workspace/store`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacestore) and [`/r/project/directory/store`](https://microsoft.github.io/deployr-api-docs/#_projectdirectorystore) calls respectively.
+Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the [/r/project/workspace/store](https://microsoft.github.io/deployr-api-docs/#_projectworkspacestore) and [/r/project/directory/store](https://microsoft.github.io/deployr-api-docs/#_projectdirectorystore) calls respectively.
 
 Repository-managed files can also be loaded directly into the workspace or working directory ahead of executing code on [anonymous projects](#anonymous-projects) or an *asynchronous job*.
 
@@ -461,7 +461,7 @@ By default, files in a user's private repository are visible only to that user. 
 
 A user may wish to share a file in their private repository by granting read-only access to fellow *authenticated* and/or *anonymous* users. Once read-only access has been granted to users they can download and view the file. In the case of a repository-managed script users can also execute the file.
 
-To facilitate these kinds of workflows the [`/r/repository/file/update`](https://microsoft.github.io/deployr-api-docs/#_repositoryfileupdate) call allows users to toggle the read-only access controls on any of their repository-managed files.
+To facilitate these kinds of workflows the [/r/repository/file/update](https://microsoft.github.io/deployr-api-docs/#_repositoryfileupdate) call allows users to toggle the read-only access controls on any of their repository-managed files.
 
 Using this call to enable *shared* access on a file makes the file visible to *authenticated* users. Using this call to enable *published* access on a file makes the file visible to *authenticated* and *anonymous* users.
 
@@ -469,7 +469,7 @@ Using this call to enable *shared* access on a file makes the file visible to *a
 
 At times the owner of a repository-managed file may also wish to grant read-write access on a file so that fellow *authenticated* users who are sharing the same DeployR server can actively collaborate on the development of a file. For example, consider a situation where the owner of a repository-managed script wishes to collaborate more closely on it's design and implementation with a select group of *authenticated* users.
 
-To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more *authenticated* users using the [`/r/repository/file/grant`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilegrant) call. Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.
+To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more *authenticated* users using the [/r/repository/file/grant](https://microsoft.github.io/deployr-api-docs/#_repositoryfilegrant) call. Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.
 
 >[!IMPORTANT]
 >When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.
@@ -497,26 +497,26 @@ Access to each repository-managed file is controlled by a set of properties on t
 
 |API Call                              |Description                                                     |
 |--------------------------------------|----------------------------------------------------------------|
-|[`/r/repository/file/list`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)|Retrieve a list of the files in the repository|
-|[`/r/repository/file/download`](https://microsoft.github.io/deployr-api-docs/#_repositoryfiledownload)|Retrieve individual files in the repository|
-|[`/r/repository/directory/list`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)|Retrieve a list of files per repository-managed directory|
-|[`/r/repository/directory/download`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorydownload)|Retrieve one or more files from a repository-managed directory|
+|[/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)|Retrieve a list of the files in the repository|
+|[/r/repository/file/download](https://microsoft.github.io/deployr-api-docs/#_repositoryfiledownload)|Retrieve individual files in the repository|
+|[/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)|Retrieve a list of files per repository-managed directory|
+|[/r/repository/directory/download](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorydownload)|Retrieve one or more files from a repository-managed directory|
 
 **Repository File Creation**
 
 |API Call                          |Description                                                     |
 |----------------------------------|----------------------------------------------------------------|
-|[`/r/repository/file/upload`](https://microsoft.github.io/deployr-api-docs/#_repositoryfileupload)   |Upload a file into the repository from the users computer|
-|[`/r/repository/file/transfer`](https://microsoft.github.io/deployr-api-docs/#_repositoryfiletransfer) |Transfer a file into the repository from a URL|
-|[`/r/repository/file/write`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilewrite)    |Write a text file into the repository|
+|[/r/repository/file/upload](https://microsoft.github.io/deployr-api-docs/#_repositoryfileupload)   |Upload a file into the repository from the users computer|
+|[/r/repository/file/transfer](https://microsoft.github.io/deployr-api-docs/#_repositoryfiletransfer) |Transfer a file into the repository from a URL|
+|[/r/repository/file/write](https://microsoft.github.io/deployr-api-docs/#_repositoryfilewrite)    |Write a text file into the repository|
 
 **Repository File Version Control**
 
 |API Call                              |Description                                                     |
 |--------------------------------------|----------------------------------------------------------------|
-|[`/r/repository/file/list`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)         |Retrieve a list of the files in the repository|
-|[`/r/repository/file/diff`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilediff)         |Retrieve a generated diff between any version of a text-based file and the latest version of that file|
-|[`/r/repository/file/revert`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilerevert)       |Revert to an older version of specific file in the repository|
+|[/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)         |Retrieve a list of the files in the repository|
+|[/r/repository/file/diff](https://microsoft.github.io/deployr-api-docs/#_repositoryfilediff)         |Retrieve a generated diff between any version of a text-based file and the latest version of that file|
+|[/r/repository/file/revert](https://microsoft.github.io/deployr-api-docs/#_repositoryfilerevert)       |Revert to an older version of specific file in the repository|
 
 
 <a name="reposcripts"></a>
@@ -528,7 +528,7 @@ These scripts are essentially blocks of R code with well-defined inputs and outp
 
 Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) for further details.
 
-*Authenticated* users can execute scripts within the context of any project using the [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute) and [`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender) calls.
+*Authenticated* users can execute scripts within the context of any project using the [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript) call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute) and [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender) calls.
 
 Refer to the section [Working with Repository Scripts](https://microsoft.github.io/deployr-api-docs/#_repositoryscripts) for a detailed description of repository-managed script-specific APIs.
 
@@ -591,7 +591,7 @@ Management events occur when important runtime conditions are detected by the se
 + `securityLogoutEvent`. The securityLogoutEvent is pushed to the event stream when users log out of the server.
 
 ###Authenticated, Anonymous and Management Event Streams
-The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the [`/r/event/stream`]((https://microsoft.github.io/deployr-api-docs/#_eventstream) API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
+The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the [/r/event/stream]((https://microsoft.github.io/deployr-api-docs/#_eventstream) API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
 
 + Authenticated event stream
 + Anonymous event stream
@@ -763,23 +763,23 @@ DeployR-specific encodings are used to encode R object data for use on the API.
 
 Encoded object data can be returned from the server in the response markup on the following calls:
 
--  [`/r/project/workspace/list`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacelist)
+-  [/r/project/workspace/list](https://microsoft.github.io/deployr-api-docs/#_projectworkspacelist)
 
--  [`/r/project/workspace/get`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
+-  [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
 
--  [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
 Encoded object data can also be sent to the server as parameter values on the following calls:
 
--  [`/r/project/workspace/push`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
+-  [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
 Each encoded object is defined by the following properties:
 
@@ -791,7 +791,7 @@ Each encoded object is defined by the following properties:
 
 - *value* - the data encapsulated by the encoded object
 
-When encoded objects are returned from the server in the response markup the purpose of the type property is to indicate to developers how to decode the encapsulated data for use within a client application. For example, an encoded vector object returned on the [`/r/project/workspace/get`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget) call will appear in the response markup as follows:
+When encoded objects are returned from the server in the response markup the purpose of the type property is to indicate to developers how to decode the encapsulated data for use within a client application. For example, an encoded vector object returned on the [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget) call will appear in the response markup as follows:
 
 	{
 		"name": "sample_vector",
@@ -806,7 +806,7 @@ When encoded objects are returned from the server in the response markup the pur
 
 In the preceding example, the encoded vector, named *sample_vector* , indicates a *type* property with a value of *vector*. This informs the client application that the *value* property on this encoded object will contain an array of values. Those values will match the values found in the vector object in the workspace.
 
-When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the *type* and *value* properties for each of those objects. The *rclass* property is determined automatically by the server and need not be specified by the client application. For example, passing both an encoded logical and an encoded matrix as *inputs* on the [`/r/project/workspace/push`](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush) call is achieved as follows:
+When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the *type* and *value* properties for each of those objects. The *rclass* property is determined automatically by the server and need not be specified by the client application. For example, passing both an encoded logical and an encoded matrix as *inputs* on the [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush) call is achieved as follows:
 
 	{
 		"sample_logical" : {
@@ -1431,17 +1431,17 @@ The DeployR API standard execution model has been updated. A new on-execution pa
 
 This change applies across all execution APIs:
 
--  [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [`/r/job/submit`](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [`/r/job/schedule`](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 ### DeployR 7.4
 
@@ -1451,17 +1451,17 @@ Grid node "cluster" names, used to denote the runtime characteristics of a node,
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 
--  [`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
+-  [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
 
--  [`/r/project/pool`](https://microsoft.github.io/deployr-api-docs/#_projectpool)
+-  [/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [`/r/job/submit`](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [`/r/job/schedule`](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same cluster. If the cluster indicated on any of these calls fails to match a actual cluster name assigned by the admin on the DeployR grid the call will be rejected.
 
@@ -1471,11 +1471,11 @@ Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same c
 Phantom executions are a special type of execution on a project that avoid per-execution meta-data being created by the server in the database. This helps avoid database resource exhaustion on the server when high-throughput, long-lived project pools are in use, such as pools used by the RBroker Framework.
 Client applications can request tasks be executed as phantom executions by enabling the value of the new phantom parameter on the following calls:
 
--  [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
-> A phantom execution will not appear in the project history returned by the [`/r/project/execute/history`](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
+> A phantom execution will not appear in the project history returned by the [/r/project/execute/history](https://microsoft.github.io/deployr-api-docs/#_projectexecutehistory) call.
 
 #### External Repository Support
 
@@ -1489,29 +1489,29 @@ Managing files in the external repository is as simple as creating, editing, cop
 
 Listing external repository-managed files and scripts is supported using a new external parameter on the following set of APIs:
 
--  [`/r/repository/file/list`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
+-  [/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
 
--  [`/r/repository/script/list`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptlist)
+-  [/r/repository/script/list](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptlist)
 
--  [`/r/repository/directory/list`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
+-  [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
 
 Loading and executing external repository-managed files and scripts use the existing set of filename , directory , and author parameters on the following calls:
 
--  [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [`/r/project/directory/load`](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload)
+-  [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#_projectdirectoryload)
 
--  [`/r/project/workspace/load`](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload)
+-  [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceload)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [`/r/job/submit`](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [`/r/job/schedule`](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 The base directory for the external repository can be found here on DeployR server:
 
@@ -1541,9 +1541,9 @@ For more information about working with the new DeployR External Repository plea
 
 Each of the following APIs have been updated to support more sophisticated filters on results:
 
--  [`/r/repository/file/list`](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
+-  [/r/repository/file/list](https://microsoft.github.io/deployr-api-docs/#_repositoryfilelist)
 
--  [`/r/repository/directory/list`](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
+-  [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/#_repositorydirectorylist)
 
 Using the *directory* and *categoryFilter* independently or together the results returned on these calls can be filtered to specific subsets of available files, for example:
 
@@ -1575,7 +1575,7 @@ Using the *directory* and *categoryFilter* independently or together the results
 
 The following new Repository Shell API has been added:
 
-1.  [`/r/repository/shell/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryshellexecute) | Executes a repository-managed shell script on the DeployR server.
+1.  [/r/repository/shell/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryshellexecute) | Executes a repository-managed shell script on the DeployR server.
 
 For more information about working with this new API please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
@@ -1586,7 +1586,7 @@ For more information about working with this new API please post your questions 
 
 The following new User API has been added:
 
-1.  [`/r/user/release`](https://microsoft.github.io/deployr-api-docs/#_userrelease) | Releases server-wide grid resources held by the currently autheneticated user
+1.  [/r/user/release](https://microsoft.github.io/deployr-api-docs/#_userrelease) | Releases server-wide grid resources held by the currently autheneticated user
 
 #### Standard Execution Model Changes
 
@@ -1602,20 +1602,20 @@ The introduction of the enableConsoleEvents is a breaking change for those using
 
 These two changes apply across all execution APIs:
 
--  [`/r/project/execute/code`](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-  [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
 
--  [`/r/project/execute/script`](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-  [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
 
--  [`/r/repository/script/execute`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-  [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
 
--  [`/r/repository/script/render`](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-  [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
--  [`/r/job/submit`](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-  [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
 
--  [`/r/job/schedule`](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-  [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 The new *preloadbydirectory* parameter is also supported on the following APIs:
 
--  [`/r/project/create`](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
+-  [/r/project/create](https://microsoft.github.io/deployr-api-docs/#_projectcreate)
 
--  [`/r/project/pool`](https://microsoft.github.io/deployr-api-docs/#_projectpool)
+-  [/r/project/pool](https://microsoft.github.io/deployr-api-docs/#_projectpool)
