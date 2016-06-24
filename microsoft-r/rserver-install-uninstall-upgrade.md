@@ -40,7 +40,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
 - Package location
 - Which nodes in the cluster have R Server
 
-### Program file version and locations
+## Program version and file locations
 
 There are several approaches for identifying a program version, including `rpm -qi` as noted in the installation instructions. However, version information is also evident in the file path, as the examples below demonstrate.
 
@@ -51,10 +51,10 @@ Note: Pre-8.0 versions of R Server will have a path that includes the Revolution
 
 ## How to fully uninstall R from a node
 
-1. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage.
-    `$ ls /usr/lib64/microsoft-r/8.0`
+1. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage:
+        $ ls /usr/lib64/microsoft-r/8.0
 2. Remove the entire directory:
-    `$ rm -fr /usr/lib64/microsoft-r`
+        $ rm -fr /usr/lib64/microsoft-r
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
@@ -62,7 +62,7 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 If you remove Microsoft R Open (microsoft-r-server-mro-8.0-8.0.5-1.x86_64), you will also remove any dependent packages used only by R Open.
 
-Uninstall order is important. Due to package dependencies, be sure to uninstall the packages in the order given below.
+Uninstall order is important. Due to package dependencies, be sure to remove the packages in the order given below.
 
 **For RPM**
 

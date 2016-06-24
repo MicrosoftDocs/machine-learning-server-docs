@@ -363,3 +363,10 @@ That should return a list of files in the native file system. If either the call
 ## Next Steps
 
 To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R Server 8.0.5 on Hadoop overview](rserver-install-hadoop-805.md)
+[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
