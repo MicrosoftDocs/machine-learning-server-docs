@@ -64,7 +64,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Disk Space:** A minimum of 500 MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
+**Disk Space:** A minimum of 500 MB of disk space is required on each node for R Server. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
 <a name="DownloadR"></a>
 ## Download Microsoft R Components
@@ -156,7 +156,7 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 
 Using Microsoft R Server in Hadoop requires the presence of the Microsoft R Server Java Archive (JAR) file scaleR-hadoop-0.1-SNAPSHOT.jar. This file is installed in the scripts directory of your Microsoft R Server installation (typically at /usr/lib64/MRS-8.0/scripts), and is typically linked to the standard Hadoop jar file location (typically $HADOOP\_HOME/lib or $HADOOP\_PREFIX/lib).
 
-If you are installing RRE as a non-root user, you may need to obtain root access to link this file appropriately.
+If you are installing R Server as a non-root user, you may need to obtain root access to link this file appropriately.
 
 ## Environment Variables for Hadoop
 
@@ -172,7 +172,7 @@ This file sets the following environment variables for use by Microsoft R Server
 
 **HADOOP_CMD**: This should be set to the command used to invoke Hadoop
 
-**HADOOP_CLASSPATH**: This should be set to include the full path to the RRE jar files (typically /usr/lib64/MRS-8.0/scripts).
+**HADOOP_CLASSPATH**: This should be set to include the full path to the R Server jar files (typically /usr/lib64/MRS-8.0/scripts).
 
 **CLASSPATH**: This should be a fully expanded CLASSPATH with access to all required Hadoop JAR files.
 

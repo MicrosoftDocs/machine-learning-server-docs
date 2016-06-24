@@ -62,16 +62,21 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 If you remove Microsoft R Open (microsoft-r-server-mro-8.0-8.0.5-1.x86_64), you will also remove any dependent packages used only by R Open.
 
-- For RPM:
-    `$ rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64`
-- For DPKG
-    `$ dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64`
+Uninstall order is important. Due to package dependencies, be sure to uninstall the packages in the order given below.
 
-Other packages include:
+**For RPM**
 
-- `microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64`
-- `microsoft-r-server-packages-8.0-8.0.5-1.x86_64`
-- `microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64`
+        $ rpm -e microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
+
+**For RPM**
+
+    $ dpkg --remove microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
 ## How to uninstall the Hadoop component
 
