@@ -43,11 +43,11 @@ The install script downloads and installs Microsoft R Open for R Server (microso
 - microsoft-r-server-packages-8.0.rpm      
 - microsoft-r-server-hadoop-8.0.rpm
 
+In contrast with previous releases, version 8.0.5 comes with a requirement for `root` installation. A non-root installation is not supported in this version.
+
 ## Recommendations for installation
 
 We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
-
-We recommend installing Microsoft R Server as `root` on each node of your Hadoop cluster if you want all users to be granted access by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
@@ -77,7 +77,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-**Disk Space:** A minimum of 500 MB of disk space is required on each node for RRE installation. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
+**Disk Space:** A minimum of 500 MB of disk space is required on each node for R Server. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
 ## Download Microsoft R software
 
@@ -128,12 +128,11 @@ Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script wi
 		[username] $ cd /tmp
 4. Run the script with the **-p** parameter, specifying the Hadoop component:
 		[tmp] $ sudo bash install.sh -p
-5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
+5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Installer output shows the packages and location of the log file.
 7. Check the version of Microsoft R Open using `rpm -qi`:
 		[tmp] $ rpm -qi microsoft-r-server-mro-8.0
-8. Check the version of the intel-mkl package:
-		[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0
+8. Optionally, you can also use `rpm -qi` to check the version of microsoft-r-server-intel-mkl-8.0, microsoft-r-server-packages-8.0, and microsoft-r-server-hadoop-8.0.
 
 9. Check the output to verify version 8.0.5. Partial output appears as follows:
 
@@ -143,21 +142,46 @@ Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script wi
 
 ## Verify install
 
-Run the Revo64 program to verify the installation.
+As a verification step, check folders and permissions. Following that, you should run the Revo64 program, a sample Hadoop job, and if applicable, a sample Spark job.
+
+**Check folders and permissions**
+
+Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
+
+		hadoop fs -mkdir /user/RevoShare/$USER
+		hadoop fs -chmod uog+rwx /user/RevoShare/$USER
+		mkdir -p /var/RevoShare/$USER
+		chmod uog+rwx /var/RevoShare/$USER
+
+The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username").
+
+Run these commands in a Revo64 session:
+
+		$ cd MRS_Linux
+		$ Revo64
+		> rxHadoopMakeDir("/user/RevoShare/username")
+		> rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
+
+Output for each command should be `[1] TRUE`.
+
+As part of this process, make sure the base directories /user and /user/RevoShare have uog+rwx permissions as well.
+
+**Run programs and sample jobs using sample data**
+
+The first task loads sample data and runs the Revo64 program to further verify the installation.
 
 1. Send sample data to HDFS.
 
-		[tmp]$ hadoop fs -mkdir -p /share/SampleData
-		[tmp]$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/8.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
-		[ltmp]$ hadoop fs -ls /share/SampleData
+		$ hadoop fs -mkdir -p /share/SampleData
+		$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/8.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
+		$ hadoop fs -ls /share/SampleData
 
 2. Start Revo64.
 
-		[tmp MRS_Linux]$ Revo64
+		$ cd MRS_Linux
+		$ Revo64
 
-3. Run a simple local computation.
-
-This step uses the proprietary Microsoft libraries.
+3. Run a simple local computation. This step uses the proprietary Microsoft libraries.
 
 		> rxSummary(~., iris)
 
@@ -201,7 +225,7 @@ This step uses the sample dataset to run a Hadoop job.
 
 Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
 
-		SetComputeContext(RxHadoopMR(consoleOutput=TRUE))
+		rxSetComputeContext(RxHadoopMR(consoleOutput=TRUE))
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
 
 		colInfo <- list(DayOfWeek = list(type = "factor",
@@ -220,6 +244,19 @@ Partial output is as follows (showing the first 10 lines).
 		End of allArgs.
 		16/06/10 18:26:26 INFO impl.TimelineClientImpl: Timeline service address:
 
+6. Run a sample Spark job.
+
+		rxSetComputeContext(RxSpark(consoleOutput=TRUE, executorMem="1g", driverMem="1g", executorOverheadMem="1g", numExecutors=2))
+		    input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
+
+		    colInfo <- list(DayOfWeek = list(type = "factor",
+		    levels = c("Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday", "Sunday")))
+
+		    airDS <- RxTextData(file = input, missingValueString = "M", colInfo  = colInfo, fileSystem = RxHdfsFileSystem())
+
+		    adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
+		    adsSummary
+
 <a name="ManualInstallation"><a/>
 ## Manual Installation
 
@@ -230,13 +267,13 @@ Assuming that the packages for Microsoft R Open for R Server and Microsoft R Ser
 **RPM or DEB Installers**
 
 - `/var/RevoShare/` and `hdfs://user/RevoShare` must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.
-- `/var/RevoShare/` and `hdfs://user/RevoShare` must have required permissions.
+- `/var/RevoShare/<user>` and `hdfs://user/RevoShare/<user>` must have full permissions (all read, write, and executive permissions for all users).
 
 **Cloudera Parcel Installers**
 
 1. Create `/var/RevoShare/` and `hdfs://user/RevoShare`. Parcels cannot create them for you.
-2. Give pull permission to both `/var/RevoShare/` and `hdfs://user/RevoShare`.
-3. On Cloudera Manager, configure the location of the parcel-repo so parcels can be discovered in the correct location, and change the rate at which Cloudera Manager checks for new parcels.
+2. Give `/var/RevoShare/<user>` and `hdfs://user/RevoShare/<user>` for each user.
+3. Grant full permissions to both `/var/RevoShare/<user>` and `hdfs://user/RevoShare/<user>`.
 
 <a name="DistributedInstallation"><a/>
 ## Distributed Installation
@@ -252,16 +289,13 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		pdshw
 		> mkdir -p /var/tmp/revo-install
 		> exit
-		pdcpw /tmp/MRO-for-MRS--\*.rpm /var/tmp/revo-install
+		pdcpw /tmp/MRS80HADOOP.tar.gz /var/tmp/revo-install
 		pdshw
-		> cd /var/tmp/revo-install;yum clean all
-		> cd /var/tmp/revo-install;yum install MRO-for-MRS-8.0.5-\*.rpm
+		> cd /var/tmp/revo-install; yum clean all
+		> tar zxf MRS80HADOOP.tar.gz
+		> cd MRS80HADOOP; sudo bash ./install.sh -a -p
 		> exit
-		pdcpw /tmp/Microsoft-R-Server-8.0.5-<OS>.tar.gz /var/tmp/revo-install
-		pdshw
-		> cd /var/tmp/revo-install;tar zxf Microsoft-R-Server-8.0.5\*.tar.gz
-		> cd rrent;./install.sh -y -a -p /usr/lib64/MRO-for-MRS-8.0.5/R-3.2.2
-		> exit
+
 
 ## Troubleshoot installation problems
 See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for tips.
@@ -274,23 +308,14 @@ The following steps walk you through a multi-node installation using Cloudera Ma
 
 Two parcels are required:
 
-- Microsoft R Open parcel—installs open-source R and additional open-source components on the nodes of your Cloudera cluster
-- Microsoft R Server parcel—installs proprietary components on the nodes of your Cloudera cluster
+- *Microsoft R Open* parcel installs open-source R and additional open-source components on the nodes of your Cloudera cluster.
+- *Microsoft R Server* parcel installs proprietary components on the nodes of your Cloudera cluster.
 
-Microsoft R Server requires several packages that may not be in a default Red Hat Enterprise Linux installation. Run the following yum command as root to install them:
+Install the Cloudera Manager parcels as follows:
 
-		yum install gcc-gfortran cairo-devel python-devel \\
-		tk-devel libicu-devel
+1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
 
-Run this command on all the nodes of your cluster that will be running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in [Distributed Installation](#DistributedInstallation); this alias includes the list of host names and specifies the use of ssh):
-
-		pdshw yum install gcc-gfortran cairo-devel python-devel tk-devel libicu-devel
-
-Once you have installed the Microsoft R Server prerequisites, install the Cloudera Manager parcels as follows:
-
-1.  [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409) (Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.)
-
-2.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
+2. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
   If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
@@ -301,53 +326,39 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 
 		tar zxvf MRS80HADOOP.tar.gz
 
-3.  Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
+3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
   From the mounted img file:
-		cp /mnt/mrsimage/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
+		cp /mnt/mrsimage/MRS-8.0.5-* /opt/cloudera/parcel-repo
 
   From the unpacked tar file:
-		cp /tmp/MRS80HADOOP/MRS-8.0.0-1-* /opt/cloudera/parcel-repo
+		cp /tmp/MRS80HADOOP/MRS-8.0.5-* /opt/cloudera/parcel-repo
 
-4.  You should have the following files in your parcel repo:
+4. You should have the following files in your parcel repo:
 
-	    MRO-3.2.2-1-el6.parcel
-	    MRO-3.2.2-1-el6.parcel.sha
-	    MRS-8.0.0-1-el6.parcel
-	    MRS-8.0.0-1-el6.parcel.sha
+		MRO-8.0.5-el6.parcel
+		MRO-8.0.5-el6.parcel.sha
+		MRS-8.0.5-el6.parcel
+		MRS-8.0.5-el6.parcel.sha
 
-  Be sure all the files are owned by root and have 755 permissions (that is, read, write, execute permission for root, and read and execute permissions for group and others).
+  Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others).
 
-5.  In your browser, open Cloudera Manager.
+5. In your browser, open Cloudera Manager.
 
-6.  Click **Hosts** in the upper navigation bar to bring up the All Hosts page.
+6. Click **Hosts** in the upper navigation bar to bring up the All Hosts page.
 
-7.  Click **Parcels** to bring up the Parcels page.
+7. Click **Parcels** to bring up the Parcels page.
 
-8.  Click **Check for New Parcels**. MRO 3.2.2-1and MRS 8.0.0-1 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
+8. Click **Check for New Parcels**. MRO 8.0.5 and MRS 8.0.5 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
 
-9.  Click the MRO 3.2.2 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+9. Click the MRO 8.0.5 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
-10.  Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
+10. Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
 
-11.  Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
-
-As a verification step, each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
-
-		hadoop fs -mkdir /user/RevoShare/$USER
-		hadoop fs -chmod uog+rwx /user/RevoShare/$USER
-		mkdir -p /var/RevoShare/$USER
-		chmod uog+rwx /var/RevoShare/$USER
-
-The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"):
-
-		rxHadoopMakeDir("/user/RevoShare/username")
-		rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
-
-As part of this process make sure to check that the base directories /user and /user/RevoShare have uog+rwx permissions as well.
+11. Click the MRS 8.0.5 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
 ## Next steps
 
-DeployR is an optional component. See [DeployR Installation](deployr-installation.md) for setup instructions.
+Developers might want to install DeployR, an optional component that provides a server-based framework for running R code in real time. See [DeployR Installation](deployr-installation.md) for setup instructions.
 
-To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md). This article is an introduction to RevoScaleR with Hadoop.
+To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](scaler-hadoop-getting-started.md).
