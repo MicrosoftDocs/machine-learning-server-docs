@@ -77,26 +77,26 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <th>Help</th>
 </tr>
 <tr>
-<td width="100px">`rxImport`</td>      
-<td>![top](../media/award.png)</td>
+<td width="150px">`rxImport`</td>      
+<td width="40px"><center>![top](../media/award.png)</center></td>
 <td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxDataStep`</td>
-<td>![top](../media/award.png)</td>
+<td><center>![top](../media/award.png)</center></td>
 <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxGetInfo`</td>
-<td>![top](../media/award.png)</td>
+<td><center>![top](../media/award.png)</center></td>
 <td>Retrieves summary information from a data source or data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxSetInfo`</td>
-<td>![top](../media/award.png)</td>
+<td><center>![top](../media/award.png)</center></td>
 <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
