@@ -86,3 +86,13 @@ For versions prior to 8.0.5, do the following:
 
 - Remove symlinks to libhfs.so and libjvm.so
 - Remove scaleR JARs (or symlinks to those JARs) from HADOOP_HOME/lib
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+
+[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+
+[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
