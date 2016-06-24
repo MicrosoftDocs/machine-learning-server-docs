@@ -31,7 +31,7 @@ The `RevoScaleR` package provides a set of portable, scalable, distributable dat
 This guide presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line. 
 
 RevoScaleR supports two Hadoop compute contexts:
-+ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](./scaler-hadoop-getting-started.md).
++ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../scaler-hadoop-getting-started.md).
 + `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 

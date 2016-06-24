@@ -106,19 +106,19 @@ The functionality found under these tabs allows you to interact with APIs on the
 
 **Console Tab**
 
-The Console tab offers access to the full set of [Project Execution APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecution).
+The Console tab offers access to the full set of [Project Execution APIs](deployr-api-reference.md#projexec).
 
 ** Workspace Tab**
 
-The Workspace tab offers access to the full set of [Project Workspace APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspace).
+The Workspace tab offers access to the full set of [Project Workspace APIs](deployr-api-reference.md#project-workspace).
 
 **Directory Tab**
 
-The Directory tab offers access to the full set of [Project Directory APIs](deployr-api-reference.md#repodir).
+The Directory tab offers access to the full set of [Project Directory APIs](deployr-api-reference.md#projdir).
 
 **Packages Tab**
 
-The Packages tab offers access to the full set of [Project Package APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpackages).
+The Packages tab offers access to the full set of [Project Package APIs](deployr-api-reference.md#projpkg).
 
 **About Tab**
 
@@ -126,15 +126,15 @@ The About tab offers access to the [/r/project/about](https://microsoft.github.i
 
 **Repo Files Tab**
 
-The Repo Files tab offers access to the full set of [Repository File APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles).
+The Repo Files tab offers access to the full set of [Repository File APIs](deployr-api-reference.md#repofiles).
 
 **Jobs Tab**
 
-The Jobs tab offers access to the full set of [Job APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs).
+The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.md#jobs).
 
 **Repo Scripts Tab**
 
-The Repo Scripts tab offers access to the full set of [Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
+The Repo Scripts tab offers access to the full set of [Repository Script APIs](deployr-api-reference.md#reposcripts).
 
 ###Panel 3: API Request
 
