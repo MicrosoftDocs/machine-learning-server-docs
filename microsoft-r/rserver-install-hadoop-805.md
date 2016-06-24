@@ -94,28 +94,9 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 		mkdir /mnt/mrsimage
 		mount –o loop <filename> /mnt/mrsimage
 
-  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+  If you have a gzipped tar file, unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-For RHEL/CENTOS systems:
-  		tar zxvf MRS80RHEL.tar.gz
-
- For SLES systems:
-  		tar zxvf MRS80SLES.tar.gz
-
-3. In either case, you will then want to copy the installer gzipped tar file to a writable directory, such as /tmp:
-
-From the mounted img file:
- 		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
-
-  From the unpacked tar file:
-		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
-
-4. Unpack the packages and installer script, as follows (the tarball name may include an operating system ID denoted below by `<OS>`):
-
-		cd /tmp
-		tar xvzf Microsoft-R-Server-`<OS>`.tar.gz
-
-This installs Microsoft R Server with the standard options (including loading the rpart and lattice packages by default when RevoScaleR is loaded).
+  		tar zxvf MRS80HADOOP.tar.gz
 
 ## Run the install script
 
@@ -124,16 +105,16 @@ Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script wi
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
 		[username] $ sudo yum clean all
-3. Change to the directory to which you downloaded the rpm (for example, /tmp):
+3. Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS80HADOOP if you unpacked the tar.gz file):
 		[username] $ cd /tmp
+		[username tmp] $ cd /MRS80HADOOP
 4. Run the script with the **-p** parameter, specifying the Hadoop component:
-		[tmp] $ sudo bash install.sh -p
+		[username tmp MRS80HADOOP] $ sudo bash install.sh -p
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Installer output shows the packages and location of the log file.
 7. Check the version of Microsoft R Open using `rpm -qi`:
-		[tmp] $ rpm -qi microsoft-r-server-mro-8.0
+		[username tmp MRS80HADOOP] $ rpm -qi microsoft-r-server-mro-8.0
 8. Optionally, you can also use `rpm -qi` to check the version of microsoft-r-server-intel-mkl-8.0, microsoft-r-server-packages-8.0, and microsoft-r-server-hadoop-8.0.
-
 9. Check the output to verify version 8.0.5. Partial output appears as follows:
 
 		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
@@ -148,14 +129,12 @@ As a verification step, check folders and permissions. Following that, you shoul
 
 Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
 
-		hadoop fs -mkdir /user/RevoShare/$USER
-		hadoop fs -chmod uog+rwx /user/RevoShare/$USER
-		mkdir -p /var/RevoShare/$USER
-		chmod uog+rwx /var/RevoShare/$USER
+		$ hadoop fs -mkdir /user/RevoShare/$USER
+		$ hadoop fs -chmod uog+rwx /user/RevoShare/$USER
+		$ mkdir -p /var/RevoShare/$USER
+		$ chmod uog+rwx /var/RevoShare/$USER
 
-The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username").
-
-Run these commands in a Revo64 session:
+The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"). Run the RevoScaleR commands in a Revo64 session.
 
 		$ cd MRS_Linux
 		$ Revo64
@@ -164,7 +143,7 @@ Run these commands in a Revo64 session:
 
 Output for each command should be `[1] TRUE`.
 
-As part of this process, make sure the base directories /user and /user/RevoShare have uog+rwx permissions as well.
+As part of this process, make sure the base directories /user and /user/RevoShare have `uog+rwx` permissions as well.
 
 **Run programs and sample jobs using sample data**
 

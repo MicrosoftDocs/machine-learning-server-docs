@@ -51,9 +51,14 @@ Note: Pre-8.0 versions of R Server will have a path that includes the Revolution
 
 ## How to fully uninstall R from a node
 
-1. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage:
+Packages are registered in a database that tracks all package installations in the cluster. To update the database, use a package manager to remove the package: **yum** for Red Hat and CentOS, or **zypper** for SUSE.
+
+1. Uninstall the package (use one of the following):
+    sudo yum erase microsoft-r-server-mro-8.0
+    sudo zypper rm microsoft-r-server-mro-8.0
+2. Remove other files added by the installer. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage:
         $ ls /usr/lib64/microsoft-r/8.0
-2. Remove the entire directory:
+3. Remove the entire directory:
         $ rm -fr /usr/lib64/microsoft-r
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
