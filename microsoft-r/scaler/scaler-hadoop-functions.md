@@ -44,7 +44,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ####Import and Export Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`RxXdfData`       |![top](../media/award.png)|Creates an efficient XDF data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxTextData`      |![top](../media/award.png)|Creates a comma delimited text data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
@@ -61,7 +61,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ####Manipulation, Cleansing, and Transformation Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxFactors`    |![top](../media/award.png)|Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.|<small>[See package](scaler.md#findmore)</small>|
 
@@ -70,7 +70,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ####Visualization Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxHistogram`       |![top](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxLinePlot`  |![top](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
@@ -81,7 +81,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxQuantile`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
 |`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
@@ -91,7 +91,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxLinMod`   |![top](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxLogit`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGlm`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
@@ -109,7 +109,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 ##Compute Context Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
 |`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[**View**](rxInstalledPackages.md)</small>|
@@ -124,7 +124,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used. 
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`RxXdfData`       | |Creates an efficient XDF data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxTextData`      | |Creates a comma delimited text data source object.|<small>[See package](scaler.md#findmore)</small>|
 
@@ -135,7 +135,7 @@ Of course, not all data source types are available on all compute contexts. For 
 The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxExec`  | |Run an arbitrary R function on nodes or cores of a cluster.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetJobStatus`| |Get the status of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetJobResults`| |Get the return object(s) of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
@@ -149,7 +149,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxOptions`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetOption`   |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
@@ -166,7 +166,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functionality via R. These functions require access to Hadoop, either locally or remotely via the RxHadoopMR or RxSpark compute contexts.
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxHadoopCommand`| |Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.|<small>[See package](scaler.md#findmore)</small>|
 |`rxHadoopVersion`| |Return the current Hadoop version.|<small>[See package](scaler.md#findmore)</small>| 
 |`rxHadoopCopyFromClient`| |Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.|<small>[See package](scaler.md#findmore)</small>|
