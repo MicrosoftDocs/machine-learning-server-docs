@@ -54,6 +54,13 @@ After your parcel is distributed and activated your R packages should be present
 ## See Also
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
-[Install R Server 8.0.0 on Hadoop overview](rserver-install-hadoop-800.md)
+
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+
+[Install R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+
+[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
