@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -274,7 +274,7 @@ You can use the **R Objects** field to request that R object(s) in the workspace
 ![](media/deployr-repository-manager-testing-debugging-scripts/robjects.png)
 
 
->To learn more about DeployR encoded objects, refer to the [DeployR API Reference Guide](../deployr-api-reference.md) chapter on data encodings.
+>To learn more about DeployR encoded objects, refer to the [DeployR API Reference Guide](../deployr-api-reference.md).
 
 The following is an example a DeployR encoding of an R vector object returned in the API Response tab of the Artifacts pane for the "workspace" property:
 

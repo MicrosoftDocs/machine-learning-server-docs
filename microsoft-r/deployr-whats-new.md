@@ -1,4 +1,3 @@
-
 ---
 
 # required metadata
@@ -9,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -20,31 +19,39 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
-# DeployR Release Notes
-
-## What's New in DeployR
+# What's New in DeployR
 
 This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
 
+-   [DeployR for Microsoft R Server 2016](#version-8-0-5)
 -   [Release 8.0.0](#version-8-0-0)
 -   [Release 7.4.1](#version-7-4-1)
 -   [Release 7.4.0](#version-7-4-0)
 -   [Release 7.3](#version-7-3)
 
-### Version 8.0.0
+<br />
+#### DeployR for Microsoft R Server 2016
+
+The following list highlights the major changes and improvements to DeployR for Microsoft R Server 2016.
+- Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
+- DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
+- DeployR Enterprise now has a simplified installer for a better customer experience.
+- Documentation is now available on MSDN.
+- The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
+- This release is of DeployR Enterprise only.
+
+<br />
+#### Version 8.0.0
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
-## Past Releases
-
-For historical purposes, we've included the list of changes and additions from several releases prior to DeployR 8.0.0.
-
-### Version 7.4.1
+<br />
+#### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.
 
@@ -58,25 +65,26 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md) guide was added for data scientists.
 -   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
-### Version 7.4.0
+<br />
+#### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
 
--   New [R Session Process Controls](deployr-admin-security.md#r-session-process-controls) introduce fine-grain file system access controls for R sessions on Linux platforms.
+-   New [R Session Process Controls](deployr-admin-security/deployr-security-authentication.md) introduce fine-grain file system access controls for R sessions on Linux platforms.
 -   New [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployrUtils/releases) with initial support for running DeployR-enabled example applications.
 -   New and updated Web service API support.
 -   Updated [Java, JavaScript and .NET RBroker Framework](https://github.com/deployr?query=rbroker) with additional features, patches and updated change history.
 -   Updated [Java, JavaScript and .NET client libraries](https://github.com/deployr?query=client) with additional features, patches and updated change history.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
 
-### Version 7.3
+<br />
+#### Version 7.3
 
 The following list highlights the major changes and improvements to DeployR 7.3.
-
 -   Support for DeployR Enterprise and DeployR Open.
 -   Support for this new DeployR website providing documentation and downloads.
 -   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
 -   New and updated API support.
--   New user account password and user account locking policies as detailed in the [Security Guide](deployr-admin-security.md).
+-   New user account password and user account locking policies as detailed in the [Security Guide](deployr-admin-security/deployr-security.md).
 -   New Administrator Diagnostic Tools that the `admin` can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.
 -   New [Server Log Events](deployr-common-administration-tasks.md#inspecting-server-logs) are now captured in the DeployR server log files. These log events provide a permanent record of API call/response events, authentication events, HTTP session events, and grid R session events.

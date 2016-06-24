@@ -1,4 +1,4 @@
-﻿---
+---
 
 # required metadata
 title: "DeployR Administration Console Help"
@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -32,22 +32,23 @@ Each user has an account with [properties](deployr-admin-console-user-accounts.m
 
 When you click **Users** in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click **Next** to proceed to the remaining accounts.
 
+>[!IMPORTANT]
+>As an alternative, you can choose another form of [authentication for DeployR](../deployr-admin-security/deployr-security-authentication.md), such as Active Directory, LDAP, or PAM.
+
 _Figure: User List page_
 
 ![](media/deployr-admin-console-user-accounts/03000008.png)
 
->You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you must log in to each one in a separate brand of browser. For example, to log in to the DeployR Administration Console with <span class="Code_1">admin</span> account and into the API Explorer tool with another user account, you could open one in Google Chrome™ and the other in Mozilla® Firefox®.
+>You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you must log in to each one in a separate brand of browser. 
 
 ## Preconfigured User Accounts
 
 The following table presents the preconfigured DeployR user accounts and their default passwords.
 
->Change the password **immediately** after installing to prevent unauthorized access.
-
 | Name                                 | Description and Recommendations                                                                                                    |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `admin`    | A default system administrator account for immediate access to the console.  This account cannot be renamed, disabled, or deleted. |
-| `testuser` | A default test account for client developers. We strongly recommend that you disable this account in production deployments.       |
+| `testuser` | A default test account for client developers. We strongly recommend that you disable this account in production deployments. This account comes locked and you’ll need to set a password in order to use it.      |
 
 
 ## User Account Properties
@@ -135,7 +136,7 @@ _Figure: Export User Accounts page_
 
 Importing allows you to retrieve all of the accounts from a previously exported CSV file. Alternately, you can also import a CSV file you have created yourself using the proper format. Since role and boundary assignments cannot be exported, all imported user accounts are automatically assigned the `BASIC_USER` role at import time unless you choose to assign the `POWER_USER` role. You can, of course, manually add roles to users later after importing.
 
->For security reasons, user passwords are not exported. You can add a plain text password manually in the password field in the exported CSV file **prior to import**. If no password is defined manually, all users are automatically assigned the password ‘changeme’ upon import. We recommend changing that password as soon as possible.
+>For security reasons, user passwords are not exported. You can add a plain text password manually in the password field in the exported CSV file **prior to import**. 
 
 **To import:**
 
@@ -148,7 +149,7 @@ Importing allows you to retrieve all of the accounts from a previously exported 
 4. Click **Load**.
  
 	_Figure: Import User Accounts page_
-        ![](media/deployr-admin-console-user-accounts/0300000C_624x252.png)  
+    ![](media/deployr-admin-console-user-accounts/0300000C_624x252.png)  
 
 5. To disable user accounts so that they do not have access to the server until you are ready, select the **Disable user account** option. You can always enable or disable user accounts individually later.
 

@@ -6,9 +6,9 @@ description: "The tutorial for DeployR's RBroker framework"
 keywords: "DeployR, tutorial, RBroker, framework"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -31,9 +31,9 @@ ms.custom: ""
 
 The RBroker Framework is the simplest way to integrate DeployR-enabled analytics Web services inside any Java, JavaScript or .NET application. This document introduces the basic building blocks exposed by the framework, explains the programming model encouraged by the framework, and demonstrates the framework in action using language-specific code samples.
 
-**Important!** The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the [DeployR Client Libraries](deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
+>The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the [DeployR Client Libraries](deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
 
->**Try Out Our Examples!** Explore the RBroker Framework examples for [Java,](https://github.com/deployr/java-example-rbroker-basics) [Javascript,](https://github.com/deployr/js-rbroker-framework) and [.NET.](https://github.com/deployr/dotnet-rbroker-framework) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
+**Try Out Our Examples!** Explore the RBroker Framework examples for [Java,](https://github.com/deployr/java-example-rbroker-basics) [Javascript,](https://github.com/deployr/js-rbroker-framework) and [.NET.](https://github.com/deployr/dotnet-rbroker-framework) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
 
 ### Basic Building Blocks
 
@@ -270,7 +270,6 @@ Currently, there are three RBroker runtimes available. These runtimes are identi
 2.  [Pooled Task Runtime](#pooled-task-runtime)
 3.  [Background Task Runtime](#background-task-runtime)
 
->[!IMPORTANT]
 >When contemplating any RBroker-based solution, a developer must first decide which runtime to use.
 
 The following sections detail the characteristics of each RBroker runtime and provide guidance to help developers make the correct runtime selection based on their specific needs.
@@ -285,14 +284,12 @@ The Discrete Task Runtime acquires DeployR grid resources per RTask on-demand, w
 
 3.  Any RTask indicating an `RGridException` failure can be resubmitted to the RBroker.
 
-    >[!IMPORTANT]
     >It is the responsibility of the client application developer to decide whether such RTasks should be resubmitted to RBroker, logged by the application, and/or reported to the end-user.
 
 4.  This runtime supports a `maxConcurrency` configuration property that limits the maximum number of RTasks that the RBroker will attempt to execute in parallel. All RTasks submitted in excess of this limit are automatically queued by the RBroker, which ensures that no more than `maxConcurrency` RTasks are executing on the runtime at any one time.
 
 5.  Tuning the `maxConcurrency` property to reflect the real-world limits determined by grid resources provisioned by the DeployR system administrator is an important step when deploying solutions on the Discrete Task Runtime.
 
-    >[!IMPORTANT]
     >See the [Grid Resource Management](#gridprimer) section of this tutorial for guidance when setting `maxConcurrency` for your RBroker instance.
 
 ### Discrete Task Runtime Suitability
@@ -472,14 +469,12 @@ The Pooled Task Runtime acquires a dedicated pool of DeployR grid resources at s
 
 5.  Tuning the `maxConcurrency` property to reflect the real-world limits determined by grid resources provisioned by the DeployR system administrator is an important step when deploying solutions on the Pooled Task Runtime.
 
-    >[!IMPORTANT]
     >See the [Grid Resource Management](#grid-resource-management) section of this tutorial for guidance when setting `maxConcurrency` for your RBroker instance.
 
 ### Pooled Task Runtime Suitability
 
 This type of runtime is well suited to production deployments where consistent runtime semantics are required. If you anticipate a high-volume RTask workload, then this runtime is for you. Remember to size the pool in line with expected workload.
 
->[!TIP]
 >If that does not sound like a suitable RBroker runtime for your client application, then consider the [Discrete Task Runtime](#discrete-task-runtime) or the [Background Task Runtime](#background-task-runtime).
 
 ### Pooled Task Runtime Programming Model
@@ -662,7 +657,6 @@ The Background Task Runtime acquires DeployR grid resources per RTask based on t
 
 This type of runtime is well-suited to deployments that require periodic, scheduled or batch processing.
 
->[!TIP]
 >If that does not sound like a suitable RBroker runtime for your client application consider the [*Discrete Task Runtime*](#discrete-task-runtime) or the [*Pooled Task Runtime*](#pooled-task-runtime).
 
 ### 2. Background Task Runtime Programming Model
@@ -845,7 +839,6 @@ RBroker authentication is required for this type of runtime, therefore RTask wil
 
 Since RTasks executed on this type of runtime are executing on behalf of an authenticated user, optional persistence to the DeployR-repository following an execution is supported. See storageOptions on BackgroundTaskOptions as documented on the [RBroker Framework API](deployr-tools-and-samples.md).
 
->[!NOTE]
 >Result data are not directly available on RTaskResult. Instead a DeployR Job identifier is returned. An application developer must use an appropriate [DeployR Client Library](deployr-tools-and-samples.md) that supports APIs for the retrieval of results persisted by the BackgroundTask on DeployR Job.
 
 ## RBroker Resource Management
@@ -888,7 +881,6 @@ The following code snippets demonstrate the mechanism:
     //
     rBroker.shutdown();
 
->[!IMPORTANT]
 >This step is especially important for applications that make use of the [Pooled Task Broker Runtime](#pooled-task-runtime) since significant DeployR grid resources associated with that runtime will remain unavailable until explicitly released.
 
 ## RTask Priority Execution
@@ -1476,7 +1468,7 @@ The client application profiling features are also available beyond simulations,
 
 As with most things in the RBroker framework, it is very simple to activate this feature. First, note that each RTaskResult has built-in profiling data. Second, each RBroker runtime generates runtime profiling events. By registering the appropriate asynchronous listener, a client application can receive these profiling events.
 
-The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulations) chapter with support for handling runtime profiling events.
+The following code snippets extend the sample demonstrated in the [client application simulation](#client-application-simulations) section with support for handling runtime profiling events.
 
 
 **Java:**
@@ -1716,27 +1708,14 @@ Each RBroker runtime automatically acquires grid resources at runtime on behalf 
 
 The [Discrete Task Runtime](#discrete-task-runtime) submits all tasks, whether executing on behalf of an authenticated or anonymous RBroker, to run on grid nodes configured for anonymous operations. If the server can not find an available slot on that subset of grid nodes, then the task may execute on a grid node configured for mixed mode operations.
 
->[!TIP]
->If your DiscreteTaskBroker instance is returning RTaskResults that indicate RGridException, then consider speaking to your DeployR system administrator about provisioning additional resources for anonymous operations.
->
->**DeployR Open** customers are limited to the resources provided by the single default grid node. **DeployR Enterprise** customers can request additional resources for existing grid nodes or even additional grid nodes.
->
->In either case, additional resources will support greater levels of concurrent workload. Once provisioned, make sure to increase the `maxConcurrency` configuration option on your instance of RBroker to take full advantage of the new resources on the grid.
+>If your DiscreteTaskBroker instance is returning RTaskResults that indicate RGridException, then consider speaking to your DeployR system administrator about provisioning additional resources for existing grid nodes or even additional grid nodes for  <b>anonymous</b> operations. These additional resources will support greater levels of concurrent workload. Once provisioned, make sure to increase the `maxConcurrency` configuration option on your instance of RBroker to take full advantage of the new resources on the grid.
 
 The [*Pooled Task Runtime*](#pooled-task-runtime) submits all tasks to run on grid nodes configured for authenticated operations. If the server can not find an available slot on that subset of grid nodes, then the task may execute on a grid node configured for mixed mode operations.
 
->[!TIP]
->If the size of the pool allocated to your PooledTaskBroker is less than requested by your `maxConcurrency` configuration option on your instance of RBroker, then consider speaking to your DeployR system administrator about provisioning additional grid nodes for authenticated operations.
->
->**DeployR Open** customers are limited to the resources provided by the single default grid node. **DeployR Enterprise** customers can request additional resources for existing grid nodes or even additional grid nodes.
+>If the size of the pool allocated to your PooledTaskBroker is less than requested by your `maxConcurrency` configuration option on your instance of RBroker, then consider speaking to your DeployR system administrator about provisioning additional resources for existing grid nodes or even additional grid nodes for <b>authenticated</b> operations.
 >
 >Also you may want to discuss increasing the per-authenticated user concurrent operation limit, which is a setting found under **Server Policies** in the Administration Console. Ultimately, this setting determines the maximum pool size that a single instance of an authenticated PooledTaskBroker can allocate.
 
 The [*Background Task Runtime*](#background-task-runtime) submits all tasks to run on grid nodes configured for asynchronous operations. If the server can not find an available slot on that subset of grid nodes then the task may execute on a grid node configured for mixed mode operations.
 
->[!TIP]
->If you feel that too many of your BackgroundTask are waiting on a queue pending available resources, then consider speaking with your DeployR system administrator about provisioning additional grid nodes for asynchronous operations to allow greater levels of concurrent workload.
->
->**DeployR Open** customers are limited to the resources provided by the single default grid node. **DeployR Enterprise** customers can request additional resources for existing grid nodes or even additional grid nodes.
-
-
+>If you feel that too many of your BackgroundTask are waiting on a queue pending available resources, then consider speaking with your DeployR system administrator about provisioning additional resources for existing grid nodes or even additional grid nodes for <b>asynchronous</b> operations.

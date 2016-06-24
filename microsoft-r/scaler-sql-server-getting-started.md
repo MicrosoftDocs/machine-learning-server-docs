@@ -8,7 +8,7 @@ author: "richcalaway"
 manager: "mblythe"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
@@ -38,7 +38,7 @@ There are three key components to running **RevoScaleR** high performance analyt
 
 **RevoScaleR** provides a variety of data sources and compute contexts that can be used with the high performance analytics functions.  This guide focuses on analyzing SQL Server data in-database.  That is, the data is located in a SQL Server database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the SQL Server database using an ODBC connection and computations are performed on a computer alongside the SQL Server Platform.
 
-You can follow this guide from an R IDE of your choice.  More extensive general examples of using **RevoScaleR** can be found in the following guides included with **Microsoft R Server**:
+You can follow this guide from an R IDE of your choice.  More extensive general examples of using **RevoScaleR** can be found here:
 
 - [*RevoScaleR Getting Started Guide*](scaler-getting-started.md)
 - [*RevoScaleR User’s Guide*](scaler-user-guide-introduction.md)

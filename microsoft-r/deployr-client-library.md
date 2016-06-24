@@ -6,9 +6,9 @@ description: "DeployR Client Library Tutorial"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -28,13 +28,12 @@ ms.custom: ""
 
 ## Introduction
 
-The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON/XML and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.
+The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.
 
 To further simplify the integration of DeployR services within client applications several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 
->**Try Out Our Examples!** Explore the client library examples for [Java,](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
+>**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
->[!TIP]
 >Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
@@ -45,13 +44,9 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing the basic authentication mechanisms for end-users and client applications that need to avail of [*authenticated services*](#authenticated-services) on the API.
 
-
-
 -   **Project Services @ /r/project/***
 
     Providing [*authenticated services*](#authenticated-services) related to stateful, and optionally persistent, R session environments and analytics Web service execution.
-
-
 
 -   **Background Job Services @ /r/job/***
 
@@ -61,7 +56,7 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing [*authenticated services*](#authenticated-services) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonymous-services) related to analytics Web service execution.
 
->All services on the DeployR API are documented in detail in the [API Reference Guide](https://deployr.revolutionanalytics.com/documents/dev/api-doc).
+All services on the DeployR API are documented in detail in the [API Reference Guide](deployr-api-reference.md).
 
 ### Hello World Example
 
@@ -69,12 +64,11 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **Java:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:8000/deployr";
+    String deployrEndpoint = "http://localhost:<PORT>/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
     //
@@ -99,12 +93,11 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **JavaScript:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    deployr.configure({ host: 'http://localhost:8000' });
+    deployr.configure({ host: 'http://localhost:<PORT>' });
 
     // 
     // 2. Execute an analytics Web service based on a repository-managed
@@ -126,12 +119,11 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
 **C#:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:7300/deployr";
+    String deployrEndpoint = "http://localhost:8050/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
     //
@@ -161,7 +153,6 @@ The first step for any client application developer using the client libraries i
 
 **Java:**
 
-    //
     // 1. Establish a connection to DeployR.
     //
     // The RClientFactory is provided to simplify the establishment and
@@ -169,25 +160,23 @@ The first step for any client application developer using the client libraries i
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:8000/deployr";
+    String deployrEndpoint = "http://localhost:<PORT>/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
 **JavaScript:**
 
-    //
     // 1. Establish a connection to DeployR.
     // 
     // deployr.configure( { host: '' } ) is provided to simplify the establishment 
     // of client connections.
     //
-    // This example assumes the DeployR server is running on http://localhost:8000.
-    //
+    // This example assumes the DeployR server is running on http://localhost:<PORT>.
 
     //
     // Browser - Same Origin does not need the deployr.configure({ host: '' }) step.
     // Browser - Cross-origin resource sharing (CORS) requests do.
     // 
-    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:8000', cors: true });
+    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>', cors: true });
 
     //
     // Node.js -  No CORS is needed in Node.js
@@ -196,11 +185,9 @@ The first step for any client application developer using the client libraries i
 **C#:**
 
     #!/usr/bin/env node
-    deployr.configure( { host: 'http://localhost:8000' });
-    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:8000' });
+    deployr.configure( { host: 'http://localhost:<PORT>' });
+    deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>' });
 
-
-    //
     // 1. Establish a connection to DeployR.
     //
     // The RClientFactory is provided to simplify the establishment and
@@ -208,7 +195,7 @@ The first step for any client application developer using the client libraries i
     //
     // This example assumes the DeployR server is running on localhost.
     //
-    String deployrEndpoint = "http://localhost:7300/deployr";
+    String deployrEndpoint = "http://localhost:8050/deployr";
     RClient rClient = RClientFactory.createClient(deployrEndpoint);
 
 ## Authentication
@@ -221,7 +208,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **Java:**
 
-    //
     // 1. Authenticate an end-user or client application.
     //
     // The RBasicAuthentication supports basic username/password authentication.
@@ -232,7 +218,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **JavaScript:**
 
-    //
     // Same Origin Request
     //
     // 1. Authenticate an end-user or client application.
@@ -249,7 +234,7 @@ The following code snippets demonstrate how to authenticate using the client lib
     //
     // Cross-origin resource sharing (CORS) Request
     //
-    deployr.configure( { host: 'http://dhost:8000', cors: true })
+    deployr.configure( { host: 'http://dhost:<PORT>', cors: true })
       .io('/r/user/login')
       .data({ username: 'george', password: 's3cret' })
       .end(function(res) {
@@ -258,7 +243,6 @@ The following code snippets demonstrate how to authenticate using the client lib
 
 **C#:**
 
-    //
     // 1. Authenticate an end-user or client application.
     //
     // The RBasicAuthentication supports basic username/password authentication.
@@ -267,7 +251,6 @@ The following code snippets demonstrate how to authenticate using the client lib
     RAuthentication authToken = new RBasicAuthentication("george", "s3cret");
     RUser rUser = rClient.login(authToken);
 
->[!IMPORTANT]
 >Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models and data files stored in the repository compared to *anonymous* users.
 
 ## Authenticated Services
@@ -282,7 +265,7 @@ The following sections introduce the services themselves and demonstrate how the
 
 ### Project Services
 
-A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an *authenticated project*. There are three types of *authenticated project*:
+A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an [Authenticated Project](deployr-api-reference.md#authenticatedprojects). There are three types of *authenticated project*:
 
 1.  Temporary Project - a stateful, transient R session offering unrestricted API access that lives only for the duration of the current user HTTP session or until explicitly closed.
 
@@ -291,9 +274,6 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 3.  Persistent Project - a stateful, persistent R session offering unrestricted API access can can live indefiitely, across multiple user HTTP sessions.
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
-
->[!TIP]
->See the [Authenticated Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#authenticatedprojects) chapter in the *API Reference Guide* for further details.
 
 Project Services are most easily understood when considered as a collection of related services:
 
@@ -343,7 +323,6 @@ These services support the creation of *authenticated projects*. The following c
 
 **JavaScript:**
 
-    //
     // 1. Create a temporary project.
     //
     deployr.io('/r/project/create')  
@@ -390,7 +369,6 @@ These services support the creation of *authenticated projects*. The following c
 
 **C#:**
 
-    //
     // 1. Create a temporary project.
     //
     RProject blac = rUser.createProject();
@@ -427,7 +405,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **Java:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -460,7 +437,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **JavaScript:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -510,7 +486,6 @@ These services support the execution of analytics Web services on *authenticated
 
 **C#:**
 
-    //
     // 1. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
     //
@@ -541,8 +516,7 @@ These services support the execution of analytics Web services on *authenticated
     List<RProjectFile> files = exec.about().artifacts;
     List<RData> objects = exec.about().workspaceObjects;
 
->[!TIP]
->All executions services support a [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+>All executions services support a standard execution model defined on the DeployR API.
 
 #### 3. Project Workspace Services
 
@@ -773,8 +747,7 @@ These services support the manipulation and management of R packages within *aut
 
 A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
->[!TIP]
->By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) chapter of this guide.
+>By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) section.
 
 Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
 
@@ -944,9 +917,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
     }
     }
 
-
->[!TIP]
->All executions services support the [standard execution model](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel) defined on the DeployR API.
+>All executions services support the standard execution model defined on the DeployR API.
 
 ### Repository Services
 
@@ -1134,8 +1105,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fileName, options);
 
->[!TIP]
->See the [Working with the Repository APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) chapter in the *API Reference Guide* for detailed information regarding working with repository-managed files and directories.
+>See the [Working with the Repository APIs](deployr-api-reference.md#repository) chapter for detailed information regarding working with repository-managed files and directories.
 
 ## Anonymous Services
 
@@ -1148,7 +1118,6 @@ There are two types of *anonymous project*:
 1.  Stateless Project - a stateless, transient R session that lives only for the duration of the analytics Web service execution.
 2.  HTTP Blackbox Project - a stateful, transient R session that lives only for the duration of the current user HTTP session.
 
->[!TIP]
 >While *anonymous project services* are provided primarily for *anonymous* users, these same service calls are also available to *authenticated* users.
 
 The following code snippets demonstrate how the client libraries make these services available.
@@ -1252,19 +1221,18 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
->[!TIP]
->See the [Anonymous Projects](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#anonymousprojects) chapter in the *API Reference Guide* for further details.
+>See the [Anonymous Projects](deployr-api-reference.md#r-for-application-developers) section for further details.
 
 ## Standard Execution Model
 
 The DeployR API supports a standard set of parameters across all execution APIs which are commonly know as the standard execution model. A summary of those execution APIs are shown here:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
--   [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
--   [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
 
 Conceptually this standard set of parameters can be categorized into three groups: *pre-execution*, *on-execution* and *post-execution* parameters.
 
@@ -2018,13 +1986,13 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 Encoded R object data can be sent on the *inputs* parameter on the following calls:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
--   [/r/job/submit](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobsubmit)
--   [/r/job/schedule](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#jobschedule)
--   [/r/project/workspace/push](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspacepush)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-   [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
 
 See the [Standard Execution Model](#standard-execution-model) section of this documentation for details describing how DeployR-encoded R object data can be sent using the *inputs* parameter on these calls.
 
@@ -2480,8 +2448,7 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
->[!TIP]
->See the [Web Service API Data Encodings](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/encodings.html) chapter in the API Reference Guide for further details.
+>See the [Web Service API Data Encodings](deployr-api-reference.md#encoding) section for further details.
 
 ## R Object Data Decoding
 
@@ -2489,10 +2456,10 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 One or more R objects can be returned as DeployR-encoded objects in the response markup on any of the following execution calls:
 
--   [/r/project/execute/code](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutecode)
--   [/r/project/execute/script](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecutescript)
--   [/r/repository/script/execute](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptexecute)
--   [/r/repository/script/render](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscriptrender)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
 
 The following code snippets demonstrate the mechanism for requesting DeployR-encoded objects to be returned on these calls:
 
@@ -2545,7 +2512,7 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
 
 When working with temporary or persistent DeployR projects R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:
 
--   [/r/project/workspace/get](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspaceget)
+-   [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
 
 The following code snippet demonstrates the mechanism for requesting DeployR-encoded objects to be returned on this call:
 

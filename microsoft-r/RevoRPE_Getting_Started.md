@@ -8,7 +8,7 @@ author: "richcalaway"
 manager: "mblythe"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
@@ -592,7 +592,7 @@ You can close the graphics window.
 
 ## Finding More Information
 
-This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the *Revolution R Enterprise R Productivity Environment User’s Guide* (RevoRPE\_Users\_Guide.pdf). A basic introduction to the R language can be found in the manual *Revolution R Enterprise Getting Started Guide* (RevoREnt\_Getting\_Started.pdf).
+This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](RevoRPE_Users_Guide.md). A basic introduction to the R language can be found [here](microsoft-r-getting-started.md).
 
 ## Keyboard Navigation Among Windows
 

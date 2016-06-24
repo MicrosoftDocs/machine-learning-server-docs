@@ -6,9 +6,9 @@ description: "DeployR API Reference Guide"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/05/2016"
+ms.date: "06/01/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -28,9 +28,12 @@ ms.custom: ""
 
 The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference.md#users-on-the-api), [projects](deployr-api-reference.md#projects-on-the-api), [jobs](deployr-api-reference.md#jobs-on-the-api) and the [repository](deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
->You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. For example, to log into the DeployR Administration Console with admin account and into the API Explorer tool with another user account, open one in Google Chrome™ and the other in Mozilla® Firefox®.
+>You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. 
 
-**Accessing the API Explorer**
+>[!NOTE]
+>Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
+
+##Accessing the API Explorer
 
 The API Explorer is accessible after auto-installing DeployR. With a manual installation on Linux, make sure you install the API Explorer software. For more information, refer to the DeployR Installation Guide for your OS.
 
@@ -45,7 +48,7 @@ The API Explorer is accessible after auto-installing DeployR. With a manual inst
 
 The interface to the API Explorer consists of four main panels:
 
-**The Preferences Panel**
+###Panel 1: Preferences 
 
 At the top of the API Explorer window, you can find the Preferences Panel. Preference controls are on the right side of this panel. You can use these controls to set global preferences for all of the API calls you will make within this tool.
 
@@ -53,43 +56,22 @@ At the top of the API Explorer window, you can find the Preferences Panel. Prefe
 
 These global preferences are described as follows:
 
--  ***API*** : this preference specifies whether JSON or XML encodings should be used on API calls.
+-  ***API*** : this preference specifies whether JSON encodings should be used on API calls.
 -  ***DEV*** : this preference specifies the default device for rendering plots in R: PNG or SVG
 -  ***DLD*** : this preference specifies whether file downloads are saved as attachments or rendered directly in the Web browser.
 
-**The API Tabs Panel**
+###Panel 2: The API Tabs
 
 The center section of the API Explorer window contains the API tabs panel:
 
 ![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-2.png)
 
-Each tab contains functionality you can use to interact with and invoke a subset of the full API. To learn more about the functionality in each tab, refer to the section [Learning the API](#learning-the-api).
-
-**The API Request Panel**
-
-The lower left area of the API Explorer window contains the API Request Panel. Each time you make an API call, this panel automatically displays details of that call, including the following:
-
--  API call parameters
-
--  API call method
-
--  API call endpoint
-
-![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-3.png)
-
-**The API Response Markup Panel**
-
-The lower right area of the API Explorer window contains the API Response Markup Panel. Each time an API call sees a response from the server, the complete response markup for the call is displayed in this panel.
-
-![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-4.png)
-
-## Learning the API
 
 Use the functionality found under each tab in API Explorer to interact with and invoke a subset of the full API. Each of these tabs is described in the following sections.
 
 **DeployR Tab**
 
-The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingusers).
+The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](deployr-api-reference.md#users).
 
 When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs you must first sign-in to DeployR.
 
@@ -106,7 +88,7 @@ Once you successfully authenticates with DeployR the following tabs are activate
 
 **Projects Tab**
 
-The Projects tab provides access to the full set of [Project Management APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingprojects).
+The Projects tab provides access to the full set of [Project Management APIs](deployr-api-reference.md#projects).
 
 Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:
 
@@ -124,34 +106,48 @@ The functionality found under these tabs allows you to interact with APIs on the
 
 **Console Tab**
 
-The Console tab offers access to the full set of [Project Execution APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectexecution).
+The Console tab offers access to the full set of [Project Execution APIs](deployr-api-reference.md#projexec).
 
 ** Workspace Tab**
 
-The Workspace tab offers access to the full set of [Project Workspace APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectworkspace).
+The Workspace tab offers access to the full set of [Project Workspace APIs](deployr-api-reference.md#project-workspace).
 
 **Directory Tab**
 
-The Directory tab offers access to the full set of [Project Directory APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectdirectory).
+The Directory tab offers access to the full set of [Project Directory APIs](deployr-api-reference.md#projdir).
 
 **Packages Tab**
 
-The Packages tab offers access to the full set of [Project Package APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectpackages).
+The Packages tab offers access to the full set of [Project Package APIs](deployr-api-reference.md#projpkg).
 
 **About Tab**
 
-The About tab offers access to the [/r/project/about](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectabout) and [/r/project/about/update](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
+The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/#_projectabout) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/#_projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
 
 **Repo Files Tab**
 
-The Repo Files tab offers access to the full set of [Repository File APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryfiles).
+The Repo Files tab offers access to the full set of [Repository File APIs](deployr-api-reference.md#repofiles).
 
 **Jobs Tab**
 
-The Jobs tab offers access to the full set of [Job APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#workingjobs).
+The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.md#jobs).
 
 **Repo Scripts Tab**
 
-The Repo Scripts tab offers access to the full set of [Repository Script APIs](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/single.html#repositoryscripts).
+The Repo Scripts tab offers access to the full set of [Repository Script APIs](deployr-api-reference.md#reposcripts).
 
->Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
+###Panel 3: API Request
+
+The lower left area of the API Explorer window contains the API Request Panel. Each time you make an API call, this panel automatically displays details of that call, including the following:
+
+-  API call parameters
+-  API call method
+-  API call endpoint
+
+![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-3.png)
+
+###Panel 4: API Response Markup
+
+The lower right area of the API Explorer window contains the API Response Markup Panel. Each time an API call sees a response from the server, the complete response markup for the call is displayed in this panel.
+
+![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-4.png)

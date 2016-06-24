@@ -6,9 +6,9 @@ description: "Data scientist's guide to Writing Portable R Code for DeployR "
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -124,7 +124,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
 
-        install_github('deployr/deployrUtils')
+        install_github('Microsoft/deployrUtils')
 
 2.  Declare package dependencies using `deployrPackage()` at the top of your script in your preferred IDE. Consult the package help for more details.
 
@@ -151,8 +151,8 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 3.  [Verify](deployr-data-scientist-getting-started.md#test-analytics) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) before handing it off to the application developer(s).
 
     >[!NOTE]
-	>If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](deployr-admin-r-package-management.md).
+	>1. If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](deployr-admin-r-package-management.md).
 	>
-    >If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
+    >2. If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 
     ![Test Page](./media/deployr-data-scientist-write-portable-r-code/testpage.png)

@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,12 +19,14 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
 # About DeployR Administration Console
+
+<!--**THIS TOPIC APPLIES TO:** ![](../media/checkmark.jpeg) DeployR for Microsoft R Server 2016 (8.0.5) ![](../media/checkmark.jpeg) DeployR Enterprise and Open (8.0.0)-->
 
 The DeployR Administration Console, which is delivered with DeployR, is an easy-to-use web interface that facilitates the proper management and administration of your DeployR deployment. Accordingly, the following functions are supported in the console:
 
@@ -33,6 +35,7 @@ The DeployR Administration Console, which is delivered with DeployR, is an easy-
 -   The import and export of [R scripts](deployr-admin-console-managing-r-scripts.md)
 -   The creation and management of [R boundaries](deployr-admin-managing-r-boundaries.md), which are used to constrain runtime resource usage
 -   The creation and management of [IP filters](deployr-admin-managing-access-with-ip-filters.md)
+-   The backup and restore of [database contents](deployr-admin-console-database.md)
 -   The management of node resources on the DeployR [grid](deployr-admin-managing-the-grid.md)
 -   The management of DeployR [server policies](deployr-admin-managing-server-policies.md)
 -   The [monitoring of events on the grid](deployr-admin-monitoring-events.md)
@@ -47,7 +50,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 
 ## How to Access the Administration Console
 
->You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you'll need to log in to each one in a separate brand of browser. For example, to log in to the DeployR Administration Console with admin account and into the API Explorer tool with another user account, you could open one in Google Chrome™ and the other in Mozilla® Firefox®.
+>You cannot log in to DeployR from multiple accounts using a single brand of browser program. To use two or more accounts concurrently, you'll need to log in to each one in a separate brand of browser. 
 
 **To access and log in to the Administration Console after installation:**
 

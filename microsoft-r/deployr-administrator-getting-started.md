@@ -6,9 +6,9 @@ description: "Getting started for DeployR Administrators: high level introdution
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -27,8 +27,6 @@ ms.custom: ""
 
 
 # Getting Started - Administrators
-
-## Introduction
 
 This guide is for system administrators of DeployR, the *R Integration Server*. If you are responsible for creating or maintaining an evaluation or a production deployment of the DeployR server, then this guide is for you.
 
@@ -46,13 +44,13 @@ But first, you must install the server. A comprehensive installation guide with 
 
 ## Security Policies
 
-User access to the DeployR server and the services offered on it's [API](deployr-api-reference.md) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](deployr-admin-console/deployr-admin-console-about.md) to create [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) for each member of your community.
+User access to the DeployR server and the services offered on its [API](deployr-api-reference.md) are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the [Administration Console](deployr-admin-console/deployr-admin-console-about.md) to create [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) for each member of your community.
 
 The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](deployr-admin-console/deployr-admin-console-permissions-with-roles.md) on a user-by-user basis to expose further functionality and data on the server.
 
-However, basic user authentication and authorization are only one small part of the full set of [DeployR security](deployr-admin-security.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. DeployR Enterprise edition also offers seamless integration with popular enterprise security solutions.
+However, basic user authentication and authorization are only one small part of the full set of [DeployR security](deployr-admin-security/deployr-security-authentication.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. DeployR Enterprise also offers seamless integration with popular enterprise security solutions.
 
-The full set of DeployR security features available to you as a system administrator are detailed in this [Security guide](deployr-admin-security.md).
+The full set of DeployR security features available to you as a system administrator are detailed in this [Security guide](deployr-admin-security/deployr-security.md).
 
 ## R Package Policies
 
@@ -122,21 +120,19 @@ Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-tro
 
 This section provides a quick summary of useful links for administrators working with DeployR.
 
-### Key Documents
+>Use the table of contents to find all of the guides and documentation needed by the administrator.
 
+**Key Documents**
 -   [About DeployR](deployr-about.md)
 -   [Installation & Configuration](deployr-installing-configuring.md)
--   [Security](deployr-admin-security.md)
+-   [Security](deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
 
->Use the table of contents to find all of the guides and documentation needed by the administrator.
-
-###Other Getting Started Guides
+**Other Getting Started Guides**
 -   [Application Developers](deployr-application-developer-getting-started.md)
 -   [Data Scientists](deployr-data-scientist-getting-started.md)
 
-### Support Channels
-
--   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+**Support Channel**
+-   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,60 +19,45 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
 # Developer Tools, API Docs, and Samples
 
->**Get Started with DeployR!**  
->Use the [**RBroker framework**](deployr-rbroker-framework.md) and/or the [**client libraries**](deployr-client-library.md) to communicate with the DeployR server. On this page, you can download the framework/library in one of the available languages, follow their tutorials, and consult the comprehensive documentation.
+Get started with DeployR! Use the **RBroker framework** and/or the **client libraries** to communicate with the DeployR server. 
+
+On this page, you can download the framework/library in one of the available languages, follow their tutorials, and consult the comprehensive documentation.
 
 ## RBroker Framework
 
 The RBroker Framework is the simplest way to integrate R Analytics into any Java, JavaScript or .NET application. Submit as many R tasks as your application needs. No need to manage client-side request queues or block for results. Let this framework handle all of the complexity while you enjoy effortless scale. Simply define an RTask, submit your task to an instance of RBroker and then retrieve your RTaskResult. It really is that simple.
 
-1.   [Read the **RBroker Tutorial**](deployr-rbroker-framework.md)
+1.   Read the [ **RBroker Framework Tutorial**](deployr-rbroker-framework.md)
 
-1.   Continue with your preferred programming language:
-	- **Java**
-		- [API Documentation](http://microsoft.github.io/java-rbroker-framework/)
-		- [Download Framework from GitHub](https://github.com/microsoft/java-rbroker-framework/releases)  
-	- **JavaScript**
-		- [API Documentation](http://microsoft.github.io/js-rbroker-framework)
-		- [Download Framework from GitHub](https://github.com/Microsoft/js-rbroker-framework/releases) 
-	- **.NET**
-		- [API Documentation](https://github.com/Microsoft/dotnet-rbroker-framework/releases)
-		- [Download Framework from GitHub](https://github.com/Microsoft/dotnet-rbroker-framework/releases)  
+1.   Get the documentation and download the library for your preferred programming language:
+	- **Java**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](http://microsoft.github.io/java-rbroker-framework/) &nbsp;|&nbsp; [Download](https://github.com/microsoft/java-rbroker-framework/releases)  
+	- **JavaScript**: &nbsp;&nbsp; [API Doc](http://microsoft.github.io/js-rbroker-framework) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/js-rbroker-framework/releases)  
+	- **.NET**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](https://github.com/Microsoft/dotnet-rbroker-framework/releases) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/dotnet-rbroker-framework/releases)<br />  &nbsp; 
 
-1.  Explore the RBroker Framework examples for [Java](https://github.com/Microsoft/java-example-rbroker-basics), [JavaScript](https://github.com/Microsoft/js-rbroker-framework), and [.NET](https://github.com/Microsoft/dotnet-rbroker-framework). Find them under the `examples` directory of each Github repository.
+1.  Explore the RBroker Framework examples for [Java](https://github.com/Microsoft/java-example-rbroker-basics), [JavaScript](https://github.com/Microsoft/js-rbroker-framework), and [.NET](https://github.com/Microsoft/dotnet-rbroker-framework). Find them under the `examples` directory of each Github repository. Check out additional sample applications that use the client library or RBroker for [Java](https://github.com/Microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/Microsoft/?utf8=✓&query=js-example).
 
 ## Client Libraries
 
 The DeployR API exposes a wide range of R analytics services to client application developers. If the RBroker Framework doesn't give you exactly what you need then you can get access to the full DeployR API using our client libraries. We currently provide native client library support for Java, JavaScript or .NET developers.
 
-1.  [Read the **Client Library Tutorial**](deployr-client-library.md)
+1.  Read the [**Client Library Tutorial**](deployr-client-library.md)
 
-1.  Continue with your preferred programming language:
+1.  Get the documentation and download the library for your preferred programming language:
+	- **Java**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](http://microsoft.github.io/java-client-library/) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/java-client-library/releases)
+	- **JavaScript**: &nbsp;&nbsp; [API Doc](https://microsoft.github.io/js-client-library) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/js-client-library/releases)  
+	- **.NET**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](https://github.com/Microsoft/dotnet-client-library/releases) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/dotnet-client-library/releases)  <br />  &nbsp;
 
-	-  **Java**
-		-  [API Documentation](http://microsoft.github.io/java-client-library/)
-		-  [Download Library from GitHub](https://github.com/Microsoft/java-client-library/releases)
-	-  **JavaScript**
-		-  [API Documentation](https://microsoft.github.io/js-client-library)
-		-  [Download Library from GitHub](https://github.com/Microsoft/js-client-library/releases)
-	-  **.NET**
-		-  [Download API Documentation](https://github.com/Microsoft/dotnet-client-library/releases)
-		-  [Download Library from GitHub](https://github.com/Microsoft/dotnet-client-library/releases)
+1.  Explore the client library examples for [Java](https://github.com/Microsoft/java-example-client-basics), [JavaScript](https://github.com/Microsoft/js-client-library/releases), and [.NET](https://github.com/Microsoft/dotnet-client-library). Find them under the `examples` directory of each Github repository. Check out additional sample applications that use the client library or RBroker for [Java](https://github.com/Microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/Microsoft/?utf8=✓&query=js-example).
 
-1.  Explore the client library examples for [Java](https://github.com/Microsoft/java-example-client-basics), [JavaScript](https://github.com/Microsoft/js-client-library/releases), and [.NET](https://github.com/Microsoft/dotnet-client-library). Find them under the `examples` directory of each Github repository.
+## API Reference and Tools
 
-## API Reference Guide
+Need to integrate DeployR-powered R Analytics using a different programming language? The [API Reference guide](deployr-api-reference.md) details everything you need to know to get up and running. 
 
-Need to integrate DeployR-powered R Analytics using a different programming language? The [API Reference guide](deployr-api-reference.md) details everything you need to know to get up and running. Also described is the API Explorer used to interactively learn the DeployR API. 
-
-
-## Examples
-
-Check out additional sample applications that use the client library or RBroker for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
+Also described is the [API Explorer tool](deployr-api-explorer-tool.md) used to interactively learn the DeployR API. 

@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "paulette.mckay"
 ms.date: "05/17/2016"
 ms.topic: "get-started-article"
-ms.prod: "rclient"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-client"
 ms.custom: ""
 
 ---
@@ -83,9 +83,10 @@ Microsoft R Client is free to everyone. Download Microsoft R Client at http://ak
 
 After you have installed the software, you launch Microsoft R Client as follows.
 
-For Windows 7 and Windows 10:
+For Windows 10:
 
-+ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
++ Choose **All Apps > Microsoft R Client > Rgui**.
+
 
 For Windows 8.1:
 
@@ -94,6 +95,11 @@ For Windows 8.1:
 1. Click **Start** to view the **Start** screen.
 
 1. Locate and click the tile for **Microsoft R Client**.
+
+
+For Windows 7:
+
++ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
 
 <br>
 ##Testing the Install

@@ -8,7 +8,7 @@ author: "richcalaway"
 manager: "mblythe"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
@@ -331,7 +331,10 @@ The location of the sample data directory is stored as an option in RevoScaleR, 
 
 	rxGetOption("sampleDataDir")
 
-Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We make extensive use of the sample data sets both in this *User’s Guide* and the companion documents *RevoScaleR Getting Started Guide* (RevoScaleR\_Getting\_Started.pdf) and *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf).
+Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We make extensive use of the sample data sets both in this *User’s Guide* and the companion guides:
+- [RevoScaleR Getting Started Guide](scaler-getting-started.md)
+- [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md); see this guide for HPC examples
+
 
 ## Managing Threads
 
@@ -368,7 +371,8 @@ The *.First.sys* function is normally run after all other initialization is comp
 
 R has extensive facilities for managing random number generation, and these are all fully supported in RevoScaleR. In addition, RevoScaleR provides an interface to random number generators supplied by the Vector Statistical Library that is part of Intel’s Math Kernel Library. To use one of these generators, call the RevoScaleR function *rxRngNewStream*, specifying the desired generator (the default is a version of the Mersenne-Twister, MT-2203), the desired substream (if applicable), and a seed (if desired). See the help file for a complete list of the available generators and examples of their use.
 
-The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf) for complete details.
+The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md)
+for complete details.
 
 RevoScaleR depends on a number of packages that are specified as “default packages” in Microsoft R Server and R Client. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
 
