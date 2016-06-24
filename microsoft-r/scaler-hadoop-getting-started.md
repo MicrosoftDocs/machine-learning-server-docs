@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# RevoScaleR Hadoop MapReduce Getting Started Guide
+# Get started with ScaleR on Hadoop MapReduce
 
 ## Overview
 
@@ -32,19 +32,27 @@ This guide is an introduction to using the **RevoScaleR** package in a Hadoop di
 
 While **RevoScaleR** makes use of the Hadoop MapReduce framework, you need have no experience or detailed knowledge of that framework to use **RevoScaleR** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
 
-The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms.*
+The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful for these scenarios:
 
-The RevoScaleR high performance analysis functions are portable. The same high performance functions work on a variety of computing platforms, including Windows and RHEL workstations and servers and distributed computing platforms including Hadoop. So, for example, you can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it. For those interested in the underlying architecture, on Hadoop the RevoScaleR analysis functions go through the following steps.
+- Analyze data sets that are too big to fit in memory.
+- Perform computations distributed over several cores, processors, or nodes in a cluster.
+- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+
+The RevoScaleR high performance analysis functions are portable. The same high performance functions work on a variety of computing platforms, including Windows and RHEL workstations and servers and distributed computing platforms including Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it.
+
+### How ScaleR distributes jobs in Hadoop
+
+On Hadoop, the RevoScaleR analysis functions go through the following steps.
 
 -   A master process is initiated to run the main thread of the algorithm.
 -   The master process initiates a MapReduce job to make a pass through the data.
--   The mapper produces “intermediate results objects” for each task processing a chunk of data. These are combined using a combiner and then a reducer
+-   The mapper produces “intermediate results objects” for each task processing a chunk of data. These are combined using a combiner and then a reducer.
 -   The master process examines the results. For iterative algorithms, it decides if another pass through the data is required. If so, it initiates another MapReduce job and repeats.
 -   When complete, the final results are computed and returned.
 
-When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example of this is shown in Section 5.6 on *Using a Local Compute Context with HDFS Data*.
+When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example is provided further on, in [Using a Local Compute Context with HDFS Data](#UsingLocalComputeContextwithHDFSData).
 
-More detailed examples of using **RevoScaleR** can be found in the following provided with **RevoScaleR**:
+More detailed examples of using **RevoScaleR** can be found in the following guides:
 
 -   [RevoScaleR Getting Started Guide](scaler-getting-started.md)
 -   [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
@@ -53,20 +61,20 @@ More detailed examples of using **RevoScaleR** can be found in the following pro
 
 ## Data Sources and Functions Supported in Hadoop
 
-The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
 
-Of course, not all data source types are available on all compute contexts. For the Hadoop compute context used in this Guide, named *RxHadoopMR*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). As noted later in this Guide, the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
+Of course, not all data source types are available on all compute contexts. For the Hadoop compute context used in this Guide, named *RxHadoopMR*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
 
 The RevoScaleR analysis functions currently supported on with the Hadoop compute context are:
 
 -   *rxSummary*: Basic summary statistics of data, including computations by group. (Writing by group computations to .xdf file not supported.)
--   *rxQuantile*: Compute approximate quantiles
+-   *rxQuantile*: Compute approximate quantiles.
 -   *rxCrossTabs*: Formula-based cross-tabulation of data.
 -   *rxCube*: Alternative formula-based cross-tabulation returning ‘cube’ results. (Writing output to .xdf file not supported.)
--   *rxLinMod*: Fits a linear model to data
+-   *rxLinMod*: Fits a linear model to data.
 -   *rxCovCor*: Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.
 -   *rxLogit*: Fits a logistic regression model to data.
--   *rxGlm*: Fits a generalized linear model to data
+-   *rxGlm*: Fits a generalized linear model to data.
 -   *rxKmeans*: Performs k-means clustering.
 -   *rxDTree*: Fits a classification or regression tree to data.
 -   *rxDForest*: Fits a classification or regression decision forest to data.
@@ -75,14 +83,14 @@ The RevoScaleR analysis functions currently supported on with the Hadoop compute
 
 High performance computing is supported in Hadoop using:
 
--   *rxExec*: Run an arbitrary R function on nodes of a cluster
+-   *rxExec*: Run an arbitrary R function on nodes of a cluster.
 
 The Hadoop compute context also allows the following data manipulation functionality:
 
 -   *rxDataStep*: Transform and subset data. Output can be an XDF data source, a comma delimited text data source, or a data frame in memory (assuming you have sufficient memory to hold the output data).
 -   *rxFactors*: Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.
 
-The following ‘helper’ functions to get basic information about your data source:
+The following helper functions get basic information about your data source:
 
 -   *rxGetInfo*
 -   *rxGetVarInfo*
@@ -111,95 +119,66 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL5 or RHEL6 operating systems:
+Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster. For instructions on how to install R on Hadoop, see the links in [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md).
 
--   Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
--   HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
--   MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA30600; contact MapR to obtain the patch), MapR 4.1
+## Running examples in the tutorial
 
-If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Server Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
+The tutorial makes extensive use of the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
 
-## Running the Examples in the Getting Started Guide
-
-This guide makes extensive use of the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations, and is used in the examples in Section 5.
-
-Section 5 uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory. That tutorial section describes how to copy the file from the sample data directory into HDFS.
-
-You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+The tutorial uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory. You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 >[!NOTE]
-> RevoScaleR (and this manual) assumes the existence of directories “/var/RevoShare” and “/var/RevoShare/$USER” in the native file system and “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster. Other writable directories may be substituted, but some examples may need to be modified. This manual also assumes the existence of a writable directory “/share” on the Hadoop Distributed File System. If this directory does not exist, or is not writable by Microsoft R Server users, another writable directory must be substituted in the examples.
+> The instructions in this article assume you're using the “/var/RevoShare” and “/var/RevoShare/$USER” directories in the native file system and “/share”, “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster.
 
-## A Tutorial Introduction to RevoScaleR in Hadoop
+<a name="TutorialScaleRHadoop"><a/>
+## A Tutorial introduction to ScaleR in Hadoop
 
-This section contains a detailed introduction to the most important high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster. The following tasks are performed***:***
+This tutorial introduces several high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster and these tasks:
 
-1.  Starting Microsoft R Server
-2.  Specify the NameNode.
-3.  Create a compute context for Hadoop.
-4.  Copy a data set into the Hadoop Distributed File System.
-5.  Create a data source.
-6.  Summarize your data.
-7.  Fit a linear model to the data.
+1.  Start Microsoft R Server.
+2.  Create a compute context for Hadoop.
+3.  Copy a data set into the Hadoop Distributed File System.
+4.  Create a data source.
+5.  Summarize your data.
+6.  Fit a linear model to the data.
 
-### Starting Microsoft R Server
+### Start Microsoft R Server
 
-How you start Microsoft R Server depends on which operating system you are running. On Linux hosts (including nodes of your Hadoop cluster), you start Microsoft R Server by typing the following at the shell prompt:
+Microsoft R Server for Hadoop runs on Linux. On Linux hosts (including nodes of your Hadoop cluster), you can start R Server by typing the following at the shell prompt:
 
-	Revo64
+	[<username>]$ cd MRS_Linux
+	[<username> MRS_Linux]$ Revo64
 
-On Windows 7 and earlier, you start Microsoft R Server as follows:
+You will see a `>` prompt, indicating an R Server session, and the ability to issue ScaleR commands, including commands that set up the compute context.
 
-1.  From the Task Bar, click **Start**.
-2.  Click **All Programs**.
-3.  Click **Revolution R**.
-4.  Click **Enterprise 8.0**.
-5.  Click **Revolution R Enterprise 8.0 (64)**.
+### Create a Compute Context for Hadoop MapReduce
 
-On Windows 8 and Windows Server 2012, you start Microsoft R Server as follows:
+A *compute context* specifies the computing resources to be used by **ScaleR**’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
 
-1.  Move your mouse to the lower left corner of the Desktop until **Start** pops up.
-2.  Click **Start** to view the Start screen.
-3.  Locate the tile for **Revolution R Enterprise 8.0 (64)**.
-
-On Windows 10, you start Microsoft R Server as follows:
-
-1.  From the Task Bar, click **Start**.
-
-2.  Click **All apps**.
-
-3.  Click **Revolution R**.
-
-4.  Click **Revolution R Enterprise 8.0 (64)**.
-
-### Creating a Compute Context for Hadoop MapReduce
-
-A *compute context* specifies the computing resources to be used by **RevoScaleR**’s distributable computing functions. In this manual, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
-
-#### Defining a Compute Context on the Cluster
+#### Define a Compute Context on the Cluster
 
 If you are running on one of the nodes of the Hadoop cluster (which may be an edge node), you can define a Hadoop MapReduce compute context that uses the default values:
 
-	myHadoopCluster <- RxHadoopMR()
+	$ myHadoopCluster <- RxHadoopMR()
 
 >[!NOTE]
 > The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must both exist and be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
-	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]], 
+	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
 		sep="/" )
-	myHdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], 
+	myHdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]],
 		sep="/" )
 
 
-You can have many compute context objects available for use; only one is active at any one time. You specify the active compute context using the *rxSetComputeContext* function:
+You can have many compute context objects but only one is active at any one time. To specify the active compute context, use the *rxSetComputeContext* function:
 
-	rxSetComputeContext(myHadoopCluster)
+	> rxSetComputeContext(myHadoopCluster)
 
 #### Defining a Compute Context on a High-Availability Cluster
 
 If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxHadoopMR*, and also specify the Hadoop port with the *port* argument:
 
-	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server", 
+	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server",
 	    port = 8020)
 
 #### Using Microsoft R Server as a Hadoop Client
@@ -212,12 +191,12 @@ If you are running Microsoft R Server from Linux or from a Windows computer equi
 	mySshSwitches <- "-i /home/yourName/user1.pem" #See NOTE below
 	myShareDir <- paste("/var/RevoShare", mySshUsername, sep ="/")
 	myHdfsShareDir <- paste("/user/RevoShare",mySshUsername, sep="/")
-	
+
 	myHadoopCluster <- RxHadoopMR(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername  = mySshUsername, 
-	    sshHostname  = mySshHostname, 
+	    sshUsername  = mySshUsername,
+	    sshHostname  = mySshHostname,
 	    sshSwitches  = mySshSwitches)
 
 >[!NOTE]
@@ -230,7 +209,7 @@ If you are using PuTTY, you may incorporate the publicly facing host name and an
 	mySshHostname <- "myCluster"
 	myShareDir <- paste("/var/RevoShare", mySshUsername, sep ="/")
 	myHdfsShareDir <- paste("/user/RevoShare",mySshUsername, sep="/")
-	
+
 	myHadoopCluster <- RxHadoopMR(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
@@ -242,7 +221,7 @@ The above assumes that the directory containing the ssh and scp commands (Linux/
 	myHadoopCluster <- RxHadoopMR(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername = mySshUsername, 
+	    sshUsername = mySshUsername,
 	    sshHostname = mySshHostname,
 	    sshClientDir = "C:\\Program Files (x86)\\PuTTY")
 
@@ -251,20 +230,20 @@ In some cases, you may find that environment variables needed by Hadoop are not 
 	myHadoopCluster <- RxHadoopMR(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername  = mySshUsername, 
-	    sshHostname  = mySshHostname, 
+	    sshUsername  = mySshUsername,
+	    sshHostname  = mySshHostname,
 	    sshProfileScript = "/home/user1/.bash_profile",
-	    sshSwitches  = mySshSwitches) 
+	    sshSwitches  = mySshSwitches)
 
 Now that you have defined your compute context, make it the active compute context using the *rxSetComputeContext* function:
 
 	rxSetComputeContext(myHadoopCluster)
 
-### Copying a Data File into the Hadoop Distributed File System
+### Copying a Data File into the Hadoop Distributed File System (HDFS)
 
 For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
 
-	file.exists(system.file("SampleData/AirlineDemoSmall.csv", 
+	file.exists(system.file("SampleData/AirlineDemoSmall.csv",
 	    package="RevoScaleR"))
 	[1] TRUE
 
@@ -278,7 +257,7 @@ First, check to see what directories and files are already in your shared file d
 
 If the AirlineDemoSmall subdirectory does not exist and you have write permission, you can use the following functions to copy the data there:
 
-	source <-system.file("SampleData/AirlineDemoSmall.csv", 
+	source <-system.file("SampleData/AirlineDemoSmall.csv",
 	    package="RevoScaleR")
 	inputDir <- file.path(bigDataDirRoot,"AirlineDemoSmall")
 	rxHadoopMakeDir(inputDir)
@@ -297,20 +276,20 @@ We will create a data source using this file, specifying that it is on the Hadoo
 The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument. We will explicitly set the factor levels for *DayOfWeek* in the desired order using the *colInfo* argument:
 
 	colInfo <- list(DayOfWeek = list(type = "factor",
-	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday", 
+	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday",
 	    "Friday", "Saturday", "Sunday")))
-	
-	airDS <- RxTextData(file = inputDir, missingValueString = "M", 
+
+	airDS <- RxTextData(file = inputDir, missingValueString = "M",
 	    colInfo  = colInfo, fileSystem = hdfsFS)
 
 ### Summarizing Your Data
 
 Use the *rxSummary* function to obtain descriptive statistics for your data. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second.
 
-	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, 
+	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek,
 	    data = airDS)
 	adsSummary
-	
+
 Summary statistics will be computed on the variables in the formula, removing missing values for all rows in the included variables:
 
 	Call:
@@ -318,25 +297,25 @@ Summary statistics will be computed on the variables in the formula, removing mi
 	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
-	Number of valid observations: 6e+05 
-	 
+	Number of valid observations: 6e+05
+
 	 Name       Mean     StdDev    Min        Max        ValidObs MissingObs
 	 ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372     
 	 CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0     
-	
+
 	Category Counts for DayOfWeek
 	Number of categories: 7
 	Number of valid observations: 6e+05
 	Number of missing observations: 0
-	
+
 	 DayOfWeek Counts
-	 Monday    97975 
-	 Tuesday   77725 
-	 Wednesday 78875 
-	 Thursday  81304 
-	 Friday    82987 
-	 Saturday  86159 
-	 Sunday    94975 
+	 Monday    97975
+	 Tuesday   77725
+	 Wednesday 78875
+	 Thursday  81304
+	 Friday    82987
+	 Saturday  86159
+	 Sunday    94975
 
 Notice that the summary information shows cell counts for categorical variables, and appropriately does not provide summary statistics such as *Mean* and *StdDev*. Also notice that the *Call:* line will show the actual call you entered or the call provided by *summary*, so will appear differently in different circumstances.
 
@@ -348,15 +327,15 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 
 	Call:
 	rxSummary(formula = ~ArrDelay:DayOfWeek, data = airDS)
-	
+
 	Summary Statistics Results for: ~ArrDelay:DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
-	Number of valid observations: 6e+05 
-	 
+	Number of valid observations: 6e+05
+
 	 Name               Mean     StdDev   Min Max  ValidObs MissingObs
 	 ArrDelay:DayOfWeek 11.31794 40.68854 -86 1490 582628   17372     
-	
+
 	Statistics by category (7 categories):
 	 Category                         DayOfWeek Means    StdDev  Min Max ValidObs
 	 ArrDelay for DayOfWeek=Monday    Monday    12.025604 40.02463 -76 1017 95298   
@@ -366,18 +345,18 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 	 ArrDelay for DayOfWeek=Friday    Friday    14.804335 41.79260 -78 1490 80142   
 	 ArrDelay for DayOfWeek=Saturday  Saturday  11.875326 45.24540 -73 1370 83851   
 	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
-	
 
-Using a Local Compute Context with HDFS Data
+<a name="UsingLocalComputeContextwithHDFSData"><a/>
+#### Using a Local Compute Context with HDFS Data
 
 At times it may be more efficient to perform smaller computations on the local node rather than using MapReduce. You can easily do this, accessing the same data from the HDFS file system. When working with the local compute context, you will need to specify the name of a specific data file. The same basic code is then used to run the analysis; simply change the compute context to a local context. (Note that this will not work if you are accessing the Hadoop cluster via a client.)
 
 	rxSetComputeContext("local")
 	inputFile <-file.path(bigDataDirRoot,"AirlineDemoSmall/AirlineDemoSmall.csv")
-	airDSLocal <- RxTextData(file = inputFile, 
-	    missingValueString = "M", 
+	airDSLocal <- RxTextData(file = inputFile,
+	    missingValueString = "M",
 	    colInfo  = colInfo, fileSystem = hdfsFS)
-	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, 
+	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek,
 		data = airDSLocal)
 	adsSummary
 
@@ -386,21 +365,21 @@ The results are the same as doing the computations across the nodes with the Had
 
 	Call:
 	rxSummary(formula = ~ArrDelay + CRSDepTime + DayOfWeek, data = airDS)
-	
+
 	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall/AirlineDemoSmall.csv
 	Number of valid observations: 6e+05
-	
+
 	 Name       Mean     StdDev    Min        Max        ValidObs MissingObs
 	 ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372
 	 CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0
-	
+
 	Category Counts for DayOfWeek
 	Number of categories: 7
 	Number of valid observations: 6e+05
 	Number of missing observations: 0
-	
+
 	 DayOfWeek Counts
 	 Monday    97975
 	 Tuesday   77725
@@ -417,23 +396,23 @@ Now set the compute context back to the Hadoop cluster for further analyses:
 ### Fitting a Linear Model
 
 Use the *rxLinMod* function to fit a linear model using your *airDS* data source. Use a single dependent variable, the factor *DayOfWeek*:
-	
+
 	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	summary(arrDelayLm1)
-	
+
 The resulting output is:
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airDS)
-	
+
 	Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
 	Dependent variable(s): ArrDelay
 	Total independent variables: 8 (Including number dropped: 1)
 	Number of valid observations: 582628
-	Number of missing observations: 17372 
-	 
+	Number of missing observations: 17372
+
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
 	(Intercept)          10.3318     0.1330  77.673 2.22e-16 ***
@@ -445,12 +424,12 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
-	
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 '.' 0.1 ' ' 1
+
 	Residual standard error: 40.65 on 582621 degrees of freedom
-	Multiple R-squared: 0.001869 
-	Adjusted R-squared: 0.001858 
-	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16 
+	Multiple R-squared: 0.001869
+	Adjusted R-squared: 0.001858
+	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 
 
 ### Creating a Non-Waiting Compute Context
@@ -467,7 +446,7 @@ Once you have set your compute context to non-waiting, distributed **RevoScaleR*
 
 Right after submission, the job status will typically return *"running"*. When the job status returns *"finished"*, you can obtain the results using *rxGetJobResults* as follows:
 
-	arrDelayLm1 <- rxGetJobResults(job1) 
+	arrDelayLm1 <- rxGetJobResults(job1)
 	summary(arrDelayLm1)
 
 You should always assign the *jobInfo* object so that you can easily track your work, but if you forget, the most recent *jobInfo* object is saved in the global environment as the object *rxgLastPendingJob*. (By default, after you’ve retrieved your job results, the results are removed from the cluster. To have your job results remain, set the *autoCleanup* argument to *FALSE* in *RxHadoopMR*.)
@@ -485,7 +464,7 @@ For the remainder of this tutorial, we return to a waiting compute context:
 
 ## Analyzing a Large Data Set with RevoScaleR
 
-### Getting Set Up to Use Your CSV Files
+### Set up the sample airline dataset
 
 We will now move to examples using a more recent version of the airline data set. The [airline on-time data](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236) has been gathered by the Department of Transportation since 1987. The data through 2008 was used in the American Statistical Association Data Expo in 2009 (<http://stat-computing.org/dataexpo/2009/>). ASA describes the data set as follows:
 
@@ -498,52 +477,52 @@ As before, our first step is to copy the data into HDFS. We specify the location
 	airDataDir <- file.path(bigDataDirRoot,"/airOnTime12/CSV")
 	rxHadoopMakeDir(airDataDir)
 	rxHadoopCopyFromLocal("/tmp/airOT2012*.csv", airDataDir)
-	
+
 The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md):
 
 	airlineColInfo <- list(
 	     MONTH = list(newName = "Month", type = "integer"),
-	    DAY_OF_WEEK = list(newName = "DayOfWeek", type = "factor", 
+	    DAY_OF_WEEK = list(newName = "DayOfWeek", type = "factor",
 	        levels = as.character(1:7),
 	        newLevels = c("Mon", "Tues", "Wed", "Thur", "Fri", "Sat",
-	                      "Sun")), 
-	    UNIQUE_CARRIER = list(newName = "UniqueCarrier", type = 
+	                      "Sun")),
+	    UNIQUE_CARRIER = list(newName = "UniqueCarrier", type =
 	                            "factor"),
 	    ORIGIN = list(newName = "Origin", type = "factor"),
 	    DEST = list(newName = "Dest", type = "factor"),
 	    CRS_DEP_TIME = list(newName = "CRSDepTime", type = "integer"),
 	    DEP_TIME = list(newName = "DepTime", type = "integer"),
 	    DEP_DELAY = list(newName = "DepDelay", type = "integer"),
-	    DEP_DELAY_NEW = list(newName = "DepDelayMinutes", type = 
+	    DEP_DELAY_NEW = list(newName = "DepDelayMinutes", type =
 	                         "integer"),
 	    DEP_DEL15 = list(newName = "DepDel15", type = "logical"),
-	    DEP_DELAY_GROUP = list(newName = "DepDelayGroups", type = 
+	    DEP_DELAY_GROUP = list(newName = "DepDelayGroups", type =
 	                           "factor",
 	       levels = as.character(-2:12),
-	       newLevels = c("< -15", "-15 to -1","0 to 14", "15 to 29", 
+	       newLevels = c("< -15", "-15 to -1","0 to 14", "15 to 29",
 	                     "30 to 44", "45 to 59", "60 to 74",
 	                     "75 to 89", "90 to 104", "105 to 119",
-	                     "120 to 134", "135 to 149", "150 to 164", 
+	                     "120 to 134", "135 to 149", "150 to 164",
 	                     "165 to 179", ">= 180")),
 	    ARR_DELAY = list(newName = "ArrDelay", type = "integer"),
-	    ARR_DELAY_NEW = list(newName = "ArrDelayMinutes", type = 
+	    ARR_DELAY_NEW = list(newName = "ArrDelayMinutes", type =
 	                         "integer"),  
 	    ARR_DEL15 = list(newName = "ArrDel15", type = "logical"),
 	    AIR_TIME = list(newName = "AirTime", type =  "integer"),
 	    DISTANCE = list(newName = "Distance", type = "integer"),
-	    DISTANCE_GROUP = list(newName = "DistanceGroup", type = 
+	    DISTANCE_GROUP = list(newName = "DistanceGroup", type =
 	                         "factor",
 	     levels = as.character(1:11),
 	     newLevels = c("< 250", "250-499", "500-749", "750-999",
 	         "1000-1249", "1250-1499", "1500-1749", "1750-1999",
 	         "2000-2249", "2250-2499", ">= 2500")))
-	
+
 	varNames <- names(airlineColInfo)
 
 We create a data source using these definitions as follows:
 
 	hdfsFS <- RxHdfsFileSystem()
-	bigAirDS <- RxTextData( airDataDir, 
+	bigAirDS <- RxTextData( airDataDir,
 	                        colInfo = airlineColInfo,
 	                        varsToKeep = varNames,
 	                        fileSystem = hdfsFS )      
@@ -554,29 +533,29 @@ We create a data source using these definitions as follows:
 We fit our first model to the large airline data much as we created the linear model for the AirlineDemoSmall data, and we time it to see how long it takes to fit the model on this large data set:
 
 	system.time(
-	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS, 
+	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS,
 	          cube = TRUE)
 	)
-	
+
 To see a summary of your results:
 
 	print(
 	     summary(delayArr)
 	)
-	
+
 You should see the following results:
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = bigAirDS, cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: bigAirDS (RxTextData Data Source)
 	File name: /share/airOnTime12/CSV
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
 	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
@@ -587,12 +566,13 @@ You should see the following results:
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
+
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 '.' 0.1 ' ' 1
+
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
-	Adjusted R-squared: 0.001826 
-	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.001826
+	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 
@@ -609,12 +589,12 @@ For our airline data, we will define our RxXdfData object as follows (the second
 	airData <- RxXdfData( bigAirXdfName,
 	                        fileSystem = hdfsFS )
 
-We set a block size of 250000 rows and specify that we will read all the data by specifying 
+We set a block size of 250000 rows and specify that we will read all the data by specifying
 
 	numRowsToRead = -1:
 	blockSize <- 250000
 	numRowsToRead = -1
-	
+
 We then import the data using rxImport:
 
 	rxImport(inData = bigAirDS,
@@ -629,29 +609,29 @@ We then import the data using rxImport:
 Now we can re-estimate the same linear model, using the new, faster data source:
 
 	system.time(
-	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = airData, 
+	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = airData,
 	          cube = TRUE)
 	)
-	
+
 To see a summary of your results:
 
 	print(
 	     summary(delayArr)
 	)
-	
+
 You should see the following results (which should match the results we found for the CSV files above):
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airData, cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: airData (RxXdfData Data Source)
 	File name: /user/RevoShare/v7alpha/AirlineOnTime2012
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
 	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
@@ -662,12 +642,12 @@ You should see the following results (which should match the results we found fo
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 '.' 0.1 ' ' 1
+
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
-	Adjusted R-squared: 0.001826 
-	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.001826
+	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 ### Handling Larger Linear Models
@@ -689,13 +669,13 @@ Next, see how the airlines rank in arrival delays:
 
 The result is:
 
-	UniqueCarrier=AS UniqueCarrier=US UniqueCarrier=DL UniqueCarrier=FL 
-	      -1.9022483       -1.2418484       -0.8013952       -0.2618747 
-	UniqueCarrier=HA UniqueCarrier=YV UniqueCarrier=WN UniqueCarrier=MQ 
-	       0.3143564        1.3189086        2.8824285        2.8843612 
-	UniqueCarrier=OO UniqueCarrier=VX UniqueCarrier=B6 UniqueCarrier=UA 
-	       3.9846305        4.0323447        4.8508215        5.0905867 
-	UniqueCarrier=AA UniqueCarrier=EV UniqueCarrier=F9 
+	UniqueCarrier=AS UniqueCarrier=US UniqueCarrier=DL UniqueCarrier=FL
+	      -1.9022483       -1.2418484       -0.8013952       -0.2618747
+	UniqueCarrier=HA UniqueCarrier=YV UniqueCarrier=WN UniqueCarrier=MQ
+	       0.3143564        1.3189086        2.8824285        2.8843612
+	UniqueCarrier=OO UniqueCarrier=VX UniqueCarrier=B6 UniqueCarrier=UA
+	       3.9846305        4.0323447        4.8508215        5.0905867
+	UniqueCarrier=AA UniqueCarrier=EV UniqueCarrier=F9
 	       6.3980937        7.2934991        7.8788931
 
 Notice that Alaska Airlines comes in as the best in on-time arrivals, while Frontier is at the bottom of the list. We can see the difference by subtracting the coefficients:
@@ -715,7 +695,7 @@ Our airline data includes a logical variable, ArrDel15, that tells whether a fli
 
 	logitObj <- rxLogit(ArrDel15 ~ DayOfWeek, data = airData)
 	logitObj
-	
+
 which results in:
 
 	Logistic Regression Results for: ArrDel15 ~ DayOfWeek
@@ -724,8 +704,8 @@ which results in:
 	Dependent variable(s): ArrDel15
 	Total independent variables: 8 (Including number dropped: 1)
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	                  ArrDel15
 	(Intercept)    -1.61122563
@@ -758,11 +738,60 @@ To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function.
 
 	newAirDir <- "/user/RevoShare/user/newAirData"
 	newAirXdf <- RxXdfData(newAirDir,fileSystem=hdfsFS)
-	
+
 	rxDataStep(inData = airData, outFile = newAirXdf,
 	           rowSelection = !is.na(ArrDelay) & (DepDelay > -60))
 
 To modify an existing composite XDF using *rxDataStep* set the *overwrite* argument to *TRUE* and either omit the *outFile* argument or set it to the same data source specified for *inData*.
+
+### Using Data from Hive for Your Analyses
+
+There are multiple ways to access and use data from Hive for analyses with R Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+
+1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
+2. If the data is large then use the Hive command line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
+
+Here’s how to get started with each of these approaches.
+
+#### Accessing data via ODBC
+
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+
+- mySQL = "SELECT * FROM CustData"
+
+- myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
+
+- xdfFile <- RxXdfData("dataFromHive.xdf")
+
+- rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
+
+#### Accessing data via an Export to Text Files
+
+This approach uses the Hive command line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
+
+First, check with your Hadoop system administrator find out whether the ‘hive’ or ‘beeline’ command should be used to run a Hive query from the command line, and obtain the needed credentials for access.
+
+Next, try out your hive/beeline command from the Linux command line to make sure it works and that you have the proper authentication and syntax.
+
+Finally, run the command from within R using R’s system command.
+
+Here are some sample R statements that output a Hive query to the local and HDFS file systems:
+
+**Run a Hive query and dump results to a local text file (edge node)**
+	system('hive –e "select * from emp" > myFile.txt')
+
+**Run the same query using beeline’s csv2 output format**
+	system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
+
+**Run the same query but dump the results to CSV in HDFS**
+	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
+
+After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+
+	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
+	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)
+
+	rxSummary(~var1 + var2+ var3+ var4, data=myHiveData)
 
 ### Writing to CSV in HDFS
 
@@ -784,35 +813,34 @@ Alternatively, you could switch your compute context back to “local” when yo
 	airDataCsvRowsDS <- RxTextData(airDataCsvRowsDir, fileSystem=hdfsFS, createFileSet=TRUE, 	rowsPerOutFile=1000000)
 	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
 
-
 Note that when using a HadoopMR compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
 
 ## Parallel Partial Decision Forests
 
 As mentioned in Section 2, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple MapReduce jobs, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single MapReduce job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
 
-	file.name <- "claims.xdf" 
+	file.name <- "claims.xdf"
 	sourceFile <- system.file(file.path("SampleData", file.name),  
 	    package="RevoScaleR")
 	inputDir <- "/share/claimsXdf"
 	rxHadoopMakeDir(inputDir)
 	rxHadoopCopyFromLocal(sourceFile, inputDir)
-	input <- RxXdfData(file.path(inputDir, file.name, 
+	input <- RxXdfData(file.path(inputDir, file.name,
 	    fsep="/"),fileSystem=hdfsFS)
-	
-	partial.forests <-rxDForest(formula = age ~ car.age + 
+
+	partial.forests <-rxDForest(formula = age ~ car.age +
 	    type + cost + number, data = input,
-	    minSplit = 5, maxDepth = 2, 
+	    minSplit = 5, maxDepth = 2,
 	    nTree = rxElemArg(rep(2,8), seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,
 	    scheduleOnce = TRUE)
-	
+
 Equivalently, you can use nTree together with rxExec’s timesToRun argument:
 
-	partial.forests <-rxDForest(formula = age ~ car.age + 
+	partial.forests <-rxDForest(formula = age ~ car.age +
 	    type + cost + number, data = input,
-	    minSplit = 5, maxDepth = 2, 
+	    minSplit = 5, maxDepth = 2,
 	    nTree = 2, seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,

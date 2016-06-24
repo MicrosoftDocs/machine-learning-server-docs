@@ -35,6 +35,7 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 
 ### Step-by-Step
 
+- [Uninstall Microsoft R to upgrade to newer versions](rserver-install-uninstall-upgrade.md)
 - [Install Microsoft R 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
 - [Install Microsoft R 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
 - [Adjust your Hadoop cluster configuration for R server workloads](rserver-install-hadoop-configuration-r-workloads.md)
