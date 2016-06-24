@@ -28,7 +28,7 @@ This article explains how to install version 8.0.5 of Microsoft R Server on a Ha
 
 ## What's new in the 8.0.5 installer
 
-Version 8.0.5 includes updated installers for deploying R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R server** that comes with most of its dependencies built into the package. Version 8.0.5 has fewer post-install configuration requirements, and also includes the Generally Available (GA) version of rxSpark. If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+Version 8.0.5 includes updated installers for deploying R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R server** that comes with most dependencies built into the package. Version 8.0.5 has fewer post-install configuration requirements. It also marks the transition of Spark support from Public Preview to General Availability (GA). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 A summary of setup tasks for version 8.0.5 is as follows:
 
@@ -37,13 +37,13 @@ A summary of setup tasks for version 8.0.5 is as follows:
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
 
-The install script downloads and installs Microsoft R Open for R Server (microsoft-r-server-mro-8.0.rpm) along with its dependencies, plus the following packages that are new in version 8.0.5:
+The install script downloads and installs Microsoft R Open for R Server (microsoft-r-server-mro-8.0.rpm); it also provides the following packages that are new in version 8.0.5:
 
 - microsoft-r-server-intel-mkl-8.0.rpm       
 - microsoft-r-server-packages-8.0.rpm      
 - microsoft-r-server-hadoop-8.0.rpm
 
-In contrast with previous releases, version 8.0.5 comes with a requirement for `root` installation. A non-root installation is not supported in this version.
+In contrast with previous releases, version 8.0.5 comes with a requirement for `root` installation. Non-root installations are not supported in this version.
 
 ## Recommendations for installation
 
@@ -57,7 +57,7 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 ## System requirements
 
-R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
+R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
 
 Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0.5 works with the following Hadoop distributions:
 
@@ -67,7 +67,7 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
 
-In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if a missing dependency error is reported, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
@@ -168,7 +168,7 @@ As part of this process, make sure the base directories /user and /user/RevoShar
 
 **Run programs and sample jobs using sample data**
 
-The first task loads sample data and runs the Revo64 program to further verify the installation.
+The next procedure loads sample data and runs the Revo64 program to further verify the installation.
 
 1. Send sample data to HDFS.
 
@@ -296,15 +296,9 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		> cd MRS80HADOOP; sudo bash ./install.sh -a -p
 		> exit
 
+## Multi-node installation using Cloudera Manager
 
-## Troubleshoot installation problems
-See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for tips.
-
-If you want to start over, see [Uninstall Microsoft R Server](rserver-install-uninstall-upgrade.md) for instructions.
-
-## Multi-node installation on a Cloudera Manager System using a Cloudera Manager Parcel
-
-The following steps walk you through a multi-node installation using Cloudera Manager for a Microsoft R Server version 8.0.5 installation. In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.
+The following steps walk you through a multi-node installation using Cloudera Manager to create a Cloudera Manager parcel for a Microsoft R Server version 8.0.5 installation. In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.
 
 Two parcels are required:
 
@@ -357,8 +351,21 @@ Install the Cloudera Manager parcels as follows:
 
 11. Click the MRS 8.0.5 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
+## Troubleshoot installation problems
+
+See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for tips.
+
+If you want to start over, see [Uninstall Microsoft R Server](rserver-install-uninstall-upgrade.md) for instructions.
+
 ## Next steps
 
 Developers might want to install DeployR, an optional component that provides a server-based framework for running R code in real time. See [DeployR Installation](deployr-installation.md) for setup instructions.
 
 To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](scaler-hadoop-getting-started.md).
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R Server 8.0.0 on Hadoop overview](rserver-install-hadoop-800.md)
+[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)

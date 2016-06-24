@@ -50,3 +50,10 @@ To distribute and activate your parcel perform the following steps:
 8.  Click **Activate**. Activation prepares your parcel to be used by the cluster.
 
 After your parcel is distributed and activated your R packages should be present in the libraries on each node and can be loaded into your next R session.
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R Server 8.0.0 on Hadoop overview](rserver-install-hadoop-800.md)
+[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)

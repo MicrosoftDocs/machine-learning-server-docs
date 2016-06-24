@@ -460,4 +460,11 @@ Next, set up a run configuration to use your R environment as follows:
 5.  Select the configuration you created in the previous procedure, and then click **Apply**.
 6.  Click **Run**. You should see an R console appear in your Eclipse window, as shown below.
 
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R Server 8.0.5 on Hadoop overview](rserver-install-hadoop-805.md)
+[Install R Server 8.0.0 on Hadoop overview](rserver-install-hadoop-800.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+
 ![](media/rserver-install-linux-server/image2.png)
