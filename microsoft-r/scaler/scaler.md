@@ -78,25 +78,25 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 </tr>
 <tr>
 <td width="150px">`rxImport`</td>      
-<td width="40px"><center>![top](../media/award.png)</center></td>
+<td width="25px"><center>![-](../media/award.png)</center></td>
 <td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxDataStep`</td>
-<td><center>![top](../media/award.png)</center></td>
+<td><center>![-](../media/award.png)</center></td>
 <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxGetInfo`</td>
-<td><center>![top](../media/award.png)</center></td>
+<td><center>![-](../media/award.png)</center></td>
 <td>Retrieves summary information from a data source or data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
 </tr>
 <tr>
 <td>`rxSetInfo`</td>
-<td><center>![top](../media/award.png)</center></td>
+<td><center>![-](../media/award.png)</center></td>
 <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
@@ -222,8 +222,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxFactors`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxDataStep`      |![-](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
+|`rxFactors`    |![-](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSplit`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[See package](scaler.md#findmore)</small>|
@@ -236,8 +236,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxHistogram`       |![top](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxLinePlot`  |![top](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxHistogram`       |![-](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxLinePlot`  |![-](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[See package](scaler.md#findmore)</small>|
 
@@ -248,10 +248,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxQuantile`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
-|`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for  efficient representation  returning ‘cube’ results.  Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
+|`rxQuantile`  |![-](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
+|`rxSummary`       |![-](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
+|`rxCrossTabs`      |![-](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxCube`  |![-](../media/award.png) |Alternative formula-based cross-tabulation designed for  efficient representation  returning ‘cube’ results.  Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 |`rxMarginals`   | |Marginal summaries of cross-tabulations.|<small>[See package](scaler.md#findmore)</small>|
 |`as.xtabs`   | |Converts cross tabulation results to an `xtabs` object.|<small>[See package](scaler.md#findmore)</small>|
 |`rxChiSquaredTest`| |Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small>|
@@ -266,16 +266,16 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxLinMod`   |![top](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxLogit`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGlm`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCovCor`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product   matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
-|`rxDTree`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxBTrees`   |![top](../media/award.png) |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.|<small>[See package](scaler.md#findmore)</small>|
-|`rxDForest`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxPredict`   |![top](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
-|`rxKmeans`   |![top](../media/award.png) |Performs k-means clustering.|<small>[See package](scaler.md#findmore)</small>|
-|`rxNaiveBayes`   |![top](../media/award.png) |Performs Naive Bayes classification.|<small>[See package](scaler.md#findmore)</small>|
+|`rxLinMod`   |![-](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxLogit`   |![-](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxGlm`   |![-](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxCovCor`   |![-](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product   matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
+|`rxDTree`   |![-](../media/award.png) |Fits a classification or regression tree to data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxBTrees`   |![-](../media/award.png) |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.|<small>[See package](scaler.md#findmore)</small>|
+|`rxDForest`   |![-](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxPredict`   |![-](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
+|`rxKmeans`   |![-](../media/award.png) |Performs k-means clustering.|<small>[See package](scaler.md#findmore)</small>|
+|`rxNaiveBayes`   |![-](../media/award.png) |Performs Naive Bayes classification.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCov`   | |Calculate the covariance matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCor`    | |Calculate the correlation matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSSCP`   | |Calculate the sum of squares / cross-product matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
@@ -289,11 +289,11 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxSetComputeContext`|![top](../media/award.png)|Sets a compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetComputeContext`|![top](../media/award.png)|Gets the current compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
-|`RxInTeradata`|![top](../media/award.png) |Creates an in-database compute context for Teradata.|<small>[See package](scaler.md#findmore)</small>|
+|`rxSetComputeContext`|![-](../media/award.png)|Sets a compute context.|<small>[See package](scaler.md#findmore)</small>|
+|`rxGetComputeContext`|![-](../media/award.png)|Gets the current compute context.|<small>[See package](scaler.md#findmore)</small>|
+|`RxHadoopMR`|![-](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
+|`RxSpark`|![-](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
+|`RxInTeradata`|![-](../media/award.png) |Creates an in-database compute context for Teradata.|<small>[See package](scaler.md#findmore)</small>|
 |`RxInSqlServer`| |Creates an in-database compute context for SQL Server.|<small>[See package](scaler.md#findmore)</small>|
 |`RxComputeContext`||Creates a compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxLocalSeq`| |Creates a local compute context for `rxExec` using sequential computations.|<small>[See package](scaler.md#findmore)</small>|
@@ -344,8 +344,8 @@ These functions and many more can be used for high performance computing and dis
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxOptions`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetOption`   |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
+|`rxOptions`  |![-](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
+|`rxGetOption`   |![-](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
 |`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
 |`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
