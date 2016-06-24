@@ -251,7 +251,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 ####Manipulation, Cleansing, and Transformation Functions 
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxFactors`    |![top](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[See package](scaler.md#findmore)</small>|
@@ -265,7 +265,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 ####Visualization Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxHistogram`       |![top](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxLinePlot`  |![top](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
@@ -277,7 +277,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 ####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxQuantile`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
 |`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
 |`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
@@ -295,7 +295,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 ####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxLinMod`   |![top](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxLogit`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGlm`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
@@ -318,7 +318,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxSetComputeContext`|![top](../media/award.png)|Sets a compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetComputeContext`|![top](../media/award.png)|Gets the current compute context.|<small>[See package](scaler.md#findmore)</small>|
 |`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
@@ -338,7 +338,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 ##Data Source Functions
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`RxXdfData`       | |Creates an efficient XDF data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxTextData`      | |Creates a comma delimited text data source object.|<small>[See package](scaler.md#findmore)</small>|
 |`RxSasData`      | |Creates a SAS data source object.|<small>[See package](scaler.md#findmore)</small>|
@@ -353,7 +353,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxExec`  | |Run an arbitrary R function on nodes or cores of a cluster.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRngNewStream`   | |Support for Parallel Random Number Generation.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRngDelStream`   | |Support for Parallel Random Number Generation.|<small>[See package](scaler.md#findmore)</small>|
@@ -373,7 +373,7 @@ These functions and many more can be used for high performance computing and dis
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxOptions`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetOption`   |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
