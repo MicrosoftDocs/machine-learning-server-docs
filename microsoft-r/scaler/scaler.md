@@ -74,7 +74,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <th>Function Name</th>
 <th></th>
 <th>Description</th>
-<th>Help</th>
+<th><center>Help</center></th>
 </tr>
 <tr>
 <td width="150px">`rxImport`</td>      
@@ -220,16 +220,89 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 ####Manipulation, Cleansing, and Transformation Functions 
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxDataStep`      |![-](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxFactors`    |![-](../media/award.png)|Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetFuzzyDist`      | |Get fuzzy distances for a character vector.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetFuzzyKeys`      | |Get fuzzy keys for a character vector.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSplit`    |  |Splits an .xdf file or data frame into multiple .xdf files or data frames.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSort`      | |Multi-key sorting of the variables an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxMerge`       | |Merges two .xdf files or data frames using avariety of merge types.|<small>[See package](scaler.md#findmore)</small>|
-|`rxExecuteSQLDDL`|  |SQL Server R Services only. Runs an arbitrary SQL DDL command.     |<small>[**View**](rxExecuteSQLDDL.md)</small>|
+
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="150px">`rxDataStep`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxFactors`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetFuzzyDist`</td>
+        <td> </td>
+        <td>Get fuzzy distances for a character vector.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetFuzzyKeys`</td>
+        <td> </td>
+        <td>Get fuzzy keys for a character vector.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxSplit`</td>
+        <td> </td>
+        <td>Splits an .xdf file or data frame into multiple .xdf files or data frames.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxSort`</td>
+        <td> </td>
+        <td>Multi-key sorting of the variables an .xdf file or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxMerge`</td>
+        <td> </td>
+        <td>Merges two .xdf files or data frames using avariety of merge types.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxExecuteSQLDDL`</td>
+        <td> </td>
+        <td>SQL Server R Services only. Runs an arbitrary SQL DDL command.</td>
+        <td>
+            <center><small>[**View**](rxExecuteSQLDDL.md)</small></center>
+        </td>
+    </tr>
+</table>
+
+
+<br/>
+
 
 <br />
 ####Visualization Functions
