@@ -26,6 +26,8 @@ ms.custom: ""
 
 # RevoScaleR Functions
 
+
+
 The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions. 
 
 This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  If you want to see the entire set of `RevoScaleR` functions,  [follow these steps.](#findmore)
@@ -67,6 +69,157 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 ####Import and Export Functions
 
+
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>Help</th>
+    </tr>
+    <tr>
+
+<td>`rxImport`</td>      
+<td>![top](../media/award.png)</td>
+<td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+
+<td>`rxDataStep`</td>     
+<td>![top](../media/award.png)</td>
+<td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+
+<td>`rxGetInfo`</td>     
+<td>![top](../media/award.png)</td>
+<td>Retrieves summary information from a data source or data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxSetInfo`</td>      
+<td>![top](../media/award.png)</td>
+<td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxGetVarInfo`</td>   
+<td> </td>
+<td>Retrieves variable information from a data source or data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxSetVarInfo`</td>   
+<td> </td>
+<td>Modifies variable information in an .xdf file or data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxGetVarNames`</td>  
+<td> </td>
+<td>Retrieves variable names from a data source or data frame.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxCreateColInfo`</td>  
+<td> </td>
+<td>Generates a 'colInfo' list from a data source.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxCompressXdf`</td>  
+<td> </td>
+<td>Compresses an existing .xdf file, or a directory of .xdf files.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxXdfData`</td>      
+<td> </td>
+<td>Creates an efficient XDF data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxTextData`</td>     
+<td> </td>
+<td>Creates a comma delimited text data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxSasData`</td>     
+<td> </td>
+<td>Creates a SAS data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxSpssData`</td>     
+<td> </td>
+<td>Creates a SPSS data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxOdbcData`</td>     
+<td> </td>
+<td>Creates a ODBC data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxTeradata`</td>    
+<td> </td>
+<td>Creates a Teradata data source object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`RxSqlServerData`</td>   
+<td> </td>
+<td>Creates a SQL Server data source object.</td>
+<td><center><small>[**View**](RxSqlServerData.md)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxOpen`</td>    
+<td> </td>
+<td>Opens a data source for reading.</td>
+<td><center><small>[**View**](rxOpen.md)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxClose`</td>     
+<td> </td>
+<td>Closes a data source.</td>
+<td><center><small>[**View**](rxClose.md)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxReadNext`</td>     
+<td> </td>
+<td>Read data from a source</td>
+<td><center><small>[**View**](rxReadNext.md)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxSetFileSystem`</td>     
+<td> </td>
+<td>Specify a file system type for data for import.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxGetFileSystem`</td>    
+<td> </td>
+<td>Retrieve the current file system type.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxHdfsFileSystem`</td>     
+<td> </td>
+<td>Creates an HDFS file system object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+<td>`rxNativeFileSystem`</td>      
+<td> </td>
+<td>Creates a native file system object.</td>
+<td><center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    </table>
+<!--
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:||
 |`rxImport`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).|<small>[See package](scaler.md#findmore)</small>|
@@ -92,7 +245,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxGetFileSystem`     | |Retrieve the current file system type.|<small>[See package](scaler.md#findmore)</small>|
 |`rxHdfsFileSystem`      | |Creates an HDFS file system object.|<small>[See package](scaler.md#findmore)</small>|
 |`rxNativeFileSystem`       | |Creates a native file system object.|<small>[See package](scaler.md#findmore)</small>|
-
+-->
 
 <br />
 ####Manipulation, Cleansing, and Transformation Functions 
