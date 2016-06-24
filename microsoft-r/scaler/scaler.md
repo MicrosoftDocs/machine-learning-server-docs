@@ -221,7 +221,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </table>
 <!--
 |Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:||
+|-----------------------|:-:|-----------------------|:--------------:|
 |`rxImport`       |![top](../media/award.png)|Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).|<small>[See package](scaler.md#findmore)</small>|
 |`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
 |`rxGetInfo`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
