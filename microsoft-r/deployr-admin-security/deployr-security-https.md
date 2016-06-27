@@ -35,7 +35,8 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.
 
 + In DeployR 8.0.0, only SSL is supported.  
 
->[!IMPORTANT] For security reasons, we strongly recommended that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
+>[!IMPORTANT] 
+>For security reasons, we strongly recommended that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
 
 ## Enabling TLS/SSL Support
 
