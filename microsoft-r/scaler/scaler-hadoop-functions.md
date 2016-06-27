@@ -46,27 +46,119 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 ####Import and Export Functions
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`RxXdfData`       |![top](../media/award.png)|Creates an efficient XDF data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`RxTextData`      |![top](../media/award.png)|Creates a comma delimited text data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetInfo`      |![top](../media/award.png)|Retrieves summary information from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSetInfo`       |![top](../media/award.png)|Sets a file description in an .xdf file or a description attribute in a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetVarInfo`    | |Retrieves variable information from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSetVarInfo`    | |Modifies variable information in an .xdf file or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetVarNames`   | |Retrieves variable names from a data source or data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHdfsFileSystem`      | |Creates an HDFS file system object.|<small>[See package](scaler.md#findmore)</small>|
-
-
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="160px">`RxXdfData`</td>
+        <td> </td>
+        <td>Creates an efficient XDF data source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>    
+    <tr>
+        <td>`RxTextData`</td>
+        <td> </td>
+        <td>Creates a comma delimited text data source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxDataStep`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxGetInfo`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Retrieves summary information from a data source or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxSetInfo`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxGetVarInfo`</td>
+        <td> </td>
+        <td>Retrieves variable information from a data source or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxSetVarInfo`</td>
+        <td> </td>
+        <td>Modifies variable information in an .xdf file or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxGetVarNames`</td>
+        <td> </td>
+        <td>Retrieves variable names from a data source or data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+        <td>`rxHdfsFileSystem`</td>
+        <td> </td>
+        <td>Creates an HDFS file system object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+</table>
 
 <br />
 ####Manipulation, Cleansing, and Transformation Functions
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxDataStep`      |![top](../media/award.png)|Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from  an .xdf file or a data frame.|<small>[See package](scaler.md#findmore)</small>|
-|`rxFactors`    |![top](../media/award.png)|Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.|<small>[See package](scaler.md#findmore)</small>|
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="160px">`rxDataStep`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxFactors`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
 
 
 <br />
@@ -83,27 +175,62 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 <br />
 ####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxQuantile`  |![top](../media/award.png) |Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small>|
-|`rxSummary`       |![top](../media/award.png)|Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCrossTabs`      |![top](../media/award.png) |Formula-based cross-tabulation of data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCube`  |![top](../media/award.png) |Alternative formula-based cross-tabulation designed for efficient representation  returning ‘cube’ results. Writing output to .xdf file not supported.|<small>[See package](scaler.md#findmore)</small>|
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="150px">`rxQuantile`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxSummary`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxCrossTabs`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Formula-based cross-tabulation of data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxCube`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results. Writing output to .xdf file not supported.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
+
+<br /> 
+
 
 <br />
 ####Analysis, Learning, and Prediction Functions for Statistical Modeling
-
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxLinMod`   |![top](../media/award.png) |Fits a linear model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxLogit`   |![top](../media/award.png) |Fits a logistic regression model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGlm`   |![top](../media/award.png) |Fits a generalized linear model to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxCovCor`   |![top](../media/award.png) |Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.|<small>[See package](scaler.md#findmore)</small>|
-|`rxDTree`   |![top](../media/award.png) |Fits a classification or regression tree to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxBTrees`   |![top](../media/award.png) |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.|<small>[See package](scaler.md#findmore)</small>|
-|`rxDForest`   |![top](../media/award.png) |Fits a classification or regression decision forest to data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxPredict`   |![top](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
-|`rxKmeans`   |![top](../media/award.png) |Performs k-means clustering.|<small>[See package](scaler.md#findmore)</small>|
 
 <table>
     <tr>
@@ -200,48 +327,6 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
             <center>![-](../media/award.png)</center>
         </td>
         <td>Performs k-means clustering.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxNaiveBayes`</td>
-        <td>
-            <center>![-](../media/award.png)</center>
-        </td>
-        <td>Performs Naive Bayes classification.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCov`</td>
-        <td> </td>
-        <td>Calculate the covariance matrix for a set of variables.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCor`</td>
-        <td> </td>
-        <td>Calculate the correlation matrix for a set of variables.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSSCP`</td>
-        <td> </td>
-        <td>Calculate the sum of squares / cross-product matrix for a set of variables.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRoc`</td>
-        <td> </td>
-        <td>Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -350,7 +435,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         </th>
     </tr>
     <tr>
-        <td width="180px">`rxExec`</td>
+        <td width="150px">`rxExec`</td>
         <td> </td>
         <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
         <td>
@@ -476,19 +561,95 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 
 RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functionality via R. These functions require access to Hadoop, either locally or remotely via the RxHadoopMR or RxSpark compute contexts.
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxHadoopCommand`| |Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopVersion`| |Return the current Hadoop version.|<small>[See package](scaler.md#findmore)</small>| 
-|`rxHadoopCopyFromClient`| |Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopCopyFromLocal`| |Copy a file from the native file system to HDFS. Wraps the Hadoop `fs -copyFromLocal` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopCopyToLocal`| |Copy a file from HDFS to the local file system. Wraps the Hadoop `fs -copyToLocal` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopCopy`| |Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop `fs -cp` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopRemove`| |Remove a file in HDFS. Wraps the Hadoop `fs -rm` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopListFiles`| |List files in an HDFS directory. Wraps the Hadoop `fs -ls` or `fs -lsr` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopMakeDir`| |Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopMove`| |Move a file in HDFS. Wraps the Hadoop `fs -mv` command.|<small>[See package](scaler.md#findmore)</small>|
-|`rxHadoopRemoveDir`| |Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.|<small>[See package](scaler.md#findmore)</small>|
 
 
-
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="180px">`rxHadoopCommand`</td>
+        <td> </td>
+        <td>Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopVersion`</td>
+        <td> </td>
+        <td>Return the current Hadoop version.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopCopyFromClient`</td>
+        <td> </td>
+        <td>Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopCopyFromLocal`</td>
+        <td> </td>
+        <td>Copy a file from the native file system to HDFS. Wraps the Hadoop `fs -copyFromLocal` command.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopCopy`</td>
+        <td> </td>
+        <td>Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop `fs -cp` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopRemove`</td>
+        <td> </td>
+        <td>Remove a file in HDFS. Wraps the Hadoop `fs -rm` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopListFiles`</td>
+        <td> </td>
+        <td>List files in an HDFS directory. Wraps the Hadoop `fs -ls` or `fs -lsr` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopMakeDir`</td>
+        <td> </td>
+        <td>Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopMove`</td>
+        <td> </td>
+        <td>Move a file in HDFS. Wraps the Hadoop `fs -mv` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxHadoopRemoveDir`</td>
+        <td> </td>
+        <td>Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
