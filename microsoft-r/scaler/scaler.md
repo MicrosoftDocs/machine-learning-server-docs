@@ -388,13 +388,17 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxChiSquaredTest`</td>
         <td> </td>
-        <td>Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
+        <td>Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxFisherTest`</td>
         <td> </td>
-        <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
+        <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
     <tr>
@@ -408,7 +412,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxPairwiseCrossTab`</td>
         <td> </td>
-        <td>Apply a function to pairwise combinations of rows and columns of an `xtabs, object.</td>
+        <td>Apply a function to pairwise combinations of rows and columns of an `xtabs` object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -416,7 +420,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxRiskRatio`</td>
         <td> </td>
-        <td>Calculate the relative risk on a two-by-two `xtabs`</td>object.</td>
+        <td>Calculate the relative risk on a two-by-two `xtabs` object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -424,7 +428,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxOddsRatio`</td>
         <td> </td>
-        <td>Calculate the odds ratio on a two-by-two `xtabs`</td>object.</td>
+        <td>Calculate the odds ratio on a two-by-two `xtabs` object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -671,7 +675,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`RxLocalParallel`</td>
         <td> </td>
-        <td>Creates a local compute context for `rxExec` using the `parallel`</td>package as back end.</td>
+        <td>Creates a local compute context for `rxExec` using the `parallel` package as backend.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -679,7 +683,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`RxForeachDoPar`</td>
         <td> </td>
-        <td>Creates a compute context for `rxExec`using the current `foreach`</td>parallel back end.</td>
+        <td>Creates a compute context for `rxExec`using the current `foreach` parallel backend.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
