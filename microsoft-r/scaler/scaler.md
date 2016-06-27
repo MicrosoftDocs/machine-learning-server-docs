@@ -77,7 +77,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <th><center>Help</center></th>
 </tr>
 <tr>
-<td width="150px">`rxImport`</td>      
+<td width="160px">`rxImport`</td>      
 <td width="25px"><center>![-](../media/award.png)</center></td>
 <td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC orTeradata connection, or data frame).</td>
 <td><center><small>[See package](scaler.md#findmore)<center></small></td>
@@ -218,6 +218,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 
 <br />
+
+<br />
 ####Manipulation, Cleansing, and Transformation Functions 
 
 
@@ -314,7 +316,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[See package](scaler.md#findmore)</small>|
 
-
+<br />
 
 <br />
 ####Analysis Functions for Descriptive Statistics and Cross-Tabulations
