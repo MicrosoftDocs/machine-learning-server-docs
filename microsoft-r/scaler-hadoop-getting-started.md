@@ -4,7 +4,7 @@
 title: "Get started with ScaleR on Hadoop MapReduce"
 description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
 keywords: ""
-author: "heidist"
+author: "HeidiSteen"
 manager: "paulettm"
 ms.date: "06/24/2016"
 ms.topic: "get-started-article"
@@ -59,7 +59,7 @@ More detailed examples of using **RevoScaleR** can be found in the following gui
 -   [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which includes HPC examples
 -   [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
 
-## Data Sources and Functions Supported in Hadoop
+### Data Sources and Functions Supported in Hadoop
 
 The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
 
@@ -117,11 +117,11 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 -   *rxHadoopMakeDir*: Wraps the Hadoop fs -mkdir command.
 -   *rxHadoopRemoveDir*: Wraps the Hadoop fs -rmr command.
 
-## Installation
+### Installation
 
 Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster. For instructions on how to install R on Hadoop, see the links in [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md).
 
-## Running examples in the tutorial
+### Running examples in the tutorial
 
 The tutorial makes extensive use of the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
 
@@ -174,14 +174,14 @@ You can have many compute context objects but only one is active at any one time
 
 	> rxSetComputeContext(myHadoopCluster)
 
-#### Defining a Compute Context on a High-Availability Cluster
+#### Define a Compute Context on a High-Availability Cluster
 
 If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxHadoopMR*, and also specify the Hadoop port with the *port* argument:
 
 	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server",
 	    port = 8020)
 
-#### Using Microsoft R Server as a Hadoop Client
+#### Use Microsoft R Server as a Hadoop Client
 
 If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
@@ -239,7 +239,7 @@ Now that you have defined your compute context, make it the active compute conte
 
 	rxSetComputeContext(myHadoopCluster)
 
-### Copying a Data File into the Hadoop Distributed File System (HDFS)
+### Copy a Data File into the Hadoop Distributed File System (HDFS)
 
 For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
 
@@ -267,7 +267,7 @@ We can then verify that it exists as follows:
 
 	rxHadoopListFiles(inputDir)
 
-### Creating a Data Source
+### Create a Data Source
 
 We will create a data source using this file, specifying that it is on the Hadoop Distributed File System. We first create a file system object that uses the default values:
 
@@ -282,7 +282,7 @@ The input .csv file uses the letter M to represent missing values, rather than t
 	airDS <- RxTextData(file = inputDir, missingValueString = "M",
 	    colInfo  = colInfo, fileSystem = hdfsFS)
 
-### Summarizing Your Data
+### Summarize Your Data
 
 Use the *rxSummary* function to obtain descriptive statistics for your data. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second.
 
@@ -347,7 +347,7 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
 
 <a name="UsingLocalComputeContextwithHDFSData"><a/>
-#### Using a Local Compute Context with HDFS Data
+#### Use a Local Compute Context with HDFS Data
 
 At times it may be more efficient to perform smaller computations on the local node rather than using MapReduce. You can easily do this, accessing the same data from the HDFS file system. When working with the local compute context, you will need to specify the name of a specific data file. The same basic code is then used to run the analysis; simply change the compute context to a local context. (Note that this will not work if you are accessing the Hadoop cluster via a client.)
 
@@ -462,7 +462,7 @@ For the remainder of this tutorial, we return to a waiting compute context:
 
 	rxSetComputeContext(myHadoopCluster)
 
-## Analyzing a Large Data Set with RevoScaleR
+## Analyze a Large Data Set with RevoScaleR
 
 ### Set up the sample airline dataset
 
@@ -795,7 +795,7 @@ After you’ve exported the query results to a text file, it can be streamed dir
 
 ### Writing to CSV in HDFS
 
-If you converted your CSV to XDF, as in section 6.3, to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory will be created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+If you converted your CSV to XDF to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory will be created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
 
 Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
 
@@ -815,9 +815,10 @@ Alternatively, you could switch your compute context back to “local” when yo
 
 Note that when using a HadoopMR compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
 
+<a name="ParallelPartitionDecisionForests></a>"
 ## Parallel Partial Decision Forests
 
-As mentioned in Section 2, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple MapReduce jobs, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single MapReduce job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
+As mentioned in [#Parallel Partition Decision Forests](#ParallelPartitionDecisionForests), both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple MapReduce jobs, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single MapReduce job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
 
 	file.name <- "claims.xdf"
 	sourceFile <- system.file(file.path("SampleData", file.name),  
@@ -866,6 +867,6 @@ You can run the following commands to clean up data in this tutorial:
 
 ## Continuing with Distributed Computing
 
-With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the Hadoop platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
+With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the Hadoop platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions.
 
 The *Distributed Computing Guide* also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.
