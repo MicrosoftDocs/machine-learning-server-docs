@@ -429,7 +429,9 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
-<br /> ####Analysis, Learning, and Prediction Functions for Statistical Modeling
+<br /> 
+
+####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 
 <table>
@@ -684,12 +686,14 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td>`rxInstalledPackages`</td>
         <td> </td>
         <td>Returns the list of installed packages for a compute context.</td>
-        <td><small>[**View**](rxInstalledPackages.md)</small></center>
+        <td><center><small>[**View**](rxInstalledPackages.md)</small></center>
         </td>
+    </tr>
+    <tr>
         <td>`rxFindPackage`</td>
         <td> </td>
         <td>Returns the path to one or more packages for a compute context.</td>
-        <td><small>[**View**](rxFindPackage.md)</small></center>
+        <td><center><small>[**View**](rxFindPackage.md)</small></center>
         </td>
     </tr>
 </table>
@@ -759,11 +763,16 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td>`RxSqlServerData`</td>
         <td> </td>
         <td>Creates a SQL Server data source object.</td>
-        <td><small>[**View**](RxSqlServerData.md)</small></center>
+        <td><center><small>[**View**](RxSqlServerData.md)</small></center>
         </td>
     </tr>
 </table>
-<br /> ##HPC and Distributed Computing Functions These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
+
+<br /> 
+
+##HPC and Distributed Computing Functions 
+
+These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
 <table>
     <tr>
@@ -880,7 +889,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
-<br /> ##Utility Functions >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
+<br /> 
+##Utility Functions 
+
+>Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
 <table>
     <tr>
@@ -902,7 +914,11 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
     </tr>
     <tr>
-        <td>`rxGetOption`</td> |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.</td>
+        <td>`rxGetOption`</td>
+                <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Retrieves a specific `RevoScaleR`-option.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -935,28 +951,28 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td>`rxIsOpen`</td>
         <td> </td>
         <td>Indicates whether a data source can be accessed.</td>
-        <td><small>[**View**](rxIsOpen.md)</small></center>
+        <td><center><small>[**View**](rxIsOpen.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxSqlServerDropTable`</td>
         <td> </td>
         <td>Execute an SQL statement that drops a table.</td>
-        <td><small>[**View**](rxSqlServerDropTable.md)</small></center>
+        <td><center><small>[**View**](rxSqlServerDropTable.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxSqlServerTableExists`</td>
         <td> </td>
         <td>Execute an SQL statement that checks for a table's existance.</td>
-        <td><small>[**View**](rxSqlServerTableExists.md)</small></center>
+        <td><center><small>[**View**](rxSqlServerTableExists.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxWriteNext`</td>
         <td> </td>
         <td>Writes the next chunk when moving data between ScaleR data sources.</td>
-        <td><small>[**View**](rxWriteNext.md)</small></center>
+        <td><center><small>[**View**](rxWriteNext.md)</small></center>
         </td>
     </tr>
 </table>
