@@ -56,25 +56,29 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </th>
     </tr>
     <tr>
+        <td>`rxDataStep`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
         <td width="160px">`RxXdfData`</td>
-        <td> </td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
         <td>Creates an efficient XDF data source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>    
     <tr>
         <td>`RxTextData`</td>
-        <td> </td>
-        <td>Creates a comma delimited text data source object.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxDataStep`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
-        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
+        <td>Creates a comma delimited text data source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
@@ -139,7 +143,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </th>
     </tr>
     <tr>
-        <td width="160px">`rxDataStep`</td>
+        <td width="140px">`rxDataStep`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
@@ -185,7 +189,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxQuantile`</td>
+        <td width="140px">`rxQuantile`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
@@ -402,7 +406,10 @@ Of course, not all data source types are available on all compute contexts. For 
     </tr>
     <tr>
         <td width="150px">`RxXdfData`</td>
-        <td>![top](../media/award.png)</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+
         <td>Creates an efficient XDF data source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
@@ -410,7 +417,9 @@ Of course, not all data source types are available on all compute contexts. For 
     </tr>
     <tr>
         <td>`RxTextData`</td>
-        <td>![top](../media/award.png)</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
@@ -573,8 +582,8 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         </th>
     </tr>
     <tr>
-        <td width="180px">`rxHadoopCommand`</td>
-        <td> </td>
+        <td width="200px">`rxHadoopCommand`</td>
+        <td width="15px"> </td>
         <td>Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
