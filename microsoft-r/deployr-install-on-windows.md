@@ -276,15 +276,17 @@ During the installation of DeployR, a local H2 database is automatically install
 
 If you want to use a local or remote SQL Server database for DeployR instead of the default local H2 database, you'll need to:
 
-1.  Install and configure SQL Server as described for that product.
+1. Install and configure SQL Server as described for that product.
 
-1.  Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`.
+1. Log into the SQL Server Management Studio.
 
->The JDBC drivers are installed with DeployR. 
+1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
+
+    >The JDBC drivers are installed with DeployR. 
 
 1.  If you are using Windows Authentication for login:
 
-    1.  Log into the SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`.
+    1. In SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`.
     
     1.  In the Object Explorer pane, right click **Security &gt; Logins**.
     

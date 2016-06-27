@@ -6,7 +6,7 @@ description: "Security in DeployR: Authentication, HTTPS, SSL, and access contro
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/06/2016"
+ms.date: "06/27/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,11 +35,12 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.
 
 + In DeployR 8.0.0, only SSL is supported.  
 
->[!IMPORTANT] For security reasons, we strongly recommended that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
-
 ## Enabling TLS/SSL Support
 
 Once enabled, your client applications can make API calls that connect over HTTPS.
+
+>[!IMPORTANT] 
+>For security reasons, we strongly recommend that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
 
 ### Enabling for DeployR for Microsoft R Server 2016
 
@@ -75,7 +76,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
    1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file. 
    
       >If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
-      >
+
       >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
    1. When prompted whether the certificate file is self-signed, answer `N` if you are using a trusted SSL certificate from a registered authority -or- `Y` if self-signed.
@@ -91,7 +92,103 @@ Once enabled, your client applications can make API calls that connect over HTTP
 <br />
 ####Securing connections between DeployR Web server and the database
 
-If your corporate policies require that you secure the communications between the Web server and the DeployR database, configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#postgresql) or a [PostgreSQL database](../deployr-install-on-linux.md#postgresql) rather than the default H2 database.
+If your corporate policies require that you secure the communications between the Web server and the DeployR database, then you should configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#postgresql) or a [PostgreSQL database](../deployr-install-on-linux.md#postgresql) rather than the default H2 database.
+
+To encrypt the connections between
+1. Log into the SQL Server Management Studio.
+
+1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
+
+    >The JDBC drivers are installed with DeployR. 
+
+1.  If you are using Windows Authentication for login:
+
+    1. In SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`.
+    
+    1.  In the Object Explorer pane, right click **Security &gt; Logins**.
+    
+        ![Login](./media/deployr-install-on-windows/sqlserver-new-login.png)
+
+    1.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
+    
+        ![Login](./media/deployr-install-on-windows/sqlserver-login-dialog.png)
+
+    1.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
+    
+    6.  Choose the **User Mapping** page on the left and select the checkbox for the database for DeployR, which in our example is called `deployr` and for the Database role member, select `db_owner` and `public`.
+    
+    7.  Choose the **Status** page on the left and **Grant** permission to connect to database engine and choose **Enabled** login.
+    
+    8.  Click **OK** to create the new login.
+
+5.  Stop the DeployR server as follows:
+
+    1.  Launch the DeployR administrator utility script with administrator privileges:
+
+            cd $DEPLOYR_HOME\deployr\tools\ 
+            sudo adminUtility.bat
+
+    2.  From the main menu, choose the option for **Start/Stop Server**.
+
+    3.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `S`. It may take some time for the Tomcat process to terminate.
+
+    4.  Exit the utility.
+
+6.  Update the database properties to point to the new database as follows:
+
+    1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
+
+    2.  Locate the `dataSource` property block.
+
+    3.  Replace **the entire contents** of the `dataSource` block with these for your authentication method:
+
+        For Windows authentication:
+
+              dataSource {
+                   dbCreate = "update"
+                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;integratedSecurity=true;"
+              }
+
+        For basic authentication:
+
+              dataSource {
+                   dbCreate = "update"
+                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                   username = “<PUT_DB_USERNAME_HERE>”
+                   password = “<PUT_DB_PASSWORD_HERE>”
+                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;"
+              }
+
+        >If you are unsure of your SQL instance name, please consult with your SQL administrator. The default instance name for:
+        >    -   SQL Server Express is `SQLEXPRESS`
+        >    -   SQL Server Standard or Professional is `MSSQLEXPRESS`
+        >
+        >If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
+
+7.  If you are connecting to a remote SQL Server database, be sure to [open the database port to the public IP of the DeployR server](#update-your-firewall).
+
+8.  Test the connection to the database and restart the server as follows:
+
+    1.  Launch the DeployR administrator utility script with administrator privileges:
+
+            cd $DEPLOYR_HOME\deployr\tools\ 
+            sudo adminUtility.bat
+
+    2.  From the main menu, choose the option **Test Database Connection**.
+
+        -   If there are any issues, you must solve them before continuing.
+
+        -   Once the connection test passes, return the main menu.
+
+    3.  From the main menu, choose the option **Start/Stop Server** to restart DeployR-related services.
+
+    4.  Once the DeployR server has been successfully restarted, return the main menu.
+
+    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+
+    6.  Exit the utility.
+
 
 1. Enable SSL/TLS 1.2 for your remote database:
 
