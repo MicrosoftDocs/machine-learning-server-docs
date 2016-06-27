@@ -89,6 +89,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
+<!--
 <br />
 ####Securing connections between DeployR Web server and the database
 
@@ -146,7 +147,7 @@ To encrypt the connections between the web server and a **remote SQL Server data
     + https://msdn.microsoft.com/en-us/library/ms191192.aspx
     + https://support.microsoft.com/en-us/kb/3135244
 
-
+-->
 
 
 <br>
