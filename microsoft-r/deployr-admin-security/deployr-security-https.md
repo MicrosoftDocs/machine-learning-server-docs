@@ -75,7 +75,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
    1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file. 
    
       >If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
-      >
+
       >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
    1. When prompted whether the certificate file is self-signed, answer `N` if you are using a trusted SSL certificate from a registered authority -or- `Y` if self-signed.
