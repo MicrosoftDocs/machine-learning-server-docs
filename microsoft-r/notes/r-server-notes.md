@@ -67,7 +67,7 @@ The following release notes apply to Microsoft R Server.
 
   + DeployR Enterprise now has a simplified installer for a better customer experience.
 
-  + The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
+  + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
 For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
