@@ -231,7 +231,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxDataStep`</td>
+        <td width="160px">`rxDataStep`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
@@ -334,7 +334,9 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td>
             <center>![-](../media/award.png)</center>
         </td>
-        <td>Computes approximate quantiles for .xdf files and data frames without sorting. |<small>[See package](scaler.md#findmore)</small></center>
+        <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
     <tr>
@@ -378,7 +380,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`as.xtabs`</td>
         <td> </td>
-        <td>Converts cross tabulation results to an `xtabs`</td>object.</td>
+        <td>Converts cross tabulation results to an `xtabs` object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -386,19 +388,19 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxChiSquaredTest`</td>
         <td> </td>
-        <td>Performs Chi-squared Test on `xtabs`</td>object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
+        <td>Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxFisherTest`</td>
         <td> </td>
-        <td>Performs Fisher's Exact Test on `xtabs`</td>object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
+        <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data. |<small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxKendallCor`</td>
         <td> </td>
-        <td>Computes Kendall's Tau Rank Correlation Coefficient using `xtabs`</td>object.</td>
+        <td>Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -406,7 +408,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`rxPairwiseCrossTab`</td>
         <td> </td>
-        <td>Apply a function to pairwise combinations of rows and columns of an `xtabs`</td>object.</td>
+        <td>Apply a function to pairwise combinations of rows and columns of an `xtabs, object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -593,7 +595,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxSetComputeContext`</td>
+        <td width="180px">`rxSetComputeContext`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
@@ -661,7 +663,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`RxLocalSeq`</td>
         <td> </td>
-        <td>Creates a local compute context for `rxExec`</td>using sequential computations.</td>
+        <td>Creates a local compute context for `rxExec` using sequential computations.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -669,7 +671,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`RxLocalParallel`</td>
         <td> </td>
-        <td>Creates a local compute context for `rxExec`</td>using the `parallel`</td>package as back end.</td>
+        <td>Creates a local compute context for `rxExec` using the `parallel`</td>package as back end.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -677,7 +679,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     <tr>
         <td>`RxForeachDoPar`</td>
         <td> </td>
-        <td>Creates a compute context for `rxExec`</td>using the current `foreach`</td>parallel back end.</td>
+        <td>Creates a compute context for `rxExec`using the current `foreach`</td>parallel back end.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
@@ -784,7 +786,7 @@ These functions and many more can be used for high performance computing and dis
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxExec`</td>
+        <td width="180px">`rxExec`</td>
         <td> </td>
         <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
         <td>
@@ -904,7 +906,7 @@ These functions and many more can be used for high performance computing and dis
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxOptions`</td>
+        <td width="200px">`rxOptions`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
@@ -942,7 +944,7 @@ These functions and many more can be used for high performance computing and dis
     <tr>
         <td>`rxStepControl`</td>
         <td> </td>
-        <td>Construct `variable.selection`</td>argument for `rxLinMod`.</td>
+        <td>Construct `variable.selection` argument for `rxLinMod`.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
