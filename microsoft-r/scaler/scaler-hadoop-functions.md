@@ -28,10 +28,12 @@ ms.custom: ""
 
 The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Hadoop compute contexts and some may not be fully supported in these compute contexts. 
 
-This guide presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line. 
+This page presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line. 
 
-RevoScaleR supports two Hadoop compute contexts:
+The `RevoScaleR` package supports two Hadoop compute contexts:
+
 + `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../scaler-hadoop-getting-started.md).
+
 + `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 
@@ -39,8 +41,9 @@ RevoScaleR supports two Hadoop compute contexts:
 
 As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
-## Data Analysis Functions
 <br />
+## Data Analysis Functions
+
 ####Import and Export Functions
 
 |Function Name          | |Description|Help|
@@ -102,18 +105,198 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 |`rxPredict`   |![top](../media/award.png) |Calculates predictions for fitted models. Output must be an XDF data source.|<small>[See package](scaler.md#findmore)</small>|
 |`rxKmeans`   |![top](../media/award.png) |Performs k-means clustering.|<small>[See package](scaler.md#findmore)</small>|
 
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="150px">`rxLinMod`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a linear model to data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxLogit`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a logistic regression model to data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGlm`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a generalized linear model to data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxCovCor`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxDTree`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a classification or regression tree to data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxBTrees`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxDForest`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fits a classification or regression decision forest to data.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxPredict`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxKmeans`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Performs k-means clustering.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxNaiveBayes`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Performs Naive Bayes classification.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxCov`</td>
+        <td> </td>
+        <td>Calculate the covariance matrix for a set of variables.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxCor`</td>
+        <td> </td>
+        <td>Calculate the correlation matrix for a set of variables.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxSSCP`</td>
+        <td> </td>
+        <td>Calculate the sum of squares / cross-product matrix for a set of variables.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxRoc`</td>
+        <td> </td>
+        <td>Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
 
 <br />
 <a name="compute"></a>
 
 ##Compute Context Functions
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`RxHadoopMR`|![top](../media/award.png) |Creates an in-data, file-based Hadoop compute context.|<small>[See package](scaler.md#findmore)</small>|
-|`RxSpark`|![top](../media/award.png) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.|<small>[See package](scaler.md#findmore)</small>|
-|`rxInstalledPackages`   | |Returns the list of installed packages for a compute context.|<small>[**View**](rxInstalledPackages.md)</small>|
-|`rxFindPackage`   | |Returns the path to one or more packages for a compute context.|<small>[**View**](rxFindPackage.md)</small>|
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="180px">`RxHadoopMR`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Creates an in-data, file-based Hadoop compute context.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`RxSpark`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxInstalledPackages`</td>
+        <td> </td>
+        <td>Returns the list of installed packages for a compute context.</td>
+        <td><center><small>[**View**](rxInstalledPackages.md)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxFindPackage`</td>
+        <td> </td>
+        <td>Returns the path to one or more packages for a compute context.</td>
+        <td><center><small>[**View**](rxFindPackage.md)</small></center>
+        </td>
+    </tr>
+</table>
 
 
 <br/>
@@ -123,10 +306,32 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used. 
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`RxXdfData`       | |Creates an efficient XDF data source object.|<small>[See package](scaler.md#findmore)</small>|
-|`RxTextData`      | |Creates a comma delimited text data source object.|<small>[See package](scaler.md#findmore)</small>|
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="150px">`RxXdfData`</td>
+        <td>![top](../media/award.png)</td>
+        <td>Creates an efficient XDF data source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`RxTextData`</td>
+        <td>![top](../media/award.png)</td>
+        <td>Creates a comma delimited text data source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
 
 
 <br />
@@ -134,32 +339,138 @@ Of course, not all data source types are available on all compute contexts. For 
 
 The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxExec`  | |Run an arbitrary R function on nodes or cores of a cluster.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetJobStatus`| |Get the status of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetJobResults`| |Get the return object(s) of a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetJobOutput`| |Get the console output from a non-waiting distributed computing job.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetJobs`| |Get the available distributed computing job information objects.|<small>[See package](scaler.md#findmore)</small>|
+
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="180px">`rxExec`</td>
+        <td> </td>
+        <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetJobStatus`</td>
+        <td> </td>
+        <td>Get the status of a non-waiting distributed computing job.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetJobResults`</td>
+        <td> </td>
+        <td>Get the return object(s) of a non-waiting distributed computing job.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetJobOutput`</td>
+        <td> </td>
+        <td>Get the console output from a non-waiting distributed computing job.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetJobs`</td>
+        <td> </td>
+        <td>Get the available distributed computing job information objects.</td>
+        <td>
+                <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+</table>
+
+<br /> 
+##Utility Functions 
+
+>Not all of these functions will work if you switch your compute context.
+
+<table>
+    <tr>
+        <th>Function Name</th>
+        <th></th>
+        <th>Description</th>
+        <th>
+            <center>Help</center>
+        </th>
+    </tr>
+    <tr>
+        <td width="200px">`rxOptions`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Gets or sets `RevoScaleR`-specific options.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetOption`</td>
+                <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Retrieves a specific `RevoScaleR`-option.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxGetEnableThreadPool`</td>
+        <td> </td>
+        <td>Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxSetEnableThreadPool`</td>
+        <td> </td>
+        <td>Sets the thread pool state.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxStepControl`</td>
+        <td> </td>
+        <td>Construct `variable.selection` argument for `rxLinMod`.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxIsOpen`</td>
+        <td> </td>
+        <td>Indicates whether a data source can be accessed.</td>
+        <td><center><small>[**View**](rxIsOpen.md)</small></center>
+        </td>
+    </tr>
+    <tr>
+        <td>`rxWriteNext`</td>
+        <td> </td>
+        <td>Writes the next chunk when moving data between ScaleR data sources.</td>
+        <td><center><small>[**View**](rxWriteNext.md)</small></center>
+        </td>
+    </tr>
+</table>
 
 
 
-<br />
-##Utility Functions
->Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxOptions`  |![top](../media/award.png) |Gets or sets `RevoScaleR`-specific options.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetOption`   |![top](../media/award.png) |Retrieves a specific `RevoScaleR`-option.|<small>[See package](scaler.md#findmore)</small>|
-|`rxGetEnableThreadPool`   | |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.|<small>[See package](scaler.md#findmore)</small>|
-|`rxSetEnableThreadPool`   | |Sets the thread pool state.|<small>[See package](scaler.md#findmore)</small>|
-|`rxStepControl`   | |Construct `variable.selection` argument for `rxLinMod`.|<small>[See package](scaler.md#findmore)</small>|
-|`rxIsOpen` | |Indicates whether a data source can be accessed.|<small>[**View**](rxIsOpen.md)</small>|
-|`rxSqlServerDropTable`| |Execute an SQL statement that drops a table.|<small>[**View**](rxSqlServerDropTable.md)</small>|  
-|`rxSqlServerTableExists`| |Execute an SQL statement that checks for a table's existance.|<small>[**View**](rxSqlServerTableExists.md)</small>|
-|`rxWriteNext`| |Writes the next chunk when moving data between ScaleR data sources.|<small>[**View**](rxWriteNext.md)</small>|
- 
+
+
+
 <br />
 ##Hadoop Convenience Functions
 
@@ -178,3 +489,6 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 |`rxHadoopMakeDir`| |Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.|<small>[See package](scaler.md#findmore)</small>|
 |`rxHadoopMove`| |Move a file in HDFS. Wraps the Hadoop `fs -mv` command.|<small>[See package](scaler.md#findmore)</small>|
 |`rxHadoopRemoveDir`| |Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.|<small>[See package](scaler.md#findmore)</small>|
+
+
+

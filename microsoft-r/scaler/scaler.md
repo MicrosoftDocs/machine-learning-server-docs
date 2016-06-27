@@ -880,7 +880,7 @@ These functions and many more can be used for high performance computing and dis
         </td>
     </tr>
     <tr>
-        <td>`rxGetJobs`
+        <td>`rxGetJobs`</td>
             <td> </td>
             <td>Get the available distributed computing job information objects.</td>
             <td>
@@ -888,7 +888,7 @@ These functions and many more can be used for high performance computing and dis
             </td>
     </tr>
     <tr>
-        <td>`rxLocateFile`
+        <td>`rxLocateFile`</td>
             <td> </td>
             <td>Get the first occurrence of a specified input file in a set of specified paths.</td>
             <td>

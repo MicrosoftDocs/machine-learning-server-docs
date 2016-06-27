@@ -94,7 +94,11 @@ Where:
 
 For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
->To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
+**Recommended Number of Cores**
+
+To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. 
+
+For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
 
 
 **Example**
