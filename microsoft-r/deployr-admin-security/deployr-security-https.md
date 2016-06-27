@@ -107,11 +107,11 @@ To encrypt the connections between
     
     1.  In the Object Explorer pane, right click **Security &gt; Logins**.
     
-        ![Login](./media/deployr-install-on-windows/sqlserver-new-login.png)
+        ![Login](../media/deployr-install-on-windows/sqlserver-new-login.png)
 
     1.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
     
-        ![Login](./media/deployr-install-on-windows/sqlserver-login-dialog.png)
+        ![Login](../media/deployr-install-on-windows/sqlserver-login-dialog.png)
 
     1.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
     
