@@ -131,6 +131,12 @@ prediction data set.
 
 + Hadoop bug fix for incompatibility when using both HA and Kerberos on HDP.
 
++ Deployr default grid node and any additional nodes should have 20 slots by default
+
++ DeployR was generating very large (~52GB) catalina.out log files.
+
++ When running scripts in the DeployR Repository Manager's Test tab, any numeric values set to `0` were ignored and not included as part of the request.
+
 <br />
 ##Microsoft R Server 8.0.0
 
