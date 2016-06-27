@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "RevoScaleR Hadoop MapReduce Getting Started Guide"
-description: "Microsoft R Server with Hadoop MapReduce features and components overview."
+title: "Get started with ScaleR on Hadoop MapReduce"
+description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
-ms.date: "03/17/2016"
+author: "heidist"
+manager: "paulettm"
+ms.date: "06/24/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
