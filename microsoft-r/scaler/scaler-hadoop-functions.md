@@ -143,7 +143,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </th>
     </tr>
     <tr>
-        <td width="140px">`rxDataStep`</td>
+        <td width="130px">`rxDataStep`</td>
         <td>
             <center>![-](../media/award.png)</center>
         </td>
