@@ -86,6 +86,8 @@ The following release notes apply to Microsoft R Server.
   + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
   + The API has been updated. [See the change history.](../deployr-api-reference.md#805)
+
+  + This release is of DeployR Enterprise only.
   
 + **Microsoft R documentation** has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
 

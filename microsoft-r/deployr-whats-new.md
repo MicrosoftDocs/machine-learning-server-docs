@@ -35,15 +35,17 @@ This topic presents the changes and new features in DeployR version 8.0.0 as wel
 -   [Release 7.3](#version-7-3)
 
 <br />
+<a name="version-8-0-5"></a>
 #### DeployR for Microsoft R Server 2016
 
 The following list highlights the major changes and improvements to DeployR for Microsoft R Server 2016.
-- Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
-- DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
-- DeployR Enterprise now has a simplified installer for a better customer experience.
-- Documentation is now available on MSDN.
-- The XML format for data exchange is not deprecated, but it will be removed from future versions of DeployR.
-- This release is of DeployR Enterprise only.
+  + Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
+  + DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
+  + DeployR Enterprise now has a simplified installer for a better customer experience.
+  + Documentation is now available on MSDN.
+  + The API has been updated. [See the change history.](deployr-api-reference.md#805)
+  + This release is of DeployR Enterprise only.
+  + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
 <br />
 #### Version 8.0.0
