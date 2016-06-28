@@ -99,7 +99,7 @@ Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist
 
 #### Role
 
-Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#analytics-web-service) into their applications. The hand-off occurs in the [Repository Manager](#DeployR-Repository-Manager). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
+Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#analytics-web-service) into their applications. The hand-off occurs in the [Repository Manager](#deployr-repository-manager). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
 
 There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](deployr-tools-and-samples.md), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](deployr-api-reference.md) guide details everything you'd need to know.
 
@@ -109,7 +109,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 1.  Consult with the data scientists responsible for developing the R analytics outputs in order to determine your application's analytics dependencies (inputs and outputs).
 
-2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#Analytics-Web-Service).
+2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
 
 3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
@@ -121,8 +121,8 @@ Learn more in the [Getting Started Guide for Application Developers](deployr-app
 
 Not unlike the responsibilities typically associated with managing and maintaining other server software, DeployR system administrators are responsible for:
 
-1.  [Provisioning suitable hardware](deployr-installing-configuring.md) in preparation for a DeployR install.
-2.  Installing DeployR using [these instructions](deployr-installing-configuring.md).
+1.  [Provisioning suitable hardware](deployr-installation.md) in preparation for a DeployR install.
+2.  Installing DeployR using [these instructions](deployr-installation.md).
 3.  Customizing DeployR [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md).
 5.  Customizing DeployR [security policies](deployr-admin-security/deployr-security.md).
@@ -155,7 +155,7 @@ DeployR Enterprise supports a scalable grid framework, providing load balancing 
 
 In DeployR, we refer to any web service that exposes R analytics capabilities over the network as an analytics web service. While “web services” is commonly used in the context of browser-based web applications, these services—in particular, analytics web services—can just as easily be integrated inside desktop, mobile, and dashboard applications, as well as backend systems. For example, when you upload an R script into the DeployR Repository Manager, the script may then be executed as an analytics web service by any application with appropriate permissions.
 
-*Note*: When you upload an R script into the [Repository Manager](#DeployR-Repository-Manager), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
+*Note*: When you upload an R script into the [Repository Manager](#deployR-repository-manager), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
 
 
 #### DeployR Administration Console
