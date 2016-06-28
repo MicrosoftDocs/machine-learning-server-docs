@@ -393,7 +393,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
     -   Set a new password for this account.
 
 
-<a name="#migrate"></a>
+<a name="migrate"></a>
 ## Migrating to DeployR for Microsoft R Server 2016 
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
