@@ -8,7 +8,7 @@ author: "j-martens"
 manager: "Paulette.McKay"
 ms.date: "03/17/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -42,8 +42,8 @@ _Figure: Role List page_
 
 The following DeployR system roles are shipped with DeployR and can be assigned to user accounts.
 
-|Role&nbsp;Name|Role&nbsp;Description|
-|---|---|
+|Role Name|Role&nbsp;Description|
+|---------|---------------------|
 |`ADMINISTRATOR`|The `ADMINISTRATOR` role identifies the user as an administrator. [There is only one administrator for the console](deployr-admin-console-user-accounts.md#preconfigured-user-accounts), and that is the user `admin`.|
 |`POWER_USER`|Users with this role are granted permissions to access the full API and to install R packages. Full access includes the ability to execute scripts and arbitrary blocks of R code.|
 |`BASIC_USER`|Users with this role are granted permissions to access the full API with the exception of being able to execute arbitrary blocks of R code on the API. However, they can execute R scripts.|

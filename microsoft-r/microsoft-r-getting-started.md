@@ -4,11 +4,11 @@
 title: "Microsoft R Server and R Client Getting Started Guide"
 description: "Microsoft R features and components overview."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
-ms.date: "05/23/2016"
+author: "j-martens"
+manager: "paulette.mckay"
+ms.date: "06/09/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,9 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: 
+  - r-client
+  - r-server
 ms.custom: ""
 
 ---
@@ -49,7 +51,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
-<a name="mrc"></a>
+
 ##Microsoft R Client
 
 Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
@@ -59,7 +61,6 @@ R Client allows you to work with production data locally using the full set of S
 Learn how to [install Microsoft R Client](install-r-client-windows.md).
 
 
-<a name="mro"></a>
 ##Microsoft R Open
 
 Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.   
@@ -115,7 +116,7 @@ DeployR is an integration technology for deploying R analytics inside web, deskt
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 [Learn more about DeployR...](deployr-about.md)
 
@@ -142,21 +143,25 @@ export PATH
 
 After you have installed the software, you launch Microsoft R Client as follows.
 
-+ For Windows 7 and Windows 10:
+For Windows 10:
 
-  + From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
++ Choose **All Apps > Microsoft R Client > Rgui**.
 
-<br>
-+ For Windows 8.1:
 
-  1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
+For Windows 8.1:
+
+1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
   
-  1. Click **Start** to view the **Start** screen.
+1. Click **Start** to view the **Start** screen.
 
-  1. Locate and click the tile for **Microsoft R Client**.
+1. Locate and click the tile for **Microsoft R Client**.
 
 
+For Windows 7:
 
++ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+
+<br />
 ### Stopping Microsoft R
 
 From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
@@ -1087,7 +1092,7 @@ Some high-performance numerics routines, including those that use x86 SIMD vecto
 
 ## R Memory Limits in Windows
 
-This chapter discusses several tools available in Windows versions of R to help you monitor and manage memory usage.
+There are several tools available in the Windows versions of R to help you monitor and manage memory usage.
 
 ### 64-bit R Memory Limits
 

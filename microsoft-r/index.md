@@ -1,3 +1,31 @@
+---
+
+# required metadata
+title: "Microsoft R Server and R Client Getting Started Guide"
+description: "Microsoft R features and components overview."
+keywords: ""
+author: "j-martens"
+manager: "paulette.mckay"
+ms.date: "06/13/2016"
+ms.topic: "get-started-article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: 
+  - r-client
+  - r-server
+ms.custom: ""
+
+---
+
 #Microsoft R
 
 R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
@@ -71,7 +99,7 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 |Big Data   |In-memory bound<br>Can only process datasets that fit into the available memory|In-memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
 |Speed of<br>Analysis    |Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
 |Enterprise<br>Readiness   |Community support|Community support|Commercial support|
-|Analytic<br>Breadth <br>& Depth     |7000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
+|Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
 |Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
 |[DeployR <br>Enterprise](microsoft-r-getting-started.md#deployr-intro)  |Not available|Not available|Included|
 

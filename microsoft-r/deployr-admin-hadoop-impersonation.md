@@ -6,9 +6,9 @@ description: "DeployR and Hadoop Impersonation"
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,14 +19,12 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
 # Using Hadoop Impersonation and DeployR
-
-## Introduction
 
 Typically when invoking system commands from R, those commands will run as the user that started R. In the case of Hadoop, if user `abc` logs into a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, will run as user `abc`. File permissions in HDFS will be honored accordingly, for example user `abc` will not be able to access files in HDFS if that user does not have proper permissions.
 
@@ -41,17 +39,20 @@ This document assumes we are working with a Kerberos secured cluster.
 
 The rest of the document will focus on the steps needed to get Hadoop Impersonation to work with DeployR.
 
-## RServe
+## Creating the 'rserve' User
 
-### Creating the 'rserve' User
-
-Since, Rserve runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
+Since, the DeployR Rserve component runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
 
 -   Will be used when running Rserve
 -   Has a `home` directory
 -   Starts a bash shell
 
 In this example, we will create the user `rserve` and change which user used to run Rserve.
+
+**Non Root Installation**
+
+If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
+
 
 **Root Installation**
 
@@ -61,11 +62,11 @@ If DeployR was installed as user `root`, do the following:
 
 2.  Go to the directory where DeployR is installed. For example:
 
-        cd /opt/deploy/8.0.0
+        cd /opt/deploy/<version>
 
 3.  Go the `rserve` sub-directory and open `rserve.sh` in an editor. For example:
 
-        vi /opt/deploy/8.0.0/rserve/rserve.sh
+        vi /opt/deploy/<version>/rserve/rserve.sh
 
 4.  Replace all instances of `apache` with `rserve`. 
 
@@ -73,7 +74,7 @@ If DeployR was installed as user `root`, do the following:
 
 5.  Give full write permissions to directory `workdir`. For example:
 
-        chmod 777 /opt/deployr/8.0.0/rserve/workdir
+        chmod 777 /opt/deployr/<version>/rserve/workdir
 
 6.  Edit `/etc/group` and add `rserve` as a member of group `apache`. For example:
 
@@ -81,37 +82,30 @@ If DeployR was installed as user `root`, do the following:
 
 7.  Restart Rserve.
 
-        cd /opt/deploy/8.0.0/rserve
+        cd /opt/deploy/<version>/rserve
         ./rserve.sh stop
         ./rserve.sh start
 
-**Non Root Installation**
 
-If DeployR was installed as non-root, then you must ensure that the user that starts DeployR has a `home` directory and starts a bash shell. Nothing else is required.
-
-
-### Setting Up the Environment for User 'rserve'
+## Setting Up the Environment for the 'rserve' User
 
 
-**ScaleR**
++ **ScaleR**: If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
+  ```
+  . ./etc/profile.d/Revolution/bash_profile_additions
+  ```
+  
++ **Kerberos**: If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
 
-If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
+  Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
+  ```
+  su - rserve
+  kinit hdfs
+  ```
 
-    . ./etc/profile.d/Revolution/bash_profile_additions
-
-**Kerberos**
-
-If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
-
-Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
-
-    su - rserve
-    kinit hdfs
-
->[!Tip]
 >We recommend that you use a `cron` job or equivalent to renew this ticket periodically to keep it from expiring.
 
-### Testing the environment
+## Testing the Environment
 
 1.  Create a private file in HDFS. In the following example, user `revo` owns the file:
 
@@ -156,7 +150,7 @@ Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
 
 We can now upload the script to DeployR using the Repository Manager. In our example, user `testuser` will create a directory called `demo` in the DeployR Repository Manager and name our RScript `piperead.R`.
 
-## Create DeployR Client
+## Creating a DeployR Client
 
 Create a DeployR client application to control which user will be running the script.
 

@@ -1,3 +1,29 @@
+---
+
+# required metadata
+title: "ScaleR Functions"
+description: "ScaleR Functions"
+keywords: "RevoScaleR, ScaleR"
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "r-server"
+ms.custom: ""
+
+---
+
 #ScaleR Functions for Working with SQL Server Data
 
 This topic provides an overview of the main ScaleR functions for use with SQL Server, along with comments on their syntax.
@@ -38,7 +64,6 @@ If you regularly move large amounts of data from a database to a local workstati
 + `rxImport` - Move data from an ODBC source to the XDF file
 + `RxXdfData` - Create an XDF data object
 + `RxDataStep` - Read data from XDF int a data frame
-+ `rxXdfToDataFrame` - Read data from XDF into a data frame
 + `rxReadXdf` - Reads data from XDF into a data frame
 
 For an example of how XDF files are used, see this tutorial:  [Data Science Deep Dive - Using the ScaleR Functions](https://msdn.microsoft.com/en-us/library/mt637368.aspx)

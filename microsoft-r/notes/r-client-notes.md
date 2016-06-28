@@ -1,4 +1,30 @@
-#Microsoft R Client
+---
+
+# required metadata
+title: "R Client Release Notes"
+description: "R Client Readme"
+keywords: ""
+author: "j-martens"
+manager: "Paulette.McKay"
+ms.date: "06/13/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "r-client"
+ms.custom: ""
+
+---
+
+#What's New in Microsoft R Client
 
 The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
 

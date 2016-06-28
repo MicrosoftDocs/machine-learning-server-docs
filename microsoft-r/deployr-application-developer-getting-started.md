@@ -6,9 +6,9 @@ description: "Getting started for Application Developers: high level introductio
 keywords: "Application Developers, r programmer, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
+ms.date: "05/06/2016"
 ms.topic: "get-started-article"
-ms.prod: "deployr"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,14 +19,12 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
 
 # Getting Started - Application Developers
-
-## Introduction
 
 This guide for application developers introduces DeployR, the *R Integration Server*. If you are an application developer or a systems integrator, then this guide explains what DeployR can do for you.
 
@@ -106,7 +104,7 @@ For example:
     RRepositoryDirectory dir = rUser.createDirectory("demo");
     List<RRepositoryFile> files = rUser.listFiles(RSCRIPT, dir);
 
-These services are available on the [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/workingrepository.html) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
+These services are available on the [API](deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
 
 It is also simple for your application to request files be moved from the repository to your R sessions and from your R sessions back into the repository. Perhaps most importantly, any R script stored in the repository is automatically exposed as a live, executable Analytics Web service. This means your R scripts can be executed on request by your application just by referencing that script by name.
 
@@ -125,7 +123,7 @@ The fact that repository-managed R scripts are automatically exposed as live, ex
 
 *"How can you enforce access controls on this type of Web service?"*
 
-The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/introduction.html#introusers) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
+The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
 
 -   `Private`, allows access only to the file's owner.
 -   `Restricted`, allows access only to those users who were granted at least one of the associated roles
@@ -182,13 +180,11 @@ They may be times when you need direct access to some of the lower-level service
 
 ### API Specification
 
-*What if I'm not a Java, JavaScript or .NET developer?*
+*What if I'm not a Java, JavaScript or .NET developer? What if I simply want to understand more about what's going on 'under the hood'?*
 
-*What if I simply want to understand more about what's going on 'under the hood'?*
+Then, the answer is the [underlying technical specification](https://microsoft.github.io/deployr-api-docs) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
 
-Then, the answer is the [underlying technical specification](https://deployr.revolutionanalytics.com/documents/dev/api-doc/) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
-
-As long as your development environment can establish HTTP(S) connections and consumes either JSON or XML, then you can integrate directly with DeployR services using the public [API](https://deployr.revolutionanalytics.com/documents/dev/api-doc/).
+As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr-api-reference.md).
 
 ## Tutorials
 
@@ -252,21 +248,18 @@ The application design overview, source code in both Java and JavaScript, and th
 
 Use the table of contents to find all of the guides and documentation needed by Application Developers.
 
-###API Docs, Tools, and Samples
+**API Docs, Tools, and Samples**
 -   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
 -   [API Reference Guide](deployr-api-reference.md)
 
-###Other Getting Started Guides
+**Other Getting Started Guides**
 -   [Administrators](deployr-administrator-getting-started.md)
 -   [Data Scientists](deployr-data-scientist-getting-started.md)
 
-### Helper Tools
-
+**Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
 -   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
--   [API Interactive Explorer](https://deployr.revolutionanalytics.com/documents/dev/api-doc/guide/explorer.html), available on the DeployR landing page following an install.
+-   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
-### Support Channels
-
--   [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
+**Support Channels**
+-   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

@@ -6,9 +6,9 @@ description: "Understanding Scale and Throughput in DeployR"
 keywords: "scalability, throughput, DeployR"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "03/17/2016"
-ms.topic: "get-started-article"
-ms.prod: "deployr"
+ms.date: "05/06/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "deployr"
 ms.custom: ""
 
 ---
@@ -63,16 +63,7 @@ All server resources are allocated on the Java Virtual Machine (JVM) heap, which
 
 ## Tuning Grid Capacity
 
-DeployR Enterprise offers the ability to expand and contract grid capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.
-
->**Grid Framework Support:**  
->When you install DeployR main server, a single grid node is installed automatically for you.
->
->-  With **DeployR Open**, this default node is installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). Expanding the grid with additional grid nodes to scale for increasing load is not supported for this edition.
->
->-  With **DeployR Enterprise**, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load.
->
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+DeployR Enterprise offers the ability to expand and contract grid capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.  With DeployR Enterprise, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load.
 
 Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.
 
@@ -101,13 +92,14 @@ Where:
 -   `Max. Concurrent Projects` is the maximum number of projects a single user can work on concurrently. The system administrator can control the concurrent project limit using the Per-user authenticated limit setting in the **Server Policies** tab of the DeployR Administration Console.
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
->[!IMPORTANT]
->To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
+For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
-&nbsp;
+**Recommended Number of Cores**
 
->[!NOTE]
->For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
+To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. 
+
+For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.  
+
 
 **Example**
 
@@ -132,13 +124,10 @@ Where:
 
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
->[!IMPORTANT]
+For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
+
 >To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.
 
-&nbsp;
-
->[!NOTE]
->For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 **Example**
 
@@ -150,7 +139,7 @@ If each grid node is configured with sufficient resources for `30` slots, then t
 
 ## About Throughput
 
-This chapter presents a description along with some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. **Artifacts** are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
+In this section, we present you with a description and some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. **Artifacts** are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
 
 ### Understanding Throughput
 
@@ -170,7 +159,6 @@ To illustrate the nature of a task, let’s begin with a summary of the basic wo
 
 4.  When the job execution completes, the server captures a complete snapshot of the R session associated with that slot. Then, the server saves the snapshot as a persistent project in the server database and releases the slot so it is available for further tasks.
 
->[!TIP]
 > By default, a snapshot of the R session is saved as a persistent DeployR project once a job has finished executing. As an alternative, use the `storenoproject` parameter when scheduling a job to instruct the server not to save a persistent project. If you specify that no project should be saved using the `storenoproject` parameter, you can still store specific artifacts to the repository. In certain scenarios, storing these artifacts to the repository rather than creating a persistent project can result in greatly improved throughput.
 
 ### Example
@@ -222,7 +210,6 @@ Enabling these configuration properties results in a number of direct consequenc
 
 2.  Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
 
->[!IMPORTANT]
 >Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
 
 

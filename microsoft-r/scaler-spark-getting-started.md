@@ -1,14 +1,14 @@
 ---
 
 # required metadata
-title: "RevoScaleR Spark Getting Started Guide"
+title: "Get started with ScaleR on Apache Spark"
 description: "Microsoft R Server with Apache Spark features and components overview."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "03/17/2016"
+ms.date: "06/22/2016"
 ms.topic: "get-started-article"
-ms.prod: "rserver"
+ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
 
@@ -19,16 +19,16 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: "r-server"
 ms.custom: ""
 
 ---
 
-# RevoScaleR Spark Getting Started Guide
+# Get started with ScaleR on Apache Spark
 
 ## Overview
 
-This guide is an introduction to using the **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using **RevoScaleR**’s HPA ‘big data’ capabilities in the Hadoop environment with Spark.
+This guide is an introduction to using the **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. Spark is an open source big data processing framework. This guide focuses on using **RevoScaleR**’s HPA ‘big data’ capabilities in the Hadoop environment with Spark.
 
 While **RevoScaleR** makes use of the Spark computing framework, you need have no experience or detailed knowledge of that framework to use **RevoScaleR** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
 
@@ -44,14 +44,12 @@ The RevoScaleR high performance analysis functions are portable. The same high p
 
 When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example of this is shown in Section 5.6 on *Using a Local Compute Context with HDFS Data*.
 
-More detailed examples of using **RevoScaleR** can be found in the following provided with **RevoScaleR**:
-
--   *RevoScaleR Getting Started Guide* 
--   *RevoScaleR User’s Guide* 
--   *RevoScaleR Hadoop MapReduce User's Guide
--   *RevoScaleR Distributed Computing Guide* 
--   *RevoScaleR ODBC Data Import Guide* 
-
+More detailed examples of using **RevoScaleR** can be found here:
+- [RevoScaleR Getting Started Guide](scaler-getting-started.md)
+- [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
+- [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md); see this guide for HPC examples
+- [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
+- [RevoScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
 
 ## Data Sources and Functions Supported in Spark
 
@@ -90,7 +88,7 @@ The following ‘helper’ functions to get basic information about your data so
 -   *rxGetVarInfo*
 -   *rxGetVarNames*
 
-The RxSpark compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
+The [RxSpark](scaler/RxSpark.md) compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
 
 -   *rxGetJobStatus*: Get the status of a non-waiting distributed computing job.
 -   *rxGetJobResults*: Get the return object(s) of a non-waiting distributed computing job.
@@ -136,7 +134,7 @@ You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=6
 
 This section contains a detailed introduction to the most important high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster. The following tasks are performed**:**
 
-1.  Starting Microsoft R Server
+1.  Starting Microsoft R Server.
 2.  Specify the NameNode.
 3.  Create a compute context for Spark.
 4.  Copy a data set into the Hadoop Distributed File System.
@@ -187,9 +185,9 @@ If you are running on one of the nodes of the Hadoop cluster (which may be an ed
 >[!NOTE]
 > The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must both exist and be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
-	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]], 
+	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
 		sep="/" )
-	myHdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], 
+	myHdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]],
 		sep="/" )
 
 
@@ -201,7 +199,7 @@ You can have many compute context objects available for use; only one is active 
 
 If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxSpark*, and also specify the Hadoop port with the *port* argument:
 
-	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", 
+	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server",
 	    port = 8020)
 
 #### Using Microsoft R Server as a Hadoop Client
@@ -214,12 +212,12 @@ If you are running Microsoft R Server from Linux or from a Windows computer equi
 	mySshSwitches <- "-i /home/yourName/user1.pem" #See NOTE below
 	myShareDir <- paste("/var/RevoShare", mySshUsername, sep ="/")
 	myHdfsShareDir <- paste("/user/RevoShare",mySshUsername, sep="/")
-	
+
 	myHadoopCluster <- RxSpark(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername  = mySshUsername, 
-	    sshHostname  = mySshHostname, 
+	    sshUsername  = mySshUsername,
+	    sshHostname  = mySshHostname,
 	    sshSwitches  = mySshSwitches)
 
 >[!NOTE]
@@ -232,7 +230,7 @@ If you are using PuTTY, you may incorporate the publicly facing host name and an
 	mySshHostname <- "myCluster"
 	myShareDir <- paste("/var/RevoShare", mySshUsername, sep ="/")
 	myHdfsShareDir <- paste("/user/RevoShare",mySshUsername, sep="/")
-	
+
 	myHadoopCluster <- RxSpark(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
@@ -244,7 +242,7 @@ The above assumes that the directory containing the ssh and scp commands (Linux/
 	myHadoopCluster <- RxSpark(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername = mySshUsername, 
+	    sshUsername = mySshUsername,
 	    sshHostname = mySshHostname,
 	    sshClientDir = "C:\\Program Files (x86)\\PuTTY")
 
@@ -253,10 +251,10 @@ In some cases, you may find that environment variables needed by Hadoop are not 
 	myHadoopCluster <- RxSpark(
 	    hdfsShareDir = myHdfsShareDir,
 	    shareDir     = myShareDir,
-	    sshUsername  = mySshUsername, 
-	    sshHostname  = mySshHostname, 
+	    sshUsername  = mySshUsername,
+	    sshHostname  = mySshHostname,
 	    sshProfileScript = "/home/user1/.bash_profile",
-	    sshSwitches  = mySshSwitches) 
+	    sshSwitches  = mySshSwitches)
 
 Now that you have defined your compute context, make it the active compute context using the *rxSetComputeContext* function:
 
@@ -267,7 +265,7 @@ Now that you have defined your compute context, make it the active compute conte
 By default, with RxSpark Compute Context, a new Spark application will be launched when a job starts and will be terminated when the job completes. To avoid the overhead of Spark initialization on launching time, the persistentRun mode (experimental) is introduced. If you set persistentRun as “TRUE”, the Spark application (and associated processes) will persist across jobs until idleTimeout or the rxStopEngine is called explicitly:
 
     myHadoopCluster <- RxSpark(persistentRun = TRUE, idleTimeout = 600)
-	
+
 The idleTimeout is the number of seconds of being idle before the system kills the Spark process.
 
 If persistentRun mode is enabled, then the RxSpark compute context cannot be a Non-Waiting Compute Context. See Non-Waiting Compute Context in section 5.8.
@@ -277,7 +275,7 @@ If persistentRun mode is enabled, then the RxSpark compute context cannot be a N
 
 For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
 
-	file.exists(system.file("SampleData/AirlineDemoSmall.csv", 
+	file.exists(system.file("SampleData/AirlineDemoSmall.csv",
 	    package="RevoScaleR"))
 	[1] TRUE
 
@@ -291,7 +289,7 @@ First, check to see what directories and files are already in your shared file d
 
 If the AirlineDemoSmall subdirectory does not exist and you have write permission, you can use the following functions to copy the data there:
 
-	source <-system.file("SampleData/AirlineDemoSmall.csv", 
+	source <-system.file("SampleData/AirlineDemoSmall.csv",
 	    package="RevoScaleR")
 	inputDir <- file.path(bigDataDirRoot,"AirlineDemoSmall")
 	rxHadoopMakeDir(inputDir)
@@ -310,20 +308,20 @@ We will create a data source using this file, specifying that it is on the Hadoo
 The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument. We will explicitly set the factor levels for *DayOfWeek* in the desired order using the *colInfo* argument:
 
 	colInfo <- list(DayOfWeek = list(type = "factor",
-	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday", 
+	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday",
 	    "Friday", "Saturday", "Sunday")))
-	
-	airDS <- RxTextData(file = inputDir, missingValueString = "M", 
+
+	airDS <- RxTextData(file = inputDir, missingValueString = "M",
 	    colInfo  = colInfo, fileSystem = hdfsFS)
 
 ### Summarizing Your Data
 
 Use the *rxSummary* function to obtain descriptive statistics for your data. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second.
 
-	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, 
+	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek,
 	    data = airDS)
 	adsSummary
-	
+
 Summary statistics will be computed on the variables in the formula, removing missing values for all rows in the included variables:
 
 	Call:
@@ -331,25 +329,25 @@ Summary statistics will be computed on the variables in the formula, removing mi
 	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
-	Number of valid observations: 6e+05 
-	 
+	Number of valid observations: 6e+05
+
 	 Name       Mean     StdDev    Min        Max        ValidObs MissingObs
 	 ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372     
 	 CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0     
-	
+
 	Category Counts for DayOfWeek
 	Number of categories: 7
 	Number of valid observations: 6e+05
 	Number of missing observations: 0
-	
+
 	 DayOfWeek Counts
-	 Monday    97975 
-	 Tuesday   77725 
-	 Wednesday 78875 
-	 Thursday  81304 
-	 Friday    82987 
-	 Saturday  86159 
-	 Sunday    94975 
+	 Monday    97975
+	 Tuesday   77725
+	 Wednesday 78875
+	 Thursday  81304
+	 Friday    82987
+	 Saturday  86159
+	 Sunday    94975
 
 Notice that the summary information shows cell counts for categorical variables, and appropriately does not provide summary statistics such as *Mean* and *StdDev*. Also notice that the *Call:* line will show the actual call you entered or the call provided by *summary*, so will appear differently in different circumstances.
 
@@ -361,15 +359,15 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 
 	Call:
 	rxSummary(formula = ~ArrDelay:DayOfWeek, data = airDS)
-	
+
 	Summary Statistics Results for: ~ArrDelay:DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
-	Number of valid observations: 6e+05 
-	 
+	Number of valid observations: 6e+05
+
 	 Name               Mean     StdDev   Min Max  ValidObs MissingObs
 	 ArrDelay:DayOfWeek 11.31794 40.68854 -86 1490 582628   17372     
-	
+
 	Statistics by category (7 categories):
 	 Category                         DayOfWeek Means    StdDev  Min Max ValidObs
 	 ArrDelay for DayOfWeek=Monday    Monday    12.025604 40.02463 -76 1017 95298   
@@ -379,7 +377,7 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 	 ArrDelay for DayOfWeek=Friday    Friday    14.804335 41.79260 -78 1490 80142   
 	 ArrDelay for DayOfWeek=Saturday  Saturday  11.875326 45.24540 -73 1370 83851   
 	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
-	
+
 
 Using a Local Compute Context with HDFS Data
 
@@ -387,10 +385,10 @@ At times it may be more efficient to perform smaller computations on the local n
 
 	rxSetComputeContext("local")
 	inputFile <-file.path(bigDataDirRoot,"AirlineDemoSmall/AirlineDemoSmall.csv")
-	airDSLocal <- RxTextData(file = inputFile, 
-	    missingValueString = "M", 
+	airDSLocal <- RxTextData(file = inputFile,
+	    missingValueString = "M",
 	    colInfo  = colInfo, fileSystem = hdfsFS)
-	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, 
+	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek,
 		data = airDSLocal)
 	adsSummary
 
@@ -399,21 +397,21 @@ The results are the same as doing the computations across the nodes with the RxS
 
 	Call:
 	rxSummary(formula = ~ArrDelay + CRSDepTime + DayOfWeek, data = airDS)
-	
+
 	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall/AirlineDemoSmall.csv
 	Number of valid observations: 6e+05
-	
+
 	 Name       Mean     StdDev    Min        Max        ValidObs MissingObs
 	 ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372
 	 CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0
-	
+
 	Category Counts for DayOfWeek
 	Number of categories: 7
 	Number of valid observations: 6e+05
 	Number of missing observations: 0
-	
+
 	 DayOfWeek Counts
 	 Monday    97975
 	 Tuesday   77725
@@ -430,23 +428,23 @@ Now set the compute context back to the Hadoop cluster for further analyses:
 ### Fitting a Linear Model
 
 Use the *rxLinMod* function to fit a linear model using your *airDS* data source. Use a single dependent variable, the factor *DayOfWeek*:
-	
+
 	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	summary(arrDelayLm1)
-	
+
 The resulting output is:
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airDS)
-	
+
 	Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: airDS (RxTextData Data Source)
 	File name: /share/AirlineDemoSmall
 	Dependent variable(s): ArrDelay
 	Total independent variables: 8 (Including number dropped: 1)
 	Number of valid observations: 582628
-	Number of missing observations: 17372 
-	 
+	Number of missing observations: 17372
+
 	Coefficients: (1 not defined because of singularities)
 	                    Estimate Std. Error t value Pr(>|t|)    
 	(Intercept)          10.3318     0.1330  77.673 2.22e-16 ***
@@ -458,12 +456,12 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
-	
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
 	Residual standard error: 40.65 on 582621 degrees of freedom
-	Multiple R-squared: 0.001869 
-	Adjusted R-squared: 0.001858 
-	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16 
+	Multiple R-squared: 0.001869
+	Adjusted R-squared: 0.001858
+	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 
 
 ### Creating a Non-Waiting Compute Context
@@ -480,7 +478,7 @@ Once you have set your compute context to non-waiting, distributed **RevoScaleR*
 
 Right after submission, the job status will typically return *"running"*. When the job status returns *"finished"*, you can obtain the results using *rxGetJobResults* as follows:
 
-	arrDelayLm1 <- rxGetJobResults(job1) 
+	arrDelayLm1 <- rxGetJobResults(job1)
 	summary(arrDelayLm1)
 
 You should always assign the *jobInfo* object so that you can easily track your work, but if you forget, the most recent *jobInfo* object is saved in the global environment as the object *rxgLastPendingJob*. (By default, after you’ve retrieved your job results, the results are removed from the cluster. To have your job results remain, set the *autoCleanup* argument to *FALSE* in *RxSpark*.)
@@ -511,52 +509,52 @@ As before, our first step is to copy the data into HDFS. We specify the location
 	airDataDir <- file.path(bigDataDirRoot,"/airOnTime12/CSV")
 	rxHadoopMakeDir(airDataDir)
 	rxHadoopCopyFromLocal("/tmp/airOT2012*.csv", airDataDir)
-	
-The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf):
+
+The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md):
 
 	airlineColInfo <- list(
 	     MONTH = list(newName = "Month", type = "integer"),
-	    DAY_OF_WEEK = list(newName = "DayOfWeek", type = "factor", 
+	    DAY_OF_WEEK = list(newName = "DayOfWeek", type = "factor",
 	        levels = as.character(1:7),
 	        newLevels = c("Mon", "Tues", "Wed", "Thur", "Fri", "Sat",
-	                      "Sun")), 
-	    UNIQUE_CARRIER = list(newName = "UniqueCarrier", type = 
+	                      "Sun")),
+	    UNIQUE_CARRIER = list(newName = "UniqueCarrier", type =
 	                            "factor"),
 	    ORIGIN = list(newName = "Origin", type = "factor"),
 	    DEST = list(newName = "Dest", type = "factor"),
 	    CRS_DEP_TIME = list(newName = "CRSDepTime", type = "integer"),
 	    DEP_TIME = list(newName = "DepTime", type = "integer"),
 	    DEP_DELAY = list(newName = "DepDelay", type = "integer"),
-	    DEP_DELAY_NEW = list(newName = "DepDelayMinutes", type = 
+	    DEP_DELAY_NEW = list(newName = "DepDelayMinutes", type =
 	                         "integer"),
 	    DEP_DEL15 = list(newName = "DepDel15", type = "logical"),
-	    DEP_DELAY_GROUP = list(newName = "DepDelayGroups", type = 
+	    DEP_DELAY_GROUP = list(newName = "DepDelayGroups", type =
 	                           "factor",
 	       levels = as.character(-2:12),
-	       newLevels = c("< -15", "-15 to -1","0 to 14", "15 to 29", 
+	       newLevels = c("< -15", "-15 to -1","0 to 14", "15 to 29",
 	                     "30 to 44", "45 to 59", "60 to 74",
 	                     "75 to 89", "90 to 104", "105 to 119",
-	                     "120 to 134", "135 to 149", "150 to 164", 
+	                     "120 to 134", "135 to 149", "150 to 164",
 	                     "165 to 179", ">= 180")),
 	    ARR_DELAY = list(newName = "ArrDelay", type = "integer"),
-	    ARR_DELAY_NEW = list(newName = "ArrDelayMinutes", type = 
+	    ARR_DELAY_NEW = list(newName = "ArrDelayMinutes", type =
 	                         "integer"),  
 	    ARR_DEL15 = list(newName = "ArrDel15", type = "logical"),
 	    AIR_TIME = list(newName = "AirTime", type =  "integer"),
 	    DISTANCE = list(newName = "Distance", type = "integer"),
-	    DISTANCE_GROUP = list(newName = "DistanceGroup", type = 
+	    DISTANCE_GROUP = list(newName = "DistanceGroup", type =
 	                         "factor",
 	     levels = as.character(1:11),
 	     newLevels = c("< 250", "250-499", "500-749", "750-999",
 	         "1000-1249", "1250-1499", "1500-1749", "1750-1999",
 	         "2000-2249", "2250-2499", ">= 2500")))
-	
+
 	varNames <- names(airlineColInfo)
 
 We create a data source using these definitions as follows:
 
 	hdfsFS <- RxHdfsFileSystem()
-	bigAirDS <- RxTextData( airDataDir, 
+	bigAirDS <- RxTextData( airDataDir,
 	                        colInfo = airlineColInfo,
 	                        varsToKeep = varNames,
 	                        fileSystem = hdfsFS )      
@@ -567,29 +565,29 @@ We create a data source using these definitions as follows:
 We fit our first model to the large airline data much as we created the linear model for the AirlineDemoSmall data, and we time it to see how long it takes to fit the model on this large data set:
 
 	system.time(
-	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS, 
+	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS,
 	          cube = TRUE)
 	)
-	
+
 To see a summary of your results:
 
 	print(
 	     summary(delayArr)
 	)
-	
+
 You should see the following results:
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = bigAirDS, cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: bigAirDS (RxTextData Data Source)
 	File name: /share/airOnTime12/CSV
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
 	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
@@ -601,11 +599,11 @@ You should see the following results:
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
 	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
+
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
-	Adjusted R-squared: 0.001826 
-	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.001826
+	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 
@@ -621,12 +619,12 @@ For our airline data, we will define our RxXdfData object as follows (the second
 	airData <- RxXdfData( bigAirXdfName,
 	                        fileSystem = hdfsFS )
 
-We set a block size of 250000 rows and specify that we will read all the data by specifying 
+We set a block size of 250000 rows and specify that we will read all the data by specifying
 
 	numRowsToRead = -1:
 	blockSize <- 250000
 	numRowsToRead = -1
-	
+
 We then import the data using rxImport:
 
 	rxImport(inData = bigAirDS,
@@ -641,29 +639,29 @@ We then import the data using rxImport:
 Now we can re-estimate the same linear model, using the new, faster data source:
 
 	system.time(
-	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = airData, 
+	     delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = airData,
 	          cube = TRUE)
 	)
-	
+
 To see a summary of your results:
 
 	print(
 	     summary(delayArr)
 	)
-	
+
 You should see the following results (which should match the results we found for the CSV files above):
 
 	Call:
 	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airData, cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	Data: airData (RxXdfData Data Source)
 	File name: /user/RevoShare/v7alpha/AirlineOnTime2012
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	               Estimate Std. Error t value Pr(>|t|)     | Counts
 	DayOfWeek=Mon   3.54210    0.03736   94.80 2.22e-16 *** | 901592
@@ -675,11 +673,11 @@ You should see the following results (which should match the results we found fo
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
 	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
+
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
-	Adjusted R-squared: 0.001826 
-	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.001826
+	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 ### Handling Larger Linear Models
@@ -701,13 +699,13 @@ Next, see how the airlines rank in arrival delays:
 
 The result is:
 
-	UniqueCarrier=AS UniqueCarrier=US UniqueCarrier=DL UniqueCarrier=FL 
-	      -1.9022483       -1.2418484       -0.8013952       -0.2618747 
-	UniqueCarrier=HA UniqueCarrier=YV UniqueCarrier=WN UniqueCarrier=MQ 
-	       0.3143564        1.3189086        2.8824285        2.8843612 
-	UniqueCarrier=OO UniqueCarrier=VX UniqueCarrier=B6 UniqueCarrier=UA 
-	       3.9846305        4.0323447        4.8508215        5.0905867 
-	UniqueCarrier=AA UniqueCarrier=EV UniqueCarrier=F9 
+	UniqueCarrier=AS UniqueCarrier=US UniqueCarrier=DL UniqueCarrier=FL
+	      -1.9022483       -1.2418484       -0.8013952       -0.2618747
+	UniqueCarrier=HA UniqueCarrier=YV UniqueCarrier=WN UniqueCarrier=MQ
+	       0.3143564        1.3189086        2.8824285        2.8843612
+	UniqueCarrier=OO UniqueCarrier=VX UniqueCarrier=B6 UniqueCarrier=UA
+	       3.9846305        4.0323447        4.8508215        5.0905867
+	UniqueCarrier=AA UniqueCarrier=EV UniqueCarrier=F9
 	       6.3980937        7.2934991        7.8788931
 
 Notice that Alaska Airlines comes in as the best in on-time arrivals, while Frontier is at the bottom of the list. We can see the difference by subtracting the coefficients:
@@ -727,7 +725,7 @@ Our airline data includes a logical variable, ArrDel15, that tells whether a fli
 
 	logitObj <- rxLogit(ArrDel15 ~ DayOfWeek, data = airData)
 	logitObj
-	
+
 which results in:
 
 	Logistic Regression Results for: ArrDel15 ~ DayOfWeek
@@ -736,8 +734,8 @@ which results in:
 	Dependent variable(s): ArrDel15
 	Total independent variables: 8 (Including number dropped: 1)
 	Number of valid observations: 6005381
-	Number of missing observations: 91381 
-	 
+	Number of missing observations: 91381
+
 	Coefficients:
 	                  ArrDel15
 	(Intercept)    -1.61122563
@@ -770,7 +768,7 @@ To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function.
 
 	newAirDir <- "/user/RevoShare/user/newAirData"
 	newAirXdf <- RxXdfData(newAirDir,fileSystem=hdfsFS)
-	
+
 	rxDataStep(inData = airData, outFile = newAirXdf,
 	           rowSelection = !is.na(ArrDelay) & (DepDelay > -60))
 
@@ -803,28 +801,28 @@ Note that when using an RxSpark compute context, createFileSet defaults to TRUE 
 
 As mentioned in Section 2, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple stages in the Spark job, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single stage in the Spark job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
 
-	file.name <- "claims.xdf" 
+	file.name <- "claims.xdf"
 	sourceFile <- system.file(file.path("SampleData", file.name),  
 	    package="RevoScaleR")
 	inputDir <- "/share/claimsXdf"
 	rxHadoopMakeDir(inputDir)
 	rxHadoopCopyFromLocal(sourceFile, inputDir)
-	input <- RxXdfData(file.path(inputDir, file.name, 
+	input <- RxXdfData(file.path(inputDir, file.name,
 	    fsep="/"),fileSystem=hdfsFS)
-	
-	partial.forests <-rxDForest(formula = age ~ car.age + 
+
+	partial.forests <-rxDForest(formula = age ~ car.age +
 	    type + cost + number, data = input,
-	    minSplit = 5, maxDepth = 2, 
+	    minSplit = 5, maxDepth = 2,
 	    nTree = rxElemArg(rep(2,8), seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,
 	    scheduleOnce = TRUE)
-	
+
 Equivalently, you can use nTree together with rxExec’s timesToRun argument:
 
-	partial.forests <-rxDForest(formula = age ~ car.age + 
+	partial.forests <-rxDForest(formula = age ~ car.age +
 	    type + cost + number, data = input,
-	    minSplit = 5, maxDepth = 2, 
+	    minSplit = 5, maxDepth = 2,
 	    nTree = 2, seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,
@@ -850,6 +848,6 @@ You can run the following commands to clean up data in this tutorial:
 
 ## Continuing with Distributed Computing
 
-With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the *RevoScaleR Distributed Computing Guide* (RevoScaleR\_Distributed\_Computing.pdf), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
+With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
 
 The *Distributed Computing Guide* also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.
