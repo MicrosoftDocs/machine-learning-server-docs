@@ -51,6 +51,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
 
+For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
 
 ##Microsoft R Client
 
