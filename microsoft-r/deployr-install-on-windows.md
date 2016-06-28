@@ -55,7 +55,7 @@ _Table: System Requirements_
 |Swap space|8+ GB for larger data sets|
 |Internet access|To download DeployR and any dependencies, interact with the Repository Manager, Administration Console, API Explorer Tool.|
 
-<a name="#depend"></a>
+<a name="depend"></a>
 ## Installing Dependencies
 
 The following dependencies are required before you can install the DeployR main server machine or any additional grid node.
@@ -80,7 +80,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
    _If you are installing while offline_, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases) manually as [described here](deployr-admin-diagnostics-troubleshooting.md#manual-package-install).
 
-<a name="#installserver"></a> 
+<a name="installserver"></a> 
 ## Installing DeployR Server
 
 The basic installation of DeployR will install the DeployR main server after which you can also install additional [grid nodes](#gridnodes) for optimized workload distribution.
@@ -99,7 +99,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
-<a name="#postinstall"></a>
+<a name="postinstall"></a>
 ##Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
@@ -211,7 +211,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
-<a name="#gridnodes"></a>
+<a name="gridnodes"></a>
 ###Installing DeployR Grid Nodes
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and configuring additional grid nodes.

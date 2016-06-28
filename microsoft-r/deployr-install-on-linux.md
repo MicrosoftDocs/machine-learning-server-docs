@@ -54,7 +54,7 @@ _Table: System Requirements_
 |Swap space|8+ GB for larger data sets|
 |Internet access|To download DeployR and any dependencies, interact with the Repository Manager, Administration Console, API Explorer Tool.|
 
-<a name="#depend"></a>
+<a name="depend"></a>
 ## Install Dependencies
 
 Before you can install DeployR, you must manually install and configure the following dependencies.
@@ -145,7 +145,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
 
       
-<a name="#installserver"></a>
+<a name="installserver"></a>
 ## Install DeployR Server
 
 The basic installation of DeployR will install the DeployR main server and configure a local H2 database on the same machine. If you wish to use a different database, you can configure DeployR to do so later as described in the steps below.
@@ -179,7 +179,7 @@ The following steps are for installing DeployR Enterprise after installing [thes
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.  
 
-<a name="#postinstall"></a>
+<a name="postinstall"></a>
 ##Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
@@ -276,7 +276,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
-<a name="#gridnodes"></a>
+<a name="gridnodes"></a>
 ### Install DeployR Grid Nodes
 
 When you install the DeployR server, one local grid node is installed automatically for you. You can also point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the main [DeployR server](#installserver).
@@ -452,7 +452,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
     -   Set a new password for this account.
 
-<a name="#migrate"></a>
+<a name="migrate"></a>
 ## Migrate to DeployR for Microsoft R Server 2016
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
