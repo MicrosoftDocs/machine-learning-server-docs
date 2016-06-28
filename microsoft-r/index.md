@@ -112,7 +112,7 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 Start learning about Microsoft R today:
 + [Microsoft R Getting Started](microsoft-r-getting-started.md)
 
-+ [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
++ [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md)
 
 + [DeployR Getting Started](deployr-about.md)
 
