@@ -122,7 +122,7 @@ The Packages tab offers access to the full set of [Project Package APIs](deployr
 
 **About Tab**
 
-The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/#_projectabout) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/#_projectaboutupdate) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
+The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/#r-project-about) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/#r-project-about-update) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
 
 **Repo Files Tab**
 

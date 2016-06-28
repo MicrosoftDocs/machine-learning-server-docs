@@ -1227,12 +1227,12 @@ The following code snippets demonstrate how the client libraries make these serv
 
 The DeployR API supports a standard set of parameters across all execution APIs which are commonly know as the standard execution model. A summary of those execution APIs are shown here:
 
--   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
--   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
--   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
--   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
--   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
--   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#r-project-execute-code)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#r-project-execute-script)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#r-repository-script-execute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#r-repository-script-render)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#r-job-submit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#r-job-schedule)
 
 Conceptually this standard set of parameters can be categorized into three groups: *pre-execution*, *on-execution* and *post-execution* parameters.
 
@@ -1986,13 +1986,13 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 Encoded R object data can be sent on the *inputs* parameter on the following calls:
 
--   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
--   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
--   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
--   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
--   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#_jobsubmit)
--   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#_jobschedule)
--   [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#_projectworkspacepush)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#r-project-execute-code)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#r-project-execute-script)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#r-repository-script-execute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#r-repository-script-render)
+-   [/r/job/submit](https://microsoft.github.io/deployr-api-docs/#r-job-submit)
+-   [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/#r-job-schedule)
+-   [/r/project/workspace/push](https://microsoft.github.io/deployr-api-docs/#r-project-workspace-push)
 
 See the [Standard Execution Model](#standard-execution-model) section of this documentation for details describing how DeployR-encoded R object data can be sent using the *inputs* parameter on these calls.
 
@@ -2456,10 +2456,10 @@ DeployR-specific encodings are used to encode R object data passing into and out
 
 One or more R objects can be returned as DeployR-encoded objects in the response markup on any of the following execution calls:
 
--   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#_projectexecutecode)
--   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#_projectexecutescript)
--   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptexecute)
--   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#_repositoryscriptrender)
+-   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/#r-project-execute-code)
+-   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/#r-project-execute-script)
+-   [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/#r-repository-script-execute)
+-   [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/#r-repository-script-render)
 
 The following code snippets demonstrate the mechanism for requesting DeployR-encoded objects to be returned on these calls:
 
@@ -2512,7 +2512,7 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
 
 When working with temporary or persistent DeployR projects R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:
 
--   [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#_projectworkspaceget)
+-   [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/#r-project-workspace-get)
 
 The following code snippet demonstrates the mechanism for requesting DeployR-encoded objects to be returned on this call:
 
