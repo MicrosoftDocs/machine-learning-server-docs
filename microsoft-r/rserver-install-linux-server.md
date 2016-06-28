@@ -82,7 +82,7 @@ Microsoft R Server 8.0.5 for Linux is deployed by running the install script wit
 		[username] $ cd /tmp
 4. Run the script.
 		[tmp] $ sudo bash install.sh
-5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **y** to accept the terms, and then click **q** to continue.
+5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Installer output shows the packages and location of the log file.
 7. Check the version of Microsoft R Open using `rpm -qi`:
 		[tmp] $ rpm -qi microsoft-r-server-mro-8.0
@@ -154,7 +154,7 @@ d. Agreement to the Microsoft R Server software license.
 
 8.  Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
 
-On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the RRE installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
+On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the R Server installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
 
 If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
@@ -459,5 +459,17 @@ Next, set up a run configuration to use your R environment as follows:
 4.  Click the R Config tab.
 5.  Select the configuration you created in the previous procedure, and then click **Apply**.
 6.  Click **Run**. You should see an R console appear in your Eclipse window, as shown below.
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+
+[Install R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+
+[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
 ![](media/rserver-install-linux-server/image2.png)

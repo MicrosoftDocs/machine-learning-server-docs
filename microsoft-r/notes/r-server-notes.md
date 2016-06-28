@@ -32,34 +32,50 @@ The following release notes apply to Microsoft R Server.
 
 **New in this Release**
 
-+ The R Productivity Environment (RPE), a custom IDE for Revolution R Enterprise, is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE. 
++ On **Linux**:
+  + Support for RedHat RHEL 7.x has been added.
 
-+ These R packages that were previously included to support the RPE have been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`. 
-   
-+ Microsoft R documentation has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
+  + Installers are now composed of RPM packages, which can be installed via a top-level install script or as individual RPM packages. This can be convenient for Enterprise IT departments managing extensive deployments.
 
-+ Microsoft R licenses and Third Party Notices files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
++ On **Hadoop**:
 
-+ Linux installers are now composed of RPM packages that can be installed via a top-level install script or as individual RPM packages. This can be convenient for Enterprise IT departments managing extensive deployments.
+  + Installation on Hadoop clusters has been simplified to eliminate manual steps.
 
-+ These `RevoScaleR` functions are now deprecated:
-	+ `rxImportToXdf` (use `rxImport`)
-	+ `rxDataStepXdf` (use `rxDataStep`)
-	+ `rxXdfToDataFrame` (use `rxDataStep`)
-	+ `rxDataFrameToXdf` (use `rxDataStep`)
+  + New support Hadoop on SUSE 11 and Hadoop distributions (Cloudera CDH 5.5-5.7, Hortonworks HDP 2.4, MapR 5.0-5.1)
 
-+ These `RevoScaleR` functions are now defunct:
-	+ `rxGetVarInfoXdf` (use `rxGetVarInfo`)
-	+ `rxGetInfoXdf` (us `rxGetInfo`)
-	+ the `covariance` argument (only) to the `rxLinMod` function
+  + A new distributed compute context `RxSpark` is available, in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
-+  An new internal variable, `.rxPredict` is available inside transformation functions to indicate that the data is being processed from a prediction rather than a model estimation.
+  + New Hadoop diagnostic tool to collect status of MRS and dependencies on all nodes (available through a CSS Support request)
 
-+ Installation on Hadoop clusters has been simplified.
+  + Hadoop user directories in HDFS and Linux are now created automatically as needed.
 
-+ A new distributed compute context `RxSpark` is available, in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
+  + New Hadoop administrator script to clean-up orphaned HDFS and Linux user directories.
 
-+ DeployR Enterprise includes the following changes and improvements:
++ On **Teradata**:
+
+  + New option has been added to `rxPredict` to insert into an existing table.
+
+  + New option has been added for use of LDAP authentication with a TPT connection.
+
++ The **R Productivity Environment** (RPE) IDE for Revolution R Enterprise:
+  + The RPE is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE. 
+  + These R packages that support the RPE have been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`. 
+
++ `RevoScaleR` changes: 
+    + These `RevoScaleR` functions are now deprecated:
+	    + `rxImportToXdf` (use `rxImport`)
+	    + `rxDataStepXdf` (use `rxDataStep`)
+	    + `rxXdfToDataFrame` (use `rxDataStep`)
+	    + `rxDataFrameToXdf` (use `rxDataStep`)
+
+    + These `RevoScaleR` functions are now defunct:
+    	+ `rxGetVarInfoXdf` (use `rxGetVarInfo`)
+    	+ `rxGetInfoXdf` (us `rxGetInfo`)
+    	+ the `covariance` argument (only) to the `rxLinMod` function
+
+    +  An new internal variable, `.rxPredict` is available inside transformation functions to indicate that the data is being processed from a prediction rather than a model estimation.
+
++ **DeployR Enterprise** includes the following changes and improvements:
 
   + Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
 
@@ -68,6 +84,12 @@ The following release notes apply to Microsoft R Server.
   + DeployR Enterprise now has a simplified installer for a better customer experience.
 
   + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
+
+  + The API has been updated. [See the change history.](../deployr-api-reference.md#805)
+  
++ **Microsoft R documentation** has been moved from the product distribution to this site on MSDN. The “doc” directories in the RevoScaleR and RevoPemaR packages have been removed, as has the top-level R Server “doc” directory.
+
++ Microsoft R **licenses and Third Party Notices** files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
 
 For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
@@ -106,6 +128,14 @@ for the appended data.
 the dependent variable, an error was given if the variable
 used in the transformation was not available in the
 prediction data set.
+
++ Hadoop bug fix for incompatibility when using both HA and Kerberos on HDP.
+
++ Deployr default grid node and any additional nodes should have 20 slots by default
+
++ DeployR was generating very large (~52GB) catalina.out log files.
+
++ When running scripts in the DeployR Repository Manager's Test tab, any numeric values set to `0` were ignored and not included as part of the request.
 
 <br />
 ##Microsoft R Server 8.0.0

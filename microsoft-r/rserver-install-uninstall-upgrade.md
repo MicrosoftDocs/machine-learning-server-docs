@@ -40,7 +40,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
 - Package location
 - Which nodes in the cluster have R Server
 
-### Program file version and locations
+## Program version and file locations
 
 There are several approaches for identifying a program version, including `rpm -qi` as noted in the installation instructions. However, version information is also evident in the file path, as the examples below demonstrate.
 
@@ -51,10 +51,15 @@ Note: Pre-8.0 versions of R Server will have a path that includes the Revolution
 
 ## How to fully uninstall R from a node
 
-1. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage.
-    `$ ls /usr/lib64/microsoft-r/8.0`
-2. Remove the entire directory:
-    `$ rm -fr /usr/lib64/microsoft-r`
+Packages are registered in a database that tracks all package installations in the cluster. To update the database, use a package manager to remove the package: **yum** for Red Hat and CentOS, or **zypper** for SUSE.
+
+1. Uninstall the package (use one of the following):
+    sudo yum erase microsoft-r-server-mro-8.0
+    sudo zypper rm microsoft-r-server-mro-8.0
+2. Remove other files added by the installer. On the root node, verify the file location. You should see subfolders for hadoop, lib64, share, and stage:
+        $ ls /usr/lib64/microsoft-r/8.0
+3. Remove the entire directory:
+        $ rm -fr /usr/lib64/microsoft-r
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
@@ -62,16 +67,21 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 If you remove Microsoft R Open (microsoft-r-server-mro-8.0-8.0.5-1.x86_64), you will also remove any dependent packages used only by R Open.
 
-- For RPM:
-    `$ rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64`
-- For DPKG
-    `$ dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64`
+Uninstall order is important. Due to package dependencies, be sure to remove the packages in the order given below.
 
-Other packages include:
+**For RPM**
 
-- `microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64`
-- `microsoft-r-server-packages-8.0-8.0.5-1.x86_64`
-- `microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64`
+        $ rpm -e microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+        $ rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
+
+**For RPM**
+
+    $ dpkg --remove microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+    $ dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
 ## How to uninstall the Hadoop component
 
@@ -81,3 +91,13 @@ For versions prior to 8.0.5, do the following:
 
 - Remove symlinks to libhfs.so and libjvm.so
 - Remove scaleR JARs (or symlinks to those JARs) from HADOOP_HOME/lib
+
+## See Also
+
+[Install R on Hadoop overview](rserver-install-hadoop.md)
+
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+
+[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+
+[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
