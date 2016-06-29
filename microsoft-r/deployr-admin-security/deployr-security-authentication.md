@@ -70,8 +70,13 @@ The LDAP and Active Directory security providers are one and the same, but their
 Accordingly, to enable do the following:
 
 1. Set `grails.plugin.springsecurity.ldap.active=true`
-2. Uncomment the LDAP properties  (make sure Active Directory  is commented out)
-3. For each property, use the value matching your LDAP DIT:
+1. Uncomment only the LDAP properties 
+1. Make sure the Active Directory section is commented out **except** for this line which should be **set to false**.    
+   ```
+   grails.plugin.springsecurity.ad.active=false
+   ```
+1. For each property, use the value matching your configuration.
+
 
 ```
     /*
@@ -130,9 +135,13 @@ By default, the Active Directory security provider is disabled. To enable Active
 The LDAP and Active Directory security providers are one and the same, but their [configuration properties](#ldap-active-directory-configuration-properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 Accordingly, to enable do the following:
 
-1. Set `grails.plugin.springsecurity.ldap.active=true`
-2. Uncomment only the Active Directory properties (make sure LDAP is commented out)
-3. For each property, use the value matching your configuration:
+1. Set `grails.plugin.springsecurity.ad.active=true`
+1. Uncomment only the Active Directory properties 
+1. Make sure the LDAP section is commented out **except** for this line which should be **set to false**.    
+   ```
+   grails.plugin.springsecurity.ldap.active=false
+   ```
+1. For each property, use the value matching your configuration.
 
    + For DeployR for Microsoft R Server 2016:
      ```
@@ -143,7 +152,7 @@ Accordingly, to enable do the following:
       * properties and provide property values matching your LDAP DIT:
       */
 
-      grails.plugin.springsecurity.ldap.active=false
+      grails.plugin.springsecurity.ad.active=false
       /*
       grails.plugin.springsecurity.providerNames = ['ldapAuthProvider1']
       grails.plugin.springsecurity.ldap.server = 'ldap://localhost:389/'

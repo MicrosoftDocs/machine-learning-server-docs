@@ -6,7 +6,7 @@ description: "Security in DeployR: Authentication, HTTPS, SSL, and access contro
 keywords: ""
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/06/2016"
+ms.date: "06/27/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,12 +35,14 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.
 
 + In DeployR 8.0.0, only SSL is supported.  
 
->[!IMPORTANT] For security reasons, we strongly recommended that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
-
 ## Enabling TLS/SSL Support
 
 Once enabled, your client applications can make API calls that connect over HTTPS.
 
+>[!IMPORTANT] 
+>For security reasons, we strongly recommend that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
+
+<br />
 ### Enabling for DeployR for Microsoft R Server 2016
 
 <br />
@@ -75,7 +77,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
    1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file. 
    
       >If you do not have a trusted SSL certificate from a registered authority, you'll need a temporary keystore for testing purposes. [Learn how to create a temporary keystore](#temporary-keystore).
-      >
+
       >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
    1. When prompted whether the certificate file is self-signed, answer `N` if you are using a trusted SSL certificate from a registered authority -or- `Y` if self-signed.
@@ -88,22 +90,65 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
+<!--
 <br />
 ####Securing connections between DeployR Web server and the database
 
-If your corporate policies require that you secure the communications between the Web server and the DeployR database, configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#postgresql) or a [PostgreSQL database](../deployr-install-on-linux.md#postgresql) rather than the default H2 database.
+If your corporate policies require that you secure the communications between the Web server and the DeployR database, then you should configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#postgresql) or a [PostgreSQL database](../deployr-install-on-linux.md#postgresql) rather than the default H2 database.
 
-1. Enable SSL/TLS 1.2 for your remote database:
+To encrypt the connections between the web server and a **remote SQL Server database**:
 
-   + For a SQL Server database:
-     
-     1. Do this. 
+1.  In the DeployR administrator utility, [stop the DeployR server](../deployr-common-administration-tasks.md#startstop).
 
-   + For a PostgreSQL database: 
-     
-     1. Do this.
+1.  Update the database connection string properties for encryption:
 
+    1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
 
+    2.  Locate the `dataSource` property block.
+
+    3.  Replace **the entire contents** of the `dataSource` block with these for your authentication method:
+
+        For Windows authentication:
+
+              dataSource {
+                   dbCreate = "update"
+                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;integratedSecurity=true;"
+              }
+
+        For basic authentication:
+
+              dataSource {
+                   dbCreate = "update"
+                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                   username = “<PUT_DB_USERNAME_HERE>”
+                   password = “<PUT_DB_PASSWORD_HERE>”
+                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;"
+              }
+
+        >If you are unsure of your SQL instance name, please consult with your SQL administrator. The default instance name for:
+        >    -   SQL Server Express is `SQLEXPRESS`
+        >    -   SQL Server Standard or Professional is `MSSQLEXPRESS`
+        >
+        >If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
+
+1. If you are connecting to a remote SQL Server database, be sure to [open the database port to the public IP of the DeployR server](#update-your-firewall).
+
+1. In the DeployR administrator utility:
+    1. Test the database connection.
+        -   If there are any issues, solve them before continuing.
+        -   Once the connection test passes, return the main menu.
+
+    1. [Restart the DeployR server](../deployr-common-administration-tasks.md#startstop).
+
+    1.  Exit the utility.
+
+1. There are additional steps in SQL Server 2016 needed to properly secure the connections and force encryption. Read more here: 
+    + https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
+    + https://msdn.microsoft.com/en-us/library/ms191192.aspx
+    + https://support.microsoft.com/en-us/kb/3135244
+
+-->
 
 
 <br>
