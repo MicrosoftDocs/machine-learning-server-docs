@@ -200,8 +200,8 @@ The following steps outline what you need to do after running the DeployR instal
     
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
->[!IMPORTANT]
->At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
+   >[!IMPORTANT]
+   >At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
 
 1. [Optional] **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#gridnodes).
 
@@ -217,7 +217,7 @@ The following steps outline what you need to do after running the DeployR instal
 
    >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
-1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configuring-public-access) now.
+1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configure-public-access) now.
 
 1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](deployr-tools-and-samples.md).
 
@@ -467,7 +467,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 
 2.  Ensure your previous version of DeployR is running and that all users are logged out of the version.
 
-3.  [Install and configure](#installdeployr) DeployR for Microsoft R Server 2016 and all its dependencies.
+3.  [Install and configure](#installserver) DeployR for Microsoft R Server 2016 and all its dependencies.
 
 4.  Ensure that all users are logged out of DeployR for Microsoft R Server 2016 as well.
 
