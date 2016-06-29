@@ -27,7 +27,7 @@ ms.custom: ""
 
 This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R Server, and Revolution R Workstation.
 
-## Microsoft R Server 8.0.5
+## Microsoft R Server 2016 (version 8.0.5)
 
 **Operating Systems (64-Bit only)**
 
@@ -45,9 +45,9 @@ This article specifies supported operating systems, distributions, and database 
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11
 - Spark version: 1.5.0-1.6.1 (if using Spark)
 
-## Microsoft R Server 8.0.0
+## Microsoft R Server 8.0
 
-Microsoft R Server 8.0.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.
+Microsoft R Server 8.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.
 
 **Operating Systems**
 

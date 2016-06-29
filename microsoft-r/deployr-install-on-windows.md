@@ -408,7 +408,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 
 2.  Ensure your previous version of DeployR is running and that all users are logged out of the version.
 
-3.  [Install and configure](#installdeployr) DeployR for Microsoft R Server 2016 and all its dependencies.
+3.  [Install and configure](#installserver) DeployR for Microsoft R Server 2016 and all its dependencies.
 
 4.  Ensure that all users are logged out of DeployR for Microsoft R Server 2016 as well.
 

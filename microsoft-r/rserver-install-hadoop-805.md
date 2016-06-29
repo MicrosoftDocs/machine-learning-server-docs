@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Microsoft R Server version 8.0.5 on Hadoop"
-description: "Install Microsoft R Server version 8.0.5 on Hadoop"
+title: "Install Microsoft R Server 2016 on Hadoop"
+description: "Installation and configuration Microsoft R Server 2016 (version 8.0.5) on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
@@ -22,28 +22,28 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Install Microsoft R Server 8.0.5 on Hadoop
+# Install Microsoft R Server 2016 on Hadoop
 
-This article explains how to install version 8.0.5 of Microsoft R Server on a Hadoop cluster.
+This article explains how to install the latest version of Microsoft R Server 2016 on a Hadoop cluster.
 
-## What's new in the 8.0.5 installer
+## What's new in the R Server 2016 installer
 
-Version 8.0.5 includes updated installers for deploying R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R server** that comes with most dependencies built into the package. Version 8.0.5 has fewer post-install configuration requirements. It also marks the transition of Spark support from Public Preview to General Availability (GA). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](notes/r-server-notes.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
-A summary of setup tasks for version 8.0.5 is as follows:
+A summary of setup tasks for R Server 2016 is as follows:
 
 - Download the software
 - Unzip to extract packages and an install script (install.sh)
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
 
-The install script downloads and installs Microsoft R Open for R Server (microsoft-r-server-mro-8.0.rpm); it also provides the following packages that are new in version 8.0.5:
+The install script downloads and installs Microsoft R Open for R Server 2016 (microsoft-r-server-mro-8.0.rpm); it also provides the following packages that are new in this version:
 
 - microsoft-r-server-intel-mkl-8.0.rpm       
 - microsoft-r-server-packages-8.0.rpm      
 - microsoft-r-server-hadoop-8.0.rpm
 
-In contrast with previous releases, version 8.0.5 comes with a requirement for `root` installation. Non-root installations are not supported in this version.
+In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported in R Server 2016.
 
 ## Recommendations for installation
 
@@ -59,15 +59,15 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0.5 works with the following Hadoop distributions:
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 2016 works with the following Hadoop distributions:
 
 - Cloudera CDH 5.5-5.7
 - HortonWorks HDP 2.3-2.4
 - MapR 5.0-5.1
 
-Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 8.0.5.
+Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 2016 (version 8.0.5).
 
-In version 8.0.5, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
@@ -100,7 +100,7 @@ Microsoft R Server is distributed in two different formats. Through VLSC, it is 
 
 ## Run the install script
 
-Microsoft R Server 8.0.5 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
+Microsoft R Server 2016 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
@@ -164,7 +164,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 		> rxSummary(~., iris)
 
-Partial output is as follows (showing the first 4 lines).
+  Partial output is as follows (showing the first 4 lines).
 
 		Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.003 seconds
 		Computation time: 0.010 seconds.
@@ -173,9 +173,9 @@ Partial output is as follows (showing the first 4 lines).
 
 4. Run a sample local job.
 
-This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
+  This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
 
-Paste the following code into your Revo64 session.
+  Paste the following code into your Revo64 session.
 
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
 
@@ -187,7 +187,7 @@ Paste the following code into your Revo64 session.
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-Partial output is as follows (showing the last 8 lines).
+  Partial output is as follows (showing the last 8 lines).
 
 		DayOfWeek Counts
 		Monday    97975
@@ -200,9 +200,9 @@ Partial output is as follows (showing the last 8 lines).
 
 5. Run a sample Hadoop job.
 
-This step uses the sample dataset to run a Hadoop job.
+  This step uses the sample dataset to run a Hadoop job.
 
-Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
+  Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
 
 		rxSetComputeContext(RxHadoopMR(consoleOutput=TRUE))
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
@@ -215,7 +215,7 @@ Paste the following code into your Revo64 session. This snippet differs from the
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-Partial output is as follows (showing the first 10 lines).
+  Partial output is as follows (showing the first 10 lines).
 
 		======  sandbox.hortonworks.com (Master HPA Process) has started run at Fri Jun 10 18:26:15 2016  ======
 		Jun 10, 2016 6:26:21 PM RevoScaleR main
@@ -241,7 +241,7 @@ Partial output is as follows (showing the first 10 lines).
 
 An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
 
-Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 8.0.5 are already installed, a manual or custom installation must create the appropriate folders and set permissions.
+Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 2016 are already installed, a manual or custom installation must create the appropriate folders and set permissions.
 
 **RPM or DEB Installers**
 
@@ -277,7 +277,7 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 
 ## Multi-node installation using Cloudera Manager
 
-The following steps walk you through a multi-node installation using Cloudera Manager to create a Cloudera Manager parcel for a Microsoft R Server version 8.0.5 installation. In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.
+The following steps walk you through a multi-node installation using Cloudera Manager to create a Cloudera Manager parcel for a Microsoft R Server 2016 installation. In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.
 
 Two parcels are required:
 
