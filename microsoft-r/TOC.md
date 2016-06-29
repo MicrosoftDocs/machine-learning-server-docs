@@ -16,7 +16,7 @@
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 #### [Uninstall R Server on Hadoop to upgrade versions](rserver-install-uninstall-upgrade.md)
-### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-server-805.md)
+### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 ### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 ### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ## [Install R Client](install-r-client-windows.md)
