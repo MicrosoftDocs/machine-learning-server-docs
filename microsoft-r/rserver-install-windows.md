@@ -27,8 +27,11 @@ ms.custom: ""
 # Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
 
 
->**Microsoft R Server 2016**
->For the latest Windows installation documentation for Microsoft R Server 2016, [go here](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
+## Find Latest Installation Instructions
+><big>**Microsoft R Server 2016**</big>
+><big>For the latest R Server Windows installation documentation, [find it on the SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx).</big>
+><big>For the Revolution R Enterprise 8.0.0 installation documentation, see below.</big>
+
 
 
 ## Documentation and GPL Source
