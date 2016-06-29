@@ -164,7 +164,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 		> rxSummary(~., iris)
 
-Partial output is as follows (showing the first 4 lines).
+  Partial output is as follows (showing the first 4 lines).
 
 		Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.003 seconds
 		Computation time: 0.010 seconds.
@@ -173,9 +173,9 @@ Partial output is as follows (showing the first 4 lines).
 
 4. Run a sample local job.
 
-This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
+  This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
 
-Paste the following code into your Revo64 session.
+  Paste the following code into your Revo64 session.
 
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
 
@@ -187,7 +187,7 @@ Paste the following code into your Revo64 session.
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-Partial output is as follows (showing the last 8 lines).
+  Partial output is as follows (showing the last 8 lines).
 
 		DayOfWeek Counts
 		Monday    97975
@@ -200,9 +200,9 @@ Partial output is as follows (showing the last 8 lines).
 
 5. Run a sample Hadoop job.
 
-This step uses the sample dataset to run a Hadoop job.
+  This step uses the sample dataset to run a Hadoop job.
 
-Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
+  Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
 
 		rxSetComputeContext(RxHadoopMR(consoleOutput=TRUE))
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
@@ -215,7 +215,7 @@ Paste the following code into your Revo64 session. This snippet differs from the
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-Partial output is as follows (showing the first 10 lines).
+  Partial output is as follows (showing the first 10 lines).
 
 		======  sandbox.hortonworks.com (Master HPA Process) has started run at Fri Jun 10 18:26:15 2016  ======
 		Jun 10, 2016 6:26:21 PM RevoScaleR main
