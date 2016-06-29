@@ -30,6 +30,8 @@ ms.custom: ""
 ## Find Latest Installation Instructions
 ><big>**Microsoft R Server 2016**</big>
 ><big>For the latest R Server Windows installation documentation, [find it on the SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx).</big>
+><big>For the Revolution R Enterprise 8.0.0 installation documentation, see below.</big>
+
 
 
 ## Documentation and GPL Source
