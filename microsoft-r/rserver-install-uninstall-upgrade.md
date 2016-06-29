@@ -30,7 +30,7 @@ Additionally, if you upgrade the Hadoop cluster, you will also need to uninstall
 
 You can uninstall and reinstall node by node across the cluster, but don’t try to submit any jobs until all nodes are at the same functional level.
 
-When you do reinstall R, we recommend [installing version 8.0.5](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
+When you do reinstall R, we recommend [installing R Server 2016 (version 8.0.5)](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
 
 ## Before you uninstall
 
@@ -85,7 +85,7 @@ Uninstall order is important. Due to package dependencies, be sure to remove the
 
 ## How to uninstall the Hadoop component
 
-If you are uninstalling version 8.0.5, there is a Hadoop component that can be uninstalled independently of other packages in the distribution: `microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64`
+If you are uninstalling R Server 2016 (version 8.0.5), there is a Hadoop component that can be uninstalled independently of other packages in the distribution: `microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64`
 
 For versions prior to 8.0.5, do the following:
 
@@ -96,7 +96,7 @@ For versions prior to 8.0.5, do the following:
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

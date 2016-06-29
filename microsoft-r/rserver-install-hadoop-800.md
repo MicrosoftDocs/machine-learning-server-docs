@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Microsoft R Server version 8.0.0 on Hadoop"
-description: "Install Microsoft R Server version 8.0.0 on Hadoop"
+title: "Install Microsoft R Server version 8.0 on Hadoop"
+description: "Install Microsoft R Server version 8.0 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
@@ -22,13 +22,13 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Install Microsoft R Server 8.0.0 on Hadoop
+# Install Microsoft R Server 8.0 on Hadoop
 
-This article explains how to install version 8.0.0 of Microsoft R Server on a Hadoop cluster.
+This article explains how to install version 8.0 of Microsoft R Server on a Hadoop cluster.
 
 ## Recommendations for installation
 
-For a first-time installation of Microsoft R Server 8, we recommend [installing Microsoft R Server version 8.0.5](rserver-install-hadoop-805.md) instead of 8.0.0. The 8.0.5 installer performs more system verification, installation, and configuration steps. Version 8.0.5 also includes the Generally Available (GA) version of rxSpark. If you already have 8.0.0 and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+For a first-time installation of Microsoft R Server, we recommend [installing Microsoft R Server 2016](rserver-install-hadoop-805.md) instead. In R Server 2016, the installer performs more system verification, installation, and configuration steps. Several new features and enhancements are [new in this release](notes/r-server-notes.md). To upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
@@ -44,7 +44,7 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0.5 works with the following Hadoop distributions:
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0 works with the following Hadoop distributions:
 
 - Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
 - HortonWorks HDP 1.3.0, HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
@@ -368,7 +368,7 @@ To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR 
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

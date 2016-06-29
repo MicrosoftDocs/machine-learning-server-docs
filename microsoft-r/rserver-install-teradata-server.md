@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "R Server Installation Guide for Teradata Servers"
-description: "R Server installation for Teradata servers."
+title: "R Server 8.0 Installation Guide for Teradata Servers"
+description: "R Server 8.0 installation for Teradata servers."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
@@ -24,11 +24,13 @@ ms.custom: ""
 
 ---
 
-# R Server Installation Guide for Teradata Servers
+# R Server 8.0 Installation Guide for Teradata Servers
+
+A newer version of R Server (Microsoft R Server 2016, version 8.0.5) is now available that's easier to install. See [Install Microsoft R Server 2016 on Teradata Servers](rserver-install-teradata-805.md) for more information.
 
 ## Quick Overview
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [*Microsoft R Server Client Installation Manual for Teradata.*](rserver-install-teradata-client.md)
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server 8.0 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [*Microsoft R Server Client Installation Manual for Teradata.*](rserver-install-teradata-client.md)
 
 >[!NOTE]
 >Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Server 7 Client Installation Manual for Teradata.*

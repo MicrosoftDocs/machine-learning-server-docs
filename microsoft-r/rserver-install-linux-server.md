@@ -2,7 +2,7 @@
 
 # required metadata
 title: "R Server installation for Linux systems"
-description: "Install Microsoft R Server version 8.0.0 and 8.0.5 on Linux."
+description: "Install Microsoft R Server 8.0 or Microsoft R Server 2016 (version 8.0.5) on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
@@ -21,12 +21,11 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology: "r-server"
 ms.custom: ""
-redirect_url: "/microsoft-r/rserver-install-linux-server/"
 ---
 
 # R Server Installation for Linux Systems
 
-This article explains how to install versions 8.0.0 and 8.0.5 of Microsoft R Server on a Linux server. Version 8.0.5 is recommended because it includes an updated installer for deploying R Server in fewer steps, including a slipstream installation of **Microsoft R Open for R Server** that comes with most of its dependencies built into the package.
+This article explains how to install newer versions of Microsoft R Server on a Linux server. The newest version (8.0.5), Microsoft R Server 2016, is recommended because it includes an updated installer that deploys R Server in fewer steps, including a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
 
 You can only install one version of R Server. Side-by-side is not supported. If the server already has an existing installation, you should uninstall the current deployment before installing the new version. See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
@@ -48,7 +47,7 @@ If any of these conditions do not apply, you should first verify that your syste
 
 **Disk Space:** A minimum of 500 MB of disk space is required.
 
-## Install R Server version 8.0.5 on Linux
+## Install R Server 2016 on Linux
 
 This version of the installer consolidates the OS-specific .tar files into a single file. Specifically, MRS80RHEL.tar.gz and MRS80SLES.tar.gz are replaced with this file: MRS80LINUX.tar.gz
 
@@ -73,7 +72,7 @@ If you have a gzipped tar file, you should unpack the file as follows (be sure y
 
 ### Run the install script
 
-Microsoft R Server 8.0.5 for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
+Microsoft R Server 2016 for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
@@ -95,7 +94,7 @@ Partial output is as follows (note version 8.0.5):
 		Version     : 8.0.5                         Vendor: Microsoft
 		. . .
 
-## Install R Server version 8.0.0 on Linux
+## Install R Server 8.0 on Linux
 
 Installation of Microsoft R Server consists of two distinct steps:
 
@@ -106,11 +105,11 @@ To download and install Microsoft R Open and R Server:
 
 1. Log in as root, or as a user with super user (sudo) privileges. Optionally, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for instructions.
 
-2. Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
+2. Download [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
 
 3. Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
 
-4. Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
+4. Download the Microsoft R Server distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
 
 	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
 	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
@@ -178,7 +177,7 @@ You can also run the installer as a non-root user, even without sudo privileges.
 
 ### Non-Root Installs
 
-*Applies to:* 8.0.0 only
+*Applies to:* 8.0 only
 
 You can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:
 
@@ -338,7 +337,7 @@ To remove Microsoft R Server from your computer, delete the directory containing
 
 	rm –rf /usr/lib64/MRS-8.0
 
-To remove Microsoft R Open, follow the [instructions online](rserver-install-linux-server.md).
+To remove Microsoft R Open, follow the [instructions online](https://mran.revolutionanalytics.com/documents/rro/installation/).
 
 ## Managing Multiple R Installations
 
@@ -464,9 +463,9 @@ Next, set up a run configuration to use your R environment as follows:
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
 
-[Install R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+[Install R Server 8.0 on Hadoop](rserver-install-hadoop-800.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 

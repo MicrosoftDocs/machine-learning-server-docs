@@ -456,7 +456,7 @@ The resulting output is:
 	DayOfWeek=Saturday    1.5435     0.1934   7.981 2.22e-16 ***
 	DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869
@@ -598,7 +598,7 @@ You should see the following results:
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
@@ -672,7 +672,7 @@ You should see the following results (which should match the results we found fo
 	DayOfWeek=Sat   0.91008    0.04144   21.96 2.22e-16 *** | 732944
 	DayOfWeek=Sun   2.82780    0.03829   73.84 2.22e-16 *** | 858366
 	---
-	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	Signif. codes:  0 `***` 0.001 `**` 0.01 `*` 0.05 ‘.’ 0.1 ‘ ’ 1
 
 	Residual standard error: 35.48 on 6005374 degrees of freedom
 	Multiple R-squared: 0.001827 (as if intercept included)
@@ -773,6 +773,58 @@ To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function.
 	           rowSelection = !is.na(ArrDelay) & (DepDelay > -60))
 
 To modify an existing composite XDF using *rxDataStep* set the *overwrite* argument to *TRUE* and either omit the *outFile* argument or set it to the same data source specified for *inData*.
+
+### Using Data from Hive for Your Analyses
+
+There are multiple ways to access and use data from Hive for analyses with R Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+
+1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
+2. If the data is large then use the Hive command line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
+
+Here’s how to get started with each of these approaches.
+
+#### Accessing data via ODBC
+
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+
+- mySQL = "SELECT * FROM CustData"
+
+- myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
+
+- xdfFile <- RxXdfData("dataFromHive.xdf")
+
+- rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
+
+#### Accessing data via an Export to Text Files
+
+This approach uses the Hive command line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
+
+First, check with your Hadoop system administrator find out whether the ‘hive’ or ‘beeline’ command should be used to run a Hive query from the command line, and obtain the needed credentials for access.
+
+Next, try out your hive/beeline command from the Linux command line to make sure it works and that you have the proper authentication and syntax.
+
+Finally, run the command from within R using R’s system command.
+
+Here are some sample R statements that output a Hive query to the local and HDFS file systems:
+
+**Run a Hive query and dump results to a local text file (edge node)**
+
+	system('hive –e "select * from emp" > myFile.txt')
+
+**Run the same query using beeline’s csv2 output format**
+
+	system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
+
+**Run the same query but dump the results to CSV in HDFS**
+
+	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
+
+After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+
+	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
+	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)
+
+	rxSummary(~var1 + var2+ var3+ var4, data=myHiveData)
 
 ### Writing to CSV in HDFS
 

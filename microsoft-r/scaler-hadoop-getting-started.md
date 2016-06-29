@@ -778,12 +778,15 @@ Finally, run the command from within R using R’s system command.
 Here are some sample R statements that output a Hive query to the local and HDFS file systems:
 
 **Run a Hive query and dump results to a local text file (edge node)**
+
 	system('hive –e "select * from emp" > myFile.txt')
 
 **Run the same query using beeline’s csv2 output format**
+
 	system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
 
 **Run the same query but dump the results to CSV in HDFS**
+
 	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
 
 After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
