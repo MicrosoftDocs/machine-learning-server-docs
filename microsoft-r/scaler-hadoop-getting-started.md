@@ -757,13 +757,10 @@ Here’s how to get started with each of these approaches.
 
 Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
 
-- mySQL = "SELECT * FROM CustData"
-
-- myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
-
-- xdfFile <- RxXdfData("dataFromHive.xdf")
-
-- rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
+	mySQL = "SELECT * FROM CustData"
+	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
+	xdfFile <- RxXdfData("dataFromHive.xdf")
+	rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
 
 #### Accessing data via an Export to Text Files
 
