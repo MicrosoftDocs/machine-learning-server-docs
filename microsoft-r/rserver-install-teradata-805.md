@@ -34,6 +34,10 @@ Microsoft R Server 2016 includes updated installers that allow you to deploy R i
 >[!NOTE]
 >In this release, SLES 10 no longer supported, only SLES 11 SP1.
 
+## Where Do I Get It?
+
+You can download Microsoft R Server 2016 (version 8.0.5) for Teradata from [here](http://aka.ms/rserver/teradata/download).
+
 ## Quick Overview
 
 Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](rserver-install-teradata-client.md).
