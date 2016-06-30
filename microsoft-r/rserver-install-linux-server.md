@@ -37,6 +37,11 @@ The instructions for either version of R Server assume the following:
 
 If any of these conditions do not apply, you should first verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
 
+
+## Where Do I Get It?
+
+You can download Microsoft R Server 2016 (version 8.0.5) for Linux from [here](http://aka.ms/rserver/linux/download).
+
 ## System Requirements
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.

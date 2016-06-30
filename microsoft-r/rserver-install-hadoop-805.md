@@ -45,6 +45,10 @@ The install script downloads and installs Microsoft R Open for R Server 2016 (mi
 
 In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported in R Server 2016.
 
+## Where do I get it?
+
+You can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
+
 ## Recommendations for installation
 
 We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
