@@ -39,7 +39,7 @@ Microsoft R Server 2016 includes updated installers that allow you to deploy R i
 Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](rserver-install-teradata-client.md).
 
 >[!NOTE]
->Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in *Microsoft R Server 7 Client Installation for Teradata.*
+>Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, skip installing R Server in your Teradata data warehouse, but do configure your local workstations per [Microsoft R Server Client Installation for Teradata](rserver-install-teradata-client.md).
 
 ## System Requirements
 
@@ -75,9 +75,8 @@ Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rp
 
 1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
 
-		Microsoft R Open for Microsoft R Server 2016
-
-		Microsoft R Server 2016 for Teradata
+  - Microsoft R Open for Microsoft R Server 2016
+  - Microsoft R Server 2016 for Teradata
 
 2.  Download the Microsoft R Open for Microsoft R Server 2016 rpm file for your Teradata appliance’s operating system, which must be SLES 11 SP1.
 
