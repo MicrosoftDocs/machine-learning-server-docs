@@ -31,20 +31,21 @@ This article explains how to install Microsoft R Server 2016 (version 8.0.5) on 
 
 Microsoft R Server 2016 includes updated installers that allow you to deploy R in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](notes/r-server-notes.md).
 
-Note that in this release, SLES 10 no longer supported, only SLES 11 SP1.
+>[!NOTE]
+>In this release, SLES 10 no longer supported, only SLES 11 SP1.
 
 ## Quick Overview
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see the companion manual [Microsoft R Server Client Installation Manual for Teradata](rserver-install-teradata-client.md).
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](rserver-install-teradata-client.md).
 
 >[!NOTE]
->Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in the manual *Microsoft R Server 7 Client Installation Manual for Teradata.*
+>Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in *Microsoft R Server 7 Client Installation for Teradata.*
 
 ## System Requirements
 
 Microsoft R Server for Teradata has the following system requirements:
 
-**Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+**Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core processors are recommended.
 
 **Operating System:** SUSE Linux Enterprise Server 11 SP 1 (64-bit).
 
@@ -70,23 +71,19 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 ## Installing the Microsoft R Server rpms
 
-In this chapter, we discuss the basics of using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms.
+Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms. PUT runs in a browser. We recommend upgrading to the latest version (3.06.01, as of this writing). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
 
-PUT is a browser-based utility, and we recommend that you upgrade to the latest version (3.06.01). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
-
-To get started, do the following:
-
-  1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
+1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
 
 		Microsoft R Open for Microsoft R Server 2016
 
 		Microsoft R Server 2016 for Teradata
 
-  2.  Download the Microsoft R Open for Microsoft R Server 2016 rpm file for your Teradata appliance’s operating system, which must be SLES 11 SP1.
+2.  Download the Microsoft R Open for Microsoft R Server 2016 rpm file for your Teradata appliance’s operating system, which must be SLES 11 SP1.
 
-  3.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+3.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 
-  4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80TERA.img /mnt/mrsimage
@@ -95,73 +92,74 @@ To get started, do the following:
 
 		tar zxvf MRS80TERA.tar.gz
 
-  5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
+5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
         microsoft-r-server-mro-8.0.tar.gz
         MRS80TERA.tar.gz
 
-  6. Change directory to the Customer Mode packages directory:
+6. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs
 
-  7. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
+7. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
 
 		tar -zxf MRS80TERA.tar.gz
 
-  8. Change directory to the one directory created in Step 7:
+8. Change directory to the one directory created in Step 7:
 
 		cd MRS80TERA
 
-  9. Run the install script, install.sh, as follows:
+9. Run the install script, install.sh. By running install.sh you are installing Microsoft-r-server-mro-tar-gz, agreeing to MRO_EULA.txt and EULA.txt license agreements:
 
 		./install.sh
 
-  10. Change directory to the Customer Mode packages directory:
+10. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs
 
-  11. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+11. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
-  1.  The initial PUT screen asks you to select an operation. Select **Install/Upgrade Software**.
+1.  The initial PUT screen asks you to select an operation. Select **Install/Upgrade Software**.
 
-  2.  At the **Install/Upgrade Software: Customer Mode** step, confirm the summary and click **Next**.
+2.  At the **Install/Upgrade Software: Customer Mode** step, confirm the summary and click **Next**.
 
-  3.  You may receive a dialog box saying that PUT was unable to find any packages to auto-select. If you see this dialog box, click OK.
+3.  You may receive a dialog box saying that PUT was unable to find any packages to auto-select. If you see this dialog box, click **OK**.
 
-  4.  Select Microsoft-R-Server.
+4.  Select **Microsoft-r-server-teradata-8.0**.
 
-  5.  Select all Groups and click &gt;&gt; to install on all groups, then click Next.
+5.  Select all Groups and click &gt;&gt; to install on all groups, then click **Next**.
 
-  6.  Review the list of dependencies and files to be installed, then click Yes.
+6.  Review the list of dependencies and files to be installed, then click **Yes**.
 
-  7.  Click Next
+7.  Click **Next**.
 
-  8.  Clear the “Restore normal Teradata Vital Infrastructure (TVI) escalation path (recommended)” check box.
+8.  Clear the **Restore normal Teradata Vital Infrastructure (TVI) escalation path (recommended)** check box.
 
-  9.  Click Finish.
+9.  Click **Finish**.
 
 Before proceeding, create the /tmp/revoJobs directory on each node:
 
-	mkdir /tmp/revoJobs
+	psh mkdir /tmp/revoJobs
 
 ## Setting Up the Revolution Analytics Database
 
 After you have installed the rpms, change directory to the "teradata" directory. There are now 3 directories that contain “revoTdSetup.sh”, one for each version of the DBS we support. Use whichever directory applies to your Teradata version:
 
-- /usr/lib64/microsoft-r/8.0/Teradata/1410
-- /usr/lib64/microsoft-r/8.0/Teradata/1500
-- /usr/lib64/microsoft-r/8.0/Teradata/1510
+- /usr/lib64/microsoft-r/8.0/teradata/1410
+- /usr/lib64/microsoft-r/8.0/teradata/1500
+- /usr/lib64/microsoft-r/8.0/teradata/1510
 
 Next, run the revoTdSetup.sh script:
 
     chmod u+x ./revoTdSetup.sh
     ./revoTdSetup.sh
 
-Enter the parent user database name and password at the prompts. Do not modify this script, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in the next section.
+Enter the parent user database name and password at the prompts. **Do not modify this script**, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in the next section.
 
-If you have previously run Microsoft R Server on your Teradata database, restart the database before proceeding.
+>[!NOTE]
+>If you have previously run Microsoft R Server on your Teradata database, restart the database before proceeding.
 
 ## Adding and Configuring Users
 
@@ -181,7 +179,7 @@ If you don’t already have such a user, the following example creates a databas
 
 You will often want to allow a user account to run jobs on data in other databases also. The lines shown below are examples of the types of permissions your Revolution users may require. (For convenience, these steps are organized according to the purpose of the permissions granted.)
 
-  1.  First, you will need to grant permissions for the user account to work with the Revolution database.  Logon to bteq with your admin account, and run the following lines.  Substitute the new user account name for 'ut1' in the sample lines below.
+1.  First, you will need to grant permissions for the user account to work with the Revolution database.  Logon to bteq with your admin account, and run the following lines.  Substitute the new user account name for 'ut1' in the sample lines below.
 
 			-- grant ut1 various permissions on revoAnalytics_Zqht2 DB
 			grant execute procedure on revoAnalytics_Zqht2.InitRevoJob to ut1;
@@ -199,7 +197,7 @@ You will often want to allow a user account to run jobs on data in other databas
 			grant create view on revoAnalytics_Zqht2 to ut1;
 			grant drop view on revoAnalytics_Zqht2 to ut1;
 
-  2.  Next you will need to grant permissions for the user account and the revolution database to work with data in the user account database.  Run the following lines, substituting your user account name for 'ut1'.
+2.  Next you will need to grant permissions for the user account and the revolution database to work with data in the user account database.  Run the following lines, substituting your user account name for 'ut1'.
 
 			-- grant ut1 rights on db with data to be analyzed -
 			-- in this case itself
@@ -211,7 +209,7 @@ You will often want to allow a user account to run jobs on data in other databas
 			grant create table on ut1 to revoAnalytics_Zqht2;
 			grant drop table on ut1 to revoAnalytics_Zqht2;
 
-  3.  Finally, you will want to grant permissions on any other databases you wish that account to have access to.  Run the following lines, substituting your user account name for 'ut1', and your other database name for 'RevoTestDB'.
+3.  Finally, you will want to grant permissions on any other databases you wish that account to have access to.  Run the following lines, substituting your user account name for 'ut1', and your other database name for 'RevoTestDB'.
 
 			-- grant ut1 rights on db with data to be analyzed
 			grant select on RevoTestDB to ut1;
@@ -255,9 +253,9 @@ In most cases, the natural place to install additional R packages is to the clie
 
 To manually distribute and install the package:
 
-  1.  Download the package and any required dependencies from <http://mran.microsoft.com/>.
-  2.  Copy the downloaded packages to each node of your data warehouse.
-  3.  For each package, run the command “R CMD INSTALL `*`package.`*`tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
+1.  Download the package and any required dependencies from <http://mran.microsoft.com/>.
+2.  Copy the downloaded packages to each node of your data warehouse.
+3.  For each package, run the command “R CMD INSTALL `*`package.`*`tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
 
 ## Removing Microsoft R Server
 
