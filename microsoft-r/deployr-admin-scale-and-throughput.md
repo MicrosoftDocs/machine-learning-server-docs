@@ -139,13 +139,14 @@ If each grid node is configured with sufficient resources for `30` slots, then t
 
 ## About Throughput
 
-In this section, we present you with a description and some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. **Artifacts** are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
+In this section, we present you with a description and some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
 
-### Understanding Throughput
+**Artifacts** are workspace objects and working directory files that are generated during R code execution. 
 
-DeployR throughput measures the number of tasks processed on the DeployR grid in a fixed time period. In practical terms, the throughput for your system is determined by your server and grid capacity in conjunction with the nature and volume of the tasks being processed.
+###Understanding Throughput
+In practical terms, the **throughput** for your system is determined by your server and grid capacity in conjunction with the nature and volume of the tasks being processed. DeployR throughput measures the number of tasks processed on the DeployR grid in a fixed time period. 
 
-### Asynchronous Job Workflow
+#### The Nature of Tasks
 
 To illustrate the nature of a task, let’s begin with a summary of the basic workflow for an asynchronous job.
 
@@ -161,7 +162,7 @@ To illustrate the nature of a task, let’s begin with a summary of the basic wo
 
 > By default, a snapshot of the R session is saved as a persistent DeployR project once a job has finished executing. As an alternative, use the `storenoproject` parameter when scheduling a job to instruct the server not to save a persistent project. If you specify that no project should be saved using the `storenoproject` parameter, you can still store specific artifacts to the repository. In certain scenarios, storing these artifacts to the repository rather than creating a persistent project can result in greatly improved throughput.
 
-### Example
+#### Example of How Tasks Affects Throughput
 
 To demonstrate how throughput is highly dependent on the nature of the tasks, see the following table for a side-by-side comparison of two jobs with very different natures that are executing on the grid. These jobs are contrived to clearly show how the nature of the task itself has significant impact on the observed throughput.
 
@@ -188,16 +189,20 @@ Beyond the time it takes to execute the R code for a job, we can see that if you
 
 Whether those artifacts are objects in the R workspace or files in the working directory, if the code you execute on a job leaves unnecessary artifacts behind, there can be very real consequences on the overall throughput of your grid. An unnecessary artifact is any workspace object or working directory file that is not required later when evaluating the final result of the job.
 
->**Guideline for Responsible Usage to Maximize Throughput:** Whenever tasks are performance-sensitive, the most effective step a user can take towards optimizing throughput for his or her own tasks is to ensure that the R code leaves no unnecessary artifacts behind. Minimal artifacts ensure minimal data is stored in the resulting persistent project. In some cases, it may be best to use the `storenoproject` parameter to skip the saving of a persistent project altogether, and instead, selectively store only specific workspace and directory data in the repository.
+#### Guideline for Responsible Usage
+
+There are guidelines for responsible task usage to help you maximize throughput. Whenever tasks are performance-sensitive, the most effective step a user can take towards optimizing throughput for his or her own tasks is to ensure that the R code leaves no unnecessary artifacts behind. 
+
+Minimal artifacts ensure minimal data is stored in the resulting persistent project. In some cases, it may be best to use the `storenoproject` parameter to skip the saving of a persistent project altogether, and instead, selectively store only specific workspace and directory data in the repository.
 
 ### Configuring DeployR for High-Volume Throughput
+
+For most DeployR deployments, the default configuration delivers adequate server runtime performance and resource usage. However, in some deployments, where the workload is anticipated to be significantly high-volumed, a specialized DeployR configuration may be required.
 
 The default runtime behavior of the DeployR server is determined by the settings in:
 
 -   The **Server Policies** tab in the Administration Console
 -   The DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`
-
-For most deployments, the default configuration delivers adequate server runtime performance and resource usage. However, in some deployments, where the workload is anticipated to be significantly high-volumed, a specialized DeployR configuration may be required.
 
 Typically, high-volume throughput deployments are characterized by a very large number of short-lived tasks that need to be executed as transactions without direct end-user participation or intervention. For such high-volume throughput deployments, the enabling of the following DeployR external configuration properties in the `deployr.groovy` file may be required:
 
@@ -211,5 +216,3 @@ Enabling these configuration properties results in a number of direct consequenc
 2.  Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
 
 >Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
-
-

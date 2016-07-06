@@ -38,7 +38,7 @@ As an administrator, your key responsibilities are to ensure the DeployR server 
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to [troubleshoot](#troubleshooting) your deployment. For that we provide diagnostic tools and numerous recommendations.
 
-But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available [here](deployr-installing-configuring.md).
+But first, you must install the server. Comprehensive installation guides are available [here](deployr-installation.md).
 
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
@@ -103,7 +103,7 @@ To alleviate this overhead, the DeployR server supports a set of NFS-mounted dir
 
 1.  [Configuring](deployr-admin-manage-big-data.md#setting-up-nfs-setup) the big data directories within your deployment.
 
-2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](deployr-admin-manage-big-data.md#external-directory-structure) in their R code to reference big data files within these directories.
+2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](deployr-admin-manage-big-data.md#adding-files-to-external-directories) in their R code to reference big data files within these directories.
 
 For the complete configuration and usage documentation, read the guide "[Managing External Directories for Big Data](deployr-admin-manage-big-data.md)".
 
@@ -124,7 +124,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Key Documents**
 -   [About DeployR](deployr-about.md)
--   [Installation & Configuration](deployr-installing-configuring.md)
+-   [Installation & Configuration](deployr-installation.md)
 -   [Security](deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)

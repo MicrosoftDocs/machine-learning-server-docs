@@ -93,9 +93,9 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Log in as a user with administrator rights.
 
-1.  Download and launch the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which can be found in the Microsoft R Server 2016 package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
+1.  Download the DeployR installer file, `DeployR-Enterprise-8.0.5.exe` from the Microsoft Volume Licensing Service Center (VLSC). 
 
-1.  Follow the onscreen prompts to complete the installation. 
+1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 

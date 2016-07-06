@@ -163,7 +163,7 @@ The following steps are for installing DeployR Enterprise after installing [thes
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
 
-3.  Download the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz`, using the link in your customer welcome letter.
+3.  Find the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz` from within the Microsoft R Server 2016 package you downloaded in the prerequisites step.
 
 4.  Unzip the tar file contents, go the `deployrInstall/installFiles` directory, and launch the installation script. At the prompt, type:
 
