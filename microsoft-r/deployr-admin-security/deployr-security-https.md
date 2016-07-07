@@ -59,13 +59,13 @@ Once enabled, your client applications can make API calls that connect over HTTP
       + For Linux
         ```
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        sudo ./adminUtility.sh
+        sudo ./adminUtilities.sh
         ```
 
      + For Windows:
         ```
         cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-        sudo adminUtility.bat
+        adminUtilities.bat
         ```
 
    1. From the main menu, choose option **Web Context and Security**.
@@ -383,13 +383,13 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
     + For Linux
       ```
       cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-      ./adminUtility.sh
+      ./adminUtilities.sh
       ```
 
    + For Windows:
       ```
       cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-      adminUtility.bat
+      adminUtilities.bat
       ```
 
 1.  From the main menu, choose option **Web Context and Security**.

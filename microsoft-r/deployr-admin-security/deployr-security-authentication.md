@@ -326,13 +326,13 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
        + On Windows:
           ```
           cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtility.bat
+          adminUtilities.bat
           ```
     
        + On Linux:
           ```
           cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtility.sh
+          ./adminUtilities.sh
           ```
 
     1.  Choose option **Start/Stop Server**.
@@ -376,13 +376,13 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
        + On Windows:
           ```
           cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtility.bat
+          adminUtilities.bat
           ```
     
        + On Linux:
           ```
           cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtility.sh
+          ./adminUtilities.sh
           ```
 
    1. Choose option **Start/Stop Server**.

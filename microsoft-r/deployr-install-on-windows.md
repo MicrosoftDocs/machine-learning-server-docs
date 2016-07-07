@@ -95,8 +95,8 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which is an add-on for SQL Server 2016 Enterprise Edition from one of these locations:
     + Microsoft Volume Licensing Service Center (VLSC): sign the license purchase agreement with Microsoft, you'll get your credentials to download.
-    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads): search for  “R Server” or ”DeployR”.
-    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “R Server” or ”DeployR”.
+    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads) search for  “Microsoft R Server” as it is part of the R Server install bundle. 
+    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “Microsoft R Server”.
  
 1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
@@ -112,7 +112,7 @@ The following steps outline what you need to do after running the DeployR instal
     1. Launch the DeployR Administrator Utility script with **administrator privileges**:
        ```
        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-       adminUtility.bat
+       adminUtilities.bat
        ```
        
     1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
@@ -200,7 +200,7 @@ To fix this issue, you must define the appropriate external server IP address an
 1.  Launch the DeployR administrator utility script with administrator privileges:
 
            cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-           adminUtility.bat
+           adminUtilities.bat
 
 2.  From the main menu, choose the option to configure the Web Context and Security options for DeployR.
 
@@ -315,7 +315,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     1.  Launch the DeployR administrator utility script with administrator privileges:
 
             cd $DEPLOYR_HOME\deployr\tools\ 
-            sudo adminUtility.bat
+            adminUtilities.bat
 
     2.  From the main menu, choose the option for **Start/Stop Server**.
 
@@ -362,7 +362,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     1.  Launch the DeployR administrator utility script with administrator privileges:
 
             cd $DEPLOYR_HOME\deployr\tools\ 
-            sudo adminUtility.bat
+            adminUtilities.bat
 
     2.  From the main menu, choose the option **Test Database Connection**.
 

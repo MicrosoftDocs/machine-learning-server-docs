@@ -189,7 +189,7 @@ The following steps outline what you need to do after running the DeployR instal
     1. Launch the DeployR Administrator Utility script  as `root` or a user with `sudo` permissions:
        ```
        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-       ./adminUtility.sh
+       ./adminUtilities.sh
        ```
        
     1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
@@ -262,7 +262,7 @@ To fix this issue, you must define the appropriate external server IP address an
 1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        ./adminUtility.sh
+        ./adminUtilities.sh
 
 2.  From the main menu, choose option `3` to configure the Web Context and Security options for DeployR.
 
@@ -372,7 +372,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
     1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
             cd $DEPLOYR_HOME/deployr/tools/ 
-            sudo ./adminUtility.sh
+            sudo ./adminUtilities.sh
 
     2.  Choose the option **Start/Stop Server**.
 
@@ -408,7 +408,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
     1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
             cd $DEPLOYR_HOME/deployr/tools/ 
-            sudo ./adminUtility.sh
+            sudo ./adminUtilities.sh
 
     2.  From the main menu, choose the option **Test Database Connection**.
 
@@ -540,7 +540,7 @@ Remember to uninstall DeployR on both the main server and any other grid node ma
 1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
         cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        sudo ./adminUtility.sh
+        sudo ./adminUtilities.sh
 
 2.  From the main menu of the utility, choose the option to stop the server.
 

@@ -35,13 +35,13 @@ To start or stop all DeployR-related services on the main server (not nodes) at 
    + On Windows:
      ```
      cd C:\Program Files\Microsoft\DeployR-<version>\deployr\tools\
-     adminUtility.bat
+     adminUtilities.bat
      ```
 
    + On Linux:
      ```
      cd /home/deployr-user/deployr/<version>/deployr/tools/ 
-     ./adminUtility.sh
+     ./adminUtilities.sh
      ```
 
 1. From the main menu, choose option **Start/Stop Server**. 

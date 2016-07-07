@@ -68,13 +68,13 @@ You must update the server Web context or else you will not be able to access to
       + On Windows, run:
         ```
         cd $DEPLOYR_HOME\deployr\tools\ 
-        adminUtility.bat 
+        adminUtilities.bat 
         ```        
 
       + On Linux, run:
         ```
         cd $DEPLOYR_HOME/deployr/tools/
-        ./adminUtility.sh 
+        ./adminUtilities.sh 
         ```         
 
    1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
@@ -216,13 +216,13 @@ You must update the server Web context or else you will not be able to access to
             + On Windows, run:
                ```
                cd $DEPLOYR_HOME\deployr\tools\ 
-               adminUtility.bat 
+               adminUtilities.bat 
                ```        
 
             + On Linux, run:
                ```
                cd $DEPLOYR_HOME/deployr/tools/
-               ./adminUtility.sh 
+               ./adminUtilities.sh 
                ```         
 
         1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
