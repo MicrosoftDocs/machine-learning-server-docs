@@ -86,10 +86,10 @@ Carefully follow the order presented whenever you reinstall Microsoft R Server 2
 
 On the main DeployR server machine:
 
-1.  [Stop DeployR](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+1.  [Stop DeployR](deployr-common-administration-tasks.md#startstop).
 2.  Uninstall Microsoft R Server 2016 using the instructions provided with your existing version of Microsoft R Server 2016.
 3.  Install Microsoft R Server 2016 and all its prerequisites as described in the instructions provided with that version of Microsoft R Server 2016.
-4.  [Start DeployR](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+4.  [Start DeployR](deployr-common-administration-tasks.md#startstop).
 
 On each DeployR grid node machine:
 
@@ -106,10 +106,10 @@ Carefully follow the order presented whenever you reinstall Revolution R Open or
 
 On the main DeployR Open server machine:
 
-1.  [Stop DeployR](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+1.  [Stop DeployR](deployr-common-administration-tasks.md#startstop).
 2.  Uninstall Revolution R Open or CRAN R.
 3.  Install Revolution R Open or CRAN R along with all of its prerequisites as described in the Revolution R Open or CRAN R installation instructions.
-4.  [Start DeployR](deployr-common-administration-tasks.md#starting-and-stopping-deployr).
+4.  [Start DeployR](deployr-common-administration-tasks.md#startstop).
 
 
 ### Troubleshooting on Linux
@@ -120,9 +120,9 @@ Try the following:
 
 1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
 2.  Make sure there is [no activity on the DeployR grid.](./deployr-admin-console/deployr-admin-managing-the-grid.md#viewing-or-stopping-slot-activity)
-3.  [Stop DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
+3.  [Stop DeployR on the machine in question.](deployr-common-administration-tasks.md#startstop)
 4.  Attempt to correct all issues reported in the [diagnostics log.](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)
-5.  [Start DeployR on the machine in question.](deployr-common-administration-tasks.md#starting-and-stopping-deployr)
+5.  [Start DeployR on the machine in question.](deployr-common-administration-tasks.md#startstop)
 6.  Run the diagnostics again.
 
 In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.

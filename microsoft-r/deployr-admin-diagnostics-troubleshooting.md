@@ -283,6 +283,7 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
 1. Exit the utility.  
 
 <br />   
+<a id="set-context-800"></a>
 #### DeployR 8.0.0: Update DeployR Web Context
 
 Run the `setWebContext` script to update the IP address in the DeployR Server Web Context.
@@ -304,7 +305,7 @@ Usage tips for the `setWebContext` script arguments:
 
 1. Open a Command Window with **“Run as Administrator”**.
 
-1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. 
    ```
    cd $DEPLOYR_HOME\deployr\tools\
    setWebContext -ip <ip_address>
@@ -319,7 +320,7 @@ Usage tips for the `setWebContext` script arguments:
 
 **On Linux:**
 
-1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. 
    ```
    cd $DEPLOYR_HOME/deployr/tools/
    ./setWebContext.sh -ip <ip_address>
@@ -336,9 +337,7 @@ Usage tips for the `setWebContext` script arguments:
 
 If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
-### Landing Page Blocked in I.E. 11
-
->**Windows only:** This issue applies only to Internet Explorer 11 on Windows.
+### Landing Page Blocked in Internet Explorer 11 (Windows Only)
 
 If you are attempting to access the DeployR landing page using `http://localhost:<PORT>/deployr/landing` in Internet Explorer (I.E.) 11 and the [diagnostic tests](#diagnostic-testing) have turned up nothing, you may find that the landing page is blocked. This may be due to some default settings in I.E. 11.
 
@@ -358,23 +357,23 @@ If you are attempting to access the DeployR landing page using `http://localhost
 
 5.  Click **OK** to apply the changes.
 
-### Cannot Access DeployR
-
-> **Windows only:** This is a Windows only issue.
+<br />
+### Cannot Access DeployR (Windows Only)
 
 During the installation of DeployR on Windows, the 'Domain' profile is used to create inbound exceptions for the ports used by DeployR. These settings may need to be adjusted after installing to meet the needs of your deployment.
 
+<br />
 ### Multiple User Sign-ins
 
 You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser.
 
+<br />
 ### Issues After Reinstalling Microsoft R or R
 
 If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr-admin-configure-reinstall-r.md).
 
-### Upping R Session Memory Limits
-
-> **Windows only:** This is a Windows only issue.
+<br />
+### Upping R Session Memory Limits (Windows only)
 
 By default, the maximum memory available to an R session under DeployR on Windows Rserve is 2 GB. If this is insufficient for your purposes, then you can increase the memory allocated for your R sessions by executing the `memory.limit()` R function on the R session. This function allows you to specify a higher memory allocation for your R session. The size parameter on that function call determines the final memory allocation for the R session. In general:
 

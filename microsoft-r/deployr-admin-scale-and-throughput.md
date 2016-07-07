@@ -201,7 +201,7 @@ For most DeployR deployments, the default configuration delivers adequate server
 
 The default runtime behavior of the DeployR server is determined by the settings in:
 
-+ The [**Server Policies** tab in the Administration Console](deployr-admin-console/deployr-admin-managing-server-policies.md)
++ The [**Server Policies** tab](deployr-admin-console/deployr-admin-managing-server-policies.md) in the Administration Console
 
 + The DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`
 
@@ -215,8 +215,7 @@ For such high-volume throughput deployments, you may need to enable the followin
 
 Enabling these configuration properties will result in the following direct consequences on the runtime behavior of the DeployR server:
 
-1.  The DeployR server becomes capable of executing hundreds of thousands of short-lived tasks without risking resource exhaustion.
++ The DeployR server becomes capable of executing hundreds of thousands of short-lived tasks without risking resource exhaustion.
 
-2.  Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
-
->Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
++ Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
+  >Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
