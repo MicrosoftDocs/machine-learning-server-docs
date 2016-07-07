@@ -214,7 +214,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
@@ -437,7 +437,7 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
@@ -472,7 +472,7 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
@@ -598,7 +598,7 @@ Install DeployR as follows:
 
 11. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
@@ -862,7 +862,7 @@ To fix this issue, ensure that:
 
 -   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
--   Or, you can run the [server Web context script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+-   Or, you can run the [server Web context script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
 
 ### Configuring the DeployR Grid
 

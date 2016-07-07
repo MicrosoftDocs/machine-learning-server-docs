@@ -16,8 +16,10 @@ The following guides are available to help you install and configure DeployR.
 
 <br />
 <br />
-### DeployR Enterprise and DeployR Open 8.0.0 (released January 2016)
+### DeployR Enterprise / Open build 8.0.0 (released January 2016)
 
 |        |Install & Configuration Guide|
 |------------------------|:----------------:|
-|**_Windows, Linux, Mac OS X_** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /> - all supported platforms|[View](deployr-installing-configuring.md)|
+|**_DeployR 8.0.0 on Windows_** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |[View](deployr-installing-configuring#installing-on-windows)|
+|**_DeployR 8.0.0 on Linux_** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[View](deployr-installing-configuring.md/#installing-on-linux)|
+|**_DeployR 8.0.0 on Mac OS X_** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[View](deployr-installing-configuring.md/#installing-on-mac-os-x)|

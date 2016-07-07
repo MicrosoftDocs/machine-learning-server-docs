@@ -477,6 +477,7 @@ This type of runtime is well suited to production deployments where consistent r
 
 >If that does not sound like a suitable RBroker runtime for your client application, then consider the [Discrete Task Runtime](#discrete-task-runtime) or the [Background Task Runtime](#background-task-runtime).
 
+<a name="pooledtaskbroker"></a>
 ### Pooled Task Runtime Programming Model
 
 The Pooled Task Runtime is supported by the PooledTaskBroker. This broker executes instances of PooledTask. The R session environment assigned to handle the execution of each PooledTask can be pre-initialized using PooledTaskOptions.

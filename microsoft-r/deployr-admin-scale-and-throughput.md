@@ -124,7 +124,7 @@ Where:
 
 -   `Average Slot Limit` is the average value for the **Slot Limit** setting for each of the grid nodes. The system administrator can set the value for each node’s **Slot Limit** in the **Grid** tab of the DeployR Administration Console.
 
-For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
+For more on managing your grid, see the [Administration Console Help](deployr-admin-console/deployr-admin-managing-the-grid.md).
 
 >To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.
 
@@ -137,16 +137,16 @@ If each grid node is configured with sufficient resources for `30` slots, then t
 
 ![Formula](./media/deployr-admin-scale-and-throughput/tuneasync-example.png)
 
-## About Throughput
+<a name="about-throughput"></a>
+## Considering & Configuring for Throughput
 
 In this section, we present you with a description and some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.
 
 **Artifacts** are workspace objects and working directory files that are generated during R code execution. 
 
-###Understanding Throughput
 In practical terms, the **throughput** for your system is determined by your server and grid capacity in conjunction with the nature and volume of the tasks being processed. DeployR throughput measures the number of tasks processed on the DeployR grid in a fixed time period. 
 
-#### The Nature of Tasks
+###Understanding the Nature of Tasks
 
 To illustrate the nature of a task, let’s begin with a summary of the basic workflow for an asynchronous job.
 
@@ -162,7 +162,7 @@ To illustrate the nature of a task, let’s begin with a summary of the basic wo
 
 > By default, a snapshot of the R session is saved as a persistent DeployR project once a job has finished executing. As an alternative, use the `storenoproject` parameter when scheduling a job to instruct the server not to save a persistent project. If you specify that no project should be saved using the `storenoproject` parameter, you can still store specific artifacts to the repository. In certain scenarios, storing these artifacts to the repository rather than creating a persistent project can result in greatly improved throughput.
 
-#### Example of How Tasks Affects Throughput
+### Example of How Tasks Affects Throughput
 
 To demonstrate how throughput is highly dependent on the nature of the tasks, see the following table for a side-by-side comparison of two jobs with very different natures that are executing on the grid. These jobs are contrived to clearly show how the nature of the task itself has significant impact on the observed throughput.
 
@@ -189,7 +189,7 @@ Beyond the time it takes to execute the R code for a job, we can see that if you
 
 Whether those artifacts are objects in the R workspace or files in the working directory, if the code you execute on a job leaves unnecessary artifacts behind, there can be very real consequences on the overall throughput of your grid. An unnecessary artifact is any workspace object or working directory file that is not required later when evaluating the final result of the job.
 
-#### Guideline for Responsible Usage
+### Guideline for Responsible Usage
 
 There are guidelines for responsible task usage to help you maximize throughput. Whenever tasks are performance-sensitive, the most effective step a user can take towards optimizing throughput for his or her own tasks is to ensure that the R code leaves no unnecessary artifacts behind. 
 
@@ -201,18 +201,21 @@ For most DeployR deployments, the default configuration delivers adequate server
 
 The default runtime behavior of the DeployR server is determined by the settings in:
 
--   The **Server Policies** tab in the Administration Console
--   The DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`
++ The [**Server Policies** tab](deployr-admin-console/deployr-admin-managing-server-policies.md) in the Administration Console
 
-Typically, high-volume throughput deployments are characterized by a very large number of short-lived tasks that need to be executed as transactions without direct end-user participation or intervention. For such high-volume throughput deployments, the enabling of the following DeployR external configuration properties in the `deployr.groovy` file may be required:
++ The DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`
+
+
+Typically, high-volume throughput deployments are characterized by a very large number of short-lived tasks that need to be executed as transactions without direct end-user participation or intervention. 
+
+For such high-volume throughput deployments, you may need to enable the following properties in the `deployr.groovy` file:
 
     deployr.node.validation.on.execution.disabled=true
     deployr.node.validation.on.heartbeat.disabled=true
 
-Enabling these configuration properties results in a number of direct consequences on the runtime behavior of the DeployR server:
+Enabling these configuration properties will result in the following direct consequences on the runtime behavior of the DeployR server:
 
-1.  The DeployR server becomes capable of executing hundreds of thousands of short-lived tasks without risking resource exhaustion.
++ The DeployR server becomes capable of executing hundreds of thousands of short-lived tasks without risking resource exhaustion.
 
-2.  Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
-
->Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
++ Grid node validation at runtime is disabled, which means the grid's ability to self-heal when grid nodes fail and recover is no longer supported.
+  >Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these `deployr.groovy` file properties only if you determine that the default DeployR configuration fails under the anticipated loads.

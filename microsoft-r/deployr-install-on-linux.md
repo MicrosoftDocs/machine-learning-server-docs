@@ -367,18 +367,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     -   `$DEPLOYR_HOME/deployr/tools/lib`
 
-5.  Stop the DeployR server as follows:
-
-    1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
-
-            cd $DEPLOYR_HOME/deployr/tools/ 
-            sudo ./adminUtilities.sh
-
-    2.  Choose the option **Start/Stop Server**.
-
-    3.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `S`. It may take some time for the Tomcat process to terminate.
-
-    4.  Exit the utility.
+5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
 6.  Update the database properties to point to the new database as follows:
 

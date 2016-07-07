@@ -41,7 +41,7 @@ To start or stop all DeployR-related services on the main server (not nodes) at 
    + On Linux:
      ```
      cd /home/deployr-user/deployr/<version>/deployr/tools/ 
-     ./adminUtilities.sh
+     sudo ./adminUtilities.sh
      ```
 
 1. From the main menu, choose option **Start/Stop Server**. 
@@ -56,17 +56,18 @@ _Table: Starting DeployR 8.0.0_
 
 |Operating System   |Commands|
 |----|-----|
-|Windows|<code>net start Apache-Tomcat-for-DeployR-8.0<br>net start RServe7.4<br>net start MongoDB-DeployR-8.0</code>|
-|Linux|To start the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br>To start all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/startAll.sh</code>|
-|Mac OS X|To start the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br>To start all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/startAll.sh</code>|
+|Windows|To start the services, run:<br /><code>net start Apache-Tomcat-for-DeployR-8.0<br>net start RServe7.4<br>net start MongoDB-DeployR-8.0</code>|
+|Linux|To start the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br><br>To start all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/startAll.sh</code>|
+|Mac OS X|To start the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br><br>To start all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/startAll.sh</code>|
 
+<br />
 _Table: Stopping DeployR 8.0.0_
 
 |Operating System   |Commands|
 |----|-----|
-|Windows|<code>net stop Apache-Tomcat-for-DeployR-8.0<br>net stop RServe7.4<br>net stop MongoDB-DeployR-8.0</code>|
-|Linux|To stop the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br>To stop all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/stopAll.sh</code>|
-|Mac OS X|To stop the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br>To stop all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/stopAll.sh</code>|
+|Windows|To stop the services, run:<br /><code>net stop Apache-Tomcat-for-DeployR-8.0<br>net stop RServe7.4<br>net stop MongoDB-DeployR-8.0</code>|
+|Linux|To stop the services individually on the main server (not nodes):<br><code>/home/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/home/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/home/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br /><br>To stop all services on the main server (not nodes) at once:<br><code>/home/deployr-user/deployr/8.0.0/stopAll.sh</code>|
+|Mac OS X|To stop the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh stop<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh stop<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh stop</code><br /><br>To stop all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/stopAll.sh</code>|
 
 ## Inspecting Server Logs
 
@@ -168,7 +169,7 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 
 ## Backing Up and Restoring Data
 
-
+<br />
 ### For DeployR for Microsoft R Server 2016
 
 To back up and restore your Deployr data:
@@ -179,6 +180,7 @@ To back up and restore your Deployr data:
 
 1. [Follow these instructions](deployr-admin-console/deployr-admin-console-database.md).
 
+<br />
 ### For DeployR 8.0.0
 Follow these instructions to back up  and restore your DeployR data or to reset the database to its initial post-installation state.
 
