@@ -248,8 +248,10 @@ This problem can arise for various reasons, including:
 
 It can be solved by updating the IP address in the DeployR Server Web Context.
 
+<br />
 <a id="set-context"></a>
-#### Updating the Web Content for DeployR for Microsoft R Server 2016
+#### DeployR for Microsoft R Server 2016: Update DeployR Web Context
+
 To fix this issue, update the IP address in the DeployR Server Web Context as follows:
 
 1. Launch the DeployR administrator utility script with administrator privileges:
@@ -279,8 +281,10 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
 1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
 1. Exit the utility.  
-         
-#### Updating the Web Content for DeployR 8.0.0
+
+<br />   
+#### DeployR 8.0.0: Update DeployR Web Context
+
 Run the `setWebContext` script to update the IP address in the DeployR Server Web Context.
 
 Usage tips for the `setWebContext` script arguments:
@@ -291,7 +295,7 @@ Usage tips for the `setWebContext` script arguments:
 |`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
 |`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
 |`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
-|`https true\|false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
+|`https true` or<br /> `html false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
 
  
 **On Windows:**
@@ -328,7 +332,7 @@ Usage tips for the `setWebContext` script arguments:
    ./setWebContext.sh -disableauto
    ```
 
->For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+>For this change to take effect, [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
@@ -392,9 +396,8 @@ For example, the following line will raise the maximum memory limit to 10 GB for
 
 >Grid nodes have finite memory resources. Keep these resource limits in mind when adjusting memory allocations for individual R sessions.
 
-### Access Denied to Tomcat (Windows)
-
-> **Windows only:** This is a Windows only issue.
+<br />
+### Access Denied to Tomcat (Windows only)
 
 If you reboot after installing and get an access error message for Tomcat, you can specify that Tomcat should be run “as an administrator” to stop the message from appearing. The error is related to `tomcat7w.exe`, which is an application for monitoring and configuring Tomcat services. The error message is: *“Access is denied. Unable to open the service Tomcat”*
 
@@ -408,9 +411,8 @@ If you reboot after installing and get an access error message for Tomcat, you c
 
 4.  Launch DeployR again.
 
-### Inactive Grid Node (Windows 7)
-
-**Windows only:** This is a Windows 7 only issue.
+<br />
+### Inactive Grid Node (Windows 7 only)
 
 If the **DeployR Default Node** appears **Inactive** in the DeployR landing page directly after having installed DeployR on a Windows 7 machine, then the `R_HOME` variable may not be set.
 
@@ -444,13 +446,15 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 
 6.  Go back to landing page and verify that the grid node is now active.
 
+<br />
 ### Cannot See API Explorer Tool
 
 1.  Ensure Adobe Flash Player is installed and configured to work with your browser.
 
 2.  Clear your browser’s cache before launching the API Explorer tool. This is particularly important if you are upgrading from a previous version of DeployR.
 
-### Changing Tomcat Port Numbers
+<br />
+### Port Conflicts with Other Applications
 
 If you run into conflicts with other applications, consider changing the port numbers. You only need to change the port numbers of those applications that are actively conflicting. Consequently, not all of the following steps may apply to your situation.
 
@@ -461,7 +465,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Find: 
     + For DeployR for Microsoft R Server 2016: `port="8050"`
     + For DeployR 8.0.0: `port="8000"`
-
+    <br />
 1. Replace the port value with a new, unique port number.
 
 1. Save the file.
@@ -486,7 +490,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Find the port number value by searching for:
    + For DeployR for Microsoft R Server 2016: `<Connector port="8050"`
    + For DeployR 8.0.0: `<Connector port="8000"`
-
+   <br />
 1. Replace the port value with a new, unique port number.
 
 1. Save the file.

@@ -29,7 +29,7 @@ The DeployR API exposes the R platform as a service allowing the integration of 
 
 With the advent of DeployR, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
-><big>Looking for the API reference detailing all of the calls? [Get it here!](https://microsoft.github.io/deployr-api-docs)</big>
+><big>Looking for a specific API call? [Look in this online reference.](https://microsoft.github.io/deployr-api-docs)</big>
 
 ##R for Application Developers
 
