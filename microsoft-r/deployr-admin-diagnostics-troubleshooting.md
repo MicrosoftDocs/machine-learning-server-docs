@@ -61,7 +61,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
     1. Launch the DeployR administrator utility script with administrator privileges:
        ```
        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-       adminUtility.bat
+       adminUtilities.bat
        ```       
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
@@ -72,7 +72,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
     1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
        ```
        cd $DEPLOYR_HOME/deployr/tools/ 
-       ./adminUtility.sh
+       ./adminUtilities.sh
        ```       
     
     1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
@@ -256,12 +256,12 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
     + On Windows, run:
     ```
     cd $DEPLOYR_HOME\deployr\tools\ 
-    adminUtility.bat 
+    adminUtilities.bat 
     ```        
     + On Linux, run:
     ```
     cd $DEPLOYR_HOME/deployr/tools/
-    ./adminUtility.sh 
+    ./adminUtilities.sh
     ```         
 
 1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
