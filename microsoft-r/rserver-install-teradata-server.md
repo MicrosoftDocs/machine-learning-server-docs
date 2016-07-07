@@ -4,9 +4,9 @@
 title: "R Server 8.0 Installation Guide for Teradata Servers"
 description: "R Server 8.0 installation for Teradata servers."
 keywords: ""
-author: "richcalaway"
+author: "jeffstokes72"
 manager: "mblythe"
-ms.date: "03/17/2016"
+ms.date: "07/07/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -41,7 +41,7 @@ Microsoft R Server for Teradata has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** SUSE Linux Enterprise Server 10 or 11. Only 64-bit operating systems are supported.
+**Operating System:** SUSE Linux Enterprise Server 10 SP3 or 11 SP1. Only 64-bit operating systems are supported.
 
 **Teradata Version:** Teradata 15.10, 15.00, or 14.10.
 
