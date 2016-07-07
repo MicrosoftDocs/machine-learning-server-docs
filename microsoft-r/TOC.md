@@ -24,8 +24,8 @@
 #### [Install Revolution R Enterprise 8.0.0](rserver-install-windows.md)
 ## [Install R Client](install-r-client-windows.md)
 ## [Install DeployR](deployr-installation.md)
-### [Install DeployR for Microsoft R Server 2016 (Windows)](deployr-install-on-windows.md)
-### [Install DeployR for Microsoft R Server 2016 (Linux)](deployr-install-on-linux.md)
+### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
+### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
