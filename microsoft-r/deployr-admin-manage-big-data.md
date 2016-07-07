@@ -26,11 +26,19 @@ ms.custom: ""
 
 # Managing External Directories for Big Data
 
-## Introduction
+There may be times when your DeployR user community needs access to genuinely large data files, or big data. These data files might be too big to be copied from the Web or copied from their local machines to the server.
 
-Whenever the data files with which your users need to work are too big to be copied from the Web or copied from their local machines to the server, those files can be stored in 'big data' external directories on the DeployR main server. It is your responsibility as the DeployR administrator to configure and manage these 'big data' external directories and the data files within them.
+When such files are stored in the DeployR Repository or at any network-accessible URI, the R code executing on the DeployR server can load the desired file data on-demand. However, physically moving big data is expensive both in terms of bandwidth and throughput.
 
-Once you put the big data files in the external directories, data scientists can use [the `deployrExternal` function](#adding-files-to-external-directories) from the `deployrUtils` package in their R code to reference these files in such a way that they can be found whether the R code is run locally or on the DeployR server. Additionally, these external directories can also be referenced in R code without the overhead of replicating the big data itself for each individual project.
+To alleviate this overhead, the DeployR server supports a set of NFS-mounted directories dedicated to managing large data files. We refer to these directories as 'big data' external directories. 
+
+As an administrator, you can enable this service by:
+
+1.  [Configuring](#setting-up-nfs-setup) the big data directories within your deployment.
+
+2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](#external-directory-structure) from the `deployrUtils` package in their R code to reference the big data files within these directories. 
+
+It is the responsibility of the DeployR administrator to configure and manage these 'big data' external directories and the data files within them.
 
 ## Setting up NFS Setup
 
@@ -166,11 +174,14 @@ It is up to the administrator to inform each user of which files are available i
 
 A file can be added to the external directories in one of two ways:
 
-1.  You can place the file, on the user's behalf, into his or her private external directories or into the `/public` external directory so that it can be access when running R code.
-2.  A user can execute R code that will write a file directly into his or her private external directory.
++ You can place the file, on the user's behalf, into his or her private external directories or into the `/public` external directory so that it can be access when running R code.
+
++ A user can execute R code that will write a file directly into his or her private external directory.
 
 Ultimately, the administrator is responsible for moving and managing files in the external directories as well as informing users that the files exist and their whereabouts.
 
-To reference one of these files in the code, a user must declare and, therefore, know if the given file is stored in the `/public` external subdirectory or the user's private subdirectory. This declaration is done using the `deployrExternal` function in the `deployrUtils` package. This function provides read and write access to big data files in a portable way whether the R code is run locally or in the remote DeployR server environment. For more information, point your users to the [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guide and the package help for this function (`??deployrUtils::deployrExternal`).
+To reference one of these files in the code, a user must declare and, therefore, know if the given file is stored in the `/public` external subdirectory or the user's private subdirectory. This declaration is done using the `deployrExternal` function in the `deployrUtils` package. 
+
+This function provides read and write access to big data files in a portable way whether the R code is run locally or in the remote DeployR server environment. For more information, point your users to the [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guide and the package help for this function (`??deployrUtils::deployrExternal`).
 
 >Currently there is no user interface to display the names of the files in this directory. Additionally, due to the potentially large size of the data, we do not expose any API or other facility for moving data into the external directories.

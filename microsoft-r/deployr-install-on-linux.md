@@ -81,7 +81,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Server 2016](rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with Microsoft R Server 2016 to install it as well as any of its dependencies.**  [ Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
+3.  Install [Microsoft R Server 2016](rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials.  
 
 1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
@@ -163,7 +163,7 @@ The following steps are for installing DeployR Enterprise after installing [thes
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
 
-3.  Download the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz`, using the link in your customer welcome letter.
+3.  Find the software, `DeployR-Enterprise-Linux-8.0.5.tar.gz` from within the Microsoft R Server 2016 package you downloaded in the prerequisites step.
 
 4.  Unzip the tar file contents, go the `deployrInstall/installFiles` directory, and launch the installation script. At the prompt, type:
 

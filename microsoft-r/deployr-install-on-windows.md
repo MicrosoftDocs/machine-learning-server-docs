@@ -74,7 +74,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. On the DeployR server, [download](http://go.microsoft.com/fwlink/?LinkId=789397) and install **Java™ Runtime Environment 8**, `jre-8u<NUMBER>-windows-x64.exe`. Java is only required on the DeployR server, not on any grid node machines.
 
-1. Install **[Microsoft R Server 2016](https://msdn.microsoft.com/en-us/library/mt671127.aspx)**, which includes ScaleR for multi-processor and big data support. Follow [the instructions](https://msdn.microsoft.com/en-us/library/mt695941.aspx) provided with R Server to install it as well as any of its dependencies. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Microsoft R Server 2016.
+1. Download **[SQL Server 2016 and R Server (standalone)](https://aka.ms/eval-sql-server-2016 )**, which includes ScaleR for multi-processor and big data support. Then, follow [the instructions](https://msdn.microsoft.com/en-us/library/mt695941.aspx) provided with R Server to install it as well as any of its dependencies. 
 
 1. _If you have internet access_ while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. 
 
@@ -93,9 +93,12 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Log in as a user with administrator rights.
 
-1.  Download and launch the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which can be found in the Microsoft R Server 2016 package. [Contact technical support](https://support.microsoft.com/) if you cannot find this file.
-
-1.  Follow the onscreen prompts to complete the installation. 
+1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which is an add-on for SQL Server 2016 Enterprise Edition from one of these locations:
+    + Microsoft Volume Licensing Service Center (VLSC): sign the license purchase agreement with Microsoft, you'll get your credentials to download.
+    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads): search for  “R Server” or ”DeployR”.
+    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “R Server” or ”DeployR”.
+ 
+1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 

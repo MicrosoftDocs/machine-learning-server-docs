@@ -92,25 +92,9 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
             <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
     <tr>
-        <td>`rxSetInfo`</td>
-        <td>
-            <center>![-](../media/award.png)</center>
-        </td>
-        <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
         <td>`rxGetVarInfo`</td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxSetVarInfo`</td>
-        <td> </td>
-        <td>Modifies variable information in an .xdf file or data frame.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
@@ -163,17 +147,6 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </td>
     </tr>
 </table>
-
-
-<br />
-####Visualization Functions
-
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxHistogram`       |![top](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxLinePlot`  |![top](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
-| `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
-|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[See package](scaler.md#findmore)</small>|
 
 
 <br />
@@ -484,82 +457,6 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         </td>
     </tr>
 </table>
-
-<br /> 
-##Utility Functions 
-
->Not all of these functions will work if you switch your compute context.
-
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="200px">`rxOptions`</td>
-        <td>
-            <center>![-](../media/award.png)</center>
-        </td>
-        <td>Gets or sets `RevoScaleR`-specific options.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetOption`</td>
-                <td>
-            <center>![-](../media/award.png)</center>
-        </td>
-        <td>Retrieves a specific `RevoScaleR`-option.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetEnableThreadPool`</td>
-        <td> </td>
-        <td>Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSetEnableThreadPool`</td>
-        <td> </td>
-        <td>Sets the thread pool state.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxStepControl`</td>
-        <td> </td>
-        <td>Construct `variable.selection` argument for `rxLinMod`.</td>
-        <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxIsOpen`</td>
-        <td> </td>
-        <td>Indicates whether a data source can be accessed.</td>
-        <td><center><small>[**View**](rxIsOpen.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxWriteNext`</td>
-        <td> </td>
-        <td>Writes the next chunk when moving data between ScaleR data sources.</td>
-        <td><center><small>[**View**](rxWriteNext.md)</small></center>
-        </td>
-    </tr>
-</table>
-
-
 
 
 
