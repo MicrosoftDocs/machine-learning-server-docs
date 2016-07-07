@@ -47,9 +47,7 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 2016 (version 8.0.3)
 
-This Windows-only release as Microsoft R Server (Standalone) is part of SQL Server 2016. 
-
-Learn more about [Microsoft R Server (Standalone)](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
+This Windows-only release as Microsoft R Server (Standalone) is part of SQL Server 2016. Learn more about [Microsoft R Server (Standalone)](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
 
 ## Microsoft R Server 8.0
 

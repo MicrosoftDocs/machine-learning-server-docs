@@ -20,7 +20,7 @@
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [Install on Windows](rserver-install-windows.md)
-#### [Install R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
+#### [Install R Server (Standalone) for SQL Server 2016](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
 #### [Install Revolution R Enterprise 8.0.0](rserver-install-windows.md)
 ## [Install R Client](install-r-client-windows.md)
 ## [Install DeployR](deployr-installation.md)
