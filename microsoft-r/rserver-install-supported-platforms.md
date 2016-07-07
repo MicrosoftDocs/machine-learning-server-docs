@@ -45,6 +45,10 @@ This article specifies supported operating systems, distributions, and database 
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11
 - Spark version: 1.5.0-1.6.1 (if using Spark)
 
+## Microsoft R Server 2016 (version 8.0.3)
+
+This Windows-only release as Microsoft R Server (Standalone) is part of SQL Server 2016. Learn more about [Microsoft R Server (Standalone)](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
+
 ## Microsoft R Server 8.0
 
 Microsoft R Server 8.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.

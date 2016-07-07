@@ -31,7 +31,7 @@ This guide for data scientists offers a high-level introduction to DeployR. It h
 In a nutshell, DeployR makes your R analytics (R scripts, models, and data files) easily consumable by any application. The sections that follow explain the steps you'll take to prepare those analytics and make them available to those who need them. They are:
 
 1.  [Develop](#develop-analytics) your R scripts and other analytics with portability in mind
-2.  [Test](#Test-Analytics) those analytics inside and outside of DeployR
+2.  [Test](#test-analytics) those analytics inside and outside of DeployR
 3.  [Collaborate](#collaborate) with application developers to deliver powerful R analytic solutions
 
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
