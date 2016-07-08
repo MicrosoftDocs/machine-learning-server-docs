@@ -354,7 +354,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
     1. Save this change and close the file in your editor.
 
-1. [Restart the server](deployr-common-administration-tasks.md#startstop).
+1. [Restart the server](../deployr-common-administration-tasks.md#startstop).
 
 
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
