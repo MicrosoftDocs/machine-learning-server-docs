@@ -93,7 +93,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Log in as a user with administrator rights.
 
-1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe` from Microsoft Volume Licensing Service Center (VLSC). You'll need to sign the license purchase agreement with Microsoft, and then you'll get your credentials to download. 
+1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe` from Microsoft Volume Licensing Service Center (VLSC). You'll need to sign the license purchase agreement with Microsoft, and then you'll get your credentials to download the DeployR installer from the SQL Server Enterprise Edition page in the VLSC.
  
 1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
