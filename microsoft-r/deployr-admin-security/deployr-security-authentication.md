@@ -320,7 +320,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
 **Step 2: Apply Configuration Changes to DeployR Server System Files**
 
-1.  Before making any configuration changes to the server system files, [stop the DeployR server](deployr-common-administration-tasks.md#startstop).
+1.  Before making any configuration changes to the server system files, [stop the DeployR server](../deployr-common-administration-tasks.md#startstop).
 
 1. Grant `root` permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
 
