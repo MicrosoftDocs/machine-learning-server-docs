@@ -93,10 +93,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Log in as a user with administrator rights.
 
-1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which is an add-on for SQL Server 2016 Enterprise Edition from one of these locations:
-    + Microsoft Volume Licensing Service Center (VLSC): sign the license purchase agreement with Microsoft, you'll get your credentials to download.
-    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads) search for  “Microsoft R Server” as DeployR is part of the R Server install bundle. 
-    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “Microsoft R Server” as DeployR is part of the R Server install bundle. 
+1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe` from Microsoft Volume Licensing Service Center (VLSC). You'll need to sign the license purchase agreement with Microsoft, and then you'll get your credentials to download. 
  
 1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
