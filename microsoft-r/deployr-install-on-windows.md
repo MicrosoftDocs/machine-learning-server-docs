@@ -95,8 +95,8 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe`, which is an add-on for SQL Server 2016 Enterprise Edition from one of these locations:
     + Microsoft Volume Licensing Service Center (VLSC): sign the license purchase agreement with Microsoft, you'll get your credentials to download.
-    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads) search for  “Microsoft R Server” as it is part of the R Server install bundle. 
-    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “Microsoft R Server”.
+    + [MSDN](http://msdn.microsoft.com/subscriptions/downloads) search for  “Microsoft R Server” as DeployR is part of the R Server install bundle. 
+    + [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads): After joining the V.S. Dev Essentials program, search for  “Microsoft R Server” as DeployR is part of the R Server install bundle. 
  
 1.  Launch the installer and follow the onscreen prompts to complete the installation. 
 
@@ -310,18 +310,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     
     8.  Click **OK** to create the new login.
 
-5.  Stop the DeployR server as follows:
-
-    1.  Launch the DeployR administrator utility script with administrator privileges:
-
-            cd $DEPLOYR_HOME\deployr\tools\ 
-            adminUtilities.bat
-
-    2.  From the main menu, choose the option for **Start/Stop Server**.
-
-    3.  When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `S`. It may take some time for the Tomcat process to terminate.
-
-    4.  Exit the utility.
+5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
 6.  Update the database properties to point to the new database as follows:
 

@@ -281,7 +281,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 
 By default, the **PAM** security provider is disabled. To enable PAM authentication support, you must:
 
-1.  Update the relevant properties in your DeployR external configuration file, deployr.groovy.
+1.  Update the relevant properties in your DeployR external configuration file, `deployr.groovy`.
 2.  Follow the DeployR server system files configuration changes outlined below.
 
 PAM is the Linux Pluggable Authentication Modules provided to support dynamic authorization for applications and services in a Linux system. If DeployR is installed on a Linux system, then the PAM security provider allows users to authenticate with DeployR using their existing Linux system username and password.
@@ -292,9 +292,9 @@ PAM is the Linux Pluggable Authentication Modules provided to support dynamic au
 
 Update the following properties in your DeployR external configuration file, `deployr.groovy`:
 
-    -   deployr.security.pam.authentication.enabled
-    -   deployr.security.pam.groups.map
-    -   deployr.security.pam.default.role
++ `deployr.security.pam.authentication.enabled`
++ `deployr.security.pam.groups.map`
++ `deployr.security.pam.default.role`
 
 Relevant snippet from `deployr.groovy` file shown here:
 ```
@@ -320,30 +320,13 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
 **Step 2: Apply Configuration Changes to DeployR Server System Files**
 
-1.  Before making any configuration changes to the server system files, stop the DeployR server:
-
-    1. Launch the DeployR administrator utility script with administrator privileges as `root` or a user with `sudo` permissions:
-       + On Windows:
-          ```
-          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtilities.bat
-          ```
-    
-       + On Linux:
-          ```
-          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtilities.sh
-          ```
-
-    1.  Choose option **Start/Stop Server**.
-
-    1.  Enter `S` to stop the server. It may take some time for the Tomcat process to terminate.
+1.  Before making any configuration changes to the server system files, [stop the DeployR server](../deployr-common-administration-tasks.md#startstop).
 
 1. Grant `root` permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
 
     1. Log in as `root` on your DeployR server.
 
-    2. Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
+    1. Using your preferred editor, edit the file `/opt/deployr/8.0.5/tomcat/tomcat7.sh`,
 
     1. Find the following section:
 
@@ -371,25 +354,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
     1. Save this change and close the file in your editor.
 
-1. Restart the server. 
-   1. Launch the DeployR administrator utility script with administrator privileges, `root` or a user with `sudo` permissions:
-       + On Windows:
-          ```
-          cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-          adminUtilities.bat
-          ```
-    
-       + On Linux:
-          ```
-          cd /home/deployr-user/deployr/8.0.5/deployr/tools/  
-          ./adminUtilities.sh
-          ```
-
-   1. Choose option **Start/Stop Server**.
-
-   1. Enter `R` to restart the server. It may take some time for the Tomcat process to terminate and restart.
-
-   1. Save this change and close the file in your editor.
+1. [Restart the server](../deployr-common-administration-tasks.md#startstop).
 
 
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
@@ -470,7 +435,7 @@ After you've enabled either PAM, LDAP, or Active Directory authentication, you c
 -   deployr.security.r.session.process.default.uid
 -   deployr.security.r.session.process.default.gid
 
-Relevant snippet from deployr.groovy file shown here:
+Relevant snippet from `deployr.groovy` file shown here:
 
         /*
         * DeployR R Session Process Controls Policy Configuration

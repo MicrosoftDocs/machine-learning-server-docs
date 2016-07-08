@@ -101,7 +101,7 @@ You must update the server Web context or else you will not be able to access to
     
      1. Open a Command Window with **“Run as Administrator”**.
     
-     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME\deployr\tools\
         setWebContext -ip <ip_address>  -disableauto
@@ -116,7 +116,7 @@ You must update the server Web context or else you will not be able to access to
     
    + On Linux:
     
-     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME/deployr/tools/
         ./setWebContext.sh -ip <ip_address>
@@ -141,12 +141,12 @@ When provisioning your DeployR server on Azure, you must open Azure endpoints fo
 If custom ports were defined during installation, enable those instead.
 
 _Table: Default Ports by Version_
-   
-|Port Number|DeployR 8.0.0|DeployR for Microsoft R Server 2016|
+
+|Port Number|DeployR for Microsoft R Server 2016|DeployR 8.0.0|
 |----------|:--------------:|:--------------:|
-|DeployR HTTP port|8000|8050|
-|DeployR HTTPS port|8001|8051|
-|DeployR event console port|8006|8056|
+|DeployR HTTP port|8050|8000|
+|DeployR HTTPS port|8051|8001|
+|DeployR event console port|8056|8006|
 <br>
 
 **To configure Azure endpoints for DeployR:**
@@ -173,11 +173,8 @@ _Table: Default Ports by Version_
 
     ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
 
-4.  Enter the port number to the **Destination port range**.
-    -   For DeployR HTTP port.
-    -   For DeployR HTTPS port.
-    -   For DeployR event console port.
-    > See the bullets at the beginning of this section for the default ports for your version of DeployR.
+4.  Enter the port number to the **Destination port range** for the DeployR HTTP port, HTTPS port, and event console port.
+    > See the bullets at the beginning of this section for these default ports for your version of DeployR.
 
 5.  Click **OK** to save your changes.
 
@@ -255,7 +252,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                 setWebContext -ip <ip_address> 
                 ```
@@ -275,7 +272,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#landing-page-cannot-be-reached).
+            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                ./setWebContext.sh -ip <ip_address>
                 ```
@@ -297,11 +294,11 @@ If custom ports were defined during installation, enable those instead.
 
 _Table: Default Ports by Version_
    
-|Port Number|DeployR 8.0.0|DeployR for Microsoft R Server 2016|
+|Port Number|DeployR for Microsoft R Server 2016|DeployR 8.0.0|
 |----------|:--------------:|:--------------:|
-|DeployR HTTP port|8000|8050|
-|DeployR HTTPS port|8001|8051|
-|DeployR event console port|8006|8056|
+|DeployR HTTP port|8050|8000|
+|DeployR HTTPS port|8051|8001|
+|DeployR event console port|8056|8006|
 <br>
 
 >Don't forget to update the firewall as [described below](#updating-the-firewall).

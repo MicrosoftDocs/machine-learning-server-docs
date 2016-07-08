@@ -36,23 +36,27 @@ As an administrator, you can enable this service by:
 
 1.  [Configuring](#setting-up-nfs-setup) the big data directories within your deployment.
 
-2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](#external-directory-structure) from the `deployrUtils` package in their R code to reference the big data files within these directories. 
+2.  Informing your DeployR users that they must use [the `deployrExternal` R function](#deployrexternal) from the `deployrUtils` package in their R code to reference the big data files within these directories. 
 
 It is the responsibility of the DeployR administrator to configure and manage these 'big data' external directories and the data files within them.
 
+<br />
 ## Setting up NFS Setup
 
 >NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. 
 
 To benefit from external directory support in a multi-grid node DeployR environment, you (the administrator) must install and configure a Network File System (NFS) shared directory on the DeployR main server as well as any grid node from which they want to access to this big data files.
 
+<br />
 ### Configure NFS on Windows
 
 1.  NFS mount the `<INSTALL_DIR>/deployr/external` directory on both the DeployR main server and each grid node.
+
     `<INSTALL_DIR>` is the full path to directory into which you installed DeployR, which is `C:\Program Files\Microsoft\DeployR-<version>\` by default.
 
 2.  Open the Windows firewall ports as described in the Windows NFS documentation for your platform.
 
+<br />
 ### Configure NFS on Linux
 
 >If you do not have access to the Internet, you’ll have to copy the install files to this machine using another method.
@@ -84,6 +88,7 @@ To benefit from external directory support in a multi-grid node DeployR environm
     -   `111`
     -   `2049`
     -   `10000:10006`
+<br />
 
 5. Restart IPTABLES.
 
@@ -170,6 +175,7 @@ For example, the user `testuser` would have access to the files under:
 
 It is up to the administrator to inform each user of which files are available in the `/public` directory and which files are in their private directory.
 
+<a name="deployrexternal"></a>
 ## Adding Files to External Directories
 
 A file can be added to the external directories in one of two ways:
