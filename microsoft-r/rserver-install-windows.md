@@ -26,29 +26,26 @@ ms.custom: ""
 
 # Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
 
+Revolution R Enterprise 2016 for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment. Review the [**release notes**](./notes/r-server-notes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+
+Get the [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB) for this release. This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
 
 ## Looking for SQL Server R Services Install Docs?
 
->For the latest installation documentation for R Server on Windows, [find it on the SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
->
->For the Revolution R Enterprise 8.0.0 installation documentation, see below.
+><big>For the latest installation documentation for R Server on Windows, find it on the [SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx).</big>
 
-Revolution R Enterprise 2016 for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment. Review the [**release notes**](./notes/r-server-notes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+## System Requirements 
 
-Get the [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB). This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
-
-## System Requirements for Revolution R Enterprise 2016 for Windows
-
-See [Supported platforms](rserver-install-supported-platforms.md) for the full list of supported platforms for this version.
+For the full list of supported platforms for Revolution R Enterprise 2016, see [Supported platforms](rserver-install-supported-platforms.md).
 
 Approximately 600MB free disk space is required for a full install of Revolution R Enterprise, after installation of all prerequisites. We recommend at least 4GB of RAM to use Revolution R Enterprise, and at least 4GB to use DeployR.
 
-DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [Web documentation](http://go.microsoft.com/fwlink/?LinkId=715698&clcid=0x409).
+DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](deployr-installing-configuring.md).
 
 
-## Installation Instructions for Windows:
+## Installation Instructions
 
-You must be logged in with **Administrator** privileges to run the installer. Before running the installer, close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
+To install Revolution R Enterprise 2016, you must be logged in with **Administrator** privileges to run the installer. Before running the installer, close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
 
 To install the files, you must be logged in with **Administrator** privileges, and you must install to a local drive on your computer. (Installing to a network drive is not currently supported.)
 
