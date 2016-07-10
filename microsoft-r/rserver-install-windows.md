@@ -26,6 +26,9 @@ ms.custom: ""
 
 # Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
 
+>This Windows functionality is now offered as [R Server Standalone](https://msdn.microsoft.com/en-us/library/mt671127.aspx) in SQL Server 2016. 
+>This article applies to customers who deployed Revolution R Enterprise/R Server on Windows before SQL Server 2016 general availability. 
+
 Revolution R Enterprise 2016 for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment. Review the [**release notes**](./notes/r-server-notes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
 
 Get the [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB) for this release. This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
