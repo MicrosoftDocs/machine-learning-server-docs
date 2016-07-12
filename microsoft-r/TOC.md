@@ -7,6 +7,7 @@
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
 ### [Install on Linux](rserver-install-linux-server.md)
+### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
 ### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
