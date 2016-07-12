@@ -78,7 +78,6 @@
 ## [RevoScaleR Teradata Getting Started](scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
 # [RevoPemaR](pemar-getting-started.md)
-# [Parallelizing Loops: foreach/iterators](foreach.md)
 # [DeployR](deployr-about.md)
 ## [Installing DeployR](deployr-installation.md)
 ## Getting Started with DeployR
@@ -129,6 +128,7 @@
 ### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 ### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+# [Parallelizing Loops: foreach/iterators](foreach.md)
 # R Productivity Environment (RRE Only)
 ## [RPE Getting Started](RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)

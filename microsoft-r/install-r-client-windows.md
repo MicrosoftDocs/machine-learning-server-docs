@@ -30,11 +30,13 @@ Microsoft R Client is a free, data science tool for high performance analytics. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop.
 
-Microsoft R Client is free to everyone. Download Microsoft R Client at http://aka.ms/rclient/download and install it today. 
+## Where do I get it?
 
->Currently, Microsoft R Client is available only on Windows.
+Microsoft R Client is free to everyone. [Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
 
 ##System Requirements
+
+>Currently, Microsoft R Client is available only on Windows.
 
 + **Operating Systems**:   64-bit versions of Microsoft Windows 7, Windows 8.1, and Windows 10
 
@@ -49,13 +51,13 @@ Microsoft R Client is free to everyone. Download Microsoft R Client at http://ak
 
 >You must install Microsoft R Client to a local drive on your computer. 
 
->These instructions assume that you have downloaded the Microsoft R Client installer, available through Visual Studio Dev Essentials.
-
 >You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
 **To install Microsoft R Client**:
 
 1. Log in to the machine with administrator privileges.
+
+1. [Download Microsoft R Client](http://aka.ms/rclient/download).
 
 1. Close any other programs running on the system. 
 
@@ -63,17 +65,17 @@ Microsoft R Client is free to everyone. Download Microsoft R Client at http://ak
 
 1. Accept the Microsoft R Client license terms.
 
-1. To install Microsoft R Client, you'll need [Microsoft R Open](index.md#mro), Microsoft's enhanced distribution of R. The setup will install it for you automatically.
+   To install Microsoft R Client, you'll need [Microsoft R Open](index.md#mro), Microsoft's enhanced distribution of R. The setup will install it for you automatically.
 
-1. You also have the option of installing R Tools for Visual Studio, an integrated development environment. [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) is a free add-in for Visual Studio that works in all editions of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.
+ 1. If desired, select the option of installing **R Tools for Visual Studio**, an integrated development environment. [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) is a free add-in for Visual Studio that works in all editions of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.
 
-1. Accept the license terms for downloading and installing Microsoft R Open. Also accept the terms for R Tools for Visual Studio if you've selected to install it as well.
+1. Accept the license terms for Microsoft R Open. And, if you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
 1. Accept the default installation path for Microsoft R Client or choose another location.
 
 1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
 
->After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the `RevoScaleR` package. The functions and APIs in this package enable you to send R commands to a remote server for execution. Learn more in the [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
+>After you have installed R Client and installed your favorite R IDE, you can begin developing your solution using the `RevoScaleR` package. [The functions](scaler/scaler.md) and APIs in this package enable you to send R commands to a remote server for execution. Learn more in the [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
 
 
 <br>
