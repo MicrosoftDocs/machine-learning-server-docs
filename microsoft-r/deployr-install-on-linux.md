@@ -207,6 +207,9 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
+   >[!IMPORTANT]
+   >**HortonWorks Data Platform Users!** The default [YARN service port](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) for the Resource Manager is set to 8050, which conflicts with the DeployR default port of 8050. To avoid conflicts, you can [change the default DeployR port](#firewall) of 8050 to something else. 
+
 1. [Optional] If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
 1. [Optional] If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
