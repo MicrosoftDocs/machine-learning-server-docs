@@ -202,15 +202,15 @@ The following steps outline what you need to do after running the DeployR instal
 
    >At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
 
-1. [Optional] **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#gridnodes).
+1. If desired, **set up grid nodes**. You can install and configure any [additional grid nodes](#gridnodes).
 
-1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
+1. If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
 
-   >_HortonWorks Data Platform Users!_ The default port for DeployR, 8050, is the same as the default [YARN service port](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) for the Resource Manager. To avoid conflicts, you can [change the default DeployR port](#firewall). 
+   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](#firewall). 
 
-1. [Optional] If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
+1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
-1. [Optional] If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
+1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
