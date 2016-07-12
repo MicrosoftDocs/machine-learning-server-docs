@@ -200,12 +200,13 @@ The following steps outline what you need to do after running the DeployR instal
     
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-   >[!IMPORTANT]
    >At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
 
 1. [Optional] **Set up any grid nodes**. If desired, install and configure any [additional grid nodes](#gridnodes).
 
 1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
+
+   >_HortonWorks Data Platform Users!_ The default port for DeployR, 8050, is the same as the default [YARN service port](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) for the Resource Manager. To avoid conflicts, you can [change the default DeployR port](#firewall). 
 
 1. [Optional] If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
