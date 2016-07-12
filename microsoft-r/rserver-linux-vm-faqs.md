@@ -4,7 +4,7 @@
 title: "Frequently asked questions when using R Server on Linux VM in Azure | Microsoft Azure"
 description: "Learn how to work with R Server on Linux by using a virtual machine in Azure."
 keywords: "R Server, linux, virtual machine"
-author: "jeffstok"
+author: "jeffstokes72"
 manager: "paulettm"
 ms.date: "07/12/2016"
 ms.topic: "get-started-article"
