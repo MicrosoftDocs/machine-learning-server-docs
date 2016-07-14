@@ -206,7 +206,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
-   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](#firewall). 
+   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr-admin-diagnostics-troubleshooting.md#changeport). 
 
 1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
