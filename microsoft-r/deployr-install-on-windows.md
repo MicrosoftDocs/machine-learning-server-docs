@@ -93,9 +93,16 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1.  Log in as a user with administrator rights.
 
-1.  Get the DeployR installer file, `DeployR-Enterprise-8.0.5.exe` from Microsoft Volume Licensing Service Center (VLSC). You'll need to sign the license purchase agreement with Microsoft, and then you'll get your credentials to download the DeployR installer from the SQL Server Enterprise Edition page in the VLSC.
- 
-1.  Launch the installer and follow the onscreen prompts to complete the installation. 
+1. Get the DeployR installer file.
+   + From Microsoft Volume Licensing Service Center (VLSC): 
+     1. Once you've signed the license purchase agreement with Microsoft, you'll get your credentials. 
+     1. Log in and search for **SQL Server 2016 Enterprise Edition**. 
+     1. In the product page, click **Continue**.  
+     1. Download the **SQL Server Enterprise Edition 2016 DeployR 64 Bit** ISO file. 
+     1. Double-click the ISO file to mount it as a DVD drive. 
+     1. Then, select and run `DeployR-Enterprise-8.0.5.exe`.
+
+1.  Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
