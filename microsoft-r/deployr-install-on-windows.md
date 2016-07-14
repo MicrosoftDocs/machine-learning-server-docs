@@ -125,7 +125,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#gridnodes).
 
-1. [Optional] If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
+1. [Optional] If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
 1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#sqlserver).
 
@@ -184,7 +184,7 @@ If any of the following cases exist, update your firewall manually:
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 >If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
-
+>[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                               
 
 ### Configuring Public Access
 

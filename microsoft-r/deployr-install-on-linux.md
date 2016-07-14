@@ -204,7 +204,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. If desired, **set up grid nodes**. You can install and configure any [additional grid nodes](#gridnodes).
 
-1. If you want to [use non-default port numbers for DeployR](#configuring-deployr), manually update them now.
+1. If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
    >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](#firewall). 
 
@@ -251,6 +251,7 @@ If any of the following cases exist, update your firewall manually:
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 > If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
+>[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
 
 ### Configure Public Access
 
