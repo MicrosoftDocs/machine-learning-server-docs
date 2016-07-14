@@ -35,7 +35,6 @@ The following resources are available to you:
 * [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md)
 * [About R](https://mran.microsoft.com/documents/what-is-r/)
 * [R Language Resources](https://mran.microsoft.com/documents/getting-started/)
-* [About ScaleR](http://www.revolutionanalytics.com/revolution-r-enterprise-scaler) 
 * [R Blog](http://blog.revolutionanalytics.com/)
 
 ## Support

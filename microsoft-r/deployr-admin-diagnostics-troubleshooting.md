@@ -457,26 +457,44 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 
 If you run into conflicts with other applications, consider changing the port numbers. You only need to change the port numbers of those applications that are actively conflicting. Consequently, not all of the following steps may apply to your situation.
 
+<a name="changeport"></a>
+
+####Changing Ports for DeployR Enterprise for Microsoft R Server 2016
+
+1. Launch the DeployR administrator utility script with administrator privileges:
+       
+   + On Windows:
+     ```
+     cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+     adminUtilities.bat
+     ```       
+    
+   + On Linux:
+     ```
+     cd $DEPLOYR_HOME/deployr/tools/ 
+     sudo ./adminUtilities.sh
+     ```       
+    
+1. From the main menu, choose the option to **Change DeployR Ports**. 
+    
+1. Choose the option cooresponding to the port you want to change and change the port number.
+
+1. Return to the main menu and choose the option to restart the server. 
+
+
+####Changing Ports for DeployR 8.0.0
+
 **For Windows:**
 
 1. In the `C:\Program Files\Microsoft\DeployR-<DEPLOYR_VERSION>\Apache_Tomcat` directory, open the file `server.xml`.
 
-1. Find: 
-    + For DeployR for Microsoft R Server 2016: `port="8050"`
-    + For DeployR 8.0.0: `port="8000"`
-    <br />
+1. Find `port="8000"`
+
 1. Replace the port value with a new, unique port number.
 
 1. Save the file.
 
 1. Restart Tomcat for the changes to take effect.
-    + For DeployR for Microsoft R Server 2016:
-      ```
-      net stop Apache-Tomcat-for-DeployR-8.0.5
-      net start Apache-Tomcat-for-DeployR-8.0.5
-      ```
-      
-    + For DeployR 8.0.0:
       ```
       net stop Apache-Tomcat-for-DeployR-8.0
       net start Apache-Tomcat-for-DeployR-8.0
@@ -486,10 +504,8 @@ If you run into conflicts with other applications, consider changing the port nu
 
 1. Edit the file `<DeployR_Install_Dir>/tomcat/tomcat7/conf/server.xml`.
 
-1. Find the port number value by searching for:
-   + For DeployR for Microsoft R Server 2016: `<Connector port="8050"`
-   + For DeployR 8.0.0: `<Connector port="8000"`
-   <br />
+1. Find the port number value by searching for `<Connector port="8000"`
+
 1. Replace the port value with a new, unique port number.
 
 1. Save the file.

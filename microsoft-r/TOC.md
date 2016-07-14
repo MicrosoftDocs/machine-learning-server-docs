@@ -7,6 +7,7 @@
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
 ### [Install on Linux](rserver-install-linux-server.md)
+### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
 ### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
@@ -77,7 +78,6 @@
 ## [RevoScaleR Teradata Getting Started](scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
 # [RevoPemaR](pemar-getting-started.md)
-# [Parallelizing Loops: foreach/iterators](foreach.md)
 # [DeployR](deployr-about.md)
 ## [Installing DeployR](deployr-installation.md)
 ## Getting Started with DeployR
@@ -128,6 +128,7 @@
 ### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 ### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+# [Parallelizing Loops: foreach/iterators](foreach.md)
 # R Productivity Environment (RRE Only)
 ## [RPE Getting Started](RevoRPE_Getting_Started.md)
 ## [RPE User's Guide](RevoRPE_Users_Guide.md)
