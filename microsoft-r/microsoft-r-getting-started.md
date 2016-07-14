@@ -6,7 +6,7 @@ description: "Microsoft R features and components overview."
 keywords: ""
 author: "j-martens"
 manager: "paulette.mckay"
-ms.date: "06/09/2016"
+ms.date: "07/13/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,7 +35,8 @@ R is the world’s most powerful, and preferred, programming language for statis
 For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
 
 ###Microsoft R Server
-Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 7000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
+
+Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
 Performance of R solutions in Microsoft R Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
 
@@ -44,6 +45,10 @@ Users can also expect to see considerable differences in performance and scalabi
 However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
+
+
+[Watch the R Server technology overview video.](https://www.microsoft.com/en-us/cloud-platform/r-server) <a href="" target="_blank">>></a>
+
 
 |Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
 |---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
