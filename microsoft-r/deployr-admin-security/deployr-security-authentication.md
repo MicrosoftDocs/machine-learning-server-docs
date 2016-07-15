@@ -29,7 +29,7 @@ ms.custom: ""
 DeployR ships with security providers for the following enterprise security solutions:
 
 -   [Basic Authentication](#basic-authentication)
--   [LDAP Authentication](#ldap-authentication)
+-   [LDAP / LDAP-S Authentication](#ldap)
 -   [Active Directory Services](#active-directory-authentication)
 -   [PAM Authentication Services](#pam-authentication)
 -   [CA Single Sign-On](#ca-single-sign-on-siteminder-pre-authentication)
@@ -52,19 +52,20 @@ When you integrate with an external enterprise security solution, you want acces
 
 By default, the Basic Authentication security provider is enabled. The Basic Authentication provider is enabled by default and there are no additional security configuration properties for this provider.
 
-If you enable [Active Directory Services](#active-directory-authentication) or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) and [LDAP](#ldap-authentication) scenarios, basic authentication remains enabled even with PAM or LDAP enabled.
+If you enable [Active Directory Services](#active-directory-authentication) or [CA Single Sign-On (SiteMinder)](#ca-single-sign-on-siteminder-pre-authentication), Basic Authentication is automatically disabled and you will no longer be able to login with the default users `admin` and `testuser`. For [PAM Authentication Services](#pam-authentication) and [LDAP](#ldap) scenarios, basic authentication remains enabled even with PAM or LDAP enabled.
 
     /*
      * DeployR Basic Authentication Policy Properties
      */
 
-## LDAP Authentication
+<a name="ldap"></a>
+## LDAP / LDAP-S Authentication
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
 >Basic authentication remains enabled even with LDAP enabled.
 
-**To enable LDAP:** 
+**To enable LDAP or LDAP-S:** 
 
 The LDAP and Active Directory security providers are one and the same, but their [configuration properties](#ldap-active-directory-configuration-properties) differ. As such, you may enable the LDAP provider or the Active Directory provider, but not both at the same time.
 Accordingly, to enable do the following:
@@ -75,10 +76,14 @@ Accordingly, to enable do the following:
    ```
    grails.plugin.springsecurity.ad.active=false
    ```
-1. For each property, use the value matching your configuration.
+1. For each property, use the value matching your configuration. For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
 
+   + For LDAP, set `grails.plugin.springsecurity.ldap.context.server` to the LDAP server URL, such as `'ldap://localhost:389/'`.
 
-```
+   + For LDAPS, set `grails.plugin.springsecurity.ldap.context.server` to the LDAP-S server URL, such as `'ldaps://localhost:636/'`.
+
+   For example:
+    ```
     /*
      * DeployR LDAP Authentication Configuration Properties
      *
@@ -90,7 +95,10 @@ Accordingly, to enable do the following:
      /*
     grails.plugin.springsecurity.ldap.context.managerDn = 'dc=example,dc=com'
     grails.plugin.springsecurity.ldap.context.managerPassword = 'secret'
+
+    // LDAP
     grails.plugin.springsecurity.ldap.context.server = 'ldap://localhost:389/'
+
     grails.plugin.springsecurity.ldap.context.anonymousReadOnly = true
     grails.plugin.springsecurity.ldap.search.base = 'ou=people,dc=example,dc=com'
     grails.plugin.springsecurity.ldap.search.searchSubtree = true
@@ -120,9 +128,7 @@ Accordingly, to enable do the following:
     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
     */
-```
-
-For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
+    ```
 
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
 
@@ -242,7 +248,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 |-----------------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------|
 | providerNames<sup>\*</sup>              | 'ldapAuthProvider1'            | Do not change or omit. Used for password management.                                                          |
 | ldap.server<sup>\*</sup>                | 'ldap://localhost:389'         | Address of the Active Directory server.                                                                       |
-| ldap.context.server                     | 'ldap://localhost:389'         | Address of the LDAP server.                                                                                   |
+| ldap.context.server                     | 'ldap://localhost:389'<br>'ldaps://localhost:636' | Address of the LDAP server.<br>Address of the LDAP-S server.                                                                                   |
 | ldap.context.managerDn                  | "'cn=admin,dc=example,dc=com'" | DN to authenticate with.                                                                                      |
 | ldap.context.managerPassword            | secret'                        | Manager password to authenticate with.                                                                        |
 | ldap.context.baseEnvironmentProperties  | None                           | Extra context properties.                                                                                     |
@@ -422,7 +428,7 @@ deployr.security.preauth.default.role = 'ROLE_BASIC_USER'
 By default, R sessions executing on the DeployR grid are not authorized to access files or directories outside of the R working directory. To enable broader file system access for a given R session to files or directories based on specific authenticated user ID and group ID credentials, you must first do ONE of the following:
 
 -   Enable [PAM authentication](#pam-authentication), or
--   Enable [LDAP authentication](#ldap-authentication), or
+-   Enable [LDAP authentication](#ldap), or
 -   Enable [Active Directory authentication](#active-directory-authentication)
 
 Once you have enabled PAM, LDAP, or AD authentication, you must (Step 1) update the relevant process controls properties on the server **and then** (Step 2) apply system-level configuration changes to every single node on your DeployR grid, as follows:
