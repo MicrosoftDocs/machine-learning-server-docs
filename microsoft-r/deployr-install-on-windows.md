@@ -102,6 +102,19 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
      1. Double-click the ISO file to mount it as a DVD drive. 
      1. Then, select and run `DeployR-Enterprise-8.0.5.exe`.
 
+   + From MSDN:
+     1. Log into [MSDN subscriptions](http://msdn.microsoft.com/subscriptions/downloads) or [Technet]( 
+     http://technet.microsoft.com/subscriptions/downloads). 
+     1. Search for **DeployR**.
+     1. Download the ZIP file.
+     1. Extract the files.
+
+   + From Visual Studio Dev Essentials:
+     1. Log into [Visual Studio Dev Essentials](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads). 
+     1. Search for **Microsoft R Server**.
+     1. Download the DeployR for SQL Server Enterprise Edition ZIP file.
+     1. Extract the files.
+
 1.  Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
 
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
