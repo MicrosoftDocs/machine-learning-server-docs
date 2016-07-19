@@ -41,11 +41,11 @@ Microsoft R Client build 1.0.0 works with the following flavors of R Server.
 |-----------|:--------------------------:|
 |Microsoft R Server for Linux|R Server for Linux 2016<br>(build 8.0.5)|
 |Microsoft R Server for Teradata DB|R Server for Teradata DB 2016<br>(build 8.0.5)|
-|Microsoft R Server for Hadoop|R Server for Hadoop 2016<br>(build 8.0.5)**&ast;**|
+|Microsoft R Server for Hadoop|R Server for Hadoop 2016<br>(build 8.0.5)**\***|
 |Microsoft R Server (Standalone - Windows)|SQL Server 2016<br>(RTM)|
 |SQL Server R Services|SQL Server 2016<br>(RTM)|
 |R Server for HDInsight|R Server for HDInsight<br>(preview)|
 
->**&ast;** For Microsoft R Client build 1.0.0 to work with Microsoft R Server for Hadoop 2016 build 8.0.5, you must:
+>**\*** For Microsoft R Client build 1.0.0 to work with Microsoft R Server for Hadoop 2016 build 8.0.5, you must:
 >1. Install the `RTools` package from CRAN onto the machine running R client.
 >1. Explicitly add `. /usr/lib64/microsoft-r/8.0/hadoop/RevoHadoopEnvVars.site` to `/etc/profile` file.
