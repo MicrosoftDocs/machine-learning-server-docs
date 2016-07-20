@@ -27,9 +27,6 @@
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
-# R Client
-## [Microsoft R Getting Started](microsoft-r-getting-started.md)
-## [R Client Compatibility Chart](r-client-compatibility.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
