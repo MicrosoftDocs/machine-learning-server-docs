@@ -6,8 +6,7 @@
 # Installation
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
-### [Install on Linux](rserver-install-linux-server.md)
-### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
+### [Install on a standalone Linux server](rserver-install-linux-server.md)
 ### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
@@ -20,7 +19,7 @@
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-### Install on Windows
+### Install on a standalone Windows server
 #### [Install Revolution R Enterprise 8.0.0](rserver-install-windows.md)
 ## [Install SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
 ## [Install R Client](install-r-client-windows.md)
@@ -28,6 +27,9 @@
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
+# R Client
+## [Microsoft R Getting Started](microsoft-r-getting-started.md)
+## [R Client Compatibility Chart](r-client-compatibility.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
@@ -73,9 +75,10 @@
 ### [rxWriteNext](scaler/rxWriteNext.md)
 ## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
 ## [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
-## [RevoScaleR Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
-## [RevoScaleR Hadoop Spark Getting Started](scaler-spark-getting-started.md)
-## [RevoScaleR Teradata Getting Started](scaler-teradata-getting-started.md)
+## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
+## [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
+## [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
+## [R Server on Teradata Getting Started](scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
 # [RevoPemaR](pemar-getting-started.md)
 # [DeployR](deployr-about.md)
