@@ -70,6 +70,18 @@ Some useful resources for this problem are here:
 
 **Answer:** The documentation for R Server can be found on MSDN at <https://msdn.microsoft.com/library/mt674634.aspx>
 
+## Question: What other steps do I need to follow to use the DeployR instance on this VM?
+
+**Answer:** To configure the DeployR instance, do the following:
+
+1. Run the DeployR Administrator Utility and do the following:
+
+   1. [Set the DeployR administrator password](deployr-install-on-linux.md#postinstall).
+
+   1. [Set the DeployR Web context](deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
+
+1. [Open the appropriate ports on the VM](deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
+
 ## Question: How can I access data in my Azure Storage Account from the VM?
 
 **Answer:** There are a couple of ways. One is to copy the data from your storage account to the local file system using a utility such as AzCopy: [https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/\#copy-files-in-azure-file-storage-with-azcopy-preview-version-only](https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/)
