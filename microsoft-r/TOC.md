@@ -7,7 +7,6 @@
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
 ### [Install on Linux](rserver-install-linux-server.md)
-### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
 ### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
@@ -29,6 +28,7 @@
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 # R Client
+## [Install R Client](install-r-client-windows.md)
 ## [Microsoft R Getting Started](microsoft-r-getting-started.md)
 ## [R Client Compatibility Chart](r-client-compatibility.md)
 # RevoScaleR
