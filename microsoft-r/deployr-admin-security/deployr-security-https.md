@@ -97,10 +97,37 @@ If your corporate policies require that you secure the communications between th
 
 After configuring DeployR to use one of those databases, you must also configure properly secure the database connections and force encryption.
 
-+ For SQL Server 2016, read more here: 
-    + https://support.microsoft.com/en-us/kb/316898
-    + https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
++ For SQL Server 2016, you should: 
 
+    + Read these two articles for information on how to enable TLS for SQL Server: https://support.microsoft.com/en-us/kb/316898 and https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
+
+    + In the `$DEPLOYR_HOME/deployr/deployr.groovy` external configuration file, add `encrypt=true;trustServerCertificate=true` to the connection string.
+
++ For PostgreSQL, you should:
+
+    + Review the documentation here: https://www.postgresql.org/docs/9.1/static/ssl-tcp.html
+
+    + In the `$DEPLOYR_HOME\deployr\deployr.groovy` external configuration file, add `ssl=true` to the `properties` section of the `dataSource` property block. For example:
+      ```
+      dataSource {
+            dbCreate = "update"
+            driverClassName = "org.postgresql.Driver"
+            url = "jdbc:postgresql://localhost:5432/deployr"
+            pooled = true
+            username = "deployr"
+            properties {
+               ssl=true
+               maxActive = -1
+               minEvictableIdleTimeMillis=1800000
+               timeBetweenEvictionRunsMillis=1800000
+               numTestsPerEvictionRun=3
+               testOnBorrow=true
+               testWhileIdle=true
+               testOnReturn=true
+               validationQuery="SELECT 1"
+            }
+        }
+      ```
 
 <br>
 ### Enabling for DeployR 8.0.0
