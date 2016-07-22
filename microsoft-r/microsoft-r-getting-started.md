@@ -58,6 +58,7 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 
 For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
 
+<a name="mrc"></a>
 ##Microsoft R Client
 
 Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
