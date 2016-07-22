@@ -37,6 +37,8 @@ Microsoft R Client is free to everyone. Download Microsoft R Client at http://ak
 
 Microsoft R Client build 1.0.0 works with the following flavors of R Server. 
 
+> Build 1.0.0 of R Client runs on Windows only. Greater operating system support is coming soon.
+
 |Version Compatibility   |R Client (build 1.0.0)|
 |-----------|:--------------------------:|
 |Microsoft R Server for Linux|R Server for Linux 2016<br>(build 8.0.5)|
