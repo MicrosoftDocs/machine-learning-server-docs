@@ -63,6 +63,14 @@ If you enable [Active Directory Services](#active-directory-authentication) or [
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
+The standard protocol for reading data from and writing data to Active Directory (AD) domain controllers (DCs) is LDAP. AD LDAP traffic is unsecured by default, which makes it possible to use network-monitoring software to view the LDAP traffic between clients and DCs. You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS for DeployR.](deployr-security-https.md)
+
+Reasons for enabling LDAP-S include:
++ Organizational security policies typically require that all client/server communication is encrypted.
++ Applications use simple BIND to transport credentials and authenticate against a DC. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
++ Use of proxy binding or password change over LDAP, which requires LDAP-S. [Bind to an AD LDS instance Through a Proxy Object](https://technet.microsoft.com/en-us/library/cc794922%28WS.10%29.aspx?f=255&MSPPError=-2147217396)
++ Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
+
 >Basic authentication remains enabled even with LDAP enabled.
 
 **To enable LDAP or LDAP-S:** 
