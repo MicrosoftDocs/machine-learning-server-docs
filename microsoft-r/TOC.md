@@ -57,6 +57,7 @@
 ## [RevoScaleR Functions](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [ScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md)
+### [ScaleR Functions for Teradata DB](scaler/scaler-teradata-functions.md)
 ### [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [rxClose](scaler/rxClose.md)
