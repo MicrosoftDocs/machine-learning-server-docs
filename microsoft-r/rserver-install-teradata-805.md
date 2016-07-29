@@ -5,7 +5,7 @@ description: "Installation and configuration for Microsoft R Server 2016 (versio
 keywords: ""
 author: "jeffstokes72"
 manager: "paulettm"
-ms.date: "06/28/2016"
+ms.date: "07/29/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -91,10 +91,6 @@ Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rp
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80TERA.img /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
-
-		tar zxvf MRS80TERA.tar.gz
-
 5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
         microsoft-r-server-mro-8.0.tar.gz
@@ -106,16 +102,16 @@ Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rp
 
 7. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
 
-		tar -zxf MRS80TERA.tar.gz
+		tar -zxf en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz
 
 8. Change directory to the one directory created in Step 7:
 
 		cd MRS80TERA
 
-9. Run the install script, install.sh. By running install.sh you are installing Microsoft-r-server-mro-tar-gz, agreeing to MRO_EULA.txt and EULA.txt license agreements:
+9. Run the install script, install.sh. This script downloads an installer from the internet. For non-internet connected nodes, manually place the en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz file in /var/opt/teradata/customernodepkgs/MRS80TERA directory on each Teradata node before running 'install.sh'. By running install.sh you are installing Microsoft-r-server-mro-tar-gz, agreeing to MRO_EULA.txt and EULA.txt license agreements. 
 
 		./install.sh
-
+	
 10. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs
@@ -142,9 +138,10 @@ To install the Microsoft R Server rpms on all the nodes, do the following:
 
 9.  Click **Finish**.
 
-Before proceeding, create the /tmp/revoJobs directory on each node:
+Before proceeding, create the /tmp/revoJobs directory on each node and set the correct permissions.
 
 	psh mkdir /tmp/revoJobs
+	psh chmod 775 /tmp/revoJobs
 
 ## Setting Up the Revolution Analytics Database
 
