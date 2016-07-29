@@ -93,8 +93,8 @@ Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rp
 
 5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
-        microsoft-r-server-mro-8.0.tar.gz
-        MRS80TERA.tar.gz
+		microsoft-r-server-mro-8.0.tar.gz
+		en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz
 
 6. Change directory to the Customer Mode packages directory:
 
@@ -140,8 +140,8 @@ To install the Microsoft R Server rpms on all the nodes, do the following:
 
 Before proceeding, create the /tmp/revoJobs directory on each node and set the correct permissions.
 
-	psh mkdir /tmp/revoJobs
-	psh chmod 775 /tmp/revoJobs
+		psh mkdir /tmp/revoJobs
+		psh chmod 775 /tmp/revoJobs
 
 ## Setting Up the Revolution Analytics Database
 
@@ -153,8 +153,8 @@ After you have installed the rpms, change directory to the "teradata" directory.
 
 Next, run the revoTdSetup.sh script:
 
-    chmod u+x ./revoTdSetup.sh
-    ./revoTdSetup.sh
+		chmod u+x ./revoTdSetup.sh
+		./revoTdSetup.sh
 
 Enter the parent user database name and password at the prompts. **Do not modify this script**, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in the next section.
 
@@ -181,43 +181,43 @@ You will often want to allow a user account to run jobs on data in other databas
 
 1.  First, you will need to grant permissions for the user account to work with the Revolution database.  Logon to bteq with your admin account, and run the following lines.  Substitute the new user account name for 'ut1' in the sample lines below.
 
-			-- grant ut1 various permissions on revoAnalytics_Zqht2 DB
-			grant execute procedure on revoAnalytics_Zqht2.InitRevoJob to ut1;
-			grant execute procedure on revoAnalytics_Zqht2.StartRevoJobXsp to ut1;
-			grant execute procedure on revoAnalytics_Zqht2.GetRevoJobState to ut1;
-			grant execute procedure on revoAnalytics_Zqht2.RemoveRevoJobResults to ut1;
-			grant execute function on revoAnalytics_Zqht2.FinishRevoJob to ut1;
-			grant execute function on revoAnalytics_Zqht2.DistributeRevoJobDataUdf to ut1;
-			grant execute function on revoAnalytics_Zqht2.revoAnalyticsTblOp to ut1;
-			grant select on revoAnalytics_Zqht2.RevoAnalyticsJobResults to ut1;
+		-- grant ut1 various permissions on revoAnalytics_Zqht2 DB
+		grant execute procedure on revoAnalytics_Zqht2.InitRevoJob to ut1;
+		grant execute procedure on revoAnalytics_Zqht2.StartRevoJobXsp to ut1;
+		grant execute procedure on revoAnalytics_Zqht2.GetRevoJobState to ut1;
+		grant execute procedure on revoAnalytics_Zqht2.RemoveRevoJobResults to ut1;
+		grant execute function on revoAnalytics_Zqht2.FinishRevoJob to ut1;
+		grant execute function on revoAnalytics_Zqht2.DistributeRevoJobDataUdf to ut1;
+		grant execute function on revoAnalytics_Zqht2.revoAnalyticsTblOp to ut1;
+		grant select on revoAnalytics_Zqht2.RevoAnalyticsJobResults to ut1;
 
-			-- the following two create view and drop view grants are for the
-			-- table operator PARTITION BY work-around
-			-- for Teradata's Issue DR166609, which was fixed in 14.10.02d
-			grant create view on revoAnalytics_Zqht2 to ut1;
-			grant drop view on revoAnalytics_Zqht2 to ut1;
+		-- the following two create view and drop view grants are for the
+		-- table operator PARTITION BY work-around
+		-- for Teradata's Issue DR166609, which was fixed in 14.10.02d
+		grant create view on revoAnalytics_Zqht2 to ut1;
+		grant drop view on revoAnalytics_Zqht2 to ut1;
 
 2.  Next you will need to grant permissions for the user account and the revolution database to work with data in the user account database.  Run the following lines, substituting your user account name for 'ut1'.
 
-			-- grant ut1 rights on db with data to be analyzed -
-			-- in this case itself
-			grant all on ut1 to ut1;
+		-- grant ut1 rights on db with data to be analyzed -
+		-- in this case itself
+		grant all on ut1 to ut1;
 
-			-- give revoAnalytics_Zqht2 rights on database with data to
-			-- be analyzed - in this case ut1
-			grant select on ut1 to revoAnalytics_Zqht2;
-			grant create table on ut1 to revoAnalytics_Zqht2;
-			grant drop table on ut1 to revoAnalytics_Zqht2;
+		-- give revoAnalytics_Zqht2 rights on database with data to
+		-- be analyzed - in this case ut1
+		grant select on ut1 to revoAnalytics_Zqht2;
+		grant create table on ut1 to revoAnalytics_Zqht2;
+		grant drop table on ut1 to revoAnalytics_Zqht2;
 
 3.  Finally, you will want to grant permissions on any other databases you wish that account to have access to.  Run the following lines, substituting your user account name for 'ut1', and your other database name for 'RevoTestDB'.
 
-			-- grant ut1 rights on db with data to be analyzed
-			grant select on RevoTestDB to ut1;
+		-- grant ut1 rights on db with data to be analyzed
+		grant select on RevoTestDB to ut1;
 
-			-- give revoAnalytics_Zqht2 rights on database with data to
-			-- be analyzed
-			grant select on RevoTestDB to revoAnalytics_Zqht2;
-			grant create table on RevoTestDB to revoAnalytics_Zqht2;
+		-- give revoAnalytics_Zqht2 rights on database with data to
+		-- be analyzed
+		grant select on RevoTestDB to revoAnalytics_Zqht2;
+		grant create table on RevoTestDB to revoAnalytics_Zqht2;
 
 ## Managing Memory in In-Teradata Computations
 
@@ -227,11 +227,11 @@ These limits may be customized by a database administrator using the SetMasterMe
 
 For example, to set the master memory limit to 3000MB:
 
-	call revoAnalytics_Zqht2.SetMasterMemoryLimitMB(3000);
+		call revoAnalytics_Zqht2.SetMasterMemoryLimitMB(3000);
 
 To set the worker memory limit to 1500MB:
 
-	call revoAnalytics_Zqht2.SetWorkerMemoryLimitMB(1500);
+		call revoAnalytics_Zqht2.SetWorkerMemoryLimitMB(1500);
 
 The current memory limits can be viewed in the revoAnalytics\_Zqht2.Properties table.
 
@@ -261,7 +261,7 @@ To manually distribute and install the package:
 
 To remove Microsoft R Server from your computer, run the following commands:
 
-        psh rpm -e microsoft-r-server-teradata-8.0
-        psh rpm -e microsoft-r-server-packages-8.0
-        psh rpm -e microsoft-r-server-intel-mkl-8.0
-        psh rpm -e microsoft-r-server-mro-8.0
+		psh rpm -e microsoft-r-server-teradata-8.0
+		psh rpm -e microsoft-r-server-packages-8.0
+		psh rpm -e microsoft-r-server-intel-mkl-8.0
+		psh rpm -e microsoft-r-server-mro-8.0
