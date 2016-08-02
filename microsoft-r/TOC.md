@@ -3,8 +3,9 @@
 # What's New
 ## [R Server & DeployR](notes/r-server-notes.md)
 ## [R Client](notes/r-client-notes.md)
-# Installation
-## Install R Server
+# R Server (and DeployR)
+## 8.0.x Documentation
+### Installation and Virtual Machines
 ### [Supported Platforms](rserver-install-supported-platforms.md)
 ### [Install on a standalone Linux server](rserver-install-linux-server.md)
 ### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
@@ -23,17 +24,17 @@
 ### Install on a standalone Windows server
 #### [Install Revolution R Enterprise 8.0.0](rserver-install-windows.md)
 ## [Install SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
-## [Install R Client](install-r-client-windows.md)
 ## [Install DeployR](deployr-installation.md)
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
-# R Client
-## [Install R Client](install-r-client-windows.md)
-## [Microsoft R Getting Started](microsoft-r-getting-started.md)
-## [R Client Compatibility Chart](r-client-compatibility.md)
-# RevoScaleR
-## [RevoScaleR Getting Started](scaler-getting-started.md)
+## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
+## RevoScaleR Getting Started
+### [RevoScaleR Getting Started](scaler-getting-started.md)
+### [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
+### [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
+### [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
+### [R Server on Teradata Getting Started](scaler-teradata-getting-started.md)
 ## RevoScaleR User's Guide
 ### [Introduction](scaler-user-guide-introduction.md)
 ### [Importing Data](scaler-user-guide-data-import.md)
@@ -77,13 +78,17 @@
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
 ## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
-## [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
-## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
-## [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
-## [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
-## [R Server on Teradata Getting Started](scaler-teradata-getting-started.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
-# [RevoPemaR](pemar-getting-started.md)
+## [RevoPemaR](pemar-getting-started.md)
+## [Parallelizing Loops: foreach/iterators](foreach.md)
+## R Productivity Environment (RRE Only)
+### [RPE Getting Started](RevoRPE_Getting_Started.md)
+### [RPE User's Guide](RevoRPE_Users_Guide.md)
+## 9.0.x Documentation
+# R Client
+## [Install R Client](install-r-client-windows.md)
+## [Microsoft R Getting Started](microsoft-r-getting-started.md)
+## [R Client Compatibility Chart](r-client-compatibility.md)
 # [DeployR](deployr-about.md)
 ## [Installing DeployR](deployr-installation.md)
 ## Getting Started with DeployR
@@ -134,9 +139,6 @@
 ### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 ### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
-# [Parallelizing Loops: foreach/iterators](foreach.md)
-# R Productivity Environment (RRE Only)
-## [RPE Getting Started](RevoRPE_Getting_Started.md)
-## [RPE User's Guide](RevoRPE_Users_Guide.md)
+
 # [Additional Resources](microsoft-r-more-resources.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
