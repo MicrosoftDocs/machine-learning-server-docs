@@ -93,6 +93,8 @@ The following release notes apply to Microsoft R Server.
 
 + Microsoft R **licenses and Third Party Notices** files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
 
++ An opt-in telemetry feature allows you to anonymously help improve Microsoft R Server by enabling us to gather data on the R Server functions you use, operating system, R version, and RevoScaleR version. Turn it on using the `rxPrivacyControl` function in `RevoScaleR`.
+
 For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 **Bug Fixes**
