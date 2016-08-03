@@ -1,7 +1,7 @@
 ---
 # required metadata
 title: "Uninstall R Server on Linux or Hadoop to upgrade to a newer version"
-description: "Upgrading Microsoft R Server and the RevoScaleR package is done by uninstalling the existing version and installing a newer version."
+description: "Upgrading Microsoft R Server and the RevoScaleR package is achieved by uninstalling the existing version and installing a newer version."
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
@@ -129,9 +129,6 @@ For versions prior to 8.0.5, do the following:
 ## See Also
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
-
 [Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
-
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
-
 [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
