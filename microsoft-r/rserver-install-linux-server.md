@@ -97,7 +97,6 @@ Microsoft R Server 2016 for Linux is deployed by running the install script with
 		`[MRS80LINUX] $ sudo bash install.sh`
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Installer output shows the packages and location of the log file.
-    ![Installer status message output](media/rserver-install-linux-server/rserver-linux-installer-status.png)
 7. Check the version of Microsoft R Open using `rpm -qi`:
 		`[MRS80LINUX] $ rpm -qi microsoft-r-server-mro-8.0`
 8. Check the version of the intel-mkl package:
