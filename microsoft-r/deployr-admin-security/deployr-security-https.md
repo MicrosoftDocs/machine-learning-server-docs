@@ -88,7 +88,8 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
    1. Exit the utility.
 
-1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see this [Alert](#alertusers).
+
 
 <br />
 ####Securing connections between DeployR Web server and the database
@@ -99,7 +100,10 @@ After configuring DeployR to use one of those databases, you must also configure
 
 + For SQL Server 2016, you should: 
 
-    + Read these two articles for information on how to enable TLS for SQL Server: https://support.microsoft.com/en-us/kb/316898 and https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
+    + Read these articles for information on how to enable TLS for SQL Server: 
+        + https://support.microsoft.com/en-us/kb/316898 
+        + https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
+        + https://support.microsoft.com/en-us/kb/3135244
 
     + In the `$DEPLOYR_HOME/deployr/deployr.groovy` external configuration file, add `encrypt=true;trustServerCertificate=true` to the connection string.
 

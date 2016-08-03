@@ -7,7 +7,6 @@
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
 ### [Install on a standalone Linux server](rserver-install-linux-server.md)
-### [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
 ### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
@@ -15,7 +14,7 @@
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
-#### [Uninstall R Server on Hadoop to upgrade versions](rserver-install-uninstall-upgrade.md)
+### [Uninstall R Server on Hadoop or Linux to upgrade to a new version](rserver-install-uninstall-upgrade.md)
 ### Install on Teradata
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)

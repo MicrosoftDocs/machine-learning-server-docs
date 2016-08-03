@@ -6,7 +6,7 @@ description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
 author: "j-martens"
 manager: "Paulette.McKay"
-ms.date: "05/16/2016"
+ms.date: "08/01/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -99,14 +99,14 @@ Before you can install DeployR, you must manually install and configure the foll
       sudo zypper clean --all
       ```
 
-1.  Install the following packages (`make`, `gcc`, `gcc-c++`, `gfortran`, `cairo-devel`, `libicu`, `libstdc++`, and `libicu-devel`) if any of them are missing as follows:
+1.  Install the following packages (`make`, `gcc`, `gcc-c++`, `gfortran`, `cairo-devel`, `libstdc++`, and `libicu-devel`) if any of them are missing as follows:
 
     >Install packages as `root` or a user with `sudo` permissions.
 
 	+ For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
       ```
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
-      yum list make gcc gcc-c++ gfortran cairo-devel libicu libicu-devel libstdc++
+      yum list make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++
       
       #INSTALL ALL MISSING PACKAGES
   
@@ -117,7 +117,7 @@ Before you can install DeployR, you must manually install and configure the foll
 	+ For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
       ```
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
-      dpkg -l make gcc gcc-c++ gfortran cairo-devel libicu libicu-devel libstdc++ 
+      dpkg -l make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++ licui18n
       
       #INSTALL ALL MISSING PACKAGES
   
