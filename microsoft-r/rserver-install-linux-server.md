@@ -44,9 +44,9 @@ MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Linux 
 You can also get R Server 2016 for Linux from these sites.
 
 - [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides a gzipped TAR file for Microsoft customers who have volume licensing.
-- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides an ISO or DVD img file for free to developers who sign up for Visual Studio Dev Essentials. Be sure that you are connected to Visual Studio Dev Essentials before searching the Downloads list. You're in the right place if the page shows the site name, as follows.
+- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides an ISO or DVD img file for free to developers who sign up for Visual Studio Dev Essentials. Be sure that you are connected to Visual Studio Dev Essentials before searching the Downloads list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
 
-![Showing: Visual Studio Dev Essentials](media/rserver-install-linux-server/rserver-install-showing-visual-studio-dev-essentials.PNG)
+  ![Showing: Visual Studio Dev Essentials](media/rserver-install-linux-server/rserver-install-showing-visual-studio-dev-essentials.PNG)
 
 ## System Requirements
 
