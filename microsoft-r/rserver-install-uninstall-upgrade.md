@@ -58,9 +58,8 @@ Version information is also evident in the file path, indicated in the examples 
 
 Alternatively, you might see these paths, given a Cloudera Manager parcel installation.
 
-- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5`
-- `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1`
-- `/opt/cloudera/parcels/RRO-8.0.3`, `/opt/cloudera/parcels/RevolutionR-7.4.1` and `/opt/cloudera/parcels/RRE-7.4.1`
+- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5) `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0)
+- `/opt/cloudera/parcels/RRO-8.0.3`, `/opt/cloudera/parcels/RevolutionR-7.4.1` and `/opt/cloudera/parcels/RRE-7.4.1` (applies to 7.4)
 
 ## How to uninstall 8.0.5
 
@@ -68,34 +67,49 @@ Packages are registered in a database that tracks all package installations in t
 
 1. Uninstall the package (use one of the following):
 
-    - `sudo yum erase microsoft-r-server-mro-8.0`
-    - `sudo zypper rm microsoft-r-server-mro-8.0`
+        sudo yum erase microsoft-r-server-mro-8.0
+        -- OR --
+        sudo zypper rm microsoft-r-server-mro-8.0
 
-2. On the root node, verify the location of other files that need to be removed: `$ ls /usr/lib64/microsoft-r/8.0`
+2. On the root node, verify the location of other files that need to be removed: `
 
-3. Remove the entire directory: `$ rm -fr /usr/lib64/microsoft-r`
+        ls /usr/lib64/microsoft-r/8.0
+
+3. Remove the entire directory:
+
+        rm -fr /usr/lib64/microsoft-r
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
 ## How to uninstall 8.0.0
 
 1. Erase Microsoft R Open:
-    `yum erase MRO-for-MRS-8.0.0`
+
+        yum erase MRO-for-MRS-8.0.0
+
 2. Remove directories of MRS and MRO, in this order:
-    `rm -rf /usr/lib64/MRS-8.0`
-    `rm -rf /usr/lib64/MRO-for-MRS-8.0.0`
+
+        rm -rf /usr/lib64/MRS-8.0
+        rm -rf /usr/lib64/MRO-for-MRS-8.0.0
+
 3. Remove symlinks:
-    `rm -f /usr/bin/Revo64 /usr/bin/Revoscript`
+
+        rm -f /usr/bin/Revo64 /usr/bin/Revoscript
 
 ## How to uninstall 7.4
 
 1. Run the uninstall script to remove Revolution R Enterprise and Revolution R Connector:
-    `/usr/lib64/Revo-7.4/uninstall_revo.sh`
+
+        /usr/lib64/Revo-7.4/uninstall_revo.sh
+
 2. Erase Revolution R Open:
-    `yum erase RRO-8.0.3`
+
+        yum erase RRO-8.0.3
+
 3. Remove directories of RRE and RRO, in this order:
-     `rm -rf /usr/lib64/Revo-7.4`
-     `rm -rf /usr/lib64/RRO-8.0.3`
+
+        rm -rf /usr/lib64/Revo-7.4
+        rm -rf /usr/lib64/RRO-8.0.3
 
 ## How to uninstall individual packages
 
@@ -105,17 +119,17 @@ Uninstall order is important. Due to package dependencies, be sure to remove the
 
 **For RPM**
 
-        $ rpm -e microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
-        $ rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
-        $ rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
-        $ rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
+        rpm -e microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+        rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+        rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+        rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
 **For DEB**
 
-    $ dpkg --remove microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
-    $ dpkg --remove microsoft-r-server-packages-8.0-8.0.5-1.x86_64
-    $ dpkg --remove microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
-    $ dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64
+        dpkg --remove microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
+        dpkg --remove microsoft-r-server-packages-8.0-8.0.5-1.x86_64
+        dpkg --remove microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
+        dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
 ## How to uninstall the Hadoop component
 
