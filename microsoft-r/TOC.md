@@ -6,20 +6,20 @@
 # Installation
 ## Install R Server
 ### [Supported Platforms](rserver-install-supported-platforms.md)
-### [Install on a standalone Linux server](rserver-install-linux-server.md)
-### [Install on a Hadoop Cluster](rserver-install-hadoop.md)
+### [Install on Linux](rserver-install-linux-server.md)
+### [Install on Hadoop](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
 #### [Package Dependencies on Linux and Hadoop](rserver-install-linux-hadoop-packages.md)
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
-### [Uninstall R Server on Hadoop or Linux to upgrade to a new version](rserver-install-uninstall-upgrade.md)
+### [Uninstall from Hadoop or Linux](rserver-install-uninstall-upgrade.md)
 ### Install on Teradata
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-### Install on a standalone Windows server
+### Install on Windows
 #### [Install Revolution R Enterprise 8.0.0](rserver-install-windows.md)
 ## [Install SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
 ## [Install R Client](install-r-client-windows.md)
