@@ -6,7 +6,7 @@ description: "Install Microsoft R Server 8.0 or Microsoft R Server 2016 (version
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "08/02/2016"
+ms.date: "08/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server Installation for Linux Systems
 
-This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (build 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
+This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (version 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
 
 You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before using Microsoft R Server 2016 (build 8.0.5). Additionally, if you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
@@ -60,73 +60,68 @@ You can also get R Server 2016 for Linux from these sites.
 
 **Disk Space:** A minimum of 500 MB of disk space is required.
 
-## Install R Server 2016 on Linux
+## Unpack the distribution
 
-Download the software to a writable directory, such as /tmp, unpack the distribution and then run the installation script.
+Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
 
-### Unpack the distribution
-
-The distribution includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component.
-
-For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
 1. Log in as root or a user with sudo privileges.
-2. Switch to the /tmp directory (assuming /tmp as the download location)
+2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
+        `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
 
-  `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
+**Unpacking an ISO file**
 
-For ISO, create a mount point, and then mount the ISO file to that mount point:
+Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
 
-  `mkdir /mnt/mrsimage`
-  `mount –o loop <filename> /mnt/mrsimage`
+      `mkdir /mnt/mrsimage`
+      `mount –o loop sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso /mnt/mrsimage`
 
-Where the file name is `sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso`
+The download file is **sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso**.
 
-### Run the install script
+## Run the install script
 
 Microsoft R Server 2016 for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
 		`[username] $ sudo yum clean all`
-3. Change to the directory to which you downloaded the rpm (for example, /tmp):
+3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
 		`[username] $ cd /tmp`
-4. Change to the `MRS80LINUX` directory containing the installation scription:
+4. Change to the `MRS80LINUX` directory containing the installation script:
         `[tmp] $ cd MRS80LINUX`
-4. Run the script.
+5. Run the script.
 		`[MRS80LINUX] $ sudo bash install.sh`
-5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
-6. Installer output shows the packages and location of the log file.
-    ![Installer status message output](media/rserver-install-linux-server/rserver-linux-installer-status.png)
-7. Check the version of Microsoft R Open using `rpm -qi`:
+6. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+7. Installer output shows the packages and location of the log file.
+8. Check the version of Microsoft R Open using `rpm -qi`:
 		`[MRS80LINUX] $ rpm -qi microsoft-r-server-mro-8.0`
-8. Check the version of the intel-mkl package:
+9. Check the version of the intel-mkl package:
 		`[MRS80LINUX] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
-
-Partial output is as follows (note version 8.0.5):
+10. Partial output is as follows (note version 8.0.5):
 
 		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
 		Version     : 8.0.5                         Vendor: Microsoft
 		. . .
 
-## Managing Your Microsoft R Server Installation
+## Manage your installation
 
 In this section, we discuss file management for your Microsoft R Server installation, including file ownership, file permissions, and so on.
 
-### File Ownership
+### File ownership
 
 If followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
 
 1. Install Microsoft R Server as root, as usual.
 2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
-3. Use the `chown` command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
+3. Use the **chown** command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
 
 		chown -R RUser:dev /usr/lib64/MRS80LINUX
 
 Here we show the default path /usr/lib64/MRS80LINUX; if you have specified an alternate installation path, use that in this command as well.
 
-### Unattended Installs
+### Unattended installs
 
 You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag ("yes" or "accept default" to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
 
@@ -143,15 +138,15 @@ For a standard unattended install, run the following script:
 
 	./install.sh –a –s
 
-### File Permissions
+### File permissions
 
-Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the `chmod` command. (For files owned by root, this command requires root privileges.)
+Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the **chmod** command. (For files owned by root, this command requires root privileges.)
 
-### Installing to a Read-Only File System
+### Installing to a read-only file system
 
 In enterprise environments, it is common for enterprise utilities to be mounted as read-only file systems, so that ordinary operations cannot corrupt the tools. Obviously, new applications can be added to such systems only by first unmounting them, then re-mounting them for read/write, installing the software, and then re-mounting as read-only. This must be done by a system administrator.
 
-## Setting Up a Package Repository
+## Setting up a package repository
 
 One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes a number of functions that make it easy to download and install these packages. However, in many enterprise environments, access to the Internet is limited or non-existent. In such environments, it is useful to create a local package repository that users can access from within the corporate firewall.
 
@@ -171,7 +166,7 @@ On a system with Internet access, the easiest way to install the miniCRAN packag
 
 If your system already contains all the system prerequisites, this will normally download and install all of miniCRAN’s R package dependencies as well as miniCRAN itself. If a system dependency is missing, compilation of the first package that needs that dependency will fail, typically with a specific but not particularly helpful message. In our testing, we have found that an error about curl-config not being found indicates that the curl-devel package is missing, and an error about libxml2 indicates the libxml2-devel package is missing. If you get such an error, exit R, use yum or zypper to install the missing package, then restart R and retry the install.packages command.
 
-### Creating a Repository from an MRAN Snapshot
+### Create a repository from an MRAN snapshot
 
 Creating a repository from an MRAN snapshot is very straightforward:
 
@@ -199,11 +194,11 @@ Creating a repository from an MRAN snapshot is very straightforward:
 
 		makeRepo(pkgs, "/local/repos", type="source")
 
-### Creating a Custom Repository
+### Create a custom repository
 
 As mentioned above, a custom repository gives you complete control over which packages are available to your users. Here, too, you have two basic choices in terms of populating your repository: you can either use makeRepo to select specific packages from an existing MRAN snapshot, or you can combine your own locally developed packages with packages from other sources. The latter option gives you the greatest control, but typically means you need to manage the contents using home-grown tools.
 
-#### Creating a Custom Package Directory
+#### Create a custom package directory
 
 Your custom package directory can contain source packages, binary packages, or both. Windows binary packages should have a path of the form
 
@@ -217,7 +212,7 @@ Windows binary packages should be built with your current R version. Windows bin
 
 	tools:::write_PACKAGES("/local/repos")
 
-### Configuring R to Use Your Local Repository
+### Configure R to use a local repository
 
 To make your local repository available to your R users:
 
@@ -243,16 +238,16 @@ To make your local repository available to your R users:
 
 If you are in a locked-down environment without access to the standard Microsoft repository, *replace* the Revo repository with your local repository (or repositories).
 
-## Removing Microsoft R Server
+## Remove Microsoft R Server
 
 For instructions on rolling back your installation, see
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).
 
-## Managing Multiple R Installations
+## Manage multiple R installations
 
 You can install the latest Microsoft R Server side-by-side with an existing Microsoft R Server. In this section, we discuss maintaining multiple versions of Microsoft R Server, together with instructions for maintaining Microsoft R Server alongside versions of R obtained from CRAN or third-party repositories such as <http://dl.fedoraproject.org/pub/epel>. (Note, however, that patch releases such as Microsoft R Server 7.4.1 are intended to replace their associated main release, not live side by side with it. You must uninstall and reinstall such releases.)
 
-### Using Microsoft R Server with Other R Installations
+### Using Microsoft R Server with other R installations
 
 If you have an installed R script in your /usr/bin directory and then install Microsoft R Server, the automated installer detects that R exists and does not prompt you to link R to Revo64. In this case, you can use both versions of R simply by calling them by their respective script names, “R” and “Revo64”. To have Microsoft R Server become your default R, do the following:
 
@@ -266,7 +261,7 @@ If you have an installed R script in your /usr/bin directory and then install Mi
 
 If you have installed Microsoft R Server and then install base R, again there should be no conflict; R and Revo64 point to their respective installations, as usual. You can use the above procedure to make Microsoft R Server your default version of R.
 
-## Install R Server 8.0 on Linux
+## Install R Server 8.0
 
 Build 8.0.0 is no longer available on the Microsoft download sites, but if you already have this distribution and you specifically require this version, you can follow these instructions to deploy version 8.0.0.
 
@@ -325,7 +320,7 @@ On Linux systems with Hadoop installed, the install.sh script also tries to conf
 
 If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
-### Non-Root Installs of Microsoft R Server 8.0
+### Non-Root installs of R Server 8.0
 
 If you have an older distribution of Microsoft R Server 8.0 for Linux, you can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:
 
