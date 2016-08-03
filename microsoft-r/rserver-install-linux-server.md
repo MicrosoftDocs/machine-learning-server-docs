@@ -25,9 +25,9 @@ ms.custom: ""
 
 # R Server Installation for Linux Systems
 
-This article explains how to install newer versions of Microsoft R Server on a Linux server. The newest version, Microsoft R Server 2016 (build 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
+This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (build 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
 
-You can only install one version of R Server. Side-by-side is not supported. If the server already has an existing installation, you should uninstall the current distribution before installing the new version. See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before using Microsoft R Server 2016 (build 8.0.5). Additionally, if you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 Installer requirements consist of the following:
 
@@ -35,7 +35,7 @@ Installer requirements consist of the following:
 -   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
 -   You are installing as root or as super user
 
-If any of these conditions do not apply, you will need to install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
+If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
 
 ## Where Do I Get It?
 
@@ -43,8 +43,10 @@ MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Linux 
 
 You can also get R Server 2016 for Linux from these sites.
 
-- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides a gzipped TAR file for Microsoft customers who have volume licensing.
-- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides an ISO or DVD img file for free to developers who sign up for Visual Studio Dev Essentials. Be sure that you are connected to Visual Studio Dev Essentials before searching the Downloads list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
+- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
+- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
+
+  Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
 
   ![Showing: Visual Studio Dev Essentials](media/rserver-install-linux-server/rserver-install-showing-visual-studio-dev-essentials.PNG)
 
@@ -60,21 +62,26 @@ You can also get R Server 2016 for Linux from these sites.
 
 ## Install R Server 2016 on Linux
 
-First, unpack the distribution and then run the installation script.
+Download the software to a writable directory, such as /tmp, unpack the distribution and then run the installation script.
 
 ### Unpack the distribution
 
 The distribution includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component.
 
-For ISO and DVD IMG files, create a mount point and then mount the file to that mount point:
-`sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso`
-
-		`mkdir /mnt/mrsimage`
-		`mount –o loop <filename> /mnt/mrsimage`
-
 For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		`tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
+1. Log in as root or a user with sudo privileges.
+2. Switch to the /tmp directory (assuming /tmp as the download location)
+3. Unpack the file:
+
+  `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
+
+For ISO, create a mount point, and then mount the ISO file to that mount point:
+
+  `mkdir /mnt/mrsimage`
+  `mount –o loop <filename> /mnt/mrsimage`
+
+Where the file name is `sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso`
 
 ### Run the install script
 
@@ -85,14 +92,17 @@ Microsoft R Server 2016 for Linux is deployed by running the install script with
 		`[username] $ sudo yum clean all`
 3. Change to the directory to which you downloaded the rpm (for example, /tmp):
 		`[username] $ cd /tmp`
+4. Change to the `MRS80LINUX` directory containing the installation scription:
+        `[tmp] $ cd MRS80LINUX`
 4. Run the script.
-		`[tmp] $ sudo bash install.sh`
+		`[MRS80LINUX] $ sudo bash install.sh`
 5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Installer output shows the packages and location of the log file.
+    ![Installer status message output](media/rserver-install-linux-server/rserver-linux-installer-status.png)
 7. Check the version of Microsoft R Open using `rpm -qi`:
-		`[tmp] $ rpm -qi microsoft-r-server-mro-8.0`
+		`[MRS80LINUX] $ rpm -qi microsoft-r-server-mro-8.0`
 8. Check the version of the intel-mkl package:
-		`[tmp] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
+		`[MRS80LINUX] $ rpm -qi microsoft-r-server-intel-mkl-8.0`
 
 Partial output is as follows (note version 8.0.5):
 
@@ -106,60 +116,19 @@ In this section, we discuss file management for your Microsoft R Server installa
 
 ### File Ownership
 
-If you use the Quick Install steps, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it is often desirable to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an “RUser” account, and change ownership of the files to that user. You can do that as follows:
+If followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
 
 1. Install Microsoft R Server as root, as usual.
-2. Create the “RUser” account if it does not already exist. Assign this user to a suitable group, if desired.
-3. Use the chown command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
+2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
+3. Use the `chown` command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
 
-		chown -R RUser:dev /usr/lib64/MRO-for-MRS-8.0.0
+		chown -R RUser:dev /usr/lib64/MRS80LINUX
 
-Here we show the default path /usr/lib64/MRO-for-MRS-8.0.03; if you have specified an alternate installation path, use that in this command as well.
-
-You can also run the installer as a non-root user, even without sudo privileges.
-
-### Non-Root Installs
-
-*Applies to:* 8.0 only
-
-You can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:
-
--   You must have all the prerequisite packages installed on your computer.
--   You must have write permission to the specified base installation directory.
-
-The installer will check that the prerequisite packages are installed and inform you of any that are missing. The prerequisite packages typically do require superuser priviliges to install, so if you do not have sudo privileges, you will probably need to consult your system administrator in order to install them.
-
-If all the prerequisites are installed, you complete the installation as follows:
-
-1. Download [Microsoft R Open for Microsoft R Server 2016](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
-
-2. Run the following commands to install the rpm file:
-
-		mkdir $HOME/localmrsrpmdb
-		rpm --initdb --dbpath $HOME/localmrsrpmdb
-		export MRS_RPM_DBPATH=$HOME/localmrsrpmdb && \
-		    rpm --dbpath $MRS_RPM_DBPATH --prefix $HOME \
-		        --nodeps -i MRO-for-MRS-`*`.rpm
-
-3. Download and unpack the Microsoft R Server tarball, then run the installer script, as follows (the tarball name may include an operating system ID; the complete name of the tarball will be in your download letter):
-
-		tar xvzf Microsoft-R-Server-8.0.0-`*`.tar.gz
-		pushd rrent
-		./install.sh
-
-At this point you are asked for the location of your R installation—be sure to use the same location you provided as the --prefix argument in step 2. You are also asked where you would like to install additional Microsoft R Server files; these are files that are not part of specific R packages, such as documentation, licenses, and scripts.
-
-You are then asked if you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
-
-Finally, you are asked to agree to the Microsoft R Server software license. Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
-
-The R installation is owned by the user who completed the installation; subsequent updates and uninstalls must be performed by the same user. In particular, multiple users can perform non-root installations–as long as the installations specify separate base installation directories, they will be completely independent. Non-root installations can be performed on systems that have had Microsoft R Server installed as root, and vice versa.
-
-In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file: `export PATH=/home/$USER/Revo-8.0/R-3.1.3/bin:$PATH`
+Here we show the default path /usr/lib64/MRS80LINUX; if you have specified an alternate installation path, use that in this command as well.
 
 ### Unattended Installs
 
-You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag (“yes” or “accept default” to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
+You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag ("yes" or "accept default" to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
 
 flag | Option | Description
 -----|--------|------------
@@ -170,13 +139,13 @@ flag | Option | Description
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
 
-For a standard unattended install, run the follwoing script:
+For a standard unattended install, run the following script:
 
 	./install.sh –a –s
 
 ### File Permissions
 
-Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the chmod command. (For files owned by root, this command requires root privileges.)
+Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the `chmod` command. (For files owned by root, this command requires root privileges.)
 
 ### Installing to a Read-Only File System
 
@@ -276,11 +245,8 @@ If you are in a locked-down environment without access to the standard Microsoft
 
 ## Removing Microsoft R Server
 
-To remove Microsoft R Server from your computer, delete the directory containing the additional Microsoft R Server file from your computer:
-
-	rm –rf /usr/lib64/MRS-8.0
-
-To remove Microsoft R Open, follow the [instructions online](https://mran.revolutionanalytics.com/documents/rro/installation/).
+For instructions on rolling back your installation, see
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).
 
 ## Managing Multiple R Installations
 
@@ -300,108 +266,6 @@ If you have an installed R script in your /usr/bin directory and then install Mi
 
 If you have installed Microsoft R Server and then install base R, again there should be no conflict; R and Revo64 point to their respective installations, as usual. You can use the above procedure to make Microsoft R Server your default version of R.
 
-## Using Microsoft R Server with a Third-Party IDE
-
-Many Linux R users find that their productivity is greatly increased by the use of integrated development environments such as RStudio or Eclipse with the StatET plug-in. These environments can be used with Microsoft R Server, although some care is needed to ensure that you are using compatible versions of the software. This section describes running RStudio and StatET with Microsoft R Server.
-
-### Running Microsoft R Server with RStudio
-
-RStudio (<http://www.rstudio.com/ide>) is an open-source, cross-platform integrated development environment for R. RStudio for Linux comes in both desktop and server versions. The server version, in turn, comes in both free and professional versions. For local computations (by which we mean computations on a single computer, as opposed to distributed computation across several computers), both the free and professional versions of RStudio Server work just fine. The free version can also be used as a client for launching distributed computing jobs on a Hadoop cluster. For distributed computing involving IBM Platform LSF, however, you must have the professional version of RStudio Server installed on one of the nodes of your LSF compute cluster. We recommend the professional version; we have also tested the free server version 0.98.1103 for use on both RHEL5 and RHEL6 systems. (We have found the desktop version incompatible with RHEL5 as it requires newer development libraries than are available in the standard RHEL5 repositories.) The server version, however, will run “out-of-the-box” on both RHEL5 and RHEL6 systems.
-
-#### Installing RStudio Server
-
-To install and start the free version of RStudio Server, run the following commands at a shell prompt after installing Microsoft R Server:
-
-	# RHEL 6 only
-	sudo yum install openssl098e
-	# on both RHEL5 and RHEL6
-	wget http://download2.rstudio.org/rstudio-server-0.98.1103-x86_64.rpm
-	sudo yum install --nogpgcheck rstudio-server-0.98.1103-x86_64.rpm
-
-(If you purchase the professional version, you will obtain your download link directly from RStudio. If you are installing RStudio Server to a cluster managed by Cloudera Manager, add the *--no-deps* flag to the rpm command above.)
-
-You should see the following message when the installation completes:
-
-	Starting rstudio-server: [ OK ]
-
-#### Accessing RStudio Server
-
-To get started using RStudio Server, open a browser and navigate to the following URL:
-
-	http://<IP-of-server>:8787
-
-You will be prompted for a username and password. RStudio uses the default authentication on your server to verify users, so it is possible you will need to add users via the standard Linux useradd command for successful authentication. Once you have successfully logged in to RStudio, you will see the IDE as shown below:
-
-![](media/rserver-install-linux-server/image1.png)
-
-RStudio includes online documentation that discusses its features in detail.
-
-#### Running Microsoft R Server with StatET
-
-Eclipse (<http://www.eclipse.org>) is a Java-based, open-source, cross-platform integrated development environment with base support for a number of programming languages, including Java, C, and C++.
-
-StatET (<http://www.walware.de/?page=/it/statet/index.mframe>) is an Eclipse plug-in providing support for the R language.
-
-To run Microsoft R Server with StatET, you must install a Java JDK (1.6 or later), an Eclipse IDE (StatET’s developers recommend the Eclipse IDE for Java Developers; these instructions were developed using the Eclipse IDE forC/C++ Developers), Microsoft R Server, and the two R packages rj and rj.gd available from the Walware web site. We will assume in what follows that you or your system administrator have installed the appropriate Java JDK on your system, and that you have already installed Microsoft R Server.
-
-### Installing Eclipse
-
-To install Eclipse, first download the desired 64-bit base IDE from <http://www.eclipse.org/downloads>. You should have a file with a name of the form
-
-	eclipse-<lang>-juno-SR1-linux-gtk-x86_64.tar.gz
-
-where \<lang\> is one of cpp or java. The following commands should install and start Eclipse on your Linux system:
-
-	tar zxvf eclipse-<lang>-luna-SR2-linux-gtk-x86_64.tar.gz
-	cd eclipse
-	./eclipse &
-
-#### Installing StatET
-
-Before installing StatET, review the requirements at <http://www.walware.de/?page=/it/statet/installation.mframe>. Install the required packages rj and rj.gd by starting Microsoft R Server and calling install.packages as follows:
-
-	install.packages(c("rj", "rj.gd"),
-		repos="http://download.walware.de/rj-2.0",
-		lib="/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R/library")
-
-
-With some Java installations, it may be necessary to run R CMD javareconf before installing the rj package. (You may also need to install the java-1.7.0-openjkd-devel package before running R CMD javareconf.) If you see a message about being unable to load libjvm.so during the installation of rj.gd, you may need to create a symbolic link from your installed version of libjvm.so to the system library, such as the following:
-
-	ln -s /path/to/libjvm.so /usr/lib/libjvm.so
-
-Once you have successfully installed the two prerequisite R packages, you install StatET as follows:
-
-1.  From the Eclipse IDE, select **Install New Software** from the **Help** menu. The **Install** dialog box appears.
-2.  To the right of the text box labeled **Work with:**, click **Add**. The **Add Repository** dialog box appears.
-3.  In the **Name** textbox, type **StatET**.
-4.  In the **Location** textbox, type or paste in the URL <http://download.walware.de/eclipse-4.4>.
-5.  Click **OK**. The available WalWare downloads should appear.
-6.  Click **Select All** to select all available WalWare downloads.
-7.  Click **Next**.
-8.  Review the items to be installed and click **Next**.
-9.  Agree to the license terms and click Finish. The Eclipse installer will download and install the StatET plug-in.
-
-Once StatET is installed, define an R environment for Microsoft R Server as follows:
-
-1.  From the Eclipse IDE, select **Preferences** from the **Window** menu. The **Preferences** dialog box appears.
-2.  In the left navigation panel, expand **StatET**, and then expand **Run/Debug**.
-3.  Click **R Environments**.
-4.  In the right pane, click **Add**. (You may have to scroll to make this button visible.) The **Add R Environment Configuration** dialog box appears.
-5.  In the text box labeled Location (R HOME), enter the full path to your Microsoft R Server installation, typically /usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R. If you do not know this path, you can obtain it from a shell prompt using the following command:
-
-		Revo64 RHOME
-
-6.  Click OK.
-
-Next, set up a run configuration to use your R environment as follows:
-
-1.  From the Eclipse IDE, select **Run Configurations. . .** from the **Run** menu. The **Run Configurations** dialog box appears.
-2.  Click **R Console** in the left navigation pane.
-3.  In the **Name** text box, enter a name for this configuration, such as “Microsoft R Server 8.0.”
-4.  Click the R Config tab.
-5.  Select the configuration you created in the previous procedure, and then click **Apply**.
-6.  Click **Run**. You should see an R console appear in your Eclipse window, as shown below.
-
 ## Install R Server 8.0 on Linux
 
 Build 8.0.0 is no longer available on the Microsoft download sites, but if you already have this distribution and you specifically require this version, you can follow these instructions to deploy version 8.0.0.
@@ -419,13 +283,7 @@ To download and install Microsoft R Open and R Server:
 
 3. Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
 
-4. Download the Microsoft R Server distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
-
-	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
-	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
-	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
-
-5.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+5.  Find the download for the 8.0 version of Microsoft R Server for Linux on your system. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 	    mkdir /mnt/mrsimage
 	    mount –o loop <filename> /mnt/mrsimage
@@ -467,12 +325,51 @@ On Linux systems with Hadoop installed, the install.sh script also tries to conf
 
 If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
+### Non-Root Installs of Microsoft R Server 8.0
+
+If you have an older distribution of Microsoft R Server 8.0 for Linux, you can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:
+
+-   You must have all the prerequisite packages installed on your computer.
+-   You must have write permission to the specified base installation directory.
+
+The installer will check that the prerequisite packages are installed and inform you of any that are missing. The prerequisite packages typically do require superuser priviliges to install, so if you do not have sudo privileges, you will probably need to consult your system administrator in order to install them.
+
+If all the prerequisites are installed, you complete the installation as follows:
+
+1. You must already have the 8.0 download because it is no longer available on the download sites. Microsoft has replaced all downloads with the newer 8.0.5 version, which does not support non-root installs.
+
+2. Run the following commands to install the rpm file:
+
+		mkdir $HOME/localmrsrpmdb
+		rpm --initdb --dbpath $HOME/localmrsrpmdb
+		export MRS_RPM_DBPATH=$HOME/localmrsrpmdb && \
+		    rpm --dbpath $MRS_RPM_DBPATH --prefix $HOME \
+		        --nodeps -i MRO-for-MRS-`*`.rpm
+
+3. Unpack the Microsoft R Server tarball, then run the installer script, as follows (the tarball name may include an operating system ID; the complete name of the tarball will be in your download letter):
+
+		tar xvzf Microsoft-R-Server-8.0.0-`*`.tar.gz
+		pushd rrent
+		./install.sh
+
+At this point you are asked for the location of your R installation—be sure to use the same location you provided as the --prefix argument in step 2. You are also asked where you would like to install additional Microsoft R Server files; these are files that are not part of specific R packages, such as documentation, licenses, and scripts.
+
+You are then asked if you would like to load the rpart and lattice packages by default; these packages are recommended as they enhance some RevoScaleR operations.
+
+Finally, you are asked to agree to the Microsoft R Server software license. Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
+
+The R installation is owned by the user who completed the installation; subsequent updates and uninstalls must be performed by the same user. In particular, multiple users can perform non-root installations–as long as the installations specify separate base installation directories, they will be completely independent. Non-root installations can be performed on systems that have had Microsoft R Server installed as root, and vice versa.
+
+In general, non-root installs require you to specify the complete path to the Revo64 script once installation is complete. To avoid this, add the path to the directory containing your Revo64 script to your PATH environment variable, for example, by adding the following to the end of your .bash\_profile file: `export PATH=/home/$USER/Revo-8.0/R-3.1.3/bin:$PATH`
+
 ## See Also
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
-[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
-[Install R Server 8.0 on Hadoop](rserver-install-hadoop-800.md)
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
-![](media/rserver-install-linux-server/image2.png)
+[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
+
+[Install R Server 8.0 on Hadoop](rserver-install-hadoop-800.md)
+
+[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+
+[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
