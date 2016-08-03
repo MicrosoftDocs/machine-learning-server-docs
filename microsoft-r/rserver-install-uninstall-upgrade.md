@@ -71,11 +71,9 @@ Packages are registered in a database that tracks all package installations in t
     - `sudo yum erase microsoft-r-server-mro-8.0`
     - `sudo zypper rm microsoft-r-server-mro-8.0`
 
-2. On the root node, verify the location of other files that need to be removed:
-        `$ ls /usr/lib64/microsoft-r/8.0`
+2. On the root node, verify the location of other files that need to be removed: `$ ls /usr/lib64/microsoft-r/8.0`
 
-3. Remove the entire directory:
-        `$ rm -fr /usr/lib64/microsoft-r`
+3. Remove the entire directory: `$ rm -fr /usr/lib64/microsoft-r`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
@@ -121,7 +119,7 @@ Uninstall order is important. Due to package dependencies, be sure to remove the
 
 ## How to uninstall the Hadoop component
 
-If you are uninstalling R Server 2016 (version 8.0.5), there is a Hadoop component that can be uninstalled independently of other packages in the distribution: `microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64`
+If you are uninstalling R Server 2016 (version 8.0.5), there is a Hadoop component that can be uninstalled independently of other packages in the distribution: **microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64**
 
 For versions prior to 8.0.5, do the following:
 
