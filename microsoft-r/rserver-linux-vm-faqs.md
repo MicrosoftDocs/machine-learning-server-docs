@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Frequently asked questions when using Microsoft R Server installed on a Linux VM on Azure
+# Frequently asked questions when using Microsoft R Server on a Linux VM on Azure
 
 ## Question: What is Microsoft R Server on Linux VM?
 
