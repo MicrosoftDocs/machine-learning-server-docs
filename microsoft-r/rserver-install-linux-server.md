@@ -6,7 +6,7 @@ description: "Install Microsoft R Server 8.0 or Microsoft R Server 2016 (version
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "08/02/2016"
+ms.date: "08/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server Installation for Linux Systems
 
-This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (build 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
+This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (version 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
 
 You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before using Microsoft R Server 2016 (build 8.0.5). Additionally, if you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
@@ -62,26 +62,25 @@ You can also get R Server 2016 for Linux from these sites.
 
 ## Install R Server 2016 on Linux
 
-Download the software to a writable directory, such as /tmp, unpack the distribution and then run the installation script.
+Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
 
 ### Unpack the distribution
 
-The distribution includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component.
-
-For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
 1. Log in as root or a user with sudo privileges.
-2. Switch to the /tmp directory (assuming /tmp as the download location)
+2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
+        `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
 
-  `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
+**Unpacking an ISO file**
 
-For ISO, create a mount point, and then mount the ISO file to that mount point:
+Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
 
-  `mkdir /mnt/mrsimage`
-  `mount –o loop <filename> /mnt/mrsimage`
+      `mkdir /mnt/mrsimage`
+      `mount –o loop sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso /mnt/mrsimage`
 
-Where the file name is `sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso`
+The download file is **sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso**.
 
 ### Run the install script
 
@@ -90,9 +89,9 @@ Microsoft R Server 2016 for Linux is deployed by running the install script with
 1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
 		`[username] $ sudo yum clean all`
-3. Change to the directory to which you downloaded the rpm (for example, /tmp):
+3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
 		`[username] $ cd /tmp`
-4. Change to the `MRS80LINUX` directory containing the installation scription:
+4. Change to the `MRS80LINUX` directory containing the installation script:
         `[tmp] $ cd MRS80LINUX`
 4. Run the script.
 		`[MRS80LINUX] $ sudo bash install.sh`
@@ -120,7 +119,7 @@ If followed the instructions provided, the installed files are all owned by root
 
 1. Install Microsoft R Server as root, as usual.
 2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
-3. Use the `chown` command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
+3. Use the **chown** command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
 
 		chown -R RUser:dev /usr/lib64/MRS80LINUX
 
@@ -145,7 +144,7 @@ For a standard unattended install, run the following script:
 
 ### File Permissions
 
-Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the `chmod` command. (For files owned by root, this command requires root privileges.)
+Normally, ordinary Microsoft R Server files are installed with read/write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. You can modify these permissions using the **chmod** command. (For files owned by root, this command requires root privileges.)
 
 ### Installing to a Read-Only File System
 
