@@ -14,7 +14,6 @@
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
-### [Uninstall from Hadoop or Linux](rserver-install-uninstall-upgrade.md)
 ### Install on Teradata
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
@@ -27,6 +26,7 @@
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
+### [Uninstall from Hadoop or Linux](rserver-install-uninstall-upgrade.md)
 # R Client
 ## [Install R Client](install-r-client-windows.md)
 ## [Microsoft R Getting Started](microsoft-r-getting-started.md)
