@@ -52,14 +52,14 @@ There are several approaches for identifying a program version, including `rpm -
 
 Version information is also evident in the file path, indicated in the examples below.
 
-- `/usr/lib64/microsoft-r/8.0` (applies to Microsoft R Server 2016, build 8.0.5)
-- `/usr/lib64/MRO-for-MRS` and `/usr/lib64/MRS-8.0` (applies to Microsoft R Server 2016, build 8.0.0)
-- `/usr/lib64/RRO-8.0.3` and `usr/lib64/Revo-7.4` (applies to Revolution R Server 7.4)
+- `/usr/lib64/microsoft-r/8.0` (applies to 8.0.5)
+- `/usr/lib64/MRO-for-MRS` and `/usr/lib64/MRS-8.0` (applies to 8.0.5)
+- `/usr/lib64/RRO-8.0.3` and `usr/lib64/Revo-7.4` (applies to 7.4)
 
 Alternatively, you might see these paths, given a Cloudera Manager parcel installation.
 
-- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5) `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0)
-- `/opt/cloudera/parcels/RRO-8.0.3`, `/opt/cloudera/parcels/RevolutionR-7.4.1` and `/opt/cloudera/parcels/RRE-7.4.1` (applies to 7.4)
+- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5) `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0.5)
+- `/opt/cloudera/parcels/RRO-8.0.3`, `/opt/cloudera/parcels/RevolutionR-7.4.1`, `/opt/cloudera/parcels/RRE-7.4.1` (applies to 7.4)
 
 ## How to uninstall 8.0.5
 
