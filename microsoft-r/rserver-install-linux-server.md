@@ -76,9 +76,9 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
 
       `mkdir /mnt/mrsimage`
-      `mount –o loop sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso /mnt/mrsimage`
+      `mount –o loop •	sw_dvd5_r_server_2016_english_-2_for_RdHtLinux_mlf_x20-98713.iso /mnt/mrsimage`
 
-The download file is **sw_dvd5_r_server_2016_english_-2_for_linux_mlf_x20-98713.iso**.
+The download file is **sw_dvd5_r_server_2016_english_-2_for_RdHtLinux_mlf_x20-98713.iso**.
 
 ## Run the install script
 
