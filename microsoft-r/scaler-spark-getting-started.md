@@ -6,7 +6,7 @@ description: "Microsoft R Server with Apache Spark features and components overv
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "06/22/2016"
+ms.date: "08/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -111,13 +111,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster configured. Microsoft R Server is currently supported on the following Hadoop distributions with the RHEL6 operating systems:
-
--   Cloudera CDH 5.0, 5.1, 5.2, 5.3, 5.4
--   HortonWorks HDP 2.0.0, HDP 2.1.0, HDP 2.2.0, HDP 2.3.0
--   MapR 3.0.2, MapR 3.0.3, MapR 3.1.0, MapR 3.1.1, MapR 4.0.1, MapR 4.0.2 (provided this version of MapR has been updated to mapr-patch-4.0.2.29870.GA30600; contact MapR to obtain the patch), MapR 4.1
-
-If you have such a Hadoop cluster and would like to install Microsoft R Server, follow the instructions in the [*Microsoft R Server Hadoop Configuration Guide*](http://go.microsoft.com/fwlink/?LinkID=698569&clcid=0x409), which is part of the Linux installer distribution.
+Instructions for installation can be found at [Install R Server on Hadoop](rserver-install-hadoop-805.md).
 
 ## Running the Examples in the Getting Started Guide
 
