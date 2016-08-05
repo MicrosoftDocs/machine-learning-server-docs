@@ -37,7 +37,7 @@ A summary of setup tasks for R Server 2016 is as follows:
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
 
-The install script downloads and installs Microsoft R Open for R Server 2016 (microsoft-r-server-mro-8.0.rpm); it also provides the following packages that are new in this version:
+The install script downloads and installs Microsoft R Open for R Server 2016 (microsoft-r-server-mro-8.0.rpm). This distribution provides the following packages that are new in this version:
 
 - microsoft-r-server-intel-mkl-8.0.rpm       
 - microsoft-r-server-packages-8.0.rpm      
@@ -47,7 +47,16 @@ In contrast with previous releases, this version  comes with a requirement for `
 
 ## Where do I get it?
 
-You can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
+MSDN subscribiers can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
+
+You can also get R Server 2016 for Hadoop from these sites.
+
+- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
+- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
+
+  Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
+
+  ![Showing: Visual Studio Dev Essentials](media/rserver-install-hadoop-805/rserver-install-showing-visual-studio-dev-essentials.PNG)
 
 ## Recommendations for installation
 
@@ -61,7 +70,7 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 ## System requirements
 
-R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
+R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
 Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 2016 works with the following Hadoop distributions:
 
@@ -83,24 +92,25 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Disk Space:** A minimum of 500 MB of disk space is required on each node for R Server. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
-## Download Microsoft R software
+## Unpack the distribution
 
-Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
+Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
 
-1. Download the Microsoft R Server 2016 distribution, which will either be a DVD img file through VLSC, or a gzipped tar file through Dev Essentials or MSDN. The distribution file includes one installer for Microsoft R Server, along with an installer for DeployR, an optional component. You can obtain the software from these locations:
+The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
-	- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)
-	- [MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)
-	- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)
+1. Log in as root or a user with sudo privileges.
+2. Switch to the **/tmp** directory (assuming it's the download location)
+3. Unpack the file:
+        `[tmp] $ tar zxvf en_microsoft_r_server_for_hadoop_x64_8944644.tar.gz`
 
-2. Unpack the distribution. If you have an .img file, first mount the file. The following commands create a mount point and mount the file to that mount point:
+**Unpacking an ISO file**
 
-		mkdir /mnt/mrsimage
-		mount –o loop <filename> /mnt/mrsimage
+Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
 
-  If you have a gzipped tar file, unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+      `mkdir /mnt/mrsimage`
+      `mount –o loop sw_dvd5_r_server_2016_english_-2_for_HadoopRdHt_mlf_x20-98709.iso /mnt/mrsimage`
 
-  		tar zxvf MRS80HADOOP.tar.gz
+The download file is **sw_dvd5_r_server_2016_english_-2_for_HadoopRdHt_mlf_x20-98709.iso**.
 
 ## Run the install script
 
