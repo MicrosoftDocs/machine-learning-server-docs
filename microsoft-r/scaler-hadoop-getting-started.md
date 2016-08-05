@@ -6,7 +6,7 @@ description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "06/24/2016"
+ms.date: "08/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -119,7 +119,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ### Installation
 
-Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster. For instructions on how to install R on Hadoop, see the links in [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md).
+Instructions for installation can be found at [Install R Server on Hadoop](rserver-install-hadoop-805.md).
 
 ### Running examples in the tutorial
 
