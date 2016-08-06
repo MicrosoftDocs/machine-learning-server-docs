@@ -26,7 +26,7 @@ ms.custom: ""
 
 # RevoScaleR 8.0 Getting Started Guide for SQL Server
 
-This guide is for customers who have RevoScaleR from the Microsoft R Server 8.0. For installation instructions and requirements, see [Revolution R Enterprise 2016 build 8.0.0 Windows Installation Instructions](https://msdn.microsoft.com/microsoft-r/rserver-install-windows).
+This guide is for customers who have RevoScaleR from the Microsoft R Server 8.0 release. For installation instructions and requirements, see [Revolution R Enterprise 2016 build 8.0 Windows Installation Instructions](https://msdn.microsoft.com/microsoft-r/rserver-install-windows).
 
 For help getting started with the newest release, Microsoft R Services in SQL Server 2016, see [Getting Started with Microsoft R Server on Windows and SQL Server](https://msdn.microsoft.comlibrary/mt671127.aspx).
 
