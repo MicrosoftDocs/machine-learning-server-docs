@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "06/21/2016"
+ms.date: "08/08/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -39,11 +39,11 @@ This article specifies supported operating systems, distributions, and database 
 - Teradata Database 14.10, 15.00, 15.10
 - Operating System: SLES11
 
-**Microsoft R Server for Hadoop**
+**Microsoft R Server for Hadoop and Spark**
 
 - Hadoop Distributions: Cloudera CDH 5.5-5.7, Hortonworks HDP 2.3-2.4, MapR 5.0-5.1
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11
-- Spark version: 1.5.0-1.6.1 (if using Spark)
+- Spark version: 1.5.0-1.6.1 (if using Spark). Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
 **DeployR**
 - [Prerequisites](deployr-install-on-linux.md#system-requirements) for DeployR on Linux
