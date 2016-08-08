@@ -2,7 +2,21 @@
   "build_entry_point": "",
   "need_generate_pdf": true,
   "need_generate_intellisense": false,
-  "docsets_to_publish": [],
+  "docsets_to_publish": [
+    {
+      "docset_name": "microsoft-r",
+      "build_source_folder": "microsoft-r",
+      "build_output_subfolder": "microsoft-r",
+      "locale": "en-us",
+      "version": 0,
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      }
+    }
+  ],
   "notification_subscribers": [
     ""
   ],
