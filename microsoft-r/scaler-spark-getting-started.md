@@ -6,7 +6,7 @@ description: "Microsoft R Server with Apache Spark features and components overv
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "08/05/2016"
+ms.date: "08/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -111,7 +111,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
 
 ## Installation
 
-Instructions for installation can be found at [Install R Server on Hadoop](rserver-install-hadoop-805.md).
+Instructions for installation can be found at [Install R Server on Hadoop](rserver-install-hadoop-805.md). See [Supported platforms](rserver-install-supported-platforms.md) for platform requirements.
 
 ## Running the Examples in the Getting Started Guide
 
