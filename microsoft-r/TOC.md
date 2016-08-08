@@ -28,9 +28,10 @@
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 # R Client
-## [Install R Client](install-r-client-windows.md)
-## [Microsoft R Getting Started](microsoft-r-getting-started.md)
-## [R Client Compatibility Chart](r-client-compatibility.md)
+## [What's New](notes/r-client-notes.md)
+## [Get Started](r-client-get-started.md)
+## [Installation](install-r-client-windows.md)
+## [R Client / R Server Version Compatibility](r-client-compatibility.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
