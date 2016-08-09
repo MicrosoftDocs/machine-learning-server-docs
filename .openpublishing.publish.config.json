@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "build_entry_point": "",
   "need_generate_pdf": true,
@@ -26,4 +27,34 @@
   "git_repository_url_open_to_public_contributors": "",
   "skip_source_output_uploading": false,
   "dependent_repositories": []
+=======
+{
+  "build_entry_point": "",
+  "need_generate_pdf": true,
+  "need_generate_intellisense": false,
+  "docsets_to_publish": [
+    {
+      "docset_name": "microsoft-r",
+      "build_source_folder": "microsoft-r",
+      "build_output_subfolder": "microsoft-r",
+      "locale": "en-us",
+      "version": 0,
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      }
+    }
+  ],
+  "notification_subscribers": [
+    ""
+  ],
+  "branches_to_filter": [
+    ""
+  ],
+  "git_repository_url_open_to_public_contributors": "",
+  "skip_source_output_uploading": false,
+  "dependent_repositories": []
+>>>>>>> master
 }

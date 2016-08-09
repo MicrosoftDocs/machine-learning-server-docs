@@ -105,6 +105,48 @@ Microsoft R Server 2016 for Linux is deployed by running the install script with
 		Version     : 8.0.5                         Vendor: Microsoft
 		. . .
 
+## Start Revo64
+
+As a verification step, run the Revo64 program.
+
+1. Switch to the directory containing the executable:
+        $ cd MRS80LINUX
+
+2. Start the program:
+		$ Revo64
+
+3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
+        > rxSummary(~., iris)
+
+  Output from the iris dataset should look similar to the following:
+
+        Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
+        Computation time: 0.005 seconds.
+        Call:
+        rxSummary(formula = ~., data = iris)
+
+        Summary Statistics Results for: ~.
+        Data: iris
+        Number of valid observations: 150
+
+         Name         Mean     StdDev    Min Max ValidObs MissingObs
+         Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
+         Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
+         Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
+         Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
+
+        Category Counts for Species
+        Number of categories: 3
+        Number of valid observations: 150
+        Number of missing observations: 0
+
+         Species    Counts
+         setosa     50
+         versicolor 50
+         virginica  50
+
+4. To quit the program, type `q()` at the command line with no arguments.
+
 ## Manage your installation
 
 In this section, we discuss file management for your Microsoft R Server installation, including file ownership, file permissions, and so on.

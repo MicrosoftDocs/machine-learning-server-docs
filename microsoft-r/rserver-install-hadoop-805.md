@@ -150,7 +150,7 @@ Each user should ensure that the appropriate user directories exist, and if nece
 
 The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"). Run the RevoScaleR commands in a Revo64 session.
 
-		$ cd MRS_Linux
+		$ cd MRS80Linux
 		$ Revo64
 		> rxHadoopMakeDir("/user/RevoShare/username")
 		> rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
@@ -171,7 +171,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 2. Start Revo64.
 
-		$ cd MRS_Linux
+		$ cd MRS80Linux
 		$ Revo64
 
 3. Run a simple local computation. This step uses the proprietary Microsoft libraries.
@@ -249,6 +249,8 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 		    adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		    adsSummary
+
+7. To quit the program, type `q()` at the command line with no arguments.
 
 <a name="ManualInstallation"><a/>
 ## Manual Installation
