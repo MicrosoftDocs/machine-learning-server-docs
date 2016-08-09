@@ -47,7 +47,6 @@ R Client allows you to work with production data locally using the full set of S
 
 [!include[Installing R Client](includes/r-client/r-client-install.md)]
 
-
 <br><a name="configure-ide"></a>
 
 ## Step 2: Configure Your IDE
