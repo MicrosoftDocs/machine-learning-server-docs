@@ -34,6 +34,10 @@ R Client allows you to work with production data locally using the full set of S
 
 Microsoft R Client is free to everyone. [Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
 
+
+[!include[Installing R Client](/includes/r-client/r-client-install.md)]
+
+
 ##System Requirements
 
 >Currently, Microsoft R Client is available only on Windows.
