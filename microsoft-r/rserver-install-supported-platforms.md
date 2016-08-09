@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "08/08/2016"
+ms.date: "08/09/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -46,8 +46,8 @@ This article specifies supported operating systems, distributions, and database 
 - Spark version: 1.5.0-1.6.1 (if using Spark). Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
 **DeployR**
-- [Prerequisites](deployr-install-on-linux.md#system-requirements) for DeployR on Linux
-- [Prerequisites](deployr-install-on-windows.md#system-requirements) for DeployR on Windows
+- [Prerequisites for DeployR on Linux](deployr-install-on-linux.md#system-requirements)
+- [Prerequisites for DeployR on Windows](deployr-install-on-windows.md#system-requirements)
 
 ## Microsoft R Server 2016 (version 8.0.3)
 
