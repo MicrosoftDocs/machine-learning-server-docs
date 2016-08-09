@@ -5,7 +5,7 @@ description: "Upgrading Microsoft R Server and the RevoScaleR package is achieve
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "08/02/2016"
+ms.date: "08/09/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,7 +26,7 @@ ms.custom: ""
 
 This article explains how to uninstall Microsoft R Server on either Linux or Hadoop. Upgrading to any new version of R Server, regardless of whether it's a major or minor release, requires that you first uninstall the existing deployment so that you can install the new distribution.
 
-When you do reinstall R, we recommend [installing R Server 2016 (version 8.0.5)](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
+When you do reinstall R Server, we recommend [installing R Server 2016 (version 8.0.5)](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
 
 ## Hadoop considerations for uninstall and reinstallation of R Server
 
@@ -58,19 +58,21 @@ Version information is also evident in the file path, indicated in the examples 
 
 Alternatively, you might see these paths, given a Cloudera Manager parcel installation.
 
-- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5) 
+- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5)
 -  `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0)
 - `/opt/cloudera/parcels/RRO-8.0.3`, `/opt/cloudera/parcels/RevolutionR-7.4.1`, `/opt/cloudera/parcels/RRE-7.4.1` (applies to 7.4)
 
-## How to uninstall 8.0.5
+## General instructions for all versions
 
 Packages are registered in a database that tracks all package installations in the cluster. To update the database, use a package manager to remove the package: **yum** for Red Hat and CentOS, or **zypper** for SUSE.
 
-1. Uninstall the package (use one of the following):
+Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` (for example, `sudo yum erase microsoft-r-server-mro-8.0`).
 
-        sudo yum erase microsoft-r-server-mro-8.0
-        -- OR --
-        sudo zypper rm microsoft-r-server-mro-8.0
+## How to uninstall 8.0.5
+
+1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
+
+        yum erase microsoft-r-server-mro-8.0
 
 2. On the root node, verify the location of other files that need to be removed: `
 
@@ -84,7 +86,7 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 ## How to uninstall 8.0.0
 
-1. Erase Microsoft R Open:
+1. Uninstall the Microsoft R Open for Microsoft R Server (MRO-for-MRS) package:
 
         yum erase MRO-for-MRS-8.0.0
 
@@ -103,7 +105,7 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
         /usr/lib64/Revo-7.4/uninstall_revo.sh
 
-2. Erase Revolution R Open:
+2. Uninstall the Revolution R Open (RRO) package:
 
         yum erase RRO-8.0.3
 
@@ -118,19 +120,11 @@ If you remove Microsoft R Open (microsoft-r-server-mro-8.0-8.0.5-1.x86_64), you 
 
 Uninstall order is important. Due to package dependencies, be sure to remove the packages in the order given below.
 
-**For RPM**
-
         rpm -e microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
         rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
         rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
         rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
-**For DEB**
-
-        dpkg --remove microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64
-        dpkg --remove microsoft-r-server-packages-8.0-8.0.5-1.x86_64
-        dpkg --remove microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
-        dpkg --remove microsoft-r-server-mro-8.0-8.0.5-1.x86_64
 
 ## How to uninstall the Hadoop component
 
