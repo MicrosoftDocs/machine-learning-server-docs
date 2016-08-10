@@ -45,7 +45,7 @@ R Client allows you to work with production data locally using the full set of S
 
 ## Step 1: Install Microsoft R Client
 
-<br>
+[Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 

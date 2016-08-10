@@ -11,7 +11,7 @@
 
 <br> 
 
-### How to Install:
+#### How to Install:
 
 1. Log in to the machine with administrator privileges.
 
