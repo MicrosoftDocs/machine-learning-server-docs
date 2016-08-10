@@ -49,7 +49,6 @@ R Client allows you to work with production data locally using the full set of S
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 
-
 <br><a name="configure-ide"></a>
 
 ## Step 2: Configure Your IDE
@@ -82,17 +81,16 @@ Once you've [installed R Client](#installrclient), the next step is to configure
    
 <br><a name="try-r-client"></a>
 
-<!--
-## Step 3: Try Our Sample Script
+## Step 3: Try Out R Client
+
+Now that you've installed R Client and set up your IDE to use R Client, you can start building and running your R code. Launch your IDE now and you'll see that Microsoft R Client is running in the console window. 
+
+Start developing your own solutions using the [`RevoScaleR` package functions](https://msdn.microsoft.com/en-us/microsoft-r/scaler/scaler) and APIs. When ready, you can run that R code using R Client in your IDE or even send those R commands to a remote R Server for execution. 
+
+<!--## Step 3: Try Our Sample Script
 
 Now that you've installed R Client and set up your IDE to use R Client, you can start building and running your R code.
 
 In your newly configured IDE, you can start developing your own solutions using the [`RevoScaleR` package functions](https://msdn.microsoft.com/en-us/microsoft-r/scaler/scaler) and APIs. When ready, you can run that R code using R Client in your IDE or even send those R commands to a remote server for execution. 
 
 Here's an example you use to try out R Client... -->
-
-## Step 3: Try Out R Client
-
-Now that you've installed R Client and set up your IDE to use R Client, you can start building and running your R code. Launch your IDE now and you'll see that Microsoft R Client is running in the console window. 
-
-Start developing your own solutions using the [`RevoScaleR` package functions](https://msdn.microsoft.com/en-us/microsoft-r/scaler/scaler) and APIs. When ready, you can run that R code using R Client in your IDE or even send those R commands to a remote R Server for execution. 
