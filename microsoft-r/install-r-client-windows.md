@@ -48,8 +48,8 @@ Once you've installed R Client, the next step is to [configure your favorite R i
 
 You can learn more with these guides:
 
-+ The [Get Started with Microsoft R Client](r-client-get-started.md) 
++ [Get Started with Microsoft R Client](r-client-get-started.md) 
 
-+ The [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) 
++ [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
-+ The [RevoScaleR Getting Started Guide](scaler-getting-started.md)
++ [RevoScaleR Getting Started](scaler-getting-started.md)
