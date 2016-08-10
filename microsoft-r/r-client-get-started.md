@@ -49,7 +49,7 @@ R Client allows you to work with production data locally using the full set of S
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 
-<br><a name="configure-ide"></a>
+<a name="configure-ide"></a>
 
 ## Step 2: Configure Your IDE
 
@@ -79,7 +79,7 @@ Once you've [installed R Client](#installrclient), the next step is to configure
      1. In the  **General** tab, update the path to R to point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64`.
   1. When you launch RStudio, R Client will now be the default R engine.
    
-<a name="try-r-client"></a>
+<br><a name="try-r-client"></a>
 
 ## Step 3: Try Out R Client
 
