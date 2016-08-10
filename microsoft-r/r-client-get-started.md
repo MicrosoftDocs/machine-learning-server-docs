@@ -45,10 +45,7 @@ R Client allows you to work with production data locally using the full set of S
 
 ## Step 1: Install Microsoft R Client
 
-testing 1-2-3
-
 [!include[Installing R Client](./includes/r-client/r-client-install.md)]
-
 
 
 <br><a name="configure-ide"></a>
