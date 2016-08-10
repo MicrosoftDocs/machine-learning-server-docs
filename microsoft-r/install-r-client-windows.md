@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-#Install Microsoft R Client on Windows
+#Install Microsoft R Client
 
 Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
 
@@ -32,12 +32,19 @@ R Client allows you to work with production data locally using the full set of S
 
 [Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
 
+###Installing R Client
+
 [!include[Install](./includes/r-client/r-client-install.md)]
 
-<br>
-####Tutorials & Getting Started Guides
+###What's Next
 
-You can learn more and explore tutorial introductions to R in:
+Once you've installed R Client, the next step is to [configure your favorite R integrated development environment (IDE)](r-client-get-started.md#configure-ide) to point to the R Client R executable. 
+
+###Learn More
+
+You can learn more with these guides:
+
++ The [Get Started with Microsoft R Client](r-client-get-started.md) 
 
 + The [Microsoft R Getting Started Guide](microsoft-r-getting-started.md) 
 
