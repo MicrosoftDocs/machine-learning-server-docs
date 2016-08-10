@@ -34,11 +34,15 @@ R Client allows you to work with production data locally using the full set of S
 
 ###Installing R Client
 
+<br>
+
 [!include[Install](./includes/r-client/r-client-install.md)]
+<br>
 
 ###What's Next
 
 Once you've installed R Client, the next step is to [configure your favorite R integrated development environment (IDE)](r-client-get-started.md#configure-ide) to point to the R Client R executable. 
+<br>
 
 ###Learn More
 
