@@ -79,7 +79,7 @@ Once you've [installed R Client](#installrclient), the next step is to configure
      1. In the  **General** tab, update the path to R to point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64`.
   1. When you launch RStudio, R Client will now be the default R engine.
    
-<br><a name="try-r-client"></a>
+<a name="try-r-client"></a>
 
 ## Step 3: Try Out R Client
 
