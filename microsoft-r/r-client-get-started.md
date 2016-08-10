@@ -94,3 +94,14 @@ Now that you've installed R Client and set up your IDE to use R Client, you can 
 In your newly configured IDE, you can start developing your own solutions using the [`RevoScaleR` package functions](https://msdn.microsoft.com/en-us/microsoft-r/scaler/scaler) and APIs. When ready, you can run that R code using R Client in your IDE or even send those R commands to a remote server for execution. 
 
 Here's an example you use to try out R Client... -->
+
+
+##Learn More
+
+You can learn more with these guides:
+
++ [Get Started with Microsoft R Client](r-client-get-started.md) 
+
++ [Microsoft R Getting Started](microsoft-r-getting-started.md) 
+
++ [RevoScaleR Getting Started](scaler-getting-started.md)
