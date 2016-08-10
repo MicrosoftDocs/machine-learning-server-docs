@@ -7,6 +7,8 @@
 
 >You must install Microsoft R Client to a local drive on your computer. 
 
+<br> 
+
 ### How to Install:
 
 1. Log in to the machine with administrator privileges.
