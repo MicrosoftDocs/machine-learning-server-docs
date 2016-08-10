@@ -1,4 +1,6 @@
-### System Requirements:
+## 
+
+#### System Requirements:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Operating Systems: &nbsp;&nbsp;&nbsp;  64-bit versions of **Microsoft Windows 7, 8.1, and 10**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Free disk space: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 600+ MB recommended, after installation of all prerequisites <br>
