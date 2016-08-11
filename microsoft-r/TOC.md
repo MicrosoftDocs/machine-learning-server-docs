@@ -27,10 +27,11 @@
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
-# R Client
+# Microsoft R Client
+## [What's New in R Client](notes/r-client-notes.md)
+## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](install-r-client-windows.md)
-## [Microsoft R Getting Started](microsoft-r-getting-started.md)
-## [R Client Compatibility Chart](r-client-compatibility.md)
+## [R Client/R Server Version Compatibility](r-client-compatibility.md)
 # RevoScaleR
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
@@ -134,8 +135,5 @@
 ### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 # [Parallelizing Loops: foreach/iterators](foreach.md)
-# R Productivity Environment (RRE Only)
-## [RPE Getting Started](RevoRPE_Getting_Started.md)
-## [RPE User's Guide](RevoRPE_Users_Guide.md)
 # [Additional Resources](microsoft-r-more-resources.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
