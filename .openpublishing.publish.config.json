@@ -11,8 +11,11 @@
       "version": 0,
       "open_to_public_contributors": false,
       "type_mapping": {
-        "Conceptual": "Content"
-      }
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "op"
     }
   ],
   "notification_subscribers": [
