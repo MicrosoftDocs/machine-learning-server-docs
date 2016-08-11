@@ -1,4 +1,4 @@
-System Requirements:
+**System Requirements:**
 
 &nbsp;&nbsp;&nbsp;&nbsp;Operating Systems: &nbsp;&nbsp;&nbsp;  64-bit versions of **Microsoft Windows 7, 8.1, and 10**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Free disk space: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 600+ MB recommended, after installation of all prerequisites <br>
@@ -9,7 +9,7 @@ System Requirements:
 
 <br> 
 
-#### How to Install:
+**How to Install:**
 
 1. Log in to the machine with administrator privileges.
 
@@ -32,7 +32,7 @@ System Requirements:
 
 <br>
 
->**What Gets Installed with R Client**<br>
+>**What's Installed with R Client**<br>
 >
 >The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 >

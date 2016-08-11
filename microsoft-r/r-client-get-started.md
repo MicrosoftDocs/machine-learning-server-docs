@@ -53,9 +53,7 @@ R Client allows you to work with production data locally using the full set of S
 
 ## Step 2: Configure Your IDE
 
-Once you've [installed R Client](#installrclient), the next step is to configure your favorite R integrated development environment (IDE) to point to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) (Recommended), RStudio, or any other R development environment.
-
-<br>
+Once you've [installed R Client](#installrclient), the next step is to configure your favorite R integrated development environment (IDE) to point to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) (Recommended), RStudio, or any other R development environment.<br>
 
 #### Set Up RTVS for R Client
 
