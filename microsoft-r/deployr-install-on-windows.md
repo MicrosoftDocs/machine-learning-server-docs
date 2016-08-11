@@ -117,7 +117,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1. Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
 
-   >**Troubleshooting:** During installation, certain details (and/or errors) are written to the following log files under the `%temp%` directory: `DeployR-configuration.log`, `DeployR-dependencies.log`, and `DeployR-Enterprise-8.0.5.log`. You can also learn about other diagnostic and troubleshooting topics [here](deployr-admin-diagnostics-troubleshooting#troubleshooting).
+   >**Troubleshooting:** During installation, certain details (and/or errors) are written to the following log files under the `%temp%` directory: `DeployR-configuration.log`, `DeployR-dependencies.log`, and `DeployR-Enterprise-8.0.5.log`. You can also learn about other diagnostic and troubleshooting topics [here](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
 
 1. Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
