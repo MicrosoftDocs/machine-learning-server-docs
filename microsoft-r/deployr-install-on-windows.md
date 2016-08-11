@@ -91,7 +91,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 >If you need to disable your anti-virus software to complete the DeployR installation process, then turn it back on as soon as you are finished.
 
-1.  Log in as a user with administrator rights.
+1. Log in as a user with administrator rights.
 
 1. Get the DeployR installer file.
    + From Microsoft Volume Licensing Service Center (VLSC): 
@@ -115,9 +115,11 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
      1. Download the DeployR for SQL Server Enterprise Edition ZIP file.
      1. Extract the files.
 
-1.  Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
+1. Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
 
-1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
+   >**Troubleshooting:** During installation, certain details (and/or errors) are written to the following log files under the `%temp%` directory: `DeployR-configuration.log`, `DeployR-dependencies.log`, and `DeployR-Enterprise-8.0.5.log`. You can also learn about other diagnostic and troubleshooting topics [here](deployr-admin-diagnostics-troubleshooting#troubleshooting).
+
+1. Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
 <a name="postinstall"></a>
 ##Post Installation Steps
@@ -140,8 +142,8 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
->[!IMPORTANT]
->At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
+   >[!IMPORTANT]
+   >At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
 
 1. [Optional] **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#gridnodes).
 
