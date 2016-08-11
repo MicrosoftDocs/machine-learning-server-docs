@@ -47,8 +47,8 @@ R Client allows you to work with production data locally using the full set of S
 Check out this video introduction to Microsoft R Client.
 
 <br>
-<br>
-<div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="500" height="280" allowFullScreen frameBorder="0"></iframe></div>
+
+<div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="380" allowFullScreen frameBorder="0"></iframe></div>
 
 <br><a name="installrclient"></a>
 
