@@ -27,7 +27,7 @@
 ### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
 ### [Install DeployR 8.0.0](deployr-installing-configuring.md)
-# Microsoft R Client
+# [Microsoft R Client](r-client-get-started.md)
 ## [What's New in R Client](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](install-r-client-windows.md)
