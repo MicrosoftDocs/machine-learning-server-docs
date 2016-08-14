@@ -30,7 +30,8 @@ Transform data from an input data set to an output data set.
 
 ## Usage
 
-`rxDataStep(inData = NULL, outFile = NULL, varsToKeep = NULL, varsToDrop = NULL,
+~~~~
+rxDataStep(inData = NULL, outFile = NULL, varsToKeep = NULL, varsToDrop = NULL,
               rowSelection = NULL, transforms = NULL, transformObjects = NULL,
               transformFunc = NULL, transformVars = NULL,
               transformPackages = NULL, transformEnvir = NULL,
@@ -40,9 +41,11 @@ Transform data from an input data set to an output data set.
               rowsPerRead = -1, startRow = 1, numRows = -1, returnTransformObjects = FALSE,
               blocksPerRead = rxGetOption("blocksPerRead"),
               reportProgress = rxGetOption("reportProgress"),
-              xdfCompressionLevel = rxGetOption("xdfCompressionLevel"), ...) `
+              xdfCompressionLevel = rxGetOption("xdfCompressionLevel"), ...)
+~~~~
 
-`rxDataStepXdf(inFile, outFile, varsToKeep = NULL, varsToDrop = NULL,
+~~~~
+rxDataStepXdf(inFile, outFile, varsToKeep = NULL, varsToDrop = NULL,
               rowSelection = NULL, transforms = NULL, transformObjects = NULL,
               transformFunc = NULL, transformVars = NULL,
               transformPackages = NULL, transformEnvir = NULL,
@@ -53,7 +56,8 @@ Transform data from an input data set to an output data set.
               inSourceArgs = NULL, blocksPerRead = rxGetOption("blocksPerRead"),
               reportProgress = rxGetOption("reportProgress"),
               xdfCompressionLevel = rxGetOption("xdfCompressionLevel"),
-              checkVarsToKeep = TRUE, cppInterp = NULL)                    `        
+              checkVarsToKeep = TRUE, cppInterp = NULL)
+~~~~       
 
 ## Arguments
 
@@ -61,46 +65,43 @@ The following table shows the arguments to RxDataStep in order and their default
 
 |Parameter | Description|
 | --------- | --------- |
-|inData |An [RxXdfData](RxXdfData.md) or [RxTeradata](RxTeradata.md) data source object. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame, a character string specifying the input ‘.xdf’ file, or NULL can also be used. Other data sources are supported as experimental. If NULL, a data set will be created automatically with a single variable, .rxRowNums, containing row numbers. It will have a total of numRows rows with rowsPerRead rows in each block.|
+|inData |An [RxXdfData](RxXdfData.md) or [RxTeradata](RxTeradata.md) data source object. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame, a character string specifying the input ‘.xdf’ file, or `NULL` can also be used. Other data sources are supported as experimental. If `NULL`, a data set will be created automatically with a single variable, `.rxRowNums`, containing row numbers. It will have a total of `numRows` rows with `rowsPerRead` rows in each block.|
 |inFile |either an [RxXdfData](RxXdfData.md) object or a character string specifying the input ‘.xdf’ file.|
-|outFile |a character string specifying the output ‘.xdf’ file, an [RxXdfData](RxXdfData.md) object, a [RxOdbcData](RxOdbcData.md) data source, or a [RxTeradata](RxTeradata.md) data source. If NULL, a data frame will be returned from rxDataStep unless returnTransformObjects is set to TRUE. Setting outFile to NULL and returnTransformObjects=TRUE allows chunkwise computations on the data without modifying the existing data or creating a new data set. outFile can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending.|
-|varsToKeep |character vector of variable names to include when reading from the input data file. If NULL, argument is ignored. Cannot be used with varsToDrop or when outFile is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in varsToKeep. If newName is used in colInfo in a non-xdf data source, the newName should be used in varsToKeep. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md) , or [RxSqlServerData](RxSqlServerData.md) data sources.|
-|varsToDrop |character vector of variable names to exclude when reading from the input data file. If NULL, argument is ignored. Cannot be used with varsToKeep or when outFile is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in varsToDrop. If newName is used in colInfo in a non-xdf data source, the newName should be used in varsToDrop. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md) , or [RxSqlServerData](RxSqlServerData.md)  data sources.|
-|rowSelection |name of a logical variable in the data set or a logical expression using variables in the data set to specify row selection. For example, rowSelection = old will use only observations in which the value of the variable old is TRUE. rowSelection = (age > 20) & (age < 65) & (log(income) > 10) will use only observations in which the value of the age variable is between 20 and 65 and the value of the log of the income variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments transforms or transformFunc). As with all expressions, rowSelection can be defined outside of the function call using the expression function.|
-|transforms |an expression of the form list(name = expression, ...) representing the first round of variable transformations. As with all expressions, transforms (or rowSelection) can be defined outside of the function call using the expression function.|
-|transformObjects |a named list containing objects that can be referenced by transforms, transformsFunc, and rowSelection. |
+|outFile |a character string specifying the output ‘.xdf’ file, an [RxXdfData](RxXdfData.md) object, a [RxOdbcData](RxOdbcData.md) data source, or a [RxTeradata](RxTeradata.md) data source. If `NULL`, a data frame will be returned from rxDataStep unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending.|
+|varsToKeep |character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in `varsToKeep`. If `newName` is used in `colInfo` in a non-xdf data source, the `newName` should be used in `varsToKeep`. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md) , or [RxSqlServerData](RxSqlServerData.md) data sources.|
+|varsToDrop |character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in `varsToDrop`. If `newName` is used in `colInfo` in a non-xdf data source, the `newName` should be used in `varsToDrop`. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md) , or [RxSqlServerData](RxSqlServerData.md)  data sources.|
+|rowSelection |name of a logical variable in the data set or a logical expression using variables in the data set to specify row selection. For example, `rowSelection = old` will use only observations in which the value of the variable old is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the age variable is between 20 and 65 and the value of the log of the income variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments transforms or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function.|
+|transforms |an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, transforms (or `rowSelection`) can be defined outside of the function call using the expression function.|
+|transformObjects |a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. |
 |transformFunc |variable transformation function. See [rxTransform function](rxTransform.md) for details.|
 |transformVars |character vector of input data set variables needed for the transformation function. See [rxTransform function](rxTransform.md) for details.|
-|transformPackages |character vector defining additional R packages (outside of those specified in [rxGetOption](rxGetOption.md)("transformPackages")) to be made available and preloaded for use in variable transformation functions, e.g., those explicitly defined in RevoScaleR functions via their transforms and transformFunc arguments or those defined implicitly via their formula or rowSelection arguments. The transformPackages argument may also be NULL, indicating that no packages outside [rxGetOption](rxGetOption.md)("transformPackages") will be preloaded.|
-|transformEnvir |user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If transformEnvir = NULL, a new "hash" environment with parent baseenv() is used instead.|
-|append |either "none" to create a new files, "rows" to append rows to an existing file, or "cols" to append columns to an existing file. If outFile exists and append is "none", the overwrite argument must be set to TRUE. Ignored for data frames. You cannot append to [RxTextData](RxTextData.md) or [RxTeradata](RxTeradata.md) data sources, and appending is not supported for composite .xdf files or when using the [RxHadoopMR](RxHadoopMR.md) compute context.|
-|overwrite |logical value. If TRUE, an existing outFile will be overwritten, or if appending columns existing columns with the same name will be overwritten. overwrite is ignored if appending rows. Ignored for data frames.|
-|rowVarName |character string or NULL. Only used if inData is a data.frame. If NULL, the data frame's row names will be dropped. If a character string, an additional variable of that name will be added to the data set containing the data frame's row names. |
-|removeMissingsOnRead |logical value. If TRUE, rows with missing values will be removed on read.|
-|removeMissings |logical value. If TRUE, rows with missing values will not be included in the output data.|
-|computeLowHigh |logical value. If FALSE, low and high values will not automatically be computed. This should only be set to FALSE in special circumstances, such as when append is being used repeatedly. Ignored for data frames.|
-|maxRowsByCols |the maximum size of a data frame that will be returned if outFile is set to NULL and inData is an ‘.xdf’ file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the ‘.xdf’ file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If maxRowsByCols is set to be too large, you may experience problems from loading a huge data frame into memory.|
-|rowsPerRead |number of rows to read for each chunk of data read from the input data source. Use this argument for finer control of the number of rows per block in the output data source. If greater than 0, blocksPerRead is ignored. Cannot be used if inFile is the same as outFile. The default value of -1 specifies that data should be read by blocks according to the blocksPerRead argument.|
-|startRow |the starting row to read from the input data source. Cannot be used if inFile is the same as outFile.|
-|numRows |number of rows to read from the input data source. If rowSelection or removeMissings are used, the output data set may have fewer rows than specified by numRows. Cannot be used if inFile is the same as outFile.|
-|returnTransformObjects |
-logical value. If TRUE, the list of transformObjects will be returned instead of a data frame or data source object. If the input transformObjects have been modified, by using .rxSet or .rxModify in the transformFunc, the updated values will be returned. Any data returned from the transformFunc is ignored. If no transformObjects are used, NULL is returned. This argument allows for user-defined computations within a transformFunc without creating new data. returnTransformObjects is not supported in distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md) or [RxInTeradata](RxInTeradata.md).|
-|startBlock |starting block to read. Ignored if startRow is set to greater than 1. |
-|numBlocks |number of blocks to read; all are read if set to -1. Ignored if numRows is not set to -1. |
-|blocksPerRead |number of blocks to read for each chunk of data read from the data source. Ignored for data frames or if rowsPerRead is positive.|
+|transformPackages |character vector defining additional R packages (outside of those specified in [rxGetOption](rxGetOption.md)("transformPackages")) to be made available and preloaded for use in variable transformation functions, e.g., those explicitly defined in RevoScaleR functions via their transforms and `transformFunc` arguments or those defined implicitly via their formula or `rowSelection` arguments. The `transformPackages` argument may also be `NULL`, indicating that no packages outside [rxGetOption](rxGetOption.md)("transformPackages") will be preloaded.|
+|transformEnvir |user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead.|
+|append |either "none" to create a new files, "rows" to append rows to an existing file, or "cols" to append columns to an existing file. If `outFile` exists and append is "none", the overwrite argument must be set to `TRUE`. Ignored for data frames. You cannot append to [RxTextData](RxTextData.md) or [RxTeradata](RxTeradata.md) data sources, and appending is not supported for composite .xdf files or when using the [RxHadoopMR](RxHadoopMR.md) compute context.|
+|overwrite |logical value. If `TRUE`, an existing outFile will be overwritten, or if appending columns existing columns with the same name will be overwritten. overwrite is ignored if appending rows. Ignored for data frames.|
+|rowVarName |character string or `NULL`. Only used if `inData` is a `data.frame`. If `NULL`, the data frame's row names will be dropped. If a character string, an additional variable of that name will be added to the data set containing the data frame's row names. |
+|removeMissingsOnRead |logical value. If `TRUE`, rows with missing values will be removed on read.|
+|removeMissings |logical value. If `TRUE`, rows with missing values will not be included in the output data.|
+|computeLowHigh |logical value. If F`ALSE`, low and high values will not automatically be computed. This should only be set to `FALSE` in special circumstances, such as when append is being used repeatedly. Ignored for data frames.|
+|maxRowsByCols |the maximum size of a data frame that will be returned if `outFile` is set to `NULL` and `inData` is an ‘.xdf’ file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the ‘.xdf’ file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If `maxRowsByCols` is set to be too large, you may experience problems from loading a huge data frame into memory.|
+|rowsPerRead |number of rows to read for each chunk of data read from the input data source. Use this argument for finer control of the number of rows per block in the output data source. If greater than 0, `blocksPerRead` is ignored. Cannot be used if `inFile` is the same as `outFile`. The default value of -1 specifies that data should be read by blocks according to the `blocksPerRead` argument.|
+|startRow |the starting row to read from the input data source. Cannot be used if `inFile` is the same as `outFile`.|
+|numRows |number of rows to read from the input data source. If `rowSelection` or `removeMissings` are used, the output data set may have fewer rows than specified by `numRows`. Cannot be used if `inFile` is the same as `outFile`.|
+|returnTransformObjects |logical value. If `TRUE`, the list of `transformObjects` will be returned instead of a data frame or data source object. If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned. Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md) or [RxInTeradata](RxInTeradata.md).|
+|startBlock |starting block to read. Ignored if `startRow` is set to greater than 1. |
+|numBlocks |number of blocks to read; all are read if set to -1. Ignored if `numRows` is not set to -1. |
+|blocksPerRead |number of blocks to read for each chunk of data read from the data source. Ignored for data frames or if `rowsPerRead` is positive.|
 |inSourceArgs |an optional list of arguments to be applied to the input data source.|
 |reportProgress |integer value with options: <br />- 0: no progress is reported. <br />- 1: the number of processed rows is printed and updated. <br />- 2: rows processed and timings are reported. <br />- 3: rows processed and all timings are reported. |
-|xdfCompressionLevel |integer in the range of -1 to 9. The higher the value, the greater the amount of compression - resulting in smaller files but a longer time to create them. If xdfCompressionLevel is set to 0, there will be no compression and files will be compatible with the 6.0 release of Revolution R Enterprise. If set to -1, a default level of compression will be used.|
-|checkVarsToKeep |logical value. If TRUE variable names specified in varsToKeep will be checked against variables in the data set to make sure they exist. An error will be reported if not found. Ignored if more than 500 variables in the data set.|
+|xdfCompressionLevel |integer in the range of -1 to 9. The higher the value, the greater the amount of compression - resulting in smaller files but a longer time to create them. If `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible with the 6.0 release of Revolution R Enterprise. If set to -1, a default level of compression will be used.|
+|checkVarsToKeep |logical value. If `TRUE` variable names specified in `varsToKeep` will be checked against variables in the data set to make sure they exist. An error will be reported if not found. Ignored if more than 500 variables in the data set.|
 |cppInterp |NOT SUPPORTED information to be sent to the C++ interpreter.|
-
-...
-additional arguments to be passed to the input data source.
+|...| additional arguments to be passed to the input data source.|
 
 
 ## Value
 
-For rxDataStep, if returnTransformObjects is FALSE)and an outFile is specified, an [RxXdfData](RxXdfData.md) data source is returned invisibly. If no outFile is specified, a data frame is returned invisibly. Either can be used in subsequent RevoScaleR analysis. For both rxDataStep and [rxDataStepXdf](rxDataStepXdf.md), if returnTransformObjects is TRUE, the transformObjects list as modified by the transformation function is returned invisibly. When working with an [RxInTeradata](RxInTeradata.md) compute context, both the input and output data sources must be [RxTeradata](RxTeradata.md).
+For rxDataStep, if `returnTransformObjects` is `FALSE` and an outFile is specified, an [RxXdfData](RxXdfData.md) data source is returned invisibly. If no `outFile` is specified, a data frame is returned invisibly. Either can be used in subsequent RevoScaleR analysis. For both rxDataStep and [rxDataStepXdf](rxDataStepXdf.md), if `returnTransformObjects` is `TRUE`, the `transformObjects` list as modified by the transformation function is returned invisibly. When working with an [RxInTeradata](RxInTeradata.md) compute context, both the input and output data sources must be [RxTeradata](RxTeradata.md).
 
 ## Examples
 
