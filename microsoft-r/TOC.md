@@ -84,10 +84,10 @@
 # [SQL Server R Services](sql-server-r-services.md)
 # [Microsoft R Open](r-open.md)
 # Microsoft R in the Cloud
-## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
-## R Server for HDInsight
-## Microsoft Data Science Virtual Machine
-## Microsoft Azure Marketplace Virtual Machine
+## [R Server for HDInsight](vm-r-server-hdinsight.md)
+## [Azure Marketplace Virtual Machine](vm-azure-marketplace.md)
+## [Data Science Virtual Machine](vm-data-science.md)
+## [R Server on Linux VM FAQs](rserver-linux-vm-faqs.md)
 # RevoScaleR Package Reference
 ## [RevoScaleR Getting Started](scaler-getting-started.md)
 ## RevoScaleR User's Guide
