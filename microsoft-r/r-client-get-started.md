@@ -34,9 +34,9 @@ R Client allows you to work with production data locally using the full set of S
 
 <br>
 <div align=center>
-<a href="#installrclient"><img src="./media/rclient/Step1.png" border="2" /></a>&nbsp;&nbsp;
-<a href="#configure-ide"><img src="./media/rclient/Step2.png" border="1" /></a>&nbsp;&nbsp;
-<a href="#try-r-client"><img src="./media/rclient/Step3.png" border="1" /></a>&nbsp;&nbsp;
+<a href="#installrclient"><img src="./media/rclient/Step1.png" /></a>&nbsp;&nbsp;
+<a href="#configure-ide"><img src="./media/rclient/Step2.png" /></a>&nbsp;&nbsp;
+<a href="#try-r-client"><img src="./media/rclient/Step3.png" /></a>&nbsp;&nbsp;
 </div>
 
 <!--
