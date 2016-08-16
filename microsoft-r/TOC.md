@@ -84,7 +84,7 @@
 # [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
 # Microsoft R in the Cloud
 ## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
-## HDInsight
+## R Server for HDInsight
 ## Microsoft Data Science Virtual Machine
 ## Microsoft Azure Marketplace Virtual Machine
 # RevoScaleR Package Reference
