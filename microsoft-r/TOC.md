@@ -81,7 +81,8 @@
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](install-r-client-windows.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
-# [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
+# [SQL Server R Services](sql-server-r-services.md)
+# [Microsoft R Open](r-open.md)
 # Microsoft R in the Cloud
 ## [R Server on Linux Virtual Machine FAQs](rserver-linux-vm-faqs.md)
 ## R Server for HDInsight
