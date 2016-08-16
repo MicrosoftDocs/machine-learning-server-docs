@@ -1,7 +1,6 @@
 # [Get Started with Microsoft R](index.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-## [Archived Documentation](microsoft-r-old-versions.md)
 # Data Analysis with Microsoft R
 ## [Introduction](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
@@ -48,6 +47,8 @@
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Functions for Teradata DB](scaler/scaler-teradata-functions.md)
+## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
+## [RevoScaleR ODBC Data Import](scaler-odbc.md)
 ## [DeployR](deployr-about.md)
 ### [Install DeployR](deployr-installation.md)
 #### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
@@ -107,8 +108,8 @@
 ## [Install R Client](install-r-client-windows.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
 # [SQL Server R Services](sql-server-r-services.md)
+## [RevoScaleR Getting Started for SQL Server](scaler-sql-server-getting-started.md)
 ## [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
-## [RevoScaleR SQL Server Getting Started](scaler-sql-server-getting-started.md)
 # [Microsoft R Open](r-open.md)
 # Microsoft R in the Cloud
 ## [R Server for HDInsight](vm-r-server-hdinsight.md)
@@ -116,7 +117,7 @@
 ## [Data Science Virtual Machine](vm-data-science.md)
 ## [R Server on Linux VM FAQs](rserver-linux-vm-faqs.md)
 # Package Reference
-## RevoScaleR Package Reference
+## RevoScaleR Function Reference
 ## [RevoScaleR Functions](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
@@ -136,7 +137,6 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
-## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
-## [RevoScaleR ODBC Data Import](scaler-odbc.md)
-## [foreach/iterators](foreach.md)
+## [Using foreach for Parallelizing Loops](foreach.md)
 ## [RevoPemaR](pemar-getting-started.md)
+# [Archived Documentation](microsoft-r-old-versions.md)
