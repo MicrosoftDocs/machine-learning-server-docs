@@ -24,11 +24,9 @@
 # Microsoft R Server
 ## [What's New in R Server & DeployR](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
-## R Server on Linux
+## R Server on Linux and Hadoop
 ### [Getting Started](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
-### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
-## R Server on Hadoop
 ### [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
 ### [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
@@ -41,7 +39,7 @@
 ### [ScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md)
 ### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ## R Server on Teradata DB
-### [R Server on Teradata Getting Started](scaler-teradata-getting-started.md)
+### [Getting Started with R Server on Teradata ](scaler-teradata-getting-started.md)
 ### Install on Teradata
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
@@ -117,7 +115,7 @@
 ## [Data Science Virtual Machine](vm-data-science.md)
 ## [R Server on Linux VM FAQs](rserver-linux-vm-faqs.md)
 # Package Reference
-## RevoScaleR Function Reference
+## ScaleR Function Reference
 ## [RevoScaleR Functions](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
@@ -137,6 +135,8 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
-## [Using foreach for Parallelizing Loops](foreach.md)
-## [RevoPemaR](pemar-getting-started.md)
+## mrsdeployr Function Reference
+## [PemaR Function Reference](pemar-getting-started.md)
+## Other Microsoft R Packages
+### [Using foreach for Parallelizing Loops](foreach.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
