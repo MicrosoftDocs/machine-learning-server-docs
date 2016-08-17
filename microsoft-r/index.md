@@ -48,7 +48,7 @@ By using and extending open source R, Microsoft R Server is fully compatible wit
 
 Microsoft R Server delivers enterprise class performance and scalability for your R-based applications with libraries that allow you to write once and deploy across multiple platforms with minimal effort, whether on-premises or in the cloud.
 
-Get started with Microsoft R Server now and read this [Getting Started](microsoft-r-getting-started.md) guide.
+Get started by reading this [Getting Started](microsoft-r-getting-started.md) guide.
 
 |Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
 |---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
@@ -63,11 +63,7 @@ For a list of supported operating systems, see [Supported platforms in Microsoft
 <a name="mrc"></a>
 ##Microsoft R Client
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
-
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop.
-
-Microsoft R Client is free to everyone. Download Microsoft R Client at http://aka.ms/rclient/download and [install](install-r-client-windows.md) it today. Don't miss this [R Client Getting Started](r-client-get-started.md) guide.
+[!include[MicrosoftRClient](./includes/r-client/r-client-intro.md)]
 
 <br>
 <a name="mro"></a>
@@ -80,12 +76,7 @@ Microsoft R Client is free to everyone. Download Microsoft R Client at http://ak
 <a name="sqlr"></a>
 ##SQL Server R Services
 
-SQL Server R Services provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open source packages to create models and generate predictions using your SQL Server data. Because SQL Server R Services integrates the R language with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
-
-SQL Server R Services combines R with a comprehensive set of SQL Server tools and technologies that offer superior performance, security, reliability and manageability. You can deploy R solutions using convenient, familiar tools, and your production applications can call the R runtime and retrieve predictions and visuals using Transact-SQL. With Enterprise Edition, you also get the ScaleR libraries to overcome R’s inherent performance and scale limitations.
-
-Learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
-
+[!include[SQLServerRServices](./includes/ss-r-services/r-services-intro.md)]
 
 <br>
 <a name="compare-prods"></a>

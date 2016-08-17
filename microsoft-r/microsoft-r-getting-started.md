@@ -61,24 +61,15 @@ For a list of supported operating systems, see [Supported platforms in Microsoft
 <a name="mrc"></a>
 ##Microsoft R Client
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
-
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. 
-
-Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
-
+[!include[MicrosoftRClient](./includes/r-client/r-client-intro.md)]
 
 ##Microsoft R Open
 
-Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.   
-
-Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the proprietary ScaleR functions and packages included with Microsoft R Server and Microsoft R Client are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory.
-
-Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
+[!include[MicrosoftROpen](./includes/r-open/mro-intro.md)]
 
 ## What's in R Server and R Client
 
-For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md##compare-prods).
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
 
 **DistributedR: Parallel and distributed computing framework for _Big Data Big Analytics_.**
 
@@ -114,7 +105,7 @@ To learn more, look for [data sources in the RevoScaleR package](scaler-user-gui
 
 <a name="deployr-intro"></a>
 <br>
-**DeployR, the R Integration Server, is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. **
+**DeployR, the R Integration Server, is an optional framework delivered with Microsoft R Server for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. **
 
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
@@ -126,57 +117,6 @@ Using analytics web services, DeployR also solves key integration problems faced
 DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 [Learn more about DeployR...](deployr-about.md)
-
-## Starting & Stopping Microsoft R
-
-### Starting Microsoft R
-
-**To launch Microsoft R Server on Linux**:
-
-1. Open a terminal or console window.
-1. At the prompt, type: 
-```
-Revo64
-```
-
-If you get the message “Revo64: Command not found," this means that Microsoft R Server is not in your search path. Check with your system administrator to find the correct path to your R Server installation, then modify your search path (typically in your .bashrc file):
-```
-PATH=$PATH:/path/to/Microsoft R Server
-export PATH
-```
-
-<br>
-**To launch Microsoft R Client**:
-
-After you have installed the software, you launch Microsoft R Client as follows.
-
-For Windows 10:
-
-+ Choose **All Apps > Microsoft R Client > Rgui**.
-
-
-For Windows 8.1:
-
-1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
-  
-1. Click **Start** to view the **Start** screen.
-
-1. Locate and click the tile for **Microsoft R Client**.
-
-
-For Windows 7:
-
-+ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
-
-<br />
-### Stopping Microsoft R
-
-From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
-
-	q()
-
-Whenever you quit R, you are asked if you want to save the workspace image; if you have created functions or data that you want to keep, saving the workspace image will preserve them for future use. (Most R users, however, create their functions and data in script files which can be read, or *sourced*, into R. If you follow this model, you will usually say “no” to saving the workspace image.)
-
 
 ## Getting Function Help
 
