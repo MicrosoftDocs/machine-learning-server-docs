@@ -63,20 +63,20 @@ For a list of supported operating systems, see [Supported platforms in Microsoft
 <a name="mrc"></a>
 ##Microsoft R Client
 
-[!include[MicrosoftRClient](./includes/r-client/r-client-intro.md)]
+[!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
 <br>
 <a name="mro"></a>
 ##Microsoft R Open
 
-[!include[MicrosoftROpen](./includes/r-open/mro-intro.md)]
+[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
 
 
 <br>
 <a name="sqlr"></a>
 ##SQL Server R Services
 
-[!include[SQLServerRServices](./includes/ss-r-services/r-services-intro.md)]
+[!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
 
 <br>
 <a name="compare-prods"></a>

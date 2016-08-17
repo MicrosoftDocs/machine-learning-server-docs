@@ -27,4 +27,4 @@ ms.custom: ""
 
 # SQL Server R Services
 
-[!include[SQLServerRServices](./includes/ss-r-services/r-services-intro.md)]
+[!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
