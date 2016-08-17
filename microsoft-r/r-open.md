@@ -28,4 +28,4 @@ ms.custom: ""
 
 # Microsoft R Open
 
-[!include[MicrosoftROpen](./includes/r-open/mro-intro.md)]
+[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
