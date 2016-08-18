@@ -39,6 +39,7 @@ The Microsoft R product family includes:
 To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 For a side-by-side comparison of Microsoft R Server, Microsoft R Client, and Microsoft R Open, [see here](microsoft-r-getting-started.md#compare-prods).
 <br>
+
 <a name="mrs"></a>
 ##Microsoft R Server
 
@@ -69,20 +70,6 @@ Get started by reading this [Getting Started](microsoft-r-getting-started.md) gu
 
 [!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
 
-<br>
-<a name="compare-prods"></a>
-##The Microsoft R: A Product Comparison
-
-The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. For information on SQL Server R Services, see the [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx).
-
-|Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|-----------|----------------|------------------|-----------|
-|Big Data   |In-memory bound<br>Can only process datasets that fit into the available memory|In-memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
-|Speed of<br>Analysis    |Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
-|Enterprise<br>Readiness   |Community support|Community support|Commercial support|
-|Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
-|Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
-|[DeployR <br>Enterprise](microsoft-r-getting-started.md#deployr-intro)  |Not available|Not available|Included|
 
 
 <br>
