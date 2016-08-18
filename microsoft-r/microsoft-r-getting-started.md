@@ -34,7 +34,7 @@ R is the world’s most powerful, and preferred, programming language for statis
 
 Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions, including big data scenarios that require a distributed file system like Hadoop. 
 
-The Microsoft R product family includes Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and Client provide additional R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
+The Microsoft R product family includes Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and R Client provide additional R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
 <br>
 <a name="compare-prods"></a>
