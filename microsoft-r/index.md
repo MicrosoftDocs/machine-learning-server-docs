@@ -37,7 +37,7 @@ The Microsoft R product family includes:
 + <a href="#sqlr">SQL Server R Services</a>
 
 To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
-
+For a side-by-side comparison of Microsoft R Server, Microsoft R Client, and Microsoft R Open, [see here](microsoft-r-getting-started.md#compare-prods).
 <br>
 <a name="mrs"></a>
 ##Microsoft R Server
@@ -50,14 +50,6 @@ Microsoft R Server delivers enterprise class performance and scalability for you
 
 Get started by reading this [Getting Started](microsoft-r-getting-started.md) guide.
 
-|Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
-|---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
-|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
-|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
-|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
-
-<br />
-For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
 
 <br />
 <a name="mrc"></a>
@@ -70,7 +62,6 @@ For a list of supported operating systems, see [Supported platforms in Microsoft
 ##Microsoft R Open
 
 [!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
-
 
 <br>
 <a name="sqlr"></a>
@@ -98,15 +89,16 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 ##Learn More
 
 Start learning about Microsoft R today:
-+ [Microsoft R Getting Started](microsoft-r-getting-started.md)
+
++ [Microsoft R Product Web Page](https://www.microsoft.com/en-us/cloud-platform/r-server) 
 
 + [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md)
 
-+ [DeployR Getting Started](deployr-about.md)
++ [Microsoft R Getting Started](microsoft-r-getting-started.md)
+
++ [Microsoft R Client Get Started](r-client-get-started.md)
 
 + [Microsoft R Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
-+ [Microsoft R Product Web Page](https://www.microsoft.com/en-us/server-cloud/products/r-server/) 
 
 + [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) 
 
