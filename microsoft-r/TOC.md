@@ -21,7 +21,7 @@
 ## [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
-# Microsoft R Server
+# [Microsoft R Server](rserver.md)
 ## [What's New in R Server & DeployR](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## R Server on Linux and Hadoop

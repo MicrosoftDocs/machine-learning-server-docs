@@ -26,6 +26,6 @@ ms.custom: ""
 
 ---
 
-# Microsoft R Open
+# Introducing Microsoft R Open
 
 [!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
