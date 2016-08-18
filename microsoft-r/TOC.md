@@ -1,7 +1,7 @@
-# [Get Started with Microsoft R](microsoft-r-getting-started.md)
+# [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-# Data Analysis with Microsoft R
+# Diving into Data Analysis with Microsoft R
 ## [Introduction](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
@@ -45,6 +45,7 @@
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Functions for Teradata DB](scaler/scaler-teradata-functions.md)
+## R Server on Windows
 ## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
 ## [DeployR](deployr-about.md)
@@ -100,20 +101,20 @@
 #### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 #### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+# [SQL Server R Services](sql-server-r-services.md)
+## [RevoScaleR Getting Started for SQL Server](scaler-sql-server-getting-started.md)
+## [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
 # [Microsoft R Client](r-client-get-started.md)
 ## [What's New in R Client](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](install-r-client-windows.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
-# [SQL Server R Services](sql-server-r-services.md)
-## [RevoScaleR Getting Started for SQL Server](scaler-sql-server-getting-started.md)
-## [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
 # [Microsoft R Open](r-open.md)
-# Microsoft R in the Cloud
-## [R Server for HDInsight](vm-r-server-hdinsight.md)
-## [Azure Marketplace Virtual Machine](vm-azure-marketplace.md)
-## [Data Science Virtual Machine](vm-data-science.md)
-## [R Server on Linux VM FAQs](rserver-linux-vm-faqs.md)
+# Cloud-Based Offerings
+## [R Server for HDInsight (Azure)](vm-r-server-hdinsight.md)
+## [R Server on Linux (Azure)](rserver-linux-vm-faqs.md)
+## [R Server on Windows (Azure)](vm-azure-marketplace.md)
+## [Data Science VM (Azure)](vm-data-science.md)
 # Package Reference
 ## ScaleR Function Reference
 ## [RevoScaleR Functions](scaler/scaler.md)
