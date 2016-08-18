@@ -1,4 +1,4 @@
-# [Get Started with Microsoft R](index.md)
+# [Get Started with Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
 # Data Analysis with Microsoft R

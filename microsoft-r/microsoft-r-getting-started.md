@@ -36,7 +36,7 @@ Microsoft R is a collection of servers and tools that extend the capabilities of
 
 The Microsoft R product family includes Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and Client provide additional R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
-
+<br>
 <a name="compare-prods"></a>
 ### Microsoft R Product Comparison
 
@@ -50,6 +50,8 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 |Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
 |Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
 |[DeployR <br>Enterprise](microsoft-r-getting-started.md#deployr-intro)  |Not available|Not available|Included|
+
+<br>
 
 
 ### Microsoft R Server
@@ -83,15 +85,20 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 <br />
 For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
 
+<br>
 
 <a name="mrc"></a>
 ### Microsoft R Client
 
 [!include[MicrosoftRClient](./includes/r-client/r-client-intro.md)]
 
+<br>
+
 ### Microsoft R Open
 
 [!include[MicrosoftROpen](./includes/r-open/mro-intro.md)]
+
+<br>
 
 ## What's in R Server and R Client
 
