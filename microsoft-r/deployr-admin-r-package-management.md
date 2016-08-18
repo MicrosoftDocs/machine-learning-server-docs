@@ -42,8 +42,9 @@ One such approach is to use a master R script that contains all required package
 
 1.  In your local environment:
 
-    1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
+    1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following commands:
 
+            library(devtools)
             install_github('Microsoft/deployrUtils')
 
     2.  Create a master R script that you'll use to install the package dependencies across the DeployR grid.
