@@ -32,11 +32,12 @@ R Client allows you to work with production data locally using the full set of S
 
 **Getting started with Microsoft R Client is as easy as 1-2-3.**
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click a step to get started:
 <br>
 <div align=center>
-<a href="#installrclient"><img src="./media/rclient/Step1.png" /></a>&nbsp;&nbsp;
-<a href="#configure-ide"><img src="./media/rclient/Step2.png" /></a>&nbsp;&nbsp;
-<a href="#try-r-client"><img src="./media/rclient/Step3.png" /></a>&nbsp;&nbsp;
+<a href="#installrclient" title="Click Step 1"><img src="./media/rclient/Step1.png" width=200 /></a>&nbsp;&nbsp;
+<a href="#configure-ide" title="Click Step 2"><img src="./media/rclient/Step2.png" width=200  /></a>&nbsp;&nbsp;
+<a href="#try-r-client" title="Click Step 3"><img src="./media/rclient/Step3.png" width=200  /></a>&nbsp;&nbsp;
 </div>
 
 <!--
