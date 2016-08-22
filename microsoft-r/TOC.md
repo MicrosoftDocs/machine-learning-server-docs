@@ -22,7 +22,7 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 # [Microsoft R Server](rserver.md)
-## [What's New in R Server & DeployR](notes/r-server-notes.md)
+## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## R Server on Linux and Hadoop
 ### [Getting Started](scaler-getting-started.md)
@@ -48,7 +48,7 @@
 ## R Server on Windows
 ## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
 ## [RevoScaleR ODBC Data Import](scaler-odbc.md)
-## [DeployR](deployr-about.md)
+## [Operationalize R Analytics (DeployR)](deployr-about.md)
 ### [Install DeployR](deployr-installation.md)
 #### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 #### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
@@ -112,8 +112,8 @@
 # [Microsoft R Open](r-open.md)
 # Cloud-Based Offerings
 ## [R Server for HDInsight (Azure)](vm-r-server-hdinsight.md)
-## [R Server on Linux (Azure)](rserver-linux-vm-faqs.md)
-## [R Server on Windows (Azure)](vm-azure-marketplace.md)
+## [R Server on Linux VM (Azure)](rserver-linux-vm-faqs.md)
+## [R Server on Windows VM (Azure)](vm-azure-marketplace.md)
 ## [Data Science VM (Azure)](vm-data-science.md)
 # Package Reference
 ## ScaleR Function Reference
@@ -136,7 +136,7 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
-## mrsdeployr Function Reference
+## mrsdeploy Function Reference
 ## [PemaR Function Reference](pemar-getting-started.md)
 ## Other Microsoft R Packages
 ### [Using foreach for Parallelizing Loops](foreach.md)

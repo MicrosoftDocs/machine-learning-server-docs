@@ -27,7 +27,6 @@ ms.custom: ""
 
 # Introducing Microsoft R Server
 
-
 [!include[Microsoft R Server](./includes/r-server/intro.md)]
 
 Get started by reading this [Getting Started](microsoft-r-getting-started.md) guide.
