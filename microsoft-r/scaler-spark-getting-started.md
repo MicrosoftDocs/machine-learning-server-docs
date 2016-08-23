@@ -6,7 +6,7 @@ description: "Microsoft R Server with Apache Spark features and components overv
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "08/08/2016"
+ms.date: "08/23/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -242,7 +242,7 @@ By default, with RxSpark Compute Context, a new Spark application will be launch
 
 The idleTimeout is the number of seconds of being idle before the system kills the Spark process.
 
-If persistentRun mode is enabled, then the RxSpark compute context cannot be a Non-Waiting Compute Context. See Non-Waiting Compute Context in section 5.8.
+If persistentRun mode is enabled, then the RxSpark compute context cannot be a Non-Waiting Compute Context. See [Non-Waiting Compute Context](#NonWaitingComputeContext).
 
 
 ### Copying a Data File into the Hadoop Distributed File System
@@ -437,7 +437,7 @@ The resulting output is:
 	Adjusted R-squared: 0.001858
 	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 
-
+<a name="NonWaitingComputeContext"></a>
 ### Creating a Non-Waiting Compute Context
 
 When running all but the shortest analyses in Hadoop, it can be convenient to let Hadoop do its processing while returning control of your R session to you immediately. You can do this by specifying *wait = FALSE* in your compute context definition. By using our existing compute context as the first argument, all of the other settings will be carried over to the new compute context:
@@ -583,6 +583,7 @@ You should see the following results:
 
 Notice that the results indicate we have processed all the data, six million observations, using all the .csv files in the specified directory. Notice also that because we specified *cube = TRUE*, we have an estimated coefficient for each day of the week (and not the intercept).
 
+<a name="importingDataAsCompositeXdfFiles"></a>
 ### Importing Data As Composite XDF Files
 
 As we have seen, you can analyze CSV files directly with RevoScaleR on Hadoop, but the analysis can be done more quickly if the data is stored in a more efficient format. The RevoScaleR .xdf format is extremely efficient, but is modified somewhat for HDFS so that individual files remain within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB.) When you use rxImport on Hadoop, you specify an RxTextData data source such as bigAirDS as the inData and an RxXdfData data source with fileSystem set to an HDFS file system as the outFile argument to create a set of *composite .xdf files*. The RxXdfData object can then be used as the data argument in subsequent RevoScaleR analyses.
@@ -799,7 +800,7 @@ After you’ve exported the query results to a text file, it can be streamed dir
 
 ### Writing to CSV in HDFS
 
-If you converted your CSV to XDF, as in section 6.3, to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory will be created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory will be created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
 
 Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
 
@@ -822,7 +823,7 @@ Note that when using an RxSpark compute context, createFileSet defaults to TRUE 
 
 ## Parallel Partial Decision Forests
 
-As mentioned in Section 2, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple stages in the Spark job, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single stage in the Spark job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
+As mentioned earlier, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple stages in the Spark job, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single stage in the Spark job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
 
 	file.name <- "claims.xdf"
 	sourceFile <- system.file(file.path("SampleData", file.name),  
