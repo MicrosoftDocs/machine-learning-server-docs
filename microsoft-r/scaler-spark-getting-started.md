@@ -28,19 +28,44 @@ ms.custom: ""
 
 ## Overview
 
-This guide explains how to use the **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. Spark is an open source big data processing framework. This guide focuses on using **RevoScaleR**’s big data capabilities in a Hadoop environment with Spark.
+This guide is an introduction to using the ScaleR functions in a **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. ScaleR functions offer scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. Spark is an open source big data processing framework. This guide focuses on using ScaleR’s big data capabilities in a Hadoop environment with Spark.
 
-The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful when you need to:
+While this guide is not a Hadoop tutorial, no prior experience or detailed knowledge of that framework is required to complete the tasks in this tutorial. If you know how to connect to your Hadoop cluster, this guide will walk you through the rest.
+
+Additional information and examples demonstrating ScaleR functionality can be found in the following guides:
+
+-   [RevoScaleR Getting Started Guide](scaler-getting-started.md)
+-   [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
+-   [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which includes HPC examples
+-   [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
+
+### Data Sources and Functions Supported in Hadoop
+
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
+
+To perform an analysis using ScaleR functions, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
+
+This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [RevoScaleR Functions for Hadoop](scaler-hadoop-functions.md).
+
+**Compute Context and Supported Data Sources**
+
+The Spark compute context is established through *RxSpark*, where the following two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
+
+**Data Manipulation and Computations**
+
+The data manipulation and computation functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful for these scenarios:
 
 - Analyze data sets that are too big to fit in memory.
 - Perform computations distributed over several cores, processors, or nodes in a cluster.
-- Develop scalable data analysis routines with local smaller data sets, then deploy to larger data and/or a cluster of computers.
+- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
 
-These scenarios are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms*.
+**High Performance Analysis (HPA)**
+
+HPA functions in **RevoScaleR** do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes automatically.
 
 ## How RevoScaleR works with the Spark engine
 
-The **RevoScaleR** high performance analysis functions are portable acorss a variety of computing platforms, including Windows and RHEL workstations and servers, and distributed computing platforms including Hadoop and Spark. In practical terms, you can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying **RevoScaleR** code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it. For those interested in the underlying architecture, on Hadoop the **RevoScaleR** analysis functions go through the following steps.
+On Hadoop the **RevoScaleR** analysis functions go through the following steps.
 
 -   A master process is initiated to run the main thread of the algorithm.
 -   The master process initiates a Spark job to make a pass through the data.
@@ -49,71 +74,6 @@ The **RevoScaleR** high performance analysis functions are portable acorss a var
 -   When complete, the final results are computed and returned.
 
 When running on Hadoop, the **RevoScaleR** analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from **RevoScaleR**, without performing the computations within the Hadoop framework. An example can be found in [Using a Local Compute Context with HDFS Data](#bkmk_local_compute_with_hdfs).
-
-More detailed examples of using **RevoScaleR** can be found here:
-- [RevoScaleR Getting Started Guide](scaler-getting-started.md)
-- [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
-- [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md); see this guide for HPC examples
-- [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
-- [RevoScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
-
-## Data Sources and Functions Supported in Spark
-
-The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
-
-Of course, not all data source types are available on all compute contexts. For the Spark compute context used in this Guide, named *RxSpark*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). As noted later in this Guide, the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
-
-The RevoScaleR analysis functions currently supported on RxSpark compute context are:
-
--   *rxSummary*: Basic summary statistics of data, including computations by group. (Writing by group computations to .xdf file not supported.)
--   *rxQuantile*: Compute approximate quantiles
--   *rxCrossTabs*: Formula-based cross-tabulation of data.
--   *rxCube*: Alternative formula-based cross-tabulation returning ‘cube’ results. (Writing output to .xdf file not supported.)
--   *rxLinMod*: Fits a linear model to data
--   *rxCovCor*: Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.
--   *rxLogit*: Fits a logistic regression model to data.
--   *rxGlm*: Fits a generalized linear model to data
--   *rxKmeans*: Performs k-means clustering.
--   *rxDTree*: Fits a classification or regression tree to data.
--   *rxDForest*: Fits a classification or regression decision forest to data.
--   *rxBTrees*: Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.
--   *rxPredict*: Calculates predictions for fitted models. Output must be an XDF data source.
-
-High performance computing is supported in Spark using:
-
--   *rxExec*: Run an arbitrary R function on nodes of a cluster
-
-The RxSpark compute context also allows the following data manipulation functionality:
-
--   *rxDataStep*: Transform and subset data. Output can be an XDF data source, a comma delimited text data source (EXPERIMENTAL), or a data frame in memory (assuming you have sufficient memory to hold the output data).
--   *rxFactors*: Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.
-
-The following ‘helper’ functions to get basic information about your data source:
-
--   *rxGetInfo*
--   *rxGetVarInfo*
--   *rxGetVarNames*
-
-The [RxSpark](scaler/RxSpark.md) compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
-
--   *rxGetJobStatus*: Get the status of a non-waiting distributed computing job.
--   *rxGetJobResults*: Get the return object(s) of a non-waiting distributed computing job.
--   *rxGetJobOutput*: Get the console output from a non-waiting distributed computing job.
--   *rxGetJobs*: Get the available distributed computing job information objects.
-
-RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functionality via R:
-
--   *rxHadoopCommand*: Allows you to run basic Hadoop commands.
--   *rxHadoopVersion*: Returns just the version string from running the *hadoop version* command..
--   *rxCopyFromClient*: Copy a file from a remote client to the Hadoop Distributed File System on the Hadoop cluster.
--   *rxHadoopCopyFromLoca*l: Wraps the Hadoop fs -copyFromLocal command.
--   *rxHadoopCopyToLocal*: Wraps the Hadoop fs -copyToLocal command.
--   *rxHadoopListFiles*: Wraps the Hadoop fs -ls or fs -lsr command.
--   *rxHadoopRemove*: Wraps the Hadoop fs -rm command.
--   *rxHadoopCopy*: Wraps the Hadoop fs -cp command.
--   *rxHadoopMove*: Wraps the Hadoop fs -mv command.
--   *rxHadoopMakeDir*: Wraps the Hadoop fs -mkdir command.
--   *rxHadoopRemoveDir*: Wraps the Hadoop fs -rmr command.
 
 ## Before you start
 
