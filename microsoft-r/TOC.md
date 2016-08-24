@@ -1,8 +1,7 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-# Diving into Data Analysis
-## [Introduction](scaler-user-guide-introduction.md)
+# [Diving into Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
 ## [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
@@ -24,9 +23,10 @@
 # [Microsoft R Server](rserver.md)
 ## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
-## R Server on Linux and Hadoop
+## R Server on Linux
 ### [Getting Started](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
+## R Server on Hadoop
 ### [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
 ### [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
@@ -46,8 +46,8 @@
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Functions for Teradata DB](scaler/scaler-teradata-functions.md)
 ## R Server on Windows
-## [RevoScaleR Distributed Computing](scaler-distributed-computing.md)
-## [RevoScaleR ODBC Data Import](scaler-odbc.md)
+## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
+## [Configure data import for ODBC data sources](scaler-odbc.md)
 ## [Operationalize R Analytics (DeployR)](deployr-about.md)
 ### [Install DeployR](deployr-installation.md)
 #### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
@@ -105,7 +105,7 @@
 ## [RevoScaleR Getting Started for SQL Server](scaler-sql-server-getting-started.md)
 ## [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
 # [Microsoft R Client](r-client-get-started.md)
-## [What's New in R Client](notes/r-client-notes.md)
+## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](install-r-client-windows.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
