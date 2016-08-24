@@ -27,7 +27,13 @@ ms.custom: ""
 
 # Microsoft R Server on the Data Science Virtual Machine
 
-The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Microsoft R Server (Developer Edition), used by data scientists and developers for advanced analytics. Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment.
+The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Microsoft R Server (Developer Edition), used by data scientists and developers for advanced analytics. Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. The tools included are:
++ Microsoft R Server Developer Edition
++ Anaconda Python distribution
++ Visual Studio Community Edition
++ Power BI desktop
++ SQL Server Express edition
++ Azure SDK
 
 The Microsoft Data Science Virtual Machine jump starts your analytics project by saving you the trouble of having to discover and install these tools individually. Hosting the data science machine on Azure gains you high availability and a consistent set of tools used across your data science team.   It enables you to work on tasks in a variety of languages including R. Visual Studio provides an IDE to develop and test your code that is easy to use. The Azure SDK included in the VM allows you to build your applications using various services on Microsoft’s cloud platform. 
 
