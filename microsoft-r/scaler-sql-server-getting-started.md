@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR SQL Server Getting Started Guide"
+title: "RevoScaleR Getting Started Guide for SQL Server"
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: ""
 author: "richcalaway"

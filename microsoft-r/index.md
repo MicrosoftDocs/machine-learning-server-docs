@@ -70,6 +70,7 @@ Get started by reading this [Getting Started](microsoft-r-getting-started.md) gu
 
 [!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
 
+Learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
 
 
 <br>

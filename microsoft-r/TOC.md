@@ -103,7 +103,7 @@
 #### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 # [SQL Server R Services](sql-server-r-services.md)
 ## [RevoScaleR Getting Started for SQL Server](scaler-sql-server-getting-started.md)
-## [ScaleR Functions for SQL Server](scaler/functions-for-sql-server-data.md)
+## [RevoScaleR Function Quick Reference](scaler/functions-for-sql-server-data.md)
 # [Microsoft R Client](r-client-get-started.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
@@ -136,7 +136,6 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
-## mrsdeploy Function Reference
 ## [PemaR Function Reference](pemar-getting-started.md)
 ## Other Microsoft R Packages
 ### [Using foreach for Parallelizing Loops](foreach.md)
