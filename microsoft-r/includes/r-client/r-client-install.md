@@ -5,13 +5,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Available RAM: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4+ GB recommended <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Internet access: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Needed to download R Client and any dependencies   
 
->You must install Microsoft R Client to a local drive on your computer. 
 
+>The installer for R Client version 1.0 does not support offline installations or installs from behind a firewall. We hope to offer such support in a future release.
 <br> 
 
 **How to Install:**
 
-1. Log in to the machine with administrator privileges.
+1. Log in to the machine with administrator privileges. You must install Microsoft R Client to a local drive on your computer.
 
 1. [Download Microsoft R Client](http://aka.ms/rclient/download).
 
