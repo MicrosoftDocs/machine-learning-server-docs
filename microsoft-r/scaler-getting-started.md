@@ -34,6 +34,8 @@ The data manipulation and analysis functions in **RevoScaleR** are appropriate f
 
 The **RevoScaleR** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. **RevoScaleR** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
 
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
+
 Additional examples of using **RevoScaleR** can be found here:
 - [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
 - [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md); see this guide for HPC examples
