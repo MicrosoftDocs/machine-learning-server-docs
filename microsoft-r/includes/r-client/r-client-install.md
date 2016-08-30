@@ -6,7 +6,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Internet access: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Needed to download R Client and any dependencies   
 
 
->The installer for R Client version 1.0 does not currently support offline installations. We hope to offer such support in a future release.  Enterprise customers who wish to install Microsoft R Client behind the firewall should contact technical support for guidance.
+>R Client version 1.0 installer does not currently support offline installations. Enterprise customers who wish to install Microsoft R Client behind the firewall should contact technical support for guidance.
 
 <br> 
 
