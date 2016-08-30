@@ -27,3 +27,13 @@ ms.custom: ""
 
 # Microsoft R Server in the Cloud
 
+Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today.  You can work with Microsoft R Server in the cloud as follows:
+
++ [R Server on Azure HDInsight](vm-r-server-hdinsight.md)
+
++ R Server as preconfigured virtual machines on Azure:
+  + [R Server on Linux Azure VM](vm-azure-rserver-linux.md)
+
+  + [R Server on Windows Azure VM](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
+
+  + [Microsoft Data Science VM on Azure](vm-data-science.md)
