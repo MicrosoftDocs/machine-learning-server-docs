@@ -1,7 +1,7 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-# [Diving into Data Analysis]
+# Diving into Data Analysis
 ## [Get Started with ScaleR functions and Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
@@ -24,11 +24,11 @@
 # [Microsoft R Server](rserver.md)
 ## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
-## R Server on Linux
+## [R Server on Linux](scaler-getting-started.md)
 ### [Get Started with R server on Linux](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
-## R Server on Hadoop
+## [R Server on Hadoop](scaler-hadoop-getting-started.md)
 ### [Get Started with R Server on Hadoop MapReduce](scaler-hadoop-getting-started.md)
 ### [Get Started with R Server on Hadoop Spark](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
