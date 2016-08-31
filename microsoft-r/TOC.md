@@ -1,7 +1,8 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-# [Diving into Data Analysis](scaler-user-guide-introduction.md)
+# [Diving into Data Analysis]
+## [Get Started with ScaleR functions and Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
 ## [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
@@ -24,12 +25,12 @@
 ## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## R Server on Linux
-### [Getting Started](scaler-getting-started.md)
+### [Get Started with R server on Linux](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
 ## R Server on Hadoop
-### [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
-### [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
+### [Get Started with R Server on Hadoop MapReduce](scaler-hadoop-getting-started.md)
+### [Get Started with R Server on Hadoop Spark](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
 #### [Install R Server 2016](rserver-install-hadoop-805.md)
 #### [Install R Server 8.0](rserver-install-hadoop-800.md)
@@ -37,16 +38,16 @@
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
-#### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
+### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ### [ScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md)
-## R Server on Teradata DB
-### [Getting Started with R Server on Teradata ](scaler-teradata-getting-started.md)
-### Install on Teradata
+## [R Server on Teradata DB](scaler-teradata-getting-started.md)
+### [Get Started with R Server on Teradata](scaler-teradata-getting-started.md)
+### [Install on Teradata](rserver-install-teradata-805.md)
 #### [Install R Server 2016 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Functions for Teradata DB](scaler/scaler-teradata-functions.md)
-## R Server on Windows
+## [R Server on Windows](rserver-install-windows.md)
 ## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
 ## [Operationalize R Analytics (DeployR)](deployr-about.md)
