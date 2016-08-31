@@ -32,23 +32,19 @@ R Client allows you to work with production data locally using the full set of S
 
 **Getting started with Microsoft R Client is as easy as 1-2-3.**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click a step to get started:
-<br>
+<!--<br>
 <div align=center>
-<a href="#installrclient" title="Click Step 1"><img src="./media/rclient/Step1.png" width=200 /></a>&nbsp;&nbsp;
-<a href="#configure-ide" title="Click Step 2"><img src="./media/rclient/Step2.png" width=200  /></a>&nbsp;&nbsp;
-<a href="#try-r-client" title="Click Step 3"><img src="./media/rclient/Step3.png" width=200  /></a>&nbsp;&nbsp;
-</div>
+<img src="./media/rclient/easy-as-1-2-3-a.jpg" width="80%"/>
+</div>-->
 
-<!--
 1. First [download](http://aka.ms/rclient/download) and [install R Client](#installrclient).
 1. Then, [configure your favorite R IDE](#configure-ide) to point to the R engine for R Client.
 1. And, finally, start running your R scripts in your IDE using the R Client’s engine. 
--->
+
+<!--[Try out our tutorial.](#try-r-client)-->
 
 <br>
-
-**Check out this video introduction to Microsoft R Client.**
+Check out this video introduction to Microsoft R Client.
 
 <br>
 
@@ -106,9 +102,8 @@ In your newly configured IDE, you can start developing your own solutions using 
 
 Here's an example you use to try out R Client... -->
 
-<br>
 
-## Learn More
+##Learn More
 
 You can learn more with these guides:
 
