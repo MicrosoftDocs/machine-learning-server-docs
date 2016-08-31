@@ -111,11 +111,11 @@
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
 # [Microsoft R Open](r-open.md)
 # [Cloud-Based Offerings](vm-cloud.md)
-## [R Server for Azure HDInsight](vm-r-server-hdinsight.md)
-## R Server on Azure VMs
-### [R Server on Linux Azure VM](vm-azure-rserver-linux.md)
-### [R Server on Windows Azure VM](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
-### [Microsoft Data Science VM (Azure)](vm-data-science.md)
+## [Azure HDInsight](vm-r-server-hdinsight.md)
+## Azure Virtual Machines
+### [R Server on Linux](vm-azure-rserver-linux.md)
+### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
+### [Microsoft Data Science VM](vm-data-science.md)
 # Package Reference
 ## ScaleR Function Reference
 ## [RevoScaleR Functions](scaler/scaler.md)
