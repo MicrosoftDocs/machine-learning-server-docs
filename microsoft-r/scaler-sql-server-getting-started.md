@@ -4,7 +4,7 @@
 title: "RevoScaleR Getting Started Guide for SQL Server"
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: ""
-author: "j-martens"
+author: "jeannt"
 manager: "paulettm"
 ms.date: "08/11/2016"
 ms.topic: "get-started-article"
