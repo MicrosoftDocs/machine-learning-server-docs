@@ -7,7 +7,7 @@
 
 
 >R Client version 1.0 installer does not currently support offline installations. Enterprise customers who wish to install Microsoft R Client behind the firewall should contact technical support for guidance.
-
+ 
 <br> 
 
 **How to Install:**
