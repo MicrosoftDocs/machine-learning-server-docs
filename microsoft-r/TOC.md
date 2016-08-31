@@ -26,6 +26,7 @@
 ## R Server on Linux
 ### [Getting Started](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
+### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
 ## R Server on Hadoop
 ### [R Server on Hadoop MapReduce Getting Started](scaler-hadoop-getting-started.md)
 ### [R Server on Hadoop Spark Getting Started](scaler-spark-getting-started.md)
@@ -36,8 +37,8 @@
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
+#### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ### [ScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md)
-### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ## R Server on Teradata DB
 ### [Getting Started with R Server on Teradata ](scaler-teradata-getting-started.md)
 ### Install on Teradata
@@ -88,7 +89,7 @@
 #### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
 #### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
 #### [Account Locking Policies](deployr-admin-security/deployr-security-account-locking.md)
-#### [RServe Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
+#### [RServer Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
 ### [APIs and Client Libraries](deployr-tools-and-samples.md)
 #### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 #### [API Overview](deployr-api-reference.md)
@@ -117,8 +118,7 @@
 ### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 # Package Reference
-## ScaleR Function Reference
-## [RevoScaleR Functions](scaler/scaler.md)
+## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [rxClose](scaler/rxClose.md)
@@ -137,7 +137,7 @@
 ### [rxSqlServerTableExists](scaler/rxSqlServerTableExists.md)
 ### [rxSqlServerDropTable](scaler/rxSqlServerDropTable.md)
 ### [rxWriteNext](scaler/rxWriteNext.md)
-## [PemaR Function Reference](pemar-getting-started.md)
+## [RevoPemaR Function Reference](pemar-getting-started.md)
 ## Other Microsoft R Packages
 ### [Using foreach for Parallelizing Loops](foreach.md)
 # [Archived Documentation](microsoft-r-old-versions.md)
