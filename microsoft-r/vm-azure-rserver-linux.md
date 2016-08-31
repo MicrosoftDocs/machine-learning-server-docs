@@ -77,18 +77,18 @@ To start Microsoft R Server, simple type `R` at the command prompt. The R Server
 
 With Microsoft R Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Microsoft R Server R executable. This way, whenever you execute your R code, you'll do so using Microsoft R Server and benefit from its proprietary packages.  R Server works well popular IDEs such as [RStudio](https://www.rstudio.com) Desktop or Server. 
 
-### Configure RStudio for Microsoft R Server
+#### Configure RStudio for Microsoft R Server
   1. Launch RStudio.
   1. [Update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R).
      1. From the **Tools** menu, choose **Global Options**.
      1. In the  **General** tab, update the path to R to point to R executable for R Server.
   1. When you launch RStudio, Microsoft R Server will now be the default R engine.
 
-### Open Ports needed to Use RStudio Server
+#### Open Ports needed to Use RStudio Server
 
 RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you will need to go to the Azure Portal and elect the proper Network Security Group. Select the All Settings option and choose Inbound security rules. Add a new rule for RStudio. Name the rule, choose Any for the Protocol, and add port 8787 to the destination port range. Click OK to save your changes. You should now be able to access RStudio using a browser.
 
-### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
+#### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
 
 No cloud service is created to contain the public resources for the VM so there is no fully qualified domain name assigned to the dynamic public IP by default. One can be created and added to the image after deployment using the Azure PowerShell. The format of the hostname will be ````domainnamelabel; region;.cloudapp.azure.com````. 
 
