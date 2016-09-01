@@ -5,9 +5,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Available RAM: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4+ GB recommended <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Internet access: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Needed to download R Client and any dependencies   
 
-
->R Client version 1.0 installer does not currently support offline installations. Enterprise customers who wish to install Microsoft R Client behind the firewall should contact technical support for guidance.
-
 <br> 
 
 **How to Install:**
