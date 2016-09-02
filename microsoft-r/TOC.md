@@ -1,7 +1,7 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
-# Diving into Data Analysis
+# [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Get Started with ScaleR and Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
@@ -118,7 +118,7 @@
 ### [R Server on Linux](vm-azure-rserver-linux.md)
 ### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
-# Package Reference
+# [Package Reference](package-reference.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
