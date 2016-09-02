@@ -56,7 +56,7 @@ The following resources are available to you:
 
 ## dplyXdf 
 
-* [The dplyXdf_CheatSheet (PDF)](http://msdn.microsoft.com/microsoft-r/includes/attach/dplyXdf_CheatSheet.pdf)
+* [The dplyXdf_CheatSheet (PDF)](http://msdnstage.redmond.corp.microsoft.com/en-us/microsoft-r/includes/attach/dplyXdf_CheatSheet.pdf)
 
 
 ## Documentation Roadmap
