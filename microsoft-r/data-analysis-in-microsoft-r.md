@@ -26,4 +26,6 @@ ms.custom: ""
 
 # Diving into data analysis in Microsoft R
 
-*Microsoft R documentation for the data scientist...*
+This section is the data science documentation for Microsoft R products and technologies, with focus on data acquisition, transformation and manipulation, visualization and analysis. It includes tutorials as well as guidance for specific tasks.
+
+If you are new to R, be sure to leverage the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 

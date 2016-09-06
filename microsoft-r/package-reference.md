@@ -28,17 +28,22 @@ ms.custom: ""
 
 # Package Reference (Microsoft R)
 
-This section contains the function reference documentation for revo packages distributed as part of Microsoft R, including Microsoft R Server, R Client, and ScaleR support in SQL Server R Services. Each package provides functions used for specific categories of operations.
+This section contains the function reference documentation for revo packages that are installed with Microsoft R Client and R Server, or available in a service (through SQL Server or Azure). Each package offers functions used for specific categories of operations. To explore these packages at no charge, download and install the free Microsoft R Client.
 
 |Package | Description | Distributions |
 |----|----|----|
-|[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the basis of R Server functionality. | Ships in all versions of Microsoft R Client and R Server. |
+|[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. | Ships in all versions of Microsoft R Client and R Server. |
 |[RevoPemaR](pemar-getting-started.md) | Developer functions for coding custom parallel external memory algorithms. | Ships in all versions of R Client and R Server. |
 |RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
-|revolpe|Deprecated. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
 |RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
-|RevoRpeConnector|Deprecated. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
-|RevoRsrConnector| Deprecated. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
 |RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
 |RevoUtils|Utility functions useful when programming and developing R packages. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships in all versions of R Client and R Server. |
 |RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |Ships with Microsoft R Open (MRO). |
+
+## Deprecated packages
+
+The following packages exist for backward compatibility but are no longer under active development:
+
+* RevoRpeConnector
+* RevoRsrConnector
+* revolpe
