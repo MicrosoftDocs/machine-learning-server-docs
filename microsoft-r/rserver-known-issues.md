@@ -4,7 +4,7 @@
 title: "Microsoft R Server - Known Issues"
 description: "Known Issues with Microsoft R Server"
 keywords: ""
-author: "jmartens"
+author: "j-martens"
 manager: "paulettem"
 ms.date: "08/01/2016"
 ms.topic: "get-started-article"
