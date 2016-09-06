@@ -36,6 +36,9 @@ There are however alternative deployment options that can be adopted to improve 
 
 This deployment model while simple can be highly effective. Your application makes use of a `primary` server and a `standby` server that share a single instance of the DeployR database. By default, your application talks only to the `primary` server. If the `primary` server becomes unresponsive at runtime, your application detects this condition and transitions away from the unresponsive `primary` by redirecting all traffic to the `standby` server.
 
+> The following is supported with a SQL Server or PostgreSQL database (not the default H2 database) for DeployR 2016, or a MongoDB database for DeployR 8.0.0.
+
+
 The following steps detail how to configure this type of deployment:
 
 1.  **DeployR Database Setup**
@@ -46,13 +49,13 @@ The following steps detail how to configure this type of deployment:
 2.  **Primary Server Setup**
 
     -   Install a dedicated DeployR server and designate it as your `primary`.
-    -   Configure the MongoDB database endpoint for the primary using deployr.groovy.
+    -   Configure the database endpoint for the primary using deployr.groovy.
     -   Set the primary `deployr.server.policy.override.web.context` property using deployr.groovy.
 
 3.  **Standby Server Setup**
 
     -   Install a dedicated DeployR server and designate it as your `standby`.
-    -   Configure the MongoDB database endpoint for the standby using deployr.groovy.
+    -   Configure the database endpoint for the standby using deployr.groovy.
     -   Set the standby `deployr.server.policy.override.web.context` property using deployr.groovy.
 
 4.  **DeployR Grid Setup**
