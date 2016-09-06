@@ -26,6 +26,6 @@ ms.custom: ""
 
 # Diving into data analysis in Microsoft R
 
-This section is the data science documentation for Microsoft R products and technologies, with focus on data acquisition, transformation and manipulation, visualization and analysis. It includes tutorials as well as guidance for specific tasks.
+This section of the documentation is for data scientists, analysts, and statisticians. The focus of this section is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies. It includes tutorials as well as guidance for specific tasks using the ScaleR functions in the  RevoScaleR package.
 
-If you are new to R, be sure to leverage the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 
+If you are new to R, be sure to also leverage the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 
