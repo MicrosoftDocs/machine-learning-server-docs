@@ -109,7 +109,7 @@
 # [Microsoft R Client](r-client-get-started.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
-## [Install R Client](install-r-client-windows.md)
+## [Install R Client](r-client-install.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
 # [Microsoft R Open](r-open.md)
 # [Cloud-Based Offerings](vm-cloud.md)
