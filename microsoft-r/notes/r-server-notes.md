@@ -141,6 +141,10 @@ prediction data set.
 
 + When running scripts in the DeployR Repository Manager's Test tab, any numeric values set to `0` were ignored and not included as part of the request.
 
+**Known Issues**
+
+See here: https://msdn.microsoft.com/en-us/microsoft-r/rserver-known-issues
+
 <br />
 ##Microsoft R Server 8.0.0
 
