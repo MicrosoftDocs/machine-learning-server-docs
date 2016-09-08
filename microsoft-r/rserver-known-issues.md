@@ -6,7 +6,7 @@ description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "paulettem"
-ms.date: "08/01/2016"
+ms.date: "09/01/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,7 +29,7 @@ ms.custom: ""
 # Known Issues with Microsoft R Server 2016
 
 ## RevoScaleR
-
+ 
 ### Distributed Computing
  + On SLES 11 systems, there have been reports of threading interference between the Boost and
 MKL libraries.
