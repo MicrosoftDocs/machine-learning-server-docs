@@ -106,7 +106,7 @@
 # [SQL Server R Services](sql-server-r-services.md)
 ## [Get started on SQL Server](scaler-sql-server-getting-started.md)
 ## [ScaleR Function Quick Reference](scaler/functions-for-sql-server-data.md)
-# [Microsoft R Client](r-client-get-started.md)
+# [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](r-client-install.md)

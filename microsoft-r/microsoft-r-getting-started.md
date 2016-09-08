@@ -66,6 +66,8 @@ The feature set provided by Microsoft R Server, Microsoft R Client, and Microsof
 
 [!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
+Learn how to [install and get started with Microsoft R Client](/r-client-get-started.md).
+
 <br>
 
 ### Microsoft R Open
