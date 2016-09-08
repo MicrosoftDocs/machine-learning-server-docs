@@ -54,13 +54,6 @@ The following resources are available to you:
 ## R Tools for Visual Studio
 * [R Tools for Visual Studio (RTVS)] (https://www.visualstudio.com/en-us/features/rtvs-vs.aspx)
 
-## dplyXdf 
-
-* [The dplyXdf_CheatSheet (PDF)](./includes/attach/dplyXdf_CheatSheet.pdf)
-* [The dplyXdf_CheatSheet (PDF)](files/dplyXdf_CheatSheet.pdf)
-* [The dplyXdf_CheatSheet (PDF)](dplyXdf_CheatSheet2.pdf)
-
-
 ## Documentation Roadmap
 
 The best place to start are the Getting Started guides available on this site. Once you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)

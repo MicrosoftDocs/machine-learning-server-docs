@@ -56,7 +56,7 @@ necessary to pad all strings to a common length.
 rxImport or rxTextToXdf are used to import and append rows, combining multiple input files
 into a single .xdf file.
  + When importing data from the Hadoop Distributed File System, attempting to interrupt the
-computation may result in exiting Revolution R Enterprise.
+computation may result in exiting the software.
 
 ### Analysis Functions
  + Composite xdf data set columns are removed when running rxPredict(.) with rxDForest(.) in
@@ -94,7 +94,6 @@ utils::timestamp().
 
 ## R Base and Recommended Packages
 In the nls function, use of the “port” algorithm occasionally causes the R front-end to stop
-unexpectedly. The nls help file advises caution when using this algorithm; Revolution
-recommends avoiding it altogether and using either the default Gauss-Newton or plinear
+unexpectedly. The nls help file advises caution when using this algorithm; We
+recommend avoiding it altogether and using either the default Gauss-Newton or plinear
 algorithms. 
-
