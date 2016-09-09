@@ -58,6 +58,8 @@ Get started by reading this [Getting Started](microsoft-r-getting-started.md) gu
 
 [!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
+Learn how to [install and get started with Microsoft R Client](/r-client-get-started.md).
+
 <br>
 <a name="mro"></a>
 ##Microsoft R Open

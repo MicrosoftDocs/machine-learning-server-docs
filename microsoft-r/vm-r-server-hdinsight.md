@@ -26,8 +26,8 @@ ms.custom: ""
 
 ---
 
-# R Server on HDInsight
+# Introducing R Server on HDInsight
 
 Running Microsoft R Server as a service on top of HDInsight, R Server for HDInsight achieves unprecedented scale and performance by combining enterprise-scale R analytics software with the power of Hadoop and Spark. Multi-threaded math libraries and transparent parallelization in R Server means handling up to 1000x more data and up to 50x faster speeds than open source R—helping you train more accurate models for better predictions than previously possible. Plus, because R Server is built to work with the open source R language, all of your R scripts can run without changes.
 
-Read the [latest documentation](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-r-server-overview/) to learn more about R Server on HDInsight.
+Read the [latest documentation](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-r-server-overview/) and this [getting started guide](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-r-server-get-started/) to learn more about R Server on HDInsight.
