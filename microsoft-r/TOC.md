@@ -114,7 +114,7 @@
 # [Microsoft R Open](r-open.md)
 # [Cloud-Based Offerings](vm-cloud.md)
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
-## Azure Virtual Machines
+## [Azure Virtual Machines](vm-cloud.md)
 ### [R Server on Linux](vm-azure-rserver-linux.md)
 ### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
