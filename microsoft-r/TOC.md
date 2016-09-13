@@ -104,8 +104,6 @@
 #### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 #### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 # [SQL Server R Services](sql-server-r-services.md)
-## [Get started on SQL Server](scaler-sql-server-getting-started.md)
-## [ScaleR Function Quick Reference](scaler/functions-for-sql-server-data.md)
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)

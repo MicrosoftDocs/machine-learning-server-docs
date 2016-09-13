@@ -35,7 +35,7 @@ This topic presents a curated list of functions commonly used by Microsoft R use
 While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](scaler-hadoop-functions.md)
 + [Computing on a Teradata Datawarehouse](scaler-teradata-functions.md)
-+ [Computing on SQL Server](functions-for-sql-server-data.md)
++ [Computing on SQL Server](https://msdn.microsoft.com/en-us/library/mt652103.aspx)
 
 >Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
 
