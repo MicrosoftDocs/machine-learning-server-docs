@@ -28,7 +28,7 @@ ms.custom: ""
 
 Creates a compute context for use with a Spark cluster.
 
-This function is new in RevoScaleR package version 8.0.5. See [Supported platforms](rserver-install-supported-platforms.md) for supported versions of Apache Spark.
+This function is new in RevoScaleR package version 8.0.5. See [Supported platforms](./rserver-install-supported-platforms.md) for supported versions of Apache Spark.
 
 ## Usage
 ~~~~
