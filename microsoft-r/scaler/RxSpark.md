@@ -28,9 +28,11 @@ ms.custom: ""
 
 Creates a compute context for use with a Spark cluster.
 
-## Usage
+This function is new in RevoScaleR package version 8.0.5. See [Supported platforms](rserver-install-supported-platforms.md) for supported versions of Apache Spark.
 
-`RxSpark(
+## Usage
+~~~~
+RxSpark(
 object,
 hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
 shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
@@ -63,7 +65,8 @@ outDataPath = NULL,
 fileSystem = NULL,
 packagesToLoad = NULL,
 resultsTimeout = 15,
-...)`
+...)
+~~~~
 
 ## Arguments
 
