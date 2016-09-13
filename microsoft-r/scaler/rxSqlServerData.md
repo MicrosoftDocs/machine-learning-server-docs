@@ -123,4 +123,4 @@ cc <-RxInSqlServer
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)
