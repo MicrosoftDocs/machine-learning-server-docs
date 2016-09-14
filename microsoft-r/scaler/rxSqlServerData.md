@@ -5,7 +5,7 @@ title: "ScaleR Functions RxSqlServerData"
 description: "ScaleR Functions: RxSqlServerData"
 keywords: "RevoScaleR, ScaleR, RxSqlServerData"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -26,7 +26,7 @@ ms.custom: ""
 
 #RxSqlServerData
 
-Generates a SQL Server data source object. 
+Generates a SQL Server data source object.
 
 ## Usage
 

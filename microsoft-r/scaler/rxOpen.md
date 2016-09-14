@@ -5,7 +5,7 @@ title: "ScaleR Functions rxOpen"
 description: "ScaleR Functions: rxOpen"
 keywords: "RevoScaleR, ScaleR, rxOpen"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -44,7 +44,7 @@ For information about how to create a SQL Server data source, see [RxSqlServer](
 For information about working with other data sources such as Hadoop, Teradata, and text files, see the [Microsoft R Server documentation](http://msdn.microsoft.com/microsoft-r/index#) in the MSDN library.
 
 ## Return Value
-TRUE if the operation was successful; FALSE otherwise. 
+TRUE if the operation was successful; FALSE otherwise.
 
 ## Example
 For examples of how to work with ScaleR data sources, see [Data Sources](https://msdn.microsoft.com/microsoft-r/rserver/rserver-scaler-user-guide-3-data-source).

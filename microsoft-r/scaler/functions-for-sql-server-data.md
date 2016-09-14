@@ -5,7 +5,7 @@ title: "ScaleR Functions"
 description: "ScaleR Functions"
 keywords: "RevoScaleR, ScaleR"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -28,12 +28,12 @@ ms.custom: ""
 
 This topic provides an overview of the main ScaleR functions for use with SQL Server, along with comments on their syntax.
 
-For a complete list of ScaleR functions and how to use them, see the [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/index#) reference in the MSDN library. 
+For a complete list of ScaleR functions and how to use them, see the [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/index#) reference in the MSDN library.
 
 ## Functions for working with SQL Server Data Sources
 The following functions let you define a SQL Server data source. A data source object is a container that specifies a connection string together with the set of data that you want, defined either as a table, view, or query. Stored procedure calls are not supported.  
 
-In addition to defining a data source, you can execute DDL statements from R, if you have the necessary permissions on the instance and database. 
+In addition to defining a data source, you can execute DDL statements from R, if you have the necessary permissions on the instance and database.
 + [RxSqlServerData](RxSqlServerData.md) - Define a SQL Server  data source object
 + [rxSqlServerDropTable](rxSqlServerDropTable.md) - Drop a SQL Server  table
 + [rxSqlServerTableExists](rxSqlServerTableExists.md) - Check for the existence of a database table or object
@@ -41,13 +41,13 @@ In addition to defining a data source, you can execute DDL statements from R, if
 
 ## Functions for Defining or Managing a Compute Context
 The following functions let you define a new compute context, switch compute contexts, or identify the current compute context.
-+ [RxComputeContext](rxComputeContext.md) - Create a compute context. 
++ [RxComputeContext](rxComputeContext.md) - Create a compute context.
 + [rxInSqlServer](rxInSqlServer.md) - Generate a SQL Server compute context that lets **ScaleR** functions run in SQL Server R Services.
-+ [rxGetComputeContext](rxGetComputeContext.md) - Get the current compute context. 
++ [rxGetComputeContext](rxGetComputeContext.md) - Get the current compute context.
 + [rxSetComputeContext](rxSetComputeContext.md) - Specify which compute context to use. The local compute context is available by default, or you can specify the keyword **local**.
 
 ## Functions for Using a Data Source
-After you have created a data source object, you can open it to get data, or write new data to it. Depending on the size of the data in the source, you can also define the batch size as part of the data source and move data in chunks. 
+After you have created a data source object, you can open it to get data, or write new data to it. Depending on the size of the data in the source, you can also define the batch size as part of the data source and move data in chunks.
 + [rxIsOpen](rxIsOpen.md) - Check whether a data source is available
 + [rxOpen](rxOpen.md) - Open a data source for reading
 + [rxReadNext](rxReadNext.md) - Read data from a source

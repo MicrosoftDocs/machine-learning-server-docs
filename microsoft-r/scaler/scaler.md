@@ -5,7 +5,7 @@ title: "ScaleR Functions"
 description: "ScaleR Functions"
 keywords: "RevoScaleR, ScaleR"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/22/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -28,7 +28,7 @@ ms.custom: ""
 
 
 
-The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions. 
+The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
 This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  If you want to see the entire set of `RevoScaleR` functions,  [follow these steps.](#findmore)
 
@@ -61,11 +61,11 @@ While most of these functions are of general application, some are specific to p
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![import](../media/scaler/data-science-labels.png)
 
 
-Whenever you want to perform an analysis using `RevoScaleR` functions, you should specify three distinct pieces of information: 
+Whenever you want to perform an analysis using `RevoScaleR` functions, you should specify three distinct pieces of information:
  + The [**analytic function**](#analytics), which specifies the analysis to be performed
  + The [**compute context**](#compute), which specifies where the computations should take place
  + The [**data source**](#data), which is the data to be used
- 
+
 <br />
 ####Import and Export Functions
 
@@ -253,7 +253,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 
 <br />
-####Manipulation, Cleansing, and Transformation Functions 
+####Manipulation, Cleansing, and Transformation Functions
 
 
 <table>
@@ -470,7 +470,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
-<br /> 
+<br />
 
 ####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
@@ -809,9 +809,9 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
-<br /> 
+<br />
 
-##HPC and Distributed Computing Functions 
+##HPC and Distributed Computing Functions
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
 
@@ -930,8 +930,8 @@ These functions and many more can be used for high performance computing and dis
     </tr>
 </table>
 
-<br /> 
-##Utility Functions 
+<br />
+##Utility Functions
 
 >Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
 
@@ -1028,7 +1028,7 @@ See the list of public functions and see the associated help pages using the fol
 
 **To see the `RevoScaleR` functions that can be called from the commands-line:**
 
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe`, R Tools for Visual Studio, RStudio, or another IDE. 
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe`, R Tools for Visual Studio, RStudio, or another IDE.
 
 1. In the console, return the number of objects by typing the following at the R prompt `>`:
    ```
@@ -1044,7 +1044,7 @@ See the list of public functions and see the associated help pages using the fol
    > objects(5)
    ```
 
-1. Find the name of the function in which you are interested. 
+1. Find the name of the function in which you are interested.
 
 1. At the R prompt, type `?<function_name>` to open the help file for that function, such as:
    ```
