@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Windows"
-description: "Windows installation of Microsoft R Client."
+title: "Introducing Microsoft R Open"
+description: "Microsoft R Open introduction"
 keywords: ""
 author: "j-martens"
 manager: "paulette.mckay"
-ms.date: "05/17/2016"
+ms.date: "08/16/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -19,11 +19,13 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+ms.technology: 
+  - r-client
+  - r-server
 ms.custom: ""
 
 ---
 
-#Install Microsoft R Client
+# Introducing Microsoft R Open
 
-The installation steps for R Client have [moved here](r-client-install.md).
+[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
