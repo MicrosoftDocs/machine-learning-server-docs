@@ -126,6 +126,7 @@
 ### [rxFindPackage](scaler/rxFindPackage.md)
 ### [RxGetComputeContext](scaler/rxGetComputeContext.md)
 ### [RxGetComputeContext](scaler/RxSetComputeContext.md)
+### [rxGetOption](scaler/rxGetOption.md)
 ### [rxInstalledPackages](scaler/rxInstalledPackages.md)
 ### [rxInSqlServer](scaler/rxInSqlServer.md)
 ### [rxIsOpen](scaler/rxIsOpen.md)
