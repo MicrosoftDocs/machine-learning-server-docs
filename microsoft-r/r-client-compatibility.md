@@ -29,7 +29,7 @@ ms.custom: ""
 
 Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop. Learn more about the compatibility in the table below.
 
-Microsoft R Client at can be downloaded from http://aka.ms/rclient/download. Learn more in this [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
+Microsoft R Client can be downloaded from http://aka.ms/rclient/download. Learn more in this [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
 
 > Build 1.x of R Client runs on Windows only. Greater operating system support is coming soon.
 
