@@ -5,7 +5,7 @@ title: "rxClose - ScaleR Functions"
 description: "ScaleR Functions: rxClose"
 keywords: "RevoScaleR, ScaleR, rxClose"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -42,7 +42,7 @@ For information about how to create a SQL Server data source, see [RxSqlServer](
 For information about working with other data sources such as Hadoop, Teradata, and text files, see the [Microsoft R Server documentation](http://msdn.microsoft.com/microsoft-r/index#) in the MSDN library.
 
 ## Return Value
-TRUE if the operation was successful; FALSE otherwise. 
+TRUE if the operation was successful; FALSE otherwise.
 
 ## Example
 For examples of how to work with ScaleR data sources, see [Data Sources](https://msdn.microsoft.com/microsoft-r/rserver/rserver-scaler-user-guide-3-data-source).
@@ -50,4 +50,4 @@ For examples of how to work with ScaleR data sources, see [Data Sources](https:/
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)

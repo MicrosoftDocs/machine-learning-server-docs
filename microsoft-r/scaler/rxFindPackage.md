@@ -5,7 +5,7 @@ title: "ScaleR Functions RxInSqlServer"
 description: "ScaleR Functions: RxInSqlServer"
 keywords: "RevoScaleR, ScaleR, RxInSqlServer"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -32,7 +32,7 @@ Finds the path for one or more packages for a compute context.
 
      rxFindPackage(package, computeContext = NULL, allNodes = FALSE, lib.loc = NULL, quiet = TRUE,
                   verbose = getOption("verbose"))
-     
+
 ## Arguments
 
 _package_: character vector of name(s) of packag(es).
@@ -66,11 +66,11 @@ This example demonstrates how to find the paths for the **RevoScaleR** and **lat
 packagePaths <- rxFindPackage(package = c("RevoScaleR", "lattice"))
 packagePaths
 ~~~~
-     
+
 This example gets the path of the RevoScaleR package in a SQL Server compute context.
 
 ~~~~
-sqlServerCompute <- RxInSqlServer(connectionString = 
+sqlServerCompute <- RxInSqlServer(connectionString =
 "Driver=SQL Server;Server=myServer;Database=TestDB;Uid=myID;Pwd=myPwd;")
 sqlPackagePaths <- rxFindPackage(package = "RevoScaleR", computeContext = sqlServerCompute)
 ~~~~

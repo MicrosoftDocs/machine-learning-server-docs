@@ -5,7 +5,7 @@ title: "ScaleR Functions RxInSqlServer"
 description: "ScaleR Functions: RxInSqlServer"
 keywords: "RevoScaleR, ScaleR, RxInSqlServer"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -27,16 +27,16 @@ ms.custom: ""
 #RxInSqlServer
 
 Generates a SQL Server compute context using SQL Server R Services.
- 
+
 ## Usage
- 
+
 ` RxInSqlServer(object, connectionString = "",  numTasks = rxGetOption("numTasks"), autoCleanup = TRUE,  consoleOutput = FALSE, executionTimeoutSeconds = 0, wait = TRUE, packagesToLoad = NULL, shareDir = NULL, server = NULL, databaseName = NULL, user = NULL, password = NULL, ...)`
- 
+
 ## Arguments
- 
+
 The following table shows the arguments in order and their default values.
- 
- 
+
+
 |Parameter | Default |  Description|
 | --------- | --------- | --------- |
 |_object_ | NULL| An optional RxInSqlServer object.|
@@ -53,21 +53,21 @@ The following table shows the arguments in order and their default values.
 |_user_ | NULL|  A string containing the SQL login used for making the connection to the SQL Server instance.  You can also specify the SQL login in the connection string by providing a value for **uid=** keyword, but the value of the _user_ parameter, if supplied, will override the user name in the connection string.|
 |_password_ | NULL| Password associated with the SQL login. Can also be specified in the connection string with the ‘pwd’ keyword.
 |_..._ | NULL|  Additional arguments required by the underlying class. For SQL Server compute contexts, consider using the arguments `traceEnabled=TRUE` and `traceLevel=7`. Combined, these arguments enable run-time tracing of computations that run in SQL Server.|
- 
+
 ## Remarks
 If a number is specified for _numTasks_ argument, each of the tasks is given data in parallel, and does computations in parallel. Therefore, it is possible that computation time might decrease as the value of _numTasks_ increases.
- 
+
 However, there are cases where increasing the value of _numTasks_ might not have the desired effect. Computation time might even increase if too many tasks are competing for machine resources.
- 
+
 To control how many threads are used in parallel within each process, you can use the Note that `rxOptions` function and set the _numCoresToUse_ argument. However, there is a trade-off between the value in _numCoresToUse_ and _numTasks_. The best performance depends upon the specific algorithm, the type of data, the hardware, and other jobs that are running.
- 
+
 > [!IMPORTANT]
 >
 > The value of _autoCleanup_ should be set to the default value of TRUE except when absolutely necessary for debugging. If you leave this flag set to FALSE by mistake, it can result in accumulation of large computational artifacts that you will need to manage and eventually delete before they fill up your hard drive.
- 
+
 ## Return Value
 None
- 
+
 ## Example
 The following example defines a compute context using previously defined variables for the connection string and other required parameters.
 ~~~~
@@ -77,8 +77,8 @@ sqlCompute <- RxInSqlServer(
      wait = sqlWait,
      consoleOutput = sqlConsoleOutput)
 ~~~~
- 
+
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
- 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)

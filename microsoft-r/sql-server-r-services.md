@@ -5,7 +5,7 @@ title: "Introducing SQL Server R Services"
 description: "SQL Server R Services introduction"
 keywords: "SQL Server R Services"
 author: "j-martens"
-manager: "paulette.mckay"
+manager: "jhubbard"
 ms.date: "08/16/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -89,5 +89,7 @@ Learn more about SQL Server R Services here:
 + [Data Science End-to-End Walkthrough](https://msdn.microsoft.com/library/mt612857.aspx): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
 + [Using the RevoScaleR Packages](https://msdn.microsoft.com/library/mt637368.aspx): Deep dive on the anaytical sunctions provided by the **ScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
 + [Data Science Scenarios and Solution Templates](https://msdn.microsoft.com/en-us/library/mt693423.aspx): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
++ [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://msdn.microsoft.com/en-us/library/mt683480.aspx)
+
 
 Learn more about the [RevoScaleR package and its function here](scaler/scaler.md).

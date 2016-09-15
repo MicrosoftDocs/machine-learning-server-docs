@@ -5,7 +5,7 @@ title: "ScaleR Functions RxInSqlServer"
 description: "ScaleR Functions: RxInSqlServer"
 keywords: "RevoScaleR, ScaleR, RxInSqlServer"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -33,7 +33,7 @@ Lists the packages that are installed in the specified compute context.
      rxInstalledPackages(computeContext = NULL, allNodes = FALSE, lib.loc = NULL,
                          priority = NULL, noCache = FALSE, fields = "Package",
                          subarch = NULL)
-     
+
 
 ## Arguments
 
@@ -47,7 +47,7 @@ _priority_: Character vector or ‘NULL’ (default). If non-null, used to selec
 
 _noCache_: If ‘TRUE’, do not use cached information, nor cache it.
 
-_fields_: A character vector giving the fields to extract from each package's DESCRIPTION file, or ‘NULL’. If ‘NULL’, the following fields are used: 
+_fields_: A character vector giving the fields to extract from each package's DESCRIPTION file, or ‘NULL’. If ‘NULL’, the following fields are used:
 + Package
 + LibPath
 + Version
@@ -64,26 +64,26 @@ _fields_: A character vector giving the fields to extract from each package's DE
 + MD5sum
 + NeedsCompilation
 + Built
- 
+
   Unavailable fields result in ‘NA’ values.
 
 _subarch_: Character string or ‘NULL’. If non-null and non-empty, selects the packages that are installed for the specified sub-architecture.
 
 ## Remarks
 
-This is a wrapper for ‘installed.packages’ that adds specification of a compute context and restriction fo the fields that are returned. See the help file for additional details. 
+This is a wrapper for ‘installed.packages’ that adds specification of a compute context and restriction fo the fields that are returned. See the help file for additional details.
 Note that ‘rxInstalledPackages’ treats the ‘field’ argument differently than does installed.packages, and returns only the ‘fields’ specified in the argument.
 
-Related R functions are `require` and `installed.packages`. 
+Related R functions are `require` and `installed.packages`.
 
 ## Return Value
 
 By default, a character vector of installed packages is returned.
 If ‘fields’ is not set to ‘"Package"’, a matrix with one row per package is returned.  
-+ The row names are the package names. 
++ The row names are the package names.
 + + The possible column names are ‘"Package"’, ‘"LibPath"’, ‘"Version"’, ‘"Priority"’, ‘"Depends"’, ‘"Imports"’, ‘"LinkingTo"’, ‘"Suggests"’, ‘"Enhances"’, ‘"License"’, ‘"License_is_FOSS"’, ‘"License_restricts_use"’, ‘"OS_type"’, ‘"MD5sum"’, ‘"NeedsCompilation"’, and ‘"Built"’ (the R version the package was built under).  
 + Additional columns can be specified using the fields argument.  
-+ 
++
 If using a distributed compute context with the ‘allNodes’ set to ‘TRUE’, a list of matrices from each node will be returned.
 
 
@@ -114,7 +114,7 @@ myPackageInfo
 The following example shows how to get a list of the packages installed on a SQL Server compute context.
 
 ~~~~
-sqlServerCompute <- RxInSqlServer(connectionString = 
+sqlServerCompute <- RxInSqlServer(connectionString =
 "Driver=SQL Server;Server=myServer;Database=TestDB;Uid=myID;Pwd=myPwd;")
      sqlPackages <- rxInstalledPackages(computeContext = sqlServerCompute)
      sqlPackages

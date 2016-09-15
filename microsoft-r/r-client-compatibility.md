@@ -5,8 +5,8 @@ title: "R Client Compatibility Chart"
 description: "Microsoft R compatibility with R client"
 keywords: ""
 author: "j-martens"
-manager: "paulette.mckay"
-ms.date: "07/16/2016"
+manager: "jhubbard"
+ms.date: "09/14/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,12 +27,13 @@ ms.custom: ""
 
 # Microsoft R Client / R Server Compatibility
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop. Learn more about the compatibility in the table below.
+Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as SQL Server R Services and R Server for Hadoop. Learn more about the compatibility in the table below.
+
+Microsoft R Client at can be downloaded from http://aka.ms/rclient/download. Learn more in this [Microsoft R Getting Started](microsoft-r-getting-started.md) guide.
 
 > Build 1.x of R Client runs on Windows only. Greater operating system support is coming soon.
 
 Microsoft R Client works with the following flavors of Microsoft R Server: 
-
 
 |Version Compatibility   |R Client (build 1.0.0)|R Client (build 1.1.0)|
 |-----------|:--------------------------:|:--------------------------:|

@@ -5,7 +5,7 @@ title: "ScaleR Functions rxReadNext"
 description: "ScaleR Functions: rxReadNext"
 keywords: "RevoScaleR, ScaleR, rxReadNext"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -52,4 +52,4 @@ For examples of how to work with ScaleR data sources, see [Data Sources](https:/
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)

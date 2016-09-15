@@ -5,7 +5,7 @@ title: "ScaleR Functions RxSqlServerData"
 description: "ScaleR Functions: RxSqlServerData"
 keywords: "RevoScaleR, ScaleR, RxSqlServerData"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -26,11 +26,22 @@ ms.custom: ""
 
 #RxSqlServerData
 
-Generates a SQL Server data source object. 
+Generates a SQL Server data source object.
 
 ## Usage
 
-`RxSqlServerData(table = NULL, sqlQuery = NULL, connectionString = NULL, rowBuffering = TRUE, returnDataFrame = TRUE, stringsAsFactors = FALSE, colClasses = NULL, colInfo = NULL, rowsPerRead = 50000, verbose = 0, useFastRead = TRUE, server = NULL, databaseName = NULL, user = NULL, password = NULL, writeFactorsAsIndexes = FALSE) `
+~~~~
+RxSqlServerData(table = NULL, sqlQuery = NULL, connectionString = NULL,
+           rowBuffering = TRUE, returnDataFrame = TRUE, stringsAsFactors = FALSE,
+           colClasses = NULL, colInfo = NULL, rowsPerRead = 50000, verbose = 0,
+           useFastRead = TRUE, server = NULL, databaseName = NULL,
+           user = NULL, password = NULL, writeFactorsAsIndexes = FALSE)
+
+## S3 method for class 'RxSqlServerData'
+head(x, n = 6L, reportProgress = 0L, ...)
+## S3 method for class 'RxSqlServerData'
+tail(x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
+~~~~
 
 ## Arguments
 
@@ -57,7 +68,7 @@ The following table shows the arguments to RxSqlServerData in order and their de
 |_writeFactorsAsIndexes_| FALSE| Indicates whether columns treated as factors should be indexed. |
 
 >[!NOTE]
-> 
+>
 > If values are provided using the _user_ or _password_ arguments, the values take precedence over equivalent information provided within the _connectionString_ argument. For example, if you specify a user name as part of the connection string, you can override it by providing a value in the _user_ argument.
 
 
@@ -67,30 +78,30 @@ This is the main generator for the class RxSqlServerData, which extends RxDataSo
 The object is prepared but not used until you use a command that begins to load the data or otherwise process it.
 
 ## Return Value
-An object of class RxSqlServerData. 
+An object of class RxSqlServerData.
 
 ## Example
 
 The following example defines a SQL Server data source using a SQL login and password. The `RxSqlServerData` function instantiates the data source object but does not populate it until the `rxImport` function is called. Then the data is read in chunks from the database, using the predefined batch size, and written to a local XDF file.
 ~~~~
-     
+
      # Create an RxSqlServerData data source
-     
+
      sqlServerConnString <- "SERVER=RTest01;DATABASE=TestDatabase;UID=DBUser;PWD=DBUserPassword;"
-     
+
      dsSqlServerData <- RxSqlServerData(sqlQuery = "SELECT * FROM MyData",
                                     connectionString = sqlServerConnString)
-        
+
      # Create an xdf file name
      localXdfFileName <- file.path(tempdir(), "importedData.xdf")
-     
+
      # Import the data into the xdf file
      rxImport(dsSqlServerData, localXdfFileName, overwrite = TRUE)
-     
+
      # Read xdf file into a data frame
      MyDataIn <- rxDataStep(localXdfFileName)
      head(MyDataIn)
-     
+
 ~~~~
 
 The following example defines a connection string using Windows integrated authentication.
@@ -112,4 +123,4 @@ cc <-RxInSqlServer
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)

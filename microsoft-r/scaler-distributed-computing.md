@@ -82,7 +82,7 @@ The principal compute contexts are the following:
 
 - RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [*RevoScaleR Teradata Getting Started Guide*](scaler-teradata-getting-started.md).
 
-The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR Sql Server Getting Started Guide*](scaler-sql-server-getting-started.md).
+The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR SQL Server Intro*](sql-server-r-services.md).
 
 Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
 
