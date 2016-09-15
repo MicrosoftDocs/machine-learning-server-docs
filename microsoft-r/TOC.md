@@ -1,6 +1,7 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
+
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Get Started with ScaleR and Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
@@ -21,6 +22,7 @@
 ## [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
+
 # [Microsoft R Server](rserver.md)
 ## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
