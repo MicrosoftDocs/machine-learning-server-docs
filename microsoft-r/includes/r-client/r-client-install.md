@@ -20,7 +20,7 @@
 
     1. Accept the Microsoft R Client license terms.
     
-    1. To install Microsoft R Client, you'll need [Microsoft R Open](/microsoft-r/index.md#mro), Microsoft's enhanced distribution of R. The setup will install it for you automatically. You must accept the license terms for Microsoft R Open.
+    1. To install Microsoft R Client, you'll need [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. The setup will install it for you automatically. You must accept the license terms for Microsoft R Open.
 
     1. If desired, select the option of installing [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
