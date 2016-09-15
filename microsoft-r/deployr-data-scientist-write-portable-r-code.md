@@ -5,7 +5,7 @@ title: "Writing Portable R Code for DeployR"
 description: "Data scientist's guide to Writing Portable R Code for DeployR "
 keywords: ""
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -122,8 +122,9 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 **Part 1. In your local environment:**
 
-1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following command:
+1.  Install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following commands:
 
+        library(devtools)
         install_github('Microsoft/deployrUtils')
 
 2.  Declare package dependencies using `deployrPackage()` at the top of your script in your preferred IDE. Consult the package help for more details.

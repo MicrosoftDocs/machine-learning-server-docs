@@ -5,7 +5,7 @@ title: "ScaleR Functions"
 description: "ScaleR Functions"
 keywords: "RevoScaleR, ScaleR"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/22/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -26,9 +26,9 @@ ms.custom: ""
 
 # RevoScaleR Functions for Teradata
 
-The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Teradata DB compute contexts and some may not be fully supported in these compute contexts. 
+The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Teradata DB compute contexts and some may not be fully supported in these compute contexts.
 
-This page presents a curated list of functions that might be particularly interesting to Teradata DB users. These functions can be called directly from the command line. 
+This page presents a curated list of functions that might be particularly interesting to Teradata DB users. These functions can be called directly from the command line.
 
 The `RevoScaleR` package supports a single Teradata DB compute context, `RxTeradata`. For details on `RxTeradata` compute context, see the [*RevoScaleR Teradata DB Getting Started Guide*](../scaler-teradata-getting-started.md#using-a-teradata-data-source-and-computecontext).
 
@@ -189,7 +189,7 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
     </tr>
 </table>
 
-<br /> 
+<br />
 
 
 <br />
@@ -372,7 +372,7 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
 
 ##Data Source Functions
 
-Of course, not all data source types are available on all compute contexts. 
+Of course, not all data source types are available on all compute contexts.
 
 <table>
     <tr>

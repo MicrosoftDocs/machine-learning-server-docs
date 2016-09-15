@@ -5,7 +5,7 @@ title: "R Client Release Notes"
 description: "R Client Readme"
 keywords: ""
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -93,6 +93,8 @@ The following release notes apply to Microsoft R Server.
 
 + Microsoft R **licenses and Third Party Notices** files are now included in the new `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
 
++ An opt-in telemetry feature allows you to anonymously help improve Microsoft R Server by enabling us to gather data on the R Server functions you use, operating system, R version, and RevoScaleR version. Turn it on using the `rxPrivacyControl` function in `RevoScaleR`.
+
 For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 **Bug Fixes**
@@ -138,6 +140,10 @@ prediction data set.
 + DeployR was generating very large (~52GB) catalina.out log files.
 
 + When running scripts in the DeployR Repository Manager's Test tab, any numeric values set to `0` were ignored and not included as part of the request.
+
+**Known Issues**
+
+See here: https://msdn.microsoft.com/en-us/microsoft-r/rserver-known-issues
 
 <br />
 ##Microsoft R Server 8.0.0

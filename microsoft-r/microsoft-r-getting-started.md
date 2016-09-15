@@ -5,7 +5,7 @@ title: "Microsoft R Server and R Client Getting Started Guide"
 description: "Microsoft R features and components overview."
 keywords: ""
 author: "j-martens"
-manager: "paulette.mckay"
+manager: "jhubbard"
 ms.date: "07/13/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -28,59 +28,61 @@ ms.custom: ""
 
 # Microsoft R Getting Started Guide
 
-##Microsoft R Products
+## Microsoft R Products
 
 R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
 
-For a side by side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
+Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions, including big data scenarios that require a distributed file system like Hadoop. 
 
-###Microsoft R Server
+The Microsoft R product family includes Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and R Client provide additional R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
-Microsoft R Server is R for the Enterprise and solves the problem of deployment and operationalization of R code. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server provides additional the R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
+<br>
+<a name="compare-prods"></a>
+### Microsoft R Product Comparison
 
-Performance of R solutions in Microsoft R Server is expected to generally be better than any conventional R implementation, given the same hardware, because R can be run using server resources and sometimes distributed to multiple processes. Depending on the input data and the processing of it, queries can be distributed across multiple partitions for faster processing.
+The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. For information on SQL Server R Services, see the [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx).
 
-Users can also expect to see considerable differences in performance and scalability for the same ScaleR functions if run in R Server versus being run locally in R Client. Reasons include support for chunking, increased threads available for R worker processing and parallel processing not only with standard R packages, but also with ScaleR functions. R Server offers optimized performance and scalability through parallelization and streaming.
+|Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
+|-----------|----------------|------------------|-----------|
+|Big Data   |In-memory bound<br>Can only process datasets that fit into the available memory|In-memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
+|Speed of<br>Analysis    |Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
+|Enterprise<br>Readiness   |Community support|Community support|Commercial support|
+|Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
+|Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
+|[DeployR <br>Enterprise](microsoft-r-getting-started.md#deployr-intro)  |Not available|Not available|Included|
 
-However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
-
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R which allows programmers to use Java, JavaScript or .Net to integrate the R analysis output with a third party package. [Learn more about DeployR...](deployr-about.md)
+<br>
 
 
-[Watch the R Server technology overview video.](https://www.microsoft.com/en-us/cloud-platform/r-server) <a href="" target="_blank">>></a>
+### Microsoft R Server
 
 
-|Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
-|---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
-|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
-|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](rserver-install-teradata-server.md)|[Doc](scaler-teradata-getting-started.md)|
-|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
+[!include[Microsoft R Server](./includes/r-server/intro.md)]
 
-For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
+<br>
 
 <a name="mrc"></a>
-##Microsoft R Client
+### Microsoft R Client
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the powerful ScaleR technology and its proprietary functions to benefit from parallelization and remote computing. 
+[!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for ScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. 
+Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
 
-Learn how to [install Microsoft R Client](install-r-client-windows.md).
+<br>
 
+### Microsoft R Open
 
-##Microsoft R Open
+[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
 
-Microsoft R Open is the enhanced distribution of R from Microsoft Corporation. It is a complete open source platform for statistical analysis and data science. Being based on the open source R engine makes Microsoft R Open fully compatibility with all R packages, scripts and applications that work with that version of R. Microsoft R Open delivers [performance boosts](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), in comparison to the standard R distribution, since R Open leverages high-performance, multi-threaded math libraries. Like open source R from CRAN, Microsoft R Open is open source and free to download, use, and share.   
-
-Microsoft R Open provides limited performance and scalability in comparison to Microsoft R Server and Microsoft R Client Editions. Specifically, none of the proprietary ScaleR functions and packages included with Microsoft R Server and Microsoft R Client are available in standalone Microsoft R Open. Also, data that can be processed is limited to the data that can fit in server memory.
-
-Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
+<br>
 
 ## What's in R Server and R Client
 
-For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md##compare-prods).
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
 
-**DistributedR: Parallel and distributed computing framework for _Big Data Big Analytics_.**
+### DistributedR
+
+DistributedR offers parallel and distributed computing framework for _Big Data Big Analytics_.
 
 One of the limitations of R frequently encountered is scalability. R has many tools and techniques for handling small problems, but when the data set to be analyzed starts to get big, speed and memory limitations can be a problem. The Microsoft R ‘Big Data Big Analytics’ platform is built upon a high-performance, scalable computing framework that eradicates these technology barriers.
 
@@ -90,8 +92,9 @@ This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to proc
 
 This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](scaler-getting-started.md#computecontext).
 
-<br>
-**ScaleR: High performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R.**
+### ScaleR
+
+ScaleR offers high performance, scalable, parallelized and distributable ‘Big Data Big Analytics’ in R.
 
 The ‘Big Data Big Analytics’ functions built on DistributedR provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
 
@@ -101,8 +104,9 @@ R is a flexible and powerful statistical programming language. The RevoScaleR pa
 
 To learn more, look for the [RevoScaleR ‘rx’ analysis and data manipulation functions](scaler-user-guide-data-transform.md) and [‘rxExec’ for HPC functionality](scaler-distributed-computing.md). If you are computing decision trees, also check out the included [RevoTreeView package](scaler-user-guide-decision-tree.md) that allows you to interactively visualize your decision trees.
 
-<br>
-**ConnectR: Move your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.**
+### ConnectR
+
+ConnectR offers your data efficiently and work with data in a variety of formats, including SAS, SPSS, Hadoop, and text files.
 
 A key to data analysis is, of course, the data. The RevoScaleR package provides a way for you to connect with the data you may have stored in a variety of formats, such as SAS, SPSS, Teradata, ODBC, delimited and fixed format text, and Hadoop Distributed File System (HDFS) text files. You have a choice of:
 
@@ -113,9 +117,10 @@ A key to data analysis is, of course, the data. The RevoScaleR package provides 
 To learn more, look for [data sources in the RevoScaleR package](scaler-user-guide-data-import.md).
 
 <a name="deployr-intro"></a>
-<br>
-**DeployR, the R Integration Server, is an optional framework for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. **
 
+### DeployR
+
+DeployR, the R Integration Server, is an optional framework delivered with Microsoft R Server for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems.
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
@@ -127,55 +132,98 @@ DeployR Enterprise scales for business-critical applications and offers support 
 
 [Learn more about DeployR...](deployr-about.md)
 
-## Starting & Stopping Microsoft R
+### Optimized Math Libraries
 
-### Starting Microsoft R
+One feature of Microsoft R Server and R Client is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
 
-**To launch Microsoft R Server on Linux**:
+Matrix multiplication, eigenvalue calculations, and singular value decompositions are significantly faster using these optimized libraries. For example, we ran the following computations, first with R built from source using the standard R BLAS, then with Microsoft R Server built with the optimized math libraries:
 
-1. Open a terminal or console window.
-1. At the prompt, type: 
-```
-Revo64
-```
+	set.seed(14)
+	x <- matrix(rnorm(1000000),nrow=1000)
+	xout <- numeric(20)
+	for (i in 1:20) xout[i] <- system.time(eigen(x))[3]
+	xout2 <- numeric(20)
+	for (i in 1:20) xout[i] <- system.time(svd(x))[3]
+	xout3 <- numeric(20)
+	for (i in 1:20) xout[i] <- system.time(qr(x))[3]
+	xout4 <- numeric(20)
+	for (i in 1:20) xout[i] <- system.time(lm(x[,i]~x[,-i]))[3]
+	xout5 <- numeric(20)
+	for (i in 1:20) xout[i] <- system.time(t(x)%*%x)[3]
 
-If you get the message “Revo64: Command not found," this means that Microsoft R Server is not in your search path. Check with your system administrator to find the correct path to your R Server installation, then modify your search path (typically in your .bashrc file):
-```
-PATH=$PATH:/path/to/Microsoft R Server
-export PATH
-```
+The mean times for each calculation are shown below. Matrix multiplication, eigenvalue, and singular value decomposition calculations show the greatest speedups.
 
-<br>
-**To launch Microsoft R Client**:
-
-After you have installed the software, you launch Microsoft R Client as follows.
-
-For Windows 10:
-
-+ Choose **All Apps > Microsoft R Client > Rgui**.
-
-
-For Windows 8.1:
-
-1. Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
-  
-1. Click **Start** to view the **Start** screen.
-
-1. Locate and click the tile for **Microsoft R Client**.
+| Calculation           | Reference Libraries  | Optimized Libraries  |
+|-----------------------|-----------|-----------|
+| eigen                 | 11.45350  | 3.63485   |
+| svd                   | 7.34740   | 1.19455   |
+| gr                    | 1.16765   | 0.93600   |
+| lm                    | 1.47795   | 1.23430   |
+| Matrix multiplication | 1.75610   | 0.09604   |
 
 
-For Windows 7:
+#### More on R Numerics
 
-+ From the **Task Bar**, choose **Start > All Programs > Microsoft R Client > Rgui**.
+Most mathematical computations in R are performed using binary double-precision floating-point numbers. Arithmetic performed using these numbers is called *floating-point arithmetic*. In floating-point arithmetic, numbers are stored with finite precision according to internationally-recognized standards established by the IEEE. There are only finitely many floating-point numbers. In particular, there is a largest (and smallest) floating-point number. There is also a smallest nonnegative floating-point number. Consider, for example, the following R statements:
 
-<br />
-### Stopping Microsoft R
+	10^308 * 10
 
-From any command-line version of R, the standard way to exit is by calling the q function. All R functions are called by typing the name of the function, followed by a pair of parentheses that may include one or more arguments. So, to quit R, you call q with no arguments, following the R prompt &gt;:
+		[1] Inf
 
-	q()
+	2^(-1074) / 2
 
-Whenever you quit R, you are asked if you want to save the workspace image; if you have created functions or data that you want to keep, saving the workspace image will preserve them for future use. (Most R users, however, create their functions and data in script files which can be read, or *sourced*, into R. If you follow this model, you will usually say “no” to saving the workspace image.)
+		[1] 0
+
+illustrating that R (and floating-point arithmetic) has a somewhat limited sense of the infinite and the minutely small. When one or more terms in a computation involve the special floating-point value *inf*, the computation is said to *overflow*. Similarly, *underflow* occurs when a number too small in magnitude to be represented is encountered.
+
+The distance between the floating-point number \(1\) and the next-largest floating-point number is typically called *machine epsilon*, or just *eps* for short. We can compute *eps* with a simple R program:
+
+	eps <- 1
+	while ((1 + eps/2) != 1) { eps <- eps/2 }
+	eps
+
+	[1] 2.220446e-16
+
+In a relative sense *eps* is as large as the gaps between floating-point numbers get.
+
+In between their largest and smallest values, floating-point numbers generally only approximate real numbers. For example, although 1 and 10 *are* floating-point numbers, the rational number 1/10 has no exact binary floating-point representation. It is *very* closely approximated by a nearby floating-point number, but not close enough that arithmetic operations are always unaffected. Consider the following somewhat counter-intuitive R example:
+
+	(11/10 - 1)*10—1
+
+	[1] 8.881784e-16
+
+Yet,
+
+	(11/10)*10 - 1*10—1
+
+	[1] 0
+
+This example shows that floating-point arithmetic does not always obey the usual algebraic laws; here the distributive law is violated. The following example shows a situation in which the associative law is violated:
+
+	x <- rnorm(100000)
+	sum(x) - sum(sort(x))
+
+	[1] -8.526513e-14
+
+The violation of associativity results from the accumulation many small approximations over the summation. Re-ordering the computation can affect the result.
+
+For a good introduction to the pitfalls involving numeric computation, read _"What every computer scientist should know about floating-point arithmetic"_ by Goldberg.
+
+#### Performance Optimization and Numerics
+
+Many of the most widely-used and compute-intensive linear algebra and arithmetic operations performed by R are computed by low-level numerics libraries, including the basic linear algebra subroutine (BLAS) library. Microsoft R includes highly-tuned low-level numerics libraries that are optimized for speed on a wide variety of x86, x86-64 and IA-64 processor architectures.
+
+Many of the performance optimizations try to:
+
+- Make use of available SIMD-style vector registers and operations
+
+- Make efficient re-use of speedy processor memory caches.
+
+Both approaches often require blocking or otherwise re-ordering computations, for example to fit in a small cache.
+
+Because floating-point arithmetic always involves approximation, and the exact nature of the approximation depends upon the particular algorithms used, it is possible that the results from the highly-tuned numerics available in Microsoft R Server and R Client differ from results computed by other implementations of R, just as results can differ across system architectures. These computational differences typically manifest themselves on the order of machine epsilon.
+
+Some high-performance numerics routines, including those that use x86 SIMD vector instructions (SSE, etc.), require that their input data be loaded into memory addresses divisible by 16 bytes. Unfortunately, R does not presently guarantee alignment of data on 16-byte boundaries. Therefore, it is possible that, depending on data alignment, parts of some computations may be grouped off differently (for less efficient computation). This alignment-dependent blocking of some computations can also result in differences from run to run on the order of machine epsilon.
 
 
 ## Getting Function Help
@@ -1005,205 +1053,6 @@ Note that because we have specified an output file when importing the data, the 
 	Number of iterations: 9
 
 
-## Optimized Math Libraries
-
-One feature of Microsoft R Server and R Client is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
-
-Matrix multiplication, eigenvalue calculations, and singular value decompositions are significantly faster using these optimized libraries. For example, we ran the following computations, first with R built from source using the standard R BLAS, then with Microsoft R Server and R Client built with the optimized math libraries:
-
-	set.seed(14)
-	x <- matrix(rnorm(1000000),nrow=1000)
-	xout <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(eigen(x))[3]
-	xout2 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(svd(x))[3]
-	xout3 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(qr(x))[3]
-	xout4 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(lm(x[,i]~x[,-i]))[3]
-	xout5 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(t(x)%*%x)[3]
-
-The mean times for each calculation are shown below. Matrix multiplication, eigenvalue, and singular value decomposition calculations show the greatest speedups.
-
-| Calculation           | Reference Libraries  | Optimized Libraries  |
-|-----------------------|-----------|-----------|
-| eigen                 | 11.45350  | 3.63485   |
-| svd                   | 7.34740   | 1.19455   |
-| gr                    | 1.16765   | 0.93600   |
-| lm                    | 1.47795   | 1.23430   |
-| Matrix multiplication | 1.75610   | 0.09604   |
-
-### A Note on R Numerics
-
-Most mathematical computations in R are performed using binary double-precision floating-point numbers. Arithmetic performed using these numbers is called *floating-point arithmetic*. In floating-point arithmetic, numbers are stored with finite precision according to internationally-recognized standards established by the IEEE. There are only finitely many floating-point numbers. In particular, there is a largest (and smallest) floating-point number. There is also a smallest nonnegative floating-point number. Consider, for example, the following R statements:
-
-	10^308 * 10
-
-		[1] Inf
-
-	2^(-1074) / 2
-
-		[1] 0
-
-illustrating that R (and floating-point arithmetic) has a somewhat limited sense of the infinite and the minutely small. When one or more terms in a computation involve the special floating-point value *inf*, the computation is said to *overflow*. Similarly, *underflow* occurs when a number too small in magnitude to be represented is encountered.
-
-The distance between the floating-point number \(1\) and the next-largest floating-point number is typically called *machine epsilon*, or just *eps* for short. We can compute *eps* with a simple R program:
-
-	eps <- 1
-	while ((1 + eps/2) != 1) { eps <- eps/2 }
-	eps
-
-	[1] 2.220446e-16
-
-In a relative sense *eps* is as large as the gaps between floating-point numbers get.
-
-In between their largest and smallest values, floating-point numbers generally only approximate real numbers. For example, although 1 and 10 *are* floating-point numbers, the rational number 1/10 has no exact binary floating-point representation. It is *very* closely approximated by a nearby floating-point number, but not close enough that arithmetic operations are always unaffected. Consider the following somewhat counter-intuitive R example:
-
-	(11/10 - 1)*10—1
-
-	[1] 8.881784e-16
-
-Yet,
-
-	(11/10)*10 - 1*10—1
-
-	[1] 0
-
-This example shows that floating-point arithmetic does not always obey the usual algebraic laws; here the distributive law is violated. The following example shows a situation in which the associative law is violated:
-
-	x <- rnorm(100000)
-	sum(x) - sum(sort(x))
-
-	[1] -8.526513e-14
-
-The violation of associativity results from the accumulation many small approximations over the summation. Re-ordering the computation can affect the result.
-
-For a good introduction to the pitfalls involving numeric computation, see the excellent article by Goldberg .
-
-### Performance Optimization and Numerics
-
-Many of the most widely-used and compute-intensive linear algebra and arithmetic operations performed by R are computed by low-level numerics libraries, including the basic linear algebra subroutine (BLAS) library. Microsoft R includes highly-tuned low-level numerics libraries that are optimized for speed on a wide variety of x86, x86-64 and IA-64 processor architectures.
-
-Many of the performance optimizations try to
-
-- Make use of available SIMD-style vector registers and operations
-
-- Make efficient re-use of speedy processor memory caches.
-
-Both approaches often require blocking or otherwise re-ordering computations, for example to fit in a small cache.
-
-Because floating-point arithmetic always involves approximation, and the exact nature of the approximation depends upon the particular algorithms used, it is possible that the results from the highly-tuned numerics available in Microsoft R Server and R Client differ from results computed by other implementations of R, just as results can differ across system architectures. These computational differences typically manifest themselves on the order of machine epsilon.
-
-Some high-performance numerics routines, including those that use x86 SIMD vector instructions (SSE, etc.), require that their input data be loaded into memory addresses divisible by 16 bytes. Unfortunately, R does not presently guarantee alignment of data on 16-byte boundaries. Therefore, it is possible that, depending on data alignment, parts of some computations may be grouped off differently (for less efficient computation). This alignment-dependent blocking of some computations can also result in differences from run to run on the order of machine epsilon.
-
-## R Memory Limits in Windows
-
-There are several tools available in the Windows versions of R to help you monitor and manage memory usage.
-
-### 64-bit R Memory Limits
-
-The primary advantage 64-bit architectures bring to R is an increase in the amount of memory available to a given R process. The first benefit of that increase is an increase in the size of data objects you can create. For example, on most 32-bit versions of R, the largest data object you can create is roughly 3GB; attempts to create 4GB objects result in errors with the message “cannot allocate vector of length *xxxx*.” On 64-bit versions of R, you can generally create larger data objects. From R 3.0.0 onward, the old limitation of \(2^{31} - 1\) elements in a vector (about 2 billion elements) has been removed (except for character vectors).
-
-The functions *memory.size* and *memory.limit* help you manage the memory used by Windows versions of R. In 64-bit Microsoft R Server and R Client, R sets the memory limit by default to the amount of physical RAM minus half a gigabyte, so that, for example, on a machine with 8GB of RAM, the default memory limit is 7.5GB:
-
-	memory.limit()
-
-	[1] 7678.328
-
-You can also use *memory.limit* to increase the amount of memory used by R, but not decrease it:
-
-	memory.limit(size = 15000)
-
-	NULL
-
-Objects larger than physical memory can be allocated and used, as long as the total memory used does not exceed *memory.limit()*. However, using such large objects may be unacceptably slow.
-
-The *memory.size* function returns the amount of memory currently being used by R, or, if you specify *max=TRUE*, the maximum amount of memory used in the current R session:
-
-	memory.size()
-
-	[1] 8207.29
-
-	memory.size(max=TRUE)
-
-	[1] 8214.75
-
-The result is in MB.
-
-Another useful function for managing memory, which is available on all platforms and not just Windows, is gc. The gc function causes R to perform garbage collection and report the current state of memory usage. The report gives information on the number of “Ncells” and “Vcells” currently in use; very roughly, the “Ncells” can be thought of the memory used by the language itself and “Vcells” the memory used for the data. The “Ncells” occupy 28 bytes on a 32-bit platform and typically 56 bytes on a 64-bit platform. “Vcells” occupy 8 bytes on all platforms. Typical output from gc is as follows:
-
-	> gc()
-		used (Mb) gc trigger   (Mb) limit (Mb)  max used   (Mb)
-	Ncells 137107  7.4     350000   18.7     229376    350000   18.7
-	Vcells 142395  1.1  451286991 3443.1      32768 537014530 4097.1
-
-### Using the Memory Tools Together
-
-The following function combines *memory.limit*, *memory.size*, and *gc* into a single function with friendly formatting; it can be used only on Windows platforms
-
-	reportMem <- function()
-	{
-		# Perform garbage collection
-		gc(verbose=FALSE)
-		#How much memory is being used by malloc
-		intvar <- round(memory.size())
-		cat("Memory currently allocated is", intvar, "Mb\n")
-		#Maximum amount of memory that has been obtained from the OS
-		intvar <- round(memory.size(max=TRUE))
-		cat("Maximum amount of memory allocated during this session is",
-		intvar, "Mb\n")
-		#Memory limit
-		intvar <- round(memory.limit())
-		cat("Current limit for total allocation is", intvar, "Mb\n")
-	}
-
-The *reportObjSize* function defined below is a simple wrapper for *object.size* that prints the size of an object in MB:
-
-	reportObjSize <- function(x=x)
-	{
-		bm_conv <- 1024*1024
-		objsize <- round(object.size(x)/bm_conv)
-		cat("Object Size =", objsize, "Mb", "\n")
-	}
-
-Together, we can use these functions to show how memory use changes as we allocate vectors of different sizes. (We used a 64-bit Windows machine for our examples; you can do similar things on 32-bit Windows, but obviously with smaller objects sizes.) For example, here we create a vector of size roughly 1GB, and see its size and effect on the memory profile:
-
-	reportMem()
-
-		Memory currently allocated is 21 Mb
-		Maximum amount of memory allocated during this session is 23 Mb
-		Current limit for total allocation is 7678 Mb
-
-	xlen1gb <- 2^27
-	x <- rnorm(xlen1gb)
-	reportMem()
-
-		Memory currently allocated is 1039 Mb
-		Maximum amount of memory allocated during this session is 1047 Mb
-		Current limit for total allocation is 7678 Mb
-
-To delete an object, use the *rm* function. The *reportMem* function handles the garbage collection to ensure that the deleted object’s memory is in fact freed:
-
-	rm(x)
-	reportMem()
-
-	 Memory currently allocated is 15 Mb
-	 Maximum amount of memory allocated during this session is 1047 Mb
-	 Current limit for total allocation is 7678 Mb
-
-To create a 5GB object, make sure that the memory limit is high enough. (Allocating a 5GB object can be done even on systems with less than 5GB of physical memory, but it can be very slow.)
-
-	x <- rnorm(xlen1gb*5)
-	reportObjSize(x)
-
-	 Object Size = 5120 Mb
-
-	reportMem()
-
-	 Memory currently allocated is 5135 Mb
-	 Maximum amount of memory allocated during this session is 5143 Mb
-	 Current limit for total allocation is 7678 Mb
 
 ## Next Steps: A Roadmap to Documentation
 

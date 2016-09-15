@@ -5,7 +5,7 @@ title: "RxSpark function (ScaleR)"
 description: "ScaleR Functions: RxSqlServerData"
 keywords: "RevoScaleR, ScaleR, RxSpark"
 author: "HeidiSteen"
-manager: "paulettm"
+manager: "jhubbard"
 ms.date: "06/23/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -28,42 +28,45 @@ ms.custom: ""
 
 Creates a compute context for use with a Spark cluster.
 
-## Usage
+This function is new in RevoScaleR package version 8.0.5. See [Supported platforms](../rserver-install-supported-platforms.md) for supported versions of Apache Spark.
 
-`RxSpark(
-object,
-hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
-shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
-clientShareDir = rxGetDefaultTmpDirByOS(),
-sshUsername = Sys.info()[["user"]],
-sshHostname = NULL,
-sshSwitches = "",
-sshProfileScript = NULL,
-sshClientDir = "",
-nameNode = rxGetOption("hdfsHost"),
-jobTrackerURL = NULL,
-port = rxGetOption("hdfsPort"),
-onClusterNode = NULL,
-wait = TRUE,
-numExecutors = 65535,
-executorCores = 2,
-executorMem = "4g",
-driverMem = "4g",
-executorOverheadMem = "4g",
-extraSparkConfig = "",
-persistentRun = FALSE,
-idleTimeout = 3600,
-suppressWarning = TRUE,
-consoleOutput = FALSE,
-showOutputWhileWaiting = TRUE,
-autoCleanup = TRUE,
-workingDir = NULL,
-dataPath = NULL,
-outDataPath = NULL,
-fileSystem = NULL,
-packagesToLoad = NULL,
-resultsTimeout = 15,
-...)`
+## Usage
+~~~~
+RxSpark(
+    object,
+    hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
+    shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
+    clientShareDir = rxGetDefaultTmpDirByOS(),
+    sshUsername = Sys.info()[["user"]],
+    sshHostname = NULL,
+    sshSwitches = "",
+    sshProfileScript = NULL,
+    sshClientDir = "",
+    nameNode = rxGetOption("hdfsHost"),
+    jobTrackerURL = NULL,
+    port = rxGetOption("hdfsPort"),
+    onClusterNode = NULL,
+    wait = TRUE,
+    numExecutors = 65535,
+    executorCores = 2,
+    executorMem = "4g",
+    driverMem = "4g",
+    executorOverheadMem = "4g",
+    extraSparkConfig = "",
+    persistentRun = FALSE,
+    idleTimeout = 3600,
+    suppressWarning = TRUE,
+    consoleOutput = FALSE,
+    showOutputWhileWaiting = TRUE,
+    autoCleanup = TRUE,
+    workingDir = NULL,
+    dataPath = NULL,
+    outDataPath = NULL,
+    fileSystem = NULL,
+    packagesToLoad = NULL,
+    resultsTimeout = 15,
+    ...)
+~~~~
 
 ## Arguments
 
@@ -141,4 +144,4 @@ An object of class RxSpark.
 ## See Also
 [Comparison of rx Functions and CRAN R Functions](compare-base-r-scaler-functions.md)
 
-[ScaleR Functions for Working with SQL Server Data](functions-for-sql-server-data.md)
+[ScaleR Functions for Working with SQL Server Data](https://msdn.microsoft.com/en-us/library/mt652103.aspx)

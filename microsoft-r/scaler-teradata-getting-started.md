@@ -6,7 +6,7 @@ description: "Overview and tutorial to using RevoScaleR in Teradata."
 keywords: ""
 author: "richcalaway"
 manager: "mblythe"
-ms.date: "03/17/2016"
+ms.date: "08/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -52,22 +52,10 @@ For information on other distributed computing compute contexts, see:
 
 ## Installation
 
-The **RevoScaleR** package is installed as part of Microsoft R Server. The package is automatically loaded when you start Microsoft R Server. On your client machine, you will need:
-
--   Microsoft R Server installed.
--   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10
-
-If you plan to do in-database computations in **Teradata**, you will need Microsoft R Server installed on all of the nodes of the **Teradata Platform**.
-
-If you plan to perform large computations alongside **Teradata**, Microsoft R Server should be installed on a server or powerful workstation with access to your **Teradata Database** with the following specification:
-
--   Red Hat Enterprise Linux 5.x or 6.x, SLES 11, or a recent version of Windows (post-XP)
--   At least 4 fast cores
--   At least 8 GB but preferably 32 GB of RAM
--   A fast hard drive with at least 100 GB available– enough disk space to temporarily store the data being analyzed if desired
--   Teradata ODBC drivers and the Teradata Parallel Transporter installed from the Teradata 14.10 client installer, with a high-speed connection (100 Mbps or above) to a Teradata Database running version 14.10 [If you are using Teradata 14.0, the in-Teradata computation functionality will not be available.]
-
-More detailed descriptions of the Teradata component requirements are provided in the [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409). 
+Installation instructions are provided in these links:
+* [Install Microsoft R Server 2016 on Teradata Servers](rserver-install-teradata-805.md)
+* [Install Microsoft R Server 8.0 on Teradata Servers](rserver-install-teradata-server.md)
+* [Install Microsoft R Server 8.0 on Teradata clients](rserver-install-teradata-client.md)
 
 ## Setting Up the Sample Data
 
@@ -101,7 +89,7 @@ Then we need an SQL query statement to identify the data we want to use. We’ll
 
 We use this information to create an RxTeradata data source object:
 
-	teradataDS <- RxTeradata(connectionString = tdConnString, 
+	teradataDS <- RxTeradata(connectionString = tdConnString,
 		sqlQuery = tdQuery, rowsPerRead = 50000)
 
 Note that we have also specified *rowsPerRead*. This parameter is important for handling memory usage and efficient computations. Most of the **RevoScaleR** analysis functions process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read. The *rowsPerRead* parameter controls how many rows of data are read into each chunk for processing. If it is too large, you may encounter slow-downs because you don’t have enough memory to efficiently process such a large chunk of data. On some systems, setting *rowsPerRead* to too small a value can also provide slower performance. You may want to experiment with this setting on your system.
@@ -139,29 +127,29 @@ Now we’ll create a column information object specifying the mapping of the exi
 
 	ccColInfo <- list(		
 	    gender = list(
-		  type = "factor", 
+		  type = "factor",
 	        levels = c("1", "2"),
 	   	  newLevels = c("Male", "Female")),		
 	    cardholder = list(
-		    type = "factor", 
-		    levels = c("1", "2"),	
+		    type = "factor",
+		    levels = c("1", "2"),
 	          newLevels = c("Principal", "Secondary")),
 		state = list(
-	          type = "factor", 
+	          type = "factor",
 	          levels = as.character(1:51),
 		    newLevels = stateAbb)
 		)
 
 Next we can recreate a Teradata data source, adding the column information:
 
-	teradataDS <- RxTeradata(connectionString = tdConnString, 
+	teradataDS <- RxTeradata(connectionString = tdConnString,
 	    sqlQuery = tdQuery, colInfo = ccColInfo, rowsPerRead = 50000)
 
 
 If we get the variable information for the new data source, we can see that the three variables specified in *colInfo* are now treated as factors:
-	
+
 	rxGetVarInfo(data = teradataDS)
-	
+
 	Var 1: custID, Type: integer
 	Var 2: gender
 	       2 factor levels: Male Female
@@ -180,7 +168,7 @@ Teradata has a limit of 30 bytes for table and column names, and sometimes creat
 ### Creating an RxInTeradata Compute Context
 
 Since we want to perform **RevoScaleR** analytic computations in-database, the next step is to create an *RxInTeradata* compute context. You will need basic information about your Teradata platform. Since the computations are tied to the database, a connection string is required for the *RxInTeradata* compute context. As when specifying an *RxTeradata* data source, the connection string can contain information about your driver, your Teradata ID, your database name, your user ID, and your password. If you have not done so already, modify the code below to specify the connection string appropriate to your setup:
-	
+
 	tdConnString <- "DRIVER=Teradata;DBCNAME=machineNameOrIP;
 		DATABASE=RevoTestDB;UID=myUserID;PWD=myPassword;"
 
@@ -205,7 +193,7 @@ Last, we need to specify some information about how we want output handled. We�
 We use all this information to create our *RxInTeradata* compute context object:
 
 	tdCompute <- RxInTeradata(
-	    connectionString = tdConnString, 
+	    connectionString = tdConnString,
 	    shareDir = tdShareDir,
 	    remoteShareDir = tdRemoteShareDir,
 	    revoPath = tdRevoPath,
@@ -219,12 +207,12 @@ You can retrieve basic information about your Teradata platform using the *rxGet
 
 	rxGetNodeInfo(tdCompute)
 
-### Troubleshooting the RxInTeradata Compute Context	
+### Troubleshooting the RxInTeradata Compute Context
 
 If you encounter difficulties while using the *RxInTeradata* context, you may find it convenient to turn on run-time tracing. You can do this by passing the arguments *traceEnabled* and *traceLevel* to the *RxInTeradata* constructor. Set the *traceLevel* to 7 to show all tracing information:
 
 	tdComputeTrace <- RxInTeradata(
-	    connectionString = tdConnString, 
+	    connectionString = tdConnString,
 	    shareDir = tdShareDir,
 	    remoteShareDir = tdRemoteShareDir,
 	    revoPath = tdRevoPath,
@@ -248,26 +236,26 @@ We can use the high-performance *rxSummary* function to compute summary statisti
 	rxSummary(formula = ~gender + balance + numTrans + numIntlTrans +
 	creditLine, data = teradataDS)
 	Call:
-	rxSummary(formula = ~gender + balance + numTrans + numIntlTrans + 
+	rxSummary(formula = ~gender + balance + numTrans + numIntlTrans +
 	    creditLine, data = teradataDS)
-	
+
 	Summary Statistics Results for: ~gender + balance + numTrans +
 	    numIntlTrans + creditLine
 	Data: teradataDS (RxTeradata Data Source)
-	Number of valid observations: 1e+07 
-	 
+	Number of valid observations: 1e+07
+
 	 Name         Mean        StdDev      Min Max   ValidObs MissingObs
 	 balance      4109.919919 3996.847310 0   41485 1e+07    0         
 	 numTrans       28.935187   26.553781 0     100 1e+07    0         
 	 numIntlTrans    4.047190    8.602970 0      60 1e+07    0         
 	 creditLine      9.134469    9.641974 1      75 1e+07    0         
-	
+
 	Category Counts for gender
 	Number of categories: 2
 	Number of valid observations: 1e+07
 	Number of missing observations: 0
-	
-	 gender Counts 
+
+	 gender Counts
 	 Male   6178231
 	 Female 3821769
 
@@ -284,15 +272,15 @@ The computed summary statistics provide useful information about our data that c
 
 	ccColInfo <- list(		
 	    gender = list(
-		  type = "factor", 
+		  type = "factor",
 	        levels = c("1", "2"),
 	   	  newLevels = c("Male", "Female")),		
 	    cardholder = list(
-		    type = "factor", 
-		    levels = c("1", "2"),	
+		    type = "factor",
+		    levels = c("1", "2"),
 	          newLevels = c("Principal", "Secondary")),
 		state = list(
-	          type = "factor", 
+	          type = "factor",
 	          levels = as.character(1:51),
 		    newLevels = stateAbb),
 	      balance = list(low = 0, high = 41485),
@@ -312,7 +300,7 @@ The *rxHistogram* function will show us the distribution of any of the variables
 
 Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the **RevoScaleR** *rxCube* analytics function, which will perform the required computations in-database in Teradata and return the results to your local workstation for plotting:
 
-	rxHistogram(~creditLine|gender, data = teradataDS,	
+	rxHistogram(~creditLine|gender, data = teradataDS,
 		histType = "Percent")
 
 ![](media/rserver-scaler-teradata-getting-started/image1.png)
@@ -341,17 +329,17 @@ Linear models are a work horse of predictive analytics. *RevoScaleR* provides a 
 As long as we have not changed the compute context, the computations will be performed in-database in Teradata. The function will return an object containing the model results to your local workstation. We can look at a summary of the results using the standard R *summary* function:
 
 	summary(linModObj)
-	
+
 	Call:
 	rxLinMod(formula = balance ~ gender + creditLine, data = teradataDS)
-	
+
 	Linear Regression Results for: balance ~ gender + creditLine
 	Data: teradataDS (RxTeradata Data Source)
 	Dependent variable(s): balance
 	Total independent variables: 4 (Including number dropped: 1)
 	Number of valid observations: 1e+07
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients: (1 not defined because of singularities)
 	               Estimate Std. Error  t value Pr(>|t|)    
 	(Intercept)   3109.8508     2.2856 1360.647 2.22e-16 ***
@@ -360,11 +348,11 @@ As long as we have not changed the compute context, the computations will be per
 	creditLine     109.2620     0.1264  864.080 2.22e-16 ***
 	---
 	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
+
 	Residual standard error: 3856 on 9999997 degrees of freedom
-	Multiple R-squared: 0.06948 
-	Adjusted R-squared: 0.06948 
-	F-statistic: 3.733e+05 on 2 and 9999997 DF,  p-value: < 2.2e-16 
+	Multiple R-squared: 0.06948
+	Adjusted R-squared: 0.06948
+	F-statistic: 3.733e+05 on 2 and 9999997 DF,  p-value: < 2.2e-16
 	Condition number: 1.0001
 
 
@@ -373,8 +361,8 @@ As long as we have not changed the compute context, the computations will be per
 Now, let’s estimate a logistic regression on whether or not an individual is a fraud risk. We’ll continue to use the same compute context and data source, and specify a large model – 60 independent variables, including the 3 dummy variables that are dropped. Note that in R (and RevoScaleR) every level of a categorical factor variable is automatically treated as a separate dummy variable:
 
 
-	logitObj <- rxLogit(fraudRisk ~ state + gender + cardholder + balance + 
-	    numTrans + numIntlTrans + creditLine, data = teradataDS, 
+	logitObj <- rxLogit(fraudRisk ~ state + gender + cardholder + balance +
+	    numTrans + numIntlTrans + creditLine, data = teradataDS,
 	    dropFirst = TRUE)
 	summary(logitObj)
 
@@ -382,18 +370,18 @@ Now, let’s estimate a logistic regression on whether or not an individual is a
 We get the following output:
 
 	Call:
-	rxLogit(formula = fraudRisk ~ state + gender + cardholder + balance + 
-	    numTrans + numIntlTrans + creditLine, data = teradataDS, 
+	rxLogit(formula = fraudRisk ~ state + gender + cardholder + balance +
+	    numTrans + numIntlTrans + creditLine, data = teradataDS,
 	    dropFirst = TRUE)
-	
+
 	Logistic Regression Results for: fraudRisk ~ state + gender +
 	    cardholder + balance + numTrans + numIntlTrans + creditLine
 	Data: teradataDS (RxTeradata Data Source)
 	Dependent variable(s): fraudRisk
 	Total independent variables: 60 (Including number dropped: 3)
-	Number of valid observations: 1e+07 
+	Number of valid observations: 1e+07
 	-2*LogLikelihood: 2101682.8022 (Residual deviance on 9999943 degrees of freedom)
-	 
+
 	Coefficients:
 	                       Estimate Std. Error  z value Pr(>|z|)    
 	(Intercept)          -8.524e+00  3.640e-02 -234.163 2.22e-16 ***
@@ -458,8 +446,8 @@ We get the following output:
 	creditLine            9.491e-02  1.416e-04  670.512 2.22e-16 ***
 	---
 	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-	
-	Condition number of final variance-covariance matrix: 2922.044 
+
+	Condition number of final variance-covariance matrix: 2922.044
 	Number of iterations: 8
 
 
@@ -468,11 +456,11 @@ We get the following output:
 We can use the estimated logistic regression model to create scores for another data set with the same independent variables. We will need to specify two new data sources: the new input data set to be scored, and a new table in the Teradata Database for the results.
 
 	tdQuery <- "SELECT * FROM ccFraudScore10"
-	teradataScoreDS <- RxTeradata(connectionString = tdConnString, 
+	teradataScoreDS <- RxTeradata(connectionString = tdConnString,
 	    sqlQuery = tdQuery, colInfo = ccColInfo, rowsPerRead = 50000)
-	
-	
-	teradataOutDS <- RxTeradata(table = "ccScoreOutput", 
+
+
+	teradataOutDS <- RxTeradata(table = "ccScoreOutput",
 	    connectionString = tdConnString, rowsPerRead = 50000 )
 
 Now we set our compute context. We’ll also make sure that the output table doesn’t exist by making a call to *rxTeradataDropTable*.
@@ -483,7 +471,7 @@ Now we set our compute context. We’ll also make sure that the output table doe
 
 Now we can use the *rxPredict* function to score. We will set *writeModelVars* to TRUE to have all of the variables used in the estimation included in the new table. The new variable containing the scores will be named *ccFraudLogitScore*. We have a choice of having our predictions calculated on the scale of the response variable or the underlying ‘link’ function. Here we choose the ‘link’ function, so that the predictions will be on a logistic scale.
 
-	rxPredict(modelObject = logitObj, 
+	rxPredict(modelObject = logitObj,
 		data = teradataScoreDS,
 		outData = teradataOutDS,
 		predVarNames = "ccFraudLogitScore",
@@ -495,8 +483,8 @@ To add additional variables to our output predictions, use the *extraVarsToWrite
 
 	if (rxTeradataTableExists("ccScoreOutput"))
 	    rxTeradataDropTable("ccScoreOutput")
-	
-	rxPredict(modelObject = logitObj, 
+
+	rxPredict(modelObject = logitObj,
 		data = teradataScoreDS,
 		outData = teradataOutDS,
 		predVarNames = "ccFraudLogitScore",
@@ -515,12 +503,12 @@ After the new table has been created, we can compute and display a histogram of 
 	minMaxVals <- as.vector(unlist(minMaxVals))
 
 Now we’ll create our data source:
-	
-	teradataScoreDS <- RxTeradata(sqlQuery = 
-		"Select ccFraudLogitScore FROM ccScoreOutput", 
+
+	teradataScoreDS <- RxTeradata(sqlQuery =
+		"Select ccFraudLogitScore FROM ccScoreOutput",
 	      connectionString = tdConnString, rowsPerRead = 50000,
 	 	colInfo = list(ccFraudLogitScore = list(
-	            low = floor(minMaxVals[1]), 
+	            low = floor(minMaxVals[1]),
 			high = ceiling(minMaxVals[2]))))
 
 Then we compute and display the histogram:
@@ -537,20 +525,20 @@ Then we compute and display the histogram:
 The *rxDataStep* function will process data a chunk at a time, reading from one data source and writing to another. In this example, we’ll use a function in another R package. The *boot* package is ‘recommended’ package that is included with every distribution of R, but is not loaded automatically on start-up. It contains a function *inv.logit* that computes the inverse of a logit; that is, converts a logit back to a probability on the [0,1] scale. (Note that we could have gotten predictions in this scale by setting *type=”response”* in our call to *rxPredict*.) We’d like all of the variables in our *ccScoreOutput* table to be put in the new table, in addition to the newly created variable. So we specify our input and output data sources as follows:
 
 	teradataScoreDS <- RxTeradata(
-	    sqlQuery =  "Select * FROM ccScoreOutput", 
+	    sqlQuery =  "Select * FROM ccScoreOutput",
 	    connectionString = tdConnString, rowsPerRead = 50000 )
-	
+
 	teradataOutDS2 <- RxTeradata(table = " ccScoreOutput2",
 		connectionString = tdConnString, rowsPerRead = 50000)
-	
+
 	rxSetComputeContext(tdCompute)
 	if (rxTeradataTableExists("ccScoreOutput2"))
 	    rxTeradataDropTable("ccScoreOutput2")
 
 Now we call the *rxDataStep* function, specifying the transforms we want in a list. We also specifying the additional R packages that are needed to perform the transformations. Note that these packages must be pre-installed on the nodes of your Teradata platform.
 
-	rxDataStep(inData = teradataScoreDS, outFile = teradataOutDS2, 
-		transforms = list(ccFraudProb = inv.logit(ccFraudLogitScore)), 
+	rxDataStep(inData = teradataScoreDS, outFile = teradataOutDS2,
+		transforms = list(ccFraudProb = inv.logit(ccFraudLogitScore)),
 		transformPackages = "boot", overwrite = TRUE)
 
 We can now look at basic variable information for the new data set.  
@@ -586,7 +574,7 @@ Now we have the high risk observations in a data frame in memory.  We can use an
 	orderedHighRisk <- highRisk[order(-highRisk$ccFraudProb),]
 	row.names(orderedHighRisk) <- NULL  # Reset row numbers
 	head(orderedHighRisk)
-	
+
 	  ccFraudLogitScore   custID state gender cardholder balance numTrans
 	1          16.60087 10957409    WA Female  Principal   39987       84
 	2          15.57692  6754290    FL   Male  Principal   31099       90
@@ -610,7 +598,7 @@ When we are working in a local compute context, we have access to both local dat
 	xdfAirDemo <- RxXdfData(file.path(rxGetOption("sampleDataDir"),
 	    "AirlineDemoSmall.xdf"))
 	rxGetVarInfo(xdfAirDemo)
-	
+
 	Var 1: ArrDelay, Type: integer, Low/High: (-86, 1490)
 	Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
 	Var 3: DayOfWeek
@@ -622,10 +610,10 @@ Let’s put this data into a Teradata table, storing DayOfWeek as an integer wit
 		connectionString = tdConnString)
 	if (rxTeradataTableExists("AirDemoSmallTest",
 	    connectionString = tdConnString))
-	    rxTeradataDropTable("AirDemoSmallTest", 
+	    rxTeradataDropTable("AirDemoSmallTest",
 	    connectionString = tdConnString)
-	
-	rxDataStep(inData = xdfAirDemo, outFile = teradataAirDemo, 
+
+	rxDataStep(inData = xdfAirDemo, outFile = teradataAirDemo,
 		transforms = list(
 			DayOfWeek = as.integer(DayOfWeek),
 			rowNum = .rxStartRow : (.rxStartRow + .rxNumRows - 1)
@@ -635,13 +623,13 @@ Let’s put this data into a Teradata table, storing DayOfWeek as an integer wit
 Now we can set our compute context back to in-Teradata, and look at summary statistics of the new table:
 
 	rxSetComputeContext(tdCompute)
-	teradataAirDemo <- RxTeradata(sqlQuery = 
+	teradataAirDemo <- RxTeradata(sqlQuery =
 		"SELECT * FROM AirDemoSmallTest",
 		connectionString = tdConnString,
 	      rowsPerRead = 50000,
-		colInfo = list(DayOfWeek = list(type = "factor", 
+		colInfo = list(DayOfWeek = list(type = "factor",
 			levels = as.character(1:7))))
-	
+
 	rxSummary(~., data = teradataAirDemo)
 
 
@@ -652,41 +640,41 @@ The *rxDataStep* function also allows us to write our own ‘chunking’ analysi
 The first step is to write a function to process each chunk of data. The data will automatically be fed into the function as a rectangular list of data columns. The function must also return a rectangular list of data columns (which a data frame is). In the example below, we’ll be summarizing the input data and returning a data frame with a single row.
 
 	ProcessChunk <- function( dataList)
-	{	
-	    # Convert the input list to a data frame and 
+	{
+	    # Convert the input list to a data frame and
 	    # call the 'table' function to compute the
-	    # contingency table 
+	    # contingency table
 		chunkTable <- table(as.data.frame(dataList))
-	
+
 		# Convert table output to data frame with single row
 		varNames <- names(chunkTable)
 		varValues <- as.vector(chunkTable)
 		dim(varValues) <- c(1, length(varNames))
 		chunkDF <- as.data.frame(varValues)
 		names(chunkDF) <- varNames
-	
+
 		# Return the data frame, which has a single row
 		return( chunkDF )
 	}
 
-Next we’ll set our active compute context to compute in-database, and setup our data source: 
+Next we’ll set our active compute context to compute in-database, and setup our data source:
 
 	rxSetComputeContext( tdCompute )
-	tdQuery <- 
+	tdQuery <-
 	"select DayOfWeek from AirDemoSmallTest"
-	inDataSource <- RxTeradata(sqlQuery = tdQuery, 
+	inDataSource <- RxTeradata(sqlQuery = tdQuery,
 	 	rowsPerRead = 50000,
-		colInfo = list(DayOfWeek = list(type = "factor", 
+		colInfo = list(DayOfWeek = list(type = "factor",
 			levels = as.character(1:7))))
 
 Now setup a data source to hold the intermediate results.  Again, we’ll “drop” the table if it exists.
 
-	iroDataSource = RxTeradata(table = "iroResults", 
+	iroDataSource = RxTeradata(table = "iroResults",
 		connectionString = tdConnString)
-	if (rxTeradataTableExists(table = "iroResults", 
+	if (rxTeradataTableExists(table = "iroResults",
 		connectionString = tdConnString))
 	{
-	    rxTeradataDropTable( table = "iroResults", 
+	    rxTeradataDropTable( table = "iroResults",
 		connectionString = tdConnString)
 	}
 
@@ -708,7 +696,7 @@ To compute our final results, in this example we can just sum the columns:
 
 To remove the intermediate results table:
 
-	rxTeradataDropTable( table = " iroResults", 
+	rxTeradataDropTable( table = " iroResults",
 		connectionString = tdConnString)
 
 ##  Using rxDataStep for By-Group Analyses
@@ -721,8 +709,8 @@ For example, let’s create a simulated data set that has 100,000 observations a
 
 
 	set.seed(10)
-	numObs <- 100000 
-	testData <- data.frame( 
+	numObs <- 100000
+	testData <- data.frame(
 		SKU = as.integer(runif(n = numObs, min = 1, max = 11)),
 		INCOME = as.integer(runif(n = numObs, min = 10, max = 21)))
 	# SKU is also underlying coefficient
@@ -731,34 +719,34 @@ For example, let’s create a simulated data set that has 100,000 observations a
 
 Next, we’ll upload this data frame into a table in our Teradata database, removing any existing table by that name first:
 
-	rxSetComputeContext("local") 
-	if (rxTeradataTableExists("sku_sales_100k", 
+	rxSetComputeContext("local")
+	if (rxTeradataTableExists("sku_sales_100k",
 	connectionString = tdConnString))
 	{
-		rxTeradataDropTable("sku_sales_100k", 
+		rxTeradataDropTable("sku_sales_100k",
 	connectionString = tdConnString)
 	}
-	
-	teradataDS <- RxTeradata(table = "sku_sales_100k", 
+
+	teradataDS <- RxTeradata(table = "sku_sales_100k",
 	connectionString = tdConnString)
 	rxDataStep(inData = testData, outFile = teradataDS)
-	
+
 ### A Transformation Function for By-Group Analysis
 
 Next, let’s consider the analysis we want to perform for each group. As in the previous section, we will write a transformation function that operates on a chunk of data, then writes out the results for that chunk into an “intermediate results” table. In this case we estimate a linear model on the chunk of data, and put the components of the model we will need for scoring into a string. We will also include the SKU number and the estimated slope in our results table. Note that we are assuming, at this point, that we will have all of the data for a single SKU in the chunk of data being processed by the transformation function.
 
-	EstimateModel <- function(dataList) 
-	{	
+	EstimateModel <- function(dataList)
+	{
 	      # Convert the input list to a data frame
 		chunkDF <- as.data.frame(dataList)
-	
+
 	      # Estimate a linear model on this chunk
 	      # Don't include the model frame in the model object
 		model <- lm( SALES~INCOME, chunkDF, model=FALSE )
-	
+
 		# Print statements can be useful for debugging
 		# print( model$coefficients )  
-	
+
 		# Remove unneeded parts of model object
 		model$residuals <- NULL
 		model$effects <- NULL
@@ -766,25 +754,25 @@ Next, let’s consider the analysis we want to perform for each group. As in the
 		model$assign <- NULL
 		model$qr[[1]] <- NULL
 		attr(model$terms, ".Environment") <- NULL
-		
+
 		# Convert the model to a character string
-		modelString <- 
+		modelString <-
 	        rawToChar(serialize(model, connect=NULL, ascii=TRUE))
-		
+
 		# Pad to a fixed length
-		modelString <- paste( modelString, 
+		modelString <- paste( modelString,
 	        paste(rep("X", 2000 - nchar(modelString)), collapse = ""),
 	        sep="")
-	
+
 	      # Create the entry for the results table
 		resultDF <- data.frame(
 	        SKU = chunkDF[1,]$SKU, # Assumes SKU's all the same
 	        COEF = model$coefficients[2], # Slope
 	        MODEL = modelString )
-	
+
 		return( resultDF )
-	  } 
-	
+	  }
+
 
 ### Setting Up an Input Data Source for By-Group Analysis
 
@@ -793,8 +781,8 @@ The next step is to setup a data source that controls how the data is passed int
 	tdQuery <- "SELECT * FROM sku_sales_100k"
 	partitionKeyword <- "PARTITION"
 	partitionClause <- paste( partitionKeyword, "BY sku_sales_100k.SKU" )
-	inDataSource <- RxTeradata(sqlQuery = tdQuery, 
-	    tableOpClause = partitionClause, 
+	inDataSource <- RxTeradata(sqlQuery = tdQuery,
+	    tableOpClause = partitionClause,
 	    rowsPerRead = 100000)
 
 By using the partition clause, we will have one computing resource for each SKU so that the transformation function will be operating on a single SKU of data. (For more details on using the partition clause, see Teradata’s *SQL Data Manipulation Language* manual.) For modeling, we need all rows for a given model (a single SKU) to fit in one read, so *rowsPerRead* is set high.
@@ -825,7 +813,7 @@ We can take a quick look at our estimated slopes by bringing the data from our r
 
 	lmResults <- rxImport(resultsDataSource)
 	lmResults[order(lmResults$SKU),c("SKU", "COEF")]
-	
+
 	   SKU     COEF
 	7    1 1.001980
 	8    2 2.099449
@@ -842,24 +830,24 @@ We can take a quick look at our estimated slopes by bringing the data from our r
 
 We can use a similar process to score the data, using a transformation function that will only be processing data from a single SKU:
 
-	ScoreChunk <- function(dataList) 
-	{	
+	ScoreChunk <- function(dataList)
+	{
 	    chunkDF <- as.data.frame(dataList)
-		
+
 	    # Extract the model string for the first observation
 	    # and convert back to model object
 	    # All observations in this chunk have the same SKU,
 	    # so they all share the same model
 	    modelString <- as.character(chunkDF[1,]$MODEL)
 	    model <- unserialize( charToRaw( modelString ) )
-	
-	    resultDF <- data.frame( 
-	        SKU = chunkDF$SKU, 
-	        INCOME = chunkDF$INCOME, 
+
+	    resultDF <- data.frame(
+	        SKU = chunkDF$SKU,
+	        INCOME = chunkDF$INCOME,
 	        # Use lm's predict method
 	        PREDICTED_SALES = predict(model, chunkDF) )
-	
-	    return( resultDF ) 
+
+	    return( resultDF )
 	 }
 
 Next, we set up an SQL query that will join our original simulated table with our intermediate results table, matching the SKU’s:
@@ -872,36 +860,36 @@ Next, we set up an SQL query that will join our original simulated table with ou
 
 For scoring, we do not need all rows for a given model to fit in one read. As long as we compute in-database, all of the data in each chunk will belong to the same SKU.
 
-	inDataSource <- RxTeradata(sqlQuery = predictQuery, 
+	inDataSource <- RxTeradata(sqlQuery = predictQuery,
 		connectionString = tdConnString,
 		tableOpClause = partitionClause, rowsPerRead = 10000)
 
 We also need to setup our new output data source:
 
-	scoresDataSource = RxTeradata(table = "scores", 
+	scoresDataSource = RxTeradata(table = "scores",
     	connectionString = tdConnString)
 
 Now we set the compute context and perform the scoring:
 
-rxSetComputeContext(tdCompute) 
-rxDataStep( inData = inDataSource, outFile = scoresDataSource, 
-    transformFunc = ScoreChunk, reportProgress = 0, 
+rxSetComputeContext(tdCompute)
+rxDataStep( inData = inDataSource, outFile = scoresDataSource,
+    transformFunc = ScoreChunk, reportProgress = 0,
     overwrite = TRUE )
 
 Last, we can use an SQL query in a Teradata data source to extract summary results by SKU:
 
-	predSum <- rxImport( RxTeradata( 
+	predSum <- rxImport( RxTeradata(
 		sqlQuery = paste("SELECT SKU, INCOME, MIN(PREDICTED_SALES),",
 	 		       "MAX(PREDICTED_SALES), COUNT(PREDICTED_SALES)",
 	 	           "FROM scores GROUP BY SKU, INCOME",
-	               "ORDER BY SKU, INCOME"), 
+	               "ORDER BY SKU, INCOME"),
 		connectionString = tdConnString ) )
 
 We’ll display the first 15 rows of the results. We would expect that *PREDICTED\_SALES* should be roughly *SKU\*INCOME*.
 
 			options(width = 120) # Set display width
 			predSum[1:15,]
-	
+
 	   SKU INCOME Minimum(PREDICTED_SALES) Maximum(PREDICTED_SALES) Count(PREDICTED_SALES)
 	1    1     10                 9.579956                 9.579956                    983
 	2    1     11                10.581936                10.581936                    911
@@ -938,28 +926,28 @@ There may be occasions when it is useful to perform computations on in-memory da
 		while (is.null(result))
 		{
 			roll <- sum(sample(6, 2, replace=TRUE))
-			
+
 			if (is.null(point))
 			{
 				point <- roll
 			}
 			if (count == 1 && (roll == 7 || roll == 11))
-			{ 
+			{
 				result <- "Win"
 			}
-	 		else if (count == 1 && 
-	               (roll == 2 || roll == 3 || roll == 12)) 
+	 		else if (count == 1 &&
+	               (roll == 2 || roll == 3 || roll == 12))
 			{
 				result <- "Loss"
-			} 
+			}
 			else if (count > 1 && roll == 7 )
 			{
 				result <- "Loss"
-			} 
+			}
 			else if (count > 1 && point == roll)
 			{
 				result <- "Win"
-			} 
+			}
 			else
 			{
 				count <- count + 1
@@ -1000,7 +988,7 @@ Although typically it is much faster to perform in-database analyses, it is some
 When extracting data from Teradata, it is often more performant to increase the number of rows extracted for each read. We can do this by increasing the *rowsPerRead* in the data source:
 
 	tdQuery <- "SELECT * FROM ccFraudScore10"  
-	teradataDS1 <- RxTeradata(connectionString = tdConnString, 
+	teradataDS1 <- RxTeradata(connectionString = tdConnString,
 	    sqlQuery = tdQuery, colInfo = ccColInfo, rowsPerRead = 500000)
 
 Now we can call rxSummary using the new data source. Note that this will be slow if you have a slow connection to your database; the data is being transferred to you local computer for analysis.
@@ -1016,7 +1004,7 @@ The *rxImport* function allows you to import data from a data source to an local
 
 	statesToKeep <- sapply(c("CA", "OR", "WA"), grep, stateAbb)
 	statesToKeep
-	  
+
 	importQuery <- paste("SELECT gender,cardholder,balance,state",
 	 	"FROM ccFraud10",
 	 	"WHERE (state = 5 OR state = 38 OR state = 48)")
@@ -1025,15 +1013,15 @@ Next we’ll create the *colInfo* to be used. In our new data set, we just want 
 
 	importColInfo <- list(		
 	    gender = list(
-		  type = "factor", 
+		  type = "factor",
 	        levels = c("1", "2"),
 	   	  newLevels = c("Male", "Female")),		
 	    cardholder = list(
-		    type = "factor", 
-		    levels = c("1", "2"),	
+		    type = "factor",
+		    levels = c("1", "2"),
 	          newLevels = c("Principal", "Secondary")),
 		state = list(
-	          type = "factor", 
+	          type = "factor",
 	          levels = as.character(statesToKeep),
 		      newLevels = names(statesToKeep))
 		)
@@ -1042,11 +1030,11 @@ Next we’ll create the *colInfo* to be used. In our new data set, we just want 
 Since we are importing to our local computer, we’ll be sure the compute context is set to local. We will store the data in a file named *ccFraudSub.xdf* in our current working directory
 
 	rxSetComputeContext("local")
-	teradataImportDS <- RxTeradata(connectionString = tdConnString, 
+	teradataImportDS <- RxTeradata(connectionString = tdConnString,
 	    	sqlQuery = importQuery, colInfo = importColInfo)
-	
+
 	localDS <- rxImport(inData = teradataImportDS,
-	    	outFile = "ccFraudSub.xdf", 
+	    	outFile = "ccFraudSub.xdf",
 	    	overwrite = TRUE)
 
 
@@ -1055,7 +1043,7 @@ The *localDs* object returned from *rxImport* is a “light-weight” *RxXdfData
 For example,
 
 	rxGetVarInfo(data = localDS)
-	
+
 	Var 1: gender
 	       2 factor levels: Male Female
 	Var 2: cardholder
@@ -1063,48 +1051,48 @@ For example,
 	Var 3: balance, Type: integer, Low/High: (0, 39987)
 	Var 4: state
 	       3 factor levels: CA OR WA
-	
-	rxSummary(~gender + cardholder + balance + state, data = localDS)	
-	
+
+	rxSummary(~gender + cardholder + balance + state, data = localDS)
+
 	Call:
 	rxSummary(formula = ~gender + cardholder + balance + state, data = localDS)
-	
+
 	Summary Statistics Results for: ~gender + cardholder + balance + state
 	Data: localDS (RxXdfData Data Source)
 	File name: ccFraud.xdf
-	Number of valid observations: 1540887 
-	 
+	Number of valid observations: 1540887
+
 	 Name    Mean     StdDev   Min Max   ValidObs MissingObs
 	 balance 4115.967 4000.873 0   39987 1540887  0         
-	
+
 	Category Counts for gender
 	Number of categories: 2
 	Number of valid observations: 1540887
 	Number of missing observations: 0
-	
+
 	 gender Counts
 	 Male   952908
 	 Female 587979
-	
+
 	Category Counts for cardholder
 	Number of categories: 2
 	Number of valid observations: 1540887
 	Number of missing observations: 0
-	
-	 cardholder Counts 
+
+	 cardholder Counts
 	 Principal  1494355
 	 Secondary    46532
-	
+
 	Category Counts for state
 	Number of categories: 3
 	Number of valid observations: 1540887
 	Number of missing observations: 0
-	
-	 state Counts 
+
+	 state Counts
 	 CA    1216069
 	 OR     121846
-	 WA     202972	
-	
+	 WA     202972
+
 
 ### Managing Memory in In-Teradata Computations
 
@@ -1115,7 +1103,7 @@ These limits may be customized by a database administrator using the SetMasterMe
 For example, to set the master memory limit to 3000MB:
 
 call revoAnalytics_Zqht2.SetMasterMemoryLimitMB(3000);
-	
+
 To set the worker memory limit to 1500MB:
 
 	call revoAnalytics_Zqht2.SetWorkerMemoryLimitMB(1500);
@@ -1131,11 +1119,11 @@ Modify the following script to include your Log In information and data base nam
 	sessions 2;
 	errlimit 25;
 	logon PUT YOUR LOGON INFO HERE: MachineNameOrIP/UserName,Password;
-	
+
 	DROP TABLE RevoTestDB.ccFraud10;
 	DROP TABLE RevoTestDB.ccFraud10_error_1;
 	DROP TABLE RevoTestDB.ccFraud10_error_2;
-	
+
 	CREATE TABLE RevoTestDB.ccFraud10 (
 	"custID" INT,
 	"gender" INT,
@@ -1147,11 +1135,11 @@ Modify the following script to include your Log In information and data base nam
 	"creditLine" INT,
 	"fraudRisk" INT)
 	PRIMARY INDEX ("custID");
-	
+
 	set record VARTEXT ",";
-	
+
 	RECORD 2;
-	
+
 	DEFINE
 	Col1 (VARCHAR(15)),
 	Col2 (VARCHAR(15)),
@@ -1163,9 +1151,9 @@ Modify the following script to include your Log In information and data base nam
 	Col8 (VARCHAR(15)),
 	Col9 (VARCHAR(15))
 	FILE=ccFraud.csv;
-	
+
 	SHOW;
-	
+
 	begin loading RevoTestDB.ccFraud10 errorfiles RevoTestDB.ccFraud10_error_1, RevoTestDB.ccFraud10_error_2;
 	insert into RevoTestDB.ccFraud10 (
 	:Col1,
@@ -1177,9 +1165,9 @@ Modify the following script to include your Log In information and data base nam
 	:Col7,
 	:Col8,
 	:Col9);
-	
+
 	END LOADING;
-	
+
 	LOGOFF;
 
 This similar script will load the ccFraudScore.csv data:
@@ -1187,11 +1175,11 @@ This similar script will load the ccFraudScore.csv data:
 	sessions 2;
 	errlimit 25;
 	logon PUT YOUR LOGON INFO HERE;
-	
+
 	DROP TABLE RevoTestDB.ccFraudScore10;
 	DROP TABLE RevoTestDB.ccFraudScore_error_1;
 	DROP TABLE RevoTestDB.ccFraudScore_error_2;
-	
+
 	CREATE TABLE RevoTestDB.ccFraudScore10 (
 	"custID" INT,
 	"gender" INT,
@@ -1202,11 +1190,11 @@ This similar script will load the ccFraudScore.csv data:
 	"numIntlTrans" INT,
 	"creditLine" INT)
 	PRIMARY INDEX ("custID");
-	
+
 	set record VARTEXT ",";
-	
+
 	RECORD 2;
-	
+
 	DEFINE
 	Col1 (VARCHAR(15)),
 	Col2 (VARCHAR(15)),
@@ -1217,9 +1205,9 @@ This similar script will load the ccFraudScore.csv data:
 	Col7 (VARCHAR(15)),
 	Col8 (VARCHAR(15))
 	FILE=ccFraudScore.csv;
-	
+
 	SHOW;
-	
+
 	begin loading RevoTestDB.ccFraudScore errorfiles RevoTestDB.ccFraudScore_error_1, RevoTestDB.ccFraudScore_error_2;
 	insert into RevoTestDB.ccFraudScore (
 	:Col1,
@@ -1230,9 +1218,9 @@ This similar script will load the ccFraudScore.csv data:
 	:Col6,
 	:Col7,
 	:Col8);
-	
+
 	END LOADING;
-	
+
 	LOGOFF;
 
 To run a fastload command, navigate to the directory containing the script from a command prompt and enter:

@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
-keywords: "RevoScaleR, ScaleR"
+title: "ScaleR Functions for Hadoop"
+description: "Microsoft R ScaleR Functions for Apache Hadoop MapReduce and Hadoop Spark."
+keywords: "RevoScaleR, ScaleR, Microsoft R, Hadoop, Spark"
 author: "j-martens"
-manager: "Paulette.McKay"
-ms.date: "06/22/2016"
+manager: "jhubbard"
+ms.date: "08/23/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,9 +26,9 @@ ms.custom: ""
 
 # RevoScaleR Functions for Hadoop
 
-The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Hadoop compute contexts and some may not be fully supported in these compute contexts. 
+The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Hadoop compute contexts and some may not be fully supported in these compute contexts.
 
-This page presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line. 
+This page presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line.
 
 The `RevoScaleR` package supports two Hadoop compute contexts:
 
@@ -203,7 +203,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     </tr>
 </table>
 
-<br /> 
+<br />
 
 
 <br />
@@ -308,6 +308,16 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
     </tr>
+    <tr>
+        <td>`rxNaiveBayes`</td>
+        <td>
+            <center>![-](../media/award.png)</center>
+        </td>
+        <td>Fit Naive Bayes Classifiers on an .xdf file or data frame for small or large data using parallel external memory algorithm. </td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)</small></center>
+        </td>
+    </tr>
 </table>
 
 <br />
@@ -366,7 +376,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
 
 ##Data Source Functions
 
-Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used. 
+Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used.
 
 <table>
     <tr>

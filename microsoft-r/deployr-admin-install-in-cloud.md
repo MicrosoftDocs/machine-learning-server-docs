@@ -5,7 +5,7 @@ title: "Enabling DeployR on the Cloud (Azure, AWS)"
 description: "How to Enable DeployR on Azure and AWS (Cloud)"
 keywords: ""
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "05/06/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -67,14 +67,14 @@ You must update the server Web context or else you will not be able to access to
 
       + On Windows, run:
         ```
-        cd $DEPLOYR_HOME\deployr\tools\ 
+        cd %REVODEPLOYR8_1_HOME%\deployr\tools\ 
         adminUtilities.bat 
         ```        
 
       + On Linux, run:
         ```
         cd $DEPLOYR_HOME/deployr/tools/
-        ./adminUtilities.sh 
+        sudo ./adminUtilities.sh 
         ```         
 
    1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
@@ -86,6 +86,12 @@ You must update the server Web context or else you will not be able to access to
    1. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
 
    1. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
+
+   1. Return to the main menu, choose the option to set a password for the local DeployR admin account.
+   
+   1. Enter a password for this account. Passwords must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
+   
+   1. Confirm the password.
 
    1. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
 
@@ -212,7 +218,7 @@ You must update the server Web context or else you will not be able to access to
 
             + On Windows, run:
                ```
-               cd $DEPLOYR_HOME\deployr\tools\ 
+               cd %REVODEPLOYR8_1_HOME%\deployr\tools\ 
                adminUtilities.bat 
                ```        
 

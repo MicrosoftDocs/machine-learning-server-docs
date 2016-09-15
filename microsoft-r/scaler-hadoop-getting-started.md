@@ -6,7 +6,7 @@ description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
 keywords: ""
 author: "HeidiSteen"
 manager: "paulettm"
-ms.date: "06/24/2016"
+ms.date: "08/23/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,19 +28,44 @@ ms.custom: ""
 
 ## Overview
 
-This guide is an introduction to using the **RevoScaleR** package in a Hadoop distributed computing environment. **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using **RevoScaleR**’s HPA ‘big data’ capabilities in the Hadoop environment.
+This guide is an introduction to using the ScaleR functions in a **RevoScaleR** package in a Hadoop distributed computing environment. ScaleR functions offer scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities in the Hadoop environment.
 
-While **RevoScaleR** makes use of the Hadoop MapReduce framework, you need have no experience or detailed knowledge of that framework to use **RevoScaleR** in Hadoop. All you need to know is basic information about connection to your Hadoop cluster. This guide will walk you through the rest.
+While this guide is not a Hadoop tutorial, no prior experience or detailed knowledge of that framework is required to complete the tasks in this tutorial. If you know how to connect to your Hadoop cluster, this guide will walk you through the rest.
 
-The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful for these scenarios:
+Additional information and examples demonstrating ScaleR functionality can be found in the following guides:
+
+-   [RevoScaleR Getting Started Guide](scaler-getting-started.md)
+-   [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
+-   [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which includes HPC examples
+-   [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
+
+### Data Sources and Functions Supported in Hadoop
+
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
+
+To perform an analysis using ScaleR functions, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
+
+This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [RevoScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md).
+
+**Compute Context and Supported Data Sources**
+
+The Hadoop compute context is established through *RxHadoopMR*, where the following two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
+
+**Data Manipulation and Computations**
+
+The data manipulation and computation functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful for these scenarios:
 
 - Analyze data sets that are too big to fit in memory.
 - Perform computations distributed over several cores, processors, or nodes in a cluster.
 - Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
 
-The RevoScaleR high performance analysis functions are portable. The same high performance functions work on a variety of computing platforms, including Windows and RHEL workstations and servers and distributed computing platforms including Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes, so you don’t have to worry about it.
+These scenarios are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms*.
 
-### How ScaleR distributes jobs in Hadoop
+**High Performance Analysis (HPA)**
+
+HPA functions in **RevoScaleR** do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR code handles the distribution of the computations across cores and nodes automatically.
+
+### How RevoScaleR distributes jobs in Hadoop
 
 On Hadoop, the RevoScaleR analysis functions go through the following steps.
 
@@ -52,80 +77,15 @@ On Hadoop, the RevoScaleR analysis functions go through the following steps.
 
 When running on Hadoop, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example is provided further on, in [Using a Local Compute Context with HDFS Data](#UsingLocalComputeContextwithHDFSData).
 
-More detailed examples of using **RevoScaleR** can be found in the following guides:
+### Before you start
 
--   [RevoScaleR Getting Started Guide](scaler-getting-started.md)
--   [RevoScaleR User’s Guide](scaler-user-guide-introduction.md)
--   [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which includes HPC examples
--   [RevoScaleR ODBC Data Import Guide](scaler-odbc.md)
+You must have R Server on Apache Hadoop using a supported distribution. For instructions, see [Install R Server on Hadoop](rserver-install-hadoop-805.md) and [Supported platforms](rserver-install-supported-platforms.md) for platform requirements.
 
-### Data Sources and Functions Supported in Hadoop
+Sample data is required if you intend to follow the steps. This guide uses the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
 
-The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
+This guide also uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory.
 
-Of course, not all data source types are available on all compute contexts. For the Hadoop compute context used in this Guide, named *RxHadoopMR*, two types of data sources can be used: a comma delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
-
-The RevoScaleR analysis functions currently supported on with the Hadoop compute context are:
-
--   *rxSummary*: Basic summary statistics of data, including computations by group. (Writing by group computations to .xdf file not supported.)
--   *rxQuantile*: Compute approximate quantiles.
--   *rxCrossTabs*: Formula-based cross-tabulation of data.
--   *rxCube*: Alternative formula-based cross-tabulation returning ‘cube’ results. (Writing output to .xdf file not supported.)
--   *rxLinMod*: Fits a linear model to data.
--   *rxCovCor*: Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.
--   *rxLogit*: Fits a logistic regression model to data.
--   *rxGlm*: Fits a generalized linear model to data.
--   *rxKmeans*: Performs k-means clustering.
--   *rxDTree*: Fits a classification or regression tree to data.
--   *rxDForest*: Fits a classification or regression decision forest to data.
--   *rxBTrees*: Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.
--   *rxPredict*: Calculates predictions for fitted models. Output must be an XDF data source.
-
-High performance computing is supported in Hadoop using:
-
--   *rxExec*: Run an arbitrary R function on nodes of a cluster.
-
-The Hadoop compute context also allows the following data manipulation functionality:
-
--   *rxDataStep*: Transform and subset data. Output can be an XDF data source, a comma delimited text data source, or a data frame in memory (assuming you have sufficient memory to hold the output data).
--   *rxFactors*: Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.
-
-The following helper functions get basic information about your data source:
-
--   *rxGetInfo*
--   *rxGetVarInfo*
--   *rxGetVarNames*
-
-The Hadoop compute context has a number of job-related functions particularly helpful when running non-waiting jobs:
-
--   *rxGetJobStatus*: Get the status of a non-waiting distributed computing job.
--   *rxGetJobResults*: Get the return object(s) of a non-waiting distributed computing job.
--   *rxGetJobOutput*: Get the console output from a non-waiting distributed computing job.
--   *rxGetJobs*: Get the available distributed computing job information objects.
-
-RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functionality via R:
-
--   *rxHadoopCommand*: Allows you to run basic Hadoop commands.
--   *rxHadoopVersion*: Returns just the version string from running the *hadoop version* command..
--   *rxCopyFromClient*: Copy a file from a remote client to the Hadoop Distributed File System on the Hadoop cluster.
--   *rxHadoopCopyFromLoca*l: Wraps the Hadoop fs -copyFromLocal command.
--   *rxHadoopCopyToLocal*: Wraps the Hadoop fs -copyToLocal command.
--   *rxHadoopListFiles*: Wraps the Hadoop fs -ls or fs -lsr command.
--   *rxHadoopRemove*: Wraps the Hadoop fs -rm command.
--   *rxHadoopCopy*: Wraps the Hadoop fs -cp command.
--   *rxHadoopMove*: Wraps the Hadoop fs -mv command.
--   *rxHadoopMakeDir*: Wraps the Hadoop fs -mkdir command.
--   *rxHadoopRemoveDir*: Wraps the Hadoop fs -rmr command.
-
-### Installation
-
-Before you can use Microsoft R Server (which contains the **RevoScaleR** package) with Hadoop, you must have a Hadoop cluster. For instructions on how to install R on Hadoop, see the links in [Install R Server on a Hadoop Cluster](rserver-install-hadoop.md).
-
-### Running examples in the tutorial
-
-The tutorial makes extensive use of the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
-
-The tutorial uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory. You can obtain these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 >[!NOTE]
 > The instructions in this article assume you're using the “/var/RevoShare” and “/var/RevoShare/$USER” directories in the native file system and “/share”, “/user/RevoShare” and “/user/RevoShare/$USER” in the Hadoop Distributed File System on the Hadoop cluster.
