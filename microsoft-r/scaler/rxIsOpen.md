@@ -5,7 +5,7 @@ title: "ScaleR Functions rxOpen"
 description: "ScaleR Functions: rxOpen"
 keywords: "RevoScaleR, ScaleR, rxOpen"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -40,7 +40,7 @@ _mode_: A string indicating the mode for opening the file or data source. Curren
 
 
 ## Return Value
-TRUE if the specified RxDataSource is open for the specified _mode_; FALSE otherwise. 
+TRUE if the specified RxDataSource is open for the specified _mode_; FALSE otherwise.
 
 ## Remarks
 This is one of several generic functions in the  RevoScaleR package that are used for managing data source objects.

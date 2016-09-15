@@ -5,7 +5,7 @@ title: "Introducing Microsoft R Server"
 description: "Microsoft R Server introduction"
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettem"
+manager: "jhubbard"
 ms.date: "09/02/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -31,7 +31,7 @@ ms.custom: ""
 
 You can install R Server on a supported server or cluster, and then use it to run existing solutions that you previously built using **RStudio** or **R Tools for Visual Studio**. Although ScaleR functions are not required in the solutions you deploy, the full value of R Server is realized only with ScaleR.
 
-R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Linux, Hadoop, Teradata. It's also available for Windows as a feature of SQL Server. See [Supported Platforms](reserver-install-supported-platforms.md) for details.
+R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Linux, Hadoop, Teradata. It's also available for Windows as a feature of SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
 
 ## Components of R Server
 

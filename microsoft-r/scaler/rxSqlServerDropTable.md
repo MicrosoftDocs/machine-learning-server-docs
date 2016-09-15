@@ -5,7 +5,7 @@ title: "ScaleR Functions rxSqlServerDropTable"
 description: "ScaleR Functions: rxSqlServerDropTable"
 keywords: "RevoScaleR, ScaleR, rxSqlServerDropTable"
 author: "j-martens"
-manager: "Paulette.McKay"
+manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -47,7 +47,7 @@ TRUE if the table is successfully dropped; FALSE if the table did not exist or c
 
 ## Example
 
-The following example checks whether a table exists and deletes the table if it does exist. 
+The following example checks whether a table exists and deletes the table if it does exist.
 ~~~~
 if (rxSqlServerTableExists(tempTable)) rxSqlServerDropTable(tempTable)
 ~~~~

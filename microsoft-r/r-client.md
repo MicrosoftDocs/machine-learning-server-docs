@@ -5,7 +5,7 @@ title: "Introducing Microsoft R Client"
 description: "Microsoft R Client"
 keywords: "R Client, Microsoft R Client"
 author: "j-martens"
-manager: "paulette.mckay"
+manager: "jhubbard"
 ms.date: "08/10/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -28,4 +28,4 @@ ms.custom: ""
 
 [!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
-Learn how to [install and get started with Microsoft R Client](/r-client-get-started.md).
+Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
