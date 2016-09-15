@@ -35,14 +35,14 @@ Microsoft R Client at can be downloaded from http://aka.ms/rclient/download. Lea
 
 Microsoft R Client works with the following flavors of Microsoft R Server: 
 
-|Version Compatibility   |R Client (build 1.0.0)|R Client (build 1.1.0)|
-|-----------|:--------------------------:|:--------------------------:|
-|Microsoft R Server for Linux|R Server for Linux 2016<br>(build 8.0.5)|R Server for Linux 2016<br>(build 8.0.5)|
-|Microsoft R Server for Teradata DB|R Server for Teradata DB 2016<br>(build 8.0.5)|R Server for Teradata DB 2016<br>(build 8.0.5)|
-|Microsoft R Server for Hadoop|R Server for Hadoop 2016<br>(build 8.0.5) _with tweaks_ <b>*</b> |R Server for Hadoop 2016<br>(build 8.0.5)|
-|Microsoft R Server (Standalone - Windows)|SQL Server 2016<br>(RTM)|SQL Server 2016<br>(RTM)|
-|SQL Server R Services|SQL Server 2016<br>(RTM)|SQL Server 2016<br>(RTM)|
-|R Server for HDInsight|R Server for HDInsight<br>(preview)|R Server for HDInsight<br>(preview)|
+|Version Compatibility   |R Client (build 1.x)|
+|-----------|:--------------------------:|
+|Microsoft R Server for Linux|R Server for Linux 2016<br>(build 8.0.5)|
+|Microsoft R Server for Teradata DB|R Server for Teradata DB 2016<br>(build 8.0.5)|
+|Microsoft R Server for Hadoop|R Server for Hadoop 2016<br>(build 8.0.5) _R Client 1.0 needs tweaks_ <b>*</b> |
+|Microsoft R Server (Standalone - Windows)|SQL Server 2016<br>(RTM)|
+|SQL Server R Services|SQL Server 2016<br>(RTM)|
+|R Server for HDInsight|R Server for HDInsight<br>(preview)|
 
 <br>
 
