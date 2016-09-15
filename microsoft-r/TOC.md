@@ -65,23 +65,24 @@
 
 ## [Operationalize R Analytics (DeployR)](deployr-about.md)
 ### Get Started Operationalizing
-### Install DeployR
-#### Install on Linux
-#### Install on Windows
-#### Post-install Configuration
+### Enable Operationalization
+#### Setup on Linux
+#### Setup on Windows
 #### Upgrade to DeployR for Microsoft R Server 2017
 ### Configure & Administer
-#### Inspecting Server & Log files
-#### Stopping & Restarting 
+#### Inspect Server & Log files
+#### Stop & Restart
 #### On Cloud Configuration
+#### Configure a Database
 ### Enterprise-Grade Security 
 #### Authentication
 #### Authorization
 #### Connection Encryption
 #### CORS 
 ### Web Services
+### Execute R Jobs Remotely
 ### API Reference 
-### Archived DeployR Docs
+### Archived Documentation
 #### [Install DeployR](deployr-installation.md)
 ##### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ##### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
