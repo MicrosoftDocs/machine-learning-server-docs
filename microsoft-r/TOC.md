@@ -2,6 +2,7 @@
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
 
+
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Get Started with ScaleR and Data Analysis](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
@@ -23,13 +24,18 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
+
 # [Microsoft R Server](rserver.md)
+
 ## [What's New](notes/r-server-notes.md)
+
 ## [Supported Platforms](rserver-install-supported-platforms.md)
+
 ## [R Server on Linux](scaler-getting-started.md)
 ### [Get Started on Linux](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
+
 ## [R Server on Hadoop](scaler-hadoop-getting-started.md)
 ### [Get Started on Hadoop MapReduce](scaler-hadoop-getting-started.md)
 ### [Get Started on Hadoop Spark](scaler-spark-getting-started.md)
@@ -42,6 +48,7 @@
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-hadoop-functions.md)
+
 ## [R Server on Teradata DB](scaler-teradata-getting-started.md)
 ### [Get Started on Teradata](scaler-teradata-getting-started.md)
 ### [Install on Teradata](rserver-install-teradata-805.md)
@@ -49,75 +56,101 @@
 #### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-teradata-functions.md)
+
 ## [R Server on Windows](rserver-install-windows.md)
+
 ## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
+
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
+
 ## [Operationalize R Analytics (DeployR)](deployr-about.md)
-### [Install DeployR](deployr-installation.md)
-#### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
-#### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
-#### [Install DeployR 8.0.0](deployr-installing-configuring.md)
-### Getting Started with DeployR
-#### [About DeployR](deployr-about.md)
-#### [What's New in DeployR](deployr-whats-new.md)
-#### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
-#### [Getting Started for Administrators](deployr-administrator-getting-started.md)
-#### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
-### [Administration & Configuration](deployr-administrator-getting-started.md)
-#### [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md)
-##### [About DeployR Administration Console](deployr-admin-console/deployr-admin-console-about.md)
-##### [Creating & Managing User Accounts](deployr-admin-console/deployr-admin-console-user-accounts.md)
-##### [Managing Permissions with Roles](deployr-admin-console/deployr-admin-console-permissions-with-roles.md)
-##### [Managing R Scripts](deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
-##### [Managing R Boundaries](deployr-admin-console/deployr-admin-managing-r-boundaries.md)
-##### [Managing Access with IP Filters](deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
-##### [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md)
-##### [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md)
-##### [Restoring & Backing Up the Database](deployr-admin-console/deployr-admin-console-database.md)
-##### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
-#### [Common Administrative Tasks](deployr-common-administration-tasks.md)
-#### [Troubleshooting & Diagnostics](deployr-admin-diagnostics-troubleshooting.md)
-#### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
-#### [DeployR in the Cloud](deployr-admin-install-in-cloud.md)
-#### [Server & Grid High Availability](deployr-admin-configure-high-availability.md)
-#### [Managing Big Data](deployr-admin-manage-big-data.md)
-#### [Using Hadoop Impersonation & DeployR](deployr-admin-hadoop-impersonation.md)
-#### [R Package Management](deployr-admin-r-package-management.md)
-#### [Reinstalling or Upgrading the R Dependency](deployr-admin-configure-reinstall-r.md)
-### [Security on DeployR](deployr-admin-security/deployr-security.md)
-#### [Introduction](deployr-admin-security/deployr-security.md)
-#### [Authentication & Authorization](deployr-admin-security/deployr-security-authentication.md)
-#### [HTTPS & SSL/TLS Support](deployr-admin-security/deployr-security-https.md)
-#### [Server Access Policies](deployr-admin-security/deployr-security-server-access.md)
-#### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
-#### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
-#### [Account Locking Policies](deployr-admin-security/deployr-security-account-locking.md)
-#### [RServer Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
-### [APIs and Client Libraries](deployr-tools-and-samples.md)
-#### [Developer Docs & Downloads](deployr-tools-and-samples.md)
-#### [API Overview](deployr-api-reference.md)
-#### [Client Library Tutorial](deployr-client-library.md)
-#### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
-#### [API Explorer Tool](deployr-api-explorer-tool.md)
-### [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md)
-### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
-#### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
-#### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
-#### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
-#### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+### Get Started Operationalizing
+### Install DeployR
+#### Install on Linux
+#### Install on Windows
+#### Post-install Configuration
+#### Upgrade to DeployR for Microsoft R Server 2017
+### Configure & Administer
+#### Inspecting Server & Log files
+#### Stopping & Restarting 
+#### On Cloud Configuration
+### Enterprise-Grade Security 
+#### Authentication
+#### Authorization
+#### Connection Encryption
+#### CORS 
+### Web Services
+### API Reference 
+### Archived DeployR Docs
+#### [Install DeployR](deployr-installation.md)
+##### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
+##### [Install DeployR for Microsoft R Server 2016 on Linux](deployr-install-on-linux.md)
+##### [Install DeployR 8.0.0](deployr-installing-configuring.md)
+#### Getting Started with DeployR
+##### [About DeployR 8.x](deployr-about.md)
+##### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
+##### [Getting Started for Administrators](deployr-administrator-getting-started.md)
+##### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
+#### [Administration & Configuration](deployr-administrator-getting-started.md)
+##### [Administration Console Help](deployr-admin-console/deployr-admin-console-about.md)
+###### [About DeployR Administration Console](deployr-admin-console/deployr-admin-console-about.md)
+###### [Creating & Managing User Accounts](deployr-admin-console/deployr-admin-console-user-accounts.md)
+###### [Managing Permissions with Roles](deployr-admin-console/deployr-admin-console-permissions-with-roles.md)
+###### [Managing R Scripts](deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
+###### [Managing R Boundaries](deployr-admin-console/deployr-admin-managing-r-boundaries.md)
+###### [Managing Access with IP Filters](deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
+###### [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md)
+###### [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md)
+###### [Restoring & Backing Up the Database](deployr-admin-console/deployr-admin-console-database.md)
+###### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
+##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
+##### [Troubleshooting & Diagnostics](deployr-admin-diagnostics-troubleshooting.md)
+##### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
+##### [DeployR in the Cloud](deployr-admin-install-in-cloud.md)
+##### [Server & Grid High Availability](deployr-admin-configure-high-availability.md)
+##### [Managing Big Data](deployr-admin-manage-big-data.md)
+##### [Using Hadoop Impersonation & DeployR](deployr-admin-hadoop-impersonation.md)
+##### [R Package Management](deployr-admin-r-package-management.md)
+##### [Reinstalling or Upgrading the R Dependency](deployr-admin-configure-reinstall-r.md)
+#### [Security on DeployR](deployr-admin-security/deployr-security.md)
+##### [Introduction](deployr-admin-security/deployr-security.md)
+##### [Authentication & Authorization](deployr-admin-security/deployr-security-authentication.md)
+##### [HTTPS & SSL/TLS Support](deployr-admin-security/deployr-security-https.md)
+##### [Server Access Policies](deployr-admin-security/deployr-security-server-access.md)
+##### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
+##### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
+##### [Account Locking Policies](deployr-admin-security/deployr-security-account-locking.md)
+##### [RServer Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
+#### [APIs and Client Libraries](deployr-tools-and-samples.md)
+##### [Developer Docs & Downloads](deployr-tools-and-samples.md)
+##### [API Overview](deployr-api-reference.md)
+##### [Client Library Tutorial](deployr-client-library.md)
+##### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
+##### [API Explorer Tool](deployr-api-explorer-tool.md)
+#### [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md)
+#### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
+##### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
+##### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
+##### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
+##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+
 # [SQL Server R Services](sql-server-r-services.md)
+
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](r-client-install.md)
 ## [R Client/R Server Version Compatibility](r-client-compatibility.md)
+
 # [Microsoft R Open](r-open.md)
+
 # [Cloud-Based Offerings](vm-cloud.md)
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
 ## [Azure Virtual Machines](vm-cloud.md)
 ### [R Server on Linux](vm-azure-rserver-linux.md)
 ### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
+
 # [Package Reference](package-reference.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
@@ -142,4 +175,5 @@
 ## [RevoPemaR Function Reference](pemar-getting-started.md)
 ## Other Microsoft R Packages
 ### [Using foreach for Parallelizing Loops](foreach.md)
+
 # [Archived Documentation](microsoft-r-old-versions.md)
