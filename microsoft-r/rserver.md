@@ -29,9 +29,9 @@ ms.custom: ""
 
 **R Server** is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). Along with **R Client**, R Server is an execution engine for solutions built on **ScaleR** technology, extending open source R with infrastructure and support for high-performance analytics, statistical analysis, machine learning scenarios, and massively large datasets. The primary difference between R Server and R Client is scale and workload distribution. Only R Server can accommodate big data on distributed file systems like Hadoop MapReduce and Spark.
 
-You can install R Server on a supported server or cluster, and then use it to run existing solutions that you previously built using **R Client** and a development tools like **R Tools for Visual Studio**. Although ScaleR functions are not required in the solutions you deploy, the full value of Microsoft R is realized only with ScaleR.
+You can install R Server on a supported server or cluster, and then use it to run existing solutions that you previously built using **R Client** and tools like **R Tools for Visual Studio**. Although ScaleR functions are not required in the solutions you deploy, the full value of Microsoft R is realized only with ScaleR technology.
 
-R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Linux, Hadoop, Teradata. It's also available for Windows as a feature of SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
+R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
 
 ## Components of R Server
 
@@ -46,18 +46,18 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 
 Reasons for choosing R Server include:
 
-* chunked data across multiple disks
-* increased threads for R worker processes running standard R packages and also ScaleR functions
-* performance and scalability through parallelization and streaming
-* supportability and service level agreements for mission-critical workloads
+* Chunked data across multiple disks
+* Increased threads for R worker processes running standard R packages and also ScaleR functions
+* Performance and scalability through parallelization and streaming
+* Supportability and service level agreements for mission-critical workloads
 
 ## Interoperability with R language and across Microsoft R
 
 R Server is built on open source R and is 100% compatible with the R language. You can run any pure open source R solution on a Microsoft R Open, Microsoft R Client, or Microsoft R Server deployment.
 
-ScaleR functions are proprietary and available only through Microsoft R Client and Microsoft R Server. Using the high-performance analytics of ScaleR will require a move to either R Client or R Server.
+ScaleR functions are proprietary and available only through Microsoft R Client and Microsoft R Server. Using the high-performance analytics of ScaleR will require a move from open source to either Microsoft R Client or Microsoft R Server.
 
-In a progression of server capacity and capability, many customers start with the free, local R Client and then upgrade to R Server. R Client is a no-charge version of Microsoft R that is typically paired with an integrated development environment like R Tools for Visual Studio. R Client provides an engine for ScaleR functions. Sometimes, a ScaleR solution developed locally against an R Client can be deployed to R Server with minimal or no changes, but additional functions become available when you switch from local or remote compute contexts. Realistically, a small amount of adaptation is typically required.
+In a progression of server capacity and capability, many customers start with the free, local R Client and then upgrade to R Server. R Client is a no-charge version of Microsoft R that is typically paired with an integrated development environment like R Tools for Visual Studio. R Client provides an engine for ScaleR functions. Occasionally, a ScaleR solution developed locally against an R Client can be deployed to R Server with minimal or no changes, but additional functions become available when you switch from local or remote compute contexts. Realistically, a small amount of adaptation is typically required to take advantage of workload distribution and chunking.
 
 R Server is the next step forward when operational requirements include performance, scale, and service level agreements. These benefits are only available through the commercial R Server product.
 

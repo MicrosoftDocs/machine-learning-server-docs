@@ -35,26 +35,25 @@ If you are new to R, be sure to also leverage the R Core Team manuals that are p
 [Get started with ScaleR and data analysis](scaler-getting-started.md)
 
 ## Tasks
-| |
-|-|
-|[Import data](scaler-user-guide-data-import.md)|
-|[Data sources](scaler-user-guide-data-source.md)|
-|[Transforming and Subsetting Data](scaler-user-guide-data-transform.md)|
-|[Models in ScaleR](scaler-user-guide-models.md)|
-|[Data Summaries](scaler-user-guide-data-summaries.md)|
-|[crosstabs](scaler-user-guide-crosstabs.md)|
-|[Linear Models](scaler-user-guide-linear-model.md)|
-|[Logistic Regression Models](scaler-user-guide-logistic-regression.md)|
-|[Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)|
-|[Decision Tree Models](scaler-user-guide-decision-tree.md)|
-|[Decision Forest Models](scaler-user-guide-decision-forest.md)|
-|[Stochastic Gradient Boosting](scaler-user-guide-boosting.md)|
-|[Naïve Bayes Classifier](scaler-user-guide-naive-bayes.md)|
-|[Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)|
-|[Clustering](scaler-user-guide-cluster.md)|
-|[Converting RevoScaleR Model Objects for Use in PMML](scaler-user-guide-pmml.md)|
-|[Transform Functions](scaler-user-guide-transform-functions.md)|
-|[Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)|
+
+* [Import data](scaler-user-guide-data-import.md)
+* [Data sources](scaler-user-guide-data-source.md)
+* [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
+* [Models in ScaleR](scaler-user-guide-models.md)
+* [Data Summaries](scaler-user-guide-data-summaries.md)
+* [crosstabs](scaler-user-guide-crosstabs.md)
+* [Linear Models](scaler-user-guide-linear-model.md)
+* [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
+* [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
+* [Decision Tree Models](scaler-user-guide-decision-tree.md)
+* [Decision Forest Models](scaler-user-guide-decision-forest.md)
+* [Stochastic Gradient Boosting](scaler-user-guide-boosting.md)
+* [Naïve Bayes Classifier](scaler-user-guide-naive-bayes.md)
+* [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
+* [Clustering](scaler-user-guide-cluster.md)
+* [Converting RevoScaleR Model Objects for Use in PMML](scaler-user-guide-pmml.md)
+* [Transform Functions](scaler-user-guide-transform-functions.md)
+* [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
 ## See Also
 
