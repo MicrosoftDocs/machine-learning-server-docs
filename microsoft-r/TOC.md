@@ -63,25 +63,43 @@
 
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
 
-## [Operationalize R Analytics (DeployR)](deployr-about.md)
-### Get Started Operationalizing
-### Enable Operationalization
-#### Setup on Linux
-#### Setup on Windows
-#### Upgrade to DeployR for Microsoft R Server 2017
-### Configure & Administer
-#### Inspect Server & Log files
-#### Stop & Restart
-#### On Cloud Configuration
-#### Configure a Database
-### Enterprise-Grade Security 
-#### Authentication
-#### Authorization
-#### Connection Encryption
-#### CORS 
-### Web Services
-### Execute R Jobs Remotely
+## Remote Compute Contexts
+
+## [Operationalize R Analytics (DeployR)](operationalize/about.md)
+
+### [Get Started with Operationalization](operationalize/get-started.md)
+
+### [Configure & Administer](operationalize/configure.md)
+#### Configuration Scenarios
+#### Configuration Guide for Windows
+#### Configuration Guide for Linux
+#### Migrate Data 
+#### Enterprise-Grade Security 
+##### Authentication
+##### Authorization
+##### Connection Security (HTTPS/SSL)
+##### CORS 
+#### Administration
+##### Inspect Server & Log files
+##### Stop & Restart
+##### Configure a Database
+##### Session management
+##### Web service monitoring
+
+### [Deploy Analytics as Web Services](operationalize/deploy.md)
+#### Deployment Workflow 
+#### Deployment Tutorial
+#### Create Web Service
+#### Test Web Service
+#### Deploy Web Service
+#### Consume Web Service
+
+### [Integrate Web Services into Applications ](operationalize/integrate.md)
+#### Integration Workflow
+#### Integration Tutorial
+
 ### API Reference 
+
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)
 ##### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
