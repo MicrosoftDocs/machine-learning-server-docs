@@ -5,8 +5,8 @@ title: "Package reference (Microsoft R)"
 description: "Function reference for Revo packages in Microsoft R, including RevoScaleR, RevoPemaR, and others."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "09/02/2016"
+manager: "jhubbard"
+ms.date: "09/20/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,11 +34,13 @@ This section contains the function reference documentation for proprietary revo 
 |----|----|
 |[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. |
 |[RevoPemaR](pemar-getting-started.md) | Developer functions for coding custom parallel external memory algorithms. |
-|RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |
-|RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |
-|RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |
-|RevoUtils|Utility functions useful when programming and developing R packages. Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |
-|RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only via package help, accessed in tools like RStudio or R Tools for Visual Studio. |
+|RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (`*`). |
+|RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only (`*`).  |
+|RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only (`*`). |
+|RevoUtils|Utility functions useful when programming and developing R packages. Reference documentation is online only (`*`). |
+|RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (`*`). |
+
+`*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in tools like **RStudio** or **R Tools for Visual Studio**.
 
 ## Deprecated packages
 
