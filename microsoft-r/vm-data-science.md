@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Microsoft R Server on the Data Science Virtual Machine
 
-The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Microsoft R Server (on Linux) and SQL Server R Services (on Windows).  R Server (Developer Edition) includes the complete R distribution from CRAN, plus additional data-analysis functions with big-data capabilities, and the DeployR framework for integrating R into applications as a web service. The developer edition is identical to the enterprise Microsoft R Server edition, but licensed for development/test use.
+The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Microsoft R Server on the Linux VM and both Microsoft R Server and SQL Server R Services on the Windows.  R Server (Developer Edition) includes the complete R distribution from CRAN, plus additional data-analysis functions with big-data capabilities, and the DeployR framework for integrating R into applications as a web service. The developer edition is identical to the enterprise Microsoft R Server edition, but licensed for development/test use.
 
 Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. 
 
