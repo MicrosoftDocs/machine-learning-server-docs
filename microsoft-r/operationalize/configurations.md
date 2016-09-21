@@ -37,7 +37,7 @@ There are essentially two types of configurations:
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping. 
 
-![One-box configuration](./media/o18n/setup-onebox.jpeg)
+![One-box configuration](../media/o18n/setup-onebox.jpeg)
 
 
 
@@ -45,5 +45,5 @@ With one-box configurations, as the name suggests, everything runs on a single m
 
 With enterprise-ready configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security and even a remote SQL or PostgreSQL database.
 
-![Enterprise-Ready Configuration](./media/o18n/setup-enterprise-ready.jpeg)
+![Enterprise-Ready Configuration](../media/o18n/setup-enterprise-ready.jpeg)
 
