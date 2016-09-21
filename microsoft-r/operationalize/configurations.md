@@ -30,7 +30,9 @@ ms.custom: ""
 If you want to operationalize your R analytics, you must configure Microsoft R Server after installation to act as a deployment server that hosts analytic web services.
 
 There are essentially two types of configurations:
+
 1. **One-box configuration** (common for testing)
+
 1. **Enterprise-ready configuration** (essential for production)
 
 ## The One-Box Basic Configuration
