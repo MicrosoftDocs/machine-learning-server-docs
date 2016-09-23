@@ -25,26 +25,31 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Authentication 
+# Configuring Authentication for the Deployment Server
 
-QUICK NOTES:
+To secure DeployR, you have several authentication options:
 
-There are two 2 modes of operation:
-
-1. One-box configuration - everything is one machine and everything is within the trust boundary.
-2. Enterprise-ready configuration - production setup
+|Authentication Method|When to Use|
+|----------------------------------|----------------------------------|
+|Local `administrator` [account](#local)|Use with [one-box configurations](configurations.md)|
+|Active Directory / LDAP|Use with [enterprise-ready configuration](configurations.md)|
+|Active Directory / LDAP-S|Use with [enterprise-ready configuration](configurations.md) and SSL/TLS|
+|Azure Active Directory|Use in the cloud|
 
 [ADD DANIEL's AUTHENTICATION DIAGRAM HERE]
 
- 
+<a name="local"></a>
+
 ## Local Administrator Account Authentication
 
-When R Server is installed and DeployR is configured, a default `administrator` account is created. After configuration, you can set a password for this local administrator.
+When R Server is installed and DeployR is configured, a default `administrator` account is created. After configuration, you can set a password for this local administrator. While this might be sufficient when trying out DeployR with a [one-box configuration](configurations.md) when everything is running within the trust boundary, it is not recommended with [enterprise-ready configurations](configurations.md).
 
 **Set the password for the local administrator account**:
 
 1. Here's how...
 
+
+<a name="ldap"></a>
 
 ## Active Directory / LDAP(S)
 
@@ -116,6 +121,7 @@ For LDAPS, do the following:
 
 @@@ HOW DO YOU ALL THE ABOVE BUT FOR LDAP-S
 
+<a name="aad"></a>
 
 ## Azure Active Directory 
 
@@ -138,7 +144,7 @@ To enable Azure Active Directory (AD), the administrator should do the following
    @@@ Where can i find this file on Linux
 
    @@@ Where do I insert this information exactly?
-        
+
 
 Add a note: point your application developers to this tutorial so they can learn how to integrate with DeployR.
 Application Developer: Read new tutorial: “how to build an application using DeployR as a back-end  that authenticates using Azure AD” (better title to come) which includes C# Sharp and Java examples. It should explain that developers must download the libraries for the type of application they are developing from https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/ With this library, they can get a token from Azure Active Directory. 
