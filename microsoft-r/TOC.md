@@ -70,12 +70,12 @@
 ### [Get Started with Operationalization](operationalize/get-started.md)
 
 ### [Configure & Administer](operationalize/configure.md)
-#### Configuration Scenarios
-#### Configuration Guide for Windows
+#### [Configuration Scenarios](operationalize/configurations.md)
+#### [Configuration Guide for Windows](operationalize/configure-on-windows.md)
 #### Configuration Guide for Linux
 #### Migrate Data 
 #### Enterprise-Grade Security 
-##### Authentication
+##### [Authentication](operationalize/security-authentication.md)
 ##### Authorization
 ##### Connection Security (HTTPS/SSL)
 ##### CORS 
@@ -94,7 +94,7 @@
 #### Deploy Web Service
 #### Consume Web Service
 
-### [Integrate Web Services into Applications ](operationalize/integrate.md)
+### [Integrate Web Services into Applications](operationalize/integrate.md)
 #### Integration Workflow
 #### Integration Tutorial
 

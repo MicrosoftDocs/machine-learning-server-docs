@@ -54,6 +54,8 @@ With enterprise-ready configurations, you can work with your production-grade da
 
 This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end owns stateless business logic and can communicate with the back-ends and the database. The back-end manages stateful R Shells, which are????
 
+In this option we recommend to set ssl between the front end and back end machines and between the front end and db (if changed from default). @@@@@ Rewrite AND LINK TO SSL ARTICLE
+
 While it is configured, by default, to use the default local SQLite database, you must define a remote SQL Server or PostgreSQL database if you plan on using multiple front-ends.
 
 Front-ends and back-ends can be scaled independently. There are n
