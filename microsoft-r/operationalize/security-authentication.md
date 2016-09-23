@@ -31,12 +31,14 @@ To secure DeployR, you have several authentication options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|Local `administrator` [account](#local)|Use with [one-box configurations](configurations.md)|
-|Active Directory / LDAP|Use with [enterprise-ready configuration](configurations.md)|
-|Active Directory / LDAP-S|Use with [enterprise-ready configuration](configurations.md) and SSL/TLS|
-|Azure Active Directory|Use in the cloud|
+|Local `administrator` [account](#local)|Use with [one-box](configurations.md) configurations|
+|[Active Directory / LDAP](#ldap)|Use with [enterprise-ready](configurations.md) configurations|
+|[Active Directory / LDAP-S](#ldap)|Use with [enterprise-ready](configurations.md)  configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|Use in the cloud|
+
 
 [ADD DANIEL's AUTHENTICATION DIAGRAM HERE]
+
 
 <a name="local"></a>
 
