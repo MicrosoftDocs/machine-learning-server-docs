@@ -32,18 +32,12 @@ You should consider configuring DeployR for HTTPS in all production environments
 >[!IMPORTANT] 
 >For security reasons, we strongly recommend that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols are disabled by default.
 
-
-Transport Layer Security (TLS) is a successor protocol to SSL. It is used to provide network security and privacy. In addition to providing encryption services, TLS uses trusted certificates to perform client and server authentication, and it uses message authentication codes to ensure data integrity.
-
-This documentation assumes that you have a basic understanding of TLS and that you know how to obtain and use trusted certificates.
-
 Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor **Secure Sockets Layer (SSL)** are commonly-used cryptographic protocols for managing the security of message transmissions on the Internet. 
 
-DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. 
-
-To setup DeployR for HTTPS, you will definitely need the following things apart from some general network configurations around opening ports, updating firewall rules, and so on:
+DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. To setup DeployR for HTTPS, you will definitely need the following things apart from some general network configurations around opening ports, updating firewall rules, and so on:
 
 1. Three to four certificate
+    1. Secure client to 
 
 2. SSL Port
 
@@ -55,33 +49,18 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 
 <br />
-####Securing connections between the DeployR Web server and client
+####Securing connections between the client application and the DeployR front end. 
 
-1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
+1. Open the BLAH BLAH BLAH @@@@@@ port:
+    1. In your firewall, be sure to open port BLAH BLAH BLAH @@@@@@  to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
 
-1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
+    1. If you are provisioning your server on a cloud service such as Azure or an AWS EC2 instance, then you must also add endpoints for port BLAH BLAH BLAH @@@@@@ .
 
-1. Enable HTTPS in the DeployR administrator utility:
+1. Enable HTTPS in DeployR:
 
    1. Launch the utility with administrator privileges to enable HTTPS:
 
-      + For Linux
-        ```
-        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
-        sudo ./adminUtilities.sh
-        ```
-
-     + For Windows:
-        ```
-        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-        adminUtilities.bat
-        ```
-
-   1. From the main menu, choose option **Web Context and Security**.
-
-   1. From the sub-menu, choose option **Configure Server SSL/HTTPS**.
-
-   1. When prompted, answer `Y` to the question **Enable SSL?**
+   1. STEPS UNKNOWN @@@@@@@@@@@@@
 
    1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file. 
    
@@ -89,15 +68,9 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
       >We recommend that you use a trusted SSL certificate from a registered authority **as soon as possible**.
 
-   1. When prompted whether the certificate file is self-signed, answer `N` if you are using a trusted SSL certificate from a registered authority -or- `Y` if self-signed.
-
    1. Return to the main menu and choose the option **Start/Stop Server**. You must restart DeployR so that the changes can take effect.
 
-   1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
-
-   1. Exit the utility.
-
-1. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see this [Alert](#alertusers).
+1. Test these changes by TRYING THIS @@@@@@.   If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see this [Alert](#alertusers).
 
 
 <br />
