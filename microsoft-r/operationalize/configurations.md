@@ -45,7 +45,7 @@ Setup R Server for operationalization with an R Server with a _one-box configura
  + [How to configure on Windows]()
  + [How to configure on Linux]()
 
-![One-box configuration](../media/o18n/setup-onebox.jpeg)
+![One-box configuration](../media/o16n/setup-onebox.jpeg)
 
 
 ## The Enterprise-Ready Configuration
@@ -64,5 +64,5 @@ Setup R Server for operationalization with an _enterprise-ready configuration_:
  + [How to configure on Windows]()
  + [How to configure on Linux]()
 
-![Enterprise-Ready Configuration](../media/o18n/setup-enterprise-ready.jpeg)
+![Enterprise-Ready Configuration](../media/o16n/setup-enterprise-ready.jpeg)
 
