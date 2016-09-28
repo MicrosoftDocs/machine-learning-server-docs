@@ -54,7 +54,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 1. Once the VM is deployed and running, [connect](#connect) to the VM to begin interacting with R Server. 
 
 1. At this point, you can also: 
-    + [Install an R IDE](#ride) such as RStudio
+    + [Install an R IDE](#ride)
     + Finish the [DeployR configuration](#deployrconfig)
 
 <a name="connect"></a>
@@ -75,7 +75,7 @@ To start Microsoft R Server, simple type `R` at the command prompt. The R Server
 
 ## Configure an R IDE
 
-With Microsoft R Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Microsoft R Server R executable. This way, whenever you execute your R code, you'll do so using Microsoft R Server and benefit from its proprietary packages.  R Server works well popular IDEs such as [RStudio](https://www.rstudio.com) Desktop or Server. 
+With Microsoft R Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Microsoft R Server R executable. This way, whenever you execute your R code, you'll do so using Microsoft R Server and benefit from its proprietary packages.  R Server works well popular IDEs such as RTVS, [RStudio](https://www.rstudio.com) Desktop or Server. 
 
 #### Configure RStudio for Microsoft R Server
   1. Launch RStudio.

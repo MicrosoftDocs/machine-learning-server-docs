@@ -52,7 +52,7 @@ If you were able to reach the landing page after install, but cannot reach that 
 
 ## How does DeployR compare to Shiny?
 
-DeployR is an integration technology for application developers to deploy R analytics inside any Web, desktop, mobile, dashboard application or backend system. Shiny is a package from [RStudio](http://www.rstudio.com/) designed to help R users take their analysis and build them into interactive Web applications. However, Shiny is not designed to build applications other than interactive Web applications.
+DeployR is an integration technology for application developers to deploy R analytics inside any Web, desktop, mobile, dashboard application or backend system. Shiny is a package from RStudio designed to help R users take their analysis and build them into interactive Web applications. However, Shiny is not designed to build applications other than interactive Web applications.
 
 The following table contrasts the two solutions:
 
