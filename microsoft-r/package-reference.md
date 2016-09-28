@@ -40,7 +40,7 @@ This section contains the function reference documentation for proprietary revo 
 |RevoUtils|Utility functions useful when programming and developing R packages. Reference documentation is online only (`*`). |
 |RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (`*`). |
 
-`*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in tools like **RStudio** or **R Tools for Visual Studio**.
+`*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
 
 ## Deprecated packages
 

@@ -12,7 +12,7 @@ Users can also expect to see considerable differences in performance and scalabi
 
 However, performance even on identical hardware can be affected by many factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use Java, JavaScript or .NET to integrate the R analysis output with a third party package. [Learn more about DeployR...](/deployr-about.md)
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The DeployR package, available for Microsoft R Server only, provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use Java, JavaScript or .NET to integrate the R analysis output with a third party package. [Learn more about DeployR...](../../deployr-about.md)
 
 
 [Watch the R Server technology overview video.](https://www.microsoft.com/en-us/cloud-platform/r-server) <a href="" target="_blank">>></a>
@@ -20,11 +20,11 @@ In many enterprises, the final step is to deploy an interface to the underlying 
 
 |Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
 |---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
-|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](/rserver-install-hadoop.md)|[Doc](/scaler-hadoop-getting-started.md)|
-|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](/rserver-install-teradata-server.md)|[Doc](/scaler-teradata-getting-started.md)|
-|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](/rserver-install-linux-server.md)|[Doc](/scaler-getting-started.md)|
+|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](../../rserver-install-hadoop.md)|[Doc](../../scaler-hadoop-getting-started.md)|
+|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](../../rserver-install-teradata-server.md)|[Doc](../../scaler-teradata-getting-started.md)|
+|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](../../rserver-install-linux-server.md)|[Doc](../../scaler-getting-started.md)|
 
 For R Server on Windows, learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server (Standalone) on the SQL Server documentation site on MSDN.
 
 <br />
-For a list of supported operating systems, see [Supported platforms in Microsoft R Server](/rserver-install-supported-platforms.md).
+For a list of supported operating systems, see [Supported platforms in Microsoft R Server](../../rserver-install-supported-platforms.md).
