@@ -76,37 +76,22 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 On each front-end machine, do the following:
 
-1. Enable AD LDAP(S) in the DeployR external JSON configuration file:
+1. Edit the DeployR external JSON configuration file, `appsettings.json`.
 
-  1. Open the configuration file, `appsettings.json`.
+1. Activate the AD LDAP(S) authentication method@@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
 
-  1. Activate the AD LDAP(S) authentication method@@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
+1. Search for the section starting with `"LDAP": {`
 
-  1. Search for the section starting with `"LDAP": {`
+1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
 
-  1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
-
-     |Properties|Definition|
-     |----------------|-------------------------------|
-     |`Host`|Address of the Active Directory server|
-     |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
-     |`BindFilter`|?????@@@@@|
-     |`ManagerDn`|Distinguished name with which to authenticate (value must be encrypted)|
-     |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
-     |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.|
-
-     + `Host`: Address of the Active Directory server
-
-     + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
-        > If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. 
-
-     + `BindFilter`: ?????@@@@@
-
-     + `ManagerDn`: Distinguished Name with which to authenticate  (This value must be encrypted.)
-
-     + `ManagerPassword`: Manager password  with which to authenticate  (This value must be encrypted.)
-
-     + `SearchBase`: Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`. 
+   |LDAP Properties|Definition|
+   |----------------|-------------------------------|
+   |`Host`|Address of the Active Directory server|
+   |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
+   |`BindFilter`|?????@@@@@|
+   |`ManagerDn`|Distinguished name with which to authenticate (value must be encrypted)|
+   |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
+   |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
  
 1. Restart the front-end so the changes can take effect.  @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
 
@@ -124,15 +109,16 @@ On each front-end machine, do the following:
 
 On each front-end machine, do the following:
 
-1. Log into [Microsoft Azure management portal](https://azure.microsoft.com/en-us/features/azure-portal/).   
+1. Get the CLIENT ID and tenant ID from the Microsoft Azure management portal:
+   1. [Log into portal](https://azure.microsoft.com/en-us/features/azure-portal/).   
 
-1. [Register a new web application](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/).
+   1. [Register a new web application](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/).
 
-1. Once the new application has been created, click **CONFIGURE**.
+   1. Once the new application has been created, click **CONFIGURE**.
 
-1. Take note of the value for the  `CLIENT ID`. You will use this value in the DeployR configuration file.
+   1. Take note of the value for the  `CLIENT ID`. You will use this value in the DeployR configuration file.
 
-1. Take note of the application's tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...``` 
+   1. Take note of the application's tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...``` 
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
 
@@ -143,10 +129,12 @@ On each front-end machine, do the following:
   1. Search for the section starting with `"AzureActiveDirectory": {`
 
   1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
-     + `Authority`: Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.
 
-     + `Audience`: Use the `CLIENT ID` value you copied from the Azure management portal.
- 
+   |Azure AD Properties|Definition|
+   |----------------|-------------------------------|
+   |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
+   |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
+   
 1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
 
 1. Repeat these steps on each front-end machine.
