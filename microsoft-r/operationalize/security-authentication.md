@@ -110,26 +110,26 @@ On each front-end machine, do the following:
 On each front-end machine, do the following:
 
 1. Get the client ID and tenant ID from the Microsoft Azure management portal. You will use these values in the DeployR configuration file:
- 1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
- 1. Once the new application has been created, click **CONFIGURE**.
- 1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL: 
+   1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
- ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...```
+   1. Once the new application has been created, click **CONFIGURE**.
+
+   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL: 
+    https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
+   1. Open the configuration file, `appsettings.json`.
 
-  1. Open the configuration file, `appsettings.json`.
+   1. Activate the Azure AD authentication method by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
 
-  1. Activate the Azure AD authentication method by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
+   1. Search for the section starting with `"AzureActiveDirectory": {`
 
-  1. Search for the section starting with `"AzureActiveDirectory": {`
+   1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
 
-  1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
-
-     |Azure AD Properties|Definition|
-     |----------------|-------------------------------|
-     |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
-     |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
+      |Azure AD Properties|Definition|
+      |----------------|-------------------------------|
+      |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
+      |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
      
 1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
 
