@@ -39,7 +39,7 @@ There are essentially two types of configurations:
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but is not appropriate for production usage. 
 
-This configuration includes an operationalization front-end and back-end on the same machine. It relies on the default local SQLite database. The front-end owns stateless business logic and can communicate with the back-ends and the database. The back-end manages stateful R Shells, which are????
+This configuration includes an operationalization front-end and back-end on the same machine. It relies on the default local SQLite database. The front-end owns stateless business logic, gets API calls, and can communicate with the back-ends and the database. The back-end executes the R code as a session or service, and it manages stateful R Shells, which are????
 
 Setup R Server for operationalization with an R Server with a _one-box configuration_:
  + [How to configure on Windows]()
@@ -52,13 +52,13 @@ Setup R Server for operationalization with an R Server with a _one-box configura
 
 With enterprise-ready configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security and even a remote SQL or PostgreSQL database.
 
-This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end owns stateless business logic and can communicate with the back-ends and the database. The back-end manages stateful R Shells, which are????
+This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end owns stateless business logic, gets API calls, and can communicate with the back-ends and the database. The back-end executes the R code as a session or service, and it manages stateful R Shells, which are????
 
-In this option we recommend to set ssl between the front end and back end machines and between the front end and db (if changed from default). @@@@@ Rewrite AND LINK TO SSL ARTICLE
+With this configuration, we recommend that you [configure DeployR for HTTPS](security-https.md).  
 
-While it is configured, by default, to use the default local SQLite database, you must define a remote SQL Server or PostgreSQL database if you plan on using multiple front-ends.
+A [remote SQL Server or PostgreSQL database can be configured](configure-remote-database.md) in place of the default SQLite database. While it is optional for configurations with a single front-end, it is required whenever multiple front-ends are configured.
 
-Front-ends and back-ends can be scaled independently. There are n
+Front-ends and back-ends can be scaled independently. 
 
 Setup R Server for operationalization with an _enterprise-ready configuration_:
  + [How to configure on Windows]()

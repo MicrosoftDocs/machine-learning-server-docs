@@ -40,7 +40,13 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. To set
     1. Secure client to 
 
 2. SSL Port
+]
 
+5.       SSL recommended:  
+a.       On FE, install SSL certificate to enable HTTPs and encrypt communication between client and FE. So traffic is not modified or read. 
+b.       On FE, install another SSL certificate with private key to ensure only recognized FE are accepted by and can communicate with BE. Configure backend to require a client certificate on each front end.  
+6.       If you have more than one front end, you must use postgres or sql server instead of SQL Lite. 
+Option to run the FE service in IIS
 
 ## Enabling TLS/SSL Support
 

@@ -28,7 +28,7 @@ ms.custom: ""
 # Configure and Administer R Server for Operationalization
 
 Learn more about configuring and administering the deployment server.
-+ [Configuration scenarios](configuration.md)
++ [Configuration scenarios](configurations.md)
 
  + Article on “Configuration Scenarios”: includes a technical architecture/config diagram of front-end/backend with authentication; introduces one-box vs enterprise ready config)  [SME: DANIEL, EFRAT]
  + Configuration Guide for Windows, including these topics:
