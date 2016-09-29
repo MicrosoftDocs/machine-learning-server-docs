@@ -118,7 +118,7 @@ On each front-end machine, do the following:
 
    1. Take note of the value for the  `CLIENT ID`. You will use this value in the DeployR configuration file.
 
-   1. Take note of the application's tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...``` 
+   1. Take note of the application's tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
 
@@ -130,11 +130,11 @@ On each front-end machine, do the following:
 
   1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
 
-   |Azure AD Properties|Definition|
-   |----------------|-------------------------------|
-   |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
-   |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
-   
+     |Azure AD Properties|Definition|
+     |----------------|-------------------------------|
+     |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
+     |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
+     
 1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
 
 1. Repeat these steps on each front-end machine.
