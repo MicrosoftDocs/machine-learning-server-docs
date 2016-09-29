@@ -76,32 +76,34 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 On each front-end machine, do the following:
 
-1. Open the DeployR external JSON configuration file, `appsettings.json`.
+1. Update the DeployR external JSON configuration file with the LDAP settings.
 
-1. Enable AD LDAP by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
+  1. Open the DeployR external JSON configuration file, `appsettings.json`.
 
-1. Search for the section starting with `"LDAP": {`
+  1. Enable AD LDAP by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
 
-1. Update all the relevant properties in that section so that they match the configuration in your Active Directory® Service Interfaces Editor.  Properties include:
-   + `Host`: Address of the Active Directory server
-   + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
-   + `BindFilter`: 
-   + `ManagerDn`: Distinguished Name with which to authenticate
-   + `ManagerPassword`: Manager password  with which to authenticate
-   + `SearchBase`: Context name to search in, relative to the base of the configured ContextSource, e.g. 'ou=users,dc=example,dc=com'. (speeds searching)
-   + and so on
+  1. Search for the section starting with `"LDAP": {`
+
+  1. Update all the relevant properties in that section so that they match the configuration in your Active Directory Service Interfaces Editor.  Properties include:
+     + `Host`: Address of the Active Directory server
+     + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
+     + `BindFilter`: 
+     + `ManagerDn`: Distinguished Name with which to authenticate
+     + `ManagerPassword`: Manager password  with which to authenticate
+     + `SearchBase`: Context name to search in, relative to the base of the configured ContextSource, e.g. 'ou=users,dc=example,dc=com'. (speeds searching)
+     + and so on
 
    > LDAP credentials must be encrypted. @@@@@ 
  
-1. If you use LDAPS, you need to change the port number to ####.  Send the users to article Ram: : \\fsu\shares\tigerbigdata\DEPLOYRLDAPS 
+1. If you use LDAPS, you need to change the port number to ####.  Send the users to article Ram: : \\fsu\shares\tigerbigdata\DEPLOYRLDAPS  @@@@ IS THIS STILL TRUE????
 
 1. Restart the front-end so the changes can take effect. @@@HOW DO I DO THAT?
 
-1. Repeat on each front-end machine.
+1. Repeat these steps on each front-end machine.
 
 @@@is this next step needed
 
-4. A certificate is needed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. @@@@@
+4. A certificate is needed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. @@@@@IS THIS STILL TRUE???
 
 
 
@@ -134,8 +136,8 @@ To enable Azure Active Directory (AD), the administrator should do the following
 1. Search for the section starting with `"AzureActiveDirectory": {`
 
 1. Update all the relevant properties in that section so that they match the configuration of your Active Directory Directory Information Tree (DIT). Properties include:
-   + For `audience`, enter the `CLIENT ID` value you copied from the Azure management portal.
-   + For `authority`, enter `https://login.windows.net/<TENANTID>` where `<TENANTID>` is the `TENANT ID` value you copied from the Azure management portal.
+   + `audience`: Use the `CLIENT ID` value you copied from the Azure management portal.
+   + `authority`: Use `https://login.windows.net/<ID>` where `<ID>` is the `TENANT ID` value you copied from the Azure management portal.
 
 1. Restart the front-end so the changes can take effect. @@@HOW DO I DO THAT?
 
