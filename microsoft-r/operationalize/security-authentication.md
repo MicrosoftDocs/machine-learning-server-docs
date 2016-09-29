@@ -52,12 +52,11 @@ If you want set or change the password after the configuration script has been r
 
 1. Here's how...
 
-> CAN YOU RESET A FORGOTTEN PASSWORD????
 
 
 <a name="ldap"></a>
 
-## Active Directory / LDAP(-S)
+## Active Directory and LDAP/LDAP-S
 
 Active Directory (AD) and LDAP are a great authentication option for on-premise configurations of DeployR to ensure that domain users have access to the APIs.  
 
@@ -72,23 +71,24 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
-
-**How to enable Active Directory (AD) and LDAP (or LDAP-S)**
+<br>
+**How to enable AD and LDAP/LDAP-S**
 
 On each front-end machine, do the following:
 
 1. Open the DeployR external JSON configuration file, `appsettings.json`.
 
-1. Enable AD LDAP by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP?
+1. Enable AD LDAP by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
 
 1. Search for the section starting with `"LDAP": {`
 
-1. Update all the relevant properties in that section so that they match the configuration of your Active Directory Directory Information Tree (DIT). Properties include:
-   + `Host`: Enter the ...???
-   + `UseLDAPS`: Enter `true` for LDAP-S or `false` for LDAP.
-   + `ManagerDn`: ????
-   + `ManagerPassword`: ???
-   + `SearchBase`: ???
+1. Update all the relevant properties in that section so that they match the configuration in your Active Directory® Service Interfaces Editor.  Properties include:
+   + `Host`: Address of the Active Directory server
+   + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
+   + `BindFilter`: 
+   + `ManagerDn`: Distinguished Name with which to authenticate
+   + `ManagerPassword`: Manager password  with which to authenticate
+   + `SearchBase`: Context name to search in, relative to the base of the configured ContextSource, e.g. 'ou=users,dc=example,dc=com'. (speeds searching)
    + and so on
 
    > LDAP credentials must be encrypted. @@@@@ 
@@ -111,6 +111,8 @@ On each front-end machine, do the following:
 
 [Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate with DeployR in the cloud when the client application and DeployR have access to the internet.
 
+
+<br>
 **How to enable Azure AD**
 
 On each front-end machine, do the following:

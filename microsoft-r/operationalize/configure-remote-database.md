@@ -33,6 +33,7 @@ By default, DeployR is configured to use a SQLite database out of the box. If yo
 + PostgreSQL (on Linux) 
 
 <a name="sqlserver"></a>
+
 ### Using a SQL Server Database
 
 During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, **but before using it**, you can configure DeployR to use a database in **SQL Server Professional, Standard, or Express Version 2012 or greater**.
@@ -53,11 +54,11 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     
     1.  In the Object Explorer pane, right click **Security &gt; Logins**.
     
-        ![Login](./media/deployr-install-on-windows/sqlserver-new-login.png)
+        ![Login](../../media/deployr-install-on-windows/sqlserver-new-login.png)
 
     1.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
     
-        ![Login](./media/deployr-install-on-windows/sqlserver-login-dialog.png)
+        ![Login](../../media/deployr-install-on-windows/sqlserver-login-dialog.png)
 
     1.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
     

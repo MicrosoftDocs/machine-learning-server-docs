@@ -106,8 +106,6 @@ You can configure one or more front-ends as needed. You can also scale your back
 
     1. To enable HTTPS for DeployR, follow [these steps](security-https.md) and install the certificates needed to secure the communications between the client application and DeployR as well as between the front-ends and back-ends of DeployR. 
 
-    >WHAT IF SSL IS ENABLED, DO WE NEED A DIFFERENT PORT LIKE WITH DID IN THE PAST?????@@@@@
-
     Your front-end is now configured. Repeat these steps for each front-end you want to add to the configuration.
 
 1. For each back-end, configure it as follows: 
@@ -135,9 +133,7 @@ You can configure one or more front-ends as needed. You can also scale your back
 
 1. Once all front-ends and back-ends are configured, declare the IP addresses of each back-end with each front-end using admin util or config file `appsettings.json`. @@@@HOW DO YOU DO THAT?@@ 
 
-1. If desired, replace A [remote SQL Server or PostgreSQL database can be configured](configure-remote-database.md) in place of the default SQLite database. While it is optional for configurations with a single front-end, it is required whenever multiple front-ends are configured.
-
-1. If you want to use a remote database or if you have multiple front-ends, configure DeployR to use one of the following databases instead:
+1. If you want to use a remote database or if you have multiple front-ends, configure DeployR to use one of the following databases instead of the local SQLite database:
     + On Windows, [configure SQL Server](configure-remote-database.md#sqlserver)
     + On Linux, [configure PostgreSQL](configure-remote-database.md#postgres)
 
