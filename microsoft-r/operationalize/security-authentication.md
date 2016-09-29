@@ -85,6 +85,16 @@ On each front-end machine, do the following:
   1. Search for the section starting with `"LDAP": {`
 
   1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
+
+     |Properties|Definition|
+     |----------------|-------------------------------|
+     |`Host`|Address of the Active Directory server|
+     |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
+     |`BindFilter`|?????@@@@@|
+     |`ManagerDn`|Distinguished name with which to authenticate (value must be encrypted)|
+     |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
+     |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.|
+
      + `Host`: Address of the Active Directory server
 
      + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
