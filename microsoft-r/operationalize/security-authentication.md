@@ -109,16 +109,12 @@ On each front-end machine, do the following:
 
 On each front-end machine, do the following:
 
-1. Get the CLIENT ID and tenant ID from the Microsoft Azure management portal:
-   1. [Log into portal](https://azure.microsoft.com/en-us/features/azure-portal/).   
+1. Get the client ID and tenant ID from the Microsoft Azure management portal. You will use these values in the DeployR configuration file:
+ 1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
+ 1. Once the new application has been created, click **CONFIGURE**.
+ 1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL: 
 
-   1. [Register a new web application](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/).
-
-   1. Once the new application has been created, click **CONFIGURE**.
-
-   1. Take note of the value for the  `CLIENT ID`. You will use this value in the DeployR configuration file.
-
-   1. Take note of the application's tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
+ ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...```
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
 
