@@ -78,34 +78,29 @@ On each front-end machine, do the following:
 
 1. Update the DeployR external JSON configuration file with the LDAP settings.
 
-  1. Open the DeployR external JSON configuration file, `appsettings.json`.
+  1. Open the configuration file, `appsettings.json`.
 
   1. Enable AD LDAP by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
 
   1. Search for the section starting with `"LDAP": {`
 
-  1. Update all the relevant properties in that section so that they match the configuration in your Active Directory Service Interfaces Editor.  Properties include:
+  1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
      + `Host`: Address of the Active Directory server
+
      + `UseLDAPS`: `true` for LDAP-S or `false` for LDAP
-     + `BindFilter`: 
-     + `ManagerDn`: Distinguished Name with which to authenticate
-     + `ManagerPassword`: Manager password  with which to authenticate
+        > If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. 
+
+     + `BindFilter`: ?????@@@@@
+
+     + `ManagerDn`: Distinguished Name with which to authenticate  (This value must be encrypted.)
+
+     + `ManagerPassword`: Manager password  with which to authenticate  (This value must be encrypted.)
+
      + `SearchBase`: Context name to search in, relative to the base of the configured ContextSource, e.g. 'ou=users,dc=example,dc=com'. (speeds searching)
-     + and so on
-
-   > LDAP credentials must be encrypted. @@@@@ 
  
-1. If you use LDAPS, you need to change the port number to ####.  Send the users to article Ram: : \\fsu\shares\tigerbigdata\DEPLOYRLDAPS  @@@@ IS THIS STILL TRUE????
-
-1. Restart the front-end so the changes can take effect. @@@HOW DO I DO THAT?
+1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY
 
 1. Repeat these steps on each front-end machine.
-
-@@@is this next step needed
-
-4. A certificate is needed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. @@@@@IS THIS STILL TRUE???
-
-
 
 <a name="aad"></a>
 
@@ -125,20 +120,25 @@ To enable Azure Active Directory (AD), the administrator should do the following
 
 1. [Register a new web application](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/)  to get a client ID.
 
-1. Finish creating the app, click **CONFIGURE**, and copy the `CLIENT ID`. Also take note of the `TENANT ID`. You will need these values in your code.
+1. Finish creating the app, click **CONFIGURE**.
 
-1. Insert the `CLIENT ID` and `TENANT ID` into the DeployR JSON configuration file.
+1. Take note of the value for the  `CLIENT ID`. You will use this value in the DeployR configuration file.
 
-1. Open the DeployR external JSON configuration file, `appsettings.json`.
+1. Also take note of the tenant id. You will use this value in the DeployR configuration file. The tenant ID is displayed as part of the URL: ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...``` 
 
-1. Enable Azure AD by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
+1. Update the DeployR external JSON configuration file with the LDAP settings.
 
-1. Search for the section starting with `"AzureActiveDirectory": {`
+  1. Open the configuration file, `appsettings.json`.
 
-1. Update all the relevant properties in that section so that they match the configuration of your Active Directory Directory Information Tree (DIT). Properties include:
-   + `audience`: Use the `CLIENT ID` value you copied from the Azure management portal.
-   + `authority`: Use `https://login.windows.net/<ID>` where `<ID>` is the `TENANT ID` value you copied from the Azure management portal.
+  1. Enable Azure AD by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
 
-1. Restart the front-end so the changes can take effect. @@@HOW DO I DO THAT?
+  1. Search for the section starting with `"AzureActiveDirectory": {`
 
-1. Repeat on each front-end machine.
+  1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
+     + `Authority`: Use `https://login.windows.net/<ID>` where `<ID>` is the tenant ID value you copied from the Azure management portal.
+
+     + `Audience`: Use the `CLIENT ID` value you copied from the Azure management portal.
+ 
+1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY
+
+1. Repeat these steps on each front-end machine.
