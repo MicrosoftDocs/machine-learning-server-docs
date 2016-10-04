@@ -39,7 +39,7 @@ There are essentially two types of configurations:
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but is not appropriate for production usage. 
 
-This configuration includes an operationalization front-end and back-end on the same machine. It relies on the default local SQLite database. The front-end owns stateless business logic, gets API calls, and can communicate with the back-ends and the database. The back-end executes the R code as a session or service, and it manages stateful R Shells, which are????
+This configuration includes an operationalization front-end and back-end on the same machine. It relies on the default local SQLite database. The front-end acts as a front-end interface with which DeployR users can interact directly to make API calls, access data in the database, and send jobs to be computed on the back-end. The back-end serves directly in support of the front-end services and is used to execute R code as a session or service, for computation, and manages stateful R shells.
 
 Setup R Server for operationalization with an R Server with a _one-box configuration_:
  + [How to configure on Windows]()
@@ -52,7 +52,7 @@ Setup R Server for operationalization with an R Server with a _one-box configura
 
 With enterprise-ready configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security and even a remote SQL or PostgreSQL database.
 
-This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end owns stateless business logic, gets API calls, and can communicate with the back-ends and the database. The back-end executes the R code as a session or service, and it manages stateful R Shells, which are????
+This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end acts as a front-end interface with which DeployR users can interact directly to make API calls, access data in the database, and send jobs to be computed on the back-end. The back-end serves directly in support of the front-end services and is used to execute R code as a session or service, for computation, and manages stateful R shells.
 
 With this configuration, we recommend that you [configure DeployR for HTTPS](security-https.md).  
 
