@@ -70,46 +70,42 @@ To complete this tutorial as written, you will need about 15 minutes and the fol
 
 The setup program for **R Tools for Visual Studio** adds the R project template and installs Microsoft R Client if you don't have it already.
 
-Sample data is installed with Microsoft R. In this tutorial, you will import *AirlineDemoSmall.csv* and convert it to an .xdf file format understood by ScaleR.
+Sample data is installed with Microsoft R so there is nothing more to download. The dataset used in this tutorial is the *AirlineDemoSmall.csv* file. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
 
-### Start a project and import data
+The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*.  The file contains 600,000 rows of data in addition to a first row with variable names.
+
+### Start a project and open the R Interactive window
 
 1. In Visual Studio, create a new R project: **File** > **New** > **Project** > **Templates** > **R**.
 
-2. Find or open the **R Interactive** window. This is a workspace for command line scripting in Visual Studio. You can enter R functions at the `>` command prompt, including functions provided by ScaleR.
+2. Find or open the **R Interactive** window used for command line scripting. You can enter R functions at the `>` command prompt, including functions provided by ScaleR.
 
-3. Type `sampleDataDir -> rxGetOption("sampleDataDir")` and press Enter to get the location of sample data.
+![R Interactive window](media/rserver-scaler-getting-started/rtvs-r-interactive.png)
 
-  `rxGetOption` is a ScaleR function retrieves a wide range of options, one of which is a directory containing sample data files via the `sampleDataDir` option. By default, sample data is found at `"C:/Program Files/Microsoft/R Client/R_SERVER/library/RevoScaleR/SampleData"`.
-
-3. Type `getwd()` and press Enter to get the working directory.
-
-  `getwd()` is a base R function that retrieves the current working directory. In this tutorial, the working directory contains your solution.
-
-4. Import the AirlineDemoSmall dataset using these steps:
+In this tutorial, you will enter commands individually or in groups into the interactive window.
 
 ### Import text data into the .xdf data file format
 
-ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert a text file into the .xdf data format, use the function *rxImport*.
+ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
-For example, the SampleData folder of the RevoScaleR package contains a file *AirlineDemoSmall.csv* containing three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. When we import the data, we want to convert the strings to a categorical or factor variable. The file contains 600,000 rows of data in addition to a first row with variable names. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
+1. Create a variable representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
 
-The location of the sample data directory is stored as an option.  It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
+	sampleDataDir <- rxGetOption("sampleDataDir")
 
-	`sampleDataDir <- rxGetOption("sampleDataDir")`
+2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*:
 
-Let’s import the text file into an .xdf file named *ADS* in your current working directory. To see this location, enter:
+	getwd()
 
-	`getwd()`
-
-To import the *AirlineDemoSmall.csv* file into the .xdf data file format, use *rxImport* as follows:
+3. Set the input file, and then use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
 ~~~~
 	inputFile <- file.path(sampleDataDir, "AirlineDemoSmall.csv")
 
 	airDS <- rxImport(inData = inputFile, outFile = "ADS.xdf",
 		missingValueString = "M", stringsAsFactors = TRUE)
 ~~~~
-The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting stringsAsFactors to TRUE will set the levels specification for DayOfWeek to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the colInfo argument. We will also use the argument overwrite=TRUE, since we want to replace the file previously imported:
+The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
+
+Additionally, append the overwrite argument to replace the file previously imported:
 ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
 	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday",
@@ -180,7 +176,7 @@ This command should generate the following output:
 	[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"    "Saturday"
 	[7] "Sunday"
 ~~~~
-### Summarizing Your Data
+### Summarizing data
 
 Use the *rxSummary* function to obtain descriptive statistics for your .xdf data file. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the *summary* method for the *airDS* object.
 ~~~~
@@ -272,7 +268,9 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 [^2]: In RevoScaleR 2.0 and later, rxSummary by default computes data summaries term-by-term, and missing values are omitted on a term-by-term basis. In earlier versions, summaries were computed on the complete table after observations with missing elements were omitted.
 
-### Fitting a Linear Model
+### Fitting a linear model
+
+This section of the tutorial demonstrates several approaches for fitting a model to the sample data.
 
 #### Fitting a Simple Model
 
@@ -312,7 +310,7 @@ The resulting output is:
 	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 	Condition number: 10.5595
 ~~~~
-#### Using the cube Argument and Plotting Results
+#### Using the cube argument and plotting results
 
 If you are using categorical data in your regression, you can use the cube argument.  If cube is set to TRUE and the first term of the regression is categorical (a factor or an interaction of factors), the regression is done using a partitioned inverse, which may be faster and use less memory than standard regression computation. Averages/counts of the category “bins” can be computed in addition to standard regression results. The intercept will also be automatically dropped, so that each category level will have an estimated coefficient (unlike the previous example). If cube is set to TRUE and the first term is not categorical, you get an error message.
 
@@ -418,7 +416,7 @@ You should see the following plot:
 
 [^3]: *F()* is not an R function, although it is used as one inside RevoScaleR formulas. It tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. See *?rxFormula* for more information.
 
-### Create a Subset of the Data Set and Compute a Crosstab
+### Create a subset of the data set and compute a crosstab
 
 Create a new data set containing a subset of rows and variables.  This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the *rxDataStep* function with the following arguments:
 
@@ -465,7 +463,7 @@ The results show that in this data set “late” flights are on average over 10
 	Sunday    53.35339 13.08261
 	Col Mean  57.96692   
 ~~~~
-### Creating a New Data Set with Variable Transformations
+### Creating a new data set with variable transformations
 
 Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
@@ -504,7 +502,7 @@ You should see the following information in your output:
 	4        1  11.750000    Monday FALSE      11 FALSE
 	5       -2   6.416667    Monday FALSE       6 FALSE
 ~~~~
-### Run a Logistic Regression Using the New Data
+### Run a logistic regression using the new data
 
 The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving.  For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
 ~~~~
@@ -535,7 +533,7 @@ You should see the following results:
 	Condition number of final variance-covariance matrix: 3.0178
 	Number of iterations: 4
 ~~~~
-### Computing Predicted Values
+### Computing predicted values
 
 You can use the object returned from the call to *rxLogit* in the previous section to compute predicted values. In addition to the model object, we specify the data set on which to compute the predicted values and the data set in which to put the newly computed predicted values.  In the call below, we use the same dataset for both.  In general, the data set on which to compute the predicted values must be similar to the original data set used to estimate the model in the following ways; it should have the same variable names and types, and factor variables must have the same levels in the same order.
 ~~~~
