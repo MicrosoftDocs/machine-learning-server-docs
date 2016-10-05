@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Write Your Own Chunking Algorithms in ScaleR (Microsoft R)"
+title: "Write custom chunking algorithms in ScaleR (Microsoft R)"
 description: ""
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-## Write Your Own Chunking Algorithms in ScaleR
+## Write custom chunking algorithms in ScaleR
 
 All of the main analysis functions in RevoScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms, that is, they analyze each chunk of data separately, combining intermediate results. When all the data has been processed, final results can be calculated and the analysis is complete. Because all of the data does not need to be in memory at one time, you can analyze huge data sets with this type of algorithm.
 
