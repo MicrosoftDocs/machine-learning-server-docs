@@ -25,97 +25,64 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure SQL Server or PostgreSQL database for DeployR.
+# Configure SQL Server or PostgreSQL database for DeployR
 
-By default, DeployR is configured to use a SQLite database out of the box. If you want to use a remote database or if you have multiple front-ends, you can configure DeployR to use the following databases instead:
+During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, **but before using it**, you can configure DeployR to use another database. This is particularly useful when you want to use a remote database or when you have multiple front-ends. The supported databases are:
 
-+ SQL Server (on Windows)
-+ PostgreSQL (on Linux) 
+> WHICH VERSIONS DO WE SUPPORT FOR THIS RELEASE??
+
++ **SQL Server Professional, Standard, or Express Version 2012 or greater** (on Windows)
++ **PostgreSQL 9.1 or greater** (on Linux) 
 
 <a name="sqlserver"></a>
 
 ### Using a SQL Server Database
 
-During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, **but before using it**, you can configure DeployR to use a database in **SQL Server Professional, Standard, or Express Version 2012 or greater**.
+To use a local or remote SQL Server database for DeployR instead of the default local SQLite database, you'll need to:
 
-If you want to use a local or remote SQL Server database for DeployR instead of the default local H2 database, you'll need to:
+> These steps assume that you have already set up SQL Server as described for that product.
+>
+> The database will be created for you when you restart the server.
 
-1. Install and configure SQL Server as described for that product.
+1.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
-1. Log into the SQL Server Management Studio.
+1.  Update the database properties to point to the new database as follows:
 
-1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
+    1.  Open the `appsettings.json` file, which is the DeployR external configuration file.
 
-    >The JDBC drivers are installed with DeployR. 
+    2.  Locate the `ConnectionStrings` property block.
 
-1.  If you are using Windows Authentication for login:
-
-    1. In SQL Server Management Studio and grant permissions to the user `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`.
-    
-    1.  In the Object Explorer pane, right click **Security &gt; Logins**.
-    
-        ![Login](../../media/deployr-install-on-windows/sqlserver-new-login.png)
-
-    1.  In the **Login - New** dialog, enter `NT SERVICE\Apache-Tomcat-for-DeployR-<X.Y.Z._VERSION_NUMBER>`, where `<X.Y.Z._VERSION_NUMBER>` is the three digit number DeployR version number, such as `NT SERVICE\Apache-Tomcat-for-DeployR-8.0.5` into the **Login name** field.
-    
-        ![Login](../../media/deployr-install-on-windows/sqlserver-login-dialog.png)
-
-    1.  Choose the **Server Roles** page on the left and select the checkboxes for `public`.
-    
-    6.  Choose the **User Mapping** page on the left and select the checkbox for the database for DeployR, which in our example is called `deployr` and for the Database role member, select `db_owner` and `public`.
-    
-    7.  Choose the **Status** page on the left and **Grant** permission to connect to database engine and choose **Enabled** login.
-    
-    8.  Click **OK** to create the new login.
-
-5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
-
-6.  Update the database properties to point to the new database as follows:
-
-    1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
-
-    2.  Locate the `dataSource` property block.
-
-    3.  Replace **the entire contents** of the `dataSource` block with these for your authentication method:
+    3.  Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
 
         For Windows authentication:
 
-              dataSource {
-                   dbCreate = "update"
-                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;integratedSecurity=true;"
-              }
+        > HOW DO WE SET INTEGRATED SECURITY? HOW DO YOU SPECIFY YOUR INSTANCE NAME?  
 
+            "ConnectionStrings": {
+                "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>;integratedSecurity=true;Initial Catalog=<DB-NAME>;",
+            },
+            
         For basic authentication:
 
-              dataSource {
-                   dbCreate = "update"
-                   driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                   username = “<PUT_DB_USERNAME_HERE>”
-                   password = “<PUT_DB_PASSWORD_HERE>”
-                   url = "jdbc:sqlserver://localhost;instanceName=<PUT_INSTANCE_NAME_HERE>;database=deployr;"
-              }
+            "ConnectionStrings": {
+                "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>;User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Initial Catalog=<DB-NAME>;",
+            },
 
-        >If you are unsure of your SQL instance name, please consult with your SQL administrator. The default instance name for:
-        >    -   SQL Server Express is `SQLEXPRESS`
-        >    -   SQL Server Standard or Professional is `MSSQLEXPRESS`
-        >
-        >If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
-
-7.  If you are connecting to a remote SQL Server database, be sure to [open the database port to the public IP of the DeployR server](#firewall).  @@@@@@
+7.  If you are connecting to a remote SQL Server database, be sure to [open the database port to the public IP of each DeployR front-end](#firewall).  @@@@@@
 
 8.  Test the connection to the database and restart the server as follows:
 
     1.  Launch the DeployR administrator utility script with administrator privileges:
 
-            cd $DEPLOYR_HOME\deployr\tools\ 
-            adminUtilities.bat
+        > HOW DO WE DO THAT?
 
     2.  From the main menu, choose the option **Test Database Connection**.
 
         -   If there are any issues, you must solve them before continuing.
 
         -   Once the connection test passes, return the main menu.
+
+        > CAN WE STILL TEST THE CONNECTION STRING IN THE ADMIN UTIL WITHOUT HAVING TO RESTART THE SERVER??
 
     3.  From the main menu, choose the option **Start/Stop Server** to restart DeployR-related services.
 
@@ -132,57 +99,45 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
 During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, **but before using it**, you can configure DeployR to use a database in **PostgreSQL 9.1 or greater.**
 
-If you want to use a local or remote PostgreSQL database for DeployR instead of the default local H2 database, you'll need to:
+> WHAT VERSION OF POSTGRESQL ARE WE SUPPORTING?
+
+If you want to use a local or remote PostgreSQL database for DeployR instead of the default local SQLite database, you'll need to:
 
 1.  Install and configure PostgreSQL as described for that product.
 
-2.  Create a database with the name `deployr`. Use the owner of this database as the username in the `dataSource` block in a later step.
+    > A DATABASE WILL BE CREATED FOR YOU
 
-3.  Assign the proper permissions to the database user to read and write into the database.
+1.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
-4.  [Download the JDBC42 Postgresql Driver for JDK 1.8](https://jdbc.postgresql.org/download.html) for the version of the database you installed and copy them under **both** of the following folders:
+1.  Update the database properties to point to the new database as follows:
 
-    -   `$DEPLOYR_HOME/tomcat/tomcat7/lib`
+    1.  Open the `appsettings.json` file, which is the DeployR external configuration file.
 
-    -   `$DEPLOYR_HOME/deployr/tools/lib`
+    2.  Locate the `ConnectionStrings` property block.
 
-5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
+    3.  Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
 
-6.  Update the database properties to point to the new database as follows:
-
-    1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
-
-    2.  Locate the `dataSource` property block.
-
-    3.  Replace the contents of that block with these properties and specify the appropriate port number, username, and password:
-
-            dataSource {
-              dbCreate = "update"
-              driverClassName = "org.postgresql.Driver"
-              url = "jdbc:postgresql://localhost:<PUT_PORT_HERE>/deployr"
-              pooled = true
-              username = "<PUT_DB_USERNAME_HERE>"
-              password = "<PUT_DB_PASSWORD_HERE>"
-              }
-
-	>Put the owner of the `deployr` database as the username. For more information, see <http://www.postgresql.org/docs/9.1/static/sql-alterdatabase.html>.
-        >
+            "ConnectionStrings": {
+                "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;",
+            },
+            
         >If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
 
 7.  If you are connecting to a remote PostgreSQL database, be sure to [open the database port to the public IP of the DeployR server](#firewall).  @@@@
 
 8.  Test the connection to the database and restart the server as follows:
 
-    1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
+    1.  Launch the DeployR administrator utility script with administrator privileges:
 
-            cd $DEPLOYR_HOME/deployr/tools/ 
-            sudo ./adminUtilities.sh
+        > HOW DO WE DO THAT?
 
     2.  From the main menu, choose the option **Test Database Connection**.
 
         -   If there are any issues, you must solve them before continuing.
 
         -   Once the connection test passes, return the main menu.
+
+        > CAN WE STILL TEST THE CONNECTION STRING IN THE ADMIN UTIL WITHOUT HAVING TO RESTART THE SERVER??
 
     3.  From the main menu, choose the option **Start/Stop Server** to restart DeployR-related services.
 
