@@ -115,3 +115,11 @@ And to delete the intermediate results file:
 
 - [Get started with ScaleR](scaler-getting-started.md)
 - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+
+## See Also
+
+[Introduction to Microsoft R](microsoft-r-getting-started.md)
+
+[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+
+[RevoScaleR Functions](../scaler/scaler.md)

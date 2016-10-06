@@ -39,13 +39,13 @@ At a high level, ScaleR functions are grouped as follows:
 * Data-related functions are used for import, transformation, summarization, visualization, and analysis.
 * Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
 
-ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as rxSort for `sort()`, rxMerge for `merge()`, and so forth. Because Microsoft R is compatible with the open source R language, solutions can use a combination of base R and ScaleR functions.
+ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions can use a combination of base R and ScaleR functions.
 
-Of course, use of ScaleR functions requires that you have a ScaleR engine to support your logic. As noted, ScaleR engine ships in both R Client and R Server. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
+Using ScaleR functions requires that a ScaleR engine to support your logic. As noted, ScaleR engine ships in both R Client and R Server. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise-grade product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
 
-## What you will learn in this tutorial
+## What you will learn
 
-This tutorial focuses on the data-related functions that are platform-agnostic. Using ScaleR functions, the tasks you'll perform include the following:
+This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll perform include the following:
 
 1.	Convert text data to the .xdf data file format.
 
@@ -73,9 +73,9 @@ To complete this tutorial as written, you will need about 15 minutes and the fol
 * [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
 * [Microsoft R Client](rclient.md)
 
-The setup program for **R Tools for Visual Studio** adds the R project template and installs Microsoft R Client if you don't have it already.
+The setup program for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
 
-Sample data is installed with Microsoft R so there is nothing more to download. The dataset used in this tutorial is the *AirlineDemoSmall.csv* file. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
+Sample data comes with Microsoft R so once you have the tools, there is nothing more to download. The dataset used in this tutorial is the *AirlineDemoSmall.csv* file. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
 
 The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
@@ -85,7 +85,7 @@ The *AirlineDemoSmall.csv* file contains three columns of data: two numeric colu
 
 2. Find or open the **R Interactive** window used for command line scripting. You can enter R functions at the `>` command prompt, including functions provided by ScaleR.
 
-![R Interactive window](media/rserver-scaler-getting-started/rtvs-r-interactive.png)
+   ![R Interactive window](media/rserver-scaler-getting-started/rtvs-r-interactive.png)
 
 In this tutorial, you will enter commands individually or in groups into the interactive window.
 
@@ -94,13 +94,13 @@ In this tutorial, you will enter commands individually or in groups into the int
 ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
 1. Create a variable representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
-
+~~~~
 	sampleDataDir <- rxGetOption("sampleDataDir")
-
+~~~~
 2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*:
-
+~~~~
 	getwd()
-
+~~~~
 3. Set the input file, and then use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
 ~~~~
 	inputFile <- file.path(sampleDataDir, "AirlineDemoSmall.csv")
@@ -584,7 +584,7 @@ You should see the following information:
  - Click **Packages**.
  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](../scaler/scaler.md).
 
-## Demo scripts
+### Try demo scripts
 
  Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. These scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
@@ -592,12 +592,11 @@ You should see the following information:
 
 ### Watch this video
 
- <get this link>
+This 30-minute video is the second in a 4-part video series. It demonstrates ScaleR functions for data ingestion.
 
- <div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+ <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
-
-### Additional resources
+### Get more information
 
 Continue building up your knowledge of ScaleR with these additional guides and tutorials.
 
@@ -607,13 +606,10 @@ Continue building up your knowledge of ScaleR with these additional guides and t
 - [ScaleR Distributed Computing Guide](scaler-distributed-computing.md)
 - [ScaleR ODBC Data Import Guide](scaler-odbc.md)
 
+## See Also
 
-## ORIGINAL OVERVIEW
+[Introduction to Microsoft R](microsoft-r-getting-started.md)
 
-This guide is an introduction to **RevoScaleR**, an R package providing both High Performance Computing (HPC) and High Performance Analytics (HPA) capabilities for R.  HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds big data to the challenge.  **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization.  This guide focuses on these HPA ‘big data’ capabilities. R, along with many other statistical analysis products, is challenged by problems of capacity and speed.  Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis.  In R this is often a problem because copies of data are frequently made during analysis.  Even without a capacity limit, computation may be too slow to be useful. The **RevoScaleR** package not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products.
+[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms*.
-
-The **RevoScaleR** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. **RevoScaleR** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
-
-The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
+[RevoScaleR Functions](../scaler/scaler.md)

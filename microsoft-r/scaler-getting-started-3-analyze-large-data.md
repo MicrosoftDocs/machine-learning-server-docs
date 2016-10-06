@@ -26,6 +26,20 @@ ms.custom: ""
 
 # Analyzing a Large Data Set with ScaleR
 
+## ORIGINAL OVERVIEW
+
+This guide is an introduction to **RevoScaleR**, an R package providing both High Performance Computing (HPC) and High Performance Analytics (HPA) capabilities for R.  HPC capabilities allow you to distribute the execution of essentially any R function across cores and nodes, and deliver the results back to the user. HPA adds big data to the challenge.  **RevoScaleR** provides functions for performing scalable and extremely high performance data management, analysis, and visualization.  This guide focuses on these HPA ‘big data’ capabilities. **R, along with many other statistical analysis products, is challenged by problems of capacity and speed.  Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis.  In R this is often a problem because copies of data are frequently made during analysis.  Even without a capacity limit, computation may be too slow to be useful. The **RevoScaleR** package not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products.**
+
+The data manipulation and analysis functions in **RevoScaleR** are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory and, 2) to perform computations distributed over several cores, processors, or nodes in a cluster, or 3) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers. These are ideal candidates for **RevoScaleR** because **RevoScaleR** is based on the concept of operating on chunks of data and using *updating algorithms*.
+
+The **RevoScaleR** package also provides an efficient file format for storing data designed for rapid reading of arbitrary rows and columns of data. Functions are provided to import data into this file format before performing analysis. **RevoScaleR** analysis functions work directly with this data file format, but also can be used directly with data stored in a text, SPSS, or SAS file or an ODBC connection.  Functions are also provided to easily extract a subset of a data file into a data frame in memory for further analysis.
+
+The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The **RevoScaleR** package also provides a set of data manipulation functions that are typically available in a local compute context.
+
+
+******************************
+
+
 This getting started tutorial builds on what you learned in [previous tutorials](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download large datasets
@@ -916,5 +930,13 @@ The results should be printed to your console, with the highest default rate at 
 ~~~~
 ## Next steps
 
-- [Get started with ScaleR](scaler-getting-started.md)
-- [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
+- If you missed the first tutorial, see [Get started with ScaleR](scaler-getting-started.md) for an overview.
+- For more advanced lessons, see [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md).
+
+## See Also
+
+[Introduction to Microsoft R](microsoft-r-getting-started.md)
+
+[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+
+[RevoScaleR Functions](../scaler/scaler.md)
