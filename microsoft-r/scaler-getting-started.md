@@ -28,11 +28,11 @@ ms.custom: ""
 
 ScaleR is a collection of proprietary functions used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-ScaleR functions are provided through **RevoScaleR**, an R package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in cloud services like Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
+ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
 
 ## What can you do with ScaleR?
 
-Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server or in the cloud. Solutions leveraging ScaleR functions can typically run anywhere the ScaleR engine is installed.
+Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions can typically run anywhere the ScaleR engine is installed.
 
 A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify a big data platform and an unfiltered dataset, and then operationalize the solution by deploying it the target environment and thus making it accessible to users.
 
@@ -77,9 +77,7 @@ To complete this tutorial as written, you will need about 20 minutes and the fol
 * [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
 * [Microsoft R Client](rclient.md)
 
-Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
-
-Sample data comes with Microsoft R so once you have the tools, there is nothing more to download.
+Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**. Sample data comes with Microsoft R so once you have the tools, there is nothing more to download.
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
@@ -99,15 +97,11 @@ ScaleR provides a data file format (.xdf) designed to be very efficient for read
 
 1. Create a variable representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
 
-~~~~
-	sampleDataDir <- rxGetOption("sampleDataDir")
-~~~~
+	`sampleDataDir <- rxGetOption("sampleDataDir")`
 
 2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*:
 
-~~~~
-	getwd()
-~~~~
+	`getwd()`
 
 3. Set the input file, and then use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
 
@@ -475,7 +469,7 @@ You should see the following plot:
 
 [^3]: *F()* is not an R function, although it is used as one inside RevoScaleR formulas. It tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. See *?rxFormula* for more information.
 
-### Create a subset of the data set and compute a crosstab
+### Subset data and compute a crosstab
 
 Create a new data set containing a subset of rows and variables.  This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the *rxDataStep* function with the following arguments:
 
@@ -528,7 +522,7 @@ The results show that in this data set “late” flights are on average over 10
 	Col Mean  57.96692   
 ~~~~
 
-### Creating a new data set with variable transformations
+### New data set with variable transformations
 
 Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
@@ -571,7 +565,7 @@ You should see the following information in your output:
 	5       -2   6.416667    Monday FALSE       6 FALSE
 ~~~~
 
-### Run a logistic regression using the new data
+### Run a logistic regression
 
 The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving.  For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
 
