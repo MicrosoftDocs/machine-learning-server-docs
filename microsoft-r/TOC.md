@@ -5,7 +5,6 @@
 ## [Get Started with ScaleR and Data Analysis](scaler-getting-started.md)
 ### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
 ### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
-### [Using ScaleR functions in R script](scaler-getting-started-2-write-r-script.md)
 ## [A guide to using ScaleR](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)

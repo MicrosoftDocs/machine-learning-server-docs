@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Analyze large data with ScaleR in Microsoft R"
+title: "Analyze a large data set with ScaleR in Microsoft R"
 description: "Learn how to work with big datasets in ScaleR using this tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -24,22 +24,15 @@ ms.custom: ""
 
 ---
 
-# Analyze large data with ScaleR
+# Analyzing a Large Data Set with ScaleR
 
+This getting started tutorial builds on what you learned in [previous tutorials](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
 
-## Analyzing a Large Data Set with RevoScaleR
+## Download large datasets
 
-### Getting Set Up to Use Your XDF File
+To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
-<a name="chunking"></a>
->**Note**  Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not featured in this tutorial. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone).
-
-
-### Download large datasets
-
-Most of the examples in this guide can be run using sample data that is included in the RevoScaleR package, but to really get a feel for ScaleR you may want to use larger data sets. You can download these larger data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
-
-Recommended dataset include the following:
+Datasets used in this tutorial include the following:
 
 - *mortDefault*:  A set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. These data sets are used in the section, "Analyzing loan defaults". Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. File size is approximately 220 MB unpacked.
 
@@ -51,18 +44,17 @@ When downloading these files, put them in a directory where you can easily acces
 
 	bigDataDir <- "C:/MRS/Data"
 
-
 ## Preparing the sample data
 
 Airline on-time performance data for the years 1987 through 2008 was used in the American Statistical Association Data Expo in 2009 ([http://stat-computing.org/dataexpo/2009/](http://stat-computing.org/dataexpo/2009/)). ASA describes the data set as follows:
 
 > The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. This is a large dataset: there are nearly 120 million records in total, and takes up 1.6 gigabytes of space compressed and 12 gigabytes when uncompressed.
 
-Data by month can be downloaded as comma-delimited text files from the Research and Innovative Technology Administration (RITA) of the Bureau of Transportation Statistics web site ([http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)). Data from 1987 through 2012 has been imported into an .xdf file named *AirOnTime87to12.xdf*. This file is available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download *AirOnTime87to12.zip*; Linux users *AirOnTime87to12.tar.gz*.)  A much smaller subset containing 7% of the observations for the variables used in this example is also available as *AirOnTime7Pct.xdf*. This subsample contains a little over 10 million rows of data, so has about 60 times the rows of the smaller subsample used in the previous example. More information on this data set can be found in the help file:
+Data by month can be downloaded as comma-delimited text files from the Research and Innovative Technology Administration (RITA) of the Bureau of Transportation Statistics web site ([http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)). Data from 1987 through 2012 has been imported into an .xdf file named *AirOnTime87to12.xdf*. This file is available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download *AirOnTime87to12.zip*; Linux users *AirOnTime87to12.tar.gz*.) A much smaller subset containing 7% of the observations for the variables used in this example is also available as *AirOnTime7Pct.xdf*. This subsample contains a little over 10 million rows of data, so has about 60 times the rows of the smaller subsample used in the previous example. More information on this data set can be found in the help file:
 
 	?AirOnTime87to12
 
-To follow the examples in this section at your own computer, you need to download one or both of these data sets.
+To follow the examples on your own computer, please download one or both of these data sets.
 
 Specify the correct location of your downloaded data for the *bigDataDir* variable:
 
@@ -724,7 +716,7 @@ Using the binary *default* variable as the dependent variable, estimate a logist
 	summary(logitObj)
 
 You will see timings for each iteration and the final results printed. The results for the large data set are:
-
+~~~~
 	Call:
 	rxLogit(formula = default ~ F(year) + creditScore + yearsEmploy +
 	    ccDebt, data = mortDS, blocksPerRead = 2, reportProgress = 1)
@@ -758,22 +750,22 @@ You will see timings for each iteration and the final results printed. The resul
 
 	Condition number of final variance-covariance matrix: 6.685
 	Number of iterations: 10
-
+~~~~
 <a name="computecontext"></a>
 ### Computing a Logistic Regression with Many Parameters
 
 If you are using the large *mortDefault* data set, you can continue and estimate a logistic regression with many parameters.
 
 One of the variables in the data set is *houseAge*.  As with *year*, we have no reason to believe that the logistic expression is linear with respect to the age of the house.  We can look at how the age of the house is related to the default rate by including *houseAge* in the formula as a categorical variable, again using the *F* function.  A coefficient will be estimated for 40 of the 41 values of *houseAge*.
-
+~~~~
 	system.time(
 	logitObj <- rxLogit(default  ~ F(houseAge) + F(year)+  
 	    creditScore + yearsEmploy + ccDebt,
 	    data = mortDS, blocksPerRead = 2, reportProgress = 1))
 	summary(logitObj)
-
+~~~~
 The results of the estimation are:
-
+~~~~
 	Call:
 	rxLogit(formula = default ~ F(houseAge) + F(year) + creditScore +
 	    yearsEmploy + ccDebt, data = dataFileName, blocksPerRead = 2,
@@ -850,13 +842,13 @@ The results of the estimation are:
 
 	Condition number of final variance-covariance matrix: 5254.541
 	Number of iterations: 10
-
+~~~~
 We can extract the coefficients from logitObj for the houseAge variables and plot them:
-
+~~~~
 	cc <- coef(logitObj)
 	df <- data.frame(Coefficient=cc[2:41], HouseAge=0:39)
 	rxLinePlot(Coefficient~HouseAge,data=df, type="p")
-
+~~~~
 The resulting plot shows that the age of the house is associated with a higher default rate in the middle of the range than for younger and older houses.
 
 ![HouseAge Plot](media/rserver-scaler-getting-started/houseage_plot.png)
@@ -864,30 +856,30 @@ The resulting plot shows that the age of the house is associated with a higher d
 ### Compute the Probability of Default
 
 Using the *rxPredict* function, we can compute the probability of default for given characteristics using our estimated logistic regression model as input.  First create some vectors containing values of interest for each of the independent variables:
-
+~~~~
 	creditScore <- c(300, 700)
 	yearsEmploy <- c( 2, 8)
 	ccDebt <- c(5000, 10000)
 	year <- c(2008, 2009)
 	houseAge <- c(5, 20)
-
+~~~~
 Now create a data frame with combinations of those values:
-
+~~~~
 	predictDF <- data.frame(
 		creditScore = rep(creditScore, times = 16),
 		yearsEmploy = rep(rep(yearsEmploy, each = 2), times = 8),
 		ccDebt      = rep(rep(ccDebt, each = 4), times = 4),
 		year        = rep(rep(year, each = 8), times = 2),
 		houseAge    = rep(houseAge, each = 16))
-
+~~~~
 Using the *rxPredict* function, we can compute the predicted probability of default for each of the variable combinations. The predicted values will be added to the *outData* data set, if it already exists:
-
+~~~~
 	predictDF <- rxPredict(modelObject = logitObj, data = predictDF,
 	    outData = predictDF)
 	predictDF[order(predictDF$default_Pred, decreasing = TRUE),]
-
+~~~~
 The results should be printed to your console, with the highest default rate at the top:
-
+~~~~
 	   creditScore yearsEmploy ccDebt year houseAge default_Pred
 	29         300           2  10000 2009       20 9.879328e-01
 	21         300           2  10000 2008       20 9.748884e-01
@@ -921,3 +913,8 @@ The results should be printed to your console, with the highest default rate at 
 	2          700           2   5000 2008        5 3.432878e-04
 	12         700           8   5000 2009        5 1.332594e-04
 	4          700           8   5000 2008        5 6.319589e-05
+~~~~
+## Next steps
+
+- [Get started with ScaleR](scaler-getting-started.md)
+- [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)

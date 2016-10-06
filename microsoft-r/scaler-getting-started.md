@@ -43,7 +43,7 @@ As a language, ScaleR can be characterized as an enhanced version of the open so
 
 Using the ScaleR function is necessary for execution by the ScaleR engine. However, because Microsoft R is compatible with the open source R language, solutions can use a combination of base R and ScaleR functions.
 
-## Tutorial: ScaleR in R Tools for Visual Studio
+## Tutorial: ScaleR in RTVS
 
 In this section, you'll learn how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies. Tasks include the following:
 
@@ -65,16 +65,16 @@ In this section, you'll learn how to work with ScaleR using sample data and free
 
 To complete this tutorial as written, you will need about 15 minutes and the following components:
 
-* [R Tools for Visual Studio download](https://www.visualstudio.com/vs/rtvs/)
+* [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
 * [Microsoft R Client](rclient.md)
 
 The setup program for **R Tools for Visual Studio** adds the R project template and installs Microsoft R Client if you don't have it already.
 
 Sample data is installed with Microsoft R so there is nothing more to download. The dataset used in this tutorial is the *AirlineDemoSmall.csv* file. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008.
 
-The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*.  The file contains 600,000 rows of data in addition to a first row with variable names.
+The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
-### Start a project and open the R Interactive window
+### Start a project
 
 1. In Visual Studio, create a new R project: **File** > **New** > **Project** > **Templates** > **R**.
 
@@ -84,7 +84,7 @@ The *AirlineDemoSmall.csv* file contains three columns of data: two numeric colu
 
 In this tutorial, you will enter commands individually or in groups into the interactive window.
 
-### Import text data into the .xdf data file format
+### Import text data into .xdf
 
 ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
@@ -569,8 +569,7 @@ You should see the following information:
 ## Next steps
 
  - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
- - [scaler-getting-started-4-write-chunking-algorithms.md](scaler-getting-started-4-write-chunking-algorithms.md)
- - [Using ScaleR functions in R script](scaler-getting-started-2-write-r-script.md)
+ - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
 
 ### Get function help
 
@@ -579,6 +578,12 @@ You should see the following information:
  - In R Help, click the Home button.
  - Click **Packages**.
  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](../scaler/scaler.md).
+
+## Demo scripts
+
+ Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. These scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
+
+ 	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
 ### Watch this video
 
