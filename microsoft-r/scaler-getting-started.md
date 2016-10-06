@@ -32,9 +32,9 @@ ScaleR functions are provided through the **RevoScaleR** package installed for f
 
 ## What can you do with ScaleR?
 
-Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions can typically run anywhere the ScaleR engine is installed.
+Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions will run wherever the ScaleR engine is installed.
 
-A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify a big data platform and an unfiltered dataset, and then operationalize the solution by deploying it the target environment and thus making it accessible to users.
+A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify an unfiltered dataset on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
 
 At a high level, ScaleR functions are grouped as follows:
 
@@ -93,7 +93,7 @@ In this tutorial, you will enter commands individually or in groups into the int
 
 ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
-1. Create a variable representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
+1. Create a variable named `sampleDataDir` representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location and store it as `sampleDataDir`.
 
     ~~~~
     sampleDataDir <- rxGetOption("sampleDataDir")
@@ -114,9 +114,9 @@ ScaleR provides a data file format (.xdf) designed to be very efficient for read
 		missingValueString = "M", stringsAsFactors = TRUE)
     ~~~~
 
-The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
+   The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
 
-Additionally, append the overwrite argument to replace the file previously imported:
+   Additionally, append the overwrite argument to replace the file previously imported:
 
     ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
@@ -133,7 +133,7 @@ Notice that once we supply the *colInfo* argument, we no longer need to specify 
 
 Using the small *airDS* object representing the ADS.xdf file, you can apply standard R methods to get basic information about the data set:
 
-    ~~~~
+~~~~
 	nrow(airDS)
 	ncol(airDS)
 	head(airDS)
@@ -150,7 +150,7 @@ Using the small *airDS* object representing the ADS.xdf file, you can apply stan
 	4        1  11.750000    Monday
 	5       -2   6.416667    Monday
 	6      -14  13.833333    Monday
-    ~~~~
+~~~~
 
 The *rxGetVarInfo* function provides addition variable information:
 
