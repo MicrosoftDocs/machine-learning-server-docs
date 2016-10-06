@@ -28,24 +28,24 @@ ms.custom: ""
 
 ScaleR is a collection of proprietary functions used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking data as necessary.
 
-ScaleR functions are provided through **RevoScaleR**, an R package that installs for free in the Microsoft R Client offering, or commercially in R Server on supported platforms. ScaleR is also available as an embedded technology when you use cloud services like Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
+ScaleR functions are provided through **RevoScaleR**, an R package that installs for free in the [Microsoft R Client](r-client.md) offering, or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also available as an embedded technology when you use cloud services like Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
 
 ## What can you do with ScaleR?
 
-Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Functions can be categorized as follows:
+Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions can typically run anywhere the ScaleR engine is installed (R Client, R Server, or cloud offering). A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify a big data platform and an unfiltered dataset, and then operationalize the solution by deploying it the target environment and thus making it accessible to users.
 
-* Data-related functions for data import, transformation, summarization, visualization, and so forth.
-* Platform-specific convenience functions for unlocking specific capabilities inherent in that platform.
+At a high level, ScaleR functions are grouped as follows:
 
-This tutorial focuses on the data-related functions that are platform-agnostic. Solutions leveraging these functions can typically run anywhere the ScaleR engine is installed (R Client, R Server, or cloud offering). A common workflow is to write code or script against a filtered dataset on a local computer, change the compute context to specify a big data platform, and then operationalize the solution by deploying it the target environment and making it accessible to users.
+* Data-related functions are used for import, transformation, summarization, visualization, and analysis.
+* Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
 
-As a language, ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are ScaleR equivalents for many common base R functions, such as rxSort for `sort()`, rxMerge for `merge()`, and so forth. For a longer list, see [Comparison of Base R and ScaleR Functions](../scaler/compare-base-r-scaler-functions.md).
+ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as rxSort for `sort()`, rxMerge for `merge()`, and so forth. Because Microsoft R is compatible with the open source R language, solutions can use a combination of base R and ScaleR functions.
 
-Using the ScaleR function is necessary for execution by the ScaleR engine. However, because Microsoft R is compatible with the open source R language, solutions can use a combination of base R and ScaleR functions.
+Of course, use of ScaleR functions requires that you have a ScaleR engine to support your logic. As noted, ScaleR engine ships in both R Client and R Server. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
 
-## Tutorial: ScaleR in RTVS
+## What you will learn in this tutorial
 
-In this section, you'll learn how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies. Tasks include the following:
+This tutorial focuses on the data-related functions that are platform-agnostic. Using ScaleR functions, the tasks you'll perform include the following:
 
 1.	Convert text data to the .xdf data file format.
 
@@ -60,6 +60,11 @@ In this section, you'll learn how to work with ScaleR using sample data and free
 6.	Fit a logistic regression model.
 
 7.	Compute predicted values.
+
+
+## Tutorial: ScaleR in RTVS
+
+In this section, you'll learn how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies.
 
 ### Prerequisites
 
