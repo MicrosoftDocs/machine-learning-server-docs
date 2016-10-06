@@ -43,9 +43,7 @@ At a high level, ScaleR functions are grouped as follows:
 
 ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
 
-Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R.
-
-R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise-grade product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
+Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise-grade product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
 
 ## What you will learn
 
@@ -97,33 +95,37 @@ ScaleR provides a data file format (.xdf) designed to be very efficient for read
 
 1. Create a variable representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location:
 
-	`sampleDataDir <- rxGetOption("sampleDataDir")`
+    ~~~~
+    sampleDataDir <- rxGetOption("sampleDataDir")
+    ~~~~
 
 2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*:
 
-	`getwd()`
+	~~~~
+    getwd()
+    ~~~~
 
 3. Set the input file, and then use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
 
-~~~~
+    ~~~~
 	inputFile <- file.path(sampleDataDir, "AirlineDemoSmall.csv")
 
 	airDS <- rxImport(inData = inputFile, outFile = "ADS.xdf",
 		missingValueString = "M", stringsAsFactors = TRUE)
-~~~~
+    ~~~~
 
 The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
 
 Additionally, append the overwrite argument to replace the file previously imported:
 
-~~~~
+    ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
 	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday",
 	    "Friday", "Saturday", "Sunday")))
 
 	airDS <- rxImport(inData = inputFile, outFile = "ADS.xdf",
 		missingValueString = "M", colInfo  = colInfo, overwrite = TRUE)
-~~~~
+        ~~~~
 
 Notice that once we supply the *colInfo* argument, we no longer need to specify *stringsAsFactors*; *DayOfWeek* is our only factor variable.
 
@@ -131,7 +133,7 @@ Notice that once we supply the *colInfo* argument, we no longer need to specify 
 
 Using the small *airDS* object representing the ADS.xdf file, you can apply standard R methods to get basic information about the data set:
 
-~~~~
+    ~~~~
 	nrow(airDS)
 	ncol(airDS)
 	head(airDS)
@@ -148,7 +150,7 @@ Using the small *airDS* object representing the ADS.xdf file, you can apply stan
 	4        1  11.750000    Monday
 	5       -2   6.416667    Monday
 	6      -14  13.833333    Monday
-~~~~
+    ~~~~
 
 The *rxGetVarInfo* function provides addition variable information:
 
@@ -469,7 +471,7 @@ You should see the following plot:
 
 [^3]: *F()* is not an R function, although it is used as one inside RevoScaleR formulas. It tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. See *?rxFormula* for more information.
 
-### Subset data and compute a crosstab
+### Subset the data and compute a crosstab
 
 Create a new data set containing a subset of rows and variables.  This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the *rxDataStep* function with the following arguments:
 
@@ -522,7 +524,7 @@ The results show that in this data set “late” flights are on average over 10
 	Col Mean  57.96692   
 ~~~~
 
-### New data set with variable transformations
+### Create a new data set with variable transformations
 
 Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
@@ -565,7 +567,7 @@ You should see the following information in your output:
 	5       -2   6.416667    Monday FALSE       6 FALSE
 ~~~~
 
-### Run a logistic regression
+### Run a logistic regression on the new data
 
 The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving.  For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
 
@@ -641,14 +643,6 @@ You should see the following information:
  - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
  - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
 
-### Get function help
-
- R packages typically include embedded package help reference and ScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
-
- - In R Help, click the Home button.
- - Click **Packages**.
- - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](../scaler/scaler.md).
-
 ### Try demo scripts
 
  Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. These scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
@@ -660,6 +654,14 @@ You should see the following information:
 This 30-minute video is the second in a 4-part video series. It demonstrates ScaleR functions for data ingestion.
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+
+ ### Get function help
+
+  R packages typically include embedded package help reference and ScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
+
+  - In R Help, click the Home button.
+  - Click **Packages**.
+  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](../scaler/scaler.md).
 
 ### Get more information
 
