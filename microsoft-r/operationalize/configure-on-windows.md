@@ -100,7 +100,15 @@ You can configure one or more front-ends as needed. You can also scale your back
     
     1. When prompted, provide the admin password for the built-in, local `administrator` account.   
 
-    1. After the script has ended, set the proper firewall rule to open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it. If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+    1. Open the BLAH BLAH BLAH @@@@@@ port:
+
+    1. In your firewall, open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it.
+    
+       If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+
+    1. If provisioning DeployR on a cloud service such as Azure or an AWS EC2 instance, then you must also [create inbound security rules for port BLAH BLAH BLAH @@@@@@ in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
+
+    > WHAT MORE DO WE NEED TO SAY ABOUT CLOUD SETUPS?    
 
     1. To configure DeployR to use Active Directory/LDAP or Azure Active Directory authentication, follow [these steps](security-authentication.md).  We highly recommend this approach to authentication. 
 
