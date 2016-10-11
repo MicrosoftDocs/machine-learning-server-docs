@@ -80,6 +80,7 @@
 ##### Connection Security (HTTPS/SSL)
 ##### CORS 
 #### Administration
+##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
 ##### Stop & Restart
 ##### Configure a Database
