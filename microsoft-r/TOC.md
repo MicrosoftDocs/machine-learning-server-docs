@@ -74,7 +74,7 @@
 #### [Configuration Guide for Windows](operationalize/configure-on-windows.md)
 #### Configuration Guide for Linux
 #### Migrate Data 
-#### Enterprise-Grade Security 
+#### [Enterprise-Grade Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### Authorization
 ##### Connection Security (HTTPS/SSL)
