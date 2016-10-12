@@ -29,7 +29,7 @@
 
 ## [What's New](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
-## [Servicing Support](rserver-servicing-support.md)
+## [Servicing Support Policy](rserver-servicing-support.md)
 
 ## [R Server on Linux](scaler-getting-started.md)
 ### [Get Started on Linux](scaler-getting-started.md)
