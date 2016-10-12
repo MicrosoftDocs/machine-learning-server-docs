@@ -4,7 +4,7 @@
 title: "Support for Microsoft R Server versions"
 description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
 keywords: ""
-author: "HeidiSteen"
+author: "j-martens"
 manager: "paulettm"
 ms.date: "08/09/2016"
 ms.topic: ""
@@ -30,9 +30,10 @@ Microsoft plans to release updates for Microsoft R Server a few times per year w
 + Security Updates (Only) servicing phase - After a new version of Microsoft R Server is released, support for older versions will reduce to Security updates only for the remainder of the twelve (12) month support lifecycle (shown in Figure 1). 
 
 
+## Servicing Support
 <br>
 
-Figure 1. Example of servicing support
+_Figure 1. Example of servicing support_
 
 ![Servicing Support](./media/rserver-servicing-support.png)
 
@@ -42,6 +43,7 @@ Figure 1. Example of servicing support
 >The latest version of Microsoft R Server is always in the Security and Critical Updates servicing phase. This means that in the event that you encounter a code defect that warrants a critical update, you must have the latest version installed in order to receive a fix. All other supported versions will only be eligible to receive security updates. All support ends after the twelve (12) month lifecycle for a current branch version has expired. At that time, customers must update to a supported version. 
 
 <br>
+## Version History
 
 |Version              |Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
