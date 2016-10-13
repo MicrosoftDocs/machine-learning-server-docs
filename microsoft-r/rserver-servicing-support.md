@@ -36,6 +36,7 @@ _Figure 1. Example of servicing support_
 >[!NOTE]
 >The latest version of Microsoft R Server is always in the Security and Critical Updates servicing phase. This means that in the event that you encounter a code defect that warrants a critical update, you must have the latest version installed in order to receive a fix. All other supported versions will only be eligible to receive security updates. All support ends after the twelve (12) month lifecycle for a current branch version has expired. At that time, customers must update to a supported version. 
 
+<br>
 
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
