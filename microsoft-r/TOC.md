@@ -4,6 +4,8 @@
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
 ### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+#### [Example: Analyzing loan data](scaler-getting-started-1-example-loan-data.md)
+#### [Example: Analyzing census data](scaler-getting-started-2-example-census-data.md)
 ### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
 ## [Using ScaleR](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
