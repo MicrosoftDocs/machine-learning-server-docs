@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Get started with ScaleR (Microsoft R)
+# Get started with ScaleR and data analysis (Microsoft R)
 
 ScaleR is a collection of proprietary functions used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
@@ -66,7 +66,7 @@ This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll 
 
 ## Tutorial: ScaleR in RTVS
 
-In this section, you'll learn how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies.
+This tutorial shows you how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies.
 
 ### Prerequisites
 
@@ -93,19 +93,20 @@ In this tutorial, you will enter commands individually or in groups into the int
 
 ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
-1. Create a variable named `sampleDataDir` representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location and store it as `sampleDataDir`.
+1. Enter the following command to create a variable named `sampleDataDir` representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location and store it as `sampleDataDir`.
 
     ~~~~
     sampleDataDir <- rxGetOption("sampleDataDir")
     ~~~~
 
-2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*:
+2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*. The output will be something like "C:/Users/<your-name>/documents/visual studio 2015/projects/<folder-name>/<file-name>".
+
 
 	~~~~
     getwd()
     ~~~~
 
-3. Set the input file, and then use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
+3. Enter the following script to set the input file and use *rxImport* to import the text file into an .xdf file named *ADS* in your current working directory.
 
     ~~~~
 	inputFile <- file.path(sampleDataDir, "AirlineDemoSmall.csv")
@@ -114,9 +115,11 @@ ScaleR provides a data file format (.xdf) designed to be very efficient for read
 		missingValueString = "M", stringsAsFactors = TRUE)
     ~~~~
 
-   The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument[^1]. Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
+   The input .csv file uses the letter M to represent missing values, rather than the default NA, so we specify this with the *missingValueString* argument.
 
-   Additionally, append the overwrite argument to replace the file previously imported:
+   Setting *stringsAsFactors* to TRUE will set the levels specification for *DayOfWeek* to the unique strings found in that variable, listed in the order in which they are encountered. Since this order is arbitrary, and can easily vary from data set to data set, it is preferred to explicitly specify the levels in the desired order using the *colInfo* argument.
+
+   Let's rerun the import operation with a fixed order for days of the week. When rerunning an import command, append the *overwrite* argument to replace the file previously imported:
 
     ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
@@ -152,7 +155,7 @@ Using the small *airDS* object representing the ADS.xdf file, you can apply stan
 	6      -14  13.833333    Monday
 ~~~~
 
-The *rxGetVarInfo* function provides addition variable information:
+The *rxGetVarInfo* function provides additional variable information:
 
 ~~~~
 	rxGetVarInfo(airDS)
@@ -205,21 +208,22 @@ Use the *rxSummary* function to obtain descriptive statistics for your .xdf data
 
 ~~~~
 	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
+	adsSummary
 
 or
 
 	adsSummary <- summary( airDS )
-
 	adsSummary
 ~~~~
 
-Summary statistics will be computed on the variables in the formula, removing missing values for all rows in the included variables[^2]:
+Summary statistics will be computed on the variables in the formula. By default, *rxSummary* computes data summaries term-by-term, and missing values are omitted on a term-by-term basis. In earlier versions, summaries were computed on the complete table after observations with missing elements were omitted.
 
 ~~~~
 	Call:
-	rxSummary(formula = form, data = object, byTerm = TRUE, reportProgress = 0L)
+	rxSummary(formula = ~ArrDelay + CRSDepTime + DayOfWeek, data = airDS)
 
 	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
+    Data: airDS (RxXdfData Data Source)
 	File name: C:\YourWorkingDir\ADS.xdf
 	Number of valid observations: 6e+05
 
@@ -250,7 +254,7 @@ You can also compute summary information by one or more categories by using inte
 	rxSummary(~ArrDelay:DayOfWeek, data = airDS)
 ~~~~
 
-The output shows the summary statistics for ArrDelay for each day of the week:
+The output shows the summary statistics for *ArrDelay* for each day of the week:
 
 ~~~~
 	Call:
@@ -275,7 +279,7 @@ The output shows the summary statistics for ArrDelay for each day of the week:
 	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
 ~~~~
 
-To get a better feel for the data, we can draw histograms for each variable:
+To get a better feel for the data, we can draw histograms for each variable. Run each *rxHistogram* function one at a time. In RTVS, the histogram is rendered in the R Plot pane.
 
 ~~~~
 	options("device.ask.default" = T)
@@ -290,7 +294,7 @@ To get a better feel for the data, we can draw histograms for each variable:
 
 ![DayOfWeek Histogram](media/rserver-scaler-getting-started/dayofweek_histogram.png)
 
-We can also easily extract a subsample of the data file into a data frame in memory.  For example, we can look at just the flights that were between 4 and 5 hours late:
+We can also easily extract a subsample of the data file into a data frame in memory. For example, we can look at just the flights that were between 4 and 5 hours late:
 
 ~~~~
 	myData <- rxDataStep(inData = airDS,
@@ -300,8 +304,6 @@ We can also easily extract a subsample of the data file into a data frame in mem
 ~~~~
 
 ![ArrDelay Histogram](media/rserver-scaler-getting-started/arrdelay_histogram_2.png)
-
-[^2]: In RevoScaleR 2.0 and later, rxSummary by default computes data summaries term-by-term, and missing values are omitted on a term-by-term basis. In earlier versions, summaries were computed on the complete table after observations with missing elements were omitted.
 
 ### Fitting a linear model
 
@@ -351,7 +353,7 @@ The resulting output is:
 
 #### Using the cube argument and plotting results
 
-If you are using categorical data in your regression, you can use the cube argument.  If cube is set to TRUE and the first term of the regression is categorical (a factor or an interaction of factors), the regression is done using a partitioned inverse, which may be faster and use less memory than standard regression computation. Averages/counts of the category “bins” can be computed in addition to standard regression results. The intercept will also be automatically dropped, so that each category level will have an estimated coefficient (unlike the previous example). If cube is set to TRUE and the first term is not categorical, you get an error message.
+If you are using categorical data in your regression, you can use the *cube* argument. If *cube* is set to TRUE and the first term of the regression is categorical (a factor or an interaction of factors), the regression is done using a partitioned inverse, which may be faster and use less memory than standard regression computation. Averages/counts of the category "bins" can be computed in addition to standard regression results. The intercept will also be automatically dropped, so that each category level will have an estimated coefficient (unlike the previous example). If *cube* is set to TRUE and the first term is not categorical, you get an error message.
 
 Re-estimate the linear model, this time setting cube to TRUE. Then print a summary of the results:
 
@@ -395,7 +397,7 @@ You should see the following output:
 
 The coefficient estimates are the mean arrival delay for each day of the week.
 
-When the cube argument is set to TRUE and the model has only one term as an independent variable, the "countDF" component of the results object also contains category means. This data frame can be extracted using the rxResultsDF function, and is particularly convenient for plotting.
+When the cube argument is set to TRUE and the model has only one term as an independent variable, the "countDF" component of the results object also contains category means. This data frame can be extracted using the *rxResultsDF* function, and is particularly convenient for plotting.
 
 ~~~~
 	countsDF <- rxResultsDF(arrDelayLm2, type = "counts")
@@ -428,7 +430,11 @@ The following plot is generated, showing the lowest average arrival delay on Thu
 
 #### A Linear Model with Multiple Independent Variables
 
-We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable. [^3]  By interacting *DayOfWeek* with *F(CRSDepTime)* we are creating a dummy variable for every combination of departure hour and day of the week.
+We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable.
+
+*F()* is not an R function, although it looks like one when used inside ScaleR formulas. An *F* expression tells ScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the *rxFormula* [package help](#get-help) for more information.
+
+By interacting *DayOfWeek* with *F(CRSDepTime)* we are creating a dummy variable for every combination of departure hour and day of the week.
 
 ~~~~
 	arrDelayLm3 <- rxLinMod(ArrDelay ~ DayOfWeek:F(CRSDepTime),
@@ -437,7 +443,7 @@ We can run a more complex model examining the dependency of arrival delay on bot
 	head(arrDelayDT, 15)
 ~~~~
 
-The output shows the first fifteen rows of the counts data frame.  The variable CRSDepTime gives the hour of the departure time and ArrDelay shows the average departure delay for that hour for that day of week. Counts gives the number of observations that contain that combination of day of week and departure hour.
+The output shows the first fifteen rows of the counts data frame.  The variable *CRSDepTime* gives the hour of the departure time and *ArrDelay* shows the average departure delay for that hour for that day of week. Counts gives the number of observations that contain that combination of day of week and departure hour.
 
 ~~~~
 	   DayOfWeek CRSDepTime   ArrDelay Counts
@@ -469,8 +475,6 @@ You should see the following plot:
 
 ![CRSDepTime Plot](media/rserver-scaler-getting-started/crsdeptime_plot.png)
 
-[^3]: *F()* is not an R function, although it is used as one inside RevoScaleR formulas. It tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. See *?rxFormula* for more information.
-
 ### Subset the data and compute a crosstab
 
 Create a new data set containing a subset of rows and variables.  This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the *rxDataStep* function with the following arguments:
@@ -478,7 +482,7 @@ Create a new data set containing a subset of rows and variables.  This is conven
 - *outFile:* the name of the new data set
 - *inData:*  the name of an .xdf file or an RxXdfData object representing the original data set you are subsetting
 - *varsToDrop:* a character vector of variables to drop from the new data set, here CRSDepTime  
-- *rowSelection:* keep only the rows where the flight was more than 15 minutes late.
+- *rowSelection:* keep only the rows where the flight was more than 15 minutes late
 
 The resulting call is as follows:
 
@@ -526,9 +530,9 @@ The results show that in this data set “late” flights are on average over 10
 
 ### Create a new data set with variable transformations
 
-Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations.  Typically additional variables are created using the *transforms* argument.  See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
+Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
-In the example below, three new variables are created.  The variable *Late* is a logical variable set to *TRUE* (or *1*) if the flight was more than 15 minutes late in arriving. The variable *DepHour* is an integer variable indicating the hour of the departure.  The variable *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M.
+In the example below, three new variables are created. The variable *Late* is a logical variable set to *TRUE* (or *1*) if the flight was more than 15 minutes late in arriving. The variable *DepHour* is an integer variable indicating the hour of the departure. The variable *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M.
 
 The *rxDataStep* function will read the existing data set and perform the transformations chunk by chunk, and create a new data set.
 
@@ -569,7 +573,7 @@ You should see the following information in your output:
 
 ### Run a logistic regression on the new data
 
-The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving.  For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
+The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving. For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
 
 ~~~~
 	logitObj <- rxLogit(Late~DepHour + Night, data = airExtraDS)
@@ -604,7 +608,7 @@ You should see the following results:
 
 ### Computing predicted values
 
-You can use the object returned from the call to *rxLogit* in the previous section to compute predicted values. In addition to the model object, we specify the data set on which to compute the predicted values and the data set in which to put the newly computed predicted values.  In the call below, we use the same dataset for both.  In general, the data set on which to compute the predicted values must be similar to the original data set used to estimate the model in the following ways; it should have the same variable names and types, and factor variables must have the same levels in the same order.
+You can use the object returned from the call to *rxLogit* in the previous section to compute predicted values. In addition to the model object, we specify the data set on which to compute the predicted values and the data set in which to put the newly computed predicted values. In the call below, we use the same dataset for both. In general, the data set on which to compute the predicted values must be similar to the original data set used to estimate the model in the following ways; it should have the same variable names and types, and factor variables must have the same levels in the same order.
 
 ~~~~
 	predictDS <- rxPredict(modelObject = logitObj, data = airExtraDS,
@@ -640,12 +644,16 @@ You should see the following information:
 
 ## Next steps
 
+This tutorial demonstrated how to use several important functions, but on a small data set. Next up are two additional tutorials that explore ScaleR with bigger data sets, and customization approaches if built-in functions are not quite enough.
+
  - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
  - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
 
 ### Try demo scripts
 
- Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. These scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
+ Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
+
+ Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
  	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
@@ -655,7 +663,8 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Sca
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
- ### Get function help
+<a name="get-help"></a>
+### Get function help
 
   R packages typically include embedded package help reference and ScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
 
