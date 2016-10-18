@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Analyze a large data set with ScaleR in Microsoft R"
-description: "Learn how to work with big datasets in ScaleR using this tutorial walkthrough."
+description: "Learn how to work with big data using a sample airline dataset in this ScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/05/2016"
+ms.date: "10/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Analyzing a Large Data Set with ScaleR
+# Analyzing a Large Data Set with ScaleR (Microsoft R)
 
 ## ORIGINAL OVERVIEW
 
@@ -40,35 +40,35 @@ The **RevoScaleR** package provides a set of portable, scalable, distributable d
 ******************************
 
 
-This getting started tutorial builds on what you learned in [previous tutorials](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
+This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
 
-## Download large datasets
+## Download the airline dataset
 
-To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 Datasets used in this tutorial include the following:
 
-- *AirOnTime87to12*: An .xdf file containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to December 2012. This is a large dataset: there are nearly 150 million records in total. It is used in the examples in "Analyzing a large data set with ScaleR". It is just under 4 GB unpacked.
+- *AirOnTime87to12*: An .xdf file containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to December 2012. This is a large dataset: there are nearly 150 million records in total. It is just under 4 GB unpacked.
 
-- *AirOnTime7Pct*: A 7% subsample of AirOnTimeData87to12, this is an .xdf file containing just the variables used in the examples in this guide. It can be used as an alternative "Analyzing a large data set with ScaleR". This subsample contains a little over 10 million rows of data. It is about 100 MB unpacked.
+- *AirOnTime7Pct*: A 7% subsample of AirOnTimeData87to12. This is an .xdf file containing just the variables used in the examples in this tutorials. It can be used as an alternative. This subsample contains a little over 10 million rows of data. It is about 100 MB unpacked.
 
-When downloading these files, put them in a directory where you can easily access them. For example, create a directory “C:/MRS/Data” and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
+When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 
-	bigDataDir <- "C:/MRS/Data"
+	bigDataDir <- "C:\MRS\BigData"
 
-## Preparing the sample data
+### Origin of the sample datasets
 
 Airline on-time performance data for the years 1987 through 2008 was used in the American Statistical Association Data Expo in 2009 ([http://stat-computing.org/dataexpo/2009/](http://stat-computing.org/dataexpo/2009/)). ASA describes the data set as follows:
 
 > The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. This is a large dataset: there are nearly 120 million records in total, and takes up 1.6 gigabytes of space compressed and 12 gigabytes when uncompressed.
 
-Data by month can be downloaded as comma-delimited text files from the Research and Innovative Technology Administration (RITA) of the Bureau of Transportation Statistics web site ([http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)). Data from 1987 through 2012 has been imported into an .xdf file named *AirOnTime87to12.xdf*. This file is available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download *AirOnTime87to12.zip*; Linux users *AirOnTime87to12.tar.gz*.) A much smaller subset containing 7% of the observations for the variables used in this example is also available as *AirOnTime7Pct.xdf*. This subsample contains a little over 10 million rows of data, so has about 60 times the rows of the smaller subsample used in the previous example. More information on this data set can be found in the help file:
+Data by month can be downloaded as comma-delimited text files from the Research and Innovative Technology Administration (RITA) of the Bureau of Transportation Statistics web site ([http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)). Data from 1987 through 2012 has been imported into an .xdf file named *AirOnTime87to12.xdf*.
 
-	?AirOnTime87to12
+A much smaller subset containing 7% of the observations for the variables used in this example is also available as *AirOnTime7Pct.xdf*. This subsample contains a little over 10 million rows of data, so has about 60 times the rows of the smaller subsample used in the previous example. More information on this data set can be found in the help file: `?AirOnTime87to12`. To view the help file, enter the file name at the `>` prompt in the R interactive window.
 
-To follow the examples on your own computer, please download one or both of these data sets.
+## Explore the data
 
-Specify the correct location of your downloaded data for the *bigDataDir* variable:
+Assuming you specified a location of your downloaded data as the *bigDataDir* variable, create an object for the dataset as *airDataName*:
 
 	bigDataDir <- "C:/MRS/Data"
 
@@ -78,12 +78,11 @@ or
 
 	airDataName <- file.path(bigDataDir,"AirOnTime7Pct")
 
-Create an in-memory RxXdfObject data source object to represent the .xdf data file:
-
+Create an in-memory *RxXdfObject* data source object to represent the .xdf data file:
 
 	bigAirDS <- RxXdfData( airDataName )
 
-Use the rxGetInfo function to get summary information on the active data set.  
+Use the *rxGetInfo* function to get summary information on the active data set.  
 
 	rxGetInfo(bigAirDS, getVarInfo=TRUE)
 

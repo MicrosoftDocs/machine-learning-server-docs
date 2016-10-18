@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Example: Analyzing loan data using ScaleR in Microsoft R"
-description: "Learn how to work with big datasets in ScaleR using this tutorial walkthrough."
+description: "Learn how to work with big datasets using sample loan data in this ScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/05/2016"
+ms.date: "10/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,26 +24,55 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing loan data using ScaleR in Microsoft R
+# Example: Analyzing loan data with ScaleR (Microsoft R)
 
-This getting started tutorial builds on what you learned in [previous tutorials](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
+This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
-## Download large datasets
+## Download the mortgage default data set
 
-To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+The sample data used in this tutorial consists of simulated data on mortgage defaults. A small version of the dataset is pre-installed with the **RevoScaleR** package that ships with R Client and R Server. It provides 100,000 observations. Alternatively, you can download a larger version of the dataset providing 10 million observations. The tutorial assumes the smaller built-in data set but this example works with both.
 
-The dataset used in this tutorial includes the following:
+**Using the pre-installed .csv files**
 
-- *mortDefault*:  A set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. File size is approximately 220 MB unpacked.
+Small versions of the data sets can be found in the sample data directory:
 
-When downloading these files, put them in a directory where you can easily access them. For example, create a directory “C:/MRS/Data” and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
+		mortDefaultSmall2000.csv
+		mortDefaultSmall2001.csv
+		mortDefaultSmall2002.csv
+		mortDefaultSmall2003.csv
+		mortDefaultSmall2004.csv
+		mortDefaultSmall2005.csv
+		mortDefaultSmall2006.csv
+		mortDefaultSmall2007.csv
+		mortDefaultSmall2008.csv
+		mortDefaultSmall2009.csv
 
-	bigDataDir <- "C:/MRS/Data"
+Each file contains 10,000 rows, for a total of 100,000 observations.
 
+**Downloading the larger data set**
 
-## An Example Analyzing Loan Defaults
+To work with a larger dataset, you can download *mortDefault*, a set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. You can download zipped [from this web site](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip. Linux users should download mortDefault.tar.gz. File size is approximately 220 MB unpacked.
 
-This example uses simulated data at the individual level to analyze loan defaults.  Suppose that data has been collected every year for 10 years on mortgage holders, and is available in a comma delimited data set for each year.  The data contains 5 variables:
+When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
+
+	bigDataDir <- "C:\MRS\BigData"
+
+Each download contains ten files, each of which contains one million observations for a total of 10 million:
+
+		mortDefault2000.csv
+		mortDefault2001.csv
+		mortDefault2002.csv
+		mortDefault2003.csv
+		mortDefault2004.csv
+		mortDefault2005.csv
+		mortDefault2006.csv
+		mortDefault2007.csv
+		mortDefault2008.csv
+		mortDefault2009.csv
+
+## Explore the data
+
+This example uses simulated data at the individual level to analyze loan defaults. Suppose that data has been collected every year for 10 years on mortgage holders, and is available in a comma delimited data set for each year. The data contains 5 variables:
 
 - *default* – a 0/1 binary variable indicating whether or not the mortgage holder defaulted on the loan
 - *creditScore* – a credit rating
@@ -52,42 +81,16 @@ This example uses simulated data at the individual level to analyze loan default
 - *houseAge* – the age (in years) of the house
 - *year* – the year the data was collected
 
-Small versions of the data sets are included with the **RevoScaleR** package:
+## Specify the input files and output XDF file
 
-	mortDefaultSmall2000.csv
-	mortDefaultSmall2001.csv
-	mortDefaultSmall2002.csv
-	mortDefaultSmall2003.csv
-	mortDefaultSmall2004.csv
-	mortDefaultSmall2005.csv
-	mortDefaultSmall2006.csv
-	mortDefaultSmall2007.csv
-	mortDefaultSmall2008.csv
-	mortDefaultSmall2009.csv
+The first step is to import the data into an XDF file format for analysis. First, specify the source files you will be using.
 
-Each file contains 10,000 rows, for a total of 100,000 observations.
-
-Alternatively, you can download a large version of these data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409), (again, Windows users should download the zip version, mortDefault.zip, and  Linux users mortDefault.tar.gz). Each download contains ten files, each of which contains 1,000,000 observations for a total of 10 million:
-
-	mortDefault2000.csv
-	mortDefault2001.csv
-	mortDefault2002.csv
-	mortDefault2003.csv
-	mortDefault2004.csv
-	mortDefault2005.csv
-	mortDefault2006.csv
-	mortDefault2007.csv
-	mortDefault2008.csv
-	mortDefault2009.csv
-
-## Importing a Set of Comma Delimited Files
-
-The first step is to import the data into an XDF file format for analysis.  First, specify which set of source files you will be using.  For the smaller, included data sets, enter:
+For the smaller data sets that exist in the sample data directory, enter:
 
 	sampleDataDir <- rxGetOption("sampleDataDir")
 	mortCsvDataName <- file.path(sampleDataDir, "mortDefaultSmall")
 
-If you have downloaded the large files, enter the location of your downloaded data:
+For the large files, enter the location of your downloaded data:
 
 	bigDataDir <- "C:/MRS/Data"
 	mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
@@ -100,9 +103,9 @@ or
 
 	mortXdfFileName <- "mortDefault.xdf"
 
-### Importing a set of files in a loop using append
+## Importing a set of files in a loop using append
 
-Use the *rxImport* function to import the data.  When the first data file is read, a new XDF file is created using the *dataFileName* specified above.  Subsequent data files are appended to that XDF file.  Within the loop, the name of the imported data file is created.
+Use the *rxImport* function to import the data. When the first data file is read, a new XDF file is created using the *dataFileName* specified above. Subsequent data files are appended to that XDF file.  Within the loop, the name of the imported data file is created.
 
 	append <- "none"
 	for (i in 2000:2009)
@@ -136,7 +139,6 @@ The output should look like the following if you are using the large data files:
 	4         713       15           5   6236 2000       0
 	5         689       10           5   6817 2000       0
 
-
 ## Computing Summary Statistics
 
 Use the *rxSummary* function to compute summary statistics for the variables in the data set, setting the *blocksPerRead* to *2*.
@@ -165,7 +167,7 @@ The following output is returned (for the large data set):
 
 ## Computing a Logistic Regression
 
-Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables.  Year is an integer value, so that if we include it “as is” in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults. Instead we can treat year as a categorical or factor variable by using the F function.  Then we will get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates - controlling for the other variables in the regression. The logistic regression is specified as follows:
+Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables. Year is an integer value, so that if we include it “as is” in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults. Instead we can treat year as a categorical or factor variable by using the F function. Then we will get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates - controlling for the other variables in the regression. The logistic regression is specified as follows:
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
@@ -216,7 +218,7 @@ You will see timings for each iteration and the final results printed. The resul
 
 If you are using the large *mortDefault* data set, you can continue and estimate a logistic regression with many parameters.
 
-One of the variables in the data set is *houseAge*.  As with *year*, we have no reason to believe that the logistic expression is linear with respect to the age of the house.  We can look at how the age of the house is related to the default rate by including *houseAge* in the formula as a categorical variable, again using the *F* function.  A coefficient will be estimated for 40 of the 41 values of *houseAge*.
+One of the variables in the data set is *houseAge*. As with *year*, we have no reason to believe that the logistic expression is linear with respect to the age of the house. We can look at how the age of the house is related to the default rate by including *houseAge* in the formula as a categorical variable, again using the *F* function. A coefficient will be estimated for 40 of the 41 values of *houseAge*.
 ~~~~
 	system.time(
 	logitObj <- rxLogit(default  ~ F(houseAge) + F(year)+  
@@ -315,7 +317,7 @@ The resulting plot shows that the age of the house is associated with a higher d
 
 ## Compute the Probability of Default
 
-Using the *rxPredict* function, we can compute the probability of default for given characteristics using our estimated logistic regression model as input.  First create some vectors containing values of interest for each of the independent variables:
+Using the *rxPredict* function, we can compute the probability of default for given characteristics using our estimated logistic regression model as input. First create some vectors containing values of interest for each of the independent variables:
 ~~~~
 	creditScore <- c(300, 700)
 	yearsEmploy <- c( 2, 8)

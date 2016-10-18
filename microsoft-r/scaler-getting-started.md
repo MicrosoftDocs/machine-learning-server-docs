@@ -6,7 +6,7 @@ description: "Learn the ScaleR functions found in Microsoft R Client and Microso
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "09/29/2016"
+ms.date: "10/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,7 +28,7 @@ ms.custom: ""
 
 ScaleR is a collection of proprietary functions used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
+In this article, you can step through a tutorial introducing you to ScaleR. ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
 
 ## What can you do with ScaleR?
 
@@ -41,9 +41,9 @@ At a high level, ScaleR functions are grouped as follows:
 * Data-related functions are used for import, transformation, summarization, visualization, and analysis.
 * Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
 
-ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
+Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
 
-Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial, enterprise-grade product. It runs on more platforms, at much greater scale, with service level agreements and support from Microsoft.
+ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
 
 ## What you will learn
 
@@ -66,7 +66,7 @@ This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll 
 
 ## Tutorial: ScaleR in RTVS
 
-This tutorial shows you how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies.
+Learn how to work with ScaleR using sample data and free components from Microsoft. We use only platform-agnostic functions to minimize the dependencies.
 
 ### Prerequisites
 

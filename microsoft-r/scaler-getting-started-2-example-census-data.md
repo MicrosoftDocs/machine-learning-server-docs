@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Example: Analyzing census data using ScaleR in Microsoft R"
-description: "Learn how to work with big datasets in ScaleR using this tutorial walkthrough."
+description: "Learn how to work with big datasets using sample census data in thisample loandata in this ScaleR tutorial walkthrough.s ScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/05/2016"
+ms.date: "10/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,13 +24,23 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing US census data using ScaleR in Microsoft R
+# Example: Analyzing US census data with ScaleR (Microsoft R)
 
-INTRO TBD
+This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by exploring the import and statistical ScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
-## Workers from Three States from the 5% IPUMS Sample
+## Download the census dataset
 
-The built-in data set *CensusWorkers.xdf* provides a subsample of the 2000 5% IPUMS U.S. Census data. It contains information on individuals from 20 to 65 years old in the states of Connecticut, Indiana, and Washington who worked during 2000.  First, let’s learn a little about the sample data set:
+The data set used in this tutorial is *CensusUS5Pct2000.xdf*. You can download the .xdf file or zipped files [from this web site](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+
+When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
+
+	bigDataDir <- "C:\MRS\BigData"
+
+## Explore the data
+
+The built-in data set *CensusWorkers.xdf* provides a subsample of the 2000 5% IPUMS U.S. Census data. It contains information on individuals from 20 to 65 years old in the states of Connecticut, Indiana, and Washington who worked during 2000.
+
+First, let’s learn a little about the sample data set:
 
 	sampleDataDir <- rxGetOption("sampleDataDir")
 	dataFile <- file.path( sampleDataDir, "CensusWorkers")
