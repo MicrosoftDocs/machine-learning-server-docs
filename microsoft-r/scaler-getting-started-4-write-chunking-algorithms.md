@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Write custom chunking algorithms in ScaleR
 
-Scalabiity in ScaleR is partly based on chunking or external memory algorithms that can analyze chunks of data in parallel and then combine intermediate results into a single analysis. Because of the chunking algorithms, it's possible to analyze huge datasets that vastly exceed the memory capacity of any one machine.
+Scalability in ScaleR is founded on chunking or external memory algorithms that can analyze chunks of data in parallel and then combine intermediate results into a single analysis. Because of the chunking algorithms, it's possible to analyze huge datasets that vastly exceed the memory capacity of any one machine.
 
-All of the main analysis functions in ScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms. However, for scenarios where specialized behaviors are needed, you can create a custom chunking algorithms using the *rxDataStep* function to automatically chunk through your data set and use arbitrary R functions to process your data.
+All of the main analysis functions in ScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms. However, for scenarios where specialized behaviors are needed, you can create a custom chunking algorithms using the *rxDataStep* function to automatically chunk through your data set and apply arbitrary R functions to process your data.
 
 In this article, you'll step through an example that teaches a simple chunking algorithm for tabulating data implemented using *rxDataStep*. A more realistic tabulation approach is to use the *rxCrossTabs* or *rxCube* functions, but since *rxDataStep* is simpler, it's a better choice for instruction.
 
@@ -52,7 +52,7 @@ Updating algorithms perform four main tasks:
 
 In this example, no initialization is required.
 
-## Example of a chunking algorithm based on rxDataStep and sample airline data
+## Example: rxDataStep and sample airline data
 
 The ProcessData step is performed within a *transformFunc* called by *rxDataStep* for each chunk of data. In this case we begin with a simple call to the *table* function after converting the chunk to a data frame. The results are then converted back to a data frame with a single row, which will be appended to a data set on disk. So, the call to *rxDataStep* reads in the data chunk-by-chunk and creates a new summary data set where each row represents the “intermediate results” of a chunk.
 

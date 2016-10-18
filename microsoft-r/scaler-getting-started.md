@@ -45,7 +45,21 @@ Using ScaleR functions requires a ScaleR engine to support your logic. As noted,
 
 ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
 
-## What you will learn
+## How to work with ScaleR
+
+The data manipulation and analysis functions in ScaleR are appropriate for small and large datasets, but are particularly useful in three common situations:
+
+- Analyze data sets that are too big to fit in memory.
+- Perform computations distributed over several cores, processors, or nodes in a cluster.
+- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+
+ScaleR enables these scenarios because it operates on chunks of data and using *updating algorithms*.
+
+Data is stored in an efficient XDF file format designed for rapid reading of arbitrary rows and columns of data. Functions in ScaleR are used to import data into XDF before performing analysis, but you can also work directly with data stored in a text, SPSS, or SAS file or an ODBC connection, or extract a subset of a data file into a data frame in memory for further analysis.
+
+To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The tutorial in this article introduces you to the basic workflow.
+
+## What you will learn in this tutorial
 
 This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll perform include the following:
 
@@ -99,8 +113,7 @@ ScaleR provides a data file format (.xdf) designed to be very efficient for read
     sampleDataDir <- rxGetOption("sampleDataDir")
     ~~~~
 
-2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*. The output will be something like "C:/Users/<your-name>/documents/visual studio 2015/projects/<folder-name>/<file-name>".
-
+2. The *rxImport* function uses the current working directory to store the imported data. To see this location, use the R function *getwd()*. The output will be something like `C:/Users/<your-name>/documents/visual studio 2015/projects/<folder-name>/<file-name>`.
 
 	~~~~
     getwd()

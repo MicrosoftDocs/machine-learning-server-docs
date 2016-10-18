@@ -6,7 +6,7 @@ description: "Learn how to work with big datasets using sample loan data in this
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/14/2016"
+ms.date: "10/18/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,11 +28,13 @@ ms.custom: ""
 
 This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
-## Download the mortgage default data set
+## Get the mortgage default data set
 
-The sample data used in this tutorial consists of simulated data on mortgage defaults. A small version of the dataset is pre-installed with the **RevoScaleR** package that ships with R Client and R Server. It provides 100,000 observations. Alternatively, you can download a larger version of the dataset providing 10 million observations. The tutorial assumes the smaller built-in data set but this example works with both.
+Data import and exploration are covered further on, but to complete those steps you will need a collection of .csv files providing the sample data.
 
-**Using the pre-installed .csv files**
+The sample data used in this tutorial consists of simulated data on mortgage defaults. A small version of the data set is pre-installed with the **RevoScaleR** package that ships with R Client and R Server. It provides 100,000 observations. Alternatively, you can download a larger version of the data set providing 10 million observations.
+
+**Use the pre-installed .csv files**
 
 Small versions of the data sets can be found in the sample data directory:
 
@@ -49,7 +51,7 @@ Small versions of the data sets can be found in the sample data directory:
 
 Each file contains 10,000 rows, for a total of 100,000 observations.
 
-**Downloading the larger data set**
+**Download the larger data set**
 
 To work with a larger dataset, you can download *mortDefault*, a set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. You can download zipped [from this web site](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip. Linux users should download mortDefault.tar.gz. File size is approximately 220 MB unpacked.
 
@@ -70,9 +72,9 @@ Each download contains ten files, each of which contains one million observation
 		mortDefault2008.csv
 		mortDefault2009.csv
 
-## Explore the data
+## About the data
 
-This example uses simulated data at the individual level to analyze loan defaults. Suppose that data has been collected every year for 10 years on mortgage holders, and is available in a comma delimited data set for each year. The data contains 5 variables:
+This example uses simulated data at the individual level to analyze loan defaults. Data has been collected every year for 10 years on mortgage holders, stored in a comma delimited data set for each year. The data contains 5 variables:
 
 - *default* – a 0/1 binary variable indicating whether or not the mortgage holder defaulted on the loan
 - *creditScore* – a credit rating
@@ -80,6 +82,8 @@ This example uses simulated data at the individual level to analyze loan default
 - *ccDebt* – the amount of credit card debt
 - *houseAge* – the age (in years) of the house
 - *year* – the year the data was collected
+
+As in previous tutorials, you can use package help to get more information by typing`?mortDefaultSmall` at the `>` prompt in the R interactive window.
 
 ## Specify the input files and output XDF file
 
@@ -95,6 +99,8 @@ For the large files, enter the location of your downloaded data:
 	bigDataDir <- "C:/MRS/Data"
 	mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
 
+Notice that the file path uses a forward slash / character. This is the correct syntax, even for file paths on Windows operating systems that would otherwise use the back slash character.
+
 Next, specify the name of the .xdf file you will create in your working directory (use "*mortDefault*" instead of "*mortDefaultSmall*" if you are using the large data sets):
 
 	mortXdfFileName <- "mortDefaultSmall.xdf"
@@ -103,7 +109,7 @@ or
 
 	mortXdfFileName <- "mortDefault.xdf"
 
-## Importing a set of files in a loop using append
+## Import a set of files in a loop using append
 
 Use the *rxImport* function to import the data. When the first data file is read, a new XDF file is created using the *dataFileName* specified above. Subsequent data files are appended to that XDF file.  Within the loop, the name of the imported data file is created.
 
@@ -111,20 +117,34 @@ Use the *rxImport* function to import the data. When the first data file is read
 	for (i in 2000:2009)
 	{
 	    importFile <- paste(mortCsvDataName, i, ".csv", sep="")
-	    mortDS <- rxImport(importFile, mortXdfFileName,
-	        append=append)
+	    mortDS <- rxImport(importFile, mortXdfFileName, append=append)
 	    append <- "rows"
 	}
 
-If you have previously imported the data and created the .xdf data source, you can create an .xdf data source representing the file us RxXdfData:
+Output will be a series of Rows Read notifications, one for each file.
 
-	mortDS <- RxXdfData( mortXdfFileName )
+If you have previously imported the data and created the .xdf data source, you can create an .xdf data source representing the file us RxXdfData:
 
 To get a basic summary of the data set and show the first 5 rows enter:
 
 	rxGetInfo(mortDS, numRows=5)
 
-The output should look like the following if you are using the large data files:
+Output for the small data files should be as follows:
+
+	File name: C:\YourWorkingDir\mortDefaultSmall.xdf
+	Number of observations: 1e+05
+	Number of variables: 6
+	Number of blocks: 10
+	Compression type: zlib
+	Data (5 rows starting with row 1):
+	  creditScore houseAge yearsEmploy ccDebt year default
+	1         691       16           9   6725 2000       0
+	2         691        4           4   5077 2000       0
+	3         743       18           3   3080 2000       0
+	4         728       22           1   4345 2000       0
+	5         745       17           3   2969 2000       0
+
+Output for large data files:
 
 	File name: C:\YourWorkingDir\mortDefault.xdf
 	Number of observations: 1e+07
@@ -143,7 +163,7 @@ The output should look like the following if you are using the large data files:
 
 Use the *rxSummary* function to compute summary statistics for the variables in the data set, setting the *blocksPerRead* to *2*.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if the script runs locally on R Client.
 
 	rxSummary(~., data = mortDS, blocksPerRead = 2)
 
@@ -167,7 +187,9 @@ The following output is returned (for the large data set):
 
 ## Computing a Logistic Regression
 
-Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables. Year is an integer value, so that if we include it “as is” in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults. Instead we can treat year as a categorical or factor variable by using the F function. Then we will get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates - controlling for the other variables in the regression. The logistic regression is specified as follows:
+Using the binary *default* variable as the dependent variable, estimate a logistic regression using *year*, *creditScore*, *yearsEmploy*, and *ccDebt* as independent variables. Year is an integer value; if we include it as-is in the regression, we would get an estimate of a single coefficient for it indicating the trend in mortgage defaults.
+
+Alternatively, we can treat year as a categorical or factor variable by using the F function. The benefit is that we get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates, while controlling for the other variables in the regression. The logistic regression is specified as follows:
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
