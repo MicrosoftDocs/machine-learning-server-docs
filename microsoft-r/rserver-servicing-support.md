@@ -29,6 +29,7 @@ Microsoft plans to release updates for Microsoft R Server a few times per year w
 + Security and Critical Updates servicing phase - When running the latest version of Microsoft R server, you will receive both Security and Critical updates. 
 + Security Updates (Only) servicing phase - After a new version of Microsoft R Server is released, support for older versions will reduce to Security updates only for the remainder of the twelve (12) month support lifecycle (shown in Figure 1). 
 
+## Support Timeline
 ![Servicing Support](./media/rserver-servicing-support805.png)
 
 _Figure 1. Example of servicing support_
