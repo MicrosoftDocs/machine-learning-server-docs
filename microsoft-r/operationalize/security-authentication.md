@@ -37,7 +37,7 @@ To secure DeployR, you have several authentication options:
 |[Azure Active Directory](#aad)|Use with [enterprise-ready](configurations.md) _cloud_ configurations|
 
 
-[ADD DANIEL's AUTHENTICATION DIAGRAM HERE]
+[@@@@@@ADD DANIEL's AUTHENTICATION DIAGRAM HERE - get diagram from daniel @@@@@@@@]
 
 
 <a name="local"></a>
@@ -48,11 +48,7 @@ During configuration, a default `administrator` account is created for R Server'
 
 **Set or change the password for the local administrator account**:
 
-If you want set or change the password after the configuration script has been run, you can do so in the administrator utility.
-
-1. Here's how...
-
-
+If you want set or change the password after the configuration script has been run, you can do so in the administrator utility. [Learn more about setting the local administrator's password.](admin-utility.md)
 
 <a name="ldap"></a>
 
@@ -98,14 +94,13 @@ On each front-end machine, do the following:
    
    By default, each time a user authenticates successfully, the front-end generates an access token and signs it with a string that was randomly generated during the front-end's configuration. In a configuration with multiple front-ends, each front-end would have its own unique token signing string. By providing a certificate with its own encryption string for  token signing, you can ensure consistent signing across front-ends.  
 
-
-1. Encrypt the LDAP/LDAP-S and/or remote database login credentials (username and password) using the administration utility as follows:
+1. @@@HOW DO WE DO THIS??? Encrypt the LDAP/LDAP-S and/or remote database login credentials (username and password) using the administration utility as follows:
     1. Make sure a credential encryption certificate with a private key is installed on the front-end.  Remote database and/or LDAP login credentials (username and password) must be encrypted using the certificate.
     1. LAUNCH UTIL ON WIN AND Linux
     1. You will select an option in the admin util to start the encryption tool. You will enter the secret string (user and password). The tool will return an encrypted string that you will need to go and add to the configuration file. (basic implementation)
     1. You will select an option of configuring LDAP/DB in the admin util. The util will prompt for the user and passwords, will call the encryption tool internally and will update the config locally for you with the encrypted strings. (more user friendly but currently a P2)
 
-1. Restart the front-end so the changes can take effect.  @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
+1. [Restart the front-end](admin-utility.md) so the changes can take effect.  
 
 1. Repeat these steps on each front-end machine.
 
@@ -142,6 +137,6 @@ On each front-end machine, do the following:
       |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
       |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
      
-1. Restart the front-end so the changes can take effect. @@@POINT TO ADMIN UTILITY  OR can we make a code change that can be restarted automatically...?
+1. [Restart the front-end](admin-utility.md) so the changes can take effect.  
 
 1. Repeat these steps on each front-end machine.
