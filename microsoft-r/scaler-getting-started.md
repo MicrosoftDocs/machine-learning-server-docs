@@ -26,42 +26,148 @@ ms.custom: ""
 
 # Get started with ScaleR and data analysis (Microsoft R)
 
-ScaleR is a collection of proprietary functions used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
+This article is tutorial that explains how to get started with ScaleR, a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Functions can be loosely categorized as data-oriented or platform-specific to tap into capabilities of a particular database system, operating system, or distributed file system.
 
-In this article, you can step through a tutorial introducing you to ScaleR. ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
+## Tutorial: ScaleR quick start
 
-## What can you do with ScaleR?
+### Step 1: import data
 
-Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions will run wherever the ScaleR engine is installed.
+The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the sample data directory. The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
 
-A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify an unfiltered dataset on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
+~~~~
+	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
+	airData <- rxImport(inData=inFile, outFile = "airExample.xdf",
+	stringsAsFactors = TRUE, missingValueString = "M", rowsPerRead = 200000)
+~~~~
 
-At a high level, ScaleR functions are grouped as follows:
+If the *outFile* argument had been omitted, the returned *airData* object would be a data frame containing the data. Since the imported data is being stored in an .xdf file, *rxImport* returns an .xdf data source object. This object represents the .xdf data file, but doesn’t take up much memory. It can be used in many other RevoScaleR objects interchangeably with a data frame.
 
-* Data-related functions are used for import, transformation, summarization, visualization, and analysis.
-* Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
+To get basic information about the data set and variables, we use *rxGetInfo*:
+~~~~
+	rxGetInfo(airData, getVarInfo = TRUE)
+~~~~
+which results in the following output:
+~~~~
+	File name: C:\YourOutputPath\airExample.xdf
+	Number of observations: 6e+05
+	Number of variables: 3
+	Number of blocks: 3
+	Compression type: zlib
+	Variable information:
+	Var 1: ArrDelay, Type: integer, Low/High: (-86, 1490)
+	Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
+	Var 3: DayOfWeek
+		7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+~~~~
+Let’s take a quick look at the data. We can use the *rxHistogram* function to show the distribution in arrival delay by day of week. It uses the *rxCube* function (described later in this manual) to calculate information for a histogram:
+~~~~
+	rxHistogram(~ArrDelay|DayOfWeek,  data = airData)
+~~~~
+![](media/rserver-scaler-user-guide-1-introduction/image2.png)
 
-Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
+We can also compute descriptive statistics for the variable:
+~~~~
+	rxSummary(~ ArrDelay, data = airData )
 
-ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
+		Call:
+		rxSummary(formula = ~ArrDelay, data = airData)
 
-## How to work with ScaleR
+		Summary Statistics Results for: ~ArrDelay
+		Data: airData (RxXdfData Data Source)
+		File name: airExample.xdf
+		Number of valid observations: 6e+05
 
-The data manipulation and analysis functions in ScaleR are appropriate for small and large datasets, but are particularly useful in three common situations:
+		Name     Mean     StdDev   Min Max  ValidObs MissingObs
+		ArrDelay 11.31794 40.68854 -86 1490 582628   17372
+~~~~
+Our first look tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were cancelled.
 
-- Analyze data sets that are too big to fit in memory.
-- Perform computations distributed over several cores, processors, or nodes in a cluster.
-- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+We can use ScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Since we have our original data safely stored in a text file, we will simply add this variable to our existing airline.xdf file using the *transforms* argument to *rxDataStep*. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
 
-ScaleR enables these scenarios because it operates on chunks of data and using *updating algorithms*.
+The full RevoScaleR data step then consists of the following steps:
 
-Data is stored in an efficient XDF file format designed for rapid reading of arbitrary rows and columns of data. Functions in ScaleR are used to import data into XDF before performing analysis, but you can also work directly with data stored in a text, SPSS, or SAS file or an ODBC connection, or extract a subset of a data file into a data frame in memory for further analysis.
+1.  Read in the *data* a block (200,000 rows) at a time.
+2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
+3.  Write the data out to the data set a block at a time. The argument *overwrite=TRUE* allows us to overwrite the data file.
 
-To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The tutorial in this article introduces you to the basic workflow.
+		airData <- rxDataStep(inData = airData, outFile = "airExample.xdf",
+		    transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))),
+		    overwrite = TRUE)
 
-## What you will learn in this tutorial
+### Step 2: Perform statistical analysis
 
-This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll perform include the following:
+We can perform statistical analysis using a data frame or .xdf file. For example, we can estimate a logistic regression on whether or not a flight is “very late” depending on the day of week using *rxLogit*:
+~~~~
+        logitResults <- rxLogit(VeryLate ~ DayOfWeek, data = airData )
+        summary(logitResults)
+~~~~
+~~~~
+        Call:
+        rxLogit(formula = VeryLate ~ DayOfWeek, data = airData)
+
+        Logistic Regression Results for: VeryLate ~ DayOfWeek
+        File name:
+        C:\YourOutputPath\airExample.xdf
+        Dependent variable(s): VeryLate
+        Total independent variables: 8 (Including number dropped: 1)
+        Number of valid observations: 6e+05
+        Number of missing observations: 0
+        -2*LogLikelihood: 251244.7201 (Residual deviance on 599993 degrees of freedom)
+
+        Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+        (Intercept)         -3.29095    0.01745 -188.64 2.22e-16 ***
+        DayOfWeek=Monday     0.40086    0.02256   17.77 2.22e-16 ***
+        DayOfWeek=Tuesday    0.84018    0.02192   38.33 2.22e-16 ***
+        DayOfWeek=Wednesday  0.36982    0.02378   15.55 2.22e-16 ***
+        DayOfWeek=Thursday   0.29396    0.02400   12.25 2.22e-16 ***
+        DayOfWeek=Friday     0.54427    0.02274   23.93 2.22e-16 ***
+        DayOfWeek=Saturday   0.48319    0.02282   21.18 2.22e-16 ***
+        DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
+        ---
+        Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+        Condition number of final variance-covariance matrix: 16.7804
+        Number of iterations: 3
+~~~~
+The results show that in this sample, a flight on Tuesday is most likely to be very late or cancelled, followed by flights departing on Friday. In this model, Sunday is the control group, so that coefficient estimates for other days of the week are relative to Sunday. The intercept shown is the same as the coefficient you would get for Sunday if you omitted the intercept term:
+~~~~
+    logitResults2 <- rxLogit(VeryLate ~ DayOfWeek - 1, data = airData )
+            summary(logitResults2)
+~~~~    
+
+~~~~         
+            Call:
+            rxLogit(formula = VeryLate ~ DayOfWeek - 1, data = airData)
+
+            Logistic Regression Results for: VeryLate ~ DayOfWeek - 1
+            File name:
+            	C:\YourOutputPath\airExample.xdf
+            Dependent variable(s): VeryLate
+            Total independent variables: 7
+            Number of valid observations: 6e+05
+            Number of missing observations: 0
+            -2*LogLikelihood: 251244.7201 (Residual deviance on 599993 degrees of freedom)
+
+            Coefficients:
+                                Estimate Std. Error z value Pr(>|z|)    
+            DayOfWeek=Monday    -2.89008    0.01431  -202.0 2.22e-16 ***
+            DayOfWeek=Tuesday   -2.45077    0.01327  -184.7 2.22e-16 ***
+            DayOfWeek=Wednesday -2.92113    0.01617  -180.7 2.22e-16 ***
+            DayOfWeek=Thursday  -2.99699    0.01648  -181.9 2.22e-16 ***
+            DayOfWeek=Friday    -2.74668    0.01459  -188.3 2.22e-16 ***
+            DayOfWeek=Saturday  -2.80776    0.01471  -190.9 2.22e-16 ***
+            DayOfWeek=Sunday    -3.29095    0.01745  -188.6 2.22e-16 ***
+            ---
+            Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+            Condition number of final variance-covariance matrix: 1
+            Number of iterations: 7
+~~~~
+
+## Tutorial 2: What you will learn in this tutorial
+
+This tutorial focuses on data-oriented functions. Using ScaleR, the tasks you'll perform include the following:
 
 1.	Convert text data to the .xdf data file format.
 
@@ -76,7 +182,6 @@ This tutorial focuses on data-related functions. Using ScaleR, the tasks you'll 
 6.	Fit a logistic regression model.
 
 7.	Compute predicted values.
-
 
 ## Tutorial: ScaleR in RTVS
 
