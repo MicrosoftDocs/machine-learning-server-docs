@@ -100,7 +100,7 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 1. From the main menu, choose the option to stop and start the services.
 
-1. When prompted, identify which processes you want to stop, start, or restart.  
+1. When prompted, identify which processes you want to stop, start, or restart.  @@@  
 
 <br><a name="ports"></a>
 
