@@ -30,6 +30,10 @@ ScaleR is a collection of proprietary functions in Microsoft R used for practici
 
 ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
 
+Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
+
+ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
+
 ## What can you do with ScaleR?
 
 Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions will run wherever the ScaleR engine is installed.
@@ -38,40 +42,32 @@ A common workflow is to write the initial code or script against a filtered data
 
 At a high level, ScaleR functions are grouped as follows:
 
-* Data-related functions are used for import, transformation, summarization, visualization, and analysis.
 * Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
-
-Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
-
-ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
-
-## How to work with ScaleR
+* Data-related functions are used for import, transformation, summarization, visualization, and analysis. These functions comprise the bulk of the ScaleR function library.
 
 The data manipulation and analysis functions in ScaleR are appropriate for small and large datasets, but are particularly useful in three common situations:
 
-- Analyze data sets that are too big to fit in memory.
-- Perform computations distributed over several cores, processors, or nodes in a cluster.
-- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+1. Analyze data sets that are too big to fit in memory.
+2. Perform computations distributed over several cores, processors, or nodes in a cluster.
+3. Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
 
-ScaleR enables these scenarios because it operates on chunks of data and using *updating algorithms*.
+ScaleR enables these scenarios because it operates on chunks of data and uses *updating algorithms*.
 
 Data is stored in an efficient XDF file format designed for rapid reading of arbitrary rows and columns of data. Functions in ScaleR are used to import data into XDF before performing analysis, but you can also work directly with data stored in a text, SPSS, or SAS file or an ODBC connection, or extract a subset of a data file into a data frame in memory for further analysis.
 
 To perform an analysis, you must provide the following information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function). The tutorial in this article introduces you to the basic workflow.
 
+## Data management and analysis using ScaleR
 
+ScaleR provides functions for scalable data management and analysis. These functions can be used with data sets in memory, and applied the same way to huge data sets stored on disk. It includes functionality for:
 
-## Why use ScaleR?
+- Accessing external data sets (SAS, SPSS, ODBC, Teradata, and delimited and fixed format text) for analysis in R
 
-ScaleR provides tools for scalable data management and analysis. These tools can be used with data sets in memory, and applied the same way to huge data sets stored on disk. It includes functionality for:
+- Efficiently storing and retrieving data in a high performance data file
 
-1.  Accessing external data sets (SAS, SPSS, ODBC, Teradata, and delimited and fixed format text) for analysis in R
+- Cleaning, exploring, and manipulating data
 
-2.  Efficiently storing and retrieving data in a high performance data file
-
-3.  Cleaning, exploring, and manipulating data
-
-4.  Fast, basic statistical analyses
+- Fast, basic statistical analyses
 
 ScaleR also includes an extensible framework for writing your own analyses for big data sets.
 
@@ -79,7 +75,7 @@ With ScaleR, you can analyze data sets far larger than can be kept in memory. Th
 
 ### Accessing External Data Sets
 
-Data can be stored in a wide-variety of formats. Typically, the first step in any RevoScaleR analysis is to make the data accessible. With RevoScaleR’s data import capability, you can access data from a SAS file, SPSS file, fixed format or delimited text file, an ODBC connection, or a Teradata data base, bringing it into a data frame in memory, or storing it for fast access in chunks on disk.
+Data can be stored in a wide-variety of formats. Typically, the first step in any ScaleR analysis is to make the data accessible. With ScaleR’s data import capability, you can access data from a SAS file, SPSS file, fixed format or delimited text file, an ODBC connection, or a Teradata data base, bringing it into a data frame in memory, or storing it for fast access in chunks on disk.
 
 ### Efficiently Storing and Retrieving Data
 
@@ -97,7 +93,7 @@ In addition to descriptive statistics and crosstabs, RevoScaleR provides functio
 
 ### Writing Your Own Analyses for Large Data Sets
 
-All of the main analysis functions in RevoScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use RevoScaleR functionality to provide you with access to your data file chunk by chunk.
+All of the main analysis functions in ScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use ScaleR functionality to provide you with access to your data file chunk by chunk. Fore more information, see [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md).
 
 ## See Also
 

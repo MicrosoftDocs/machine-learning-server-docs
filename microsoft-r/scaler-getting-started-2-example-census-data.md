@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Example: Analyzing US census data with ScaleR (Microsoft R)
 
-This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by exploring the import and statistical ScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by exploring the import and statistical ScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download the census dataset
 

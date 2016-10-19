@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Example: Analyzing loan data with ScaleR (Microsoft R)
 
-This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
 ## Get the mortgage default data set
 

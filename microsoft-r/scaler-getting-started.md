@@ -26,11 +26,11 @@ ms.custom: ""
 
 # Get started with ScaleR and data analysis (Microsoft R)
 
-[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale.
+[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although ScaleR works equally well on small and large datasets, what ScaleR enables is analysis of very large data sets that exceed the memory and processing capabilities of any one machine.
 
-To bring you up to speed, this article includes a quick start demonstrating data import and analysis over a small built-in data set. In a few short steps, you can get first-hand experience of the essential workflow.
+If you are new to Microsoft R and ScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. For a first "hands on" experience, this article offers a quick start: two basic lessons demonstrating data import and analysis. In a few short steps, you can interact with ScaleR functions using data from a comma delimited text file.
 
-ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. ScaleR is built on the R language, and you can write scripts or code that use both in the same solution.
+ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. ScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ To complete this quick start as written, you will need about 15 minutes and the 
 
 Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
 
-Sample data comes with Microsoft R so once you have the tools, there is nothing more to download.
+Microsoft R includes sample data and packages for the R language, so once you have the tools there is nothing more to download.
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 

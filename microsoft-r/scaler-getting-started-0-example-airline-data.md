@@ -26,9 +26,11 @@ ms.custom: ""
 
 # ScaleR tutorial using airplane flight data (Microsoft R)
 
-In this tutorial, you'll learn how to use ScaleR functions that enable data science at scale. Functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system.
+This tutorial builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by adding more steps and functions that broaden your experience with the functions. As before, you'll work with airline sample data to complete the steps.
 
-This tutorial focuses on data-oriented functions to minimize the dependencies. You will need a development tool such as **R Tools for Visual Studio** and ScaleR, which you can get through Microsoft R Client, R Server, or R in Azure.
+ScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
+
+To complete this tutorial, you will need a development tool such as **R Tools for Visual Studio** and ScaleR, which you can get through Microsoft R Client, R Server, or R in Azure.
 
 ## What you will learn in this tutorial
 

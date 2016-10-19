@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Analyze a large data set with ScaleR in Microsoft R"
+title: "Tutorial: Analyze a large data set with ScaleR in Microsoft R"
 description: "Learn how to work with big data using a sample airline dataset in this ScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -24,15 +24,15 @@ ms.custom: ""
 
 ---
 
-# Analyzing a Large Data Set with ScaleR (Microsoft R)
+# Tutorial: Analyzing a Large Data Set with ScaleR (Microsoft R)
 
-This getting started tutorial builds on what you learned in [the first tutorial introduction to ScaleR](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
+This tutorial builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download the airline dataset
 
 To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
-Datasets used in this tutorial include the following:
+You can use a smaller or larger data set with this tutorial. Datasets for this tutorial include the following:
 
 - *AirOnTime87to12*: An .xdf file containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to December 2012. This is a large dataset: there are nearly 150 million records in total. It is just under 4 GB unpacked.
 
