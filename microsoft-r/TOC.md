@@ -5,6 +5,7 @@
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
 ### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+#### [Airline data example](scaler-getting-started-0-example-airline-data.md)
 #### [Loan data example](scaler-getting-started-1-example-loan-data.md)
 #### [Census data example](scaler-getting-started-2-example-census-data.md)
 ### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
