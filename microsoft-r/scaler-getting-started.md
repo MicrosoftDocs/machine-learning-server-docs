@@ -32,7 +32,7 @@ To bring you up to speed, this article includes a quick start demonstrating data
 
 ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. ScaleR is built on the R language, and you can write scripts or code that use both in the same solution.
 
-### Prerequisites
+## Prerequisites
 
 To complete this quick start as written, you will need about 15 minutes and the following components:
 
@@ -45,7 +45,7 @@ Sample data comes with Microsoft R so once you have the tools, there is nothing 
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
-### Start a project
+## Start a project
 
 1. In Visual Studio, create a new R project: **File** > **New** > **Project** > **Templates** > **R**.
 
