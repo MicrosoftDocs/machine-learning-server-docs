@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Example: Analyzing airline flight departure data using ScaleR in Microsoft R"
+title: "Tutorial: Analyzing airline flight departure data using ScaleR in Microsoft R"
 description: "Learn the ScaleR functions found in Microsoft R Client and Microsoft R Server using this tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing airline flight data with ScaleR (Microsoft R)
+# ScaleR tutorial using airplane flight data (Microsoft R)
 
-This tutorial show you how to get started with ScaleR, a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Functions can be loosely categorized as data-oriented or platform-specific to tap into capabilities of a particular database system, operating system, or distributed file system.
+In this tutorial, you'll learn how to use ScaleR functions that enable data science at scale. Functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system.
+
+This tutorial focuses on data-oriented functions to minimize the dependencies. You will need a development tool such as **R Tools for Visual Studio** and ScaleR, which you can get through Microsoft R Client, R Server, or R in Azure.
 
 ## What you will learn in this tutorial
-
-This tutorial focuses on data-oriented functions. We use only platform-agnostic functions to minimize the dependencies. You will need a development tool such as **R Tools for Visual Studio** and ScaleR via Microsoft R Client, R Server, or R in Azure.
 
 Tasks you'll perform include the following:
 
@@ -51,6 +51,8 @@ Tasks you'll perform include the following:
 ## Get the airline data set
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
+
+This dataset is built into ScaleR so there is nothing to download.
 
 ## Import text data into .xdf
 

@@ -26,16 +26,22 @@ ms.custom: ""
 
 # Get started with ScaleR and data analysis (Microsoft R)
 
-This tutorial that explains how to get started with ScaleR, a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Functions can be loosely categorized as data-oriented or platform-specific to tap into capabilities of a particular database system, operating system, or distributed file system.
+[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale.
+
+To bring you up to speed, this article includes a quick start demonstrating data import and analysis over a small built-in data set. In a few short steps, you can get first-hand experience of the essential workflow.
+
+ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. ScaleR is built on the R language, and you can write scripts or code that use both in the same solution.
 
 ### Prerequisites
 
-To complete this tutorial as written, you will need about 15 minutes and the following components:
+To complete this quick start as written, you will need about 15 minutes and the following components:
 
 * [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
 * [Microsoft R Client](rclient.md)
 
-Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**. Sample data comes with Microsoft R so once you have the tools, there is nothing more to download.
+Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
+
+Sample data comes with Microsoft R so once you have the tools, there is nothing more to download.
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
@@ -47,11 +53,13 @@ Setup for **R Tools for Visual Studio** adds the R project template and optional
 
    ![R Interactive window](media/rserver-scaler-getting-started/rtvs-r-interactive.png)
 
-In this tutorial, you will enter commands individually or in groups into the interactive window.
+In this quick start, you will enter commands individually or in groups into the interactive window.
 
 ## Import data
 
-The most common way to store data is in a text file. For example, a comma-delimited, text data file containing a subsample of information on airline departures and arrivals in the United States is available in the sample data directory. The sample code below will import it using the *rxImport* function. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
+A very common way to store data is in text files. ScaleR includes a sample data directory providing numerous data files that are ready to use, including the *AirlineDemoSmall.csv* file. The sample data directory is registered with ScaleR; the exact location can be returned through a "sampleDataDir" parameter on the *rxGetOption* function.
+
+The following commands import a .csv file, stores the data in an .xdf file, and creates a data object (airData) representing the data source. There are a total of 600,000 rows in the data file. By specifying the argument *rowsPerRead*, we read and write the data in 3 blocks of 200,000 rows each.
 
 ~~~~
 	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
@@ -59,13 +67,15 @@ The most common way to store data is in a text file. For example, a comma-delimi
 	stringsAsFactors = TRUE, missingValueString = "M", rowsPerRead = 200000)
 ~~~~
 
-If the *outFile* argument had been omitted, the returned *airData* object would be a data frame containing the data. Since the imported data is being stored in an .xdf file, *rxImport* returns an .xdf data source object. This object represents the .xdf data file, but doesn’t take up much memory. It can be used in many other RevoScaleR objects interchangeably with a data frame.
+If you leave out the *outFile* argument, the return *airData* object is a data frame containing the data. Including *outFile* creates an .xdf file, a type of file recognized by ScaleR.
 
-To get basic information about the data set and variables, we use *rxGetInfo*:
+Given an .xdf input file, *rxImport* returns an .xdf data source object. This object represents the data source, but doesn’t take up much memory. It can be used in many other ScaleR objects interchangeably with a data frame.
+
+To get basic information about the data set and variables, use *rxGetInfo*:
 ~~~~
 	rxGetInfo(airData, getVarInfo = TRUE)
 ~~~~
-which results in the following output:
+It returns in the following output:
 ~~~~
 	File name: C:\YourOutputPath\airExample.xdf
 	Number of observations: 6e+05
@@ -78,7 +88,7 @@ which results in the following output:
 	Var 3: DayOfWeek
 		7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
 ~~~~
-Let’s take a quick look at the data. We can use the *rxHistogram* function to show the distribution in arrival delay by day of week. It uses the *rxCube* function (described later in this manual) to calculate information for a histogram:
+Now let’s take a quick look at the data. Use the *rxHistogram* function to show the distribution in arrival delay by day of week. Internally, this function uses the *rxCube* function to calculate information for a histogram:
 ~~~~
 	rxHistogram(~ArrDelay|DayOfWeek,  data = airData)
 ~~~~
@@ -99,11 +109,11 @@ We can also compute descriptive statistics for the variable:
 		Name     Mean     StdDev   Min Max  ValidObs MissingObs
 		ArrDelay 11.31794 40.68854 -86 1490 582628   17372
 ~~~~
-Our first look tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were cancelled.
+This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were cancelled.
 
 We can use ScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Since we have our original data safely stored in a text file, we will simply add this variable to our existing airline.xdf file using the *transforms* argument to *rxDataStep*. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
 
-The full RevoScaleR data step then consists of the following steps:
+The full ScaleR data step then consists of the following steps:
 
 1.  Read in the *data* a block (200,000 rows) at a time.
 2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
@@ -186,14 +196,16 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
 
 ## Next steps
 
-This tutorial demonstrated how to use several important functions, but on a small data set. Next up are two additional tutorials that explore ScaleR with bigger data sets, and customization approaches if built-in functions are not quite enough.
+This quick start demonstrated a basic workflow, but there are several more tutorials that go into more detail and cover more scenarios, including instructions for working with bigger data sets.
 
- - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
- - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
+  - [ScaleR tutorial using airplane flight data](scaler-getting-started-0-example-airline-data.md)
+  - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+  - [Example: Analyzing loan data with ScaleR](scaler-getting-started-1-example-loan-data.md)
+  - [Example: Analyzing census data with ScaleR](scaler-getting-started-2-census-loan-data.md)
 
 ### Try demo scripts
 
- Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
+ Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
 
  Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
@@ -216,11 +228,11 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Sca
 
 ### Get more information
 
-Continue building up your knowledge of ScaleR with these additional guides and tutorials.
+Continue building up your knowledge of ScaleR with these additional resources.
 
 - [ScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
 - [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)
-- [ScaleR User’s Guide](scaler-user-guide-introduction.md)
+- [ScaleR Getting Started with SQL Server](https://msdn.microsoft.com/library/mt604885.aspx)
 - [ScaleR Distributed Computing Guide](scaler-distributed-computing.md)
 - [ScaleR ODBC Data Import Guide](scaler-odbc.md)
 
