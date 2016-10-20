@@ -1,5 +1,6 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 ## [Introduction to Microsoft R](microsoft-r-getting-started.md)
+## [Glossary](microsoft-r-glossary.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
 
 

@@ -31,7 +31,8 @@ ms.custom: ""
 
 <hr>
 
-<big> A&nbsp;B&nbsp;[C](#C)&nbsp;D&nbsp;E&nbsp;F&nbsp;G&nbsp;H&nbsp;I&nbsp;J&nbsp;K&nbsp;L [M](#M)&nbsp;N&nbsp;O&nbsp;P&nbsp;Q&nbsp;[R](#R)&nbsp;[S](#S)&nbsp;T&nbsp;U&nbsp;V&nbsp;[X](#X)&nbsp;Y&nbsp;Z</big>
+
+<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;H &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;U &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
 
 <hr>
 
@@ -39,14 +40,13 @@ ms.custom: ""
 >
 >For general R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 
-Find the definitions to common terms in the Microsoft R documentation in this glossary.
+Use this glossary to find the definitions to common terms in the Microsoft R documentation.
 
 <!--
 <br>
 
 <a name="A"></a>
 ## A
-
 
 <br>
 
@@ -183,7 +183,7 @@ Find the definitions to common terms in the Microsoft R documentation in this gl
 ## S
 
 **ScaleR**
-<div style="margin:15px; margin-bottom:25px;">See <i>RevoScaleR<i></div>
+<div style="margin:15px; margin-bottom:25px;">See <i>RevoScaleR</i></div>
 
 **SQL Server R Services**
 <div style="margin:15px; margin-bottom:25px;">A feature included in SQL Server 2016 and after that supports execution of R scripts in T-SQL stored procedures. R Services integrates an R run-time with optimizations in SQL Server, including resource management and data security.</div>
@@ -231,3 +231,9 @@ Find the definitions to common terms in the Microsoft R documentation in this gl
 <a name="Z"></a>
 ## Z
 -->
+
+
+<br>
+<br>
+
+## Suggest Terms with **"Is this page helpful?"** 
