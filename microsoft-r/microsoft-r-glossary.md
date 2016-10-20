@@ -125,7 +125,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 ## M
 
 **Microsoft R Client**
-<div style="margin:15px; margin-bottom:25px;">Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. <a href="r-client">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. <a href="r-client.md">Learn more…</a></div>
 
 
 **Microsoft R Open**
@@ -133,7 +133,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 **Microsoft R Server**
-<div style="margin:15px; margin-bottom:25px;"> </div>
+<div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a></div>
 
 <!--
 <br>
@@ -145,7 +145,6 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 <a name="O"></a>
 ## O
-
 
 <br>
 
@@ -236,4 +235,4 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <br>
 <br>
 
-## Suggest Terms with **"Is this page helpful?"** 
+## Suggest terms with **"Is this page helpful?"** 
