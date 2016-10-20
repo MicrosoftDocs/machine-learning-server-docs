@@ -157,7 +157,7 @@ Accordingly, to enable do the following:
    ```
 1. For each property, use the value matching your configuration.
 
-   + For DeployR for Microsoft R Server 2016:
+   + For DeployR for Microsoft R Server 8.0.5:
      ```
      /*
       * DeployR Active Directory Configuration Properties

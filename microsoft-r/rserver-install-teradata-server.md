@@ -26,7 +26,7 @@ ms.custom: ""
 
 # R Server 8.0 Installation Guide for Teradata Servers
 
-A newer version of R Server (Microsoft R Server 2016, version 8.0.5) is now available that's easier to install. See [Install Microsoft R Server 2016 on Teradata Servers](rserver-install-teradata-805.md) for more information.
+A newer version of R Server (Microsoft R Server 8.0.5) is now available that's easier to install. See [Install Microsoft R Server 8.0.5 on Teradata Servers](rserver-install-teradata-805.md) for more information.
 
 ## Quick Overview
 
@@ -79,13 +79,13 @@ To get started, do the following:
 
   1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
 
-		Microsoft R Open for Microsoft R Server 2016
+		Microsoft R Open for Microsoft R Server
 
-		Microsoft R Server 2016 for Teradata
+		Microsoft R Server 8.0.5 for Teradata
 
-  2.  Download the Microsoft R Open for Microsoft R Server 2016 rpm file for your Teradata appliance’s operating system, either SLES 10 or SLES 11.
+  2.  Download the Microsoft R Open for Microsoft R Server rpm file for your Teradata appliance’s operating system, either SLES 10 or SLES 11.
 
-  3.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 
   4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 

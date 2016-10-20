@@ -31,7 +31,7 @@ Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor
 
 DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL. 
 
-+ In DeployR Enterprise for Microsoft R Server 2016 (v8.0.5), the DeployR Web server as well as all APIs calls and utilities support TLS 1.2 and SSL. However, HTTPS is disabled by default.
++ In DeployR Enterprise for Microsoft R Server 8.0.5, the DeployR Web server as well as all APIs calls and utilities support TLS 1.2 and SSL. However, HTTPS is disabled by default.
 
 + In DeployR 8.0.0, only SSL is supported.  
 
@@ -43,7 +43,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 >For security reasons, we strongly recommend that TLS/SSL be enabled in **all production environments.**  Since we cannot ship TLS/SSL certificates for you, TLS/SSL protocols on DeployR are disabled by default.
 
 <br />
-### Enabling for DeployR for Microsoft R Server 2016
+### Enabling for DeployR for Microsoft R Server 8.0.5
 
 <br />
 ####Securing connections between the DeployR Web server and client
@@ -350,7 +350,7 @@ When prompted by the script, provide the following information when prompted by 
 
 ## Disabling SSL Support
 
-### Disabling for DeployR for Microsoft R Server 2016
+### Disabling for DeployR for Microsoft R Server 8.0.5
 
 The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the security of message transmissions on the Internet. By default, SSL on DeployR is disabled. If you have enabled SSL at some time and you now wish to disable SSL, follow the steps in this section.
 

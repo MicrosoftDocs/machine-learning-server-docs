@@ -56,7 +56,7 @@ The easiest way to run diagnostics is to launch it from the **Diagnostics** tab 
 
 However, if you cannot reach the landing page, the `admin` can log into the server and manually run it using the following commands:
 
-#### For DeployR for Microsoft R Server 2016
+#### For DeployR for Microsoft R Server 8.0.5
 + **On Windows**: 
     1. Launch the DeployR administrator utility script with administrator privileges:
        ```
@@ -250,7 +250,7 @@ It can be solved by updating the IP address in the DeployR Server Web Context.
 
 <br />
 <a id="set-context"></a>
-#### DeployR for Microsoft R Server 2016: Update DeployR Web Context
+#### DeployR for Microsoft R Server 8.0.5: Update DeployR Web Context
 
 To fix this issue, update the IP address in the DeployR Server Web Context as follows:
 
@@ -459,7 +459,7 @@ If you run into conflicts with other applications, consider changing the port nu
 
 <a name="changeport"></a>
 
-####Changing Ports for DeployR Enterprise for Microsoft R Server 2016
+####Changing Ports for DeployR Enterprise for Microsoft R Server 8.0.5
 
 1. Launch the DeployR administrator utility script with administrator privileges:
        

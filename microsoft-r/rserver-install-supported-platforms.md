@@ -27,7 +27,7 @@ ms.custom: ""
 
 This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R Server, and Revolution R Workstation.
 
-## Microsoft R Server 2016 (version 8.0.5)
+## Microsoft R Server 8.0.5
 
 This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
 
@@ -51,7 +51,7 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 - [Prerequisites for DeployR on Linux](deployr-install-on-linux.md#system-requirements)
 - [Prerequisites for DeployR on Windows](deployr-install-on-windows.md#system-requirements)
 
-## Microsoft R Server 2016 (version 8.0.3)
+## Microsoft R Server 8.0.3
 
 This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
 

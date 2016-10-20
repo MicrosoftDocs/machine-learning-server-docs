@@ -26,7 +26,7 @@ ms.custom: ""
 
 ---
 
-# Known Issues with Microsoft R Server 2016
+# Known Issues with Microsoft R Server 8.0.5
 
 ## RevoScaleR
  

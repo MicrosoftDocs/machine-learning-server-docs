@@ -24,11 +24,11 @@ ms.custom: ""
 
 ---
 
-#Microsoft R Server 2016 Release notes
+#Microsoft R Server Release notes
 
 The following release notes apply to Microsoft R Server.
 
-##Microsoft R Server 2016
+##Microsoft R Server 8.0.5
 
 **New in this Release**
 
