@@ -25,17 +25,22 @@ ms.custom: ""
 
 # Microsoft R Server: DeployR
 
+Welcome to the Microsoft R Server DeployR documentation on the MSDN website.
+
 ## Looking for DeployR 8.0.0 and 8.0.5 documentation?
 
-Start here:
+You've come to the right place fpr **8.0.0 and 8.0.5 documentation**. 
 
+Start here:
 + [About DeployR 8.0.0 and 8.0.5](deployr-about.md)
 + [Installation docs](deployr-installation.md)
 + [Application Developer's Getting Started](deployr-application-developer-getting-started.md)
 + [Data Scientist's Getting Started](deployr-data-scientist-getting-started.md)
 + [Administrator's Getting Started](deployr-administrator-getting-started.md)
 
-## Looking for the DeployR Open downloads?
+<br>
+
+## Looking for a DeployR Open download?
 
 >Attention: Microsoft has suspended support of **DeployR Open** releases. 
 >
