@@ -31,13 +31,15 @@ ms.custom: ""
 
 <hr>
 
-<big> A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z</big>
+<big> A&nbsp;B&nbsp;[C](#C)&nbsp;D&nbsp;E&nbsp;F&nbsp;G&nbsp;H&nbsp;I&nbsp;J&nbsp;K&nbsp;L [M](#M)&nbsp;N&nbsp;O&nbsp;P&nbsp;Q&nbsp;[R](#R)&nbsp;[S](#S)&nbsp;T&nbsp;U&nbsp;V&nbsp;[X](#X)&nbsp;Y&nbsp;Z</big>
 
 <hr>
 
-Find the definitions to common terms in the Microsoft R documentation in this glossary.
+>Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below. 
+>
+>For general R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 
->Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below. For general R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
+Find the definitions to common terms in the Microsoft R documentation in this glossary.
 
 <!--
 <br>
