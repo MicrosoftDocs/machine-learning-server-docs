@@ -21,6 +21,7 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
+  - r-server
   - deployr
 ms.custom: ""
 
