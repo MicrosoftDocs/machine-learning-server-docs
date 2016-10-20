@@ -31,17 +31,21 @@ ms.custom: ""
 
 Find the definitions to common terms in the Microsoft R documentation.
 
+<hr>
 
->[!NOTE]
->Looking for R language terminology? Check out this [R glossary page](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf) on CRAN.
-
-<br>
-
-## A B [C](#C) D E F G H I J K L [M](#M) N O P Q [R](#R) [S](#S) T U V [X](#X) Y Z
+## A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z
 
 <hr>
 
->Didn't find a term?  Click the **"Is this page helpful?"** link and let us know what you were looking for.
+### A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z
+
+<hr>
+
+<big> A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z</big>
+
+<hr>
+
+>Didn't find a term?  Click the **"Is this page helpful?"** link and let us know about the term. If you are looking for R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 
 <!--
 <br>
@@ -56,8 +60,6 @@ Find the definitions to common terms in the Microsoft R documentation.
 ## B
 
 -->
-
-<br>
 
 <a name="C"></a>
 ## C
