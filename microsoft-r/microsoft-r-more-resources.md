@@ -66,16 +66,34 @@ Beyond the standard R manuals, there are many books available to help you learn 
 
 ### Introductory Material
 
-*R for Dummies* by Andrie de Vries and Joris Meys is an excellent starting place for those new to R, filled with examples and tips. O’Reilly’s *R Cookbook*, by Paul Teetor , is just what it claims to be–a book filled with recipes to help you accomplish very specific tasks. The *Essential R Reference* by Mark Gardener provides a dictionary-like reference to more than 400 R commands, including cross-references and examples.
+#### For Those New to R
 
-As mentioned above, you can also continue your tutorial with the R Core Group’s *An Introduction to R.* (R Development Core Team, 2008). Based on “Notes on S-Plus” by Bill Venables and David Smith, this has been the jumping off point for R documentation for years. It includes an extensive sample session as its Appendix A.
++ _R for Dummies_ by Andrie de Vries and Joris Meys
+  <br>Excellent starting place for those new to R, filled with examples and tips
 
-The original S documentation consisting of the “Blue Book" (*The New S Language* by Rick Becker, John Chambers, and Allan Wilks ), the “White Book" (*Statistical Models in S*, edited by John Chambers and Trevor Hastie , and the “Green Book" contains much introductory material that is still useful in today’s R. However, there are some S functions that either are not available or work differently in R, and many of the example data sets are not available in R, so typing along with the examples is not always possible.
++ [_R FAQ_](http://cran.r-project.org/doc/FAQ/R-FAQ.html) by Kurt Hornik 
 
-Another very useful document that all R users should read is the R FAQ by Kurt Hornik (http://cran.r-project.org/doc/FAQ/R-FAQ.html).
++ _An Introduction to R_ by the R Development Core Team, 2008
+  <br>Based on “Notes on S-Plus” by Bill Venables and David Smith. Includes an extensive sample session in Appendix A
 
-Users of SAS or SPSS who are new to R might usefully start with Robert Muenchen’s *R for SAS and SPSS Users* . Two other books that address both the SAS and R user communities are *SAS and R: Data Management, Statistical Analysis, and Graphics* by Ken Kleinman and Nicholas J. Horton and *Analysis of Correlated Data with SAS and R* by Mohamed M. Shoukri and Mohammad A. Chaudhary .
+#### For Intermediate R Users
 
++ _O’Reilly’s R Cookbook_ by Paul Teetor
+  <br>A book filled with recipes to help you accomplish very specific tasks
+
++ _The Essential R Reference_ by Mark Gardener
+  <br>A dictionary-like reference to more than 400 R commands, including cross-references and examples
+
+#### For SAS or SPSS Users
+
++ _R for SAS and SPSS Users_ by Robert Muenchen
+  <br>Good starting point for users of SAS or SPSS who are new to R
+
++ _SAS and R: Data Management, Statistical Analysis, and Graphics_ by Ken Kleinman and Nicholas J. Horton 
+
++ _Analysis of Correlated Data with SAS and R_ by Mohamed M. Shoukri and Mohammad A. Chaudhary
+
+<br>
 ### Information on Data Analysis and Statistics
 
 A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R* . After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
