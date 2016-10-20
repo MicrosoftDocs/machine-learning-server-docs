@@ -29,23 +29,15 @@ ms.custom: ""
 
 # Microsoft R Glossary
 
-Find the definitions to common terms in the Microsoft R documentation.
-
-<hr>
-
-## A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z
-
-<hr>
-
-### A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z
-
 <hr>
 
 <big> A | B | [C](#C) | D | E | F | G | H | I | J | K | L | [M](#M) | N | O | P | Q | [R](#R) | [S](#S) | T | U | V | [X](#X) | Y | Z</big>
 
 <hr>
 
->Didn't find a term?  Click the **"Is this page helpful?"** link and let us know about the term. If you are looking for R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
+Find the definitions to common terms in the Microsoft R documentation in this glossary.
+
+>Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below. For general R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 
 <!--
 <br>
