@@ -29,7 +29,7 @@ Welcome to the Microsoft R Server DeployR documentation on the MSDN website.
 
 ## Looking for DeployR 8.0.0 and 8.0.5 documentation?
 
-You've come to the right place fpr **8.0.0 and 8.0.5 documentation**. 
+You've come to the right place for **8.0.0 and 8.0.5 documentation**. 
 
 Start here:
 + [About DeployR 8.0.0 and 8.0.5](deployr-about.md)
