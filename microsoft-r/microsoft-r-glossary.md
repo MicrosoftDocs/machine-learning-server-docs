@@ -235,4 +235,4 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <br>
 <br>
 
-## Suggest terms with **"Is this page helpful?"** 
+## Suggest terms with <br>"Is this page helpful?"
