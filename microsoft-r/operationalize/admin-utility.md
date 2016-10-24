@@ -108,6 +108,28 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 @@@@@@@@@
 
+<br><a name="encrypt"></a>
+
+## Encrypt Secrets
+
+For security reasons, the username and password for LDAP and any remote databases should not be stored in plain text. Therefore, when specifying this information when configuring LDAP or a remote database, you should encrypt these secrets in the administrator utiity first as follows. 
+
+For security purposes, we strongly recommend that you encrypt remote database and LDAP/LDAP-S login credentials rather than store them in the `appsettings.json` file in plain text. Here's how: 
+         >2. [Generate an encrypted credential string](admin-utility.md#encrypt) using the Administrator Utility.
+         >3. Return to `appsettings.json` and insert this string into the database connection string.
+
+1. Make sure a credential encryption certificate with a private key is installed on the front-end. 
+
+1. [Launch the DeployR Administrator Utility](#launch) script with administrator privileges.
+
+1. From the main menu, choose the option to encrypt secrets.
+
+1. When prompted, enter the secret string made up of the username and password. 
+
+The tool will return an encrypted string that you must add to the appropriate section of the configuration file, `appsettings.json`.
+ 
+@@@@@@@@@
+
 <br><a name="test"></a>
 
 ## Diagnostic Testing

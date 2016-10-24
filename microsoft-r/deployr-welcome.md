@@ -1,0 +1,51 @@
+---
+
+# required metadata
+title: "DeployR Landing"
+description: "DeployR introduction and overview."
+keywords: ""
+author: "j-martens"
+manager: "jhubbard"
+ms.date: "10/19/2016"
+ms.topic: "get-started-article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "deployr"
+ms.custom: ""
+---
+
+# Microsoft R Server: DeployR
+
+This page provides links to supported versions of DeployR Enterprise that ship in Microsoft R Server and SQL Server 2016.
+
+## Looking for DeployR 9.0.0 documentation?
+
+Start here:
+
++ [About DeployR 9.0.0](deployr.md)
++ [Installation docs](deployr-installation.md)
+
+## Looking for DeployR 8.0.0 and 8.0.5 documentation?
+
+Start here:
+
++ [About DeployR 8.0.0 and 8.0.5](deployr-about.md)
++ [Installation docs](deployr-installation.md)
+
+## Looking for the DeployR Open downloads?
+
+>Attention: Microsoft has suspended distribution of **DeployR Open** releases. 
+>
+>DeployR is now delivered as part of Microsoft R Server. There is no separate download or setup program.
+>To try out and evaluate DeployR, you can download R Server for development and test usage from either of these two places:
+> - [MSDN](http://aka.ms/rserver/linux/download) 
+> - [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)
