@@ -52,15 +52,13 @@ This section walks you through the steps for securing the connections between th
 > The following steps assume the trusted, signed  HTTPS certificate is already installed on the front-end machine with a private key.
 
  
-1. Launch the utility with administrator privileges to enable HTTPS:
+1. [Launch the DeployR Administrator Utility](admin-utility#launch) script with administrator privileges.
 
 1. STEPS UNKNOWN @@@@@@@@@@@@@
 
 1. When prompted to provide the full file path to the trusted SSL certificate file, type the full path to the file. 
 
-1. **Start/Stop Server**. You must restart DeployR so that the changes can take effect.   @@@@ USE UTILITY
-
-   > HOW CAN WE TEST THESE CHANGES???
+1. [Restart the front-end](admin-utility.md#startstop) so that the changes can take effect.   
 
 1. Test these changes by TRYING THIS @@@@@@.  
 
@@ -78,7 +76,7 @@ With this option, you have the choice of using:
 
 > The following steps assume the trusted, signed HTTPS certificate is already installed on the back-end machine with a private key.
 
-1. STEPS UNKNOWN
+1. STEPS UNKNOWN @@@@@@
 
 <br />
 
@@ -101,6 +99,9 @@ This section walks you through the steps for authenticating the front-end with t
     > WHAT DO WE NEED TO DO ON EACH BACK-END?
 
     1. STEPS UNKNOWN
+
+
+
 <br />
 
 
