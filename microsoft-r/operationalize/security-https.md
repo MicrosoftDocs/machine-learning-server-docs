@@ -33,7 +33,7 @@ ms.custom: ""
 
 DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.  To enable HTTPS, you'll need some or all of these certificates.
 
-||HTTPS Certificate|Description|Front-end|Back-end|
+||HTTPS Certificates|Description|Front-end|Back-end|
 |---|------------------------------------|------------------------------------------------------------------------|--------------|---------------|
 |1|API certificate|Secures communication between client applications and DeployR front-end.|Yes, with private key|No|
 |2|Back-end certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._ <br>Encrypts the traffic between the front-end and back-end. You can use a unique certificate for each back-end, or you can use one common Multi-Domain (SAN) certificate for all back-ends.|No|Yes, with private key|

@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure SQL Server or PostgreSQL database for DeployR
+# Configure SQL Server or PostgreSQL Database for DeployR
 
 During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple front-ends. 
 
@@ -60,27 +60,29 @@ The supported databases are:
         + SQL Server Database (Integrated Security):
           ``` 
           "ConnectionStrings": {
-             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;",
+             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
           },
           ```
 
         + SQL Server Database (SQL authentication): 
           ```
           "ConnectionStrings": {
-             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;",
+             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
            },
            ```
 
         + PostgreSQL Database: 
           ```
           "ConnectionStrings": {
-             "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;",
+             "postgresql": "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
           },   
           ```
 
-1. [Open the database port on the remote machine to the public IP of each DeployR front-end](#firewall).  @@@@@@       
-    > HOW DO WE OPEN THIS PORT AND WHAT PORT IS THAT? @@@@
+1. Open the database port on the remote machine to the public IP of each DeployR front-end as described in these articles:
+   + [SQL server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
 
+   + [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
+         
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
  
