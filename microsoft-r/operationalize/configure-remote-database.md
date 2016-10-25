@@ -55,6 +55,7 @@ The supported databases are:
 
     3.  Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
 
+        > [!Important]
         > For security purposes, we recommend you [encrypt login credentials](admin-utility.md#encrypt) for this database before adding the information to this file.
 
         + SQL Server Database (Integrated Security):
@@ -79,11 +80,11 @@ The supported databases are:
           ```
 
 1. Open the database port on the remote machine to the public IP of each DeployR front-end as described in these articles:
-   + [SQL server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
+   + [For SQL server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
 
-   + [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
+   + [For PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
  
-   1. Run the [DeployR diagnostic tests](admin-diagnostics-troubleshooting.md).
+   1. [Run the diagnostic tests](admin-diagnostics-troubleshooting.md).
