@@ -119,8 +119,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Once the new application has been created, click **CONFIGURE**.
 
-   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: 
-   ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...```
+   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
    1. Open the configuration file, `appsettings.json`.
