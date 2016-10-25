@@ -39,6 +39,8 @@ An administrator utility is installed with each front-end you configure for Depl
 + DO YOU HAVE TO LOG IN WHEN THE UTILITY IS LAUNCHED?
 + ARE ALL USERS ALLOWED TO LAUNCH THE UTILITY?
 + ARE WE IMPLEMENTING AN OPTION FOR ENCRYPTING SECRETS FOR A REMOTE DB OR LDAP
++ ARE WE IMPLEMENTING LDAP/AAD ENABLE/DISABLE OPTION IN UTILITY?
++ WHAT PORTS CAN BE CONFIGURED FOR FRONTEND AND FOR BACKEND?
 
 <br>
 <a name="launch"></a>
@@ -100,7 +102,7 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 1. From the main menu, choose the option to stop and start the services.
 
-1. When prompted, identify which processes you want to stop, start, or restart.  @@@  
+1. When prompted, identify which processes you want to stop, start, or restart. @@@@@@@ @@@  
 
 <br><a name="ports"></a>
 
@@ -112,23 +114,18 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 ## Encrypt Secrets
 
-For security reasons, the username and password for LDAP and any remote databases should not be stored in plain text. Therefore, when specifying this information when configuring LDAP or a remote database, you should encrypt these secrets in the administrator utiity first as follows. 
-
-For security purposes, we strongly recommend that you encrypt remote database and LDAP/LDAP-S login credentials rather than store them in the `appsettings.json` file in plain text. Here's how: 
-         >2. [Generate an encrypted credential string](admin-utility.md#encrypt) using the Administrator Utility.
-         >3. Return to `appsettings.json` and insert this string into the database connection string.
-
+For security purposes, we strongly recommend that you encrypt the login credentials for any remote database and/or LDAP/LDAP-S rather than store them in plain text in the `appsettings.json` configuration file. Here's how: 
+       
 1. Make sure a credential encryption certificate with a private key is installed on the front-end. 
 
-1. [Launch the DeployR Administrator Utility](#launch) script with administrator privileges.
+1. Encrypt the credentials using the DeployR Administrator Utility as follows:
+   1. [Launch the utility](#launch) script with administrator privileges.
 
-1. From the main menu, choose the option to encrypt secrets.
+   1. From the main menu, choose the option to encrypt secrets.
 
-1. When prompted, enter the secret string made up of the username and password. 
+   1. When prompted, enter the username and password.  The tool will return an encrypted string.
 
-The tool will return an encrypted string that you must add to the appropriate section of the configuration file, `appsettings.json`.
- 
-@@@@@@@@@
+1. Insert that string in the appropriate section of the configuration file, `appsettings.json`.
 
 <br><a name="test"></a>
 

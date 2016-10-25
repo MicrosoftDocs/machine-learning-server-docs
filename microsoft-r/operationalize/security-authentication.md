@@ -36,8 +36,11 @@ To secure DeployR, you have several authentication options:
 |[Active Directory / LDAP-S](#ldap)|Use with [enterprise-ready](configurations.md) _on-premise_ configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|Use with [enterprise-ready](configurations.md) _cloud_ configurations|
 
+<br>
 
 [@@@@@@ADD DANIEL's AUTHENTICATION DIAGRAM HERE - get diagram from daniel @@@@@@@@]
+
+<br>
 
 
 <a name="local"></a>
@@ -46,9 +49,7 @@ To secure DeployR, you have several authentication options:
 
 During configuration, a default `administrator` account is created for R Server's DeployR. While this might be sufficient when trying out DeployR with a [one-box configuration](configurations.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise-ready configurations](configurations.md#enterpriseready).
 
-**Set or change the password for the local administrator account**:
-
-If you want set or change the password after the configuration script has been run, you can do so in the administrator utility. [Learn more about setting the local administrator's password.](admin-utility.md)
+To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
 <a name="ldap"></a>
 
@@ -67,19 +68,20 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
-<br>
+**On each front-end machine, do the following:**
 
-**How to enable AD and LDAP/LDAP-S**
+1. Update the DeployR external JSON configuration file, `appsettings.json` to enable LDAP/LDAP-S:
 
-On each front-end machine, do the following:
+   1. Open `appsettings.json`.
 
-1. Edit the DeployR external JSON configuration file, `appsettings.json`.
+   1. Activate the AD LDAP(S) authentication method@@@@ 
+      > HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
 
-1. Activate the AD LDAP(S) authentication method@@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
+   1. Search for the section starting with `"LDAP": {`
 
-1. Search for the section starting with `"LDAP": {`
+   1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
 
-1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
+   >WHAT PROPERTIES ARE NEEDED HERE???
 
    |LDAP Properties|Definition|
    |----------------|-------------------------------|
@@ -90,17 +92,16 @@ On each front-end machine, do the following:
    |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
    |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
 
+   > For security purposes, we recommend you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.
+
 1. When LDAP/LDAP-S is enabled, you can use a certificate with a private key to sign/encrypt user access tokens between the front-end and the LDAP server. This is particularly useful when you have multiple front-ends and want the tokens to be signed consistently by every front-end in your configuration.
    
    By default, each time a user authenticates successfully, the front-end generates an access token and signs it with a string that was randomly generated during the front-end's configuration. In a configuration with multiple front-ends, each front-end would have its own unique token signing string. By providing a certificate with its own encryption string for  token signing, you can ensure consistent signing across front-ends.  
 
-1. @@@HOW DO WE DO THIS??? Encrypt the LDAP/LDAP-S and/or remote database login credentials (username and password) using the administration utility as follows:
-    1. Make sure a credential encryption certificate with a private key is installed on the front-end.  Remote database and/or LDAP login credentials (username and password) must be encrypted using the certificate.
-    1. LAUNCH UTIL ON WIN AND Linux
-    1. You will select an option in the admin util to start the encryption tool. You will enter the secret string (user and password). The tool will return an encrypted string that you will need to go and add to the configuration file. (basic implementation)
-    1. You will select an option of configuring LDAP/DB in the admin util. The util will prompt for the user and passwords, will call the encryption tool internally and will update the config locally for you with the encrypted strings. (more user friendly but currently a P2)
-
-1. [Restart the front-end](admin-utility.md) so the changes can take effect.  
+1. Launch the administrator's utility and:
+   1. [Restart the front-end](admin-utility.md#startstop).
+ 
+   1. Run the [DeployR diagnostic tests](admin-diagnostics-troubleshooting.md).
 
 1. Repeat these steps on each front-end machine.
 
@@ -111,22 +112,21 @@ On each front-end machine, do the following:
 [Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate with DeployR in the cloud when the client application and DeployR have access to the internet.
 <br>
 
-**How to enable Azure AD**
-
-On each front-end machine, do the following:
+**On each front-end machine, do the following:**
 
 1. Get the client ID and tenant ID from the Microsoft Azure management portal. You will use these values in the DeployR configuration file:
    1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
    1. Once the new application has been created, click **CONFIGURE**.
 
-   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL: 
-    https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...
+   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: 
+   ```https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...```
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
    1. Open the configuration file, `appsettings.json`.
 
-   1. Activate the Azure AD authentication method by @@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
+   1. Activate the Azure AD authentication method by @@@@@
+      >@@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
 
    1. Search for the section starting with `"AzureActiveDirectory": {`
 
@@ -136,7 +136,10 @@ On each front-end machine, do the following:
       |----------------|-------------------------------|
       |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
       |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
-     
-1. [Restart the front-end](admin-utility.md) so the changes can take effect.  
+
+1. Launch the administrator's utility and:
+   1. [Restart the front-end](admin-utility.md#startstop).
+ 
+   1. Run the [DeployR diagnostic tests](admin-diagnostics-troubleshooting.md).
 
 1. Repeat these steps on each front-end machine.
