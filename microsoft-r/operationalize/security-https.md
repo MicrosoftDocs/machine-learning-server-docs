@@ -53,8 +53,10 @@ This section walks you through the steps for securing the connections between th
 > Make sure the name of the certificate matches the domain name of the front-end URL. 
 
 **On each front-end machine:**
+
 1. Install the trusted, signed HTTPS "API certificate" with a private key in the certificate store on the front-end machine.
-1. Launch IIS.<a name=iis></a>
+<a name=iis></a>
+1. Launch IIS.
 1. In the "Connections" pane on the left, expand the "Sites" folder and select the website.
 1. Click on "Bindings" under the "Actions" pane on the right.
 1. Click on "Add".
@@ -115,6 +117,7 @@ With this option, you have the choice of using:
 > Make sure the name of the certificate matches the domain name of the back-end URL. 
 
 **On each back-end machine:**
+
 1. Install the trusted, signed HTTPS "back-end certificate" with a private key in the certificate store on the back-end machine.
 1. Launch IIS and follow the [instructions above](#iis).
 
