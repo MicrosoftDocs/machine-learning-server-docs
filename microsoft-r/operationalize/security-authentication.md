@@ -92,11 +92,55 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
    |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
 
-   > For security purposes, we recommend you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.
+// Uncomment this section if you want to enable authentication via LDAP
+
+        //"LDAP": [
+
+        //    {
+
+        //        "Host": "<domain controller>",
+
+        //        "UseLDAPS": "True",
+
+        //        "BindFilter": "CN={0},DC=YOURDOMAIN,DC=COM",
+
+        //        "QueryUserDn": "CN=<read user>,DC=YOURDOMAIN,DC=COM",
+
+        //        "QueryUserPassword": "", // NOTE: Password must be encrypted using Administrator Tool.
+
+        //        "SearchBase": "DC=YOURDOMAIN,DC=COM",
+
+        //        "SearchFilter": "cn={0}"
+
+        //    }
+
+        //],
+
+SearchFilter: The pattern to be used for the user search. {0} is the user's DN.
+
+   >[!IMPORTANT] 
+   >For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.
 
 1. When LDAP/LDAP-S is enabled, you can use a certificate with a private key to sign/encrypt user access tokens between the front-end and the LDAP server. This is particularly useful when you have multiple front-ends and want the tokens to be signed consistently by every front-end in your configuration.
    
    By default, each time a user authenticates successfully, the front-end generates an access token and signs it with a string that was randomly generated during the front-end's configuration. In a configuration with multiple front-ends, each front-end would have its own unique token signing string. By providing a certificate with its own encryption string for  token signing, you can ensure consistent signing across front-ends.  
+
+
+   "JWTKey": "<Please run AdminUtil to initialize this value>"
+
+ 
+
+        // Uncomment this section if you want to sign the access token with a certificate instead of a randomly generated key
+
+        //"JWTSigningCertificate": {
+
+        //    "StoreName": "My",
+
+        //    "StoreLocation": "LocalMachine",
+
+        //    "SubjectName": "<subject name>"
+
+        //}
 
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
