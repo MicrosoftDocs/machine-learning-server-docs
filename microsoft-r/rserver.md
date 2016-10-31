@@ -42,6 +42,10 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 |Other packages | Additional packages are distributed with R Client and R Server, such as RevoPemaR. For the complete list, see [Package reference on MSDN](package-reference.md). |
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. |
 
+## Why use R Server?
+
+ **R**, along with many other statistical analysis products, is challenged by problems of capacity and speed. Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis. In R this is often a problem because copies of data are frequently made during analysis. Even without a capacity limit, computation may be too slow to be useful. R Server with ScaleR not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products.
+
 ## Benefits of R Server
 
 Reasons for choosing R Server include:
