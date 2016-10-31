@@ -179,4 +179,4 @@ This should give the result:
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](../scaler/scaler.md)
+[RevoScaleR Functions](/scaler/scaler.md)

@@ -636,7 +636,7 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Sca
 
   - In R Help, click the Home button.
   - Click **Packages**.
-  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](../scaler/scaler.md).
+  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](/scaler/scaler.md).
 
 ### Get more information
 
@@ -654,4 +654,4 @@ Continue building up your knowledge of ScaleR with these additional guides and t
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](../scaler/scaler.md)
+[RevoScaleR Functions](\/scaler/scaler.md)
