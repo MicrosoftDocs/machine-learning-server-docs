@@ -55,7 +55,7 @@ This section walks you through the steps for securing the connections between th
 **On each front-end machine:**
 
 1. Install the trusted, signed HTTPS "API certificate" with a private key in the certificate store on the front-end machine.
-<a name=iis></a>
+<a name="iis"></a>
 1. Launch IIS.
 1. In the "Connections" pane on the left, expand the "Sites" folder and select the website.
 1. Click on "Bindings" under the "Actions" pane on the right.
