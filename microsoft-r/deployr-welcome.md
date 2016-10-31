@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Microsoft R Server: DeployR
 
-This page provides links to supported versions of DeployR Enterprise that ship in Microsoft R Server and SQL Server 2016.
+This page provides links to the MSDN documentation for the versions of DeployR Enterprise shipped with Microsoft R Server and SQL Server.
 
 ## Looking for DeployR 9.0.0 documentation?
 
@@ -34,14 +34,16 @@ Start here:
 + [About DeployR 9.0.0](deployr.md)
 + [Installation docs](deployr-installation.md)
 
+
 ## Looking for DeployR 8.0.0 and 8.0.5 documentation?
 
 Start here:
-
 + [About DeployR 8.0.0 and 8.0.5](deployr-about.md)
 + [Installation docs](deployr-installation.md)
 
-## Looking for the DeployR Open downloads?
+<br>
+
+## Looking for a DeployR Open download?
 
 >Attention: Microsoft has suspended distribution of **DeployR Open** releases. 
 >
