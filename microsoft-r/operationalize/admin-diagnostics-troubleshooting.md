@@ -111,8 +111,6 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
 1.  If the log file indicates an error, then fix it.
 
-1.  If Server Web Context points to the wrong IP, [update it now](#set-context).
-
 1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#startstop) in question. It may take a few minutes for a component to restart.
 
 1.  [Re-run the diagnostic test](#running-the-diagnostic-check) again to make sure all is running smoothly now.

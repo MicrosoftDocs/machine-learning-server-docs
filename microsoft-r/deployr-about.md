@@ -153,14 +153,14 @@ DeployR Enterprise supports a scalable grid framework, providing load balancing 
 
 In DeployR, we refer to any web service that exposes R analytics capabilities over the network as an analytics web service. While “web services” is commonly used in the context of browser-based web applications, these services—in particular, analytics web services—can just as easily be integrated inside desktop, mobile, and dashboard applications, as well as backend systems. For example, when you upload an R script into the DeployR Repository Manager, the script may then be executed as an analytics web service by any application with appropriate permissions.
 
-*Note*: When you upload an R script into the [Repository Manager](#deployR-repository-manager), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
+*Note*: When you upload an R script into the [Repository Manager](#deployr-repository-manager), it becomes an analytics Web service that, with the appropriate access control, can be consumed by any application.
 
 
 #### DeployR Administration Console
 
 The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](deployr-admin-console/deployr-admin-console-about.md).
 
-
+<a name="deployr-repository-manager"></a>
 #### DeployR Repository Manager
 
 The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-manager-about.md).

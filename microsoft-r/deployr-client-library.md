@@ -263,6 +263,7 @@ An *authenticated* user or simply an authenticated client application has access
 
 The following sections introduce the services themselves and demonstrate how the client libraries make these services available.
 
+<a name="authenticated-projects"></a>
 ### Project Services
 
 A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an [Authenticated Project](deployr-api-reference.md#authenticatedprojects). There are three types of *authenticated project*:

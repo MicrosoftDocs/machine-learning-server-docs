@@ -82,6 +82,7 @@ DeployR supports a number of different types of projects, each of which is desig
 The following sections discuss the different types of projects available:
 
 <br />
+<a name="anonymous-projects"></a>
 ###Anonymous Projects
 
 An *anonymous project* is a project created by an *anonymous user*. There are two types of anonymous project: **stateless projects** and **HTTP blackbox projects**. The types of projects can be created using the following API calls:
@@ -116,6 +117,7 @@ These calls also support a ***recycle*** parameter that can be used when working
 To interrupt an execution on the HTTP blackbox project on the current HTTP session use the [/r/repository/script/interrupt](https://microsoft.github.io/deployr-api-docs/#r-repository-script-interrupt).
 
 <br />
+<a name="authenticated-projects"></a>
 ###Authenticated Projects
 
 An *authenticated project* is a project created by an authenticated user. There are three types of authenticated project:
@@ -467,7 +469,7 @@ There are just three system directories:
 
 Each user has access to a private repository store. Each file placed in that store will be maintained indefinitely by the server unless it is explicitly deleted by the user.
 
-Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#r-project-workspace-load) call. A data file can be loaded directly into a project working directory using the [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#r-project-directory-load) call.
+Repository-managed files can be easily loaded by users directly into [anonymous projects](#anonymous-projects), [authenticated projects](#authenticated-projects) as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the [/r/project/workspace/load](https://microsoft.github.io/deployr-api-docs/#r-project-workspace-load) call. A data file can be loaded directly into a project working directory using the [/r/project/directory/load](https://microsoft.github.io/deployr-api-docs/#r-project-directory-load) call.
 
 Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the [/r/project/workspace/store](https://microsoft.github.io/deployr-api-docs/#r-project-workspace-store) and [/r/project/directory/store](https://microsoft.github.io/deployr-api-docs/#r-project-directory-store) calls respectively.
 
