@@ -275,6 +275,7 @@ After installing the [main server for DeployR Enterprise](#basic-deployr-install
 >4.  If you already have a version of DeployR, carefully follow the [migration instructions](#upgrading-deployr) before continuing.
 >5.  The Ubuntu and OpenSUSE releases of DeployR Open are experimental and not officially supported. They are **not** available for DeployR Enterprise.
 
+<a name="lindependencies"></a>
 ### Dependencies for Linux
 
 Before you can install DeployR on the main server machine, a remote database (DeployR Enterprise only), or any additional grid node (DeployR Enterprise only), you must manually install the following dependencies. All other dependencies will be installed for you.
@@ -410,7 +411,7 @@ The basic installation of DeployR will install the DeployR main server and confi
 
 #### DeployR Enterprise
 
-After installing [these prerequisites](#dependencies-for-linux), install DeployR Enterprise as follows:
+After installing [these prerequisites](#lindependencies), install DeployR Enterprise as follows:
 
 1.  Log into the operating system.
 
@@ -445,7 +446,7 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 #### DeployR Open
 
-After installing [these prerequisites](#dependencies-for-linux), install DeployR Open as follows:
+After installing [these prerequisites](#lindependencies), install DeployR Open as follows:
 
 1.  Log into the operating system.
 
@@ -489,7 +490,7 @@ After installing [these prerequisites](#dependencies-for-linux), install DeployR
 
 ### Grid Node Install for Linux
 
-When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using [`Option 1`](#install-deployr-linux) or [`Option 3`](#install-deployr-custom). 
+When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using `Option 1` or `Option 3`. 
 
 >[!TIP]
 >-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
@@ -500,7 +501,7 @@ After installing the main [DeployR server](#basic-deployr-install-for-linux), in
 
 1.  Log into the operating system on the machine on which you will install the grid node.
 
-2.  Install Microsoft R Server and RServe [as described here](#dependencies-for-linux) on the grid node machine.
+2.  Install Microsoft R Server and RServe [as described here](#lindependencies) on the grid node machine.
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
@@ -532,7 +533,7 @@ After installing the main [DeployR server](#basic-deployr-install-for-linux), in
 
 ### DeployR Install with Remote Database
 
-DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#dependencies-for-linux) followed by DeployR on a second machine.
+DeployR Enterprise on Linux supports the installation of a remote database for DeployR. This requires that you first install that database on one machine, and then install [these prerequisites](#lindependencies) followed by DeployR on a second machine.
 
 #### Part A: Installing the Remote Database for DeployR (Option 2)
 

@@ -31,8 +31,8 @@ This page provides links to the MSDN documentation for the versions of DeployR E
 
 Start here:
 
-+ [About DeployR 9.0.0](deployr.md)
-+ [Installation docs](deployr-installation.md)
++ [About DeployR 9.0.0](operationalize/deployr.md)
++ [Installation docs](operationalize/deployr-installation.md)
 
 
 ## Looking for DeployR 8.0.0 and 8.0.5 documentation?
