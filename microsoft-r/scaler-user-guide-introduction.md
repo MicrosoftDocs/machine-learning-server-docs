@@ -28,21 +28,21 @@ ms.custom: ""
 
 ScaleR is a collection of proprietary functions in Microsoft R used for practicing data science at scale. For data scientists, ScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
+ScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. ScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and will be coming soon to Azure Machine Learning. ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable.
 
-Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that supports R. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
+Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that uses these products. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
 
-ScaleR can be characterized as an enhanced version of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](../scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
+ScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](/scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
 
 ## What can you do with ScaleR?
 
 Data scientists and developers can include ScaleR functions in custom script or solutions that run locally against R Client or remotely on R Server. Solutions leveraging ScaleR functions will run wherever the ScaleR engine is installed.
 
-A common workflow is to write the initial code or script against a filtered dataset on a local computer, change the compute context to specify an unfiltered dataset on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
+A common workflow is to write the initial code or script against a subset of data on a local computer, change the compute context to specify a large set of data on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
 
 At a high level, ScaleR functions are grouped as follows:
 
-* Platform-specific convenience functions are used for unlocking specific capabilities inherent in a given platform.
+* Platform-specific utilities.
 * Data-related functions are used for import, transformation, summarization, visualization, and analysis. These functions comprise the bulk of the ScaleR function library.
 
 The data manipulation and analysis functions in ScaleR are appropriate for small and large datasets, but are particularly useful in three common situations:
@@ -75,11 +75,11 @@ With ScaleR, you can analyze data sets far larger than can be kept in memory. Th
 
 ### Accessing External Data Sets
 
-Data can be stored in a wide-variety of formats. Typically, the first step in any ScaleR analysis is to make the data accessible. With ScaleR’s data import capability, you can access data from a SAS file, SPSS file, fixed format or delimited text file, an ODBC connection, or a Teradata data base, bringing it into a data frame in memory, or storing it for fast access in chunks on disk.
+Data can be stored in a wide-variety of formats. Typically, the first step in any ScaleR analysis is to make the data accessible. With ScaleR’s data import capability, you can access data from a SAS file, SPSS file, fixed format or delimited text file, an ODBC connection, SQL Server, or a Teradata database, bringing it into a data frame in memory, or storing it for fast access in chunks on disk.
 
 ### Efficiently Storing and Retrieving Data
 
-A key component of RevoScaleR is a data file format (.xdf) that is extremely efficient for both reading and writing data. You can create .xdf files by importing data files or from R data frames, and add rows or variables to an existing .xdf file. Once your data is in this file format you can use it directly with analysis functions provided with RevoScaleR, or quickly extract a subsample and read it into a data frame in memory for use in other R functions.
+A key component of RevoScaleR is a data file format (.xdf) that is extremely efficient for both reading and writing data. You can create .xdf files by importing data files or from R data frames, and add rows or variables to an existing .xdf file (appending rows is currently only supported in a local compute context). Once your data is in this file format you can use it directly with analysis functions provided with RevoScaleR, or quickly extract a subsample and read it into a data frame in memory for use in other R functions.
 
 ### Data Cleaning, Exploration, and Manipulation
 
@@ -89,11 +89,11 @@ RevoScaleR also provides all of the power of R to use in data transformations an
 
 ### Statistical Analysis
 
-In addition to descriptive statistics and crosstabs, RevoScaleR provides functions for fitting linear and binary logistic regression models, generalized linear models, k-means models, and decision trees and forests. These functions access .xdf files or other data sources directly or operate on data frames in memory. Because these functions are so efficient and do not require that all of the data be in memory at one time, you can analyze huge data sets without requiring huge computing power. In particular, you can relax assumptions previously required. For example, instead of assuming a linear or polynomial functional form in a model, you can break independent variables into many categories providing a completely flexible functional form. The many degrees of freedom provided by large data sets, combined with RevoScaleR’s efficiency, make this approach feasible.
+In addition to descriptive statistics and crosstabs, RevoScaleR provides functions for fitting linear and binary logistic regression models, generalized linear models, k-means models, and decision trees and forests, among others. These functions access .xdf files or other data sources directly or operate on data frames in memory. Because these functions are so efficient and do not require that all of the data be in memory at one time, you can analyze huge data sets without requiring huge computing power. In particular, you can relax assumptions previously required. For example, instead of assuming a linear or polynomial functional form in a model, you can break independent variables into many categories providing a completely flexible functional form. The many degrees of freedom provided by large data sets, combined with RevoScaleR’s efficiency, make this approach feasible.
 
 ### Writing Your Own Analyses for Large Data Sets
 
-All of the main analysis functions in ScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use ScaleR functionality to provide you with access to your data file chunk by chunk. Fore more information, see [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md).
+All of the main analysis functions in ScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use ScaleR functionality to provide you with access to your data file chunk by chunk. For more information, see [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md).
 
 ## See Also
 
