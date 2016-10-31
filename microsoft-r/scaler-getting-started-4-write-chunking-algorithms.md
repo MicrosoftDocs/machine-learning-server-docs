@@ -128,7 +128,7 @@ And to delete the intermediate results file:
 
 - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
 - [Census data example for analyzing large data](scaler-getting-started-2-example-census-data.md)
-- [Loan data example for analyzing large data](scaler-getting-started-3-example-loan-data.md)
+- [Loan data example for analyzing large data](scaler-getting-started-1-example-loan-data.md)
 
 ## See Also
 
