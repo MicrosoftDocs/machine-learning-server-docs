@@ -78,7 +78,7 @@ Learn how to [install and get started with Microsoft R Client](r-client-get-star
 
 ## What's in R Server and R Client
 
-For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](index.md#compare-prods).
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](#compare-prods).
 
 ### DistributedR
 
@@ -124,7 +124,7 @@ DeployR, the R Integration Server, is an optional framework delivered with Micro
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
 
-DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
+DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 

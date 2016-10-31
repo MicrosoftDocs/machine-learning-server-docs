@@ -36,7 +36,6 @@ The Microsoft R product family includes:
 + <a href="#mro">Microsoft R Open</a>
 + <a href="#sqlr">SQL Server R Services</a>
 
-To learn about the difference between these Microsoft R products, see the [comparison here](#compare-prods).
 For a side-by-side comparison of Microsoft R Server, Microsoft R Client, and Microsoft R Open, [see here](microsoft-r-getting-started.md#compare-prods).
 <br>
 

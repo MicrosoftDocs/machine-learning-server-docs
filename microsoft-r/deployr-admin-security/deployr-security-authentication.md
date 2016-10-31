@@ -242,6 +242,7 @@ Accordingly, to enable do the following:
 
 For more information, see the complete list of [configuration properties](#ldap-active-directory-configuration-properties).
 
+<a name="ldap-active-directory-configuration-properties"></a>
 ## LDAP & Active Directory Configuration Properties
 
 The following table presents the complete list of LDAP and Active Directory configuration properties.
