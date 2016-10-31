@@ -101,4 +101,4 @@ All of the main analysis functions in ScaleR use updating or external memory alg
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](../scaler/scaler.md)
+[RevoScaleR Functions](/scaler/scaler.md)
