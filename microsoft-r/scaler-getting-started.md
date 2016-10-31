@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Get started with ScaleR and data analysis (Microsoft R)
 
-[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although ScaleR works equally well on small and large datasets, what ScaleR enables is analysis of very large data sets that exceed the memory and processing capabilities of any one machine.
+[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although ScaleR works on both small and large datasets, what ScaleR enables is analysis of very large data sets that would otherwise exceed the memory and processing capabilities of any one machine.
 
 If you are new to Microsoft R and ScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. For a first "hands on" experience, this article offers a quick start: two basic lessons demonstrating data import and analysis. In a few short steps, you can interact with ScaleR functions using data from a comma delimited text file.
 
