@@ -201,7 +201,7 @@ This quick start demonstrated a basic workflow, but there are several more tutor
   - [ScaleR tutorial using airplane flight data](scaler-getting-started-0-example-airline-data.md)
   - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
   - [Example: Analyzing loan data with ScaleR](scaler-getting-started-1-example-loan-data.md)
-  - [Example: Analyzing census data with ScaleR](scaler-getting-started-2-census-loan-data.md)
+  - [Example: Analyzing census data with ScaleR](scaler-getting-started-2-example-census-data.md)
 
 ### Try demo scripts
 

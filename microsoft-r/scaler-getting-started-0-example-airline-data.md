@@ -654,4 +654,4 @@ Continue building up your knowledge of ScaleR with these additional guides and t
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](\/scaler/scaler.md)
+[RevoScaleR Functions](/scaler/scaler.md)
