@@ -5,7 +5,16 @@
 
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
-## [Get Started with ScaleR and Data Analysis](scaler-user-guide-introduction.md)
+## [Introduction to ScaleR](scaler-user-guide-introduction.md)
+## [Get Started with ScaleR](scaler-getting-started.md)
+### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
+### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+#### [Loan data example](scaler-getting-started-1-example-loan-data.md)
+#### [Census data example](scaler-getting-started-2-example-census-data.md)
+### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
+### [Write custom analyses for large data sets in ScaleR](scaler-user-guide-write-custom-analyses.md)
+### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
+### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
 ## [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
