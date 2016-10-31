@@ -37,7 +37,7 @@ ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readil
 To complete this quick start as written, you will need about 15 minutes and the following components:
 
 * [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
-* [Microsoft R Client](rclient.md)
+* [Microsoft R Client](r-client.md)
 
 Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
 
