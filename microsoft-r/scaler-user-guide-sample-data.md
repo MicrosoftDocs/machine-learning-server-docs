@@ -65,4 +65,4 @@ Larger data sets containing the full airline, census, and mortgage default data 
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](../scaler/scaler.md)
+[RevoScaleR Functions](/scaler/scaler.md)
