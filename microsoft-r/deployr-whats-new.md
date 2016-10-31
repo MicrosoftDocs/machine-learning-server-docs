@@ -48,11 +48,14 @@ The following list highlights the major changes and improvements to DeployR for 
   + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
 <br />
+<a name="version-8-0-0"></a>
 #### Version 8.0.0
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
 <br />
+
+<a name="version-7-4-1"></a>
 #### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.
@@ -68,6 +71,8 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
 <br />
+
+<a name="version-7-4-0"></a>
 #### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
@@ -80,6 +85,8 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
 
 <br />
+
+<a name="version-7-3"></a>
 #### Version 7.3
 
 The following list highlights the major changes and improvements to DeployR 7.3.
