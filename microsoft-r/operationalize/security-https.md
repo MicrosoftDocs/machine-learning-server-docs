@@ -41,20 +41,20 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.  To en
 
 <br />
 
-### Encrypt the Traffic between the Client Application and DeployR
+## Encrypt the Traffic between the Client Application and DeployR
 
 >[!IMPORTANT] 
 >We strongly recommend that HTTPS be enabled in **all production environments.**  
 
 This section walks you through the steps for securing the connections between the client application and the DeployR front-end. Doing so will encrypt the communication between client and front-end to prevent traffic from being modified or read.
 
-### Using Windows IIS to Encrypt**
+### Using Windows IIS to Encrypt
 
 > Make sure the name of the certificate matches the domain name of the front-end URL. 
 
 **On each front-end machine:**
 
-1. Install the trusted, signed HTTPS "API certificate" with a private key in the certificate store on the front-end machine.
+1. Install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
 <a name="iis"></a>
 1. Launch IIS.
 1. In the "Connections" pane on the left, expand the "Sites" folder and select the website.
@@ -73,7 +73,7 @@ This section walks you through the steps for securing the connections between th
 
 **On each front-end machine:**
 
-1. Install the trusted, signed HTTPS "API certificate" with a private key in the certificate store on the front-end machine.
+1. Install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
    > Make sure the name of the certificate matches the domain name of the front-end URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
@@ -82,6 +82,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Update the DeployR external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the front-end:
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
+
    1. Update and add properties in the `Kestrel` section to match the values for the API certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
       ```
       {
@@ -95,6 +96,7 @@ This section walks you through the steps for securing the connections between th
               }
           },
       ```
+      
    1. Close and save the file.
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
@@ -102,7 +104,7 @@ This section walks you through the steps for securing the connections between th
 
 <br />
 
-### Encrypt Communication between the Front-end and Back-end
+## Encrypt Communication between the Front-end and Back-end
 
 This section walks you through the steps for encrypting the traffic between the DeployR's front-end and each of its back-ends. 
 
@@ -112,7 +114,7 @@ With this option, you have the choice of using:
 + One unique certificate per back-end machine.
 + One common Multi-Domain (SAN) certificate with all back-end names declared in the single certificate
 
-### Using Windows IIS to Encrypt**
+### Using Windows IIS to Encrypt
 
 > Make sure the name of the certificate matches the domain name of the back-end URL. 
 
