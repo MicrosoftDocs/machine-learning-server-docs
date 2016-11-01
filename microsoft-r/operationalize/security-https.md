@@ -48,7 +48,7 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.  To en
 
 This section walks you through the steps for securing the connections between the client application and the DeployR front-end. Doing so will encrypt the communication between client and front-end to prevent traffic from being modified or read.
 
-### Using Windows IIS to Encrypt
+#### Using Windows IIS to Encrypt
 
 > Make sure the name of the certificate matches the domain name of the front-end URL. 
 
@@ -69,7 +69,7 @@ This section walks you through the steps for securing the connections between th
 1. Run the [DeployR diagnostic tool](admin-diagnostics-troubleshooting.md) to send a test HTTPs request.
    > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 
-### Using your Default .ASP Core Web Server to Encrypt
+#### Using your Default .ASP Core Web Server to Encrypt
 
 **On each front-end machine:**
 
@@ -96,7 +96,7 @@ This section walks you through the steps for securing the connections between th
               }
           },
       ```
-      
+
    1. Close and save the file.
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
@@ -108,26 +108,26 @@ This section walks you through the steps for securing the connections between th
 
 This section walks you through the steps for encrypting the traffic between the DeployR's front-end and each of its back-ends. 
 
-> If a back-end is inside the front-end's trust boundary, then this certificate isn't needed. However, if the back-end resides outside of the trust boundary, consider using the back-end certificate to encrypt the traffic between the front-end and back-end. 
+> If a back-end is inside the front-end's trust boundary, then encryption of this piece isn't needed. However, if the back-end resides outside of the trust boundary, consider using the back-end certificate to encrypt the traffic between the front-end and back-end. 
 
-With this option, you have the choice of using:
+When encrypting, you have the choice of using one of the following **back-end HTTPS certificates**:
 + One unique certificate per back-end machine.
 + One common Multi-Domain (SAN) certificate with all back-end names declared in the single certificate
 
-### Using Windows IIS to Encrypt
+#### Using Windows IIS to Encrypt
 
 > Make sure the name of the certificate matches the domain name of the back-end URL. 
 
 **On each back-end machine:**
 
-1. Install the trusted, signed HTTPS "back-end certificate" with a private key in the certificate store on the back-end machine.
+1. Install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
 1. Launch IIS and follow the [instructions above](#iis).
 
-### Using your Default .ASP Core Web Server to Encrypt
+#### Using your Default .ASP Core Web Server to Encrypt
 
 **On each back-end machine:**
 
-1. Install the trusted, signed HTTPS "back-end certificate" with a private key in the certificate store on the back-end machine.
+1. Install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
    > Make sure the name of the certificate matches the domain name of the back-end URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
@@ -136,6 +136,7 @@ With this option, you have the choice of using:
 
 1. Update the DeployR external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the back-end:
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
+
    1. Update and add properties in that section to match the values for the back-end certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
       ```
       {
@@ -149,6 +150,7 @@ With this option, you have the choice of using:
               }
           },
       ```
+
    1. Close and save the file.
 1. Launch the administrator's utility and:
    1. [Restart the back-end](admin-utility.md#startstop).
@@ -157,7 +159,7 @@ With this option, you have the choice of using:
 
 <br />
 
-### Authenticate the Front-end with the Back-end
+## Authenticate the Front-end with the Back-end
 
 This section walks you through the steps for authenticating the front-end with the back-end so that only the front-end can communicate with the back-end.
 
