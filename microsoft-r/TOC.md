@@ -86,8 +86,7 @@
 #### Migrate Data 
 #### [Enterprise-Grade Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
-##### Authorization
-##### Connection Security (HTTPS/SSL)
+##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 #### Administration
 ##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
