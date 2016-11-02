@@ -38,7 +38,9 @@ ms.custom: ""
 
 >Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below. 
 >
->For general R language terminology, check out CRAN's [R glossary](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
+>For general R language terminology, check out CRAN's [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
+>
+>Also, check out our [More Resources](microsoft-r-more-resources.md) for other publications and resources.
 
 Use this glossary to find the definitions to common terms in the Microsoft R documentation.
 
@@ -124,15 +126,15 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="M"></a>
 ## M
 
-**Microsoft R Client**
+<a name="mrc"></a>**Microsoft R Client**
 <div style="margin:15px; margin-bottom:25px;">Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. <a href="r-client.md">Learn more…</a></div>
 
 
-**Microsoft R Open**
+<a name="mro"></a>**Microsoft R Open**
 <div style="margin:15px; margin-bottom:25px;">Microsoft R Open is the enhanced distribution of open source R from Microsoft that is fully compatibility with all R packages, scripts and applications. Enhancements include multi-core processing, a fixed CRAN repository date, and reproducible R with the checkpoint package.  <a href="https://mran.microsoft.com/open/" target=_blank>Learn more…</a></div>
 
 
-**Microsoft R Server**
+<a name="mrs"></a>**Microsoft R Server**
 <div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a></div>
 
 <!--
@@ -164,14 +166,14 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 ## R
 
 **R Client**
-<div style="margin:15px; margin-bottom:25px;">See <i>Microsoft R Client</i></div>
+<div style="margin:15px; margin-bottom:25px;">See <a href="#mrc"><i>Microsoft R Client</i></a></div>
 
 
 **R Open**
-<div style="margin:15px; margin-bottom:25px;">See <i>Microsoft R Open</i></div>
+<div style="margin:15px; margin-bottom:25px;">See <a href="#mro"><i>Microsoft R Open</i></a></div>
 
 **R Server**
-<div style="margin:15px; margin-bottom:25px;">See <i>Microsoft R Server</i></div>
+<div style="margin:15px; margin-bottom:25px;">See <a href="#mrs"><i>Microsoft R Server</i></a></div>
 
 **RevoScaleR**
 <div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler">Learn more…</a></div>
