@@ -183,16 +183,14 @@ This section walks you through the steps for authenticating the front-end with t
 
 1. On each back-end:
 
-, require a client certificate with a public key. 
-
-    > These steps assume the trusted, signed HTTPS certificate is already installed on the back-end machine with a _public_ key.
-
-    > WHAT DO WE NEED TO DO ON EACH BACK-END?
-
     1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Make sure the name of the certificate matches the domain name of the back-end URL. 
        > Also, take note of the `Subject` name of the certificate as you'll need this info later.
        > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
+
+       > These steps assume the trusted, signed HTTPS certificate is already installed on the back-end machine with a _public_ key.
+
+       > WHAT DO WE NEED TO DO ON EACH BACK-END?
 
     1. Open the DeployR external JSON configuration file, `appsettings.json` file.
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
@@ -205,6 +203,6 @@ This section walks you through the steps for authenticating the front-end with t
        },   
        ```
 
-   1. Close and save the file.
-   1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
-   1. Repeat on each back-end.
+    1. Close and save the file.
+    1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
+    1. Repeat on each back-end.
