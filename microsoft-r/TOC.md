@@ -83,7 +83,6 @@
 #### [Configuration Scenarios](operationalize/configurations.md)
 #### [Configuration Guide for Windows](operationalize/configure-on-windows.md)
 #### Configuration Guide for Linux
-#### Migrate Data 
 #### [Enterprise-Grade Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
@@ -91,8 +90,8 @@
 #### Administration
 ##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
-##### Stop & Restart
-##### Configure a Database
+##### Basic Administration (Admin Utility)
+##### [Configure a Database](operationalize/configure-remote-database.md)
 ##### Session management
 ##### Web service monitoring
 
