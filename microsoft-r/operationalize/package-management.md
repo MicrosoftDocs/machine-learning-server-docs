@@ -29,7 +29,7 @@ ms.custom: ""
 
 Whenever you or your users are writing, testing, and deploying R scripts, it is critical that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
 
-By adopting one or both of the R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote DeployR server environment.
+By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote DeployR server environment.
 
 To simplify R package management, review the following approaches for the best practices for production and non-production environments. 
 
@@ -118,4 +118,4 @@ This production-safe approach provides an excellent way to:
 
 1. Manually run this R script on each back-end.
 
->You will have to update and manually rerun this script on each back-end whenever a new package or version is needed in the server environment.
+>You must update and manually rerun this script on each back-end whenever a new package or version is needed in the server environment.
