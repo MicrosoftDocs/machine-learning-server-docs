@@ -52,9 +52,7 @@ This section walks you through the steps for securing the connections between th
 
 > Make sure the name of the certificate matches the domain name of the front-end URL. 
 
-**On each front-end machine:**
-
-1. Install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
+1. On each front-end machine, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
 <a name="iis"></a>
 1. Launch IIS.
 1. In the "Connections" pane on the left, expand the "Sites" folder and select the website.
@@ -71,9 +69,7 @@ This section walks you through the steps for securing the connections between th
 
 #### Using your Default .ASP Core Web Server to Encrypt
 
-**On each front-end machine:**
-
-1. Install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
+1. On each front-end machine, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
    > Make sure the name of the certificate matches the domain name of the front-end URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
@@ -118,16 +114,12 @@ When encrypting, you have the choice of using one of the following **back-end HT
 
 > Make sure the name of the certificate matches the domain name of the back-end URL. 
 
-**On each back-end machine:**
-
-1. Install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
+1. On each back-end machine, install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
 1. Launch IIS and follow the [instructions above](#iis).
 
 #### Using your Default .ASP Core Web Server to Encrypt
 
-**On each back-end machine:**
-
-1. Install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
+1. On each back-end machine, install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
    > Make sure the name of the certificate matches the domain name of the back-end URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
@@ -165,78 +157,54 @@ This section walks you through the steps for authenticating the front-end with t
 
 > If a back-end is inside the front-end's trust boundary, then this certificate isn't needed. However, if the back-end resides outside of the trust boundary, consider using the back-end certificate to encrypt the traffic between the front-end and back-end. 
 
+
 1. On each front-end:
 
-    > These steps assume the trusted, signed HTTPS certificate is already installed on each front-end with a _private_ key AND PUBLIC KEY!!!!!!.
+    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
+       > Make sure the name of the certificate matches the domain name of the back-end URL. 
+       > Also, take note of the `Subject` name of the certificate as you'll need this info later.
+       > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
 
-    > WHAT DO WE NEED TO DO ON THE FRONT-END?
+    1. Open the DeployR external JSON configuration file, `appsettings.json` file.
+    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
+    1. Uncomment characters on each line of that section. 
+    1. Update and add properties in that section to match the values for the **Authentication certificate**:
+       ```
+       "BackEndConfiguration": {
+           "ClientCertificate": {
+               "StoreName": "My",
+               "StoreLocation": "LocalMachine",
+               "SubjectName": "<name-of-certificate-subject>"
+       ```
 
-    1. install the private key certificate. 
+    1. Close and save the file.
+    1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
+    1. Repeat on each front-end.
 
-    1. 3:25pm 
+1. On each back-end:
 
-    1. edit `appsettings.json`  
-
-    Uncomment it and specify how the front-end will find the certificate in the certificate store.
-
-    "BackEndConfiguration": {
-
-        "ClientCertificate": {
-
-            "StoreName": "My",
-
-            "StoreLocation": "CurrentUser",
-
-            "SubjectName": "CN=be-auth.deployr.mrs.microsoft-tst.com"
-
-"BackEndConfiguration": {
-
-        // Uncomment this section if your backend(s) require certificate authentication
-
-        //"ClientCertificate": {
-
-        //    "StoreName": "My",
-
-        //    "StoreLocation": "LocalMachine",
-
-        //    "SubjectName": "<subject name>"
-
-        //},
-
-    1. Restart the server....
-
-    1. if multople fronts repeat    
-
-1. On each back-end, require a client certificate with a public key. 
+, require a client certificate with a public key. 
 
     > These steps assume the trusted, signed HTTPS certificate is already installed on the back-end machine with a _public_ key.
 
     > WHAT DO WE NEED TO DO ON EACH BACK-END?
 
+    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
+       > Make sure the name of the certificate matches the domain name of the back-end URL. 
+       > Also, take note of the `Subject` name of the certificate as you'll need this info later.
+       > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
 
-    1. edit `appsettings.json`  
+    1. Open the DeployR external JSON configuration file, `appsettings.json` file.
+    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
+    1. Uncomment characters on each line of that section. 
+    1. Update and add properties in that section to match the values for the **Authentication certificate**:
+       ```
+       "ClientCertificate": {
+           "Issuer": "<certificate issuer name>",
+           "Subject": "<certificate subject name>"
+       },   
+       ```
 
-
-"ClientCertificate": {
-
-        "Issuer": "CN=Microsoft IT SSL SHA2, OU=Microsoft IT, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
-
-        "Subject": "CN=be-auth.deployr.mrs.microsoft-tst.com"
-
-    },
-
-
-
-// Uncomment this section if you want to enforce certificate authentication for front-end to back-end
-
-    //"ClientCertificate": {
-
-    //    "Issuer": "<issuer name>",
-
-    //    "Subject": "<subject name>"
-
-    //},   
-
- 1. restart the backend.
-
- 1. repeat on all back-ends.
+   1. Close and save the file.
+   1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
+   1. Repeat on each back-end.
