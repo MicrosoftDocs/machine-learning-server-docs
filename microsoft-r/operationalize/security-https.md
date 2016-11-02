@@ -37,7 +37,7 @@ DeployR allows for HTTPS within a connection encrypted by TLS and/or SSL.  To en
 |---|------------------------------------|------------------------------------------------------------------------|--------------|---------------|
 |1|API certificate|Secures communication between client applications and DeployR front-end.|Yes, with private key|No|
 |2|Back-end certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._ <br>Encrypts the traffic between the front-end and back-end. You can use a unique certificate for each back-end, or you can use one common Multi-Domain (SAN) certificate for all back-ends.|No|Yes, with private key|
-|3|Authentication certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._<br>Authenticates the front-end with the back-end so that only the front-end can communicate with the back-end.|Yes, with private key|Yes, with public key|
+|3|Authentication certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._<br>Authenticates the front-end with the back-end so that only the front-end can communicate with the back-end.|Yes, with private and a public key|No|
 
 <br />
 
@@ -74,9 +74,7 @@ This section walks you through the steps for securing the connections between th
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-   > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
-
-1. Update the DeployR external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the front-end:
+1. Update the DeployR external JSON configuration file, `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` to enable configure the HTTPS port for the front-end:
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
 
    1. Update and add properties in the `Kestrel` section to match the values for the API certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
@@ -124,8 +122,6 @@ When encrypting, you have the choice of using one of the following **back-end HT
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-   > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
-
 1. Update the DeployR external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the back-end:
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
 
@@ -163,12 +159,10 @@ This section walks you through the steps for authenticating the front-end with t
     1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Make sure the name of the certificate matches the domain name of the back-end URL. 
        > Also, take note of the `Subject` name of the certificate as you'll need this info later.
-       > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
 
     1. Open the DeployR external JSON configuration file, `appsettings.json` file.
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
-    1. Uncomment characters on each line of that section. 
-    1. Update and add properties in that section to match the values for the **Authentication certificate**:
+    1. Uncomment characters in that section and update the properties to match the values for the **Authentication certificate**:
        ```
        "BackEndConfiguration": {
            "ClientCertificate": {
@@ -182,20 +176,11 @@ This section walks you through the steps for authenticating the front-end with t
     1. Repeat on each front-end.
 
 1. On each back-end:
-
-    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
-       > Make sure the name of the certificate matches the domain name of the back-end URL. 
-       > Also, take note of the `Subject` name of the certificate as you'll need this info later.
-       > @@@@@@@@ HOW DO WE DO THIS ON LINUX?? SUPPORTED FLAVORS OF LINUX????
-
-       > These steps assume the trusted, signed HTTPS certificate is already installed on the back-end machine with a _public_ key.
-
-       > WHAT DO WE NEED TO DO ON EACH BACK-END?
+    > These steps assume the trusted, signed **HTTPS authentication certificate**  is already installed on the front-end machine with a _public_ key.
 
     1. Open the DeployR external JSON configuration file, `appsettings.json` file.
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
-    1. Uncomment characters on each line of that section. 
-    1. Update and add properties in that section to match the values for the **Authentication certificate**:
+    1. Uncomment characters in that section and update the properties to match the values for the **Authentication certificate**:
        ```
        "ClientCertificate": {
            "Issuer": "<certificate issuer name>",

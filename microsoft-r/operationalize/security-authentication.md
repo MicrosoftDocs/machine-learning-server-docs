@@ -38,11 +38,6 @@ To secure DeployR, you have several authentication options:
 
 <br>
 
-[@@@@@@ADD DANIEL's AUTHENTICATION DIAGRAM HERE - get diagram from daniel @@@@@@@@]
-
-<br>
-
-
 <a name="local"></a>
 
 ## Local Administrator Account Authentication
@@ -64,83 +59,46 @@ By default, the LDAP security provider is not configured. To enable LDAP authent
 You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS for DeployR.](security-https.md) Reasons for enabling LDAP-S include:
 
 + Organizational security policies typically require that all client/server communication is encrypted.
-+ Applications use simple BIND to transport credentials and authenticate against a DC. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
++ Applications use simple BIND to transport credentials and authenticate against a Domain Controller. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
 **On each front-end machine, do the following:**
 
-1. Update the DeployR external JSON configuration file, `appsettings.json` to enable LDAP/LDAP-S:
-
-   1. Open `appsettings.json`.
-
-   1. Activate the AD LDAP(S) authentication method@@@@ 
-      > HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT LDAP? did we implement a way to let deployr know which one is being used in the config file) or does DeployR try each method until one works?
+1. Enable LDAP/LDAP-S in the DeployR external JSON configuration file, `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`:
 
    1. Search for the section starting with `"LDAP": {`
 
-   1. Update all the relevant properties in that `LDAP` section so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
+   1. Uncomment characters in that section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
 
-   >WHAT PROPERTIES ARE NEEDED HERE???
+      |LDAP Properties|Definition|
+      |---------------|-------------------------------|
+      |`Host`|Address of the Active Directory server|
+      |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
+      |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
+      |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
+      |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted). For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
+      |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
+      |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 
-   |LDAP Properties|Definition|
-   |----------------|-------------------------------|
-   |`Host`|Address of the Active Directory server|
-   |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
-   |`BindFilter`|?????@@@@@|
-   |`ManagerDn`|Distinguished name with which to authenticate (value must be encrypted)|
-   |`ManagerPassword`|Manager password with which to authenticate (value must be encrypted)|
-   |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
+1. If using a certificate for access token signing, do the following: 
 
-// Uncomment this section if you want to enable authentication via LDAP
+   >This is particularly useful when you have multiple front-ends and want the tokens to be signed consistently by every front-end in your configuration. 
+   >
+   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the front-end and the LDAP server.
+    
+   1. On each front-end machine, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-        //"LDAP": [
+   1. In the `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
-        //    {
-
-        //        "Host": "<domain controller>",
-
-        //        "UseLDAPS": "True",
-
-        //        "BindFilter": "CN={0},DC=YOURDOMAIN,DC=COM",
-
-        //        "QueryUserDn": "CN=<read user>,DC=YOURDOMAIN,DC=COM",
-
-        //        "QueryUserPassword": "", // NOTE: Password must be encrypted using Administrator Tool.
-
-        //        "SearchBase": "DC=YOURDOMAIN,DC=COM",
-
-        //        "SearchFilter": "cn={0}"
-
-        //    }
-
-        //],
-
-SearchFilter: The pattern to be used for the user search. {0} is the user's DN.
-
-   >[!IMPORTANT] 
-   >For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.
-
-1. When LDAP/LDAP-S is enabled, you can use a certificate with a private key to sign/encrypt user access tokens between the front-end and the LDAP server. This is particularly useful when you have multiple front-ends and want the tokens to be signed consistently by every front-end in your configuration.
-   
-   By default, each time a user authenticates successfully, the front-end generates an access token and signs it with a string that was randomly generated during the front-end's configuration. In a configuration with multiple front-ends, each front-end would have its own unique token signing string. By providing a certificate with its own encryption string for  token signing, you can ensure consistent signing across front-ends.  
-
-
-   "JWTKey": "<Please run AdminUtil to initialize this value>"
-
- 
-
-        // Uncomment this section if you want to sign the access token with a certificate instead of a randomly generated key
-
-        //"JWTSigningCertificate": {
-
-        //    "StoreName": "My",
-
-        //    "StoreLocation": "LocalMachine",
-
-        //    "SubjectName": "<subject name>"
-
-        //}
+   1. Uncomment characters in that section and update the properties so that they match the values for your token signing certificate:
+       ```
+       "JWTSigningCertificate": {
+           "StoreName": "My",
+           "StoreLocation": "LocalMachine",
+           "SubjectName": "<subject name>"
+        }
+        ```
 
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
@@ -166,14 +124,11 @@ SearchFilter: The pattern to be used for the user search. {0} is the user's DN.
    1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
-   1. Open the configuration file, `appsettings.json`.
-
-   1. Activate the Azure AD authentication method by @@@@@
-      >@@@@ HOW DO YOU SIGNAL IN THE CONFIG FILE THAT YOU WANT AZURE AD?
+   1. Open the configuration file, `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`.
 
    1. Search for the section starting with `"AzureActiveDirectory": {`
 
-   1. Update all the relevant properties in that `AzureActiveDirectory` section so that they match the values in the Azure Management portal.  Properties include:
+   1. Uncomment characters in that section and update the properties so that they match the values in the Azure Management portal.  Properties include:
 
       |Azure AD Properties|Definition|
       |----------------|-------------------------------|
