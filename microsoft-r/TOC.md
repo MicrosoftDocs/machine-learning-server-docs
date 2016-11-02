@@ -97,6 +97,8 @@
 ##### Session management
 ##### Web service monitoring
 
+### [R Package Management](operationalize/package-management.md)
+
 ### [Deploy Analytics as Web Services](operationalize/deploy.md)
 #### Deployment Workflow 
 #### Deployment Tutorial
