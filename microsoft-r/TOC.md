@@ -88,7 +88,7 @@
 ##### [Authentication](operationalize/security-authentication.md)
 ##### Authorization
 ##### Connection Security (HTTPS/SSL)
-##### CORS 
+##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 #### Administration
 ##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
