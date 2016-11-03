@@ -137,6 +137,10 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="mrs"></a>**Microsoft R Server**
 <div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a></div>
 
+
+<a name="mkl"></a>**MKL**
+<div style="margin:15px; margin-bottom:25px;">The Intel® Math Kernel Library (Intel® MKL)is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. <a href="https://mran.microsoft.com/documents/rro/multithread/">Learn more…</a></div>
+
 <!--
 <br>
 
