@@ -6,7 +6,7 @@ description: "Learn how to work with big data using a sample airline dataset in 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/14/2016"
+ms.date: "11/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -205,7 +205,7 @@ In the next section you will see how you can analyze a data set that is too big 
 
 The RevoScaleR compute engine is designed to work very efficiently with .xdf files, particularly with factor data. When working with larger data sets, the *blocksPerRead* argument is important in controlling how much data is processed in memory at one time.  If too many blocks are read in at one time, you may run out of memory.  If too few blocks are read in at one time, you may experience slower total processing time. You can experiment with *blocksPerRead* on your system and  time the estimation of a linear model as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 	system.time(
 		delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS,
@@ -272,7 +272,7 @@ You should see the following plot for the full data set:
 
 By default, **RevoScaleR** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 	delayDep <- rxLinMod(DepDelay ~ DayOfWeek, data = bigAirDS,
 		cube = TRUE, blocksPerRead = 30, reportProgress = 0)
@@ -281,7 +281,7 @@ By default, **RevoScaleR** reports on the progress of the model fitting so that 
 
 The data set contains a variable *UniqueCarrier* which contains airline codes for 29 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 29 instead of 7 factor levels.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier,
 		data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -331,7 +331,7 @@ which results in:
 
 One ambitious question we could ask is to what extent the difference in delays is due to the differences in origins and destinations of the flights. To control for Origin and Destination we would need to add over 700 dummy variables in the full data set to represent the factor levels of *Origin* and *Dest*. The RevoScaleR Compute Engine is particularly efficient at handling this type of problem, so we can in fact run the regression:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 
 	delayCarrierLoc <- rxLinMod(ArrDelay ~ UniqueCarrier + Origin+Dest,
@@ -438,7 +438,7 @@ Now you can re-run the large scale regression from Section 6.6, this time just s
 	delayCarrierLocDist <- rxLinMod(ArrDelay ~ UniqueCarrier+Origin+Dest,
 	    data = dataFile, cube = TRUE, blocksPerRead = 30)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 The computations are automatically distributed over all the nodes of the cluster.
 

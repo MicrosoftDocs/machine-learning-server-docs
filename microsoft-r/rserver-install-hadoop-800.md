@@ -4,8 +4,8 @@ title: "Install Microsoft R Server version 8.0 on Hadoop"
 description: "Install Microsoft R Server version 8.0 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "06/14/2016"
+manager: "jhubbard"
+ms.date: "11/03/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -358,11 +358,11 @@ Next try to run a simple rxExec job:
 
 	rxExec(list.files)
 
-That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshooting the Installation](#troubleshooting-the-installation), for a few of the more common errors and how to fix them.
+That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for help with common errors and solutions.
 
 ## Next Steps
 
-To get started with Microsoft R Server on Hadoop, we recommend the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md). This provides a tutorial introduction to using RevoScaleR with Hadoop.
+To get started with Microsoft R Server on Hadoop, we recommend the [Get started with ScaleR on Hadoop ](scaler-hadoop-getting-started.md).
 
 ## See Also
 

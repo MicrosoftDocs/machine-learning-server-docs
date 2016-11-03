@@ -70,25 +70,30 @@ In the master node approach, you submit a job by calling a **RevoScaleR** analys
 
 The second approach is via the **RevoScaleR** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the tradition high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. Examples of this approach can be found in Chapter 6.
 
-## About Compute Contexts
+<a name="scaler-compute-context"></a>
+## Compute Contexts
 
-A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with **RevoScaleR**. The default compute context tells **RevoScaleR** to compute on the local computer. In the default compute context, high-performance analytics (HPA) functions such as *rxLinMod* are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via *rxExec* are done sequentially. If you have supported distributed computing resources available to you, you can create a compute context object for those distributed computing resources, set your compute context using *rxOptions*, and then use those distributed computing resources in subsequent calls to **RevoScaleR**. You can create multiple compute context objects, and switch between them easily. You can also easily update existing compute context objects, for example, to add new computers as they come online.
+A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ScaleR. The default compute context tells the ScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as *rxLinMod* are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via *rxExec* are done sequentially.
+
+If you have supported distributed computing resources available to you, you can create a compute context object for those distributed computing resources, set your compute context using *rxOptions*, and then use those distributed computing resources in subsequent calls to ScaleR.
+
+You can create multiple compute context objects, and switch between them easily. You can also easily update existing compute context objects, for example, to add new computers as they come online.
 
 The principal compute contexts are the following:
 
 - RxLocalSeq: the default compute context described above. This compute context is available on all platforms.
 
-- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md).
+- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [Get Started with ScaleR on Hadoop](scaler-hadoop-getting-started.md).
 
-- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [*RevoScaleR Teradata Getting Started Guide*](scaler-teradata-getting-started.md).
+- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [Get Started with ScaleR on Teradata](scaler-teradata-getting-started.md).
 
-The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [*RevoScaleR SQL Server Intro*](sql-server-r-services.md).
+The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
 
 Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
 
 ### Compute Contexts and Data Sources
 
-In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the RxInTeradata compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
+In the local compute context, all of ScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the RxInTeradata compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
 
 | Data Source | RxLocalSeq | RxHadoopMR | RxInTeraData | RxInSqlServer |
 |-------------|------------|------------|--------------|---------------|
@@ -101,11 +106,11 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Teradata database (RxTeradata) | X |   | X |   |
 | SQL Server database (RxSqlServerData) |   |   |   | X |
 
-Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. (See the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md) for details.) Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. (See ["Managing Distributed Data"](#managing-distributed-data) for details.)
+Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. For more information, see [Get Started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. See ["Managing Distributed Data"](#managing-distributed-data) for details.
 
 ### Waiting and Non-waiting Compute Contexts
 
-By default, compute contexts are *waiting* (or *blocking*), that is, your R session waits for results from the job before returning control to you. For most RevoScaleR jobs, which return in a few seconds to perhaps a minute for a large data logistic regression, this is an appropriate choice. However, when running a big job (several minutes to several hours) on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session.  In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. To set the compute context object to run “no wait” jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
+By default, compute contexts are *waiting* (or *blocking*), that is, your R session waits for results from the job before returning control to you. For most ScaleR jobs, which return in a few seconds to perhaps a minute for a large data logistic regression, this is an appropriate choice. However, when running a big job (several minutes to several hours) on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session.  In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. To set the compute context object to run “no wait” jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters; you define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from  all the jobs.
 
