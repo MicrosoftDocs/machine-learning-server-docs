@@ -34,42 +34,42 @@ As an example, consider the *kyphosis* data set in the *rpart* package. This dat
 
 We can use *rxLogit* to model the probability that kyphosis is present as follows:
 
-	######################################################## 
+	########################################################
 	# Chapter 9: Fitting Logistic Regression Models
 	Ch9Start <- Sys.time()
 
-	  
+
 	library(rpart)
 	rxLogit(Kyphosis ~ Age + Start + Number, data = kyphosis)
-	
+
 The following output is returned:
 
 	Logistic Regression Results for: Kyphosis ~ Age + Start + Number
 	Data: kyphosis
 	Dependent variable(s): Kyphosis
-	Total independent variables: 4 
+	Total independent variables: 4
 	Number of valid observations: 81
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 				   Kyphosis
 	(Intercept) -2.03693354
 	Age          0.01093048
 	Start       -0.20651005
 	Number       0.41060119
-	
+
 The same model can be fit with `glm` (or `rxGlm`) as follows:
 
 	glm(Kyphosis ~ Age + Start + Number, family = binomial, data = kyphosis)
 
-	 Call:  glm(formula = Kyphosis ~ Age + Start + Number, family = binomial,      data = kyphosis) 
-     
+	 Call:  glm(formula = Kyphosis ~ Age + Start + Number, family = binomial,      data = kyphosis)
+
 	 Coefficients:
 	 (Intercept)          Age        Start       Number  
 	    -2.03693      0.01093     -0.20651      0.41060  
-     
+
 	 Degrees of Freedom: 80 Total (i.e. Null);  77 Residual
-	 Null Deviance:	    83.23 
+	 Null Deviance:	    83.23
 	 Residual Deviance: 61.38 	AIC: 69.38
 
 ### Stepwise Logistic Regression
@@ -82,33 +82,33 @@ Stepwise logistic regression begins with an initial model of some sort. We can l
 
 	initModel <- rxLogit(Kyphosis ~ Age, data=kyphosis)
 	initModel
-	
+
 	  Logistic Regression Results for: Kyphosis ~ Age
 	  Data: kyphosis
 	  Dependent variable(s): Kyphosis
-	  Total independent variables: 2 
+	  Total independent variables: 2
 	  Number of valid observations: 81
-	  Number of missing observations: 0 
-	   
+	  Number of missing observations: 0
+
 	  Coefficients:
 	  				Kyphosis
 	  (Intercept) -1.809351230
 	  Age          0.005441758
-	
+
 We can specify a stepwise model using rxLogit and rxStepControl as follows:
-	
+
 	KyphStepModel <-  rxLogit(Kyphosis ~ Age,
 		data = kyphosis,
-		variableSelection = rxStepControl(method="stepwise", 
+		variableSelection = rxStepControl(method="stepwise",
 			scope = ~ Age + Start + Number ))
 	KyphStepModel
 	  Logistic Regression Results for: Kyphosis ~ Age + Start + Number
 	  Data: kyphosis
 	  Dependent variable(s): Kyphosis
-	  Total independent variables: 4 
+	  Total independent variables: 4
 	  Number of valid observations: 81
-	  Number of missing observations: 0 
-	   
+	  Number of missing observations: 0
+
 	  Coefficients:
 	  			   Kyphosis
 	  (Intercept) -2.03693354
@@ -116,7 +116,7 @@ We can specify a stepwise model using rxLogit and rxStepControl as follows:
 	  Start       -0.20651005
 	  Number       0.41060119
 
-The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](#stepwise-variable-selection) and the rxStepControl help file for more details.
+The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](scaler-user-guide-linear-model.md#stepwise-variable-selection) and the rxStepControl help file for more details.
 
 #### Plotting Model Coefficients
 
@@ -129,38 +129,38 @@ As described above for linear models, the objects returned by the RevoScaleR mod
 For example, consider the mortgage default example in Section 6 of the manual *RevoScaleR: Getting Started Guide.* For that example, we used ten input data files to create the data set used to fit the model. But suppose instead we use nine input data files to create the training data set and use the remaining data set for prediction. We can do that as follows (again, remember to modify the first line for your own system):
 
 	#  Logistic Regression Prediction
-	  
+
 	bigDataDir <- "C:/MRS/Data"
 	mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
 	trainingDataFileName <- "mortDefaultTraining"
 	mortCsv2009 <- paste(mortCsvDataName, "2009.csv", sep = "")
 	targetDataFileName <- "mortDefault2009.xdf"
 	ageLevels <- as.character(c(0:40))		
-	yearLevels <- as.character(c(2000:2009))	
-	colInfo <- list(list(name = "houseAge", type = "factor", 
-		levels = ageLevels), list(name = "year", type = "factor", 
+	yearLevels <- as.character(c(2000:2009))
+	colInfo <- list(list(name = "houseAge", type = "factor",
+		levels = ageLevels), list(name = "year", type = "factor",
 		levels = yearLevels))
 	append= FALSE
 	for (i in 2000:2008)
 	{
 		importFile <- paste(mortCsvDataName, i, ".csv", sep = "")
-		rxImport(inData = importFile, outFile = trainingDataFileName, 
+		rxImport(inData = importFile, outFile = trainingDataFileName,
 		colInfo = colInfo, append = append)
 		append = TRUE								
 	}
 
 
-	rxImport(inData = mortCsv2009, outFile = targetDataFileName, 
+	rxImport(inData = mortCsv2009, outFile = targetDataFileName,
 	   colInfo = colInfo)
-	
+
 We can then fit a logistic regression model to the training data and predict with the prediction data set as follows:
 
 	logitObj <- rxLogit(default ~ year + creditScore + yearsEmploy + ccDebt,
-		data = trainingDataFileName, blocksPerRead = 2, verbose = 1, 
+		data = trainingDataFileName, blocksPerRead = 2, verbose = 1,
 		reportProgress=2)
-	rxPredict(logitObj, data = targetDataFileName, 
+	rxPredict(logitObj, data = targetDataFileName,
 		outData = targetDataFileName, computeResiduals = TRUE)
-	
+
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 To view the first 30 rows of the output data file, use rxGetInfo as follows:
@@ -171,30 +171,30 @@ To view the first 30 rows of the output data file, use rxGetInfo as follows:
 
 You can use rxPredict to obtain prediction standard errors and confidence intervals for models fit with rxLogit in the same way as for those fit with rxLinMod. The original model must be fit with covCoef=TRUE:
 
-	  
+
 	#  Prediction Standard Errors and Confidence Intervals
-	  
+
 	logitObj2 <- rxLogit(default ~ year + creditScore + yearsEmploy + ccDebt,
-		data = trainingDataFileName, blocksPerRead = 2, verbose = 1, 
+		data = trainingDataFileName, blocksPerRead = 2, verbose = 1,
 		reportProgress=2, covCoef=TRUE)
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 You then specify `computeStdErr=TRUE` to obtain prediction standard errors; if this is TRUE, you can also specify `interval="confidence"` to obtain a confidence interval:
 
-	rxPredict(logitObj2, data = targetDataFileName, 
-		outData = targetDataFileName, computeStdErr = TRUE, 
+	rxPredict(logitObj2, data = targetDataFileName,
+		outData = targetDataFileName, computeStdErr = TRUE,
 		interval = "confidence", overwrite=TRUE)
 
 The first ten lines of the file with predictions can be viewed as follows:
 
-	rxGetInfo(targetDataFileName, numRows=10)	
+	rxGetInfo(targetDataFileName, numRows=10)
 
-	  File name: C:\Users\yourname\Documents\MRS\mortDefault2009.xdf 
-	  Number of observations: 1e+06 
-	  Number of variables: 10 
+	  File name: C:\Users\yourname\Documents\MRS\mortDefault2009.xdf
+	  Number of observations: 1e+06
+	  Number of variables: 10
 	  Number of blocks: 2
-	  Compression type: zlib 
+	  Compression type: zlib
 	  Data (10 rows starting with row 1):
 	     creditScore houseAge yearsEmploy ccDebt year default default_Pred
 	  1          617       20           8   4410 2009       0 6.620773e-06
@@ -227,7 +227,7 @@ A *receiver operating characteristic* (ROC) curve can be used to visually assess
 Let’s start with a simple example. Suppose we have a data set with 10 observations. The variable *actual* contains the actual responses, or the ‘truth’. The variable *badPred* are the predicted responses from a very poor model. The variable *goodPred* contains the predicted responses from a great model.
 
 	# Using ROC Curves for Binary Response Models
-	  
+
 	sampleDF <- data.frame(
 	    actual = c(0, 0, 0, 0, 0, 1, 1, 1, 1, 1),
 	    badPred = c(.99, .99, .99, .99, .99, .01, .01, .01, .01, .01),
@@ -236,7 +236,7 @@ Let’s start with a simple example. Suppose we have a data set with 10 observat
 
 We can now call the *rxRocCurve* function to compute the sensitivity and specificty for the ‘bad’ predictions, and draw the ROC curve. The numBreaks argument indicates the number of breaks to use in determining the thresholds for computing the true and false positive rates.
 
-rxRocCurve(actualVarName = "actual", predVarNames = "badPred", 
+rxRocCurve(actualVarName = "actual", predVarNames = "badPred",
 	data = sampleDF, numBreaks = 10, title = "ROC for Bad Predictions")
 
 ![](media/rserver-scaler-user-guide-9-logistic-regression/image14.png)
@@ -245,7 +245,7 @@ Since all of our predictions are wrong at every threshold, the ROC curve is a fl
 
 At the other extreme, let’s draw an ROC curve for our great model:
 
-	rxRocCurve(actualVarName = "actual", predVarNames = "goodPred", 
+	rxRocCurve(actualVarName = "actual", predVarNames = "goodPred",
 		data = sampleDF, numBreaks = 10, title = "ROC for Great Predictions")
 
 
@@ -258,31 +258,31 @@ Now let’s use actual model predictions in an ROC curve. We’ll use the small 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 	# Using mortDefaultSmall for predictions and an ROC curve
-	  
+
 	mortXdf <- file.path(rxGetOption("sampleDataDir"), "mortDefaultSmall")
-	logitOut1 <- rxLogit(default ~ creditScore + yearsEmploy + ccDebt, 
+	logitOut1 <- rxLogit(default ~ creditScore + yearsEmploy + ccDebt,
 		data = mortXdf,	blocksPerRead = 5)
-		
+
 	predFile <- "mortPred.xdf"
 
-	predOutXdf <- rxPredict(modelObject = logitOut1, data = mortXdf, 
+	predOutXdf <- rxPredict(modelObject = logitOut1, data = mortXdf,
 		writeModelVars = TRUE, predVarNames = "Model1", outData = predFile)
 
 Now, let’s estimate a different model (with 1 less independent variable), and add the predictions from that model to our output data set:
-	  
+
 	# Estimate a second model without ccDebt
-	logitOut2 <- rxLogit(default ~ creditScore + yearsEmploy, 
+	logitOut2 <- rxLogit(default ~ creditScore + yearsEmploy,
 		data = predOutXdf, blocksPerRead = 5)
-		
+
 	# Add preditions to prediction data file
-	predOutXdf <- rxPredict(modelObject = logitOut2, data = predOutXdf, 
+	predOutXdf <- rxPredict(modelObject = logitOut2, data = predOutXdf,
 
 	predVarNames = "Model2")
 
 Now we can compute the sensitivity and specificity for both models, using rxRoc:
 
-	rocOut <- rxRoc(actualVarName = "default", 
-		predVarNames = c("Model1", "Model2"), 
+	rocOut <- rxRoc(actualVarName = "default",
+		predVarNames = c("Model1", "Model2"),
 		data = predOutXdf)
 	rocOut
 

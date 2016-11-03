@@ -55,7 +55,7 @@ The following table shows the arguments to rxGetInfo in order and their default 
 |startRow |The starting row for retrieval of data if a data frame or .xdf file.|
 |numRows |The number of rows of data to retrieve if a data frame or .xdf file.|
 |computeInfo |Logical value. If `TRUE`, and `getVarInfo` is `TRUE`, variable information (e.g., high/low values) for non-xdf data sources will be computed by reading through the data set. If `TRUE`, and `getVarInfo` is FALSE, the number of variables will be gotten from non-xdf data sources (but not the number of rows).|
-|allNodes |Logical value. Ignored if the active [RxComputeContext](RxComputeContext.md) compute context is local or [RxForeachDoPar](RxForeachDoPar.md). Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned. If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See [Distributed Computing](scaler-distributed-computing.md) for more information on master node computations. |
+|allNodes |Logical value. Ignored if the active [RxComputeContext](RxComputeContext.md) compute context is local or RxForeachDoPar. Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned. If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See [Distributed Computing](scaler-distributed-computing.md) for more information on master node computations. |
 |verbose |Integer value. If 0, no additional output is printed. If 1, additional summary information is printed for an .xdf file.|
 
 ## Remarks
@@ -77,7 +77,7 @@ A list containing the following possible elements:
 |numRows |The number of rows in the data set.|
 |numVars |The number of variables in the data set.|
 |numBlocks |The number of blocks in the data set.|
-|varInfo |A list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](rxGetVarInfo.md) for more information.)|
+|varInfo |A list of variable information where each element is a list describing a variable. (See return value of rxGetVarInfo for more information.)|
 |rowsPerBlock |Integer vector containing number of rows in each block (if `getBlockSizes` is set to `TRUE`). Set to `NULL` if data is a data frame.|
 |data |Data frame containing the data (if `numRows > 0`).|
 

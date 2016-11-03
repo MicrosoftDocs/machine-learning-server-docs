@@ -6,7 +6,7 @@ description: "RxXdfData function in the RevoScaleR package in Microsoft R."
 keywords: "RevoScaleR, ScaleR, RxXdfData"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "08/13/2016"
+ms.date: "11/03/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 
 #RxXdfData function (RevoScaleR)
-This is the main generator for S4 class RxXdfData, which extends [RxDataSource](RxDataSource.md).
+This is the main generator for S4 class RxXdfData, which extends RxDataSource.
 
 ## Usage
 ~~~~
@@ -56,7 +56,7 @@ The following table shows the arguments to RxXdfData in order and their default 
 |returnDataFrame|Logical indicating whether or not to convert the result to a data frame when reading with [rxReadNext](rxReadNext.md). If `FALSE`, a list is returned when reading with rxReadNext.|
 |stringsAsFactors|Logical indicating whether or not to convert strings into factors in R (for reader mode only).|
 |blocksPerRead|Number of blocks to read for each chunk of data read from the data source.|
-|fileSystem|Character string or [RxFileSystem](RxFileSystem.md) object indicating type of file system; "native" or [RxNativeFileSystem](RxNativeFileSystem.md) object can be used for the local operating system, or an [RxHdfsFileSystem](RxHdfsFileSystem.md) object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option.|
+|fileSystem|Character string or RxFileSystem object indicating type of file system; "native" or RxNativeFileSystem object can be used for the local operating system, or an RxHdfsFileSystem object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option.|
 |createCompositeSet|Logical value or NULL. Used only when writing. If `TRUE`, a composite set of files will be created instead of a single .xdf file. A directory will be created whose name is the same as the .xdf file that would otherwise be created, but with no extension. Subdirectories ‘data’ and ‘metadata’ will be created. In the ‘data’ subdirectory, the data will be split across a set of .xdfd files (see `blocksPerCompositeFile` below for determining how many blocks of data will be in each file). In the ‘metadata’ subdirectory there is a single .xdfm file, which contains the meta data for all of the .xdfd files in the ‘data’ subdirectory. When the compute context is [RxHadoopMR](RxHadoopMR.md) a composite set of files is always created.|
 |blocksPerCompositeFile|Integer value. If `createCompositeSet=TRUE`, and if the compute context is not RxHadoopMR, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`.|
 |x|An RxXdfData object.|
