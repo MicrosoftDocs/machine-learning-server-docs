@@ -38,4 +38,4 @@ The following release notes apply to Microsoft R Client, which can be downloaded
 
 + With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop in order to benefit from disk scalability, greater performance and speed. 
 
-[See here](../index.md#compare-prods) for a comparison between R Client and R Server. 
+[See here](../microsoft-r-getting-started.md#compare-prods) for a comparison between R Client and R Server. 

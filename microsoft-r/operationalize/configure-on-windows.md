@@ -143,7 +143,7 @@ You can configure one or more front-ends as needed. You can also scale your back
 
 1. If you want to use a remote database or if you have multiple front-ends, configure DeployR to use one of the following databases instead of the local SQLite database:
     + On Windows, [configure SQL Server](configure-remote-database.md#sqlserver)
-    + On Linux, [configure PostgreSQL](configure-remote-database.md#postgres)
+    + On Linux, [configure PostgreSQL](configure-remote-database.md#postgresql)
 
 1. Now that the configuration is complete, run the diagnostic tests on **every front-end machine**. 
     + **On Windows**: 

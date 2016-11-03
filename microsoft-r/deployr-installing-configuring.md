@@ -484,12 +484,13 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 >**What's Next After Installing?**
 >
 >1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
->2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
+>2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
+<a name="grid-node-install-for-Linux"></a>
 ### Grid Node Install for Linux
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using `Option 1` or `Option 3`. 
@@ -570,7 +571,7 @@ DeployR Enterprise on Linux supports the installation of a remote database for D
 
 Install DeployR as follows:
 
-1.  Install [these prerequisites](#dependancies-for-linux).
+1.  Install [these prerequisites](#lindependencies).
 
 2.  Log into the operating system on the machine on which you want to install DeployR.
 
@@ -610,7 +611,7 @@ Install DeployR as follows:
 >**What's Next After Installing?**
 >
 >1. Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help.
->2.  [Add any additional grid nodes](#install-deployr-nodes) (DeployR Enterprise only).
+>2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
