@@ -76,6 +76,7 @@ The Repository Manager is accessible from the main menu of the DeployR landing p
 
 1.  From the menu, choose  **Logout**.
 
+<a name="permissions-policies"></a>
 ## Permissions & Policies
 
 The operations you can perform in the DeployR Repository Manager and on the APIs is largely dependent on your permissions and the server policies.

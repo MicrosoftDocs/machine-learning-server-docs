@@ -59,6 +59,7 @@ See the DeployR dependencies for your OS:
 -   [Linux](#installing-on-linux)
 -   [Mac / OS X](#installing-on-mac-os-x)
 
+<a name="installing-on-Windows"></a>
 ## Installing on Windows
 
 >[!IMPORTANT]  
@@ -88,7 +89,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install-for-windows).
+	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
 2.  Install **[Revolution R Enterprise for Windows](rserver-install-windows.md)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies**. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
 
@@ -155,7 +156,7 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install-for-windows).
+	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
 2.  Install either [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://mran.microsoft.com) is the enhanced distribution of R from Microsoft.
 
@@ -187,7 +188,7 @@ DeployR Open depends on the manual installation and configuration of these depen
  
 ### Basic DeployR Install for Windows
 
-The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install-for-windows) for optimized workload distribution.
+The basic installation of DeployR will install the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install) for optimized workload distribution.
 
 >**DeployR Enterprise Only:**  
 >Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr-admin-console/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
@@ -225,12 +226,13 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 >**What's Next After Installing?**
 >
 >1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as `admin` with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
->2.  [Add any additional grid nodes](#grid-node-install-for-windows) (DeployR Enterprise only).
+>2.  [Add any additional grid nodes](#grid-node-install) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guide.
 
+<a name="grid-node-install"></a>
 ### Grid Node Install for Windows
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr-admin-console/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the DeployR server.
@@ -621,6 +623,7 @@ Install DeployR as follows:
 >1.  We highly recommend installing DeployR on a dedicated server machine.
 >2.  The Mac OS X release of DeployR is experimental, and therefore not officially supported. It is not available for DeployR Enterprise. See the list of [supported OS](#system-requirements-for-deployr) for more.
 
+<a name="preparing-osx"></a>
 ### Dependencies
 
 Before you can install DeployR on the main server machine, you must manually install the following dependencies. All other dependencies will be installed for you.
@@ -728,7 +731,7 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
 1.  Be sure to review the following:
 
-    -   **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the [data migration](#migrating-to-8-0-0).
+    -   **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the data migration.
 
     -   While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you **dedicate one machine for each server instance** that is *in production* so as to avoid resource contention.
 
@@ -824,7 +827,7 @@ During installation, the Windows firewall was updated to allow inbound communica
 | DeployR server machine                 | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
 | Remote grid node machines<sup>1</sup> | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server|
 
-<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](deployr-installing-configuring.md#grid-node-install).
+<sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](#grid-node-install).
 
 ---
 
