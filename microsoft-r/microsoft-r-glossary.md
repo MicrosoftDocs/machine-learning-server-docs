@@ -58,73 +58,99 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 -->
 
 <a name="C"></a>
-## C
+<hr>
+<big><b> C </b></big>
 
 **Compute Context**
 <div style="margin:15px; margin-bottom:25px;">A feature in RevoScaleR that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, and Microsoft R Server.</div>
 
 <!--
-**Term**
-<div style="margin:15px; margin-bottom:25px;"> </div>
 
 <br>
 
 <a name="D"></a>
-## D
+<hr>
+<big><b> D </b></big>
+
+
 
 
 <br>
 
 <a name="E"></a>
-## E
+<hr>
+<big><b> E </b></big>
 
+**Term**
 
 <br>
 
 <a name="F"></a>
-## F
+<hr>
+<big><b> F </b></big>
 
+**Term**
 
 <br>
 
 <a name="G"></a>
-## G
+<hr>
+<big><b> G </b></big>
+
+**Term**
 
 
 <br>
 
 <a name="H"></a>
-## H
+<hr>
+<big><b> H </b></big>
+
+**Term**
 
 
 <br>
 
 <a name="I"></a>
-## I
+<hr>
+<big><b> I </b></big>
 
+**Term**
 
 <br>
 
 <a name="J"></a>
-## J
+<hr>
+<big><b> J </b></big>
+
+**Term**
 
 <br>
 
 <a name="K"></a>
-## K
+<hr>
+<big><b> K </b></big>
+
+**Term**
+
 
 
 <br>
 
 <a name="L"></a>
-## K
+<hr>
+<big><b> L </b></big>
+
+**Term**
+
 
 -->
 
 <br>
 
 <a name="M"></a>
-## M
+<hr>
+<big><b> M </b></big>
 
 <a name="mrc"></a>**Microsoft R Client**
 <div style="margin:15px; margin-bottom:25px;">Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. <a href="r-client.md">Learn more…</a></div>
@@ -139,35 +165,51 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 <a name="mkl"></a>**MKL**
-<div style="margin:15px; margin-bottom:25px;">The Intel® Math Kernel Library (Intel® MKL)is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. <a href="https://mran.microsoft.com/documents/rro/multithread/">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. <a href="https://mran.microsoft.com/documents/rro/multithread/">Learn more…</a></div>
 
 <!--
 <br>
 
 <a name="N"></a>
-## N
+<hr>
+<big><b> N</b></big>
+
+**Term**
+
 
 <br>
 
 <a name="O"></a>
-## O
+<hr>
+<big><b> O </b></big>
+
+**Term**
+
 
 <br>
 
 <a name="P"></a>
-## P
+<hr>
+<big><b> P </b></big>
+
+**Term**
+
 
 <br>
 
 <a name="Q"></a>
-## Q
+<hr>
+<big><b> Q </b></big>
+
+**Term**
 
 -->
 
 <br>
 
 <a name="R"></a>
-## R
+<hr>
+<big><b>R</b></big>
 
 **R Client**
 <div style="margin:15px; margin-bottom:25px;">See <a href="#mrc"><i>Microsoft R Client</i></a></div>
@@ -185,7 +227,8 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <br>
 
 <a name="S"></a>
-## S
+<hr>
+<big><b> S </b></big>
 
 **ScaleR**
 <div style="margin:15px; margin-bottom:25px;">See <i>RevoScaleR</i></div>
@@ -197,30 +240,46 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <br>
 
 <a name="T"></a>
-## T
+<hr>
+<big><b> T </b></big>
+
+**Term**
+
 
 <br>
 
 <a name="U"></a>
-## U
+<hr>
+<big><b> U </b></big>
+
+**Term**
+
 
 <br>
 
 <a name="V"></a>
-## V
+<hr>
+<big><b> V </b></big>
+
+**Term**
+
 
 <br>
 
 <a name="W"></a>
-## W
+<hr>
+<big><b> W </b></big>
+
+**Term**
+
 
 -->
 
 <br>
 
 <a name="X"></a>
-## X
-
+<hr>
+<big><b> X </b></big>
 
 **XDF File Format**
 <div style="margin:15px; margin-bottom:25px;">The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  <a href="https://msdn.microsoft.com/en-us/microsoft-r/scaler-user-guide-introduction">Learn more…</a></div>
@@ -229,12 +288,20 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <br>
 
 <a name="Y"></a>
-## Y
+<hr>
+<big><b>Y</b></big>
+
+**Term**
+
 
 <br>
 
 <a name="Z"></a>
-## Z
+<hr>
+<big><b> Z </b></big>
+
+**Term**
+
 -->
 
 
