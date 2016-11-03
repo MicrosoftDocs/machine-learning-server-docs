@@ -194,6 +194,13 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
             Number of iterations: 7
 ~~~~
 
+<a name="chunking"></a>
+## Data chunking and ScaleR
+
+A primary benefit of ScaleR is its ability to apportion data into multiple parts for processing, reassembling it later for analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which ScaleR processes and analyzes very large data sets.
+
+In Microsoft R products, chunking functionality is available only when ScaleR is accessed via R Server on Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when ScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server (standalone). For more information, see [Microsoft R Server](rserver.md).
+
 ## Next steps
 
 This quick start demonstrated a basic workflow, but there are several more tutorials that go into more detail and cover more scenarios, including instructions for working with bigger data sets.
