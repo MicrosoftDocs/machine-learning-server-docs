@@ -37,12 +37,18 @@ Learn more about configuring and administering the deployment server.
      + On cloud configuration
      + General post install steps (firewall rules)
  + Configuration Guide for Linux (like for Windows)
- + How to migrate data from another instance or previous version
+ + Cloud configuration
  + Enterprise Grade Security:
      + Authentication 
      + Authorization
      + CORS
      + Connection Security (HTTPS/SSL)
+
+### Enterprise-grade Security
+Learn about security options for DeployR, including:
++ [Authentication](security-authentication.md)
++ [Enabling HTTPS](security-https.md)
++ [Cross-Origin Resource Sharing](security-cors.md)
 
  + Administration Section:
      + Inspect Server & Log files
