@@ -62,6 +62,12 @@ R Client allows you to work with production data locally using the full set of S
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 
+<br>
+<br>
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
 <a name="configure-ide"></a>
 
 ## Step 2: Configure Your IDE
