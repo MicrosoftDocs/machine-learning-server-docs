@@ -38,7 +38,7 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 
 ## Develop Analytics
 
-With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as  RStudio or StatET.
+With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE).
 
 All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 

@@ -1028,7 +1028,7 @@ See the list of public functions and see the associated help pages using the fol
 
 **To see the `RevoScaleR` functions that can be called from the commands-line:**
 
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe`, R Tools for Visual Studio, RStudio, or another IDE.
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
 
 1. In the console, return the number of objects by typing the following at the R prompt `>`:
    ```

@@ -6,7 +6,7 @@ description: "rxDataStep function in the RevoScaleR package in Microsoft R."
 keywords: "RevoScaleR, ScaleR, rxDataStep"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "09/13/2016"
+ms.date: "11/03/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -87,7 +87,7 @@ The following table shows the arguments to RxDataStep in order and their default
 |rowsPerRead |Number of rows to read for each chunk of data read from the input data source. Use this argument for finer control of the number of rows per block in the output data source. If greater than 0, `blocksPerRead` is ignored. Cannot be used if `inFile` is the same as `outFile`. The default value of -1 specifies that data should be read by blocks according to the `blocksPerRead` argument.|
 |startRow |The starting row to read from the input data source. Cannot be used if `inFile` is the same as `outFile`.|
 |numRows |Number of rows to read from the input data source. If `rowSelection` or `removeMissings` are used, the output data set may have fewer rows than specified by `numRows`. Cannot be used if `inFile` is the same as `outFile`.|
-|returnTransformObjects |Logical value. If `TRUE`, the list of `transformObjects` will be returned instead of a data frame or data source object. If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned. Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md) or [RxInTeradata](RxInTeradata.md).|
+|returnTransformObjects |Logical value. If `TRUE`, the list of `transformObjects` will be returned instead of a data frame or data source object. If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned. Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md) or RxInTeradata.|
 |startBlock |Starting block to read. Ignored if `startRow` is set to greater than 1. |
 |numBlocks |Number of blocks to read; all are read if set to -1. Ignored if `numRows` is not set to -1. |
 |blocksPerRead |Number of blocks to read for each chunk of data read from the data source. Ignored for data frames or if `rowsPerRead` is positive.|
@@ -101,7 +101,7 @@ The following table shows the arguments to RxDataStep in order and their default
 
 ## Return Value
 
-For rxDataStep, if `returnTransformObjects` is `FALSE` and an outFile is specified, an [RxXdfData](RxXdfData.md) data source is returned invisibly. If no `outFile` is specified, a data frame is returned invisibly. Either can be used in subsequent RevoScaleR analysis. For both rxDataStep and [rxDataStepXdf](rxDataStepXdf.md), if `returnTransformObjects` is `TRUE`, the `transformObjects` list as modified by the transformation function is returned invisibly. When working with an [RxInTeradata](RxInTeradata.md) compute context, both the input and output data sources must be [RxTeradata](RxTeradata.md).
+For rxDataStep, if `returnTransformObjects` is `FALSE` and an outFile is specified, an [RxXdfData](RxXdfData.md) data source is returned invisibly. If no `outFile` is specified, a data frame is returned invisibly. Either can be used in subsequent RevoScaleR analysis. For both rxDataStep and rxDataStepXdf, if `returnTransformObjects` is `TRUE`, the `transformObjects` list as modified by the transformation function is returned invisibly. When working with an RxInTeradata compute context, both the input and output data sources must be RxTeradata.
 
 ## Examples
 
@@ -230,7 +230,5 @@ newTransformVals[["toTotalSumDev"]]
 [RxTeradata function](RxTeradata.md)
 
 [rxGetInfo function](rxGetInfo.md)
-
-[rxGetVarInfo function](rxGetVarInfo.md)
 
 [rxTransform function](rxTransform.md)

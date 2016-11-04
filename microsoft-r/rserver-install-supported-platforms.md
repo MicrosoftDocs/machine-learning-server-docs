@@ -29,6 +29,8 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 2016 (version 8.0.5)
 
+This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+
 **Operating Systems (64-Bit only)**
 
 - Red Hat Enterprise Linux (RHEL) 6.x and 7.x, or CentOS   
@@ -51,9 +53,13 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 2016 (version 8.0.3)
 
+This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+
 This Windows-only release as Microsoft R Server (Standalone) is part of SQL Server 2016. Learn more about [Microsoft R Server (Standalone)](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
 
 ## Microsoft R Server 8.0
+
+This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
 
 Microsoft R Server 8.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.
 
@@ -95,6 +101,8 @@ Additional Hadoop Distributions Supported as HDFS Data Sources via ConnectR (inc
 
 ## Revolution R Enterprise 7.4 and 7.4.1 Workstation
 
+This release of R Server is built atop of _Revolution R Open 8.0.3_, which is based on R-3.1.3.
+
 Revolution R Enterprise Workstation is licensed for a single named user, and available in two editions: Entry and Power. DevelopR is only supported on Windows platforms.
 
 - Revolution Enterprise Workstation — Entry Edition: One desktop or laptop, 1-4 cores.
@@ -105,6 +113,8 @@ Revolution R Enterprise Workstation is licensed for a single named user, and ava
     - 64-Bit Red Hat Enterprise Linux 5.x, 6.x
 
 ## Revolution R Enterprise 7.4 and 7.4.1 Server
+
+This release of R Server is built atop of _Revolution R Open 8.0.3_, which is based on R-3.1.3.
 
 **Operating Systems**
 
@@ -143,6 +153,9 @@ Additional Hadoop Distributions Supported as HDFS Data Sources via ConnectR:
 - Pivotal HD 1.0 HDFS
 
 ## Revolution R Enterprise 7.3 Workstation
+
+This release of R Server is built atop of R-3.1.1.
+
 Revolution R Enterprise Workstation is licensed for a single named user, and available in two editions: Entry and Power.
 
 - Revolution Enterprise Workstation — Entry Edition: One desktop or laptop, 1-4 cores
@@ -154,6 +167,8 @@ Revolution R Enterprise Workstation is supported on the following platforms. Dev
 - 64-Bit Red Hat Enterprise Linux 5.x, 6.x
 
 ## Revolution R Enterprise 7.3 Server
+
+This release of R Server is built atop of R-3.1.1.
 
 **Operating Systems**
 
