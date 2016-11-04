@@ -28,6 +28,8 @@
 
     1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
 
+> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
 <br>
 
 >**What's Installed with R Client**<br>
