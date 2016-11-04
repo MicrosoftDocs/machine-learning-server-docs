@@ -26,7 +26,26 @@ ms.custom: ""
 
 #What's New in Microsoft R Client
 
+## Microsoft R Client 1.1
+
 The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
+
++ New enhanced R Client Getting Started
++ An auto-update feature is now available using `CheckForUpdates()` in your R Console
++ The R Client setup experience was enhanced:
+  + Installer was simplified when RTVS was unbundled with the installer. [Learn about available R IDEs...](../r-client-get-started.md#try-r-client)
+  + [Offline installations](../r-client-get-started.md#installrclient) are now possible
++ New packages now bundled with Microsoft R Client (and Microsoft R Open):
+  + `mrsdeploy` - for remote execution and deployment
+  + `MML`
+  + `olapR`
+  + and the [packages bundled with Microsoft R Open 3.2.2](https://mran.microsoft.com/rro/installed/#enhance)
++ Updated end-user license agreement
++ Telemetry collection is now enabled. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+ 
+## Microsoft R Client 1.0
+
+The following release notes apply to Microsoft R Client 1.0:
 
 + Microsoft R Client is a free, community-supported, data science tool for building high performance analytics using the full set of ScaleR functions.  
 
