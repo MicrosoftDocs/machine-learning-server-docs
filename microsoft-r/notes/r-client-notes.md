@@ -30,10 +30,10 @@ ms.custom: ""
 
 The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
 
-+ New enhanced R Client Getting Started
++ New enhanced [Microsoft R Client Getting Started](../r-client-get-started.md)
 + An auto-update feature is now available using `CheckForUpdates()` in your R Console
 + The R Client setup experience was enhanced:
-  + Installer was simplified when RTVS was unbundled with the installer. [Learn about available R IDEs...](../r-client-get-started.md#try-r-client)
+  + Installer was simplified when RTVS was unbundled with the installer. [Learn about available R IDEs.](../r-client-get-started.md#try-r-client)
   + [Offline installations](../r-client-get-started.md#installrclient) are now possible
 + New packages now bundled with Microsoft R Client (and Microsoft R Open):
   + `mrsdeploy` - for remote execution and deployment
