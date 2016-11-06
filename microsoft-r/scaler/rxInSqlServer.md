@@ -6,7 +6,7 @@ description: "ScaleR Functions: RxInSqlServer"
 keywords: "RevoScaleR, ScaleR, RxInSqlServer"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "06/13/2016"
+ms.date: "11/13/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -59,7 +59,7 @@ If a number is specified for _numTasks_ argument, each of the tasks is given dat
 
 However, there are cases where increasing the value of _numTasks_ might not have the desired effect. Computation time might even increase if too many tasks are competing for machine resources.
 
-To control how many threads are used in parallel within each process, you can use the Note that `rxOptions` function and set the _numCoresToUse_ argument. However, there is a trade-off between the value in _numCoresToUse_ and _numTasks_. The best performance depends upon the specific algorithm, the type of data, the hardware, and other jobs that are running.
+To control how many threads are used in parallel within each process, you can use the `rxOptions` function and set the _numCoresToUse_ argument to an integer specifying the number of cores you want to use. However, there is a trade-off between the value in _numCoresToUse_ and _numTasks_. The best performance depends upon the specific algorithm, the type of data, the hardware, and other jobs that are running.
 
 > [!IMPORTANT]
 >

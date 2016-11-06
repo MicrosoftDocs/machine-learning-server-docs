@@ -6,7 +6,7 @@ description: "Learn how to work with big datasets using sample loan data in this
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/18/2016"
+ms.date: "11/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -191,7 +191,7 @@ Using the binary *default* variable as the dependent variable, estimate a logist
 
 Alternatively, we can treat year as a categorical or factor variable by using the F function. The benefit is that we get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates, while controlling for the other variables in the regression. The logistic regression is specified as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
 
 	logitObj <- rxLogit(default~F(year) + creditScore +
 	       yearsEmploy + ccDebt,

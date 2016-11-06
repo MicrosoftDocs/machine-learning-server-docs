@@ -6,7 +6,7 @@ description: "Microsoft R features and components overview."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "07/13/2016"
+ms.date: "11/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - r-client
   - r-server
 ms.custom: ""
@@ -30,9 +30,9 @@ ms.custom: ""
 
 ## Microsoft R Products
 
-R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments. 
+R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and graphics, and is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Traditionally, using R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or when faced with a need to deploy solutions to production environments.
 
-Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions, including big data scenarios that require a distributed file system like Hadoop. 
+Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions, including big data scenarios that require a distributed file system like Hadoop.
 
 The Microsoft R product family includes Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and R Client provide additional R packages and connectivity tools to enable remote compute context and to support scalable, parallelizable solutions.
 
@@ -90,7 +90,7 @@ This ‘Big Data Big Analytics’ compute engine works behind-the-scenes to proc
 
 *DistributedR* allows you to run the same R script on multiple platforms; you can create a model in one environment such as a workstation and then deploy it on a different environment such as an on-site Microsoft SQL Server, a Teradata platform, or a Hadoop cluster in the cloud. You just need to specify the information about where these computations should be performed and what data should be analyzed.
 
-This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](scaler-getting-started.md#computecontext).
+This ‘Big Data Big Analytics’ compute engine is the core of the RevoScaleR package, included in your distribution of Microsoft R Server and Microsoft R Client. For information on supported computing environments, look for the [‘compute contexts’ in the RevoScaleR package](scaler-distributed-computing.md#scaler-compute-context).
 
 ### ScaleR
 
@@ -122,7 +122,7 @@ To learn more, look for [data sources in the RevoScaleR package](scaler-user-gui
 
 DeployR, the R Integration Server, is an optional framework delivered with Microsoft R Server for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems.
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that. 
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The optional DeployR package, available for Microsoft R Server only, provides the tools for doing just that.
 
 DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
 
@@ -242,7 +242,7 @@ Most users will probably use ? because it is easy to type; help allows you to sp
 
 ## An R Tutorial in 25 Functions or So
 
-To get you started with Microsoft R Server and R Client, this brief tutorial will present you with 25 (or so) of the most commonly used R functions. You can learn to load your own small data sets into R, and begin to do useful analysis on them. We’ll also provide some initial tips on the next steps for performing scalable data analysis in R. 
+To get you started with Microsoft R Server and R Client, this brief tutorial will present you with 25 (or so) of the most commonly used R functions. You can learn to load your own small data sets into R, and begin to do useful analysis on them. We’ll also provide some initial tips on the next steps for performing scalable data analysis in R.
 
 ### Creating Vectors
 
@@ -293,7 +293,7 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	[25]  0.70891942
 
  By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the `mean` and *sd* arguments to *rnorm* to specify a different normal distribution:
-	
+
 	normalSat <- rnorm(25, mean=450, sd=100)
 	normalSat
 
@@ -488,7 +488,7 @@ To view a summary of the model, we can use the summary function:
 	Residuals:
 	   Min       1Q   Median       3Q      Max 
 	-12.8799  -5.9905   0.1783   6.2978   9.6294 
-	
+
 	Coefficients:
 		Estimate Std. Error t value Pr(>|t|)    
 	(Intercept) 14.37632    6.61999   2.172   0.0385 *  
@@ -935,7 +935,7 @@ We get the following output:
 	Number of valid observations: 9982
 	Number of missing observations: 0
 	-2*LogLikelihood: 100.6036 (Residual deviance on 9979 degrees of freedom)
-	
+
 	Coefficients:
 		Estimate Std. Error z value Pr(>|z|)
 	(Intercept) -1.614e+01 2.074e+00 -7.781 2.22e-16 ***
@@ -1060,6 +1060,6 @@ Having completed the tutorials, you are now ready to dive right in and start usi
 
 The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 
-Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. 
+Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on.
 
-Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md). 
+Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).

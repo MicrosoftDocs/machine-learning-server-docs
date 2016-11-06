@@ -28,27 +28,27 @@ ms.custom: ""
 Linear regression models are fitted in RevoScaleR using the *rxLinMod* function. Like other RevoScaleR functions, *rxLinMod* uses an updating algorithm to compute the regression model. The R object returned by *rxLinMod* includes the estimated model coefficients and the call used to generate the model, together with other information that allows RevoScaleR to recompute the model—because *rxLinMod* is designed to work with arbitrarily large data sets, quantities such as residuals and fitted values are not included in the return object, although these can be obtained easily once the model has been fitted.
 
 As a simple example, let’s use the sample data set AirlineDemoSmall.xdf and fit the arrival delay by day of week:
-	
-	######################################################## 
+
+	########################################################
 	# Chapter 8: Fitting Linear Models
 	Ch8Start <- Sys.time()
-	
-	  
+
+
 	readPath <- rxGetOption("sampleDataDir")
 	airlineDemoSmall <- file.path(readPath, "AirlineDemoSmall.xdf")
 	rxLinMod(ArrDelay ~ DayOfWeek, data = airlineDemoSmall)
-	
+
 	  Call:
 	  rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airlineDemoSmall)
-	  
+
 	  Linear Regression Results for: ArrDelay ~ DayOfWeek
 	  File name:
 	      C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\ RevoScaleR\SampleData\AirlineDemoSmall.xdf
 	  Dependent variable(s): ArrDelay
 	  Total independent variables: 8 (Including number dropped: 1)
 	  Number of valid observations: 582628
-	  Number of missing observations: 17372 
-	   
+	  Number of missing observations: 17372
+
 	  Coefficients:
 	                        ArrDelay
 	  (Intercept)         10.3318058
@@ -62,24 +62,24 @@ As a simple example, let’s use the sample data set AirlineDemoSmall.xdf and fi
 
 Because our predictor is categorical, we can use the *cube* argument to *rxLinMod* to perform the regression using a partitioned inverse, which may be faster and may use less memory than the standard algorithm. The output object also includes a data frame with the averages or counts for each category:
 
-	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, cube = TRUE, 
+	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, cube = TRUE,
 	    data = airlineDemoSmall)
 
 
 Typing the name of the object arrDelayLm1 yields the following output:
 
 	Call:
-	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airlineDemoSmall, 
+	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airlineDemoSmall,
 	    cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	File name:
 	    C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\ RevoScaleR\SampleData\AirlineDemoSmall.xdf
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 582628
-	Number of missing observations: 17372 
-	 
+	Number of missing observations: 17372
+
 	Coefficients:
 	                     ArrDelay
 	DayOfWeek=Monday    12.025604
@@ -102,17 +102,17 @@ The print method for the rxLinMod model object shows only the call and the coeff
 This produces the following output, which includes substantially more information about the model coefficients, together with the residual standard error, multiple R-squared, and adjusted R-squared:
 
 	Call:
-	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airlineDemoSmall, 
+	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airlineDemoSmall,
 	    cube = TRUE)
-	
+
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
 	File name:
 	    C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\ RevoScaleR\SampleData\AirlineDemoSmall.xdf
 	Dependent variable(s): ArrDelay
-	Total independent variables: 7 
+	Total independent variables: 7
 	Number of valid observations: 582628
-	Number of missing observations: 17372 
-	 
+	Number of missing observations: 17372
+
 	Coefficients:
 	                    Estimate Std. Error t value Pr(>|t|)     | Counts
 	DayOfWeek=Monday     12.0256     0.1317   91.32 2.22e-16 *** |  95298
@@ -123,12 +123,12 @@ This produces the following output, which includes substantially more informatio
 	DayOfWeek=Saturday   11.8753     0.1404   84.59 2.22e-16 *** |  83851
 	DayOfWeek=Sunday     10.3318     0.1330   77.67 2.22e-16 *** |  93395
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
-	
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
 	Residual standard error: 40.65 on 582621 degrees of freedom
 	Multiple R-squared: 0.001869 (as if intercept included)
-	Adjusted R-squared: 0.001858 
-	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.001858
+	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 ### Using Probability Weights
@@ -136,14 +136,14 @@ This produces the following output, which includes substantially more informatio
 Probability weights are common in survey data; they represent the probability that a case was selected into the sample from the population, and are calculated as the inverse of the sampling fraction. The variable *perwt* in the census data represents a probability weight. You pass probability weights to the RevoScaleR analysis functions using the *pweights* argument, as in the following example:
 
 	#  Using Probability Weights
-  
+
 	rxLinMod(incwage ~ F(age), pweights = "perwt", data = censusWorkers)
 
 This yields the following output:
 
 	Call:
 	rxLinMod(formula = incwage ~ F(age), data = censusWorkers, pweights = "perwt")
-	
+
 	Linear Regression Results for: incwage ~ F(age)
 	File name:
 	    C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\CensusWorkers.xdf
@@ -151,8 +151,8 @@ This yields the following output:
 	Dependent variable(s): incwage
 	Total independent variables: 47 (Including number dropped: 1)
 	Number of valid observations: 351121
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 	                incwage
 	(Intercept)  32111.3012
@@ -260,8 +260,8 @@ For example, the sample data set fourthgraders.xdf contains the following 44 row
 The *reps* column shows the number of replications for each observation; the sum of the reps column indicates the total number of observations, in this case 100. We can fit a model (admittedly not very useful) of height on eye color with *rxLinMod* as follows:
 
 	#  Using Frequency Weights
-	  
-	fourthgraders <- file.path(rxGetOption("sampleDataDir"), 
+
+	fourthgraders <- file.path(rxGetOption("sampleDataDir"),
 	    "fourthgraders.xdf")
 	fourthgradersLm <- rxLinMod(height ~ eyecolor, data = fourthgraders,
 	    fweights="reps")
@@ -270,7 +270,7 @@ Typing the name of the object shows the following output:
 
 	Call:
 	rxLinMod(formula = height ~ eyecolor, data = fourthgraders, fweights = "reps")
-	
+
 	Linear Regression Results for: height ~ eyecolor
 	File name:
 	    C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\fourthgraders.xdf
@@ -279,8 +279,8 @@ Typing the name of the object shows the following output:
 	Dependent variable(s): height
 	Total independent variables: 5 (Including number dropped: 1)
 	Number of valid observations: 44
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 	                    height
 	(Intercept)    47.33333333
@@ -292,23 +292,23 @@ Typing the name of the object shows the following output:
 ### Using rxLinMod with R Data Frames
 
 While RevoScaleR is primarily designed to work with data on disk, it can also be used with in-memory R data frames. As an example, consider the R sample data frame “cars”, which contains data recorded in the 1920s on the speed of cars and the distances taken to stop.
-	
+
 	#  Using rxLinMod with R Data Frames
-	  
+
 	rxLinMod(dist ~ speed, data = cars)
 
 We get the following output (which matches the output given by the R function lm):
 
 	Call:
 	rxLinMod(formula = dist ~ speed, data = cars)
-	
+
 	Linear Regression Results for: dist ~ speed
 	Data: cars
 	Dependent variable(s): dist
-	Total independent variables: 2 
+	Total independent variables: 2
 	Number of valid observations: 50
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 	                  dist
 	(Intercept) -17.579095
@@ -320,13 +320,13 @@ We get the following output (which matches the output given by the R function lm
 If the cube argument is set to TRUE and the first term of the independent variables is categorical, *rxLinMod* will compute and return a data frame with category counts. If there are no other independent variables, or if the *cubePredictions* argument is set to TRUE, the data frame will also contain predicted values. Let’s create a simple data frame to illustrate:
 
 	#  Using the Cube Option for Conditional Predictions
-	  
+
 	xfac1 <- factor(c(1,1,1,1,2,2,2,2,3,3,3,3), labels=c("One1", "Two1", "Three1"))
 	xfac2 <- factor(c(1,1,1,1,1,1,2,2,2,3,3,3), labels=c("One2", "Two2", "Three2"))
 	set.seed(100)
 	y <- as.integer(xfac1) + as.integer(xfac2)* 2 + rnorm(12)
 	myData <- data.frame(y, xfac1, xfac2)
-	
+
 If we estimate a simple linear regression of y on xfac1, the coefficients are equal to the within- group means:
 
 	myLinMod <- rxLinMod(y ~ xfac1, data = myData, cube = TRUE)
@@ -334,14 +334,14 @@ If we estimate a simple linear regression of y on xfac1, the coefficients are eq
 
 	  Call:
 	  rxLinMod(formula = y ~ xfac1, data = myData, cube = TRUE)
-	
+
 	  Cube Linear Regression Results for: y ~ xfac1
 	  Data: myData
 	  Dependent variable(s): y
-	  Total independent variables: 3 
+	  Total independent variables: 3
 	  Number of valid observations: 12
-	  Number of missing observations: 0 
-	 
+	  Number of missing observations: 0
+
 	  Coefficients:
 	                      y
 	  xfac1=One1   3.109302
@@ -356,24 +356,24 @@ In addition to the standard output, the returned object contains a *countDF* dat
 	1   One1 3.109302      4
 	2   Two1 5.142086      4
 	3 Three1 8.250260      4
-	
+
 Using rxLinMod with the cube option also allows us to compute conditional within-group means.  For example:
 
-	myLinMod1 <- rxLinMod(y~xfac1 + xfac2, data = myData, 
+	myLinMod1 <- rxLinMod(y~xfac1 + xfac2, data = myData,
 	    cube = TRUE, cubePredictions = TRUE)
 	myLinMod1
 
 	  Call:
-	  rxLinMod(formula = y ~ xfac1 + xfac2, data = myData, cube = TRUE, 
+	  rxLinMod(formula = y ~ xfac1 + xfac2, data = myData, cube = TRUE,
 	  cubePredictions=TRUE)
-	  
+
 	  Cube Linear Regression Results for: y ~ xfac1 + xfac2
 	  Data: myData
 	  Dependent variable(s): y
 	  Total independent variables: 6 (Including number dropped: 1)
 	  Number of valid observations: 12
-	  Number of missing observations: 0 
-	   
+	  Number of missing observations: 0
+
 	  Coefficients:
 	                       y
 	  xfac1=One1    7.725231
@@ -390,7 +390,7 @@ If we look at the countDF, we will see the within-group means, conditional on th
 	  1   One1 4.725427      4
 	  2   Two1 5.833926      4
 	  3 Three1 5.942295      4
-	
+
 For the variable xfac2, 50% of the observations have the value “One2”, 25% of the observations have the value “Two2”, and 25% have the value “Three2”.  We can compute the weighted average of the coefficients for xfac2 as:
 
 	myCoef <- coef(myLinMod1)
@@ -401,7 +401,7 @@ To compute the conditional within-group mean shown in the countDF for xfac1 equa
 	condMean1 <- myCoef[1] + avexfac2c
 	condMean1
 
-	  xfac1=One1 
+	  xfac1=One1
 	    4.725427
 
 Conditional within-group means can also be computed using additional continuous independent variables.
@@ -413,32 +413,32 @@ When you fit a model with lm or any of the other core R model-fitting functions,
 For example, we can draw from the 7% sample of the large airline data set (available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409)) training and prediction data sets as follows (remember to customize the first line below for your own system):
 
 #  Fitted Values, Residuals, and Prediction
-  
-	bigDataDir <- "C:/MRS/Data" 
+
+	bigDataDir <- "C:/MRS/Data"
 	sampleAirData <- file.path(bigDataDir, "AirOnTime7Pct.xdf")
 	trainingDataFile <- "AirlineData06to07.xdf"
 	targetInfile <- "AirlineData08.xdf"
-	
+
 	rxDataStep(sampleAirData, trainingDataFile, rowSelection = Year == 1999 |
 		Year == 2000 | Year == 2001 | Year == 2002 | Year == 2003 |
 		Year == 2004 | Year == 2005 | Year == 2006 | Year == 2007)
-	rxDataStep(sampleAirData, targetInfile, rowSelection = Year == 2008)	
-	
+	rxDataStep(sampleAirData, targetInfile, rowSelection = Year == 2008)
+
 We can then fit a linear model with the training data and compute predicted values on the prediction data set as follows:
 
-	arrDelayLm2 <- rxLinMod(ArrDelay ~ DayOfWeek + UniqueCarrier + Dest, 
+	arrDelayLm2 <- rxLinMod(ArrDelay ~ DayOfWeek + UniqueCarrier + Dest,
 	    data = trainingDataFile)
 	rxPredict(arrDelayLm2, data = targetInfile, outData = targetInfile)
-	
+
 To see the first few rows of the result, use rxGetInfo as follows:
 
 	rxGetInfo(targetInfile,  numRows = 5)
 
-	  File name: C:\MRS\Data\OutData\AirlineData08.xdf 
-	  Number of observations: 489792 
-	  Number of variables: 14 
-	  Number of blocks: 2 
-	  Compression type: zlib 
+	  File name: C:\MRS\Data\OutData\AirlineData08.xdf
+	  Number of observations: 489792
+	  Number of variables: 14
+	  Number of blocks: 2
+	  Compression type: zlib
 	  Data (5 rows starting with row 1):
 	    Year DayOfWeek UniqueCarrier Origin Dest CRSDepTime DepDelay TaxiOut TaxiIn
 	  1 2008       Mon            9E    ATL  HOU   7.250000       -2      14      5
@@ -458,22 +458,22 @@ To see the first few rows of the result, use rxGetInfo as follows:
 You can also use rxPredict to obtain prediction standard errors, provided you have included the variance-covariance matrix in the original rxLinMod fit. If you choose to compute the prediction standard errors, you can also obtain either of two kinds of intervals: *confidence intervals* that for a given confidence level tell us how confident we are that the expected value is within the given interval, and *prediction intervals* that specify, for a given confidence level, how likely future observations are to fall within the interval given what has already been observed. Standard error computations are computationally intensive, and they may become prohibitive on large data sets with a large number of predictors. To illustrate the computation, we start with a small data set, using the example on page 132 of *Introduction to the Practice of Statistics,* (5<sup>th</sup> Edition). The predictor, neaInc, is the increase in “non-exercise activity” in response to an increase in caloric intake. The response, fatGain, is the associated increase in fat. We first read in the data and create a data frame to use in our analysis:
 
 	# Standard Errors, Confidence Intervals, and Prediction Intervals
-	  
-	neaInc <- c(-94, -57, -29, 135, 143, 151, 245, 355, 392, 473, 486, 535, 571, 
+
+	neaInc <- c(-94, -57, -29, 135, 143, 151, 245, 355, 392, 473, 486, 535, 571,
 	    580, 620, 690)
 	fatGain <- c( 4.2, 3.0, 3.7, 2.7, 3.2, 3.6, 2.4, 1.3, 3.8, 1.7, 1.6, 2.2, 1.0,
 	    0.4, 2.3, 1.1)
 	ips132df <- data.frame(neaInc = neaInc, fatGain=fatGain)
-	
+
 Next we fit the linear model with rxLinMod, setting covCoef=TRUE to ensure we have the variance-covariance matrix in our model object:
 
 	ips132lm <- rxLinMod(fatGain ~ neaInc, data=ips132df, covCoef=TRUE)
-	
+
 Now we use rxPredict to obtain the fitted values, prediction standard errors, and confidence intervals. By setting writeModelVars to TRUE, the variables used in the model will also be included in the output data set.  In this first example, we obtain confidence intervals:
 
 	ips132lmPred <- rxPredict(ips132lm, data=ips132df, computeStdErrors=TRUE,
 	    interval="confidence", writeModelVars = TRUE)
-	
+
 The standard errors are by default put into a variable named by concatenating the name of the response variable with an underscore and the string “StdErr”:
 
 	ips132lmPred$fatGain_StdErr
@@ -481,11 +481,11 @@ The standard errors are by default put into a variable named by concatenating th
 	 [1] 0.3613863 0.3381111 0.3209344 0.2323853 0.2288433 0.2254018 0.1941840
 	 [8] 0.1863180 0.1915656 0.2151569 0.2202366 0.2418892 0.2598922 0.2646223
 	[15] 0.2865818 0.3279390
-	
+
 We can view the original data, the fitted prediction line, and the confidence intervals as follows:
 
 	rxLinePlot(fatGain + fatGain_Pred + fatGain_Upper + fatGain_Lower ~ neaInc,
-		data = ips132lmPred, type = "b", 
+		data = ips132lmPred, type = "b",
 		lineStyle = c("blank", "solid", "dotted", "dotted"),
 		lineColor = c(NA, "red", "black", "black"),
 		symbolStyle = c("solid circle", "blank", "blank", "blank"),
@@ -502,7 +502,7 @@ The prediction intervals can be obtained and plotted as follows:
 	ips132lmPred2 <- rxPredict(ips132lm, data=ips132df, computeStdErrors=TRUE,
 	    interval="prediction", writeModelVars = TRUE)
 	rxLinePlot(fatGain + fatGain_Pred + fatGain_Upper + fatGain_Lower ~ neaInc,
-		data = ips132lmPred2, type = "b", 
+		data = ips132lmPred2, type = "b",
 		lineStyle = c("blank", "solid", "dotted", "dotted"),
 		lineColor = c(NA, "red", "black", "black"),
 		symbolStyle = c("solid circle", "blank", "blank", "blank"),
@@ -516,23 +516,23 @@ The resulting plot is shown below:
 
 We can fit the prediction standard errors on our big airline regression model if we first refit it with covCoef=TRUE:
 
-	arrDelayLmVC <- rxLinMod(ArrDelay ~ DayOfWeek + UniqueCarrier + Dest, 
+	arrDelayLmVC <- rxLinMod(ArrDelay ~ DayOfWeek + UniqueCarrier + Dest,
 		data = trainingDataFile, covCoef=TRUE)
 
 We can then obtain the prediction standard errors and a confidence interval as before:
 
-	rxPredict(arrDelayLmVC, data = targetInfile, outData = targetInfile,	
+	rxPredict(arrDelayLmVC, data = targetInfile, outData = targetInfile,
 		computeStdErrors=TRUE, interval = "confidence", overwrite=TRUE)
 
 We can then look at the first few lines of targetInfile to see the first few predictions and standard errors:
 
 	rxGetInfo(targetInfile, numRows=10)
 
-	  File name: C:\YourOutputPath\AirlineData08.xdf 
-	  Number of observations: 489792 
-	  Number of variables: 17 
-	  Number of blocks: 2 
-	  Compression type: zlib 
+	  File name: C:\YourOutputPath\AirlineData08.xdf
+	  Number of observations: 489792
+	  Number of variables: 17
+	  Number of blocks: 2
+	  Compression type: zlib
 	  Data (10 rows starting with row 1):
 		 Year DayOfWeek UniqueCarrier Origin Dest CRSDepTime DepDelay TaxiOut TaxiIn
 	  1  2008       Mon            9E    ATL  HOU   7.250000       -2      14      5
@@ -568,7 +568,7 @@ We can then look at the first few lines of targetInfile to see the first few pre
 	  9        9.600905      10.711532
 	  10       8.964355      10.121540
 
-
+<a name="stepwise-variable-selection"></a>
 ### Stepwise Variable Selection
 
 Stepwise linear regression is an algorithm that helps you determine which variables are most important to a regression model. You provide a minimal, or lower, model formula and a maximal, or upper, model formula, and using forward selection, backward elimination, or bidirectional search, the algorithm determines the model formula that provides the best fit based on an AIC selection criterion.
@@ -580,7 +580,7 @@ RevoScaleR provides an implementation of stepwise linear regression that is not 
 Stepwise linear regression begins with an initial model of some sort. Consider for example the airline training data set AirlineData06to07.xdf we created in section 8.6:
 
 	#  Stepwise Linear Regression
-	  
+
 	rxGetVarInfo(trainingDataFile)
 	  Var 1: Year, Type: integer, Low/High: (1999, 2007)
 	  Var 2: DayOfWeek
@@ -599,7 +599,7 @@ Stepwise linear regression begins with an initial model of some sort. Consider f
 	  Var 11: ArrDel15, Type: logical, Low/High: (0, 1)
 	  Var 12: CRSElapsedTime, Type: integer, Low/High: (-34, 1295)
 	  Var 13: Distance, Type: integer, Low/High: (11, 4962)
-	  
+
 
 We are interested in fitting a model that will predict arrival delay (*ArrDelay*) as a function of some of the other variables. To keep things simple, we’ll start with our by now familiar model of arrival delay as a function of *DayOfWeek* and *CRSDepTime*:
 
@@ -609,15 +609,15 @@ We are interested in fitting a model that will predict arrival delay (*ArrDelay*
 
 	  Call:
 	  rxLinMod(formula = ArrDelay ~ DayOfWeek + CRSDepTime, data = trainingDataFile)
-	  
+
 	  Linear Regression Results for: ArrDelay ~ DayOfWeek + CRSDepTime
 	  File name:
 		  C:\MyWorkingDir\Documents\MRS\LMPrediction\AirlineData06to07.xdf
 	  Dependent variable(s): ArrDelay
 	  Total independent variables: 9 (Including number dropped: 1)
 	  Number of valid observations: 3945964
-	  Number of missing observations: 98378 
-	   
+	  Number of missing observations: 98378
+
 	  Coefficients:
 						ArrDelay
 	  (Intercept)    -4.91416806
@@ -629,19 +629,19 @@ We are interested in fitting a model that will predict arrival delay (*ArrDelay*
 	  DayOfWeek=Sat  -2.86217838
 	  DayOfWeek=Sun      Dropped
 	  CRSDepTime      0.86703378
-	  
+
 The question is, can we improve this model by adding more predictors? If so, which ones? To use stepwise selection in RevoScaleR, you add the *variableSelection* argument to your call to *rxLinMod*. The *variableSelection* argument is a list, most conveniently created by using the *rxStepControl* function. Using *rxStepControl*, you specify the method (the default, "stepwise", specifies a bidirectional search), the scope (lower and upper formulas for the search), and various control parameters. With our model, we first want to try some more numeric predictors, so we specify our model as follows:
 
 	airlineStepModel <- rxLinMod(ArrDelay ~ DayOfWeek + CRSDepTime,
 		data = trainingDataFile,
-		variableSelection = rxStepControl(method="stepwise", 
-			scope = ~ DayOfWeek + CRSDepTime + CRSElapsedTime + 
+		variableSelection = rxStepControl(method="stepwise",
+			scope = ~ DayOfWeek + CRSDepTime + CRSElapsedTime +
 				Distance + TaxiIn + TaxiOut ))
 	  Call:
-	  rxLinMod(formula = ArrDelay ~ DayOfWeek + CRSDepTime, data = trainingDataFile, 
-		  variableSelection = rxStepControl(method = "stepwise", scope = ~DayOfWeek + 
+	  rxLinMod(formula = ArrDelay ~ DayOfWeek + CRSDepTime, data = trainingDataFile,
+		  variableSelection = rxStepControl(method = "stepwise", scope = ~DayOfWeek +
 			  CRSDepTime + CRSElapsedTime + Distance + TaxiIn + TaxiOut))
-	  
+
 	  Linear Regression Results for: ArrDelay ~ DayOfWeek + CRSDepTime +
 		  CRSElapsedTime + Distance + TaxiIn + TaxiOut
 	  File name:
@@ -649,8 +649,8 @@ The question is, can we improve this model by adding more predictors? If so, whi
 	  Dependent variable(s): ArrDelay
 	  Total independent variables: 13 (Including number dropped: 1)
 	  Number of valid observations: 3945964
-	  Number of missing observations: 98378 
-	   
+	  Number of missing observations: 98378
+
 	  Coefficients:
 						ArrDelay
 	  (Intercept)    -9.87474950
@@ -666,7 +666,7 @@ The question is, can we improve this model by adding more predictors? If so, whi
 	  Distance        0.02135381
 	  TaxiIn          0.16194266
 	  TaxiOut         0.99814931
-	  
+
 #### Methods of Variable Selection
 
 Three methods of variable selection are supported by rxLinMod:
@@ -692,12 +692,12 @@ You use the *scope* argument in *rxStepControl* (or a named component *"scope"* 
 You can specify the scope as a simple formula (which will be treated as the upper bound, or maximal model), or as a named list with components *"lower"* and *"upper"* (either of which may be missing). For example, to analyze the iris data with a minimal model involving the single predictor *Sepal.Width* and a maximal model involving *Sepal.Width*, *Petal.Length*, and the interaction between *Petal.Width* and *Species*, we can specify our variable selection model as follows:
 
 	#	Specifying Model Scope
-	  
+
 	form <- Sepal.Length ~ Sepal.Width + Petal.Length
 	scope <- list(
 	    lower = ~ Sepal.Width,
 	    upper = ~ Sepal.Width + Petal.Length + Petal.Width * Species)
-	   
+
 	varsel <- rxStepControl(method = "stepwise", scope = scope)
 	rxlm.step <- rxLinMod(form, data = iris, variableSelection = varsel,
 	    verbose = 1, dropMain = FALSE, coefLabelStyle = "R")
@@ -723,9 +723,9 @@ By default, variable selection is determined using the Akaike Information Criter
 	# Specifying selection criterion
 	#  
 	airlineStepModelSigLevel <- rxLinMod(ArrDelay ~ DayOfWeek + CRSDepTime,
-		data = trainingDataFile, variableSelection = 
-			rxStepControl( method = "stepwise", scope = ~ DayOfWeek + 
-				CRSDepTime + CRSElapsedTime + Distance + TaxiIn + TaxiOut, 
+		data = trainingDataFile, variableSelection =
+			rxStepControl( method = "stepwise", scope = ~ DayOfWeek +
+				CRSDepTime + CRSElapsedTime + Distance + TaxiIn + TaxiOut,
 				stepCriterion = "SigLevel" ))
 
 In this case (and with many other well-behaved models), the results of using the SigLevel step criterion are identical to those using AIC.
@@ -733,9 +733,9 @@ In this case (and with many other well-behaved models), the results of using the
 You can control the significance levels for adding and dropping models using the *maxSigLevelToAdd* and *minSigLevelToDrop*. The *maxSigLevelToAdd* specifies a significance level below which a variable can be considered for inclusion in the model; the *minSigLevelToDrop* specifies a significance level above which a variable currently included can be considered for dropping. By default, for *method="stepwise",* the both levels are set to .15. We can tighten the selection criterion to the .10 level as follows:
 
 	airlineStepModelSigLevel.10 <- rxLinMod(ArrDelay ~ DayOfWeek + CRSDepTime,
-		data = trainingDataFile, variableSelection = 
-			rxStepControl( method = "stepwise", scope = ~ DayOfWeek + 
-				CRSDepTime + CRSElapsedTime +Distance + TaxiIn + TaxiOut, 
+		data = trainingDataFile, variableSelection =
+			rxStepControl( method = "stepwise", scope = ~ DayOfWeek +
+				CRSDepTime + CRSElapsedTime +Distance + TaxiIn + TaxiOut,
 				stepCriterion = "SigLevel",
 				maxSigLevelToAdd=.10, minSigLevelToDrop=.10))
 
@@ -745,7 +745,7 @@ You can control the significance levels for adding and dropping models using the
 By default, the values of the parameters at each step of the stepwise selection are not preserved. Using an additional argument, *keepStepCoefs*, in your *rxStepControl* statement saves the values of the coefficients from each step of the regression. This coefficient data can then be plotted using another function, *rxStepPlot.*
 
 Consider the stepwise linear regression on the iris data from section 8.8.3:
-	
+
 	#  
 	# Plottings Model Coefficients at Each Step
 	#  
@@ -753,7 +753,7 @@ Consider the stepwise linear regression on the iris data from section 8.8.3:
 	scope <- list(
 	    lower = ~ Sepal.Width,
 	    upper = ~ Sepal.Width + Petal.Length + Petal.Width * Species)
-	
+
 	varsel <- rxStepControl(method = "stepwise", scope = scope, keepStepCoefs=TRUE)
 	rxlm.step <- rxLinMod(form, data = iris, variableSelection = varsel,
 	    verbose = 1, dropMain = FALSE, coefLabelStyle = "R")
@@ -773,7 +773,7 @@ Notice the addition of the argument *keepStepCoefs = TRUE* to the *rxStepContol*
 	  Petal.Width:Species1 0.0000000 0.0000000  0.0000000  0.2630978
 	  Petal.Width:Species2 0.0000000 0.0000000  0.0000000 -0.5012827
 	  Petal.Width:Species3 0.0000000 0.0000000  0.0000000         NA
-	  
+
 
 Trying to glean patterns and information from a table can be difficult. So we’ve added another function, *rxStepPlot*, which allows the user to plot the parameter values at each step. Using the iris model object, we plot the coefficients:
 
@@ -802,7 +802,7 @@ Fixed-effects models are commonly associated with studies in which multiple obse
 For example, the MASS library contains the data set *petrol*, which consists of measurements of the yield of a certain refining process with possible predictors including specific gravity, vapor pressure, ASTM 10% point, and volatility measured as the ASTM endpoint for 10 samples of crude oil. Following Venables and Ripley , we first scale the numeric predictors, then fit the fixed-effects model:
 
 	#  Fixed-Effects Models
-	  
+
 	library(MASS)
 	Petrol <- petrol
 	Petrol[,2:5] <- scale(Petrol[,2:5], scale=F)
@@ -810,14 +810,14 @@ For example, the MASS library contains the data set *petrol*, which consists of 
 
 	  Call:
 	  rxLinMod(formula = Y ~ No + EP, data = Petrol, cube = TRUE)
-	  
+
 	  Cube Linear Regression Results for: Y ~ No + EP
 	  Data: Petrol
 	  Dependent variable(s): Y
-	  Total independent variables: 11 
+	  Total independent variables: 11
 	  Number of valid observations: 32
-	  Number of missing observations: 0 
-	   
+	  Number of missing observations: 0
+
 	  Coefficients:
 					Y
 	  No=A 32.5493917
@@ -831,7 +831,7 @@ For example, the MASS library contains the data set *petrol*, which consists of 
 	  No=I  9.8053871
 	  No=J  4.4360767
 	  EP    0.1587296
-	  
+
 
 ### Least Squares Dummy Variable (LSDV) Models
 
@@ -843,7 +843,7 @@ First, let’s do a quick, cautionary review of interacting factor variables by 
 
 	#  Least Squares Dummy Variable (LSDV) Models
 	#   A Quick Review of Interacting Factors
-	
+
 	set.seed(50)
 	income <- rep(c(1000,1500,2500,4000), each=5) + 100*rnorm(20)
 	region <- rep(c("Rural","Urban"), each=10)
@@ -910,7 +910,7 @@ We can see that the dummy variable for urban males was dropped; urban males are 
 
 Another variation is to use “\*”in the formula for factor crossing. Using *a\*b* is equivalent to using *a + b + a:b*. For example:
 
-	lm(income~region*sex, data = myData)	
+	lm(income~region*sex, data = myData)
 
 which results in:
 
@@ -963,14 +963,14 @@ results in:
 
 	Call:
 	rxLinMod(formula = income ~ region * sex, data = myData, cube = TRUE)
-	
+
 	Cube Linear Regression Results for: income ~ region * sex
 	Data: myData
 	Dependent variable(s): income
 	Total independent variables: 8 (Including number dropped: 4)
 	Number of valid observations: 20
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 	                           income
 	region=Rural            1480.4378
@@ -998,14 +998,14 @@ In Chapter 6, we looked at the CensusWorkers.xdf data set and examined the relat
 We can start with a simple dummy variable model, computing the mean wage income by sex:
 
 	#   Using Dummy Variables in rxLinMod
-	  
+
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
 	rxLinMod(incwage~sex, data=censusWorkers, pweights="perwt", cube=TRUE)
 
 which computes:
 
 	Call:
-	rxLinMod(formula = incwage ~ sex, data = censusWorkers, pweights = "perwt", 
+	rxLinMod(formula = incwage ~ sex, data = censusWorkers, pweights = "perwt",
 		cube = TRUE)
 
 	Cube Linear Regression Results for: incwage ~ sex
@@ -1013,22 +1013,22 @@ which computes:
 		C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\CensusWorkers.xdf
 	Probability weights: perwt
 	Dependent variable(s): incwage
-	Total independent variables: 2 
+	Total independent variables: 2
 	Number of valid observations: 351121
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 				incwage
 	sex=Male   43472.71
 	sex=Female 26721.09
-	
+
 Similarly, we could look at a simple linear relationship between wage income and age:
 
 	linMod1 <- rxLinMod(incwage~age, data=censusWorkers, pweights="perwt")
 	summary(linMod1)
 
 resulting in:
-	
+
 	Call:
 	rxLinMod(formula = incwage ~ age, data = censusWorkers, pweights = "perwt")
 
@@ -1037,23 +1037,23 @@ resulting in:
 		C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\CensusWorkers.xdf
 	Probability weights: perwt
 	Dependent variable(s): incwage
-	Total independent variables: 2 
+	Total independent variables: 2
 	Number of valid observations: 351121
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 				 Estimate Std. Error t value Pr(>|t|)    
 	(Intercept) 12802.980    247.963   51.63 2.22e-16 ***
 	age           572.980      5.947   96.35 2.22e-16 ***
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 	Residual standard error: 180800 on 351119 degrees of freedom
-	Multiple R-squared: 0.02576 
-	Adjusted R-squared: 0.02576 
-	F-statistic:  9284 on 1 and 351119 DF,  p-value: < 2.2e-16 
-	Condition number: 1 
-	
+	Multiple R-squared: 0.02576
+	Adjusted R-squared: 0.02576
+	F-statistic:  9284 on 1 and 351119 DF,  p-value: < 2.2e-16
+	Condition number: 1
+
 Computing the two end points on the regression line, we can plot it:
 
 	age <- c(20,65)
@@ -1067,14 +1067,14 @@ Computing the two end points on the regression line, we can plot it:
 
 The next typical step is to combine the two approaches by estimating separate intercepts for males and females:
 
-	linMod2 <- rxLinMod(incwage~sex+age, data = censusWorkers, pweights = "perwt", 
+	linMod2 <- rxLinMod(incwage~sex+age, data = censusWorkers, pweights = "perwt",
 	cube=TRUE)
 	summary(linMod2)
 
 which results in:
 
 	Call:
-	rxLinMod(formula = incwage ~ sex + age, data = censusWorkers, 
+	rxLinMod(formula = incwage ~ sex + age, data = censusWorkers,
 		pweights = "perwt", cube = TRUE)
 
 	Cube Linear Regression Results for: incwage ~ sex + age
@@ -1082,22 +1082,22 @@ which results in:
 	C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\CensusWorkers.xdf
 	Probability weights: perwt
 	Dependent variable(s): incwage
-	Total independent variables: 3 
+	Total independent variables: 3
 	Number of valid observations: 351121
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 				Estimate Std. Error t value Pr(>|t|)     |  Counts
 	sex=Male   20479.178    250.033   81.91 2.22e-16 *** | 3866542
 	sex=Female  3723.067    252.968   14.72 2.22e-16 *** | 3276744
 	age          573.232      5.816   98.56 2.22e-16 *** |        
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 	Residual standard error: 176800 on 351118 degrees of freedom
 	Multiple R-squared: 0.06804 (as if intercept included)
-	Adjusted R-squared: 0.06804 
-	F-statistic: 1.282e+04 on 2 and 351118 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.06804
+	F-statistic: 1.282e+04 on 2 and 351118 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
 We will create a small sample data set with the same variables we use in censusWorkers, but with only four observations representing the high and low value of age for both sexes.  Using the `rxPredict` function, the predicted values for each one of these sample observations is computed, which we then plot:
@@ -1114,11 +1114,11 @@ We will create a small sample data set with the same variables we use in censusW
 
 These types of models are often relaxed further by allowing both the slope and itercept to vary by group:
 
-	linMod3 <- rxLinMod(incwage~sex+sex:age, data = censusWorkers, 
+	linMod3 <- rxLinMod(incwage~sex+sex:age, data = censusWorkers,
 		pweights = "perwt", cube=TRUE)
 	summary(linMod3)
 	Call:
-	rxLinMod(formula = incwage ~ sex + sex:age, data = censusWorkers, 
+	rxLinMod(formula = incwage ~ sex + sex:age, data = censusWorkers,
 		pweights = "perwt", cube = TRUE)
 
 	Cube Linear Regression Results for: incwage ~ sex + sex:age
@@ -1126,10 +1126,10 @@ These types of models are often relaxed further by allowing both the slope and i
 		C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\library\RevoScaleR\SampleData\CensusWorkers.xdf
 	Probability weights: perwt
 	Dependent variable(s): incwage
-	Total independent variables: 4 
+	Total independent variables: 4
 	Number of valid observations: 351121
-	Number of missing observations: 0 
-	 
+	Number of missing observations: 0
+
 	Coefficients:
 						Estimate Std. Error t value Pr(>|t|)     |  Counts
 	sex=Male           10783.449    328.871   32.79 2.22e-16 *** | 3866542
@@ -1137,12 +1137,12 @@ These types of models are often relaxed further by allowing both the slope and i
 	age for sex=Male     814.948      7.888  103.31 2.22e-16 *** |        
 	age for sex=Female   288.876      8.556   33.76 2.22e-16 *** |        
 	---
-	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 	Residual standard error: 176300 on 351117 degrees of freedom
 	Multiple R-squared: 0.07343 (as if intercept included)
-	Adjusted R-squared: 0.07343 
-	F-statistic:  9276 on 3 and 351117 DF,  p-value: < 2.2e-16 
+	Adjusted R-squared: 0.07343
+	F-statistic:  9276 on 3 and 351117 DF,  p-value: < 2.2e-16
 	Condition number: 1.1764
 
 Again getting predictions and plotting:
@@ -1155,7 +1155,7 @@ Again getting predictions and plotting:
 
 We could continue the process, experimenting with functional forms for age. But, since we have many observations (and therefore many degrees of freedom), we can take advantage of the F() function available in revoScaleR to let the data speak for itself. As we saw in Chapter 6, the F() function creates a factor variable from a numeric variable “on-the-fly”, creating a level for every integer value. This allows us to compute and observe the shape of the functional form using a purely dummy variable model:
 
-	linMod4 <- rxLinMod(incwage~sex:F(age), data=censusWorkers, pweights="perwt", 
+	linMod4 <- rxLinMod(incwage~sex:F(age), data=censusWorkers, pweights="perwt",
 	cube=TRUE)
 
 
@@ -1174,27 +1174,25 @@ This model estimated a total of 92 coefficients, all for dummy variables represe
 You may have seen intercept-only models fitted with R’s *lm* function, where the model formula is of the form response ~ 1. In RevoScaleR these models should be fitted using *rxSummary*, because the intercept-only model simply returns the mean of the response. For example:
 
 #  Intercept-Only Models
-  
-	airlineDF <- rxDataStep(inData = 
+
+	airlineDF <- rxDataStep(inData =
 		file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.xdf"))
 	lm(ArrDelay ~ 1, data = airlineDF)
 	  Call:
 	  lm(formula = ArrDelay ~ 1, data = airlineDF)
-	
+
 	  Coefficients:
 	  (Intercept)  
 	        11.32  
-	
+
 	rxSummary(~ ArrDelay, data = airlineDF)
 	  Call:
 	  rxSummary(formula = ~ArrDelay, data = airlineDF)
-	
+
 	  Summary Statistics Results for: ~ArrDelay
 	  Data: airlineDF
 	  Number of valid observations: 6e+05
-	  Number of missing observations: 0 
-	 
+	  Number of missing observations: 0
+
 	     Name     Mean     StdDev   Min Max  ValidObs MissingObs
 	     ArrDelay 11.31794 40.68854 -86 1490 582628   17372
-	
-
