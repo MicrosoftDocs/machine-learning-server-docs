@@ -5,8 +5,8 @@ title: "R Server installation for Linux systems"
 description: "Install Microsoft R Server 8.0 or Microsoft R Server 2016 (version 8.0.5) on Linux."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "08/03/2016"
+manager: "jhubbard"
+ms.date: "11/03/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,7 +35,7 @@ Installer requirements consist of the following:
 -   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
 -   You are installing as root or as super user
 
-If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#managing-your-microsoft-r-server-installation).
+If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
 ## Where Do I Get It?
 
@@ -147,6 +147,7 @@ As a verification step, run the Revo64 program.
 
 4. To quit the program, type `q()` at the command line with no arguments.
 
+<a name="manage-installation"></a>
 ## Manage your installation
 
 In this section, we discuss file management for your Microsoft R Server installation, including file ownership, file permissions, and so on.
@@ -362,6 +363,7 @@ On Linux systems with Hadoop installed, the install.sh script also tries to conf
 
 If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
+<a name="non-root-installs"></a>
 ### Non-Root installs of R Server 8.0
 
 If you have an older distribution of Microsoft R Server 8.0 for Linux, you can run the installer as a non-root user without sudo privileges. You can run either a complete install or simply extract the files to a directory for subsequent installation using your own install scripts. For a complete install to succeed, however, the following conditions must be met:

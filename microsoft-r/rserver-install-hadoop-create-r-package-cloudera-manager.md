@@ -31,12 +31,11 @@ The Microsoft R Server Parcel Generator is a Python script that takes a library 
 
 When you call the script, you must provide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
 
-	generate\_r\_parcel.py –p "RevoUserPkgs" –v "0.1" –l /home/RevoUser/R/library
+	generate_r_parcel.py –p "RevoUserPkgs" –v "0.1" –l /home/RevoUser/R/library
 
 By default, the path to the library you package should be the same as the path to the library on the Hadoop cluster. You can specify a different destination using the –d flag:
 
-	generate\_r\_parcel.py –p "RevoUserPkgs" –v "0.1" \
-		-l /home/RevoUser/R/library –d /var/RevoShare/RevoUser/library
+	generate_r_parcel.py –p "RevoUserPkgs" –v "0.1" -l /home/RevoUser/R/library –d /var/RevoShare/RevoUser/library
 
 To distribute and activate your parcel perform the following steps:
 
