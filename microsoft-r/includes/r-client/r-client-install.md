@@ -40,7 +40,7 @@
 
    1. [Download Microsoft R Client](http://aka.ms/rclient/download)
    
-   1. Download an additional file ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=761266&clcid=1033
+   1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=761266&clcid=1033
 
    1. Copy the .cab file and R Client installer to a network share or portable drive.
 
@@ -50,7 +50,7 @@
    
    1. Close any other programs running on the system. 
 
-   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to a folder on the machine with restricted internet access.
+   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
 
    1. Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
 
