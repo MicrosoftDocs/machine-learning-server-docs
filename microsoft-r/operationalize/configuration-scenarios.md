@@ -31,9 +31,9 @@ If you want to operationalize your R analytics, you must configure Microsoft R S
 
 There are essentially two types of configurations:
 
-1. **One-box configuration** (common for testing)
+1. The "One-box configuration", which is commonly used for testing
 
-1. **Enterprise-ready configuration** (essential for production)
+1. The "Enterprise-ready configuration", which is essential for production grade environments
 
 <a name="onebox"></a>
 ## The One-Box Basic Configuration
@@ -42,9 +42,7 @@ With one-box configurations, as the name suggests, everything runs on a single m
 
 This configuration includes an operationalization front-end and back-end on the same machine. It relies on the default local SQLite database. The front-end acts as a front-end interface with which DeployR users can interact directly to make API calls, access data in the database, and send jobs to be computed on the back-end. The back-end serves directly in support of the front-end services and is used to execute R code as a session or service, for computation, and manages stateful R shells.
 
-Setup R Server for operationalization with an R Server with a _one-box configuration_:
- + [How to configure on Windows]()
- + [How to configure on Linux]()
+[Learn how to setup R Server for operationalization with a _one-box configuration_](configuration-initial.md#onebox).
 
 ![One-box configuration](../media/o16n/setup-onebox.jpeg)
 
@@ -52,19 +50,13 @@ Setup R Server for operationalization with an R Server with a _one-box configura
 <a name="enterpriseready"></a>
 ## The Enterprise-Ready Configuration
 
-With enterprise-ready configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security and even a remote SQL or PostgreSQL database.
+With enterprise-ready configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
-This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end acts as a front-end interface with which DeployR users can interact directly to make API calls, access data in the database, and send jobs to be computed on the back-end. The back-end serves directly in support of the front-end services and is used to execute R code as a session or service, for computation, and manages stateful R shells.
+This configuration includes one or more operationalization front-ends and back-ends on a group of machines. The front-end acts as a front-end interface with which DeployR users can interact directly to make API calls, access data in the database, and send jobs to be computed on the back-end. The back-end serves directly in support of the front-end services and is used to execute R code as a session or service, for computation, and manages stateful R shells. Front-ends and back-ends can be scaled independently.  You can also [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
 
-With this configuration, we recommend that you [configure DeployR for HTTPS](security-https.md).  
+[Learn how to setup R Server for operationalization withan _enterprise-ready configuration_](configuration-initial.md#enterpriseready).
 
-A [remote SQL Server or PostgreSQL database can be configured](configure-remote-database.md) in place of the default SQLite database. While it is optional for configurations with a single front-end, it is required whenever multiple front-ends are configured.
-
-Front-ends and back-ends can be scaled independently. 
-
-Setup R Server for operationalization with an _enterprise-ready configuration_:
- + [How to configure on Windows]()
- + [How to configure on Linux]()
+> With this configuration, we strongly recommend that you [configure DeployR for HTTPS](security-https.md).  
 
 ![Enterprise-Ready Configuration](../media/o16n/setup-enterprise-ready.jpeg)
 

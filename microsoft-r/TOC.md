@@ -80,9 +80,9 @@
 ### [Get Started with Operationalization](operationalize/get-started.md)
 
 ### [Configure & Administer](operationalize/configure.md)
-#### [Configuration Scenarios](operationalize/configurations.md)
-#### [Configuration Guide for Windows](operationalize/configure-on-windows.md)
-#### Configuration Guide for Linux
+#### [Configuration Scenarios](operationalize/configuration-scenarios.md)
+#### [Configuring DeployR](operationalize/configuration-initial.md)
+#### [Configure a Database](operationalize/configure-remote-database.md)
 #### [Enterprise-Grade Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
@@ -91,7 +91,6 @@
 ##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
 ##### Basic Administration (Admin Utility)
-##### [Configure a Database](operationalize/configure-remote-database.md)
 ##### Session management
 ##### Web service monitoring
 

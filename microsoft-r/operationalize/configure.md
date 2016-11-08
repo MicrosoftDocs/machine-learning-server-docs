@@ -27,29 +27,21 @@ ms.custom: ""
 
 # Configure and Administer R Server for Operationalization
 
-Learn more about configuring and administering the deployment server.
-+ [Configuration scenarios](configurations.md)
+Once R Server has been installed, you can configure DeployR.
 
- + Article on “Configuration Scenarios”: includes a technical architecture/config diagram of front-end/backend with authentication; introduces one-box vs enterprise ready config)  [SME: DANIEL, EFRAT]
- + Configuration Guide for Windows, including these topics:
-     + Basic Setup for Operationalization (one-box; not enterprise-ready; small scale prototyping/POC, try it out)  [SME: Nick]
-     + Enterprise Ready Setup for Operationalization (multiple front and backends; scale backend, active directory, LDAPs, SSL/Certificates, remote postgres (linux) or SQL database(windows))  [SME: DANIEL]
-     + On cloud configuration
-     + General post install steps (firewall rules)
- + Configuration Guide for Linux (like for Windows)
- + Cloud configuration
- + Enterprise Grade Security:
-     + Authentication 
-     + Authorization
-     + CORS
-     + Connection Security (HTTPS/SSL)
+### DeployR Configuration
 
-### Enterprise-grade Security
-Learn about security options for DeployR, including:
-+ [Authentication](security-authentication.md)
-+ [Enabling HTTPS](security-https.md)
-+ [Cross-Origin Resource Sharing](security-cors.md)
+There are two types of [configuration scenarios](configuration-scenarios.md): one-box by enterprise-ready.
 
+[Get started configuring DeployR for your organization.](configuration-initial.md)
+
+### Enterprise-Grade Security
+
+[!include[Security Introduction](./includes/o16n/security-intro.md)]
+
+### Administration Tasks
+
+@@@@@@
  + Administration Section:
      + Inspect Server & Log files
      + Stop & Restart
