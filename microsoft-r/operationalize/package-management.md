@@ -102,6 +102,8 @@ There are several ways you can achieve this goal. Two options are described here
 
 You can create a local R package repository  of the packages you need using the R package miniCRAN. You can then install from this repository. This can be very useful when the server does not have Internet connectivity since the standard method of installing R packages (the R command install.packages()) might not work.
 
+**To use the miniCRAN method:**
+
 1. Install the `miniCRAN` package on a computer that has Internet access.
    ```
    if(!require("miniCRAN")) install.packages("miniCRAN")
@@ -127,24 +129,27 @@ You can create a local R package repository  of the packages you need using the 
    1. Copy the miniCRAN repository to @@@WHERE.
 
    1. Run the R command `install.packages()` using your preferred IDE or an R tool such as Rgui.exe.
-At the prompt to specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
-pkgs_needed <- c("ggplot2", "ggdendro")
-local_repo  <- "~/miniCRAN"
+      @@@ WHAT DO YOU INSTALL HERE????
 
-.libPaths()[1]
-"C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
-
-lib <- .libPaths()[1]
-
-install.packages(pkgs_needed, 
+   1. At the prompt to specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
+      ```
+      pkgs_needed <- c("ggplot2", "ggdendro")
+      local_repo  <- "~/miniCRAN"
+      
+      .libPaths()[1]
+      "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
+      
+      lib <- .libPaths()[1]
+      
+      install.packages(pkgs_needed, 
               repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
               lib = lib,
               type = "win.binary",
               dependencies = TRUE
               )
+      ```
 
-1. Verify that the packages were installed by running this R code.
-installed.packages()
+1. Verify that the packages were installed by running the following R command:  ```installed.packages()``
 
 ### Option 2: Create a Master Script with the List of Approved Packages
 
