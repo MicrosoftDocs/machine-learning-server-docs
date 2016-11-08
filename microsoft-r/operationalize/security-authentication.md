@@ -118,24 +118,24 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Get the client ID and tenant ID from the Microsoft Azure management portal. You will use these values in the DeployR configuration file:
 
-   1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
+    1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
-   1. Once the new application has been created, click **CONFIGURE**.
+    1. Once the new application has been created, click **CONFIGURE**.
 
-   1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
+    1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
 
-   1. Open the configuration file, `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`.
+    1. Open the configuration file, `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`.
 
-   1. Search for the section starting with `"AzureActiveDirectory": {`
+    1. Search for the section starting with `"AzureActiveDirectory": {`
 
-   1. Uncomment characters in that section and update the properties so that they match the values in the Azure Management portal.  Properties include:
+    1. Uncomment characters in that section and update the properties so that they match the values in the Azure Management portal.  Properties include:
 
-      |Azure AD Properties|Definition|
-      |----------------|-------------------------------|
-      |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
-      |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
+       |Azure AD Properties|Definition|
+       |----------------|-------------------------------|
+       |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
+       |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
 
