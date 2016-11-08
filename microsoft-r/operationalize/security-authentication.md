@@ -116,9 +116,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each front-end machine, do the following:**
 
-1. Get the client ID and tenant ID from the Microsoft Azure management portal. You will use these values in the DeployR configuration file:
-
-    1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
+1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
     1. Once the new application has been created, click **CONFIGURE**.
 
