@@ -31,9 +31,129 @@ Whenever you or your users are writing, testing, and deploying R scripts, it is 
 
 By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote DeployR server environment.
 
-To simplify R package management, review the following approaches for the best practices for production and non-production environments. 
+As the DeployR administrator, one of your responsibilities is to ensure the R code that runs on the DeployR server has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
 
-## Non-Production/Development Environments
+Of course, data scientists can test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
+
+<br>
+
+## Option 1: Local Package Repository (Offline Solution)
+
+>**Audience:** System administrator
+>
+>**Applies to:** Development -or- Production Environments
+
+You can create a local R package repository of the R packages you need using the R package `miniCRAN`. You can then copy this repository to all back-ends and then install directly from this repository. 
+
+This production-safe approach provides an excellent way to:
++ Keep a standard, sanctioned library of R packages for production use
++ Allow packages to be installed in an offline environment
+
+
+**To use the miniCRAN method:**
+
+1. On the machine with Internet access:
+
+   1. Launch your preferred R IDE or an R tool such as Rgui.exe.
+
+   1. At the R prompt, install the `miniCRAN` package on a computer that has Internet access.
+      ```
+      if(!require("miniCRAN")) install.packages("miniCRAN")
+      if(!require("igraph")) install.packages("igraph")
+      library(miniCRAN)
+      ```   
+   
+   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open will be used. For example, for Microsoft R Server 9.0.0 that date is 2016-11-01.
+
+      ```
+      # Define the package source: a CRAN mirror, or an MRAN snapshot
+      CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-11-01")
+      ```
+
+   1. Create a miniCRAN repository in which the packages will be downloaded and installed.  This will create the folder structure that you need to copy the packages to each back-end later.
+      ``` 
+      # Define the local download location
+      local_repo <- "~/my-miniCRAN-repo"
+      ```
+
+   1. Download and install the packages you need to this computer. 
+      ```       
+      # List the packages you need 
+      # Do not specify dependencies
+      pkgs_needed <- c("Package-A", "Package-B", "Package-...")
+      ```
+
+1. On each back-end:
+   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@@WHERE on this back-end machine.
+
+   1. Launch your preferred R IDE or an R tool such as Rgui.exe.
+   
+   1. At the R prompt, run the R command `install.packages()`. @@@ WHAT DOES THIS DO HERE???
+
+   1. At the prompt, specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
+         ```
+         pkgs_needed <- c("ggplot2", "ggdendro")
+         local_repo  <- "~/my-miniCRAN-repo"
+         
+         .libPaths()[1]
+         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library @@@"
+         
+         lib <- .libPaths()[1]
+         
+         install.packages(pkgs_needed, 
+              repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
+              lib = lib,
+              type = "win.binary",
+              dependencies = TRUE
+              )
+         ```
+
+   1. Verify that the packages were installed by running the following R command and reviewing the list of packages returned:  
+      ```
+      installed.packages()
+      ```
+
+<br>
+
+## Option 2: R Script with List of Approved Packages
+
+>**Audience:** System administrator
+>
+>**Applies to:** Development -or- Production Environments
+
+As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the DeployR configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
++ Which R packages (and versions) are needed and sanctioned for production.
++ Requests from users to add new R packages or update package versions.
+
+This production-safe approach provides an excellent way to:
++ Keep a standard (and sanctioned) library of R packages for production use.
++ Manage R package dependencies as well as package versions.
++ Schedule timely updates to R packages.
+
+This option does require the back-end machines have access to the Internet to install the packages.
+
+**To use a master script to install packages:**
+
+1. Create the master list of packages (and versions) in an R script format.  For example:
+   ```
+   install.packages("Package-A")
+   install.packages("Package-B")
+   install.packages("Package-C")
+   install.packages("Package-...")
+   ```
+
+1. Manually run this R script on each back-end.
+
+>You must update and manually rerun this script on each back-end whenever a new package or version is needed in the server environment.
+
+<br>
+
+<a name="mrsdeploy"></a>
+## Option 3: Remote Session Testing
+
+>**Audience:** Data Scientist or the system administrator
+>
+>**Applies to:** Development Environments
 
 To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the DeployR server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
 
@@ -43,12 +163,17 @@ This remote execution and snapshotting approach provides an excellent way to:
 
 The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. @LINK TO VIGNETTE DOC IN MSDN "LEARN MORE ABOUT SNAPSHOTS AND REMOTE EXECUTION"
 
+**Note:** Once you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
+
 **To install packages within an R session:**
+
 1. Develop and test your code locally.
+
 1. Load the `mrsdeploy` package.
    ```
    > library(mrsdeploy)
    ```
+
 1. Authenticate to create the remote session. @LINK TO VIGNETTE DOC IN MSDN    For example, for Azure Active Directory:
    ```
    > remote_login_aad([AAD_properties])
@@ -79,102 +204,14 @@ The packages you install using this method do not 'contaminate' the production e
    ```
 
    >Take note of the `snapshotId` to call this snapshot later.
-   > Learn more about snapshots here @@@ADD LINK
+   >
+   >Learn more about snapshots here @@@ADD LINK
     
 
 **To reuse those installed packages, objects and files:**
 
 You can use the snapshot (installed packages, objects, files) within the context of a web service in a remote session. When you create a web service, reference the snapshot ID. Then, when the service is executed, the snapshot will be loaded and the session information is automatically available to the service. @LINK TO VIGNETTE DOC IN MSDN
 
+```
 @@@CAN WE PROVIDE AN EXAMPLE??
-
->You can request that a package be installed across the configuration for all users by the administrator once you've sufficiently tested the package(s) as described in this section.
-
-## Production Environments
-
-As the DeployR administrator, one of your responsibilities is to ensure the R code that runs on the DeployR server has access to the R package dependencies declared within that code. 
-
-This means that the right set of R package versions have been installed for the organization and are accessible to all users.
-
-There are several ways you can achieve this goal. Two options are described here.
-
-### Option 1: Create a Local Package Repository Using miniCRAN
-
-You can create a local R package repository  of the packages you need using the R package miniCRAN. You can then install from this repository. This can be very useful when the server does not have Internet connectivity since the standard method of installing R packages (the R command install.packages()) might not work.
-
-**To use the miniCRAN method:**
-
-1. Install the `miniCRAN` package on a computer that has Internet access.
-   ```
-   if(!require("miniCRAN")) install.packages("miniCRAN")
-   if(!require("igraph")) install.packages("igraph")
-   library(miniCRAN)
-   
-   # Define the package source: a CRAN mirror, or an MRAN snapshot
-   CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-04-01")
-   ```
-
-1. Download or install the packages you need to this computer. This will create the folder structure that you need to copy the packages to each back-end later.
-   ``` 
-   # Define the local download location
-   local_repo <- "~/miniCRAN"
-   
-   
-   # List the packages you need 
-   # Do not specify dependencies
-   pkgs_needed <- c("package-1", "package-2", "package-n")
-   ```
-
-1. On each back-end:
-   1. Copy the miniCRAN repository to @@@WHERE.
-
-   1. Run the R command `install.packages()` using your preferred IDE or an R tool such as Rgui.exe.
-      @@@ WHAT DO YOU INSTALL HERE????
-
-   1. At the prompt to specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
-      ```
-      pkgs_needed <- c("ggplot2", "ggdendro")
-      local_repo  <- "~/miniCRAN"
-      
-      .libPaths()[1]
-      "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
-      
-      lib <- .libPaths()[1]
-      
-      install.packages(pkgs_needed, 
-              repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
-              lib = lib,
-              type = "win.binary",
-              dependencies = TRUE
-              )
-      ```
-
-1. Verify that the packages were installed by running the following R command:  ```installed.packages()``
-
-### Option 2: Create a Master Script with the List of Approved Packages
-
-To achieve this end, we recommend you use an R script to install a master list of default packages across the DeployR configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
-+ Which R packages (and versions) are needed and sanctioned for production.
-+ Requests from users to add new R packages or update package versions.
-
-
-This production-safe approach provides an excellent way to:
-+ Keep a standard (and sanctioned) library of R packages for production use.
-+ Manage R package dependencies as well as package versions.
-+ Schedule timely updates to R packages.
-
-> @@@ Download the packages you need, and their dependencies, as zip files, and save them in a local folder, and then copy that folder to each back-end machine. For more information on the manual copy method, see Install Additional Packages on SQL Server.
-
-**To use a master script to install packages:**
-
-1. Create the master list of packages (and versions) in an R script format.  For example:
-   ```
-   install.packages("Package-A")
-   install.packages("Package-B")
-   install.packages("Package-C")
-   install.packages("Package-...")
-   ```
-
-1. Manually run this R script on each back-end.
-
->You must update and manually rerun this script on each back-end whenever a new package or version is needed in the server environment.
+```
