@@ -121,11 +121,12 @@ You can create a local R package repository  of the packages you need using the 
    # List the packages you need 
    # Do not specify dependencies
    pkgs_needed <- c("package-1", "package-2", "package-n")
-   
-1. Copy the miniCRAN repository to @@@WHERE on each back-end.
+   ```
 
+1. On each back-end:
+   1. Copy the miniCRAN repository to @@@WHERE.
 
-On the SQL Server computer, run the R command install.packages(). You can use one of the R tools that are installed with R Services (In-database), such as Rgui.exe, or you can run the command as part of a Transact-SQL stored procedure.
+   1. Run the R command `install.packages()` using your preferred IDE or an R tool such as Rgui.exe.
 At the prompt to specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
 pkgs_needed <- c("ggplot2", "ggdendro")
 local_repo  <- "~/miniCRAN"
@@ -142,12 +143,8 @@ install.packages(pkgs_needed,
               dependencies = TRUE
               )
 
-Verify that the packages were installed by running this R code.
+1. Verify that the packages were installed by running this R code.
 installed.packages()
-
-Acknowledgements
-The source for this information is this article by Andre de Vries, who also developed the miniCRAN package. For details and a complete walkthrough, see How to install R packages on an off-line SQL Server 2016 instance
-
 
 ### Option 2: Create a Master Script with the List of Approved Packages
 

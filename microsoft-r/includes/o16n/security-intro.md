@@ -1,7 +1,7 @@
 
 Configure DeployR to take advantage of enterprise-ready security features such as:
-+ [Authenticating](./operationalize/security-authentication.md) with Active Directory LDAP/LDAP-Security or with Azure Active Directory
-+ [Using HTTPS](./operationalize/security-https.md) to secure communication
++ [Authenticating](../../operationalize/security-authentication.md) with Active Directory LDAP/LDAP-Security or with Azure Active Directory
++ [Using HTTPS](../../operationalize/security-https.md) to secure communication
 + [Cross-Origin Resource Sharing](../../operationalize/security-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
 
 >[!IMPORTANT] 
