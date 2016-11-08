@@ -57,7 +57,7 @@ You are now ready to begin operationalizating your R analytics with R Server.
 
 ## Setting up for an enterprise-ready configuration
 
-This type of configuration is highly recommended for production usage. It offers a scalable architecture, enterprise-grade security, and even a remote SQL or PostgreSQL database. [Learn more.](configurations.md)
+This type of configuration is highly recommended for production usage. It offers a scalable architecture, enterprise-grade security, and even a remote SQL or PostgreSQL database. [Learn more.](configuration-scenarios.md)
 
 You can configure one or more front-ends as needed and scale your back-ends as well. A back-end can be configured on its own machine or on the same machine as the front-end.
 

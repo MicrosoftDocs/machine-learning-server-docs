@@ -88,7 +88,7 @@
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 #### Administration
-##### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics-troubleshooting.md)
+##### [Diagnostics & Troubleshooting](operationalize/diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
 ##### Basic Administration (Admin Utility)
 ##### Session management

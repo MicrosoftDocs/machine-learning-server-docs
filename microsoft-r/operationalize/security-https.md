@@ -64,7 +64,7 @@ This section walks you through the steps for securing the connections between th
 1. Back in the "Connections" pane, select the website name.
 1. Click the "SSL Settings" icon in the center of the screen to open the dialog. 
 1. Select the checkbox to "Require SSL" and require a client certificate.
-1. Run the [DeployR diagnostic tool](admin-diagnostics-troubleshooting.md) to send a test HTTPs request.
+1. Run the [DeployR diagnostic tool](diagnostics-troubleshooting.md) to send a test HTTPs request.
    > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 
 #### Using your Default .ASP Core Web Server to Encrypt
@@ -94,7 +94,7 @@ This section walks you through the steps for securing the connections between th
    1. Close and save the file.
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
-   1. Run the [DeployR diagnostic tool](admin-diagnostics-troubleshooting.md) to send a test HTTPs request.
+   1. Run the [DeployR diagnostic tool](diagnostics-troubleshooting.md) to send a test HTTPs request.
 
 <br />
 
@@ -142,7 +142,7 @@ When encrypting, you have the choice of using one of the following **back-end HT
    1. Close and save the file.
 1. Launch the administrator's utility and:
    1. [Restart the back-end](admin-utility.md#startstop).
-   1. Run the [DeployR diagnostic tool](admin-diagnostics-troubleshooting.md) to send a test HTTPs request.
+   1. Run the [DeployR diagnostic tool](diagnostics-troubleshooting.md) to send a test HTTPs request.
 
 
 <br />
