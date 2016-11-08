@@ -134,7 +134,7 @@ For security purposes, we strongly recommend that you encrypt the login credenti
 You can assess the state and health of your DeployR environment by running the diagnostic test in the Administrator Utility. 
 Armed with this information, you will be able to investigate and resolve most issues. 
 
-[Learn more about Diagnostic testing here.](admin-diagnostics-troubleshooting.md)
+[Learn more about Diagnostic testing here.](diagnostics-troubleshooting.md)
 
 <br><a name="capacity"></a>
 

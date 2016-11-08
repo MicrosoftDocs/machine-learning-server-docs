@@ -100,12 +100,10 @@ There are several ways you can achieve this goal. Two options are described here
 
 ### Option 1: Create a Local Package Repository Using miniCRAN
 
-You can create a local R package repository using the R package miniCRAN. This can be very useful when the server does not have Internet connectivity since the standard method of installing R packages (the R command install.packages()) might not work.
+You can create a local R package repository  of the packages you need using the R package miniCRAN. You can then install from this repository. This can be very useful when the server does not have Internet connectivity since the standard method of installing R packages (the R command install.packages()) might not work.
 
-There are two options for installing packages from a local share or repository:
-Use the miniCRAN package to create a local repository of the packages you need, then install from this repository. This topic describes the miniCRAN method.
-Download the packages you need, and their dependencies, as zip files, and save them in a local folder, and then copy that folder to the SQL Server computer. For more information on the manual copy method, see Install Additional Packages on SQL Server.
-Step 1. Install miniCRAN and download packages
+1. Install the miniCRAN package on a computer that has Internet access.
+
 Install the miniCRAN package on a computer that has Internet access.
 # Install miniCRAN ---------------------------------------------------
 
@@ -161,6 +159,8 @@ This production-safe approach provides an excellent way to:
 + Keep a standard (and sanctioned) library of R packages for production use.
 + Manage R package dependencies as well as package versions.
 + Schedule timely updates to R packages.
+
+> @@@ Download the packages you need, and their dependencies, as zip files, and save them in a local folder, and then copy that folder to each back-end machine. For more information on the manual copy method, see Install Additional Packages on SQL Server.
 
 **To use a master script to install packages:**
 

@@ -31,7 +31,7 @@ After installing Microsoft R Server, you can configure the product for the opera
 
 ## Setting up for a one-box configuration
 
-With this configuration, everything runs on a single machine. This configuration is perfect for testing, proof-of-concepts, and small-scale prototyping, but is not appropriate for production usage. [Learn more.](configurations.md)
+With this configuration, everything runs on a single machine. This configuration is perfect for testing, proof-of-concepts, and small-scale prototyping, but is not appropriate for production usage. [Learn more.](configuration-scenarios.md)
 
 <a name="onebox"></a>
 
