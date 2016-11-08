@@ -37,7 +37,7 @@ There are two types of [configuration scenarios](configuration-scenarios.md): on
 
 ### Enterprise-Grade Security
 
-[!include[Security Introduction](./includes/o16n/security-intro.md)]
+[!include[Security Introduction](../includes/o16n/security-intro.md)]
 
 ### Administration Tasks
 

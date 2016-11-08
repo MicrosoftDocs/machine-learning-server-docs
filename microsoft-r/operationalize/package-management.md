@@ -96,6 +96,62 @@ As the DeployR administrator, one of your responsibilities is to ensure the R co
 
 This means that the right set of R package versions have been installed for the organization and are accessible to all users.
 
+There are several ways you can achieve this goal. Two options are described here.
+
+### Option 1: Create a Local Package Repository Using miniCRAN
+
+You can create a local R package repository using the R package miniCRAN. This can be very useful when the server does not have Internet connectivity since the standard method of installing R packages (the R command install.packages()) might not work.
+
+There are two options for installing packages from a local share or repository:
+Use the miniCRAN package to create a local repository of the packages you need, then install from this repository. This topic describes the miniCRAN method.
+Download the packages you need, and their dependencies, as zip files, and save them in a local folder, and then copy that folder to the SQL Server computer. For more information on the manual copy method, see Install Additional Packages on SQL Server.
+Step 1. Install miniCRAN and download packages
+Install the miniCRAN package on a computer that has Internet access.
+# Install miniCRAN ---------------------------------------------------
+
+if(!require("miniCRAN")) install.packages("miniCRAN")
+if(!require("igraph")) install.packages("igraph")
+library(miniCRAN)
+
+# Define the package source: a CRAN mirror, or an MRAN snapshot
+CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-04-01")
+
+# Define the local download location
+local_repo <- "~/miniCRAN"
+
+Download or install the packages you need to this computer. This will create the folder structure that you need to copy the packages to the SQL Server later.
+# List the packages you need 
+# Do not specify dependencies
+pkgs_needed <- c("ggplot2", "ggdendro")
+
+Copy the miniCRAN repository to the R_SERVICES library on the SQL Server instance.
+Step 2. Install the packages on the SQL Server computer
+On the SQL Server computer, run the R command install.packages(). You can use one of the R tools that are installed with R Services (In-database), such as Rgui.exe, or you can run the command as part of a Transact-SQL stored procedure.
+At the prompt to specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
+pkgs_needed <- c("ggplot2", "ggdendro")
+local_repo  <- "~/miniCRAN"
+
+.libPaths()[1]
+"C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
+
+lib <- .libPaths()[1]
+
+install.packages(pkgs_needed, 
+              repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
+              lib = lib,
+              type = "win.binary",
+              dependencies = TRUE
+              )
+
+Verify that the packages were installed by running this R code.
+installed.packages()
+
+Acknowledgements
+The source for this information is this article by Andre de Vries, who also developed the miniCRAN package. For details and a complete walkthrough, see How to install R packages on an off-line SQL Server 2016 instance
+
+
+### Option 2: Create a Master Script with the List of Approved Packages
+
 To achieve this end, we recommend you use an R script to install a master list of default packages across the DeployR configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
 + Which R packages (and versions) are needed and sanctioned for production.
 + Requests from users to add new R packages or update package versions.
