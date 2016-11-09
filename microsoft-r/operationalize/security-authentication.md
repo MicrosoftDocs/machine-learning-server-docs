@@ -92,13 +92,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    1. In the `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
    1. Uncomment characters in that section and update the properties so that they match the values for your token signing certificate:
+      ```
+      "JWTSigningCertificate": {
+          "StoreName": "My",
+          "StoreLocation": "LocalMachine",
+          "SubjectName": "<subject name>"
+       }
        ```
-       "JWTSigningCertificate": {
-           "StoreName": "My",
-           "StoreLocation": "LocalMachine",
-           "SubjectName": "<subject name>"
-        }
-        ```
 
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
@@ -107,12 +107,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each front-end machine.
 
+<br>
+
 <a name="aad"></a>
 
 ## Azure Active Directory 
 
 [Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate with DeployR in the cloud when the client application and DeployR have access to the internet.
-<br>
 
 **On each front-end machine, do the following:**
 
