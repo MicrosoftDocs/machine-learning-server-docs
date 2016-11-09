@@ -41,9 +41,9 @@ With this configuration, everything runs on a single machine. This configuration
 
 1. [Launch the DeployR administrator utility script](admin-utility.md#launch).
 
-1. Choose @@
+1. Choose the option to @@**Configure DeployR**.
 
-1. Run the configuration script called `onebox.exe` (on Windows) and `onebox.sh` (on Linux) to set up the front-end and back-end onto the same machine.
+1. Choose the option to @@**Configure onebox** to set up the front-end and back-end onto the same machine.
 
 1. When prompted, provide the admin password for the built-in, local DeployR `administrator` account.  
   
@@ -77,7 +77,9 @@ You can configure one or more front-ends as needed and scale your back-ends as w
 
     1. [Launch the DeployR administrator utility script](admin-utility.md#launch) and:
 
-       1. Choose the option to configure the front-end.
+       1. Choose the option to @@ **Configure DeployR**.
+
+       1. Choose the option to @@ **Configure Frontend only** to set up the front-end.
     
        1. Choose the option to [set the admin password](admin-utility.md#admin-password) for the built-in, local `administrator` account.   
 
@@ -93,9 +95,11 @@ You can configure one or more front-ends as needed and scale your back-ends as w
 
     1. On each machine, install the same R Server you installed on the front-end.
 
-    1. [Launch the DeployR administrator utility script](admin-utility.md#launch).
-    
-    1. From the utility menu, choose the option to configure the back-end.
+    1. [Launch the DeployR administrator utility script](admin-utility.md#launch) and:
+
+       1. Choose the option to @@ **Configure DeployR**.
+
+       1. Choose the option to @@ **Configure Backend only** to set up the back-end.
 
     1. After the script has ended, configure the firewall.
     

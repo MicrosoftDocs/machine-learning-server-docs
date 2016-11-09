@@ -25,21 +25,19 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure and Administer R Server for Operationalization
+# Configure and Administer DeployR
 
 Once R Server has been installed, you can configure DeployR.
 
-### DeployR Configuration
+## Configuring DeployR
 
-There are two types of [configuration scenarios](configuration-scenarios.md): one-box by enterprise-ready.
+There are two types of configuration scenarios: [one-box -or- enterprise-ready multi-machine](configuration-scenarios.md).  Learn how to [configure DeployR](configuration-initial.md) for your organization.
 
-[Get started configuring DeployR for your organization.](configuration-initial.md)
-
-### Enterprise-Grade Security
+### Enabling Enterprise-Grade Security
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
 
-### Administration Tasks
+### Administrating
 
 @@
  + Administration Section:
