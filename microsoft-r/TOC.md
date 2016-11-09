@@ -88,25 +88,15 @@
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 #### Administration
+##### [Basic Administration (Admin Utility)](operationalize/admin-utility.md)
 ##### [Diagnostics & Troubleshooting](operationalize/diagnostics-troubleshooting.md)
 ##### Inspect Server & Log files
-##### Basic Administration (Admin Utility)
-##### Session management
-##### Web service monitoring
 
 ### [R Package Management](operationalize/package-management.md)
 
 ### [Deploy Analytics as Web Services](operationalize/deploy.md)
-#### Deployment Workflow 
-#### Deployment Tutorial
-#### Create Web Service
-#### Test Web Service
-#### Deploy Web Service
-#### Consume Web Service
 
 ### [Integrate Web Services into Applications](operationalize/integrate.md)
-#### Integration Workflow
-#### Integration Tutorial
 
 ### [API Reference](operationalize/api.md)
 
