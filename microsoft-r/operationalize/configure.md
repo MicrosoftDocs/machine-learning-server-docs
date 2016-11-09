@@ -41,7 +41,7 @@ There are two types of [configuration scenarios](configuration-scenarios.md): on
 
 ### Administration Tasks
 
-@@@@@@
+@@
  + Administration Section:
      + Inspect Server & Log files
      + Stop & Restart

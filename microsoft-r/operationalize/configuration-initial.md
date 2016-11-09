@@ -41,7 +41,7 @@ With this configuration, everything runs on a single machine. This configuration
 
 1. [Launch the DeployR administrator utility script](admin-utility.md#launch).
 
-1. Choose @@@@@@
+1. Choose @@
 
 1. Run the configuration script called `onebox.exe` (on Windows) and `onebox.sh` (on Linux) to set up the front-end and back-end onto the same machine.
 
@@ -71,9 +71,9 @@ You can configure one or more front-ends as needed and scale your back-ends as w
 
     1. On each machine, install R Server:
 
-       + On Windows, install R Server (Standalone).  @@@ADD LINKS
+       + On Windows, install R Server (Standalone).  @@ADD LINKS
 
-       + On Linux, install Microsoft R Server.  @@@ADD LINKS 
+       + On Linux, install Microsoft R Server.  @@ADD LINKS 
 
     1. [Launch the DeployR administrator utility script](admin-utility.md#launch) and:
 
@@ -81,7 +81,7 @@ You can configure one or more front-ends as needed and scale your back-ends as w
     
        1. Choose the option to [set the admin password](admin-utility.md#admin-password) for the built-in, local `administrator` account.   
 
-       1. Choose the option to open the BLAH BLAH BLAH @@@@@@ port:
+       1. Choose the option to open the BLAH BLAH BLAH @@ port:
 
     1. In your firewall, open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it.
     
@@ -111,12 +111,12 @@ You can configure one or more front-ends as needed and scale your back-ends as w
 
        1. [Enable HTTPS for DeployR](security-https.md) and install the necessary certificates. 
 
-       1. If provisioning DeployR on a cloud service, then you must also [create inbound security rules for port BLAH BLAH BLAH @@@@@@ in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
+       1. If provisioning DeployR on a cloud service, then you must also [create inbound security rules for port BLAH BLAH BLAH @@ in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
 
           > WHAT MORE DO WE NEED TO SAY ABOUT CLOUD SETUPS?  
 
        1. If you want to use a remote database or if you have multiple front-ends, [configure DeployR to use a SQL Server database or a PostgreSQL database](configure-remote-database.md) instead of the local SQLite database.
 
-1. Once all front-ends and back-ends are configured, declare the IP addresses of each back-end with each front-end using admin util or config file `appsettings.json`. @@@@HOW DO YOU DO THAT?@@ 
+1. Once all front-ends and back-ends are configured, declare the IP addresses of each back-end with each front-end using admin util or config file `appsettings.json`. @@HOW DO YOU DO THAT?@@ 
 
 1. Once you are done configuring DeployR, [run a diagnostic test of the configuration](diagnostics-troubleshooting.md) on **each front-end machine**. 

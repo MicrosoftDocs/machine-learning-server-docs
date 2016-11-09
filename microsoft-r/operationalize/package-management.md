@@ -84,11 +84,11 @@ This production-safe approach provides an excellent way to:
       ```
 
 1. On each back-end:
-   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@@WHERE on this back-end machine.
+   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@WHERE on this back-end machine.
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
-   1. At the R prompt, run the R command `install.packages()`. @@@ WHAT DOES THIS DO HERE???
+   1. At the R prompt, run the R command `install.packages()`. @@ WHAT DOES THIS DO HERE???
 
    1. At the prompt, specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
          ```
@@ -96,7 +96,7 @@ This production-safe approach provides an excellent way to:
          local_repo  <- "~/my-miniCRAN-repo"
          
          .libPaths()[1]
-         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library @@@"
+         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library @@"
          
          lib <- .libPaths()[1]
          
@@ -161,7 +161,7 @@ This remote execution and snapshotting approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
 + Install packages without requiring any intervention from the administrator
 
-The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. @LINK TO VIGNETTE DOC IN MSDN "LEARN MORE ABOUT SNAPSHOTS AND REMOTE EXECUTION"
+The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. @@LINK TO VIGNETTE DOC IN MSDN "LEARN MORE ABOUT SNAPSHOTS AND REMOTE EXECUTION"
 
 **Note:** Once you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
 
@@ -174,7 +174,7 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session. @LINK TO VIGNETTE DOC IN MSDN    For example, for Azure Active Directory:
+1. Authenticate to create the remote session. @@LINK TO VIGNETTE DOC IN MSDN    For example, for Azure Active Directory:
    ```
    > remote_login_aad([AAD_properties])
    
@@ -185,17 +185,17 @@ The packages you install using this method do not 'contaminate' the production e
 
 1. Run R code in the remote environment:
 
-   1. Install new R packages and upload any needed R objects and files into the remote R session. @LINK TO VIGNETTE DOC IN MSDN
+   1. Install new R packages and upload any needed R objects and files into the remote R session. @@LINK TO VIGNETTE DOC IN MSDN
 
-      @@@ EXAMPLE NEEDED
+      @@ EXAMPLE NEEDED
    
-   1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. @LINK TO VIGNETTE DOC IN MSDN
+   1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. @@LINK TO VIGNETTE DOC IN MSDN
    ```
    REMOTE> pause()
    > remote_script("my-script.R")
    ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot.  @LINK TO VIGNETTE DOC IN MSDN
+1. To allow the workspace and working directory to be reused later, create a session snapshot.  @@LINK TO VIGNETTE DOC IN MSDN
    ```
    REMOTE>pause()
    >create_snapshot("my-snapshot-name")
@@ -205,13 +205,13 @@ The packages you install using this method do not 'contaminate' the production e
 
    >Take note of the `snapshotId` to call this snapshot later.
    >
-   >Learn more about snapshots here @@@ADD LINK
+   >Learn more about snapshots here @@ADD LINK
     
 
 **To reuse those installed packages, objects and files:**
 
-You can use the snapshot (installed packages, objects, files) within the context of a web service in a remote session. When you create a web service, reference the snapshot ID. Then, when the service is executed, the snapshot will be loaded and the session information is automatically available to the service. @LINK TO VIGNETTE DOC IN MSDN
+You can use the snapshot (installed packages, objects, files) within the context of a web service in a remote session. When you create a web service, reference the snapshot ID. Then, when the service is executed, the snapshot will be loaded and the session information is automatically available to the service. @@LINK TO VIGNETTE DOC IN MSDN
 
 ```
-@@@CAN WE PROVIDE AN EXAMPLE??
+@@CAN WE PROVIDE AN EXAMPLE??
 ```

@@ -108,7 +108,7 @@
 #### Integration Workflow
 #### Integration Tutorial
 
-### API Reference 
+### [API Reference](operationalize/api.md)
 
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)
