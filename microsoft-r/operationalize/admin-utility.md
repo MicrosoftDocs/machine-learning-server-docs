@@ -48,7 +48,6 @@ These instructions describe how to launch the DeployR Administrator Utility.
 Launch the utility script with administrator privileges:
 ```
 @@
-
 ```  
 The main utility menu appears.     
 
@@ -56,8 +55,7 @@ The main utility menu appears.
 
 Launch the utility script with administrator privileges as `root` or a user with `sudo` permissions:
 ```
-cd $DEPLOYR_HOME/deployr/tools/ 
-./adminUtilities.sh
+@@
 ```     
 The main utility menu appears.     
 
@@ -94,7 +92,7 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 1. From the main menu, choose the option to stop and start the services.
 
-1. When prompted, identify which processes you want to stop, start, or restart. @@
+1. Choose from the options to stop or start the services.
 
 <br><a name="ports"></a>
 
@@ -134,4 +132,57 @@ Armed with this information, you will be able to investigate and resolve most is
 
 ## Evaluate Capacity
 
-@@
+To evaluate the load balancing capacity of the DeployR configuration, you can simulate the thresholds of your configuration using this tool. 
+
+**To run or design a capacity simulation test:**
+
+1. [Launch the DeployR Administrator Utility](#launch) script with administrator privileges.
+
+1. From the main menu, choose the option to **Evaluate Capacity**.
+
+1. To start a capacity simulation, choose the option to **Run capacity simulation** from the sub-menu.
+
+1. To specify a different service for the test:
+   1. Choose **Change the service for simulation**. 
+
+   1. Specify the service to use:
+      + To specify an existing service, enter `yes` and then provide the service name and version number using the format `<service-name>/<version>` such as `my-service/v1.0.0`.
+
+      + To use the generated [default service], enter `no`.
+
+1. To specify a different threshold rule:  
+
+   1. Choose **Change thread/latency limits**.
+
+   1. To stop after maximum thread count:
+
+      1. Enter `Threads`.
+
+      1. Specify the maximum thread count, which means the test will stop after this thread number.
+
+      1. Specify the minimum thread count, which is where the test will start.
+
+      1. Specify the increment when testing, which means the number of threads will increase by the value each iteration until the maximum is reached.
+
+   1. To determine how many concurrent threads can be run before maximum latency is met:
+
+      1. Enter `Time`.
+
+      1. Specify the maximum latency in milliseconds, which means the test will stop after this time has elapsed.
+
+      1. Specify the minimum thread count, which is where the test will start.
+
+      1. Specify the increment when testing, which means the number of threads will increase by the value each iteration until the maximum latency is reached.
+     
+
+
+
+
+
+
+
+
+@@WHAT CAN YOU DO WITH THE OUTPUT OF THE SIMULATION?
+
+
+
