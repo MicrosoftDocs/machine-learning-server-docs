@@ -29,22 +29,14 @@ ms.custom: ""
 
 Once R Server has been installed, you can configure DeployR.
 
-## Configuring DeployR
+#### Configuring DeployR
 
-There are two types of configuration scenarios: [one-box -or- enterprise-ready multi-machine](configuration-scenarios.md).  Learn how to [configure DeployR](configuration-initial.md) for your organization.
+There are two types of configuration scenarios: [one-box -or- enterprise-ready multi-machine](configuration-scenarios.md).  Learn how to [configure DeployR](configuration-initial.md) for your organization. Also, learn how to [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
 
-### Enabling Enterprise-Grade Security
+#### Enabling Enterprise-Grade Security
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
 
-### Administrating
+#### Administrating
 
-@@
- + Administration Section:
-     + Inspect Server & Log files
-     + Stop & Restart
-     + Configure a Database
-     + ession management
-     + Web service monitoring
-    ???
-
+[!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]

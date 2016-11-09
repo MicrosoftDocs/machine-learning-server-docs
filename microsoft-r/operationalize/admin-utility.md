@@ -26,20 +26,14 @@ ms.custom: ""
 
 # DeployR Administrator Utility
 
-An administrator utility is installed with each front-end you configure for DeployR. You can do the following with this utility:
-+ [Set a password for the local administrator account](#admin-password)
-+ [Start and stop the front-ends and back-ends](#startstop)
-+ [Change the port numbers used by the system](#ports)
-+ [Run diagnostic tests of the system](#test)
-+ [Evaluate the capacity of the configuration](#capacity)
+[!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]
+
 
 ## OPEN QUESTIONS
-+ IS THE UTILITY INSTALLED ON FRONT END AND ALSO THE BACKEND?
 + DO WE KNOW THE DIRECTORY PATH FOR ALL VERSIONS ON WINDOWS? 
 + DO YOU HAVE TO LOG IN WHEN THE UTILITY IS LAUNCHED?
 + ARE ALL USERS ALLOWED TO LAUNCH THE UTILITY?
 + ARE WE IMPLEMENTING AN OPTION FOR ENCRYPTING SECRETS FOR A REMOTE DB OR LDAP
-+ ARE WE IMPLEMENTING LDAP/AAD ENABLE/DISABLE OPTION IN UTILITY?
 + WHAT PORTS CAN BE CONFIGURED FOR FRONTEND AND FOR BACKEND?
 
 <br>
@@ -129,6 +123,8 @@ For security purposes, we strongly recommend that you encrypt the login credenti
 <br><a name="test"></a>
 
 ## Diagnostic Testing
+
+> Available only on the front-end
 
 You can assess the state and health of your DeployR environment by running the diagnostic test in the Administrator Utility. 
 Armed with this information, you will be able to investigate and resolve most issues. 
