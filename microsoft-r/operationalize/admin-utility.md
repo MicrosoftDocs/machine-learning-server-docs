@@ -48,8 +48,7 @@ These instructions describe how to launch the DeployR Administrator Utility.
 Launch the utility script with administrator privileges:
 ```
 @@
-cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-adminUtilities.bat
+
 ```  
 The main utility menu appears.     
 
