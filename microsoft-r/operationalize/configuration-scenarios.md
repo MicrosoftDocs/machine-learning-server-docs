@@ -25,12 +25,14 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Deployment Server Configuration Scenarios
+# DeployR Configuration Scenarios
 
-In order to operationalize your R analytics, you must configure Microsoft R Server after installation to enable the operationalization feature. 
+To operationalize your R analytics, you must configure Microsoft R Server after installation to enable the operationalization feature. 
 
-The most simple configuration for this feature involves a single front-end and back-end, called a **one-box** configuration. These components are defined as follows:
+The simplest configuration for this feature involves a single front-end and back-end, called a **one-box** configuration. These components are defined as follows:
+
 + A **front-end** acts as a http REST endpoint with which DeployR users can interact directly to make API calls. It can also access data in the database, and send jobs to be computed on the back-end. 
+
 + A **back-end** serves is used to execute R code as a session or service.
 
 In addition to the one-box configuration, you can also install multiple components on multiple machines, which is referred to as an  **enterprise** configuration. 
