@@ -1,5 +1,5 @@
 
-You can configure DeployR to take advantage of enterprise-ready security features such as:
+You can configure DeployR to take advantage of enterprise security features such as:
 + [Authentication](../../operationalize/security-authentication.md) with Active Directory LDAP/LDAP-Security or with Azure Active Directory
 
 + [HTTPS](../../operationalize/security-https.md) configuration to secure communication

@@ -32,9 +32,9 @@ To secure DeployR, you have several authentication options:
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
 |[Local `administrator` account](#local)|Use with [one-box](configuration-scenarios.md) configurations|
-|[Active Directory / LDAP](#ldap)|Use with [enterprise-ready](configuration-scenarios.md) _on-premise_ configurations|
-|[Active Directory / LDAP-S](#ldap)|Use with [enterprise-ready](configuration-scenarios.md) _on-premise_ configurations with SSL/TLS enabled|
-|[Azure Active Directory](#aad)|Use with [enterprise-ready](configuration-scenarios.md) _cloud_ configurations|
+|[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-scenarios.md) _on-premise_ configurations|
+|[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-scenarios.md) _on-premise_ configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|Use with [enterprise](configuration-scenarios.md) _cloud_ configurations|
 
 <br>
 
@@ -42,7 +42,7 @@ To secure DeployR, you have several authentication options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `administrator` account is created for R Server's DeployR. While this might be sufficient when trying out DeployR with a [one-box configuration](configuration-scenarios.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise-ready configurations](configuration-scenarios.md#enterpriseready).
+During configuration, a default `administrator` account is created for R Server's DeployR. While this might be sufficient when trying out DeployR with a [one-box configuration](configuration-scenarios.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-scenarios.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 

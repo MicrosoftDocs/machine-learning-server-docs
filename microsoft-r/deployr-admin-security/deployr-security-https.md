@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 
 
-# DeployR Server Support for SSL/TLS (HTTPS)
+# Configure SSL/TLS for DeployR (HTTPS)
 
 Both **Transport Layer Security** (TLS) protocol version 1.2 and its predecessor **Secure Sockets Layer (SSL)** are commonly-used cryptographic protocols for managing the security of message transmissions on the Internet. 
 

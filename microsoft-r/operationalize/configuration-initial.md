@@ -53,9 +53,9 @@ With this configuration, everything runs on a single machine. This configuration
 
 You are now ready to begin operationalizating your R analytics with R Server.
 
-<a name="enterpriseready"></a>
+<a name="enterprise"></a>
 
-## Setting up for an enterprise-ready configuration
+## Setting up for an enterprise configuration
 
 This type of configuration is highly recommended for production usage. It offers a scalable architecture, enterprise-grade security, and even a remote SQL or PostgreSQL database. [Learn more.](configuration-scenarios.md)
 
@@ -113,7 +113,7 @@ You can configure one or more front-ends as needed and scale your back-ends as w
     
        1. [Configure DeployR for use with Active Directory/LDAP or Azure Active Directory authentication](security-authentication.md).  We highly recommend this approach to authentication. 
 
-       1. [Enable HTTPS for DeployR](security-https.md) and install the necessary certificates. 
+       1. [Configure SSL for DeployR](security-https.md) and install the necessary certificates. 
 
        1. If provisioning DeployR on a cloud service, then you must also [create inbound security rules for port BLAH BLAH BLAH @@ in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
 

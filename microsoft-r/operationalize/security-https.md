@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configuring DeployR for HTTPS
+# Configure SSL for DeployR (HTTPS)
 
 >[!IMPORTANT] 
 >For security reasons, we strongly recommend that HTTPS be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.

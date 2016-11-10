@@ -83,7 +83,7 @@
 #### [Configuration Scenarios](operationalize/configuration-scenarios.md)
 #### [Configuring DeployR](operationalize/configuration-initial.md)
 #### [Configure a Database](operationalize/configure-remote-database.md)
-#### [Enterprise-Grade Security](operationalize/security.md)
+#### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
