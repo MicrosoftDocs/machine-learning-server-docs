@@ -31,7 +31,7 @@ To operationalize your R analytics, you must configure Microsoft R Server after 
 
 The simplest configuration for this feature involves a single front-end and back-end, called a **one-box** configuration. These components are defined as follows:
 
-+ A **front-end** acts as a http REST endpoint with which DeployR users can interact directly to make API calls. It can also access data in the database, and send jobs to be computed on the back-end. 
++ A **front-end** acts as a http REST endpoint with which users can interact directly to make API calls. It can also access data in the database, and send jobs to be computed on the back-end. 
 
 + A **back-end** is used to execute R code as a session or service.
 
@@ -48,24 +48,25 @@ This configuration is useful when you want to explore what it is to operationali
 
 **To configure on a single machine:**
 
-  1. On each machine, install Microsoft R Server:
+1. On each machine, install Microsoft R Server:
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator, `root`, or `sudo` privileges.
 
-1. Choose the option to **Configure DeployR**.
+1. Choose the option to **Configure R Server for Operationalization**.
 
 1. Choose the option to **Configure for one box** to set up the front-end and back-end onto the same machine.
 
-1. @@When prompted, provide the admin password for the built-in, local DeployR `administrator` account.  
-  
-1. After the script has ended, set the proper firewall rule to open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it. 
+1. When prompted, provide a password for the built-in, local operationalization `administrator` account. 
 
-   If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+1. Return to the main menu of the utility when the configuration ends. 
 
 1. [Run a diagnostic test of the configuration](admin-utility.md#test). 
+  
+1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the front-end so that remote machines can access it. 
+
 
 You are now ready to begin operationalizating your R analytics with R Server.
 
@@ -75,7 +76,7 @@ You are now ready to begin operationalizating your R analytics with R Server.
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
-This configuration includes one or more front-ends and back-ends on a group of machines. These front-ends and back-ends can be scaled independently.  For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md) for DeployR.
+This configuration includes one or more front-ends and back-ends on a group of machines. These front-ends and back-ends can be scaled independently.  For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
 
 Additionally, when you have multiple front-ends, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across front-end services.
  
@@ -84,27 +85,20 @@ Additionally, when you have multiple front-ends, you must set up a [remote SQL S
 
 **Step 1: Configure Front-end(s)**
 
->**Note:** It is possible to run the DeployR front-end service from within IIS.
+>**Note:** It is possible to run the operationalization front-end service from within IIS.
 
   1. On each machine, install Microsoft R Server:
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
-  1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges and:
-
-     1. From the main menu, choose the option to **Configure DeployR**.
+  1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
+     1. From the main menu, choose the option to **Configure R Server for Operationalization**.
      1. From the sub-menu, choose the option to **Configure a front-end**.     
-     1. Follow the onscreen prompts.  
-     1. Return to the main menu and choose the option to [Set a local administrator password](admin-utility.md#admin-password).
-     1. Set the password for that account. 
-        You can always configure DeployR to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
-
-  1. Choose the option to open the BLAH BLAH BLAH @@ port:
-
-  1. In your firewall, open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it.
-    
-     If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+     1. When prompted, provide a password for the built-in, local operationalization `administrator` account.  
+        You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
+  
+  1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the front-end so that remote machines can access it. 
 
 Your front-end is now configured. Repeat these steps for each front-end you want to add to the configuration.
 
@@ -114,19 +108,11 @@ Your front-end is now configured. Repeat these steps for each front-end you want
 
 1. On each machine, install the same R Server version you installed on the front-end.
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges and:
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
 
-   1. From the main menu, choose the option to **Configure DeployR**.
-   1. From the sub-menu, choose the option to **Configure a back-end**.
-   1. Follow the onscreen prompts.
+1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-1. After the script has ended, configure the firewall.
-    
-   1. Set the proper firewall rule to open the back-end port (9002) to ONLY allow communication with the front-end(s) so that all back-ends can reach all front-ends. 
-
-      If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
-
-   1. For added security, restrict the list of IPs that can access the machine.
+1. From the sub-menu, choose the option to **Configure a back-end**.
   
 Your back-end is now configured. Repeat these steps for each back-end you want to add to the configuration.
 
@@ -134,23 +120,40 @@ Your back-end is now configured. Repeat these steps for each back-end you want t
 
 In production environments, we strongly recommend the following approaches:
 
-1. [Configure SSL](security-https.md) for DeployR and install the necessary certificates. 
+1. [Configure SSL](security-https.md) and install the necessary certificates. 
 
-1. Authenticate DeployR against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
+1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
+
+1. For added security, restrict the list of IPs that can access the back-end machine.
 
 **Step 4: Configure a Remote Database**
 
 By default, the front-end configuration sets up a SQLite database. If you have multiple front-ends or simply want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL) so that data can be shared across front-end services.
 
-**Step 5: Provisioning DeployR on the Cloud**
+**Step 5: Provisioning on the Cloud**
 
-If provisioning DeployR on a cloud service, then you must also [create inbound security rules for port BLAH BLAH BLAH @@ in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
-
-> @@WHAT MORE DO WE NEED TO SAY ABOUT CLOUD SETUPS?  
+If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
 
 **Step 6: Post Configuration**
 
-1. Once all front-ends and back-ends are configured, declare the IP addresses of each back-end with each front-end using admin util or config file `appsettings.json`. 
-   > @@HOW DO YOU DO THAT? DO WE NEED THIS STEP?@@ 
+Once all front-ends and back-ends are configured, you must declare the IP addresses of each back-end with each front-end.
 
+1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+1. In the file, search for the section starting with `"BackEndConfiguration": {` .
+1. Uncomment characters in that section.
+1. Update the `"Uris": {` properties to declare each backend:
+   ```
+    "Uris": {
+      "Description": "Update 'Values' section to point to your backend machines. Using HTTPS is highly recommended",
+      "Values": [
+        "http://<IP-ADDRESS-OF-BACKEND-1>:12805",
+        "http://<IP-ADDRESS-OF-BACKEND-2>:12805",
+        "http://<IP-ADDRESS-OF-BACKEND-3>:12805"       
+      ]
+    }
+    ```
+
+1. Close and save the file.
+1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
 1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each front-end machine. 
+1. Repeat these steps on each front-end to declare all the backends.

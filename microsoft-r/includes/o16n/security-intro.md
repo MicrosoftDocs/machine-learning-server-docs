@@ -1,5 +1,5 @@
 
-You can configure DeployR to take advantage of enterprise security features such as:
+You can configure Microsoft R Server to add further enterprise security features around the operationalization feature such as:
 + [Authentication](../../operationalize/security-authentication.md) with Active Directory LDAP/LDAP-Security or with Azure Active Directory
 
 + [HTTPS](../../operationalize/security-https.md) configuration to secure communication

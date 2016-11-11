@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure and Administer DeployR
+# Configure and Administer
 
-Once R Server has been installed, you can configure DeployR.
+Once R Server has been installed, you can configure the operationalization feature. 
 
-#### Configuring DeployR
+#### Configuration
 
 There are two ways to configure DeployR: 
 + [One-box configuration](configuration-initial.md#onebox)
@@ -37,10 +37,10 @@ There are two ways to configure DeployR:
 
 Also, learn how to [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
 
-#### Enabling Enterprise-Grade Security
+#### Enhanced Security
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
 
-#### Administrating
+#### Administration
 
 [!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]

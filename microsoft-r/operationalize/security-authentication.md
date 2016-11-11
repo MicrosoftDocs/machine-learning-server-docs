@@ -25,9 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configuring Authentication for the Deployment Server
+# Authentication for R Server's Operationalization
 
-To secure DeployR, you have several authentication options:
+To secure connections and communications, you have several authentication options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
@@ -42,7 +42,7 @@ To secure DeployR, you have several authentication options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `administrator` account is created for R Server's DeployR. While this might be sufficient when trying out DeployR with a [one-box configuration](configuration-initial.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default `administrator` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -50,13 +50,13 @@ To set or change the password for the local administrator account after the conf
 
 ## Active Directory and LDAP/LDAP-S
 
-Active Directory (AD) and LDAP are a great authentication option for on-premise configurations of DeployR to ensure that domain users have access to the APIs.  
+Active Directory (AD) and LDAP are a great authentication option for on-premise configurations to ensure that domain users have access to the APIs.  
 
 The standard protocol for reading data from and writing data to Active Directory (AD) domain controllers (DCs) is LDAP. AD LDAP traffic is unsecured by default, which makes it possible to use network-monitoring software to view the LDAP traffic between clients and DCs.  
 
-By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your DeployR configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
+By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
-You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS for DeployR.](security-https.md) Reasons for enabling LDAP-S include:
+You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS.](security-https.md) Reasons for enabling LDAP-S include:
 
 + Organizational security policies typically require that all client/server communication is encrypted.
 + Applications use simple BIND to transport credentials and authenticate against a Domain Controller. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
@@ -65,8 +65,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each front-end machine, do the following:**
 
-1. Enable LDAP/LDAP-S in the DeployR external JSON configuration file, `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json`:
+1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
+   1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+   
    1. Search for the section starting with `"LDAP": {`
 
    1. Uncomment characters in that section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
@@ -74,7 +76,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |LDAP Properties|Definition|
       |---------------|-------------------------------|
       |`Host`|Address of the Active Directory server|
-      |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by DeployR. |
+      |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
       |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
       |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
       |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted). For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
@@ -89,7 +91,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
     
    1. On each front-end machine, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   1. In the `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
+   1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
    1. Uncomment characters in that section and update the properties so that they match the values for your token signing certificate:
       ```
@@ -103,7 +105,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
  
-   1. Run the [DeployR diagnostic tests](admin-utility.md#test).
+   1. Run the [diagnostic tests](admin-utility.md#test).
 
 1. Repeat these steps on each front-end machine.
 
@@ -113,7 +115,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 ## Azure Active Directory 
 
-[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate with DeployR in the cloud when the client application and DeployR have access to the internet.
+[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and front-end have access to the internet.
 
 **On each front-end machine, do the following:**
 
@@ -123,9 +125,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
     1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
 
-1. Enable Azure AD in the DeployR external JSON configuration file:
+1. Enable Azure AD in the external JSON configuration file:
 
-    1. Open the configuration file, `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json`.
+    1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
 
     1. Search for the section starting with `"AzureActiveDirectory": {`
 
@@ -137,9 +139,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
-
    1. [Restart the front-end](admin-utility.md#startstop).
- 
-   1. Run the [DeployR diagnostic tests](admin-utility.md#test).
+   1. Run the [diagnostic tests](admin-utility.md#test).
 
 1. Repeat these steps on each front-end machine.

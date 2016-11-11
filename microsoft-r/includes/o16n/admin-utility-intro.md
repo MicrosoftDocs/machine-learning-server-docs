@@ -1,6 +1,6 @@
-Use the administration utility to configure and manage DeployR, including:
+Use the administration utility to configure and manage operationalization for Microsoft R Server, including:
 
-+ [Configuring DeployR](../../operationalize/configuration-initial.md)  front-ends and back-ends
++ [Configuring R Server for Operationalization](../../operationalize/configuration-initial.md)  front-ends and back-ends
 
 + [Setting a password](../../operationalize/admin-utility.md#admin-password)  for the local administrator password
 

@@ -24,36 +24,40 @@ ms.custom: ""
 
 ---
 
-# DeployR Administrator Utility
+# Administrator Utility for Operationalization
 
 [!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]
 
-<!--<br>
+<br>
 <a name="launch"></a>
 
 ## Launch the Utility
 
-These instructions describe how to launch the DeployR Administrator Utility.
+These instructions describe how to launch the Administrator Utility.
 
 **To launch the administration utility:**
 
-1. If R Server (Standalone) is not yet installed, install it now.
+1. Launch the administration utility script with administrator, `root`, or `sudo` privileges:
+   ```
+   cd <MRS_home>\deployr\Microsoft.DeployR.Utils.AdminUtil
+   dotnet Microsoft.DeployR.Utils.AdminUtil.dll
+   ```
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
-  
-The main utility menu appears.     -->
+   where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+
+The main utility menu appears.  
 
 <br><a name="admin-password"></a>
 
 ## Set/Update Local Administrator Password
 
-When no other form of [authentication](security-authentication.md) is used, you must define a password for the local DeployR administrator account called `administrator`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
+When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `administrator`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
 >The password for the local administrator account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
 
 **To set or update the local administrator account password:**
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
 1. From the main menu, choose the option to set a password for the local administrator account.
 
@@ -66,15 +70,15 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 <br><a name="startstop"></a>
 
-## Starting and Stopping DeployR
+## Starting and Stopping Services
 
-To start or stop all DeployR-related services on the machine at once, use the administrator utility. 
+To start or stop all operationalization-related services on the machine at once, use the administrator utility. 
 
 **To stop or start a front-end or back-end:**
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
-1. From the main menu, choose the option **Stop and start DeployR services**.
+1. From the main menu, choose the option **Stop and start services**.
 
 1. From the sub-menu, choose which services to start or stop.
 
@@ -88,7 +92,7 @@ You can update the ports numbers for the front-end, back-end, or Rserve.
 
 1. Log into the machine on which your front-end or back-end is installed.
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
 1. From the main menu, choose the option **Change service ports**.
 
@@ -96,7 +100,7 @@ You can update the ports numbers for the front-end, back-end, or Rserve.
 
 1. Enter the port number. 
 
-The port number has now been updated and the service restarted.
+The port number will be updated the next time the [service is restarted](#startstop).
 
 <br><a name="encrypt"></a>
 
@@ -106,25 +110,25 @@ For security purposes, we strongly recommend that you encrypt the login credenti
        
 1. Make sure a credential encryption certificate with a private key is installed on the front-end. 
 
-1. Encrypt the credentials using the DeployR Administrator Utility as follows:
-   1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. Encrypt the credentials using the Administrator Utility as follows:
+   1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
    1. From the main menu, choose the option **Encrypt Credentials**.
 
    1. When prompted, enter the username and password.  The tool will return an encrypted string.
 
-1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings.
+1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings. You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
 
 <br><a name="test"></a>
 
 ## Diagnostic Testing
 
-You can assess the state and health of your DeployR environment by running the diagnostic test in the Administrator Utility. 
+You can assess the state and health of your environment by running the diagnostic test in the Administrator Utility. 
 Armed with this information, you will be able to identifies unresponsive components and access the log files. 
 
 **To run diagnostic tests:**
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -137,8 +141,9 @@ Armed with this information, you will be able to identifies unresponsive compone
       1. Review the test results.
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-         + On the front-end: `$MRS_DEPLOYR\Microsoft.DeployR.Server.WebAPI\logs`
-         + On the back-end: `$MRS_DEPLOYR\Microsoft.DeployR.Server.BackEnd\logs`
+         + On the front-end: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
+         + On the back-end: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
+         where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
@@ -162,11 +167,11 @@ Armed with this information, you will be able to identifies unresponsive compone
 
 ## Evaluate Capacity
 
-To evaluate the load balancing capacity of the DeployR configuration, you can simulate the thresholds of your configuration using this tool. 
+To evaluate the load balancing capacity of the configuration, you can simulate the thresholds of your configuration using this tool. 
 
 **To run or design a capacity simulation test:**
 
-1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 

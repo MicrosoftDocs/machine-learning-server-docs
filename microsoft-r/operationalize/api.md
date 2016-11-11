@@ -24,7 +24,7 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
-# DeployR API Overview
+# R Server's Operationalization API Overview
 
 Applies to:  DeployR 9.0.0
 

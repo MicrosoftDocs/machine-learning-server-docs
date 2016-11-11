@@ -25,9 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure SQL Server or PostgreSQL Database for DeployR
+# Configure a Remote SQL Server or PostgreSQL Database
 
-During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple front-ends. 
+During the configuration of operationalization for R Server, a local SQLite database is automatically installed and configured for you. Later, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple front-ends. 
 
 The supported databases are:
 + SQL Server Professional, Standard, or Express Version 2008 or greater (Windows)
@@ -39,15 +39,17 @@ The supported databases are:
 <a name="sqlserver"></a>
 <a name="postgresql"></a>
 
-**To use a local or remote database for DeployR instead of the default local SQLite database, do the following:**
+**To use a local or remote database instead of the default local SQLite database, do the following:**
 
 > These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
 
-1.  On **each front-end machine**, [stop the DeployR server](admin-utility.md#startstop).
+1.  On **each front-end machine**, [stop the service](admin-utility.md#startstop).
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. Open the `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` file, which is the DeployR external configuration file.
+    1. Open the `appsettings.json` file, which is the external configuration file. 
+    
+       You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
 
     1. Locate the `ConnectionStrings` property block.
 
@@ -77,7 +79,7 @@ The supported databases are:
         },   
         ```
 
-1. Open the database port on the remote machine to the public IP of each DeployR front-end as described in these articles:
+1. Open the database port on the remote machine to the public IP of each Dfront-end as described in these articles:
    + [For SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
    + [For PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          

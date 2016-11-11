@@ -25,13 +25,13 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Package Management with DeployR
+# R Package Management with R Server
 
 Whenever you or your users are writing, testing, and deploying R scripts, it is critical that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
 
-By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote DeployR server environment.
+By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote environment.
 
-As the DeployR administrator, one of your responsibilities is to ensure the R code that runs on the DeployR server has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
+As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the back-end(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
 
 Of course, data scientists can test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
 
@@ -121,7 +121,7 @@ This production-safe approach provides an excellent way to:
 >
 >**Applies to:** Development -or- Production Environments
 
-As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the DeployR configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
+As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
 + Which R packages (and versions) are needed and sanctioned for production.
 + Requests from users to add new R packages or update package versions.
 
@@ -155,7 +155,7 @@ This option does require the back-end machines have access to the Internet to in
 >
 >**Applies to:** Development Environments
 
-To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the DeployR server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
+To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the R server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
 
 This remote execution and snapshotting approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
