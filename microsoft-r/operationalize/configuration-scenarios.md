@@ -33,7 +33,7 @@ The simplest configuration for this feature involves a single front-end and back
 
 + A **front-end** acts as a http REST endpoint with which DeployR users can interact directly to make API calls. It can also access data in the database, and send jobs to be computed on the back-end. 
 
-+ A **back-end** serves is used to execute R code as a session or service.
++ A **back-end** is used to execute R code as a session or service.
 
 In addition to the one-box configuration, you can also install multiple components on multiple machines, which is referred to as an  **enterprise** configuration. 
 
@@ -52,7 +52,7 @@ Learn how to [set up a one-box configuration](configuration-initial.md#enterpris
 <a name="enterprise"></a>
 ## The Enterprise Configuration
 
-With enterprise configurations, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
+With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
 This configuration includes one or more front-ends and back-ends on a group of machines. These front-ends and back-ends can be scaled independently.  For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md) for DeployR.
 

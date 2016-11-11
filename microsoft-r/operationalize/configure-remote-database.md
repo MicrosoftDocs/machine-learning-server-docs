@@ -87,4 +87,4 @@ The supported databases are:
 1. Launch the administrator's utility and:
    1. [Restart the front-end](admin-utility.md#startstop).
  
-   1. [Run the diagnostic tests](diagnostics-troubleshooting.md).
+   1. [Run the diagnostic tests](admin-utility.md#test).

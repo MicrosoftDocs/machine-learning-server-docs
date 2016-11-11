@@ -34,7 +34,6 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-
 # [Microsoft R Server](rserver.md)
 
 ## [What's New](notes/r-server-notes.md)
@@ -80,17 +79,13 @@
 ### [Get Started with Operationalization](operationalize/get-started.md)
 
 ### [Configure & Administer](operationalize/configure.md)
-#### [Configuration Scenarios](operationalize/configuration-scenarios.md)
-#### [Configuring DeployR](operationalize/configuration-initial.md)
-#### [Configure a Database](operationalize/configure-remote-database.md)
+#### [DeployR Configuration](operationalize/configuration-initial.md)
+#### [Remote Database Setup](operationalize/configure-remote-database.md)
 #### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
-#### Administration
-##### [Basic Administration (Admin Utility)](operationalize/admin-utility.md)
-##### [Diagnostics & Troubleshooting](operationalize/diagnostics-troubleshooting.md)
-##### Inspect Server & Log files
+#### [Administration](operationalize/admin-utility.md)
 
 ### [R Package Management](operationalize/package-management.md)
 
