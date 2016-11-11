@@ -52,7 +52,7 @@ This configuration is useful when you want to explore what it is to operationali
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
 
-     + On Linux, install [Microsoft R Server](../rserver-install-linux-server).  
+     + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
 1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
 
@@ -78,7 +78,7 @@ This configuration includes one or more front-ends and back-ends on a group of m
 
 Additionally, when you have multiple front-ends, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across front-end services.
  
-![Enterprise Configuration](../media/o16n/setup-enterprise.jpeg)
+![Enterprise Configuration](../media/o16n/setup-enterprise-ready.jpeg)
 
 
 **Step 1: Configure Front-end(s)**
@@ -89,7 +89,7 @@ Additionally, when you have multiple front-ends, you must set up a [remote SQL S
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
 
-     + On Linux, install [Microsoft R Server](../rserver-install-linux-server).  
+     + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
   1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
 
