@@ -53,7 +53,7 @@ This configuration is useful when you want to explore what it is to operationali
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. Choose the option to **Configure DeployR**.
 
@@ -91,7 +91,7 @@ Additionally, when you have multiple front-ends, you must set up a [remote SQL S
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
-  1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
+  1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges and:
 
      1. From the main menu, choose the option to **Configure DeployR**.
      1. From the sub-menu, choose the option to **Configure a front-end**.     
@@ -114,7 +114,7 @@ Your front-end is now configured. Repeat these steps for each front-end you want
 
 1. On each machine, install the same R Server version you installed on the front-end.
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges and:
 
    1. From the main menu, choose the option to **Configure DeployR**.
    1. From the sub-menu, choose the option to **Configure a back-end**.

@@ -92,7 +92,7 @@ This section walks you through the steps for securing the connections between th
       ```
 
    1. Close and save the file.
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges and:
    1. [Restart the front-end](admin-utility.md#startstop).
    1. Run the [DeployR diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 

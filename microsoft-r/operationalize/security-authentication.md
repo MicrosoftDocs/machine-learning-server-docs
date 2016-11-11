@@ -65,7 +65,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each front-end machine, do the following:**
 
-1. Enable LDAP/LDAP-S in the DeployR external JSON configuration file, `$MRS_DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`:
+1. Enable LDAP/LDAP-S in the DeployR external JSON configuration file, `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json`:
 
    1. Search for the section starting with `"LDAP": {`
 
@@ -89,7 +89,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
     
    1. On each front-end machine, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   1. In the `$MRS_DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
+   1. In the `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
    1. Uncomment characters in that section and update the properties so that they match the values for your token signing certificate:
       ```
@@ -125,7 +125,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable Azure AD in the DeployR external JSON configuration file:
 
-    1. Open the configuration file, `$MRS_DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json`.
+    1. Open the configuration file, `$MRS_DEPLOYR\DeployR.WebAPI\appsettings.json`.
 
     1. Search for the section starting with `"AzureActiveDirectory": {`
 

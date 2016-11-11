@@ -39,7 +39,7 @@ These instructions describe how to launch the DeployR Administrator Utility.
 
 1. If R Server (Standalone) is not yet installed, install it now.
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
   
 The main utility menu appears.     -->
 
@@ -53,7 +53,7 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 **To set or update the local administrator account password:**
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. From the main menu, choose the option to set a password for the local administrator account.
 
@@ -72,7 +72,7 @@ To start or stop all DeployR-related services on the machine at once, use the ad
 
 **To stop or start a front-end or back-end:**
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. From the main menu, choose the option **Stop and start DeployR services**.
 
@@ -88,7 +88,7 @@ You can update the ports numbers for the front-end, back-end, or Rserve.
 
 1. Log into the machine on which your front-end or back-end is installed.
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. From the main menu, choose the option **Change service ports**.
 
@@ -107,7 +107,7 @@ For security purposes, we strongly recommend that you encrypt the login credenti
 1. Make sure a credential encryption certificate with a private key is installed on the front-end. 
 
 1. Encrypt the credentials using the DeployR Administrator Utility as follows:
-   1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+   1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
    1. From the main menu, choose the option **Encrypt Credentials**.
 
@@ -124,7 +124,7 @@ Armed with this information, you will be able to identifies unresponsive compone
 
 **To run diagnostic tests:**
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -137,8 +137,8 @@ Armed with this information, you will be able to identifies unresponsive compone
       1. Review the test results.
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-         + On the front-end: `$MRS_DEPLOYR_HOME\deployr\Microsoft.DeployR.Server.WebAPI\logs`
-         + On the back-end: `$MRS_DEPLOYR_HOME\deployr\Microsoft.DeployR.Server.BackEnd\logs`
+         + On the front-end: `$MRS_DEPLOYR\Microsoft.DeployR.Server.WebAPI\logs`
+         + On the back-end: `$MRS_DEPLOYR\Microsoft.DeployR.Server.BackEnd\logs`
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
@@ -148,12 +148,12 @@ Armed with this information, you will be able to identifies unresponsive compone
 
     + Choose **Trace code execution** to trace the execution of specific R code and retrieve request IDs for debugging purposes:
       1. Enter the R code you want to run and trace. 
-      1. Press the Enter key (carriage return) to run the code and start the trace.
+      1. Press the Enter key (carriage return) to start the trace.
       1. Review the trace output.
 
     + Choose **Trace service execution** to trace the execution of specific service and retrieve request IDs for debugging purposes:  
       1. Enter the service name and version following the syntax `<service-name>/v<version>` such as `my-service/v1.0.0`. 
-      1. Press the Enter key (carriage return) to run the code and start the trace.
+      1. Press the Enter key (carriage return) to start the trace.
       1. Review the trace output.
 
 > If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
@@ -166,7 +166,7 @@ To evaluate the load balancing capacity of the DeployR configuration, you can si
 
 **To run or design a capacity simulation test:**
 
-1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
+1. Launch the utility script, `$MRS_DEPLOYR\runAdminUtils.ps1`, with administrator privileges.
 
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 
