@@ -51,7 +51,6 @@ This configuration is useful when you want to explore what it is to operationali
   1. On each machine, install Microsoft R Server:
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
-
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
 1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges.
@@ -62,7 +61,9 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. @@When prompted, provide the admin password for the built-in, local DeployR `administrator` account.  
   
-1. After the script has ended, set the proper firewall rule to open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it. If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+1. After the script has ended, set the proper firewall rule to open the front-end port (9000) to the public IP of the DeployR server so that remote machines can access it. 
+
+   If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
 
 1. [Run a diagnostic test of the configuration](admin-utility.md#test). 
 
@@ -88,20 +89,16 @@ Additionally, when you have multiple front-ends, you must set up a [remote SQL S
   1. On each machine, install Microsoft R Server:
 
      + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
-
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
   1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
 
      1. From the main menu, choose the option to **Configure DeployR**.
-
-     1. From the sub-menu, choose the option to **Configure a front-end**.
-     
-     1. Follow the onscreen prompts.
-    
+     1. From the sub-menu, choose the option to **Configure a front-end**.     
+     1. Follow the onscreen prompts.  
      1. Return to the main menu and choose the option to [Set a local administrator password](admin-utility.md#admin-password).
-
-     1. Set the password for that account. You can always configure DeployR to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
+     1. Set the password for that account. 
+        You can always configure DeployR to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
 
   1. Choose the option to open the BLAH BLAH BLAH @@ port:
 
@@ -120,14 +117,14 @@ Your front-end is now configured. Repeat these steps for each front-end you want
 1. Launch the utility script, `$MRS_DEPLOYR_HOME\deployr\runAdminUtils.ps1`, with administrator privileges and:
 
    1. From the main menu, choose the option to **Configure DeployR**.
-
    1. From the sub-menu, choose the option to **Configure a back-end**.
-
    1. Follow the onscreen prompts.
 
 1. After the script has ended, configure the firewall.
     
-   1. Set the proper firewall rule to open the back-end port (9002) to ONLY allow communication with the front-end(s) so that all back-ends can reach all front-ends. If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
+   1. Set the proper firewall rule to open the back-end port (9002) to ONLY allow communication with the front-end(s) so that all back-ends can reach all front-ends. 
+
+      If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open the port.
 
    1. For added security, restrict the list of IPs that can access the machine.
   

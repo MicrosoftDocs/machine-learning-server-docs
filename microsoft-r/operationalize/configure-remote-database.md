@@ -30,8 +30,8 @@ ms.custom: ""
 During the configuration of DeployR, a local SQLite database is automatically installed and configured for you. After configuring DeployR, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple front-ends. 
 
 The supported databases are:
-+ **SQL Server** Professional, Standard, or Express Version 2008 or greater (on Windows)
-+ **PostgreSQL** 9.2 or greater (on Linux) 
++ SQL Server Professional, Standard, or Express Version 2008 or greater (Windows)
++ PostgreSQL 9.2 or greater (Linux) 
 
 > [!Important]
 > Any data that was saved in the default SQLite database will be lost if you configure a remote database.
@@ -42,49 +42,45 @@ The supported databases are:
 **To use a local or remote database for DeployR instead of the default local SQLite database, do the following:**
 
 > These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
->
-> The database will be created for you when you restart the server.
 
-1.  On **each front-end machine**, [Stop the DeployR server](admin-utility.md#startstop).
+1.  On **each front-end machine**, [stop the DeployR server](admin-utility.md#startstop).
 
 1.  Update the database properties to point to the new database as follows:
 
-    1.  Open the `appsettings.json` file, which is the DeployR external configuration file.
+    1. Open the `$DEPLOYR_HOME\deployr\DeployR.WebAPI\appsettings.json` file, which is the DeployR external configuration file.
 
-    2.  Locate the `ConnectionStrings` property block.
+    1. Locate the `ConnectionStrings` property block.
 
-    3.  Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
+    1. Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
 
-        > [!Important]
-        > For security purposes, we recommend you [encrypt login credentials](admin-utility.md#encrypt) for this database before adding the information to this file.
+       > [!Important]
+       > For security purposes, we recommend you [encrypt login credentials](admin-utility.md#encrypt) for this database before adding the information to this file.
 
-        + SQL Server Database (Integrated Security):
-          ``` 
-          "ConnectionStrings": {
-             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
-          },
-          ```
+       For SQL Server Database (Integrated Security), use:
+       ``` 
+       "ConnectionStrings": {
+          "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
+        },
+        ```
 
-        + SQL Server Database (SQL authentication): 
-          ```
-          "ConnectionStrings": {
-             "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
-           },
-           ```
+        For SQL Server Database (SQL authentication), use: 
+        ```
+        "ConnectionStrings": {
+           "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
+        },
+        ```
 
-        + PostgreSQL Database: 
-          ```
-          "ConnectionStrings": {
-             "postgresql": "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
-          },   
-          ```
+        For PostgreSQL Database, use:
+        ```
+        "ConnectionStrings": {
+           "postgresql": "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
+        },   
+        ```
 
 1. Open the database port on the remote machine to the public IP of each DeployR front-end as described in these articles:
-   + [For SQL server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
-
+   + [For SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
    + [For PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          
 1. Launch the administrator's utility and:
-   1. [Restart the front-end](admin-utility.md#startstop).
- 
+   1. [Restart the front-end](admin-utility.md#startstop). The database is created for you when you restart.
    1. [Run the diagnostic tests](admin-utility.md#test).
