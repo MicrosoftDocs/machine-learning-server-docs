@@ -60,4 +60,4 @@ Additionally, when you have multiple front-ends, you must set up a [remote SQL S
  
 Learn how to [set up an enterprise configuration](configuration-initial.md#enterprise) for operationalization.
 
-![Enterprise Configuration](../media/o16n/setup-enterprise.jpeg)
+![Enterprise Configuration](../media/o16n/setup-enterprise-ready.jpeg)

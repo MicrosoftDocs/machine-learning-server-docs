@@ -146,12 +146,12 @@ Armed with this information, you will be able to identifies unresponsive compone
 
     + Choose **Get raw server status** to retrieve a 'raw details' on the health of the system and review the output.
 
-    + Choose **Trace code execution** to get the complete log tracing the execution of user-defined R code.
+    + Choose **Trace code execution** to trace the execution of specific R code and retrieve request IDs for debugging purposes:
       1. Enter the R code you want to run and trace. 
       1. Press the Enter key (carriage return) to run the code and start the trace.
       1. Review the trace output.
 
-    + Choose **Trace service execution** to get the complete log tracing the response to a call to a user-specified service. 
+    + Choose **Trace service execution** to trace the execution of specific service and retrieve request IDs for debugging purposes:  
       1. Enter the service name and version following the syntax `<service-name>/v<version>` such as `my-service/v1.0.0`. 
       1. Press the Enter key (carriage return) to run the code and start the trace.
       1. Review the trace output.
