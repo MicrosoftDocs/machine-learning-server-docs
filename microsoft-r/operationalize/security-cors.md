@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Cross-Origin Resource Sharing"
-description: "Cross-Origin Resource Sharing for DeployR"
+description: "Cross-Origin Resource Sharing - R Server"
 keywords: "Security DeployR CORS Cross-Origin Resource Sharing"
 author: "j-martens"
 manager: "jhubbard"

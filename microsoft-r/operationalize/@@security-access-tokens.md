@@ -43,7 +43,7 @@ You can get the API tokens in one of two ways:
 
 Place the token in the header of an API.
 
-When the API call is sent with an access token, DeployR validates that the user is valid and that the token itself is not expired.
+When the API call is sent with an access token, R Server validates that the user is valid and that the token itself is not expired.
 
 
 ## Renewing Tokens

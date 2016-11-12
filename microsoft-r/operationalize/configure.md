@@ -31,7 +31,7 @@ Once R Server has been installed, you can configure the operationalization featu
 
 #### Configuration
 
-There are two ways to configure DeployR: 
+There are two ways to configure R Server for operationalization: 
 + [One-box configuration](configuration-initial.md#onebox)
 + [Enterprise configuration](configuration-initial.md#enterprise)
 
