@@ -49,7 +49,7 @@ The supported databases are:
 
     1. Open the `appsettings.json` file, which is the external configuration file. 
     
-       You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+       You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
     1. Locate the `ConnectionStrings` property block.
 

@@ -75,7 +75,7 @@ This section walks you through the steps for securing the connections between th
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the front-end:
-   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
 
@@ -125,7 +125,7 @@ When encrypting, you have the choice of using one of the following **back-end HT
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the back-end:
-   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
 
@@ -164,7 +164,7 @@ This section walks you through the steps for authenticating the front-end with t
        > Make sure the name of the certificate matches the domain name of the back-end URL. 
        > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-    1. Open the external JSON configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json`, where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+    1. Open the external JSON configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json`, where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
     1. Uncomment characters in that section and update the properties to match the values for the **Authentication certificate**:

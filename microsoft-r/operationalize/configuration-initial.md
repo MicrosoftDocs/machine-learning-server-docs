@@ -138,7 +138,7 @@ If provisioning on a cloud service, then you must also [create inbound security 
 
 Once all front-ends and back-ends are configured, you must declare the IP addresses of each back-end with each front-end.
 
-1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 1. Uncomment characters in that section.
 1. Update the `"Uris": {` properties to declare each backend:

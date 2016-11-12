@@ -43,7 +43,7 @@ These instructions describe how to launch the Administrator Utility.
    dotnet Microsoft.DeployR.Utils.AdminUtil.dll
    ```
 
-   where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+   where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 The main utility menu appears.  
 
@@ -117,7 +117,7 @@ For security purposes, we strongly recommend that you encrypt the login credenti
 
    1. When prompted, enter the username and password.  The tool will return an encrypted string.
 
-1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings. You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings. You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 <br><a name="test"></a>
 
@@ -143,7 +143,7 @@ Armed with this information, you will be able to identifies unresponsive compone
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
          + On the front-end: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
          + On the back-end: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
-         where `<MRS_home>` is the path to the Microsoft R Server installation directory. If you don't know where that directory is, launch an R console and enter `normalizePath(R.home())`.
+         where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
