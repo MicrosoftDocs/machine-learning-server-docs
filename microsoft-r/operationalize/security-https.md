@@ -33,11 +33,11 @@ ms.custom: ""
 
 You can use HTTPS within a connection encrypted by TLS and/or SSL.  To enable HTTPS, you'll need some or all of these certificates.
 
-||HTTPS Certificates|Description|Front-end|Back-end|
+||HTTPS Certificates|Description|control node|compute node|
 |---|------------------------------------|------------------------------------------------------------------------|--------------|---------------|
-|1|API certificate|Secures communication between client applications and front-end.|Yes, with private key|No|
-|2|Back-end certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._ <br>Encrypts the traffic between the front-end and back-end. You can use a unique certificate for each back-end, or you can use one common Multi-Domain (SAN) certificate for all back-ends.|No|Yes, with private key|
-|3|Authentication certificate|_Note: If a back-end is inside the front-end's trust boundary, then this certificate isn't needed._<br>Authenticates the front-end with the back-end so that only the front-end can communicate with the back-end.|Yes, with private and a public key|No|
+|1|API certificate|Secures communication between client applications and control node.|Yes, with private key|No|
+|2|compute node certificate|_Note: If a compute node is inside the control node's trust boundary, then this certificate isn't needed._ <br>Encrypts the traffic between the control node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.|No|Yes, with private key|
+|3|Authentication certificate|_Note: If a compute node is inside the control node's trust boundary, then this certificate isn't needed._<br>Authenticates the control node with the compute node so that only the control node can communicate with the compute node.|Yes, with private and a public key|No|
 
 <br />
 
@@ -46,13 +46,13 @@ You can use HTTPS within a connection encrypted by TLS and/or SSL.  To enable HT
 >[!IMPORTANT] 
 >We strongly recommend that HTTPS be enabled in **all production environments.**  
 
-This section walks you through the steps for securing the connections between the client application and the front-end. Doing so will encrypt the communication between client and front-end to prevent traffic from being modified or read.
+This section walks you through the steps for securing the connections between the client application and the control node. Doing so will encrypt the communication between client and control node to prevent traffic from being modified or read.
 
 #### Using Windows IIS to Encrypt
 
-> Make sure the name of the certificate matches the domain name of the front-end URL. 
+> Make sure the name of the certificate matches the domain name of the control node URL. 
 
-1. On each front-end machine, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
+1. On each machine hosting a control node, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store.
 <a name="iis"></a>
 1. Launch IIS.
 1. In the "Connections" pane on the left, expand the "Sites" folder and select the website.
@@ -69,12 +69,12 @@ This section walks you through the steps for securing the connections between th
 
 #### Using your Default .ASP Core Web Server to Encrypt
 
-1. On each front-end machine, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store on the front-end machine.
-   > Make sure the name of the certificate matches the domain name of the front-end URL. 
+1. On each machine hosting the control node, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store.
+   > Make sure the name of the certificate matches the domain name of the control node URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the front-end:
+1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the control node:
    1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
@@ -95,41 +95,41 @@ This section walks you through the steps for securing the connections between th
 
    1. Close and save the file.
 1. Launch the utility script with administrator privileges and:
-   1. [Restart the front-end](admin-utility.md#startstop).
+   1. [Restart the control node](admin-utility.md#startstop).
    1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
 <br />
 
-## Encrypt Communication between the Front-end and Back-end
+## Encrypt Communication between the Control Node and Compute Node
 
-This section walks you through the steps for encrypting the traffic between the front-end and each of its back-ends. 
+This section walks you through the steps for encrypting the traffic between the control node and each of its compute nodes. 
 
-> If a back-end is inside the front-end's trust boundary, then encryption of this piece isn't needed. However, if the back-end resides outside of the trust boundary, consider using the back-end certificate to encrypt the traffic between the front-end and back-end. 
+> If a compute node is inside the control node's trust boundary, then encryption of this piece isn't needed. However, if the compute node resides outside of the trust boundary, consider using the compute node certificate to encrypt the traffic between the control node and compute node. 
 
-When encrypting, you have the choice of using one of the following **back-end HTTPS certificates**:
-+ One unique certificate per back-end machine.
-+ One common Multi-Domain (SAN) certificate with all back-end names declared in the single certificate
+When encrypting, you have the choice of using one of the following **compute node HTTPS certificates**:
++ One unique certificate per machine hosting a compute node.
++ One common Multi-Domain (SAN) certificate with all compute node names declared in the single certificate
 
 #### Using Windows IIS to Encrypt
 
-> Make sure the name of the certificate matches the domain name of the back-end URL. 
+> Make sure the name of the certificate matches the domain name of the compute node URL. 
 
-1. On each back-end machine, install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
+1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
 1. Launch IIS and follow the [instructions above](#iis).
 
 #### Using your Default .ASP Core Web Server to Encrypt
 
-1. On each back-end machine, install the trusted, signed **back-end HTTPS certificate** with a private key in the certificate store on the back-end machine.
-   > Make sure the name of the certificate matches the domain name of the back-end URL. 
+1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
+   > Make sure the name of the certificate matches the domain name of the compute node URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the back-end:
+1. Update the external JSON configuration file, `appsettings.json` to enable configure the HTTPS port for the compute node:
    1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
    1. In the `appsettings.json` file, search for the section starting with `"Kestrel": {` .
 
-   1. Update and add properties in that section to match the values for the back-end certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
+   1. Update and add properties in that section to match the values for the compute node certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
       ```
       {
           "Kestrel": {
@@ -145,23 +145,23 @@ When encrypting, you have the choice of using one of the following **back-end HT
 
    1. Close and save the file.
 1. Launch the administrator's utility and:
-   1. [Restart the back-end](admin-utility.md#startstop).
+   1. [Restart the compute node](admin-utility.md#startstop).
    1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
 
 <br />
 
-## Authenticate the Front-end with the Back-end
+## Authenticate the Control Node with the Compute Node
 
-This section walks you through the steps for authenticating the front-end with the back-end so that only the front-end can communicate with the back-end.
+This section walks you through the steps for authenticating the control node with the compute node so that only the control node can communicate with the compute node.
 
-> If a back-end is inside the front-end's trust boundary, then this certificate isn't needed. However, if the back-end resides outside of the trust boundary, consider using the back-end certificate to encrypt the traffic between the front-end and back-end. 
+> If a compute node is inside the control node's trust boundary, then this certificate isn't needed. However, if the compute node resides outside of the trust boundary, consider using the compute node certificate to encrypt the traffic between the control node and compute node. 
 
 
-1. On each front-end:
+1. On each control node:
 
     1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
-       > Make sure the name of the certificate matches the domain name of the back-end URL. 
+       > Make sure the name of the certificate matches the domain name of the compute node URL. 
        > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
     1. Open the external JSON configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json`, where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
@@ -177,11 +177,11 @@ This section walks you through the steps for authenticating the front-end with t
        ```
 
     1. Close and save the file.
-    1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
-    1. Repeat on each front-end.
+    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+    1. Repeat on each control node.
 
-1. On each back-end:
-    > These steps assume the trusted, signed **HTTPS authentication certificate**  is already installed on the front-end machine with a _public_ key.
+1. On each compute node:
+    > These steps assume the trusted, signed **HTTPS authentication certificate**  is already installed on the machine hosting the control node with a _public_ key.
 
     1. Open the external JSON configuration file, `appsettings.json` file.
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
@@ -194,5 +194,5 @@ This section walks you through the steps for authenticating the front-end with t
        ```
 
     1. Close and save the file.
-    1. Launch the administrator's utility and [restart the back-end](admin-utility.md#startstop).
-    1. Repeat on each back-end.
+    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+    1. Repeat on each compute node.

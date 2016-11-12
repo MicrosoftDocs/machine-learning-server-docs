@@ -31,7 +31,7 @@ Whenever you or your users are writing, testing, and deploying R scripts, it is 
 
 By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote environment.
 
-As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the back-end(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
+As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the compute node(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
 
 Of course, data scientists can test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
 
@@ -43,7 +43,7 @@ Of course, data scientists can test out new packages without risk to the product
 >
 >**Applies to:** Development -or- Production Environments
 
-You can create a local R package repository of the R packages you need using the R package `miniCRAN`. You can then copy this repository to all back-ends and then install directly from this repository. 
+You can create a local R package repository of the R packages you need using the R package `miniCRAN`. You can then copy this repository to all compute nodes and then install directly from this repository. 
 
 This production-safe approach provides an excellent way to:
 + Keep a standard, sanctioned library of R packages for production use
@@ -70,7 +70,7 @@ This production-safe approach provides an excellent way to:
       CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-11-01")
       ```
 
-   1. Create a miniCRAN repository in which the packages will be downloaded and installed.  This will create the folder structure that you need to copy the packages to each back-end later.
+   1. Create a miniCRAN repository in which the packages will be downloaded and installed.  This will create the folder structure that you need to copy the packages to each compute node later.
       ``` 
       # Define the local download location
       local_repo <- "~/my-miniCRAN-repo"
@@ -83,8 +83,8 @@ This production-safe approach provides an excellent way to:
       pkgs_needed <- c("Package-A", "Package-B", "Package-...")
       ```
 
-1. On each back-end:
-   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@WHERE on this back-end machine.
+1. On each compute node:
+   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@WHERE on the machine hosting the compute node.
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
@@ -130,7 +130,7 @@ This production-safe approach provides an excellent way to:
 + Manage R package dependencies as well as package versions.
 + Schedule timely updates to R packages.
 
-This option does require the back-end machines have access to the Internet to install the packages.
+This option does require the  machines hosting the compute node have access to the Internet to install the packages.
 
 **To use a master script to install packages:**
 
@@ -142,9 +142,9 @@ This option does require the back-end machines have access to the Internet to in
    install.packages("Package-...")
    ```
 
-1. Manually run this R script on each back-end.
+1. Manually run this R script on each compute node.
 
->You must update and manually rerun this script on each back-end whenever a new package or version is needed in the server environment.
+>You must update and manually rerun this script on each compute node whenever a new package or version is needed in the server environment.
 
 <br>
 

@@ -64,7 +64,7 @@ When no other form of [authentication](security-authentication.md) is used, you 
 1. If a password was already defined, provide the current password.
 
 1. When prompted, enter the new password for this administrator account. 
-   >If your configuration has multiple front-ends, we recommend the same password be used.
+   >If your configuration has multiple control nodes, we recommend the same password be used.
 
 1. Confirm the password.
 
@@ -74,7 +74,7 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 To start or stop all operationalization-related services on the machine at once, use the administrator utility. 
 
-**To stop or start a front-end or back-end:**
+**To stop or start a control node or compute node:**
 
 1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
@@ -86,11 +86,11 @@ To start or stop all operationalization-related services on the machine at once,
 
 ## Update Port Numbers
 
-You can update the ports numbers for the front-end, back-end, or Rserve.
+You can update the ports numbers for the control node, compute node, or Rserve.
 
 **To update the port values:**
 
-1. Log into the machine on which your front-end or back-end is installed.
+1. Log into the machine on which your control node or compute node is installed.
 
 1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
@@ -108,7 +108,7 @@ The port number will be updated the next time the [service is restarted](#starts
 
 For security purposes, we strongly recommend that you encrypt the login credentials for any remote database and/or LDAP/LDAP-S rather than store them in plain text in the `appsettings.json` configuration file. Here's how: 
        
-1. Make sure a credential encryption certificate with a private key is installed on the front-end. 
+1. Make sure a credential encryption certificate with a private key is installed on the control node. 
 
 1. Encrypt the credentials using the Administrator Utility as follows:
    1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
@@ -141,8 +141,8 @@ Armed with this information, you will be able to identifies unresponsive compone
       1. Review the test results.
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-         + On the front-end: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
-         + On the back-end: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
+         + On the control node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
+         + On the compute node: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
          where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.

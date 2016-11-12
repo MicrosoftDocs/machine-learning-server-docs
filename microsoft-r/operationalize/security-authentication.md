@@ -63,7 +63,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
-**On each front-end machine, do the following:**
+**On each control node, do the following:**
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
@@ -85,11 +85,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. If using a certificate for access token signing, do the following: 
 
-   >This is particularly useful when you have multiple front-ends and want the tokens to be signed consistently by every front-end in your configuration. 
+   >This is particularly useful when you have multiple control nodes and want the tokens to be signed consistently by every control node in your configuration. 
    >
-   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the front-end and the LDAP server.
+   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the control node and the LDAP server.
     
-   1. On each front-end machine, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
+   1. On each machine hosting the control node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
    1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
@@ -103,11 +103,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        ```
 
 1. Launch the administrator's utility and:
-   1. [Restart the front-end](admin-utility.md#startstop).
+   1. [Restart the control node](admin-utility.md#startstop).
  
    1. Run the [diagnostic tests](admin-utility.md#test).
 
-1. Repeat these steps on each front-end machine.
+1. Repeat these steps on each  machine hosting the control node.
 
 <br>
 
@@ -115,9 +115,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 ## Azure Active Directory 
 
-[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and front-end have access to the internet.
+[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and control node have access to the internet.
 
-**On each front-end machine, do the following:**
+**On each control node, do the following:**
 
 1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
@@ -139,7 +139,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
-   1. [Restart the front-end](admin-utility.md#startstop).
+   1. [Restart the control node](admin-utility.md#startstop).
    1. Run the [diagnostic tests](admin-utility.md#test).
 
-1. Repeat these steps on each front-end machine.
+1. Repeat these steps on each  machine hosting the control node.
