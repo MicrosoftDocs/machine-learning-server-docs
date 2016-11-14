@@ -27,6 +27,8 @@ ms.custom: ""
 
 # About Operationalization with R Server
 
+
+
 Ever-increasing  software companies are presenting  advanced analytics in terms of algorithms, models and insights, they offer  tools and solutions to magically find new opportunities or predict how clients buy or decide on offers. Some companies build on top of open source solutions like Python or R, Others create workflows and drag and drop black boxes to develop outcomes and solutions which require coding to be useful against real data.  In the end, these approaches resolve some problems well, but create expensive, difficult to manage silos of knowledge and nightmares to implement.
 
 We have been learning about these with our real world clients, who now employ  one or more of these  tools and technologies to make sense of the massive new amounts of data , flowing in from all sources continuously. The biggest challenge our clients experience is the operationalization of their models.
