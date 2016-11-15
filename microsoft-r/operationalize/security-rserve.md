@@ -55,8 +55,7 @@ In order to mitigate some of the risks associated with RServe, the service is se
 + Read-only permissions to the R library to prevent users from installing packages from their R scripts
 
 + Write permissions to the R working directory, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces
-
 <br> 
 
 >[!Important]
->While the working directory is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script. 
+>While the custom Rserve service can only write to the working directory, **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script. 
