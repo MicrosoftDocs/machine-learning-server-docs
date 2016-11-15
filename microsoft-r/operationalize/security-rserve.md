@@ -50,14 +50,13 @@ If your operationalization configuration requires additional compute capacity, [
 
 In the R language, users can change files in the file system, download content from the Web, download packages, and so on. 
 
-In order to mitigate some of the risks associated with RServe, the service is setup to:
-+ Run in a low privileges account
+In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with restricted privileges**:
 
-+ Have 'read only' access to the R library to prevent users from installing packages from their R scripts
++ 'read only' permissions to the R library to prevent users from installing packages from their R scripts
 
-+ Have 'write' permission to the R working directory @@ This is the directory under which an R session will create a session-specific subdirectory to store the workspace and working directory. Similarly, service calls and remote execution sessions also create a sub-directory under this directory. 
++ 'write' permissions to the R working directory, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces. 
 
 <br> 
 
 >[!Important]
->While the directory@@ is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user who is familiar with the directory structure could potentially access another user’s session folder from their R script. 
+>While the working directory is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script. 
