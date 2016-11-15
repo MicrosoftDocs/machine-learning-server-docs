@@ -52,7 +52,9 @@ In the R language, users can change files in the file system, download content f
 
 In order to mitigate some of the risks associated with RServe, the service is setup to:
 + Run in a low privileges account
+
 + Have 'read only' access to the R library to prevent users from installing packages from their R scripts
+
 + Have 'write' permission to the R working directory @@ This is the directory under which an R session will create a session-specific subdirectory to store the workspace and working directory. Similarly, service calls and remote execution sessions also create a sub-directory under this directory. 
 
 <br> 
