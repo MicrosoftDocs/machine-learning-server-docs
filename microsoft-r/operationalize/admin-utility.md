@@ -104,18 +104,25 @@ The port number will be updated the next time the [service is restarted](#starts
 
 <br><a name="encrypt"></a>
 
-## Encrypt Secret Credentials
+## Encrypt Credentials 
 
-For security purposes, we strongly recommend that you encrypt the login credentials for any remote database and/or LDAP/LDAP-S rather than store them in plain text in the `appsettings.json` configuration file. Here's how: 
+For security purposes, we strongly recommend that you encrypt the connection string for the remote database and/or the password for the LDAP/LDAP-S credentials rather than store them in plain text in the `appsettings.json` configuration file. Here's how: 
        
-1. Make sure a credential encryption certificate with a private key is installed on the control node. 
+1. On the control node, install a credential encryption certificate with a private key into the default certificate store on the local machine. 
 
-1. Encrypt the credentials using the Administrator Utility as follows:
-   1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
-   1. From the main menu, choose the option **Encrypt Credentials**.
+1. From the main menu, choose the option **Encrypt Credentials**.
 
-   1. When prompted, enter the username and password.  The tool will return an encrypted string.
+1. Specify where is the encryption certificate installed? 
+   + Local machine (Computer account)
+   + Current user (My user account)
+
+   The list of available certificates appears.
+
+1. Specify the certificate to use for encryption.
+
+1. Enter information you want to encrypt.  The tool will return an encrypted string.
 
 1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings. You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
