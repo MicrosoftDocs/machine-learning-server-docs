@@ -46,14 +46,16 @@ All authentication takes place on the operationalization web node, and the execu
 
 If your operationalization configuration requires additional compute capacity, [additional compute nodes](configuration-initial.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities. 
 
-## RServe Security Configurations
+## Directory & User Isolation Considerations
 
 In the R language, users can change files in the file system, download content from the Web, download packages, and so on. 
 
 In order to mitigate some of the risks associated with RServe, the service is setup to:
 + Run in a low privileges account
 + Have 'read only' access to the R library to prevent users from installing packages from their R scripts
-+ Have 'write' permission to the R working directory @@HOW DO WE REFER TO THIS DIR???  This is the directory under which an R session will create a session-specific subdirectory to store the workspace and working directory. Similarly, service calls and remote execution sessions also create a sub-directory under this directory. 
++ Have 'write' permission to the R working directory @@ This is the directory under which an R session will create a session-specific subdirectory to store the workspace and working directory. Similarly, service calls and remote execution sessions also create a sub-directory under this directory. 
+
+<br> 
 
 >[!Important]
->While the @@ directory is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user who is familiar with the directory structure could potentially access another user’s session folder from their R script. 
+>While the directory@@ is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user who is familiar with the directory structure could potentially access another user’s session folder from their R script. 
