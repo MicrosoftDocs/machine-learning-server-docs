@@ -100,7 +100,7 @@ You can update the ports numbers for the control node, compute node, or Rserve.
 
 1. Enter the port number. 
 
-The port number will be updated the next time the [service is restarted](#startstop).
+>The port number will be updated the next time the [service is restarted](#startstop).
 
 <br><a name="encrypt"></a>
 

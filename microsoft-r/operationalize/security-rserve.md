@@ -1,0 +1,59 @@
+---
+
+# required metadata
+title: " Security in DeployR"
+description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
+keywords: ""
+author: "j-martens"
+manager: "jhubbard"
+ms.date: "05/06/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "deployr"
+ms.custom: ""
+
+---
+
+# RServe Security Considerations
+
+
+## RServe Execution Context
+
+As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
+
+R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. 
+
+All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve will only accept socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
+
+>[!Important]
+>The operationalization compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process. 
+>
+>However, there exist several vulnerabilities of which you should be aware. They are:
+>
+>-   RServe only accepts usernames and passwords in plain text from connecting clients.
+>-   RServe uses a plain text configuration file to store the username and password.
+>-   RServe has the permissions of the virtual service account, so it may have unwanted access to resources on the computer.
+
+If your operationalization configuration requires additional compute capacity, [additional compute nodes](configuration-initial.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities. 
+
+## RServe Security Configurations
+
+In the R language, users can change files in the file system, download content from the Web, download packages, and so on. 
+
+In order to mitigate some of the risks associated with RServe, the service is setup to:
++ Run in a low privileges account
++ Have 'read only' access to the R library to prevent users from installing packages from their R scripts
++ Have 'write' permission to the R working directory @@HOW DO WE REFER TO THIS DIR???  This is the directory under which an R session will create a session-specific subdirectory to store the workspace and working directory. Similarly, service calls and remote execution sessions also create a sub-directory under this directory. 
+
+>[!Important]
+>While the @@ directory is the only one to which the custom Rserve service can write, it is important to understand that **there is no user isolation between the session folders**. Any user who is familiar with the directory structure could potentially access another user’s session folder from their R script. 

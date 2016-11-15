@@ -102,6 +102,8 @@ Additionally, when you have multiple control nodes, you must set up a [remote SQ
 
 Your control node is now configured. Repeat these steps for each control node you want to add.
 
+<a name="add-compute-nodes"></a>
+
 **Step 2: Configure Compute Node(s)**
 
 >**Note:** A compute node can be configured on its own machine or on the same machine as the control node.

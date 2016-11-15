@@ -85,6 +85,7 @@
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
+##### [RServe Considerations](operationalize/security-rserve.md)
 #### [Administration](operationalize/admin-utility.md)
 
 ### [R Package Management](operationalize/package-management.md)
@@ -134,7 +135,7 @@
 ##### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
 ##### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
 ##### [Account Locking Policies](deployr-admin-security/deployr-security-account-locking.md)
-##### [RServer Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
+##### [RServe Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
 #### [APIs and Client Libraries](deployr-tools-and-samples.md)
 ##### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 ##### [API Overview](deployr-api-reference.md)
