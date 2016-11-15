@@ -52,9 +52,9 @@ In the R language, users can change files in the file system, download content f
 
 In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with restricted privileges**:
 
-+ 'read only' permissions to the R library to prevent users from installing packages from their R scripts
++ Read-only permissions to the R library to prevent users from installing packages from their R scripts
 
-+ 'write' permissions to the R working directory, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces. 
++ Write permissions to the R working directory, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces
 
 <br> 
 
