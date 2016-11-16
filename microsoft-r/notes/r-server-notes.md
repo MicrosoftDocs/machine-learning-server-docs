@@ -28,6 +28,86 @@ ms.custom: ""
 
 The following release notes apply to Microsoft R Server.
 
+##Microsoft R Server 9.0.1
+
+**New in this Release**
+
++ On **Linux**:
+
+  + SOMETHING
+  
++ On **Hadoop**:
+
+  + SOMETHING
+
++ On **Teradata**:
+
+  + SOMETHING
+  
++ `RevoScaleR` changes: 
+    + These `RevoScaleR` functions are now deprecated:
+	    + `  ` (use `  `)
+
+    + These `RevoScaleR` functions are now defunct:
+	    + `  ` (use `  `)
+
+    + New variables....
+
++ The **DeployR** feature is now referred to as the Operationalization feature. 
+
+  
++ Microsoft R **licenses and Third Party Notices** files are included in the `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
+
+For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/en-us/library/mt604847.aspx). @@
+
+**Bug Fixes**
+
++ `rxKmeans` now works with an `RxHadoopMR` compute context and an `RxTextData` data source.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, specifying `firstRowIsColNames` to `FALSE` in
+the output data source will now correctly result in no
+column names being written.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, setting `quoteMark` to `""` in the output data
+source will now result in no quote marks written around
+character data.
+ 
++ When writing to an `RxTextData` data source using
+`rxDataStep`, setting `missingValueString` to `""` in the
+output data source will now result in empty strings for
+missing values.
+ 
++ Using `rxImport`, if `quotedDelimiters` was set to `TRUE`,
+transforms could not be processed.
+ 
++ `rxImport` of `RxTextData` now reports a warning instead of
+an error if mismatched quotes are encountered.
+ 
++ When using `rxImport` and appending to an `.xdf` file, a
+combination of the use of `newName` and `newLevels` for
+different variables in `colInfo` could result in `newLevels`
+being ignored, resulting in a different set of factor levels
+for the appended data.
+ 
++ When using `rxPredict`, with an in-formula transformation of
+the dependent variable, an error was given if the variable
+used in the transformation was not available in the
+prediction data set.
+
++ Hadoop bug fix for incompatibility when using both HA and Kerberos on HDP.
+
++ Deployr default grid node and any additional nodes should have 20 slots by default
+
++ DeployR was generating very large (~52GB) catalina.out log files.
+
++ When running scripts in the DeployR Repository Manager's Test tab, any numeric values set to `0` were ignored and not included as part of the request.
+
+**Known Issues**
+
+See here: https://msdn.microsoft.com/en-us/microsoft-r/rserver-known-issues
+
 ##Microsoft R Server 8.0.5
 
 **New in this Release**
