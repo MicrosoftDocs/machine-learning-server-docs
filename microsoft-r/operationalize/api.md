@@ -45,13 +45,13 @@ Once R code is exposed by R Server as a web service, an application can make API
 
 The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
 
-<br>
-
 ### User Authentication & Status APIs
 
 All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
 
 >For the full documentation for each session API, check out [this section of the API Reference help](?tags=User).
+
+>@@What about Access tokens LINK???
 
 |Authentication & Status API|Description|
 |----|-----------|
@@ -59,8 +59,6 @@ All operationalization API calls must be authenticated using the `/login` API or
 |`POST /login/refreshToken`|The user renews the access token and refresh token|
 |`DELETE /login/refreshToken/{refreshToken}`|The user revokes a refresh token|
 |`GET /status`|Gets the current health of the system|
-
-@@What about Access tokens LINK???
 
 <br>
 
@@ -73,6 +71,7 @@ These are the APIs around the management and life cycle of Web services. For mor
 When a service is published (`/services/{name}/{version}`), not only is a Web service endpoint is created (`/api/{name}/{version}`) for the consumption of that service, but another Swagger document defining that service is also generated (`/api/{name}/{version}/swagger.json`). There is always one Swagger service template for each Web service version. You can run this swagger.json file through your Swagger code generator* to produce a custom client library stub for the consumption of that version of that Web service. 
 
 >For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
+
 >@@ADD link to vignette @@How do we introduce vignette here.
 
 |Web Services API|Description|
@@ -226,47 +225,6 @@ The session APIs can be divided into the following groups:
         </tr>
     </tbody>
 </table>
-
-
-<!--
-|Session Lifecycle API|Description|
-|----|-----------|
-|`POST /sessions`|Creates a session|
-|`GET /sessions`|Lists or existing sessions|
-|`DELETE /sessions/{id}`|Closes a session and all its associated resources|
-|`DELETE /sessions/{id}/force`|Attempts to forcefully close a session and all its associated resources|
-|`POST /sessions/{id}/execute`|Executes code in the context of a specific session|
-|`POST /sessions/{id}/cancel`|Cancel a session by aborting the current execution operation|
-|`GET /sessions/{id}/console-output`|Returns the console output for the current or last execution|
-|`GET /sessions/{id}/history`|Lists all history for a specific session|
-
-<br>
-
-|Session Workspace API|Description|
-|----|-----------|
-|`GET /sessions/{id}/workspace`|Lists all object names of a specific session|
-|`GET /sessions/{id}/workspace/{objectName}`|Returns an R object from a session as RData file stream|
-|`POST /sessions/{id}/workspace/{objectName}`|Upload a serialized R object into R session|
-|`DELETE /sessions/{id}/workspace/{objectName}`|Delete an object from a session|
-
-<br>
-
-|Session Working Directory API|Description|
-|----|-----------|
-|`GET /sessions/{id}/files`|Lists all files of a specific session|
-|`POST /sessions/{id}/files`|Loads a file into the R session working directory| 
-|`GET /sessions/{id}/files/{fileName}`|Downloads a file from a session as stream|
-|`DELETE /sessions/{id}/files/{fileName}`|Delete a file from a session working directory|
-
-<a name="sessionsnapshots"></a>
-<br>
-
-|Session Snapshot API|Description|
-|----|-----------|
-|`POST /sessions/{id}/snapshot `|Create snapshot from specific R session.|
-|`POST /sessions/{id}/loadsnapshot/{snapshotId}`|Loads a certain snapshot into specific R session.|
-|` `| |
--->
 
 <br>
 
