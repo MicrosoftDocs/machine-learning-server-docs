@@ -28,41 +28,26 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
+## Introduction
 The Microsoft R Server [operationalization API](https://microsoft.github.io/deployr-api-docs/) exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs)</big>
 
-While data scientists can work with R directly in an R console window or R IDE, application developers need a different set of tools to leverage R inside applications. The API exposes **R analytics Web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
+While data scientists can work with R directly in an R console window or R IDE, application developers need a different set of tools to leverage R inside applications. The API exposes Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
-As an application developer integrating with Microsoft R Server-hosted **Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. Using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
+As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
-Each time a service is executed on the API, the service makes use of an R session that is managed by R Server on behalf of the application. 
-
-## Client Libraries
-
-To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API. 
-
-You can use this template to build the client libraries that will simplify making calls, encoding data, and handling response markup on the API.  
-
-**Get the Core Swagger File**
-
-The core Swagger template, `swagger.json`, is available here@@. 
-
-**Build Your Client Libraries**
-
-To build your client libraries, you'll need a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
-
-Then, run the Swagger file through the code generator to get a custom client library stub you can use to call these core APIs. 
+Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
 <br>
 
-## The Core APIs Introduced
+## Core Operationalization APIs
 
-the core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
+The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
 
 <br>
 
-### User Authentication & Status
+### User Authentication & Status APIs
 
 All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
 
@@ -79,7 +64,7 @@ All operationalization API calls must be authenticated using the `/login` API or
 
 <br>
 
-### Web Services
+### Web Services APIs
 
 @@Small intro para
 
@@ -88,8 +73,9 @@ These are the APIs around the management and life cycle of Web services. For mor
 When a service is published (`/services/{name}/{version}`), not only is a Web service endpoint is created (`/api/{name}/{version}`) for the consumption of that service, but another Swagger document defining that service is also generated (`/api/{name}/{version}/swagger.json`). There is always one Swagger service template for each Web service version. You can run this swagger.json file through your Swagger code generator* to produce a custom client library stub for the consumption of that version of that Web service. 
 
 >For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
+>@@ADD link to vignette @@How do we introduce vignette here.
 
-|Web Service API|Description|
+|Web Services API|Description|
 |----|-----------|
 |`GET /services`|Lists all published web services for the authenticated user.|
 |`GET /services/{name}`|Lists all published web services by the specified name for the authenticated user.|
@@ -102,18 +88,147 @@ When a service is published (`/services/{name}/{version}`), not only is a Web se
 
 <br>
 
-### Sessions
+### Session APIs
 
-@@Small intro para
+Each time a service is executed on the API, the service makes use of an R session that is managed by R Server on behalf of the application. 
 
 The session APIs can be divided into the following groups:
-+ Session Lifecycle APIs: These APIs manage the lifecycle of an R session.
-+ Session Workspace APIs: These APIs allow you to manage the objects in your workspace.
-+ Session Working Directory APIs: These APIs allow you to manage the files in your workspace.
-+ Session Snapshot APIs: These APIs allow you to create and manage session snapshots.
++ Session lifecycle APIs help manage the R session lifecycle.
++ Session workspace APIs help manage the objects in your workspace.
++ Session working directory APIs help manage the files in your workspace.
++ Session snapshot APIs help create and manage session snapshots.
 
 >For the full documentation for each session API, check out [this section of the API Reference help](?tags=Sessions).
 
+>@@ADD link to vignette @@How do we introduce vignette here.
+
+
+<table>
+    <thead>
+        <tr>
+            <th width="370">Session Lifecycle API</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>POST /sessions</code></td>
+            <td>Creates a session</td>
+        </tr>
+        <tr>
+            <td><code>GET /sessions</code></td>
+            <td>Lists or existing sessions</td>
+        </tr>
+        <tr>
+            <td><code>DELETE /sessions/{id}</code></td>
+            <td>Closes a session and all its associated resources</td>
+        </tr>
+        <tr>
+            <td><code>DELETE /sessions/{id}/force</code></td>
+            <td>Attempts to forcefully close a session and all its associated resources</td>
+        </tr>
+        <tr>
+            <td><code>POST /sessions/{id}/execute</code></td>
+            <td>Executes code in the context of a specific session</td>
+        </tr>
+        <tr>
+            <td><code>POST /sessions/{id}/cancel</code></td>
+            <td>Cancel a session by aborting the current execution operation</td>
+        </tr>
+        <tr>
+            <td><code>GET /sessions/{id}/console-output</code></td>
+            <td>Returns the console output for the current or last execution</td>
+        </tr>
+        <tr>
+            <td><code>GET /sessions/{id}/history</code></td>
+            <td>Lists all history for a specific session</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br></p>
+
+<table>
+    <thead>
+        <tr>
+            <th width="370">Session Workspace API</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GET /sessions/{id}/workspace</code></td>
+            <td>Lists all object names of a specific session</td>
+        </tr>
+        <tr>
+            <td><code>GET /sessions/{id}/workspace/{objName}</code></td>
+            <td>Returns named R object from a session as RData file stream</td>
+        </tr>
+        <tr>
+            <td><code>POST /sessions/{id}/workspace/{objName}</code></td>
+            <td>Upload named serialized R object into R session</td>
+        </tr>
+        <tr>
+            <td><code>DELETE /sessions/{id}/workspace/{objName}</code></td>
+            <td>Delete named object from a session</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br></p>
+
+<table>
+    <thead>
+        <tr>
+            <th width="370">Session Working Directory API</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>GET /sessions/{id}/files</code></td>
+            <td>Lists all files of a specific session</td>
+        </tr>
+        <tr>
+            <td><code>POST /sessions/{id}/files</code></td>
+            <td>Loads a file into the R session working directory</td>
+        </tr>
+        <tr>
+            <td><code>GET /sessions/{id}/files/{fileName}</code></td>
+            <td>Downloads a file from a session as stream</td>
+        </tr>
+        <tr>
+            <td><code>DELETE /sessions/{id}/files/{fileName}</code></td>
+            <td>Delete a file from a session working directory</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    <a name="user-content-sessionsnapshots"></a>
+    <br></p>
+
+<table>
+    <thead>
+        <tr>
+            <th width="370">Session Snapshot API</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>POST /sessions/{id}/snapshot</code></td>
+            <td>Create snapshot from specific R session.</td>
+        </tr>
+        <tr>
+            <td><code>POST /sessions/{id}/loadsnapshot/{snapId}</code></td>
+            <td>Loads a certain snapshot into specific R session.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--
 |Session Lifecycle API|Description|
 |----|-----------|
 |`POST /sessions`|Creates a session|
@@ -151,12 +266,11 @@ The session APIs can be divided into the following groups:
 |`POST /sessions/{id}/snapshot `|Create snapshot from specific R session.|
 |`POST /sessions/{id}/loadsnapshot/{snapshotId}`|Loads a certain snapshot into specific R session.|
 |` `| |
-
-@@ADD link to vignette
+-->
 
 <br>
 
-### Snapshots
+### Snapshot APIs
 
 You can prolong the lifespan of a session by saving the session's workspace and working directory into a **snapshot**. A snapshot includes:
 + The session's workspace along with the installed R packages
@@ -173,3 +287,19 @@ These APIs allow you to create and manage session snapshots. There are additiona
 |`GET /snapshots`|List all snapshots for the current user.|
 |`GET /snapshots/{id}`|Get the snapshot content as a zip file containing the working directory and workspace.|
 |`DELETE /snapshots/{id}`|Delete specified snapshot.|
+
+
+## Swagger & Client Libraries
+
+To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API. 
+
+You can use this template to build the client libraries that will simplify making calls, encoding data, and handling response markup on the API.  
+
+**To build your client libraries:**
+
+1. Download the core Swagger template, `swagger.json`, is available here@@.
+1. Get a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
+1. Run the Swagger file through the code generator specifying the language you want. 
+
+You can now use the generated client library stub to call the core APIs.
+
