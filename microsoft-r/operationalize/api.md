@@ -60,20 +60,24 @@ Then, run the Swagger file through the code generator to get a custom client lib
 
 the core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
 
+<br>
+
 ### User Authentication & Status
 
-All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authenticaton.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
+All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
 
-|Common&nbsp;APIs|Description|
+>For the full documentation for each session API, check out [this section of the API Reference help](?tags=User).
+
+|Authentication & Status API|Description|
 |----|-----------|
 |`POST /login`|Logs the user in|
 |`POST /login/refreshToken`|The user renews the access token and refresh token|
 |`DELETE /login/refreshToken/{refreshToken}`|The user revokes a refresh token|
 |`GET /status`|Gets the current health of the system|
 
-Learn more about the set of authentication APIs, [here](?tags=User).
-
 @@What about Access tokens LINK???
+
+<br>
 
 ### Web Services
 
@@ -83,7 +87,9 @@ These are the APIs around the management and life cycle of Web services. For mor
 
 When a service is published (`/services/{name}/{version}`), not only is a Web service endpoint is created (`/api/{name}/{version}`) for the consumption of that service, but another Swagger document defining that service is also generated (`/api/{name}/{version}/swagger.json`). There is always one Swagger service template for each Web service version. You can run this swagger.json file through your Swagger code generator* to produce a custom client library stub for the consumption of that version of that Web service. 
 
-|Common&nbsp;APIs|Description|
+>For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
+
+|Web Service API|Description|
 |----|-----------|
 |`GET /services`|Lists all published web services for the authenticated user.|
 |`GET /services/{name}`|Lists all published web services by the specified name for the authenticated user.|
@@ -94,17 +100,21 @@ When a service is published (`/services/{name}/{version}`), not only is a Web se
 |`PATCH /services/{name}/{version}`|Patches the published web service for the logged in user.|
 |`GET /api/{name}/{version}/swagger.json`|Get Swagger capability json for the published web service.|
 
-Learn more about the set of Web services APIs, [here](?tags=Services).
+<br>
 
 ### Sessions
 
 @@Small intro para
 
-**Session Lifecycle APIs**
+The session APIs can be divided into the following groups:
++ Session Lifecycle APIs: These APIs manage the lifecycle of an R session.
++ Session Workspace APIs: These APIs allow you to manage the objects in your workspace.
++ Session Working Directory APIs: These APIs allow you to manage the files in your workspace.
++ Session Snapshot APIs: These APIs allow you to create and manage session snapshots.
 
-These calls manage the lifecycle of an R session.
+>For the full documentation for each session API, check out [this section of the API Reference help](?tags=Sessions).
 
-|Common&nbsp;APIs|Description|
+|Session Lifecycle API|Description|
 |----|-----------|
 |`POST /sessions`|Creates a session|
 |`GET /sessions`|Lists or existing sessions|
@@ -115,34 +125,28 @@ These calls manage the lifecycle of an R session.
 |`GET /sessions/{id}/console-output`|Returns the console output for the current or last execution|
 |`GET /sessions/{id}/history`|Lists all history for a specific session|
 
-**Session Workspace APIs**
+<br>
 
-These APIs allow you to manage the objects in your workspace.
-
-|Common&nbsp;APIs|Description|
+|Session Workspace API|Description|
 |----|-----------|
 |`GET /sessions/{id}/workspace`|Lists all object names of a specific session|
 |`GET /sessions/{id}/workspace/{objectName}`|Returns an R object from a session as RData file stream|
 |`POST /sessions/{id}/workspace/{objectName}`|Upload a serialized R object into R session|
 |`DELETE /sessions/{id}/workspace/{objectName}`|Delete an object from a session|
 
-**Session Working Directory APIs**
+<br>
 
-These APIs allow you to manage the files in your workspace.
-
-|Common&nbsp;APIs|Description|
+|Session Working Directory API|Description|
 |----|-----------|
 |`GET /sessions/{id}/files`|Lists all files of a specific session|
 |`POST /sessions/{id}/files`|Loads a file into the R session working directory| 
 |`GET /sessions/{id}/files/{fileName}`|Downloads a file from a session as stream|
 |`DELETE /sessions/{id}/files/{fileName}`|Delete a file from a session working directory|
 
+<a name="sessionsnapshots"></a>
+<br>
 
-**Session Snapshot APIs**
-
-These APIs allow you to create and manage session snapshots.
-
-|Common&nbsp;APIs|Description|
+|Session Snapshot API|Description|
 |----|-----------|
 |`POST /sessions/{id}/snapshot `|Create snapshot from specific R session.|
 |`POST /sessions/{id}/loadsnapshot/{snapshotId}`|Loads a certain snapshot into specific R session.|
@@ -150,6 +154,7 @@ These APIs allow you to create and manage session snapshots.
 
 @@ADD link to vignette
 
+<br>
 
 ### Snapshots
 
@@ -161,16 +166,10 @@ You can then retrieve this snapshot later using its ID to access the session con
 
 Snapshots can be used for and by both sessions and web service APIs. You can create a snapshot to freeze a session in time and then use it when consuming a web service.
 
-These APIs allow you to create and manage session snapshots.
+These APIs allow you to create and manage session snapshots. There are additional snapshot APIs under the session grouping](#sessionsnapshots).
 
-|Common&nbsp;APIs|Description|
+|Snapshot APIs|Description|
 |----|-----------|
 |`GET /snapshots`|List all snapshots for the current user.|
 |`GET /snapshots/{id}`|Get the snapshot content as a zip file containing the working directory and workspace.|
 |`DELETE /snapshots/{id}`|Delete specified snapshot.|
-
-
-## OPEN QUESTIONS
-
-1. where do users find the swagger doc? app developers need access to it.
-1. Who is writing the swagger - how to use doc?  Sean to write, Josee to polish?? what needs to be filled out in the template?  And what needs to be fleshed out in the resulting client library stubs? 
