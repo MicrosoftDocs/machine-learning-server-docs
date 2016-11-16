@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Security: Cross-Origin Resource Sharing
 
-Cross-Origin Resource Sharing (CORS) enables your client application to freely communicate and make cross-site HTTP requests for resources from a domain other than where the control node is hosted. 
+Cross-Origin Resource Sharing (CORS) enables your client application to freely communicate and make cross-site HTTP requests for resources from a domain other than where the web node is hosted. 
 
 CORS can be enabled or disabled in the external configuration file, `appsettings.json`. Support for CORS is disabled by default.  
 
@@ -54,4 +54,4 @@ CORS can be enabled or disabled in the external configuration file, `appsettings
      }
    }
    ```
-3. Launch the administrator's utility and [restart the control node](admin-utility.md#startstop).
+3. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).

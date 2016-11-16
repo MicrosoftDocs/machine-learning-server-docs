@@ -31,7 +31,7 @@ To secure connections and communications, you have several authentication option
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|[Local `administrator` account](#local)|Use with [one-box](configuration-initial.md) configurations|
+|[Local `admin` account](#local)|Use with [one-box](configuration-initial.md) configurations|
 |[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations|
 |[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|Use with [enterprise](configuration-initial.md) _cloud_ configurations|
@@ -42,7 +42,7 @@ To secure connections and communications, you have several authentication option
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `administrator` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default `admin` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -63,7 +63,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
-**On each control node, do the following:**
+**On each Web node, do the following:**
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
@@ -85,11 +85,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. If using a certificate for access token signing, do the following: 
 
-   >This is particularly useful when you have multiple control nodes and want the tokens to be signed consistently by every control node in your configuration. 
+   >This is particularly useful when you have multiple Web nodes and want the tokens to be signed consistently by every Web node in your configuration. 
    >
-   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the control node and the LDAP server.
+   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the Web node and the LDAP server.
     
-   1. On each machine hosting the control node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
+   1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
    1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
@@ -103,11 +103,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        ```
 
 1. Launch the administrator's utility and:
-   1. [Restart the control node](admin-utility.md#startstop).
+   1. [Restart the Web node](admin-utility.md#startstop).
  
    1. Run the [diagnostic tests](admin-utility.md#test).
 
-1. Repeat these steps on each  machine hosting the control node.
+1. Repeat these steps on each  machine hosting the Web node.
 
 <br>
 
@@ -115,9 +115,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 ## Azure Active Directory 
 
-[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and control node have access to the internet.
+[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
-**On each control node, do the following:**
+**On each Web node, do the following:**
 
 1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
 
@@ -139,7 +139,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
-   1. [Restart the control node](admin-utility.md#startstop).
+   1. [Restart the Web node](admin-utility.md#startstop).
    1. Run the [diagnostic tests](admin-utility.md#test).
 
-1. Repeat these steps on each  machine hosting the control node.
+1. Repeat these steps on each  machine hosting the Web node.

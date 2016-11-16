@@ -43,7 +43,7 @@ Test Environment
  
 Production Environment
  
-It would also describe DeployR as having a control node and compute node. The front end consists of APIs, domain services (users, files). It will be independently scalable. The compute node consists of RServe sessions and Shells (R sessions).
+It would also describe DeployR as having a web node and compute node. The front end consists of APIs, domain services (users, files). It will be independently scalable. The compute node consists of RServe sessions and Shells (R sessions).
  
 Answer the question: What do I need it for? What problems are we trying to solve?
  

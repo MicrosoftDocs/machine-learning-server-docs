@@ -27,11 +27,11 @@ ms.custom: ""
 
 # Configuring R Server for Operationalization
 
-To operationalize your R analytics, you must configure Microsoft R Server after installation to enable the operationalization feature. 
+To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
-The simplest configuration for this feature involves a single control node and compute node, called a **one-box** configuration. These components are defined as follows:
+The simplest configuration for this feature involves a single web node and compute node, called a **one-box** configuration. These components are defined as follows:
 
-+ A **control node** acts as a http REST endpoint with which users can interact directly to make API calls. It can also access data in the database, and send jobs to the compute node. 
++ A **web node** acts as a http REST endpoint with which users can interact directly to make API calls. It can also access data in the database, and send jobs to the compute node. 
 
 + A **compute node** is used to execute R code as a session or service.
 
@@ -40,7 +40,7 @@ In addition to the one-box configuration, you can also install multiple componen
 <a name="onebox"></a>
 ## The Basic One-Box Configuration
 
-With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization control node and compute node on the same machine. It also relies on the default local SQLite database.
+With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
 
 This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. 
 
@@ -57,15 +57,15 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. Choose the option to **Configure R Server for Operationalization**.
 
-1. Choose the option to **Configure for one box** to set up the control node and compute node onto the same machine.
+1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
-1. When prompted, provide a password for the built-in, local operationalization `administrator` account. 
+1. When prompted, provide a password for the built-in, local operationalization `admin` account. 
 
 1. Return to the main menu of the utility when the configuration ends. 
 
 1. [Run a diagnostic test of the configuration](admin-utility.md#test). 
   
-1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the control node so that remote machines can access it. 
+1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it. 
 
 
 You are now ready to begin operationalizating your R analytics with R Server.
@@ -76,16 +76,16 @@ You are now ready to begin operationalizating your R analytics with R Server.
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
-This configuration includes one or more control nodes and compute nodes on a group of machines, which can be scaled independently.  For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
+This configuration includes one or more web nodes and compute nodes on a group of machines, which can be scaled independently.  For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
 
-Additionally, when you have multiple control nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across control node services.
+Additionally, when you have multiple web nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
  
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.jpeg)
 
 
-**Step 1: Configure control node(s)**
+**Step 1: Configure web node(s)**
 
->**Note:** It is possible to run the operationalization control node service from within IIS.
+>**Note:** It is possible to run the operationalization web node service from within IIS.
 
   1. On each machine, install Microsoft R Server:
 
@@ -94,21 +94,21 @@ Additionally, when you have multiple control nodes, you must set up a [remote SQ
 
   1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
      1. From the main menu, choose the option to **Configure R Server for Operationalization**.
-     1. From the sub-menu, choose the option to **Configure a control node**.     
-     1. When prompted, provide a password for the built-in, local operationalization `administrator` account.  
+     1. From the sub-menu, choose the option to **Configure a web node**.     
+     1. When prompted, provide a password for the built-in, local operationalization `admin` account.  
         You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
   
-  1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the control node so that remote machines can access it. 
+  1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it. 
 
-Your control node is now configured. Repeat these steps for each control node you want to add.
+Your web node is now configured. Repeat these steps for each web node you want to add.
 
 <a name="add-compute-nodes"></a>
 
 **Step 2: Configure Compute Node(s)**
 
->**Note:** A compute node can be configured on its own machine or on the same machine as the control node.
+>**Note:** A compute node can be configured on its own machine or on the same machine as the web node.
 
-1. On each machine, install the same R Server version you installed on the control node.
+1. On each machine, install the same R Server version you installed on the web node.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
 
@@ -130,7 +130,7 @@ In production environments, we strongly recommend the following approaches:
 
 **Step 4: Configure a Remote Database**
 
-By default, the control node configuration sets up a SQLite database. If you have multiple control nodes or simply want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL) so that data can be shared across control node services.
+By default, the web node configuration sets up a SQLite database. If you have multiple web nodes or simply want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL) so that data can be shared across web node services.
 
 **Step 5: Provisioning on the Cloud**
 
@@ -138,7 +138,7 @@ If provisioning on a cloud service, then you must also [create inbound security 
 
 **Step 6: Post Configuration**
 
-Once all control nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each control node.
+Once all web nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each web node.
 
 1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 1. In the file, search for the section starting with `"BackEndConfiguration": {` .
@@ -157,5 +157,5 @@ Once all control nodes and compute nodes are configured, you must declare the IP
 
 1. Close and save the file.
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
-1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each control node. 
-1. Repeat these steps on each control node to declare all the backends.
+1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node. 
+1. Repeat these steps on each web node to declare all the backends.
