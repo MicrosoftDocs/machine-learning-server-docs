@@ -248,71 +248,75 @@ This execution might require several minutes.
 
 1. Concatenate/Merge flight records and weather data.
    1. Join flight records and weather data at origin of the flight `OriginAirportID`.
-        ```
-        originData_mrs <- rxMerge(
-          inData1 = flight_mrs, inData2 = weather_mrs, outFile = outFileOrigin,
-          type = "inner", autoSort = TRUE, 
-          matchVars = c("Month", "DayofMonth", "OriginAirportID", "CRSDepTime"),
-          varsToDrop2 = "DestAirportID",
-          overwrite = TRUE
-        )
-        ```                
+      ```
+      originData_mrs <- rxMerge(
+        inData1 = flight_mrs, inData2 = weather_mrs, outFile = outFileOrigin,
+        type = "inner", autoSort = TRUE, 
+        matchVars = c("Month", "DayofMonth", "OriginAirportID", "CRSDepTime"),
+        varsToDrop2 = "DestAirportID",
+        overwrite = TRUE
+      )
+      ```                
+
    1. Join flight records and weather data using the destination of the flight `DestAirportID`.
-        ```
-        destData_mrs <- rxMerge(
-          inData1 = originData_mrs, inData2 = weather_mrs, outFile = outFileDest,
-          type = "inner", autoSort = TRUE, 
-          matchVars = c("Month", "DayofMonth", "DestAirportID", "CRSDepTime"),
-          varsToDrop2 = c("OriginAirportID"),
-          duplicateVarExt = c("Origin", "Destination"),
-          overwrite = TRUE
-        )
-        ```
+      ```
+      destData_mrs <- rxMerge(
+        inData1 = originData_mrs, inData2 = weather_mrs, outFile = outFileDest,
+        type = "inner", autoSort = TRUE, 
+        matchVars = c("Month", "DayofMonth", "DestAirportID", "CRSDepTime"),
+        varsToDrop2 = c("OriginAirportID"),
+        duplicateVarExt = c("Origin", "Destination"),
+        overwrite = TRUE
+      )
+      ```
+
    1. Call `rxFactors()` function to convert `OriginAirportID` and `DestAirportID` as categorical.
-        ```
-        rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,
-                  factorInfo = c("OriginAirportID", "DestAirportID"),
-                  overwrite = TRUE)
-        ```
+      ```
+      rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,
+                factorInfo = c("OriginAirportID", "DestAirportID"),
+                overwrite = TRUE)
+      ```
 
 #### Step 4: Prepare Training and Test Datasets
 
 1. Randomly split data (80% for training, 20% for testing).
-    ```
-    rxSplit(inData = outFileFinal,
-            outFilesBase = paste0(td, "/modelData"),
-            outFileSuffixes = c("Train", "Test"),
-            splitByFactor = "splitVar",
-            overwrite = TRUE,
-            transforms = list(
-              splitVar = factor(sample(c("Train", "Test"),
+   ```
+   rxSplit(inData = outFileFinal,
+           outFilesBase = paste0(td, "/modelData"),
+           outFileSuffixes = c("Train", "Test"),
+           splitByFactor = "splitVar",
+           overwrite = TRUE,
+           transforms = list(
+             splitVar = factor(sample(c("Train", "Test"),
                                        size = .rxNumRows,
                                        replace = TRUE,
                                        prob = c(.80, .20)),
                                 levels = c("Train", "Test"))),
             rngSeed = 17,
             consoleOutput = TRUE)
-    ```
+   ```
+
 1. Point to the XDF files for each set.
-    ```
-    train <- RxXdfData(paste0(td, "/modelData.splitVar.Train.xdf"))
-    test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
-    ```
+   ```
+   train <- RxXdfData(paste0(td, "/modelData.splitVar.Train.xdf"))
+   test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
+   ```
 
 #### Step 5: Predict using Logistic Regression
 
 1. Choose and apply the Logistic Regression learning algorithm.
-    ```
-    # Build the formula.
-    modelFormula <- formula(train, depVars = "ArrDel15",
-                            varsToDrop = c("RowNum", "splitVar"))
+   ```
+   # Build the formula.
+   modelFormula <- formula(train, depVars = "ArrDel15",
+                           varsToDrop = c("RowNum", "splitVar"))
 
-    # Fit a Logistic Regression model.
-    logitModel_mrs <- rxLogit(modelFormula, data = train)
+   # Fit a Logistic Regression model.
+   logitModel_mrs <- rxLogit(modelFormula, data = train)
 
-    # Review the model results.
-    summary(logitModel_mrs)
-    ```
+   # Review the model results.
+   summary(logitModel_mrs)
+   ```
+
 1. Predict using new data.
     ```
     # Predict the probability on the test dataset.
