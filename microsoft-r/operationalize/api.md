@@ -45,6 +45,7 @@ Once R code is exposed by R Server as a web service, an application can make API
 
 The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
 
+<a name="authentication"></a>
 ### User Authentication & Status APIs
 
 All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
@@ -238,7 +239,7 @@ You can then retrieve this snapshot later using its ID to access the session con
 
 Snapshots can be used for and by both sessions and web service APIs. You can create a snapshot to freeze a session in time and then use it when consuming a web service.
 
-These APIs allow you to create and manage session snapshots. There are additional snapshot APIs under the session grouping](#sessionsnapshots).
+These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
 |Snapshot APIs|Description|
 |----|-----------|
