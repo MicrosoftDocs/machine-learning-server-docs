@@ -181,13 +181,13 @@ There are two ways in which you can test:
 + **Maximum Thread Count:** Define how many threads you want to run it against, such as 1, 10, 20, or 40. Then, see how much time is spent on each processing stage.
 
 The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
-  + @@Web Node Request: measures the duration of the request from the web node's controller all the way to RServe and back.
+  + Web Node Request: measures the duration of the request from the web node's controller all the way to RServe and back.
 
-  + @@Create Shell: measures the time it takes to create a shell or take it from the pool
+  + Create Shell: measures the time it takes to create a shell or take it from the pool
 
-  + @@Web Node to Compute Node: measures the time it takes when the web node makes a request to the compute node
+  + Web Node to Compute Node: measures the time it takes when the web node makes a request to the compute node
 
-  + @@Compute Node Request: measures the time it takes from the compute node’s controller all the way to RServe and back
+  + Compute Node Request: measures the time it takes from the compute node’s controller all the way to RServe and back
  
 After the tool is run, the results are printed to the console. You can also explore the results visually using the URL that is returned to the console. 
 
