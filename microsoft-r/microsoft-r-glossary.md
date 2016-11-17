@@ -62,7 +62,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> C </b></big>
 
 **Compute Context**
-<div style="margin:15px; margin-bottom:25px;">A feature in RevoScaleR that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, and Microsoft R Server.</div>
+<div style="margin:15px; margin-bottom:25px;">A feature in RevoScaleR that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows).</div>
 
 <!--
 
