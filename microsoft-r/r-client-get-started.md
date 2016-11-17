@@ -133,7 +133,6 @@ This execution might require several minutes.
 1. Launch your R IDE.
 
 1. Check if Microsoft R Client is installed. The easiest way is to check if the proprietary package, `RevoScaleR`, is installed in the R Console of your R IDE.
-
    ```
    if (!require("RevoScaleR")) {
      cat("RevoScaleR package does not seem to exist. 
@@ -149,7 +148,6 @@ This execution might require several minutes.
    ```
 
 1. Initialize some variables to specify the data sets.
-
    ```
    github <- "https://raw.githubusercontent.com/brohrer-ms/RTVS-docs/master/examples/MRS_and_Machine_Learning/Datasets/"
    inputFileFlightURL <- paste0(github, "Flight_Delays_Sample.csv")
@@ -157,7 +155,6 @@ This execution might require several minutes.
    ```
 
 1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  <a href="https://msdn.microsoft.com/en-us/microsoft-r/scaler-user-guide-introduction">Learn more…</a>
-
    ```
    td <- tempdir()
    outFileFlight <- paste0(td, "/flight.xdf")
@@ -247,10 +244,10 @@ This execution might require several minutes.
       AdjustedHour = list(newName = "CRSDepTime")
     )
     rxSetVarInfo(varInfo = newVarInfo, data = weather_mrs)
-      ```
+    ```
 
 1. Concatenate/Merge flight records and weather data.
-   1. Join flight records and weather data at origin of the flight (OriginAirportID).
+   1. Join flight records and weather data at origin of the flight `OriginAirportID`.
         ```
         originData_mrs <- rxMerge(
           inData1 = flight_mrs, inData2 = weather_mrs, outFile = outFileOrigin,
@@ -260,9 +257,9 @@ This execution might require several minutes.
           overwrite = TRUE
         )
         ```                
-   1. Join flight records and weather data using the destination of the flight (DestAirportID).
-        destData_mrs <- rxMerge(
+   1. Join flight records and weather data using the destination of the flight `DestAirportID`.
         ```
+        destData_mrs <- rxMerge(
           inData1 = originData_mrs, inData2 = weather_mrs, outFile = outFileDest,
           type = "inner", autoSort = TRUE, 
           matchVars = c("Month", "DayofMonth", "DestAirportID", "CRSDepTime"),
@@ -271,7 +268,7 @@ This execution might require several minutes.
           overwrite = TRUE
         )
         ```
-   1. Call "rxFactors" function to convert "OriginAirportID" and "DestAirportID" as categorical.
+   1. Call `rxFactors()` function to convert `OriginAirportID` and `DestAirportID` as categorical.
         ```
         rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,
                   factorInfo = c("OriginAirportID", "DestAirportID"),
@@ -280,7 +277,7 @@ This execution might require several minutes.
 
 #### Step 4: Prepare Training and Test Datasets
 
-1. Randomly split data. 80% for training and remaining 20% as a test set.
+1. Randomly split data (80% for training, 20% for testing).
     ```
     rxSplit(inData = outFileFinal,
             outFilesBase = paste0(td, "/modelData"),
