@@ -71,16 +71,7 @@ automatically binned.
 
  + On Linux, if you attempt to change the DeployR RServe port using the `adminUtilities.sh`, the script incorrectly updates Tomcat's `server.xml` file, which prevents Tomcat from starting, and does not update the necessary the `Rserv.conf` file. You must revert back to an earlier version of `server.xml` to restore service.
 
- + Using `deployrExternal()` on the DeployR Server to reference a file that in a specified folder produces a ‘Connection Error’ due to an improperly defined environment variable. To workaround this issue, you must prefix the `REVODEPLOYR8_1_HOME` environment variable. <br><br>For example, the following code would produce the error:
-   ```
-   irisdf<-read.csv(file = deployrExternal("irisE.csv", isPublic= TRUE))
-   ```
-   The workaround can only be achieved by:
-   ```
-   dplhome<-paste(Sys.getenv("REVODEPLOYR8_1_HOME"),"..",sep="/")
-   extfile<-file.path(dplhome,deployrExternal("irisE.csv",isPublic=TRUE))
-   irisdf<-read.csv(extfile)
-   ```
+ + Using `deployrExternal()` on the DeployR Server to reference a file that in a specified folder produces a ‘Connection Error’ due to an improperly defined environment variable. For this reason, you must log into the Administration Console and go to **The Grid** tab. In that tab, edit **Storage Context value for each and every node** and specify the **full path** to the external data directory on that node’s machine, such as `<DEPLOYR_INSTALLATION_DIRECTORY>/deployr/external/data`.
 
 ## RevoIOQ Package
 
