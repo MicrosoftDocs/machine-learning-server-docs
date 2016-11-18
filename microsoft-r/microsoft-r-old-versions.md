@@ -36,7 +36,10 @@ R Productivity Environment (RPE) is an older development tool that is now supers
 Prior to Microsoft R Server, the product was called Revolution R Enterprise (RRE). DeployR has not changed names.
 
 Here is a list of the available archived documentation sets for RRE:
-* [RRE 8.0.0 Windows Install Guide](rserver-install-windows.md)
+* [RRE 8.0.0 Windows Install Guide](rserver-install-windows-800.md)
+* [RRE 8.0.0 Teradata Install Guide](rserver-install-teradata-server.md)
+* [RRE 8.0.0 Hadoop Install Guide](rserver-install-hadoop-800.md)
+* [RRE 8.0.0 Linux Install Guide](rserver-install-linux-server-800.md)
 * [RRE 7.5.0 Docs](http://packages.revolutionanalytics.com/doc/7.5.0/)
 * [RRE 7.4.1 Docs](http://packages.revolutionanalytics.com/doc/7.4.1/) and [DeployR 7.4.1 Docs](https://deployr.revolutionanalytics.com/doc/7.4.1/)
 * [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) and [DeployR 7.4.0 Docs](https://deployr.revolutionanalytics.com/doc/7.4.0/)

@@ -3,7 +3,6 @@
 ## [Glossary](microsoft-r-glossary.md)
 ## [Additional Resources](microsoft-r-more-resources.md)
 
-
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
@@ -50,7 +49,6 @@
 ### [Get Started on Hadoop Spark](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
 #### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
-#### [Install R Server 8.0](rserver-install-hadoop-800.md)
 #### [Package Dependencies on Linux and Hadoop](rserver-install-linux-hadoop-packages.md)
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
@@ -62,7 +60,6 @@
 ### [Get Started on Teradata](scaler-teradata-getting-started.md)
 ### [Install on Teradata](rserver-install-teradata-805.md)
 #### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
-#### [Install R Server 8.0 on a Teradata Server](rserver-install-teradata-server.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-teradata-functions.md)
 

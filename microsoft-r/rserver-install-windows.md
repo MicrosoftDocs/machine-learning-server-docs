@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Revolution R Enterprise 2016 Windows Installation Instructions"
-description: "Windows install."
+title: "Install Microsoft R Server for Windows"
+description: "How to install Microsoft R Server on computers running the Windows operating system."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
-ms.date: "03/17/2016"
+author: "HeidiSteen"
+manager: "jhubbard"
+ms.date: "11/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,72 +24,56 @@ ms.custom: ""
 
 ---
 
-# Revolution R Enterprise 2016 (build 8.0.0) Windows Installation Instructions
+# Install Microsoft R Server for Windows
 
->This Windows functionality is now offered as [R Server Standalone](https://msdn.microsoft.com/en-us/library/mt671127.aspx) in SQL Server 2016. 
->This article applies to customers who deployed Revolution R Enterprise/R Server on Windows before SQL Server 2016 general availability. 
+R Server can be installed on a variety of operating systems and integrates with several database platforms. For more information about specific OS and database platform versions, see [Supported platforms](rserver-install-supported-platforms.md).
 
-Revolution R Enterprise 2016 for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment. Review the [**release notes**](./notes/r-server-notes.md) for more information on Revolution R Enterprise 2016 for Windows, including known issues.
+R Server for Windows is designed to run workloads that you have created and tested on a workstation that has **Microsoft R Client** and development tools such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications that can consume R packages. R Client is a scaled down, free execution engine for Microsoft R features that includes function libraries and operationalization features. R Client is used in conjunction with tools like RTVS to create and tune R solutions locally, prior to deployment on a commercial server platform like R Server for Windows. For more information about workstation setup, see [R Client](r-client.md).
 
-Get the [**modified GPL/LGPL source code**](http://go.microsoft.com/fwlink/?LinkId=715643&clcid=0x409) (rre-gpl-src.8.0.0.tar.gz - 94.2MB) for this release. This is made available in compliance with the GNU General Public License, but is not required to install or use Revolution R Enterprise.
+R Server includes the following components:
 
-## Looking for SQL Server R Services Install Docs?
+* R Open
+* ScaleR (RevoScaleR package)
+* Operational support for solution deployment and interaction (mrsdeploy package)
+* Microsoft Machine Learning (MML package)
+* Other packages as described in [Package Reference](package-reference.md)
 
-><big>For the latest installation documentation for R Server on Windows, find it on the [SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx).</big>
+## Install R Server 9.0
 
-## System Requirements 
+You can install R Server 9.0 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on the same server, you can install SQL Server R Services, which is a multi-instance service similar to the relational database engine.
 
-For the full list of supported platforms for Revolution R Enterprise 2016, see [Supported platforms](rserver-install-supported-platforms.md).
+### Prerequisites
 
-Approximately 600MB free disk space is required for a full install of Revolution R Enterprise, after installation of all prerequisites. We recommend at least 4GB of RAM to use Revolution R Enterprise, and at least 4GB to use DeployR.
+**.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link in case you need to install it prior to R Server. A computer restart is required after the .NET Framework is installed.
 
-DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](deployr-installing-configuring.md).
+You must accept the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
+You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language. It is fully compatible with open source R and the R language, but includes the following additional components that make R Open a better choice for R Server operations: intel-mkl package, XXX, YYY. R Open is free under the GNU open source licensing framework and can be downloaded separately from the MRAN web site.
 
-## Installation Instructions
+### How to obtain R Server for Windows
 
-To install Revolution R Enterprise 2016, you must be logged in with **Administrator** privileges to run the installer. Before running the installer, close any other programs running on the system and disable any antivirus software you may have running, such as McAfee Total Protection or Norton AntiVirus.
+You can download the installation program from the following locations:
 
-To install the files, you must be logged in with **Administrator** privileges, and you must install to a local drive on your computer. (Installing to a network drive is not currently supported.)
+* MSDN Dev Essentials
+* (pending) Microsoft volume licensing
 
-Revolution R Enterprise 2016 for Windows is installed in two steps: first, you install Microsoft R Open for Revolution R Enterprise, and then install Revolution R Enterprise itself. This document assumes you have access to the Revolution R Enterprise installer, which is available either through your Volume Licensing agreement or an MSDN subscription.
+## How to connect to R Server
 
-- [Install Microsoft R Open for Revolution R Enterprise](http://go.microsoft.com/fwlink/?LinkId=699383) if you have not already done so.
-- Double-click **Revolution-R-Enterprise-8.0.0-Windows.exe** and follow the on-screen prompts. This installs the Revolution R Enterprise product.
+Once the software is installed, you can connect to R Server and run ScaleR functions.
 
-**After you have installed the software, you launch Revolution R Enterprise as follows.**
+<TO DO>
 
-**For Windows 7 and Windows Server 2008**
+Sample data is include in R Server installations:
 
--   From the **Task Bar**, click **Start**.
--   Click **All Programs**.
--   Click **Revolution R**.
--   Click **Revolution R Enterprise 8.0 (64)**.
+*
+*
 
-**For Windows 8 and Windows Server 2012:**
+## Install R Server 8.0.5
 
--   Move the pointer to the lower left corner of the Desktop until the **Start** icon appears.
--   Click **Start** to view the **Start** screen.
--   Locate and click the tile for **Revolution R Enterprise 8.0 (64)**.
+This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing and installation of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server Standalone](https://msdn.microsoft.com/en-us/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/en-us/library/mt671127.aspx) in SQL Server 2016.
 
-**For Windows 10**
+## See Also
 
--   From the **Task Bar**, click **Start**.
--   Click **All apps**.
--   Click **Revolution R**.
--   Click **Revolution R Enterprise 8.0 (64)**.
-
-The Revolution R Productivity Environment opens. The Revolution R program group includes a variety of documents, including the Microsoft R Getting Started Guide and the RevoScaleR Getting Started Guide. These provide tutorial introductions to working with Microsoft R Server.
-
-The RevoIOQ package provides a set of tests to verify correct installation and operation of Revolution R Enterprise. To run these tests, run the following commands from your R prompt:
-
-	library(RevoIOQ)
-	RevoIOQ()
-
-A fresh install of Revolution R Enterprise should yield a report (which will appear in a browser window) that contains no Errors or Failures, though there may be some Deactivated Tests.
-
-To install DeployR, follow the instructions [here](http://go.microsoft.com/fwlink/?LinkID=708387&clcid=0x409).
-
-## Sample Data
-
-Sample data sets for use with Revolution R Enterprise can be found [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+[Supported platforms](rserver-install-supported-platforms.md)
+[What's new in R Server](r-server-notes.md)
+[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
