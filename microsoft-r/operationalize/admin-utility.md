@@ -183,11 +183,13 @@ There are two ways in which you can test:
 The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
   + Web Node Request: measures the duration of the request from the web node's controller all the way to RServe and back.
 
-  + Create Shell: measures the time it takes to create a shell or take it from the pool
+  + Create Shell: the time it took to create a shell or take it from the pool
 
-  + Web Node to Compute Node: measures the time it takes when the web node makes a request to the compute node
+  + Initialize Shell: the time it took to load the data (model or snapshot) into the shell prior to execution
+ 
+  + Web Node to Compute Node: the time it took for a request from the web node to reach the compute node
 
-  + Compute Node Request: measures the time it takes from the compute node’s controller all the way to RServe and back
+  + Compute Node Request: the time it took for a request from the compute node to reach RServe and return to the node
  
 After the tool is run, the results are printed to the console. You can also explore the results visually using the URL that is returned to the console. 
 
