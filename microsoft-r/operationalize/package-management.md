@@ -164,7 +164,7 @@ This remote execution and snapshotting approach provides an excellent way to:
 The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. @@LINK TO VIGNETTE DOC IN MSDN "LEARN MORE ABOUT SNAPSHOTS AND REMOTE EXECUTION"
 
 >[!Important]
->For optimal performance, consider the size of the snapshot carefully. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
+>For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
 
 **Note:** Once you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
 
