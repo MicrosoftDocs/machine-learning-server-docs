@@ -64,7 +64,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 **Compute Context**
 <div style="margin:15px; margin-bottom:25px;">A feature in RevoScaleR that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows).</div>
 
-<!--
+
 
 <br>
 
@@ -72,9 +72,12 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <hr>
 <big><b> D </b></big>
 
+**DeployR**
+<div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
 
 
 
+<!--
 <br>
 
 <a name="E"></a>
@@ -167,8 +170,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="mkl"></a>**MKL**
 <div style="margin:15px; margin-bottom:25px;">The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. <a href="https://mran.microsoft.com/documents/rro/multithread/">Learn more…</a></div>
 
-<!--
-<br>
+<!--<br>
 
 <a name="N"></a>
 <hr>
@@ -176,6 +178,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
+-->
 
 <br>
 
@@ -183,10 +186,12 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <hr>
 <big><b> O </b></big>
 
-**Term**
+<a name="o16n"></a>**Operationalization**
+<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services.<a href="operationalize/about.md">Learn more…</a></div>
 
 
-<br>
+
+<!--<br>
 
 <a name="P"></a>
 <hr>
