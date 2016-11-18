@@ -47,5 +47,7 @@ Microsoft R Client works with the following flavors of Microsoft R Server:
 <br>
 
 ><b>*</b> <b>Build 1.0.0</b> will work with Microsoft R Server for <b>Hadoop</b> 2016 build 8.0.5 if you do the following:
+>
 >1. Install the `RTools` package from CRAN onto the machine running R client.
+>
 >1. Explicitly add `. /usr/lib64/microsoft-r/8.0/hadoop/RevoHadoopEnvVars.site` to `/etc/profile` file.
