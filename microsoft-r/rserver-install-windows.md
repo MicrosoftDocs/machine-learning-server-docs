@@ -32,13 +32,11 @@ R Server offers feature parity across platforms. Whether you use Windows, Linux,
 
 Installation of R Server provides the following components:
 
-| Components | Description |
-|------------|-------------|
-|[**R Open**](r-open.md) |Microsoft's distribution of R.|
-|[**ScaleR (RevoScaleR)**](scaler/scaler.md)|A proprietary package with functions that enable data chunking and distributed, parallel workloads.|
-|[Operationalization](operationalize/about.md) |Deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md)|
-|[**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md) | A collection of functions used for doing machine learning at scale.|
-|Other packages| Described in [Package Reference](package-reference.md).|
+* [**R Open**](r-open.md), Microsoft's distribution of R.
+* [**ScaleR (RevoScaleR)**](scaler/scaler.md), a proprietary package with functions that enable data chunking and distributed, parallel workloads.
+* [Operationalization features](operationalize/about.md) add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
+* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a collection of functions used for doing machine learning at scale.
+* Other packages as described in [Package Reference](package-reference.md).
 
 For information about the latest features, see [What's New in R Server](rserver-whats-new.md).
 
@@ -48,7 +46,7 @@ R Server is commercial-grade software designed to run workloads that you have cr
 
 R Client is a scaled down, free execution engine for Microsoft R features that includes function libraries and operationalization features. It's suitable for development and smaller workloads that run in memory using a maximum of two processors. R Client is typically used in conjunction with development applications like RTVS to create and tune R solutions locally, prior to deployment on a commercial server platform like R Server for Windows. For more information about workstation setup and features, see [R Client](r-client.md).
 
-Solutions developed locally are easily reconfigured to run on remote servers by modifying the compute context. In this release, you can use [mrsdeploy package](mrsdeploy/mrsdeploy.md) to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate your changes incrementally.
+Solutions developed locally on workstation can be published to remote R Server instances offering performance and scale. Existing solutions can be deployed as-is, modified to accommodate large data sets, or reconfigured to use a specific compute context. In this release, the [mrsdeploy package](mrsdeploy/mrsdeploy.md) give you the ability to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate the changes incrementally.
 
 ## How to install R Server 9.0
 
@@ -76,12 +74,17 @@ The following additional components are installed by Setup.
 
 You can download the installation program from the following locations:
 
-* MSDN Dev Essentials
-* (pending) Microsoft volume licensing
+- Through your existing MSDN subscription.
+- (pending) [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
+- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
+
+    - Click **Join or Access Now** and enter your account information.
+    - Click **Downloads**, and then search for *Microsoft R*.
+    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
 ### Run Setup
 
-The installation wizard for a standalone server install checks for prerequisites and gives you the option of choosing a different program directory. When you complete the wizard, Setup installs additional software required for operations.
+The installation wizard of the standalone server installer checks for prerequisites and gives you the option of choosing a different program directory. When you complete the wizard, Setup installs additional software required for operations.
 
 Log files (RClientSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
 
@@ -111,5 +114,7 @@ Sample data is include in R Server installations:
 ## See Also
 
 [Supported platforms](rserver-install-supported-platforms.md)
+
 [What's new in R Server](notes/r-server-notes.md)
+
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)

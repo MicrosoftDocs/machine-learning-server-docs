@@ -30,15 +30,11 @@ This release of R Server includes the following new features. To review known is
 
 ## New and updated packages
 
-###MicrosoftML Package (New)
-
 **Microsoft Machine Learning (MicrosoftML package)** is new in this release. It contains a collection of functions in Microsoft R used for doing machine learning at scale, with fast performance, even when handling a large corpus of text data and high-dimensional categorical data. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-###RevoScaleR Package
+**RevoScaleR Package**
 
-**Spark 2.0 support in ScaleR** is announced in this release.
-
-**ScaleR (RevoScaleR package)** adds the following new functions.
+Support for **Spark 2.0** is available through RevoScaleR. ScaleR adds the following new functions.
 
 |Function | Description |
 |--|--|
@@ -49,25 +45,23 @@ This release of R Server includes the following new features. To review known is
 |rxSparkListData |--|
 |rxSparkRemoveData|--|
 
-###mrsdeploy Package (New)
-
 **mrsdeploy package** is new in this release. Functions in this package enable remote execution on the command line, in a session that's open on a remote R Server 9.0 instance. Additionally, this package includes functions for deploying Web services. You can publish any R code block as a Web service on a local or remote R Server 9.0 instance, with additional commands for service management. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 ##General updates
 
-###Operationalization updates
+**Operationalization updates**
 
 <TBD>
 
 **DeployR** feature is now referred to as the Operationalization feature.
 
-###R Server for Windows installation
+**R Server for Windows installation**
 
 This release includes a simplified setup program for a standalone server install on Windows. You are no longer required to run SQL Server Setup to get a standalone R Server on Windows. For standalone server install on Windows, you can use either the simplified setup or the SQL Server installer. For SQL Server R Services, you must use SQL Server Setup. For information on SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx). For installation guidance, see [Install R Server for Windows](rserver-install-windows.md).
 
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed as a standalone server. You will need a SQL Server enterprise license to install R Server on Windows.
 
-###Service and support for Microsoft R
+**Service and support for Microsoft R**
 
 R Server is now under the  Modern Lifecycle policy, which covers products that are serviced and supported continuously. For more information, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
