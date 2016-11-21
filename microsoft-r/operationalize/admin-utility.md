@@ -140,7 +140,6 @@ Armed with this information, you will be able to identifies unresponsive compone
 1. From the main menu, choose **Run Diagnostic Tests**.
 
 1. If you haven't authenticated yet, you'll need to provide your username and password. 
-   > @@ ASK USER TO AUTHENTICATE HERE INSTEAD OF FROM THE SUB MENU CHOICE
 
 1. To retrieve a 'health check' of the configuration including a code execution test, choose **Test configuration**.
 

@@ -28,6 +28,9 @@ ms.custom: ""
 
 RServer is the compute node's R execution component.
 
+>[!IMPORTANT]
+>DeployR is not intended to prevent or protect you from "malicious” users and is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
+
 ## The Execution Context
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
