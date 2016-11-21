@@ -26,8 +26,9 @@ ms.custom: ""
 
 # RServe Security Considerations
 
+RServer is the compute node's R execution component.
 
-## RServe Execution Context
+## The Execution Context
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
@@ -44,6 +45,8 @@ R Server provides various [API calls](api.md) that permit the execution of R scr
 
 If your operationalization configuration requires additional compute capacity, [additional compute nodes](configuration-initial.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities. 
 
+<a name="isolation"></a>
+
 ## Directory & User Isolation Considerations
 
 In the R language, users can change files in the file system, download content from the web, download packages, and so on. 
@@ -52,7 +55,7 @@ In order to mitigate some of the risks associated with RServe, the service is se
 
 + Read-only permissions to the R library to prevent users from installing packages from their R scripts
 
-+ Write permissions to the R working directory, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces
++ Write permissions to the R working directory `<MRS_home>\deployr\Rserve\workdir`, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces
 <br> 
 
 >[!Important]

@@ -173,14 +173,12 @@ Armed with this information, you will be able to identifies unresponsive compone
 
 ## Evaluate Capacity
 
-To evaluate the load balancing capacity of the configuration, you can simulate the thresholds of your configuration using this tool. 
-
-There are two ways in which you can test:
+To evaluate the load balancing capacity, you can simulates requests for the configuration or for a given web service. There are two ways in which you can test:
 + **Maximum Latency:** Define a maximal threshold for the duration of a web node request as well as define the initial thread count and a thread increments for the test. Then, the test will increase the number of threads by the defined increment until the defined time limit is reached.
 
 + **Maximum Thread Count:** Define how many threads you want to run it against, such as 1, 10, 20, or 40. Then, see how much time is spent on each processing stage.
 
-The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
+This tool will let you know the maximum latency or number of parallel requests that can be supported. The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
   + Web Node Request: measures the duration of the request from the web node's controller all the way to RServe and back.
 
   + Create Shell: the time it took to create a shell or take it from the pool
