@@ -26,7 +26,7 @@ ms.custom: ""
 
 # What's New in R Server 9.0
 
-This release of R Server includes the following new features. To review known issues, bug fixes, and notifications about feature status, see the [release notes for R Server](../notes/r-server-notes.md). To learn about new features added to Microsoft R Client, see [What's new in R Client](../notes/r-client-notes.md).
+This release of R Server includes the following new features. To review known issues, bug fixes, and notifications about feature status, see the [release notes for R Server](notes/r-server-notes.md). To learn about new features added to Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
 
 ##MicrosoftML Package (New)
 
