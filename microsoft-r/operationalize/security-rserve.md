@@ -29,7 +29,7 @@ ms.custom: ""
 RServer is the compute node's R execution component.
 
 >[!IMPORTANT]
->DeployR is not intended to prevent or protect you from "malicious” users and is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
+>DeployR is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
 
 ## The Execution Context
 
