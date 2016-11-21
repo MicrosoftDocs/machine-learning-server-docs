@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "What's New in R Server"
-description: "Learn about new features in R Server 9.0"
+title: "Microsoft R Server release notes"
+description: "Readme file for R Server 9.0 release."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -23,49 +23,11 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-#What's new in R Server 9.0 (Microsoft R)
+#R Server release notes (Microsoft R)
 
-This release of Microsoft R Server includes the following new features and updates.
+This article documents known issues, bug fixes, and notifications about changes to function status, such as deprecated and discontinued functions. For information about new features, see [What's new in R Server](../rserver-whats-new.md).
 
-##Microsoft R Server 9.0.1
-
-**Microsoft Machine Learning (mml package)**
-
-- Fast Linear Learner (SDCA) allows you to train 2x faster than logistic regression. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/3.%20Samples/FastLinear_Twitter.ipynb)
-- GPU acceleration for Neural Nets allows you to train multilayer custom nets on GPUs up to 8x faster. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/2.%20Demos/MNIST_GPU.ipynb).
-- Feature selection can reduce training time up to 10x while still retaining model accuracy. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/2.%20Demos/FeatureSelection_Twitter.ipynb)
-- SQL Server integration allows you to easily pull data from SQL and train in R and use your trained model inside SQL. [More Info]()
-
-**ScaleR (RevoScaleR package)** includes the following new functions.
-
-|Function | Description |
-|--|--|
-|RxHiveData|--|
-|RxParquetData |--|
-|rxSparkConnect |--|
-|rxSparkDisconnect |--|
-|rxSparkListData |--|
-|rxSparkRemoveData|--|
-
-**Spark 2.0 support**
-
-**DeployR** feature is now referred to as the Operationalization feature.
-
-**Operationalization updates (mrsdeploy package)**
-
-To get the following new capabilities, install and load mrsdeploy using any tool that has an R console application. The mrsdeploy package is available on every installation of R Server 9.0.
-
-* Remote execution is a command line mode used to establish an R session with a remote R Server 9.0 instance. With a remote session in place, you can execute functions and script as if the session were local, switching back and forth to test new script, run ad hoc commands, or deploy script on remote servers.
-
-* Web services is the ability to publish an R code block as a Web service on a local or remote R Server 9.0 instance. Additional commands allow you to manage the Web service from the command line, including functions for updating and deleting the services.
-
-**R Server for Windows installation**
-
-R Server for Windows has a simplified setup program for a standalone install. You are no longer required to run SQL Server Setup unless you want to install SQL Server R Services. Although the installer is decoupled from SQL Server, licensing is unchanged. R Server for Windows is consider a SQL Server enterprise feature. For more information and next steps, see [Install R Server for Windows](rserver-install-windows.md).
-
-Microsoft R **licenses and Third Party Notices** files are included in the `MicrosoftR` package. The `Revo.home()` function now points to the location of this directory, and `Revo.home(“licenses”)` points to the “licenses” directory within. The `Revo.home(“doc”)` component is now defunct.
-
-For information on SQL Server R Services, please refer to the corresponding [release notes](https://msdn.microsoft.com/library/mt604847.aspx).
+## Microsoft R Server 9.0.1
 
 ###RevoScaleR changes
 

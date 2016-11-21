@@ -41,7 +41,7 @@ The `MicrosoftML` package provides transform pipelines that allow you to compose
 
 - Concatenate
 - Categorical Hash
-- Categorical 
+- Categorical
 - Select Features
 - Ngram
 - Featurize Text
@@ -54,26 +54,25 @@ Fast Linear model (SDCA) |  binary classification, linear regression | Mortgage 
 OneClass SVM | anomaly detection | Credit card fraud detection
 Fast Tree | binary classification, regression | Page ranking by search
 Fast Forest | binary classification, regression | Churn Prediction
-Neural Network | binary and multiclass classification, regression | Check signature recognition, OCR, Click Prediction 
+Neural Network | binary and multiclass classification, regression | Check signature recognition, OCR, Click Prediction
 Logistic regression | binary and multiclass classification | Classifying sentiments from feedback
 
-For more information, see [MicrosoftML functions](microsoftml/microsoftml-introduction.md)and the documentation for the individual transforms and functions in the product help.
+For more information, see [MicrosoftML functions](microsoftml/microsoftml.md) and the documentation for the individual transforms and functions in the product help.
 
 ## Getting started with MicrosoftML
 
-MicrosoftML functions are provided through the **MicrosoftML** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. 
+MicrosoftML functions are provided through the **MicrosoftML** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms.
 
 
 ## Working with MicrosoftML
 
-Data scientists and developers can include MicrosoftML functions in custom script or solutions that run locally against R Client or remotely on R Server. 
+Data scientists and developers can include MicrosoftML functions in custom script or solutions that run locally against R Client or remotely on R Server.
 
 A common workflow is to write the initial code or script against a subset of data on a local computer, change the compute context to specify a large set of data on a big data platform, and then operationalize the solution by deploying it to the target environment, making it accessible to users.
- 
+
 
 ## See Also
 
 [Introduction to Microsoft R](microsoft-r-getting-started.md)
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
-

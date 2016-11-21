@@ -4,6 +4,7 @@
 ## [Additional Resources](microsoft-r-more-resources.md)
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
 ### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
@@ -35,12 +36,12 @@
 
 # [Microsoft R Server](rserver.md)
 
-## [What's New](notes/r-server-notes.md)
+## [What's New](rserver-whats-new.md)
+## [Release Notes](notes/r-server-notes.md)
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## [Servicing Support Policy](rserver-servicing-support.md)
 
 ## [R Server on Linux](scaler-getting-started.md)
-### [Get Started on Linux](scaler-getting-started.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
 
@@ -66,15 +67,10 @@
 ## [R Server on Windows](rserver-install-windows.md)
 
 ## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
-
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
 
-## Remote Compute Contexts
-
 ## [Operationalize R Analytics (DeployR)](operationalize/about.md)
-
 ### [Get Started with Operationalization](operationalize/get-started.md)
-
 ### [Configure & Administer](operationalize/configure.md)
 #### [DeployR Configuration](operationalize/configuration-initial.md)
 #### [Remote Database Setup](operationalize/configure-remote-database.md)
@@ -164,6 +160,8 @@
 ### [Microsoft Data Science VM](vm-data-science.md)
 
 # [Package Reference](package-reference.md)
+## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
