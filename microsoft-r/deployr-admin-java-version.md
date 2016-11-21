@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Managing External Directories for Big Data"
-description: "Big Data in DeployR - Managing External Directories for Big Data"
-keywords: "big data, DeployR"
+title: "Update DeployR after Java update"
+description: "Update DeployR after Java update"
+keywords: "DeployR, JRE, JDK, Java, Update"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "11/21/2016"
