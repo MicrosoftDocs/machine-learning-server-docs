@@ -34,7 +34,7 @@ Installation of R Server provides the following components:
 
 * [**R Open**](r-open.md) is Microsoft's distribution of the R base packages and Intel MKL.
 * [**ScaleR (RevoScaleR)**](scaler/scaler.md) is a proprietary package with functions that enable data chunking and distributed workloads.
-* [Operational support for solution deployment and interaction](operationalize/about.md) enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeloy.md)
+* [Operational support for solution deployment and interaction](operationalize/about.md) enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md)
 * [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md)
 * Other packages as described in [Package Reference](package-reference.md).
 
