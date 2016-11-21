@@ -41,7 +41,7 @@
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## [Servicing Support Policy](rserver-servicing-support.md)
 
-## [R Server on Linux](scaler-getting-started.md)
+## [R Server on Linux](rserver-install-linux-server.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
 

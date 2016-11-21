@@ -28,19 +28,21 @@ ms.custom: ""
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows.
 
-R Server offers feature parity across platforms. Whether you use Windows, Linux, Hadoop, or a cloud service like Azure HDInsight, R Server is mostly identical across all platforms, with the exception of helper functions created specifically for Hadoop MapReduce, Spark, SQL Server, or Teradata. To review specific OS and database platform versions, see [Supported platforms](rserver-install-supported-platforms.md).
+R Server offers feature parity across platforms. Whether you use Windows, Linux, Hadoop, or a cloud service like Azure HDInsight, R Server is mostly identical across all platforms, with the exception of data-specific and platform helper functions created specifically for Hadoop MapReduce, Spark, SQL Server, or Teradata. To review specific OS and database platform versions, see [Supported platforms](rserver-install-supported-platforms.md).
 
 Installation of R Server provides the following components:
 
-* [**R Open**](r-open.md) is Microsoft's distribution of the R base packages and Intel MKL.
-* [**ScaleR (RevoScaleR)**](scaler/scaler.md) is a proprietary package with functions that enable data chunking and distributed workloads.
-* [Operational support for solution deployment and interaction](operationalize/about.md) enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md)
-* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md)
-* Other packages as described in [Package Reference](package-reference.md).
+| Components | Description |
+|------------|-------------|
+|[**R Open**](r-open.md) |Microsoft's distribution of R.|
+|[**ScaleR (RevoScaleR)**](scaler/scaler.md)|A proprietary package with functions that enable data chunking and distributed, parallel workloads.|
+|[Operationalization](operationalize/about.md) |Deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md)|
+|[**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md) | A collection of functions used for doing machine learning at scale.|
+|Other packages| Described in [Package Reference](package-reference.md).|
 
-For information about the latest features, see [What's New in R Server](rserver-whats-new.md)
+For information about the latest features, see [What's New in R Server](rserver-whats-new.md).
 
-## How to use R Server on Windows with other tools
+## Using R Server with other tools
 
 R Server is commercial-grade software designed to run workloads that you have created and tested on a workstation that has **Microsoft R Client** and development tools such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications that can consume R packages.
 
@@ -70,7 +72,7 @@ The following additional components are installed by Setup.
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
 | Microsoft Visual C++ 2015 Redistributable | 14.0.23026.0 |
 
-### How to obtain the R Server installer for Windows
+### Download R Server installer
 
 You can download the installation program from the following locations:
 
