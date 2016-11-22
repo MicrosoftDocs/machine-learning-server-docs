@@ -27,7 +27,9 @@ ms.custom: ""
 
 # About Operationalization with R Server
 
-You can configure R Server to be the operationalization engine of your advanced R analytics.
+This release of Microsoft R Server now includes an even better operationalization engine for all your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+
+## What You Get with R Server Operationalization
 
 With operationalization enabled, R Server offers:
 
@@ -38,6 +40,27 @@ With operationalization enabled, R Server offers:
 + [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-utility.md#capacity) tools
 + Enterprise grade security: [SSL](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md).
 
-With this release of Microsoft R, we now offer an improved version of the operationalization engine for all  your analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
-
 ![Operationalization Engine](../media/o16n/about.png)
+
+## The Predictive Analytics Process
+
+R Server's operationalization feature fits perfectly into the predictive analytics process. The steps in that process (at a high-level) include:
++ **Prepare**:  Assemble, cleanse, profile and transform diverse data relevant to the subject.
+
++ **Model**:  Use of statistical and machine learning algorithms to build classifiers and predictions
+
++ **Operationalize**:  Apply predictions and visualizations to support business applications
+
+![Process](../media/o16n/about-predictive-analytics-flow.png)
+
+
+## Best-in-Class Deployment Experience
+
+R Server offers:
+
++ Easy Deployment: Turn R into web services in one line of code in your R console.
++ Easy Integration: Use easily consumable Swagger-based APIs with any programming languages.
++ Easy Setup: In-cloud or on-premise scalable configurations, enterprise grade security, Web service management, HA and load balancing, remote execution.
+
+
+![Easy](../media/o16n/about-easy.png)

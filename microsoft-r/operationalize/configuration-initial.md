@@ -34,7 +34,7 @@ The simplest configuration for this feature involves a single web node and compu
 + A **web node** acts as a HTTP REST endpoint with which users can interact directly to make API calls. It can also access data in the database, and send jobs to the compute node. 
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
-The size is in the compute node configuration:
+The size is in the compute node configuration:  @@
 "Pool": {
     "InitialSize": 5,
     "MaxSize": 80
@@ -58,7 +58,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. On each machine, install Microsoft R Server:
 
-     + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx)
+     + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
@@ -85,11 +85,11 @@ You are now ready to begin operationalizating your R analytics with R Server.
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
-This configuration includes one or more web nodes and compute nodes on a group of machines, which can be scaled independently. Scaling up compute nodes will improve throughput. For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
+This configuration includes one or more web nodes and compute nodes on a group of machines, each of which can easily be scaled. Scaling up compute nodes to create a grid enables you to handle more concurrent requests and benefit from load balancing across these compute nodes. For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
 
 Additionally, when you have multiple web nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
  
-![Enterprise Configuration](../media/o16n/setup-enterprise-ready.jpeg)
+![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
 
 **Step 1: Configure web node(s)**

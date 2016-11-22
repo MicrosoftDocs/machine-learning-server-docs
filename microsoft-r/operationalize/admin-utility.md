@@ -37,15 +37,13 @@ These instructions describe how to launch the Administrator Utility.
 
 **To launch the administration utility:**
 
-1. Launch the administration utility script with administrator, `root`, or `sudo` privileges:
-   ```
-   cd <MRS_home>\deployr
-   dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
-   ```
+Launch the administration utility script with administrator, `root`, or `sudo` privileges:
+```
+cd <MRS_home>\deployr
+dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
+```
 
-   where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-The main utility menu appears.  
+where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 <br><a name="admin-password"></a>
 
@@ -131,7 +129,14 @@ For security purposes, we strongly recommend that you encrypt the connection str
 ## Diagnostic Testing
 
 You can assess the state and health of your environment by running the diagnostic test in the Administrator Utility. 
-Armed with this information, you will be able to identifies unresponsive components and access the log files. 
+Armed with this information, you will be able to identifies unresponsive components, execution problems, and access the log files. 
+
+The set of diagnostic tests include:
++ A general health check of the configuration
++ A raw report of the system status
++ A trace of an R code execution
++ A trace of an web service execution
+
 
 **To run diagnostic tests:**
 
@@ -154,7 +159,7 @@ Armed with this information, you will be able to identifies unresponsive compone
 
       1. Rerun the diagnostic test to make sure all is running smoothly now.
 
-1. To retrieve a 'raw details' on the health of the system and review the output, choose **Get raw server status** .
+1. To retrieve the 'raw details' on the health of the system and review the output, choose **Get raw server status** .
 
 1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
       1. Enter the R code you want to run and trace. 
@@ -172,23 +177,29 @@ Armed with this information, you will be able to identifies unresponsive compone
 
 ## Evaluate Capacity
 
-To evaluate the load balancing capacity, you can simulates requests for the configuration or for a given web service. There are two ways in which you can test:
+To evaluate the load balancing capacity, you can simulates the traffic for the configuration or for a given web service. 
+
+### Simulation Tests
+There are two ways in which you can test:
 + **Maximum Latency:** Define a maximal threshold for the duration of a web node request as well as define the initial thread count and a thread increments for the test. Then, the test will increase the number of threads by the defined increment until the defined time limit is reached.
 
 + **Maximum Thread Count:** Define how many threads you want to run it against, such as 1, 10, 20, or 40. Then, see how much time is spent on each processing stage.
 
+### The Results
 This tool will let you know the maximum latency or number of parallel requests that can be supported. The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
-  + Web Node Request: measures the duration of the request from the web node's controller all the way to RServe and back.
+  1. **Web Node Request**: the time it took the request from the web node's controller to go all the way to RServe and back.
 
-  + Create Shell: the time it took to create a shell or take it from the pool
+  1. **Create Shell**: the time it took to create a shell or take it from the pool
 
-  + Initialize Shell: the time it took to load the data (model or snapshot) into the shell prior to execution
+  1. **Initialize Shell**: the time it took to load the data (model or snapshot) into the shell prior to execution
  
-  + Web Node to Compute Node: the time it took for a request from the web node to reach the compute node
+  1. **Web Node to Compute Node**: the time it took for a request from the web node to reach the compute node
 
-  + Compute Node Request: the time it took for a request from the compute node to reach RServe and return to the node
+  1. **Compute Node Request**: the time it took for a request from the compute node to reach RServe and return to the node
  
 After the tool is run, the results are printed to the console. You can also explore the results visually using the URL that is returned to the console. 
+
+### Using the Evaluate Capacity Tool
 
 **To run or design a capacity simulation test:**
 
@@ -203,6 +214,9 @@ After the tool is run, the results are printed to the console. You can also expl
         1. Enter `Yes`.
         1. Provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
         1. Enter a JSON object representing the input parameters.@@
+
+        > What does this mean?@@        Enter a JSON object representing the input parameters.
+
       + To use the generated [default service], enter `No` and enter a JSON object representing the input parameters.
 
 1. To change threshold rules, choose **Change thread/latency limits** from the sub-menu and one of the following:

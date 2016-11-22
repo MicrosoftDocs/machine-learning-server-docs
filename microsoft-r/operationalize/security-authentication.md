@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Authentication for R Server's Operationalization
 
-To secure connections and communications, you have several authentication options:
+R Server's offers seamless integration with authentication solutions for operationalization. To secure connections and communications, you have several options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
@@ -35,6 +35,10 @@ To secure connections and communications, you have several authentication option
 |[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations|
 |[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|Use with [enterprise](configuration-initial.md) _cloud_ configurations|
+
+<br>
+
+![Security](../media/o16n/security.png)
 
 <br>
 

@@ -31,3 +31,5 @@ R Server has many features that support creating secure applications. Common sec
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
 
+
+![Security](../media/o16n/security.png)
