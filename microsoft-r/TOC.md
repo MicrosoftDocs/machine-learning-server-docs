@@ -90,7 +90,7 @@
 ### [Placeholder: Integrate Web Services into Applications](operationalize/integrate.md)
 ### [Placeholder: Access Tokens](operationalize/@@security-access-tokens.md)
 ### [Placeholder: Get Started](operationalize/get-started.md)
-### [Placeholder: Consuming Web Services](operationalize/web-services-consumption.md)
+### [Placeholder: Consuming Web Services](operationalize/web-service-consumption.md)
 
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)
