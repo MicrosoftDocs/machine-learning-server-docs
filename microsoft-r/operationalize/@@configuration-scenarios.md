@@ -60,4 +60,4 @@ Additionally, when you have multiple Web nodes, you must set up a [remote SQL Se
  
 Learn how to [set up an enterprise configuration](configuration-initial.md#enterprise) for operationalization.
 
-![Enterprise Configuration](../media/o16n/setup-enterprise-ready.jpeg)
+![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
