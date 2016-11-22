@@ -27,10 +27,17 @@ ms.custom: ""
 
 # About Operationalization with R Server
 
-Ever-increasing  software companies are presenting  advanced analytics in terms of algorithms, models and insights, they offer  tools and solutions to magically find new opportunities or predict how clients buy or decide on offers. Some companies build on top of open source solutions like Python or R, Others create workflows and drag and drop black boxes to develop outcomes and solutions which require coding to be useful against real data.  In the end, these approaches resolve some problems well, but create expensive, difficult to manage silos of knowledge and nightmares to implement.
+You can configure R Server to be the operationalization engine of your advanced R analytics.
 
-We have been learning about these with our real world clients, who now employ  one or more of these  tools and technologies to make sense of the massive new amounts of data , flowing in from all sources continuously. The biggest challenge our clients experience is the operationalization of their models.
+With operationalization enabled, R Server offers:
 
-In the past year, we also learned a lot from integrating Open Source R and parallelized algorithms into our Database and integrating these into Hadoop/ Spark, Linux and Teradata appliances. The combined abilities to run the analytics where the data is located and the ability to write once and deploy across multiple platforms makes a compelling choice for our clients, but imagine if you could also take models, algorithms and artifacts from other popular analytical systems and manage them in one place, where your data scientists, analysts and power analytical users can work and share.
++ Instant deployment and easy consumption of your R analytics
++ "Write once / deploy anywhere" - no more duplication of efforts
++ Speedy real-time and batch scoring
++ [Scalability](configuration-initial.md) for more power and better load balancing
++ [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-utility.md#capacity) tools
++ Enterprise grade security: [SSL](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md).
 
-With Microsoft R we now offer an improved version of the operationalization engine for all  your analytics. Wherever the source, the  language or the method, you will have the ability to simplify and deploy and realize the promise and power of advanced analytics.
+With this release of Microsoft R, we now offer an improved version of the operationalization engine for all  your analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+
+![Operationalization Engine](../media/o16n/about.png)

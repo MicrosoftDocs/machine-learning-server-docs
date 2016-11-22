@@ -70,9 +70,9 @@
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
 
 ## [Operationalize R Analytics (DeployR)](operationalize/about.md)
-### [Get Started with Operationalization](operationalize/get-started.md)
+### [Compare Features: 9.0 / 8.0.5](operationalize/about-compare-to-8.0.5.md)
 ### [Configure & Administer](operationalize/configure.md)
-#### [DeployR Configuration](operationalize/configuration-initial.md)
+#### [Configuration](operationalize/configuration-initial.md)
 #### [Remote Database Setup](operationalize/configure-remote-database.md)
 #### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
@@ -83,11 +83,14 @@
 
 ### [R Package Management](operationalize/package-management.md)
 
-### [Deploy Analytics as Web Services](operationalize/deploy.md)
+### [Web Services](operationalize/web-services.md)
+### [API Oveview](operationalize/api.md)
 
-### [Integrate Web Services into Applications](operationalize/integrate.md)
-
-### [API Reference](operationalize/api.md)
+### [Placeholder: Deploy Analytics as Web Services](operationalize/deploy.md)
+### [Placeholder: Integrate Web Services into Applications](operationalize/integrate.md)
+### [Placeholder: Access Tokens](operationalize/@@security-access-tokens.md)
+### [Placeholder: Get Started](operationalize/get-started.md)
+### [Placeholder: Consuming Web Services](operationalize/web-services-consumption.md)
 
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)
