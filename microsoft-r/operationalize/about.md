@@ -64,13 +64,13 @@ R Server's operationalization feature fits perfectly into the predictive analyti
 
 ### Best-in-Class Deployment Experience
 
-R Server offers:
+The deployment experience for R Server includes:
 
-+ Easy Deployment: Turn R into web services in one line of code in your R console.
++ **Easy Deployment**: Turn R into web services in one line of code in your R console.
 
-+ Easy Integration: Use easily consumable Swagger-based APIs with any programming languages.
++ **Easy Integration**: Use easily consumable Swagger-based APIs with any programming languages.
 
-+ Easy Setup: In-cloud or on-premise scalable configurations, enterprise grade security, Web service management, HA and load balancing, remote execution.
++ **Easy Setup**: In-cloud or on-premise scalable configurations, enterprise grade security, Web service management, HA and load balancing, remote execution.
 
 
 ![Easy](../media/o16n/about-easy.png)
