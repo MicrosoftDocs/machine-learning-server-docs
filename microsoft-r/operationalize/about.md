@@ -29,20 +29,28 @@ ms.custom: ""
 
 This release of Microsoft R Server now includes an even better operationalization engine for all your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
-## What You Get with R Server Operationalization
+>Looking for older "DeployR" documentation, [start here](../deployr-about.md).
+
+### What You Get with R Server Operationalization
 
 With operationalization enabled, R Server offers:
 
 + Instant deployment and easy consumption of your R analytics
+
 + "Write once / deploy anywhere" - no more duplication of efforts
+
 + Speedy real-time and batch scoring
+
 + [Scalability](configuration-initial.md) for more power and better load balancing
+
 + [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-utility.md#capacity) tools
+
 + Enterprise grade security: [SSL](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md).
 
+<br>
 ![Operationalization Engine](../media/o16n/about.png)
 
-## The Predictive Analytics Process
+### The Predictive Analytics Process
 
 R Server's operationalization feature fits perfectly into the predictive analytics process. The steps in that process (at a high-level) include:
 + **Prepare**:  Assemble, cleanse, profile and transform diverse data relevant to the subject.
@@ -54,12 +62,14 @@ R Server's operationalization feature fits perfectly into the predictive analyti
 ![Process](../media/o16n/about-predictive-analytics-flow.png)
 
 
-## Best-in-Class Deployment Experience
+### Best-in-Class Deployment Experience
 
 R Server offers:
 
 + Easy Deployment: Turn R into web services in one line of code in your R console.
+
 + Easy Integration: Use easily consumable Swagger-based APIs with any programming languages.
+
 + Easy Setup: In-cloud or on-premise scalable configurations, enterprise grade security, Web service management, HA and load balancing, remote execution.
 
 
