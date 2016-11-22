@@ -28,21 +28,24 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-When a web service is published (`/services/{name}/{version}`), not only is a endpoint is created (`/api/{name}/{version}`) for the consumption of that specific version of the service, but a custom Swagger document defining that service version is also dynamically generated (`/api/{name}/{version}/swagger.json`).  This Swagger document contains all of the APIs specific to the service version and the [authentication APIs](api.md#authentication) so that an app dev will have everything they need to interact with the published web service. 
+A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the `mrsdeploy` package functions. When published, the following are generate for the consumption of the web service:
 
-You can run this `swagger.json`@@ DOES THIS HAVE A VERSION SPECIFIC NAME OR A GENERIC NAME file through your Swagger code generator* to produce a custom client library stub for the consumption of that version of that Web service. 
++ An endpoint (`/api/{name}/{version}`) for its consumption
+
++ A custom Swagger document containing all of the APIs specific to that service and the [authentication APIs](api.md#authentication) so that an application developer will have everything they need to interact with the published web service
 
 ## Swagger & Client Libraries
 
-To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API. 
+Each web service version has its own [Swagger template](http://swagger.io/) that defines the APIs needed to interact with it. 
 
-You can use this template to build the client libraries that will simplify making calls, encoding data, and handling response markup on the API.  
+You can use this template to build the client libraries that will simplify the making of calls, encoding of data, and markup response handling on the API.  
 
 **To build your client libraries:**
 
-1. Download the core Swagger template, `swagger.json`, is available here@@.
-1. Get a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
+1. Find the Swagger template, `swagger.json`, available under `/api/{name}/{version}/swagger.json`. Using the core APIs, you can use `GET /api/{name}/{version}/swagger.json`.
+
+1. Install a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
+
 1. Run the Swagger file through the code generator specifying the language you want. 
 
-You can now use the generated client library stub to call the core APIs.
-
+You can now use the generated client library stub to call the APIs needed to authenticate and consume the service.

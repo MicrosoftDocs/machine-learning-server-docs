@@ -31,6 +31,8 @@ This release of Microsoft R Server now includes an even better operationalizatio
 
 >Looking for older "DeployR" documentation, [start here](../deployr-about.md).
 
+<br>
+
 ### What You Get with R Server Operationalization
 
 With operationalization enabled, R Server offers:
@@ -48,7 +50,11 @@ With operationalization enabled, R Server offers:
 + Enterprise grade security: [SSL](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md).
 
 <br>
+
 ![Operationalization Engine](../media/o16n/about.png)
+
+<br>
+
 
 ### The Predictive Analytics Process
 
@@ -60,7 +66,6 @@ R Server's operationalization feature fits perfectly into the predictive analyti
 + **Operationalize**:  Apply predictions and visualizations to support business applications
 
 ![Process](../media/o16n/about-predictive-analytics-flow.png)
-
 
 ### Best-in-Class Deployment Experience
 

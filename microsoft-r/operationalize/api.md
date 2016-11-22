@@ -69,11 +69,9 @@ All operationalization API calls must be authenticated using the `/login` API or
 
 These are the APIs around the management and life cycle of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
 
-When a service is published (`/services/{name}/{version}`), not only is a Web service endpoint is created (`/api/{name}/{version}`) for the consumption of that service, but another Swagger document defining that service is also generated (`/api/{name}/{version}/swagger.json`). There is always one Swagger service template for each Web service version. You can run this swagger.json file through your Swagger code generator* to produce a custom client library stub for the consumption of that version of that Web service. 
+When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](web-service-consumption.md). 
 
 >For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
-
->@@ADD link to vignette @@How do we introduce vignette here.
 
 |Web Services API|Description|
 |----|-----------|
