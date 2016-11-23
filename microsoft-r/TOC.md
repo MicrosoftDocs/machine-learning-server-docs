@@ -83,14 +83,12 @@
 
 ### [R Package Management](operationalize/package-management.md)
 
-### [Web Services](operationalize/web-services.md)
 ### [API Oveview](operationalize/api.md)
 
-### [Placeholder: Deploy Analytics as Web Services](operationalize/deploy.md)
-### [Placeholder: Integrate Web Services into Applications](operationalize/integrate.md)
+### [Placeholder: Deploy Analytics as Web Services](operationalize/service-management.md)
+### [Placeholder: Integrate and Consume Web Services](operationalize/service-integration.md)
 ### [Placeholder: Access Tokens](operationalize/@@security-access-tokens.md)
 ### [Placeholder: Get Started](operationalize/get-started.md)
-### [Placeholder: Consuming Web Services](operationalize/web-service-consumption.md)
 
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)

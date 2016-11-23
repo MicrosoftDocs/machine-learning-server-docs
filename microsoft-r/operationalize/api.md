@@ -29,7 +29,7 @@ ms.custom: ""
 **Applies to:  Microsoft R Server 9.0.1**
 
 ## Introduction
-The core Microsoft R Server [operationalization APIs](https://microsoft.github.io/deployr-api-docs/) expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
+The core Microsoft R Server [operationalization APIs](https://microsoft.github.io/deployr-api-docs/) expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This REST API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs)</big>
 
@@ -75,7 +75,7 @@ All operationalization API calls must be authenticated using the `/login` API or
 
 These are the APIs around the management and life cycle of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
 
-When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](web-service-consumption.md). 
+When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](integrate.md#consume). 
 
 >For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
 
@@ -257,19 +257,22 @@ These APIs allow you to create and manage session snapshots. There are additiona
 
 <a name=swagger></a>
 
-## Swagger & Client Libraries
+## Swagger & API Client Libraries
 
-To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API.  In a nutshell, Swagger is a popular specification for the JSON document that describes the core REST APIs. 
+To simplify the integration of R analytics web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API.  In a nutshell, Swagger is a popular specification for a JSON file that describes REST APIs. 
 
-Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can generate client libraries that can be used in various stacks, such as .NET, Java, Javascript, ..., to access the RESTful web services. 
-
-And, these client libraries will simplify the making of calls, encoding of data, and markup response handling on the API.    
+Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can generate an API client that can be used in various stacks, such as .NET, Java, Javascript, to access the RESTful web services. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
 
 **To build your client libraries:**
 
-1. Download the core Swagger template, `swagger.json`, is available here@@.
+1. Download@@ the Swagger-based JSON file, `swagger.json`, containing the definitions for the core operationalization APIs. 
 
-1. Run the Swagger file through a code generator, such as [Azure AutoRest](https://github.com/Azure/autorest), and specify the language you want. 
+1. Install a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
+
+1. Install a Swagger code generator such as [Azure autorest](https://github.com/Azure/autorest).
+
+1. Run the file through the code generator, and specify the language you want. 
+
+1. Review the resulting API client stub that was generated. You can provide some custom headers and make other changes.
 
 You can now use the generated client library stub to call the core APIs.
-
