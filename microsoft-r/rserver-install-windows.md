@@ -34,9 +34,9 @@ Installation of R Server provides the following components:
 
 * [**R Open**](r-open.md), Microsoft's distribution of R.
 * [**ScaleR (RevoScaleR)**](scaler/scaler.md), a proprietary package with functions that enable data chunking and distributed, parallel workloads.
-* [Operationalization features](operationalize/about.md) add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
-* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a collection of functions used for doing machine learning at scale.
-* Other packages as described in [Package Reference](package-reference.md).
+* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a collection of functions used for machine learning at scale.
+* [**Operationalization features**](operationalize/about.md) add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
+* **Other packages** as described in [Package Reference](package-reference.md).
 
 For information about the latest features, see [What's New in R Server](rserver-whats-new.md).
 
@@ -94,7 +94,8 @@ Once R Server is installed, you can connect to R Server and run ScaleR functions
 
 **Local Connections**
 
-<TO DO>
+* Go to C:\Program Files\Microsoft\R Client\R_SERVER\bin
+* Double-click R.exe 
 
 **Remote Connections**
 
