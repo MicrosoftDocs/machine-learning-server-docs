@@ -75,7 +75,7 @@ All operationalization API calls must be authenticated using the `/login` API or
 
 These are the APIs around the management and life cycle of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
 
-When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](integrate.md#consume). 
+When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](service-integration.md#consume). 
 
 >For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
 
