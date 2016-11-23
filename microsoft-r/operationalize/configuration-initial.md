@@ -62,6 +62,42 @@ This configuration is useful when you want to explore what it is to operationali
 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
+1. On the following Linux flavors, add a few static links:
+
+   + On CentOS 7.1, CentOS 7.2:
+     ```
+      cd /usr/lib64
+      sudo ln -s libpcre.so.1   libpcre.so.0
+      sudo ln -s libicui18n.so.50   libicui18n.so.36
+      sudo ln -s libicuuc.so.50 libicuuc.so.36
+      sudo ln -s libicudata.so.50 libicudata.so.36
+     ```
+
+   + On Ubuntu 14.04:
+     ```
+      sudo apt-get install libicu-dev
+
+      cd /lib/x86_64-linux-gnu
+      ln -s libpcre.so.3 libpcre.so.0
+
+      cd /usr/lib/x86_64-linux-gnu
+      ln -s libicui18n.so.52 libicui18n.so.36
+      ln -s libicuuc.so.52 libicuuc.so.36
+      ln -s libicudata.so.52 libicudata.so.36
+     ```
+
+   + On Ubuntu 16.04:
+     ```
+      cd /lib/x86_64-linux-gnu
+      ln -s libpcre.so.3 libpcre.so.0
+      ln -s liblzma.so.5 liblzma.so.0
+
+      cd /usr/lib/x86_64-linux-gnu
+      ln -s libicui18n.so.55 libicui18n.so.36
+      ln -s libicuuc.so.55 libicuuc.so.36
+      ln -s libicudata.so.55 libicudata.so.36
+     ```
+
 1. [Launch the administration utility](admin-utility.md#launch) with administrator, `root`, or `sudo` privileges.
 
 1. Choose the option to **Configure R Server for Operationalization**.
@@ -92,7 +128,7 @@ Additionally, when you have multiple web nodes, you must set up a [remote SQL Se
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
 
-**Step 1: Configure web node(s)**
+**Step 1: Configure Web Node(s)**
 
 >**Note:** It is possible to run the operationalization web node service from within IIS.
 
@@ -118,6 +154,42 @@ Your web node is now configured. Repeat these steps for each web node you want t
 >**Note:** A compute node can be configured on its own machine or on the same machine as the web node.
 
 1. On each machine, install the same R Server version you installed on the web node.
+
+1. On the following Linux flavors, add a few static links:
+
+   + On CentOS 7.1, CentOS 7.2:
+     ```
+      cd /usr/lib64
+      sudo ln -s libpcre.so.1   libpcre.so.0
+      sudo ln -s libicui18n.so.50   libicui18n.so.36
+      sudo ln -s libicuuc.so.50 libicuuc.so.36
+      sudo ln -s libicudata.so.50 libicudata.so.36
+     ```
+
+   + On Ubuntu 14.04:
+     ```
+      sudo apt-get install libicu-dev
+
+      cd /lib/x86_64-linux-gnu
+      ln -s libpcre.so.3 libpcre.so.0
+
+      cd /usr/lib/x86_64-linux-gnu
+      ln -s libicui18n.so.52 libicui18n.so.36
+      ln -s libicuuc.so.52 libicuuc.so.36
+      ln -s libicudata.so.52 libicudata.so.36
+     ```
+
+   + On Ubuntu 16.04:
+     ```
+      cd /lib/x86_64-linux-gnu
+      ln -s libpcre.so.3 libpcre.so.0
+      ln -s liblzma.so.5 liblzma.so.0
+
+      cd /usr/lib/x86_64-linux-gnu
+      ln -s libicui18n.so.55 libicui18n.so.36
+      ln -s libicuuc.so.55 libicuuc.so.36
+      ln -s libicudata.so.55 libicudata.so.36
+     ```
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
 

@@ -28,17 +28,13 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the `mrsdeploy` package functions. When published, the following are generate for the consumption of the web service:
-
-+ An endpoint (`/api/{name}/{version}`) for its consumption
-
-+ A custom Swagger document containing all of the APIs specific to that service and the [authentication APIs](api.md#authentication) so that an application developer will have everything they need to interact with the published web service
+A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the `mrsdeploy` package functions. When a service is published, an endpoint (`/api/{name}/{version}`) is registered, which in turn triggers the generation of a custom Swagger-based JSON document. This document containing the definitions of every API specific to that service and the [authentication APIs](api.md#authentication) to provide application developers with everything they need to interact with the published web service.
 
 ## Swagger & Client Libraries
 
 Each web service version has its own [Swagger template](http://swagger.io/) that defines the APIs needed to interact with it. 
 
-You can use this template to build the client libraries that will simplify the making of calls, encoding of data, and markup response handling on the API.  
+You can use this template to build the API clients that will simplify the making of calls, encoding of data, and markup response handling on the API.  
 
 **To build your client libraries:**
 
@@ -48,4 +44,6 @@ You can use this template to build the client libraries that will simplify the m
 
 1. Run the Swagger file through the code generator specifying the language you want. 
 
-You can now use the generated client library stub to call the APIs needed to authenticate and consume the service.
+1. Review the resulting API client stub that was generated. You can provide some custom headers and other changes.
+
+Now, you are ready to call the APIs needed to authenticate and consume the service.

@@ -29,7 +29,7 @@ ms.custom: ""
 **Applies to:  Microsoft R Server 9.0.1**
 
 ## Introduction
-The Microsoft R Server [operationalization API](https://microsoft.github.io/deployr-api-docs/) exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
+The core Microsoft R Server [operationalization APIs](https://microsoft.github.io/deployr-api-docs/) expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs)</big>
 
@@ -43,7 +43,13 @@ Once R code is exposed by R Server as a web service, an application can make API
 
 ## Core Operationalization APIs
 
-The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. They can be grouped by the following areas. 
+The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. 
+
+These REST APIs are described in a [Swagger-based JSON document delivered with the product](#swagger).
+
+custom Swagger-based JSON document. This document containing the definitions of every API specific to that service and the [authentication APIs](api.md#authentication)
+
+The core APIs can be grouped by the following areas. 
 
 <a name="authentication"></a>
 ### User Authentication & Status APIs
@@ -249,17 +255,21 @@ These APIs allow you to create and manage session snapshots. There are additiona
 |`DELETE /snapshots/{id}`|Delete specified snapshot.|
 
 
+<a name=swagger></a>
+
 ## Swagger & Client Libraries
 
-To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API. 
+To simplify the integration of R analytics Web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API.  In a nutshell, Swagger is a popular specification for the JSON document that describes the core REST APIs. 
 
-You can use this template to build the client libraries that will simplify making calls, encoding data, and handling response markup on the API.  
+Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can generate client libraries that can be used in various stacks, such as .NET, Java, Javascript, ..., to access the RESTful web services. 
+
+And, these client libraries will simplify the making of calls, encoding of data, and markup response handling on the API.    
 
 **To build your client libraries:**
 
 1. Download the core Swagger template, `swagger.json`, is available here@@.
-1. Get a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
-1. Run the Swagger file through the code generator specifying the language you want. 
+
+1. Run the Swagger file through a code generator, such as [Azure AutoRest](https://github.com/Azure/autorest), and specify the language you want. 
 
 You can now use the generated client library stub to call the core APIs.
 
