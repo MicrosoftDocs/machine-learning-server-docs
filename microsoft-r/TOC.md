@@ -79,6 +79,8 @@
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 ##### [RServe Considerations](operationalize/security-rserve.md)
+##### [Authorization Bearer Tokens](operationalize/security-access-tokens.md)
+
 #### [Administration](operationalize/admin-utility.md)
 
 ### [R Package Management](operationalize/package-management.md)
@@ -87,7 +89,6 @@
 
 ### [Placeholder: Deploy Analytics as Web Services](operationalize/service-management.md)
 ### [Placeholder: Integrate and Consume Web Services](operationalize/service-integration.md)
-### [Placeholder: Access Tokens](operationalize/@@security-access-tokens.md)
 ### [Placeholder: Get Started](operationalize/get-started.md)
 
 ### Archived Documentation

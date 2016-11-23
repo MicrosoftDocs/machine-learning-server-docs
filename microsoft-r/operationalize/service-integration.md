@@ -43,7 +43,7 @@ ms.custom: ""
 
 ## Creating API Client Libraries to Consume Web Services
 
-A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the `mrsdeploy` package functions. When a service is published, an endpoint (`/api/{name}/{version}`) is registered, which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file. 
+A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the `mrsdeploy` package functions. Whenever a service is published (`POST /services/{name}/{version}`), an endpoint is registered (`/api/{name}/{version}`), which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file.  
 
 This Swagger-based JSON file contains the definitions of every API specific to that service version, including the [authentication APIs](api.md#authentication), needed to interact with that specific version. 
 

@@ -43,24 +43,28 @@ Once R code is exposed by R Server as a web service, an application can make API
 
 ## Core Operationalization APIs
 
-The core R Server operationalization APIs include those used to authenticate, create R sessions and snapshots, execute R code, upload objects, and publish Web services. 
+The core R Server operationalization APIs can be grouped by the following areas:
++ [Authentication & Status](#authentication)
++ [Web Services management & consumption](#services)
++ [Session management](#sessions)
++ [Snapshot management](#snapshots)
++ [Status](#status)
 
-These REST APIs are described in a [Swagger-based JSON document delivered with the product](#swagger).
-
-custom Swagger-based JSON document. This document containing the definitions of every API specific to that service and the [authentication APIs](api.md#authentication)
-
-The core APIs can be grouped by the following areas. 
+These REST APIs are described in a [Swagger-based JSON document](#swagger) delivered with the product. 
 
 <a name="authentication"></a>
-### User Authentication & Status APIs
+### User Authentication APIs
 
-All operationalization API calls must be authenticated using the `/login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). Once you use the `/login` API, you'll get the access and refresh tokens@@. 
+All operationalization API calls must be authenticated using the `POST /login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). 
+
+Once your use the `POST /login` API, you'll get the [bearer token](security-access-tokens.md). 
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more](security-access-tokens.md).
 
 >For the full documentation for each session API, check out [this section of the API Reference help](?tags=User).
+>
+>[Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
 
->@@What about Access tokens LINK???
-
-|Authentication & Status API|Description|
+|Authentication API|Description|
 |----|-----------|
 |`POST /login`|Logs the user in|
 |`POST /login/refreshToken`|The user renews the access token and refresh token|
@@ -69,15 +73,16 @@ All operationalization API calls must be authenticated using the `/login` API or
 
 <br>
 
+<a name="services"></a>
 ### Web Services APIs
 
 @@Small intro para
 
-These are the APIs around the management and life cycle of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
+These are the APIs around publishing and management of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
 
-When a service is published (`/services/{name}/{version}`), another Swagger document defining the APIS specific to that service is generated along with the service endpoint  (`/api/{name}/{version}`). [Learn more about consuming web services](service-integration.md#consume). 
+Whenever a service is published (`POST /services/{name}/{version}`), an endpoint is registered (`/api/{name}/{version}`), which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file. [Learn more about consuming web services](service-integration.md#consume).
 
->For the full documentation for each web service API, check out [this section of the API Reference help](?tags=Services).
+>For the full documentation for each web service API, check out [this section](?tags=Services) of the API Reference help.
 
 |Web Services API|Description|
 |----|-----------|
@@ -92,6 +97,7 @@ When a service is published (`/services/{name}/{version}`), another Swagger docu
 
 <br>
 
+<a name="sessions"></a>
 ### Session APIs
 
 Each time a service is executed on the API, the service makes use of an R session that is managed by R Server on behalf of the application. 
@@ -102,7 +108,7 @@ The session APIs can be divided into the following groups:
 + Session working directory APIs help manage the files in your workspace.
 + Session snapshot APIs help create and manage session snapshots.
 
->For the full documentation for each session API, check out [this section of the API Reference help](?tags=Sessions).
+>For the full documentation for each session API, check out [this section](?tags=Services) of the API Reference help.
 
 >@@ADD link to vignette @@How do we introduce vignette here.
 
@@ -233,6 +239,7 @@ The session APIs can be divided into the following groups:
 
 <br>
 
+<a name="snapshots"></a>
 ### Snapshot APIs
 
 You can prolong the lifespan of a session by saving the session's workspace and working directory into a **snapshot**. A snapshot includes:
@@ -248,6 +255,10 @@ Snapshots can be used for and by both sessions and web service APIs. You can cre
 
 These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
+
+>For the full documentation for each snapshot API, check out [this section](?tags=Snapshots) of the API Reference help.
+
+
 |Snapshot APIs|Description|
 |----|-----------|
 |`GET /snapshots`|List all snapshots for the current user.|
@@ -255,9 +266,22 @@ These APIs allow you to create and manage session snapshots. There are additiona
 |`DELETE /snapshots/{id}`|Delete specified snapshot.|
 
 
+<br>
+
+
+<a name="status"></a>
+### Status API
+
+|Status API|Description|
+|----|-----------|
+|`GET /status`|Gets the current health of the system|
+
+<br>
+
+
 <a name=swagger></a>
 
-## Swagger & API Client Libraries
+## Creating API Client Libraries from Swagger-based JSON File 
 
 To simplify the integration of R analytics web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/), we provide a core [Swagger template](http://swagger.io/) that defines each API.  In a nutshell, Swagger is a popular specification for a JSON file that describes REST APIs. 
 

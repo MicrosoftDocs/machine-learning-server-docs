@@ -27,16 +27,21 @@ ms.custom: ""
 
 # R Package Management with R Server
 
-Whenever you or your users are writing, testing, and deploying R scripts, it is critical that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
+One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes a number of functions that make it easy to download and install these packages. Whenever you or your users are writing, testing, and deploying R scripts, it is imperative that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
 
-By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing package dependencies when executed in the remote environment.
+By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing packages or package dependencies when executed in the remote environment.
 
-As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the compute node(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users. Review the following options for the best practices for production and non-production environments. 
+As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the compute node(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users.  
 
-Of course, data scientists can test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
+However, in many enterprise environments, access to the Internet is limited or non-existent. In such environments, it is useful to create a local package repository that users can access from within the corporate firewall using [Option 1](#offline).
+
+You can also manually install the packages using a master script using [Option 2](#master).
+
+Of course, data scientists can also test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
 
 <br>
 
+<a name="offline"></a>
 ## Option 1: Local Package Repository (Offline Solution)
 
 >**Audience:** System administrator
@@ -115,6 +120,8 @@ This production-safe approach provides an excellent way to:
 
 <br>
 
+<a name="master"></a>
+
 ## Option 2: R Script with List of Approved Packages
 
 >**Audience:** System administrator
@@ -155,7 +162,7 @@ This option does require the  machines hosting the compute node have access to t
 >
 >**Applies to:** Development Environments
 
-To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the R server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
+To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the R Server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
 
 This remote execution and snapshotting approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
@@ -189,14 +196,15 @@ The packages you install using this method do not 'contaminate' the production e
 1. Run R code in the remote environment:
 
    1. Install new R packages and upload any needed R objects and files into the remote R session. @@LINK TO VIGNETTE DOC IN MSDN
-
-      @@ EXAMPLE NEEDED
+      ```
+      REMOTE> install.packages(“ggplot2”)
+      ```
    
    1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. @@LINK TO VIGNETTE DOC IN MSDN
-   ```
-   REMOTE> pause()
-   > remote_script("my-script.R")
-   ```
+      ```
+      REMOTE> pause()
+      > remote_script("my-script.R")
+      ```
 
 1. To allow the workspace and working directory to be reused later, create a session snapshot.  @@LINK TO VIGNETTE DOC IN MSDN
    ```
@@ -213,8 +221,10 @@ The packages you install using this method do not 'contaminate' the production e
 
 **To reuse those installed packages, objects and files:**
 
-You can use the snapshot (installed packages, objects, files) within the context of a web service in a remote session. When you create a web service, reference the snapshot ID. Then, when the service is executed, the snapshot will be loaded and the session information is automatically available to the service. @@LINK TO VIGNETTE DOC IN MSDN
+You can reload the snapshot (installed packages, objects, files) within the context of a remote session. @LINK TO VIGNETTE DOC IN MSDN
 
 ```
-@@CAN WE PROVIDE AN EXAMPLE??
+> loadSnapshot("123456789-abcdef-123456789")
 ```
+
+You can request that a package be installed across the configuration for all users by the administrator once you've sufficiently tested the package(s) as described in this section.

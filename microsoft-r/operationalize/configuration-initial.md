@@ -62,7 +62,7 @@ This configuration is useful when you want to explore what it is to operationali
 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
-1. On the following Linux flavors, add a few static links:
+1. On the following Linux flavors, add a few symlinks:
 
    + On CentOS 7.1, CentOS 7.2:
      ```
@@ -155,7 +155,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 
 1. On each machine, install the same R Server version you installed on the web node.
 
-1. On the following Linux flavors, add a few static links:
+1. On the following Linux flavors, add a few symlinks:
 
    + On CentOS 7.1, CentOS 7.2:
      ```
