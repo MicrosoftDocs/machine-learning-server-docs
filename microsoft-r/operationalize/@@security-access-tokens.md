@@ -27,8 +27,6 @@ ms.custom: ""
 
 # Managing Tokens for API Requests
 
-AUDIENCE: APP DEVELOPER
-
 You can use tokens to identify and authenticate the user sending the API call. Once all of the APIs have been authenticated, you will only need to log in once.  HOW DO ALL APIS GET AUTHENTICATED????
 
 Then, add that token in the header of any subsequent API call. 
@@ -39,11 +37,26 @@ You can get the API tokens in one of two ways:
 + If you have Active Directory LDAP (or LDAP-S) enabled, then send a `/login` API request to retrieve the **access** token and the **refresh** token
 + If you have Azure Active Directory enabled, then get token from there.
 
+Example Request|Example Reponse
+---------------|--------------
+``` request example ```|``` response example
+
+
 ## Using Access Tokens
 
 Place the token in the header of an API.
 
 When the API call is sent with an access token, R Server validates that the user is valid and that the token itself is not expired.
+
+Example #1:
+```
+
+```
+
+Example #2:
+```
+
+```
 
 
 ## Renewing Tokens
@@ -52,8 +65,18 @@ Access tokens expire. Use the refresh token to renew the token. Refresh tokens d
 
 There is an API CALL to do this
 
+Example Request|Example Reponse
+---------------|--------------
+``` request example ```|``` response example
+
+
 
 
 ## Revoking Tokens
 
 There is an API CALL to do this
+
+Example Request|Example Reponse
+---------------|--------------
+``` request example ```|``` response example
+
