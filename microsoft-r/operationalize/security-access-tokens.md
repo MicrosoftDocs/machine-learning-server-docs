@@ -58,15 +58,16 @@ The bearer token's request output properties consist in an `access_token` / `ref
 |Creation|- During user authentication|- When bearer token is created, or<br>- When the bearer token is used, the `refresh_token` is replaced.|
 |Expiration|- After 1 hour (3660 seconds) of inactivity|- After 336 hours (14 days) of inactivity|
 |Invalidity|- If bearer token > 90 days (`401: Unauthorized`, or<br>- If `refresh_token` is expired, or<br>- If user's password changed (authentication will fails), or<br>- If bearer token was revoked|- If not used for 336 hours (14 days), or<br>- When `access_token` expires, or<br>- After it is used (replaced by another)|
+
 <br>
 
 
 ## Tokens Creation
 
 API bearer tokens can be generated in one of two ways:
-+ If you have Active Directory LDAP enabled, then send a `POST /login HTTP/1.1` API request to retrieve the **access** token and the **refresh** token.
++ If you have Active Directory LDAP enabled, then send a `POST /login HTTP/1.1` API request to retrieve the bearer token.
 
-+ If Azure Active Directory (AAD) is enabled, then the token will come from AAD. Learn more: https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios
++ If Azure Active Directory (AAD) is enabled, then the token will come from AAD. [Learn more](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
 
 This bearer token is valid for up to 90 days with an active `access_token` and `refresh_token`. After 90 days, the user will be forced to authenticate again and a new bearer token will be issued.  Note that the bearer token's `access_token` does expires after 1 hour of inactivity. It can easily be renewed using the `refresh_token`. This `refresh_token` also expires after inactivity (336 hrs/14 days). 
@@ -74,7 +75,7 @@ This bearer token is valid for up to 90 days with an active `access_token` and `
 
 ### Example: Token creation request 
 
-Example Request|Example Reponse
+Example Request|Example Response
 ---------------|--------------
 ``POST /login HTTP/1.1``<br>`{`<br>`"username": "my-user-name",`<br>`"password": "$ecRet1"`<br>`}`|`{"token_type":"Bearer",`<br>`"access_token":"eyJhbGci....",`<br>`"expires_in":3600,`<br>`"expires_on":1479937454,`<br>`"refresh_token":"0/LTo...."}`
 
