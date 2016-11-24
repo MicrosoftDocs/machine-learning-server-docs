@@ -51,7 +51,13 @@ The bearer token's request output properties consist in an `access_token` / `ref
 |  |Creation|Expiration|Invalidity|
 |--|---|---|---|
 |`access_token`|- During user authentication|- After 1 hour (3660 seconds) of inactivity|- If bearer token > 90 days (`401: Unauthorized`, or<br>- If `refresh_token` is expired, or<br>- If user's password changed (authentication will fails), or<br>- If bearer token was revoked|
+|`refresh_token`|- When bearer token is created, or<br>- When the bearer token is used, the `refresh_token` is replaced.|- After 336 hours (14 days) of inactivity|- If not used for 336 hours (14 days), or<br>- When `access_token` expires, or<br>- After it is used (replaced by another)|
 
+
+||`access_token`|`refresh_token`|
+|Creation|- During user authentication|- When bearer token is created, or<br>- When the bearer token is used, the `refresh_token` is replaced.|
+|Expiration|- After 1 hour (3660 seconds) of inactivity|- After 336 hours (14 days) of inactivity|
+|Invalidity|- If bearer token > 90 days (`401: Unauthorized`, or<br>- If `refresh_token` is expired, or<br>- If user's password changed (authentication will fails), or<br>- If bearer token was revoked|- If not used for 336 hours (14 days), or<br>- When `access_token` expires, or<br>- After it is used (replaced by another)|
 <br>
 
 
