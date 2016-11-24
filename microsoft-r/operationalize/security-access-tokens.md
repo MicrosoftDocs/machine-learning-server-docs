@@ -154,7 +154,7 @@ If the `refresh_token` itself has also expired, then the user's bearer token bec
 
 ## Security Concerns and the Revocation of Tokens
 
->![Important!]
+>![Important]
 >Though a party must first authenticate first to receive the bearer token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, bearer tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](security-https.md). 
 >
 >If a bearer token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching bearer tokens for later use. Always ensure that your application transmits and stores bearer tokens in a secure manner. 
@@ -174,4 +174,5 @@ Use the API call `DELETE /login/refreshToken/{refreshToken} HTTP/1.1` to revoke 
   ```
 
 + **Response**
+
   HTTP Error: `200`
