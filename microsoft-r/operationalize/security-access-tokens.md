@@ -46,7 +46,7 @@ The bearer token's request output properties consist in an `access_token` / `ref
 <br>
 
 
-## Token Lifecycle Details
+## Bearer Token Lifecycle
 
 
 ||"access_token" Property|"refresh_token" Property|
@@ -70,20 +70,34 @@ This bearer token is valid for up to 90 days with an active `access_token` and `
 
 ### Example: Token creation request 
 
-Example Request|Example Response
----------------|--------------
-``POST /login HTTP/1.1``<br>`{`<br>`"username": "my-user-name",`<br>`"password": "$ecRet1"`<br>`}`|`{"token_type":"Bearer",`<br>`"access_token":"eyJhbGci....",`<br>`"expires_in":3600,`<br>`"expires_on":1479937454,`<br>`"refresh_token":"0/LTo...."}`
++ **Request**
+  ```
+  POST /login HTTP/1.1
+  {
+    "username": "my-user-name",
+    "password": "$ecRet1"
+  }
+  ```
 
++ **Response**
+  ```
+  {
+    "token_type":"Bearer",
+    "access_token":"eyJhbGci....",
+    "expires_in":3600,
+    "expires_on":1479937454,
+    "refresh_token":"0/LTo...."
+  }
+  ```
 
 <br>
-
-
 
 ## Tokens Usage
 
 As defined by HTTP/1.1 [RFC2617], the application should send the `access_token` directly in the Authorization request header. Do so by including the bearer token's `access_token` value in the HTTP request body as `Authorization: Bearer {access_token_value}`. When the API call is sent with the token, R Server will validate that the user is successfully authenticated and that the token itself is not expired.
 
 ### Example: HTTP header for session creation
+
 ```
  POST /sessions HTTP/1.1
      Host: mrs.contoso.com
@@ -101,9 +115,7 @@ As defined by HTTP/1.1 [RFC2617], the application should send the `access_token`
 
 <br>
 
-
-
-## Refresh Tokens
+## Token Refresh
 
 A valid bearer token keeps the user's authentication alive without requiring him or her to enter their credentials all the time.  Each time an active bearer token is used, the `refresh_token` is replaced and the new one gets another 336 hours (14 days) before it expires. 
  
@@ -111,10 +123,30 @@ However, after a one-hour period of inactivity, the `access_token` will automati
 
 ### Example: Refresh access_token
 
-Refresh Request |Example Response
----------------|--------------
-`POST /login/refreshToken HTTP/1.1`<br>`Connection: Keep-Alive`<br>`Content-Type: application/json;`<br> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;`charset=utf-8`<br>`Accept-Encoding: gzip, deflate`<br>`Content-Length: 370`<br>`Host: mrs.contoso.com`<br>`{"refreshToken": "0/LTo...."}`|`{"token_type":"Bearer",`<br>`"access_token":"eyJhbGci....",`<br>`"expires_in":3600,`<br>`"expires_on":1479937454,`<br>`"refresh_token":"0/LTo...."}`<br> <br> <br> <br> 
++ **Request**
+  ```
+  POST /login/refreshToken HTTP/1.1
+    Connection: Keep-Alive
+    Content-Type: application/json; charset=utf-8
+    Accept-Encoding: gzip, deflate
+    Content-Length: 370
+    Host: mrs.contoso.com
+ 
+    {
+      "refreshToken": "0/LTo...."
+    }
+  ```
 
++ **Response**
+  ```
+  {
+    "token_type":"Bearer",
+    "access_token":"eyJhbGci....",
+    "expires_in":3600,
+    "expires_on":1479937523,
+    "refresh_token":"ScW2t...."
+  }
+  ```
 
 If the `refresh_token` itself has also expired, then the user's bearer token becomes invalid and they will need to authenticate again during their next API call. 
 
@@ -133,6 +165,13 @@ Use the API call `DELETE /login/refreshToken/{refreshToken} HTTP/1.1` to revoke 
 
 ### Example: Revoke token
 
-Example Request|Example Response
----------------|--------------
-`DELETE https://mrs.contoso.com/login/refreshToken?refreshToken=OeAiJl HTTP/1.1`<br>`Connection: Keep-Alive`<br>`Accept-Encoding: gzip, deflate`<br>`Host: mrs.contoso.com`| Error code: `200`
++ **Request**
+  ```
+  DELETE https://mrs.contoso.com/login/refreshToken?refreshToken=ScW2t HTTP/1.1
+    Connection: Keep-Alive
+    Accept-Encoding: gzip, deflate
+    Host: mrs.contoso.com
+  ```
+
++ **Response**
+  HTTP Error: `200`
