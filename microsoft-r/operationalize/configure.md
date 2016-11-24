@@ -37,6 +37,9 @@ There are two ways to configure R Server for operationalization:
 
 Also, learn how to [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
 
+>![Important!]
+>The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
+
 #### Enhanced Security
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
