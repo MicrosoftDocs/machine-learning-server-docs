@@ -54,4 +54,4 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 
 [Package Help](../package-reference.md)
 
-[Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
+[Write custom chunking algorithms in ScaleR](../scaler-getting-started-4-write-chunking-algorithms.md)
