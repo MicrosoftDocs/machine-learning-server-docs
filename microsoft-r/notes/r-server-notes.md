@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 #R Server release notes (Microsoft R)
 
-This article documents known issues, bug fixes, and notifications about changes to function status, such as deprecated and discontinued functions for R Server.
+This article documents the known issues, bug fixes, and notifications about status changes to function libraries, such as deprecated and discontinued functions in RevoScaleR
 
 **Related Documents**
 
@@ -37,7 +37,7 @@ This article documents known issues, bug fixes, and notifications about changes 
 
 ###Changed in this release
 
-+ R Server is built on Microsoft R Open 3.3.2 (R 3.3.2) .
++ R Server is built on Microsoft R Open 3.3.2 (R 3.3.2).
 + R packages added to MRO include `curl`, `Jsonlite`, and `R6`.
 + R packages added to R Server include `mrupdate` (for automated update checks) and `CompatibilityAPI` (to check for feature compatibility between versions).
 + DeployR (now referred to as Operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
