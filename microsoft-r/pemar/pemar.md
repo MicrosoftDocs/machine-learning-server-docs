@@ -28,7 +28,7 @@ ms.custom: ""
 
 The `RevoPemaR` package provides a framework for writing custom Parallel External Memory Algorithms (PEMA) for execution on R Server. An external memory algorithm is used to process data in chunks, in parallel, typically on different nodes of a server cluster. The results are then combined and processed at the end (or at the end of each iteration). The `RevoPemaR` package makes use of the R reference classes introduced by John Chambers in R 2.12.
 
-This topic is a high-level description of package functionality. For step-by-step instructions on usage, see [Get started with PemaR](../pemar-getting-started.md).
+This topic is a high-level description of package functionality. For step-by-step instructions on usage, see [Get started with PemaR](~/pemar-getting-started.md).
 
 ## Class library
 

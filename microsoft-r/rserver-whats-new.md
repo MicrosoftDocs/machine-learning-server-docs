@@ -31,8 +31,8 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 **Related Documents**
 
 + For known issues, bug fixes, and behavior changes in existing features of R Server, see the [release notes for R Server](notes/r-server-notes.md).
-+ For new feature announcements in Microsoft R Client, see [What's new in R Client](r-client-notes.md).
-+ For new feature announcements in SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
++ For new feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
++ For new feature announcements in SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ## New and updated packages
 
@@ -149,7 +149,7 @@ This section lists the feature announcements of recent previous releases.
 
     + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
-    + The API has been updated. [See the change history.](../deployr-api-reference.md#805)
+    + The API has been updated. [See the change history.](deployr-api-reference.md#805)
 
     + This release is of DeployR Enterprise only.
 
