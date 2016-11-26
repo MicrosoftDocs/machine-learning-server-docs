@@ -30,7 +30,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Related Documents**
 
-+ For known issues, bug fixes, and behavior changes in existing features of R Server, see the [release notes for R Server](notes/r-server-notes.md).
++ For known issues, bug fixes, and behavior changes in existing features of R Server, see the [Release notes for R Server](notes/r-server-notes.md).
 + For new feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
 + For new feature announcements in SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
@@ -74,6 +74,7 @@ This release now supports Ubuntu 14.04 and 16.04 on premises. For installation i
 
 + Support for Spark 2.0, in addition to Spark 1.5-1.6.
 + Support for Spark DataFrames through `RxHiveData` and `RxParquetData` in ScaleR:
+
   ~~~~
     hiveData <- RxHiveData("select * from hivesampletable", ...)
     pqData <- RxParquetData('/share/claimsParquet', ...)
@@ -90,23 +91,19 @@ For installation instructions, see [Install R Server on Hadoop](rserver-install-
 
 As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
 
-Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation. For installation instructions, see [Install R Server for Windows](rserver-install-windows.md).
-
-The setup program you use determines the service and support policy, as described below.
+Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation. For installation instructions, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
 
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server on Windows.
 
 **Service and support for Microsoft R Server for Windows**
 
-R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle).
+R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
-Modern lifecycle policy is designed for rapid release cycle. Individual versions age out sooner, but newer features are made available more frequently.
++ Modern lifecycle policy is designed for rapid release cycle. Individual versions age out sooner, but newer features are made available more frequently. The Modern lifecycle policy is in effect when you use simplified setup to install R Server on Windows.
 
-SQL Server support policy supports released versions over a longer time frame, but updates are less frequent.
++ SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server on Windows.
 
-Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy.
-
-For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
++ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup.
 
 ##Previously released features
 

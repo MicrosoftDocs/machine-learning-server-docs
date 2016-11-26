@@ -34,9 +34,9 @@ Installation of R Server provides the following components:
 
 * [**R Open**](r-open.md), Microsoft's distribution of R.
 * [**ScaleR (RevoScaleR)**](scaler/scaler.md), a proprietary package with functions that enable data chunking and distributed, parallel workloads.
-* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a collection of functions used for machine learning at scale.
-* [**Operationalization features**](operationalize/about.md) add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
-* **Other packages** as described in [Package Reference](package-reference.md).
+* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a proprietary collection of functions used for machine learning at scale.
+* [**Operationalization features**](operationalize/about.md) that add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
+* [**All other packages listed in Package Reference**](package-reference.md).
 
 For information about the latest features, see [What's New in R Server](rserver-whats-new.md).
 
@@ -50,15 +50,15 @@ Solutions developed locally on workstation can be published to remote R Server i
 
 ## How to install R Server 9.0
 
-You can install R Server 9.0 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on the same server, you can install SQL Server R Services as a multi-instance service, similar to the relational database engine and other features in SQL Server.
+You can install R Server 9.0 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on the same server, you can install SQL Server R Services as a multi-instance service, similar to how the relational database engine and other features are installed in SQL Server.
 
 ### Prerequisites
 
-**.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link in case you need to install it prior to R Server. A computer restart is required after the .NET Framework is installed.
++ **.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link in case you need to install it prior to R Server. A computer restart is required after the .NET Framework is installed.
 
-You must accept the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
++ You must accept the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
-You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup installs R Open for you, but it is also downloadable from the [MRAN web site](https://mran.microsoft.com/).
++ You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup installs R Open for you, but it is also downloadable from the [MRAN web site](https://mran.microsoft.com/).
 
 The following additional components are installed by Setup.
 
@@ -74,13 +74,14 @@ The following additional components are installed by Setup.
 
 You can download the installation program from the following locations:
 
-- Through your existing MSDN subscription.
-- (pending) [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
-- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
++ Through your existing MSDN subscription.
++ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
+
+> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server on Windows is pending. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
 
 ### Run Setup
 
@@ -95,7 +96,7 @@ Once R Server is installed, you can connect to R Server and run ScaleR functions
 **Local Connections**
 
 * Go to C:\Program Files\Microsoft\R Client\R_SERVER\bin
-* Double-click R.exe 
+* Double-click R.exe
 
 **Remote Connections**
 
@@ -108,9 +109,10 @@ Sample data is include in R Server installations:
 
 ## Install earlier versions of R Server for Windows
 
- Version 8.0.5 of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing and installation of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server Standalone](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016.
-
- Version 8.0 has a different installation program. For more information and instructions, see [Install Revolution R Enterprise 2016 (version 8.0) for Windows](rserver-install-windows-800.md).
+| Version | Details|
+|---------|--------|
+| Version 8.0.5 of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing and installation of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. <br/><br/> For more information, see [R Server Standalone](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016.|
+| Version 8.0 | This version has a different installation program. <br/><br/>For more information and instructions, see [Install Revolution R Enterprise 2016 (version 8.0) for Windows](rserver-install-windows-800.md).|
 
 ## See Also
 
