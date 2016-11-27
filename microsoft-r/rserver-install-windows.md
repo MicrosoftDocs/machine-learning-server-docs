@@ -33,10 +33,10 @@ R Server offers feature parity across platforms. Whether you use Windows, Linux,
 Installation of R Server provides the following components:
 
 * [**R Open**](r-open.md), Microsoft's distribution of R.
-* [**ScaleR (RevoScaleR)**](scaler/scaler.md), a proprietary package with functions that enable data chunking and distributed, parallel workloads.
-* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a proprietary collection of functions used for machine learning at scale.
-* [**Operationalization features**](operationalize/about.md) that add deployment capabilities, enabled in part through the [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
-* [**All other packages listed in Package Reference**](package-reference.md).
+* [**ScaleR (RevoScaleR)**](scaler/scaler.md), a proprietary package with functions that enable data chunking and distributed, parallel workloads on single or clustered installations.
+* [**Microsoft Machine Learning (MML package)**](microsoftml-introduction.md), a proprietary collection of functions used for machine learning at scale in R code or script.
+* [**Operationalization features**](operationalize/about.md) that add deployment capabilities, enabled in part through the new [**mrsdeploy package**](mrsdeploy/mrsdeploy.md).
+* [**Other packages listed in Package Reference**](package-reference.md).
 
 For information about the latest features, see [What's New in R Server](rserver-whats-new.md).
 
@@ -44,7 +44,9 @@ For information about the latest features, see [What's New in R Server](rserver-
 
 R Server is commercial-grade software designed to run workloads that you have created and tested on a workstation that has **Microsoft R Client** and development tools such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications that can consume R packages.
 
-R Client is a scaled down, free execution engine for Microsoft R features that includes function libraries and operationalization features. It's suitable for development and smaller workloads that run in memory using a maximum of two processors. R Client is typically used in conjunction with development applications like RTVS to create and tune R solutions locally, prior to deployment on a commercial server platform like R Server for Windows. For more information about workstation setup and features, see [R Client](r-client.md).
+R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
+
+R Client is a scaled down, free execution engine for Microsoft R features that includes function libraries and operationalization features. It's suitable for development and smaller workloads that fit in memory, using a maximum of two processors. R Client is typically used in conjunction with development applications like RTVS to create and tune R solutions locally, prior to deployment on a commercial server platform like R Server for Windows. For more information about workstation setup and features, see [R Client](r-client.md).
 
 Solutions developed locally on workstation can be published to remote R Server instances offering performance and scale. Existing solutions can be deployed as-is, modified to accommodate large data sets, or reconfigured to use a specific compute context. In this release, the [mrsdeploy package](mrsdeploy/mrsdeploy.md) give you the ability to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate the changes incrementally.
 
@@ -85,13 +87,13 @@ You can download the installation program from the following locations:
 
 ### Run Setup
 
-The installation wizard of the standalone server installer checks for prerequisites and gives you the option of choosing a different program directory. When you complete the wizard, Setup installs additional software required for operations.
+RServerSetup.exe provides an installation wizard of the standalone server. The installer checks for prerequisites, prompts for acceptance of user agreements, and gives you the option of choosing a different program directory. When you complete the wizard, setup installs R Server, plus additional software (noted in the prerequisites) required for operations.
 
-Log files (RClientSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
+Post-installation, you can review log files. Log files (RServerSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
 
 ### Connect to R Server
 
-Once R Server is installed, you can connect to R Server and run ScaleR functions to valid the connection.
+After R Server is installed, you can connect to and run a few ScaleR functions to validate the installation.
 
 **Local Connections**
 
@@ -111,7 +113,7 @@ Sample data is include in R Server installations:
 
 | Version | Details|
 |---------|--------|
-| Version 8.0.5 of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing and installation of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. <br/><br/> For more information, see [R Server Standalone](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016.|
+| Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing and installation of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. <br/><br/> For more information, see [R Server Standalone](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016.|
 | Version 8.0 | This version has a different installation program. <br/><br/>For more information and instructions, see [Install Revolution R Enterprise 2016 (version 8.0) for Windows](rserver-install-windows-800.md).|
 
 ## See Also

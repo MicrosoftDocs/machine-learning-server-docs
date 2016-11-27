@@ -69,7 +69,7 @@ No separate installation is required for operationalization functionality. It is
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server on Linux](rserver-install-linux-server.md).
 
-<a name="bkmk_Spark></a>"
+<a name="bkmk_Spark"></a>
 **R Server for Hadoop (MapReduce and Spark)**
 
 + Support for Spark 2.0, in addition to Spark 1.5-1.6.
