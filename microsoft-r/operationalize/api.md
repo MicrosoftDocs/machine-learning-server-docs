@@ -39,6 +39,8 @@ As an application developer integrating with these web services, typically your 
 
 Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
+To simplify the integration of R analytics web services using these APIs, you can build and use [an API client library stub](#swagger).
+
 <br>
 
 ## Core Operationalization APIs
@@ -60,7 +62,7 @@ All operationalization API calls must be authenticated using the `POST /login` A
 Once your use the `POST /login` API, you'll get the [bearer token](security-access-tokens.md). 
 This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more](security-access-tokens.md).
 
->For the full documentation for each session API, check out [this section of the API Reference help](?tags=User).
+>For the full documentation for each session API, check out [@@this section of the API Reference help](?tags=User).
 >
 >[Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
 
@@ -76,13 +78,11 @@ This bearer token is a lightweight security token that grants the “bearer” a
 <a name="services"></a>
 ### Web Services APIs
 
-@@Small intro para
-
 These are the APIs around publishing and management of Web services. For more information on these Web services, @@CHECKOUT THE VIGNETTE.
 
 Whenever a service is published (`POST /services/{name}/{version}`), an endpoint is registered (`/api/{name}/{version}`), which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file. [Learn more about consuming web services](service-integration.md#consume).
 
->For the full documentation for each web service API, check out [this section](?tags=Services) of the API Reference help.
+>For the full documentation for each web service API, check out [@@this section](?tags=Services) of the API Reference help.
 
 |Web Services API|Description|
 |----|-----------|
@@ -108,9 +108,9 @@ The session APIs can be divided into the following groups:
 + Session working directory APIs help manage the files in your workspace.
 + Session snapshot APIs help create and manage session snapshots.
 
->For the full documentation for each session API, check out [this section](?tags=Services) of the API Reference help.
+>For the full documentation for each session API, check out [@@this section](?tags=Services) of the API Reference help.
 
->@@ADD link to vignette @@How do we introduce vignette here.
+>@@ADD link to vignette 
 
 
 <table>
@@ -256,7 +256,7 @@ Snapshots can be used for and by both sessions and web service APIs. You can cre
 These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
 
->For the full documentation for each snapshot API, check out [this section](?tags=Snapshots) of the API Reference help.
+>For the full documentation for each snapshot API, check out [@@this section](?tags=Snapshots) of the API Reference help.
 
 
 |Snapshot APIs|Description|
@@ -271,6 +271,10 @@ These APIs allow you to create and manage session snapshots. There are additiona
 
 <a name="status"></a>
 ### Status API
+
+You can retrieve the 'raw details' on the health of the system.
+
+>For the full documentation for the status API, check out [@@this section](?tags=Status) of the API Reference help.
 
 |Status API|Description|
 |----|-----------|

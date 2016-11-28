@@ -44,7 +44,7 @@ The pool starts in initial size and grows until max size if there are more reque
  
 In addition to the one-box configuration, you can also install multiple components on multiple machines, which is referred to as an  **enterprise** configuration. 
 
->![Important!]
+>![Important]
 >The operationalization feature for Microsoft R Server is supported on:
 >- Windows Server 2012, Windows Werver 2016
 >- Ubuntu 14.04, Ubuntu 16.04, 
@@ -63,7 +63,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 **To configure on a single machine:**
 
->![Important!]
+>![Important]
 >The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
 1. On each machine, install Microsoft R Server:
@@ -137,7 +137,7 @@ Additionally, when you have multiple web nodes, you must set up a [remote SQL Se
  
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
->![Important!]
+>![Important]
 >The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
 **Step 1: Configure Web Node(s)**

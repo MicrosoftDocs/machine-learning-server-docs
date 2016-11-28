@@ -100,7 +100,7 @@ This section walks you through the steps for securing the connections between th
 
 <br />
 
-## Encrypt Communication between the web node and Compute Node
+## Encrypt Communication between the Web Node and Compute Node
 
 This section walks you through the steps for encrypting the traffic between the web node and each of its compute nodes. 
 
@@ -117,7 +117,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
 1. Launch IIS and follow the [instructions above](#iis).
 
-#### Using your Default .ASP Core web Server to Encrypt
+#### Using your Default .ASP Core Web Server to Encrypt
 
 1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
    > Make sure the name of the certificate matches the domain name of the compute node URL. 
@@ -151,7 +151,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 <br />
 
-## Authenticate the Web node with the Compute Node
+## Authenticate the Web Node with the Compute Node
 
 This section walks you through the steps for authenticating the web node with the compute node so that only the web node can communicate with the compute node.
 

@@ -67,7 +67,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
-**On each Web node, do the following:**
+**On each web node, do the following:**
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
