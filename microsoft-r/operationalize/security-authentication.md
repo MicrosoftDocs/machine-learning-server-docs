@@ -119,19 +119,82 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 ## Azure Active Directory 
 
-[Azure Active Directory (AD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
+[Azure Active Directory (AAD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
-**On each Web node, do the following:**
+**In the Azure Classic Portal, do the following:**
 
-1. [Log into](https://azure.microsoft.com/en-us/features/azure-portal/) portal and [register](https://azure.microsoft.com/en-us/documentation/articles/sql-database-client-id-keys/) a new web application.   
+1. Log on to the [Azure portal](https://portal.azure.com/), and navigate to your application. Copy the URL in your browser address bar. You will use this to configure your Azure Active Directory app.
 
-    1. Once the new application has been created, click **CONFIGURE**.
+1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and navigate to **Active Directory** in the left hand pane.
 
-    1. Take note of the value for the  `CLIENT ID` on the page. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...`
+1. Select your directory. If the Azure Active Directory has not been set up yet, contact your system administrator.  
 
-1. Enable Azure AD in the external JSON configuration file:
+1. Select the **Applications** tab at the top. 
 
-    1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+1. Now, create a web app that will be tied to the Azure Active Directory as follows: 
+
+   1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
+ 
+   1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
+
+   1. In the wizard, enter a **Name** for your application, such as `rserver_web`.
+
+   1. For the **Type**, click the **Web Application And/Or Web API**. 
+
+   1. Click the arrow to continue.
+
+   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier or something like `http://localhost:12800`. Then, enter that same URL in the **App ID URI** box. 
+
+   1. Click the checkmark to continue and add the application.
+
+   1. Once the application has been added, click the **Configure** tab. 
+
+   1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
+
+   1. Add a key by selecting a key duration.
+
+   1. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...` 
+
+   1. Click **Save**. The application is created.
+
+1. Now, create a native app, which will link the web app to the Microsoft R Server operationalization server as follows:
+
+   1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
+
+   1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
+
+   1. In the wizard, enter a **Name** for your native application, such as `rserver_native`.
+
+   1. For the **Type**, click the **Native Client Application**. 
+
+   1. Click the arrow to continue.
+
+   1. In the **Application Information** dialog, enter `urn:ietf:wg:oauth:2.0:oob` for the **Redirect URI**.
+
+   1. Click the checkmark to continue and add the application.
+
+   1. Once the application has been added, click the **Configure** tab. 
+
+   1. Copy the **Client ID** for the native app. You will use it when enabling AAD in Microsoft R Server in a later step.
+
+   1. Scroll down and click **Add Application** button. A dialog opens in which you can define which apps will have access to the native app.
+
+   1. In the **Permissions to other applications** dialog, enter the name of the web app you created above in the **Starting With** field.
+
+   1. Click the checkmark next to this field to filter the list of apps using the string you entered.
+
+   1. In the list, click the + symbol next to the name of the web app.
+
+   1. Click the checkmark in the bottom right to give the native app permissions to the web application.
+
+   1. Add **Delegated Permissions** to the web app.
+     ![Delegated Permissions](../media/o16n/aad-delegated-permissions.png)
+
+   1. Click **Save**. 
+
+**On each Web node, enable Azure AD by doing the following:**
+
+1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
     1. Search for the section starting with `"AzureActiveDirectory": {`
 
@@ -139,11 +202,30 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
        |Azure AD Properties|Definition|
        |----------------|-------------------------------|
-       |`Authority`|Use `https://login.windows.net/<ID>.onmicrosoft.com` where `<ID>` is the tenant ID value you copied from the Azure management portal.|
-       |`Audience`|Use the `CLIENT ID` value you copied from the Azure management portal.|
+       |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login.|
+       |`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
    1. [Restart the Web node](admin-utility.md#startstop).
    1. Run the [diagnostic tests](admin-utility.md#test).
 
 1. Repeat these steps on each  machine hosting the Web node.
+
+
+**When authenticating with the `mrsdeploy` package, do the following:**
+
+To authenticate with Azure Active Directory from your R script using the  `mrsdeploy` package, use the `remoteLoginAAD` function.
+
+```
+remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
+                   authuri = "https://login.windows.net",
+                   tenantid = "<AAD_DOMAIN>", #domain of AAD account
+                   clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
+                   resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
+                   session = TRUE,
+                   diff=TRUE,
+                   commandline=TRUE,
+                   prompt = "MY-PROMPT> ")  #the remote R session prompt once authenticated 
+```
+
+You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
