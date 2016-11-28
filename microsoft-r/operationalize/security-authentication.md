@@ -143,7 +143,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Click the arrow to continue.
 
-   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier or something like `http://localhost:12800`. Then, enter that same URL in the **App ID URI** box. 
+   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use `http://localhost:12800`. Then, enter that same URL in the **App ID URI** box. 
 
    1. Click the checkmark to continue and add the application.
 
