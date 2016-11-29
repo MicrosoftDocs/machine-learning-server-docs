@@ -29,9 +29,9 @@ ms.custom: ""
 **Applies to:  Microsoft R Server 9.0.1**
 
 ## Introduction
-The core Microsoft R Server [operationalization APIs](https://microsoft.github.io/deployr-api-docs/) expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This REST API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
+The core Microsoft R Server [operationalization APIs](https://microsoft.github.io/deployr-api-docs/9.0.1/) expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This REST API is exposed by the R Server's operationalization server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments. With this server, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
-><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs)</big>
+><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs/9.0.1/)</big>
 
 While data scientists can work with R directly in an R console window or R IDE, application developers need a different set of tools to leverage R inside applications. The API exposes Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
@@ -59,10 +59,10 @@ These REST APIs are described in a [Swagger-based JSON document](#swagger) deliv
 
 All operationalization API calls must be authenticated using the `POST /login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). 
 
-Once your use the `POST /login` API, you'll get the [bearer token](security-access-tokens.md). 
+Once your use the `POST /login` API, you'll get the [bearer/access token](security-access-tokens.md). 
 This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more](security-access-tokens.md).
 
->For the full documentation for each session API, check out [@@this section of the API Reference help](?tags=User).
+>For the full documentation for each session API, check out [this section of the API Reference help](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#authentication-apis).
 >
 >[Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
 
@@ -82,7 +82,7 @@ These are the APIs around publishing and management of Web services. For more in
 
 Whenever a service is published (`POST /services/{name}/{version}`), an endpoint is registered (`/api/{name}/{version}`), which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file. [Learn more about consuming web services](service-integration.md#consume).
 
->For the full documentation for each web service API, check out [@@this section](?tags=Services) of the API Reference help.
+>For the full documentation for each web service API, check out [this section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#services-management-apis) of the API Reference help.
 
 |Web Services API|Description|
 |----|-----------|
@@ -108,7 +108,7 @@ The session APIs can be divided into the following groups:
 + Session working directory APIs help manage the files in your workspace.
 + Session snapshot APIs help create and manage session snapshots.
 
->For the full documentation for each session API, check out [@@this section](?tags=Services) of the API Reference help.
+>For the full documentation for each session API, check out [this section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#session-apis) of the API Reference help.
 
 >@@ADD link to vignette 
 
@@ -256,7 +256,7 @@ Snapshots can be used for and by both sessions and web service APIs. You can cre
 These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
 
->For the full documentation for each snapshot API, check out [@@this section](?tags=Snapshots) of the API Reference help.
+>For the full documentation for each snapshot API, check out [this section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#snapshot-apis) of the API Reference help.
 
 
 |Snapshot APIs|Description|
@@ -274,7 +274,7 @@ These APIs allow you to create and manage session snapshots. There are additiona
 
 You can retrieve the 'raw details' on the health of the system.
 
->For the full documentation for the status API, check out [@@this section](?tags=Status) of the API Reference help.
+>For the full documentation for the status API, check out [this section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#status-apis) of the API Reference help.
 
 |Status API|Description|
 |----|-----------|
@@ -293,7 +293,7 @@ Using a Swagger code generation tool such as  [Azure AutoRest](https://github.co
 
 **To build your client libraries:**
 
-1. Download@@ the Swagger-based JSON file, `swagger.json`, containing the definitions for the core operationalization APIs. 
+1. Download the Swagger-based JSON file, `rserver-swagger-9.0.1.json`, containing the definitions for the core operationalization APIs. This file can be found on the [main API documentation page](https://microsoft.github.io/deployr-api-docs/9.0.1).
 
 1. Install a Swagger code generator such as [Azure autorest](https://github.com/Azure/autorest).
 
