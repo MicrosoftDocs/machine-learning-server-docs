@@ -86,7 +86,7 @@
 
 ### [R Package Management](operationalize/package-management.md)
 
-### [API Oveview](operationalize/api.md)
+### [API Overview](operationalize/api.md)
 
 ### [Placeholder: Deploy Analytics as Web Services](operationalize/service-management.md)
 ### [Placeholder: Integrate and Consume Web Services](operationalize/service-integration.md)
