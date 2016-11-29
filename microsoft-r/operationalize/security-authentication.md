@@ -127,8 +127,6 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 [Azure Active Directory (AAD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
-<br>
-
 **In the Azure Classic Portal, do the following:**
 
 1. Log on to the [Azure portal](https://portal.azure.com/), and navigate to your application. Copy the URL in your browser address bar. You will use this to configure your Azure Active Directory app.
