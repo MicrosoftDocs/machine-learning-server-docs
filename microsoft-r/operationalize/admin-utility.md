@@ -112,7 +112,7 @@ For security purposes, we strongly recommend that you encrypt the connection str
 
 1. From the main menu, choose the option **Encrypt Credentials**.
 
-1. Specify where is the encryption certificate installed? 
+1. Specify where is the encryption certificate installed: 
    + Local machine (Computer account)
    + Current user (My user account)
 

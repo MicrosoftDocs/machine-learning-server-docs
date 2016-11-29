@@ -53,18 +53,7 @@ API bearer tokens can be generated in one of two ways:
 
 [Learn more about authentication methods for operationalization...](security-authentication.md)
 
-This bearer token is valid for up to 90 days with an active `access_token` and `refresh_token`. After 90 days, the user will be forced to authenticate again and a new bearer token will be issued.  Note that the bearer token's `access_token` does expires after 1 hour of inactivity. It can easily be renewed using the `refresh_token`. This `refresh_token` also expires after inactivity (336 hrs/14 days). 
-
-#### Bearer Token Lifecycle
-
-The bearer token's properties consist in an `access_token` / `refresh_token` pair and expiration dates.
-
-|Properties|"access_token"|"refresh_token"|
-|---|----|-----|
-|**Gets<br>Created**|When bearer token is created|When bearer token is created, or<br><br>When the `access_token` is used|
-|**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If bearer token older than 90 days, or<br><br>If `refresh_token` is expired, or<br><br>If user's password changed, or<br><br>If bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When `access_token` expires, or<br><br>After `access_token` is used (replaced by another)<br> <br> <br>|
-
+The bearer token's properties consist in an `access_token` / `refresh_token` pair and expiration dates. Learn more about its lifecycle and expiration dates below.
 
 #### Example: Token creation request 
 
@@ -87,6 +76,18 @@ The bearer token's properties consist in an `access_token` / `refresh_token` pai
     "refresh_token":"0/LTo...."
   }
   ```
+
+<br>
+
+## Bearer Token Lifecycle
+
+The bearer token is made of an `access_token` property and  a `refresh_token` property.
+
+|Properties|The "access_token" Lifecycle|The "refresh_token" Lifecycle|
+|---|----|-----|
+|**Gets<br>Created**|Whenever the bearer token is created|Whenever the bearer token is created, or<br><br>After an `access_token` is used|
+|**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
+|**Becomes<br>Invalid**|If the bearer token is older than 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When it expires, or<br><br>After `access_token` is used (replaced by another)<br> <br> <br>|
 
 <br>
 
@@ -125,7 +126,7 @@ When the API call is sent with the token, R Server will attempt to validate that
 
 ## Token Renewal
 
-A valid bearer token keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  Each time an active bearer token is used, the `refresh_token` is replaced and the new one gets another 336 hours (14 days) before it expires. 
+A valid bearer token (with valid `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  Each time an active bearer token is used, the `refresh_token` is replaced and the new one gets another 336 hours (14 days) before it expires. 
  
 However, after a one-hour period of inactivity, the `access_token` will automatically expire. Fortunately, since each `access_token` has a `refresh_token`, you can renew the `access_token` on behalf of the user **if** the `refresh_token` has not yet expired. 
 
