@@ -1,15 +1,15 @@
-Use the administration utility to configure and manage operationalization for Microsoft R Server, including:
+You can configure the operationalization feature for Microsoft R Server using the administration utility. Use the utility to:
 
-+ [Configuring R Server for Operationalization](../../operationalize/configuration-initial.md)  front-ends and back-ends
++ [Configure R Server for Operationalization](../../operationalize/configuration-initial.md)  front-ends and back-ends
 
-+ [Setting a password](../../operationalize/admin-utility.md#admin-password)  for the local administrator password
++ [Set a local admin password](../../operationalize/admin-utility.md#admin-password)  
 
 + [Stop and restart](../../operationalize/admin-utility.md#startstop)  front-ends and back-end services
 
 + [Update the service ports](../../operationalize/admin-utility.md#ports)
 
-+ [Run diagnostic tests](../../operationalize/admin-utility.md#test)  on the system
++ [Run diagnostic tests](../../operationalize/admin-utility.md#test)
 
 + [Encrypt credentials](../../operationalize/admin-utility.md#encrypt)
 
-+ [Evaluate the capacity](../../operationalize/admin-utility.md#capacity)  of the configuration
++ [Evaluate the configuration's capacity](../../operationalize/admin-utility.md#capacity)

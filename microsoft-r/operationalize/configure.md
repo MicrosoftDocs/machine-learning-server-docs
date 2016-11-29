@@ -25,25 +25,25 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure and Administer
+# Operationalization: Configuration and Administration
 
 Once R Server has been installed, you can configure the operationalization feature. 
 
-#### Configuration
+### Configuration
 
 There are two ways to configure R Server for operationalization: 
 + [One-box configuration](configuration-initial.md#onebox)
 + [Enterprise configuration](configuration-initial.md#enterprise)
 
-Also, learn how to [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
+In enterprise configurations, you can also [configure a remote database](configure-remote-database.md) (SQL Server or PostgreSQL) in place of the default SQLite database. 
 
->![Important]
+>[!Important]
 >The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
-#### Enhanced Security
+### Enhanced Security
 
 [!include[Security Introduction](../includes/o16n/security-intro.md)]
 
-#### Administration
+### Administration
 
 [!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]
