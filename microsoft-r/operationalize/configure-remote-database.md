@@ -49,7 +49,7 @@ The supported databases are:
 
     1. Open the `appsettings.json` file, which is the external configuration file. 
     
-       You can find that file under <MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json where `<MRS_home>` is the path to the Microsoft R Server install directory. 
+       You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json where `<MRS_home>` is the path to the Microsoft R Server install directory. 
        
        To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -84,6 +84,6 @@ The supported databases are:
          
 1. Launch the administrator's utility and:
 
-   1. [Restart the web node](admin-utility.md#startstop). The database is created for you when you restart.
+   1. [Restart the web node](admin-utility.md#startstop) and the database is created upon restart.
 
    1. [Run the diagnostic tests](admin-utility.md#test) to ensure the connection can be made to your new database.

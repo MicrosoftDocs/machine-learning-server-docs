@@ -32,9 +32,9 @@ R Server's offers seamless integration with authentication solutions for operati
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
 |[Local `admin` account](#local)|Use with [one-box](configuration-initial.md) configurations|
-|[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations|
-|[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-initial.md) _on-premise_ configurations with SSL/TLS enabled|
-|[Azure Active Directory](#aad)|Use with [enterprise](configuration-initial.md) _cloud_ configurations|
+|[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-initial.md), _on-premise_ configurations|
+|[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-initial.md), _on-premise_ configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|Use with [enterprise](configuration-initial.md), _cloud_ configurations|
 
 <br>
 
@@ -46,7 +46,7 @@ R Server's offers seamless integration with authentication solutions for operati
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `admin` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) when everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default `admin` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -71,7 +71,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
-   1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+   1. Open the `appsettings.json` configuration file.
+      
+      You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\ where `<MRS_home>` is the path to the Microsoft R Server install directory. 
+       
+      To find this path, enter `normalizePath(R.home())` in your R console.
    
    1. Search for the section starting with `"LDAP": {`
 
@@ -92,6 +96,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >This is particularly useful when you have multiple Web nodes and want the tokens to be signed consistently by every Web node in your configuration. 
    >
    >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the Web node and the LDAP server.
+   >
+   >Tokens are particularly useful to the application develop who can use them to identify and authenticate the user who is sending the API call within his or her application. [Learn more...](security-access-tokens.md)
     
    1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
@@ -107,11 +113,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
        ```
 
 1. Launch the administrator's utility and:
-   1. [Restart the Web node](admin-utility.md#startstop).
+   1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-utility.md#test).
+   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
 
-1. Repeat these steps on each  machine hosting the Web node.
+1. Repeat these steps on each machine hosting the web node.
 
 <br>
 
@@ -194,27 +200,32 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each Web node, enable Azure AD by doing the following:**
 
-1. Open the configuration file, `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+1. Open the `appsettings.json` configuration file.
+      
+You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\ where `<MRS_home>` is the path to the Microsoft R Server install directory. 
+       
+To find this path, enter `normalizePath(R.home())` in your R console.
 
-    1. Search for the section starting with `"AzureActiveDirectory": {`
+1. Search for the section starting with `"AzureActiveDirectory": {`
 
-    1. Uncomment characters in that section and update the properties so that they match the values in the Azure Management portal.  Properties include:
+1. Uncomment characters in that section and update the properties so that they match the values in the Azure Management portal.  Properties include:
 
-       |Azure AD Properties|Definition|
-       |----------------|-------------------------------|
-       |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login.|
-       |`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
+|Azure AD Properties|Definition|
+|----------------|-------------------------------|
+|`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login.|
+|`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
-   1. [Restart the Web node](admin-utility.md#startstop).
-   1. Run the [diagnostic tests](admin-utility.md#test).
+   1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
+ 
+   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
 
-1. Repeat these steps on each  machine hosting the Web node.
+1. Repeat these steps on each machine hosting the web node.
 
 
 **When authenticating with the `mrsdeploy` package, do the following:**
 
-To authenticate with Azure Active Directory from your R script using the  `mrsdeploy` package, use the `remoteLoginAAD` function.
+To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../mrsdeploy/mrsdeploy.md).
 
 ```
 remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application

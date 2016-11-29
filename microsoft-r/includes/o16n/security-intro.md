@@ -1,5 +1,5 @@
 You can add greater enterprise security around Microsoft R Server's operationalization feature such as:
-+ Seamless integrations with Active Directory LDAP/LDAP-Security or Azure Active Directory [authentication](../../operationalize/security-authentication.md) options.
++ Seamless integrations with Active Directory LDAP/LDAP-Security or Azure Active Directory [authentication](../../operationalize/security-authentication.md).
 
 + Secured connections using [HTTPS](../../operationalize/security-https.md). For security reasons, we strongly recommend that HTTPS be enabled in **all production environments.** 
 
