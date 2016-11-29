@@ -33,6 +33,8 @@ CORS can be enabled or disabled in the external configuration file, `appsettings
 
 **To enable CORS support:**
 
+@@Web or Compute Node??
+
 1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 1. Enable CORS in the `"CORS": {` section of the  `appsettings.json` file:
@@ -40,11 +42,9 @@ CORS can be enabled or disabled in the external configuration file, `appsettings
 
    1. Enter a comma-separated list of allowed `"Origins"` for your policy.  In this example, the policy allows cross-origin requests from “http://www.contoso.com”, “http://www.microsoft.com”, and no other origins.
    ```
-   {
-     "CORS": {
-       "Enabled": true,
-       "Origins": [“http://www.contoso.com”, “http://www.microsoft.com”]
-     }
+   "CORS": {
+      "Enabled": true,
+      "Origins": [“http://www.contoso.com”, “http://www.microsoft.com”]
    }
    ```
 3. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).

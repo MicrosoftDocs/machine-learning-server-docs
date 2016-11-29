@@ -80,7 +80,7 @@
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 ##### [RServe Considerations](operationalize/security-rserve.md)
-##### [Authorization Bearer Tokens](operationalize/security-access-tokens.md)
+##### [Bearer Token Management](operationalize/security-access-tokens.md)
 
 #### [Administration](operationalize/admin-utility.md)
 

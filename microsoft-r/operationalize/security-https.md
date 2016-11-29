@@ -91,29 +91,28 @@ This section walks you through the steps for securing the connections between th
        
    To find this path, enter `normalizePath(R.home())` in your R console.
 
-   1. In that file, search for the section starting with `"Kestrel": {` .
+1. In that file, search for the section starting with `"Kestrel": {` .
 
-   1. Update and add properties in the `Kestrel` section to match the values for the API certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
-      ```
-      {
-          "Kestrel": {
-              "Port": <https-port-number>,
-              "HttpsEnabled": true,
-              "HttpsCertificate": {
-                  "StoreName": "My",        
-                  "StoreLocation": "LocalMachine",
-                  "SubjectName": "CN=<certificate-subject-name>"
-              }
-          },
-      ```
+1. Update and add properties in the `Kestrel` section to match the values for the API certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
+   ```
+   {
+       "Kestrel": {
+           "Port": <https-port-number>,
+           "HttpsEnabled": true,
+           "HttpsCertificate": {
+               "StoreName": "My",        
+               "StoreLocation": "LocalMachine",
+               "SubjectName": "CN=<certificate-subject-name>"
+           }
+       },
+   ```
 
-   1. Close and save the file.
+1. Close and save the file.
 
-1. Launch the utility script with administrator privileges and:
+1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-   1. [Restart the web node](admin-utility.md#startstop).
+1. In the same utility, run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
-   1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
 <br />
 
@@ -167,9 +166,10 @@ When encrypting, you have the choice of using one of the following **compute nod
       ```
 
    1. Close and save the file.
-1. Launch the administrator's utility and:
-   1. [Restart the compute node](admin-utility.md#startstop).
-   1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
+
+1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+
+1. In the same utility, run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
 
 <br>
