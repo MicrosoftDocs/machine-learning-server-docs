@@ -218,6 +218,8 @@ The session APIs can be divided into the following groups:
     <a name="user-content-sessionsnapshots"></a>
     <br></p>
 
+Note: Other snapshot APIs are covered in the section below.
+
 <table>
     <thead>
         <tr>
@@ -242,11 +244,18 @@ The session APIs can be divided into the following groups:
 <a name="snapshots"></a>
 ### Snapshot APIs
 
-You can prolong the lifespan of a session by saving the session's workspace and working directory into a **snapshot**. A snapshot includes:
+
+If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a remote R session saved to Microsoft R Server, which includes:
 + The session's workspace along with the installed R packages
 + Any files and artifacts in the working directory
 
-You can then retrieve this snapshot later using its ID to access the session contents exactly as they were at the time the snapshot was created.
+A snapshot can be loaded into any subsequent remote R session for the user who created it.  For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.   Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. 
+
+Snapshots are only accessible to the user that creates them and cannot be shared across users.
+
+The following functions are available for working with snapshots:  
+`listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
+
 
 Snapshots can be used for and by both sessions and web service APIs. You can create a snapshot to freeze a session in time and then use it when consuming a web service.
 

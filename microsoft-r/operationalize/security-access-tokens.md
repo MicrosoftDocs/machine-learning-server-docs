@@ -82,11 +82,11 @@ Tokens can be generated in one of two ways:
 
 The bearer token is made of an `access_token` property and  a `refresh_token` property.
 
-|P |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
+| |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the user logs in|Whenever the user logs in, or<br><br>After an `access_token` has been used|
+|**Gets<br>Created**|Whenever the user logs in|Whenever the user logs in, or<br><br>After a `access_token`/`refresh_token` pair is used|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the bearer token is older than 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When it expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
+|**Becomes<br>Invalid**|If the token usage/renewal cycle exceeds 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
 
 <br>
 
@@ -125,10 +125,7 @@ When the API call is sent with the token, R Server will attempt to validate that
 
 A valid bearer token (with active `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
 
- 
-However, after a one-hour period of inactivity, the `access_token` will automatically expire. Fortunately, since each `access_token` has a `refresh_token`, you can renew the `access_token` on behalf of the user **if** the `refresh_token` has not yet expired. 
-
-The `access_token` can be used for as long as it’s active, which is for one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days). Each time an active `access_token` is used, the `refresh_token` is replaced with new `refresh_token`.  Once the `access_token` expires, an active `refresh_token` is used to get a new `access_token` / `refresh_token` pair as shown in the example below. If the `refresh_token` expires, the tokens cannot be renewed and the user will have to log in again.  This cycle can continue for up to 90 days after which the user will need to log in again. 
+The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days). Each time an active `access_token` is used, the `refresh_token` is replaced with new `refresh_token`.  Once the `access_token` expires, an active `refresh_token` is used to get a new `access_token` / `refresh_token` pair as shown in the example below. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  This cycle can continue for up to 90 days after which the user must log in again. 
 
 Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#refresh-user-access-token)  to refresh a token. 
 

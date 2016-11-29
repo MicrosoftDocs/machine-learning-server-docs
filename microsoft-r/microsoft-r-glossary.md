@@ -6,7 +6,7 @@ description: "DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "08/04/2016"
+ms.date: "11/29/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,11 +32,11 @@ ms.custom: ""
 <hr>
 
 
-<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;H &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;U &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
+<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
 
 <hr>
 
->Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below. 
+>Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below.
 >
 >For general R language terminology, check out CRAN's [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 >
@@ -62,7 +62,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> C </b></big>
 
 **Compute Context**
-<div style="margin:15px; margin-bottom:25px;">A feature in RevoScaleR that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows).</div>
+<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scalerd.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 
 
@@ -102,16 +102,20 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
-
+-->
 <br>
 
 <a name="H"></a>
 <hr>
 <big><b> H </b></big>
 
-**Term**
+<a name="hpa"></a>**High-performance analytics (HPA)**
+<div style="margin:15px; margin-bottom:25px;">Refers to functions such as rxLinMod and other RevoScaleR analytics functions, that typically require less processing on a given chunk of data, but focus on efficiently feeding data to the cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md" target=_blank>Learn more…</a></div>
 
+<a name="hpc"></a>**High-performance computing (HPC)**
+<div style="margin:15px; margin-bottom:25px;">Mechanisms such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. They are optimized to share tasks among the various computing resources, but can be slowed if large amounts of data need to be transferred.</div>
 
+<!--
 <br>
 
 <a name="I"></a>
@@ -250,16 +254,17 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
-
+-->
 <br>
 
 <a name="U"></a>
 <hr>
 <big><b> U </b></big>
 
-**Term**
+<a name="updatingalgorithm"></a>**Updating algorithm**
+<div style="margin:15px; margin-bottom:25px;">An algorithm that takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: given three chunks of data and corresponding sums, an updating sum algorithm would incorporate each additional sum into a revised value until you arrive at the cumulative sum. Updating algorithms are used in ScaleR.</div>
 
-
+<!--
 <br>
 
 <a name="V"></a>
@@ -279,7 +284,6 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 -->
-
 <br>
 
 <a name="X"></a>
