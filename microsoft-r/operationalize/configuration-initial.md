@@ -29,22 +29,15 @@ ms.custom: ""
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
-The simplest configuration for this feature involves a single web node and compute node, called a **one-box** configuration. These components are defined as follows:
+The simplest configuration for this feature, called a **one-box configuration**, involves a single web node and compute node:
 
-+ A **web node** acts as a HTTP REST endpoint with which users can interact directly to make API calls. It can also access data in the database, and send jobs to the compute node. 
++ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node can also access data in the database, and send jobs to the compute node. 
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
-The size is in the compute node configuration:  @@
-"Pool": {
-    "InitialSize": 5,
-    "MaxSize": 80
-  },
  
-The pool starts in initial size and grows until max size if there are more requests.
- 
-In addition to the one-box configuration, you can also install multiple components on multiple machines, which is referred to as an  **enterprise** configuration. 
+In addition to the one-box configuration, you can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**. 
 
->![Important]
+>[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
 >- Windows Server 2012, Windows Werver 2016
 >- Ubuntu 14.04, Ubuntu 16.04, 
@@ -63,7 +56,6 @@ This configuration is useful when you want to explore what it is to operationali
 
 **To configure on a single machine:**
 
->![Important]
 >The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
 1. On each machine, install Microsoft R Server:
@@ -137,7 +129,6 @@ Additionally, when you have multiple web nodes, you must set up a [remote SQL Se
  
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
->![Important]
 >The operationalization feature is supported on Windows Server 2012, Windows Werver 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
 **Step 1: Configure Web Node(s)**
@@ -225,7 +216,7 @@ In production environments, we strongly recommend the following approaches:
 
 By default, the web node configuration sets up a SQLite database. If you have multiple web nodes or simply want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL) so that data can be shared across web node services.
 
-**Step 5: Provisioning on the Cloud**
+**Step 5: Provision on the Cloud**
 
 If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
 
@@ -234,8 +225,11 @@ If provisioning on a cloud service, then you must also [create inbound security 
 Once all web nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each web node.
 
 1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
 1. In the file, search for the section starting with `"BackEndConfiguration": {` .
+
 1. Uncomment characters in that section.
+
 1. Update the `"Uris": {` properties to declare each backend:
    ```
     "Uris": {
@@ -249,6 +243,9 @@ Once all web nodes and compute nodes are configured, you must declare the IP add
     ```
 
 1. Close and save the file.
+
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+
 1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node. 
+
 1. Repeat these steps on each web node to declare all the backends.

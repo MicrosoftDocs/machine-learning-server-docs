@@ -73,7 +73,7 @@
 ## [Operationalize R Analytics (DeployR)](operationalize/about.md)
 ### [Compare Features: 9.0 / 8.0.5](operationalize/about-compare-to-8.0.5.md)
 ### [Configure & Administer](operationalize/configure.md)
-#### [Configuration](operationalize/configuration-initial.md)
+#### [Operationalization Configuration](operationalize/configuration-initial.md)
 #### [Remote Database Setup](operationalize/configure-remote-database.md)
 #### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
