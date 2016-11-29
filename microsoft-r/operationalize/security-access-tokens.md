@@ -83,11 +83,11 @@ The bearer token's properties consist in an `access_token` / `refresh_token` pai
 
 The bearer token is made of an `access_token` property and  a `refresh_token` property.
 
-|Properties|The "access_token" Lifecycle|The "refresh_token" Lifecycle|
+|P |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the bearer token is created|Whenever the bearer token is created, or<br><br>After an `access_token` is used|
+|**Gets<br>Created**|Whenever the bearer token is created|Whenever the bearer token is created, or<br><br>After an `access_token` has been used|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the bearer token is older than 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When it expires, or<br><br>After `access_token` is used (replaced by another)<br> <br> <br>|
+|**Becomes<br>Invalid**|If the bearer token is older than 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When it expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
 
 <br>
 
@@ -167,7 +167,7 @@ If the `refresh_token` itself has also expired, then the user's bearer token bec
 
 You can revoke a token if a user is no longer permitted to make requests on the API or if the token has been compromised.
 
-Use the API call `DELETE /login/refreshToken/{refreshToken} HTTP/1.1` to revoke a token.
+Use the API call `DELETE /login/refreshToken/{refreshToken} HTTP/1.1` to revoke a token. @@LINK TO SEANS DOC WHEN AVAILABLE
 
 #### Example: Revoke token
 

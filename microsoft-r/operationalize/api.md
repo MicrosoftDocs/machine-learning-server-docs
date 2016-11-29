@@ -295,8 +295,6 @@ Using a Swagger code generation tool such as  [Azure AutoRest](https://github.co
 
 1. Download@@ the Swagger-based JSON file, `swagger.json`, containing the definitions for the core operationalization APIs. 
 
-1. Install a Swagger code generator such as  [Azure autorest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen).
-
 1. Install a Swagger code generator such as [Azure autorest](https://github.com/Azure/autorest).
 
 1. Run the file through the code generator, and specify the language you want. 
