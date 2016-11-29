@@ -27,11 +27,11 @@ ms.custom: ""
 
 # Configure a Remote SQL Server or PostgreSQL Database
 
-During the configuration of operationalization for R Server, a local SQLite database is automatically installed and configured for you. Later, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for R Server installs and uses a local SQLite database by default. Later, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
 The supported databases are:
-+ SQL Server Professional, Standard, or Express Version 2008 or greater (Windows)
-+ PostgreSQL 9.2 or greater (Linux) 
++ On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater
++ On Linux: PostgreSQL 9.2 or greater 
 
 > [!Important]
 > Any data that was saved in the default SQLite database will be lost if you configure a remote database.
@@ -39,23 +39,24 @@ The supported databases are:
 <a name="sqlserver"></a>
 <a name="postgresql"></a>
 
-**To use a local or remote database instead of the default local SQLite database, do the following:**
+**To use a local or remote database, do the following:**
 
 > These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
 
-1.  On **each web node**, [stop the service](admin-utility.md#startstop).
+1.  **On each web node**, [stop the service](admin-utility.md#startstop).
 
 1.  Update the database properties to point to the new database as follows:
 
     1. Open the `appsettings.json` file, which is the external configuration file. 
     
-       You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+       You can find that file under <MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json where `<MRS_home>` is the path to the Microsoft R Server install directory. 
+       
+       To find this path, enter `normalizePath(R.home())` in your R console.
 
     1. Locate the `ConnectionStrings` property block.
 
-    1. Replace **the entire contents** of the `ConnectionStrings` block with these for your authentication method:
+    1. Replace **the entire contents** of this block with those for your authentication method:
 
-       > [!Important]
        > For security purposes, we recommend you [encrypt login credentials](admin-utility.md#encrypt) for this database before adding the information to this file.
 
        For SQL Server Database (Integrated Security), use:
@@ -79,10 +80,10 @@ The supported databases are:
         },   
         ```
 
-1. Open the database port on the remote machine to the public IP of each web node as described in these articles:
-   + [For SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)
-   + [For PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
+1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          
 1. Launch the administrator's utility and:
+
    1. [Restart the web node](admin-utility.md#startstop). The database is created for you when you restart.
-   1. [Run the diagnostic tests](admin-utility.md#test).
+
+   1. [Run the diagnostic tests](admin-utility.md#test) to ensure the connection can be made to your new database.
