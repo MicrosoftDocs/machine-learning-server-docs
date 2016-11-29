@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configure SSL for R Server's Operationalization (HTTPS)
+# Security: Configure SSL for R Server's Operationalization (HTTPS)
 
 >For security reasons, we strongly recommend that HTTPS be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.
 
@@ -229,5 +229,5 @@ This section walks you through the steps for authenticating the web node with th
     1. Close and save the file.
 
     1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
-    
+
     1. Repeat on each compute node.

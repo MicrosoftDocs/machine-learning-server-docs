@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Managing Tokens for API Requests
+# Security: Token Management for API Requests
 
 You can use tokens to identify and authenticate the user who is sending the API call within your application. When an un-authenticated user makes an API call, they will be required to provide their credentials. R Server will then issue a bearer token to your application for this user. 
 
