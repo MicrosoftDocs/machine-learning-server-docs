@@ -128,8 +128,8 @@ For security purposes, we strongly recommend that you encrypt the connection str
 
 ## Diagnostic Testing
 
-You can assess the state and health of your environment by running the diagnostic test in the Administrator Utility. 
-Armed with this information, you will be able to identifies unresponsive components, execution problems, and access the log files. 
+You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
+Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
 
 The set of diagnostic tests include:
 + A general health check of the configuration
@@ -153,6 +153,7 @@ The set of diagnostic tests include:
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
          + On the web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
          + On the compute node: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
+         
          where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
@@ -177,16 +178,12 @@ The set of diagnostic tests include:
 
 ## Evaluate Capacity
 
-To evaluate the load balancing capacity, you can simulates the traffic for the configuration or for a given web service. 
-
-### Simulation Tests
-There are two ways in which you can test:
+To evaluate the load balancing capacity, you can simulate the traffic for the configuration or for a given web service. There are two ways in which you can test:
 + **Maximum Latency:** Define a maximal threshold for the duration of a web node request as well as define the initial thread count and a thread increments for the test. Then, the test will increase the number of threads by the defined increment until the defined time limit is reached.
 
 + **Maximum Thread Count:** Define how many threads you want to run it against, such as 1, 10, 20, or 40. Then, see how much time is spent on each processing stage.
 
-### The Results
-This tool will let you know the maximum latency or number of parallel requests that can be supported. The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
+During the simulation, you'll be able to see the maximum latency or number of parallel requests that can be supported. The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
   1. **Web Node Request**: the time it took the request from the web node's controller to go all the way to RServe and back.
 
   1. **Create Shell**: the time it took to create a shell or take it from the pool
@@ -199,9 +196,14 @@ This tool will let you know the maximum latency or number of parallel requests t
  
 After the tool is run, the results are printed to the console. You can also explore the results visually using the URL that is returned to the console. 
 
-### Using the Evaluate Capacity Tool
+<br>
 
 **To run or design a capacity simulation test:**
+
+
+> What does this mean?@@        Enter a JSON object representing the input parameters.
+>
+> Where do you run this? @@On the front end??
 
 1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
@@ -214,8 +216,6 @@ After the tool is run, the results are printed to the console. You can also expl
         1. Enter `Yes`.
         1. Provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
         1. Enter a JSON object representing the input parameters.@@
-
-        > What does this mean?@@        Enter a JSON object representing the input parameters.
 
       + To use the generated [default service], enter `No` and enter a JSON object representing the input parameters.
 
