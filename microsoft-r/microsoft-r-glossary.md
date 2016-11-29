@@ -32,7 +32,7 @@ ms.custom: ""
 <hr>
 
 
-<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;H &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;U &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
+<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
 
 <hr>
 
@@ -102,7 +102,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
-
+-->
 <br>
 
 <a name="H"></a>
@@ -115,6 +115,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="hpc"></a>**High-performance computing (HPC)**
 <div style="margin:15px; margin-bottom:25px;">Mechanisms such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. They are optimized to share tasks among the various computing resources, but can be slowed if large amounts of data need to be transferred.</div>
 
+<!--
 <br>
 
 <a name="I"></a>
@@ -253,7 +254,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
-
+-->
 <br>
 
 <a name="U"></a>
@@ -263,6 +264,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="updatingalgorithm"></a>**Updating algorithm**
 <div style="margin:15px; margin-bottom:25px;">An algorithm that takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: given three chunks of data and corresponding sums, an updating sum algorithm would incorporate each additional sum into a revised value until you arrive at the cumulative sum. Updating algorithms are used in ScaleR.</div>
 
+<!--
 <br>
 
 <a name="V"></a>
@@ -282,7 +284,6 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 -->
-
 <br>
 
 <a name="X"></a>
