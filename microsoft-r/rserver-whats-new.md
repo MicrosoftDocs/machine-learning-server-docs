@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/22/2016"
+ms.date: "11/29/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,19 +26,19 @@ ms.custom: ""
 
 # What's New in R Server 9.0.1
 
-This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new capabilities in the core engine.
+This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine.
 
 **Related Documents**
 
-+ For known issues, bug fixes, and behavior changes in existing features of R Server, see the [Release notes for R Server](notes/r-server-notes.md).
++ For known issues, bug fixes, and behavior changes in existing features, see the [Release notes for R Server](notes/r-server-notes.md).
 + For new feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
 + For new feature announcements in SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ## New and updated packages
 
-**Microsoft Machine Learning (MicrosoftML package)** is new in these Microsoft R products: R Server on Windows, R Client on Windows, and SQL Server R Services (with availability on Linux and Hadoop projected for the first quarter of 2017). MicrosoftML is a collection of functions for machine learning at scale, with fast performance, even when handling a large corpus of text data and high-dimensional categorical data. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**Microsoft Machine Learning (MicrosoftML package)** is new in these Microsoft R products: R Server on Windows, R Client on Windows, and SQL Server R Services. Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for machine learning at scale, with fast performance, even when handling a large corpus of text data and high-dimensional categorical data. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-**mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable remote execution on the command line, on a remote R Server 9.0.1 instance. It also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, with additional commands for service management. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
+**mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable remote command line execution on a remote R Server 9.0.1 instance. This package also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, using additional commands to manage the web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 **RevoScaleR Package** adds [support for **Spark 2.0**](#bkmk_Spark) through new functions for both R Server and R Client. For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
@@ -99,11 +99,11 @@ Additionally, this release adds a simplified setup program for a standalone R Se
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
-+ Modern lifecycle policy is designed for rapid release cycle. Individual versions age out sooner, but newer features are made available more frequently. The Modern lifecycle policy is in effect when you use simplified setup to install R Server on Windows.
++ Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently. The Modern lifecycle policy is in effect when you use simplified setup to install R Server on Windows.
 
 + SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server on Windows.
 
-+ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup.
++ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
 
 ##Previously released features
 
