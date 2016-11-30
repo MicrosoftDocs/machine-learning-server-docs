@@ -6,7 +6,7 @@ description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/26/2016"
+ms.date: "11/30/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,11 +26,11 @@ ms.custom: ""
 
 # mrsdeploy Functions
 
-The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. The package is installed as part of R Server 9.0 and R Client 9.0 on all supported platforms.
+The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. The package is installed as part of R Server 9.0 and R Client 9.0.1 on all supported platforms.
 
-Command line interaction between local client and remote server requires `mrsdeploy` on both ends. The package version must be 9.0.1 or later.
+Command line interaction between local and remote sessions requires `mrsdeploy` on both ends. The package version must be 9.0.1 or later.
 
-This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore).
+This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
 
 ## Remote Execution Functions
 
@@ -75,8 +75,14 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 2. At the command line, type `library(mrsdeploy)`.
 3. Type `help(mrsdeploy)`.
 
+Vignettes are available for [remote execution]() and [web service deployment]().
+
 ## See also
 
 [Package Help](../package-reference.md)
 
 [Introduction to mrsdeploy](mrsdeploy-intro-vignette.md)
+
+[Install R Server](rserver.md)
+
+[Install R Client](r-client.md)
