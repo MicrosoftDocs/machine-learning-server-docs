@@ -47,7 +47,7 @@ This topic is a high-level description of package functionality. These functions
 |Execute|remoteExecute|Base function for executing a block of R code or an R script in the remote R session. |
 |Execute|remoteScript |A simple wrapper function for executing a remote R script.|
 |Files|listRemoteFiles |Get a list of all the files that are in the working directory of the remote session. |
-|Files|putLocalFile |Uploads a file from the local machine and writes it to the working directory of the remote R sesion. This function is often used if a data file needs to be accessed by a script running on the remote R session. |
+|Files|putLocalFile |Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a data file needs to be accessed by a script running on the remote R session. |
 |Files|getRemoteFile |Downloads the file from the working directory of the remote R session into the working directory of the local R session. |
 |Files|deleteRemoteFile |Deletes the file from the working directory of the remote R session. |
 |Objects|putLocalObject |Put an object from the workspace of the local R session and load it into the workspace of the remote R session. |
@@ -77,7 +77,7 @@ This topic is a high-level description of package functionality. These functions
 R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages for `mrsdeploy`, follow these steps.
 
 1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. At the command line, type `library(mrsdeploy)`.
+2. If `mrsdeploy` is not loaded, you can load it from the command line by typing `library(mrsdeploy)`.
 3. Type `help(mrsdeploy)`.
 
 Vignettes are available for [remote execution](mrsdeploy-remoteexec-vignette.md) and [web service deployment](mrsdeploy-websrv-vignette.md).
