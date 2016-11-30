@@ -28,7 +28,7 @@ ms.custom: ""
 
 The `mrsdeploy` package provides functions that give you command line execution against a remote Microsoft R Server, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
 
-Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2.
+Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0.1 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2.
 
 ## How to get and use mrsdeploy
 
