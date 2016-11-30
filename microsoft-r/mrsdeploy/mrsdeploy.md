@@ -26,7 +26,7 @@ ms.custom: ""
 
 # mrsdeploy Functions
 
-The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. It's used to access the [operationalization capabilities](~/operationalization/about.md) in R Server. The package is installed as part of R Server 9.0 or R Client 3.3.2 on all supported platforms, but you must have R Server to use it.
+The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. It's used to access the [operationalization capabilities](~/operationalize/about.md) in R Server. The package is installed as part of R Server 9.0 or R Client 3.3.2 on all supported platforms, but you must have R Server to use it.
 
 For remote execution, participating nodes can be as follows:
 

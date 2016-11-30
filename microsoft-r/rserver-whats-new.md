@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/29/2016"
+ms.date: "11/30/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,7 +32,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 + For known issues, bug fixes, and behavior changes in existing features, see the [Release notes for R Server](notes/r-server-notes.md).
 + For new feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
-+ For new feature announcements in SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
++ For new feature announcements in SQL Server R Services (version 9.0), see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ## New and updated packages
 
@@ -91,7 +91,11 @@ For installation instructions, see [Install R Server on Hadoop](rserver-install-
 
 As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
 
-Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation. For installation instructions, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
+Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
+
+Features in the 9.0.1 release are currently only available through simplified setup. SQL Server Setup currently installs the 9.0 version of R Server for Windows. For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+
+For installation instructions, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
 
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server on Windows.
 
@@ -108,6 +112,10 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 ##Previously released features
 
 This section lists the feature announcements of recent previous releases.
+
+### Announced in Microsoft R Server 9.0
+
+R Server 9.0 is a Windows-only, SQL-Server-only release. It provides all of the 9.0.1 features, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ### Announced in Microsoft R Server 8.0.5
 
