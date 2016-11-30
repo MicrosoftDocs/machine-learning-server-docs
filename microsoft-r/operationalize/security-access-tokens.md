@@ -125,7 +125,7 @@ When the API call is sent with the token, R Server will attempt to validate that
 
 A valid bearer token (with active `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
 
-The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days). Each time an active `access_token` is used, the `refresh_token` is replaced with new `refresh_token`.  Once the `access_token` expires, an active `refresh_token` is used to get a new `access_token` / `refresh_token` pair as shown in the example below. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  This cycle can continue for up to 90 days after which the user must log in again. 
+The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days).  Once the `access_token` expires, an active `refresh_token` can be used to get a new `access_token` / `refresh_token` pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  
 
 Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#refresh-user-access-token)  to refresh a token. 
 

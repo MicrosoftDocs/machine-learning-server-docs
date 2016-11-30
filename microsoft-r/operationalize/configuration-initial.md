@@ -81,6 +81,7 @@ This configuration is useful when you want to explore what it is to operationali
 
       cd /lib/x86_64-linux-gnu
       ln -s libpcre.so.3 libpcre.so.0
+      ln -s liblzma.so.5 liblzma.so.0
 
       cd /usr/lib/x86_64-linux-gnu
       ln -s libicui18n.so.52 libicui18n.so.36
@@ -99,6 +100,8 @@ This configuration is useful when you want to explore what it is to operationali
       ln -s libicuuc.so.55 libicuuc.so.36
       ln -s libicudata.so.55 libicudata.so.36
      ```
+
+   >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator, `root`, or `sudo` privileges.
 
@@ -175,6 +178,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 
       cd /lib/x86_64-linux-gnu
       ln -s libpcre.so.3 libpcre.so.0
+      ln -s liblzma.so.5 liblzma.so.0
 
       cd /usr/lib/x86_64-linux-gnu
       ln -s libicui18n.so.52 libicui18n.so.36
@@ -193,6 +197,8 @@ Your web node is now configured. Repeat these steps for each web node you want t
       ln -s libicuuc.so.55 libicuuc.so.36
       ln -s libicudata.so.55 libicudata.so.36
      ```
+
+   >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
 
