@@ -26,10 +26,10 @@ ms.custom: ""
 
 # RServe Security Considerations
 
-RServer is the compute node's R execution component.
+RServe is the R execution component for the operationalization compute node for Microsoft R Server.
 
 >[!IMPORTANT]
->DeployR is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
+>Microsoft R Server's operationalization feature is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
 
 ## The Execution Context
 
