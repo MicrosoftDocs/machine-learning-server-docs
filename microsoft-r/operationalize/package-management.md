@@ -188,14 +188,24 @@ The packages you install using this method do not 'contaminate' the production e
 
    + For example, for Azure Active Directory:
      ```
-     > remote_login_aad([AAD_properties])
+     > remoteLoginAAD("http://localhost:12800",
+                   authuri = "https://login.windows.net",
+                   tenantid = "myMRSServer.contoso.com",
+                   clientid = "00000000-0000-0000-0000-000000000000",
+                   resource = "00000000-0000-0000-0000-000000000000",
+                   session=TRUE,
+                   diff=TRUE,
+                   commandline=TRUE)
    
      REMOTE> 
      ```
 
-   + For example, for Azure Active Directory:
+   + For example, for Active Directory/LDAP:
      ```
-     > remoteLogin("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
+     > remoteLogin("https://localhost:12800", 
+                   session=TRUE, 
+                   diff=TRUE, 
+                   commandline=TRUE)
    
      REMOTE> 
      ```
