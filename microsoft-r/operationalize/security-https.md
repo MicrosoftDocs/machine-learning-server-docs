@@ -25,9 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Security: Configure SSL/TLS for R Server Operationalization (HTTPS)
+# Security: Configure SSL/TLS for R Server Operationalization
 
->For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.
+>For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
 
 
 You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/TLS, you'll need some or all of these certificates.

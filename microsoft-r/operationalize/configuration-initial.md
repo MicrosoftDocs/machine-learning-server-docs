@@ -31,7 +31,7 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 The simplest configuration for this feature, called a **one-box configuration**, involves a single web node and compute node:
 
-+ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node can also access data in the database, and send jobs to the compute node. 
++ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node. 
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
  
