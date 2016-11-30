@@ -129,9 +129,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **In the Azure Classic Portal, do the following:**
 
-1. Log on to the [Azure portal](https://portal.azure.com/), and navigate to your application. Copy the URL in your browser address bar. You will use this to configure your Azure Active Directory app.
-
-1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and navigate to **Active Directory** in the left hand pane.
+1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and navigate to **Active Directory** in the left hand pane. Copy the URL in your browser address bar. You will use this to configure your Azure Active Directory app.
 
 1. Select your directory. If the Azure Active Directory has not been set up yet, contact your system administrator.  
 
