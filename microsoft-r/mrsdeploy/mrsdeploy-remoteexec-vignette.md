@@ -159,6 +159,6 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 [mrsdeploy Function Reference](mrsdeploy.md)
 
-[Vignette introduction](mrsdeploy-intro-vignette)
+[Vignette introduction](mrsdeploy-intro-vignette.md)
 
 [Package Reference](../package-reference.md)

@@ -621,6 +621,6 @@ print(result$output('answer'))
 
 [mrsdeploy Function Reference](mrsdeploy.md)
 
-[Vignette introduction](mrsdeploy-intro-vignette)
+[Vignette introduction](mrsdeploy-intro-vignette.md)
 
 [Package Reference](../package-reference.md)

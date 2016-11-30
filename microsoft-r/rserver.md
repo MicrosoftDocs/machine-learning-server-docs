@@ -6,7 +6,7 @@ description: "Microsoft R Server introduction"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "09/20/2016"
+ms.date: "11/30/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -76,10 +76,10 @@ In this release, the [mrsdeploy package](mrsdeploy/mrsdeploy.md) gives you the a
 
 ## Installation links
 
-+ [R Server on Windows](rserver-install-windows)
++ [R Server on Windows](rserver-install-windows.md)
 + [R Server on Linux](rserver-install-linux-server.md)
 + [R Server on Hadoop](rserver-install-hadoop.md)
-+ [R Server on Teradata](rserver0install-teradata-server.md)
++ [R Server on Teradata](rserver-install-teradata-server.md)
 + [R Server on SQL Server](https://msdn.microsoft.com/library/mt604845.aspx)
 
 To review specific OS and database platform versions that can be used for an R Server deployment, see [Supported platforms](rserver-install-supported-platforms.md).
