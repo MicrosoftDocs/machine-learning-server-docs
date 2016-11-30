@@ -239,7 +239,7 @@ Once all web nodes and compute nodes are configured, you must declare the IP add
 1. Update the `"Uris": {` properties to declare each backend:
    ```
     "Uris": {
-      "Description": "Update 'Values' section to point to your backend machines. Using HTTPS is highly recommended",
+      "Description": "Update 'Values' section to point to your backend machines. Using SSL/TLS 1.2 (HTTPS) is highly recommended",
       "Values": [
         "http://<IP-ADDRESS-OF-BACKEND-1>:12805",
         "http://<IP-ADDRESS-OF-BACKEND-2>:12805",

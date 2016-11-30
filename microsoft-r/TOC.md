@@ -76,7 +76,7 @@
 #### [Operationalization Configuration](operationalize/configuration-initial.md)
 #### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
-##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
+##### [Connection Security (SSL/TLS)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 ##### [RServe Considerations](operationalize/security-rserve.md)
 ##### [Access Token Management](operationalize/security-access-tokens.md)

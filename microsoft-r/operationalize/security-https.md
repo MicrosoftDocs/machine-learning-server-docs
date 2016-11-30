@@ -25,12 +25,12 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Security: Configure SSL for R Server's Operationalization (HTTPS)
+# Security: Configure SSL/TLS for R Server Operationalization (HTTPS)
 
->For security reasons, we strongly recommend that HTTPS be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.
+>For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.
 
 
-You can use HTTPS within a connection encrypted by TLS 1.2 and/or SSL.  To enable HTTPS, you'll need some or all of these certificates.
+You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/TLS, you'll need some or all of these certificates.
 
 |HTTPS Certificates|Description|Web Node|Compute Node|
 |------------------------------------|------------------------------------------------------------------------|--------------|---------------|
@@ -43,7 +43,7 @@ You can use HTTPS within a connection encrypted by TLS 1.2 and/or SSL.  To enabl
 ## Encrypt the Traffic between Client Applications and R Server
 
 >[!IMPORTANT] 
->We strongly recommend that HTTPS be enabled in **all production environments.**  
+>We strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  
 
 This section walks you through the steps for securing the connections between the client application and the web node. Doing so will encrypt the communication between client and web node to prevent traffic from being modified or read.
 
