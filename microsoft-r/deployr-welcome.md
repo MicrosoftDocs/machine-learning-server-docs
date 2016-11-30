@@ -32,11 +32,11 @@ Welcome to the Microsoft R Server DeployR documentation on the MSDN website.
 You've come to the right place for **8.0.0 and 8.0.5 documentation**. 
 
 Start here:
-+ [About DeployR 8.0.0 and 8.0.5](deployr-about.md)
-+ [Installation docs](deployr-installation.md)
-+ [Application Developer's Getting Started](deployr-application-developer-getting-started.md)
-+ [Data Scientist's Getting Started](deployr-data-scientist-getting-started.md)
-+ [Administrator's Getting Started](deployr-administrator-getting-started.md)
++ [About DeployR 8.0.0 and 8.0.5](https://msdn.microsoft.com/en-us/microsoft-r/deployr-about.md)
++ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/deployr-installation.md)
++ [Application Developer's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-application-developer-getting-started.md)
++ [Data Scientist's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-data-scientist-getting-started.md)
++ [Administrator's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-administrator-getting-started.md)
 
 <br>
 
