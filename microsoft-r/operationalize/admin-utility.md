@@ -35,7 +35,17 @@ ms.custom: ""
 
 These instructions describe how to launch the Administrator Utility.
 
-**To launch the administration utility:**
+**On Windows:**
+
++ You can launch the administration utility using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**. 
++ Alternately, you launch the administration utility script with administrator privileges in your command window
+  where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+  ```
+  cd <MRS_home>\deployr
+  dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
+  ```
+
+**On Linux:**
 
 Launch the administration utility script with administrator, `root`, or `sudo` privileges:
 ```
@@ -44,6 +54,7 @@ dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
 ```
 
 where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
 
 <br><a name="admin-password"></a>
 
