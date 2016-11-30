@@ -26,9 +26,14 @@ ms.custom: ""
 
 # mrsdeploy Functions
 
-The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. The package is installed as part of R Server 9.0 and R Client 9.0.1 on all supported platforms.
+The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. It's used to access the [operationalization capabilities](../operationalization/about.md) in R Server. The package is installed as part of R Server 9.0 or R Client 3.3.2 on all supported platforms, but you must have R Server to use it.
 
-Command line interaction between local and remote sessions requires `mrsdeploy` on both ends. The package version must be 9.0.1 or later.
+For remote execution, participating nodes can be as follows:
+
++ Two machines running R Server 9.0.1
++ One machine running R Server 9.0.1 and one machine running R Client 3.3.2, where the R Client user does a remote login to the R Server instance. Execution is always on the R Server side. Specifically, you cannot set up a remote session from R Server to R Client.
+
+R Server can be any platform, as long as both are version 9.0.1. For example, you can establish a remote connection between Linux and Windows as along as both are running R Server 9.0.1, or the Windows machine has R Client 3.3.2.
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
 
@@ -75,7 +80,7 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 2. At the command line, type `library(mrsdeploy)`.
 3. Type `help(mrsdeploy)`.
 
-Vignettes are available for [remote execution]() and [web service deployment]().
+Vignettes are available for [remote execution](mrsdeploy-remoteexec-vignette.md) and [web service deployment](mrsdeploy-websrv-vignette.md).
 
 ## See also
 
