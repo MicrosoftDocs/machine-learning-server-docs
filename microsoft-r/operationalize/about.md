@@ -76,7 +76,7 @@ The deployment experience for R Server includes:
 
 + **Easy Integration**: Use easily consumable Swagger-based APIs with any programming languages.
 
-+ **Easy Setup**: In-cloud or on-premise scalable configurations, enterprise grade security, Web service management, HA and load balancing, remote execution.
++ **Easy Setup**: In-cloud or on-premise scalable configurations, enterprise grade security, web service management, HA and load balancing, remote execution.
 
 
 ![Easy](../media/o16n/about-easy.png)
