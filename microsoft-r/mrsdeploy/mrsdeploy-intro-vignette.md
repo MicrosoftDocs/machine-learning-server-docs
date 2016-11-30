@@ -26,17 +26,17 @@ ms.custom: ""
 
 # Introduction to the mrsdeploy package in Microsoft R (vignette)
 
-# Introduction to mrsdeploy
+The `mrsdeploy` package provides functions that give you command line execution against a remote Microsoft R Server, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
 
-The **mrsdeploy** package provides functions that give you command line execution against a remote Microsoft R Server, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
-
-Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Client or R Server 9.0.1.
+Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2.
 
 ## How to get and use mrsdeploy
 
-The mrsdeploy package is available in installations of [Microsoft R Client 9.0](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server 9.0](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
+The `mrsdeploy` package is available in installations of [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
 
-The `mrsdeploy` package is not loaded automatically. In an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/), RStudio, or another third-party tool.
+The `mrsdeploy` package is not loaded automatically.
+
+To use it for the duration of a session in an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/) on a Windows computer, or RStudio or another R IDE on a non-Windows workstation.
 
 1. Open an R project in RTVS.
 2. In the **R Interactive** window at the command prompt, type `install.packages("mrsdeploy")`.

@@ -28,7 +28,7 @@ ms.custom: ""
 
 This article provides the vignette documentation for Web service functions in the [mrsdeploy package](mrsdeploy.md).
 
-# Web Services using mrsdeploy in Microsoft R Server
+## Using web services in mrsdeploy
 
 Through the **mrsdeploy** package, you can deploy R script or code as a *web service* that you create and manage using functions in the package. After the service is published, you can use it as a help object in code or script, or as an all-inclusive solution with data and visuals.
 
@@ -479,7 +479,7 @@ print(result$success)
 
 ## Services with packages
 
-Packages need to be installed by a DeployR administrator.
+Packages need to be installed by an administrator.
 
 **Build and save a model**
 ```R
@@ -528,7 +528,7 @@ result$output('answer'))
 
 ## Services with rx Functions
 
-RevoScaleR analysis functions can be used within DeployR services like any other package.
+RevoScaleR analysis functions can be used within an mrsdeploy web service like any other package.
 
 
 **Dataset**

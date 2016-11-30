@@ -30,26 +30,19 @@ This article provides the vignette documentation for Remote Execution functions 
 
 ## Using the remote command line
 
-The remote command line allows you to directly interact with the DeployR server. You can enter
-'R' code just as you would in a local R console. R code entered at the remote command line, will be
-executed remotely on the deployr server. Switching between the local command line and
-the remote command line can be done by using the special functions: pause() and resume(). In order
-to use the remote command line, you must first pass the appropriate user credentials to authenticate
-against the DeployR server, and establish a "remote session"
+The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
 
 ### Creating a remote session
 
-The `remote_login` and `remote_login_aad` functions are used to authenticate against the DeployR server,
-and create a remote session
-
+The `remote_login` and `remote_login_aad` functions are used to authenticate against R Server, creating a remote session.
 
 **Example**
 
 ```R
-#authenticate against the DeployR server
+#authenticate against the remote R Server
 remote_login("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
 
-#authenticate against the DeployR server using Azure Active Directory
+#authenticate against the R Server using Azure Active Directory
 remote_login_aad("http://localhost:12800",
                    authuri = "https://login.windows.net",
                    tenantid = "deployrtest.onmicrosoft.com",
@@ -61,12 +54,11 @@ remote_login_aad("http://localhost:12800",
 
 
 ```
-Once the `REMOTE>` command line is displayed in the R connsole, any R commands entered will be executed on the
+Once the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the
 remote R session. To switch back to the local R session, type `pause()`. To terminate the remote R session,
 type `exit`, at the `REMOTE>` prompt. If you have switched to the local R session, you can go back to the
 remote R session by typing `resume()`. Also, from local R session, you can terminate the remote R session by
 typing `remote_logout()`
-
 
 **Example**
 
@@ -86,19 +78,18 @@ REMOTE>exit  #logout and terminate the remote R session
 A `diff` report is available so you can see and manage differences between the local and remote R environments.
 The diff reports contains information regarding R versions, R packages installed locally, but not on the remote
 session, and differences between R package versions. This report is shown by default when you login, but can be
-run anytime by executing the function:  `diff_local_remote()`.
+run anytime by executing the function: `diff_local_remote()`.
 
 ## Executing an R script remotely
 
 If you have R scripts on your local machine, you can execute them remotely by using the function `remote_script()`.
-This function takes either a path to an R scriptto be executed remotely. You also have options
-to save/display any plots that might have been generated during the exexution. The function returns a list
-containing the status of the execution (sucess/failure), the console output generated, and a list of files created
+This function takes either a path to an R script to be executed remotely. You also have options
+to save or display any plots that might have been generated during the execution. The function returns a list
+containing the status of the execution (success/failure), the console output generated, and a list of files created.
 
-Remeber if your R Script depends on some R Packages to be loaded, those packages need to be installed on the remote
-DeployR server. You can either have your Administrator install them globally by logging in directly to the server,
-or you can install them for the life of the remote session by using the R function `install.packages()` Just leave the
-`lib` parameter empty.
+If your R Script has R Package dependencies, those packages must be installed on the remote
+server. You can either have your Administrator install them globally by logging in directly to the server,
+or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
 
 If you need more granular control of a remote execution scenario, you can use the `remote_execute()` function.
 
@@ -115,21 +106,18 @@ REMOTE>pause()
 ```
 ## Working with R objects and files remotely
 
-Once you have executed an R code remotely, you may want to retreive certain R objects and load them into your local
-R session. For example, if you have an R script that creates a liner model (i.e. `m<-lm(x~y)` ), and you want to work
-with that model in your local R session, you can retrieve the object `m` by using the function `get_remote_object()`.
-Conversely, if you have a local R object that you want to make available to your remote R session, you can use the
-function `put_local_object()`  If you want to sync your local and remote workspaces, the functions `put_local_workspace()`
-and `get_remote_workspace()` can be used.
+Once you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model (i.e. `m<-lm(x~y)` ), and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `get_remote_object()`.
 
-Similar capabilites are available for files that need to be moved between the local and remote R sessions.
-The following functions are available for working with files:  `put_local_file()`, `get_remote_file()`,
-`list_remote_files()` and `delete_remote_file()`.
+Conversely, if you have a local R object that you want to make available to your remote R session, you can use the function `put_local_object()`. If you want to sync your local and remote workspaces, the functions `put_local_workspace()` and `get_remote_workspace()` can be used.
+
+Similar capabilities are available for files that need to be moved between the local and remote R sessions.
+
+The following functions are available for working with files:  `put_local_file()`, `get_remote_file()`, `list_remote_files()` and `delete_remote_file()`.
 
 **Example**
 
 ```R
-#execute a script remotely that generated 2 R objects we are interested in retreiving
+#execute a script remotely that generated 2 R objects we are interested in retrieving
 >remote_execute("C:/myScript.R')
 #retreive the R objects from the remote R session and load them into our local R session
 >get_remote_object(c("model","out"))
@@ -147,14 +135,10 @@ The following functions are available for working with files:  `put_local_file()
 ```
 
 ## Snapshots and why they are useful
-If you need a prepared environment for your remote script execution that may include any of the following:  
-R Packages, R objects and data files, consider creating a `snapshot` A snapshot is a image of the working directory
-and workspace of the remote R session. Snapshots are saved to the DeployR server and can be loaded into any subsequent
-remote R session. For example, suppose you want to execute a script that needs 3 R packages, a reference data file,
-and a model object. Instead of loading these item each time you wish to execute the script, create a snapshot of those items
-and then just load the snapshot when you need that particular configuration. The following functions are available
-for working with snapshots:  `list_snapshots()`, `create_snapshot()`, `load_snapshot(), `download_snapshot()` and
-`delete_snapshot()`.
+
+If you need a prepared environment for your remote script execution that includes R packages, objects, or data files, consider creating a `snapshot`. A snapshot is a image of the working directory and workspace of the remote R session. Snapshots are saved to the R Server and can be loaded into any subsequent remote R session. For example, suppose you want to execute a script that needs 3 R packages, a reference data file, and a model object. Instead of loading these items each time you wish to execute the script, create a snapshot of those items and then just load the snapshot when you need that particular configuration.
+
+The following functions are available for working with snapshots:  `list_snapshots()`, `create_snapshot()`, `load_snapshot(), `download_snapshot()` and `delete_snapshot()`.
 
 **Example**
 
