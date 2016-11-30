@@ -30,108 +30,110 @@ This article provides the vignette documentation for Web service functions in th
 
 ## Using web services in mrsdeploy
 
-Through the **mrsdeploy** package, you can deploy R script or code as a *web service* that you create and manage using functions in the package. After the service is published, you can use it as a help object in code or script, or as an all-inclusive solution with data and visuals.
+Through the **mrsdeploy** package, you can deploy R script or code as a *web service* that you create and manage using functions in the package. After the service is published, it can be consumed by others from R or from your language of choice via [Swagger](http://swagger.io/).
 
-The complete list of functions include the following:
-
-- [Publish](#publish) - Publish a new service to a local or remote R Server instance.
-- [Update](#update) - Update an existing service
-- [Discover](#discover) - Get an existing service by `name` and `version`
-- [List](#list) - List service meta-data
-- [Delete](#delete) - Delete a published service
+## Service APIs
 
 ### Publish
 
-The `publish_service` function publishes a new web service.
+Publishes an R code block as a new web service running on R Server.
 
 **Arguments**
 
-- `name` - (Required) Defines the name of the service.
-- `code` - (Required) Defines the R code that will be ran. The provided `code` value can either be:
+- `name` - (required) The web service name.
+- `code` - (required) R code to publish. `code` can take the form of:
     1. A filepath to an R script `code = "/path/to/R/script.R"`
     2. A block of R code as a character string `code = "result <- x + y"`
     3. A function handle:
     ```R
     code = function(hp, wt) {
       newdata <- data.frame(hp = hp, wt = wt)
-      predict(model, newdata, type = 'response')
+      predict(model, newdata, type = "response")
     }
     ```
-- `model` - (Optional) A filepath to a binary object `.RData` file or a filepath to
-    an R Script
-- `inputs` - (Optional) A `List` which defines the web service input schema
-- `outputs` - (Optional) A `List` which defines the web service output schema
-- `v` - (Optional) Defines a unique web service version
-- `alias` - (Optional) The predication RPC function used to consume the service
-- `descr` - (Optional) The description of the web service.
+- `model` - (optional) An `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:
+    1. File-path to an `.RData` file holding R objects to be loaded.
+    2. File-path to an `.R` file which will be evaluated into an environment and loaded.
+
+- `snapshot` (optional) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.
+- `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
+   names and their corresponding [Data Types](#io-data-types)
+- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#io-data-types)
+    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
+- `v` - (optional) Defines a unique web service version. If the version is left blank, a unique \code{guid} will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.
+- `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
+- `destination` (optional) The codegen output directory location.
+- `descr` - (optional) The description of the web service.
 
 **Response**
 
-An [Api](api.html) instance.
-
-[R6](https://cran.r-project.org/web/packages/R6/index.html)
+An [Api](#api-client) instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)
 
 **Example**
 
 ```R
-api <- publish_service(
-  'addition',
-   code = 'result <- x + y',
-   inputs = list(x = 'numeric', y = 'numeric'),
-   outputs = list(result = 'numeric'),
-   v = 'v1.0.0',
-   alias = 'add'
+api <- publishService(
+  "addition",
+   code = "result <- x + y",
+   inputs = list(x = "numeric", y = "numeric"),
+   outputs = list(result = "numeric"),
+   v = "v1.0.0",
+   alias = "add"
 )
-
-result <- api$add(10, 10)
 ```
-See more [examples](#service-examples).
+
+See more [examples](#publish-service).
 
 ### Update
 
-The `update_service` function updates a published web service.
+The `updateService` function updates a published web service.
 
 **Arguments**
 
-- `name` - (Required) Defines the name of the service
-- `v` - (Required) Defines the web service version
-- `code` - (Optional) Defines the R code that will be ran. The provided `code`
-    value can either be:
+- `name` - (required) The web service name.
+- `v` - (required) Defines a unique web service version.
+- `code` - (optional) R code to publish. `code` can take the form of:
     1. A filepath to an R script `code = "/path/to/R/script.R"`
     2. A block of R code as a character string `code = "result <- x + y"`
     3. A function handle:
     ```R
     code = function(hp, wt) {
       newdata <- data.frame(hp = hp, wt = wt)
-      predict(model, newdata, type = 'response')
+      predict(model, newdata, type = "response")
     }
     ```
-- `model` - (Optional) A filepath to a binary object `.RData` file or a filepath to
-    an R Script
-- `inputs` - (Optional) A `List` which defines the web service input schema by `name` and `type`
-- `outputs` - (Optional) A `List` which defines the web service output schema by `name` and `type`
-- `alias` - (Optional) The predication RPC function used to consume the service
-- `descr` - (Optional) The description of the web service.
+- `model` - (optional) An `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:
+    1. File-path to an `.RData` file holding R objects to be loaded.
+    2. File-path to an `.R` file which will be evaluated into an environment and loaded.
+
+- `snapshot` (optional) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.
+- `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
+   names and they're corresponding [Data Types](#io-data-types)
+- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and they're corresponding  [Data Types](#io-data-types)
+    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
+- `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
+- `destination` (optional) The codegen output directory location.
+- `descr` - (optional) The description of the web service.
 
 **Response**
 
-An [Api](api.html) instance.
+An [Api](#api-client) instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)
 
 **Example**
 
 ```R
-api <- update_service(
-  'addition',
-  'v1.0.0',
-  descr = 'Update the description for the `addition` service.'
+api <- updateService(
+  "addition",
+  "v1.0.0",
+  descr = "Update the description for the `addition` service."
 )
 ```
 
-See more [examples](#service-examples).
+See more [examples](#update-service).
 
 ### Discover
 
-The `discover_service` function gets a published web service for consumption.
+The `getServices` function gets a published web service for consumption.
 
 **Arguments**
 
@@ -140,26 +142,25 @@ The `discover_service` function gets a published web service for consumption.
 
 **Response**
 
-An [Api](api.html) instance.
+An [Api](#api-client) instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)
 
 **Example**
 
 ```R
-api <- discover_service('addition', 'v1.0.0')
+api <- getServices("addition", "v1.0.0")
 
 result <- api$add(10, 20)
 ```
-
-See more [examples](#service-examples).
+See more [examples](#get-a-service).
 
 ### List
 
-The `list_service` function retrieves published web service meta-data.
+The `listServices` function retrieves published web service meta-data.
 
 **Arguments**
 
-- `name` - (Optional) Defines the name of the service
-- `v` - (Optional) Defines the web service version
+- `name` - (Optional) Defines the name of the service.
+- `v` - (Optional) Defines the web service version.
 
 **Response**
 
@@ -169,20 +170,20 @@ The `list_service` function retrieves published web service meta-data.
 
 ```R
 # Return all
-services <- list_service()
+services <- listServices()
 
 # Return meta-data for all versions of the `addition` service
-services <- list_service('addition')
+services <- listServices("addition")
 
 # Return meta-data regarding the version `v1.0.0` of the `addition` service
-addition <- list_service('addition', 'v1.0.0')
+addition <- listServices("addition", "v1.0.0")
 ```
 
-See more [examples](#service-examples).
+See more [examples](#list-service).
 
 ### Delete
 
-The `delete_service` function deletes a published web service. Only the user who initially created the web service can use this function.
+The `deleteService` function deletes a published web service. Only the user who initially created the web service can use this function.
 
 **Arguments**
 
@@ -197,29 +198,150 @@ Success status and message.
 
 _Failure_:
 
-stops execution with error message.
+Stops execution with error message.
 
 **Example**
 
 ```R
-success <- delete_service('addition', 'v1.0.0')
+success <- deleteService("addition", "v1.0.0"")
 print(success)
 ```
 ```R
 [1] "Service addition version v1.0.0 deleted."
 ```
 
-See more [examples](#service-examples).
+See more [examples](#delete-service).
 
+## API Client
 
+Defines the client instance of a published service. This acts as the `client stub`
+to consume the service and view its service holdings.
 
-## Service examples
+The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getService](#discover).
 
-**Authenticate using on prem Active Directory**
+**Supported public functions:**
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `print`       |	Print method that lists all members of the object      |
+| `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
+| `consume`     |	Consume the service based on I/O schema                |
+| consume _alias_ | Alias to the `consume` function for convenience see [publish alias](#publish) |
+| `swagger`     |	Displays the service's `swagger` specification         |
+
+**Examples:**
 
 ```R
-host <- 'http://localhost:12800'
-remote_login(host, username = '{{USERNAME}}', password = '{{PASSWORD}}', session = FALSE)
+api <- getServices("transmission", "v1.0.0")
+print(api)
+
+cap <- api$capabilities()
+print(cap$name)
+print(cap$version)
+print(cap$inputs)
+print(cap$outputs)
+print(cap$swagger)
+
+# consume
+result <- api$consume(120, 2.8)
+
+# consume with rpc `alias`. Alias to the `consume` function above
+result <- api$manualTransmission(120, 2.8)
+
+swagger <- api$swagger()
+cat(swagger)
+
+swagger <- api$swagger(json = FALSE)
+cat(swagger)
+
+```
+
+## I/O Data Types
+
+Supported _Data Types_ for the [publish](#publish) and [update](#update) service input and output schemas:
+
+| Type          | Fully Supported                                        |
+| ------------- |--------------------------------------------------------|
+| `numeric`     |	TRUE                                                   |
+| `integer`     |	TRUE                                                   |
+| `logical`     |	TRUE                                                   |
+| `character`   | TRUE	                                                 |
+| `vector`      | TRUE 	                                                 |
+| `matrix`      | FALSE	(logical, character matrix not supported)        |
+| `data.frame`  |	TRUE ***note**  coercing the object during I/O is a user defined task
+
+## Swagger
+
+```R
+model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+save(model, file = "transmission.RData")
+
+manualTransmission <- function(hp, wt) {
+  newdata <- data.frame(hp = hp, wt = wt)
+  predict(model, newdata, type = "response")
+}
+
+api <- publishService(
+  "transmission",
+   code = manualTransmission,
+   model = "transmission.RData",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(answer = "numeric"),
+   v = "v1.0.0"
+)
+
+print(api)
+```
+### Capabilities
+
+View the service capabilities, notice the `swagger(json = TRUE)` function:
+
+```R
+<TransmissionApi>
+name: transmission
+description:
+version: v1.0.0
+date: 2016-10-26T16:18:26.9563885
+snapshotId: 3fd27552-c1c9-4fa3-8185-39061c1bf6cd
+inputs:
+  hp: numeric
+  wt: numeric
+outputs:
+  answer: numeric
+operationId: manualTransmission
+swagger: http://localhost:12800/api/transmission/v1.0.0/swagger.json
+public-functions:
+  consume: consume(hp, wt)
+  manualTransmission: manualTransmission(hp, wt)
+  capabilities: capabilities()
+  print: print()
+  swagger: swagger(json = TRUE)
+```
+
+Inspect the actual `http://localhost:12800/api/transmission/v1.0.0/swagger.json`:
+
+```R
+swagger <- api$swagger()
+cat(swagger)
+
+# `json = FALSE` returns a list() defined by `jsonlite::toJSON()`
+swagger <- api$swagger(json = FALSE)
+```
+
+## Service Examples
+
+First authenticate using _Azure Active Directory_ or _On Premise Active Directory_
+
+
+```R
+remoteLoginAAD(
+  "https://dhost.com",
+  authuri = "https://login.windows.net",
+  tenantid = "microsoft.com",
+  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
+  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  session = FALSE
+)
 ```
 
 ### Publish Service
@@ -230,20 +352,19 @@ By use of the logistic regression equation of vehicle transmission in the data s
 
 ```R
 model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
-save(model, file = 'transmission.RData')
 ```
 
 **Produce a `prediction` function that can use the `model`**
 ```R
-manual_transmission <- function(hp, wt) {
+manualTransmission <- function(hp, wt) {
   newdata <- data.frame(hp = hp, wt = wt)
-  predict(model, newdata, type = 'response')
+  predict(model, newdata, type = "response")
 }
 ```
 
 **Test locally**
 ```R
-print(manual_transmission(120, 2.8))
+print(manualTransmission(120, 2.8))
 ```
 
 **Publish new service**
@@ -253,21 +374,21 @@ print(manual_transmission(120, 2.8))
 # Publish a new version `v1.0.0` service named `transmission`
 # POST /api/transmission/v1.0.0
 #
-api <- publish_service(
-  'transmission',
-   code = manual_transmission,
-   model = 'transmission.RData',
-   inputs = list(hp = 'numeric', wt = 'numeric'),
-   outputs = list(answer = 'numeric'),
-   v = 'v1.0.0'
+api <- publishService(
+  "transmission",
+   code = manualTransmission,
+   model = model,
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(answer = "numeric"),
+   v = "v1.0.0"
 )
 ```
 
 **Consume remotely**
 
 ```R
-result <- api$manual_transmission(120, 2.8)
-print(result$output('answer'))
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer"))
 ```
 ```R
 
@@ -283,20 +404,19 @@ and engine displacement in cubic inches.
 
 ```R
 model <- glm(formula= vs ~ wt + disp, data = mtcars, family = binomial)
-save(model, file = 'transmission.RData')
 ```
 
 **Update the `prediction` function to reflect the model**
 ```R
-manual_transmission <- function(wt, disp) {
+manualTransmission <- function(wt, disp) {
   newdata <- data.frame(wt = wt, disp = disp)
-  predict(model, newdata, type = 'response')
+  predict(model, newdata, type = "response")
 }
 ```
 
 **Test locally**
 ```R
-print(manual_transmission(2.1, 180))
+print(manualTransmission(2.1, 180))
 ```
 
 **Update existing Service**
@@ -306,45 +426,45 @@ print(manual_transmission(2.1, 180))
 # Update the version `v1.0.0` service named `transmission` with new `model`
 # POST /api/transmission/v1.0.0
 #
-api <- update_service(
-  'transmission',
-  'v1.0.0'
-  code = manual_transmission,
-  mode = 'transmission.RData',
-  inputs = list(wt = 'numeric', dist = 'numeric')
+api <- updateService(
+  "transmission",
+  "v1.0.0",
+  code = manualTransmission,
+  mode = model,
+  inputs = list(wt = "numeric", dist = "numeric")
 )
 
 ```
 
 **Consume remotely**
 ```R
-result <- api$manual_transmission(2.1, 180)
-print(result$output('answer'))
+result <- api$manualTransmission(2.1, 180)
+print(result$output("answer"))
 ```
 ```R
 ## 0.2361081
 ```
 
-### List supported service (meta-data)
+### List Service
 
 **List all services currently published (meta-data)**
 ```R
-services <- list_service()
+services <- listServices()
 ```
 
 **List all `versions` of the `transmission` service (meta-data)**
 ```R
-services <- list_service('transmission')
+services <- listServices("transmission")
 ```
 
 **List `transmission` service for version `v1.0.0` (meta-data)**
 ```R
-transmission <- list_service('transmission', 'v1.0.0')
+transmission <- listServices("transmission", "v1.0.0")
 
 # View service capabilities/schema. For example, the input schema:
-#   list(name = 'wt', type = 'numeric')
-#   list(name = 'dist', type = 'numeric')
-print(transmission$inputParameterDefinitions)
+#   list(name = "wt", type = "numeric")
+#   list(name = "dist", type = "numeric")
+print(transmission)
 ```
 ```R
 $creationTime
@@ -358,9 +478,6 @@ $version
 
 $description
 NULL
-
-$code
-[1] "answer <- (function (hp, wt) \n{\n    newdata <- data.frame(hp = hp, wt = wt)\n    predict(model, newdata, type = \"response\")\n})(hp, wt)"
 
 $snapshotId
 [1] "05053e85-c9d0-43cb-9be8-8dccf2b5da54"
@@ -392,14 +509,14 @@ $outputParameterDefinitions[[1]]$type
 [1] "numeric"
 
 $operationId
-manual_transmission
+manualTransmission
 ```
 
 ### Get a service
 
 **Get a published service by `name` and `version`**
 ```R
-api <- discover_service('transmission', 'v1.0.0')
+api <- discoverService("transmission", "v1.0.0")
 ```
 
 **View service capabilities/schema and holdings**
@@ -420,9 +537,6 @@ $version
 $description
 NULL
 
-$code
-[1] "answer <- (function (hp, wt) \n{\n    newdata <- data.frame(hp = hp, wt = wt)\n    predict(model, newdata, type = \"response\")\n})(hp, wt)"
-
 $snapshotId
 [1] "05053e85-c9d0-43cb-9be8-8dccf2b5da54"
 
@@ -453,13 +567,13 @@ $outputParameterDefinitions[[1]]$type
 [1] "numeric"
 
 $operationId
-manual_transmission
+manualTransmission
 ```
 
 **Consume remotely**
 ```R
-result <- api$manual_transmission(2.1, 180)
-print(result$output('answer'))
+result <- api$manualTransmission(2.1, 180)
+print(result$output("answer"))
 ```
 ```R
  ## 0.2361081
@@ -469,152 +583,469 @@ print(result$output('answer'))
 
 **Delete Service by `name` and `version`**
 ```R
-result <- delete_service('transmission', 'v1.0.0')
-print(result$success)
+result <- deleteService("transmission", "v1.0.0")
+print(result)
 ```
 
 ```R
-## TRUE
+## [1] "Service transmission version v1.0.0 deleted."
 ```
 
-## Services with packages
+## Workflow Examples
 
-Packages need to be installed by an administrator.
+There are different approaches to _publishing_ and _updateing_  a service depending on
+your workflow needs as it relates to the `code` and `model` arguments.
+All approaches are equivalent.
 
-**Build and save a model**
-```R
-require("lme4")
-set.seed(1)
+#### The `code` argument
 
-train <- sleepstudy[sample(nrow(sleepstudy), 120),]
-model <- lm(Reaction ~ Days + Subject, data = train)
-save(model, file = 'sleepy.RData')
-```
+The `code` argument is **required** and can be populated three different ways:
 
-**Produce a `prediction` function that can use the `model`**
-```R
-sleepy_predict <- function(newdata) {
-   if(!require("lme4")) { require("lme4") }
-
-   predict(model, newdata = newdata)
-}
-```
-
-**Publish new service**
+1. It can be populated with a file-path to an R script `code = "/path/to/script.R"`
 
 ```R
-#
-# Publish a new version `v1.0.0` service named `sleepy`
-# POST /api/sleepy/v1.0.0
-#
-api <- publish_service(
-  'sleepy',
-   code = sleepy_predict,
-   model = 'sleepy.RData',
-   inputs = list(newdata = 'dataframe'),
-   v = 'v1.0.0'
+publishService(
+   "add-service",
+   code = "/path/to/addition-code.R",
+   inputs = list(x = "numeric", y = "numeric"),
+   outputs = list(result = "numeric")
 )
 ```
 
-**Consume remotely**
+Where the file `addition-code.R` contains the following R:
 
 ```R
-
-require("lme4")
-
-result <- api$sleepy_predict(sleepstudy)
-result$output('answer'))
+result <- x + y
 ```
 
-## Services with rx Functions
+**Note** there is no function rather just the supporting source.
 
-RevoScaleR analysis functions can be used within an mrsdeploy web service like any other package.
-
-
-**Dataset**
-
-
-The adult data set is a widely used machine learning data set.The data set is
-available from the machine learning data repository at [UC Irvine](http://archive.ics.uci.edu/ml/datasets/Adult)
-
-**Supply a fitted model object and a set of new data**
-
-Here we will keep the model separate in a individual R file named
-`adult.R`
+2. It can be populated with a block of R code as a character string `code = "result <- x + y"`
 
 ```R
-# http://archive.ics.uci.edu/ml/datasets/Adult
-adultDataFile <- file.path("C:/MRS/Data", "adult.data.txt")
-
-adultTrain <- rxImport(adultDataFile, stringsAsFactors = TRUE)
-names(adultTrain) <-c("age", "workclass", "fnlwgt", "education",
-                      "education_num", "marital_status", "occupation",
-                      "relationship", "race", "sex", "capital_gain",
-                      "capital_loss", "hours_per_week","native_country",
-                      "income")
-
-adultTree <- rxDTree(income ~ age + sex + hours_per_week, pweights = "fnlwgt",
-                     data = adultTrain)
-```
-
-**Produce a `prediction` function that can use the `model`**
-```R
-adult_pred <- function(newdata) {
-   rxPredict(adultTree, data = newdata, type="vector")
-}
-```
-
-**Test locally**
-```R
-source(adult.R)
-
-newdata <-read.table("C:/data/adult.test", skip=1, sep=",", stringsAsFactors=TRUE)
-
-names(newdata) <-c("age", "workclass", "fnlwgt", "education", "education_num",
-                   "marital_status", "occupation", "relationship","race", "sex",
-                   "capital_gain", "capital_loss",  "hours_per_week","native_country",
-                   "income")
-
-# The result shows that the fitted model accurately classifies about 77%
-# of the test data.
-print(adult_pred(newdata))
-```
-
-```R
-## 0.7734169
-```
-
-**Publish new service**
-
-```R
-#
-# Publish a new version `v1.0.0` service named `adult`
-# POST /api/adult/v1.0.0
-#
-api <- publish_service(
-  'adult',
-   code = adult_pred,
-   model = 'adult.R', # similarly you can use an .RData
-   inputs = list(newdata = 'dataframe'),
-   v = 'v1.0.0'
+publishService(
+   "add-service",
+   code = "result <- x + y",
+   inputs = list(x = "numeric", y = "numeric"),
+   outputs = list(result = "numeric")
 )
 ```
 
-**Consume remotely**
+3. It can be populated with a function handle:
 
 ```R
-newdata <-read.table("C:/data/adult.test", skip=1, sep=",", stringsAsFactors=TRUE)
-names(newdata) <-c("age", "workclass", "fnlwgt", "education", "education_num",
-                   "marital_status", "occupation", "relationship","race", "sex",
-                   "capital_gain", "capital_loss",  "hours_per_week","native_country",
-                   "income")
+addition <- function(x, y) {
+  x + y
+}
 
-result <- api$adult_pred(newdata)
-print(result$output('answer'))
+publishService(
+   "add-service",
+   code = addition,
+   inputs = list(x = "numeric", y = "numeric"),
+   outputs = list(result = "numeric")
+)
 ```
 
+#### The `model` argument
+
+Similar to the `code` argument, the `model` argument also supports different
+_shapes_ depending on your workflow needs.
+
+The `model` argument is **optional** and can be populated three ways:
+
+1. It can be populated with an `object`
+
 ```R
-## 0.7734169
+am.glm <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+
+publishService(
+   "transmission",
+   code = "an <- predict(am.glm, data.frame(hp=hp, wt=wt), type = 'response')",
+   model = am.glm,
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(an = "numeric")
+)
+```
+
+2. It can be populated with a file-path to an `.RData` file `model = "/path/to/model.RData"`
+
+```R
+
+publishService(
+   "transmission",
+   code = "an <- predict(am.glm, data.frame(hp=hp, wt=wt), type = 'response')",
+   model = "/path/to/glm-model.RData",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(an = "numeric")
+)
+```
+
+Where the file `glm-model.RData` could have been created prior to publishing or updating:
+
+```R
+am.glm <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+save(am.gml, file = "glm-model.RData")
+```
+
+3. It can be populated with a file-path to an R script `model = "/path/to/model.R"`
+
+```R
+publishService(
+   "transmission",
+   code = "an <- predict(am.glm, data.frame(hp=hp, wt=wt), type = 'response')",
+   model = "/path/to/glm-model.R",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(an = "numeric")
+)
+```
+
+Where the file `glm-model.R` contains the following R:
+
+```R
+am.glm <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+```
+
+**Note** The `.R` file  will be evaluated into an environment and loaded
+internally.
+
+### Local `model` object
+
+Publish a service based on local `model` object
+
+```R
+library(mrsdeploy)
+
+# --- Local R session ----------------------------------------------------------
+
+# logistic regression vehicle transmission to
+# estimate the probability of a vehicle being
+# fitted with a manual transmission base on
+# horsepower (hp) and weight (wt)
+model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+
+manualTransmission <- function(hp, wt) {
+  newdata <- data.frame(hp = hp, wt = wt)
+  predict(model, newdata, type = "response")
+}
+
+print(manualTransmission(120, 2.8)) # 0.6418125
+
+# --- AAD login ----------------------------------------------------------------
+
+remoteLoginAAD(
+  "https://dhost.com",
+  authuri = "https://login.windows.net",
+  tenantid = "microsoft.com",
+  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
+  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0"
+)
+
+# --- Remote R session ---------------------------------------------------------
+
+model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+
+manualTransmission <- function(hp, wt) {
+  newdata <- data.frame(hp = hp, wt = wt)
+  predict(model, newdata, type = "response")
+}
+
+print(manualTransmission(120, 2.8)) # 0.6418125
+
+ls()
+pause()
+
+# --- Local R session ----------------------------------------------------------
+
+ls()
+rm(model) # clean local for demo
+ls()
+
+# load object `model` into GlobalEnv of the local R session
+status <- getRemoteObject(c("model"))
+ls()
+
+# pseudo `unique` service name so no collision in example
+serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+
+api <- publishService(
+  serviceName,
+  code = manualTransmission,
+  model = model,
+  inputs = list(hp = "numeric", wt = "numeric"),
+  outputs = list(answer = "numeric"),
+  v = "v1.0.0"
+)
+
+api
+
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+swagger <- api$swagger()
+cat(swagger)
+
+services <- listServices(serviceName)
+services
+
+transmission <- services[[1]]
+transmission
+
+api <- getServices(transmission$name, transmission$version)
+api
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+cap <- api$capabilities()
+cap
+cap$swagger
+
+status <- deleteService(cap$name, cap$version)
+status
+
+remoteLogout()
+```
+
+### Local `.RData` file on disk
+
+Publish service using local `.RData` file on disk
+
+```R
+library(mrsdeploy)
+
+# --- AAD login ----------------------------------------------------------------
+
+remoteLoginAAD(
+  "https://dhost.com",
+  authuri = "https://login.windows.net",
+  tenantid = "microsoft.com",
+  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
+  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  session = FALSE
+)
+
+model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+save(model, file = "transmission.RData")
+
+manualTransmission <- function(hp, wt) {
+  newdata <- data.frame(hp = hp, wt = wt)
+  predict(model, newdata, type = "response")
+}
+
+# test locally: 0.6418125
+print(manualTransmission(120, 2.8))
+
+# base dir for `code` and `model` args
+opts <- serviceOption()
+opts$set("data-dir", getwd())
+
+# pseudo `unique` service name so no collision in example
+serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+
+api <- publishService(
+   serviceName,
+   code = manualTransmission,
+   model = "transmission.RData",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(answer = "numeric"),
+   v = "v1.0.0"
+)
+
+api
+
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+swagger <- api$swagger()
+cat(swagger)
+
+swagger <- api$swagger(json = FALSE)
+swagger
+
+services <- listServices(serviceName)
+services
+
+transmission <- services[[1]]
+transmission
+
+api <- getServices(transmission$name, transmission$version)
+api
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+cap <- api$capabilities()
+cap
+cap$swagger
+
+status <- deleteService(cap$name, cap$version)
+status
+
+services <- listServices(serviceName)
+length(services) # gone
+
+# Error: No service found for `serviceName` version "v1.0.0"
+api <- getServices(serviceName, "v1.0.0")
+
+remoteLogout()
+```
+
+#### local `.RData` and `.R` files from disk
+
+Publish service by local `.RData` and `.R` files from disk
+
+```R
+library(mrsdeploy)
+
+# --- AAD login ----------------------------------------------------------------
+
+remoteLoginAAD(
+  "https://dhost.com",
+  authuri = "https://login.windows.net",
+  tenantid = "microsoft.com",
+  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
+  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  session = FALSE
+)
+
+# model
+model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+save(model, file = "transmission.RData")
+
+# R code
+code <- "newdata <- data.frame(hp = hp, wt = wt)\n
+         answer <- predict(model, newdata, type = "response")"
+cat(code, file = "transmission-code.R", sep="n", append = TRUE)
+
+# base dir for `code` and `model` args
+opts <- serviceOption()
+opts$set("data-dir", getwd())
+
+# pseudo `unique` service name so no collision in example
+serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+
+api <- publishService(
+   serviceName,
+   code = "transmission-code.R",
+   model = "transmission.RData",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(answer = "numeric"),
+   v = "v1.0.0",
+   alias = "manualTransmission"
+)
+
+api
+
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+swagger <- api$swagger()
+cat(swagger)
+
+swagger <- api$swagger(json = FALSE)
+swagger
+
+services <- listServices(serviceName)
+services
+
+transmission <- services[[1]]
+transmission
+
+api <- getServices(transmission$name, transmission$version)
+api
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+cap <- api$capabilities()
+cap
+cap$swagger
+
+status <- deleteService(cap$name, cap$version)
+status
+
+services <- listServices(serviceName)
+length(services) # gone
+
+# Error: No service found for `serviceName` version "v1.0.0"
+api <- getServices(serviceName, "v1.0.0")
+
+remoteLogout()
+```
+
+### Local `.R` files on disk
+
+Publish service by local `.R` files on disk
+
+```R
+library(mrsdeploy)
+
+# --- AAD login ----------------------------------------------------------------
+
+remoteLoginAAD(
+  "https://dhost.com",
+  authuri = "https://login.windows.net",
+  tenantid = "microsoft.com",
+  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
+  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  session = FALSE
+)
+
+# Demo this information can come from a file
+model <- "model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)"
+code <- "newdata <- data.frame(hp = hp, wt = wt)\n
+         answer <- predict(model, newdata, type = "response")"
+
+cat(model, file = "transmission.R", append = FALSE)
+cat(code, file = "transmission-code.R", append = FALSE)
+
+# pseudo `unique` service name so no collision in example
+serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+
+api <- publishService(
+   serviceName,
+   code = "transmission-code.R",
+   model = "transmission.R",
+   inputs = list(hp = "numeric", wt = "numeric"),
+   outputs = list(answer = "numeric"),
+   v = "v1.0.0",
+   alias = "manualTransmission"
+)
+
+api
+
+result <- api$manualTransmission(120, 2.8)
+result
+print(result$output("answer")) # 0.6418125
+
+swagger <- api$swagger()
+cat(swagger)
+
+swagger <- api$swagger(json = FALSE)
+swagger
+
+services <- listServices(serviceName)
+services
+
+transmission <- services[[1]]
+transmission
+
+api <- getServices(transmission$name, transmission$version)
+api
+result <- api$manualTransmission(120, 2.8)
+print(result$output("answer")) # 0.6418125
+
+cap <- api$capabilities()
+cap
+cap$swagger
+
+status <- deleteService(cap$name, cap$version)
+status
+
+services <- listServices(serviceName)
+length(services) # gone
+
+# Error: No service found for "transmission" version "v1.0.0"
+api <- getServices(serviceName, "v1.0.0")
+
+remoteLogout()
 ```
 
 ## See also
