@@ -31,15 +31,15 @@ This page provides links to the MSDN documentation for the versions of DeployR E
 
 Start here:
 
-+ [About Operationalization with v9.0.1](/operationalize/about.md)
-+ [Installation docs](/operationalize/configure-initial.md)
++ [About Operationalization with v9.0.1](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/about.md)
++ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/configure-initial.md)
 
 
 ## Looking for v8.0.0 and v8.0.5 documentation?
 
 Start here:
-+ [About DeployR v8.0.0 and 8.0.5](deployr-about.md)
-+ [Installation docs](deployr-installation.md)
++ [About DeployR v8.0.0 and 8.0.5](https://msdn.microsoft.com/en-us/microsoft-r/deployr-about.md)
++ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/deployr-installation.md)
 
 <br>
 

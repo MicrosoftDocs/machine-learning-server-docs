@@ -152,7 +152,7 @@ The set of diagnostic tests include:
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
          + On the web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
-         + On the compute node: `<MRS_home>\deployrMicrosoft.DeployR.Server.BackEnd\logs`
+         + On the compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs`
          
          where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -200,24 +200,21 @@ After the tool is run, the results are printed to the console. You can also expl
 
 **To run or design a capacity simulation test:**
 
-
-> What does this mean?@@        Enter a JSON object representing the input parameters.
->
-> Where do you run this? @@On the front end??
-
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. On the web node, [launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 
 1. To start a capacity simulation, choose the option to **Run capacity simulation** from the sub-menu. Review the results and paste the results URL into your browser for a visual representation of the test results.
 
-1. To change services, choose **Change the service for simulation** from the sub-menu and specify a new service:
-      + To specify an existing service:
-        1. Enter `Yes`.
-        1. Provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
-        1. Enter a JSON object representing the input parameters.@@
+1. To change services, choose **Change the service for simulation** from the sub-menu and:
 
-      + To use the generated [default service], enter `No` and enter a JSON object representing the input parameters.
+   1. Specify the new service:
+
+      + Enter `Yes` to specify an existing service and provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
+
+      + Enter `No` to use the generated [default service].
+
+   1. When prompted, enter the required input parameters for the service in a JSON format. For example, if you specify a vector/matrix, follow the JSON format such as `[1,2,3]` for vector, `[[…]]` for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.
 
 1. To change threshold rules, choose **Change thread/latency limits** from the sub-menu and one of the following:
 

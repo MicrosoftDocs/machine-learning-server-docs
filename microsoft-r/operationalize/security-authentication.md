@@ -159,7 +159,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Add a key by selecting a key duration.
 
-   1. Also, take note of the application's tenant id.  The tenant ID is displayed as part of the URL such as: `https://manage.windowsazure.com/tenantname#Workspaces/ActiveDirectoryExtension/Directory/<TenantID>/...` 
+   1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account.
 
    1. Click **Save**. The application is created.
 
@@ -232,14 +232,14 @@ To authenticate with Azure Active Directory from your R script using  the `remot
 
 ```
 remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
-                   authuri = "https://login.windows.net",
-                   tenantid = "<AAD_DOMAIN>", #domain of AAD account
-                   clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
-                   resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
-                   session = TRUE,
-                   diff=TRUE,
-                   commandline=TRUE,
-                   prompt = "MY-PROMPT> ")  #the remote R session prompt once authenticated 
+           authuri = "https://login.windows.net",
+           tenantid = "<AAD_DOMAIN>", #domain of AAD account
+           clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
+           resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
+           session = TRUE,
+           diff=TRUE,
+           commandline=TRUE,
+           prompt = "MY-PROMPT> ")  
 ```
 
 You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 

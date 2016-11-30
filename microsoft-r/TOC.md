@@ -74,23 +74,22 @@
 ### [Compare Features: 9.0 / 8.0.5](operationalize/about-compare-to-8.0.5.md)
 ### [Configure & Administer](operationalize/configure.md)
 #### [Operationalization Configuration](operationalize/configuration-initial.md)
-#### [Remote Database Setup](operationalize/configure-remote-database.md)
 #### [Enterprise Security](operationalize/security.md)
 ##### [Authentication](operationalize/security-authentication.md)
 ##### [Connection Security (HTTPS/SSL)](operationalize/security-https.md)
 ##### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 ##### [RServe Considerations](operationalize/security-rserve.md)
-##### [Bearer Token Management](operationalize/security-access-tokens.md)
+##### [Access Token Management](operationalize/security-access-tokens.md)
+#### [Remote Database Setup](operationalize/configure-remote-database.md)
 
 #### [Administration](operationalize/admin-utility.md)
 
 ### [R Package Management](operationalize/package-management.md)
 
-### [API Oveview](operationalize/api.md)
+### [API Overview](operationalize/api.md)
 
 ### [Placeholder: Deploy Analytics as Web Services](operationalize/service-management.md)
 ### [Placeholder: Integrate and Consume Web Services](operationalize/service-integration.md)
-### [Placeholder: Get Started](operationalize/get-started.md)
 
 ### Archived Documentation
 #### [Install DeployR](deployr-installation.md)

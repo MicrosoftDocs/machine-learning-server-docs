@@ -35,9 +35,9 @@ This bearer token is a lightweight security token that grants the “bearer” a
 
 ## Security Concerns 
 
-Though a party must authenticate first to receive the bearer token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, bearer tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](security-https.md). 
+Though a party must authenticate first to receive the token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](security-https.md). 
 
-If a bearer token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching bearer tokens for later use. Always ensure that your application transmits and stores bearer tokens in a secure manner. 
+If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
 
 > You can [revoke a token](#revoke) if a user is no longer permitted to make requests on the API or if the token has been compromised.
 
@@ -45,15 +45,14 @@ If a bearer token is transmitted in the clear, a man-in the middle attack can be
 
 ## Token Creation
 
+The API bearer token's properties include an `access_token` / `refresh_token` pair and expiration dates. 
 
-API bearer tokens can be generated in one of two ways:
+Tokens can be generated in one of two ways:
 + If Active Directory LDAP or a local administrator account is enabled, then send a `POST /login HTTP/1.1` API request to retrieve the bearer token.
 
 + If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
 [Learn more about authentication methods for operationalization...](security-authentication.md)
-
-The bearer token's properties consist in an `access_token` / `refresh_token` pair and expiration dates. Learn more about its lifecycle and expiration dates below.
 
 #### Example: Token creation request 
 
@@ -79,15 +78,15 @@ The bearer token's properties consist in an `access_token` / `refresh_token` pai
 
 <br>
 
-## Bearer Token Lifecycle
+## Token Lifecycle
 
 The bearer token is made of an `access_token` property and  a `refresh_token` property.
 
-|P |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
+| |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the bearer token is created|Whenever the bearer token is created, or<br><br>After an `access_token` has been used|
+|**Gets<br>Created**|Whenever the user logs in|Whenever the user logs in, or<br><br>After a `access_token`/`refresh_token` pair is used|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the bearer token is older than 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When it expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
+|**Becomes<br>Invalid**|If the token usage/renewal cycle exceeds 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
 
 <br>
 
@@ -101,8 +100,6 @@ When the API call is sent with the token, R Server will attempt to validate that
 +  If the user is successfully authenticated but the bearer token's `access_token` or `refresh_token` is expired, a `401 - Unauthorized (invalid or expired refresh token)` error is returned.
 
 + If the user is not successfully authenticated, a `401 - Unauthorized (invalid credentials)` error is returned.
-
-
 
 #### Examples
 
@@ -126,9 +123,11 @@ When the API call is sent with the token, R Server will attempt to validate that
 
 ## Token Renewal
 
-A valid bearer token (with valid `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  Each time an active bearer token is used, the `refresh_token` is replaced and the new one gets another 336 hours (14 days) before it expires. 
- 
-However, after a one-hour period of inactivity, the `access_token` will automatically expire. Fortunately, since each `access_token` has a `refresh_token`, you can renew the `access_token` on behalf of the user **if** the `refresh_token` has not yet expired. 
+A valid bearer token (with active `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
+
+The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days).  Once the `access_token` expires, an active `refresh_token` can be used to get a new `access_token` / `refresh_token` pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  
+
+Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#refresh-user-access-token)  to refresh a token. 
 
 #### Example: Refresh access_token
 
@@ -157,7 +156,7 @@ However, after a one-hour period of inactivity, the `access_token` will automati
   }
   ```
 
-If the `refresh_token` itself has also expired, then the user's bearer token becomes invalid and they will need to authenticate again before their next API call. 
+If the `refresh_token` itself has also expired, then the user's bearer token becomes invalid and they will need to log in  again before their next API call. 
 
 <br>
 
@@ -165,9 +164,11 @@ If the `refresh_token` itself has also expired, then the user's bearer token bec
 
 ## Token Revocation
 
-You can revoke a token if a user is no longer permitted to make requests on the API or if the token has been compromised.
+A `refresh_token` should be revoked:
++ If a user is no longer permitted to make requests on the API, or 
++ If the `access_token` or `refresh_token` have been compromised.
 
-Use the API call `DELETE /login/refreshToken/{refreshToken} HTTP/1.1` to revoke a token. @@LINK TO SEANS DOC WHEN AVAILABLE
+Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#delete-user-access-token)  to revoke a token. 
 
 #### Example: Revoke token
 

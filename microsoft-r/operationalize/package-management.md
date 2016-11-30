@@ -184,29 +184,48 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session. @@LINK TO VIGNETTE DOC IN MSDN    For example, for Azure Active Directory:
-   ```
-   > remote_login_aad([AAD_properties])
+1. Authenticate to create the remote session.    
+
+   + For example, for Azure Active Directory:
+     ```
+     > remoteLoginAAD("http://localhost:12800",
+                   authuri = "https://login.windows.net",
+                   tenantid = "myMRSServer.contoso.com",
+                   clientid = "00000000-0000-0000-0000-000000000000",
+                   resource = "00000000-0000-0000-0000-000000000000",
+                   session=TRUE,
+                   diff=TRUE,
+                   commandline=TRUE)
    
-   REMOTE> 
-   ```
+     REMOTE> 
+     ```
+
+   + For example, for Active Directory/LDAP:
+     ```
+     > remoteLogin("https://localhost:12800", 
+                   session=TRUE, 
+                   diff=TRUE, 
+                   commandline=TRUE)
+   
+     REMOTE> 
+     ```
 
    A new remote session is started.
 
 1. Run R code in the remote environment:
 
-   1. Install new R packages and upload any needed R objects and files into the remote R session. @@LINK TO VIGNETTE DOC IN MSDN
+   1. Install new R packages and upload any needed R objects and files into the remote R session. 
       ```
       REMOTE> install.packages(“ggplot2”)
       ```
    
-   1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. @@LINK TO VIGNETTE DOC IN MSDN
+   1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. 
       ```
       REMOTE> pause()
       > remote_script("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot.  @@LINK TO VIGNETTE DOC IN MSDN
+1. To allow the workspace and working directory to be reused later, create a session snapshot.  [Learn more about snapshots here.](api.md#snapshots)
    ```
    REMOTE>pause()
    >create_snapshot("my-snapshot-name")
@@ -215,13 +234,12 @@ The packages you install using this method do not 'contaminate' the production e
    ```
 
    >Take note of the `snapshotId` to call this snapshot later.
-   >
-   >Learn more about snapshots here @@ADD LINK
     
+@@LINK TO VIGNETTE DOC IN MSDN
 
 **To reuse those installed packages, objects and files:**
 
-You can reload the snapshot (installed packages, objects, files) within the context of a remote session. @LINK TO VIGNETTE DOC IN MSDN
+You can reload the snapshot (installed packages, objects, files) within the context of a remote session. 
 
 ```
 > loadSnapshot("123456789-abcdef-123456789")
