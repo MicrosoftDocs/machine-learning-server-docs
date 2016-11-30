@@ -30,7 +30,7 @@ ms.custom: ""
 >For security reasons, we strongly recommend that HTTPS be enabled in **all production environments.**  Since we cannot ship certificates for you, HTTPS protocols are disabled by default.
 
 
-You can use HTTPS within a connection encrypted by TLS and/or SSL.  To enable HTTPS, you'll need some or all of these certificates.
+You can use HTTPS within a connection encrypted by TLS 1.2 and/or SSL.  To enable HTTPS, you'll need some or all of these certificates.
 
 |HTTPS Certificates|Description|Web Node|Compute Node|
 |------------------------------------|------------------------------------------------------------------------|--------------|---------------|
