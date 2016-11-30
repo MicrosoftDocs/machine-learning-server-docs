@@ -33,8 +33,8 @@ This article provides the vignette documentation for Remote Execution functions 
 The remote command line allows you to directly interact with the DeployR server. You can enter
 'R' code just as you would in a local R console. R code entered at the remote command line, will be
 executed remotely on the deployr server. Switching between the local command line and
-the remote command line can be done by using the special functions:  pause() and resume(). In order
-to use the remote command line, you must first pass the approrpriate user credentials to authenticate
+the remote command line can be done by using the special functions: pause() and resume(). In order
+to use the remote command line, you must first pass the appropriate user credentials to authenticate
 against the DeployR server, and establish a "remote session"
 
 ### Creating a remote session
@@ -174,5 +174,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 ## See also
 
 [mrsdeploy Function Reference](mrsdeploy.md)
+
+[Vignette introduction](mrsdeploy-intro-vignette)
 
 [Package Reference](../package-reference.md)
