@@ -28,7 +28,7 @@ ms.custom: ""
 
 # Package Reference (Microsoft R)
 
-This section contains the function reference documentation for proprietary revo packages installed with Microsoft R Client and R Server, or available in a service (through SQL Server or Azure). Each package offers functions used for specific categories of operations. To explore these packages at no charge, download and install the free Microsoft R Client.
+This section contains the function reference documentation for proprietary *revo* packages installed with Microsoft R Client and R Server, or available in a service (SQL Server or Azure). Each package offers functions used for specific categories of operations. To explore these packages at no charge, download and install the free Microsoft R Client.
 
 |Package | Description |
 |----|----|
@@ -62,3 +62,7 @@ For a list of deprecated or discontinued functions within an existing package, s
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
 
 [Additional learning resources and sample datasets](microsoft-r-more-resources.md)
+
+[Install R Server](rserver.md)
+
+[Install R Client](r-client.md)

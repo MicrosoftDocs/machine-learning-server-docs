@@ -26,7 +26,43 @@ ms.custom: ""
 
 # Introduction to the mrsdeploy package in Microsoft R (vignette)
 
-TBD
+# Introduction to mrsdeploy
+
+The **mrsdeploy** package provides functions that give you command line execution against a remote Microsoft R Server, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
+
+Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Client or R Server 9.0.1.
+
+## How to get and use mrsdeploy
+
+The mrsdeploy package is available in installations of [Microsoft R Client 9.0](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server 9.0](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
+
+The `mrsdeploy` package is not loaded automatically. In an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/), RStudio, or another third-party tool.
+
+1. Open an R project in RTVS.
+2. In the **R Interactive** window at the command prompt, type `install.packages("mrsdeploy")`.
+3. Also in **R Interactive**, type `library(mrsdeploy)` to load the package.
+
+## Authenticated access to mrsdeploy operations
+
+Deployment and administration tasks require an authenticated connection. Authentication of a user identity is handled via Active Directory. Neither R Server, nor the former DeployR server component that is now embedded in R Server, will store or manage user names and passwords.
+
+For authentication, you can choose from the following approaches, which are valid on all supported platforms:
+
+- **remote_login()** using an on premises Active Directory server on your network.
+- **remote_login_aad()** using Azure Active Directory in the cloud.
+
+For on premises Active Directory, users will need to authenticate via the `/user/login` API, passing a username and password.
+
+Both Active Directory and Azure Active Directory return an access token. This access token is then passed in the request header of every subsequent mrsdeploy request. If the user does not provide a valid login, an HTTP 401 status code is returned.
+
+In general, all mrsdeploy operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
+
+## Next steps
+
+After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see the other vignettes in this package:
+
++ [Remote Execution vignette](mrsdeploy-remoteexec-vignette.md)
++ [Web Service vignette](mrsdeploy-websrv-vignette.md)
 
 ## See also
 

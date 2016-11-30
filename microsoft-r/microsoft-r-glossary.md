@@ -62,7 +62,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> C </b></big>
 
 **Compute Context**
-<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scalerd.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. RevoScaleR supports these remote compute contexts: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scalerd.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 
 
@@ -71,6 +71,10 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <a name="D"></a>
 <hr>
 <big><b> D </b></big>
+
+**Data chunking**
+<div style="margin:15px; margin-bottom:25px;">Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. <a href="scaler-getting-started.md#data-chunking-and-scaler">Learn more…</a></div>
+
 
 **DeployR**
 <div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
@@ -110,10 +114,10 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> H </b></big>
 
 <a name="hpa"></a>**High-performance analytics (HPA)**
-<div style="margin:15px; margin-bottom:25px;">Refers to functions such as rxLinMod and other RevoScaleR analytics functions, that typically require less processing on a given chunk of data, but focus on efficiently feeding data to the cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md" target=_blank>Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md" target=_blank>Learn more…</a></div>
 
 <a name="hpc"></a>**High-performance computing (HPC)**
-<div style="margin:15px; margin-bottom:25px;">Mechanisms such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. They are optimized to share tasks among the various computing resources, but can be slowed if large amounts of data need to be transferred.</div>
+<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.</div>
 
 <!--
 <br>
@@ -191,7 +195,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> O </b></big>
 
 <a name="o16n"></a>**Operationalization**
-<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services.<a href="operationalize/about.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about.md">Learn more…</a></div>
 
 
 
@@ -262,7 +266,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> U </b></big>
 
 <a name="updatingalgorithm"></a>**Updating algorithm**
-<div style="margin:15px; margin-bottom:25px;">An algorithm that takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: given three chunks of data and corresponding sums, an updating sum algorithm would incorporate each additional sum into a revised value until you arrive at the cumulative sum. Updating algorithms are used in ScaleR.</div>
+<div style="margin:15px; margin-bottom:25px;">An algorithm that takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: sum is computed for the first chunk, followed by a second chunk, which each successive chunk contributing to a revised value until reaching the cumulative sum. Updating algorithms are used in ScaleR.</div>
 
 <!--
 <br>
