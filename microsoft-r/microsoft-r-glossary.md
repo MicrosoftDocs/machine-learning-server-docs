@@ -32,7 +32,7 @@ ms.custom: ""
 <hr>
 
 
-<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;P &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
+<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;D &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;O &nbsp;[P](#P) &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
 
 <hr>
 
@@ -62,7 +62,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> C </b></big>
 
 **Compute Context**
-<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing">Learn more…</a></div>
 
 
 
@@ -114,7 +114,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> H </b></big>
 
 <a name="hpa"></a>**High-performance analytics (HPA)**
-<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md" target=_blank>Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads">Learn more…</a></div>
 
 <a name="hpc"></a>**High-performance computing (HPC)**
 <div style="margin:15px; margin-bottom:25px;">In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.</div>
@@ -172,7 +172,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 <a name="mrs"></a>**Microsoft R Server**
-<div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver">Learn more…</a></div>
 
 
 <a name="mkl"></a>**MKL**
@@ -195,7 +195,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> O </b></big>
 
 <a name="o16n"></a>**Operationalization**
-<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about">Learn more…</a></div>
 
 
 <a name="P"></a>
@@ -233,7 +233,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#mrs"><i>Microsoft R Server</i></a></div>
 
 **RevoScaleR**
-<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler">Learn more…</a></div>
 
 <br>
 
