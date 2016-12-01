@@ -38,9 +38,9 @@ R Server is commercial-grade software designed to run workloads that you have cr
 
 R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
 
-Data scientists who use R Server typically connect over Remote Desktop, and then use RTVS or other tools to create or run solutions. This release expands the interaction model to include remote execution via the mrsdeploy package. Assuming you have two or more installations of R Client or R Server 9.0.1, you can interact with a remote node on the command line. For more information, see [mrsdeploy](mrsdeploy/mrsdeploy.md).
+Data scientists who use R Server typically connect over Remote Desktop, and then use RTVS or other tools to create or run solutions. This release expands the interaction model to include remote execution via the `mrsdeploy` package. Assuming you have two or more installations of R Client or R Server 9.0.1, you can interact with a remote node on the command line. For more information, see [mrsdeploy](mrsdeploy/mrsdeploy.md).
 
-## How to install R Server 9.0 on Windows
+## How to install R Server 9.0.1 on Windows
 
 In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
 
@@ -52,10 +52,6 @@ The setup program you use determines the service and support policy.
 
 >[!NOTE]
 > Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
-
-###Side-by-side installation
-
-You can install R Server 9.0 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as a multi-instance service, similar to how the relational database engine and other features are installed in SQL Server.
 
 ### Prerequisites
 
@@ -77,6 +73,7 @@ The following additional components are installed by Setup.
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
 | Microsoft Visual C++ 2015 Redistributable | 14.0.23026.0 |
 
+<a name="Download"><a/>
 ### Download R Server installer
 
 You can download the installation program from the following locations:
@@ -113,6 +110,24 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 2. Double-click Rgui.exe to start the R Console application.
 3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. If you want to load a package that's not automatically available, such as `mrsdpeloy`, type `load.package("mrsdeploy")`.
 4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`.
+
+##Side-by-side installation
+
+You can install R Server 9.0.x and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
+
+##Upgrade 9.0 to 9.0.1
+
+Currently, version 9.0.1 is only available through simplified setup, while SQL Server Setup installs 9.0 only. If you want to use the new 9.0.1 features with an existing 9.0 instance, you can run simplified setup program and accept the prompts to upgrade to the newer version.
+
+Doing so voids the SQL Server Support policy, replacing it with the Modern Lifecycle Support policy describe above. Moving forward, R-related updates to SQL Server are not applied to your installation. Instead, updates are applied through the Microsoft *check for updates* program.
+
++  On a computer that has standalone R Server or SQL Server R Services (in database), as installed by SQL Server Setup, [download and run the new setup program](#download) to upgrade to 9.0.1.
+
+Later, if you want to revert to the SQL Server Support policy, follow these steps:
+
+1. Uninstall the SQL Server relational database instance that previously hosted R Services.
+2. Reinstall the SQL Server relational database instance with R Services.
+3. Reapply any service updates or hot fixes to that instance. 
 
 ## Install earlier versions of R Server for Windows
 

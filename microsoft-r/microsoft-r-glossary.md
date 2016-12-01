@@ -79,7 +79,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
 
 **Distributed computing**
-<div style="margin:15px; margin-bottom:25px;">Similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple servers.<a href="scaler-distributed-computing">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple servers. <a href="scaler-distributed-computing">Learn more…</a></div>
 
 <!--
 <br>
@@ -203,7 +203,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> P </b></big>
 
 <a name="parallel"></a>**Parallel computing**
-<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result.<a href="scaler-distributed-computing">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. <a href="scaler-distributed-computing">Learn more…</a></div>
 
 <!--
 <br>

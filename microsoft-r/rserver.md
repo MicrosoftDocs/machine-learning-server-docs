@@ -6,7 +6,7 @@ description: "Microsoft R Server introduction"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/30/2016"
+ms.date: "12/01/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,9 +27,9 @@ ms.custom: ""
 
 # Introducing Microsoft R Server
 
-**R Server** is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). It provides an execution engine for solutions built using Microsoft R packages, extending open source R with support for high-performance analytics, statistical analysis, machine learning scenarios, and massively large datasets.
+**R Server** is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). It provides an execution engine for solutions built using Microsoft R packages, extending open source R with support for high-performance analytics, statistical analysis, machine learning scenarios, and massively large datasets. Value-added functionality is provided through proprietary packages that install with the server.
 
-You can install R Server on a supported server or cluster, and use tools like **R Tools for Visual Studio** to adapt or create solutions that use the additional capacity. Although ScaleR functions are not required in the solutions you deploy, the full value of Microsoft R is realized only with ScaleR technology and other packages.
+You can install R Server on a supported server or cluster, and use an R IDE like **R Tools for Visual Studio** to adapt or create solutions that use the additional capacity. Although Microsoft R functions are not required in the solutions you deploy, the full value of Microsoft R is realized when you use ScaleR technology and other packages.
 
 R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
 
@@ -38,11 +38,10 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 |Components | Description |
 |----|---|
 |[Microsoft R Open](r-open.md) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
-|[Operationalization](operationalize/about.md) |An operationalization engine only in R Server that simplifies deployment and enables an interactive experience across multiple nodes running R Server.|
-|[ScaleR (RevoScaleR package)](scaler/scaler.md) | A proprietary package with functions that enable data chunking and distributed, parallel workloads on single or clustered installations. ScaleR ships in Microsoft R Client and Microsoft R Server. Many of its functions are platform-agnostic, but others exist to unlock the capabilities of specific platforms. Generally, the full value of R Server requires adoption of ScaleR functions for a specific platform. |
-|[MicrosoftML](microsoftml/microsoftml.md) |A proprietary collection of functions used in R code or script for performing machine learning at scale. This package ships in Microsoft R Client and Microsoft R Server. |
-|[mrsdeploy](mrsdeploy/mrsdeploy.md) |A proprietary collection of functions used for remote command line execution and web service deployment. This package ships in Microsoft R Client and Microsoft R Server.|
-|Other packages | Additional packages are distributed with R Client and R Server, such as RevoPemaR. For the complete list, see [Package reference on MSDN](package-reference.md). |
+|[Operationalization](operationalize/about.md) |An operationalization engine only in R Server used to deploy R script or code as web services. It also enables an interactive experience across multiple nodes running R Server. Operationalization functions are provided by the [mrsdeploy package](mrsdeploy/mrsdeploy.md) |
+|[ScaleR](scaler-getting-started) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
+|[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Machine learning functions are provided by the[MicrosoftML package](microsoftml/microsoftml.md).|
+|Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](pemar/pemar.md). For the complete list, see [Package reference on MSDN](package-reference.md). |
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. |
 |Rgui.exe and R.exe| Console applications for command line execution in a local session.|
 

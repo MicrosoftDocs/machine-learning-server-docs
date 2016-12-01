@@ -6,7 +6,7 @@ description: "An introduction to functions in the mrsdeploy package in Microsoft
 keywords: "mrsdeploy package vignette"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/26/2016"
+ms.date: "12/01/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,15 +26,26 @@ ms.custom: ""
 
 # Introduction to the mrsdeploy package in Microsoft R (vignette)
 
-The `mrsdeploy` package provides functions that give you command line execution against a remote Microsoft R Server, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
+The `mrsdeploy` package provides functions that give you command line execution against a remote Microsoft R Server 9.0.1 instance, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
 
-Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0.1 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use remote execution or web service deployment. Both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2.
+The package is installed as part of R Server 9.0 or R Client 3.3.2 on all supported platforms, but you must have R Server to use it.
+
+## Supported configurations
+
+For remote execution, participating nodes can be either of the following configurations:
+
++ Two machines running R Server 9.0.1
++ One machine running R Server 9.0.1 and one machine running R Client 3.3.2, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
+
+R Server can be any platform, as long as both are version 9.0.1. For example, you can establish a remote connection between Linux and Windows as along as both are running R Server 9.0.1, or the Windows machine has R Client 3.3.2.
 
 ## How to get and use mrsdeploy
 
 The `mrsdeploy` package is available in installations of [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
 
-The `mrsdeploy` package is not loaded automatically.
+On R Client, the `mrsdeploy` package is loaded automatically and can be used to initiate a remote session on an R Server instance.
+
+On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. For more information, see [Configuring R Server for Operationalization](~/operationalize/configuration-initial.md).
 
 To use it for the duration of a session in an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/) on a Windows computer, or RStudio or another R IDE on a non-Windows workstation.
 
