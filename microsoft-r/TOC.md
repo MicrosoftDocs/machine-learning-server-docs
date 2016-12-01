@@ -87,7 +87,7 @@
 ### [API Overview](operationalize/api.md)
 
 
-### Archived Documentation
+### Archived DeployR 8.x Docs
 #### [Install DeployR](deployr-installation.md)
 ##### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
 ##### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
