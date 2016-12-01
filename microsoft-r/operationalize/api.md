@@ -80,7 +80,7 @@ The core Web Services APIs facilitate the publishing and management of user-defi
 
 Web services can be versioned to improve the release of services for service authors and make it easier for consumers to identify the services they are calling.  Service versioning is an important part of the publishing process and is designed to be flexible without naming restrictions. We highly recommend the adoption of meaningful and standard versioning conventions such as [semantic versioning](http://semver.org/).
 
->For the full documentation for each web service API, check out [this API reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) and @@THIS VIGNETTE.
+>For the full documentation for each web service API, check out [this API reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis).
 
 The Service Management APIs are RESTful APIs that provide programmatic access to a services management’s lifecycle:
 
@@ -135,7 +135,7 @@ The session APIs can be divided into the following groups:
 + Session working directory APIs help manage the files in your workspace.
 + Session snapshot APIs help create and manage session snapshots.
 
->For the full documentation for each session API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis) and @@THIS VIGNETTE.
+>For the full documentation for each session API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis).
 
 <table>
     <thead>

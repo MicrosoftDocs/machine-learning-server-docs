@@ -189,57 +189,9 @@ The set of diagnostic tests include:
 
 ## Evaluate Capacity
 
-To evaluate the load balancing capacity, you can simulate the traffic for the configuration or for a given web service. There are two ways in which you can test:
-+ **Maximum Latency:** Define a maximal threshold for the duration of a web node request as well as define the initial thread count and a thread increments for the test. Then, the test will increase the number of threads by the defined increment until the defined time limit is reached.
+To evaluate the load balancing capacity, you can simulate the traffic for the configuration or for a given web service. You can test for maximum latency or maximum thread count.
++ **Maximum Latency:** Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test. The test will increase the number of threads by the defined increment until the defined time limit is reached.
 
-+ **Maximum Thread Count:** Define how many threads you want to run it against, such as 1, 10, 20, or 40. Then, see how much time is spent on each processing stage.
++ **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached. 
 
-During the simulation, you'll be able to see the maximum latency or number of parallel requests that can be supported. The results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. The stages are:
-  1. **Web Node Request**: the time it took the request from the web node's controller to go all the way to RServe and back.
-
-  1. **Create Shell**: the time it took to create a shell or take it from the pool
-
-  1. **Initialize Shell**: the time it took to load the data (model or snapshot) into the shell prior to execution
- 
-  1. **Web Node to Compute Node**: the time it took for a request from the web node to reach the compute node
-
-  1. **Compute Node Request**: the time it took for a request from the compute node to reach RServe and return to the node
- 
-After the tool is run, the results are printed to the console. You can also explore the results visually using the URL that is returned to the console. 
-
-<br>
-
-**To run or design a capacity simulation test:**
-
-1. On the web node, [launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
-
-1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
-
-1. To start a capacity simulation, choose the option to **Run capacity simulation** from the sub-menu. Review the results and paste the results URL into your browser for a visual representation of the test results.
-
-1. To change services, choose **Change the service for simulation** from the sub-menu and:
-
-   1. Specify the new service:
-
-      + Enter `Yes` to specify an existing service and provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
-
-      + Enter `No` to use the generated [default service].
-
-   1. When prompted, enter the required input parameters for the service in a JSON format. For example, if you specify a vector/matrix, follow the JSON format such as `[1,2,3]` for vector, `[[…]]` for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.
-
-1. To change threshold rules, choose **Change thread/latency limits** from the sub-menu and one of the following:
-
-      + To stop after the maximum thread count is reached:
-
-         1. Enter `Threads`.
-         1. Specify the maximum thread count after which the test will stop running.
-         1. Specify the minimum thread count at which the test will start.
-         1. Specify the increment by which the number of threads will increase for each iteration.
-
-      + To determine how many concurrent threads can be run before maximum latency is met:
-
-         1. Enter `Time`.
-         1. Specify the maximum latency in milliseconds after which the test will stop.
-         1. Specify the minimum thread count at which the test will start.
-         1. Specify the increment by which the number of threads will increase for each iteration until the maximum latency is reached.
-     
+[Learn how to configure the test parameters, run the test, and interpret the results.](admin-evaluate-capacity.md)

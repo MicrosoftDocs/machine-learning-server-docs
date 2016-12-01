@@ -45,9 +45,9 @@ With operationalization enabled, R Server offers:
 
 + [Scalability](configuration-initial.md) for more power and better load balancing
 
-+ [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-utility.md#capacity) tools
++ [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-evaluate-capacity.md) tools
 
-+ Enterprise grade security: [SSL/TLS 1.2](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md).
++ Enterprise grade security: [SSL/TLS 1.2](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md)
 
 + Enable interactive remote code execution in your own session on the R server. @@ADD LINK
 <br>

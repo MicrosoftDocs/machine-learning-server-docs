@@ -12,4 +12,4 @@ You can configure the operationalization feature for Microsoft R Server using th
 
 + [Encrypt credentials](../../operationalize/admin-utility.md#encrypt)
 
-+ [Evaluate the configuration's capacity](../../operationalize/admin-utility.md#capacity)
++ [Evaluate the configuration's capacity](../../operationalize/admin-evaluate-capacity.md)
