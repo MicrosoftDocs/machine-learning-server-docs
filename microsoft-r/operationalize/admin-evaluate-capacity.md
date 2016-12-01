@@ -86,8 +86,6 @@ After the tool is run, the results are printed to the console. The test results 
 
 You can also explore the results visually using the URL that is returned to the console. 
 
-@@Sample screenshot
-
 |Stage|Time Measured|
 |------|-----------|
 |Web Node Request|Time for the request from the web node's controller to go all the way to RServe and back|
@@ -96,3 +94,4 @@ You can also explore the results visually using the URL that is returned to the 
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
 |Compute Node Request|Time for a request from the compute node to reach RServe and return to the node|
  
+![URL results](../media/o16n/admin-capacity-results-url.png)
