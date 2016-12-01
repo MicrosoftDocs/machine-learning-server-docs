@@ -60,11 +60,9 @@ These REST APIs are described in a [Swagger-based JSON document](#swagger) deliv
 All operationalization API calls must be authenticated using the `POST /login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). 
 
 Once your use the `POST /login` API, you'll get the [bearer/access token](security-access-tokens.md). 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more](security-access-tokens.md).
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
 
->For the full documentation for each session API, check out [this section of the API Reference help](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#authentication-apis).
->
->[Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
+>For the full documentation for each authentication API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#authentication-apis).
 
 |Authentication API|Description|
 |----|-----------|
@@ -82,7 +80,7 @@ The core Web Services APIs facilitate the publishing and management of user-defi
 
 Web services can be versioned to improve the release of services for service authors and make it easier for consumers to identify the services they are calling.  Service versioning is an important part of the publishing process and is designed to be flexible without naming restrictions. We highly recommend the adoption of meaningful and standard versioning conventions such as [semantic versioning](http://semver.org/).
 
->For the full documentation for each web service API, check out [this API reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#services-management-apis) and @@THIS VIGNETTE.
+>For the full documentation for each web service API, check out [this API reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) and @@THIS VIGNETTE.
 
 The Service Management APIs are RESTful APIs that provide programmatic access to a services management’s lifecycle:
 
@@ -137,7 +135,7 @@ The session APIs can be divided into the following groups:
 + Session working directory APIs help manage the files in your workspace.
 + Session snapshot APIs help create and manage session snapshots.
 
->For the full documentation for each session API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#session-apis) and @@THIS VIGNETTE.
+>For the full documentation for each session API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis) and @@THIS VIGNETTE.
 
 <table>
     <thead>
@@ -157,11 +155,11 @@ The session APIs can be divided into the following groups:
         </tr>
         <tr>
             <td><code>DELETE /sessions/{id}</code></td>
-            <td>Closes a session and all its associated resources</td>
+            <td>Closes a session and deletes all its associated resources</td>
         </tr>
         <tr>
             <td><code>DELETE /sessions/{id}/force</code></td>
-            <td>Attempts to forcefully close a session and all its associated resources</td>
+            <td>Attempts to forcefully close a session and deletes all its associated resources</td>
         </tr>
         <tr>
             <td><code>POST /sessions/{id}/execute</code></td>
@@ -241,7 +239,7 @@ The session APIs can be divided into the following groups:
 </table>
 
 <p>
-    <a name="user-content-sessionsnapshots"></a>
+    <a name="sessionsnapshots"></a>
     <br></p>
 
 Note: Other snapshot APIs are covered in the section below.
@@ -259,7 +257,7 @@ Note: Other snapshot APIs are covered in the section below.
             <td>Create snapshot from specific R session.</td>
         </tr>
         <tr>
-            <td><code>POST /sessions/{id}/loadsnapshot/{snapId}</code></td>
+            <td><code>POST /sessions/{id}/loadsnapshot/{snapshotId}</code></td>
             <td>Loads a certain snapshot into specific R session.</td>
         </tr>
     </tbody>
@@ -271,11 +269,11 @@ Note: Other snapshot APIs are covered in the section below.
 ### Snapshot APIs
 
 
-If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a remote R session saved to Microsoft R Server, which includes:
+If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a R session saved to Microsoft R Server, which includes:
 + The session's workspace along with the installed R packages
 + Any files and artifacts in the working directory
 
-A snapshot can be loaded into any subsequent remote R session for the user who created it.  For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.   Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. 
+A snapshot can be loaded into any subsequent remote R session for the user who created it.  For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.   Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by loading this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. 
 
 Snapshots are only accessible to the user that creates them and cannot be shared across users.
 
@@ -291,7 +289,7 @@ Snapshots can be used for and by both sessions and web service APIs. You can cre
 These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
 
->For the full documentation for each snapshot API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#snapshot-apis).
+>For the full documentation for each snapshot API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis).
 
 
 |Snapshot APIs|Description|
@@ -309,7 +307,7 @@ These APIs allow you to create and manage session snapshots. There are additiona
 
 You can retrieve the 'raw details' on the health of the system.
 
->For the full documentation for the status API, check out [this section](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#status-apis) of the API Reference help.
+>For the full documentation for the status API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis).
 
 |Status API|Description|
 |----|-----------|

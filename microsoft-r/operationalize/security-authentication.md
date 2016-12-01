@@ -87,15 +87,16 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
       |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
       |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
+      |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted). For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 
 1. If using a certificate for access token signing, do the following: 
 
-   >This is particularly useful when you have multiple Web nodes and want the tokens to be signed consistently by every Web node in your configuration. 
+   >You must use a certificate for access token signing whenever you have multiple web nodes so the tokens are signed consistently by every web node in your configuration. 
    >
-   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the Web node and the LDAP server.
+   >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the web node and the LDAP server.
    >
    >Tokens are particularly useful to the application developer who can use them to identify and authenticate the user who is sending the API call within his or her application. [Learn more...](security-access-tokens.md)
     
@@ -103,14 +104,15 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
-   1. Uncomment characters in that section and update the properties so that they match the values for your token signing certificate:
+   1. Enable this section and update the properties so that they match the values for your token signing certificate:
       ```
       "JWTSigningCertificate": {
+          "Enabled": true,
           "StoreName": "My",
-          "StoreLocation": "LocalMachine",
-          "SubjectName": "<subject name>"
-       }
-       ```
+          "StoreLocation": "CurrentUser",
+          "SubjectName": "CN=<subject name>"
+      }
+      ```
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
@@ -157,7 +159,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Add a key by selecting a key duration.
 
-   1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account.
+   1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
    1. Click **Save**. The application is created.
 
@@ -212,7 +214,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    |Azure AD Properties|Definition|
    |----------------|-------------------------------|
-   |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login.|
+   |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login. For example, if the AAD account domain is `myMRServer.contoso.com`, then the `Authority` would be `https://login.windows.net/myMRSServer.contoso.com`|
    |`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
 
 1. Launch the administrator's utility and:
@@ -231,7 +233,7 @@ To authenticate with Azure Active Directory from your R script using  the `remot
 ```
 remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
            authuri = "https://login.windows.net",
-           tenantid = "<AAD_DOMAIN>", #domain of AAD account
+           tenantid = "<AAD_DOMAIN>", #domain of AAD account such as: myMRServer.contoso.com
            clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
            resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
            session = TRUE,

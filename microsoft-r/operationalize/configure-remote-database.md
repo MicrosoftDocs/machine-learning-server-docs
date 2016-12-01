@@ -59,14 +59,14 @@ The supported databases are:
 
        > For security purposes, we recommend you [encrypt login credentials](admin-utility.md#encrypt) for this database before adding the information to this file.
 
-       For SQL Server Database (Integrated Security), use:
+       For SQL Server Database (**Integrated Security**), use:
        ``` 
        "ConnectionStrings": {
           "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
         },
         ```
 
-        For SQL Server Database (SQL authentication), use: 
+        For SQL Server Database (**SQL authentication**), use: 
         ```
         "ConnectionStrings": {
            "sqlserver": "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"

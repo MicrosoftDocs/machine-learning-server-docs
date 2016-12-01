@@ -4,7 +4,7 @@ You can configure the operationalization feature for Microsoft R Server using th
 
 + [Set a local admin password](../../operationalize/admin-utility.md#admin-password)  
 
-+ [Stop and restart](../../operationalize/admin-utility.md#startstop)  front-ends and back-end services
++ [Stop and restart](../../operationalize/admin-utility.md#startstop) web and compute node services
 
 + [Update the service ports](../../operationalize/admin-utility.md#ports)
 
