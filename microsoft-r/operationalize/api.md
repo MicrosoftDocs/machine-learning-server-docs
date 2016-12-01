@@ -181,9 +181,6 @@ The session APIs can be divided into the following groups:
         </tr>
     </tbody>
 </table>
-
-<p><br></p>
-
 <table>
     <thead>
         <tr>
@@ -210,9 +207,6 @@ The session APIs can be divided into the following groups:
         </tr>
     </tbody>
 </table>
-
-<p><br></p>
-
 <table>
     <thead>
         <tr>
