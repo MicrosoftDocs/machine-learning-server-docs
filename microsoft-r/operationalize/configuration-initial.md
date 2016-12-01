@@ -60,7 +60,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. On each machine, install Microsoft R Server:
 
-     + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx).
+     + On Windows, install [R Server (Standalone)](../rserver-install-windows.md).
 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
@@ -212,7 +212,7 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 
 In production environments, we strongly recommend the following approaches:
 
-1. [Configure SSL](security-https.md) and install the necessary certificates. 
+1. [Configure SSL/TLS](security-https.md) and install the necessary certificates. 
 
 1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
 
@@ -226,32 +226,40 @@ By default, the web node configuration sets up a SQLite database. If you have mu
 
 If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
 
-**Step 6: Post Configuration**
+**Step 6: Declare all Compute Nodes**
 
 Once all web nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each web node.
 
-1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
-1. In the file, search for the section starting with `"BackEndConfiguration": {` .
+   1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-1. Uncomment characters in that section.
+   1. Uncomment characters in that section.
 
-1. Update the `"Uris": {` properties to declare each backend:
-   ```
-    "Uris": {
-      "Description": "Update 'Values' section to point to your backend machines. Using SSL/TLS 1.2 (HTTPS) is highly recommended",
-      "Values": [
-        "http://<IP-ADDRESS-OF-BACKEND-1>:12805",
-        "http://<IP-ADDRESS-OF-BACKEND-2>:12805",
-        "http://<IP-ADDRESS-OF-BACKEND-3>:12805"       
-      ]
-    }
-    ```
+   1. Update the `"Uris": {` properties to declare each backend:
+      ```
+      "Uris": {
+         "Description": "Update 'Values' section to point to your backend machines. Using SSL/TLS 1.2 (HTTPS) is highly recommended",
+         "Values": [
+           "http://<IP-ADDRESS-OF-BACKEND-1>:12805",
+           "http://<IP-ADDRESS-OF-BACKEND-2>:12805",
+           "http://<IP-ADDRESS-OF-BACKEND-3>:12805"       
+         ]
+       }
+       ```
 
-1. Close and save the file.
+   1. Close and save the file.
 
-1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node. 
+   1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node. 
 
-1. Repeat these steps on each web node to declare all the backends.
+   1. Repeat these steps on each web node to declare all the backends.
+
+**Step 7: Post Configuration**
+
+1. [Update service ports](../../operationalize/admin-utility.md#ports), if needed.
+
+1. [Run diagnostic tests](../../operationalize/admin-utility.md#test).
+
+1. [Evaluate](../../operationalize/admin-evaluate-capacity.md) the configuration's capacity.
