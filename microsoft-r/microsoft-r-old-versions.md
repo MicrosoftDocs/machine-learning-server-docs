@@ -33,6 +33,8 @@ R Productivity Environment (RPE) is an older development tool that is now supers
 * [RPE Getting Started](RevoRPE_Getting_Started.md)
 * [RPE User's Guide](RevoRPE_Users_Guide.md)
 
+
+## Revolution R Enterprise Docs
 Prior to Microsoft R Server, the product was called Revolution R Enterprise (RRE). DeployR has not changed names.
 
 Here is a list of the available archived documentation sets for RRE:
@@ -45,3 +47,7 @@ Here is a list of the available archived documentation sets for RRE:
 * [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) and [DeployR 7.4.0 Docs](https://deployr.revolutionanalytics.com/doc/7.4.0/)
 * [RRE 7.3.0 Docs](http://packages.revolutionanalytics.com/doc/7.3.0/) and [DeployR 7.3.0 Docs](https://deployr.revolutionanalytics.com/doc/7.3.0/)
 * [RRE 7.2.0 Docs](http://packages.revolutionanalytics.com/doc/7.2.0/)
+
+## DeployR 8.x Docs
+
+The documentation for these releases have been archived. [See here.](deployr-welcome.md)
