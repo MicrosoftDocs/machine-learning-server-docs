@@ -75,7 +75,7 @@
 ### [Compare Features: 9.0 / 8.0.5](operationalize/about-compare-to-8.0.5.md)
 ### [Configure Operationalization](operationalize/configuration-initial.md)
 ### [Configure Remote Database](operationalize/configure-remote-database.md)
-### [Enterprise Security](operationalize/security.md)
+### [Enterprise Security Options](operationalize/security.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection Security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
