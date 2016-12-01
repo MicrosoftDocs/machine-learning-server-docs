@@ -81,6 +81,7 @@
 #### [Cross-Origin Resource Sharing](operationalize/security-cors.md)
 #### [RServe Considerations](operationalize/security-rserve.md)
 ### [Administration](operationalize/admin-utility.md)
+### [Evaluate Capacity](operationalize/admin-evaluate-capacity.md)
 ### [R Package Management](operationalize/package-management.md)
 ### [Service Consumption & Integration](operationalize/service-integration.md)
 ### [Access Token Management](operationalize/security-access-tokens.md)

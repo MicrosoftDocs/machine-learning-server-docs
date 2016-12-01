@@ -76,7 +76,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 1. Review the results onscreen.
 
    ![Onscreen results](../media/o16n/admin-capacity-results-cl.png)
-1. Paste the URL printed onto the screen into your browser for a visual representation of the results.
+1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
 
 <br>
 
