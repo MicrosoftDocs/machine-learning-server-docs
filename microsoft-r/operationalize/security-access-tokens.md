@@ -61,7 +61,7 @@ Tokens can be generated in one of two ways:
   POST /login HTTP/1.1
   {
     "username": "my-user-name",
-    "password": "$ecRet1"
+    "password": "$ecRetPas$1"
   }
   ```
 
@@ -84,9 +84,9 @@ The bearer token is made of an `access_token` property and  a `refresh_token` pr
 
 | |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the user logs in|Whenever the user logs in, or<br><br>After a `access_token`/`refresh_token` pair is used|
+|**Gets<br>Created**|Whenever the user logs in, or<br><br> a refreshToken api is called|Whenever the user logs in|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the token usage/renewal cycle exceeds 90 days, or<br><br>If `refresh_token` expired, or<br><br>If user's password changed, or<br><br>If the bearer token was revoked|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>After `access_token` has been used <br> (another `refresh_token` takes its place)<br> <br> <br>|
+|**Becomes<br>Invalid**|If the `refresh_token` was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of `access_token`/`refresh_token` has been created|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>When a new `access_token`/`refresh_token` pair was created, or<br><br>If the `refresh_token` was revoked<br> <br> <br>|
 
 <br>
 
@@ -155,8 +155,6 @@ Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.gith
     "refresh_token":"ScW2t...."
   }
   ```
-
-If the `refresh_token` itself has also expired, then the user's bearer token becomes invalid and they will need to log in  again before their next API call. 
 
 <br>
 

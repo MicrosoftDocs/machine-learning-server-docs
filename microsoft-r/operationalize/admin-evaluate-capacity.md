@@ -40,6 +40,8 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
+   ![Test Parameters](../media/o16n/admin-capacity-parameters.png)
+
 1. To choose a different web service:
 
    1. From the sub-menu, choose the option for **Change the service for simulation**.
@@ -72,6 +74,8 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.
+
+   ![Onscreen results](../media/o16n/admin-capacity-results-cl.png)
 1. Paste the URL printed onto the screen into your browser for a visual representation of the results.
 
 <br>

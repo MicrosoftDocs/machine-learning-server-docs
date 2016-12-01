@@ -60,30 +60,30 @@ These REST APIs are described in a [Swagger-based JSON document](#swagger) deliv
 All operationalization API calls must be authenticated using the `POST /login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). 
 
 Once your use the `POST /login` API, you'll get the [bearer/access token](security-access-tokens.md). 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about bearer tokens and refreshTokens](security-access-tokens.md) for operationalization.
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. 
 
->For the full documentation for each authentication API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#authentication-apis).
+[Learn about each authentication API](https://microsoft.github.io/deployr-api-docs/9.0.1/#authentication-apis)...
 
+<!--
 |Authentication API|Description|
 |----|-----------|
 |`POST /login`|Logs the user in|
 |`POST /login/refreshToken`|The user renews the access token and refresh token|
 |`DELETE /login/refreshToken/{refreshToken}`|The user revokes a refresh token|
-|`GET /status`|Gets the current health of the system|
-
-<br>
+-->
 
 <a name="services"></a>
 ### Web Services APIs
 
-The core Web Services APIs facilitate the publishing and management of user-defined analytic web services. An R Server web service is uniquely defined by a `name` and `version` for easy service consumption and meaningful machine-readable discovery approaches. The APIs are straightforward, easy-to-use, and when composed together, can form the foundation for more expressive operations.
+The core Web Services APIs facilitate the publishing and management of user-defined analytic web services. An R Server web service is a stateless execution in an R shell on the compute node. Each web service is uniquely defined by a `name` and `version` for easy service consumption and meaningful machine-readable discovery approaches. 
+
+These RESTful APIs provide programmatic access to a services management’s lifecycle. The APIs are straightforward, easy-to-use, and when composed together, can form the foundation for more expressive operations.
 
 Web services can be versioned to improve the release of services for service authors and make it easier for consumers to identify the services they are calling.  Service versioning is an important part of the publishing process and is designed to be flexible without naming restrictions. We highly recommend the adoption of meaningful and standard versioning conventions such as [semantic versioning](http://semver.org/).
 
->For the full documentation for each web service API, check out [this API reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis).
+[Learn about each web service API](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis)...
 
-The Service Management APIs are RESTful APIs that provide programmatic access to a services management’s lifecycle:
-
+<!--
 <table><thead>
 <tr>
 <th width="325">Web Services API</th>
@@ -92,51 +92,53 @@ The Service Management APIs are RESTful APIs that provide programmatic access to
 </thead><tbody>
 <tr>
 <td><code>GET /services</code></td>
-<td>Lists all published web services for the authenticated user.</td>
+<td>Lists all published web services.</td>
 </tr>
 <tr>
 <td><code>GET /services/{name}</code></td>
-<td>Lists all published web services by the specified name for the authenticated user.</td>
-</tr>
-<tr>
-<td><code>POST /services/{name}</code></td>
-<td>Publish web service for the authenticated user with given name. Since no `version` was specified a `GUID` (Globally Unique Identifier) will be created as a unique reference number to represent a version. <br><br>Since the GUID is not a meaningful version number, the intention is allow an author to treat the service as a <i>development</i> version (seen only by the author) until it is ready to be promoted and shared. From there, a more meaningful version number can be chosen during service publishing to represent a stable release.</td>
+<td>Lists all published web services by the specified name.</td>
 </tr>
 <tr>
 <td><code>GET /services/{name}/{version}</code></td>
-<td>Lists all the published web services having given name and version for the logged in user.</td>
+<td>Lists all the published web services having given name and version.</td>
+</tr>
+<tr>
+<td><code>POST /services/{name}</code></td>
+<td>Publish web service with given name. Since no `version` was specified a `GUID` (Globally Unique Identifier) will be created as a unique reference number to represent a version. <br><br>Since the GUID is not a meaningful version number, the intention is allow an author to treat the service as a <i>development</i> version (seen only by the author) until it is ready to be promoted and shared. From there, a more meaningful version number can be chosen during service publishing to represent a stable release.</td>
 </tr>
 <tr>
 <td><code>POST /services/{name}/{version}</code></td>
-<td>Publish the web service for the authenticated user with given name and version.</td>
+<td>Publish the web service with given name and version.</td>
 </tr>
 <tr>
 <td><code>DELETE /services/{name}/{version}</code></td>
-<td>Deletes the published web service for the logged in user.</td>
+<td>Deletes the published web service.</td>
 </tr>
 <tr>
 <td><code>PATCH /services/{name}/{version}</code></td>
-<td>Patches the published web service for the logged in user.</td>
+<td>Patches the published web service.</td>
 </tr>
 <tr>
 <td><code>GET /api/{name}/{version}/swagger.json</code></td>
 <td>Get Swagger capability JSON for the published web service. Whenever a service is published (<code>POST /services/{name}/{version}</code>), an endpoint is registered (<code>/api/{name}/{version}</code>), which in turn triggers the generation of a custom <a href="http://swagger.io/">Swagger</a>-based JSON file. <a href="service-integration.md#consume">Learn more about consuming web services</a>.</td>
 </tr>
 </tbody></table>
+-->
 
 <a name="sessions"></a>
 ### Session APIs
 
-Each time a service is executed on the API, the service makes use of an R session that is managed by R Server on behalf of the application. 
+A session is an interactive stateful R session that is run in an R shell on the compute node. A session is managed by R Server on behalf of the application. 
 
 The session APIs can be divided into the following groups:
 + Session lifecycle APIs help manage the R session lifecycle.
 + Session workspace APIs help manage the objects in your workspace.
 + Session working directory APIs help manage the files in your workspace.
-+ Session snapshot APIs help create and manage session snapshots.
++ Session snapshot APIs help create and manage session snapshots. Other snapshot APIs are covered in the section below.
 
->For the full documentation for each session API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis).
+[Learn about each session API](https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis)...
 
+<!--
 <table>
     <thead>
         <tr>
@@ -262,12 +264,11 @@ Note: Other snapshot APIs are covered in the section below.
         </tr>
     </tbody>
 </table>
+-->
 
-<br>
 
 <a name="snapshots"></a>
 ### Snapshot APIs
-
 
 If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a R session saved to Microsoft R Server, which includes:
 + The session's workspace along with the installed R packages
@@ -277,29 +278,21 @@ A snapshot can be loaded into any subsequent remote R session for the user who c
 
 Snapshots are only accessible to the user that creates them and cannot be shared across users.
 
-The following functions are available for working with snapshots:  
-`listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
-
-
 Snapshots can be used for and by both sessions and web service APIs. You can create a snapshot to freeze a session in time and then use it when consuming a web service.
 
->[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
 
 These APIs allow you to create and manage session snapshots. There are additional snapshot APIs in the [session group](#sessionsnapshots).
 
+[Learn about each snapshot API](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis)...
 
->For the full documentation for each snapshot API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis).
-
-
+<!--
 |Snapshot APIs|Description|
 |----|-----------|
 |`GET /snapshots`|List all snapshots for the current user.|
 |`GET /snapshots/{id}`|Get the snapshot content as a zip file containing the working directory and workspace.|
 |`DELETE /snapshots/{id}`|Delete specified snapshot.|
-
-
-<br>
+-->
 
 
 <a name="status"></a>
@@ -307,11 +300,13 @@ These APIs allow you to create and manage session snapshots. There are additiona
 
 You can retrieve the 'raw details' on the health of the system.
 
->For the full documentation for the status API, check out [this API Reference section](https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis).
+[Learn about the status API](https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis)...
 
+<!--
 |Status API|Description|
 |----|-----------|
 |`GET /status`|Gets the current health of the system|
+-->
 
 <br>
 

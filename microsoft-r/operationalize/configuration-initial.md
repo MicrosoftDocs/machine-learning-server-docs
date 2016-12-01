@@ -56,8 +56,6 @@ This configuration is useful when you want to explore what it is to operationali
 
 **To configure on a single machine:**
 
->The operationalization feature is supported on Windows Server 2012, Windows Server 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
-
 1. On each machine, install Microsoft R Server:
 
      + On Windows, install [R Server (Standalone)](../rserver-install-windows.md).
@@ -126,13 +124,12 @@ You are now ready to begin operationalizating your R analytics with R Server.
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security. 
 
-This configuration includes one or more web nodes and compute nodes on a group of machines, each of which can easily be scaled. Scaling up compute nodes to create a grid enables you to handle more concurrent requests and benefit from load balancing across these compute nodes. For added security, you can authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) and [configure SSL](security-https.md).
-
-Additionally, when you have multiple web nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+ 
+For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
  
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
->The operationalization feature is supported on Windows Server 2012, Windows Server 2016, and Ubuntu 14.04, Ubuntu 16.04, CentOS/RHEL 7.x.
 
 **Step 1: Configure Web Node(s)**
 
