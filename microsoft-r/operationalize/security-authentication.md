@@ -78,8 +78,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       To find this path, enter `normalizePath(R.home())` in your R console.
    
    1. Search for the section starting with `"LDAP": {`
+   
+   1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
 
-   1. Uncomment characters in that section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
+      > For better security, we recommend you [encrypt the password](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
 
       |LDAP Properties|Definition|
       |---------------|-------------------------------|
@@ -91,6 +93,26 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted). For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
+
+      For example:
+      ```
+      "LDAP": {
+            "Enabled": true,
+            "Values": [
+                {
+                    "Host": "<host_ip>",
+                    "UseLDAPS": "True",
+                    "SkipCertificateValidation": "True",
+                    "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
+                    "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
+                    "QueryUserPasswordEncrypted": true,
+                    "QueryUserPassword": "eyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzEeyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzEeyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzE",
+                    "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
+                    "SearchFilter": "cn={0}"
+                }
+            ]
+        }
+        ```
 
 1. If using a certificate for access token signing, do the following: 
 
@@ -113,6 +135,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
           "SubjectName": "CN=<subject name>"
       }
       ```
+1. Save changes to `appsettings.json`.
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.

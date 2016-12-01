@@ -121,19 +121,22 @@ For security purposes, we strongly recommend that you encrypt the connection str
 
 1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
 
-1. From the main menu, choose the option **Encrypt Credentials**.
+      1. From the main menu, choose the option **Encrypt Credentials**.
 
-1. Specify where is the encryption certificate installed: 
-   + Local machine (Computer account)
-   + Current user (My user account)
+      1. Specify where is the encryption certificate installed: 
+        + Local machine (Computer account)
+        + Current user (My user account)
 
-   The list of available certificates appears.
+        The list of available certificates appears.
 
-1. Specify the certificate to use for encryption.
+      1. Specify the certificate to use for encryption.
 
-1. Enter information you want to encrypt.  The tool will return an encrypted string.
+      1. Enter information you want to encrypt.  The tool will return an encrypted string.
 
-1. Insert that string in the appropriate section of the configuration file, `appsettings.json` for a [remote database](configure-remote-database.md) or the [authentication](security-authentication.md) strings. You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+1. Open the configuration file, `appsettings.json`.
+You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 
 <br><a name="test"></a>
 
