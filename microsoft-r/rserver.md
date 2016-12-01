@@ -46,11 +46,13 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. |
 |Rgui.exe and R.exe| Console applications for command line execution in a local session.|
 
-We recommend that you also install [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/). RTVS provides a new R project template that adds the R Interactive window, R script support, embedded help, package management, and more.
+If you run Windows, we recommend that you also install [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/). RTVS provides a new R project template that adds the R Interactive window, R script support, embedded help, package management, and more. Otherwise, you can use any R IDE that supports R packages.
 
 ## Why use R Server?
 
  **R**, along with many other statistical analysis products, is challenged by problems of capacity and speed. Users cannot perform data analysis because their data is too big to fit into memory, or even if it fits, there is not sufficient memory available to perform analysis. In R this is often a problem because copies of data are frequently made during analysis. Even without a capacity limit, computation may be too slow to be useful. R Server with ScaleR not only helps to overcome these challenges in R, but surpasses capabilities in other statistics products.
+
+In addition to capacity and scale, R Server offers machine learning and operationalization features, both of which are new in this release.
 
 ## Benefits of R Server
 
@@ -60,6 +62,7 @@ Reasons for choosing R Server include:
 * Increased threads for R worker processes running standard R packages and also ScaleR functions
 * Performance and scalability through parallelization and streaming
 * Supportability and service level agreements for mission-critical workloads
+* Machine learning algorithms and transforms
 * Operationalization engine for enterprise deployment
 
 ## Interoperability with R language and across Microsoft R
