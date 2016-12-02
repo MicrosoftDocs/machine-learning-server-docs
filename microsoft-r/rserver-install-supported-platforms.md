@@ -37,7 +37,7 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 - Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
 - Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
 - SUSE Linux Enterprise Server 11 (SLES11)
-- Ubuntu 14.x and 16.x
+- Ubuntu 14.04 and 16.04
 
 **Microsoft R Server for Teradata**
 
