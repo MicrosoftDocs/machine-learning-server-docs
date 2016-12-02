@@ -179,5 +179,6 @@ Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1
   ```
 
 + **Response**
-
-  HTTP Error: `200`
+  ```
+  HTTP 200 Success
+  ```

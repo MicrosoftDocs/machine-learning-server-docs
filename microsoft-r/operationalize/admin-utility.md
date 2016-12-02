@@ -38,23 +38,23 @@ These instructions describe how to launch the Administrator Utility.
 **On Windows:**
 
 + You can launch the administration utility using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**. 
-+ Alternately, you launch the administration utility script with administrator privileges in your command window
-  where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
++ Alternately, open a command line window with administrator privileges and enter the following commands:
   ```
   cd <MRS_home>\deployr
   dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
   ```
+  where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 **On Linux:**
 
-Launch the administration utility script with administrator, `root`, or `sudo` privileges:
-```
-cd <MRS_home>\deployr
-dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
-```
+1. Launch the administration utility script with `root` or `sudo` privileges.
 
-where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
+1. At the prompt, enter the following commands:
+   ```
+   cd /usr/lib64/microsoft-deployr/9.0.1
+   dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
+   ```
 
 <br><a name="admin-password"></a>
 
@@ -134,7 +134,10 @@ For security purposes, we strongly recommend that you encrypt the connection str
       1. Enter information you want to encrypt.  The tool will return an encrypted string.
 
 1. Open the configuration file, `appsettings.json`.
-You can find that file under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 
@@ -165,10 +168,14 @@ The set of diagnostic tests include:
       1. Review the test results.
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-         + On the web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
-         + On the compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs`
-         
-         where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+         + Windows default log path:
+              + Web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
+              + Compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs`
+           
+           where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+         + Linux default log path: 
+              + Web node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs`
+              + Compute node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs`
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 

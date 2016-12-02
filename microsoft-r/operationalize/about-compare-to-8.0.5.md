@@ -29,6 +29,9 @@ ms.custom: ""
 
 The following table presents some of the main differences between the operationalization feature in Microsoft R Server 9.0 and the DeployR feature available in R Server 8.0.5.
 
+>[!Important]
+>R Server's operationalization feature is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
+
 Release|Microsoft R Server 8.0.5|Microsoft R Server 9.0.1
 ----|-----|------
 Name of feature|DeployR|Operationalization
@@ -41,3 +44,11 @@ High Availability|Active-Active recovery not supported|Active-Active recovery su
 Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the built-in remote execution functions in the `mrsdeploy` package.
 Web UI|Login, Admin Console, Repository Manager, <br>API Explorer, Event Console|Coming in 2017 with new design 
 APIs|Over 100 RESTful APIs|About 40 RESTful APIs<br> (not backwards compatible)
+
+
+Some term equilavents in the new operationalization feature:
+
+|DeployR 8.x|Operationalization in R Server 9|
+|------------|---------------|
+|Projects|Sessions|
+|RBroker pool|Now part of web services implementation with an internal pool of R shells|

@@ -227,20 +227,23 @@ If provisioning on a cloud service, then you must also [create inbound security 
 
 Once all web nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each web node.
 
-   1. Open `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\appsettings.json` where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
+On each web node:
+
+    1. Open the external configuration file, `appsettings.json` file. 
+
+       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-   1. Uncomment characters in that section.
-
-   1. Update the `"Uris": {` properties to declare each backend:
+   1. Update the `"Uris": {` properties to declare each compute node:
       ```
       "Uris": {
-         "Description": "Update 'Values' section to point to your backend machines. Using SSL/TLS 1.2 (HTTPS) is highly recommended",
          "Values": [
-           "http://<IP-ADDRESS-OF-BACKEND-1>:12805",
-           "http://<IP-ADDRESS-OF-BACKEND-2>:12805",
-           "http://<IP-ADDRESS-OF-BACKEND-3>:12805"       
+           "http://<IP-ADDRESS-OF-COMPUTE-NODE-1>:12805",
+           "http://<IP-ADDRESS-OF-COMPUTE-NODE-2>:12805",
+           "http://<IP-ADDRESS-OF-COMPUTE-NODE-3>:12805"       
          ]
        }
        ```
@@ -251,7 +254,7 @@ Once all web nodes and compute nodes are configured, you must declare the IP add
 
    1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node. 
 
-   1. Repeat these steps on each web node to declare all the backends.
+   1. Repeat these steps on each web node to declare all the compute node.
 
 **Step 7: Post Configuration**
 

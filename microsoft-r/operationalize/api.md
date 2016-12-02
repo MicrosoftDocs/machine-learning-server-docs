@@ -33,19 +33,18 @@ The core Microsoft R Server [operationalization APIs](https://microsoft.github.i
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs/9.0.1/)</big>
 
+## R for Application Developers
 While data scientists can work with R directly in an R console window or R IDE, application developers need a different set of tools to leverage R inside applications. The API exposes Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
 As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
-Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
-
-To simplify the integration of R analytics web services using these APIs, you can build and use [an API client library stub](#swagger).
-
 <br>
 
-## Core Operationalization APIs
+## Core APIs for Operationalization 
 
-The core R Server operationalization APIs can be grouped into several categories, including: [Authentication](#authentication), [Web Services](#services), [Sessions](#sessions), [Snapshots](#snapshots), and [Status](#status). These REST APIs are described in a [Swagger-based JSON document](#swagger) delivered with the product. 
+ The core operationalization APIs are REST APIs that expose a wide range of R analytics services to client application developers. These REST APIs are described in a Swagger-based JSON document, `rserver-swagger-9.0.1.json`, which is delivered with the product. You can get access to all the core APIs for operationalization using a client library built from this Swagger-based JSON document. [Learn more about building libraries from swagger.](#swagger)
+
+The core R Server operationalization APIs can be grouped into several categories, including: [Authentication](#authentication), [Web Services](#services), [Sessions](#sessions), [Snapshots](#snapshots), and [Status](#status). 
 
 <a name="authentication"></a>
 ### User Authentication APIs
@@ -69,7 +68,7 @@ If a web service is published without a version (<code>GET /services/{name}</cod
 
 Whenever a web service is published (<code>POST /services/{name}/{version}</code>), an endpoint is registered (<code>/api/{name}/{version}</code>), which in turn triggers the generation of a custom <a href="http://swagger.io/">Swagger</a>-based JSON file. <a href="service-integration.md#consume">Learn more about consuming web services</a>.
 
-Please note that snapshots are only accessible to the user who created them. However, if you use a snapshot when developing your web service, the session information from a snapshot will be baked into the service API when published. Therefore, any authenticated user can consume the web service later.
+If you use a snapshot when developing your web service, the session snapshot information will be baked into the service API when published and available to any authenticated user consuming that web service later.
 
 <a name="sessions"></a>
 ### Session APIs
@@ -103,6 +102,12 @@ A snapshot can be loaded into any subsequent remote R session for the user who c
 
 You can retrieve the 'raw details' on the health of the system using the `GET /status` API call. [Learn about this API](https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis).
 
+
+
+## Service Consumption APIs for Operationalization
+Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
+
+To simplify the integration of R analytics web services using these APIs, you can build and use [an API client library stub](#swagger).
 
 <br>
 

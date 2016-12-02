@@ -86,10 +86,10 @@ This section walks you through the steps for securing the connections between th
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
-      
-   You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\ where `<MRS_home>` is the path to the Microsoft R Server install directory. 
-       
-   To find this path, enter `normalizePath(R.home())` in your R console.
+
+   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
 1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -144,10 +144,10 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 1. Update the external JSON configuration file, `appsettings.json` to configure the HTTPS port for the compute node:
    1. Open the `appsettings.json` configuration file.
-      
-      You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\ where `<MRS_home>` is the path to the Microsoft R Server install directory. 
-       
-      To find this path, enter `normalizePath(R.home())` in your R console.
+
+       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
    1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -189,17 +189,18 @@ This section walks you through the steps for authenticating the web node with th
        > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
     1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
-      
-       You can find that file under &lt;MRS_home&gt;\deployr\Microsoft.DeployR.Server.WebAPI\ where `<MRS_home>` is the path to the Microsoft R Server install directory. 
-       
-       To find this path, enter `normalizePath(R.home())` in your R console.
+
+       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+
+       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-    1. Uncomment characters in that section and update the properties to match the values for the **Authentication certificate**:
+    1. Enable this section with `"Enabled": true` and update the properties to match the values for the **Authentication certificate**:
        ```
        "BackEndConfiguration": {
            "ClientCertificate": {
+               "Enabled": false,
                "StoreName": "My",
                "StoreLocation": "LocalMachine",
                "SubjectName": "<name-of-certificate-subject>"
@@ -218,9 +219,10 @@ This section walks you through the steps for authenticating the web node with th
 
     1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-    1. Uncomment characters in that section and update the properties to match the values for the **Authentication certificate**:
+    1. Enable this section with `"Enabled": true` and update the properties to match the values for the **Authentication certificate**:
        ```
        "ClientCertificate": {
+           "Enabled": false,
            "Issuer": "<certificate issuer name>",
            "Subject": "<certificate subject name>"
        },   
