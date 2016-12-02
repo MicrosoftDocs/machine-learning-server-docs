@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Supported Platforms for Microsoft R Server"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
+description: "A list of the operating systems supported by editions and versions of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "08/09/2016"
+manager: "jhubbard"
+ms.date: "12/01/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,34 @@ ms.custom: ""
 ---
 # Supported Platforms for Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R Server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R Server, Revolution R Server, and Revolution R Workstation.
+
+## Microsoft R Server 9.0.1
+
+This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+
+
+**Operating Systems (64-Bit only)**
+
+- Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
+- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
+- SUSE Linux Enterprise Server 11 (SLES11)
+- Ubuntu 14.x and 16.x 
+
+**Microsoft R Server for Teradata**
+
+- Teradata Database 14.10, 15.00, 15.10
+- Operating System: SLES11
+
+**Microsoft R Server for Hadoop and Spark**
+
+- Hadoop Distributions: Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
+- Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
+- Spark versions: 1.5.0-1.6.1 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
+
+Operationalization features (formerly known as DeployR) is integrated into R Server and has no separate installation requirements.
+
+R Server for SQL Server is a SQL Server enterprise feature. Hardware and software requirements for the enterprise edition is documented in SQL Server technical documentation. For more information, see [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/library/ms143506.aspx#Processor, Memory, and Operating System Requirements).
 
 ## Microsoft R Server 8.0.5
 

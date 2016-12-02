@@ -36,7 +36,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## New and updated packages
 
-**Microsoft Machine Learning algorithms (MicrosoftML package)** is new in these Microsoft R products: R Server on Windows, R Client on Windows, and SQL Server R Services. Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**Microsoft Machine Learning algorithms (MicrosoftML package)** is new in these Microsoft R products: R Server for Windows, R Client on Windows, and SQL Server R Services. Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
 **mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable remote command line execution on a remote R Server 9.0.1 instance. This package also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, using additional commands to manage the web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
@@ -70,7 +70,7 @@ No separate installation is required for operationalization functionality, but c
 
 **R Server for Linux**
 
-This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server on Linux](rserver-install-linux-server.md).
+This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 <a name="bkmk_Spark"></a>
 **R Server for Hadoop (MapReduce and Spark)**
@@ -88,7 +88,7 @@ Additional new ScaleR functions for Spark 2.0:
 + Manage Spark persistent sessions: `rxSparkConnect`, `rxSparkDisconnect`
 + Manage data in Spark DataFrames : `rxSparkListData`, `rxSparkRemoveData`
 
-For installation instructions, see [Install R Server on Hadoop](rserver-install-hadoop.md).
+For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md).
 
 **R Server for Windows**
 
@@ -100,15 +100,16 @@ Features in the 9.0.1 release are currently only available through simplified se
 
 For installation instructions, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
 
-> Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server on Windows.
+> [!NOTE]
+> Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
 
 **Service and support for Microsoft R Server for Windows**
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
-+ Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently. The Modern lifecycle policy is in effect when you use simplified setup to install R Server on Windows.
++ Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently. The Modern lifecycle policy is in effect when you use simplified setup to install R Server for Windows.
 
-+ SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server on Windows.
++ SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server for Windows.
 
 + Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
 
@@ -163,7 +164,7 @@ R Server 9.0 is a Windows-only, SQL-Server-only release. It provides all of the 
 
 ### Announced in Microsoft R Server 8.0.0
 
-+ Revolution R Open is now Microsoft R Open, and Revolution R Enterprise is now generically known as Microsoft R Services, and specifically Microsoft R Server on Linux platforms.
++ Revolution R Open is now Microsoft R Open, and Revolution R Enterprise is now generically known as Microsoft R Services, and specifically Microsoft R Server for Linux platforms.
 
 + Microsoft R Services installs on top of an enhanced version of R 3.2.2, Microsoft R Open for Revolution R Enterprise 8.0.0 (on Windows) or Microsoft R Open for Microsoft R Server (on Linux)
 

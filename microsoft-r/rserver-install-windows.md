@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Run Microsoft R Server on Windows"
+title: "Run Microsoft R Server for Windows"
 description: "How to install, connect to, and use Microsoft R Server on computers running the Windows operating system."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/21/2016"
+ms.date: "12/01/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Run Microsoft R Server on Windows
+# Run Microsoft R Server for Windows
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows.
 
@@ -85,7 +85,7 @@ You can download the installation program from the following locations:
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
-> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server on Windows is pending. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
+> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Windows is pending. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
 
 ### Run Setup
 
@@ -117,9 +117,9 @@ You can install R Server 9.0.x and previous major versions side-by-side on the s
 
 ##Upgrade 9.0 to 9.0.1
 
-Currently, version 9.0.1 is only available through simplified setup, while SQL Server Setup installs 9.0 only. If you want to use the new 9.0.1 features with an existing 9.0 instance, you can run simplified setup program and accept the prompts to upgrade to the newer version.
+Currently, version 9.0.1 is only available through simplified setup. SQL Server Setup installs 9.0 only. If you want to use the new 9.0.1 features with an existing 9.0 instance, you can run simplified setup program and accept the prompts to upgrade to the newer version.
 
-Doing so voids the SQL Server Support policy, replacing it with the Modern Lifecycle Support policy describe above. Moving forward, R-related updates to SQL Server are not applied to your installation. Instead, updates are applied through the Microsoft *check for updates* program.
+Doing so voids the SQL Server Support policy, replacing it with the Modern Lifecycle Support policy described above. Moving forward, R-related updates to SQL Server are not applied to your installation. Instead, updates are applied through the Microsoft *check for updates* program.
 
 +  On a computer that has standalone R Server or SQL Server R Services (in database), as installed by SQL Server Setup, [download and run the new setup program](#download) to upgrade to 9.0.1.
 
@@ -127,7 +127,7 @@ Later, if you want to revert to the SQL Server Support policy, follow these step
 
 1. Uninstall the SQL Server relational database instance that previously hosted R Services.
 2. Reinstall the SQL Server relational database instance with R Services.
-3. Reapply any service updates or hot fixes to that instance. 
+3. Reapply any service updates or hot fixes to that instance.
 
 ## Install earlier versions of R Server for Windows
 

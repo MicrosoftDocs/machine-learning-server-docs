@@ -29,7 +29,7 @@ ms.custom: ""
 
 **R Server** is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). It provides an execution engine for solutions built using Microsoft R packages, extending open source R with support for high-performance analytics, statistical analysis, machine learning scenarios, and massively large datasets. Value-added functionality is provided through proprietary packages that install with the server.
 
-You can install R Server on a supported server or cluster, and use an R IDE like **R Tools for Visual Studio** to adapt or create solutions that use the additional capacity. Although Microsoft R functions are not required in the solutions you deploy, the full value of Microsoft R is realized when you use ScaleR technology and other packages.
+You can install R Server on a supported server or cluster, and use an R IDE like **R Tools for Visual Studio** to adapt or create solutions to use additional capabilities. Although Microsoft R functions are not required in the solutions you deploy, the full value of Microsoft R is realized when you use ScaleR technology and other packages.
 
 R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
 
@@ -40,10 +40,10 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 |[Microsoft R Open](r-open.md) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
 |[Operationalization](operationalize/about.md) |An operationalization engine only in R Server used to deploy R script or code as web services. It also enables an interactive experience across multiple nodes running R Server. Operationalization functions are provided by the [mrsdeploy package](mrsdeploy/mrsdeploy.md) |
 |[ScaleR](scaler-getting-started) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
-|[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Machine learning functions are provided by the[MicrosoftML package](microsoftml/microsoftml.md).|
+|[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Machine learning functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
 |Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](pemar/pemar.md). For the complete list, see [Package reference on MSDN](package-reference.md). |
-|Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. |
-|Rgui.exe and R.exe| Console applications for command line execution in a local session.|
+|Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. Platform-specific components are available when you install R server on that platform. For more information, see [installation links](#installationlinks) below.|
+|Rgui.exe and R.exe| R Server includes console applications for command line execution in a local session.|
 
 If you run Windows, we recommend that you also install [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/). RTVS provides a new R project template that adds the R Interactive window, R script support, embedded help, package management, and more. Otherwise, you can use any R IDE that supports R packages.
 
@@ -76,13 +76,14 @@ Existing solutions developed with R Client can be deployed to R Server with mini
 
 In this release, the [mrsdeploy package](mrsdeploy/mrsdeploy.md) gives you the ability to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate your changes incrementally.
 
+<a name="installationlinks"></a>
 ## Installation links
 
-+ [R Server on Windows](rserver-install-windows.md)
-+ [R Server on Linux](rserver-install-linux-server.md)
-+ [R Server on Hadoop](rserver-install-hadoop.md)
-+ [R Server on Teradata](rserver-install-teradata-server.md)
-+ [R Server on SQL Server](https://msdn.microsoft.com/library/mt604845.aspx)
++ [R Server for Windows](rserver-install-windows.md)
++ [R Server for Linux](rserver-install-linux-server.md)
++ [R Server for Hadoop](rserver-install-hadoop.md)
++ [R Server for Teradata](rserver-install-teradata-server.md)
++ [R Server for SQL Server](https://msdn.microsoft.com/library/mt604845.aspx)
 
 To review specific OS and database platform versions that can be used for an R Server deployment, see [Supported platforms](rserver-install-supported-platforms.md).
 
