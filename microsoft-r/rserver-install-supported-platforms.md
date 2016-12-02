@@ -49,9 +49,11 @@ This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
 - Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-Platform support for R Server for SQL Server (SQL Server R services) is covered in [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/library/ms143506.aspx#Processor, Memory, and Operating System Requirements). SQL Server R Services is a SQL Server enterprise feature and thus documented in SQL Server Technical Documentation.
-
 <sup>1</sup> [Operationalization](operationalize/about.md) capabilities (formerly known as the DeployR server) are integrated into R Server and have no separate installation requirements. Currently, this feature is available in standalone server installations on Windows, RHEL and CentOS, and Ubuntu. Projected availability on SLES11, Teradata, Hadoop, and SQL Server R Services is next year (2017).
+
+## Microsoft R Server 9.0
+
+This release of R Server is or SQL Server (SQL Server R services). Supported platform information is covered in [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/library/ms143506.aspx#Processor, Memory, and Operating System Requirements). SQL Server R Services is a SQL Server enterprise feature and thus documented in SQL Server Technical Documentation.
 
 ## Microsoft R Server 8.0.5
 

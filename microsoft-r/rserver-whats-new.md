@@ -38,7 +38,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is new in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-**mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable [operationalization of R Server](#operationalize), including remote command line execution on a remote R Server 9.0.1 instance. This package also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, using additional commands to manage the web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
+**mrsdeploy package** is new in this release on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions in this package support remote execution on a R Server 9.0.1 instance, plus functions for publishing, and subsequently managing, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 **RevoScaleR Package** adds [support for **Spark 2.0**](#bkmk_Spark) through new functions for both R Server and R Client. For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
@@ -59,21 +59,21 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 <a name="operationalize"></a>
 **Operationalization features**
 
-You can configure R Server after installation to act as a deployment server and host analytic web services. When you enable operationalization, users can publish and consume web services composed of R script or code on the server. Additionally, you can access the server remotely from another R Server or R Client instance. Post-configuration, you can use functions in [mrsdeploy](mrsdeploy/mrsdeploy.md) to work with web services and remote execution.
+You can configure R Server after installation to act as a deployment server and host analytic web services. When you enable operationalization, you can use [mrsdeploy](mrsdeploy/mrsdeploy.md) or write code against a swagger API to publish and consume web services composed of R script or code on the server. Remote execution can be interactive at the command line, or instrumented programmatically using the API.
 
-An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers, with the ability to accept pipelined data streams -- transformed, analyzed, and visualized using web services that you create and manage using the operationalization API or `mrsdeploy` functions.
+An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers, with the ability to accept pipelined data streams that are subsequently transformed, analyzed, and visualized using web services.
 
-The operationalization engine is based on ASP .NET Core with simplified deployment APIs and new app integration experiences:
+Operationalization includes tool support, a simplified deployment API, and new app integration experiences:
 
 + Configuration using an administrative tool, used to designate web and compute nodes and grant administrator rights.
 
-+ Simplified deployment refers to bundling R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment for both R Client and R Server, but to do this programmatically, R Server is required.
++ Simplified deployment allows you to bundled R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment from either R Client and R Server, but to create a Web service programmatically, R Server is required.
 
-+ Simplified app integration refers to Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
++ Simplified app integration is provided through Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
 
 + In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
-No separate installation is required for operationalization, but configuration is required before you can use it. It is bundled into the R Server installer on selected platforms including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
+Configuration is required before you can operationalize R Server, but there is no separate installation component. Operationalization is bundled into the R Server installer on selected platforms including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 **R Server for Linux**
 
@@ -95,7 +95,7 @@ Additional new ScaleR functions for Spark 2.0:
 + Manage Spark persistent sessions: `rxSparkConnect`, `rxSparkDisconnect`
 + Manage data in Spark DataFrames : `rxSparkListData`, `rxSparkRemoveData`
 
-For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md).
+For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
 
 **R Server for Windows**
 
