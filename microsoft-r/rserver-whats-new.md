@@ -36,9 +36,9 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## New and updated packages
 
-**Microsoft Machine Learning algorithms (MicrosoftML package)** is new in these Microsoft R products: R Server for Windows, R Client on Windows, and SQL Server R Services. Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**Microsoft Machine Learning algorithms (MicrosoftML package)** is new in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-**mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable remote command line execution on a remote R Server 9.0.1 instance. This package also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, using additional commands to manage the web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
+**mrsdeploy package** is new in this release on all platforms, for both R Server and R Client. Functions in this package enable [operationalization of R Server](#operationalize), including remote command line execution on a remote R Server 9.0.1 instance. This package also includes functions for deploying R code blocks as a web service. You can publish any R code block as a Web service on a local or remote R Server 9.0.1 instance, using additional commands to manage the web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 **RevoScaleR Package** adds [support for **Spark 2.0**](#bkmk_Spark) through new functions for both R Server and R Client. For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
@@ -56,6 +56,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## General updates
 
+<a name="operationalize"></a>
 **Operationalization features**
 
 You can configure R Server after installation to act as a deployment server and host analytic web services. When you enable operationalization, users can publish and consume web services composed of R script or code on the server. Additionally, you can access the server remotely from another R Server or R Client instance. Post-configuration, you can use functions in [mrsdeploy](mrsdeploy/mrsdeploy.md) to work with web services and remote execution.
@@ -64,15 +65,15 @@ An operationalized R Server supports advanced multi-server topologies composed o
 
 The operationalization engine is based on ASP .NET Core with simplified deployment APIs and new app integration experiences:
 
-+ Configuration using an administrative tool, used to set up web and compute nodes and grant administrator rights.
++ Configuration using an administrative tool, used to designate web and compute nodes and grant administrator rights.
 
-+ Simplified deployment refers to the ability to turn R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment for both R Client and R Server, but to do this programmatically, R Server is required.
++ Simplified deployment refers to bundling R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment for both R Client and R Server, but to do this programmatically, R Server is required.
 
 + Simplified app integration refers to Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
 
 + In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
-No separate installation is required for operationalization functionality, but configuration is required to enable it. It is bundled into the R Server installer on selected platformsincluding Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu only. For details, see [Supported platforms](rserver-install-supported-platforms.md). For more information, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
+No separate installation is required for operationalization, but configuration is required before you can use it. It is bundled into the R Server installer on selected platforms including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 **R Server for Linux**
 
@@ -81,7 +82,7 @@ This release now supports Ubuntu 14.04 and 16.04 on premises. For installation i
 <a name="bkmk_Spark"></a>
 **R Server for Hadoop (MapReduce and Spark)**
 
-+ Support for Spark 2.0, in addition to Spark 1.5-1.6.
++ Support for Spark 1.6 and 2.0.
 + Support for Spark DataFrames through `RxHiveData` and `RxParquetData` in ScaleR:
 
   ~~~~
@@ -102,9 +103,9 @@ As noted, installation of R Server or R Client on Windows delivers the new [Micr
 
 Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
-Features in the 9.0.1 release are currently only available through simplified setup. SQL Server Setup currently installs the 9.0 version of R Server for Windows. For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server Setup installs the 9.0 version of R Server for Windows. For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
-For installation instructions, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
+For installation instructions for 9.0.1, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
 
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
@@ -117,7 +118,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
 + SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server for Windows.
 
-+ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
++ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you require 9.0.1 operationalization capabilities, or if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To upgrade, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
 
 ##Previously released features
 
