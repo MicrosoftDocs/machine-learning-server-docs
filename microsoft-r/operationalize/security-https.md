@@ -47,38 +47,9 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 
 This section walks you through the steps for securing the connections between the client application and the web node. Doing so will encrypt the communication between client and web node to prevent traffic from being modified or read.
 
-#### Using Windows IIS to Encrypt
 
-> Make sure the name of the certificate matches the domain name of the web node URL. 
 
-1. On each machine hosting a web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
-<a name="iis"></a>
-
-1. Launch IIS.
-
-1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
-
-1. Click on **Bindings** under the **Actions** pane on the right.
-
-1. Click on **Add**.
-
-1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
-
-1. Select the SSL certificate you installed previously. 
-
-1. Click **OK** to create the new HTTPS binding.
-
-1. Back in the **Connections** pane, select the website name.
-
-1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
-
-1. Select the checkbox to **Require SSL** and require a client certificate.
-
-1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
-
-> If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
-
-#### Using your Default .ASP Core web Server to Encrypt
+#### Using Your Default ASP .NET Core Web Server to Encrypt Traffic
 
 1. On each machine hosting the web node, install the trusted, signed ** API HTTPS certificate** with a private key in the certificate store.
    > Make sure the name of the certificate matches the domain name of the web node URL. 
@@ -113,7 +84,36 @@ This section walks you through the steps for securing the connections between th
 
 1. In the same utility, run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
 
+#### Using Windows IIS to Encrypt
 
+> Make sure the name of the certificate matches the domain name of the web node URL. 
+
+1. On each machine hosting a web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+<a name="iis"></a>
+
+1. Launch IIS.
+
+1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+
+1. Click on **Bindings** under the **Actions** pane on the right.
+
+1. Click on **Add**.
+
+1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
+
+1. Select the SSL certificate you installed previously. 
+
+1. Click **OK** to create the new HTTPS binding.
+
+1. Back in the **Connections** pane, select the website name.
+
+1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
+
+1. Select the checkbox to **Require SSL** and require a client certificate.
+
+1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
+
+> If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 <br />
 
 ## Encrypt Communication between the Web Node and Compute Node
@@ -126,16 +126,9 @@ When encrypting, you have the choice of using one of the following **compute nod
 + One unique certificate per machine hosting a compute node.
 + One common Multi-Domain (SAN) certificate with all compute node names declared in the single certificate
 
-#### Using Windows IIS to Encrypt
 
-1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
-   > Make sure the name of the certificate matches the domain name of the compute node URL. 
 
-1. Launch IIS and follow the [instructions above](#iis).
-
-<br>
-
-#### Using your Default .ASP Core Web Server to Encrypt
+#### Using Your Default ASP .NET Core Web Server to Encrypt
 
 1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
    > Make sure the name of the certificate matches the domain name of the compute node URL. 
@@ -174,6 +167,15 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 <br>
 
+#### Using Windows IIS to Encrypt
+
+1. On each machine hosting a compute node, install the trusted, signed **compute node HTTPS certificate** with a private key in the certificate store.
+   > Make sure the name of the certificate matches the domain name of the compute node URL. 
+
+1. Launch IIS and follow the [instructions above](#iis).
+
+<br>
+
 ## Authenticate the Web Node with the Compute Node
 
 This section walks you through the steps for authenticating the web node with the compute node so that only the web node can communicate with the compute node.
@@ -184,9 +186,7 @@ This section walks you through the steps for authenticating the web node with th
 1. **On each web node:**
 
     1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
-       > Make sure the name of the certificate matches the domain name of the compute node URL. 
-       >
-       > Also, take note of the `Subject` name of the certificate as you'll need this info later.
+       > Take note of the `Subject` name of the certificate as you'll need this info later.
 
     1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
 
@@ -213,7 +213,7 @@ This section walks you through the steps for authenticating the web node with th
     1. Repeat on each web node.
 
 1. **On each compute node:**
-    > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _public_ key.
+    > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _private_ key.
 
     1. Open the external JSON configuration file, `appsettings.json` file.
 
