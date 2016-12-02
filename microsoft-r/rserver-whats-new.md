@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/30/2016"
+ms.date: "12/02/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -44,8 +44,8 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 |Function | Description |
 |--|--|
-|`RxHiveData`|Generate Hive or Parquet Data Source object.|
-|`RxParquetData `|Generate Hive or Parquet Data Source object.|
+|`RxHiveData`|Generate a Hive Data Source object.|
+|`RxParquetData `|Generate a Parquet Data Source object.|
 |`rxSparkConnect` | Create Spark compute context, connect and disconnect a Spark application. |
 |`rxSparkDisconnect `| Create Spark compute context, connect and disconnect a Spark application. |
 |`rxSparkListData` |Remove or list cached `RxParquetData` or `RxHiveData`.|
@@ -56,17 +56,23 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## General updates
 
-**Operationalization features** (formerly known as **DeployR**)
+**Operationalization features**
 
 You can configure R Server after installation to act as a deployment server and host analytic web services. When you enable operationalization, users can publish and consume web services composed of R script or code on the server. Additionally, you can access the server remotely from another R Server or R Client instance. Post-configuration, you can use functions in [mrsdeploy](mrsdeploy/mrsdeploy.md) to work with web services and remote execution.
 
+An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers, with the ability to accept pipelined data streams -- transformed, analyzed, and visualized using web services that you create and manage using the operationalization API or `mrsdeploy` functions.
+
 The operationalization engine is based on ASP .NET Core with simplified deployment APIs and new app integration experiences:
 
-+ Simplified deployment refers to the ability to turn R analytics into a Web Service in one line of code. The `mrsdeploy` package enables Web service deployment for both R Client and R Server, but to do this programmatically, R Server is required.
++ Configuration using an administrative tool, used to set up web and compute nodes and grant administrator rights.
 
-+ Simplified app integration refers to Swagger based APIs, easy to consume, supported on a wide range of programming languages.
++ Simplified deployment refers to the ability to turn R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment for both R Client and R Server, but to do this programmatically, R Server is required.
 
-No separate installation is required for operationalization functionality, but configuration is required to enable it. It is bundled into the R Server installer on all platforms. For more information, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
++ Simplified app integration refers to Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
+
++ In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
+
+No separate installation is required for operationalization functionality, but configuration is required to enable it. It is bundled into the R Server installer on selected platformsincluding Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu only. For details, see [Supported platforms](rserver-install-supported-platforms.md). For more information, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 **R Server for Linux**
 

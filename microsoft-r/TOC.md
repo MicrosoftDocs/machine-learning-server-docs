@@ -42,11 +42,11 @@
 ## [Supported Platforms](rserver-install-supported-platforms.md)
 ## [Servicing Support Policy](rserver-servicing-support.md)
 
-## [R Server on Linux](rserver-install-linux-server.md)
+## [R Server for Linux](rserver-install-linux-server.md)
 ### [Install on Linux](rserver-install-linux-server.md)
 ### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
 
-## [R Server on Hadoop](scaler-hadoop-getting-started.md)
+## [R Server for Hadoop](scaler-hadoop-getting-started.md)
 ### [Get Started on Hadoop MapReduce](scaler-hadoop-getting-started.md)
 ### [Get Started on Hadoop Spark](scaler-spark-getting-started.md)
 ### [Install on Hadoop](rserver-install-hadoop.md)
@@ -58,14 +58,14 @@
 ### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-hadoop-functions.md)
 
-## [R Server on Teradata DB](scaler-teradata-getting-started.md)
+## [R Server for Teradata DB](scaler-teradata-getting-started.md)
 ### [Get Started on Teradata](scaler-teradata-getting-started.md)
 ### [Install on Teradata](rserver-install-teradata-805.md)
 #### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-teradata-functions.md)
 
-## [R Server on Windows](rserver-install-windows.md)
+## [R Server for Windows](rserver-install-windows.md)
 
 ## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
 ## [Configure data import for ODBC data sources](scaler-odbc.md)
