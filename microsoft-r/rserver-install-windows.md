@@ -28,17 +28,9 @@ ms.custom: ""
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows.
 
-R Server offers feature parity across platforms. Whether you use Windows or another platform, R Server is mostly the same in all contexts, with the exception of data-specific and platform helper functions created specifically for Hadoop MapReduce, Spark, SQL Server, or Teradata. For a list of packages and key features, see [Introduction to R Server](rserver.md).
+R Server offers feature parity across platforms. Whether you use Windows or another platform, R Server is mostly the same in all contexts, with the exception of data-specific and platform helper functions created specifically for Hadoop MapReduce, Spark, SQL Server, or Teradata. For description of components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md).
 
 To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
-
-## How to use R Server
-
-R Server is commercial-grade software designed to run workloads that you have created and tested using development tools such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications that can consume R packages. Data scientists who start with R Client or open source R typically move to R Server when data size or computational scale require additional capacity.
-
-R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
-
-Data scientists who use R Server typically connect over Remote Desktop, and then use RTVS or other tools to create or run solutions. This release expands the interaction model to include remote execution via the `mrsdeploy` package. Assuming you have two or more installations of R Client or R Server 9.0.1, you can interact with a remote node on the command line. For more information, see [mrsdeploy](mrsdeploy/mrsdeploy.md).
 
 ## How to install R Server 9.0.1 on Windows
 

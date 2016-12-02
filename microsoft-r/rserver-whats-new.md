@@ -36,11 +36,11 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## New and updated packages
 
-**Microsoft Machine Learning algorithms (MicrosoftML package)** is new in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability on Linux and Hadoop is projected for the first quarter of 2017. MicrosoftML is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
-**mrsdeploy package** is new in this release on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions in this package support remote execution on a R Server 9.0.1 instance, plus functions for publishing, and subsequently managing, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
+**Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability on Linux and Hadoop is projected for the first quarter of 2017. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-**RevoScaleR Package** adds [support for **Spark 2.0**](#bkmk_Spark) through new functions for both R Server and R Client. For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
+**RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
 |Function | Description |
 |--|--|
@@ -52,7 +52,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 |`rxSparkRemoveData`|Remove or list cached `RxParquetData` or `RxHiveData`.|
 
 > [!NOTE]
-> Although ScaleR jobs only execute on Spark 2.0 if you have [R Server for Hadoop](rserver-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
+> Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](rserver-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
 
 ## General updates
 
@@ -74,6 +74,9 @@ Operationalization includes tool support, a simplified deployment API, and new a
 + In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
 Configuration is required before you can operationalize R Server, but there is no separate installation component. Operationalization is bundled into the R Server installer on selected platforms including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
+
+> [!NOTE]
+> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the supported R Server platforms. [Supported platforms](rserver-install-supported-platforms.md) has the list.
 
 **R Server for Linux**
 
@@ -103,9 +106,9 @@ As noted, installation of R Server or R Client on Windows delivers the new [Micr
 
 Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
-Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server Setup installs the 9.0 version of R Server for Windows. For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server Setup installs the 9.0 version of R Server for Windows. For a description of the features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
-For installation instructions for 9.0.1, see [Install R Server for Windows](rserver-install-windows.md). The setup program you use determines the service and support policy, as described below.
+For installation and upgrade instructions, see [Install R Server for Windows](rserver-install-windows.md).
 
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
@@ -126,7 +129,7 @@ This section lists the feature announcements of recent previous releases.
 
 ### Announced in Microsoft R Server 9.0
 
-R Server 9.0 is a Windows-only, SQL-Server-only release. It provides all of the 9.0.1 features, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a list of features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+R Server 9.0 is a Windows-only, SQL-Server-only release. It is roughly equivalent to the 9.0.1 release, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a description of the features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ### Announced in Microsoft R Server 8.0.5
 
