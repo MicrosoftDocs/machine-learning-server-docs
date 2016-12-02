@@ -37,7 +37,7 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 - Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
 - Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
 - SUSE Linux Enterprise Server 11 (SLES11)
-- Ubuntu 14.x and 16.x 
+- Ubuntu 14.x and 16.x
 
 **Microsoft R Server for Teradata**
 
@@ -48,7 +48,7 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 
 - Hadoop Distributions: Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
-- Spark versions: 1.5.0-1.6.1 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
+- Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
 Operationalization features (formerly known as DeployR) is integrated into R Server and has no separate installation requirements.
 
