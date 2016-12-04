@@ -30,15 +30,15 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Related Documents**
 
-+ For known issues, bug fixes, and behavior changes in existing features, see the [Release notes for R Server](notes/r-server-notes.md).
-+ For new feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
-+ For new feature announcements in SQL Server R Services (version 9.0), see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
++ Known issues, bug fixes, and behavior changes in existing features, see the [Release notes for R Server](notes/r-server-notes.md).
++ New feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
++ New feature announcements in SQL Server R Services (version 9.0), see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ## New and updated packages
 
 **mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
-**Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability on Linux and Hadoop is projected for the first quarter of 2017. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux and Hadoop is projected for the first quarter of 2017. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
 **RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
@@ -59,21 +59,21 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 <a name="operationalize"></a>
 **Operationalization features**
 
-You can configure R Server after installation to act as a deployment server and host analytic web services. When you enable operationalization, you can use [mrsdeploy](mrsdeploy/mrsdeploy.md) or write code against a swagger API to publish and consume web services composed of R script or code on the server. Remote execution can be interactive at the command line, or instrumented programmatically using the API.
+One of the deployment options for R Server is configuration for hosting analytic web services composed of R script or code. An operationalized server accepts interactive commands through [mrsdeploy functions](mrsdeploy/mrsdeploy.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Developers can write code to instrument equivalent operations using Swagger APIs. The `mrsdeploy` package enables Web service deployment from either R Client and R Server, but code only executes on R Server. Additionally, for programmatic solutions, R Server is required.
 
-An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers, with the ability to accept pipelined data streams that are subsequently transformed, analyzed, and visualized using web services.
+An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized in an R web service. In a multi-server topology, connections can be encrypted.
 
 Operationalization includes tool support, a simplified deployment API, and new app integration experiences:
 
 + Configuration using an administrative tool, used to designate web and compute nodes and grant administrator rights.
 
-+ Simplified deployment allows you to bundled R analytics into a Web Service with minor code changes. The `mrsdeploy` package enables Web service deployment from either R Client and R Server, but to create a Web service programmatically, R Server is required.
++ Ability to bundle R analytics into a Web Service with minimal code changes.
 
-+ Simplified app integration is provided through Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
++ Integration is provided through Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
 
 + In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
-Configuration is required before you can operationalize R Server, but there is no separate installation component. Operationalization is bundled into the R Server installer on selected platforms including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
+Configuration is required before you can operationalize R Server, but there is no separate installation component. Operationalization is bundled into the R Server installer on selected platforms, including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the supported R Server platforms. [Supported platforms](rserver-install-supported-platforms.md) has the list.

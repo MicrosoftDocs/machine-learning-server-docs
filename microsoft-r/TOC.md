@@ -55,6 +55,7 @@
 #### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 #### [Create an R package parcel in Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 #### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
+#### [EnforceYARN Queue Usage ](rserver-install-hadoop-yarnqueueusage.md)
 ### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 ### [ScaleR Function Quick Reference](scaler/scaler-hadoop-functions.md)
 

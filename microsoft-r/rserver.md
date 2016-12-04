@@ -59,9 +59,13 @@ In addition to capacity and scale, R Server offers machine learning and operatio
 
 ## How to use R Server
 
-R Server runs as a background process when you use development tools such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications that can consume R packages. Data scientists who use R Server typically connect over Remote Desktop, and then use RTVS or other tools to create or run solutions interactively.
+R Server runs as a background process that starts up when you use an R IDE  such as **R Tools for Visual Studio (RTVS)**, RStudio, or other applications. Generally, you can use any R IDE that can consume R packages.
 
-This release expands the interaction model to include remote execution via the `mrsdeploy` package on an R Server configured for operationalization. Assuming you have two or more installations of R Client 3.3.2 or R Server 9.0.1, you can interact with a remote node from the command line in a local console application or script. Developers can use Swagger APIs to automate R analytics over single and multi-server deployments. For more information, see [operationalization](operationalize/about.md) and [mrsdeploy](mrsdeploy/mrsdeploy.md).
+Data scientists who use R Server typically connect over Remote Desktop, and then use RTVS or another to create or run solutions interactively. Solutions are usually script files that include a combination of R functions and functions from proprietary packages: RevoScaleR, MicrosoftML, mrsdeploy, RevoPema, and so forth.
+
+This release expands the interaction model to include remote execution via the `mrsdeploy` package on an R Server configured for operationalization. Assuming you have two or more installations of R Client 3.3.2 or R Server 9.0.1, you can interact with a remote node from the command line in a local console application or script. Working in this modality introduces requirements for encrypted connections and authentication. Supported authentication methodologies include Active Directory, Azure Active Directory, or LDAP in Active Directory (if you're using Linux or another non-Windows platform).
+
+Developers can use Swagger APIs to automate R analytics over single and multi-server deployments. For more information, see [operationalization](operationalize/about.md) and [mrsdeploy](mrsdeploy/mrsdeploy.md).
 
 ## Benefits of R Server
 
@@ -72,7 +76,9 @@ Reasons for choosing R Server include:
 * Performance and scalability through parallelization and streaming
 * Supportability and service level agreements for mission-critical workloads
 * Machine learning algorithms and transforms
-* Operationalization engine for enterprise deployment
+* R script running as a standalone web service
+* Toggle between local and remote sessions on the command line
+* Operationalization engine for multi-server topologies with clustered web nodes and compute nodes
 
 ## Interoperability with R language and across Microsoft R
 

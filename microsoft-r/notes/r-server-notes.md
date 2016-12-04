@@ -6,7 +6,7 @@ description: "Readme file for Microsoft R Server release, documenting known issu
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "11/18/2016"
+ms.date: "12/04/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 #R Server release notes (Microsoft R)
 
-This article documents the known issues, bug fixes, and notifications about status changes to function libraries, such as deprecated and discontinued functions in RevoScaleR
+This article documents the known issues, bug fixes, and notifications about status changes to function libraries, such as deprecated and discontinued functions in RevoScaleR.
 
 **Related Documents**
 
@@ -44,12 +44,13 @@ This article documents the known issues, bug fixes, and notifications about stat
 
 ###Deprecated or Discontinued
 
-+ Deprecated functions:
-    + `  ` (use `  `)
++ RevoScaleR deprecated functions:
+    + `RxHpcServer` (no replacement)
+    + `rxReadXdf` (use`rxDataStep`)
 
-+ Discontinued functions:
-    + `  ` (use `  `)
-
++ RevoScaleR discontinued functions:
+    + (none)
+     	
 
 ###Bug Fixes
 
