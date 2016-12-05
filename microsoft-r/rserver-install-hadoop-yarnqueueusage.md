@@ -40,7 +40,7 @@ RxSparkConnect(..,
      extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
 ````
 
-## overrides
+## Overrides
 
 Use of a specific queue can be enforced by the Hadoop system administrator by providing an installation override to the `RxSpark()`, `RxSparkConnect()`, and `RxHadoopMR()` compute context functions. A benefit is that you no longer have to explicitly specify the queue.  
 
@@ -78,9 +78,9 @@ This package is for internal Company ABC use only -- not for redistribution.
 
 4. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory.
 
-  ~~~~
-# sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
-# and RxSparkConnect
+~~~~
+  # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
+  # and RxSparkConnect
 
 RxHadoopMR <- function(...) {
     dotargs <- list(...)
@@ -138,7 +138,7 @@ RxSparkConnect <- function(...) {
     dotargs$extraSparkConfig <- paste(y,'-conf spark.yarn.queue=mrsjobs')
     do.call( RevoScaleR::RxSparkConnect, dotargs )
 }
-  ~~~~
+~~~~
 
 5. After editing the above components of the package, run the following Linux commands to build the package from the directory containing the **abcMods** directory:
 
@@ -152,6 +152,7 @@ set rpath="C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64\R.exe"
   ~~~~
 
 6. To test it, start R, load the library, and make a call to `RxHadoopMR()`:
+
   ~~~~
 > library(abcMods)
 > RxHadoopMR(hadoopSwitches="-Dmapreduce.job.queuename=XYZ")

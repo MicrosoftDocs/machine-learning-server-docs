@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Opting out of usage data collection (Microsoft R)"
-description: "Learn how to turn off telemetry data collection on Microsoft R Server and R Client using the `rxPrivacyControl` function."
+description: "Learn how to turn off telemetry data collection on Microsoft R Server and R Client using the `rxPrivacyControl` function in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -48,21 +48,23 @@ The RevoScaleR package providing `rxPrivacyControl` is installed and loaded in b
 
 The  `rxPrivacyControl` command sets the state to be opted-in or out for anonymous usage collection.
 
-**Command syntax:**
+**Command syntax**
 ~~~~
      rxPrivacyControl(optIn)
 ~~~~
 
-`optIn` is a logical value that specifies to opt in ‘TRUE’ or to opt out ‘FALSE’ with anonymous data usage collection. If left unspecified, the value is returned.
+This command takes one parameter. The `optIn` parmaeter is a logical value that specifies to opt in ‘TRUE’ or to opt out ‘FALSE’ with anonymous data usage collection. If left unspecified, the current setting is returned.
 
 ## How to Contact Us
 
-If you have a general privacy question or a question for the Chief Privacy Officer of Microsoft or want to request access to your personal information, please contact us by using our [Web form](http://go.microsoft.com/fwlink/?LinkId=321116).
+Please contact Microsoft if you have any questions or concerns.
 
-If you have a technical or general support question, please visit [http://support.microsoft.com/](http://support.microsoft.com/) to learn more about Microsoft Support offerings.
++ For general privacy question or a question for the Chief Privacy Officer of Microsoft or want to request access to your personal information, please contact us by using our [Web form](http://go.microsoft.com/fwlink/?LinkId=321116).
 
-If you have a Microsoft account password question, please visit [Microsoft account support](http://go.microsoft.com/FWLink/p/?LinkID=320207).
++ For technical or general support question, please visit [http://support.microsoft.com/](http://support.microsoft.com/) to learn more about Microsoft Support offerings.
 
-By mail: Microsoft Privacy, Microsoft Corporation, One Microsoft Way, Redmond, Washington 98052 USA
++ If you have a Microsoft account password question, please visit [Microsoft account support](http://go.microsoft.com/FWLink/p/?LinkID=320207).
 
-By Phone: 425-882-8080
++ By mail: Microsoft Privacy, Microsoft Corporation, One Microsoft Way, Redmond, Washington 98052 USA
+
++ By Phone: 425-882-8080
