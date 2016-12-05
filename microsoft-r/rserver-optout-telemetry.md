@@ -41,7 +41,7 @@ The RevoScaleR package providing `rxPrivacyControl` is installed and loaded in b
 
 1. Log in to the computer as an administrator.
 2. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
-3. Double-click Rgui.exe to start the R Console application.
+3. Right-click Rgui.exe and select **Run as administrator**.
 4. At the command line, type search() to view a list of objects already loaded. You should see the RevoScaleR package in the list.
 5. Type `rxPrivacyControl` to return the current value.
 6. Type `rxPrivacyControl(FALSE)`to turn off telemetry data collection.
@@ -53,7 +53,7 @@ The  `rxPrivacyControl` command sets the state to be opted-in or out for anonymo
      rxPrivacyControl(optIn)
 ~~~~
 
-This command takes one parameter. The `optIn` parmaeter is a logical value that specifies to opt in ‘TRUE’ or to opt out ‘FALSE’ with anonymous data usage collection. If left unspecified, the current setting is returned.
+This command takes one parameter, `optIn`, set to either ‘TRUE’ or ‘FALSE’ to opt out. Left unspecified, the current setting is returned.
 
 ## How to Contact Us
 
