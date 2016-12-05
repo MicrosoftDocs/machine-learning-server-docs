@@ -22,16 +22,16 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Enforcing YARN Queue Usage 
+# Enforcing YARN queue usage
 
-R Server tasks running on Spark or Map Reduce can be managed through use of YARN job queues.  To direct a job to a specific queue, the end user must include the queue name in the MapReduce or Spark Compute Context.
+R Server tasks running on Spark or MapReduce can be managed through use of YARN job queues. To direct a job to a specific queue, the end user must include the queue name in the MapReduce or Spark Compute Context.
 
 ## MapReduce
 Use the "hadoopSwitches" option to direct jobs to a specific YARN queue.
 ````
 RxHadoopMR(.., hadoopSwitches='-Dmapreduce.job.queuename=mrsjobs')
 ````
-##Spark
+## Spark
 Use the "extraSparkConfig" option to direct jobs to a specific YARN queue.
 ````
 RxSpark(.., extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
@@ -39,6 +39,9 @@ RxSpark(.., extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
 RxSparkConnect(..,
      extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
 ````
+
+## overrides
+
 Use of a specific queue can be enforced by the Hadoop system administrator by providing an installation override to the `RxSpark()`, `RxSparkConnect()`, and `RxHadoopMR()` compute context functions. A benefit is that you no longer have to explicitly specify the queue.  
 
 This procedure involves creating a custom R package which contains the function overrides, installing that package on the nodes in use by end-users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
@@ -52,7 +55,7 @@ This procedure involves creating a custom R package which contains the function 
 
 2. This will create each of the essential files required for the package in the directory you’ve specified for the package, in this case ‘/dev/abcMods’.  Edit each of the following to fill in the relevant info.
 
-a.DESCRIPTION – text file containing the description of the R package, e.g.
+  a. DESCRIPTION – text file containing the description of the R package:
   ~~~~
   Package: abcMods
   Date: 2016-09-01
@@ -62,14 +65,16 @@ a.DESCRIPTION – text file containing the description of the R package, e.g.
   License: file LICENSE
   ~~~~
 
-b.NAMESPACE – text file containing the list of overridden functions to be exported, e.g.
+  b. NAMESPACE – text file containing the list of overridden functions to be exported:
   ~~~~
   export("RxHadoopMR", "RxSpark", “RxSparkConnect”)
   ~~~~
 
-3. LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package, e.g.
+3. LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
 
+  ~~~~
 This package is for internal Company ABC use only -- not for redistribution.
+  ~~~~
 
 4. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory.
 
@@ -135,7 +140,7 @@ RxSparkConnect <- function(...) {
 }
   ~~~~
 
-5. When done editing the above components of the package, run the following Linux commands to build the package from the directory containing the abcMods directory:
+5. After editing the above components of the package, run the following Linux commands to build the package from the directory containing the **abcMods** directory:
 
   ~~~~
 R CMD build abcMods
@@ -146,16 +151,18 @@ set rpath="C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64\R.exe"
 %rpath% CMD INSTALL abcMods_0.1-0.tar.gz
   ~~~~
 
-6. To test it, start R, load the library, and make a call to RxHadoopMR(), e.g.
+6. To test it, start R, load the library, and make a call to `RxHadoopMR()`:
   ~~~~
 > library(abcMods)
 > RxHadoopMR(hadoopSwitches="-Dmapreduce.job.queuename=XYZ")
   ~~~~
-You should see the result come back with the queue name set to your override value, e.g. -Dmapreduce.job.queuename=mrsjobs
 
-7. To automate the loading of the package so that users don’t need to specify ‘library(abcMods)’, edit Rprofile.site and modify the line specifying the default packages to include ‘abcMods’ as the last item, e.g.
+You should see the result come back with the queue name set to your override value (for example, `Dmapreduce.job.queuename=mrsjobs)`.
+
+7. To automate the loading of the package so that users don’t need to specify "library(abcMods)", edit Rprofile.site and modify the line specifying the default packages to include **abcMods** as the last item:
+
   ~~~~
 options(defaultPackages=c(getOption("defaultPackages"), "rpart", "lattice", "RevoScaleR", "RevoMods", "RevoUtils", "RevoUtilsMath", "abcMods"))
   ~~~~
 
-8. Once everything tests out to your satisfaction, install the package on all the edge nodes that your users will be logging into.  To do this, copy "Rprofile.site" and R’s library/abcMods directory to each of these nodes, or install the package from the abcmods_0.1-0 tar file on each node and manually edit the "Rprofile.site" file on each node.    
+8. Once everything tests out to your satisfaction, install the package on all the edge nodes that your users will be logging into. To do this, copy "Rprofile.site" and R’s library/abcMods directory to each of these nodes, or install the package from the abcmods_0.1-0 tar file on each node and manually edit the "Rprofile.site" file on each node.    

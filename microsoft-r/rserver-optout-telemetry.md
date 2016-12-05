@@ -1,0 +1,68 @@
+---
+
+# required metadata
+title: "Opting out of usage data collection (Microsoft R)"
+description: "Learn how to turn off telemetry data collection on Microsoft R Server and R Client using the `rxPrivacyControl` function."
+keywords: ""
+author: "HeidiSteen"
+manager: "jhubbard"
+ms.date: "12/05/2016"
+ms.topic: ""
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "r-server"
+ms.custom: ""
+
+---
+# Opting out of usage data collection
+
+By default, telemetry data is collected during your usage of Microsoft R Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
+
+To turn data collection off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
+## Permission Requirements
+
+If you are running R as administrator, the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session. If you run the command without providing a parameter, just the current setting is returned.
+
+If you are not running as administrator, `rxPrivacyControl` returns the current setting.
+
+## How to opt out
+
+The RevoScaleR package providing `rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use any R console application. The following steps include Rgui.exe which is available in all installations of R Server and R Client.
+
+1. Log in to the computer as an administrator.
+2. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
+3. Double-click Rgui.exe to start the R Console application.
+4. At the command line, type search() to view a list of objects already loaded. You should see the RevoScaleR package in the list.
+5. Type `rxPrivacyControl` to return the current value.
+6. Type `rxPrivacyControl(FALSE)`to turn off telemetry data collection.
+
+The  `rxPrivacyControl` command sets the state to be opted-in or out for anonymous usage collection.
+
+**Command syntax:**
+~~~~
+     rxPrivacyControl(optIn)
+~~~~
+
+`optIn` is a logical value that specifies to opt in ‘TRUE’ or to opt out ‘FALSE’ with anonymous data usage collection. If left unspecified, the value is returned.
+
+## How to Contact Us
+
+If you have a general privacy question or a question for the Chief Privacy Officer of Microsoft or want to request access to your personal information, please contact us by using our [Web form](http://go.microsoft.com/fwlink/?LinkId=321116).
+
+If you have a technical or general support question, please visit [http://support.microsoft.com/](http://support.microsoft.com/) to learn more about Microsoft Support offerings.
+
+If you have a Microsoft account password question, please visit [Microsoft account support](http://go.microsoft.com/FWLink/p/?LinkID=320207).
+
+By mail: Microsoft Privacy, Microsoft Corporation, One Microsoft Way, Redmond, Washington 98052 USA
+
+By Phone: 425-882-8080
