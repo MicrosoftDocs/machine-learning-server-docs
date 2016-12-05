@@ -16,9 +16,11 @@
 ### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
 ### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
+### [Configure data import for ODBC data sources](scaler-odbc.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
 ## [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
 ## [Models in RevoScaleR](scaler-user-guide-models.md)
+## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
 ## [Data Summaries](scaler-user-guide-data-summaries.md)
 ## [Crosstabs](scaler-user-guide-crosstabs.md)
 ## [Linear Models](scaler-user-guide-linear-model.md)
@@ -43,7 +45,8 @@
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
 
-## **Install R Server**
+## [Install R Server](rserver.md)
+### [R Server for Windows](rserver-install-windows.md)
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
@@ -65,13 +68,8 @@
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
-### [R Server for Windows](rserver-install-windows.md)
 
-## [Configure parallel and distributed workloads](scaler-distributed-computing.md)
-## [Configure data import for ODBC data sources](scaler-odbc.md)
-
-
-## [Operationalize R Analytics (DeployR)](operationalize/about.md)
+## [Operationalize R Server)](operationalize/about.md)
 ### [Compare Features: 9.0 / 8.0.5](operationalize/about-compare-to-8.0.5.md)
 ### [Configure Operationalization](operationalize/configuration-initial.md)
 ### [Configure Remote Database](operationalize/configure-remote-database.md)
