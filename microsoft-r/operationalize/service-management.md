@@ -29,7 +29,7 @@ ms.custom: ""
 
 
 
-> Learn about consuming the web services [here](service-integration.md#consume)
+> Learn about consuming the web services [here](service-integration.md#clientlib)
 
 ## put web services vignette here for now.
 
