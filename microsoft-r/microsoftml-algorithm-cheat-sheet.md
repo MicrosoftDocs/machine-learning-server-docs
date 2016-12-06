@@ -41,7 +41,7 @@ Download and print the MicrosoftML Algorithm Cheat Sheet in tabloid size to keep
 
 ## More help with algorithms
 
-For a list by category of all the machine learning algorithms available in the MicrosoftML package, see [MicrosoftML functions](/microsoftml/microsoftml.md).
+For a list by category of all the machine learning algorithms available in the MicrosoftML package, see [MicrosoftML functions](microsoftml/microsoftml.md).
 
 ## Notes and terminology definitions for the machine learning algorithm cheat sheet
 
