@@ -2,11 +2,11 @@
 
 # required metadata
 title: "R Server installation for Linux systems"
-description: "Install Microsoft R Server 2016 (version 8.0.5) on Linux."
+description: "Install Microsoft R Server 8.0.5 or 9.0.1 on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "12/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,9 +25,21 @@ ms.custom: ""
 
 # R Server Installation for Linux Systems
 
-This article explains how to install Microsoft R Server on a standalone Linux server. The newest version, Microsoft R Server 2016 (version 8.0.5), is recommended because it includes an updated installer that deploys R Server in fewer steps. The updated installer includes a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most of its dependencies built into the package.
+This article explains how to install Microsoft R Server on a standalone Linux server.
 
-You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before using Microsoft R Server 2016 (build 8.0.5). Additionally, if you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+Version 9.0.1 is the newest version. Currently, only the developer edition is available, which you can find on the Visual Studio Dev Essentials download pages. Enterprise edition, distributed via the Volume Licensing Service Center, is projected to be available in January 2017.
+
+Version 8.0.5 was released in June 2016 and is available in both developer and enterprise editions. This version changed the installation experience for the better, chaining the installation of several packages (including Microsoft R Open) so that there are fewer steps. Additionally, in the 8.0.5 release, Microsoft R Open comes with most of its dependencies built into the package.
+
+**Side-by-side Installation**
+
+You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5 or 9.0.1.
+
+**Upgrade Versions**
+
+If you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+
+**Requirements**
 
 Installer requirements consist of the following:
 
@@ -37,24 +49,32 @@ Installer requirements consist of the following:
 
 If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
-## Where Do I Get It?
+## Download sites
 
-MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Linux [here](http://aka.ms/rserver/linux/download).
+**For 9.0.1**
 
-You can also get R Server 2016 for Linux from these sites.
++ MSDN subscribers can get this version through MSDN [here](http://aka.ms/rserver/linux/download).
 
-- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
++ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
+
+    - Click **Join or Access Now** and enter your account information.
+    - Click **Downloads**, and then search for *Microsoft R*.
+    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
+
+> [!NOTE]
+> Recall that the download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Linux is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
+
+**For 8.0.5**
+
+- MSDN subscribers can download Microsoft R Server 8.0.5 for Linux [here](http://aka.ms/rserver/linux/download).
 - [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
-
-  Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
-
-  ![Showing: Visual Studio Dev Essentials](media/rserver-install-linux-server/rserver-install-showing-visual-studio-dev-essentials.PNG)
+- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
 
 ## System Requirements
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server 11. Microsoft R Server has different operating system requirements depending on whether you install 8.0.0 or 8.0.5. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
 
 **Memory:** A minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 

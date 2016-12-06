@@ -1,11 +1,11 @@
 ---
 # required metadata
-title: "Install Microsoft R Server 2016 on Hadoop"
-description: "Installation and configuration Microsoft R Server 2016 (version 8.0.5) on Hadoop"
+title: "Install Microsoft R Server 9.0.1 on Hadoop"
+description: "Installation and configuration Microsoft R Server 9.0.1 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "12/06/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -22,13 +22,21 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Install Microsoft R Server 2016 on Hadoop
+# Install Microsoft R Server 9.0.1 on Hadoop
 
-This article explains how to install the latest version of Microsoft R Server 2016 on a Hadoop cluster.
+This article explains how to install the latest version of Microsoft R Server 9.0.1 on a Hadoop cluster.
 
-## What's new in the R Server 2016 installer
+In this first release of 9.0.1, only the developer edition is available. You can find it on the Visual Studio Dev Essentials web site. Enterprise edition will follow shortly. Projected availability for enterprise is January 2017, with download options on the Volume Licensing Service Center.
 
-Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](notes/r-server-notes.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+**Side-by-side Installation**
+
+You can install major versions of R Server side-by-side on Hadoop, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0.x, you can install 9.0.5 on the same cluster.
+
+**Upgrade Versions**
+
+If you want to replace 7.x or 8.x with the 9.0.1 version, you should uninstall the older distribution before installing the new version (there is no in-place upgrade).
+
+**Installation Steps**
 
 A summary of setup tasks for R Server 2016 is as follows:
 
@@ -37,26 +45,26 @@ A summary of setup tasks for R Server 2016 is as follows:
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
 
-The install script downloads and installs Microsoft R Open for R Server 2016 (microsoft-r-server-mro-8.0.rpm). This distribution provides the following packages that are new in this version:
+The install script downloads and installs Microsoft R Open (microsoft-r-server-mro-9.0.rpm). This distribution provides the following packages that are new in this version:
 
-- microsoft-r-server-intel-mkl-8.0.rpm       
-- microsoft-r-server-packages-8.0.rpm      
-- microsoft-r-server-hadoop-8.0.rpm
+- microsoft-r-server-intel-mkl-9.0.rpm       
+- microsoft-r-server-packages-9.0.rpm      
+- microsoft-r-server-hadoop-9.0.rpm
 
-In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported in R Server 2016.
+In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported.
 
-## Where do I get it?
+## Download sites
 
-MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
+- MSDN subscribers can download Microsoft R Server 9.0.1 for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
 
-You can also get R Server 2016 for Hadoop from these sites.
-
-- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
 - [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
 
-  Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
+    - Click **Join or Access Now** and enter your account information.
+    - Click **Downloads**, and then search for *Microsoft R*.
+    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
-  ![Showing: Visual Studio Dev Essentials](media/rserver-install-hadoop-805/rserver-install-showing-visual-studio-dev-essentials.PNG)
+> [!NOTE]
+> Recall that the download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Hadoop is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ## Recommendations for installation
 
@@ -72,21 +80,15 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 2016 works with the following Hadoop distributions:
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 9.0.1 works with the Hadoop distributions listed here: [Supported platforms](rserver-install-supported-platforms.md)
 
-- Cloudera CDH 5.5-5.7
-- HortonWorks HDP 2.3-2.4
-- MapR 5.0-5.1
-
-Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 2016 (version 8.0.5).
+Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.0.1.
 
 In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
-
-**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6.x and 7.x (or a fully compatible operating system like CentOS), or SUSE Linux Enterprise Server 11 (SLES11). See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
@@ -302,7 +304,7 @@ Two parcels are required:
 
 Install the Cloudera Manager parcels as follows:
 
-1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
+1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel](https://rserverdistribution.azureedge.net/production/MRO/3.3.2/485/1033/f9644b5c602b4479bcdaa88d55cdd977/MRO-3.3.2-Cloudera.tar.gz). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
 
 2. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 

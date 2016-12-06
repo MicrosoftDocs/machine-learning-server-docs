@@ -77,7 +77,7 @@ You can download the installation program from the following locations:
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
-> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Windows is pending. VLSC is expected to have an ISO available for the 9.0 release in January 2017.
+> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Windows is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ### Run Setup
 
@@ -105,7 +105,7 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 ##Side-by-side installation
 
-You can install R Server 9.0.x and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
+You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
 
 ##Upgrade 9.0 to 9.0.1
 
