@@ -28,13 +28,13 @@ ms.custom: ""
 
 The `MicrosoftML` package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as featurization, classification, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
-## MicrosoftML transforms 
+## MicrosoftML transforms
 
 The transform pipelines of MicrosoftML allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. One advantage of the transform pipelines is that once you've defined a transform pipeline, you can save the pipeline and apply it to additional data.
 
-- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands. 
-- **Categorical Hash**: converts a categorical value into an indicator array by hashing the value and using the hash as an index in the bag. 
-- **Categorical**: passes through a data set, operating on text columns, to build a dictionary of categories. 
+- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
+- **Categorical Hash**: converts a categorical value into an indicator array by hashing the value and using the hash as an index in the bag.
+- **Categorical**: passes through a data set, operating on text columns, to build a dictionary of categories.
 - **Select Features**: selects features from the specified variables using one of the two modes: count or mutual information.
 - **Ngram**: ngramCount and ngramHash allows defining arguments for count-based and hashing-based feature extraction.
 - **Featurize Text**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
@@ -53,7 +53,7 @@ The `MicrosoftML` package implements algorithms that perform a variety of machin
 
 
 ### Fast Linear model (SDCA)
-The **`rxFastLinear`** algorithm is based on the Stochastic Dual Coordinate Ascent (SDCA) method, a state-of-the-art optimization technique for convex objective functions. The algorithm can be scaled for use on large out-of-memory data sets due to a semi-asynchronized implementation that supports multithreaded. Several choices of loss functions are also provided and elastic net regularization is supported. The SDCA method combines several of the best properties and capabilities of logistic regression and SVM algorithms. 
+The **`rxFastLinear`** algorithm is based on the Stochastic Dual Coordinate Ascent (SDCA) method, a state-of-the-art optimization technique for convex objective functions. The algorithm can be scaled for use on large out-of-memory data sets due to a semi-asynchronized implementation that supports multithreaded. Several choices of loss functions are also provided and elastic net regularization is supported. The SDCA method combines several of the best properties and capabilities of logistic regression and SVM algorithms.
 
 **Tasks supported**: binary classification, linear regression
 
@@ -91,7 +91,7 @@ To see the MicrosoftML functions that can be called:
 
 1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
 2. In the console, return the number of objects by typing the following at the R prompt, type search().
-3. Note the position of the object you are interested in. 
+3. Note the position of the object you are interested in.
 4. At the R prompt, type `objects(<position>)` to reveal the set of functions such as: objects(5)
 5. Find the name of the function in which you are interested.
 6. At the R prompt, type `?<function_name>` to open the help file for that function.
@@ -102,4 +102,4 @@ To see the MicrosoftML functions that can be called:
 
 [Sample code and Data for Microsoft R Server and Microsoft R Client](https://github.com/Microsoft/microsoft-r)
 
-For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](../microsoftml-algorithm-cheat-sheet.md).

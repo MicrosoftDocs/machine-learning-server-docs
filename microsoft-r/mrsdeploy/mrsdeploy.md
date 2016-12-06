@@ -28,7 +28,7 @@ ms.custom: ""
 
 The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. It's used to access the [operationalization capabilities](~/operationalize/about.md) in R Server.
 
-Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0.1 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use `mrsdeploy`. In a remote execution scenario, both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2. For more information about requirements and supported configurations, see [Introduction to the mrsdeploy](mrsdpeloy-intro-vignette.md).
+Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0.1 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use `mrsdeploy`. In a remote execution scenario, both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2. For more information about requirements and supported configurations, see [Introduction to the mrsdeploy](mrsdeploy-intro-vignette.md).
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
 
