@@ -31,9 +31,9 @@ MicrosoftML is a new package for Microsoft R Server that adds state-of-the-art a
 MicrosoftML adds algorithms and transforms that are used by product teams across Microsoft. This brings new machine learning functionality with increased speed, performance and scale, especially for handling a large corpus of text data and high-dimensional categorical data.  
 
 
-## What’s New?
+## What’s new?
 
-MicrosoftML supports new end-to-end that include new features and functionality. You can now:
+MicrosoftML supports new end-to-end scenarios that include new features and functionality. You can now:
 -	Create text classification models for problems such as sentiment analysis and support ticket classification.
 -	Train deep neural nets with GPU acceleration in order to solve complex problems such as retail image classification and handwriting analysis.
 -	Work with high-dimensional categorical data for scenarios like online advertising click-through prediction.
@@ -48,14 +48,13 @@ Here are links to Notebooks that contain several tutorials and samples that illu
 
 ## MicrosoftML transforms
 
-The `MicrosoftML` package provides transform pipelines that allow you to compose a custom set of transforms that can be applied to your data for featurization before training or testing to facilitate these processes. These include:
+The `MicrosoftML` package provides a machine learning transform pipelines that allows you to compose a custom set of transforms that can be applied to your data for featurization before training or testing to facilitate these processes. These include:
 
-- **Concatenate**: creates a single vector-valued column from multiple  columns.
-- **Categorical Hash**: converts a categorical value into an indicator array.
-- **Categorical**: passes through a data set, operating on text columns, to build a dictionary of categories. 
-- **Select Features**: selects features from the specified variables using one of the two modes: count or mutual information.
-- **Ngram**: ngramCount and ngramHash allows defining arguments for count-based and hashing-based feature extraction.
-- **Featurize Text**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.
+- **`concat()`**: creates a single vector-valued column from multiple columns. Combining features of the same type into a vector can significantly speed up training times.
+- **`categoricalHash()`**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable
+- **`categorical()`**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
+- **`selectFeatures()`**: selects features from the specified variables using one of the two modes: count or mutual information.
+- **`featurizeText()`**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF.
 
 
 ## MicrosoftML algorithms
@@ -66,9 +65,9 @@ Algorithm | ML task supported | Scalability | Application Examples
 --------- | ----------------- | ------------ | -----------
 Fast Linear model (SDCA) |  binary classification, linear regression | #cols: ~1B;<br> #rows: ~1B;<br> CPU: multi-proc | Mortgage default prediction, Email spam filtering
 OneClass SVM | anomaly detection | cols: ~1K;<br> #rows: RAM-bound;<br> CPU: single-proc | Credit card fraud detection
-Fast Tree | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Page ranking by search
+Fast Tree | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Bankruptcy prediction
 Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
-Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc | Check signature recognition, OCR, Click Prediction
+Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
 Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
 
 For more information, see [MicrosoftML functions](microsoftml/microsoftml.md) and the documentation for the individual transforms and functions in the product help.
