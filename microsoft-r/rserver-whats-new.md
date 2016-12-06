@@ -26,7 +26,11 @@ ms.custom: ""
 
 # What's New in R Server 9.0.1
 
-This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine.
+This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
+
++ [Machine learning algorithms](microsoftml-introduction.md)
++ [Remote execution](operationalize/remote-execution.md)
++ [Web service deployment](mrsdeploy/mrsdeploy-websrv-vignette.md)
 
 **Related Documents**
 
@@ -36,9 +40,9 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## New and updated packages
 
-**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
-
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux and Hadoop is projected for the first quarter of 2017. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+
+**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 **RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
@@ -59,11 +63,11 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 <a name="operationalize"></a>
 **Operationalization features**
 
-Formerly known as DeployR, the operationalization feature in R Server 9.0.1 is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and configure R Server to host R analytics web services and remote R sessions. All you need to do is configure it.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md). 
+Formerly known as DeployR, the operationalization feature in R Server 9.0.1 is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and configure R Server to host R analytics web services and remote R sessions. All you need to do is configure it.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
-An operationalized R server offers the ability to host and bundle R analytics into web services with minimal code changes. R Server accepts interactive commands through [mrsdeploy functions](mrsdeploy/mrsdeploy.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/api.md) in any programming language. 
+An operationalized R server offers the ability to host and bundle R analytics into web services with minimal code changes. R Server accepts interactive commands through [mrsdeploy functions](mrsdeploy/mrsdeploy.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/api.md) in any programming language.
 
-The operationalization feature can be configured [on a single machine](operationalize/configuration-initial.md#onebox) or it can scaled up easily into an advanced [enterprise-ready multi-server topology](operationalize/configuration-initial.md#enterprise) composed of multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service. 
+The operationalization feature can be configured [on a single machine](operationalize/configuration-initial.md#onebox) or it can scaled up easily into an advanced [enterprise-ready multi-server topology](operationalize/configuration-initial.md#enterprise) composed of multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
 
 In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
