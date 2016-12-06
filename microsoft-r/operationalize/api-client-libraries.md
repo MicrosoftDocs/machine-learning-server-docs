@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Using Client Libraries to Access APIs
+# Build and Use Client Libraries to Access APIs from Swagger
 
 While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
@@ -34,6 +34,8 @@ To simplify the integration of your R analytics web services, R Server provides 
 To access these RESTful APIs outside of R, use a Swagger code tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
 
 ![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
+
+## Swagger Workflow
 
 ### Get a Swagger Generation Tool
 
@@ -130,7 +132,7 @@ Once your client library has been generated and you've build the authentication 
    DeployRClient deployRClient = new DeployRClient(new Uri("https://dhost:port"));
    ```
 
-Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the core APIs](#authentication).
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the core APIs](api-client-libraries.md#authentication).
 
 
 
@@ -189,12 +191,12 @@ To build a client library used to integrate and consume a specific web service, 
    DeployRClient deployRClient = new DeployRClient(new Uri("https://dhost:port"));
    ```
 
-Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the service consumption APIs](#authentication).
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the service consumption APIs](api-client-libraries.md#authentication).
+
+ 
 
 
-
-
-## CSharp Client Library Example
+## Building and Using a Core Client Library from Swagger (CSharp and Azure Active Directory)
 
 1. Statically generate CSharp client libraries from the `rserver-9.0.1.json` swagger. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1).
 
@@ -217,90 +219,61 @@ Review the resulting API client stub that was generated. You can provide some cu
       PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
       ```
 
-### Import required namespace types in your source code
+    1. Import required namespace types in your source code
 
-```csharp
-// The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
-using IO.Swagger.Client;
-using IO.Swagger.Client.Models;
+    ```csharp
+    // The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
+    using IO.Swagger.Client;
+    using IO.Swagger.Client.Models;
 
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using Microsoft.Rest
-```
+    using Microsoft.IdentityModel.Clients.ActiveDirectory;
+    using Microsoft.Rest
+    ```
 
-### Create a Client Library
+    1. Create a Client Library
 
-```csharp
-DeployRClient client = new DeployRClient(new Uri("https://host:port"));
-```
+       ```csharp
+       <swagger-client-title> client = new <swagger-client-title>(new Uri("https://<host>:<port>"));
+       ```
 
-### Authentication ADDING THE AUTHENTICATION WORKFLOW TO YOUR APP
+1. Add authentication workflow to your application.  Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in ever request header:
 
-Once your client library has been generated, you can begin to interact with the core operationalization APIs. Keep in mind that all APIs require authentication and therefore all users must authenticate when making an API call. To simplify this process, bearer access tokens are issues so that users need not provide their credentials for every since call. Learn more about managing these tokens.
-Before you interact with the core APIs, first authenticate and get the bearer access token using the authentication method your administrator configured for operationalization.
-Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in ever request header:
+   ```
+   GET /resource HTTP/1.1
+   Host: rserver.contoso.com
+   Authorization: Bearer mFfl_978_.G5p-4.94gM-
+   ```
 
-```
-GET /resource HTTP/1.1
-Host: server.example.com
-Authorization: Bearer mFfl_978_.G5p-4.94gM-
-```
+   In our example, the organization has Azure Active Directory.
 
-There are two ways to achieve this depending on your authentication requirements 
-and workflow:
+   ```cs
+   <swagger-client-title> client = new <swagger-client-title>(new Uri("https://<host>:<port>"));
+   
+   // -------------------------------------------------------------------------
+   // Note - Update these with your appropriate values
+   // -------------------------------------------------------------------------
 
-1. Authenticating with Azure Active Directory (Cloud)
+   // Address of the authority to issue token.
+   const string tenantId = "microsoft.com";
+   const string authority = "https://login.windows.net/" + tenantId;
+   
+   // Identifier of the client requesting the token
+   const string clientId = "00000000-0000-0000-0000-000000000000";
 
-```cs
-DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+   // Secret of the client requesting the token
+   const string clientKey = "00000000-0000-0000-0000-00000000000";
 
-// -------------------------------------------------------------------------
-// Note - Update these with your appropriate values
-// -------------------------------------------------------------------------
+   var authenticationContext = new AuthenticationContext(authority);
+   var authenticationResult = await authenticationContext.AcquireTokenAsync(
+          clientId, new ClientCredential(clientId, clientKey));
 
-// Address of the authority to issue token.
-const string tenantId = "microsoft.com";
-const string authority = "https://login.windows.net/" + tenantId;
+   // Set Authorization header with `Bearer` and access-token
+   var headers = client.HttpClient.DefaultRequestHeaders;
+   var accessToken = authenticationResult.AccessToken;
 
-// Identifier of the client requesting the token
-const string clientId = "00000000-0000-0000-0000-000000000000";
-
-// Secret of the client requesting the token
-const string clientKey = "00000000-0000-0000-0000-00000000000";
-
-var authenticationContext = new AuthenticationContext(authority);
-var authenticationResult = await authenticationContext.AcquireTokenAsync(
-       clientId, new ClientCredential(clientId, clientKey));
-
-// Set Authorization header with `Bearer` and access-token
-var headers = client.HttpClient.DefaultRequestHeaders;
-var accessToken = authenticationResult.AccessToken;
-
-headers.Remove("Authorization");
-headers.Add("Authorization", $"Bearer {accessToken}");
-```
-
-2. Authenticating with Active Directory LDAP or Local Admin (On-premise)
-For these authentication methods, you must call the POST /login API in order to authenticate. You'll need to pass in the username and password for the local administrator, or if Active Directory is enabled, pass the LDAP account information.
-
-
-Authentication via On-prem AD requires you to call the `POST /login` API 
-passing in your AD `username` and `password`.
-
-```cs
-DeployRClient client = new DeployRClient(new Uri("https://host:port"));
-
-// Authenticate using username/password
-var loginRequest = new LoginRequest("LDAP_USER_NAME", "LDAP_PASSWORD");
-var loginResponse = await client.LoginAsync(loginRequest);
-
-// Set Authorization header with `Bearer` and access-token
-var headers = deployRClient.HttpClient.DefaultRequestHeaders;
-var accessToken = loginResponse.AccessToken;
-
-headers.Remove("Authorization");
-headers.Add("Authorization", $"Bearer {accessToken}");
-```
+   headers.Remove("Authorization");
+   headers.Add("Authorization", $"Bearer {accessToken}");
+   ```
 
 ### Consume Core Op APIs
 
