@@ -30,11 +30,11 @@ In this first release of 9.0.1, only the developer edition is available. You can
 
 **Side-by-side Installation**
 
-You can install major versions of R Server side-by-side on Hadoop, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0.x, you can install 9.0.5 on the same cluster.
+You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Hadoop, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
 
 **Upgrade Versions**
 
-If you want to replace 7.x or 8.x with the 9.0.1 version, you should uninstall the older distribution before installing the new version (there is no in-place upgrade).
+If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 **Installation Steps**
 
@@ -45,7 +45,7 @@ A summary of setup tasks for R Server 2016 is as follows:
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
 
-The install script downloads and installs Microsoft R Open (microsoft-r-server-mro-9.0.rpm). This distribution provides the following packages that are new in this version:
+The install script downloads and installs Microsoft R Open (microsoft-r-server-mro-9.0.x86_64.rpm). This distribution provides the following packages that are new in this version:
 
 - microsoft-r-server-intel-mkl-9.0.rpm       
 - microsoft-r-server-packages-9.0.rpm      
@@ -55,8 +55,6 @@ In contrast with previous releases, this version  comes with a requirement for `
 
 ## Download sites
 
-- MSDN subscribers can download Microsoft R Server 9.0.1 for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
-
 - [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
@@ -64,11 +62,11 @@ In contrast with previous releases, this version  comes with a requirement for `
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
 > [!NOTE]
-> Recall that the download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Hadoop is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
+> Recall that the download option for [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Hadoop is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ## Recommendations for installation
 
-We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
+We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R Server. Although the task will eventually get reassigned to a node that has R Server, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
@@ -80,7 +78,7 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 9.0.1 works with the Hadoop distributions listed here: [Supported platforms](rserver-install-supported-platforms.md)
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server works with the Hadoop distributions listed here: [Supported platforms](rserver-install-supported-platforms.md)
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.0.1.
 
@@ -105,36 +103,36 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 3. Unpack the file:
         `[tmp] $ tar zxvf en_microsoft_r_server_for_hadoop_x64_8944644.tar.gz`
 
-**Unpacking an ISO file**
-
-Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
-
-      `mkdir /mnt/mrsimage`
-      `mount –o loop sw_dvd5_r_server_2016_english_-2_for_HadoopRdHt_mlf_x20-98709.iso /mnt/mrsimage`
-
-The download file is **sw_dvd5_r_server_2016_english_-2_for_HadoopRdHt_mlf_x20-98709.iso**.
 
 ## Run the install script
 
 Microsoft R Server 2016 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
-1. Log in as root or a user with sudo privileges. The following instructions assume user privileges with the sudo override.
+1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
 2. Verify system repositories are up to date:
-		[username] $ sudo yum clean all
-3. Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS80HADOOP if you unpacked the tar.gz file):
-		[username] $ cd /tmp
-		[username tmp] $ cd /MRS80HADOOP
+		[username] $ `sudo yum clean all`
+3. Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS90HADOOP if you unpacked the tar.gz file):
+		[username] $ `cd /tmp`
+		[username tmp] $ `cd /MRS90HADOOP`
 4. Run the script with the **-p** parameter, specifying the Hadoop component:
-		[username tmp MRS80HADOOP] $ sudo bash install.sh -p
-5. When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
-6. Installer output shows the packages and location of the log file.
-7. Check the version of Microsoft R Open using `rpm -qi`:
-		[username tmp MRS80HADOOP] $ rpm -qi microsoft-r-server-mro-8.0
-8. Optionally, you can also use `rpm -qi` to check the version of microsoft-r-server-intel-mkl-8.0, microsoft-r-server-packages-8.0, and microsoft-r-server-hadoop-8.0.
-9. Check the output to verify version 8.0.5. Partial output appears as follows:
+		[username tmp MRS90HADOOP] $ `sudo bash install.sh -p`
+5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+6. Repeat to accept license terms for Microsoft R Server.
+7. Installer output shows the packages and location of the log file.
 
-		Name        : microsoft-r-server-mro-8.0   Relocations: /usr/lib64
-		Version     : 8.0.5                         Vendor: Microsoft
+## Verify installation
+
+1. List installed packages and get package names:
+        [MRS90HADOOP] $ `yum list \*microsoft\*`
+        [MRS90HADOOP] $ `yum list \*deployr\*`
+2. Check the version of Microsoft R Open using `rpm -qi`:
+		[MRS90HADOOP] $ `rpm -qi microsoft-r-open-mro-3.3.x86_64`
+3. Check the version of Microsoft R Server:
+        [MRS90HADOOP] $ `rpm -qi microsoft-r-server-packages-9.0.x86_64`
+4. Partial output is as follows (note version 9.0.1):
+
+		Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
+		Version     : 9.0.1                               Vendor: Microsoft
 		. . .
 
 ## Verify install
@@ -145,15 +143,15 @@ As a verification step, check folders and permissions. Following that, you shoul
 
 Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:
 
-		$ hadoop fs -mkdir /user/RevoShare/$USER
-		$ hadoop fs -chmod uog+rwx /user/RevoShare/$USER
-		$ mkdir -p /var/RevoShare/$USER
-		$ chmod uog+rwx /var/RevoShare/$USER
+		$ `hadoop fs -mkdir /user/RevoShare/$USER`
+		$ `hadoop fs -chmod uog+rwx /user/RevoShare/$USER`
+		$ `mkdir -p /var/RevoShare/$USER`
+		$ `chmod uog+rwx /var/RevoShare/$USER`
 
 The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"). Run the RevoScaleR commands in a Revo64 session.
 
-		$ cd MRS80Linux
-		$ Revo64
+		$ `cd MRS90HADOOP`
+		$ `Revo64`
 		> rxHadoopMakeDir("/user/RevoShare/username")
 		> rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
 
