@@ -86,7 +86,7 @@
 ### [Service Consumption & Integration](operationalize/service-integration.md)
 ### [Access Token Management](operationalize/security-access-tokens.md)
 ### [API Overview](operationalize/api.md)
-### [Build and Use Client Libraries](api-client-libraries.md)
+### [Build and Use Client Libraries](operationalize/api-client-libraries.md)
 
 
 ### DeployR 8.x Doc Archives
