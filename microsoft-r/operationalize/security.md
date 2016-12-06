@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Security Authentication"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Enterprise-Grade Security for Operationalization | Microsoft R Server Docs"
+description: "Enterprise-Grade Security for Operationalization with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Enterprise-Grade Security
+# Enterprise-Grade Security for Operationalization
 
 R Server has many features that support the creation of secure applications. Common security considerations, such as data theft or vandalism, apply regardless of the version of R Server you are using. Data integrity should also be considered as a security issue. If data is not protected, it is possible that it could become worthless if ad hoc data manipulation is permitted and the data is inadvertently or maliciously modified. In addition, there are often legal requirements that must be adhered to, such as the correct storage of confidential information. 
 

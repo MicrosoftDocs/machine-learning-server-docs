@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "DeployR API"
-description: "DeployR API"
+title: "Operationalization APIs | Microsoft R Server Docs"
+description: "Operationalization APIs for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,6 +24,7 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
+
 # R Server Operationalization APIs
 
 **Applies to:  Microsoft R Server 9.0.1**

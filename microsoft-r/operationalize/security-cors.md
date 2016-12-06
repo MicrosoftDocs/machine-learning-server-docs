@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Cross-Origin Resource Sharing"
-description: "Cross-Origin Resource Sharing - R Server"
-keywords: "Security DeployR CORS Cross-Origin Resource Sharing"
+title: "Enterprise-Grade Security: CORS | Microsoft R Server Docs"
+description: "Enterprise-Grade Security: CORS with Microsoft R Server"
+keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""

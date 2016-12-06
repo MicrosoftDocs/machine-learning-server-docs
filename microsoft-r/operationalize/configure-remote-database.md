@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization with R Server"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Configure a remote database for operationalization | Microsoft R Server Docs"
+description: "Configure a remote database for operationalization with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""

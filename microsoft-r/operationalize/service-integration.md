@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization with R Server"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Integrate R Analytics Web Services into Applications | Microsoft R Server Docs"
+description: "Integrate R Analytics Web Services into Applications with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Administration utility"
-description: "Administration utility for DeployR"
+title: "Operationalization Administration Utility | Microsoft R Server Docs"
+description: "Operationalization of R Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
-ms.topic: "article"
+ms.date: "12/08/2016"
+ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -19,9 +19,10 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+ms.technology: 
+  - deployr
+  - r-server
 ms.custom: ""
-
 ---
 
 # Administrator Utility for Operationalization

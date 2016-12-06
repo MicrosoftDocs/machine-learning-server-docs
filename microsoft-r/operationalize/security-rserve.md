@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: " Security in DeployR"
-description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
-keywords: ""
+title: "R Execution Security Considerations | Microsoft R Server Docs"
+description: "R Execution Security Considerations for Operationalization with Microsoft R Server"
+keywords: "RServe"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
-ms.topic: "article"
+ms.date: "12/08/2016"
+ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -19,9 +19,10 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+ms.technology: 
+  - deployr
+  - r-server
 ms.custom: ""
-
 ---
 
 # R Execution Security Considerations

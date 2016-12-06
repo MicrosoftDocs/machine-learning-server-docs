@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Package Management"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "R Package Management with R Server | Microsoft R Server Docs"
+description: "R Package Management with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/06/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
