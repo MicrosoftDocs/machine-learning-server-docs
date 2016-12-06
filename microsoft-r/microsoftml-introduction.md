@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "11/18/2016"
+ms.date: "12/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,53 +26,68 @@ ms.custom: ""
 
 # Introduction to MicrosoftML
 
-MicrosoftML is a new Machine Learning package for R. It contains a collection of functions in Microsoft R used for doing machine learning at scale. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions, including big data scenarios. Microsoft R Server brings you the ability to do parallel and chunked data processing that addresses the restrictions that limit in-memory open source R. MicrosoftML adds learners and transforms that are used by product teams across Microsoft to the existing Microsoft R Server functionality. This brings new machine learning functionality with increased speed, performance and scale, especially for handling a large corpus of text data and high-dimensional categorical data.  
+MicrosoftML is a new package for Microsoft R Server that adds state-of-the-art algorithms and data transforms to Microsoft R Server functionality. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R Server brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
+
+MicrosoftML adds algorithms and transforms that are used by product teams across Microsoft. This brings new machine learning functionality with increased speed, performance and scale, especially for handling a large corpus of text data and high-dimensional categorical data.  
+
 
 ## What’s New?
 
-- Fast Linear Learner (SDCA) allows you to train 2x faster than logistic regression. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/3.%20Samples/FastLinear_Twitter.ipynb)
+MicrosoftML supports new end-to-end that include new features and functionality. You can now:
+-	Create text classification models for problems such as sentiment analysis and support ticket classification.
+-	Train deep neural nets with GPU acceleration in order to solve complex problems such as retail image classification and handwriting analysis.
+-	Work with high-dimensional categorical data for scenarios like online advertising click-through prediction.
+-	Solve many other common machine learning tasks such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
+
+Here are links to Notebooks that contain several tutorials and samples that illustrate how to implement some of the new functionality:
+
+- Fast Linear Algorithm (SDCA) allows you to train 2x faster than logistic regression. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/3.%20Samples/FastLinear_Twitter.ipynb)
 - GPU acceleration for Neural Nets allows you to train multilayer custom nets on GPUs up to 8x faster. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/2.%20Demos/MNIST_GPU.ipynb).
 - Feature selection can reduce training time up to 10x while still retaining model accuracy. [Notebook Link](http://notebookhost.redmond.corp.microsoft.com/notebooks/Tutorials%20and%20Samples/2.%20Demos/FeatureSelection_Twitter.ipynb)
-- SQL Server integration allows you to easily pull data from SQL and train in R and use your trained model inside SQL. [More Info]()
 
-## MicrosoftML transforms and learners
+
+## MicrosoftML transforms
 
 The `MicrosoftML` package provides transform pipelines that allow you to compose a custom set of transforms that can be applied to your data for featurization before training or testing to facilitate these processes. These include:
 
-- Concatenate
-- Categorical Hash
-- Categorical
-- Select Features
-- Ngram
-- Featurize Text
+- **Concatenate**: creates a single vector-valued column from multiple  columns.
+- **Categorical Hash**: converts a categorical value into an indicator array.
+- **Categorical**: passes through a data set, operating on text columns, to build a dictionary of categories. 
+- **Select Features**: selects features from the specified variables using one of the two modes: count or mutual information.
+- **Ngram**: ngramCount and ngramHash allows defining arguments for count-based and hashing-based feature extraction.
+- **Featurize Text**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.
 
-The `MicrosoftML` package provides fast and scalable machine learning algorithms that enable you to tackle common machine learning tasks such as classification, regression and ranking. These include:
 
-Algorithm | ML task supported | Applications
---------- | ----------------- | ------------
-Fast Linear model (SDCA) |  binary classification, linear regression | Mortgage default prediction, Email spam filtering
-OneClass SVM | anomaly detection | Credit card fraud detection
-Fast Tree | binary classification, regression | Page ranking by search
-Fast Forest | binary classification, regression | Churn Prediction
-Neural Network | binary and multiclass classification, regression | Check signature recognition, OCR, Click Prediction
-Logistic regression | binary and multiclass classification | Classifying sentiments from feedback
+## MicrosoftML algorithms
+
+The `MicrosoftML` package provides fast and scalable machine learning algorithms that enable you to tackle common machine learning tasks such as classification, regression and anomaly detection. These are high-performance algorithms that are multi-threaded, some of which execute off disk, so that they can scale up to to 100s of GBs on a single-node. These include:
+
+Algorithm | ML task supported | Scalability | Application Examples
+--------- | ----------------- | ------------ | -----------
+Fast Linear model (SDCA) |  binary classification, linear regression | #cols: ~1B;<br> #rows: ~1B;<br> CPU: multi-proc | Mortgage default prediction, Email spam filtering
+OneClass SVM | anomaly detection | cols: ~1K;<br> #rows: RAM-bound;<br> CPU: single-proc | Credit card fraud detection
+Fast Tree | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Page ranking by search
+Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
+Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc | Check signature recognition, OCR, Click Prediction
+Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
 
 For more information, see [MicrosoftML functions](microsoftml/microsoftml.md) and the documentation for the individual transforms and functions in the product help.
 
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
+
 ## Getting started with MicrosoftML
 
-MicrosoftML functions are provided through the **MicrosoftML** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms.
+MicrosoftML is currently available in Microsoft R Server on Windows and in the SQL Server 2017 CTP. MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
 
 
-## Working with MicrosoftML
-
-Data scientists and developers can include MicrosoftML functions in custom script or solutions that run locally against R Client or remotely on R Server.
-
-A common workflow is to write the initial code or script against a subset of data on a local computer, change the compute context to specify a large set of data on a big data platform, and then operationalize the solution by deploying it to the target environment, making it accessible to users.
-
-
-## See Also
+## What's next?
 
 [Introduction to Microsoft R](microsoft-r-getting-started.md)
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+
+[MicrosoftML functions](microsoftml/microsoftml.md) 
+
+[MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+
+[Sample code and Data for Microsoft R Server and Microsoft R Client](https://github.com/Microsoft/microsoft-r)
