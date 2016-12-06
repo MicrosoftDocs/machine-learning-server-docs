@@ -57,6 +57,8 @@ While data scientists can work with R directly in an R console window or R IDE, 
 
 To simplify the integration of your R analytics web services, R Server provides a Swagger template that defines each [core operationalization API](https://microsoft.github.io/deployr-api-docs/9.0.1).  Additionally, another unique Swagger-based JSON file is generated each time a web service version is published to define the list of resources that are available in the REST API and the operations that can be called on those resources.
 
+![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
+
 To access these RESTful APIs outside of R, use a Swagger code tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [code-gen](https://github.com/swagger-api/swagger-codegen).
 
 <a name=clientlib-core></a>
