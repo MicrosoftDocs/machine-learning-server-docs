@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "011/18/2016"
+ms.date: "12/05/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -100,3 +100,6 @@ To see the MicrosoftML functions that can be called:
 
 [Introduction to MicrosoftML](../microsoftml-introduction.md)
 
+[Sample code and Data for Microsoft R Server and Microsoft R Client](https://github.com/Microsoft/microsoft-r)
+
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).

@@ -5,6 +5,7 @@
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
 ### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
