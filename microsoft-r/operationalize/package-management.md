@@ -216,19 +216,20 @@ The packages you install using this method do not 'contaminate' the production e
 
    1. Install new R packages and upload any needed R objects and files into the remote R session. 
       ```
-      REMOTE> install.packages(“ggplot2”)
+      REMOTE> install.packages("ggplot2")
       ```
    
    1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. 
       ```
       REMOTE> pause()
-      > remote_script("my-script.R")
+      > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot.  [Learn more about snapshots here.](api.md#snapshots)
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. 
+
    ```
    REMOTE>pause()
-   >create_snapshot("my-snapshot-name")
+   >snapshotId<-createSnapshot("my-snapshot-name")
    $snapshotId
    [1] "123456789-abcdef-123456789"
    ```

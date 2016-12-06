@@ -82,23 +82,96 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 <a name=clientlib-core></a>
 
-### Build the Client Library for Core APIs
+### Get the Swagger File and Build the Core Client Library
 
 To build a client library for the core operationalization APIs, follow these steps.
 
 1. Get the Swagger-based JSON file. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1) to get the core operationalization API definitions.
 
-1. Run the file through the Swagger code generator, and specify the language you want.  if using AutoRest to generate a C# client library, it might look like this:
+1. Run the file through the Swagger code generator, and specify the language you want. If you were using AutoRest to generate a C# client library, it might look like this:
    ```
    AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
    ```
+
+You can now provide some custom headers and make other changes before using the generated client library stub.
+
+<a name="authentication"></a>
+
+### Add Authentication Workflow Logic to Your Application
+
+Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
+
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+
+Before you interact with the core APIs, first authenticate and get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization:
+
++ Azure Active Directory (AAD): You'll need to pass the AAD credentials, authority, and client ID. In turn, AAD will issue the token.
+
++ Active Directory LDAP or Local Admin:  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md).   
+
+Once authenticated, the user will not need to provide credentials again as long as the token is still valid.
+
+#### CSharp Example of Azure Active Directory Authentication
+
+```cs
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+
+// -------------------------------------------------------------------------
+// Note - Update these with your appropriate values
+// -------------------------------------------------------------------------
+
+// Address of the authority to issue token.
+const string tenantId = "microsoft.com";
+const string authority = "https://login.windows.net/" + tenantId;
+
+// Identifier of the client requesting the token
+const string clientId = "00000000-0000-0000-0000-000000000000";
+
+// Secret of the client requesting the token
+const string clientKey = "00000000-0000-0000-0000-00000000000";
+
+var authenticationContext = new AuthenticationContext(authority);
+var authenticationResult = await authenticationContext.AcquireTokenAsync(
+       clientId, new ClientCredential(clientId, clientKey));
+
+// Set Authorization header with `Bearer` and access-token
+var headers = client.HttpClient.DefaultRequestHeaders;
+var accessToken = authenticationResult.AccessToken;
+
+headers.Remove("Authorization");
+headers.Add("Authorization", $"Bearer {accessToken}");
+```
+
+#### CSharp Example of Active Directory/LDAP  Authentication
+
+```cs
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+
+// Authenticate using username/password
+var loginRequest = new LoginRequest("LDAP_USER_NAME", "LDAP_PASSWORD");
+var loginResponse = await client.LoginAsync(loginRequest);
+
+// Set Authorization header with `Bearer` and access-token
+var headers = deployRClient.HttpClient.DefaultRequestHeaders;
+var accessToken = loginResponse.AccessToken;
+
+headers.Remove("Authorization");
+headers.Add("Authorization", $"Bearer {accessToken}");
+```
+
+
+### Interact with the APIs
+
+Once your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core operationalization APIs. 
 
 1. Create the client library.
    ```
    DeployRClient deployRClient = new DeployRClient(new Uri("https://dhost:port"));
    ```
 
-Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the core APIs](#auth).
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the core APIs](#authentication).
+
+
 
 <a name=clientlib-service></a>
 
@@ -155,83 +228,138 @@ To build a client library used to integrate and consume a specific web service, 
    DeployRClient deployRClient = new DeployRClient(new Uri("https://dhost:port"));
    ```
 
-Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the service consumption APIs](#auth).
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the service consumption APIs](#authentication).
 
-<a name=auth></a>
 
-### Adding Authentication Logic to your Application  
 
-Once your client library has been generated, you can begin to interact with the core operationalization APIs. Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory. 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+## CSharp Client Library Example
 
-Before you interact with the core APIs, first authenticate and get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization.
+1. Statically generate CSharp client libraries from the `rserver-9.0.1.json` swagger. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1).
 
-+ **Authenticating with Azure Active Directory (Cloud)**
+   ```
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace IO.Swagger.Client
+   ```
 
-  For Azure Active Directory (AAD), you'll need to pass the AAD credentials and, in turn, AAD will issue the token.
+   Notice the namespace is `IO.Swagger.Client`.
 
-    ```
-    csharp
-    public static async Task<DeployRClient> HandleLoginAzureActiveDirectory(DeployRClient deployRClient)
-    { 
+1. Use the statically-generated client library to call the operationalization APIs. 
 
-    // Enter the URL to the AAD login as the authority. 
-    // For example, if the AAD domain is `myMRServer.contoso.com`, 
-    // then the `Authority` would be `https://login.windows.net/myMRSServer.contoso.com`
-    const string authority = "https://login.windows.net/myMRSServer.contoso.com";
+   1. Get the following `NuGet` package dependencies and add them to your Visual Studio project. 
+      + `Microsoft.Rest.ClientRuntime`
+      + `Microsoft.IdentityModel.Clients.ActiveDirectory`
 
-    // Enter the identifier of the client requesting the token.
-    // This is the `CLIENT ID` value for the web app in the Azure management portal.
-    // Ask your administrator for more information.
-    const string clientId = "00000000-0000-0000-0000-000000000000";
+      Open the Package Manager Console for NuGet and add them with this command:
 
-    // Enter the secret of the client requesting the token.
-    const string clientKey = "00000000-0000-0000-0000-00000000000";
+      ```
+      PM> Install-Package Microsoft.Rest.ClientRuntime
+      PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
+      ```
 
-    var authenticationContext = new AuthenticationContext(authority);
-    var authenticationResult = authenticationContext.AcquireTokenAsync(
-    clientId, new ClientCredential(clientId, clientKey));
-           // Set Authorization header with `Bearer` and access-token
-           var headers = deployRClient.HttpClient.DefaultRequestHeaders;
-           var accessToken = authenticationResult.Result.AccessToken;
+### Import required namespace types in your source code
 
-    headers.Remove("Authorization");
-    headers.Add("Authorization", $"Bearer {accessToken}");
+```csharp
+// The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
+using IO.Swagger.Client;
+using IO.Swagger.Client.Models;
 
-    return deployRClient;
-    }
-    ```
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.Rest
+```
 
-+ **Authenticating with Active Directory LDAP or Local Admin (On-premise)** 
+### Create a Client Library
 
-  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md).   
+```csharp
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+```
 
-    ```
-    public static async Task<DeployRClient> HandleLoginOnPremisesActiveDirectory(DeployRClient deployRClient)
-    {
-        try
-        {  
-            // Authenticate using username/password
-            var loginRequest = new LoginRequest("<USER_NAME>", "<PASSWORD>");
-            var loginResponse = await deployRClient.LoginAsync(loginRequest);
+### Authentication ADDING THE AUTHENTICATION WORKFLOW TO YOUR APP
 
-       // Set Authorization header with `Bearer` and access-token
-        var headers = deployRClient.HttpClient.DefaultRequestHeaders;
-        var accessToken = loginResponse.AccessToken;
+Once your client library has been generated, you can begin to interact with the core operationalization APIs. Keep in mind that all APIs require authentication and therefore all users must authenticate when making an API call. To simplify this process, bearer access tokens are issues so that users need not provide their credentials for every since call. Learn more about managing these tokens.
+Before you interact with the core APIs, first authenticate and get the bearer access token using the authentication method your administrator configured for operationalization.
+Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in ever request header:
 
-       headers.Remove("Authorization");
-       headers.Add("Authorization", $"Bearer {accessToken}");
+```
+GET /resource HTTP/1.1
+Host: server.example.com
+Authorization: Bearer mFfl_978_.G5p-4.94gM-
+```
 
-            return deployRClient;
-        }
-        catch (HttpOperationException httpOperationException)
-        {
-            httpOperationException.Response.ThrowIfInternalServerError();
-        }
+There are two ways to achieve this depending on your authentication requirements 
+and workflow:
 
-        throw new InvalidOperationException("Unable to authenticate with Active Directory.");
-    }
-    ``` 
+1. Authenticating with Azure Active Directory (Cloud)
 
-Once authenticated, the user will not need to provide credentials again as long as the token is still valid. 
+```cs
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+
+// -------------------------------------------------------------------------
+// Note - Update these with your appropriate values
+// -------------------------------------------------------------------------
+
+// Address of the authority to issue token.
+const string tenantId = "microsoft.com";
+const string authority = "https://login.windows.net/" + tenantId;
+
+// Identifier of the client requesting the token
+const string clientId = "00000000-0000-0000-0000-000000000000";
+
+// Secret of the client requesting the token
+const string clientKey = "00000000-0000-0000-0000-00000000000";
+
+var authenticationContext = new AuthenticationContext(authority);
+var authenticationResult = await authenticationContext.AcquireTokenAsync(
+       clientId, new ClientCredential(clientId, clientKey));
+
+// Set Authorization header with `Bearer` and access-token
+var headers = client.HttpClient.DefaultRequestHeaders;
+var accessToken = authenticationResult.AccessToken;
+
+headers.Remove("Authorization");
+headers.Add("Authorization", $"Bearer {accessToken}");
+```
+
+2. Authenticating with Active Directory LDAP or Local Admin (On-premise)
+For these authentication methods, you must call the POST /login API in order to authenticate. You'll need to pass in the username and password for the local administrator, or if Active Directory is enabled, pass the LDAP account information.
+
+
+Authentication via On-prem AD requires you to call the `POST /login` API 
+passing in your AD `username` and `password`.
+
+```cs
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+
+// Authenticate using username/password
+var loginRequest = new LoginRequest("LDAP_USER_NAME", "LDAP_PASSWORD");
+var loginResponse = await client.LoginAsync(loginRequest);
+
+// Set Authorization header with `Bearer` and access-token
+var headers = deployRClient.HttpClient.DefaultRequestHeaders;
+var accessToken = loginResponse.AccessToken;
+
+headers.Remove("Authorization");
+headers.Add("Authorization", $"Bearer {accessToken}");
+```
+
+### Consume Core Op APIs
+
+Once authenticated, the user will not need to provide credentials again as long as the token is still valid. You can now begin to interact with the core Op APIs
+
+``cs
+// --- Create Client ----------------------------------------------------------
+DeployRClient client = new DeployRClient(new Uri("https://host:port"));
+
+// --- Authenticate using AAD [or] on-prem AD as defined above ----------------
+// ...
+// ...
+
+// --- Ready to use APIS ------------------------------------------------------
+
+// Try creating an R Session `POST /sessions`
+var createSessionResponse = client.CreateSession(
+      new CreateSessionRequest("Session One"));
+
+Console.WriteLine("Session ID: " + createSessionResponse.SessionId);
+```
+
+ 
