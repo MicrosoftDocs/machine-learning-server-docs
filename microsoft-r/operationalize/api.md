@@ -40,7 +40,7 @@ The APIs available for operationalization with R Server can be categorized into 
 
 These core REST APIs expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications.  These APIs enable you to publish Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API. 
 
-The core APIs are described in  `rserver-swagger-9.0.1.json`, a Swagger-based JSON document available from [the core API reference page](https://microsoft.github.io/deployr-api-docs/9.0.1). [Swagger](http://swagger.io/) is a popular specification for a JSON file that describes REST APIs.  You access all the core APIs for operationalization using a client library built from `rserver-swagger-9.0.1.json` using the instructions later in this article.
+The core APIs are described in  `rserver-swagger-9.0.1.json`, a Swagger-based JSON document available from [the core API reference page](https://microsoft.github.io/deployr-api-docs/9.0.1). [Swagger](http://swagger.io/) is a popular specification for a JSON file that describes REST APIs.  You access all the core APIs for operationalization using a client library built from `rserver-swagger-9.0.1.json` using the [instructions](#clientlib-core) later in this article.
 
 For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) directly to list, discover, and consume services. [Learn more in this vignette](../mrsdeploy/mrsdeploy-websrv-vignette.md).
 
@@ -48,7 +48,7 @@ For client applications written in **R**, you can side-step the Swagger approach
 
 The service consumption REST APIs expose a wide range of R analytics services to client application developers.   Once R code is published and exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve R session outputs (R objects, graphics, files, ...) from the service.  
 
-Each time a service is published, a unique Swagger-based JSON document is automatically generated to describe each API needed to interact with that service. While the service consumption Swagger files are all named `swagger.json`, you'll find them each in a unique location by calling `GET /api/{service-name}/{service-name}/swagger.json`.  To simplify the integration of R analytics web services using these APIs, build and use [an API client library stub](@@).@@link to a consumption article on using swagger to create client libs for service consumption????
+Each time a service is published, a unique Swagger-based JSON document is automatically generated to describe each API needed to interact with that service. While the service consumption Swagger files are all named `swagger.json`, you'll find them each in a unique location by calling `GET /api/{service-name}/{service-name}/swagger.json`.  To simplify the integration of R analytics web services using these APIs, build and use [an API client library stub](#clientlib-service).
 
 
 ## Using Client Libraries to Access APIs
@@ -59,18 +59,15 @@ To simplify the integration of your R analytics web services, R Server provides 
 
 To access these RESTful APIs outside of R, use a Swagger code tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [code-gen](https://github.com/swagger-api/swagger-codegen).
 
+<a name=clientlib-core></a>
+
 ### Build the Client Library for Core APIs
 
 To build a client library for the core operationalization APIs, follow these steps.
 
-@@The steps to build a client library for service consumption as slightly different. See here@@
-
 1. Install and familiarize yourself with a Swagger code generator such as [Azure AutoRest](https://github.com/Azure/autorest) and [code-gen](https://github.com/swagger-api/swagger-codegen). 
 
-1. Get the Swagger-based JSON file.
-   + [For the core operationalization API definitions, [download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1 
-
-   +
+1. Get the Swagger-based JSON file. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1) to get the core operationalization API definitions.
 
 1. Run the file through the code generator, and specify the language you want.  if using AutoRest to generate a C# client library, it might look like this:
    ```
@@ -83,6 +80,8 @@ To build a client library for the core operationalization APIs, follow these ste
    ```
 
 Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to [authenticate and call the core APIs](#auth).
+
+<a name=clientlib-service></a>
 
 ### Build the Client Library for Service Consumption APIs
 
@@ -281,9 +280,3 @@ A snapshot can be loaded into any subsequent remote R session for the user who c
 
 You can retrieve the 'raw details' on the health of the system using the `GET /status` API call. [Learn about this API](https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis).
 
-
-
-## Service Consumption APIs for Operationalization
-Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
-
-To simplify the integration of R analytics web services using these APIs, you can build and use [an API client library stub](#swagger).
