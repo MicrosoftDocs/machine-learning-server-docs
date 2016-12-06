@@ -172,7 +172,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 
 <a name="mrs"></a>**Microsoft R Server**
-<div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a></div>
 
 
 <a name="mkl"></a>**MKL**
