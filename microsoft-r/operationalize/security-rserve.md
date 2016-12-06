@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# RServe Security Considerations
+# R Execution Security Considerations
 
 RServe is the R execution component for the operationalization compute node for Microsoft R Server.
 
@@ -35,7 +35,7 @@ RServe is the R execution component for the operationalization compute node for 
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
-R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve will only accept socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
+R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve will only accept socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
 >[!Important]
 >The operationalization compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process. 
@@ -44,7 +44,6 @@ R Server provides various [API calls](api.md) that permit the execution of R scr
 >
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
->-   RServe has the permissions of the virtual service account, so it may have unwanted access to resources on the computer.
 
 If your operationalization configuration requires additional compute capacity, [additional compute nodes](configuration-initial.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities. 
 

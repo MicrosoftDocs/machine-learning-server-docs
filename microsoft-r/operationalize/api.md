@@ -33,21 +33,176 @@ The core Microsoft R Server [operationalization APIs](https://microsoft.github.i
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs/9.0.1/)</big>
 
+The core REST APIs expose a wide range of R analytics services to client application developers. These APIs are described in a Swagger-based JSON document, `rserver-swagger-9.0.1.json`, which is delivered with the product. You can get access to all the core APIs for operationalization using a client library built from this Swagger-based JSON document. 
+
 ## R for Application Developers
-While data scientists can work with R directly in an R console window or R IDE, application developers need a different set of tools to leverage R inside applications. The API exposes Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
+While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. The API exposes Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
 As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
+
+### Accessing APIs Outside of R with Client Libraries
+
+To simplify the integration of your R analytics web services, R Server provides a core [Swagger template](http://swagger.io/) that defines each [core operationalization API](https://microsoft.github.io/deployr-api-docs/9.0.1). In a nutshell, Swagger is a popular specification for a JSON file that describes REST APIs. 
+
+In addition to the core Swagger template, another custom Swagger-based JSON file for that service. each time a web service version is published, an endpoint is registered, which in turn triggers the generation of another custom [Swagger](http://swagger.io/)-based JSON file for that service.  There is one unique file for each service version published. This Swagger document specifies the list of resources that are available in the REST API and the operations that can be called on those resources.
+
+To access these core RESTful APIs and published web services outside of R, use a Swagger code generation tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
+
+Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [code-gen](https://github.com/swagger-api/swagger-codegen).
+
+#### Create Client Library for Core Operationalization APIs
+
+1. Install and familiarize yourself with a Swagger code generator.  
+
+1. [Download the Swagger-based JSON file](https://microsoft.github.io/deployr-api-docs/9.0.1), `rserver-swagger-9.0.1.json`, containing the definitions for the core operationalization APIs. 
+
+1. Run the file through the code generator, and specify the language you want.  For example, if using AutoRest, it might look like this:
+   ```
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
+   ```
+
+1. Create the client library.
+   ```
+   DeployRClient deployRClient = new DeployRClient(new Uri("https://dhost:port"));
+   ```
+
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to authenticate and call the core APIs.
+
+
+#### Configure Authentication 
+
+Once your client library has been generated, you can begin to interact with the core operationalization APIs. 
+
+Since all APIs require authentication, begin by obtaining a bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization.
+
++ **For Azure Active Directory (Cloud)**
+    ```
+    csharp
+    public static async Task<DeployRClient> HandleLoginAzureActiveDirectory(DeployRClient deployRClient)
+    { 
+
+    // Enter the URL to the AAD login as the authority. 
+    // For example, if the AAD domain is `myMRServer.contoso.com`, 
+    // then the `Authority` would be `https://login.windows.net/myMRSServer.contoso.com`
+    const string authority = "https://login.windows.net/myMRSServer.contoso.com";
+
+    // Enter the identifier of the client requesting the token.
+    // This is the `CLIENT ID` value for the web app in the Azure management portal.
+    // Ask your administrator for more information.
+    const string clientId = "00000000-0000-0000-0000-000000000000";
+
+    // Enter the secret of the client requesting the token.
+    const string clientKey = "00000000-0000-0000-0000-00000000000";
+
+    var authenticationContext = new AuthenticationContext(authority);
+    var authenticationResult = authenticationContext.AcquireTokenAsync(
+    clientId, new ClientCredential(clientId, clientKey));
+           // Set Authorization header with `Bearer` and access-token
+           var headers = deployRClient.HttpClient.DefaultRequestHeaders;
+           var accessToken = authenticationResult.Result.AccessToken;
+
+    headers.Remove("Authorization");
+    headers.Add("Authorization", $"Bearer {accessToken}");
+
+    return deployRClient;
+    }
+    ```
+
++ **For Active Directory LDAP or Local Administrator (On-premise)** 
+
+  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information.
+
+    ```
+    public static async Task<DeployRClient> HandleLoginOnPremisesActiveDirectory(DeployRClient deployRClient)
+    {
+        try
+        {  
+            // Authenticate using username/password
+            var loginRequest = new LoginRequest("<USER_NAME>", "<PASSWORD>");
+            var loginResponse = await deployRClient.LoginAsync(loginRequest);
+
+       // Set Authorization header with `Bearer` and access-token
+        var headers = deployRClient.HttpClient.DefaultRequestHeaders;
+        var accessToken = loginResponse.AccessToken;
+
+       headers.Remove("Authorization");
+       headers.Add("Authorization", $"Bearer {accessToken}");
+
+            return deployRClient;
+        }
+        catch (HttpOperationException httpOperationException)
+        {
+            httpOperationException.Response.ThrowIfInternalServerError();
+        }
+
+        throw new InvalidOperationException("Unable to authenticate with Active Directory.");
+    }
+    ``` 
+
+
+
+#### Client Library for Web Service Consumption
+
+1. Install and familiarize yourself with a Swagger code generator. 
+
+1. Retrieve the Swagger-based JSON file, `swagger.json`, available under `/api/{name}/{version}/swagger.json`. Using the core APIs, you can use:
+   ```
+   GET /api/{service-name}/{service-name}/swagger.json
+   ```
+
+   For example, to retrieve the JSON file for wersion `1.0.0` of the service named `transmission`:
+   ```
+   GET https://r-server-host/api/transmission/1.0.0/swagger.json
+   ```
+
+1. Run the file through the code generator, and specify the language you want.  For example, if using AutoRest to generate a C# client library to consume the `transmission` service version `1.0.0`, you might run the following:
+   ```
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input swagger.json -Namespace MyNamespace
+   ```
+   
+   ```java
+   using System;
+   using MyNamespace;
+   using MyNamespace.Models;
+   
+   namespace TransmissionApiExample
+   {
+       public class Program
+       {
+           public static void Main(string[] args)
+           {
+               var api = new Transmission(new Uri("https://r-server.contoso.com"));
+               var accessToken = "{{YOUR_JWT_TOKEN}}";
+               
+               var headers = client.HttpClient.DefaultRequestHeaders;
+               headers.Remove("Authorization");
+               headers.Add("Authorization", $"Bearer {accessToken}");   
+            
+               InputParameters inputs = new InputParameters() { hp = 120, wt = 2.8 };
+               var serviceResult = api.Manual.TransmissionAsync(inputs).Result;
+          
+               Console.Out.WriteLine(serviceResult.OutputParameters);
+           }
+       }
+   }
+   ```
+
+Review the resulting API client stub that was generated. You can provide some custom headers and make other changes before using the generated client library stub to call the core APIs.
+
+### Access APIs from R
+
+For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) directly to list, discover, and consume services. [Learn more in this vignette](../mrsdeploy/mrsdeploy-websrv-vignette.md).
+
+
 
 <br>
 
 ## Core APIs for Operationalization 
 
- The core operationalization APIs are REST APIs that expose a wide range of R analytics services to client application developers. These REST APIs are described in a Swagger-based JSON document, `rserver-swagger-9.0.1.json`, which is delivered with the product. You can get access to all the core APIs for operationalization using a client library built from this Swagger-based JSON document. [Learn more about building libraries from swagger.](#swagger)
-
 The core R Server operationalization APIs can be grouped into several categories, including: [Authentication](#authentication), [Web Services](#services), [Sessions](#sessions), [Snapshots](#snapshots), and [Status](#status). 
 
 <a name="authentication"></a>
-### User Authentication APIs
+### Authentication APIs
 
 All operationalization API calls must be authenticated using the `POST /login` API or [through Azure Active Directory or Active Directory/LDAP](security-authentication.md). 
 
@@ -111,26 +266,3 @@ You can retrieve the 'raw details' on the health of the system using the `GET /s
 Once R code is exposed by R Server as a web service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
 To simplify the integration of R analytics web services using these APIs, you can build and use [an API client library stub](#swagger).
-
-<br>
-
-
-<a name=swagger></a>
-
-## Creating API Client Libraries from Swagger-based JSON File 
-
-To simplify the integration of R analytics web services using the [R Server operationalization APIs](https://microsoft.github.io/deployr-api-docs/9.0.1), we provide a core [Swagger template](http://swagger.io/) that defines each API.  In a nutshell, Swagger is a popular specification for a JSON file that describes REST APIs. 
-
-Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can generate an API client that can be used in various stacks, such as .NET, Java, Javascript, to access the RESTful web services. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
-
-**To build your client libraries:**
-
-1. Download the Swagger-based JSON file, `rserver-swagger-9.0.1.json`, containing the definitions for the core operationalization APIs. This file can be found on the [main API documentation page](https://microsoft.github.io/deployr-api-docs/9.0.1).
-
-1. Install a Swagger code generator such as [Azure autorest](https://github.com/Azure/autorest).
-
-1. Run the file through the code generator, and specify the language you want. 
-
-1. Review the resulting API client stub that was generated. You can provide some custom headers and make other changes.
-
-You can now use the generated client library stub to call the core APIs.

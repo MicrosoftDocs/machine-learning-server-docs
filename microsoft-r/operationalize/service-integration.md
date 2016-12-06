@@ -83,15 +83,18 @@ A web service can be published using the APIs directly (`/services/{name}/{versi
 
 This Swagger-based JSON file contains the definitions of every API specific to that service version, including the [authentication APIs](api.md#authentication), needed to interact with that specific version. 
 
-Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can convert the Swagger-based file into an API client. The client  simplifies the way in which you consume this published web service, simplifing the making of calls, encoding of data, and markup response handling on the API.  
+Using a Swagger code generation tool such as  [Azure AutoRest](https://github.com/Azure/autorest) or [code-gen](https://github.com/swagger-api/swagger-codegen), you can convert the Swagger-based file into an API client. The client simplifies the way in which you consume this published web service, simplifing the making of calls, encoding of data, and markup response handling on the API.  
 
 **To build your client libraries:**
 
-1. Find the Swagger-based JSON file, `swagger.json`, available under `/api/{name}/{version}/swagger.json`. Using the core APIs, you can use `GET /api/{name}/{version}/swagger.json`.
+1. Find the Swagger-based JSON file, `swagger.json`, available under `/api/{name}/{version}/swagger.json`. Using the core APIs, you can use:
+   ```
+   GET /api/{name}/{version}/swagger.json
+   ```
 
-1. Install a Swagger code generator such as [Azure autorest](https://github.com/Azure/autorest).
+1. Install a Swagger code generator, such as [Azure AutoRest](https://github.com/Azure/autorest).
 
-1. Run the file through the code generator, and specify the language you want. 
+1. Run the file through the code generator, and specify the output language you want. 
 
 1. Review the resulting API client stub that was generated. You can provide some custom headers and make other changes.
 
