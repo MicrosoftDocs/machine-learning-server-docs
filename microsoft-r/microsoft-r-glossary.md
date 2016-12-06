@@ -62,7 +62,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> C </b></big>
 
 **Compute Context**
-<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 
 
@@ -79,7 +79,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
 
 **Distributed computing**
-<div style="margin:15px; margin-bottom:25px;">Similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple servers. <a href="scaler-distributed-computing">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple servers. <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 <!--
 <br>
@@ -114,7 +114,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> H </b></big>
 
 <a name="hpa"></a>**High-performance analytics (HPA)**
-<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md">Learn more…</a></div>
 
 <a name="hpc"></a>**High-performance computing (HPC)**
 <div style="margin:15px; margin-bottom:25px;">In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.</div>
@@ -195,7 +195,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> O </b></big>
 
 <a name="o16n"></a>**Operationalization**
-<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about.md">Learn more…</a></div>
 
 
 <a name="P"></a>
@@ -203,7 +203,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> P </b></big>
 
 <a name="parallel"></a>**Parallel computing**
-<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. <a href="scaler-distributed-computing">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 <!--
 <br>
@@ -233,7 +233,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#mrs"><i>Microsoft R Server</i></a></div>
 
 **RevoScaleR**
-<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler.md">Learn more…</a></div>
 
 <br>
 

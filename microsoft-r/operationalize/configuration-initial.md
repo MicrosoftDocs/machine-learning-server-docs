@@ -258,8 +258,8 @@ On each web node:
 
 **Step 7: Post Configuration**
 
-1. [Update service ports](../../operationalize/admin-utility.md#ports), if needed.
+1. [Update service ports](admin-utility.md#ports), if needed.
 
-1. [Run diagnostic tests](../../operationalize/admin-utility.md#test).
+1. [Run diagnostic tests](admin-utility.md#test).
 
-1. [Evaluate](../../operationalize/admin-evaluate-capacity.md) the configuration's capacity.
+1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.

@@ -39,9 +39,9 @@ The following release notes apply to Microsoft R Client, which can be downloaded
   + `olapR`
   + and the packages bundled with [Microsoft R Open 3.3.2](https://mran.microsoft.com/rro/installed/#enhance)
 
-  [Learn more about these new packages and those that have been updated in this release.](rserver-whats-new.md)
+  [Learn more about these new packages and those that have been updated in this release.](../rserver-whats-new.md)
 + Updated end-user license agreement
-+ Telemetry collection is now enabled. [Learn more](rserver-optout-telemetry.md) about this feature and how to turn it off.
++ Telemetry collection is now enabled. [Learn more](../rserver-optout-telemetry.md) about this feature and how to turn it off.
  
 ## Microsoft R Client 1.0.0
 
