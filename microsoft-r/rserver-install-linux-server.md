@@ -29,31 +29,29 @@ This article explains how to install Microsoft R Server on a standalone Linux se
 
 Version 9.0.1 is the newest version. Currently, only the developer edition is available, which you can find on the Visual Studio Dev Essentials or MSDN subscriber download pages. Enterprise edition, distributed via the Volume Licensing Service Center, is projected to be available in January 2017.
 
-Version 8.0.5 was released in June 2016 and is available in both developer and enterprise editions. This version changed the installation experience for the better, chaining the installation of several packages (including Microsoft R Open) so that there are fewer steps. Additionally, in the 8.0.5 release, Microsoft R Open has most dependencies built into the package.
+Version 8.0.5 was released in June 2016 and is available in both developer and enterprise editions. This version changed the installation experience for the better, chaining the installation of several packages (including Microsoft R Open) so that there are fewer steps. Additionally, starting in the 8.0.5 release, Microsoft R Open has most of its dependencies built into the package.
 
 **Side-by-side Installation**
 
-You can install major versions of R Server side-by-side on Linux, but not minor versions. Specifically, if you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5 or 9.0.1.
+You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
 
 **Upgrade Versions**
 
-If you want to replace 7.4 with 8.0.5 rather than run both side-by-side, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+If you want to replace an older version, you should uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 **Requirements**
 
-Installer requirements consist of the following:
+Installer requirements include the following:
 
--   Your system has Internet access
--   Your system is configured to use your platform’s package manager (yum for RHEL systems, zypper for SLES systems)
--   You are installing as root or as super user
+-   An internet connection
+-   A package manager (yum for RHEL systems, zypper for SLES systems)
+-   Root or as super user permissions
 
 If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
 ## Download sites
 
 **For 9.0.1**
-
-+ MSDN subscribers can get this version through MSDN [here](http://aka.ms/rserver/linux/download).
 
 + [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
