@@ -31,9 +31,9 @@ To turn data collection off, use the RevoScaleR package function `rxPrivacyContr
 
 ## Permission Requirements
 
-If you are running R as administrator, the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session. If you run the command without providing a parameter, just the current setting is returned.
+If you are running R as administrator, the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session.
 
-If you are not running as administrator, `rxPrivacyControl` returns the current setting.
+Without a parameter, running `rxPrivacyControl()` returns the current setting. Similarly, if you are not an administrator, `rxPrivacyControl()` returns just the current setting.
 
 ## How to opt out
 
