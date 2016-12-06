@@ -85,7 +85,8 @@
 ### [R Package Management](operationalize/package-management.md)
 ### [Service Consumption & Integration](operationalize/service-integration.md)
 ### [Access Token Management](operationalize/security-access-tokens.md)
-### [API / Swagger Overview](operationalize/api.md)
+### [API Overview](operationalize/api.md)
+### [Build and Use Client Libraries](api-client-libraries.md)
 
 
 ### DeployR 8.x Doc Archives
