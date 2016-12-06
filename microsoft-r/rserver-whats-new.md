@@ -59,24 +59,18 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 <a name="operationalize"></a>
 **Operationalization features**
 
-One of the deployment options for R Server is configuration for hosting analytic web services composed of R script or code. An operationalized server accepts interactive commands through [mrsdeploy functions](mrsdeploy/mrsdeploy.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Developers can write code to instrument equivalent operations using Swagger APIs. The `mrsdeploy` package enables Web service deployment from either R Client and R Server, but code only executes on R Server. Additionally, for programmatic solutions, R Server is required.
+Formerly known as DeployR, the operationalization feature in R Server 9.0.1 is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and configure R Server to host R analytics web services and remote R sessions. All you need to do is configure it.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md). 
 
-An operationalized R Server supports advanced multi-server topologies composed of web and compute nodes on clustered servers. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized in an R web service. In a multi-server topology, connections can be encrypted.
+An operationalized R server offers the ability to host and bundle R analytics into web services with minimal code changes. R Server accepts interactive commands through [mrsdeploy functions](mrsdeploy/mrsdeploy.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/api.md) in any programming language. 
 
-Operationalization includes tool support, a simplified deployment API, and new app integration experiences:
+The operationalization feature can be configured [on a single machine](operationalize/configuration-initial.md#onebox) or it can scaled up easily into an advanced [enterprise-ready multi-server topology](operationalize/configuration-initial.md#enterprise) composed of multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service. 
 
-+ Configuration using an administrative tool, used to designate web and compute nodes and grant administrator rights.
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
 
-+ Ability to bundle R analytics into a Web Service with minimal code changes.
-
-+ Integration is provided through Swagger-based APIs, easy to consume, supported on a wide range of programming languages.
-
-+ In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Connections are encrypted using HTTPS and only authenticated requests are accepted.
-
-Configuration is required before you can operationalize R Server, but there is no separate installation component. Operationalization is bundled into the R Server installer on selected platforms, including Windows, Red Hat Enterprise Linux, CentOS, and Ubuntu. For details, see [Supported platforms](rserver-install-supported-platforms.md). For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
+For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 > [!NOTE]
-> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the supported R Server platforms. [Supported platforms](rserver-install-supported-platforms.md) has the list.
+> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
 
 **R Server for Linux**
 
