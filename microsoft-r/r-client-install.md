@@ -35,6 +35,11 @@ ms.custom: ""
 [!include[Install](./includes/r-client/r-client-install.md)]
 <br>
 
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
+<br>
+
 ###What's Next
 
 Once you've installed R Client, the next step is to [configure your favorite R integrated development environment (IDE)](r-client-get-started.md#configure-ide) to point to the R Client R executable. 

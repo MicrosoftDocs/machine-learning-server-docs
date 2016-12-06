@@ -5,16 +5,20 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Available RAM: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4+ GB recommended <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Internet access: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Needed to download R Client and any dependencies   
 
+
+   >You must install Microsoft R Client to a local drive on your computer.
+   >
+   >You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
+
 <br> 
 
-**How to Install:**
+**How to Install (with Internet Access):**
 
-1. Log in to the machine with administrator privileges. You must install Microsoft R Client to a local drive on your computer.
+1. Log in to the machine with administrator privileges.
 
 1. [Download Microsoft R Client](http://aka.ms/rclient/download).
 
 1. Close any other programs running on the system. 
-   >You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
 1. Run the Microsoft R Client setup and follow the prompts:
 
@@ -27,6 +31,28 @@
     1. Accept the default installation path for Microsoft R Client or choose another location.
 
     1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
+
+<br> 
+
+**How to Install (without Internet Access):**
+
+1. On the machine with _**unrestricted**_ internet access:
+
+   1. [Download Microsoft R Client](http://aka.ms/rclient/download)
+   
+   1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=761266&clcid=1033
+
+   1. Copy the .cab file and R Client installer to a network share or portable drive.
+
+1. On the machine with _**restricted**_ internet access:
+
+   1. Log in with administrator privileges. 
+   
+   1. Close any other programs running on the system. 
+
+   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
+
+   1. Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
 
 <br>
 
