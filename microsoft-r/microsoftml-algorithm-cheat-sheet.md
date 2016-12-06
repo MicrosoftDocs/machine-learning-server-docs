@@ -32,7 +32,7 @@ The **MicrosoftML: Algorithm Cheat Sheet** helps you choose the right machine le
 MicrosoftML provides a library of algorithms from the  ***regression***, ***classification (two-class and multi-class)***, and ***anomaly detection*** families. Each is designed to address a different type of machine learning problem.
 
 ## Download: MicrosoftML algorithm cheat sheet
-**Download the cheat sheet here: [MicrosoftML algorithm cheat sheet (11x17 in.)](http://download.microsoft.com/download/TBD/microsoftml-algorithm-cheat-sheet-v1.pdf)**
+**Download the cheat sheet here: [MicrosoftML algorithm cheat sheet (11x17 in.)](http://download.microsoft.com/download/B/3/1/B31FE451-E69B-4569-9B32-CFA9FB40027E/microsoftml-algorithm-cheat-sheet-v1.pdf)**
 
 ![Machine Learning Algorithm cheat sheet: Learn how to choose a Machine Learning algorithm.](./media/microsoftml-algorithm-cheat-sheet/microsoftml-algorithm-cheat-sheet.png)
 
