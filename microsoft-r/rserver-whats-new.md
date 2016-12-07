@@ -61,7 +61,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 ## General updates
 
 <a name="operationalize"></a>
-**Operationalization features**
+### Operationalization features
 
 Formerly known as DeployR, the operationalization feature in R Server 9.0.1 is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and configure R Server to host R analytics web services and remote R sessions. All you need to do is configure it.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
@@ -76,12 +76,12 @@ For feature information and next steps, see [Operationalization with R Server](o
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
 
-**R Server for Linux**
+### R Server for Linux
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 <a name="bkmk_Spark"></a>
-**R Server for Hadoop (MapReduce and Spark)**
+### R Server for Hadoop (MapReduce and Spark)
 
 + Support for Spark 1.6 and 2.0.
 + Support for Spark DataFrames through `RxHiveData` and `RxParquetData` in ScaleR:
@@ -98,7 +98,7 @@ Additional new ScaleR functions for Spark 2.0:
 
 For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
 
-**R Server for Windows**
+### R Server for Windows
 
 As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
 
@@ -111,7 +111,7 @@ For installation and upgrade instructions, see [Install R Server for Windows](rs
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
 
-**Service and support for Microsoft R Server for Windows**
+### Service and support options
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
