@@ -16,7 +16,7 @@ Setup provides a download link. This component is required before setup can cont
 
 | Component | Version |
 |-----------|---------|
-| [.NET Framework](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2 or later (requires a computer restart)|
+| [.NET Framework (requires a computer restart)](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2|
 
 **Software Requirements:**
 
@@ -40,43 +40,37 @@ Setup installs Microsoft R Open and the following additional components. If you 
 
 1. Run the Microsoft R Client setup and follow the prompts:
 
-    1. Accept the Microsoft R Client license terms.
+    + Accept the Microsoft R Client license terms.
 
-    1. Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
+    + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
 
-    1. Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
+    + Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
-    1. Accept the default installation path for Microsoft R Client or choose another location.
+    + Accept the default installation path for Microsoft R Client or choose another location.
 
-    1. When the installation finishes, click **Finish**.  A welcome screen opens to introduce you to the product and documentation.
-
-<br>
+    + Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
 
 **How to Install (without Internet Access):**
 
-1. On the machine with _**unrestricted**_ internet access:
+1. On a machine with _**unrestricted**_ internet access:
 
-   1. [Download Microsoft R Client](http://aka.ms/rclient/download)
+   + [Download Microsoft R Client](http://aka.ms/rclient/download)
 
-   1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
+  + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
 
-   1. Download the prerequisites, including the .NET Framework and other components previously listed.
+   + Download the prerequisites, including the .NET Framework and other components previously listed.
 
-   1. Copy the .cab file, component executables, and R Client installer to a network share or portable drive.
+   + Copy the .cab file, component executables, and R Client installer to a network share or portable drive.
 
 1. On the machine with _**restricted**_ internet access:
 
-   1. Log in with administrator privileges.
+   + Log in with administrator privileges.
 
-   1. Close any other programs running on the system.
+   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
 
-   1. Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
+   + Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
 
-   1. Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
-
-   1. Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
-
-<br>
+   + Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
 
 >**What's Installed with R Client**<br>
 >
