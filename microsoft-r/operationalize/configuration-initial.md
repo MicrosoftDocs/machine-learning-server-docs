@@ -152,9 +152,17 @@ For added security, you can [configure SSL](security-https.md) as well as authen
 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
+**Step 2: Configure a Remote Database** 
+
+By default, the web node configuration sets up a SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
+
+If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+
+> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
+
 <a name="add-compute-nodes"></a>
 
-**Step 2: Configure Compute Node(s)**
+**Step 3: Configure Compute Node(s)**
 
 >**Note:** A compute node can be configured on its own machine or on the same machine as the web node.
 
@@ -207,7 +215,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
   
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
-**Step 3: Configure Enterprise-Grade Security**
+**Step 4: Configure Enterprise-Grade Security**
 
 In production environments, we strongly recommend the following approaches:
 
@@ -216,10 +224,6 @@ In production environments, we strongly recommend the following approaches:
 1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
 
 1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
-
-**Step 4: Configure a Remote Database**
-
-By default, the web node configuration sets up a SQLite database. If you have multiple web nodes or simply want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL) so that data can be shared across web node services.
 
 **Step 5: Provision on the Cloud**
 
