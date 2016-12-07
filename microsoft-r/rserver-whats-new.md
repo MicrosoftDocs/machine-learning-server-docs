@@ -28,7 +28,7 @@ ms.custom: ""
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
-+ [Machine learning algorithms](microsoftml-introduction.md)
++ [Machine learning algorthms](microsoftml-introduction.md)
 + [Remote execution](operationalize/remote-execution.md)
 + [Web service deployment](mrsdeploy/mrsdeploy-websrv-vignette.md)
 
