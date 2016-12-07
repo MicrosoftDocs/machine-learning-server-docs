@@ -10,14 +10,20 @@
    >
    >You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
-<br>
-Setup installs Microsoft R Open and the following additional components. If you have an internet connection, Setup adds most of these for you.
+**Setup Requirements:**
 
-The .NET Framework is an exception; setup provides a download link, but you need to install it first before setup can continue.
+Setup provides a download link. This component is required before setup can continue.
 
 | Component | Version |
 |-----------|---------|
 | [.NET Framework](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2 or later (requires a computer restart)|
+
+**Software Requirements:**
+
+Setup installs Microsoft R Open and the following additional components. If you have an internet connection, Setup downloads and installs these during installation.
+
+| Component | Version |
+|-----------|---------|
 | [Microsoft AS OLE DB Provider for SQL Server 2016](https://www.microsoft.com/download/details.aspx?id=52676) | 13.0.1601.5 |
 | [Microsoft .NET Core](https://www.microsoft.com/net/download) | 1.0.1 |
 | [Microsoft MPI](https://www.microsoft.com/download/details.aspx?id=52981) | 7.1.12437.25 |
@@ -54,7 +60,7 @@ The .NET Framework is an exception; setup provides a download link, but you need
 
    1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
 
-   1. Download the prerequisites, including the .NET Framework and other components previously lists.
+   1. Download the prerequisites, including the .NET Framework and other components previously listed.
 
    1. Copy the .cab file, component executables, and R Client installer to a network share or portable drive.
 
