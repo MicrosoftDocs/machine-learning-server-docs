@@ -202,10 +202,6 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
    In our example, the organization has Azure Active Directory. Insert the following into your application code:
 
    ```
-   // --- Create API Client ----------------------------------------------------------
-   DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
-   
-
    // --- Authenticate using AAD  ----------------------------------------------------
    // Note - Update these with your appropriate values
    // Once authenticated, user won't provide credentials again until token is invalid. 
