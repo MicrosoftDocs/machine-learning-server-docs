@@ -23,25 +23,31 @@ ms.technology: "deployr"
 ms.custom: ""
 ---
 
-# Microsoft R Server: DeployR
+# Microsoft R Server: Operationalization
 
-Welcome to the Microsoft R Server DeployR documentation on the MSDN website.
+This page provides links to the MSDN documentation for the versions of DeployR Enterprise shipped with Microsoft R Server and SQL Server.
 
-## Looking for DeployR 8.0.0 and 8.0.5 documentation?
-
-You've come to the right place for **8.0.0 and 8.0.5 documentation**. 
+## Looking for v9.0.1 documentation?
 
 Start here:
-+ [About DeployR 8.0.0 and 8.0.5](https://msdn.microsoft.com/en-us/microsoft-r/deployr-about.md)
-+ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/deployr-installation.md)
-+ [Application Developer's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-application-developer-getting-started.md)
-+ [Data Scientist's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-data-scientist-getting-started.md)
-+ [Administrator's Getting Started](https://msdn.microsoft.com/en-us/microsoft-r/deployr-administrator-getting-started.md)
+
++ [About Operationalization with v9.0.1](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/about)
++ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/configure-initial)
+
+
+## Looking for v8.0.0 and v8.0.5 documentation?
+
+Start here:
++ [About DeployR v8.0.0 and 8.0.5](https://msdn.microsoft.com/en-us/microsoft-r/deployr-about)
++ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/deployr-installation)
 
 <br>
 
 ## Looking for a DeployR Open download?
 
->Attention: Microsoft has suspended support of **DeployR Open** releases. 
+>Attention: Microsoft has suspended distribution of **DeployR Open** releases. 
 >
->To try out and evaluate the DeployR experience, we recommend that you download Microsoft R Server for development and test usage from [MSDN](http://aka.ms/rserver/linux/download) or [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+>DeployR is now delivered as part of Microsoft R Server. There is no separate download or setup program.
+>To try out and evaluate DeployR, you can download R Server for development and test usage from either of these two places:
+> - [MSDN](http://aka.ms/rserver/linux/download) 
+> - [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)

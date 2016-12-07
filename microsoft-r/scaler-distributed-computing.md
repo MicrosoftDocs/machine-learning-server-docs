@@ -664,8 +664,7 @@ If we are using our R Productivity Environment, we can view the job status by cl
 
 ![Object Browser](media/rserver-scaler-distributed-computing/object_browser_1.png)
 
->[!IMPORTANT]
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 
 We can then call rxGetJobResults to obtain the actual computation results:
 

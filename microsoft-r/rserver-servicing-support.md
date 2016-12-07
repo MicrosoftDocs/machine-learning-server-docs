@@ -26,13 +26,12 @@ ms.custom: ""
 # Support for Microsoft R Server Versions
 
 Microsoft plans to release updates for Microsoft R Server a few times per year with each update version supported for two (2) years from its general availability (GA) release date. Technical support will be provided for the entire two (2) years. However, our support structure is now dynamic, evolving into two distinct servicing phases that depend on the availability of the latest version.  
-+ Security and Critical Updates servicing phase - When running the latest version of Microsoft R server, you will receive both Security and Critical updates. 
++ Security and Critical Updates servicing phase - When running the latest version of Microsoft R Server, you will receive both Security and Critical updates. 
 + Security Updates (Only) servicing phase - After a new version of Microsoft R Server is released, support for older versions will reduce to Security updates only for the remainder of the two (2) year support lifecycle (shown in Figure 1).  
 
 ## Support Timeline
-![Servicing Support](./media/rserver-servicing-support805.png)
-
-_Figure 1. Example of servicing support_
+![Servicing Support](./media/rserver-servicing-support.png)
+<br>_Figure 1. Example of servicing support_
 
 <br>
 
@@ -45,3 +44,4 @@ _Figure 1. Example of servicing support_
 |:-------------------:|:---------------------------------:|:--------------------------------:|
 |8.0.0                |1/1/2016                           |1/1/2018                          |
 |8.0.5|7/1/2016|7/1/2018|
+|9.0.1|12/1/2016|12/1/2018|

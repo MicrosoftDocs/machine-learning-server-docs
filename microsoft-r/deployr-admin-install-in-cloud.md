@@ -61,7 +61,7 @@ You must update the server Web context or else you will not be able to access to
    
 1. If DeployR was installed on a virtual machine, remote desktop or SSH into that machine.
 
-1. For **DeployR for Microsoft R Server 2016**:
+1. For **DeployR for Microsoft R Server 8.0.5**:
 
    1. Launch the DeployR administrator utility script with administrator privileges:
 
@@ -148,7 +148,7 @@ If custom ports were defined during installation, enable those instead.
 
 _Table: Default Ports by Version_
 
-|Port Number|DeployR for Microsoft R Server 2016|DeployR 8.0.0|
+|Port Number|DeployR for Microsoft R Server 8.0.5|DeployR 8.0.0|
 |----------|:--------------:|:--------------:|
 |DeployR HTTP port|8050|8000|
 |DeployR HTTPS port|8051|8001|
@@ -212,7 +212,7 @@ You must update the server Web context or else you will not be able to access to
 
 1. Set the Web context:
 
-    + For **DeployR for Microsoft R Server 2016**:
+    + For **DeployR for Microsoft R Server 8.0.5**:
     
         1. Launch the DeployR administrator utility script with administrator privileges:
 
@@ -300,7 +300,7 @@ If custom ports were defined during installation, enable those instead.
 
 _Table: Default Ports by Version_
    
-|Port Number|DeployR for Microsoft R Server 2016|DeployR 8.0.0|
+|Port Number|DeployR for Microsoft R Server 8.0.5|DeployR 8.0.0|
 |----------|:--------------:|:--------------:|
 |DeployR HTTP port|8050|8000|
 |DeployR HTTPS port|8051|8001|
@@ -343,7 +343,7 @@ In Windows Firewall, you must open the same DeployR ports as you configured as A
 
 <br>
     
-_Table: Inbound Rules for DeployR for Microsoft R Server 2016_
+_Table: Inbound Rules for DeployR for Microsoft R Server 8.0.5_
    
 |Port Number|Inbound Rule Name|
 |----------|--------------|

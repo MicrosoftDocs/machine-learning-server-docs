@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "RevoPemaR Getting Started Guide"
-description: "Getting started guide for RevoPemaR package."
+title: "Get started with PemaR functions in Microsoft R"
+description: "Getting started with the RevoPemaR package in Microsoft R."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
-ms.date: "03/17/2016"
+author: "HeidiSteen"
+manager: "jhubbard"
+ms.date: "11/26/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# RevoPemaR™ Getting Started Guide
+# Get started with PemaR function in Microsoft R
 
 ## Overview
 
@@ -59,7 +59,7 @@ When working with reference class, here are a few tips to keep in mind:
 -   Use the *usingMethods* call to declare that a method will be used by another method.
 -   The code for a method can be displayed using an instantiated reference class object, e.g. *myRefClassObj$initialize*.
 
-## A Tutorial Introduction to RevoPemaR 
+## A Tutorial Introduction to RevoPemaR
 
 This section contains an overview of a simple example of estimating the mean of a variable using the **RevoPemaR** framework. The key step is in creating a *PemaMean* reference class generator function that provides the fields and methods for computing the mean using a parallel external memory algorithm. This includes creating methods to compute the sum and number of observations for each chunk of data, to update these “intermediate results”, and at the end to use the intermediate results to compute the mean.
 
@@ -72,7 +72,7 @@ Start by making sure that the **RevoPemaR** package is loaded:
 To create a PEMA class generator function, use the *setPemaClass* function. It is a wrapper function for *setRefClass*. As with *setRefClass*, we will specify four basic pieces of information when using *setPemaClass*: the class name, the superclasses, the fields, and the methods. The structure looks something like this:
 
 	PemaMean <- setPemaClass(
-		Class = "PemaMean", 
+		Class = "PemaMean",
 		contains = "PemaBaseClass",
 		fields = list( # To be written
 			),
@@ -108,11 +108,11 @@ There are five methods we will specify for *PemaMean*. These methods are all in 
 The primary use of the i*nitialize* method is to initialize field values. The one field that is initialized with user input in this example is the name of the variable to use in the computations, *varName*. Use of the ellipses in the function signature allows for initialization values to be passed up to the parent class using .*callSuper*, the first action in the *initialize* method after the documentation. Here is the beginning of our methods listing:
 
 	methods = list(
-	    initialize = function(varName = "", ...) 
+	    initialize = function(varName = "", ...)
 	    {
             'sum, totalValidObs, and mean are all initialized to 0'
             # callSuper calls the initialize method of the parent class
-            callSuper(...)	
+            callSuper(...)
 
 The *pemaSetClass* function also provides additional functionality used in the *initialize* method to ensure that all of the methods of the class and its parent classes are included when an object is serialized. This is critical for distributed computing. To use this functionality, add the following to the initialize method:
 
@@ -126,7 +126,7 @@ Now we finish the field initialization, setting the *varName* field to the input
 		sum <<- 0
 		totalObs <<- 0
 	          totalValidObs <<- 0
-	          mean <<- 0	
+	          mean <<- 0
 	},
 
 
@@ -134,16 +134,16 @@ Now we finish the field initialization, setting the *varName* field to the input
 
 The *processData* method is the core of an external memory algorithm. It processes a chunk of data and computes intermediate results, updating the field value(s). It takes as an argument a rectangular list of data vectors; typically only the variable(s) of interest will be included. Note that in our example code we do not compute the mean within this method; that occurs after we have processed all of the data. Here we compute and update the intermediate results: the sum and number of observations:
 
-	processData = function(dataList) 
+	processData = function(dataList)
 	{
-	    'Updates the sum and total observations from 
+	    'Updates the sum and total observations from
 	         the current chunk of data.'
-	         sum <<- sum + sum(as.numeric(dataList[[varName]]), 
+	         sum <<- sum + sum(as.numeric(dataList[[varName]]),
 	             na.rm = TRUE)
-	
+
 	         totalObs <<- totalObs + length(dataList[[varName]])
-	
-	     totalValidObs <<- totalValidObs + 
+
+	     totalValidObs <<- totalValidObs +
 	             sum(!is.na(dataList[[varName]]))
 	         invisible(NULL)
 	},
@@ -161,13 +161,13 @@ Here is the *updateResults* method for our *PemaMean*:
 
 	updateResults = function(pemaMeanObj)
 	{
-	        'Updates the sum and total observations from 
+	        'Updates the sum and total observations from
 	         another PemaMean object.'
-	
+
 	        sum <<- sum + pemaMeanObj$sum
 	    totalObs <<- totalObs + pemaMeanObj$totalObs
 	        totalValidObs <<- totalValidObs + pemaMeanObj$totalValidObs
-	
+
 	        invisible(NULL)
 	},
 
@@ -187,7 +187,7 @@ The *processResults* performs any necessary computations to produce the final re
 		{
 			mean <<- as.numeric(NA)
 		}
-		return( mean )	
+		return( mean )
 	},
 
 
@@ -197,7 +197,7 @@ The *getVarsToUse* method specifies the names of the variables in the dataset th
 
 	        getVarsToUse = function()
 	        {
-	            'Returns the varName.' 
+	            'Returns the varName.'
 	            varName
 	        }
 		) # End of methods
@@ -211,7 +211,7 @@ The *getVarsToUse* method specifies the names of the variables in the dataset th
 A version of the code in the previous section is contained within the **RevoPemaR** package and exported, so we can directly work with the *PemaMean* generator without first running the code. We can show the names of all the methods, including those that are explicitly overridden by the *PemaMean* class:
 
 	PemaMean$methods()
-	
+
 	 [1] ".pemaMethods"                 ".pemaMethods#PemaBaseClass"  
 	 [3] "callSuper"                    "compute"                     
 	 [5] "copy"                         "copyFields"                  
@@ -228,26 +228,26 @@ A version of the code in the previous section is contained within the **RevoPema
 	[27] "processResults"               "processResults#PemaBaseClass"
 	[29] "setFieldList"                 "show"                        
 	[31] "trace"                        "untrace"                     
-	[33] "updateResults"                "updateResults#PemaBaseClass" 
+	[33] "updateResults"                "updateResults#PemaBaseClass"
 	[35] "usingMethods"   
-	
+
 
 Some of the methods (e.g., *initIteration,* *getFieldList*) are inherited from the *PemaBaseClass*. Others (e.g., .*callSuper*, *methods*) are inherited from the base reference class generator.
 
 We can use the *help* method with the generator function to get help on specific methods:
 
 	PemaMean$help(initialize)
-	
+
 	Call:
 	$initialize(varName = , ...)
-	
+
 	sum, totalValidObs, and mean are all initialized to 0
 
 Next we’ll generate a default *PemaMean* object, and print out the values of its fields (including those inherited):
 
 	meanPemaObj <- PemaMean()
 	meanPemaObj
-	
+
 	Reference class object of class "PemaMean"
 	Reference class object of class "PemaMean" (from the global environment)
 	Field ".isPemaObject":
@@ -293,9 +293,9 @@ Next we’ll generate a default *PemaMean* object, and print out the values of i
 We can also print out the code for a specific method using an instantiated object. For example, the initialize method of the *PemaMean* object in the **RevoPemaR** package is:
 
 	meanPemaObj$initialize
-	
+
 	Class method definition for method initialize()
-	function (varName = "", ...) 
+	function (varName = "", ...)
 	{
 	    "sum, totalValidObs, and mean are all initialized to 0"
 	    callSuper(...)
@@ -307,7 +307,7 @@ We can also print out the code for a specific method using an instantiated objec
 	    mean <<- 0
 	}
 	<environment: 0x000000003148ea40>
-	
+
 	 Methods used:  
 	    ".pemaMethods", "callSuper", "usingMethods""
 
@@ -317,17 +317,17 @@ We can also print out the code for a specific method using an instantiated objec
 The *pemaCompute* function takes two required arguments: an “analysis” object and a data source object. The analysis object must be generated by *setPemaClass* and inherit (directly or indirectly) from *PemaBaseClass*. The data source object must be either a data frame or a data source object supported by the **RevoScaleR** package if it is available. The ellipses will take any additional information used in the *initialize* method.
 
 Let’s compute a mean of some random numbers:
-	
+
 	set.seed(67)
-	pemaCompute(pemaObj = meanPemaObj, 
+	pemaCompute(pemaObj = meanPemaObj,
 		data = data.frame(x = rnorm(1000)), varName = "x")
-	
+
 	[1] 0.00504128
 
 If we again print the values of the fields of our meanPemaObj, we will see the updated values:
 
 	meanPemaObj
-	
+
 	Reference class object of class "PemaMean" (from the global environment)
 	Field ".isPemaObject":
 	[1] TRUE
@@ -369,12 +369,12 @@ If we again print the values of the fields of our meanPemaObj, we will see the u
 	[1] "x"
 
 By default the *pemaCompute* method will reinitialize the *pemaObj*. By setting the *initPema* flag to *FALSE*, we can add more data to our analysis:
-	
-	pemaCompute(pemaObj = meanPemaObj, 
-		data = data.frame(x = rnorm(1000)), varName = "x", 
+
+	pemaCompute(pemaObj = meanPemaObj,
+		data = data.frame(x = rnorm(1000)), varName = "x",
 	      initPema = FALSE)
 	[1] 0.001516969
-	
+
 	meanPemaObj$totalValidObs
 	[1] 2000
 
@@ -392,10 +392,10 @@ We can use a sample .xdf file provided with the package. First we will create a 
 Using the *meanPemaObj* created above, we compute the mean of the variable *ArrDelay* (the arrival delay in minutes). The data in this file is stored in three blocks, with 200,000 rows in each block. The *pemaCompute* function will process these chunks one at a time:
 
 	pemaCompute(meanPemaObj, data = airXdf, varName = "ArrDelay")
-	
+
 	Rows Read: 200000, Total Rows Processed: 200000, Total Chunk Time: 0.009 seconds
 	Rows Read: 200000, Total Rows Processed: 400000, Total Chunk Time: 0.007 seconds
-	Rows Read: 200000, Total Rows Processed: 600000, Total Chunk Time: 0.041 seconds 
+	Rows Read: 200000, Total Rows Processed: 600000, Total Chunk Time: 0.041 seconds
 	[1] 11.31794
 
 You can control the amount of progress reported to the console using the *reportProgress* field of *PemaBaseClass*.
@@ -438,14 +438,14 @@ This class generator cannot be used directly. A child class generator must be cr
 
 ## Debugging *RevoPemaR* Code
 
-The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class. 
+The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class.
 
 The *PemaBaseClass* provides a simple way of printing trace output that is particularly useful in debugging code in a distributed environment. Calls to the *outputTrace* method within other methods will print the specified text if the *traceLevel* field value exceeds or is equal to the *outTraceLevel* argument:
 
 	meanPemaObj$outputTrace
-	
+
 	Class method definition for method outputTrace()
-	function (text, outTraceLevel = 1) 
+	function (text, outTraceLevel = 1)
 	{
 	    "Prints text if the traceLevel >= outTraceLevel"
 	    if (length(traceLevel) == 0) {

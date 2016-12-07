@@ -36,7 +36,7 @@ There are however alternative deployment options that can be adopted to improve 
 
 This deployment model while simple can be highly effective. Your application makes use of a `primary` server and a `standby` server that share a single instance of the DeployR database. By default, your application talks only to the `primary` server. If the `primary` server becomes unresponsive at runtime, your application detects this condition and transitions away from the unresponsive `primary` by redirecting all traffic to the `standby` server.
 
-> The following is supported with a SQL Server or PostgreSQL database (not the default H2 database) for DeployR 2016, or a MongoDB database for DeployR 8.0.0.
+> The following is supported with a SQL Server or PostgreSQL database (not the default H2 database) for DeployR 8.0.5, or a MongoDB database for DeployR 8.0.0.
 
 
 The following steps detail how to configure this type of deployment:

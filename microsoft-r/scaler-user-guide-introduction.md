@@ -6,7 +6,7 @@ description: "Learn about the benefits of ScaleR and how to use it in custom scr
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/17/2016"
+ms.date: "11/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -76,6 +76,15 @@ With ScaleR, you can analyze data sets far larger than can be kept in memory. Th
 ### Accessing External Data Sets
 
 Data can be stored in a wide-variety of formats. Typically, the first step in any ScaleR analysis is to make the data accessible. With ScaleR’s data import capability, you can access data from a SAS file, SPSS file, fixed format or delimited text file, an ODBC connection, SQL Server, or a Teradata database, bringing it into a data frame in memory, or storing it for fast access in chunks on disk.
+
+<a name="compute-context"></a>
+### Defining Compute Context
+
+ScaleR has the concept of *compute context* that sets the location for data processing (subsets, aggregations, transformations, and so forth) and analysis. The compute context is either local or remote, where remote offloads processing and analysis of chunked data to one or more remote R Servers.
+
+Local is the default, and it supports the full range of data source inputs. As its name suggests, a local compute context uses only the physical cores of the local computer. Local compute context is provided by ScaleR on both R Client and R Server instances.
+
+Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has R Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for ScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in R Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and R Server (Windows and Linux). For more information, see [Compute Context](scaler-user-guide-introduction.md#compute-context).
 
 ### Efficiently Storing and Retrieving Data
 

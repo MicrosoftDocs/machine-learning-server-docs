@@ -28,7 +28,7 @@ This article explains how to install version 8.0 of Microsoft R Server on a Hado
 
 ## Recommendations for installation
 
-For a first-time installation of Microsoft R Server, we recommend [installing Microsoft R Server 2016](rserver-install-hadoop-805.md) instead. In R Server 2016, the installer performs more system verification, installation, and configuration steps. Several new features and enhancements are [new in this release](notes/r-server-notes.md). To upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+For a first-time installation of Microsoft R Server, we recommend [installing Microsoft R Server 8.0.5](rserver-install-hadoop-805.md) instead. In R Server 8.0.5, the installer performs more system verification, installation, and configuration steps. Several new features and enhancements are [new in this release](notes/r-server-notes.md). To upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
@@ -74,7 +74,7 @@ Deploying Microsoft R 8.0.0 on a Hadoop cluster is a 2-part installation of the 
 Component | Download location |
 ----------|-------------------|
 Microsoft R Open for Microsoft R Server | [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) <br /><br />Microsoft R Open for Microsoft R Server is distributed as an rpm file (or, if you are installing via Cloudera Manager, a Cloudera Manager parcel file).|
-Microsoft R Server 2016 | Available through the following distribution channels, depending upon how you purchased the product:<br />[Volume Licensing Service Center](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) (VLSC)<br />[MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)<br />[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)<br /><br />Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
+Microsoft R Server 8.0.5 | Available through the following distribution channels, depending upon how you purchased the product:<br />[Volume Licensing Service Center](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) (VLSC)<br />[MSDN subscription](http://go.microsoft.com/fwlink/?LinkId=717967&clcid=0x409)<br />[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)<br /><br />Microsoft R Server is distributed in two different formats. Through VLSC, it is in the form of a DVD img file. Through MSDN or Dev Essentials, it is a tar.gz file.
 
 ## Recommendations for Microsoft R Server on a Hadoop cluster
 
@@ -95,7 +95,7 @@ For most users, installing on the cluster means simply running the standard Micr
 		cd /tmp
 5. Use the following command to install Microsoft R Open for Microsoft R Server:
 		yum install MRO-for-MRS-8.0.0.`*`.x86_64.rpm
-6. [Download and unpack the Microsoft R Server 2016 distribution](#DownloadR), which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
+6. [Download and unpack the Microsoft R Server 8.0.5 distribution](#DownloadR), which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 7. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
@@ -216,7 +216,7 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 
 1.  [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409) (Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.)
 
-2.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
+2.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
   If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
@@ -368,7 +368,7 @@ To get started with Microsoft R Server on Hadoop, we recommend the [Get started 
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

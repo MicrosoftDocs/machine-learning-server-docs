@@ -6,7 +6,7 @@ description: "Microsoft R Open introduction"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "08/16/2016"
+ms.date: "12/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - r-client
   - r-server
 ms.custom: ""

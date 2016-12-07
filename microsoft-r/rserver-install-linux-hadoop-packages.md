@@ -5,8 +5,8 @@ title: "Package Dependencies for Microsoft R Server installations on Linux and H
 description: "Required Linux packages for a Microsoft R Server installation on Linux and Hadoop systems."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "06/20/2016"
+manager: "jhubbard"
+ms.date: "12/05/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,9 +29,32 @@ This article lists the Linux packages required for running or building Microsoft
 
 For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a manual install of dependent packages is required.
 
-Because the installer for 8.0.5 was significantly revised, there are separate sections for versions 8.0.5 and 8.0.0 of R Server. Starting in 8.0.5, most package dependencies are included in the version of R Open that installs with R Server, accounting for the much smaller list of dependencies.
+## Package dependencies for Microsoft R Server 9.0.1
+
+Package  | Architecture  | Version  | Repository  | Size
+---------|---------------|----------|-------------|-----
+cairo   | x86_64   | 1.8.8-6.el6_6   | base  | 309 k
+fontconfig  | x86_64  | 2.8.0-5.el6  | base  | 186 k
+freetype  | x86_64  | 2.3.11-17.el6  | base  | 361 k
+libICE  | x86_64  | 1.0.6-1.el6  | base  | 53 k
+libSM  | x86_64  | 1.2.1-2.el6  | base  | 37 k
+libX11  | x86_64  | 1.6.3-2.el6  | base  | 586 k
+libX11-common  | not applicable   | 1.6.3-2.el6  | base  | 169 k
+libXau  | x86_64  | 1.0.6-4.el6  | base  | 24 k
+libXft  | x86_64  | 2.3.2-1.el6  | base  | 55 k
+libXrender  | x86_64  | 0.9.8-2.1.el6_8.1  | updates  | 24 k
+libXt  | x86_64  | 1.1.4-6.1.el6  | base  | 165 k
+libgomp  | x86_64  | 4.4.7-17.el6  | base  | 134 k
+libpng  | x86_64  | 2:1.2.49-2.el6_7  | base  | 182 k
+libthai  | x86_64  | 0.1.12-3.el6  | base  | 183 k
+libxcb  | x86_64  | 1.11-2.el6  | base  | 142 k
+pango  | x86_64  | 1.28.1-11.el6  | base  | 351 k
+pixman  | x86_64  | 0.32.8-1.el6  | base  | 243 k
+
 
 ## Package dependencies for Microsoft R Server 8.0.5
+
+In release 8.0.5, the installer was significantly revised. Most package dependencies are included in the version of Microsoft R Open that installs with R Server, accounting for the much smaller list of dependencies.
 
 The following list of eighteen packages are Linux packages that `yum` looks for during an R Server installation.
 

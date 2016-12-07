@@ -252,7 +252,7 @@ If any of the following cases exist, update your firewall manually:
 
 > If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
 >[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
-
+<a name="configuring-public-access"></a>
 ### Configure Public Access
 
 When the wrong IP is defined, you will not be able to access to the DeployR landing page or other DeployR components after installation or reboot. In some cases, the wrong IP address may be automatically assigned during installation or when the machine is rebooted, and that address may not be the only IP address for this machine or may not be publicly accessible. If this case, you must update the server Web context address.

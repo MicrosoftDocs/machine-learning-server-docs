@@ -27,7 +27,7 @@ ms.custom: ""
 # R Productivity Environment Getting Started Guide
 
 >[!IMPORTANT]
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 2016 or Microsoft R Client.
+> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 
 ## Overview
 

@@ -26,7 +26,7 @@ ms.custom: ""
 
 This article explains how to uninstall Microsoft R Server on either Linux or Hadoop. Upgrading to any new version of R Server, regardless of whether it's a major or minor release, requires that you first uninstall the existing deployment so that you can install the new distribution.
 
-When you do reinstall R Server, we recommend [installing R Server 2016 (version 8.0.5)](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
+When you do reinstall R Server, we recommend [installing R Server 8.0.5](rserver-install-hadoop-805.md) because it provides the newest features, including significant enhancements to the installers.
 
 ## Hadoop considerations for uninstall and reinstallation of R Server
 
@@ -46,8 +46,8 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
 There are several approaches for identifying a program version, including `rpm -qi` as noted in the installation instructions.
 
-- `rpm -qi microsoft-r-server-mro-8.0` (applies to Microsoft R Server 2016, build 8.0.5)
-- `rpm -qi MRO-for-MRS-8.0.0` (applies to Microsoft R Server 2016, build 8.0)
+- `rpm -qi microsoft-r-server-mro-8.0` (applies to Microsoft R Server 8.0.5)
+- `rpm -qi MRO-for-MRS-8.0.0` (applies to Microsoft R Server 8.0.0)
 - `rpm -qi RRO-8.0.3` (applies to Revolution R Server 7.4)
 
 Version information is also evident in the file path, indicated in the examples below.
@@ -128,7 +128,7 @@ Uninstall order is important. Due to package dependencies, be sure to remove the
 
 ## How to uninstall the Hadoop component
 
-If you are uninstalling R Server 2016 (version 8.0.5), there is a Hadoop component that can be uninstalled independently of other packages in the distribution: **microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64**
+If you are uninstalling R Server 8.0.5, there is a Hadoop component that can be uninstalled independently of other packages in the distribution: **microsoft-r-server-hadoop-8.0-8.0.5-1.x86_64**
 
 For versions prior to 8.0.5, do the following:
 
@@ -139,7 +139,7 @@ For versions prior to 8.0.5, do the following:
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

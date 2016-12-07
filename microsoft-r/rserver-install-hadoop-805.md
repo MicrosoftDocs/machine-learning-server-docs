@@ -47,7 +47,7 @@ In contrast with previous releases, this version  comes with a requirement for `
 
 ## Where do I get it?
 
-MSDN subscribiers can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
+MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
 
 You can also get R Server 2016 for Hadoop from these sites.
 

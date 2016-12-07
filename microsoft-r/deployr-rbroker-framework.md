@@ -1689,6 +1689,8 @@ The following code snippets extend the sample demonstrated in the [client applic
         }
     }
 
+<a name=gridprimer></a>
+
 ## Grid Resource Management
 
 This short primer is provided as a note for client application developers. The guidance presented here should prove useful when considering suitable values for `maxConcurrency` on an RBrokerConfig or when discussing DeployR grid resources with a DeployR system administrator.

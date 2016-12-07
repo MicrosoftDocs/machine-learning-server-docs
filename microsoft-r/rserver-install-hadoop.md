@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Hadoop installation and configuration for Microsoft R Server"
-description: "Hadoop installation and configuration guide for Microsoft R Server version 8."
+description: "Hadoop installation and configuration guide for Microsoft R Server version 9.0.1 and 8.0.5"
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "06/14/2016"
+manager: "jhubbard"
+ms.date: "12/05/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,13 +35,15 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 ### Step-by-Step
 
 - [Uninstall Microsoft R to upgrade to newer versions](rserver-install-uninstall-upgrade.md)
-- [Install Microsoft R Server 2016 (version 8.0.5) on Hadoop](rserver-install-hadoop-805.md)
-- [Install Microsoft R 8.0 on Hadoop](rserver-install-hadoop-800.md)
+- [Install Microsoft R Server 9.0.1 on Hadoop](rserver-install-hadoop-901.md)
+- [Install Microsoft R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+- [Install Microsoft R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
 - [Adjust your Hadoop cluster configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 - [Create an R package parcel for Hadoop cluster using Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 
 ### Other Resources
 
 - [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+- [Enforcing YARN queue usage on R Server for Hadoop](rserver-install-hadoop-yarnqueueusage.md)
 - [Get started with ScaleR and Hadoop](scaler-hadoop-getting-started.md)
 - [Get started with ScaleR and Spark](scaler-spark-getting-started.md)
