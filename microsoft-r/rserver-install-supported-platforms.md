@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Supported Platforms for Microsoft R Server"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
+description: "A list of the operating systems supported by editions and versions of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "08/09/2016"
+manager: "jhubbard"
+ms.date: "12/01/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,11 +25,39 @@ ms.custom: ""
 ---
 # Supported Platforms for Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R, Revolution R Server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R Server, Revolution R Server, and Revolution R Workstation.
 
-## Microsoft R Server 2016 (version 8.0.5)
+## Microsoft R Server 9.0.1
 
-This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on R-3.2.2.
+
+**Operating Systems (64-Bit only)**
+
+- Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
+- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
+- SUSE Linux Enterprise Server 11 (SLES11) <sup>1</sup>
+- Ubuntu 14.04 and 16.04
+
+**Microsoft R Server for Teradata <sup>1</sup>**
+
+- Teradata Database 14.10, 15.00, 15.10
+- Operating System: SLES11
+
+**Microsoft R Server for Hadoop <sup>1</sup>**
+
+- Hadoop Distributions: Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
+- Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
+- Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
+
+<sup>1</sup> [Operationalization](operationalize/about.md) capabilities (formerly known as the DeployR server) are integrated into R Server and have no separate installation requirements. Currently, this feature is available in standalone server installations on Windows, RHEL and CentOS, and Ubuntu. Projected availability on SLES11, Teradata, Hadoop, and SQL Server R Services is next year (2017).
+
+## Microsoft R Server 9.0
+
+This release of R Server is or SQL Server (SQL Server R services). Supported platform information is covered in [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/library/ms143506.aspx#Processor, Memory, and Operating System Requirements). SQL Server R Services is a SQL Server enterprise feature and thus documented in SQL Server Technical Documentation.
+
+## Microsoft R Server 8.0.5
+
+This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on R-3.2.2.
 
 **Operating Systems (64-Bit only)**
 
@@ -41,7 +69,7 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 - Teradata Database 14.10, 15.00, 15.10
 - Operating System: SLES11
 
-**Microsoft R Server for Hadoop and Spark**
+**Microsoft R Server for Hadoop**
 
 - Hadoop Distributions: Cloudera CDH 5.5-5.7, Hortonworks HDP 2.3-2.4, MapR 5.0-5.1
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11
@@ -51,15 +79,15 @@ This release of R Server is built atop of _Microsoft R Open for Microsoft R Serv
 - [Prerequisites for DeployR on Linux](deployr-install-on-linux.md#system-requirements)
 - [Prerequisites for DeployR on Windows](deployr-install-on-windows.md#system-requirements)
 
-## Microsoft R Server 2016 (version 8.0.3)
+## Microsoft R Server 8.0.3
 
-This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on R-3.2.2.
 
 This Windows-only release as Microsoft R Server (Standalone) is part of SQL Server 2016. Learn more about [Microsoft R Server (Standalone)](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
 
 ## Microsoft R Server 8.0
 
-This release of R Server is built atop of _Microsoft R Open for Microsoft R Server 3.2.2_, which is based on R-3.2.2.
+This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on R-3.2.2.
 
 Microsoft R Server 8.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.
 
@@ -282,10 +310,9 @@ Note: This excludes Revolution R Enterprise for IBM PureData System for Analytic
 
 On 10/22/2015, we announced the End of Life for Platform LSF and Microsoft HPC for clustering solutions. Support will end on 12/31/2016. Please contact Microsoft if you have questions about alternatives.
 
-Additionally, Revolution R Enterprise 6.x reached end of life in January 2016 and will stop being supported July 2016.
-
 The following versions have reached the end of life and are no longer available or eligible for Technical Support.
 
+- Revolution R Enterprise 6.x
 - Revolution R Enterprise 5.0
 - Revolution R Enterprise 4.3 & 4.2
 - RevoDeployR 1.2 & 1.1

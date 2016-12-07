@@ -27,7 +27,7 @@ ms.custom: ""
 # Common DeployR Administration Tasks
 
 <a name="startstop"></a>
-## Starting and Stopping DeployR for Microsoft R Server 2016
+## Starting and Stopping DeployR for Microsoft R Server 8.0.5
 
 To start or stop all DeployR-related services on the main server (not nodes) at once, use the administrator utility. 
 
@@ -170,7 +170,7 @@ This sample log output captures an `/r/repository/script/execute` API call, orig
 ## Backing Up and Restoring Data
 
 <br />
-### For DeployR for Microsoft R Server 2016
+### For DeployR for Microsoft R Server 8.0.5
 
 To back up and restore your Deployr data:
 

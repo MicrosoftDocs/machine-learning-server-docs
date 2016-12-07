@@ -28,7 +28,7 @@ ms.custom: ""
 
 This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
 
--   [DeployR for Microsoft R Server 2016](#version-8-0-5)
+-   [DeployR for Microsoft R Server 8.0.5](#version-8-0-5)
 -   [Release 8.0.0](#version-8-0-0)
 -   [Release 7.4.1](#version-7-4-1)
 -   [Release 7.4.0](#version-7-4-0)
@@ -36,9 +36,9 @@ This topic presents the changes and new features in DeployR version 8.0.0 as wel
 
 <br />
 <a name="version-8-0-5"></a>
-#### DeployR for Microsoft R Server 2016
+#### DeployR for Microsoft R Server 8.0.5
 
-The following list highlights the major changes and improvements to DeployR for Microsoft R Server 2016.
+The following list highlights the major changes and improvements to DeployR for Microsoft R Server 8.0.5.
   + Deployr Enterprise is more secure than ever with improved Web security features for better protection against malicious attacks, improved installation security, and improved Security Policy Management.
   + DeployR Enterprise now relies on an H2 database by default and allows you to easily use a SQL Server or PostgreSQL database instead to fit your production environment. 
   + DeployR Enterprise now has a simplified installer for a better customer experience.
@@ -48,11 +48,14 @@ The following list highlights the major changes and improvements to DeployR for 
   + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
 <br />
+<a name="version-8-0-0"></a>
 #### Version 8.0.0
 
 DeployR 8.0.0 has been rebranded for distribution via Microsoft Corporation.
 
 <br />
+
+<a name="version-7-4-1"></a>
 #### Version 7.4.1
 
 The following list highlights the major changes and improvements to DeployR 7.4.1.
@@ -68,6 +71,8 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   New R package: `deployrUtils`. The goal of deployrUtils is to solve several R portability issues that arise when Data Scientists develop R analytics for use in their local R environment and in the DeployR server environment. [Install from GitHub](https://github.com/Microsoft/deployr-cli).
 
 <br />
+
+<a name="version-7-4-0"></a>
 #### Version 7.4.0
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
@@ -80,6 +85,8 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   Updated user account password security with automatic [bcrypt hashing](https://en.wikipedia.org/wiki/Bcrypt), which is resistent to rainbow table and brute-force search attacks.
 
 <br />
+
+<a name="version-7-3"></a>
 #### Version 7.3
 
 The following list highlights the major changes and improvements to DeployR 7.3.

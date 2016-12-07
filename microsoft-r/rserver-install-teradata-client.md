@@ -357,7 +357,7 @@ If your client machine is running Windows, you will need to obtain Revolution R 
 
 If your client machine is running Red Hat Enterprise Linux or SUSE Linux Enterprise Server, you will need to obtain Microsoft R Server for Red Hat or Microsoft R Server for SLES. Installing the client software is a two-step process, described in the following documents:
 
-1.	[Install Microsoft R Open for Microsoft R Server 2016.](http://go.microsoft.com/fwlink/?LinkId=699383)
+1.	[Install Microsoft R Open for Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkId=699383)
 2.	[Install Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkID=698570&clcid=0x409)
 
 ## Testing the Client Installation 

@@ -110,7 +110,7 @@ Supply new input values in the following ways:
 
 - Defining temporary [primitive input values](deployr-repository-manager-testing-debugging-scripts.md#quick-on-the-fly-inputs) on-the-fly
 
-- Modifying the value of any [deployrInput()](deployr-repository-manager-testing-debugging-scripts.md#r-code-inputs-deployrinput-) widgets
+- Modifying the value of any [deployrInput()](deployr-repository-manager-testing-debugging-scripts.md#r-code-inputs-deployrinput) widgets
 
 - Editing the [source code](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code) to add, remove, or update any deployrInput() functions (available to script-owners only)
 
@@ -218,6 +218,7 @@ To clear the pane, workspace or working directory:
 	-  **Clear Working Directory** to clear **all** files from the working directory on the underlying R session.
 	-  **Clear Both** to clear all binary R objects from the workspace and all files from the working directory on the underlying R session.
 
+<a name="r-code-inputs-deployrinput"></a>
 ## Supplying Input Values
 
 There are two kinds of inputs to your script. They are:

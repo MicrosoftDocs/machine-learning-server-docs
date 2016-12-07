@@ -182,7 +182,7 @@ They may be times when you need direct access to some of the lower-level service
 
 *What if I'm not a Java, JavaScript or .NET developer? What if I simply want to understand more about what's going on 'under the hood'?*
 
-Then, the answer is the [underlying technical specification](https://microsoft.github.io/deployr-api-docs) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
+Then, the answer is the [underlying technical specification](https://microsoft.github.io/deployr-api-docs/8.0.5/) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
 
 As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr-api-reference.md).
 

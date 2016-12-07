@@ -94,7 +94,6 @@ Beyond the standard R manuals, there are many books available to help you learn 
 + _Analysis of Correlated Data with SAS and R_ by Mohamed M. Shoukri and Mohammad A. Chaudhary
 
 <br>
-
 ### Information on Data Analysis and Statistics
 
 A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R* . After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.

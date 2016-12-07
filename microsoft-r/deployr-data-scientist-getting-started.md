@@ -62,6 +62,7 @@ Once your R code, models, and data files are ready, you can [verify](#Test-Analy
 
 >**Reproducibility Tip:** Use [the `checkpoint` package](https://mran.microsoft.com/package/checkpoint/) to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Microsoft R Open (and Revolution R Open). [Learn more...](http://mran.microsoft.com/documents/rro/reproducibility/#timemachine)
 
+<a name="Test-Analytics"></a>
 ## Test Analytics
 
 Perhaps not surprisingly, the next step after developing your analytics is to test them. The first step is to test your analytics in your local environment. Then, when you are ready, upload those analytics to the DeployR server environment so you can test your R scripts in a live debugging environment.
@@ -143,6 +144,7 @@ Once you share a snapshot with application developers, you must let them know th
 
 ![Communicate](./media/deployr-data-scientist-getting-started/email.png)
 
+<a name="On-Server-Collaboration"></a>
 ### On-Server Collaboration
 
 When the application developers have access to the same DeployR server instance as you, you can share stable, tested R analytics snapshots there.
@@ -198,6 +200,7 @@ When the application developers have access to the same DeployR server instance 
 
 Now the application developer(s) can review the files in the Repository Manager. They can also test the R scripts in the Test page and explore the artifacts. Application developers can use the files in this instance of DeployR as they are, make copies of the files, set permissions on those files, or even download the files to use in a separate instance of DeployR.
 
+<a name="Off-Server-Collaboration"></a>
 ### Off-Server Collaboration
 
 If [application developers](deployr-application-developer-getting-started.md) on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:

@@ -4,8 +4,8 @@ title: "Troubleshoot Microsoft R installation problems on Hadoop"
 description: "Troubleshoot Microsoft R installation on a Hadoop cluster."
 keywords: ""
 author: "HeidiSteen"
-manager: "paulettm"
-ms.date: "06/14/2016"
+manager: "jhubbard"
+ms.date: "12/05/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,7 +28,7 @@ No two Hadoop installations are exactly alike, but most are quite similar. This 
 
 ### Missing dependencies
 
-Linux and Hadoop servers that are locked down will prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md). 
+Linux and Hadoop servers that are locked down will prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
 ### No Valid Credentials
 

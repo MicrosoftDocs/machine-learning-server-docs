@@ -1022,31 +1022,27 @@ These functions and many more can be used for high performance computing and dis
 <br />
 
 <a name="findmore"></a>
-##See All Functions and Help Files
+##How to view function help in the package
 
-See the list of public functions and see the associated help pages using the following steps.
+R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages, follow these steps.
 
-**To see the `RevoScaleR` functions that can be called from the commands-line:**
+1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
+2. At the command line, type `help(<package-name>)`. For example, `help(RevoScaleR)` or `help(mrsdeploy)`. This opens a package description providing a list of functions.
+3. Alternatively, type `?<function_name>` to open the help file for that function, such as: `?rxGetOption`.
 
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+**Search for an object**
 
-1. In the console, return the number of objects by typing the following at the R prompt `>`:
+1. In an R console, return a numbered list of objects by typing the following at the R prompt `>`:
    ```
    > search()
    ```
 
-1. Identify the position of the object you are interested in. In the case of our example, RevoScaleR is in the fifth position.
+2. Identify the position of the object you are interested in. You should see RevoScaleR in the list.
 
    ![objects](../media/scaler-rconsole-obj.png)
 
-1. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
+3. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
    ```
    > objects(5)
    ```
-
-1. Find the name of the function in which you are interested.
-
-1. At the R prompt, type `?<function_name>` to open the help file for that function, such as:
-   ```
-   > ?rxXdfData
-   ```
+4. Use `?<function_name>` to open the help page for that function.

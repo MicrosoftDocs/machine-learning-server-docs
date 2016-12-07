@@ -211,7 +211,7 @@ While many default node settings are preconfigured during the installation proce
 
 6. Specify the **Operating Type**. The [operating mode](#node-operation-types) you define for a grid node has an impact on the operations you can perform on that node.
 
-7. Under **External directory** configuration, set the [**Storage Context**](deployr-admin-managing-server-policies.md#server-policy-properties) to reflect the full path to the external data directory on that node’s machine, such as `$DEPLOYR_HOME/deployr/external/data` where `$DEPLOYR_HOME` is the installation directory.
+7. Under **External directory** configuration, set the [**Storage Context**](deployr-admin-managing-server-policies.md#server-policy-properties) to reflect **the full path** to the external data directory on that node’s machine, such as `$DEPLOYR_HOME/deployr/external/data` where `$DEPLOYR_HOME` is the installation directory.
 
 8.  Click **Create** to save the new node.  The node configuration is [validated](#node-validation-and-errors). If the configuration works, then it is saved. If not, an [error message](#node-validation-and-errors) will appear.
 

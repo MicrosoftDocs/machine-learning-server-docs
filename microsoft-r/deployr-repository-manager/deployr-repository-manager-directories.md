@@ -112,6 +112,7 @@ To rename a directory:
 3.  In the **Rename Directory** dialog, enter the new name for the directory. [Directory Naming: Dos and Don'ts](#directory-naming-dos-and-don-ts).
 4.  Click **Rename** to apply the change.
 
+<a name="directory-naming-dos-and-don-ts"></a>
 ## Directory Naming: Dos and Don'ts
 
 **Dos**
