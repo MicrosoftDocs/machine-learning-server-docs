@@ -78,8 +78,6 @@ Tokens can be generated in one of two ways:
   }
   ```
 
-<br>
-
 ## Token Lifecycle
 
 The bearer token is made of an `access_token` property and  a `refresh_token` property.
@@ -88,9 +86,7 @@ The bearer token is made of an `access_token` property and  a `refresh_token` pr
 |---|----|-----|
 |**Gets<br>Created**|Whenever the user logs in, or<br><br> a refreshToken api is called|Whenever the user logs in|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the `refresh_token` was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of `access_token`/`refresh_token` has been created|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>When a new `access_token`/`refresh_token` pair was created, or<br><br>If the `refresh_token` was revoked<br> <br> <br>|
-
-<br>
+|**Becomes<br>Invalid**|If the `refresh_token` was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of `access_token`/`refresh_token` has been created|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>When a new `access_token`/`refresh_token` pair was created, or<br><br>If the `refresh_token` was revoked<br> <br>|
 
 ## Token Usage
 
@@ -105,7 +101,7 @@ When the API call is sent with the token, R Server will attempt to validate that
 
 #### Examples
 
-**HTTP header for session creation:**
+Example HTTP header for session creation:
 ```
  POST /sessions HTTP/1.1
      Host: mrs.contoso.com
@@ -113,7 +109,7 @@ When the API call is sent with the token, R Server will attempt to validate that
      ...
 ```
 
-**HTTP header for publishing web service:**
+Example HTTP header for publishing web service:
 ```
  POST /api/{service}/{version} HTTP/1.1
      Host: mrs.contoso.com
@@ -121,7 +117,6 @@ When the API call is sent with the token, R Server will attempt to validate that
      ...
 ```
 
-<br>
 
 ## Token Renewal
 
@@ -133,7 +128,7 @@ Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.gith
 
 #### Example: Refresh access_token
 
-+ **Request**
++ Example request:
   ```
   POST /login/refreshToken HTTP/1.1
     Connection: Keep-Alive
@@ -147,7 +142,7 @@ Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.gith
     }
   ```
 
-+ **Response**
++ Example response:
   ```
   {
     "token_type":"Bearer",
@@ -157,8 +152,6 @@ Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.gith
     "refresh_token":"ScW2t...."
   }
   ```
-
-<br>
 
 <a name="revoke"></a>
 
@@ -172,7 +165,7 @@ Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1
 
 #### Example: Revoke token
 
-+ **Request**
++ Example request:
   ```
   DELETE https://mrs.contoso.com/login/refreshToken?refreshToken=ScW2t HTTP/1.1
     Connection: Keep-Alive
@@ -180,7 +173,7 @@ Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1
     Host: mrs.contoso.com
   ```
 
-+ **Response**
++ Example response:
   ```
   HTTP 200 Success
   ```

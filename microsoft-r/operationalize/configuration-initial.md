@@ -231,7 +231,7 @@ Once all web nodes and compute nodes are configured, you must declare the IP add
 
 On each web node:
 
-    1. Open the external configuration file, `appsettings.json` file. 
+   1. Open the external configuration file, `appsettings.json` file. 
 
        + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 

@@ -171,13 +171,15 @@ The set of diagnostic tests include:
       1. Review the test results.
 
       1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-         + Windows default log path:
+
+         Windows default log path, where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console:
               + Web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
+
               + Compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs`
-           
-           where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console.
-         + Linux default log path: 
+
+         Linux default log path: 
               + Web node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs`
+              
               + Compute node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs`
 
       1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.

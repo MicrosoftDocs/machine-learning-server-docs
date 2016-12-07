@@ -37,8 +37,8 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 |HTTPS Certificates|Description|Web Node|Compute Node|
 |------------------------------------|------------------------------------------------------------------------|--------------|---------------|
 |API certificate|Secures communication between client applications and web node.|Yes, with private key|No|
-|Compute node certificate|_Note: If a compute node is inside the web node's trust boundary, then this certificate isn't needed._ <br>Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.|No|Yes, with private key|
-|Authentication certificate|_Note: If a compute node is inside the web node's trust boundary, then this certificate isn't needed._<br>Authenticates the web node with the compute node so that only the web node can communicate with the compute node.|Yes, with private and a public key|No|
+|Compute node certificate|Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate isn't needed._ |No|Yes, with private key|
+|Authentication certificate|Authenticates the web node with the compute node so that only the web node can communicate with the compute node.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate isn't needed._|Yes, with private and a public key|No|
 
 <br />
 

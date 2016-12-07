@@ -171,23 +171,23 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
       PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
       ```
 
-    1. In your application code, import the required namespace types:
+   1. In your application code, import the required namespace types:
 
-       ```
-       // The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
-       using IO.Swagger.Client;
-       using IO.Swagger.Client.Models;
+      ```
+      // The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
+      using IO.Swagger.Client;
+      using IO.Swagger.Client.Models;
        
-       using Microsoft.IdentityModel.Clients.ActiveDirectory;
-       using Microsoft.Rest
-       ```
+      using Microsoft.IdentityModel.Clients.ActiveDirectory;
+      using Microsoft.Rest
+      ```
 
-    1. In your application code, create an API client to manage the API calls: 
+   1. In your application code, create an API client to manage the API calls: 
 
-       ```
-       // --- Create API Client ----------------------------------------------------------
-       DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
-       ```
+      ```
+      // --- Create API Client ----------------------------------------------------------
+      DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
+      ```
 
 1. In your application code, add the authentication workflow to your application.  
 
@@ -278,25 +278,25 @@ Build and use a service consumption client library from swagger in CSharp and Ac
       PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
       ```
 
-    1. In your application code, import the required namespace types:
+   1. In your application code, import the required namespace types:
 
-       ```
-       // The namespace used during `AutoRest.exe -Namespace Transmission`
-       using System;
+      ```
+      // The namespace used during `AutoRest.exe -Namespace Transmission`
+      using System;
 
-       using Transmission;
-       using Transmission.Models;
+      using Transmission;
+      using Transmission.Models;
 
-       using Microsoft.IdentityModel.Clients.ActiveDirectory;
-       using Microsoft.Rest;
-       ```
+      using Microsoft.IdentityModel.Clients.ActiveDirectory;
+      using Microsoft.Rest;
+      ```
 
-    1. In your application code, create an API client to manage the API calls: 
+   1. In your application code, create an API client to manage the API calls: 
 
-       ```
-       // --- Create API Client ----------------------------------------------------------
-       Transmission client = new Transmission(new Uri("https://rserver.contoso.com:12800”));
-       ```
+      ```
+      // --- Create API Client ----------------------------------------------------------
+      Transmission client = new Transmission(new Uri("https://rserver.contoso.com:12800”));
+      ```
 
 1. In your application code, add the authentication workflow to your application.  
 

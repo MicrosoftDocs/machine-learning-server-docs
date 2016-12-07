@@ -33,10 +33,10 @@ R Server's offers seamless integration with authentication solutions for operati
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|[Local `admin` account](#local)|Use with [one-box](configuration-initial.md) configurations|
-|[Active Directory / LDAP](#ldap)|Use with [enterprise](configuration-initial.md), _on-premise_ configurations|
-|[Active Directory / LDAP-S](#ldap)|Use with [enterprise](configuration-initial.md), _on-premise_ configurations with SSL/TLS enabled|
-|[Azure Active Directory](#aad)|Use with [enterprise](configuration-initial.md), _cloud_ configurations|
+|[Local `admin` account](#local)|For [one-box](configuration-initial.md) configurations|
+|[Active Directory / LDAP](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations|
+|[Active Directory / LDAP-S](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|For [enterprise](configuration-initial.md) cloud configurations|
 
 <br>
 

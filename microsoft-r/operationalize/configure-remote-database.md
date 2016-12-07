@@ -41,11 +41,11 @@ The supported databases are:
 <a name="sqlserver"></a>
 <a name="postgresql"></a>
 
-**To use a local or remote database, do the following:**
+**To use a different local or remote database, do the following:**
 
 > These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
 
-1.  **On each web node**, [stop the service](admin-utility.md#startstop).
+1.  On each web node, [stop the service](admin-utility.md#startstop).
 
 1.  Update the database properties to point to the new database as follows:
 

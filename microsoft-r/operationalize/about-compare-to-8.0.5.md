@@ -35,15 +35,15 @@ The following table presents some of the main differences between the operationa
 Release|Microsoft R Server 8.0.5|Microsoft R Server 9.0.1
 ----|-----|------
 Name of feature|DeployR|Operationalization
-Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to configure operationalization and enable R Server to deploy and host web services
-Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using new `mrsdeploy` package or from a REST API.
-Application Integration|Use client libraries and RBroker framework|Swagger-based API for quicker exploration and integration
+Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure operationalization](configuration-initial.md) and enable R Server to deploy and host web services
+Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using [new `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) or from a REST API.
+Application Integration|Use client libraries and RBroker framework|[Swagger-based API for quicker exploration and integration](api-client-libraries.md)
 Architecture|Apache Tomcat|ASP .Net Core
 Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator Account
 High Availability|Active-Active recovery not supported|Active-Active recovery supported
 Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](remote-execution.md) in the `mrsdeploy` package.
 Web UI|Login, Admin Console, Repository Manager, <br>API Explorer, Event Console|Coming in 2017 with new design 
-APIs|Over 100 RESTful APIs|About 40 RESTful APIs<br> (not backwards compatible)
+APIs|Over 100 RESTful APIs|[About 40 RESTful APIs](api.md)<br> (not backwards compatible)
 
 
 Some term equilavents in the new operationalization feature:
