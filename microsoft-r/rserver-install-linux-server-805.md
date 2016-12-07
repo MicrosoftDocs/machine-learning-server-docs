@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "R Server installation for Linux systems"
-description: "Install Microsoft R Server 9.0.1 on Linux."
+title: "R Server 2016 installation for Linux systems"
+description: "Install Microsoft R Server 2016 (8.0.5) on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# R Server Installation for Linux Systems
+# R Server 2016 (8.0.5) Installation for Linux Systems
 
-This article explains how to install Microsoft R Server 9.0.1 on a standalone Linux server.
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 **Side-by-side Installation**
 
@@ -45,17 +45,6 @@ Installer requirements include the following:
 
 If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
-## Download sites
-
-+ [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
-+ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
-
-    - Click **Join or Access Now** and enter your account information.
-    - Click **Downloads**, and then search for *Microsoft R*.
-    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
-
-> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Linux is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
-
 ## System Requirements
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
@@ -68,14 +57,23 @@ If these requirements cannot be met, you can install R Server manually. First, v
 
 ## Unpack the distribution
 
-Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
+Unpack the distribution in a writable directory such as **/tmp**, and then run the installation script.
 
 The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
 1. Log in as root or a user with sudo privileges.
 2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
-        `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
+        `[tmp] $ tar zxvf en_microsoft_r_server_for_linux_x64_8944657.tar.gz`
+
+## Unpacking an ISO file
+
+(applies to 8.x only) Volume licensing makes the download available as an ISO file. To unpack this file, create a mount point, and then mount the ISO file to that mount point:
+
+  `mkdir /mnt/mrsimage`
+  `mount –o loop •    sw_dvd5_r_server_2016_english_-2_for_RdHtLinux_mlf_x20-98713.iso /mnt/mrsimage`
+
+The download file is sw_dvd5_r_server_2016_english_-2_for_RdHtLinux_mlf_x20-98713.iso.
 
 ## Run the install script
 
@@ -86,10 +84,10 @@ Microsoft R Server for Linux is deployed by running the install script with no p
 		`[username] $ sudo yum clean all`
 3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
 		`[username] $ cd /tmp`
-4. Change to the `MRS90LINUX` directory containing the installation script:
-        `[tmp] $ cd MRS90LINUX`
+4. Change to the `MRS80LINUX` directory containing the installation script:
+        `[tmp] $ cd MRS80LINUX`
 5. Run the script.
-		`[MRS90LINUX] $ sudo bash install.sh`
+		`[MRS80LINUX] $ sudo bash install.sh`
 6. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 7. Repeat to accept license terms for Microsoft R Server.
 8. Installer output shows the packages and location of the log file.
@@ -97,16 +95,16 @@ Microsoft R Server for Linux is deployed by running the install script with no p
 ## Verify installation
 
 1. List installed packages and get package names:
-        `[MRS90LINUX] $ yum list \*microsoft\*`
-        `[MRS90LINUX] $ yum list \*deployr\*`
+        `[MRS80LINUX] $ yum list \*microsoft\*`
+        `[MRS80LINUX] $ yum list \*deployr\*`
 2. Check the version of Microsoft R Open using `rpm -qi`:
-		`[MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+		`[MRS80LINUX] $ rpm -qi microsoft-r-open-mro-3.f.x86_64`
 3. Check the version of Microsoft R Server:
-        `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
-4. Partial output is as follows (note version 9.0.1):
+        `[MRS80LINUX] $ rpm -qi microsoft-r-server-packages-8.0.x86_64`
+4. Partial output is as follows (note version 8.0.5):
 
-		Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
-		Version     : 9.0.1                               Vendor: Microsoft
+		Name        : microsoft-r-server-packages-8.0     Relocations: /usr/lib64
+		Version     : 8.0.5                               Vendor: Microsoft
 		. . .
 
 ## Start Revo64
@@ -114,7 +112,7 @@ Microsoft R Server for Linux is deployed by running the install script with no p
 As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
-        $ cd MRS90LINUX
+        $ cd MRS80LINUX
 
 2. Start the program:
 		$ Revo64
@@ -164,9 +162,9 @@ If followed the instructions provided, the installed files are all owned by root
 2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
 3. Use the **chown** command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
 
-		chown -R RUser:dev /usr/lib64/MRS90LINUX
+		chown -R RUser:dev /usr/lib64/MRS80LINUX
 
-Here we show the default path /usr/lib64/MRS90LINUX; if you have specified an alternate installation path, use that in this command as well.
+Here we show the default path /usr/lib64/MRS80LINUX; if you have specified an alternate installation path, use that in this command as well.
 
 ### Unattended installs
 
@@ -310,13 +308,9 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 ## See Also
 
-[Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)
-
-[Install R Server 8.0 for Linux](rserver-install-linux-server-800.md)
+[Install newest release of R Server for Linux](rserver-install-linux-server.md)
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
-
-[Install R Server 8.0.5 for Hadoop](rserver-install-hadoop-805.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "R Server installation for Teradata servers"
-description: "Install Microsoft R Server 9.0.1 on Teradata servers."
+title: "R Server 8.0 Installation Guide for Teradata Servers"
+description: "R Server 8.0 installation for Teradata servers."
 keywords: ""
 author: "jeffstokes72"
 manager: "jhubbard"
@@ -24,9 +24,11 @@ ms.custom: ""
 
 ---
 
-# R Server 9.0.1 installation instructions for Teradata Servers
+# R Server 8.0 Installation Guide for Teradata Servers
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server 9.0.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](rserver-install-teradata-client.md).
+Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Teradata](rserver-install-teradata-server.md).
+
+Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server 8.0 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](rserver-install-teradata-client.md).
 
 >[!NOTE]
 >Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in [Microsoft R Server Client Installation Manual for Teradata](rserver-install-teradata-client.md).
@@ -37,7 +39,7 @@ Microsoft R Server for Teradata has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** SUSE Linux Enterprise Server. OMicrosoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** SUSE Linux Enterprise Server 10 SP3 or 11 SP1. Only 64-bit operating systems are supported.
 
 **Teradata Version:** Teradata 15.10, 15.00, or 14.10.
 
@@ -59,6 +61,7 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 * SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc-fortran-4.3-62.198.x86_64.rpm
 
+
 ## Installing the Microsoft R Server rpms
 
 We recommend using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms.
@@ -71,11 +74,11 @@ To get started, do the following:
 
 		Microsoft R Open for Microsoft R Server
 
-		Microsoft R Server 8.0.5 for Teradata
+		Microsoft R Server 8.0 for Teradata
 
   2.  Download the Microsoft R Open for Microsoft R Server rpm file for your Teradata appliance’s operating system, either SLES 10 or SLES 11.
 
-  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN).
+  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
 
   4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 

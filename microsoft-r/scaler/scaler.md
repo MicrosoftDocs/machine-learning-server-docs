@@ -1027,7 +1027,7 @@ These functions and many more can be used for high performance computing and dis
 R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages, follow these steps.
 
 1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. At the command line, type `help(<package-name>)`. For example, `help(RevoScaleR)` or `help(mrsdeploy)`. This opens a package description providing a list of functions.
+2. At the command line, type `help(package="<package-name>")`. For example, `help(package="RevoScaleR")` or `help(package="MicrosoftML")`. This opens a package description providing a list of functions.
 3. Alternatively, type `?<function_name>` to open the help file for that function, such as: `?rxGetOption`.
 
 **Search for an object**

@@ -5,7 +5,7 @@ description: "Installation and configuration Microsoft R Server 9.0.1 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/06/2016"
+ms.date: "12/07/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,8 +25,6 @@ ms.custom: ""
 # Install Microsoft R Server 9.0.1 on Hadoop
 
 This article explains how to install the latest version of Microsoft R Server 9.0.1 on a Hadoop cluster.
-
-In this first release of 9.0.1, only the developer edition is available. You can find it on the Visual Studio Dev Essentials web site. Enterprise edition will follow shortly. Projected availability for enterprise is January 2017, with download options on the Volume Licensing Service Center.
 
 **Side-by-side Installation**
 
@@ -55,14 +53,14 @@ In contrast with previous releases, this version  comes with a requirement for `
 
 ## Download sites
 
-- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
++ [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
++ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
-> [!NOTE]
-> Recall that the download option for [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Hadoop is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
+> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Hadoop is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ## Recommendations for installation
 
@@ -101,7 +99,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 1. Log in as root or a user with sudo privileges.
 2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
-        `[tmp] $ tar zxvf en_microsoft_r_server_for_hadoop_x64_8944644.tar.gz`
+        `[tmp] $ tar zxvf en_r_server_901_for_hadoop_x64_9648875.gz`
 
 
 ## Run the install script

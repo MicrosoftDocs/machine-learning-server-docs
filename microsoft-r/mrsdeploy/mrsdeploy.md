@@ -108,7 +108,7 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 
 1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
 2. If `mrsdeploy` is not loaded, you can load it from the command line by typing `library(mrsdeploy)`.
-3. Type `help(mrsdeploy)`.
+3. Type `help(package="mrsdeploy")`.
 
 Vignettes are available for [remote execution](mrsdeploy-remoteexec-vignette.md) and [web service deployment](mrsdeploy-websrv-vignette.md).
 

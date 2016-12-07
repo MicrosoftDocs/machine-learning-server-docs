@@ -45,7 +45,7 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 
 1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
 2. At the command line, type `library(RevoPemaR)`.
-3. Type `help(RevoPemaR)`.
+3. Type `help(package="RevoPemaR")`.
 
 
 ## See also
