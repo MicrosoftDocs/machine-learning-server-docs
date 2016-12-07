@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/02/2016"
+ms.date: "12/07/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -58,10 +58,10 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 |--|--|
 |`RxHiveData`|Generate a Hive Data Source object.|
 |`RxParquetData `|Generate a Parquet Data Source object.|
-|`rxSparkConnect` | Create Spark compute context, connect and disconnect a Spark application. |
-|`rxSparkDisconnect `| Create Spark compute context, connect and disconnect a Spark application. |
-|`rxSparkListData` |Remove or list cached `RxParquetData` or `RxHiveData`.|
-|`rxSparkRemoveData`|Remove or list cached `RxParquetData` or `RxHiveData`.|
+|`rxSparkConnect` | Create a persistent Spark compute context. |
+|`rxSparkDisconnect `| Disconnect a Spark session and return to a local compute context. |
+|`rxSparkListData` | List cached `RxParquetData` or `RxHiveData` data source objects.|
+|`rxSparkRemoveData`|Remove cached `RxParquetData` or `RxHiveData` data source objects.|
 
 > [!NOTE]
 > Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](rserver-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.

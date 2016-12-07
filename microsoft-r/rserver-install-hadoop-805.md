@@ -22,13 +22,13 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Install Microsoft R Server 2016 on Hadoop
+# Install Microsoft R Server 2016 (8.0.5) on Hadoop
 
-This article explains how to install the latest version of Microsoft R Server 2016 on a Hadoop cluster.
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop-901.md).
 
-## What's new in the R Server 2016 installer
+## About the R Server 2016 installer
 
-Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](notes/r-server-notes.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](rserver-whats-new.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
 
 A summary of setup tasks for R Server 2016 is as follows:
 
@@ -44,19 +44,6 @@ The install script downloads and installs Microsoft R Open for R Server 2016 (mi
 - microsoft-r-server-hadoop-8.0.rpm
 
 In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported in R Server 2016.
-
-## Where do I get it?
-
-MSDN subscribers can download Microsoft R Server 2016 (version 8.0.5) for Hadoop from [here](http://aka.ms/rserver/hadoop/download).
-
-You can also get R Server 2016 for Hadoop from these sites.
-
-- [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) provides an ISO file for Microsoft customers who have volume licensing.
-- [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a gzipped TAR file for free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise but is licensed for development scenarios.
-
-  Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the page shows the site name, as follows, near the top right of the page.
-
-  ![Showing: Visual Studio Dev Essentials](media/rserver-install-hadoop-805/rserver-install-showing-visual-studio-dev-essentials.PNG)
 
 ## Recommendations for installation
 
@@ -94,7 +81,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 ## Unpack the distribution
 
-Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
+Unpack the software to a writable directory, such as **/tmp**, and then run the installation script.
 
 The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 

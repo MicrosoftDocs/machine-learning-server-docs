@@ -25,22 +25,20 @@ ms.custom: ""
 
 # R Server 8.0 Installation for Linux Systems
 
-Build 8.0.0 is no longer available on the Microsoft download sites, but if you already have this distribution and you specifically require this version, you can follow these instructions to deploy version 8.0.0.
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Linux](rserver-install-linux.md).
 
-Installation of Microsoft R Server consists of two distinct steps:
+Installation of Microsoft R Server 8.0 consists of two distinct steps:
 
 - Install R Open
 - Install R Server
 
-To download and install R Open and R Server:
+To install R Open and R Server:
 
 1. Log in as root, or as a user with super user (sudo) privileges. Optionally, you can install as a non-root user. See [Non-Root Installs](#non-root-installs) for instructions.
 
-2. Download [Microsoft R Open for Microsoft R Server](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409).
+2. Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
 
-3. Install Microsoft R Open according to the [online instructions](http://go.microsoft.com/fwlink/?LinkID=699383&clcid=0x409) for your platform.
-
-5.  Find the download for the 8.0 version of Microsoft R Server for Linux on your system. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+3. Find the download for the 8.0 version of Microsoft R Server for Linux on your system. If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 	    mkdir /mnt/mrsimage
 	    mount –o loop <filename> /mnt/mrsimage
@@ -94,7 +92,7 @@ The installer will check that the prerequisite packages are installed and inform
 
 If all the prerequisites are installed, you complete the installation as follows:
 
-1. You must already have the 8.0 download because it is no longer available on the download sites. Microsoft has replaced all downloads with the newer 8.0.5 version, which does not support non-root installs.
+1. You must already have the 8.0 download because it is no longer available on the download sites. Newer versions of the installers do not support non-root installs.
 
 2. Run the following commands to install the rpm file:
 
