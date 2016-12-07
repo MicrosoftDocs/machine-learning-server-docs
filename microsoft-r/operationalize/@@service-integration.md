@@ -85,4 +85,4 @@ This Swagger-based JSON file contains the definitions of every API specific to t
 
 Using a Swagger code generation tool, you can convert the Swagger-based file into an API client. The client simplifies the way in which you consume this published web service, simplifing the making of calls, encoding of data, and markup response handling on the API.
 
-Learn how to get a [code generation tool, download the Swagger files, and generate a client library stub](api-client-libraries.md#clientlib-service).
+Learn how to get a [code generation tool, download the Swagger files, and generate a client library stub](api-client-libraries.md).
