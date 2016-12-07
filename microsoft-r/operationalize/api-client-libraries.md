@@ -250,65 +250,22 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
 
 ## Example: Service Consumption Client Library from Swagger (in CSharp)
 
-
-
-
-
 This example shows how you can use the `swagger.json` swagger file for version 1.0.0 of a service named `transmission` to build a client library to interact with published service from your application.  
 
 Build and use a service consumption client library from swagger in CSharp and Active Directory LDAP authentication:
 
 1. Get the `swagger.json` for the service you want to consume named `transmission`:
-     ```
-     GET /api/transmission/1.0.0/swagger.json
-     ```
+   ```
+   GET /api/transmission/1.0.0/swagger.json
+   ```
 
 1. Build the statically generated client library files for CSharp from the `swagger.json` swagger. 
 
    ```
-   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input swagger.json -Namespace Transmission.Models
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input swagger.json -Namespace Transmission
    ```
 
-   Notice the language is `CSharp` and the namespace is `Transmission.Models`.
-
-
-
-
-```cs
-
-
-namespace Transmission
-{
-    class TransmissionExample
-    {
-        static void Main(string[] args)
-        {
-            Transmission client = new Transmission(new Uri("https://rserver.contoso.com:12800”));
-
-            // --- authenticate using AD --------------------------------------
-            var loginRequest = new LoginRequest("LDAP_USERNAME", "LDAP_PASSWORD");
-            var loginResponse = client.Login(loginRequest);
-
-            //
-            // --- Set Authorization header -----------------------------------
-            // Set Authorization header with `Bearer` access-token for all
-            // future calls
-            //
-            var headers = client.HttpClient.DefaultRequestHeaders;
-            var accessToken = loginResponse.AccessToken;
-            headers.Remove("Authorization");
-            headers.Add("Authorization", $"Bearer {accessToken}");
-            
-            // --- Invoke API -------------------------------------------------
-            InputParameters inputs = new InputParameters() { hp = 120, wt = 2.8 };
-            var serviceResult = api.Manual.Transmission(inputs).Result;
-          
-            Console.Out.WriteLine(serviceResult.OutputParameters);
-        }
-    }
-}
-```
-
+   Notice the language is `CSharp` and the namespace is `Transmission`.
 
 1. Use the statically-generated client library files to call the operationalization APIs. 
 
@@ -326,7 +283,7 @@ namespace Transmission
     1. In your application code, import the required namespace types:
 
        ```
-       // The namespace used during `AutoRest.exe -Namespace Transmission.Models`
+       // The namespace used during `AutoRest.exe -Namespace Transmission`
        using System;
 
        using Transmission;
@@ -353,7 +310,7 @@ namespace Transmission
    Authorization: Bearer mFfl_978_.G5p-4.94gM-
    ```
 
-   In our example, the organization has Azure Active Directory. Insert the following into your application code:
+   In our example, the organization has Active Directory/LDAP. Insert the following into your application code:
 
    ```
    // --- authenticate using AD --------------------------------------
@@ -363,24 +320,21 @@ namespace Transmission
    //
    // --- Set Authorization header -----------------------------------
    // Set Authorization header with `Bearer` access-token for all
-            // future calls
-            //
-            var headers = client.HttpClient.DefaultRequestHeaders;
-            var accessToken = loginResponse.AccessToken;
-            headers.Remove("Authorization");
-            headers.Add("Authorization", $"Bearer {accessToken}");
-
+   // future calls
+   //
+   var headers = client.HttpClient.DefaultRequestHeaders;
+   var accessToken = loginResponse.AccessToken;
+   headers.Remove("Authorization");
+   headers.Add("Authorization", $"Bearer {accessToken}");
 
 1. Begin consuming the core operationalization APIs.
    ```
    // --------------------------------------------------------------------------------
    // Once authenticated, no need for credentials again until token expires. 
 
-   // --- Ready to use APIS ------------------------------------------------------
-
-   // Try creating an R Session `POST /sessions`
-   var createSessionResponse = client.CreateSession(
-         new CreateSessionRequest("Session One"));
-   
-   Console.WriteLine("Session ID: " + createSessionResponse.SessionId);
+   // --- Invoke API -------------------------------------------------
+   InputParameters inputs = new InputParameters() { hp = 120, wt = 2.8 };
+   var serviceResult = api.Manual.Transmission(inputs).Result;
+    
+   Console.Out.WriteLine(serviceResult.OutputParameters);
    ```
