@@ -44,11 +44,11 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
-**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
+**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
 
 To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
-**olapR package** lets you run MDX queries and connect directly to OLAP cubes on SQL Server 2016 Analysis Services from your R solution. You can manually create and then paste in aan MDX query, or use an R-style API to choose a cube, axes, and slicers.
+**olapR package** lets you run MDX queries and connect directly to OLAP cubes on SQL Server 2016 Analysis Services from your R solution. You can manually create and then paste in an MDX query, or use an R-style API to choose a cube, axes, and slicers.
 
 To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/library/mt790485.aspx).
 

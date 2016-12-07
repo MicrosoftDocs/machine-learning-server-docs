@@ -11,17 +11,18 @@
    >You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
 <br>
+Setup installs Microsoft R Open and the following additional components. If you have an internet connection, Setup adds most of these for you.
 
-The following additional components are installed by Setup. If you have an internet connection, Setup adds most of these for you. The .NET Framework is an exception; setup provides a download link if you need to install it first.
+The .NET Framework is an exception; setup provides a download link, but you need to install it first before setup can continue.
 
 | Component | Version |
 |-----------|---------|
-| .NET Framework | 4.5.2 or later (requires a computer restart)|
-| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 |
-| Microsoft .NET Core | 1.0.1 |
-| Microsoft MPI | 7.1.12437.25 |
-| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
-| Microsoft Visual C++ 2015 Redistributable | 14.0.23026.0 |
+| [.NET Framework](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2 or later (requires a computer restart)|
+| [Microsoft AS OLE DB Provider for SQL Server 2016](https://www.microsoft.com/download/details.aspx?id=52676) | 13.0.1601.5 |
+| [Microsoft .NET Core](https://www.microsoft.com/net/download) | 1.0.1 |
+| [Microsoft MPI](https://www.microsoft.com/download/details.aspx?id=52981) | 7.1.12437.25 |
+| [Microsoft Visual C++ 2013 Redistributable](https://www.microsoft.com/download/details.aspx?id=40784) | 12.0.30501.0 |
+| [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com//download/details.aspx?id=48145) | 14.0.23026.0 |
 
 **How to Install (with Internet Access):**
 
@@ -35,9 +36,9 @@ The following additional components are installed by Setup. If you have an inter
 
     1. Accept the Microsoft R Client license terms.
 
-    1. To install Microsoft R Client, you'll need [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. The setup will install it for you automatically. You must accept the license terms for Microsoft R Open.
+    1. Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
 
-    1. If desired, select the option of installing [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
+    1. Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
     1. Accept the default installation path for Microsoft R Client or choose another location.
 
@@ -51,9 +52,11 @@ The following additional components are installed by Setup. If you have an inter
 
    1. [Download Microsoft R Client](http://aka.ms/rclient/download)
 
-   1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=761266&clcid=1033
+   1. Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
 
-   1. Copy the .cab file and R Client installer to a network share or portable drive.
+   1. Download the prerequisites, including the .NET Framework and other components previously lists.
+
+   1. Copy the .cab file, component executables, and R Client installer to a network share or portable drive.
 
 1. On the machine with _**restricted**_ internet access:
 
@@ -61,7 +64,9 @@ The following additional components are installed by Setup. If you have an inter
 
    1. Close any other programs running on the system.
 
-   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
+   1. Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
+
+   1. Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
 
    1. Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
 
