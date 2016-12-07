@@ -30,10 +30,11 @@ This article provides the vignette documentation for Remote Execution functions 
 
 ## Using the remote command line
 
-The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
+The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
-### Creating a remote session
+To establish a remote session, issue a remote login request, which in turn authenticates your user identity on the remote server. Once the session is established, you can switch between local and remote command lines through the `pause()` and `resume()` functions.
 
+### Create a remote session
 
 The `remote_login` and `remote_login_aad` functions are used to authenticate against R Server, creating a remote session.
 
@@ -75,13 +76,13 @@ REMOTE>exit  #logout and terminate the remote R session
 >remoteLogout()  
 ```
 
-## Diff report
+## Create a diff report
 A `diff` report is available so you can see and manage differences between the local and remote R environments.
 The diff report contains information regarding R versions, R packages installed locally, but not on the remote
 session, and differences between R package versions. This report is shown by default when you log in, but can be
 run anytime by executing the function: `diffLocalRemote()`.
 
-## Executing an R script remotely
+## Execute an R script remotely
 
 If you have R scripts on your local machine, you can execute them remotely by using the function `remoteScript()`.
 This function takes a path to an R script to be executed remotely. You also have options
@@ -104,7 +105,7 @@ REMOTE>pause()
 #execute an R script remotely
 >remoteScript("c/myScript.R")    
 ```
-## Working with R objects and files remotely
+## Work with R objects and files remotely
 
 Once you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model (i.e. `m<-lm(x~y)` ), and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `getRemoteObject()`.
 

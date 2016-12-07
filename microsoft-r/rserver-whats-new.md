@@ -40,9 +40,13 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 ## New and updated packages
 
-**Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux and Hadoop is projected for the first quarter of 2017. To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+**Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux and Hadoop is projected for the first quarter of 2017.
 
-**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service. To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
+To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+
+**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions support remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
+
+To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
 **RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 

@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-Remote execution is the ability to issue commands from either R Server or R Client to a remote R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
+Remote execution is the ability to issue commands from either R Server or R Client to a session running on a remote R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
 
 Requirements for using this feature include:
 
@@ -38,9 +38,9 @@ Requirements for using this feature include:
 
 ## Using the remote command line
 
-The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`.
+The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
-To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
+To establish a remote session, issue a remote login request, which in turn authenticates your user identity on the remote server. Once the session is established, you can switch between local and remote command lines through the `pause()` and `resume()` functions.
 
 ## Supported configurations
 
@@ -55,7 +55,7 @@ R Server can be any platform, as long as both are version 9.0.1. For example, yo
 
 Functions used in remote execution are provided in the `mrsdeploy` package, available in installations of [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
 
-+ On R Client, the `mrsdeploy` package is loaded automatically. You can initiate a remote session on an operationalized R Server instance once you complete a remote login.
++ On R Client, the `mrsdeploy` package is loaded automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 
 + On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. This configuration step is required. For more information, see [Configuring R Server for Operationalization](configuration-initial.md).
 

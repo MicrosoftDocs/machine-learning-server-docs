@@ -30,19 +30,19 @@ ms.custom: ""
 
 ###Installing R Client
 
-[Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
+[Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today.
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 <br>
 
 > [!NOTE]
-> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`. For more information, see [Opting out of usage data collection](rserver-optout-telemetry.md).
 
 <br>
 
 ###What's Next
 
-Once you've installed R Client, the next step is to [configure your favorite R integrated development environment (IDE)](r-client-get-started.md#configure-ide) to point to the R Client R executable. 
+Once you've installed R Client, the next step is to [configure your favorite R integrated development environment (IDE)](r-client-get-started.md#configure-ide) to point to the R Client R executable.
 
 <br>
 
@@ -50,8 +50,8 @@ Once you've installed R Client, the next step is to [configure your favorite R i
 
 You can learn more with these guides:
 
-+ [Get Started with Microsoft R Client](r-client-get-started.md) 
++ [Get Started with Microsoft R Client](r-client-get-started.md)
 
-+ [Microsoft R Getting Started](microsoft-r-getting-started.md) 
++ [Microsoft R Getting Started](microsoft-r-getting-started.md)
 
 + [RevoScaleR Getting Started](scaler-getting-started.md)

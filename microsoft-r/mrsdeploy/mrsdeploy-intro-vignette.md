@@ -43,9 +43,9 @@ R Server can be any platform, as long as both are version 9.0.1. For example, yo
 
 The `mrsdeploy` package is available in installations of [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
 
-On R Client, the `mrsdeploy` package is loaded automatically and can be used to initiate a remote session on an R Server instance.
++ On R Client, the `mrsdeploy` package is loaded automatically and can be used to initiate a remote session on an R Server instance.
 
-On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. For more information, see [Configuring R Server for Operationalization](~/operationalize/configuration-initial.md).
++ On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. For more information, see [Configuring R Server for Operationalization](~/operationalize/configuration-initial.md).
 
 To use it for the duration of a session in an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/) on a Windows computer, or RStudio or another R IDE on a non-Windows workstation.
 
