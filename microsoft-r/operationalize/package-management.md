@@ -89,11 +89,11 @@ This production-safe approach provides an excellent way to:
       ```
 
 1. On each compute node:
-   1. Copy the miniCRAN repository from the machine with Internet connectivity to @@WHERE on the machine hosting the compute node.
+   1. Copy the miniCRAN repository from the machine with Internet connectivity to the machine hosting the compute node.
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
-   1. At the R prompt, run the R command `install.packages()`. @@ WHAT DOES THIS DO HERE???
+   1. At the R prompt, run the R command `install.packages()`. 
 
    1. At the prompt, specify a repository and specify the directory containing the files you just copied; that is, the local miniCRAN repository.
          ```
@@ -170,7 +170,7 @@ This remote execution and snapshotting approach provides an excellent way to:
 
 The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. 
 
-[Learn more about snapshots and remote execution...](operationalize/remote-execution.md)
+[Learn more about snapshots and remote execution...](remote-execution.md)
 
 >[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
@@ -227,7 +227,7 @@ The packages you install using this method do not 'contaminate' the production e
       > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](operationalize/remote-execution.md)
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](remote-execution.md)
 
    ```
    REMOTE>pause()

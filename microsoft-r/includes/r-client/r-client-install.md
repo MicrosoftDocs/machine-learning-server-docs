@@ -18,18 +18,6 @@ Setup provides a download link. This component is required before setup can cont
 |-----------|---------|
 | [.NET Framework (requires a computer restart)](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2|
 
-**Software Requirements:**
-
-Setup installs Microsoft R Open and the following additional components. If you have an internet connection, Setup downloads and installs these during installation.
-
-| Component | Version |
-|-----------|---------|
-| [Microsoft AS OLE DB Provider for SQL Server 2016](https://www.microsoft.com/download/details.aspx?id=52676) | 13.0.1601.5 |
-| [Microsoft .NET Core](https://www.microsoft.com/net/download) | 1.0.1 |
-| [Microsoft MPI](https://www.microsoft.com/download/details.aspx?id=52981) | 7.1.12437.25 |
-| [Microsoft Visual C++ 2013 Redistributable](https://www.microsoft.com/download/details.aspx?id=40784) | 12.0.30501.0 |
-| [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com//download/details.aspx?id=48145) | 14.0.23026.0 |
-
 **How to Install (with Internet Access):**
 
 1. Log in to the machine with administrator privileges.
@@ -54,9 +42,9 @@ Setup installs Microsoft R Open and the following additional components. If you 
 
 1. On a machine with _**unrestricted**_ internet access:
 
-   + [Download Microsoft R Client](http://aka.ms/rclient/download)
+   + Download Microsoft R Client from the following link: http://aka.ms/rclient/download
 
-  + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
+   + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
 
    + Download the prerequisites, including the .NET Framework and other components previously listed.
 
