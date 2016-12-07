@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server 8.0 Installation for Linux Systems
 
-Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Linux](rserver-install-linux.md).
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 Installation of Microsoft R Server 8.0 consists of two distinct steps:
 

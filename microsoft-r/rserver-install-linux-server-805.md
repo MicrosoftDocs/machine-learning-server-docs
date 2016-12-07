@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server 2016 (8.0.5) Installation for Linux Systems
 
-Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](rserver-install-linux.md).
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 **Side-by-side Installation**
 
@@ -308,7 +308,7 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 ## See Also
 
-[Install newest release of R Server for Linux](reserver-install-linux-server.md)
+[Install newest release of R Server for Linux](rserver-install-linux-server.md)
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
