@@ -95,13 +95,13 @@ This production-safe approach provides an excellent way to:
    
    1. At the R prompt, run the R command `install.packages()`. @@ WHAT DOES THIS DO HERE???
 
-   1. At the prompt, specify a repository, select the folder containing the files you just copied; that is, the local miniCRAN repository.
+   1. At the prompt, specify a repository and specify the directory containing the files you just copied; that is, the local miniCRAN repository.
          ```
          pkgs_needed <- c("ggplot2", "ggdendro")
          local_repo  <- "~/my-miniCRAN-repo"
          
          .libPaths()[1]
-         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library @@"
+         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
          
          lib <- .libPaths()[1]
          
@@ -168,7 +168,9 @@ This remote execution and snapshotting approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
 + Install packages without requiring any intervention from the administrator
 
-The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. @@LINK TO VIGNETTE DOC IN MSDN "LEARN MORE ABOUT SNAPSHOTS AND REMOTE EXECUTION"
+The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. 
+
+[Learn more about snapshots and remote execution...](operationalize/remote-execution.md)
 
 >[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
@@ -225,18 +227,17 @@ The packages you install using this method do not 'contaminate' the production e
       > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. 
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](operationalize/remote-execution.md)
 
    ```
    REMOTE>pause()
-   >snapshotId<-createSnapshot("my-snapshot-name")
+   >create_snapshot>snapshotId<-createSnapshot("my-snapshot-name")
    $snapshotId
    [1] "123456789-abcdef-123456789"
    ```
 
    >Take note of the `snapshotId` to call this snapshot later.
-    
-@@LINK TO VIGNETTE DOC IN MSDN
+
 
 **To reuse those installed packages, objects and files:**
 

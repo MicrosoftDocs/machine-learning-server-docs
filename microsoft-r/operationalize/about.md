@@ -49,7 +49,7 @@ With operationalization enabled, R Server offers:
 
 + Enterprise grade security: [SSL/TLS 1.2](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md)
 
-+ Enable interactive remote code execution in your own session on the R server. @@ADD LINK
++ Enable interactive [remote code execution](remote-execution.md) in your own session on the R server.
 <br>
 
 ![Operationalization Engine](../media/o16n/about.png)

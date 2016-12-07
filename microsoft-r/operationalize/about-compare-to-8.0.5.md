@@ -41,7 +41,7 @@ Application Integration|Use client libraries and RBroker framework|Swagger-based
 Architecture|Apache Tomcat|ASP .Net Core
 Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator Account
 High Availability|Active-Active recovery not supported|Active-Active recovery supported
-Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the built-in remote execution functions in the `mrsdeploy` package.
+Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](remote-execution.md) in the `mrsdeploy` package.
 Web UI|Login, Admin Console, Repository Manager, <br>API Explorer, Event Console|Coming in 2017 with new design 
 APIs|Over 100 RESTful APIs|About 40 RESTful APIs<br> (not backwards compatible)
 
