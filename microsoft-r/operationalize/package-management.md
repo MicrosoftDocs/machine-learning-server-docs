@@ -91,29 +91,22 @@ This production-safe approach provides an excellent way to:
       ```
 
 1. On each compute node:
-   1. Copy the miniCRAN repository from the machine with Internet connectivity to the machine hosting the compute node.
+   1. Copy the miniCRAN repository from the machine with Internet connectivity to the R_SERVICES library on the SQL Server instance.
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
    1. At the R prompt, run the R command `install.packages()`. 
 
    1. At the prompt, specify a repository and specify the directory containing the files you just copied; that is, the local miniCRAN repository.
-         ```
-         pkgs_needed <- c("ggplot2", "ggdendro")
-         local_repo  <- "~/my-miniCRAN-repo"
+      ```
+      pkgs_needed <- c("Package-A", "Package-B", "Package-...")
+      local_repo  <- "~/my-miniCRAN-repo"
          
-         .libPaths()[1]
-         "C:/Program Files/Microsoft SQL Server/130/R_SERVER/library"
-         
-         lib <- .libPaths()[1]
-         
-         install.packages(pkgs_needed, 
-              repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
-              lib = lib,
-              type = "win.binary",
-              dependencies = TRUE
-              )
-         ```
+      install.packages(pkgs_needed, 
+	          repos = file.path("file://", normalizePath(local_repo, winslash = "/")),
+	          dependencies = TRUE
+      )
+      ```
 
    1. Verify that the packages were installed by running the following R command and reviewing the list of packages returned:  
       ```
