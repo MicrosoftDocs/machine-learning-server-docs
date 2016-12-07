@@ -29,7 +29,7 @@ ms.custom: ""
 
 
 
-> Learn about consuming the web services [here](service-integration.md#clientlib)
+> Learn about consuming the web services [here](api-client-libraries.md)
 >
 > Learn more about@@
 
@@ -44,7 +44,7 @@ If you need a prepared environment for remote script execution that includes any
 
 A snapshot can be loaded into any subsequent remote R session for the user who created it.  For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.   Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by loading this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. 
 
-[Learn about each snapshot API](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis) used to manage to create and manage session snapshots. There are a few more snapshot APIs under the [session group](#sessions).
+[Learn about each snapshot API](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis) used to manage to create and manage session snapshots.
 
 
 ## Web Services

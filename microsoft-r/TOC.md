@@ -83,9 +83,9 @@
 ### [Administration](operationalize/admin-utility.md)
 ### [Evaluate Capacity](operationalize/admin-evaluate-capacity.md)
 ### [R Package Management](operationalize/package-management.md)
-### [API Access Token Management](operationalize/security-access-tokens.md)
 ### [API Overview](operationalize/api.md)
 ### [API Client Libraries from Swagger](operationalize/api-client-libraries.md)
+### [API Access Token Management](operationalize/security-access-tokens.md)
 
 ## [Remote Execution](operationalize/remote-execution.md)
 
