@@ -83,7 +83,6 @@
 ### [Administration](operationalize/admin-utility.md)
 ### [Evaluate Capacity](operationalize/admin-evaluate-capacity.md)
 ### [R Package Management](operationalize/package-management.md)
-### [Service Consumption & Integration](operationalize/service-integration.md)
 ### [Access Token Management](operationalize/security-access-tokens.md)
 ### [API Overview](operationalize/api.md)
 ### [Client Libraries from Swagger](operationalize/api-client-libraries.md)
