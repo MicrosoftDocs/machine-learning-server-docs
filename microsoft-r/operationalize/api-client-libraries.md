@@ -248,7 +248,7 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
    Console.WriteLine("Session ID: " + createSessionResponse.SessionId);
    ```
 
-<a name=clientlib-service></a>
+<a name="clientlib-service"></a>
 
 ## Example: Service Consumption Client Library from Swagger (in CSharp)
 
@@ -312,7 +312,8 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    Authorization: Bearer mFfl_978_.G5p-4.94gM-
    ```
 
-   In our example, the organization has Active Directory/LDAP. Insert the following into your application code:
+   In this example, the organization has Active Directory/LDAP. 
+   Insert the following into your application code:
 
    ```
    // --- authenticate using AD --------------------------------------
@@ -329,8 +330,8 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    headers.Remove("Authorization");
    headers.Add("Authorization", $"Bearer {accessToken}");
    ```
-   
-1. Begin consuming the core operationalization APIs.
+
+1. Begin consuming the service consumption APIs.
    ```
    // --------------------------------------------------------------------------------
    // Once authenticated, no need for credentials again until token expires. 
