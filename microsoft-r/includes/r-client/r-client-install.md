@@ -16,7 +16,7 @@ The following additional components are installed by Setup. If you have an inter
 
 | Component | Version |
 |-----------|---------|
-| .NET Framework | 4.5.1 or later (requires a computer restart)|
+| .NET Framework | 4.5.2 or later (requires a computer restart)|
 | Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 |
 | Microsoft .NET Core | 1.0.1 |
 | Microsoft MPI | 7.1.12437.25 |

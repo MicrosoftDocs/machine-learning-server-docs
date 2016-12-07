@@ -48,6 +48,10 @@ To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
 To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
+**olapR package** lets you run MDX queries and connect directly to OLAP cubes on SQL Server 2016 Analysis Services from your R solution. You can manually create and then paste in aan MDX query, or use an R-style API to choose a cube, axes, and slicers.
+
+To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/library/mt790485.aspx).
+
 **RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
 
 |Function | Description |
