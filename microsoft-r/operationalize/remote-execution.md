@@ -52,7 +52,7 @@ Functions used in remote execution are provided in the `mrsdeploy` package, avai
 
 + On R Client, the `mrsdeploy` package is loaded automatically. You can initiate a remote session on an operationalized R Server instance once you complete a remote login.
 
-+ On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. This configuration step is required. For more information, see [Configuring R Server for Operationalization](~/operationalize/configuration-initial.md).
++ On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. This configuration step is required. For more information, see [Configuring R Server for Operationalization](configuration-initial.md).
 
 To use remote execution for the duration of a session in an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/) on a Windows computer, or RStudio or another R IDE on a non-Windows workstation.
 
@@ -248,4 +248,4 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Next steps
 
-Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, see the [Web Service vignette](mrsdeploy-websrv-vignette.md).
+Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, see the [Web Service vignette](../mrsdeploy/mrsdeploy-websrv-vignette.md).
