@@ -39,7 +39,7 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 ### Get a Swagger Generation Tool
 
-1. Install a Swagger code generator on your local machine. Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [code-gen](https://github.com/swagger-api/swagger-codegen). 
+1. Install a Swagger code generator on your local machine. Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
 1. Familiarize yourself with the tool so you can generate the API client libraries in your preferred programming language. 
 
@@ -61,11 +61,11 @@ To build a client library, run the file through the Swagger code generator, and 
    AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
    ```
 
-You can now provide some custom headers and make other changes before using the generated client library stub.
+You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
 <a name="authentication"></a>
 
-### Add Authentication Workflow Logic to Your Application
+### Add Authentication Workflow Logic
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
@@ -140,7 +140,7 @@ Once your client library has been generated and you've build the authentication 
 
 <a name="clientlib-core"></a>
 
-## Example: Core Client Library from Swagger (CSharp)
+## Example: Core Client Library from Swagger (in CSharp)
 
 This example shows how you can use the `rserver-9.0.1.json` swagger file to build a client library to interact with the core operationalization APIs from your application.  
 
@@ -248,4 +248,4 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
 
 <a name=clientlib-service></a>
 
-## Example: Service Consumption Client Library from Swagger
+## Example: Service Consumption Client Library from Swagger (in CSharp)

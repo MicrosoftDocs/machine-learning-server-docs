@@ -47,7 +47,7 @@ A snapshot can be loaded into any subsequent remote R session for the user who c
 [Learn about each snapshot API](https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis) used to manage to create and manage session snapshots.
 
 
-## Web Services
+## Publishing and Managing Web Services
 
 The core Web Services APIs facilitate the publishing and management of user-defined analytic web services. An R Server web service is a stateless execution in an R shell on the compute node. Each web service is uniquely defined by a `name` and `version` for easy service consumption and meaningful machine-readable discovery approaches. 
 
