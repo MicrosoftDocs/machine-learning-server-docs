@@ -44,6 +44,8 @@ The supported databases are:
 **To use a different local or remote database, do the following:**
 
 > These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
+>
+> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
 
 1.  On each web node, [stop the service](admin-utility.md#startstop).
 

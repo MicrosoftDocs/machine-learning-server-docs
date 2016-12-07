@@ -4,9 +4,9 @@
 title: "ScaleR Functions for Hadoop"
 description: "Microsoft R ScaleR Functions for Apache Hadoop MapReduce and Hadoop Spark."
 keywords: "RevoScaleR, ScaleR, Microsoft R, Hadoop, Spark"
-author: "j-martens"
+author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "08/23/2016"
+ms.date: "12/07/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -111,6 +111,48 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         <td>Creates an HDFS file system object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    <td>`RxHiveData`</td>
+    <td> </td>
+    <td>Generate a Hive Data Source object.</td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    <td>`RxParquetData `</td>
+    <td> </td>
+    <td>Generate a Parquet Data Source object.</td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    <td>`rxSparkConnect`</td>
+    <td> </td>
+    <td>Create a persistent Spark compute context. </td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    v`rxSparkDisconnect `</td>
+    <td> </td>
+    <td> Disconnect a Spark session and return to a local compute context.</td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    <td>`rxSparkListData` </td>
+    <td> </td>
+    <td>List cached `RxParquetData` or `RxHiveData` data source objects. </td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>   
+    </tr>
+    <tr>
+    <td>`rxSparkRemoveData`</td>
+    <td> </td>
+    <td>Remove cached `RxParquetData` or `RxHiveData` data source objects.</td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
 </table>
 

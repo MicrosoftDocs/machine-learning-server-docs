@@ -89,11 +89,8 @@ The **`rxLogisticRegression`** algorithm is used to predict the value of a categ
 To see the MicrosoftML functions that can be called:
 
 1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. In the console, return the number of objects by typing the following at the R prompt, type search().
-3. Note the position of the object you are interested in. 
-4. At the R prompt, type `objects(<position>)` to reveal the set of functions such as: objects(5)
-5. Find the name of the function in which you are interested.
-6. At the R prompt, type `?<function_name>` to open the help file for that function.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="MicrosoftML")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
 
 ## See also
 

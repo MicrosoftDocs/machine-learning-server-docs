@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Install Microsoft R Server 2016 on Teradata Servers"
+title: "Install Microsoft R Server 2016 (8.0.5) on Teradata Servers"
 description: "Installation and configuration for Microsoft R Server 2016 (version 8.0.5) on Teradata servers."
 keywords: ""
 author: "jeffstokes72"
@@ -25,16 +25,16 @@ ms.custom: ""
 
 # Install Microsoft R Server 2016 on Teradata Servers
 
-This article explains how to install Microsoft R Server 2016 (version 8.0.5) on a Teradata server.
+Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Teradata](rserver-install-teradata-server.md).
 
-## What's new in the R Server 2016 installer
+## About the R Server 2016 installer
 
-Microsoft R Server 2016 includes updated installers that allow you to deploy R in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](notes/r-server-notes.md).
+Microsoft R Server 2016 includes updated installers that allow you to deploy R in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package.
 
 >[!NOTE]
 >In this release, SLES 10 no longer supported, only SLES 11 SP1.
 
-## Where Do I Get It?
+## Download sites
 
 You can download Microsoft R Server 2016 (version 8.0.5) for Teradata from [here](http://aka.ms/rserver/teradata/download).
 
@@ -108,10 +108,10 @@ Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rp
 
 		cd MRS80TERA
 
-9. Run the install script, install.sh. This script downloads an installer from the internet. For non-internet connected nodes, manually place the en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz file in /var/opt/teradata/customernodepkgs/MRS80TERA directory on each Teradata node before running 'install.sh'. By running install.sh you are installing Microsoft-r-server-mro-tar-gz, agreeing to MRO_EULA.txt and EULA.txt license agreements. 
+9. Run the install script, install.sh. This script downloads an installer from the internet. For non-internet connected nodes, manually place the en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz file in /var/opt/teradata/customernodepkgs/MRS80TERA directory on each Teradata node before running 'install.sh'. By running install.sh you are installing Microsoft-r-server-mro-tar-gz, agreeing to MRO_EULA.txt and EULA.txt license agreements.
 
 		./install.sh
-	
+
 10. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs

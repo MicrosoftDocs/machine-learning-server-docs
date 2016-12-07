@@ -61,7 +61,7 @@ The service consumption REST APIs expose a wide range of R analytics services to
 
 Whenever a web service is published (<code>POST /services/{name}/{version}</code>), an endpoint is registered (<code>/api/{name}/{version}</code>), which in turn triggers the generation of a custom Swagger-based JSON file. This swagger file describes each API needed to interact with that service. While the service consumption Swagger files are all named `swagger.json`, you'll find them each in a unique location by calling:
 ```
-GET /api/{service-name}/{service-name}/swagger.json
+GET /api/{service-name}/{service-version}/swagger.json
 ``` 
 
 To simplify the integration of R analytics web services using these APIs, build and use an API client library stub from the `swagger.json` file for each web service using [these instructions and example](api-client-libraries.md).

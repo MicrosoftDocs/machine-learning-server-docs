@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/01/2016"
+ms.date: "12/07/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,16 +34,20 @@ To learn more about the latest release, see [What's New in R Server](rserver-wha
 
 ## How to install R Server 9.0.1 on Windows
 
-In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
+In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server 2016 Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
 
-The setup program you use determines the service and support policy.
+The setup program you use determines feature availability and the service and support policy.
 
-+ Using simplified setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently.
++ Simplified setup installs the [9.0.1 feature set](rserver-whats-new.md) that includes operationalization.
 
-+ Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but at longer intervals. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx).
+  Using this setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently.
+
++ SQL Server setup installs the [9.0 feature set](https://msdn.microsoft.com/library/mt604847.aspx). Operationalization is not provided in this feature set.
+
+  Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but at longer intervals. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
 
 >[!NOTE]
-> Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
+> Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. Doing so upgrades the feature set and switches you to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
 
 ### Prerequisites
 
@@ -70,7 +74,7 @@ The following additional components are installed by Setup.
 
 You can download the installation program from the following locations:
 
-+ Through your existing MSDN subscription.
++ [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
 + [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
@@ -89,8 +93,6 @@ Additionally, you should install a development tool on the server to code script
 
 + [Visual Studio 2015](https://www.visualstudio.com/downloads/)
 + [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
-
-> Unless you are using the remote execution feature of `mrsdeploy`, the only additional configuration is to provide credentials for login or give individual Windows user or groups login rights to the machine. R Server interaction is either local to the machine, where individual data scientists use Remote Desktop to start a local session, or accessed remotely via `mrsdeploy` on the command line. For more information, see [mrsdeploy](mrsdeploy/mrsdeploy.md).
 
 ### Connect to R Server and validate installation
 
