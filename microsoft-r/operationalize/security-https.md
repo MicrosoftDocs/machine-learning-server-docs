@@ -25,7 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Security: Configure SSL/TLS for R Server Operationalization
+# Connection Security (SSL/TLS) for Operationalization
+
+**Applies to:  Microsoft R Server 9.0.1**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
 

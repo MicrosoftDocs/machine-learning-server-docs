@@ -27,6 +27,8 @@ ms.custom: ""
 
 # Build and Use API Client Libraries from Swagger 
 
+**Applies to:  Microsoft R Server 9.0.1**
+
 While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
 To simplify the integration of your R analytics web services, R Server provides a Swagger template that defines each [core operationalization API](https://microsoft.github.io/deployr-api-docs/9.0.1).  Additionally, another unique Swagger-based JSON file is generated each time a web service version is published to define the list of resources that are available in the REST API and the operations that can be called on those resources.
@@ -326,7 +328,8 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    var accessToken = loginResponse.AccessToken;
    headers.Remove("Authorization");
    headers.Add("Authorization", $"Bearer {accessToken}");
-
+   ```
+   
 1. Begin consuming the core operationalization APIs.
    ```
    // --------------------------------------------------------------------------------

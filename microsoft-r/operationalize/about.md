@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# About Operationalization with R Server
+# Operationalization with R Server
 
 This release of Microsoft R Server now includes an even better operationalization engine for all your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 

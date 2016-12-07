@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Remote execution in Microsoft R Server
+# Remote Execution in Microsoft R Server
 
 **Applies to:  Microsoft R Server 9.0.1**
 

@@ -25,7 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Security: Authentication for R Server's Operationalization
+# Authentication Options for Operationalization
+
+**Applies to:  Microsoft R Server 9.0.1**
 
 R Server's offers seamless integration with authentication solutions for operationalization. To secure connections and communications, you have several options:
 

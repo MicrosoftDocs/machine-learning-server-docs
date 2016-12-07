@@ -25,7 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Security: Token Management for API Requests
+# Access Token Management for API Requests
+
+**Applies to:  Microsoft R Server 9.0.1**
 
 Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the `POST /login HTTP/1.1` API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
 

@@ -25,14 +25,16 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Administrator Utility for Operationalization
+# R Server Operationalization Administration
+
+**Applies to:  Microsoft R Server 9.0.1**
 
 [!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]
 
 <br>
 <a name="launch"></a>
 
-## Launch the Utility
+## Launch the Administrator Utility
 
 These instructions describe how to launch the Administrator Utility.
 

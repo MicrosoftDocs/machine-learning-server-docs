@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Comparing to 8.x Releases
+# Comparing Operationalization in R Server 9.0 to DeployR 8.x
 
 The following table presents some of the main differences between the operationalization feature in Microsoft R Server 9.0 and the DeployR feature available in R Server 8.0.5.
 
