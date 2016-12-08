@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "12/08/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -205,13 +205,14 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
       ln -s libicudata.so.55 libicudata.so.36
      ```
 
-   >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
 1. From the sub-menu, choose the option to **Configure a compute node**.
+
+   >**Note:** If there are issues when starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
   
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
@@ -266,6 +267,6 @@ On each web node:
 
 1. [Update service ports](admin-utility.md#ports), if needed.
 
-1. [Run diagnostic tests](admin-utility.md#test).
+1. [Run diagnostic tests](admin-utility.md#test). 
 
 1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.

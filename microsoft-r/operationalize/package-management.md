@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "12/08/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -123,11 +123,11 @@ This production-safe approach provides an excellent way to:
 >
 >**Applies to:** Development -or- Production Environments
 
-As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. To produce the list of packages, consider the following:
-+ Which R packages (and versions) are needed and sanctioned for production.
-+ Requests from users to add new R packages or update package versions.
+As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. 
 
-This production-safe approach provides an excellent way to:
+To produce the list of packages, consider which R packages (and versions) are needed and sanctioned for production. Also consider requests from users to add new R packages or update package versions.
+
+This production-safe approach provides an excellent way to
 + Keep a standard (and sanctioned) library of R packages for production use.
 + Manage R package dependencies as well as package versions.
 + Schedule timely updates to R packages.

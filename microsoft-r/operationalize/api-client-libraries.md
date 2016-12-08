@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "12/08/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -49,19 +49,16 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 Get the Swagger-based JSON file for the APIs you need.
 
-   + For Core APIs: [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1). 
+   + For the core APIs, download `rserver-swagger-9.0.1.json` from https://microsoft.github.io/deployr-api-docs/9.0.1. 
 
-   + For Service Consumption APIs: Get the `swagger.json` for the service you want to consume:
-     ```
-     GET /api/{service-name}/{service-version}/swagger.json
-     ```
+   + For the service consumption APIs, get the `swagger.json` for the service you want to consume with the call: `GET /api/{service-name}/{service-version}/swagger.json`.
 
 ### Build the Core Client Library
 
 To build a client library, run the file through the Swagger code generator, and specify the language you want. If you were using AutoRest to generate a C# client library, it might look like this:
-   ```
-   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
-   ```
+```
+AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
+```
 
 You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
@@ -151,78 +148,79 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
 1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1).
 
 1. Build the statically generated client library files for CSharp from the `rserver-9.0.1.json` swagger. 
+   Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
 
    ```
    AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace IO.Swagger.Client
    ```
 
-   Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
+1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 
+   + `Microsoft.Rest.ClientRuntime`
+   + `Microsoft.IdentityModel.Clients.ActiveDirectory`
 
-1. Use the statically-generated client library files to call the operationalization APIs. 
+   Open the Package Manager Console for NuGet and add them with this command:
 
-   1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 
-      + `Microsoft.Rest.ClientRuntime`
-      + `Microsoft.IdentityModel.Clients.ActiveDirectory`
+   ```
+   PM> Install-Package Microsoft.Rest.ClientRuntime
+   PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
+   ```
 
-      Open the Package Manager Console for NuGet and add them with this command:
+1. Use the statically-generated client library files to call the operationalization APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
 
-      ```
-      PM> Install-Package Microsoft.Rest.ClientRuntime
-      PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
-      ```
-
-   1. In your application code, import the required namespace types:
-
-      ```
-      // The namespace used during `AutoRest.exe -Namespace IO.Swagger.Client`
-      using IO.Swagger.Client;
-      using IO.Swagger.Client.Models;
+   ```
+   // --- IMPORT NAMESPACE TYPES -------------------------------------------------------
+   // Use the namespace provided with `AutoRest.exe -Namespace IO.Swagger.Client`
+   using IO.Swagger.Client;
+   using IO.Swagger.Client.Models;
        
-      using Microsoft.IdentityModel.Clients.ActiveDirectory;
-      using Microsoft.Rest
-      ```
+   using Microsoft.IdentityModel.Clients.ActiveDirectory;
+   using Microsoft.Rest
 
-   1. In your application code, create an API client to manage the API calls: 
+   // --- CREATE API CLIENT -------------------------------------------------------------
+   DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
+   ```
 
-      ```
-      // --- Create API Client ----------------------------------------------------------
-      DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
-      ```
+1. Add the authentication workflow to your application.  In this example, the organization has Azure Active Directory.
 
-1. In your application code, add the authentication workflow to your application.  
-
-   Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in every request header:
-
+   Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in every request header like this:
    ```
    GET /resource HTTP/1.1
    Host: rserver.contoso.com
    Authorization: Bearer mFfl_978_.G5p-4.94gM-
    ```
 
-   In our example, the organization has Azure Active Directory. Insert the following into your application code:
+   In your application code, insert the following:
 
    ```
-   // --- Authenticate using AAD  ----------------------------------------------------
+   // --- AUTHENTICATE WITH AAD ------------------------------------------------------
    // Note - Update these with your appropriate values
    // Once authenticated, user won't provide credentials again until token is invalid. 
    // You can now begin to interact with the core Op APIs
    // --------------------------------------------------------------------------------
 
-   // Address of the authority to issue token.
+   //
+   // ADDRESS OF AUTHORITY ISSUING TOKEN
+   //
    const string tenantId = "microsoft.com";
    const string authority = "https://login.windows.net/" + tenantId;
    
-   // Identifier of the client requesting the token
+   //
+   // ID OF CLIENT REQUESTING TOKEN
+   //
    const string clientId = "00000000-0000-0000-0000-000000000000";
 
-   // Secret of the client requesting the token
+   //
+   // SECRET OF CLIENT REQUESTING TOKEN 
+   //
    const string clientKey = "00000000-0000-0000-0000-00000000000";
 
    var authenticationContext = new AuthenticationContext(authority);
    var authenticationResult = await authenticationContext.AcquireTokenAsync(
           clientId, new ClientCredential(clientId, clientKey));
 
-   // Set Authorization header with `Bearer` and access-token
+   //
+   // SET AUTHORIZATION HEADER WITH BEARER ACCESS TOKEN FOR FUTURE CALLS
+   //
    var headers = client.HttpClient.DefaultRequestHeaders;
    var accessToken = authenticationResult.AccessToken;
 
@@ -232,10 +230,7 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
 
 1. Begin consuming the core operationalization APIs.
    ```
-   // --------------------------------------------------------------------------------
-   // Once authenticated, no need for credentials again until token expires. 
-
-   // --- Ready to use APIS ------------------------------------------------------
+   // --- INVOKE API -----------------------------------------------------------------
 
    // Try creating an R Session `POST /sessions`
    var createSessionResponse = client.CreateSession(
@@ -258,68 +253,62 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    ```
 
 1. Build the statically generated client library files for CSharp from the `swagger.json` swagger. 
+   Notice the language is `CSharp` and the namespace is `Transmission`.
 
    ```
    AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input swagger.json -Namespace Transmission
    ```
 
-   Notice the language is `CSharp` and the namespace is `Transmission`.
+1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 
+   + `Microsoft.Rest.ClientRuntime`
+   + `Microsoft.IdentityModel.Clients.ActiveDirectory`
 
-1. Use the statically-generated client library files to call the operationalization APIs. 
+   Open the Package Manager Console for NuGet and add them with this command:
 
-   1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 
-      + `Microsoft.Rest.ClientRuntime`
-      + `Microsoft.IdentityModel.Clients.ActiveDirectory`
+   ```
+   PM> Install-Package Microsoft.Rest.ClientRuntime
+   PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
+   ```
 
-      Open the Package Manager Console for NuGet and add them with this command:
+1. Use the statically-generated client library files to call the operationalization APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
 
-      ```
-      PM> Install-Package Microsoft.Rest.ClientRuntime
-      PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
-      ```
+   ```
+   // --- IMPORT NAMESPACE TYPES -------------------------------------------------------
+   // Use the namespace provided with `AutoRest.exe -Namespace Transmission`
+   using System;
+   
+   using Transmission;
+   using Transmission.Models;
+       
+   using Microsoft.IdentityModel.Clients.ActiveDirectory;
+   using Microsoft.Rest
 
-   1. In your application code, import the required namespace types:
+   // --- CREATE API CLIENT -------------------------------------------------------------
+   Transmission client = new Transmission(new Uri("https://rserver.contoso.com:12800”));
+   ```
 
-      ```
-      // The namespace used during `AutoRest.exe -Namespace Transmission`
-      using System;
+1. Add the authentication workflow to your application.  In this example, the organization has Active Directory/LDAP.
 
-      using Transmission;
-      using Transmission.Models;
-
-      using Microsoft.IdentityModel.Clients.ActiveDirectory;
-      using Microsoft.Rest;
-      ```
-
-   1. In your application code, create an API client to manage the API calls: 
-
-      ```
-      // --- Create API Client ----------------------------------------------------------
-      Transmission client = new Transmission(new Uri("https://rserver.contoso.com:12800”));
-      ```
-
-1. In your application code, add the authentication workflow to your application.  
-
-   Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in every request header:
-
+   Since all APIs require authentication, we first need to obtain our `Bearer` access token such that it can be included in every request header like this:
    ```
    GET /resource HTTP/1.1
    Host: rserver.contoso.com
    Authorization: Bearer mFfl_978_.G5p-4.94gM-
    ```
 
-   In this example, the organization has Active Directory/LDAP. 
-   Insert the following into your application code:
+   In your application code, insert the following:
 
    ```
-   // --- authenticate using AD --------------------------------------
+   // --- AUTHENTICATE WITH ACTIVE DIRECTORY -----------------------------------------
+   // Note - Update these with your appropriate values
+   // Once authenticated, user won't provide credentials again until token is invalid. 
+   // You can now begin to interact with the operationalization APIs
+   // --------------------------------------------------------------------------------
    var loginRequest = new LoginRequest("LDAP_USERNAME", "LDAP_PASSWORD");
    var loginResponse = client.Login(loginRequest);
 
    //
-   // --- Set Authorization header -----------------------------------
-   // Set Authorization header with `Bearer` access-token for all
-   // future calls
+   // SET AUTHORIZATION HEADER WITH BEARER ACCESS TOKEN FOR FUTURE CALLS
    //
    var headers = client.HttpClient.DefaultRequestHeaders;
    var accessToken = loginResponse.AccessToken;
@@ -329,10 +318,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
 
 1. Begin consuming the service consumption APIs.
    ```
-   // --------------------------------------------------------------------------------
-   // Once authenticated, no need for credentials again until token expires. 
-
-   // --- Invoke API -------------------------------------------------
+   // --- INVOKE API -----------------------------------------------------------------
    InputParameters inputs = new InputParameters() { hp = 120, wt = 2.8 };
    var serviceResult = api.Manual.Transmission(inputs).Result;
     
