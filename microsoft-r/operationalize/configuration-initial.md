@@ -154,7 +154,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 
 **Step 2: Configure a Remote Database** 
 
-By default, the web node configuration sets up a SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
+By default, the web node configuration sets up a local SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
 
 If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
 

@@ -29,14 +29,14 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-The operationalization feature for R Server installs and uses a local SQLite database by default. Later, you can update the configuration to use another database. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for R Server installs and uses a local SQLite database by default. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
 The supported databases are:
 + On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater
 + On Linux: PostgreSQL 9.2 or greater 
 
 > [!Important]
-> Any data that was saved in the default SQLite database will be lost if you configure a remote database.
+> Any data that was saved in the default local SQLite database will be lost if you configure a different database.
 
 <a name="sqlserver"></a>
 <a name="postgresql"></a>
