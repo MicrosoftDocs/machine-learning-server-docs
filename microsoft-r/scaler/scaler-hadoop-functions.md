@@ -6,7 +6,7 @@ description: "Microsoft R ScaleR Functions for Apache Hadoop MapReduce and Hadoo
 keywords: "RevoScaleR, ScaleR, Microsoft R, Hadoop, Spark"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/07/2016"
+ms.date: "12/08/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -111,20 +111,6 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         <td>Creates an HDFS file system object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-    <td>`rxSparkListData` </td>
-    <td> </td>
-    <td>List cached `RxParquetData` or `RxHiveData` data source objects. </td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>   
-    </tr>
-    <tr>
-    <td>`rxSparkRemoveData`</td>
-    <td> </td>
-    <td>Remove cached `RxParquetData` or `RxHiveData` data source objects.</td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
 </table>
 
@@ -446,6 +432,20 @@ Of course, not all data source types are available on all compute contexts. For 
         <td>`RxParquetData`</td>
         <td> </td>
         <td>Generates a Parquet Data Source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+        </tr>
+        <tr>
+        <td>`rxSparkListData` </td>
+        <td> </td>
+        <td>Lists cached `RxParquetData` or `RxHiveData` data source objects. </td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>   
+        </tr>
+        <tr>
+        <td>`rxSparkRemoveData`</td>
+        <td> </td>
+        <td>Removes cached `RxParquetData` or `RxHiveData` data source objects.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
         </tr>
