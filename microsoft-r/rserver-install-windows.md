@@ -44,7 +44,7 @@ The setup program you use determines feature availability and the service and su
 
 + SQL Server vNext setup installs the [9.0.0 feature set](https://msdn.microsoft.com/library/mt604847.aspx). Operationalization is not provided in this feature set.
 
-  Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but at longer intervals. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
+  Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
 
 ### Prerequisites
 

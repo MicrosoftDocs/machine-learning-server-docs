@@ -182,7 +182,7 @@ R Server 9.0.0 is a Windows-only, SQL-Server-only release. It is roughly equival
 
 ### Announced in Microsoft R Server 8.0.3
 
-    + R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. For a description of the features in 8.0.3, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
++ R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. For a description of the features in 8.0.3, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 
 ### Announced in Microsoft R Server 8.0.0

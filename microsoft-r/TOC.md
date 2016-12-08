@@ -175,5 +175,7 @@
 ## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)
 ### [Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
+### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
+### [ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 
 # [Archived Documentation](microsoft-r-old-versions.md)

@@ -371,14 +371,14 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
     <td>`rxSparkConnect`</td>
     <td> </td>
-    <td>Create a persistent Spark compute context. </td>
+    <td>Creates a persistent Spark compute context. </td>
     <td>
         <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
     <tr>
     <td>`rxSparkDisconnect`</td>
     <td> </td>
-    <td> Disconnect a Spark session and return to a local compute context.</td>
+    <td> Disconnects a Spark session and return to a local compute context.</td>
     <td>
         <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
@@ -438,14 +438,14 @@ Of course, not all data source types are available on all compute contexts. For 
     </tr>    <tr>
         <td>`RxHiveData`</td>
         <td> </td>
-        <td>Generate a Hive Data Source object.</td>
+        <td>Generates a Hive Data Source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
         </tr>
         <tr>
         <td>`RxParquetData`</td>
         <td> </td>
-        <td>Generate a Parquet Data Source object.</td>
+        <td>Generates a Parquet Data Source object.</td>
         <td>
             <center><small>[See package](scaler.md#findmore)<center></small></td>
         </tr>
