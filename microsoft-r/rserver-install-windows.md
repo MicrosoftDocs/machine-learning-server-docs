@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/07/2016"
+ms.date: "12/08/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,7 +34,7 @@ To learn more about the latest release, see [What's New in R Server](rserver-wha
 
 ## How to install R Server 9.0.1 on Windows
 
-In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server 2016 Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
+In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
 
 The setup program you use determines feature availability and the service and support policy.
 
@@ -42,12 +42,9 @@ The setup program you use determines feature availability and the service and su
 
   Using this setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently.
 
-+ SQL Server setup installs the [9.0 feature set](https://msdn.microsoft.com/library/mt604847.aspx). Operationalization is not provided in this feature set.
++ SQL Server vNext setup installs the [9.0.0 feature set](https://msdn.microsoft.com/library/mt604847.aspx). Operationalization is not provided in this feature set.
 
   Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but at longer intervals. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
-
->[!NOTE]
-> Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. Doing so upgrades the feature set and switches you to the Modern Lifecycle policy. To switch support policies, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
 
 ### Prerequisites
 
@@ -108,20 +105,6 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 ##Side-by-side installation
 
 You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
-
-##Upgrade 9.0 to 9.0.1
-
-Currently, version 9.0.1 is only available through simplified setup. SQL Server Setup installs 9.0 only. If you want to use the new 9.0.1 features with an existing 9.0 instance, you can run simplified setup program and accept the prompts to upgrade to the newer version.
-
-Doing so voids the SQL Server Support policy, replacing it with the Modern Lifecycle Support policy described above. Moving forward, R-related updates to SQL Server are not applied to your installation. Instead, updates are applied through the Microsoft *check for updates* program.
-
-+  On a computer that has standalone R Server or SQL Server R Services (in database), as installed by SQL Server Setup, [download and run the new setup program](#download) to upgrade to 9.0.1.
-
-Later, if you want to revert to the SQL Server Support policy, follow these steps:
-
-1. Uninstall the SQL Server relational database instance that previously hosted R Services.
-2. Reinstall the SQL Server relational database instance with R Services.
-3. Reapply any service updates or hot fixes to that instance.
 
 ## Install earlier versions of R Server for Windows
 

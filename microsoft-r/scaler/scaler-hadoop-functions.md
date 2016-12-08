@@ -113,34 +113,6 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
             <center><small>[See package](scaler.md#findmore)<center></small></td>
     </tr>
     <tr>
-    <td>`RxHiveData`</td>
-    <td> </td>
-    <td>Generate a Hive Data Source object.</td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-    <td>`RxParquetData `</td>
-    <td> </td>
-    <td>Generate a Parquet Data Source object.</td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-    <td>`rxSparkConnect`</td>
-    <td> </td>
-    <td>Create a persistent Spark compute context. </td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
-    v`rxSparkDisconnect `</td>
-    <td> </td>
-    <td> Disconnect a Spark session and return to a local compute context.</td>
-    <td>
-        <center><small>[See package](scaler.md#findmore)<center></small></td>
-    </tr>
-    <tr>
     <td>`rxSparkListData` </td>
     <td> </td>
     <td>List cached `RxParquetData` or `RxHiveData` data source objects. </td>
@@ -397,6 +369,20 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </td>
     </tr>
     <tr>
+    <td>`rxSparkConnect`</td>
+    <td> </td>
+    <td>Create a persistent Spark compute context. </td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
+    <td>`rxSparkDisconnect`</td>
+    <td> </td>
+    <td> Disconnect a Spark session and return to a local compute context.</td>
+    <td>
+        <center><small>[See package](scaler.md#findmore)<center></small></td>
+    </tr>
+    <tr>
         <td>`rxInstalledPackages`</td>
         <td> </td>
         <td>Returns the list of installed packages for a compute context.</td>
@@ -449,7 +435,20 @@ Of course, not all data source types are available on all compute contexts. For 
         <td>
             <center><small>[See package](scaler.md#findmore)</small></center>
         </td>
-    </tr>
+    </tr>    <tr>
+        <td>`RxHiveData`</td>
+        <td> </td>
+        <td>Generate a Hive Data Source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+        </tr>
+        <tr>
+        <td>`RxParquetData`</td>
+        <td> </td>
+        <td>Generate a Parquet Data Source object.</td>
+        <td>
+            <center><small>[See package](scaler.md#findmore)<center></small></td>
+        </tr>
 </table>
 
 
