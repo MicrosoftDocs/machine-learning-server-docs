@@ -60,7 +60,7 @@ To benefit from disk scalability, performance and speed, you can push the comput
 
 ## Step 1: Install Microsoft R Client
 
-[Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today. 
+[Download Microsoft R Client](http://aka.ms/rclient/download) and install it today. 
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 

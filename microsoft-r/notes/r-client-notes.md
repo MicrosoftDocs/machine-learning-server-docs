@@ -31,8 +31,8 @@ ms.custom: ""
 The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
 
 + New enhanced Microsoft R Client [Getting Started](../r-client-get-started.md) guide
-+ A new 'version check' and update is now possible using `CheckForUpdates()` in your R Console.  
-+ [Offline installations](../r-client-get-started.md#installrclient) are now possible for R Client.
++ A new 'version check' and auto-update is now possible using `CheckForUpdates()` in your R Console 
++ [Offline installations](../r-client-get-started.md#installrclient) are now possible for R Client
 + New packages now bundled with Microsoft R Client (and Microsoft R Open):
   + `mrsdeploy` - adds remote execution and web service deployment from R Client 3.3.2 to a remote R Server 9.0.1 instance
   + `MicrosoftML` - adds machine learning algorithms to R script that executes on either R Client or R Server
