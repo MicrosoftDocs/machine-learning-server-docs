@@ -37,7 +37,7 @@ Microsoft R Server for Teradata has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** SUSE Linux Enterprise Server. OMicrosoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
 
 **Teradata Version:** Teradata 15.10, 15.00, or 14.10.
 
@@ -77,13 +77,13 @@ To get started, do the following:
 
   1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
 
-		Microsoft R Open 3.3.2 for Microsoft R Server (can be found at [the mro repository](https://mran.microsoft.com/install/mro/3.3.2/microsoft-r-open-3.3.2.tar.gz).)
+		Microsoft R Open 3.3.2 (can be found at [the mro repository](https://mran.microsoft.com/install/mro/3.3.2/microsoft-r-open-3.3.2.tar.gz).)
 
 		Microsoft R Server 9.0.1 for Teradata
 
-  2.  Download the Microsoft R Open for Microsoft R Server rpm file for your Teradata appliance’s operating system (SLES 11).
+  2.  Download the Microsoft R Open rpm file for your Teradata appliance’s operating system (SLES 11).
 
-  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
+  3.  Download and unpack the Microsoft R Server 9.0.1 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
 
   4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
@@ -97,23 +97,20 @@ To get started, do the following:
 		This creates the directory MRS90Teradata
 		This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.0.1 will not work.
 
-		Agree to license agreements:
+  5. Agree to license agreements:
 		/MRS90Teradata/ MRO_EULA.txt
 		/MRS90Teradata/ MRO_EULA.txt
 
 
-  5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
+  6. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
-		[for SLES11 systems]
 		microsoft-r-open-3.3.2.tar.gz
 
-		New MRO file name (as downloaded from mran): microsoft-r-open-3.3.2.tar.gz
+		New MRO file name (as downloaded from mran): microsoft-r-open-3.3.2.tar
 		
 		Also need to copy files:
 		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm
 		MRS90Teradata/RPM/microsoft-r-server-teradata-9.0.rpm
-
-  6. View and agree to the licenses agreements.
 
   7. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
