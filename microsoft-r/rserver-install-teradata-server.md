@@ -6,7 +6,7 @@ description: "Install Microsoft R Server 9.0.1 on Teradata servers."
 keywords: ""
 author: "jeffstokes72"
 manager: "jhubbard"
-ms.date: "12/07/2016"
+ms.date: "12/09/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -59,6 +59,14 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 * SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc-fortran-4.3-62.198.x86_64.rpm
 
+**Dependency:** The file libstdc++6-5.3.1.x86_64.rpm is **included** with MRS 9.0.1. This may cause conflicts with existing rpms. If you opt to perform this install, the rpm will need to be installed on **each node**. If you cannot install this rpm MRS 9.0.1 will not work.
+
+A method of doing so is to execute the following command on each node:
+
+```
+zypper -n install --force-resolution libstdc++6-5.3.1.x86_64.rpm
+```
+
 ## Installing the Microsoft R Server rpms
 
 We recommend using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms.
@@ -69,13 +77,13 @@ To get started, do the following:
 
   1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
 
-		Microsoft R Open for Microsoft R Server
+		Microsoft R Open 3.3.2 for Microsoft R Server (can be found at [the mro repository](https://mran.microsoft.com/install/mro/3.3.2/microsoft-r-open-3.3.2.tar.gz).)
 
-		Microsoft R Server 8.0.5 for Teradata
+		Microsoft R Server 9.0.1 for Teradata
 
-  2.  Download the Microsoft R Open for Microsoft R Server rpm file for your Teradata appliance’s operating system, either SLES 10 or SLES 11.
+  2.  Download the Microsoft R Open for Microsoft R Server rpm file for your Teradata appliance’s operating system (SLES 11).
 
-  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN).
+  3.  Download and unpack the Microsoft R Server 8.0.5 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
 
   4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
@@ -84,49 +92,30 @@ To get started, do the following:
 
 	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		tar zxvf MRS80TERA.tar.gz
+		tar -zxf en_r_server_901_for_teradata_x64_9649029.gz
+
+		This creates the directory MRS90Teradata
+		This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.0.1 will not work.
+
+		Agree to license agreements:
+		/MRS90Teradata/ MRO_EULA.txt
+		/MRS90Teradata/ MRO_EULA.txt
+
 
   5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
-		[for SLES10 systems]
-		MRO-for-MRS-8.0.0-SLES10.x86_64.rpm
-		Microsoft-R-Server-8.0.0-TERA14S10.tar.gz
-
 		[for SLES11 systems]
-		MRO-for-MRS-8.0.0-SLES11.x86_64.rpm
-		Microsoft-R-Server-8.0.0-TERA14S11.tar.gz
+		microsoft-r-open-3.3.2.tar.gz
 
-  6. Change directory to the Customer Mode packages directory:
+		New MRO file name (as downloaded from mran): microsoft-r-open-3.3.2.tar.gz
+		
+		Also need to copy files:
+		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm
+		MRS90Teradata/RPM/microsoft-r-server-teradata-9.0.rpm
 
-		cd /var/opt/teradata/customermodepkgs
+  6. View and agree to the licenses agreements.
 
-  7. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
-
-		tar -zxf Microsoft-R-Server-8.0.0-TERA14S10.tar.gz
-
-	or
-
-		tar -zxf Microsoft-R-Server-8.0.0-TERA14S11.tar.gz
-
-  8. Change directory to the one directory created in Step 7:
-
-		cd Microsoft-R-Server-8.0.0-TERA14S10
-
-	or
-
-		cd Microsoft-R-Server-8.0.0-TERA14S11
-
-  9. Run the install script, install.py, as follows:
-
-		./install.py
-
-	This script asks you to accept the Microsoft R Server license, and, if you are a Teradata employee, to acknowledge that, if you are installing the software, it is on a system owned by and for the internal use of Teradata Corporation or any of its affiliates.
-
-  10. Change directory to the Customer Mode packages directory:
-
-		cd /var/opt/teradata/customermodepkgs
-
-  11. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+  7. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
@@ -136,7 +125,7 @@ To install the Microsoft R Server rpms on all the nodes, do the following:
 
   3.  You may receive a dialog box saying that PUT was unable to find any packages to auto-select. If you see this dialog box, click OK.
 
-  4.  Select Microsoft-R-Server.
+  4.  Select microsoft-r-server-teradata-9.0.
 
   5.  Select all Groups and click &gt;&gt; to install on all groups, then click Next.
 
@@ -148,17 +137,19 @@ To install the Microsoft R Server rpms on all the nodes, do the following:
 
   9.  Click Finish.
 
-Before proceeding, create the /tmp/revoJobs directory on each node:
-
-	mkdir /tmp/revoJobs
 
 ## Setting Up the Revolution Analytics Database
 
-After you have installed the rpms, change directory to the "teradata" directory beneath the Microsoft-R-Server-8.0.0-TERA14Sxx directory (where xx is 10 or 11, depending on your Teradata system), and run the revoTdSetup.sh script as follows:
+After you have installed the rpms, change directory to the "teradata" directory and run the revoTdSetup.sh script as follows:
 
-	cd Microsoft-R-Server-8.0.0-TERA14Sxx/teradata
+	Depending on Teradata version cd to:
+	/usr/lib64/microsoft-r/3.3/teradata/1510 or
+	/usr/lib64/microsoft-r/3.3/teradata/1500 or
+	/usr/lib64/microsoft-r/3.3/teradata/1410
+	
 	chmod u+x ./revoTdSetup.sh
 	./revoTdSetup.sh
+
 
 Enter the parent user database name and password at the prompts. Do not modify this script, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in Chapter 5, Adding and Configuring Users.
 
@@ -264,5 +255,10 @@ To manually distribute and install the package:
 
 To remove Microsoft R Server from your computer, run the following commands:
 
-	psh rpm –e Microsoft-R-Server
-	psh rpm –e MRO-for-MRS
+	psh rpm -e microsoft-r-server-teradata-9.0
+	psh rpm -e microsoft-r-server-packages-9.0
+	psh rpm -e microsoft-r-open-foreachiterators-3.3
+	psh rpm -e microsoft-r-open-mkl-3.3
+	psh rpm -e microsoft-r-open-mro-3.3
+
+Restart the DBS to unload MRS from udfsectsk processes.
