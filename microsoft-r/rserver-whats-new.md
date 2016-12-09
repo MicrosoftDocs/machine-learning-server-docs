@@ -135,10 +135,6 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
 This section lists the feature announcements of recent previous releases.
 
-### Announced in Microsoft R Server 9.0.0
-
-R Server 9.0.0 is a Windows-only, SQL-Server-only release. It is roughly equivalent to the 9.0.1 release, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
-
 ### Announced in Microsoft R Server 8.0.5
 
 + On **Linux**:
