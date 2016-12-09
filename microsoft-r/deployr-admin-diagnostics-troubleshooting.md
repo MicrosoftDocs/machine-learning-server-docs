@@ -412,7 +412,7 @@ If you reboot after installing and get an access error message for Tomcat, you c
 4.  Launch DeployR again.
 
 <br />
-### Inactive Grid Node (Windows 7 only)
+### Inactive Grid Node (Windows only)
 
 If the **DeployR Default Node** appears **Inactive** in the DeployR landing page directly after having installed DeployR on a Windows 7 machine, then the `R_HOME` variable may not be set.
 
@@ -425,9 +425,9 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 2.  Verify the status of the DeployR Rserve service in the **Services** dialog box. If it appears as `Started`, continue to the next step. If not, start it now and go back to step 1.  
     **Tip:** Go to **Start &gt; Control Panel**. Search for `admin` and select **Administrative Tools** from the results. Choose **Services** to open the **Services** dialog box.
 
-3.  At a DOS command prompt, go to the `bin\x64` directory for R and start RServe. Pay particular attention to the messages printed to the window. For example:
+3.  At a DOS command prompt, go to the directory for R and start RServe. Pay particular attention to the messages printed to the window. For example:
 
-        cd C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64
+        cd C:\Program Files\Microsoft SQL Server\130\R_SERVER\
         Rserve8.0.5
 
 4.  If you see the message "R\_HOME must be set in the environment or Registry", then you must define that environment variable as follows:
@@ -438,7 +438,7 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
     
     3.  Click the **Environment Variables...** button to open the **Environment Variables** dialog box.
     
-    4.  Click **New...** and enter `R_HOME` as the **Variable name** and the path to R (such as `C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64`) as the **Variable value**.
+    4.  Click **New...** and enter `R_HOME` as the **Variable name** and the path to R (such as `C:\Program Files\Microsoft SQL Server\130\R_SERVER`) as the **Variable value**.
     
     5.  Click **OK** to create the variable.
 
