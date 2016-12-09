@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - r-client
 ms.custom: ""
 
@@ -33,18 +33,8 @@ Microsoft R Client can be downloaded from http://aka.ms/rclient/download. Learn 
 
 > R Client runs on Windows only. Greater operating system support is coming soon.
 
-Microsoft R Client works with the following flavors of Microsoft R Server: 
+Microsoft R Client works with the following flavors of Microsoft R Server:
 
-<<<<<<< HEAD
-|R Server "Flavors"|Compatible with R Client 1.0.0|Compatible with R Client 3.3.2|
-|-----------|:--------------------------:|:--------------------------:|
-|Microsoft R Server for Linux|8.0.5|8.0.5 & 9.0.1|
-|Microsoft R Server for Teradata DB|8.0.5|8.0.5 & 9.0.1|
-|Microsoft R Server for Hadoop|8.0.5<b>*</b> |8.0.5 & 9.0.1|
-|Microsoft R Server (Standalone - Windows)|SQL Server 2016 RTM|SQL Server 2017 CPT 1|
-|SQL Server R Services|SQL Server 2016 RTM|SQL Server 2017 CPT 1|
-|R Server for HDInsight|Preview|General Availability|
-=======
 |R Server Offerings|Compatible with R Client 3.3.2|
 |-----------|:--------------------------:|
 |Microsoft R Server for Linux|8.0.5 - 9.0.1|
