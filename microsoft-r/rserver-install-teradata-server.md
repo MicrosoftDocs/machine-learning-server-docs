@@ -112,7 +112,7 @@ To get started, do the following:
 		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm
 		MRS90Teradata/RPM/microsoft-r-server-teradata-9.0.rpm
 
-  7. Point your Java-enabled browser to `https://&lt;HOSTIP&gt;:8443/put` where &lt;HOSTIP&gt; is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+  7. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
