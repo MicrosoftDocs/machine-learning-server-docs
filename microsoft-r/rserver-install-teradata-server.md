@@ -83,12 +83,12 @@ To get started, do the following:
 
   2.  Download the Microsoft R Open rpm file for your Teradata appliance’s operating system (SLES 11).
 
-  3.  Download and unpack the Microsoft R Server 9.0.1 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
+  3.  Download and unpack the Microsoft R Server 9.0.1 distribution, which will either be a DVD iso file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
 
-  4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+  4.  If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
 
 		mkdir /mnt/mrsimage
-		mount –o loop MRS80TERA.img /mnt/mrsimage
+		mount –o loop MSDN.iso /mnt/mrsimage
 
 	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
@@ -102,15 +102,12 @@ To get started, do the following:
 		/MRS90Teradata/ MRO_EULA.txt
 
 
-  6. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
+  6. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
 
 		microsoft-r-open-3.3.2.tar.gz
-
-		New MRO file name (as downloaded from mran): microsoft-r-open-3.3.2.tar
-		
-		Also need to copy files:
-		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm
+		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm 
 		MRS90Teradata/RPM/microsoft-r-server-teradata-9.0.rpm
+
 
   7. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
