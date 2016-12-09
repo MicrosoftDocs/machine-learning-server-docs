@@ -60,7 +60,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. On each machine, install Microsoft R Server:
 
-     + On Windows, install [R Server (Standalone)](../rserver-install-windows.md).
+     + On Windows, install [R Server for Windows](../rserver-install-windows.md).
 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
@@ -139,7 +139,7 @@ For added security, you can [configure SSL](security-https.md) as well as authen
 
   1. On each machine, install Microsoft R Server:
 
-     + On Windows, install [R Server (Standalone)](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
+     + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
      + On Linux, install [Microsoft R Server](../rserver-install-linux-server.md).  
 
   1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:

@@ -27,7 +27,7 @@ ms.custom: ""
 
 # R Execution Security Considerations
 
-RServe is the R execution component for the operationalization compute node for Microsoft R Server.
+RServe is the R execution component for the operationalization compute node for Microsoft R Server. RServe is an interface to R, which by default is single threaded. However, in this context, this custom version of RServe sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
 
 >[!IMPORTANT]
 >Microsoft R Server's operationalization feature is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
