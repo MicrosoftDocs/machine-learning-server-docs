@@ -37,7 +37,7 @@ Microsoft R Server for Teradata has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** SUSE Linux Enterprise Server SLES11 SP1 64-bit is supported.
 
 **Teradata Version:** Teradata 15.10, 15.00, or 14.10.
 
