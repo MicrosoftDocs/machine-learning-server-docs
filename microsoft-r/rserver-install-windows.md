@@ -34,7 +34,7 @@ To learn more about the latest release, see [What's New in R Server](rserver-wha
 
 ## How to install R Server 9.0.1 on Windows
 
-In this release, you can use a simplified setup program for a standalone R Server for Windows installation. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation of a standalone R Server for Windows instance.
+In this release, you can use a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation of a standalone R Server instance on Windows.
 
 The setup program you use determines feature availability and the service and support policy.
 
@@ -112,7 +112,7 @@ Earlier versions are supported, but are no longer available on Microsoft downloa
 
 | Version | Details|
 |---------|--------|
-| Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing, installation, and support of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server for Windows as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server for Windows](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016 technical documentation.|
+| Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing, installation, and support of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server Standalone](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016 technical documentation.|
 | Version 8.0 | Installation of this version is package by package, in a specific order. For more information and instructions, see [Install Revolution R Enterprise 2016 (version 8.0) for Windows](rserver-install-windows-800.md).|
 
 ## See Also
