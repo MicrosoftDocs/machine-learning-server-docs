@@ -27,9 +27,7 @@ ms.custom: ""
 
 # Evaluate Load Balancing Capacity
 
-The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
-
-You can define the parameters for the traffic simulation for a given configuration or for a given web service. You can test for maximum latency or maximum thread count.
+To evaluate the load balancing capacity, you can simulate the traffic for the configuration or for a given web service. You can test for maximum latency or maximum thread count.
 
 + **Maximum Latency:** Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test. The test will increase the number of threads by the defined increment until the defined time limit is reached.
 
@@ -87,6 +85,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 After the tool is run, the results are printed to the console. The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. 
 
+You can also explore the results visually using the URL that is returned to the console. 
 
 |Stage|Time Measured|
 |------|-----------|
@@ -95,8 +94,5 @@ After the tool is run, the results are printed to the console. The test results 
 |Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
 |Compute Node Request|Time for a request from the compute node to reach RServe and return to the node|
-
-<br>
-You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
  
 ![URL results](../media/o16n/admin-capacity-results-url.png)

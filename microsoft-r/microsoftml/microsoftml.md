@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "12/08/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -57,7 +57,7 @@ The **`rxFastLinear()`** algorithm is based on the Stochastic Dual Coordinate As
 
 
 ### OneClass SVM
-The **`rxOneClassSvm()`** algorithm is used for one-class anomaly detection. This is a type of unsupervised learning as its training set contains only examples from the target class and not any anomalous instances. It infers what properties are normal for the objects in the target class and from these properties predicts which examples are unlike these normal examples. This is useful as typically there are very few examples of network intrusion, fraud, or other types of anomalous behavior in training data sets.
+One-class anomaly detection as provided by the **`rxOneClassSvm()`** function is a type of unsupervised learning as its training set contains only examples from the target class and not anomalous instances. It infers what properties are normal for the objects in the target class and from these properties predicts which examples are unlike these normal examples. This is useful as typically there are very few examples of network intrusion, fraud, or other types of anomalous behavior in training data sets.
 
 **Tasks supported**: anomaly detection
 
