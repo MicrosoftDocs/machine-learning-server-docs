@@ -25,9 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Build and Use API Client Libraries from Swagger 
+# Getting Started for Application Developers 
 
 **Applies to:  Microsoft R Server 9.0.1**
+
+Learn how to build and use API Client libraries from Swagger to integrate into your applications.
 
 While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
