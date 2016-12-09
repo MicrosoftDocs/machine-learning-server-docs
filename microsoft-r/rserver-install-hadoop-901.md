@@ -36,7 +36,7 @@ If you want to replace an older version rather than run side-by-side, you can un
 
 **Installation Steps**
 
-A summary of setup tasks for R Server 2016 is as follows:
+A summary of setup tasks is as follows:
 
 - Download the software
 - Unzip to extract packages and an install script (install.sh)
@@ -133,9 +133,7 @@ Microsoft R Server 2016 for Hadoop is deployed by running the install script wit
 		Version     : 9.0.1                               Vendor: Microsoft
 		. . .
 
-## Verify install
-
-As a verification step, check folders and permissions. Following that, you should run the Revo64 program, a sample Hadoop job, and if applicable, a sample Spark job.
+For further verification, check folders and permissions. Following that, you should run the Revo64 program, a sample Hadoop job, and if applicable, a sample Spark job.
 
 **Check folders and permissions**
 
@@ -164,12 +162,12 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 1. Send sample data to HDFS.
 
 		$ hadoop fs -mkdir -p /share/SampleData
-		$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/8.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
+		$ hadoop fs -copyFromLocal /usr/lib64/microsoft-r/9.0/lib64/R/library/RevoScaleR/SampleData/AirlineDemoSmall.csv /share/SampleData/
 		$ hadoop fs -ls /share/SampleData
 
 2. Start Revo64.
 
-		$ cd MRS80Linux
+		$ cd MRS90Linux
 		$ Revo64
 
 3. Run a simple local computation. This step uses the proprietary Microsoft libraries.
@@ -255,7 +253,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
 
-Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 2016 are already installed, a manual or custom installation must create the appropriate folders and set permissions.
+Assuming that the packages for Microsoft R Open and Microsoft R Server are already installed, a manual or custom installation must create the appropriate folders and set permissions.
 
 **RPM or DEB Installers**
 
@@ -273,7 +271,7 @@ Assuming that the packages for Microsoft R Open for R Server and Microsoft R Ser
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh ("Dancer’s shell")](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
-Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](rserver-install-hadoop-800.md#StandardCommandLineInstall) steps 3 through 8.
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](rserver-install-hadoop-800.md#StandardCommandLineInstall) steps 3 through 8.
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
@@ -282,51 +280,51 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		pdshw
 		> mkdir -p /var/tmp/revo-install
 		> exit
-		pdcpw /tmp/MRS80HADOOP.tar.gz /var/tmp/revo-install
+		pdcpw /tmp/MRS90HADOOP.tar.gz /var/tmp/revo-install
 		pdshw
 		> cd /var/tmp/revo-install; yum clean all
-		> tar zxf MRS80HADOOP.tar.gz
-		> cd MRS80HADOOP; sudo bash ./install.sh -a -p
+		> tar zxf MRS90HADOOP.tar.gz
+		> cd MRS90HADOOP; sudo bash ./install.sh -a -p
 		> exit
 
-## Multi-node installation using Cloudera Manager
+## Multinode installation using Cloudera Manager
 
-The following steps walk you through a multi-node installation using Cloudera Manager to create a Cloudera Manager parcel for a Microsoft R Server 2016 installation. In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.
+The following steps walk you through a multinode installation using Cloudera Manager to create a Cloudera Manager parcel for an R Server installation.
 
 Two parcels are required:
 
-- *Microsoft R Open* parcel installs open-source R and additional open-source components on the nodes of your Cloudera cluster.
+- *Microsoft R Open* parcel installs open source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
 - *Microsoft R Server* parcel installs proprietary components on the nodes of your Cloudera cluster.
 
 Install the Cloudera Manager parcels as follows:
 
 1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel](https://rserverdistribution.azureedge.net/production/MRO/3.3.2/485/1033/f9644b5c602b4479bcdaa88d55cdd977/MRO-3.3.2-Cloudera.tar.gz). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
 
-2. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
+2. Download and unpack the R Server distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
   If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
-		mount –o loop MRS80HADOOP.img /mnt/mrsimage
+		mount –o loop MRS90HADOOP.img /mnt/mrsimage
 
   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		tar zxvf MRS80HADOOP.tar.gz
+		tar zxvf MRS90HADOOP.tar.gz
 
 3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
   From the mounted img file:
-		cp /mnt/mrsimage/MRS-8.0.5-* /opt/cloudera/parcel-repo
+		cp /mnt/mrsimage/MRS-9.0.5-* /opt/cloudera/parcel-repo
 
   From the unpacked tar file:
-		cp /tmp/MRS80HADOOP/MRS-8.0.5-* /opt/cloudera/parcel-repo
+		cp /tmp/MRS80HADOOP/MRS-9.0.5-* /opt/cloudera/parcel-repo
 
 4. You should have the following files in your parcel repo:
 
-		MRO-8.0.5-el6.parcel
-		MRO-8.0.5-el6.parcel.sha
-		MRS-8.0.5-el6.parcel
-		MRS-8.0.5-el6.parcel.sha
+		MRO-9.0.5-el6.parcel
+		MRO-9.0.5-el6.parcel.sha
+		MRS-9.0.5-el6.parcel
+		MRS-9.0.5-el6.parcel.sha
 
   Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others).
 
@@ -336,13 +334,13 @@ Install the Cloudera Manager parcels as follows:
 
 7. Click **Parcels** to bring up the Parcels page.
 
-8. Click **Check for New Parcels**. MRO 8.0.5 and MRS 8.0.5 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
+8. Click **Check for New Parcels**. MRO and MRS parcels should each appear with a **Distribute** button. After clicking **Check for New Parcels** you may need to click on **Location > All Clusters** on the left to see the new parcels.
 
-9. Click the MRO 8.0.5 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+9. Click the MRO **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
 10. Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
 
-11. Click the MRS 8.0.5 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+11. Click the MRS **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
 ## Troubleshoot installation problems
 
