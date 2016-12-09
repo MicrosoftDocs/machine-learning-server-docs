@@ -12,11 +12,7 @@
 
 **Setup Requirements:**
 
-Setup provides a download link. This component is required before setup can continue.
-
-| Component | Version |
-|-----------|---------|
-| [.NET Framework (requires a computer restart)](https://www.microsoft.com/download/details.aspx?id=42642) | 4.5.2|
+Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component is required before setup can continue. Installing this component will require a computer restart.
 
 **How to Install (with Internet Access):**
 
@@ -60,8 +56,10 @@ Setup provides a download link. This component is required before setup can cont
 
    + Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
 
->**What's Installed with R Client**<br>
->
->The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
->
->All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Client under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
+> Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
+ 
+**What's Installed with R Client**<br>
+
+The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+
+All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Client under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.

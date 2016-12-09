@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/07/2016"
+ms.date: "12/08/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -94,7 +94,7 @@ This release now supports Ubuntu 14.04 and 16.04 on premises. For installation i
 ### R Server for Hadoop (MapReduce and Spark)
 
 + Support for Spark 1.6 and 2.0.
-+ Support for Spark DataFrames through `RxHiveData` and `RxParquetData` in ScaleR:
++ Support for Spark DataFrames through `RxHiveData` and `RxParquetData` in ScaleR when using an `RxSpark` compute context in ScaleR:
 
   ~~~~
     hiveData <- RxHiveData("select * from hivesampletable", ...)
@@ -114,7 +114,7 @@ As noted, installation of R Server or R Client on Windows delivers the new [Micr
 
 Additionally, this release adds a simplified setup program for a standalone R Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
-Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server Setup installs the 9.0 version of R Server for Windows. For a description of the features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server vNext installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 For installation and upgrade instructions, see [Install R Server for Windows](rserver-install-windows.md).
 
@@ -129,15 +129,15 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
 + SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install a standalone R Server for Windows.
 
-+ Simplified setup can be used to replace instance-by-instance installs of SQL Server R Services. This is useful if you require 9.0.1 operationalization capabilities, or if you want to switch from the SQL Server support policy to the Modern Lifecycle policy. To upgrade, run simplified setup on a Windows computer that has an existing R Server instance that was previously installed using SQL Server Setup. You will be prompted to run a tool that handles the conversion.
++ In the upcoming SQL Server vNext CTP 1.1 release, you will be able to unbind your SQL Server R Services instance and replace it with a 9.0.1 version that offers operationalization features and the Modern Lifecycle Support policy. Check [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) for the latest information on CTP 1.1 when it becomes available.
 
 ##Previously released features
 
 This section lists the feature announcements of recent previous releases.
 
-### Announced in Microsoft R Server 9.0
+### Announced in Microsoft R Server 9.0.0
 
-R Server 9.0 is a Windows-only, SQL-Server-only release. It is roughly equivalent to the 9.0.1 release, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a description of the features in 9.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+R Server 9.0.0 is a Windows-only, SQL-Server-only release. It is roughly equivalent to the 9.0.1 release, minus the `mrsdeploy` package and new [operationalization features](operationalize/about.md). For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 ### Announced in Microsoft R Server 8.0.5
 
@@ -179,6 +179,11 @@ R Server 9.0 is a Windows-only, SQL-Server-only release. It is roughly equivalen
     + The API has been updated. [See the change history.](deployr-api-reference.md#805)
 
     + This release is of DeployR Enterprise only.
+
+### Announced in Microsoft R Server 8.0.3
+
++ R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. For a description of the features in 8.0.3, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+
 
 ### Announced in Microsoft R Server 8.0.0
 

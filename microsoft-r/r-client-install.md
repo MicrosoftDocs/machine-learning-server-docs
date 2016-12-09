@@ -30,7 +30,7 @@ ms.custom: ""
 
 ###Installing R Client
 
-[Download Microsoft R Client](http://aka.ms/rclient/download), available through Visual Studio Dev Essentials, and install it today.
+[Download Microsoft R Client](http://aka.ms/rclient/download) and install it today.
 
 [!include[Install](./includes/r-client/r-client-install.md)]
 <br>

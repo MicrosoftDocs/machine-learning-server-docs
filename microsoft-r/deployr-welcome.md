@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "10/19/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -31,15 +31,15 @@ This page provides links to the MSDN documentation for the versions of DeployR E
 
 Start here:
 
-+ [About Operationalization with v9.0.1](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/about)
-+ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/configure-initial)
++ [About Operationalization with v9.0.1](https://msdn.microsoft.com/microsoft-r/operationalize/about)
++ [Installation docs](https://msdn.microsoft.com/microsoft-r/operationalize/configuration-initial)
 
 
 ## Looking for v8.0.0 and v8.0.5 documentation?
 
 Start here:
-+ [About DeployR v8.0.0 and 8.0.5](https://msdn.microsoft.com/en-us/microsoft-r/deployr-about)
-+ [Installation docs](https://msdn.microsoft.com/en-us/microsoft-r/deployr-installation)
++ [About DeployR v8.0.0 and 8.0.5](https://msdn.microsoft.com/microsoft-r/deployr-about)
++ [Installation docs](https://msdn.microsoft.com/microsoft-r/deployr-installation)
 
 <br>
 
