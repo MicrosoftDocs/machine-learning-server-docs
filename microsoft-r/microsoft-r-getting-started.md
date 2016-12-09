@@ -6,7 +6,7 @@ description: "Microsoft R features and components overview."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "12/09/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -40,7 +40,7 @@ The Microsoft R product family includes Microsoft R Server, Microsoft R Client, 
 <a name="compare-prods"></a>
 ### Microsoft R Product Comparison
 
-The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. For information on SQL Server R Services, see the [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx).
+The feature set provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. For information on SQL Server R Services, see the [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
 
 |Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |-----------|----------------|------------------|-----------|
@@ -133,7 +133,7 @@ In a Windows environment, multi-server topologies are supported through Windows 
 For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 > [!NOTE]
-> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
+> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Operationalization is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](rserver-install-supported-platforms.md).
 
 
 ### Optimized Math Libraries
