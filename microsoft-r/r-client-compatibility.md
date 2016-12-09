@@ -42,7 +42,6 @@ Microsoft R Client works with the following flavors of Microsoft R Server:
 |Microsoft R Server for Hadoop|8.0.5 - 9.0.1|
 |Microsoft R Server for Windows|9.0.1|
 |SQL Server R Services <br>(in-database & standalone)|SQL Server 2016 RTM - <br>SQL Server v.next CTP1|
-|Microsoft R Server for Windows|SQL Server v.next CTP1|
 |HDInsight (Clustered Type R Server)|8.0.x - 9.0.1|
 
 <br>
