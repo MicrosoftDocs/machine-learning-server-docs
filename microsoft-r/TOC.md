@@ -95,7 +95,7 @@
 
 ## DeployR 8.x doc archives
 ### [Install DeployR](deployr-installation.md)
-#### [Install DeployR for R Server (Standalone) on Windows](deployr-install-on-windows.md)
+#### [Install DeployR for R Server on Windows](deployr-install-on-windows.md)
 #### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
 #### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 ### Getting Started with DeployR
