@@ -29,7 +29,7 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 9.0.1
 
-This release of R Server is built on _Microsoft R Open 3.2.2_, which is based on R-3.2.2.
+This release of R Server is built atop of Microsoft R Open 3.3.2, which is based on R-3.3.2.
 
 **Operating Systems (64-Bit only)**
 

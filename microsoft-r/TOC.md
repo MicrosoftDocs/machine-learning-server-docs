@@ -84,7 +84,7 @@
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
 #### [R execution security sonsiderations](operationalize/security-rserve.md)
 ### [Administration](operationalize/admin-utility.md)
-### [Evaluate sapacity](operationalize/admin-evaluate-capacity.md)
+### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
 ### [R package management](operationalize/package-management.md)
 ### [API overview](operationalize/api.md)
 ### [API client libraries from Swagger](operationalize/api-client-libraries.md)
