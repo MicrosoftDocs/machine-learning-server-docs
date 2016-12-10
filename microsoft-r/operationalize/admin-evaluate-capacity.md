@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - deployr
   - r-server
 ms.custom: ""
@@ -27,11 +27,13 @@ ms.custom: ""
 
 # Evaluate Load Balancing Capacity
 
-To evaluate the load balancing capacity, you can simulate the traffic for the configuration or for a given web service. You can test for maximum latency or maximum thread count.
+The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
+
+You can define the parameters for the traffic simulation for a given configuration or for a given web service. You can test for maximum latency or maximum thread count.
 
 + **Maximum Latency:** Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test. The test will increase the number of threads by the defined increment until the defined time limit is reached.
 
-+ **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached. 
++ **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
 <br>
 
@@ -58,7 +60,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
    1. Specify the maximum latency in milliseconds after which the test will stop.
    1. Specify the minimum thread count at which the test will start.
    1. Specify the increment by which the number of threads will increase for each iteration until the maximum latency is reached.
-     
+
 1. To test for the maximum number of parallel requests that can be supported:
 
    1. From the sub-menu, choose the option for **Change thread/latency limits**.
@@ -66,7 +68,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
    1. Specify the maximum thread count after which the test will stop running.
    1. Specify the minimum thread count at which the test will start.
    1. Specify the increment by which the number of threads will increase for each iteration.
- 
+
 <br>
 
 ## Run Simulation Tests
@@ -83,9 +85,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 ## Understanding the Results
 
-After the tool is run, the results are printed to the console. The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on. 
-
-You can also explore the results visually using the URL that is returned to the console. 
+After the tool is run, the results are printed to the console. The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on.
 
 |Stage|Time Measured|
 |------|-----------|
@@ -94,5 +94,8 @@ You can also explore the results visually using the URL that is returned to the 
 |Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
 |Compute Node Request|Time for a request from the compute node to reach RServe and return to the node|
- 
+
+<br>
+You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
+
 ![URL results](../media/o16n/admin-capacity-results-url.png)
