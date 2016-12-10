@@ -82,7 +82,7 @@
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
-#### [R execution security sonsiderations](operationalize/security-rserve.md)
+#### [R execution security considerations](operationalize/security-rserve.md)
 ### [Administration](operationalize/admin-utility.md)
 ### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
 ### [R package management](operationalize/package-management.md)
