@@ -39,7 +39,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. On the web node, [launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
