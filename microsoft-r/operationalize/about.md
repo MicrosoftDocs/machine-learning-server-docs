@@ -37,7 +37,7 @@ This release of Microsoft R Server now includes an even better operationalizatio
 
 Once you [configure the operationalization feature](configuration-initial.md) for R Server, you can benefit from: 
 
-+ Instant deployment and easy consumption of your R analytics
++ Instant deployment and [easy consumption of your R analytics](api-client-libraries.md)
 
 + "Write once / deploy anywhere" - no more duplication of efforts
 

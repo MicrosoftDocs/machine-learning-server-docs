@@ -69,7 +69,7 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 **To set or update the local admin account password:**
 
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option to set a password for the local `admin` account.
 
@@ -88,7 +88,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 **To stop or start a web node or compute node:**
 
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option **Stop and start services**.
 
@@ -104,7 +104,7 @@ You can update the ports numbers for the web node, compute node, or Rserve.
 
 1. Log into the machine on which your web node or compute node is installed.
 
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option **Change service ports**.
 
@@ -122,7 +122,7 @@ For security purposes, we strongly recommend that you encrypt the connection str
        
 1. On the web node, install a credential encryption certificate with a private key into the default certificate store on the local machine. 
 
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
       1. From the main menu, choose the option **Encrypt Credentials**.
 
@@ -160,7 +160,7 @@ The set of diagnostic tests include:
 
 **To run diagnostic tests:**
 
-1. [Launch the administration utility](#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 

@@ -103,7 +103,7 @@ This configuration is useful when you want to explore what it is to operationali
 
    >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator, `root`, or `sudo` privileges.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. Choose the option to **Configure R Server for Operationalization**.
 
@@ -115,7 +115,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. [Run a diagnostic test of the configuration](admin-utility.md#test).
 
-1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 
 You are now ready to begin operationalizating your R analytics with R Server.
@@ -148,7 +148,7 @@ For added security, you can [configure SSL](security-https.md) as well as authen
      1. When prompted, provide a password for the built-in, local operationalization `admin` account.  
         You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
 
-  1. On Linux: If using the IPTABLES firewall or equivalent service on Linux, use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+  1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
