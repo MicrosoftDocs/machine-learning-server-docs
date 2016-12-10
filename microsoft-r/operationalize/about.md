@@ -29,13 +29,13 @@ ms.custom: ""
 
 This release of Microsoft R Server now includes an even better operationalization engine for all your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
->Looking for older "DeployR" documentation, [start here](../deployr-about.md).
+>Looking for older "DeployR 8.x" documentation? [Start here](../deployr-about.md).
 
 <br>
 
 ### What You Get with R Server Operationalization
 
-With operationalization enabled, R Server offers:
+Once you [configure the operationalization feature](configuration-initial.md) for R Server, you can benefit from: 
 
 + Instant deployment and easy consumption of your R analytics
 
@@ -50,7 +50,10 @@ With operationalization enabled, R Server offers:
 + Enterprise grade security: [SSL/TLS 1.2](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md)
 
 + Enable interactive [remote code execution](remote-execution.md) in your own session on the R server.
+
 <br>
+
+>Want to configure R Server for operationalization? [Start here](configuration-initial.md).
 
 ![Operationalization Engine](../media/o16n/about.png)
 
