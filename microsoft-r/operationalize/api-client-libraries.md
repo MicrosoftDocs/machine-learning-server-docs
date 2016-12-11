@@ -33,7 +33,7 @@ Learn how to build and use API Client libraries from Swagger to integrate into y
 
 While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
-To simplify the integration of your R analytics web services, R Server provides a Swagger template that defines each [core operationalization API](https://microsoft.github.io/deployr-api-docs/9.0.1).  Additionally, another unique Swagger-based JSON file is generated each time a web service version is published to define the list of resources that are available in the REST API and the operations that can be called on those resources.
+To simplify the integration of your R analytics web services, R Server provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](api.md).    
 
 To access these RESTful APIs outside of R, use a Swagger code tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
 
@@ -49,11 +49,13 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 ### Get the Swagger File
 
-Get the Swagger-based JSON file for the APIs you need.
+To simplify the integration, R Server provides several [Swagger templates](http://swagger.io/) each defining the list of resources that are available in the REST API and the operations that can be called on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/9.0.1/) in `rserver-swagger-9.0.1.json`. Additionally, another unique Swagger-based JSON file is also generated for each and every web service version that is published.  
 
-   + For the core APIs, download `rserver-swagger-9.0.1.json` from https://microsoft.github.io/deployr-api-docs/9.0.1. 
+API&nbsp;Types|Corresponding Swagger-based JSON File
+------------------------|------------------
+Core&nbsp;APIs|[Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json). 
+Service-specific&nbsp;APIs|Retrieve the service-specific `swagger.json` needed to consume the service with `GET /api/{service}/{version}/swagger.json`.
 
-   + For the service consumption APIs, get the `swagger.json` for the service you want to consume with the call: `GET /api/{service-name}/{service-version}/swagger.json`.
 
 ### Build the Core Client Library
 
@@ -147,7 +149,7 @@ This example shows how you can use the `rserver-9.0.1.json` swagger file to buil
 
 Build and use a core client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1).
+1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json).
 
 1. Build the statically generated client library files for CSharp from the `rserver-9.0.1.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
