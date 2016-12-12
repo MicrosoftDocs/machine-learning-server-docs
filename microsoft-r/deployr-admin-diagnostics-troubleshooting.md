@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Diagnostics & Troubleshooting
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## Introduction
 
 This document describes how to run and interpret the DeployR diagnostic test. Additionally, this document offers solutions to issues that you might be [troubleshooting](#troubleshooting) after installing or during your use of DeployR.

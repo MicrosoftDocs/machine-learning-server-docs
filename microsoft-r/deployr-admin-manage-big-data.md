@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Managing External Directories for Big Data
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 There may be times when your DeployR user community needs access to genuinely large data files, or big data. These data files might be too big to be copied from the Web or copied from their local machines to the server.
 
 When such files are stored in the DeployR Repository or at any network-accessible URI, the R code executing on the DeployR server can load the desired file data on-demand. However, physically moving big data is expensive both in terms of bandwidth and throughput.

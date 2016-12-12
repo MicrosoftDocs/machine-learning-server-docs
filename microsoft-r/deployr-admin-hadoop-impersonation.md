@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Using Hadoop Impersonation and DeployR
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 Typically when invoking system commands from R, those commands will run as the user that started R. In the case of Hadoop, if user `abc` logs into a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, will run as user `abc`. File permissions in HDFS will be honored accordingly, for example user `abc` will not be able to access files in HDFS if that user does not have proper permissions.
 
 However when using DeployR, every R session is started as the same user. This is an artifact of the Rserve component that was used to create and interact with R sessions. In order to work around this circumstance, [Hadoop Impersonation](https://issues.apache.org/jira/browse/HADOOP-8561) will be used. Hadoop impersonation is employed by standard Hadoop services like Hue and WebHDFS.

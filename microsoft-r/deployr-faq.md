@@ -27,6 +27,10 @@ ms.custom: ""
 
 # Frequently Asked Questions
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## If I want to use the DeployR Web server for my Web application, where should I put my application files?
 
 If I want to use the DeployR Web server for my Web application, where should I put my application files?

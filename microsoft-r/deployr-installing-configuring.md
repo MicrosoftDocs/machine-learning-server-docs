@@ -25,6 +25,10 @@ ms.custom: ""
 ---
 # Installing & Configuring DeployR 8.0.0
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## System Requirements for DeployR
 
 Before you begin installing DeployR, make sure the computer meets the minimum hardware and software requirements.

@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Scale & Throughput
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## Introduction
 
 DeployR is a server framework that exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop, and mobile applications. Within the server, a grid framework provides sophisticated load balancing capabilities for a single DeployR server instance. The overall capacity of your server and grid, in conjunction with the nature and volume of your anticipated workload, determines the runtime characteristics for the tasks that are executing within the DeployR environment.

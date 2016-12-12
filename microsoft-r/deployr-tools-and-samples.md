@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Developer Tools, API Docs, and Samples
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 Get started with DeployR! Use the **RBroker framework** and/or the **client libraries** to communicate with the DeployR server. 
 
 On this page, you can download the framework/library in one of the available languages, follow their tutorials, and consult the comprehensive documentation.
