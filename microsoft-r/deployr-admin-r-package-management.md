@@ -26,6 +26,10 @@ ms.custom: ""
 
 # R Package Management Guide
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## Introduction
 
 As the DeployR administrator, one of your responsibilities is to ensure the R code that runs on the DeployR server has access to the R package dependencies declared within that code. The following sections discuss R package management in this context.

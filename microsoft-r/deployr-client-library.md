@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Client Library Tutorial
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## Introduction
 
 The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.

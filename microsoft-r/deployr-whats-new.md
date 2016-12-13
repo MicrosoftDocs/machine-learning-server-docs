@@ -26,7 +26,11 @@ ms.custom: ""
 
 # What's New in DeployR
 
-This topic presents the changes and new features in DeployR version 8.0.0 as well as several prior releases.
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
+This topic presents the changes and new features in DeployR version 8.0.5 as well as several prior releases.
 
 -   [DeployR for Microsoft R Server 8.0.5](#version-8-0-5)
 -   [Release 8.0.0](#version-8-0-0)

@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Upgrading or Reinstalling R
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## On Windows
 
 ### Reinstalling Microsoft R Server for DeployR Enterprise

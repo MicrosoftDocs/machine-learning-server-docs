@@ -26,6 +26,10 @@ ms.custom: ""
 
 # DeployR Server and Grid High Availability
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ## Server High Availability
 
 When discussing high-availability in the context of server systems, clustered Java Web applications are a common architectural solution. However, due to the non-serializable socket connections maintained per R session by the DeployR server, full distributed session management across servers in a cluster is not possible, as it depends on serializable session state.

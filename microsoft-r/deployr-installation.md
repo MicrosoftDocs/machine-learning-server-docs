@@ -1,4 +1,34 @@
+---
+
+# required metadata
+title: "Install DeployR for Microsoft R Server 2016 on Windows"
+description: "How to install, migrate, and configure DeployR"
+keywords: "install, installation, DeployR, configuration, configure"
+author: "j-martens"
+manager: "jhubbard"
+ms.date: "06/20/2016"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+ms.service: ""
+ms.assetid: ""
+
+# optional metadata
+ROBOTS: ""
+audience: ""
+ms.devlang: ""
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.technology: "deployr"
+ms.custom: ""
+
+---
+
 # DeployR Installation / Set Up Guides
+
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
 
 The following guides are available to help you install and configure DeployR.
 

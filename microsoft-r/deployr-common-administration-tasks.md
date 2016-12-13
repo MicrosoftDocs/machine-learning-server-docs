@@ -26,6 +26,10 @@ ms.custom: ""
 
 # Common DeployR Administration Tasks
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 <a name="startstop"></a>
 ## Starting and Stopping DeployR for Microsoft R Server 8.0.5
 

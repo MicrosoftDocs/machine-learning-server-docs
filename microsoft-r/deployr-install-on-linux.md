@@ -25,6 +25,10 @@ ms.custom: ""
 ---
 # Installing DeployR for Microsoft R Server 2016 (8.0.5) on Linux
 
+**Applies to: DeployR 8.x**
+
+>Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+
 ##Before You Begin
 
 Read and follow these points before you begin the installation process.
