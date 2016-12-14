@@ -122,7 +122,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Other Getting Started Guides**
 -   [Application Developers](app-developer-get-started.md)
--   [Data Scientists](deployr-data-scientist-getting-started.md)
+<!---   [Data Scientists](deployr-data-scientist-getting-started.md)-->
 
 **Support Channel**
 -   [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

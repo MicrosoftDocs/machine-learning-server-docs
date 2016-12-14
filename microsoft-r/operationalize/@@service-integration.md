@@ -81,8 +81,8 @@ Example:
 
 A web service can be published using the APIs directly (`/services/{name}/{version}`) or using the [`mrsdeploy` package functions](../mrsdeploy/mrsdeploy.md). Whenever a service is published (`POST /services/{name}/{version}`), an endpoint is registered (`/api/{name}/{version}`), which in turn triggers the generation of a custom [Swagger](http://swagger.io/)-based JSON file.  
 
-This Swagger-based JSON file contains the definitions of every API specific to that service version, including the [authentication APIs](api-client-libraries.md#authentication), needed to interact with that specific version. 
+This Swagger-based JSON file contains the definitions of every API specific to that service version, including the [authentication APIs](app-developer-get-started.md#authentication), needed to interact with that specific version. 
 
 Using a Swagger code generation tool, you can convert the Swagger-based file into an API client. The client simplifies the way in which you consume this published web service, simplifing the making of calls, encoding of data, and markup response handling on the API.
 
-Learn how to get a [code generation tool, download the Swagger files, and generate a client library stub](api-client-libraries.md).
+Learn how to get a [code generation tool, download the Swagger files, and generate a client library stub](app-developer-get-started.md).
