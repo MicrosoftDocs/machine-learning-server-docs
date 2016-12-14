@@ -164,7 +164,7 @@ This procedure involves creating a custom R package which contains the function 
   > RxHadoopMR(hadoopSwitches="-Dmapreduce.job.queuename=XYZ")
   ~~~~
 
-You should see the result come back with the queue name set to your override value (for example, `Dmapreduce.job.queuename=mrsjobs)`.
+  You should see the result come back with the queue name set to your override value (for example, `Dmapreduce.job.queuename=mrsjobs)`.
 
 6. To automate the loading of the package so that users don’t need to specify "library(abcMods)", edit Rprofile.site and modify the line specifying the default packages to include **abcMods** as the last item:
 

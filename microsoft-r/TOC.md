@@ -98,7 +98,7 @@
 
 ## DeployR 8.x doc archives
 ### [Install DeployR](deployr-installation.md)
-#### [Install DeployR for R Server on Windows](deployr-install-on-windows.md)
+#### [Install DeployR for R Server for Windows](deployr-install-on-windows.md)
 #### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
 #### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 ### Getting Started with DeployR
@@ -163,8 +163,8 @@
 # [Cloud-Based Offerings](vm-cloud.md)
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
 ## [Azure Virtual Machines](vm-cloud.md)
-### [R Server on Linux](vm-azure-rserver-linux.md)
-### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
+### [R Server for Linux](vm-azure-rserver-linux.md)
+### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 
 # [Package Reference](package-reference.md)
