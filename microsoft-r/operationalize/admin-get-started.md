@@ -38,9 +38,22 @@ As an administrator, your key responsibilities are to ensure configuration for t
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-utility.md#test) and numerous recommendations.
 
-But first, you must [configure R Server for operationalization](configuration-initial.md). 
-
 >For a general introduction to R Server for operationalization, read the [About](about.md) topic.
+
+## Setup R Server for Operationalization
+
+To benefit from Microsoft R Server’s deployment and operationalization features, you must first [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+
+All configurations have at least a single web node and single compute node:
+
++ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
+
++ A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
+
+The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
+
+[Learn more on how to configure for operationalization.](operationalize/configuration-initial.md) 
+
 
 ## Security Policies
 

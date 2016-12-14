@@ -151,6 +151,10 @@ As a verification step, run the Revo64 program.
 
 4. To quit the program, type `q()` at the command line with no arguments.
 
+## Configure R Server for Operationalization
+
+To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code.
+
 <a name="manage-installation"></a>
 ## Manage your installation
 
@@ -321,3 +325,5 @@ If you have installed Microsoft R Server and then install base R, again there sh
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 
 [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+
+[Configure R Server for Operationalization](operationalize/configuration-initial.md)

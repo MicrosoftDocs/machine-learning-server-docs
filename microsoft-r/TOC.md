@@ -81,7 +81,7 @@
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Configure remote database](operationalize/configure-remote-database.md)
 #### [Enterprise security options](operationalize/security.md)
-#### [Authentication](operationalize/security-authentication.md)
+##### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
 #### [R execution security considerations](operationalize/security-rserve.md)
