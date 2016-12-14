@@ -64,20 +64,26 @@ The the operationalization feature supports a wide range of runtime policies tha
 
 The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node, including:
 
--   Global settings such as server name, declared compute nodes, authentication properties, remote database connection information, and so on
--   Runtime policies governing pool size
++ On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
 
-On Windows, `appsettings.json` is located here  where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console:
++ On the compute node, this configuration file governs SSL, service logging, R shell pool size, R execution ports, and more.
+
+|Operating System|Web Node|Compute Node|
+|---|--|--|
+|Windows|`<Microsoft_R_Server_home>\deployr\Microsoft.DeployR.Server.WebAPI\`|`<Microsoft_R_Server_home>\deployr\Microsoft.DeployR.Server.BackEnd\`|
+|Linux|`/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`|`/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/`|
+
+On Windows, find this file here where `<MRS_home>` is the path to the Microsoft R Server installation directory:
 
    + Web node, find it under: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` 
    
    + Compute node, find it under: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\`  
 
-On Linux, `appsettings.json` is located here:
+On Linux, find this file here where `<Op_Dir>` is the operationalization path, by default `/usr/lib64/microsoft-deployr/9.0.1/`:
 
-   + Web node, find it under: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/` 
+   + Web node, find it under: `<Op_Dir>/Microsoft.DeployR.Server.WebAPI/` 
    
-   + Compute node, find it under: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/` 
+   + Compute node, find it under: `<Op_Dir>/Microsoft.DeployR.Server.BackEnd/` 
   
 
 <!--### Availability-->
@@ -86,9 +92,9 @@ On Linux, `appsettings.json` is located here:
 
 For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
 
-<!--### Scalability & Throughput-->
+### Scalability & Throughput
 
-<!--In the context of a discussion on runtime policies, the topics of scalability and throughput are closely related. Some of the most common questions that arise when planning the configuration and provisioning of R Server for operationalization are:
+In the context of a discussion on runtime policies, the topics of scalability and throughput are closely related. Some of the most common questions that arise when planning the configuration and provisioning of R Server for operationalization are:
 
 -   How many users can I support?
 -   How many web and compute nodes do I need?
@@ -96,7 +102,8 @@ For a discussion of the available server, grid, and database HA policy options, 
 
 The answer to these questions will ultimately depend on the configuration and size of the configuration and node resources allocated to your deployment.
 
-For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).-->
+To evaluate and simulate the capacity of a configuration, use the [Evaluate Capacity tool](admin-evaluate-capacity.md). You can also [adjust the pool size](admin-evaluate-capacity.md#pool) of available R shells for concurrent operations.
+<!--For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).-->
 
 ## Troubleshooting
 

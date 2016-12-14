@@ -113,6 +113,7 @@ You can also explore the results visually in a break-down graph using the URL th
 
 ![URL results](../media/o16n/admin-capacity-results-url.png)
 
+<a name="pool"></a>
 ### R Shell Pool 
 
 When using R Server for operationalization, R code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, R Server is capable of establishing and maintaining a pool of R shells for R code execution.  This pool limits the maximum number of R shells can be used to execute in parallel.
