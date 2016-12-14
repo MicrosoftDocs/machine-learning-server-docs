@@ -75,27 +75,29 @@
 #### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 
 ## [Operationalization](operationalize/about.md)
-### [9.0 & 8.0.5 Feature comparison](operationalize/about-compare-to-8.0.5.md)
-### [Configure operationalization](operationalize/configuration-initial.md)
-### [Configure remote database](operationalize/configure-remote-database.md)
-### [Enterprise security options](operationalize/security.md)
+### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
+### [Setup](operationalize/configuration-initial.md)
+### Administration
+#### [Get started for administrators](operationalize/admin-get-started.md)
+#### [Administration utility](operationalize/admin-utility.md)
+#### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
 #### [R execution security considerations](operationalize/security-rserve.md)
-### [Administration](operationalize/admin-utility.md)
-### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
-### [R package management](operationalize/package-management.md)
-### [Get Started for Application Developers](operationalize/api-client-libraries.md)
-### [API overview](operationalize/api.md)
-### [API access token management](operationalize/security-access-tokens.md)
+#### [Configure remote database](operationalize/configure-remote-database.md)
+#### [R package management](operationalize/package-management.md)
+### Integration
+#### [Get started for application developers](operationalize/app-developer-get-started.md)
+#### [API overview](operationalize/api.md)
+#### [API access token management](operationalize/security-access-tokens.md)
 
 ## [Remote execution](operationalize/remote-execution.md)
 
 
 ## DeployR 8.x doc archives
 ### [Install DeployR](deployr-installation.md)
-#### [Install DeployR for R Server on Windows](deployr-install-on-windows.md)
+#### [Install DeployR for R Server for Windows](deployr-install-on-windows.md)
 #### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
 #### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 ### Getting Started with DeployR
@@ -160,8 +162,8 @@
 # [Cloud-Based Offerings](vm-cloud.md)
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
 ## [Azure Virtual Machines](vm-cloud.md)
-### [R Server on Linux](vm-azure-rserver-linux.md)
-### [R Server on Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
+### [R Server for Linux](vm-azure-rserver-linux.md)
+### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 
 # [Package Reference](package-reference.md)

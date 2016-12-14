@@ -27,6 +27,8 @@ ms.custom: ""
 
 # Evaluate Load Balancing Capacity
 
+**Applies to:  Microsoft R Server 9.0.1**
+
 The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
 
 You can define the parameters for the traffic simulation for a given configuration or for a given web service. You can test for maximum latency or maximum thread count.
@@ -85,7 +87,18 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Understanding the Results
 
-After the tool is run, the results are printed to the console. The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on.
+It is important to understand the results of these simulations to determine whether any configuration changes are warranted, such as adding more web or compute nodes, increasing the pool size, and so on.
+
+### Console Results
+
+After the tool is run, the results are printed to the console. 
+
+
+### Chart Report
+
+The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on.
+
+
 
 |Stage|Time Measured|
 |------|-----------|
@@ -99,3 +112,48 @@ After the tool is run, the results are printed to the console. The test results 
 You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
 
 ![URL results](../media/o16n/admin-capacity-results-url.png)
+
+<a name="pool"></a>
+### R Shell Pool 
+
+When using R Server for operationalization, R code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, R Server is capable of establishing and maintaining a pool of R shells for R code execution.  This pool limits the maximum number of R shells can be used to execute in parallel.
+
+There is a cost to creating an R shell both in time and memory. So having a pool of existing R shells awaiting R code execution requests means no time will be lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create R shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it will take to start up the compute node. 
+
+New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. Once the maximum is reached, the compute node will return a `503 - server busy` response. However, during simulation test, the test will continue until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell will be created on-demand when the request is made and the time it takes to execute the code will be longer since time will be spent creating the shell itself. 
+
+The size of this pool can be adjusted in the external configuration file, `appsettings.json`, found on each compute node.
+
+```
+"Pool": {
+    "InitialSize": 5,
+    "MaxSize": 80
+  },
+```
+
+Since each compute node has its own thread pool for R shells, configuring multiple compute nodes means that more pooled R shells will be available to your users. 
+
+
+**To update the thread pool:**
+
+   1. On each compute nodes, open the `appsettings.json` external JSON configuration file.
+
+      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\` where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.
+
+      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/`.
+   
+   1. Search for the section starting with `"Pool": {`
+
+   1. Set the `InitialSize`. This is the number of R shells that will be pre-created for your users each time the compute node is restarted.
+
+   1. Set the `MaxSize`. This is the maximum number of R shells that can be pre-created and held in memory for processing R code execution requests. 
+
+   1. Save the file.
+
+   1. [Restart](admin-utility.md#startstop) the compute node services. 
+
+   1. Repeat these changes on every compute node.
+
+
+>Each compute node should have the same `appsettings.json` properties.
+

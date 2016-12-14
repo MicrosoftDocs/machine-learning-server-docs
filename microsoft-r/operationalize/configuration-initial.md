@@ -44,7 +44,6 @@ The simplest configuration is a single web node and compute node on a single mac
 >- Windows Server 2012, Windows Server 2016
 >- Ubuntu 14.04, Ubuntu 16.04,
 >- CentOS/RHEL 7.x
- 
 
 
 <a name="onebox"></a>

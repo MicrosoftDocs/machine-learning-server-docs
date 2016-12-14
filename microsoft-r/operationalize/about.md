@@ -27,6 +27,8 @@ ms.custom: ""
 
 # Operationalization with R Server
 
+**Applies to:  Microsoft R Server 9.0.1**
+
 This release of Microsoft R Server now includes an even better operationalization engine for all your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 >Looking for older "DeployR 8.x" documentation? [Start here](../deployr-about.md).
@@ -37,7 +39,7 @@ This release of Microsoft R Server now includes an even better operationalizatio
 
 Once you [configure the operationalization feature](configuration-initial.md) for R Server, you can benefit from: 
 
-+ Instant deployment and [easy consumption of your R analytics](api-client-libraries.md)
++ Instant deployment and [easy consumption of your R analytics](app-developer-get-started.md)
 
 + "Write once / deploy anywhere" - no more duplication of efforts
 

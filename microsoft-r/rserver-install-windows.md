@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "12/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,7 +34,7 @@ To learn more about the latest release, see [What's New in R Server](rserver-wha
 
 ## How to install R Server 9.0.1 on Windows
 
-In this release, you can use a simplified setup program for R Server for Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation for R Server on Windows.
+In this release, you can use a simplified setup program for R Server for Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation on R Server for Windows.
 
 The setup program you use determines feature availability and the service and support policy.
 
@@ -102,6 +102,10 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. If you want to load a package that's not automatically available, such as `mrsdpeloy`, type `load.package("mrsdeploy")`.
 4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`.
 
+### Configure R Server for operationalization
+
+To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code.
+
 ##Side-by-side installation
 
 You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
@@ -122,3 +126,5 @@ Earlier versions are supported, but are no longer available on Microsoft downloa
 [What's new in R Server](notes/r-server-notes.md)
 
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
+
+[Configure R Server for Operationalization](operationalize/configuration-initial.md)
