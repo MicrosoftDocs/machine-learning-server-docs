@@ -95,7 +95,7 @@ This production-safe approach provides an excellent way to:
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
-   1. At the R prompt, run the R command `install.packages()`. 
+   1. At the R prompt, run the R command `install.packages()`.
 
    1. At the prompt, specify a repository and specify the directory containing the files you just copied; that is, the local miniCRAN repository.
       ```
