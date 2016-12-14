@@ -6,7 +6,7 @@ description: "Learn the ScaleR functions found in Microsoft R Client and Microso
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/17/2016"
+ms.date: "12/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -199,7 +199,7 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
 
 A primary benefit of ScaleR is its ability to apportion data into multiple parts for processing, reassembling it later for analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which ScaleR processes and analyzes very large data sets.
 
-In Microsoft R products, chunking functionality is available only when ScaleR is accessed via R Server on Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when ScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. For more information, see [Microsoft R Server](rserver.md).
+In Microsoft R products, chunking functionality is available only when ScaleR is accessed via R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when ScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. For more information, see [Microsoft R Server](rserver.md).
 
 ## Next steps
 

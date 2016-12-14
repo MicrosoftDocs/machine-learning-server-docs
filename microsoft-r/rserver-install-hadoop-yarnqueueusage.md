@@ -5,7 +5,7 @@ description: "Enforce YARN queue usage for a  Microsoft R Server installation on
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/04/2016"
+ms.date: "12/14/2016"
 ms.topic: ""
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -46,16 +46,17 @@ Use of a specific queue can be enforced by the Hadoop system administrator by pr
 
 This procedure involves creating a custom R package which contains the function overrides, installing that package on the nodes in use by end-users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
 
-1. Create a new R package, e.g. “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the package.skeleton() function in base R.  To learn more about creating R packages see Writing R Extensions on the CRAN website.
+1. Create a new R package, e.g. “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the package.skeleton() function in base R.  To learn more about creating R packages see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website.
 
   ~~~~
   > library(devtools)
   > create('/dev/abcMods',rstudio=FALSE)
    ~~~~
 
-2. This will create each of the essential files required for the package in the directory you’ve specified for the package, in this case ‘/dev/abcMods’.  Edit each of the following to fill in the relevant info.
+2. This will create the essential package files in the requested directory, in this case ‘/dev/abcMods’. Edit each of the following to fill in the relevant info.
 
-  a. DESCRIPTION – text file containing the description of the R package:
+  DESCRIPTION – text file containing the description of the R package:
+  
   ~~~~
   Package: abcMods
   Date: 2016-09-01
@@ -65,15 +66,16 @@ This procedure involves creating a custom R package which contains the function 
   License: file LICENSE
   ~~~~
 
-  b. NAMESPACE – text file containing the list of overridden functions to be exported:
+  NAMESPACE – text file containing the list of overridden functions to be exported:
+
   ~~~~
   export("RxHadoopMR", "RxSpark", “RxSparkConnect”)
   ~~~~
 
-3. LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
+  LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
 
   ~~~~
-This package is for internal Company ABC use only -- not for redistribution.
+  This package is for internal Company ABC use only -- not for redistribution.
   ~~~~
 
 4. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory.

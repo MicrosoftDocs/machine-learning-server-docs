@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "12/14/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,7 +34,7 @@ To learn more about the latest release, see [What's New in R Server](rserver-wha
 
 ## How to install R Server 9.0.1 on Windows
 
-In this release, you can use a simplified setup program for R Server for Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation for R Server on Windows.
+In this release, you can use a simplified setup program for R Server for Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation on R Server for Windows.
 
 The setup program you use determines feature availability and the service and support policy.
 
