@@ -46,7 +46,7 @@ Use of a specific queue can be enforced by the Hadoop system administrator by pr
 
 This procedure involves creating a custom R package which contains the function overrides, installing that package on the nodes in use by end-users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
 
-1. Create a new R package, such as “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the `package.skeleton()` function in base R.  To learn more about creating R packages, see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website.
+1. Create a new R package, such as “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the `package.skeleton()` function in base R.  To learn more about creating R packages, see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website, or this [online version of R Packages](http://r-pkgs.had.co.nz/) from Hadley Wickham..
 
   ~~~~
   > library(devtools)
