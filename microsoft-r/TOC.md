@@ -76,6 +76,8 @@
 
 ## [Operationalization](operationalize/about.md)
 ### [9.0 & 8.0.5 Feature comparison](operationalize/about-compare-to-8.0.5.md)
+### [Get started for administrators](operationalize/admin-get-started.md)
+### [Get started for application developers](operationalize/app-developer-get-started.md)
 ### [Configure operationalization](operationalize/configuration-initial.md)
 ### [Configure remote database](operationalize/configure-remote-database.md)
 ### [Enterprise security options](operationalize/security.md)
@@ -86,7 +88,6 @@
 ### [Administration](operationalize/admin-utility.md)
 ### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
 ### [R package management](operationalize/package-management.md)
-### [Get Started for Application Developers](operationalize/api-client-libraries.md)
 ### [API overview](operationalize/api.md)
 ### [API access token management](operationalize/security-access-tokens.md)
 
