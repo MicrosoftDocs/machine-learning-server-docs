@@ -60,7 +60,7 @@ Making sure that these R package dependencies are available to the code executin
 
 The the operationalization feature supports a wide range of runtime policies that affect many aspects of the server runtime environment. As an administrator, you can select the preferred policies that best reflect the needs of your user community.
 
-<!--### General-->
+### General
 
 The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node, including:
 
@@ -68,29 +68,23 @@ The external configuration file, `appsettings.json` defines a number of policies
 
 + On the compute node, this configuration file governs SSL, service logging, R shell pool size, R execution ports, and more.
 
-|Operating System|Web Node|Compute Node|
-|---|--|--|
-|Windows|`<Microsoft_R_Server_home>\deployr\Microsoft.DeployR.Server.WebAPI\`|`<Microsoft_R_Server_home>\deployr\Microsoft.DeployR.Server.BackEnd\`|
-|Linux|`/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`|`/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/`|
 
-On Windows, find this file here where `<MRS_home>` is the path to the Microsoft R Server installation directory:
+**Table: Path to `appsettings.json` by node and operating system**
 
-   + Web node, find it under: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` 
-   
-   + Compute node, find it under: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\`  
+|Operating System|Path on Web Node|Path on Compute Node|
+|----------------|--------|------------|
+|Windows|<R_Server_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ |<R_Server_Home>\deployr\Microsoft.DeployR.Server.BackEnd\|
+|Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/|  
 
-On Linux, find this file here where `<Op_Dir>` is the operationalization path, by default `/usr/lib64/microsoft-deployr/9.0.1/`:
+### Availability
 
-   + Web node, find it under: `<Op_Dir>/Microsoft.DeployR.Server.WebAPI/` 
-   
-   + Compute node, find it under: `<Op_Dir>/Microsoft.DeployR.Server.BackEnd/` 
-  
+The operationalization feature consists of a number of web and compute nodes that combine to deliver the full capabilities of this R operationalization server. Each component can be configured for Active-Active High Availability (HA) in order to deliver a robust, reliable runtime environment.
 
-<!--### Availability-->
+You can configure R Server to use multiple Web Nodes for Active-Active backup / recovery using a load balancer.
 
-<!--The DeployR product consists of a number of software components that combine to deliver the full capabilities of the R Integration Server: the server, the grid and the database. Each component can be configured for High Availability (HA) in order to deliver a robust, reliable runtime environment.
+For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database.md)
 
-For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
+<!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
 
 ### Scalability & Throughput
 
@@ -124,8 +118,8 @@ This section provides a quick summary of useful links for administrators working
 -   [Configuration](configuration-initial.md)
 -   [Security](security.md)
 -   [R Package Management](package-management.md)
-<!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 -   [Diagnostic Testing & Troubleshooting](admin-utility.md#test)
+<!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 
 **Other Getting Started Guides**
 -   [Application Developers](app-developer-get-started.md)
