@@ -82,7 +82,10 @@ The operationalization feature consists of a number of web and compute nodes tha
 
 You can configure R Server to use multiple Web Nodes for Active-Active backup / recovery using a load balancer.
 
-For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database.md)
+For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database.md).
+
+![High Availability](../media/o16n/admin-HA.png)
+
 
 <!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
 
