@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-This guide is for system administrators of R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
+This guide is for system administrators of the operationalization feature in R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
 
 As an administrator, your key responsibilities are to ensure configuration for the operationalization feature is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
 
@@ -86,8 +86,10 @@ The external configuration file, `appsettings.json` defines a number of policies
 
 |Operating System|Path on Web Node|Path on Compute Node|
 |----------------|--------|------------|
-|Windows|<R_Server_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ |<R_Server_Home>\deployr\Microsoft.DeployR.Server.BackEnd\|
+|Windows|&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ |&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\|
 |Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/|  
+
+*<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
 
 ### Availability
 
@@ -135,6 +137,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Security](security.md)
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-utility.md#test)
+-   [Evaluate Capacity](admin-evaluate-capacity.md)
 <!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 
 **Other Getting Started Guides**
