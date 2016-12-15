@@ -4,10 +4,10 @@
 title: "Using foreach and iterators"
 description: "High level guide to using foreach and iterators packages."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
+author: "HeidiSteen"
+manager: "jhubbard"
 ms.date: "04/20/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -59,7 +59,7 @@ We can parallelize the operation immediately by replacing `%do%` with
 However, if we run this example, we see the following warning:
 
     Warning message:
-    executing %dopar% sequentially: no parallel backend registered 
+    executing %dopar% sequentially: no parallel backend registered
 
 To actually run in parallel, we need to have a “parallel backend” for
 `foreach`. Parallel backends are discussed in the next section.
@@ -106,7 +106,7 @@ with a number of cores, as with doMC. For example, here we create a
 cluster and register it:
 
     > library(doParallel)
-    > cl <- makeCluster(4) 
+    > cl <- makeCluster(4)
     > registerDoParallel(cl)
 
 Once you’ve registered the parallel backend, you’re ready to run
@@ -377,13 +377,13 @@ In most cases, you don’t actually need to write the `iter` and
 own iterators:
 
     > iterators:::iter.iter
-    function (obj, ...) 
+    function (obj, ...)
     {
             obj
     }
     <environment: namespace:iterators>
     > iterators:::nextElem.abstractiter
-    function (obj, ...) 
+    function (obj, ...)
     {
             obj$nextElem()
     }

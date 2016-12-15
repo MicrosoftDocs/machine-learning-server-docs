@@ -7,10 +7,10 @@ keywords: ""
 author: "jeffstokes72"
 manager: "jhubbard"
 ms.date: "12/09/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
-ms.assetid: "" 
+ms.assetid: ""
 
 # optional metadata
 ROBOTS: ""
@@ -105,7 +105,7 @@ To get started, do the following:
   6. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
 
 		microsoft-r-open-3.3.2.tar.gz
-		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm 
+		MRS90Teradata/RPM/microsoft-r-server-packages-9.0.rpm
 		MRS90Teradata/RPM/microsoft-r-server-teradata-9.0.rpm
 
 
@@ -140,7 +140,7 @@ After you have installed the rpms, change directory to the "teradata" directory 
 	/usr/lib64/microsoft-r/3.3/teradata/1510 or
 	/usr/lib64/microsoft-r/3.3/teradata/1500 or
 	/usr/lib64/microsoft-r/3.3/teradata/1410
-	
+
 	chmod u+x ./revoTdSetup.sh
 	./revoTdSetup.sh
 

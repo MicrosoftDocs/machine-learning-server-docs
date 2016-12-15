@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "05/06/2016"
-ms.topic: "article"
+ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -84,8 +84,8 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
     //
     // 3. Retrieve the analytics Web service execution results.
-    // 
-    // An RScriptExecution provides a client application access to 
+    //
+    // An RScriptExecution provides a client application access to
     // results including R console output, generated plots or files
     // and DeployR-encoded R object workspace data.
     //
@@ -103,16 +103,16 @@ The following code snippets provide the ubiquituous "Hello World" example for th
     //
     deployr.configure({ host: 'http://localhost:<PORT>' });
 
-    // 
+    //
     // 2. Execute an analytics Web service based on a repository-managed
     // R script: /george/demo/regression.R.
-    // 
+    //
     deployr.io('/r/repository/script/execute')
       .data({ author: 'george', directory: 'demo', filename: 'regression' })
       .end(function(res) {
          //
          // 3. Retrieve the analytics Web service execution results.
-         // 
+         //
          var exec = res.get('execution');
          var workspace = res.get('workspace');
          var console = exec.console;
@@ -138,8 +138,8 @@ The following code snippets provide the ubiquituous "Hello World" example for th
 
     //
     // 3. Retrieve the analytics Web service execution results.
-    // 
-    // An RScriptExecution provides a client application access to 
+    //
+    // An RScriptExecution provides a client application access to
     // results including R console output, generated plots or files
     // and DeployR-encoded R object workspace data.
     //
@@ -170,8 +170,8 @@ The first step for any client application developer using the client libraries i
 **JavaScript:**
 
     // 1. Establish a connection to DeployR.
-    // 
-    // deployr.configure( { host: '' } ) is provided to simplify the establishment 
+    //
+    // deployr.configure( { host: '' } ) is provided to simplify the establishment
     // of client connections.
     //
     // This example assumes the DeployR server is running on http://localhost:<PORT>.
@@ -179,7 +179,7 @@ The first step for any client application developer using the client libraries i
     //
     // Browser - Same Origin does not need the deployr.configure({ host: '' }) step.
     // Browser - Cross-origin resource sharing (CORS) requests do.
-    // 
+    //
     deployr.configure( { host: 'http://DIFFERENT_DOMAIN:<PORT>', cors: true });
 
     //
@@ -351,8 +351,8 @@ These services support the creation of *authenticated projects*. The following c
     // that project to become a persistent project.
     //
     deployr.io('/r/project/create')  
-      .data({ 
-        projectname: 'Demo Project', 
+      .data({
+        projectname: 'Demo Project',
         projectdesrc: 'Sample persistent project'
       })
       .end(function(res) {
@@ -430,7 +430,7 @@ These services support the execution of analytics Web services on *authenticated
 
     //
     // 4. Retrieve the analytics Web service execution results.
-    // 
+    //
     // Regardless of what style of execution service is used the RProjectExecution
     // response provides access to results including R console output, generated
     // plots or files and DeployR-encoded R object workspace data.
@@ -446,8 +446,8 @@ These services support the execution of analytics Web services on *authenticated
     // R script: /george/demo/regression.R.
     //
     deployr.io('/r/project/execute/script')  
-      .data({ 
-        filename: 'regression', 
+      .data({
+        filename: 'regression',
         directory: 'demo',
         author: 'george',
         project: rProject
@@ -478,9 +478,9 @@ These services support the execution of analytics Web services on *authenticated
 
     //
     // 4. Retrieve the analytics Web service execution results.
-    // 
-    // Regardless of what style of execution service is used /r/project/execution/* 
-    // responses provide access to results including R console output, generated 
+    //
+    // Regardless of what style of execution service is used /r/project/execution/*
+    // responses provide access to results including R console output, generated
     // plots or files and DeployR-encoded R object workspace data.
     //
     var about = res.deplor.response;
@@ -511,7 +511,7 @@ These services support the execution of analytics Web services on *authenticated
 
     //
     // 4. Retrieve the analytics Web service execution results.
-    // 
+    //
     // Regardless of what style of execution service is used the RProjectExecution
     // response provides access to results including R console output, generated
     // plots or files and DeployR-encoded R object workspace data.
@@ -584,9 +584,9 @@ These services support the manipulation and management of R workspace objects wi
       // --------------------------------------------------------------------------
       .io('/r/project/workspace/push')  
       .data({ project: rProject })
-      .rinput({ 
-         type: deployr.RDataType.RNUMERIC_VECTOR, 
-         name: 'samplev', 
+      .rinput({
+         type: deployr.RDataType.RNUMERIC_VECTOR,
+         name: 'samplev',
          value: [10, 11, 12, 13, 14]
       })
       .end()
@@ -601,8 +601,8 @@ These services support the manipulation and management of R workspace objects wi
       // in the repository.
       // --------------------------------------------------------------------------
       .io('/r/project/directory/store')  
-      .data({ 
-        filename: 'samplev', 
+      .data({
+        filename: 'samplev',
         desrc: 'Object data description.',
         project: rProject,
         newversion: true
@@ -679,10 +679,10 @@ These services support the manipulation and management of R working directory fi
     // 2. Load a repository-managed file into the working directory.
     //
     deployr.io('/r/repository/file/fetch')  
-      .data({ filename: 'data.csv', directory: 'demo', author: 'george' }) 
+      .data({ filename: 'data.csv', directory: 'demo', author: 'george' })
       .end()
       .io('/r/project/directory/load')  
-      .data({ project: rProject, filename: 'data.csv' }) 
+      .data({ project: rProject, filename: 'data.csv' })
       .end();
 
 **C#:**
@@ -722,7 +722,7 @@ These services support the manipulation and management of R packages within *aut
     // 1. List R packages attached on the project.
     //
     deployr.io('/r/project/package/list')
-      .data({ project: rProject }) 
+      .data({ project: rProject })
       .end(function(res) {
          var pkgs = res.deployr.response.packages;
       });
@@ -731,7 +731,7 @@ These services support the manipulation and management of R packages within *aut
     // 2. Attach an R package to the project.
     //
     deployr.io('/r/project/package/attach')
-      .data({ project: rProject, name: 'ggplot2' }) 
+      .data({ project: rProject, name: 'ggplot2' })
       .end(function(res) {
          var pkgs = res.deployr.response.packages;
       });
@@ -822,12 +822,12 @@ The following code snippets demonstrate some of the ways the client libraries ma
     // repository, such as binary R object or file data.
     //
     deployr.io('/r/job/submit')
-      .data({ 
+      .data({
          rscriptauthor: 'george'
          rscriptdirectory: 'demo',
          name: 'regression',
          priority: 'high' // `low` (default), `medium` or `high`
-      }) 
+      })
       .end(function(res) {
          var job = res.deployr.response.job;
       });
@@ -837,7 +837,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
     // service based on an arbitrary block of R code: [codeBlock]
     //
     deployr.io('/r/job/submit')
-      .data({ name: 'Sample Job', descr: 'Sample description.', code: codeBlock }) 
+      .data({ name: 'Sample Job', descr: 'Sample description.', code: codeBlock })
       .end(function(res) {
          var job = res.deployr.response.job;
       });
@@ -847,11 +847,11 @@ The following code snippets demonstrate some of the ways the client libraries ma
     // service based on a URL-addressable R script: [regressionURL]
     //
     deployr.io('/r/job/submit')
-      .data({ 
-         name: 'Sample Job', 
-         descr: 'Sample description.', 
-         externalsource: regressionURL 
-      }) 
+      .data({
+         name: 'Sample Job',
+         descr: 'Sample description.',
+         externalsource: regressionURL
+      })
       .end(function(res) {
          var job = res.deployr.response.job;
       });
@@ -1029,15 +1029,15 @@ That tool uses the full range of *repository services* on the DeployR API to del
     // Browser
     //
     // 5. Upload a file to the repository on behalf of the authenticated user.
-    // 
+    //
     // Assuming element on page:
     // `<input id="report-pdf" type="file">`
     //
     var file = document.getElementById('report-pdf').files[0];
 
     deployr.io('/r/repository/file/upload')
-      .data({ 
-         filename: 'report.pdf', 
+      .data({
+         filename: 'report.pdf',
          directory: 'examples',
          descr: 'Quarterly report.'
       })
@@ -1054,8 +1054,8 @@ That tool uses the full range of *repository services* on the DeployR API to del
 
     #!/usr/bin/env node
     deployr.io('/r/repository/file/upload')
-      .data({ 
-         filename: 'report.pdf', 
+      .data({
+         filename: 'report.pdf',
          directory: 'examples',
          descr: 'Quarterly report.'
       })
@@ -1077,7 +1077,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     // per directory belonging to authenticated user.
     //
     dirs = rUser.listDirectories(true, false, false, false, "");
-    foreach(RRepositoryDirectory dir in dirs) 
+    foreach(RRepositoryDirectory dir in dirs)
     {
         List<RRepositoryFile> rfiles = dir.about().files;
     }
@@ -1087,7 +1087,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     // to the authenticated user.
     //
     List<RRepositoryFile> files = rUser.listFiles();
-    foreach(RRepositoryFile file in files) 
+    foreach(RRepositoryFile file in files)
     {
         String fileURL = file.download();
     }
@@ -1174,9 +1174,9 @@ The following code snippets demonstrate how the client libraries make these serv
     // R script: /george/demo/regression.R using a HTTP Blackbox Project.
     //
     deployr.io('/r/repository/script/execute')
-      .data({ 
-         author: 'george', 
-         directory: 'demo', 
+      .data({
+         author: 'george',
+         directory: 'demo',
          filename: 'regression',
          blackbox: true
       })
@@ -1290,7 +1290,7 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     //
     // Parameter: preloadfile[name | directory | author | (optional) version]
     // Allows the caller to load one or more files from the repository into the
-    // working directory before the execution begins. 
+    // working directory before the execution begins.
     //
     // Specify comma-separated values on the filename, directory and author fields
     // on your ProjectPreloadOptions instance if you want to load two or more files.
@@ -1345,7 +1345,7 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     //
     // Parameter: rinputs
     // Allows the caller to pass DeployR-encoded R object values as inputs.
-    // These inputs are turned into R objects in the workspace before the execution 
+    // These inputs are turned into R objects in the workspace before the execution
     // begins.
     //
     var RIn = deployr.RInput;
@@ -1357,17 +1357,17 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     //
     // Parameter: csvinputs
     // Allows the caller to pass R object primitive values as comma-separated
-    // name/value pairs. These inputs are turned into R object string literals in 
+    // name/value pairs. These inputs are turned into R object string literals in
     // the workspace before the execution begins.
     //
     options.csvinputs = 'num,10.0,expired,false';
 
     //
-    // Preload Object Parameters: 
-    //   - preloadobjectname 
+    // Preload Object Parameters:
+    //   - preloadobjectname
     //   - preloadobjectdirectory
     //   - preloadobjectauthor
-    //   - preloadobjectversion (optional) 
+    //   - preloadobjectversion (optional)
     //
     // Allows the caller to load one or more binary R objects (.rData) from the
     // repository into the workspace before the execution begins.
@@ -1381,13 +1381,13 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     options.preloadobjectauthor = 'testuser';
 
     //
-    // Preload File Parameters: 
+    // Preload File Parameters:
     //   - preloadfilename
     //   - preloadfiledirectory
     //   - preloadfileauthor
     //   - preloadfileversion (optional)
     // Allows the caller to load one or more files from the repository into the
-    // working directory before the execution begins. 
+    // working directory before the execution begins.
     //
     // Specify comma-separated values on the filename, directory and author fields
     // on your `Project Preload Options` if you want to load two or more files.
@@ -1402,13 +1402,13 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     // directories into the working directory before the execution begins.
     //
     // Specify comma-separated value on the preloadByDirectory field on your
-    // `Project Execution Options` if you want to load the files found within two 
+    // `Project Execution Options` if you want to load the files found within two
     // or more directories.
     //
     options.preloadbydirectory = 'production-models';
 
     //
-    // Adopt Parameters: 
+    // Adopt Parameters:
     //   - adoptdirectory
     //   - adoptworkspace
     //   - adpotpackages
@@ -1470,7 +1470,7 @@ The *pre-execution* parameters allow the caller to *pre-heat* the R session with
     //
     // Parameter: preloadfile[name | directory | author | (optional) version]
     // Allows the caller to load one or more files from the repository into the
-    // working directory before the execution begins. 
+    // working directory before the execution begins.
     //
     // Specify comma-separated values on the filename, directory and author fields
     // on your ProjectPreloadOptions instance if you want to load two or more files.
@@ -1775,11 +1775,11 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
     var options = {};
 
     //
-    // Store Object Parameters: 
+    // Store Object Parameters:
     //   - robjects
     //   - storedirectory
     //   - storepublished
-    //   - storenewversion 
+    //   - storenewversion
     //
     // Allows the caller to specify a comma-separated list of workspace
     // objects to be stored in the repository after the execution completes.
@@ -1806,7 +1806,7 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
     options.storenewversion = false;
 
     //
-    // Store Workspace Parameters: 
+    // Store Workspace Parameters:
     //   - storeworkspace
     //   - storedirectory
     //   - storepublished
@@ -1837,7 +1837,7 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
     options.storenewversion = true;
 
     //
-    // Store File Parameters: 
+    // Store File Parameters:
     //   - storefile
     //   - storedirectory
     //   - storepublished
@@ -2486,10 +2486,10 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
 
     //
     // ProjectExecutionOptions: use the `robjects` or `robject` parameter to request
-    // one or more R objects to be returned as DeployR-encoded objects on the 
+    // one or more R objects to be returned as DeployR-encoded objects on the
     // response markup.
     //
-    // In this example, following the execution the "mtcars" and the "score" 
+    // In this example, following the execution the "mtcars" and the "score"
     // workspace objects will be returned on the call.
     //
     deployr.io(api)
@@ -2539,7 +2539,7 @@ The following code snippet demonstrates the mechanism for requesting DeployR-enc
 **JavaScript:**
 
     //
-    // 
+    //
     // var obj = response.workspace(objectName);
     //
     // -- or --
@@ -2584,7 +2584,7 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
     //
     // Java Client Library R Object Decoding
-    // 
+    //
     // The Java client library always returns DeployR-encoded objects
     // as an instance of com.revo.deployr.client.data.RData.
     //
@@ -2640,15 +2640,15 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
     //
     // JavaScript Client Library R Object Decoding
-    // 
-    // The Java client library always returns DeployR-encoded objects as object 
+    //
+    // The Java client library always returns DeployR-encoded objects as object
     // literals.
     //
     // There are two approaches available to JavaScript client developers.
     //
 
     //
-    // (1) Explicit "Casting" of `R Data` 
+    // (1) Explicit "Casting" of `R Data`
     //
     // This approach can be used if you know the underlying type of the RData on the
     // response ahead of time.
@@ -2657,9 +2657,9 @@ The method for decoding these DeployR-encoded objects within a client applicatio
     var value = mtcars.value;
 
     //
-    // (2) Runtime Detection of `R Data` 
+    // (2) Runtime Detection of `R Data`
     //
-    // This approach can be used if you are working with multiple objects or if the 
+    // This approach can be used if you are working with multiple objects or if the
     // RData is simply unknown ahead of time on the response.
     //
     var objects = response.workspace();
@@ -2677,7 +2677,7 @@ The method for decoding these DeployR-encoded objects within a client applicatio
 
     //
     // .NET Client Library R Object Decoding
-    // 
+    //
     // The .NET client library always returns DeployR-encoded objects
     // as an instance of RData.
     //
@@ -2711,20 +2711,18 @@ The method for decoding these DeployR-encoded objects within a client applicatio
     List<String> objectNames = new List<String>{"mtcars", "score"};
     List<RData> rDataList = rProject.getObjects(objectNames, true);
 
-    foreach(RData rDataVal in rDataList) 
+    foreach(RData rDataVal in rDataList)
     {
 
-        if(rDataVal.GetType() == typeof(RDataFrame)) 
+        if(rDataVal.GetType() == typeof(RDataFrame))
         {
             List<RData> vals = (List<RData>)rDataVal.Value;
             //write your own function to parse a dataframe
             processDataFrame(rDataVal.Name, vals);
-        } 
-        else if(rDataVal.GetType() == typeof(RNumeric)) 
+        }
+        else if(rDataVal.GetType() == typeof(RNumeric))
         {
             Double value = (Double)rDataVal.Value;
         }
         // else..if..etc...
     }
-
-
