@@ -80,14 +80,14 @@
 ### Administration
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
-#### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
+#### [Capacity evaluation](operationalize/admin-evaluate-capacity.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
-#### [R execution security considerations](operationalize/security-rserve.md)
-#### [Configure remote database](operationalize/configure-remote-database.md)
+#### [R execution security](operationalize/security-rserve.md)
+#### [Remote database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
-### Integration
+### Integration for App Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
@@ -155,7 +155,7 @@
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Install R Client](r-client-install.md)
-## [R Client/R Server Version Compatibility](r-client-compatibility.md)
+## [Compatibility with R Server](r-client-compatibility.md)
 
 # [Microsoft R Open](r-open.md)
 
