@@ -7,7 +7,7 @@ keywords: "RevoScaleR, ScaleR, RxHadoopMR"
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "09/14/2016"
-ms.topic: "article"
+ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -92,7 +92,7 @@ The following table shows the arguments to **RxHadoopMR** in order and their def
 |outDataPath |NOT YET IMPLEMENTED. NULL or character vector defining the search path(s) for new output data file(s). If not NULL, this overrides any specification for `outDataPath` in **rxOptions**. |
 |fileSystem |NULL or an **RxHdfsFileSystem** to use as the default file system for data sources when created when this compute context is active.|
 |packagesToLoad |Optional character vector specifying additional packages to be loaded on the nodes when jobs are run in this compute context. |
-|resultsTimeout |A numeric value indicating for how long attempts should be made to retrieve results from the cluster. Under normal conditions, results are available immediately. However, under certain high load conditions, the processes on the nodes have reported as completed, but the results have not been fully committed to disk by the operating system. Increase this parameter if results retrieval is failing on high load clusters.| 
+|resultsTimeout |A numeric value indicating for how long attempts should be made to retrieve results from the cluster. Under normal conditions, results are available immediately. However, under certain high load conditions, the processes on the nodes have reported as completed, but the results have not been fully committed to disk by the operating system. Increase this parameter if results retrieval is failing on high load clusters.|
 
 ## Remarks
 This compute context is supported for Hadoop distributions noted in [Supported Platforms](../rserver-install-supported-platforms.md).

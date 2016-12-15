@@ -5,9 +5,9 @@ title: "Microsoft R Server - Known Issues"
 description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"
-manager: "paulettem"
+manager: "jhubbard"
 ms.date: "09/01/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - deployr
   - r-server
 ms.custom: ""
@@ -32,7 +32,7 @@ ms.custom: ""
 ## Known Issues with Microsoft R Server 9.0.1
 
 ### Package: RevoScaleR
- 
+
 #### Distributed Computing
  + On SLES 11 systems, there have been reports of threading interference between the Boost and
 MKL libraries.
@@ -49,7 +49,7 @@ supported.
 compute context.
  + When specifying a non-default `RNGkind` as an argument to `rxExec`, identical random number streams can be generated unless the `RNGseed` is also specified.
  + When using small test data sets on a Teradata appliance, some test failures may occur due to insufficient data on each AMP.
- 
+
 
 #### Data Import and Manipulation
  + Appending to an existing table is not supported when writing to a Teradata database.
@@ -77,17 +77,17 @@ automatically binned.
 
  + If the `RevoIOQ` function is run concurrently in separate processes, some tests may fail.
 
-### Package: RevoMods 
+### Package: RevoMods
  + The `RevoMods` timestamp() function, which masks the standard version from the utils package, is unable to find the `C_addhistory` object when running in  an Rgui, Rscript, etc. session. If you are calling `timestamp()`, call the `utils` version directly as `utils::timestamp()`.
 
 ### R Base and Recommended Packages
-+ In the `nls` function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The `nls` help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms. 
++ In the `nls` function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The `nls` help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
 
 
 ## Known Issues with Microsoft R Server 8.0.5
 
 ### RevoScaleR
- 
+
 #### Distributed Computing
  + On SLES 11 systems, there have been reports of threading interference between the Boost and
 MKL libraries.
@@ -139,4 +139,4 @@ automatically binned.
  + The `RevoMods` timestamp() function, which masks the standard version from the utils package, is unable to find the `C_addhistory` object when running in  an Rgui, Rscript, etc. session. If you are calling `timestamp()`, call the `utils` version directly as `utils::timestamp()`.
 
 ### R Base and Recommended Packages
-+ In the nls function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The nls help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms. 
++ In the nls function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The nls help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.

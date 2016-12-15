@@ -7,7 +7,7 @@ keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
 ms.date: "12/09/2016"
-ms.topic: "article"
+ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -28,11 +28,11 @@ ms.custom: ""
 
 The **MicrosoftML** package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as featurization, classification, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
-## Data transforms 
+## Data transforms
 
 The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. One advantage of the transform pipelines is that once you've defined a transform pipeline, you can save the pipeline and apply it to additional data.
 
-- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands. 
+- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
 - **Categorical Hash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
 - **Categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
 - **Select Features**: selects features from the specified variables using one of the two modes: count or mutual information.
@@ -51,7 +51,7 @@ The **MicrosoftML** package implements algorithms that perform a variety of mach
 
 
 ### Fast Linear model (SDCA)
-The **`rxFastLinear()`** algorithm is based on the Stochastic Dual Coordinate Ascent (SDCA) method, a state-of-the-art optimization technique for convex objective functions. The algorithm can be scaled for use on large out-of-memory data sets due to a semi-asynchronized implementation that supports multithreaded processing. Several choices of loss functions are also provided and elastic net regularization is supported. The SDCA method combines several of the best properties and capabilities of logistic regression and SVM algorithms. 
+The **`rxFastLinear()`** algorithm is based on the Stochastic Dual Coordinate Ascent (SDCA) method, a state-of-the-art optimization technique for convex objective functions. The algorithm can be scaled for use on large out-of-memory data sets due to a semi-asynchronized implementation that supports multithreaded processing. Several choices of loss functions are also provided and elastic net regularization is supported. The SDCA method combines several of the best properties and capabilities of logistic regression and SVM algorithms.
 
 **Tasks supported**: binary classification, linear regression
 

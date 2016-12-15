@@ -4,8 +4,8 @@
 title: "R Productivity Environment User's Guide"
 description: "Microsoft R Services IDE tutorials."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
+author: "HeidiSteen"
+manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -24,12 +24,12 @@ ms.custom: ""
 
 ---
 
-# R Productivity Environment User’s Guide 
+# R Productivity Environment User’s Guide
 
 >[!IMPORTANT]
 > The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 
-## A Tutorial Introduction 
+## A Tutorial Introduction
 
 Revolution R Enterprise for Windows combines the popular R data analysis environment with the power of Microsoft’s Visual Studio Shell to create a full-featured R Productivity Environment™ for data analysis and graphics. This chapter introduces you to the Revolution R Enterprise productivity environment by means of a brief tutorial that walks you through the following basic operations:
 
@@ -43,7 +43,7 @@ Revolution R Enterprise for Windows combines the popular R data analysis environ
 - Examining R objects with the Object Browser
 - Getting help
 
-### Starting and Stopping Revolution R Enterprise 
+### Starting and Stopping Revolution R Enterprise
 
 On Windows 7 and earlier, you start Revolution R Enterprise as follows:
 
@@ -73,7 +73,7 @@ To stop the Revolution R Enterprise productivity environment, do either of the f
 
 You may use the q() function from the R Console prompt to exit the RPE, but any arguments you pass will be ignored; the function simply calls the standard RPE exit command, as if you’d clicked the Close button or selected Exit from the File menu.
 
-### A Quick Tour of the Revolution R Enterprise User Interface 
+### A Quick Tour of the Revolution R Enterprise User Interface
 
 When you first open Revolution R Enterprise, you see a window with menus and toolbars and four open tool windows: the Solution Explorer, the R Console, the Output window, and the Object Browser, as shown on the previous page. The standard toolbar appears as follows:
 
@@ -87,14 +87,14 @@ From left to right, the buttons are as follows:
 - Save
 - Save All
 - Cut
-- Copy 
+- Copy
 - Paste
 - Undo
 - Redo
 - Navigate Backward: move between bookmarks. Bookmarks are described later in this chapter.
 - Navigate Forward: move between bookmarks.
 - Solution Configurations: switch between Release and Debug configurations. Release is the standard configuration. Debug configuration allows you to use the visual debugger to debug your R scripts.
-- Run Script/Continue: run the active script, or continue debugging. 
+- Run Script/Continue: run the active script, or continue debugging.
 - Run Line or Selection: run currently selected text or line containing the cursor if no text is selected.
 - Find in Files: find specified text in one or more project files.
 - Find: find specified text in the current script.
@@ -132,14 +132,14 @@ The Debug toolbar appears as shown below when the visual debugger is running:
 Left to right, its buttons are as follows:
 
 - Start/Continue: continue after stopping for a pause or breakpoint.
-- Break All: pause evaluation. 
+- Break All: pause evaluation.
 - Stop:  stop evaluation.
 - Step Into: step into functions while debugging.
 - Step Over: step over a line of code while debugging.
 - Step Out: step out of a function while debugging.
 - Breakpoints: display the Breakpoints window.
 
-### Working with the R Console Window 
+### Working with the R Console Window
 
 R is at heart an interactive, interpreted programming language, so the simplest way to work with it is by typing commands at an R Console prompt. The R Console window facilitates this interaction—it works much like the R console window in the Windows Rgui program, or like R in a UNIX terminal window.
 
@@ -178,7 +178,7 @@ A scatter plot is created in separate graphics window.
 
 For further examples of using the R Console, try working through the tutorial in the RPE Getting Started Guide, or by working through the sample session in the R manual *An Introduction to R* (R-intro.pdf).
 
-### Creating an R Project 
+### Creating an R Project
 
 Like other versions of Visual Studio, the Revolution R Enterprise R Productivity Environment is project-based. When you start Revolution R Enterprise, a default project is created for you. The standard project type in Revolution R Enterprise is the R project. Projects are contained within solutions, and a default solution is created at startup also. Solutions can contain multiple projects, and projects can contain one or more R scripts, as well as other related files.
 
@@ -192,21 +192,21 @@ You are prompted to clear your R workspace and history; click **OK**. In general
 
 The **MyRProject** solution, which contains the **MyRProject** project, appears in the Solution Explorer.  By default, the project contains one R script. However, you can add projects to the solution, and add scripts to each project.
 
-### Working in the Script Editor 
+### Working in the Script Editor
 
 Right-click on **Script.R** in the Solution Explorer, and rename it **MyRProject.R**. Then double-click the script name to open the script in a Script window. If you are familiar with Visual Studio or with the Rgui script editor, you will find working with the Script window very similar.
 
 At the top of your script, add the following lines by selecting all the text in the R Console window from the first definition of x and then selecting **Copy Commands Only** from the **Edit** menu, then right-clicking in the Script window and clicking **Paste**:
 
     x <- 1:20
-    x 
+    x
     y <- 2 + .2*x + rnorm(20)
     y
     plot(x, y)
 
 When a line in a script is edited, a yellow highlight appears in the left margin of the Script window. When the change is saved (for example, by running the script) the highlight changes to green.
 
-### Running a Script 
+### Running a Script
 
 Now, run your script by clicking the Run button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) on the Revolution R Enterprise standard toolbar. The commands and the output are printed in the R Console window, as shown:
 
@@ -229,7 +229,7 @@ It is sometimes convenient to run only a portion of a script. To do this, select
      [8] 2.4992445 3.1564125 3.6010072 4.3156243 5.2222722 5.3168272 5.5181892
     [15] 4.7657572 3.2346259 4.8671942 5.5564427 4.7841998 6.7392932
 
-### Adding Code Snippets to Your Script 
+### Adding Code Snippets to Your Script
 
 Code Snippets help you quickly expand your R repertoire by including syntactically complete R expressions for which you need only “fill in the blanks.” Revolution R Enterprise comes with dozens of built-in Code Snippets, and you can easily add others for you and your colleagues.
 
@@ -269,33 +269,33 @@ To fit the linear model:
 
 6.	Click the Run button ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) to run the script.
 
-### Completing Code with IntelliSense 
+### Completing Code with IntelliSense
 
 IntelliSense is Microsoft’s implementation of auto-completion, common to all Visual Studio-based programs. If you can’t remember the exact name of an R object such as a function or data set, or you have created long object names in order to make your code more readable, IntelliSense can speed up your programming.
 
 For example, having created your linear model lmObj, you may want to view the model residuals. Not quite sure what the R command for this is, you do the following:
 
-1.	Type resi into your Script window, and click the **Display Word Completion** toolbar button. You see objects named resid and residuals, and clicking on each of them in turn, you see that both are functions that take an object as an argument. 
+1.	Type resi into your Script window, and click the **Display Word Completion** toolbar button. You see objects named resid and residuals, and clicking on each of them in turn, you see that both are functions that take an object as an argument.
 
 2.	Not sure which you might want (in fact, they are synonyms), you double-click residuals and the full name appears in your script.
- 
+
 3.	Type an opening parenthesis and begin typing lmO, then click **Display Word Completion** again.
- 
-4.	Double-click lmObj and then type a closing parenthesis. 
+
+4.	Double-click lmObj and then type a closing parenthesis.
 
 5.	Select the line containing residuals(lmObj) and click Run Line or Selection ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) to see the residuals of your fitted model.
 
-### Examining R Objects with the Object Browser 
+### Examining R Objects with the Object Browser
 
 All R objects that you create by assignment during an R session (whether by running a script or typing commands at the console prompt) are stored during the session in R’s *global environment*. Other R objects are stored in R *package databases*. To see information about objects in the global environment and your installed packages, use the Object Browser.
 
-The Object Browser consists of three panes. The left pane shows an icon representing the global environment and two expandable lists, one showing installed packages, and one showing loaded packages.. When you select an entry from the search path, the top right pane shows the objects or variables found in that entry. 
+The Object Browser consists of three panes. The left pane shows an icon representing the global environment and two expandable lists, one showing installed packages, and one showing loaded packages.. When you select an entry from the search path, the top right pane shows the objects or variables found in that entry.
 
 Click on an object in the top right pane to view information about the object in the lower right pane. For most built-in data objects and functions, the lower right pane shows help information. For user-defined objects, the class and a brief description of the data are shown.
 
-### Getting Help 
+### Getting Help
 
-Revolution R Enterprise includes comprehensive help on both the Revolution R Enterprise graphical user interface and the underlying R language. 
+Revolution R Enterprise includes comprehensive help on both the Revolution R Enterprise graphical user interface and the underlying R language.
 
 To obtain help on the Revolution R Enterprise graphical user interface, do one of the following:
 
@@ -333,11 +333,11 @@ To display help in tabbed windows:
 
 4.	In the right pane, clear the check box labeled **Reuse topic window**.
 
-## Managing Data 
+## Managing Data
 
 The Revolution R Enterprise R Productivity Environment contains two main tools for managing R data objects, the Object Browser and the Data menu.  The Object Browser is a powerful tool for exploring your R functions and data objects. From the Object Browser, you can obtain descriptive information about your R objects, such as data summaries or function help. You can also edit your R objects, plot them, and perform some basic data management tasks. The Data menu can be a convenient shortcut to data management tasks if you already know the name of the object you want to act upon. This chapter gives a complete description of using the Object Browser and the Data menu.
 
-### Opening the Object Browser 
+### Opening the Object Browser
 
 By default, the Object Browser is open whenever you start Revolution R Enterprise for Windows. If you close it, however, it is easy to open it again.
 
@@ -373,7 +373,7 @@ You can obtain detailed information about objects in packages by drilling down. 
 
 5.	Click on the column name speed.  In the lower right pane you will see that it is numeric data with 50 rows.  The first few values from that column are then listed.
 
-### Editing Objects in the Object Browser 
+### Editing Objects in the Object Browser
 
 Using the Object Browser’s context menu, it is easy to edit both functions and data objects. Most data objects can be edited using R’s spreadsheet-like data editor, which allows you to change values and variable names, add variables, and perform other data edits. R functions can be edited using Notepad (or another editor, if specified).
 
@@ -395,7 +395,7 @@ To edit a function:
 
 	![Data Editor Dialog](media/RevoRPE_Users_Guide/data_editor_dialog.jpg)
 
-### Plotting Objects in the Object Browser 
+### Plotting Objects in the Object Browser
 
 Using the Object Browser, you can visualize most R data objects via simple graphics. One- and two-dimensional data are displayed as scatter plots, except for time series, which are displayed as connected line graphs, while higher dimensional data are displayed as scatterplot matrices showing pairwise scatter plots of all the variables.
 
@@ -405,7 +405,7 @@ To plot a data object in the Object Browser:
 
 2.	In the context menu that appears, click **Plot Object**.
 
-### Viewing Data Summaries 
+### Viewing Data Summaries
 
 Using the Object Browser, you can view summaries of most data objects as generated by the R function summary. The data shown in the summary depends upon the class of the data object.
 
@@ -415,7 +415,7 @@ To view a data summary from the Object Browser:
 
 2.	In the context menu that appears, click **Summary**.
 
-### Getting Help 
+### Getting Help
 
 Using the Object Browser, you can get help for most objects as follows:
 
@@ -423,7 +423,7 @@ Using the Object Browser, you can get help for most objects as follows:
 
 2.	In the context menu that appears, click **Help**.
 
-### Using the Data Menu 
+### Using the Data Menu
 
 The Data menu provides quick access to a number of commands for managing data, as follows:
 
@@ -436,7 +436,7 @@ The Data menu provides quick access to a number of commands for managing data, a
 - **Edit Object:** launches the R data editor on the specified data object.
 - **List Search Path:**  equivalent to the R search function, this lists all the environments and databases in your current search path.
 
-## Writing and Running R Scripts 
+## Writing and Running R Scripts
 
 For many purposes, it can be convenient to use R purely interactively, either by typing commands in the R Console window or using commands available from the Object Browser and main menu. However, if you want to organize your work in projects, you want your work to be fully reproducible, or if you want to be able to comment your commands so that you’ll have some idea what you were thinking when you typed that strange looking command, you will want to start working with R *scripts*.
 
@@ -471,7 +471,7 @@ To close a solution:
 
 - From the **File** menu, click **Close Solution**.
 
-### A Simple Analysis 
+### A Simple Analysis
 
 Data analysis begins with a data set, and in this case we’ll start by examining some data concerning SAT scores. We’ll explore the controversial topic of how education spending affects SAT scores.
 
@@ -491,7 +491,7 @@ First, however, we’ll create a new solution:
 
 6.	Double-click **SATscores.R** to open it.
 
-Next, we’ll add the SAT data to our project. 
+Next, we’ll add the SAT data to our project.
 
 1.	Open a Windows Explorer window, and navigate to the **IDE\doc\examples\SATanalysis** folder of your Revolution R Enterprise installation directory (typically **C:\Revolution\R-Enterprise-X.Y**, where **X.Y** is the current Revolution version number).
 
@@ -507,7 +507,7 @@ Now we’ll make use of the data in our script:
 
 2.	Double-click **data sets**
 
-3.	Double-click **import data**. A code snippet appears in your script as follows: 
+3.	Double-click **import data**. A code snippet appears in your script as follows:
 
 	![Code Snippet](media/RevoRPE_Users_Guide/code_snippet.jpg)
 
@@ -547,16 +547,16 @@ We will try to explore this using a *conditioning plot*, a feature of R availabl
 		levels(cat)[3] = paste("Third 25%:", levels(cat)[3])
 		levels(cat)[4] = paste("Top 25%:", levels(cat)[4])
 		library(lattice)  # Make sure lattice package is loaded
-		xyplot(y ~ x| cat, 
+		xyplot(y ~ x| cat,
 			type=c("r", "p", "g"),
 			main= title,
 			sub = "",
 			xlab = xlabel,
 			ylab = ylabel,
-			# Symbol type: 15 solid square, 16 solid circle, , 
+			# Symbol type: 15 solid square, 16 solid circle, ,
 			# 17 solid up triangle
 			pch = 16,  
-			# Colors:  1 black, 2 red, 3 green, 4 blue, 5 cyan, 6 magenta, 
+			# Colors:  1 black, 2 red, 3 green, 4 blue, 5 cyan, 6 magenta,
 			#7 yellow, 8 gray
 			col = 4,
 			col.line = 2,
@@ -578,9 +578,9 @@ You can then call your function by adding the following lines to your script:
 	x <- SAT$ExpPerPupil
 	y <- SAT$AveSAT
 	c <- SAT$PctSAT
-	conditionedRegressionPlot(x, y, c, 
-	      title="Conditioning on % Students Taking SATs", 
-	      xlabel = "Educational Expenditures Per Pupil", 
+	conditionedRegressionPlot(x, y, c,
+	      title="Conditioning on % Students Taking SATs",
+	      xlabel = "Educational Expenditures Per Pupil",
 	      ylabel= "Average SAT Scores By State")
 
 Select those seven lines, right-click, and then click Run Line or Selection. The conditioning plot is produced as follows:
@@ -589,7 +589,7 @@ Select those seven lines, right-click, and then click Run Line or Selection. The
 
 From this we see that when the percentage of students taking the SAT is taken into account, the expected relationship between expenditure per pupil and average SAT score seems to hold.
 
-### Running R Scripts 
+### Running R Scripts
 
 We have seen several ways of running R scripts, using a combination of toolbar buttons and context menus. In this section, we describe all the techniques available for running R code from a script, and how they differ.
 
@@ -603,11 +603,11 @@ There are five locations in the user interface with options for running script c
 
 The options available in each location differ somewhat, and sometimes have different behavior, as follows:
 
-#### Running Scripts from the Standard Toolbar 
+#### Running Scripts from the Standard Toolbar
 
 There are two buttons for running scripts on the standard toolbar. The first, ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg),  (Run), runs the current or active script. The second, ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg), runs the currently selected text or, if no text is selected, the line containing the cursor.
 
-#### Running Scripts from the Edit Menu 
+#### Running Scripts from the Edit Menu
 
 The **Edit** menu includes three options for running scripts:
 
@@ -615,12 +615,12 @@ The **Edit** menu includes three options for running scripts:
 - **Run to Cursor** runs the current script from the top of the script to the cursor location.
 - **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
-#### Running Scripts from the Debug Menu 
+#### Running Scripts from the Debug Menu
 
 - **Debug Line or Selection** runs the currently selected text or, if no text is selected, the line containing the cursor. This is equivalent to the ![Run Line or Selection Button](media/RevoRPE_Users_Guide/run_line_selection_button.jpg) toolbar button.
 - **Start Debugging** runs the currently open script.  This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
-#### Running Scripts from the Script Window Context Menu 
+#### Running Scripts from the Script Window Context Menu
 
 The Script window context menu is available by right-clicking in the Script window, and it has three options for running scripts:
 
@@ -628,7 +628,7 @@ The Script window context menu is available by right-clicking in the Script wind
 - **Run to Cursor** runs the current script from the top of the script to the cursor location.
 - **Run Current Script** runs the currently open script. This is equivalent to the ![Run Button](media/RevoRPE_Users_Guide/run_button.jpg) toolbar button.
 
-#### Running Scripts from the Solution Explorer Context Menu 
+#### Running Scripts from the Solution Explorer Context Menu
 
 The Solution Explorer context menu is available by right-clicking any item (project, script, etc.) in the Solution Explorer. Options in the context menu depend upon the item type, and include the following options for running scripts:
 
@@ -636,7 +636,7 @@ The Solution Explorer context menu is available by right-clicking any item (proj
 - **Run Folder and Subfolders** (folders only): runs all scripts in the selected folder and all scripts in any subfolders of the selected folder.
 - **Run Script** (scripts only): runs the selected script.
 
-### Sourcing Scripts and Projects 
+### Sourcing Scripts and Projects
 
 When you *run* a script, the RPE processes it one line at a time, echoing each line to the R Console window (if open) and displaying any output from that line before continuing. If you have a project containing many scripts, running the project can take considerable time. A faster alternative is to source the project, which reads and parses an entire file, then evaluates it as a single top-level expression. This has two effects: first, this suppresses auto-printing of output from individual expressions, so that the only output displayed is that from explicit print and plot statements in the script. Second, if a syntax error is encountered while parsing a file, none of the file will be executed.
 
@@ -660,7 +660,7 @@ To source a script:
 
 2.	Click **Source Current Script**.
 
-## Customizing Revolution R Enterprise 
+## Customizing Revolution R Enterprise
 
 Revolution R Enterprise offers a number of ways to customize the user interface to suit your working style. Among the aspects available for customization are the following:
 
@@ -672,7 +672,7 @@ Revolution R Enterprise offers a number of ways to customize the user interface 
 
 This chapter describes how to perform these customizations.
 
-### Customizing the Window Layout 
+### Customizing the Window Layout
 
 There are two types of windows in the Revolution R Enterprise user interface: document windows and tool windows.
 
@@ -692,7 +692,7 @@ Tool windows, such as the Output and Breakpoints windows, can be repositioned in
 
 - *To resize the relative size of two docked (attached) windows:* Place the cursor on the connecting border. The cursor changes to a double line with two arrows. Drag the cursor to change the relative size of the two windows.
 - *To allow windows to “float”:*  Right-click on the window’s title bar, and then click **Floating**. This can be useful if you are using dual monitors; you may, for example, want to undock your Console window and move it to the other monitor.
-- *To tab one or more tool windows:* Right-click on the window’s title bar, and then click **Tabbed**. 
+- *To tab one or more tool windows:* Right-click on the window’s title bar, and then click **Tabbed**.
 - *To dock a tool window:* Right-click on the window’s title bar, and then click **Dockable**. Place the cursor on the title bar and drag the cursor. Gray arrows appear in the locations where the window can be docked. Drag the cursor to one of these arrows to highlight the location where the window will be docked. Release the mouse button to dock the window.
 
 The RPE’s default window positioning has the tabbed Script windows in the upper left, the R Console window in the lower left, the Solution Explorer at upper right, and the Object Browser at lower right. If you would prefer to have the R Console window occupying the left side of the application, with the Script window to its right, do the following:
@@ -700,17 +700,17 @@ The RPE’s default window positioning has the tabbed Script windows in the uppe
 1.	Click the R Console windows title bar, and begin to drag the cursor. The screen appears as shown below:
 
 	![R Console Window](media/RevoRPE_Users_Guide/r_console_window.jpg)
- 
+
 	Note the cluster of arrows in the center:
 
 	![Cluster of Arrows](media/RevoRPE_Users_Guide/cluster_of_arrows.jpg)
- 
+
 2.	Move the cursor to the left pointing arrow in the cluster and release the mouse button.
 
 3.	The R Console window now occupies the left portion of the application window, as shown:
 
 	![Moved R Console Window](media/RevoRPE_Users_Guide/moved_r_console_window.jpg)
- 
+
 Your window positions are saved automatically when you close Revolution R Enterprise. There are two sets of window positions, corresponding to the two solution configurations, Release and Debug.
 
 To restore the original window positions:
@@ -719,15 +719,15 @@ To restore the original window positions:
 
 - From the **Window** menu, click **Reset Window Layout**.
 
-### Showing Line Numbers 
+### Showing Line Numbers
 
 Line numbers can be a convenient editing tool, especially for long, involved scripts.
 To add line numbers to your scripts:
 
 
-1.	In the **Options** dialog box, expand **Text Editor** and then expand **All Languages**. 
+1.	In the **Options** dialog box, expand **Text Editor** and then expand **All Languages**.
 
-2.	Click **General**. The **Options** dialog appears as follows: 
+2.	Click **General**. The **Options** dialog appears as follows:
 
 	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_2.jpg)
 
@@ -735,7 +735,7 @@ To add line numbers to your scripts:
 
 4.	Click **OK**.
 
-### Tab Settings 
+### Tab Settings
 
 To modify the tab settings for the Script window:
 
@@ -744,7 +744,7 @@ To modify the tab settings for the Script window:
 2.	Click **Tabs**. The **Options** dialog appears as follows:
 
 	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_3.jpg)
- 
+
 3.	Specify the desired indenting for new lines, as follows:
 
 	- None: each new line starts in the leftmost column of the script editor.
@@ -757,7 +757,7 @@ To modify the tab settings for the Script window:
 
 6.	Click **OK** to accept your changes.
 
-### Changing Font Characteristics 
+### Changing Font Characteristics
 
 You can change the font family, style, size, and foreground and background color for the text displayed in most Revolution R Enterprise windows. Most commonly, you would change the font used in the Script window or the Output window. The font settings for the Output window apply also to the R Console window.
 
@@ -767,7 +767,7 @@ To change the font characteristics for a window:
 
 2.	Expand **Environment**, if it is not already.
 
-3.	Under **Environment**, click **Fonts and Colors**. The dialog appears as follows: 
+3.	Under **Environment**, click **Fonts and Colors**. The dialog appears as follows:
 
 	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_4.jpg)
 
@@ -781,19 +781,19 @@ To change the font characteristics for a window:
 
 8.	Click **OK** to accept your changes and close the dialog, or **Cancel** to abandon your changes.
 
-### Modifying Revolution R Enterprise Options 
+### Modifying Revolution R Enterprise Options
 
 There are several Revolution R Enterprise -specific options in the RPE. They can all be modified from the **Revolution RPE Options** page of the **Options** dialog:
 
 - Automatically restore saved objects: Each time you exit the RPE or close a solution, you are asked if you want to save the R objects in your session. Answering yes to this prompt creates a file of saved objects. If this option is True (the default), the RPE automatically loads these saved objects when you next start the RPE or open the solution.
 - Automatically run .Rprofile: If you have a .Rprofile file in your solution’s directory, it is normally run automatically at startup. Set this to **False** to prevent the file from being run automatically.
-- Buffered output and History size: These are both options you shouldn’t need to modify. Buffered output provides smoother output display and History size allows you to specify how many commands are stored in your commands history. 
+- Buffered output and History size: These are both options you shouldn’t need to modify. Buffered output provides smoother output display and History size allows you to specify how many commands are stored in your commands history.
 - Load last loaded solution at startup: This option provides standard Visual Studio behavior, which is to re-open the solution that was open when the application was last shut down.
 - Output To Console: This option displays the output from R commands executed from a Script window to be displayed in the R Console window. This output is also available in the Output window.
 - Prompt for Help source: Another option you shouldn’t need to modify, this option causes you to be prompted to look for help locally before looking online.
 - Prompt to add opened R files: Normally, when you open a file that does not belong to the current project, you are asked if you want to add the file. Setting this option to **False** causes the RPE to skip the prompt and simply open the file without adding it to the current project.
 
-### Modifying Keyboard Shortcuts 
+### Modifying Keyboard Shortcuts
 
 You can create or modify keyboard shortcuts for most RPE commands. Keyboard shortcuts are assigned to either a specific feature, such as Text Editor, or as *global* shortcuts. Feature-specific shortcuts take precedence over global shortcuts.
 
@@ -802,12 +802,12 @@ To assign a keyboard shortcut:
 1.	In the **Options** dialog box, expand **Environment** and then click **Keyboard**. The **Options** dialog appears as follows:
 
 	![Options Dialog](media/RevoRPE_Users_Guide/options_dialog_5.jpg)
- 
+
 2.	In the **Show commands containing** text box, type a word or command (such as Delete or Tile). A list of commands containing the word is shown.
 
 3.	Select the command for which you are specifying a shortcut.
 
-4.	In the **Use new shortcut in** menu, select the feature for which the shortcut applies, or use the default **Global**. 
+4.	In the **Use new shortcut in** menu, select the feature for which the shortcut applies, or use the default **Global**.
 
 5.	In the box labeled **Press shortcut keys**, press the desired keyboard shortcut. If the shortcut is already in use, the **Shortcut currently used by** box is filled in. To use that shortcut for your purposes, you must first remove it from the command it is currently used by.
 
@@ -827,11 +827,11 @@ To remove a keyboard shortcut:
 
 5.	Click **OK** to accept changes.
 
-## Debugging R Scripts 
+## Debugging R Scripts
 
 Revolution R Enterprise for Windows incorporates a visual debugger, and if you have ever used Visual Studio for debugging C#, C++, or Visual Basic, the operation of the Revolution R Enterprise debugger will be very familiar to you. However, if you are used to using the browser, trace, or debug functions of R, you will find the visual debugger is a new way of working. This chapter walks you through the basic operations of the visual debugger.
 
-### Using the Visual Debugger 
+### Using the Visual Debugger
 
 To explore debugging using the visual debugger, create a new project, basicstats, with a single R script, and put the following lines into the script:
 
@@ -908,7 +908,7 @@ Remove the breakpoint in your script by clicking it, and then click ![Run Button
     > myVar(x)
     [1] 0.7647091
 
-### Looking at Local Variables 
+### Looking at Local Variables
 
 Turning our attention to the regressYOnX function, the simplest test sets are those known to be lines. So, add the following line to your script:
 
@@ -932,10 +932,10 @@ All of the variables needed to produce our value b are there except one—there 
 Stop the current debugging session by typing SHIFT-F5, add the above line, then rerun the script. You see the expected output:
 
 	> regressYOnX(1:5, 1:5)
-	(Intercept)           x 
+	(Intercept)           x
 			  0			  1
 
-### Sourcing Scripts for Debugging 
+### Sourcing Scripts for Debugging
 
 When you run a script under the visual debugger, a copy of the script is created in memory and *instrumented* with debugging instructions. When you run a project under the debugger, instrumented copies of all the scripts in the project are created. As we saw in Chapter 3, running a project can take considerable time, particularly if the project contains many scripts, and there we saw that *sourcing* the script could save time. You can also source scripts and projects under the visual debugger. However, when you source scripts under the debugger, the instrumented copies are written to disk rather than kept in memory. While this can be a considerable timesaver, it may happen that the instrumented copies of the scripts become out of sync with the scripts themselves, and this can cause problems in execution under the debugger. If this occurs, you may need to *clean* the project of these instrumented copies. Cleaning the project removes all instrumented copies.
 
@@ -993,7 +993,7 @@ revoSource("basicstats/basicStatsFuns.R")
 
 If we set our breakpoint at myVar(x) as before and run this script in Debug mode, we can debug into the myVar function because the basicStatsFuns.R script is instrumented. If we use the source function instead of revoSource in basicStatsTests.R, we cannot debug into the myVar function because the basicStatsFuns.R script is not instrumented.
 
-### Using the Call Stack Window 
+### Using the Call Stack Window
 
 When stopped at a breakpoint or stepping through the code, you can view the current call stack by opening the Call Stack window.
 
@@ -1011,12 +1011,12 @@ The Call Stack window appears as follows:
 
 ![Call Stack Window](media/RevoRPE_Users_Guide/call_stack_window.jpg)
 
-Once you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed. 
- 
+Once you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed.
+
 > ![NOTE]
 > If you are sourcing rather than running files, clicking on the last source() entry will simply take you to the first line of the currently executing file.
 
-### Debugging in the R Console 
+### Debugging in the R Console
 
 The R Console normally runs in Release mode, even if the Solution Configurations dropdown is set to Debug. However, in certain cases it can be useful to run commands in the R Console under the debugger, and so Revolution R Enterprise provides this capability. For example, suppose we have set a breakpoint at the following line of our regressYOnX function:
 
@@ -1032,7 +1032,7 @@ and have run our complete script in Debug mode so that the regressYOnX function 
 
 Your call is then run under the debugger and you will stop at the specified breakpoint. You then can use the visual debugging commands described in this chapter as usual.
 
-### Troubleshooting Debugging Problems 
+### Troubleshooting Debugging Problems
 
 The visual debugger included with the Revolution R Enterprise RPE is a powerful tool, but there are some circumstances in which it may not provide you the information you’re looking for. The usual cause of this is that the code you are debugging is using valid R code that is incompatible with the visual debugger. This section describes the most common culprits.
 
@@ -1042,11 +1042,11 @@ If you type commands at the “Debug> “  prompt and see no output, check to se
 
 Another problematic R command is source(); although this command may be used in code being debugged, any script executed with it will always be executed in release mode - so you will not be able to debug into or hit breakpoints in any code defined in the sourced files. However, see the section Sourcing Scripts for Debugging for information on the revoSource function that can be used in place of source when you want sourced code instrumented for debugging. Note that using the 'Source' menu command in the RPE is not the same as using the R source function directly - using the RPE UI rather than the function WILL execute the sourced files in whichever mode, debug or release, is set in the UI.
 
-## Extending Revolution R Enterprise 
+## Extending Revolution R Enterprise
 
 Revolution R Enterprise is a powerful tool right out of the box, but because it is built on the Visual Studio Shell, it has a number of extensibility features, including macros, templates, and code snippets. This chapter introduces you to these features.
 
-### Macros 
+### Macros
 
 Macros allow you to combine common sequences of actions (which can include both mouse and keyboard actions) into a single, repeatable command. You can store and manage macros like any other user interface command—assign them keyboard shortcuts, add them to toolbars, etc.
 
@@ -1078,11 +1078,11 @@ To save the temporary macro:
 
 2.	Type a name for your macro, and press ENTER.
 
-### Templates 
+### Templates
 
 Templates allow you to preserve the structure of a file or project for a later re-use. You can create both project and item templates; project templates supply the structure for an entire project and item templates supply the structure for a particular file type.
 
-### Creating a Project Template 
+### Creating a Project Template
 
 Most of us tend to organize our work in similar ways from project to project. Project templates allow you to automate some of that organization.
 
@@ -1134,7 +1134,7 @@ Now you’re ready to create a project template:
 
 To verify that your template has been successfully deployed, point to **New** in the **File** menu, and then click **Project…**. You should see **My Usual Project** listed under **My Templates** on the right side of the **New Project** dialog box.
 
-### Code Snippets 
+### Code Snippets
 
 Code Snippets provide a convenient way for new users to learn R coding by providing fill-in-the-blanks code fragments—from flow-of-control constructions to function calls to longer code fragments that users can put together to create complete analyses. Revolution R Enterprise comes with a number of built-in Code Snippets, but the real power is in the ability for local R experts to create their own snippets to share with their colleagues or the R community.
 
@@ -1189,7 +1189,7 @@ Finally, you specify the code. The IDs of the placeholders you defined in the de
         <![CDATA[
 	$fnName$ <- function($arguments$)
 	{
-	   $selected$ $expressions$ $end$ 
+	   $selected$ $expressions$ $end$
 	}
         ]]>
       </Code>
@@ -1210,7 +1210,7 @@ As an example of a Code Snippet created from this template, here is a Code Snipp
 	    <Header>
 	      <Title>Create a Sleigh</Title>
 	      <Shortcut>sleigh</Shortcut>
-	      <Description>Set up a NetWorkSpaces sleigh for parallel 
+	      <Description>Set up a NetWorkSpaces sleigh for parallel
 	                    computing</Description>
 	      <Author>Revolution Computing</Author>
 	      <SnippetTypes>
@@ -1224,7 +1224,7 @@ As an example of a Code Snippet created from this template, here is a Code Snipp
 	          <ID>nodeList</ID>
 	          <ToolTip>
 	            a list of hosts on which workers will be created. This argument is
-	            ignored when launch='local'. 
+	            ignored when launch='local'.
 	          </ToolTip>
 	          <Default>rep('localhost', 3)</Default>
 	        </Literal>
@@ -1236,7 +1236,7 @@ As an example of a Code Snippet created from this template, here is a Code Snipp
 	        <Literal>
 	          <ID>launch</ID>
 	          <ToolTip>method to launch remote workers. Can be set to the strings 'local' 	or 'web', or to a function object.</ToolTip>
-	          <Default>'local'</Default>	
+	          <Default>'local'</Default>
 	        </Literal>
 	       </Declarations>
 	      <Code Language="R">
@@ -1247,11 +1247,11 @@ As an example of a Code Snippet created from this template, here is a Code Snipp
 	  </CodeSnippet>
 	</CodeSnippets>
 
-## Managing Projects and Solutions 
+## Managing Projects and Solutions
 
 Revolution R Enterprise for Windows provides a Revosystem for managing R projects and solutions, based on the system used by Visual Studio for managing compiled code. You can combine the R scripts, data, and other related documents within your projects, and you can easily share solutions with colleagues. This chapter describes the Revolution R Enterprise for Windows solution system and gives several examples of its use.
 
-### Specifying a Working Directory 
+### Specifying a Working Directory
 
 The working directory is where R by default searches for files and writes files. The default working directory is specified by the Start In field of your Revolution R Enterprise shortcut properties. You can modify this field to specify a different default working directory, and you can modify your working directory during a Revolution R Enterprise session. The working directory also changes when you create or open a non-default solution, to the solution directory. (Normally, the solution directory is a subdirectory of the default working directory.)
 
@@ -1263,9 +1263,9 @@ To specify a default working directory:
 
 2.	Right-click the shortcut, and click Properties.
 
-3.	In the Target field, append the path to a directory for which you have write permission as a quoted string to the end of the command ending in ‘RevoIDE.exe”’. If there is already a directory specified, you can replace it, but be careful not to change anything before the ‘RevoIDE.exe”’. 
+3.	In the Target field, append the path to a directory for which you have write permission as a quoted string to the end of the command ending in ‘RevoIDE.exe”’. If there is already a directory specified, you can replace it, but be careful not to change anything before the ‘RevoIDE.exe”’.
 
-	For example, 
+	For example,
 
 	C:\Windows\SysWOW64\cmd.exe /c echo Starting... & "C:\Revolution\R-Enterprise-x.x\IDE64\Run_GUI.bat" "C:\Revolution\R-Enterprise-x.x\IDE64\RevoIDE.exe" "C:\Users\yournamehere"
 
@@ -1308,7 +1308,7 @@ To grant a network drive full trust on Windows XP systems:
 
 	where \\unc\path is the path to the network drive. If prompted, type **yes** to complete the action.
 
-### Creating a Project 
+### Creating a Project
 
 Although the top-level organizational unit of Revolution R Enterprise for Windows is the solution, *solutions* are never created directly. Instead, you create projects, and each new project can either be placed in its own solution or placed in an existing solution. By default, a project named **Project0** is created when you start Revolution R Enterprise, with a default solution named **RSolution0**. When you create a project, the default behavior is to create a new solution with the same name as the new project. All of the examples we have seen up to now use this default behavior.
 
@@ -1340,7 +1340,7 @@ To create a project in an existing solution:
 
 4.	Click **OK**.
 
-### Creating a Project from an Existing Folder 
+### Creating a Project from an Existing Folder
 
 If you have R scripts in existing folders, for example, in existing R packages, you can easily create RPE projects from those existing folders.
 
@@ -1352,7 +1352,7 @@ To create a project from an existing folder:
 
 A solution is created with the same name as the name of the folder you selected, with a single project whose name is the name of the folder concatenated with the word “Project”.
 
-### Opening a Solution 
+### Opening a Solution
 
 Solutions are stored in their top-level directories as files with .Rsln extensions. Another file, with extension .Rsou, stores the state of the solution when it is closed, so that information such as which files are open, and where breakpoints have been set, is preserved from session to session.
 
@@ -1362,7 +1362,7 @@ To open a solution:
 
 2.	Double-click the file with the .Rsln extension (there should normally be just one such file in a solution directory).
 
-### Opening a Project 
+### Opening a Project
 
 Projects are stored as files with .rproj extensions in project directories within solution directories. Opening a project opens its enclosing solution as well.
 
@@ -1372,9 +1372,9 @@ To open a project:
 
 2.	Double-click the file with the .rproj extension (there should normally be just one such file in a project directory).
 
-### Working with Projects and Solutions 
+### Working with Projects and Solutions
 
-#### Adding a File to a Solution 
+#### Adding a File to a Solution
 
 R script files are always associated with *projects*, but data files and other related files can be associated with either solutions or projects. This is important because the R working directory is set to the *solution* directory; thus, data files you plan to read in with R functions such as read.table should be associated with solutions.
 
@@ -1388,7 +1388,7 @@ To add a file to a solution:
 
 4.	Select the file in the Add Existing Item dialog box, and then click **Add**.
 
-#### Adding a File to a Project 
+#### Adding a File to a Project
 
 To add a file to a project:
 
@@ -1400,7 +1400,7 @@ To add a file to a project:
 
 4.	Select the file in the Add Existing Item dialog box, and then click **Add**.
 
-#### Creating an R Package as an R Project 
+#### Creating an R Package as an R Project
 
 You can use the project type R Package Project to create a new R package. The package is created as an R project containing a DESCRIPTION file, a NAMESPACE file, and R and man directories for holding R scripts and .Rd format help files, respectively. As in all new R projects in the RPE, an empty R script is created for you, but in the R Package Project it is in the R directory. (A README file is also created with instructions for making the package skeleton ready to build. Once you have your package ready to go, you can safely delete this file from your package.)
 
@@ -1428,7 +1428,7 @@ As you add functions to your R script, you can create help files for them:
 
 The DESCRIPTION file is a template that you will need to edit before building your package, and the NAMESPACE file is a stub to which you should add directives. Complete details for both of these steps can be found in the R manual Writing R Extensions (R-exts.pdf). Once you have completed these steps, you can build your package by right-clicking the package name and then clicking **Build R Package** from the context menu.
 
-#### Managing Solution Startup 
+#### Managing Solution Startup
 
 Normally, when you open a solution, the following events occur:
 

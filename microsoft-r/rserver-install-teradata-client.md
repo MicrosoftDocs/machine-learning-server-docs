@@ -4,10 +4,10 @@
 title: "R Server Client Installation Guide for Teradata"
 description: "Microsoft R Server install guide for Teradata clients."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
+author: "jeffstorkes72"
+manager: "jhubbard"
 ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -24,16 +24,16 @@ ms.custom: ""
 
 ---
 
-# R Server Client Installation Guide for Teradata 
+# R Server Client Installation Guide for Teradata
 
 ## Quick Overview
 
 Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Server for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Server Server Installation Manual for Teradata*](rserver-install-teradata-client.md).
 
-> [!NOTE] 
-> Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual. 
+> [!NOTE]
+> Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual.
 
-## System Requirements 
+## System Requirements
 
 Microsoft R Server for Windows has the following system requirements:
 
@@ -59,11 +59,11 @@ Microsoft R Server on Linux systems has the following system requirements:
 
 **Disk Space:** A minimum of 500MB of disk space is required.
 
-## Installing the Client Software 
+## Installing the Client Software
 
 The Teradata client software for Windows is available from the [Teradata At Your Service](https://tays.teradata.com/) web site (this web site requires a customer login).
 
-### Installing the Teradata Client on Windows 
+### Installing the Teradata Client on Windows
 
 **If you are using the 14.10 client:**
 
@@ -120,17 +120,17 @@ To test that you can communicate with your Teradata server using your Teradata O
 
 2.	Change directory to the directory containing the tdxodbc.exe program (you may need to quote the path:
 
-    
+
     	cd C:\Program Files\Teradata\Client\<version>\ODBC Driver for Teradata nt-x8664\Bin
-    
+
 
     where <version> is the client version number.
 
 3.	Start the program by typing its name:
 
-    
+
     	tdxodbc.exe
-    
+
 4.	At the prompt, enter the DSN name TDDSN.
 
 5.	At the prompt, enter your database user name.
@@ -138,9 +138,9 @@ To test that you can communicate with your Teradata server using your Teradata O
 6.	At the prompt, enter your database user password.
 
 7.	If your ODBC connection is successful, you will see something like the following, followed by a prompt to enter a SQL string:
-	    
+
 		.....ODBC connection successful.
-        
+
 		ODBC version        = -03.80.0000-
 	    DBMS name           = -Teradata-
 	    DBMS version        = -15.00.0011  15.00.00.11-
@@ -150,7 +150,7 @@ To test that you can communicate with your Teradata server using your Teradata O
 
 8.	Enter “quit” to exit.
 
-### Installing the Teradata Client on Linux 
+### Installing the Teradata Client on Linux
 
 **If you are using the 14.10 client:**
 
@@ -186,7 +186,7 @@ At the prompt “Enter one or more selections (separated by space):”, enter �
 	         Teradata Parallel Transporter Stream Operator.
 	Warning: The Teradata Parallel Transporter Base software
 	         will be installed.
-	
+
 	Do you want to continue with the installation? [y/n (default: y)]:
 
 This indicates that the necessary dependencies will also be installed.
@@ -227,7 +227,7 @@ If the setup script fails, you can try installing the packages using rpm directl
 
 	On RHEL6 systems, tptstream may complain about missing glibc and nsl dependencies; these can be resolved by using the “yum provides” command to find a package or packages that can provide the missing dependencies, then using yum to install those packages.
 
-8.	After installing the tptstream package, update your system LD_LIBRARY_PATH environment variable to include the path to the 64-bit version of libtelapi.so (typically /opt/teradata/client/14.10/tbuild/lib64) and the path to your unixODBC 2.3 libraries (typically /usr/lib64). (This is most effectively done in the /etc/profile file; be sure to source the file after making any changes to it.) 
+8.	After installing the tptstream package, update your system LD_LIBRARY_PATH environment variable to include the path to the 64-bit version of libtelapi.so (typically /opt/teradata/client/14.10/tbuild/lib64) and the path to your unixODBC 2.3 libraries (typically /usr/lib64). (This is most effectively done in the /etc/profile file; be sure to source the file after making any changes to it.)
 
 **If you are using the 15.00 client:**
 
@@ -272,34 +272,34 @@ After installing the tptstream package, update your system LD_LIBRARY_PATH envir
 
     export NLSPATH=/opt/teradata/client/15.00/tbuild/msg/%N:$NLSPATH
 
-#### Updating Your ODBC Driver Manager 
+#### Updating Your ODBC Driver Manager
 
 Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you will be using Microsoft R Server exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you will be using Microsoft R Server with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
 
-##### Configuring the Teradata ODBC Driver Manager 
+##### Configuring the Teradata ODBC Driver Manager
 
 To use the ODBC driver manager supplied with the Teradata client package when you have another ODBC driver manager installed (typically unixODBC):
 
 1.	Identify the directory where the existing ODBC driver manager libraries reside (almost certainly /usr/lib64) and cd to that directory:
 
-		cd /usr/lib64 
+		cd /usr/lib64
 
-2.	Rename or remove any existing soft link in that directory named libodbc.so.2: 
+2.	Rename or remove any existing soft link in that directory named libodbc.so.2:
 
-		mv libodbc.so.2 libodbc.so.2.previous 
+		mv libodbc.so.2 libodbc.so.2.previous
 
-3.	Add a soft link, libodbc.so.2, that points to the Teradata driver manager library libodbc.so (almost certainly in /opt/teradata/client/ODBC_64/lib) 
+3.	Add a soft link, libodbc.so.2, that points to the Teradata driver manager library libodbc.so (almost certainly in /opt/teradata/client/ODBC_64/lib)
 
 		ln -s /opt/teradata/client/ODBC_64/lib/libodbc.so ./libodbc.so.2
 
-4.	Export an environment variable definition for ODBCINI in the /etc/profile file (which runs for everyone at login), set to the pathname of the currently used odbc.ini file (probably /etc/odbc.ini): 
+4.	Export an environment variable definition for ODBCINI in the /etc/profile file (which runs for everyone at login), set to the pathname of the currently used odbc.ini file (probably /etc/odbc.ini):
 
-		ODBCINI=/etc/odbc.ini 
-		export ODBCINI 
+		ODBCINI=/etc/odbc.ini
+		export ODBCINI
 
 5.	Logout and log back in so that the profile changes take effect.
 
-##### Configuring the unixODBC 2.3.1 Driver Manager 
+##### Configuring the unixODBC 2.3.1 Driver Manager
 
 The unixODBC 2.3.1 driver manager is not available as part of standard RHEL yum repositories. You must, therefore, install it from source. It is important that unixODBC 2.3.1 be the only unixODBC installation on your system, so be sure to perform the following steps:
 
@@ -342,11 +342,11 @@ If you will be using RxOdbcData with a DSN, you need to define an appropriate DS
 	Database=RevoTestDB
 	DefaultDatabase=
 
-#### Installing RODBC 
+#### Installing RODBC
 
 The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the MRAN source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
 
-## Installing Microsoft R Server on the Client 
+## Installing Microsoft R Server on the Client
 
 To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in.
 
@@ -360,9 +360,9 @@ If your client machine is running Red Hat Enterprise Linux or SUSE Linux Enterpr
 1.	[Install Microsoft R Open for Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkId=699383)
 2.	[Install Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkID=698570&clcid=0x409)
 
-## Testing the Client Installation 
+## Testing the Client Installation
 
-After installing your Teradata client software, you should test that you can communicate with your Teradata database. For this, you will typically need a connection string, which may look something like the following: 
+After installing your Teradata client software, you should test that you can communicate with your Teradata database. For this, you will typically need a connection string, which may look something like the following:
 
 	"DRIVER=Teradata;DBCNAME=machineNameOrIP;DATABASE=RevoTestDB;UID=myUserID;PWD=myPassword;"
 
@@ -374,23 +374,23 @@ The following commands can be used to verify that your Windows client can commun
 	connectionString <- "Driver=Teradata;DBCNAME=157.54.160.204;Database=RevoTestDB;Uid=RevoTester;pwd=RevoTester;"
 
 
-###### ODBC 
+###### ODBC
 
 	rxSetComputeContext("local")
 	odbcDS <- RxOdbcData(sqlQuery=query, connectionString = connectionString)
 	rxImport(odbcDS)
 
-###### TPT 
+###### TPT
 
 	rxSetComputeContext("local")
 	teradataDS <- RxTeradata(sqlQuery = query, connectionString = connectionString)
 	rxImport(teradataDS)
 
-###### InTeradata 
+###### InTeradata
 
 	myCluster <- RxInTeradata(
 	      connectionString = connectionString,
-	      shareDir =  paste("c:/AllShare/", 
+	      shareDir =  paste("c:/AllShare/",
 	      Sys.info()["login"], sep=""),
 	      remoteShareDir = "/tmp/revoJobs",
 	      revoPath = "/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R",
@@ -410,7 +410,7 @@ For Linux clients, the only change that should need to be made is to the shareDi
 
 	myCluster <- RxInTeradata(
 	      connectionString = connectionString,
-	      shareDir =  paste("/AllShare/", 
+	      shareDir =  paste("/AllShare/",
 	      Sys.info()["login"], sep=""),
 	      remoteShareDir = "/tmp/revoJobs",
 	      revoPath = "/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R",

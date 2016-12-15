@@ -4,8 +4,8 @@
 title: "R Productivity Environment Getting Started Guide"
 description: "Microsoft R Services IDE features and components overview."
 keywords: ""
-author: "richcalaway"
-manager: "mblythe"
+author: "HeidiSteen"
+manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -169,7 +169,7 @@ You should see a graphics window displaying your plot. The regression line sugge
 
 Close the graphics window.
 
-### Use Summary Statistics 
+### Use Summary Statistics
 
 Another variable in the data set, PctSAT, contains the percentage of eligible students in the state who take the SATs.
 
@@ -314,7 +314,7 @@ You should still hit any breakpoints encountered while stepping, and at any poin
 >[!WARNING]
 >The Step functions described here should be used only after you have reached a breakpoint. They may be visible at the top-level, but should not be used to start script execution.
 
-### Examine Local Values 
+### Examine Local Values
 
 Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](media/RevoRPE_Getting_Started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/RevoRPE_Getting_Started/image9.png) twice.
 
@@ -511,7 +511,7 @@ The **Navigate Forward** and **Navigate Backward** buttons on the main toolbar a
 ## Macros: Associating with Keyboard Shortcuts and Saving
 
 
-### Save a Temporary Macro 
+### Save a Temporary Macro
 
 
 In Section 5.7, you defined a macro to create empty functions.

@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Getting Started for DeployR Administrators"
-description: "Getting started for DeployR Administrators: high level introdution to DeployR for the server administrator"
+description: "Getting started for DeployR Administrators: high level introduction to DeployR for the server administrator"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"

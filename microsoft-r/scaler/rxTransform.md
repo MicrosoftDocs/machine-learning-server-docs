@@ -7,7 +7,7 @@ keywords: "RevoScaleR, ScaleR, rxTransform"
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "09/14/2016"
-ms.topic: "article"
+ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -59,7 +59,7 @@ Three functions are also available for use within transformation functions that 
 
 - **rxGet(objName)**: Get the value of an object in the transform environment, e.g., **.rxGet("myObject")**.
 
-- **rxSet(objName, objValue)**: Set the value of an object in the transform environment, e.g., **.rxSet("myObject", pi)**. 
+- **rxSet(objName, objValue)**: Set the value of an object in the transform environment, e.g., **.rxSet("myObject", pi)**.
 
 - **rxModify(objName, ..., FUN = "+")**: Modify the value of an object in the transform environment by applying to the current value a specified function, FUN. The first argument passed (behind the scenes) to FUN is always the current value of "objName". The ellipsis argument (...) denotes additional arguments passed to FUN. By default, FUN = "+", the addition operator. e.g.,
 
