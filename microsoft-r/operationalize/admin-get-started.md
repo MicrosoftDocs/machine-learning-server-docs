@@ -137,7 +137,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Security](security.md)
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-utility.md#test)
--   [Evaluate Capacity](admin-evaluate-capacity.md)
+-   [Capacity Evaluatation](admin-evaluate-capacity.md)
 <!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 
 **Other Getting Started Guides**

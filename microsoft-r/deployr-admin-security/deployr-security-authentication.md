@@ -127,12 +127,10 @@ Accordingly, to enable do the following:
 
     // deployr.security.ldap.roles.map property
     // Allows you to map between LDAP group names to DeployR role names.
-    // NOTE, while LDAP group names can be defined on the LDAP server using
-    // any mix of upper and lower case, such as finance, Finance or FINANCE,
-    // the LDAP group names that appear in the map must have ROLE_ appended
-    // and be capitialized. For example, an LDAP group named "finance" should
-    // appear in the map as ROLE_FINANCE. DeployR role names must
-    // begin with ROLE_ and must always be upper case.
+    // NOTE: LDAP group names can be defined on the LDAP server using any mix of 
+    // upper and lower case, such as finance, Finance or FINANCE. However, in the mapping, 
+    // the LDAP group name must have ROLE_ as a prefix and be fully capitalized. 
+    // For example, an LDAP group named "finance" should appear as ROLE_FINANCE. 
     deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                        'ROLE_ENGINEERING':'ROLE_POWER_USER']
     */
@@ -188,11 +186,10 @@ Accordingly, to enable do the following:
   
       // deployr.security.ldap.roles.map property
       // Allows you to map between LDAP group names to DeployR role names.
-      // NOTE, LDAP group names can be defined on the LDAP server using
-      // any mix of upper and lower case, such as finance, Finance or FINANCE,
-      // For example, an LDAP group named "finance" should
-      // appear in the map fonance. DeployR role names must
-      // begin with ROLE_ and must always be upper case.
+      // NOTE: LDAP group names can be defined on the LDAP server using any mix of 
+      // upper and lower case, such as finance, Finance or FINANCE. However, in the mapping, 
+      // the LDAP group name must have ROLE_ as a prefix and be fully capitalized. 
+      // For example, an LDAP group named "finance" should appear as ROLE_FINANCE. 
       deployr.security.ldap.roles.map = ['FINANCE':'ROLE_BASIC_USER',
                                          'Engineering':'ROLE_POWER_USER']
  
@@ -230,12 +227,10 @@ Accordingly, to enable do the following:
     
      // deployr.security.ldap.roles.map property
      // Allows you to map between LDAP group names to DeployR role names.
-     // NOTE, while LDAP group names can be defined on the LDAP server using
-     // any mix of upper and lower case, such as finance, Finance or FINANCE,
-     // the LDAP group names that appear in the map must have ROLE_ appended
-     // and be capitialized. For example, an LDAP group named "finance" should
-     // appear in the map as ROLE_FINANCE. DeployR role names must
-     // begin with ROLE_ and must always be upper case.
+     // NOTE: LDAP group names can be defined on the LDAP server using any mix of 
+     // upper and lower case, such as finance, Finance or FINANCE. However, in the mapping, 
+     // the LDAP group name must have ROLE_ as a prefix and be fully capitalized. 
+     // For example, an LDAP group named "finance" should appear as ROLE_FINANCE. 
      deployr.security.ldap.roles.map = ['ROLE_FINANCE':'ROLE_BASIC_USER',
                                         'ROLE_ENGINEERING':'ROLE_POWER_USER']
      ```
