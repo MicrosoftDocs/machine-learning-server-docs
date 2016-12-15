@@ -27,6 +27,8 @@ ms.custom: ""
 
 # Microsoft R Server on a Linux Virtual Machine on Azure
 
+><big>Microsoft R Server 9.0.1 will be available on an Azure VM in early 2017. Check back soon!</big>
+
 Microsoft offers a Linux virtual machine (VM) on Azure that includes a preconfigured instance of [Microsoft R Server 8.0.5 for Linux](https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server). 
 
 This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](deployr-about.md) for deploying R analytics inside applications and backend systems. 
@@ -75,7 +77,7 @@ To start Microsoft R Server, simple type `R` at the command prompt. The R Server
 
 ## Configure an R IDE
 
-With Microsoft R Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Microsoft R Server R executable. This way, whenever you execute your R code, you'll do so using Microsoft R Server and benefit from its proprietary packages.  R Server works well popular IDEs such as RTVS, [RStudio](https://www.rstudio.com) Desktop or Server. 
+With Microsoft R Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Microsoft R Server R executable. This way, whenever you execute your R code, you'll do so using Microsoft R Server and benefit from its proprietary packages.  R Server works well popular IDEs such as [RStudio](https://www.rstudio.com) Desktop or Server. 
 
 #### Configure RStudio for Microsoft R Server
   1. Launch RStudio.
@@ -92,17 +94,17 @@ RStudio Server uses port 8787. The default configuration for the Azure VM does n
 
 No cloud service is created to contain the public resources for the VM so there is no fully qualified domain name assigned to the dynamic public IP by default. One can be created and added to the image after deployment using the Azure PowerShell. The format of the hostname will be ````domainnamelabel; region;.cloudapp.azure.com````. 
 
-Here's an example of how to add a public hostname using PowerShell for a VM named ‘rrecloudvm’ with resource group ‘rrecloudrg’ and desired hostname of ‘rrecloud’.
+For example, to add a public hostname using PowerShell for a VM named `rservercloudvm` with resource group `rservercloudrg` and desired hostname of `rservercloud`.
 
 ```
 PS C:\\Users\\juser> Select-AzureSubscription -SubscriptionName "Visual Studio Ultimate with MSDN" –Current
 
 PS C:\\Users\\juser> Switch-AzureMode -Name AzureResourceManager
 
-PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rrecloudvm -ResourceGroupName rrecloudrg -Location "South Central US" -DomainNameLabel rrecloud -AllocationMethod Dynamic
+PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rservercloudvm -ResourceGroupName rservercloudrg -Location "South Central US" -DomainNameLabel rservercloud -AllocationMethod Dynamic
 ```
 
-After adding access to port TCP/8787 to the inbound security rules, RStudio Server can be accessed at <http://rrecloud.southcentralus.cloudapp.azure.com:8787/>
+After adding access to port TCP/8787 to the inbound security rules, RStudio Server can be accessed at <http://rservercloud.southcentralus.cloudapp.azure.com:8787/>
 
 Some related articles are:
 
