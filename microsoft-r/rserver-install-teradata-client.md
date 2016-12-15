@@ -4,7 +4,7 @@
 title: "R Server Client Installation Guide for Teradata"
 description: "Microsoft R Server install guide for Teradata clients."
 keywords: ""
-author: "jeffstorkes72"
+author: "jeffstokes72"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "article"
