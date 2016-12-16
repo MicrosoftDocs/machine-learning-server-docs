@@ -36,7 +36,7 @@ As an administrator, your key responsibilities are to ensure configuration for t
 -   Server [R package management policies](#r-package-policies)
 -   Server [runtime policies](#runtime-policies), which affect availability, scalability, and throughput
 
-Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-utility.md#test) and numerous recommendations.
+Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-diagnostics.md) and numerous recommendations.
 
 >For a general introduction to R Server for operationalization, read the [About](about.md) topic.
 
@@ -121,7 +121,7 @@ To evaluate and simulate the capacity of a configuration, use the [Evaluate Capa
 
 There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
-When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-utility.md#test) to attempt to identify the underlying cause of the problem.
+When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-diagnostics.md) to attempt to identify the underlying cause of the problem.
 
 <!--Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.-->
 
@@ -136,7 +136,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Configuration](configuration-initial.md)
 -   [Security](security.md)
 -   [R Package Management](package-management.md)
--   [Diagnostic Testing & Troubleshooting](admin-utility.md#test)
+-   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)
 <!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 

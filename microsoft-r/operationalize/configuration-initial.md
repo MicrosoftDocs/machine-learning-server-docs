@@ -112,7 +112,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. Return to the main menu of the utility when the configuration ends.
 
-1. [Run a diagnostic test of the configuration](admin-utility.md#test).
+1. [Run a diagnostic test of the configuration](admin-diagnostics.md).
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -255,7 +255,7 @@ On each web node:
 
    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-   1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node.
+   1. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
 
    1. Repeat these steps on each web node to declare all the compute node.
 
@@ -263,6 +263,6 @@ On each web node:
 
 1. [Update service ports](admin-utility.md#ports), if needed.
 
-1. [Run diagnostic tests](admin-utility.md#test).
+1. [Run diagnostic tests](admin-diagnostics.md).
 
 1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.

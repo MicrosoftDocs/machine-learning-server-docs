@@ -149,56 +149,9 @@ For security purposes, we strongly recommend that you encrypt the connection str
 ## Diagnostic Testing
 
 You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
-Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
+Armed with this information, you can identify unresponsive components, execution problems, and access the log files. The set of diagnostic tests include a general health check of the configuration as well as tracing R code executions or web service executions.
 
-The set of diagnostic tests include:
-+ A general health check of the configuration
-+ A raw report of the system status
-+ A trace of an R code execution
-+ A trace of an web service execution
-
-
-**To run diagnostic tests:**
-
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
-
-1. From the main menu, choose **Run Diagnostic Tests**.
-
-1. If you haven't authenticated yet, you'll need to provide your username and password. 
-
-1. To retrieve a 'health check' of the configuration including a code execution test, choose **Test configuration**.
-
-      1. Review the test results.
-
-      1. If any issues arise, attempt to resolve them. If needed, look through the log files to find any errors reported there.
-
-         Windows default log path, where `<MRS_home>` is the path to the Microsoft R Server install directory. To find this path, enter `normalizePath(R.home())` in your R console:
-              + Web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs`
-
-              + Compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs`
-
-         Linux default log path: 
-              + Web node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs`
-              
-              + Compute node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs`
-
-      1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
-
-      1. Rerun the diagnostic test to make sure all is running smoothly now.
-
-1. To retrieve the 'raw details' on the health of the system and review the output, choose **Get raw server status** .
-
-1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
-      1. Enter the R code you want to run and trace. 
-      1. Press the Enter key (carriage return) to start the trace.
-      1. Review the trace output.
-
-1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution** :  
-      1. Enter the service name and version following the syntax `<service-name>/<version>` such as `my-service/1.1`. 
-      1. Press the Enter key (carriage return) to start the trace.
-      1. Review the trace output to better understand how the execution is running or failing.
-
-> If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+[Learn how to run the diagnostics and troubleshoot.](admin-diagnostics.md)
 
 <br><a name="capacity"></a>
 

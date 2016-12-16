@@ -142,7 +142,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
+   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
 1. Repeat these steps on each machine hosting the web node.
 
@@ -251,7 +251,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
+   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
 1. Repeat these steps on each machine hosting the web node.
 
