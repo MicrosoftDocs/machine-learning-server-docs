@@ -98,7 +98,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 ## Update Port Numbers
 
-You can update the ports numbers for the web node, compute node, or Rserve.
+You can update the ports numbers for the web node, compute node, or [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve)(a forked version of RServe).
 
 **To update the port values:**
 

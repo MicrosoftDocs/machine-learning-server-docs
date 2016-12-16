@@ -100,7 +100,7 @@ This configuration is useful when you want to explore what it is to operationali
       ln -s libicudata.so.55 libicudata.so.36
      ```
 
-   >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
+   >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 

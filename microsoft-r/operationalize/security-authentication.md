@@ -182,7 +182,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
-   1. Add a key by selecting a key duration.
+   1. Add a key by selecting a key duration. Take note of this key as your application developers and data scientists will need it later to authenticate.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 

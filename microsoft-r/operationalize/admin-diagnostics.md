@@ -95,7 +95,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
-If you get an `HTTP status 503 (Service Unavailable)` response when using operationalization Rest APIs -or- get a `FAIL` result for the compute node during diagnostic testing, then it may be that one or more symlinks needed to start RServe, the R execution component for the compute node, are missing.
+If you get an `HTTP status 503 (Service Unavailable)` response when using operationalization Rest APIs -or- get a `FAIL` result for the compute node during diagnostic testing, then it may be that one or more symlinks needed to start [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve), the R execution component for the compute node, are missing.
 
    1. Launch a command window with administrator privileges with `root`/ `sudo` privileges.
 
