@@ -53,8 +53,8 @@ To simplify the integration, R Server provides several [Swagger templates](http:
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|[Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json). 
-Service-specific&nbsp;APIs|Retrieve the service-specific `swagger.json` needed to consume the service with `GET /api/{service}/{version}/swagger.json`.
+Core&nbsp;APIs|[Download](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json) `rserver-swagger-9.0.1.json`, which contains the set of core operationalization APIs.
+Service-specific&nbsp;APIs|Retrieve the service-specific APIs defined in `swagger.json` in order to consume that specific service with `GET /api/{service}/{version}/swagger.json`.
 
 
 ### Build the Core Client Library
@@ -126,7 +126,7 @@ Before you interact with the core APIs, first authenticate and get the bearer ac
   var loginResponse = await client.LoginAsync(loginRequest);
 
   // Set Authorization header with `Bearer` and access-token
-  var headers = deployRClient.HttpClient.DefaultRequestHeaders;
+  var headers = <swagger-client-title>.HttpClient.DefaultRequestHeaders;
   var accessToken = loginResponse.AccessToken;
 
   headers.Remove("Authorization");
@@ -181,7 +181,7 @@ Build and use a core client library from swagger in CSharp and Azure Active Dire
    using Microsoft.Rest
 
    // --- CREATE API CLIENT -------------------------------------------------------------
-   DeployRClient client = new DeployRClient(new Uri("https://rserver.contoso.com:12800"));
+   SwaggerClientTitle client = new SwaggerClientTitle(new Uri("https://rserver.contoso.com:12800"));
    ```
 
 1. Add the authentication workflow to your application.  In this example, the organization has Azure Active Directory.
