@@ -93,6 +93,7 @@ It is important to understand the results of these simulations to determine whet
 
 After the tool is run, the results are printed to the console. 
 
+![Onscreen results](../media/o16n/admin-capacity-results-cl.png)
 
 ### Chart Report
 
