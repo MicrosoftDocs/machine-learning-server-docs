@@ -48,7 +48,7 @@ R Server's offers seamless integration with authentication solutions for operati
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `admin` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 

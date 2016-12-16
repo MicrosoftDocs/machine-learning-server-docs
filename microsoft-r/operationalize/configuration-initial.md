@@ -108,7 +108,7 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
-1. When prompted, provide a password for the built-in, local operationalization `admin` account.
+1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
 
 1. Return to the main menu of the utility when the configuration ends.
 
@@ -144,7 +144,7 @@ For added security, you can [configure SSL](security-https.md) as well as authen
   1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
      1. From the main menu, choose the option to **Configure R Server for Operationalization**.
      1. From the sub-menu, choose the option to **Configure a web node**.     
-     1. When prompted, provide a password for the built-in, local operationalization `admin` account.  
+     1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
         You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
 
   1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
