@@ -100,7 +100,7 @@ This configuration is useful when you want to explore what it is to operationali
       ln -s libicudata.so.55 libicudata.so.36
      ```
 
-   >**Note:** If there are issues with starting RServe, check this log file: `tail -f /opt/deployr/9.0.1/rserve/R/log`.
+   >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
@@ -108,11 +108,11 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
-1. When prompted, provide a password for the built-in, local operationalization `admin` account.
+1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
 
 1. Return to the main menu of the utility when the configuration ends.
 
-1. [Run a diagnostic test of the configuration](admin-utility.md#test).
+1. [Run a diagnostic test of the configuration](admin-diagnostics.md).
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -144,7 +144,7 @@ For added security, you can [configure SSL](security-https.md) as well as authen
   1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
      1. From the main menu, choose the option to **Configure R Server for Operationalization**.
      1. From the sub-menu, choose the option to **Configure a web node**.     
-     1. When prompted, provide a password for the built-in, local operationalization `admin` account.  
+     1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
         You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
 
   1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
@@ -255,7 +255,7 @@ On each web node:
 
    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-   1. Verify the configuration by running [diagnostic test](admin-utility.md#test) on each web node.
+   1. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
 
    1. Repeat these steps on each web node to declare all the compute node.
 
@@ -263,6 +263,6 @@ On each web node:
 
 1. [Update service ports](admin-utility.md#ports), if needed.
 
-1. [Run diagnostic tests](admin-utility.md#test).
+1. [Run diagnostic tests](admin-diagnostics.md).
 
 1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.

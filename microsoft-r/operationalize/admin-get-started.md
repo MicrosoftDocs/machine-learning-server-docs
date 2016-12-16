@@ -36,7 +36,7 @@ As an administrator, your key responsibilities are to ensure configuration for t
 -   Server [R package management policies](#r-package-policies)
 -   Server [runtime policies](#runtime-policies), which affect availability, scalability, and throughput
 
-Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-utility.md#test) and numerous recommendations.
+Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-diagnostics.md) and numerous recommendations.
 
 >For a general introduction to R Server for operationalization, read the [About](about.md) topic.
 
@@ -71,7 +71,7 @@ Making sure that these R package dependencies are available to the code executin
 
 ## Runtime Policies
 
-The the operationalization feature supports a wide range of runtime policies that affect many aspects of the server runtime environment. As an administrator, you can select the preferred policies that best reflect the needs of your user community.
+The operationalization feature supports a wide range of runtime policies that affect many aspects of the server runtime environment. As an administrator, you can select the preferred policies that best reflect the needs of your user community.
 
 ### General
 
@@ -79,7 +79,7 @@ The external configuration file, `appsettings.json` defines a number of policies
 
 + On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
 
-+ On the compute node, this configuration file governs SSL, service logging, R shell pool size, R execution ports, and more.
++ On the compute node, this configuration file governs SSL, logging, R shell pool size, R execution ports, and more.
 
 
 **Table: Path to `appsettings.json` by node and operating system**
@@ -90,6 +90,12 @@ The external configuration file, `appsettings.json` defines a number of policies
 |Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/|  
 
 *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+ 
+### Asynchronous Batch Sizes
+
+For asynchronous batch executions, you can specify the maximum number of operations a single caller can execute in parallel during a specific asynchronous job. By restricting single batch executions in this way, you can avoid or minimize resource exhaustion by a single user. 
+
+This value is defined in `"MaxNumberOfThreadsPerBatchExecution"`  property in the `appsettings.json` on the web node. If you have multiple web nodes, we recommend you set the same values on every machine. 
 
 ### Availability
 
@@ -121,7 +127,7 @@ To evaluate and simulate the capacity of a configuration, use the [Evaluate Capa
 
 There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
-When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-utility.md#test) to attempt to identify the underlying cause of the problem.
+When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-diagnostics.md) to attempt to identify the underlying cause of the problem.
 
 <!--Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.-->
 
@@ -136,7 +142,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Configuration](configuration-initial.md)
 -   [Security](security.md)
 -   [R Package Management](package-management.md)
--   [Diagnostic Testing & Troubleshooting](admin-utility.md#test)
+-   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)
 <!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 

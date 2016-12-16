@@ -47,7 +47,7 @@ Once you [configure the operationalization feature](configuration-initial.md) fo
 
 + [Scalability](configuration-initial.md) for more power and better load balancing
 
-+ [Diagnostic](admin-utility.md#test) and [capacity evaluation](admin-evaluate-capacity.md) tools
++ [Diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools
 
 + Enterprise grade security: [SSL/TLS 1.2](security-https.md) and [authentication with AD LDAP or Azure AD](security-authentication.md)
 

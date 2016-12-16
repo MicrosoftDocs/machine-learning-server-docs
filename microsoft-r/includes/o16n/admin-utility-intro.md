@@ -8,7 +8,7 @@ You can configure the operationalization feature for Microsoft R Server using th
 
 + [Update the service ports](../../operationalize/admin-utility.md#ports)
 
-+ [Run diagnostic tests](../../operationalize/admin-utility.md#test)
++ [Run diagnostic tests](../../operationalize/admin-diagnostics.md)
 
 + [Encrypt credentials](../../operationalize/admin-utility.md#encrypt)
 

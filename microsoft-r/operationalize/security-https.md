@@ -84,7 +84,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-1. In the same utility, run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
+1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
 #### Using Windows IIS to Encrypt
 
@@ -113,7 +113,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Select the checkbox to **Require SSL** and require a client certificate.
 
-1. Run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
+1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
 > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 <br />
@@ -164,7 +164,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-1. In the same utility, run the [diagnostic tool](admin-utility.md#test) to send a test HTTPs request.
+1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
 
 <br>

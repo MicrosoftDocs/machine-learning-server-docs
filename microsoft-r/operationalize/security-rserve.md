@@ -3,7 +3,7 @@
 # required metadata
 title: "R Execution Security Considerations | Microsoft R Server Docs"
 description: "R Execution Security Considerations for Operationalization with Microsoft R Server"
-keywords: "RServe"
+keywords: "RServe; deployr-rserve"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "12/08/2016"
@@ -27,7 +27,9 @@ ms.custom: ""
 
 # R Execution Security Considerations
 
-RServe is the R execution component for the operationalization compute node for Microsoft R Server. RServe is an interface to R, which by default is single threaded. However, in this context, this custom version of RServe sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
+`deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
+
+This forked version of RServe is the R execution component for the operationalization compute node for Microsoft R Server. It acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
 
 >[!IMPORTANT]
 >Microsoft R Server's operationalization feature is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.

@@ -48,7 +48,7 @@ R Server's offers seamless integration with authentication solutions for operati
 
 ## Local Administrator Account Authentication
 
-During configuration, a default `admin` account is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -142,7 +142,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
+   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
 1. Repeat these steps on each machine hosting the web node.
 
@@ -182,7 +182,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
-   1. Add a key by selecting a key duration.
+   1. Add a key by selecting a key duration. Take note of this key as your application developers and data scientists will need it later to authenticate.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -251,7 +251,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-utility.md#test) to ensure all tests are passing in the configuration.
+   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
 1. Repeat these steps on each machine hosting the web node.
 

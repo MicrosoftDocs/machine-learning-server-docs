@@ -80,6 +80,7 @@
 ### Administration
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
+#### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics.md)
 #### [Capacity evaluation](operationalize/admin-evaluate-capacity.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
@@ -163,7 +164,7 @@
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
 ## [Azure Virtual Machines](vm-cloud.md)
 ### [R Server for Linux](vm-azure-rserver-linux.md)
-### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780(SQL.130).aspx)
+### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 
 # [Package Reference](package-reference.md)
