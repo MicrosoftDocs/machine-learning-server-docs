@@ -131,37 +131,11 @@ For added security, you can [configure SSL](security-https.md) as well as authen
 
 ![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
 
-
-**Step 1: Configure Web Node(s)**
-
->**Note:** It is possible to run the operationalization web node service from within IIS.
-
-  1. On each machine, install Microsoft R Server:
-
-     + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
-     + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
-
-  1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
-     1. From the main menu, choose the option to **Configure R Server for Operationalization**.
-     1. From the sub-menu, choose the option to **Configure a web node**.     
-     1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
-        You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
-
-  1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
-
-Your web node is now configured. Repeat these steps for each web node you want to add.
-
-**Step 2: Configure a Remote Database**
-
-By default, the web node configuration sets up a local SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
-
-If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
-
-> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
+<br>
 
 <a name="add-compute-nodes"></a>
 
-**Step 3: Configure Compute Node(s)**
+**Step 1: Configure Compute Node(s)**
 
 >**Note:** A compute node can be configured on its own machine or on the same machine as the web node.
 
@@ -212,31 +186,32 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
-**Step 4: Configure Enterprise-Grade Security**
+<br>
 
-In production environments, we strongly recommend the following approaches:
+**Step 2: Configure a Remote Database**
 
-1. [Configure SSL/TLS](security-https.md) and install the necessary certificates.
+By default, the web node configuration sets up a local SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
 
-1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
+If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
 
-1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
+> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
 
-**Step 5: Provision on the Cloud**
+<br>
 
-If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
+**Step 3: Configure Web Node(s)**
 
-**Step 6: Declare all Compute Nodes**
+>**Note:** It is possible to run the operationalization web node service from within IIS.
 
-Once all web nodes and compute nodes are configured, you must declare the IP addresses of each compute node with each web node.
+1. On each machine, install Microsoft R Server:
+   + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
+   + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
 
-On each web node:
-
+1. Declare the IP addresses of every compute node with each web node.
    1. Open the external configuration file, `appsettings.json` file.
 
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
@@ -255,11 +230,45 @@ On each web node:
 
    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-   1. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
-
    1. Repeat these steps on each web node to declare all the compute node.
 
-**Step 7: Post Configuration**
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
+   1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+
+   1. From the sub-menu, choose the option to **Configure a web node**.     
+
+   1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
+        You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
+
+   1. From the main menu, choose the option to **Run Diagnostic Tests** . Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
+
+   1. Exit the utility.
+
+1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+
+Your web node is now configured. Repeat these steps for each web node you want to add.
+
+<br>
+
+**Step 4: Configure Enterprise-Grade Security**
+
+In production environments, we strongly recommend the following approaches:
+
+1. [Configure SSL/TLS](security-https.md) and install the necessary certificates.
+
+1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
+
+1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
+
+<br>
+
+**Step 5: Provision on the Cloud**
+
+If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
+
+<br>
+
+**Step 6: Post Configuration**
 
 1. [Update service ports](admin-utility.md#ports), if needed.
 
