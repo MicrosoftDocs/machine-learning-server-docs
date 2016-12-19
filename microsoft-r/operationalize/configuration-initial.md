@@ -226,6 +226,8 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
        }
        ```
 
+      > Do not update any other properties in this file at this point. It will be updated during the compute node configuration.
+
    1. Close and save the file.
 
    1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
@@ -240,7 +242,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
         You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
 
-   1. From the main menu, choose the option to **Run Diagnostic Tests** . Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
+   1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
 
    1. Exit the utility.
 
