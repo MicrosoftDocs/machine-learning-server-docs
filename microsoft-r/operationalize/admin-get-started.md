@@ -84,16 +84,16 @@ The external configuration file, `appsettings.json` defines a number of policies
 
 **Table: Path to `appsettings.json` by node and operating system**
 
-|Operating System|Path on Web Node|Path on Compute Node|
+| |Path on Web Node|Path on Compute Node|
 |----------------|--------|------------|
-|Windows|&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ |&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\|
-|Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/|  
+|Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
+|Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ </small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
 
 *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
  
 ### Asynchronous Batch Sizes
 
-For asynchronous batch executions, you can specify the maximum number of operations a single caller can execute in parallel during a specific asynchronous job. By restricting single batch executions in this way, you can avoid or minimize resource exhaustion by a single user. 
+Your users can perform speedy real-time and batch scoring. To reduce the risk of resource exhaustion by a single user, you can set the maximum number of operations that a single caller can execute in parallel during a specific asynchronous batch job. 
 
 This value is defined in `"MaxNumberOfThreadsPerBatchExecution"`  property in the `appsettings.json` on the web node. If you have multiple web nodes, we recommend you set the same values on every machine. 
 

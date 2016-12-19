@@ -43,7 +43,11 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 ### Get a Swagger Generation Tool
 
-1. Install a Swagger code generator on your local machine. Some popular Swagger code generation tools are [Azure AutoRest](https://github.com/Azure/autorest) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
+1. Install a Swagger code generator on your local machine. 
+
+   Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Visual Studio or chocolatey) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
+
+   ![One-box configuration](../media/o16n/app-dev-autorest.png)
 
 1. Familiarize yourself with the tool so you can generate the API client libraries in your preferred programming language. 
 
