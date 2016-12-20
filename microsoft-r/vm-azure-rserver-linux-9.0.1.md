@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Microsoft R Server on a Linux Virtual Machine on Azure
 
-Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
+Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
 This VM also includes:
 
