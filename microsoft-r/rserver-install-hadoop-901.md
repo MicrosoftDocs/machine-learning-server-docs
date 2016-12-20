@@ -342,6 +342,12 @@ Install the Cloudera Manager parcels as follows:
 
 11. Click the MRS **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
+## Configure R Server for Operationalization
+
+Developers might want to configure R Server for operationalization and deploying R analytics on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time. See [Configuring R Server for Operationalization](operationalize/configuration-initial.md) for setup instructions.
+
+We recommend that you set up the ["one-box configuration"](operationalize/configuration-initial.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
+
 ## Troubleshoot installation problems
 
 See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for tips.
@@ -349,8 +355,6 @@ See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-h
 If you want to start over, see [Uninstall Microsoft R Server](rserver-install-uninstall-upgrade.md) for instructions.
 
 ## Next steps
-
-Developers might want to configure R Server for operationalization and deploying R analytics. This optional feature provides a server-based framework for running R code in real time. See [Configuring R Server for Operationalization](operationalize/configuration-initial.md) for setup instructions.
 
 To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](scaler-hadoop-getting-started.md).
 
