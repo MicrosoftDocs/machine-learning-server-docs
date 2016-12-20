@@ -51,7 +51,7 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
 - Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-<sup>1</sup> After installing R Server, you can [configure](operationalize/configuration-initial.md) R Server to [operationalize](operationalize/configuration-about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
+<sup>1</sup> After installing R Server, you can [configure](operationalize/configuration-initial.md) R Server to [operationalize](operationalize/about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
 + Windows: &nbsp;&nbsp;Windows Server 2012 R2, Windows Server 2016
 + Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
