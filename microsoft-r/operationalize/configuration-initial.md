@@ -41,9 +41,11 @@ The simplest configuration is a single web node and compute node on a single mac
 
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
->- Windows Server 2012, Windows Server 2016
+>- Windows Server 2012 R2, Windows Server 2016
 >- Ubuntu 14.04, Ubuntu 16.04,
 >- CentOS/RHEL 7.x
+
+This feature uses a SQLite database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
 
 
 <a name="onebox"></a>

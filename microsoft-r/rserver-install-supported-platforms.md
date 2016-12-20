@@ -31,11 +31,13 @@ This article specifies supported operating systems, distributions, and database 
 
 This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
 
-**Operating Systems (64-Bit only) <sup>1</sup>**
+>All supported operating systems are 64-bit only
+
+**Microsoft R Server <sup>1</sup>**
 
 - Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
 - Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
-- SUSE Linux Enterprise Server 11 (SLES11) <sup>1</sup>
+- SUSE Linux Enterprise Server 11 (SLES11) 
 - Ubuntu 14.04 and 16.04
 
 **Microsoft R Server for Teradata <sup>1</sup>**
@@ -49,13 +51,11 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
 - Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-<sup>1</sup> **[Operationalization](operationalize/about.md)** capabilities (formerly known as DeployR) are integrated into R Server and have no separate installation requirements. However, this feature does need to be [configured as described here](operationalize/configuration-initial.md). This feature uses a SQLite database, but can be configured to [use an SQL Server or PostgreSQL](operationalize/configure-remote-database.md) database. Due to its dependency on ASP .Net Core, the operationalization feature is **currently** supported only following platforms:
-+ Windows: &nbsp;&nbsp;Windows Server 2012, Windows Server 2016
-+ Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
-+ Hadoop on Linux-based edge nodes:  Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x
-
-
+<sup>1</sup> After installing R Server, you can [configure](operationalize/configuration-initial.md) R Server to [operationalize](operationalize/configuration-about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
++ Windows: &nbsp;&nbsp;Windows Server 2012 R2, Windows Server 2016
++ Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
++ Hadoop: &nbsp;&nbsp;&nbsp;&nbsp;Linux-based edge nodes on Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x
 
 ## Microsoft R Server 8.0.5
 
