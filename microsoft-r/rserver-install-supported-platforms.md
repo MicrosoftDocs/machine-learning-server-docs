@@ -53,9 +53,9 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 
 <sup>1</sup> After installing R Server, you can [configure](operationalize/configuration-initial.md) R Server to [operationalize](operationalize/configuration-about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
 + Windows: &nbsp;&nbsp;Windows Server 2012 R2, Windows Server 2016
-+ Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
-+ Hadoop: &nbsp;&nbsp;&nbsp;&nbsp;Linux-based edge nodes on Ubuntu 14.04, Ubuntu 16.04, and CentOS/RHEL 7.x
++ Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
++ Hadoop: &nbsp;&nbsp;&nbsp;&nbsp;Linux-based edge nodes on CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04 
 
 ## Microsoft R Server 8.0.5
 
