@@ -6,7 +6,7 @@ description: "An introduction to functions in the mrsdeploy package in Microsoft
 keywords: "mrsdeploy package vignette"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/01/2016"
+ms.date: "12/19/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -59,8 +59,8 @@ Deployment and administration tasks require an authenticated connection. Authent
 
 For authentication, you can choose from the following approaches, which are valid on all supported platforms:
 
-- **remote_login()** using an on premises Active Directory server on your network.
-- **remote_login_aad()** using Azure Active Directory in the cloud.
+- **remoteLogin()** using an on premises Active Directory server on your network.
+- **remoteLoginAAD()** using Azure Active Directory in the cloud.
 
 For on premises Active Directory, users will need to authenticate via the `/user/login` API, passing a username and password.
 
