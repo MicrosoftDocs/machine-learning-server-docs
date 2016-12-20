@@ -39,12 +39,13 @@ All configurations have at least a single web node and single compute node:
 
 The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
 
+This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
+
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
->- Windows Server 2012, Windows Server 2016
+>- Windows Server 2012 R2, Windows Server 2016
 >- Ubuntu 14.04, Ubuntu 16.04,
 >- CentOS/RHEL 7.x
-
 
 <a name="onebox"></a>
 ## The Basic One-Box Configuration
@@ -196,7 +197,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 > Create this database and register it in the configuration file below BEFORE the service for the control node is started.
 
-<br>
+<br><a name="webnode"></a>
 
 **Step 3: Configure Web Node(s)**
 
@@ -230,9 +231,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
-
-   1. Repeat these steps on each web node to declare all the compute node.
+   1. Repeat these steps on each web node to declare each and every compute node.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
@@ -240,7 +239,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
    1. From the sub-menu, choose the option to **Configure a web node**.     
 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
-        You can always authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md) later.
+        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
    1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
 
@@ -266,7 +265,7 @@ In production environments, we strongly recommend the following approaches:
 
 **Step 5: Provision on the Cloud**
 
-If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console.
+If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
 
 <br>
 

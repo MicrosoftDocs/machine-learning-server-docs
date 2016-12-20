@@ -31,11 +31,13 @@ This article specifies supported operating systems, distributions, and database 
 
 This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
 
-**Operating Systems (64-Bit only)**
+>All supported operating systems are 64-bit only
+
+**Microsoft R Server <sup>1</sup>**
 
 - Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, and Windows Server 2016
 - Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x  
-- SUSE Linux Enterprise Server 11 (SLES11) <sup>1</sup>
+- SUSE Linux Enterprise Server 11 (SLES11) 
 - Ubuntu 14.04 and 16.04
 
 **Microsoft R Server for Teradata <sup>1</sup>**
@@ -48,8 +50,15 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - Hadoop Distributions: Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.x and 16.x (except for Ubuntu with Cloudera Parcel install)
 - Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
+<br>
 
-<sup>1</sup> [Operationalization](operationalize/about.md) capabilities (formerly known as the DeployR server) are integrated into R Server and have no separate installation requirements. However, this feature does need to be [configured](operationalize/configuration-initial.md). Currently, this feature is available on RHEL and CentOS,  Ubuntu, and on standalone server installations on Windows. Projected availability on SLES11, Teradata, Hadoop, and SQL Server R Services is next year (2017).
+**<sup>1</sup>** After installation, you can [configure](operationalize/configuration-initial.md) R Server to [operationalize](operationalize/about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
++ Windows: &nbsp;&nbsp;Windows Server 2012 R2, Windows Server 2016
++ Linux: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04
+  &nbsp;&nbsp;&nbsp;&nbsp;_Note: Projected availability on SLES in 2017_
++ Hadoop: &nbsp;&nbsp;&nbsp;&nbsp;Linux-based edge nodes on CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04 
+
+<br>
 
 ## Microsoft R Server 8.0.5
 

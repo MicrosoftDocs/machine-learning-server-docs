@@ -93,6 +93,17 @@ Review the log and configuration files for any component that was identified as 
 
 This section contains pointers to help you troubleshoot some problems that can occur.
 
+### "BackEndConfiguration is missing URI" Error
+
+If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then verify that your compute nodes are installed and [declared](configuration-initial.md#webnode) prior to installing the web node. 
+
+```
+Unhandled Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> Microsoft.DeployR.Server.App.Common.Exceptions.ConfigurationException: BackEndConfiguration is missing URIs
+   at Microsoft.DeployR.Server.WebAPI.Extensions.ServicesExtensions.AddDomainServices(IServiceCollection serviceCollection, IHostingEnvironment env, IConfigurationRoot configurationRoot, String LogPath)
+   --- End of inner exception stack trace ---
+```
+
+
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
 If you get an `HTTP status 503 (Service Unavailable)` response when using operationalization Rest APIs -or- get a `FAIL` result for the compute node during diagnostic testing, then it may be that one or more symlinks needed to start [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve), the R execution component for the compute node, are missing.
