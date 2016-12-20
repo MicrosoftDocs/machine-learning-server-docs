@@ -1,7 +1,8 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
-## [Introduction to Microsoft R](microsoft-r-getting-started.md)
-## [Glossary](microsoft-r-glossary.md)
-## [Additional Resources](microsoft-r-more-resources.md)
+
+# [Get started with Microsoft R](microsoft-r-getting-started-tutorial.md)
+## [An R Tutorial in 25 functions](microsoft-r-getting-started-tutorial.md)
+## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
@@ -182,3 +183,7 @@
 ### [ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 
 # [Archived Documentation](microsoft-r-old-versions.md)
+
+# [Glossary](microsoft-r-glossary.md)
+
+# [Additional Resources](microsoft-r-more-resources.md)

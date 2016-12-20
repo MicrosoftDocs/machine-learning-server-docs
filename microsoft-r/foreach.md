@@ -6,7 +6,7 @@ description: "High level guide to using foreach and iterators packages."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/20/2016"
+ms.date: "12/19/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,15 +28,13 @@ ms.custom: ""
 
 One common approach to parallelization is to see if the iterations
 within a loop can be performed independently, and if so, then try to run
-the iterations concurrently rather than sequentially. can help you do
-this loop parallelization quickly and easily.
+the iterations concurrently rather than sequentially.
 
 ## Using `foreach`
 
-
 The `foreach` package is a set of tools that allow you to run virtually
 anything that can be expressed as a for-loop as a set of parallel tasks.
-One application of this is to allow multiple simulations to run in
+One scenario is to run multiple simulations in
 parallel. As a simple example, consider the case of simulating 10000
 coin flips, which can be done by sampling with replacement from the
 vector `c(H, T)`. To run this simulation 10 times sequentially, use
@@ -69,11 +67,11 @@ To actually run in parallel, we need to have a “parallel backend” for
 In order for loops coded with `foreach` to run in parallel, you must
 register a parallel backend to manage the execution of the loop. Any
 type of mechanism for running code in parallel could potentially have a
-parallel backend written for it. Currently, Microsoft
+parallel backend written for it. Currently, Microsoft R
 includes the `doParallel` backend; this uses the `parallel` package of R
 2.14.0 or later to run jobs in parallel, using either of the component
 parallelization methods incorporated into the parallel package:
-SNOW-like functionality using socket connections or multicore-like
+SNOW-like functionality using socket connections, or multicore-like
 functionality using forking (on Linux only).
 
 The `doParallel` package is a parallel backend for `foreach` that is
@@ -250,7 +248,7 @@ function that knows what to do with it, the iterator supplies a sequence
 of values. The iterator also maintains information about its state, in
 particular its current index.
 
-includes a number of functions for creating iterators, the simplest of
+The `iterators` package includes a number of functions for creating iterators, the simplest of
 which is `iter`, which takes virtually any R object and turns it into an
 iterator object. The simplest function that operates on iterators is the
 `nextElem` function, which when given an iterator, returns the next
@@ -307,7 +305,7 @@ value is drawn from a specified random normal distribution:
     [1] 1.242886
 
 Similarly, the `irunif`, `irbinom`, and `irpois` functions create
-iterators which drawn their values from uniform, binomial, and Poisson
+iterators which draw their values from uniform, binomial, and Poisson
 distributions, respectively. (These functions use the standard R
 distribution functions to generate random numbers, and these are not
 necessarily useful in a distributed or parallel environment. When using
@@ -418,10 +416,9 @@ dispatch. The only argument that we need is the object for the iterator
 to return, which can be of any type. Instead, we implement this iterator
 by defining a normal function that returns the iterator.
 
-This iterator is quite simple to implement, and possibly even useful. Be
-careful, however, how you you use this iterator. If you pass it to
-`foreach`, it will result in an infinite loop unless you pair it with a
-finite iterator. And never pass this iterator to `as.list` without the
+This iterator is quite simple to implement, and possibly even useful, but exercise caution if you use it.
+Passing it to `foreach` will result in an infinite loop unless you pair it with a
+finite iterator. Similarly, never pass this iterator to `as.list` without the
 `n` argument.
 
 The iterator returned by `iforever` is a list that has a single element
@@ -435,8 +432,8 @@ contain any state. Most iterators need to contain some state, or it will
 be difficult to make it return different values and eventually stop.
 Managing the state is usually the real trick to writing iterators.
 
-As an example of writing a stateful iterator, Let’s modify the previous
-iterator to put a limit on the number of values that it returns. I’ll
+As an example of writing a stateful iterator, let’s modify the previous
+iterator to put a limit on the number of values that it returns. We’ll
 call the new function `irep`, and give it another argument called
 `times`:
 

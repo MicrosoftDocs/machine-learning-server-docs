@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Microsoft R Server on a Linux Virtual Machine on Azure
 
-Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
+Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
 This VM also includes:
 
@@ -59,7 +59,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride)
-    + Finish the [DeployR configuration](#deployrconfig)
+    + Configure R Server for [operationalization](#o16n) so it will act as a deployment server and host analytic web services. 
 
 <a name="connect"></a>
 
@@ -111,6 +111,7 @@ Some related articles are:
 + [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
 + [Creating Azure VMs with ARM PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
 
+<a name="o16n"></a>
 
 ## Operationalize R Analytics with R Server on the VM
 

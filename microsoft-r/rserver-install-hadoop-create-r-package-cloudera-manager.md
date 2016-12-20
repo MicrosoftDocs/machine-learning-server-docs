@@ -5,7 +5,7 @@ description: "Create an R Package Parcel for Cloudera Manager to distribute R ac
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "06/14/2016"
+ms.date: "12/19/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
