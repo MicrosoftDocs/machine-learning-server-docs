@@ -80,9 +80,9 @@ Learn how to [install and get started with Microsoft R Client](r-client-get-star
 
 <br>
 
-## What's in R Server and R Client
+## Why choose R Server over R Client
 
-For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](#compare-prods).
+For a high-level, side-by-side comparison of R features in Microsoft R Server, R Client, and R Open, [see here](#compare-prods). For an explanation of benefts exclusive to R Server, read on.
 
 ### ScaleR
 

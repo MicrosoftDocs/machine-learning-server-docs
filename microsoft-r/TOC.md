@@ -1,8 +1,8 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 
 # [Get started with Microsoft R](microsoft-r-getting-started-tutorial.md)
-## [An R Tutorial in 25 functions or less](microsoft-r-getting-started-tutorial.md)
-## [Tips on computing with big data in R](microsoft-r-getting-started-tips.md)
+## [An R Tutorial in 25 functions](microsoft-r-getting-started-tutorial.md)
+## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
