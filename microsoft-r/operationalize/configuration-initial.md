@@ -39,7 +39,7 @@ All configurations have at least a single web node and single compute node:
 
 The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
 
-This feature uses a SQLite database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
+This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
 
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
