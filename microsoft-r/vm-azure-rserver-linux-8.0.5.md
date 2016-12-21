@@ -27,15 +27,11 @@ ms.custom: ""
 
 # Microsoft R Server on a Linux Virtual Machine on Azure
 
->The article on Microsoft R Server 2016 (8.0.5) [is covered here](vm-azure-rserver-linux-8.0.5.md).
+><big>[Microsoft R Server 9.0.1 is now available](vm-azure-rserver-linux-9.0.1.md)  on an Azure virtual machine.</big>
 
-Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
+Microsoft offers a Linux virtual machine (VM) on Azure that includes a preconfigured instance of [Microsoft R Server 8.0.5 for Linux](https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server-805). 
 
-This VM also includes:
-
-+ `mrsdeploy`: a new R package for deploying R analytics inside applications and backend systems. [Learn more...](mrsdeploy/mrsdeploy.md)
-
-+ `MicrosoftML`:  a new 'Microsoft Machine Learning algorithm' R package that includes functions for incorporating machine learning into R code or a script that executes on R Server for Windows, R Client for Windows, and SQL Server R Services. Availability for Linux, Hadoop, and Azure HDInsight is projected for the first quarter of 2017. [Learn more...](microsoftml/microsoftml.md)
+This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](deployr-about.md) for deploying R analytics inside applications and backend systems. 
 
 ## Provision the R Server Virtual Machine
 
@@ -61,7 +57,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride)
-    + Configure R Server for [operationalization](#o16n) so it will act as a deployment server and host analytic web services. 
+    + Finish the [DeployR configuration](#deployrconfig)
 
 <a name="connect"></a>
 
@@ -86,11 +82,13 @@ With Microsoft R Server installed, you can configure your favorite R integrated 
 #### Configure RStudio for Microsoft R Server
   1. Launch RStudio.
   1. [Update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R).
+     1. From the **Tools** menu, choose **Global Options**.
+     1. In the  **General** tab, update the path to R to point to R executable for R Server.
   1. When you launch RStudio, Microsoft R Server will now be the default R engine.
 
 #### Open Ports needed to Use RStudio Server
 
-RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you will need to go to the Azure Portal and elect the proper Network Security Group. Select the **All Settings** option and choose **Inbound security rules**. Add a new rule for RStudio. Name the rule, choose **Any** for the Protocol, and add port 8787 to the destination port range. Click **OK** to save your changes. You should now be able to access RStudio using a browser.
+RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you will need to go to the Azure Portal and elect the proper Network Security Group. Select the All Settings option and choose Inbound security rules. Add a new rule for RStudio. Name the rule, choose Any for the Protocol, and add port 8787 to the destination port range. Click OK to save your changes. You should now be able to access RStudio using a browser.
 
 #### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
 
@@ -113,12 +111,23 @@ Some related articles are:
 + [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
 + [Creating Azure VMs with ARM PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
 
-<a name="o16n"></a>
+<a name=deployrconfig></a>
 
-## Operationalize R Analytics with R Server on the VM
+## Use DeployR on the Virtual Machine
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+To configure the DeployR instance:
 
+1. On the VM, launch the DeployR Administrator Utility script  as `root` or a user with `sudo` permissions:
+   ```
+   cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
+   ./adminUtilities.sh
+   ```
+
+1. [Set the DeployR administrator password](deployr-install-on-linux.md#postinstall).
+
+1. [Define the DeployR Web context](deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
+
+1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
 
 ## Access Data in an Azure Storage Account
 
@@ -128,14 +137,11 @@ When you need to use data from your Azure storage account, there are several opt
 
 + Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files.](https://azure.microsoft.com/en-us/documentation/articles/storage-how-to-use-files-linux/)
 
-
 ## Use Data in an Azure Data Lake Storage (ADLS) account
 
-You can read data from ADLS storage using the `RevoscaleR` package. Simply reference the storage account in the same way that you would an HDFS file system, by using `webHDFS`. For more information, see this [setup guide](http://go.microsoft.com/fwlink/?LinkId=723452).
+You can read data from ADLS storage using ScaleR, if you reference the storage account the same way that you would an HDFS file system, by using webHDFS. For more information, see this [setup guide](http://go.microsoft.com/fwlink/?LinkId=723452).
 
-
-## Resources & Documentation
-
+## Resources
 Additional documentation about Microsoft R can be found in this MSDN library using the table of contents on your left.
 
 See these additional resources to learn about R in general:
