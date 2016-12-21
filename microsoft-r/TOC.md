@@ -164,7 +164,7 @@
 # [Cloud-Based Offerings](vm-cloud.md)
 ## [Azure HDInsight](vm-r-server-hdinsight.md)
 ## [Azure Virtual Machines](vm-cloud.md)
-### [R Server for Linux](vm-azure-rserver-linux.md)
+### [R Server for Linux](vm-azure-rserver-linux-9.0.1.md)
 ### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 
