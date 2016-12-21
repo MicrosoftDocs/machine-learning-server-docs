@@ -6,7 +6,7 @@ description: "Learn the ScaleR functions found in Microsoft R Client and Microso
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/14/2016"
+ms.date: "12/20/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,14 +36,17 @@ ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readil
 
 To complete this quick start as written, you will need about 15 minutes and the following components:
 
+* [Visual Studio 2015 (community edition or another edition)](https://www.visualstudio.com/downloads/)
+* [Microsoft R Client](http://aka.ms/rclient/download) or [Microsoft R Server](rserver.md)
 * [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
-* [Microsoft R Client](r-client.md)
 
-Setup for **R Tools for Visual Studio** adds the R project template and optionally installs **Microsoft R Client**.
+Setup for **Microsoft R Client** includes an option for also installing **R Tools for Visual Studio (RTVS)**. RTVS adds the R project template, R Interactive windows, R Help, and other development support.
 
-Microsoft R includes sample data and packages for the R language, so once you have the tools there is nothing more to download.
+Microsoft R Client and R includes sample data and packages for the R language, so once you have the tools there is nothing more to download.
 
-*AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
+## About sample data
+
+*AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set about flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
 ## Start a project
 

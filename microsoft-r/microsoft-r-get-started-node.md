@@ -38,7 +38,7 @@ New to the R language or Microsoft R products and pacakges? These tutorials will
 
 ## ScaleR: sample data
 
-[Sample data in RevoScaleR package](scaler-user-guide-sample-data.md)
++ [Sample data in RevoScaleR package](scaler-user-guide-sample-data.md)
 
 ## ScaleR: a deeper dive
 
