@@ -30,26 +30,26 @@ ms.custom: ""
 
 New to the R language or Microsoft R products and pacakges? These tutorials will help you get started.
 
-[Get Started with ScaleR](scaler-getting-started.md)
-[Get started with ScaleRon Hadoop MapReduce](scaler-hadoop-getting-started.md)
-[Get started with ScaleRon Hadoop Spark](scaler-spark-getting-started.md)
-[Get Started with ScaleRon Teradata](scaler-teradata-getting-started.md)
-[Get Started with PemaR](pemar-getting-started.md)
++ [Get Started with ScaleR](scaler-getting-started.md)
++ [Get started with ScaleRon Hadoop MapReduce](scaler-hadoop-getting-started.md)
++ [Get started with ScaleRon Hadoop Spark](scaler-spark-getting-started.md)
++ [Get Started with ScaleRon Teradata](scaler-teradata-getting-started.md)
++ [Get Started with PemaR](pemar-getting-started.md)
 
-## Sample data
+## ScaleR: sample data
 
-[Sample data in ScaleR](scaler-user-guide-sample-data.md)
+[Sample data in RevoScaleR package](scaler-user-guide-sample-data.md)
 
 ## ScaleR: a deeper dive
 
-[Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
-[Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
-[Loan data example](scaler-getting-started-1-example-loan-data.md)
-[Census data example](scaler-getting-started-2-example-census-data.md)
++ [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
++ [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
++ [Loan data example](scaler-getting-started-1-example-loan-data.md)
++ [Census data example](scaler-getting-started-2-example-census-data.md)
 
 ## From R to Microsoft R
 
-[An R Tutorial in 25 functions](microsoft-r-getting-started-tutorial.md)
++ [An R Tutorial in 25 functions](microsoft-r-getting-started-tutorial.md)
 
 ## See Also
 
