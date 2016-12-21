@@ -42,7 +42,7 @@ Here are some tips for handling big data with R:
 
 It is always best to start with the easiest things first, and in some cases getting a better computer, or improving the one you have, can help a great deal. Usually the most important consideration is memory. If you are analyzing data that just about fits in R on your current system, getting more memory will not only let you finish your analysis, it is also likely to speed things up by a lot. This is because your operating system starts to “thrash” when it gets low on memory, removing some things from memory to let others continue to run. This can slow your system to a crawl. Getting more cores can also help, but only up to a point. R itself can generally only use one core at a time internally. In addition, for many data analysis problems the bottlenecks are disk I/O and the speed of RAM, so efficiently using more than 4 or 8 cores on commodity hardware can be difficult.
 
-### Upgrade Your Software
+## Upgrade Your Software
 
 Some software is simply more optimized for use with big data. For instance, getting better math libraries can greatly speed some computations. R allows its core math libraries to be replaced, and in Microsoft R Server and R Client they are replaced with extremely fast, threaded libraries. And, of course, the ***RevoScaleR*** package provides the underlying high-performance compute engine used by its Big Data Big Analytics algorithms.
 
