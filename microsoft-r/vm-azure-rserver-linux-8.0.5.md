@@ -25,9 +25,9 @@ ms.custom: ""
 
 ---
 
-# Microsoft R Server on a Linux Virtual Machine on Azure
+# Microsoft R Server 2016 (8.0.5) on a Linux Virtual Machine on Azure
 
-><big>[Microsoft R Server 9.0.1 is now available](vm-azure-rserver-linux-9.0.1.md)  on an Azure virtual machine.</big>
+><big>[Microsoft R Server 2016 (9.0.1) is now available](vm-azure-rserver-linux-9.0.1.md)  on an Azure virtual machine.</big>
 
 Microsoft offers a Linux virtual machine (VM) on Azure that includes a preconfigured instance of [Microsoft R Server 8.0.5 for Linux](https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server-805). 
 
