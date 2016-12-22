@@ -31,16 +31,16 @@ ms.custom: ""
 New to the R language or Microsoft R products and pacakges? These tutorials will help you get started.
 
 + [Get Started with ScaleR](scaler-getting-started.md)
-+ [Get started with ScaleRon Hadoop MapReduce](scaler-hadoop-getting-started.md)
-+ [Get started with ScaleRon Hadoop Spark](scaler-spark-getting-started.md)
-+ [Get Started with ScaleRon Teradata](scaler-teradata-getting-started.md)
++ [Get started with ScaleR on Hadoop MapReduce](scaler-hadoop-getting-started.md)
++ [Get started with ScaleR on Hadoop Spark](scaler-spark-getting-started.md)
++ [Get Started with ScaleR on Teradata](scaler-teradata-getting-started.md)
 + [Get Started with PemaR](pemar-getting-started.md)
 
-## ScaleR: sample data
+## ScaleR > sample data
 
-+ [Sample data in RevoScaleR package](scaler-user-guide-sample-data.md)
++ [Sample data available in the RevoScaleR package](scaler-user-guide-sample-data.md)
 
-## ScaleR: a deeper dive
+## ScaleR > a deeper dive
 
 + [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
 + [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
@@ -49,7 +49,7 @@ New to the R language or Microsoft R products and pacakges? These tutorials will
 
 ## From R to Microsoft R
 
-+ [An R Tutorial in 25 functions](microsoft-r-getting-started-tutorial.md)
++ [Expore R and ScaleR in 25 functions or less](microsoft-r-getting-started-tutorial.md)
 
 ## See Also
 
