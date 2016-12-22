@@ -32,9 +32,7 @@ Applies To: Azure Virtual Machines, provisioned as the 8.0.3 version of "R Serve
 
 If you already have an existing 8.0.3 version of "R Server Only SQL Server 2016 Enterprise" Virtual Machine on Azure, these instructions apply to your VM. 
 
-A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). 
-
-If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](https://msdn.microsoft.com/library/mt759780.aspx).
+A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](https://msdn.microsoft.com/library/mt759780.aspx).
 
 ## Provision the R Server 8.0.3 Virtual Machine
 
