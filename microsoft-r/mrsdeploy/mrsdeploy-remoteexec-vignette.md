@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: mrsdeploy Remote Execution functions in Microsoft R (vignette)"
+title: mrsdeploy Remote Execution functions in Microsoft R"
 description: "Remote execution functions in the mrsdeploy package in Microsoft R are used for command line interaction with a remote R Server instance from a console application."
-keywords: "mrsdeploy package vignette"
+keywords: "mrsdeploy package"
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "12/02/2016"
@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# mrsdeploy Remote Execution functions in Microsoft R (vignette)
+# mrsdeploy Remote Execution functions in Microsoft R
 
-This article provides the vignette documentation for Remote Execution functions in the [mrsdeploy package](mrsdeploy.md).
+This article describes the Remote Execution functions in the [mrsdeploy package](mrsdeploy.md).
 
 ## Using the remote command line
 
@@ -207,6 +207,6 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 [mrsdeploy Function Reference](mrsdeploy.md)
 
-[Vignette introduction](mrsdeploy-intro-vignette.md)
+[mrsdeploy introduction](mrsdeploy-intro-vignette.md)
 
 [Package Reference](../package-reference.md)
