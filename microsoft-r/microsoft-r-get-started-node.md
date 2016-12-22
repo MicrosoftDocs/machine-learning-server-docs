@@ -49,7 +49,7 @@ New to the R language or Microsoft R products and pacakges? These tutorials will
 
 ## From R to Microsoft R
 
-+ [An R Tutorial in 25 functions or less](microsoft-r-getting-started-tutorial.md)
++ [Expore R and ScaleR in 25 functions or less](microsoft-r-getting-started-tutorial.md)
 
 ## See Also
 

@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Create your first R solution with Microsoft R"
-description: "Create your first R solution with Microsoft R."
+title: "Explore R and ScaleR in 25 functions"
+description: "Execute R and ScaleR commands using R Microsoft R Client or R Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/20/2016"
+ms.date: "12/21/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,13 +26,37 @@ ms.custom: ""
 
 ---
 
-# Create your first R solution with Microsoft R (an R Tutorial in 25 Functions)
+# Explore R and ScaleR in 25 functions
 
-To get you started with Microsoft R Server and R Client, this brief tutorial will present you with 25 (or so) of the most commonly used R functions. You can learn to load your own small data sets into R, and begin to do useful analysis on them. 
+If you are new to both R and Microsoft R, this brief tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. 
 
-## Create Vectors
+This tutorial starts with base R commands before transitioning to ScaleR functions in Microsoft R. If you already know R, you might want to skip ahead to [Explore ScaleR Functions](#ExploreScaleRFunctions).
 
-R is an environment for analyzing data, so the natural starting point is with some data to analyze. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, it is simplest to use R’s *c* function to combine the data into a vector. Type the following at the &gt;  prompt at the beginning of the line:
+## Prerequisites
+
+This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe, plus sample data and commands copied directly from this tutorial. RGui.exe and R.exe are command line tools included in an R distribution like MRO.
+
+To start RGui.exe, do the following:
+
+1. Go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64
+2. Double-click `RGui.exe`
+
+If you would prefer a rich IDE like RTVS, use these links instead:
+
+* [Visual Studio 2015 (community edition or another edition)](https://www.visualstudio.com/downloads/)
+* [Microsoft R Client](http://aka.ms/rclient/download) (or [Microsoft R Server](rserver.md))
+* [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
+
+> [!NOTE]
+> Setup for **Microsoft R Client** includes an option for also installing **R Tools for Visual Studio (RTVS)**. RTVS adds the R project template, R Interactive windows, R Help, and other development support. Both Microsoft R Client and MRO include sample data and packages for the R language, so once you have the tools there is nothing more to download.
+
+## Start with R
+
+Because Microsoft R is built on R, the right place to begin is with base R commands.
+
+### Create Vectors in R
+
+R is an environment for analyzing data, so the natural starting point is to load some data. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s *c* function to combine the data into a vector. Type or copy the following script and paste it at the &gt; prompt at the beginning of the command line:
 
 	c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
 	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
@@ -42,14 +66,14 @@ R is an environment for analyzing data, so the natural starting point is with so
 	[1]  850  740  900 1070  930  850  950  	980  980  880  
 	[11]  1000 980  930  650  760  810 1000 1000  960  960
 
-This indicates that R has interpreted what you typed, created a vector with 20 elements, and returned that vector. But we have a problem. R hasn’t saved what we typed. If we want to use this vector again (and that’s the usual reason for creating a vector in the first place), we need to *assign* it. The R assignment operator has the suggestive form *&lt;-* to indicate a value is being assigned to a name. You can use most combinations of letters, numbers, and periods to form names (but note that names can’t begin with a number); here we’ll use michelson:
+This indicates that R has interpreted what you typed, created a vector with 20 elements, and returned that vector. But we have a problem. R hasn’t saved what we typed. If we want to use this vector again (and that’s the usual reason for creating a vector in the first place), we need to *assign* it. The R assignment operator has the suggestive form *&lt;-* to indicate a value is being assigned to a name. You can use most combinations of letters, numbers, and periods to form names (but note that names can’t begin with a number). Here we’ll use `michelson`:
 
 	michelson <- c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
 	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
 
-Now R responds with a prompt; the vector is not automatically printed when it is assigned. But now we can view the vector we created by typing its name at the prompt:
+R responds with a &gt; prompt. Notice that the named vector is not automatically printed when it is assigned. However, you can view the vector by typing its name at the prompt:
 
-	michelson
+	> michelson
 
 	[1]  850  740  900 1070  930  850  950  980   980  880
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
@@ -57,7 +81,8 @@ Now R responds with a prompt; the vector is not automatically printed when it is
 The `c` function is useful for typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors. For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using c as follows:
 
 	michelsonNew <- c(michelson, 850, 930, 940, 970, 870)
-	michelsonNew
+	
+	> michelsonNew
 
 	[1]  850  740  900 1070  930  850  950  	980  980  880
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
@@ -78,7 +103,7 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	[22] -0.19858329  0.13886578 -0.27933600
 	[25]  0.70891942
 
- By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the `mean` and *sd* arguments to *rnorm* to specify a different normal distribution:
+ By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the *mean* and *sd* arguments to *rnorm* to specify a different normal distribution:
 
 	normalSat <- rnorm(25, mean=450, sd=100)
 	normalSat
@@ -89,7 +114,7 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	[16] 406.8826 488.2447 454.1125 444.0776 320.3576
 	[21] 236.3024 360.6385 511.2733 508.2971 449.4118
 
-Similarly, you use the *runif* function to generate random data from a uniform distribution:
+Similarly, you can use the *runif* function to generate random data from a uniform distribution:
 
 	uniformDat <- runif(25)
 	uniformDat
@@ -132,11 +157,12 @@ For more general sequences, use the *seq* function:
 	[1] 10 14 18 22 26 30 34 38 42 46 50 54 58 62 66 70 74
 	[18] 78 82 86
 
-> Big Data Big Analytics Tip: If you are working with big data, you’ll use vectors regularly to manipulate parameters and information about your data.  However, you’ll typically want to store your big data sets in the RevoScaleR high-performance .xdf file format.
+> [!Tip]
+> If you are working with big data, you’ll still use vectors to manipulate parameters and information about your data, but you'll probably store the data in the RevoScaleR high-performance .xdf file format.
 
-### Exploratory Data Analysis
+### Exploratory Data Analysis in R
 
-Once you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the plot function, which provides a default graphical view of the data:
+Once you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the `plot` function, which provides a default graphical view of the data:
 
 	plot(michelson)
 	plot(normalDat)
@@ -182,9 +208,10 @@ Another useful exploratory plot, especially for comparing two distributions, is 
 
 ![](media/rserver-getting-started/image8.jpeg)
 
->*Big Data Big Analytics Tip*: These plots are great if you have a small data set in memory.  When working with big data, some plot types may not be very informative when working directly with the data (e.g., scatter plots can produce a big blob of ink) and others may be computational intensive (e.g., require sorting data).  A good starting place is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets.  And remember that RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
+> [!Tip]
+> These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be very informative when working directly with the data (e.g., scatter plots can produce a big blob of ink) and others may be computational intensive (e.g., require sorting data). A good starting place is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets.  And remember that RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
 
-## Summary Statistics
+### Summary Statistics in R
 
 While an informative graphic often gives the fullest description of a data set, numerical summaries provide a useful shorthand for describing certain features of the data. For example, estimators such as the mean and median help to locate the data set, and the standard deviation and variance measure the scale or spread of the data. R has a full set of summary statistics available:
 
@@ -204,9 +231,10 @@ While an informative graphic often gives the fullest description of a data set, 
 	 Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 	 650     850     940     909     980    1070
 
-> *Big Data Big Analytics Tip*: The *rxSummary* function in RevoScaleR will efficiently compute summary statistics for a data frame in memory or a large data file stored on disk.
+> [!Tip]
+> The *rxSummary* function in RevoScaleR will efficiently compute summary statistics for a data frame in memory or a large data file stored on disk.
 
-### Creating Multivariate Data Sets
+### Creating Multivariate Data Sets in R
 
 In most disciplines, meaningful data sets have multiple variables, typically observations of various quantities and qualities of individual subjects. Such data sets are typically represented as tables in which the columns correspond to variables and the rows correspond to subjects, or cases. In R, such tables can be created as *data frame* objects. For example, at the 2008 All-Star Break, the Seattle Mariners had five players who met the minimum qualifications to be considered for a batting title (that is, at least 3.1 at bats per game played by the team). Their statistics are shown in the following table:
 
@@ -243,13 +271,14 @@ You can then read the data into R using the *read.table* function. The argument 
 	4 0.267 0.278 0.374 0.656
 	5 0.259 0.329 0.440 0.769
 
-(Notice how *read.table* changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.)
+Notice how *read.table* changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.
 
 Most small R data sets in daily use are data frames. The built-in package, *datasets,* is a rich source of data frames for further experimentation. In the next section, we turn our attention to the built-in data set *attitude*, part of the *datasets* package.
 
->*Big Data Big Analytics Tip*: Check out the *rxImport* function for an efficient and flexible way to bring data stored in a variety of data formats (e.g., text, SQL Server, ODBC, SAS, SPSS, Teradata) into a data frame in memory or an .xdf file.
+> [!Tip]
+> Check out the *rxImport* function for an efficient and flexible way to bring data stored in a variety of data formats (e.g., text, SQL Server, ODBC, SAS, SPSS, Teradata) into a data frame in memory or an .xdf file.
 
-### Linear Models
+### Linear Models in R
 
 The *attitude* data set is a data frame with 30 observations on 7 variables, measuring the percent proportion of favorable responses to seven survey questions in each of 30 departments. The survey was conducted in a large financial organization; there were approximately 35 respondents in each department.
 
@@ -261,7 +290,7 @@ The resulting plot is a pairwise scatter plot of the numeric variables in the da
 
 ![](media/rserver-getting-started/image9.jpeg)
 
-The first two variables (*rating* and *complaints*) show a strong linear relationship. To model that relationship, we use the lm function:
+The first two variables (*rating* and *complaints*) show a strong linear relationship. To model that relationship, we use the `lm` function:
 
 	attitudeLM1 <- lm(rating ~ complaints, data=attitude)
 
@@ -297,9 +326,10 @@ The default plot for a fitted linear model is a set of four plots; by default th
 
 ![](media/rserver-getting-started/image10.jpeg)
 
->**Big Data Big Analytics Tip**: The *rxLinMod* function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at *rxLogit* and *rxGlm* as alternatives to *glm*, *rxKmeans* as an alternative to *kmeans*, and *rxDTree* as an alternative to *rpart*.
+> [!Tip]
+> The *rxLinMod* function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at *rxLogit* and *rxGlm* as alternatives to *glm*, *rxKmeans* as an alternative to *kmeans*, and *rxDTree* as an alternative to *rpart*.
 
-## Matrices and apply
+### Matrices and *apply* in R
 
 A *matrix* is a two-dimensional data array. Unlike data frames, which can have different data types in their columns, matrices may contain data of only one type. Most commonly, matrices are used to hold numeric data. You create matrices with the *matrix* function:
 
@@ -376,7 +406,7 @@ To sort the columns of *A*, just replace *prod* with *sort*:
 	[2,]    5   13    4
 	[3,]    7   15    8
 
-## Lists and *lapply*
+### Lists and *lapply* in R
 
 A *list* in R is a very flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
 
@@ -408,9 +438,10 @@ The function *lapply* can be used to apply the same function to each component o
 	$z
 	[1] 4
 
->*Big Data Big Analytics Tip*: You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.  
+> [!Tip]
+> You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.  
 
-## Packages
+## R Packages
 
 An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
 
@@ -461,19 +492,23 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 
 On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
 
->*Big Data Big Analytics Tip*: The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
+> [!Tip]
+> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 
 ## Using Microsoft R via Rscript and R CMD BATCH
 
-Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag *–default-packages=* to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
+Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. 
 
-Similarly, you should avoid the –vanilla construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
+Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag `–default-packages=` to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
 
-# Getting Started with Big Data in R
+Similarly, you should avoid the `–vanilla` construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
+
+<a name="ExploreScaleRFunctions"></a>
+## Expore ScaleR Functions
 
 The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
 
-## Step 1: Accessing Your Data with *rxImport*
+### Step 1: Access Data with *rxImport*
 
 The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need an ODBC driver for your data base to access it. Let’s use an example of a delimited text file available in the sample data directory of the **RevoScaleR** package, a small data set containing simulated mortgage default data. We’ll store the location of the file in a character string, then import the data into an in-memory data set (data frame) using the default settings:
 
@@ -488,7 +523,7 @@ If we think that we may want to do the same analysis on a larger data set later,
 	outFile2 <- NULL
 	mortData <- rxImport(inData = inDataFile, outFile = outFile)
 
-## Step 2: A Quick Look at the Data
+### Step 2: Retrieve metadata
 
 There are a number of basic methods we can use to quickly get some information about the data set and its variables that will work on the output of *rxImport*, whether it is a data frame or *RxXdfData* object. For example, to get the number of rows, cols, and names of the imported data:
 
@@ -536,7 +571,7 @@ The output shows us:
 	2 691 4 4 5077 2000 0
 	3 743 18 3 3080 2000 0
 
-## Step 3: Data Selection and Transformations with *rxDataStep*
+### Step 3: Select and transform data with *rxDataStep*
 
 The *rxDataStep* function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
 
@@ -568,7 +603,7 @@ Our new data set, *mortDataNew*, will not have the variable year, but adds two n
 		2 factor levels: Low Debt High Debt
 	Var 7: lowScore, Type: logical, Low/High: (0, 1)
 
-## Step 4: Visualizing Your Data with *rxHistogram*, *rxCube*, and *rxLinePlot*
+### Step 4: Visualize Data with *rxHistogram*, *rxCube*, and *rxLinePlot*
 
 The *rxHistogram* function will show us the distribution of any of the variables in our data set. For example, let’s look at credit score:
 
@@ -586,7 +621,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 
 ![](media/rserver-getting-started/image15.png)
 
-## Step 5: Analyzing Your Data with *rxLogit*
+### Step 5: Analyze Data with *rxLogit*
 
 **RevoScaleR** provides the foundation for a variety of high performance, scalable data analyses. Here we’ll do a logistic regression, but you’ll probably also want to take look at computing summary statistics (*rxSummary*), computing cross-tabs (*rxCrossTabs*), estimating linear models (*rxLinMod*) or generalized linear models (*rxGlm*), and estimating variance-covariance or correlation matrices (*rxCovCor*) that can be used as inputs to other R functions such as principal components analysis and factor analysis. Now, let’s estimate a logistic regression on whether or not an individual defaulted on their loan, using credit card debt and years of employment as independent variables:
 
@@ -617,7 +652,7 @@ We get the following output:
 	Condition number of final variance-covariance matrix: 1.4455
 	Number of iterations: 9
 
-## Step 6: Scaling Your Analysis
+### Step 6: Scale Your Analysis
 
 So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz). After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
 
@@ -724,7 +759,7 @@ Note that because we have specified an output file when importing the data, the 
 
 
 
-# Next Steps: A Roadmap to Documentation
+## Next Steps: A Roadmap to Documentation
 
 Having completed the tutorials, you are now ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
@@ -735,7 +770,7 @@ Next, you should be aware of the R Core Team manuals, which are part of every R 
 Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
 
-# Appendix
+## Appendix
 
 ### Optimized Math Libraries
 
