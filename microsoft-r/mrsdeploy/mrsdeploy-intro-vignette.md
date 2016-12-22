@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Introduction to the mrsdeploy package in Microsoft R (vignette)"
+title: "Introduction to the mrsdeploy package in Microsoft R"
 description: "An introduction to functions in the mrsdeploy package in Microsoft R"
-keywords: "mrsdeploy package vignette"
+keywords: "mrsdeploy package"
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "12/19/2016"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Introduction to the mrsdeploy package in Microsoft R (vignette)
+# Introduction to the mrsdeploy package in Microsoft R
 
 The `mrsdeploy` package provides functions that give you command line execution against a remote Microsoft R Server 9.0.1 instance, plus the ability to deploy R script or code as a standalone web service, on a local or remote R Server instance.
 
@@ -70,10 +70,10 @@ In general, all mrsdeploy operations are available to authenticated users. There
 
 ## Next steps
 
-After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see the other vignettes in this package:
+After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
 
-+ [Remote Execution vignette](mrsdeploy-remoteexec-vignette.md)
-+ [Web Service vignette](mrsdeploy-websrv-vignette.md)
++ [Remote Execution](mrsdeploy-remoteexec-vignette.md)
++ [Web Service](mrsdeploy-websrv-vignette.md)
 
 ## See also
 
