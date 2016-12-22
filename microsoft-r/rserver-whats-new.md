@@ -121,7 +121,7 @@ For installation and upgrade instructions, see [Install R Server for Windows](rs
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
 
-## New service and support options for R Server for Windows
+#### New service and support options for R Server for Windows
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
