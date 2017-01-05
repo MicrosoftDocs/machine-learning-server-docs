@@ -40,8 +40,8 @@ The following table broadly compares members of the Microsoft R product family. 
 |Component  |Role |Price | Support | Intended use |
 |-----------|-----|------|---------|--------------|
 |[Microsoft R Open (MRO)](r-open.md) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use MRO as you would any other distribution of R. Script written against MRO is straight R, composed of basic functions provided in publically available R packages.|
-|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Adds custom functionality provided in proprietary Microsoft R packages. Used for development and local execution.<|
-|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds custom functionality provided in proprietary Microsoft R packages, used for remote and distributed execution at scale.|
+|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Adds custom functionality provided in proprietary Microsoft R packages, intended for development and local execution of in-memory datasets.|
+|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds custom functionality provided in proprietary Microsoft R packages, intended for local, remote, or distributed execution of larger datasets at scale.|
 
 <sup>1</sup> Microsoft does not offer technical support for issues encountered in either MRO or MRC, but you can get peer support in [MSDN forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ropen) and [StackOverflow](https://stackoverflow.com/questions/tagged/microsoft-r), to name a few.
 
@@ -76,8 +76,6 @@ Learn how to [install and get started with Microsoft R Client](r-client-get-star
 ## Why choose R Server over R Client
 
 R Server and R Client offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. You can learn and develop on R Client, and then migrate your work to R Server when you need the scale, support, and infrastructure of an operationalized server.
-
-<a href="https://www.microsoft.com/en-us/cloud-platform/r-server" target="_blank">Watch this 2-minute video introduction to Microsoft R Server.</a> 
 
 ### Scale
 
@@ -118,7 +116,7 @@ For feature information and next steps, see [Operationalization with R Server](o
 |SQL Server R Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />
-For a list of supported operating systems, see [Supported platforms in Microsoft R Server](../../rserver-install-supported-platforms.md).
+For a list of supported operating systems, see [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md).
 
 
 ## Next Steps

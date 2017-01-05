@@ -36,6 +36,8 @@ To run Microsoft R on Linux or Hadoop cluster, you can get the developer or ente
 
 Cloud-based alternatives are also an option. On Azure, you can sign up for HDInsight, or provision a virtual machine for R Server on specific operating systems, editions of SQL Server, or data science environments. In the Azure portal, search for "R Server" to review the list services and templates.
 
+Students and educators can access the big data analytics capabilities of R Server through the [Microsoft Imagine program](https://imagine.microsoft.com).
+
 ## Tutorials
 
 New to the R language or Microsoft R products and packages? These tutorials will help you get started.
