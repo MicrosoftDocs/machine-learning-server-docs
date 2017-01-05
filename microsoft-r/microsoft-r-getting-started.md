@@ -33,29 +33,27 @@ R is the world’s most powerful, and preferred, programming language for statis
 Microsoft R fills the functional void in enterprise deployments by providing a collection of servers and tools that extend the capabilities of R. The Microsoft R product family builds on top of open source R, offering free and commercial products in the form of Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and R Client include additional R packages and connectivity tools that enable remote compute context and remote execution, web service deployment, machine learning integration, and scalable solutions through clusters or parallelized workloads on platforms that support it.
 
 <a name="compare-prods"></a>
-### Microsoft R Product Comparison
+### Compare products
 
 The following table broadly compares members of the Microsoft R product family. All Microsoft R products are built on Microsoft R Open (MRO) and install the package automatically.
 
 |Component  |Role |Price | Support | Intended use |
 |-----------|-----|------|---------|--------------|
-|[Microsoft R Open (MRO)](r-open.md) | Microsoft's distribution of open source R | Free of charge | Community supported through forums <sup>1</sup>| As a standalone component, use MRO as you would any other distribution of R. Script written against MRO is straight R, using the basic functions or other functions provided by packages in the R distribution.|
-|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R | Free of charge | Community supported through forums <sup>1</sup>| (Windows only) Used for development and local execution of R script that can also include functions from proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML). <p/>You can use R Client as a standalone component, but also as a satellite development environment within organizations that also have R Server installations. <p/>R Client and R Server share common packages (such as RevoScaleR) so that if and when you need the extra capability of R Server, the transition is easy and your code runs intact on R Server with minimal modifications. R Client is to provide the benefits of statistical, visual, and analytical functions, but at reduced scale.|
-|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md). | Adds proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML), with scalable infrastructure for big data scenarios. <p/>Executes parallel and distributed workloads on standalone servers, clustered servers, database platforms like SQL Server and Teradata, and on distributed file systems like Hadoop. <p/>Provides operationalization features that let you run solutions and scripts on coordinated web and compute node configurations.|
+|[Microsoft R Open (MRO)](r-open.md) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use MRO as you would any other distribution of R. Script written against MRO is straight R, composed of basic functions provided in publically available R packages.|
+|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Used for development and local execution of R script. Your script can include functions from proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML). <p/>You can use R Client as a standalone component, but also as a satellite development environment within organizations having R Server installations. <p/>R Client and R Server share common packages (such as RevoScaleR) so that if and when you need the extra capability of R Server, the transition is easy and your code runs intact on R Server with minimal modifications. R Client provides the benefits of statistical, visual, and analytical functions, but at reduced scale.|
+|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML), with scalable infrastructure for big data scenarios. <p/>Executes parallel and distributed workloads on standalone servers, clustered servers, database platforms like SQL Server and Teradata, and on distributed file systems like Hadoop. <p/>Provides operationalization features that let you run solutions and scripts on coordinated web and compute node configurations.|
 
-<sup>1</sup> Microsoft does not offer technical support for issues encountered in either MRO or MRC.
+<sup>1</sup> Microsoft does not offer technical support for issues encountered in either MRO or MRC, but you can get peer support in MSDN forums and StackOverflow, to name a few.
 
-**Features by Component**
+### Compare features by product
 
 Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. This table slices key features by components.
 
 |Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |-----------|----------------|------------------|-----------|
-|Big Data   |In-memory bound<br>Can only process datasets that fit into the available memory|In-memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
+|Big Data   |Memory bound<br>Can only process datasets that fit into the available memory|Memory bound<br>Can process datasets that fit into the available memory<br>Operates on large volumes when connected to R Server|Disk scalability<br>Operates on bigger volumes & factors|  
 |Speed of<br>Analysis    |Multi-threaded when MKL is installed for non-ScaleR functions|Multi-threaded with MKL for non-ScaleR functions<br>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
-|Enterprise<br>Readiness   |Community support|Community support|Commercial support|
 |Analytic<br>Breadth <br>& Depth     |8000+ open source packages|Leverage & optimize open source R packages plus 'Big Data'-ready ScaleR packages|Leverage & optimize open source R packages plus 'Big Data'-ready + Multithreaded ready ScaleR packages|
-|Commercial<br>Viability   |Risk of deployment to open source|Free for everyone|Commercial licenses|
 |[Operationalization](operationalize/about.md)  |Not available|Not available|Included|
 
 
