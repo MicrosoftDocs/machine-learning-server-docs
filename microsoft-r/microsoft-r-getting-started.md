@@ -40,8 +40,8 @@ The following table broadly compares members of the Microsoft R product family. 
 |Component  |Role |Price | Support | Intended use |
 |-----------|-----|------|---------|--------------|
 |[Microsoft R Open (MRO)](r-open.md) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use MRO as you would any other distribution of R. <br/><br/>Script written against MRO is straight R, composed of basic functions provided in publically available R packages.|
-|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Adds custom functionality provided in proprietary Microsoft R packages such as RevoScaleR and MicrosoftML. <br/><br/>Used for development and local execution.|
-|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds custom functionality provided in proprietary Microsoft R packages such as RevoScaleR and MicrosoftML, used for remote execution at scale. <br/><br/>Adds support for parallel and distributed workloads for very large datasets via data chunking and concurrent processing across multiple systems. <br/><br/>Adds operationalization features for deploying solutions and scripts on coordinated web and compute node configurations.|
+|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| <ul>Adds custom functionality provided in proprietary Microsoft R packages such as RevoScaleR and MicrosoftML. </li><li>Used for development and local execution.</ul>|
+|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | <ul><li>Adds custom functionality provided in proprietary Microsoft R packages such as RevoScaleR and MicrosoftML, used for remote execution at scale. </li><li>Adds support for parallel and distributed workloads for very large datasets via data chunking and concurrent processing across multiple systems. </li><li>Adds operationalization features for deploying solutions and scripts on coordinated web and compute node configurations.</ul>|
 
 <sup>1</sup> Microsoft does not offer technical support for issues encountered in either MRO or MRC, but you can get peer support in MSDN forums and StackOverflow, to name a few.
 
@@ -51,8 +51,8 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 
 |Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
 |-----------|----------------|------------------|-----------|
-|Storage   |Memory bound<br/><br/>Can only process datasets that fit into the available memory|Memory bound<br/><br/>Can process datasets that fit into the available memory<br/><br/>Operates on large volumes when connected to a remote R Server|Data chunking across multiple disks<br/><br/>Operates on bigger volumes & factors|  
-|Speed of Analysis    |Multithreaded via MKL<sup>1</sup> for non-ScaleR functions|Multithreaded via MKL<sup>1</sup> for non-ScaleR functions<br/><br/>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
+|Storage   |Memory bound<br/>Can only process datasets that fit into the available memory|Memory bound<br/>Can process datasets that fit into the available memory<br/>Operates on large volumes when connected to a remote R Server|Data chunking across multiple disks<br/>Operates on bigger volumes & factors|  
+|Speed of Analysis    |Multithreaded via MKL<sup>1</sup> for non-ScaleR functions|Multithreaded via MKL<sup>1</sup> for non-ScaleR functions<br/>Up to 2 threads for ScaleR functions with a local compute context|Full parallel threading & processing|
 |Analytic Breadth & Depth     |Open source packages|Open source R packages plus propertietary packages|Open source R packages plus propertietary packages with support for parallelization and distributed workloads.|
 |[Operationalization](operationalize/about.md)  |Not available|Not available|Included|
 

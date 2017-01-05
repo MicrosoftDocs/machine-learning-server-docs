@@ -9,9 +9,9 @@ Although generic R scripts tend to run faster on MRO via Intel MKL, the major be
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The operationalization feature (available in Microsoft R Server only) provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about Operationalization](../../operationalize/about.md)
 
-**Watch this video introduction to Microsoft R Server.**
+**Watch this 2-minute video introduction to Microsoft R Server.**
 
-<div align=center><iframe src="https://www.microsoft.com/en-us/cloud-platform/r-server/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+<div align=center><iframe src="https://www.microsoft.com/en-us/cloud-platform/r-server" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
 |Microsoft R Server platforms|Description|Install|ScaleR Get Started|
 |----------------------------|-----------|:-----:|:----------------:|
