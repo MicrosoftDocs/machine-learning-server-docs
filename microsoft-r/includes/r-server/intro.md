@@ -2,21 +2,19 @@ Microsoft R Server is "R for the Enterprise" and solves the problem of deploymen
 
 Microsoft R Server offers big-data capable R distributions for servers, Hadoop clusters, and data warehouses. It supports a variety of big data statistics, predictive modeling and machine learning capabilities, and provides you with analytics that are fully compatible with the R language, the de facto standard for modern analytics users.
 
-Due to the inclusion of the Intel Math Kernel Library (MKL) in the Microsoft R stack, the performance of a generic R solution is generally better than a conventional R implementation. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls those low-level routines tend to execute faster than on a generic installation of R. 
-
-Although generic R scripts tend to run faster on MRO and Intel MKL, the major benefit in terms of scale and performance comes from using ScaleR functions. ScaleR is available in both R Client and R Server, but only R Server adds support for remote execution, remote compute contexts, data chunking, additional threads for multithreaded processing, parallel processing, and streaming.
+Although generic R scripts tend to run faster on MRO via Intel MKL, the major benefit in terms of scale and performance comes from using ScaleR functions. ScaleR is available in both R Client and R Server, but only R Server adds support for remote execution, remote compute contexts, data chunking, additional threads for multithreaded processing, parallel processing, and streaming.
 
 > [!Note]
 > Performance can be affected by external factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The operationalization feature (available in Microsoft R Server only) provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about Operationalization](../../operationalize/about.md)
 
+**Watch this video introduction to Microsoft R Server.**
 
-[Watch the R Server technology overview video.](https://www.microsoft.com/en-us/cloud-platform/r-server) <a href="" target="_blank">>></a>
+<div align=center><iframe src="https://www.microsoft.com/en-us/cloud-platform/r-server/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
-
-|Microsoft R Server Editions|Description                                                          |Install|ScaleR Get Started|
-|---------------------------|---------------------------------------------------------------------|:-------:|:------------------:|
+|Microsoft R Server platforms|Description|Install|ScaleR Get Started|
+|----------------------------|-----------|:-----:|:----------------:|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](../../rserver-install-hadoop.md)|[Doc](../../scaler-hadoop-getting-started.md)|
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](../../rserver-install-teradata-server.md)|[Doc](../../scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](../../rserver-install-linux-server.md)|[Doc](../../scaler-getting-started.md)|
