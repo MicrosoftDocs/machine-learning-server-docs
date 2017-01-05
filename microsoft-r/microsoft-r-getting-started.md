@@ -33,19 +33,19 @@ R is the world’s most powerful, and preferred, programming language for statis
 Microsoft R fills the functional void in enterprise deployments by providing a collection of servers and tools that extend the capabilities of R. The Microsoft R product family builds on top of open source R, offering free and commercial products in the form of Microsoft R Server, Microsoft R Client, and Microsoft R Open. In addition to the over 8000 standard R packages available to all R users, Microsoft R Server and R Client include additional R packages and connectivity tools that enable remote compute context and remote execution, web service deployment, machine learning integration, and scalable solutions through clusters or parallelized workloads on platforms that support it.
 
 <a name="compare-prods"></a>
-### Compare products
+## Compare products
 
 The following table broadly compares members of the Microsoft R product family. All Microsoft R products are built on Microsoft R Open (MRO) and install the package automatically.
 
 |Component  |Role |Price | Support | Intended use |
 |-----------|-----|------|---------|--------------|
 |[Microsoft R Open (MRO)](r-open.md) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use MRO as you would any other distribution of R. Script written against MRO is straight R, composed of basic functions provided in publically available R packages.|
-|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Used for development and local execution of R script. Your script can include functions from proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML). <p/>You can use R Client as a standalone component, but also as a satellite development environment within organizations having R Server installations. <p/>R Client and R Server share common packages (such as RevoScaleR) so that if and when you need the extra capability of R Server, the transition is easy and your code runs intact on R Server with minimal modifications. R Client provides the benefits of statistical, visual, and analytical functions, but at reduced scale.|
-|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds proprietary packages from Microsoft (such as RevoScaleR and MicrosoftML), with scalable infrastructure for big data scenarios. <p/>Executes parallel and distributed workloads on standalone servers, clustered servers, database platforms like SQL Server and Teradata, and on distributed file systems like Hadoop. <p/>Provides operationalization features that let you run solutions and scripts on coordinated web and compute node configurations.|
+|[Microsoft R Client (MRC)](r-client.md) | Workstation version of Microsoft R (Windows only) | Free | Community forums <sup>1</sup>| Use for development and local execution of R script. Script can include functions from proprietary Microsoft packages (such as RevoScaleR and MicrosoftML). <br/><br/>Use R Client as a standalone component or as a satellite development environment within organizations having R Server installations. <br/><br/>R Client and R Server share common packages (such as RevoScaleR) so that if and when you need extra capacity, the transition is easy and your code runs intact on R Server with minimal modifications. R Client provides the benefits of statistical, visual, and analytical functions, but at reduced scale.|
+|[Microsoft R Server (MRS)](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Use when scale and suport are required. <br/><br/>Script can include functions from proprietary Microsoft packages (such as RevoScaleR and MicrosoftML), but works on hardware architecture suitable for big data scenarios. <br/><br/>Executes parallel and distributed workloads on standalone servers, clustered servers, database platforms like SQL Server and Teradata, and on distributed file systems like Hadoop. <br/><br/>Provides operationalization features that let you run solutions and scripts on coordinated web and compute node configurations.|
 
 <sup>1</sup> Microsoft does not offer technical support for issues encountered in either MRO or MRC, but you can get peer support in MSDN forums and StackOverflow, to name a few.
 
-### Compare features by product
+## Compare features by product
 
 Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. This table slices key features by components.
 
@@ -57,20 +57,20 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 |[Operationalization](operationalize/about.md)  |Not available|Not available|Included|
 
 
-### Microsoft R Server
+## Microsoft R Server
 
 [!include[Microsoft R Server](./includes/r-server/intro.md)]
 
 
 <a name="mrc"></a>
-### Microsoft R Client
+## Microsoft R Client
 
 [!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
 
 Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
 
 
-### Microsoft R Open
+## Microsoft R Open
 
 [!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
 
