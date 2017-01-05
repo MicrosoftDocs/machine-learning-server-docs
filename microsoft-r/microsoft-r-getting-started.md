@@ -56,7 +56,7 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 |Analytic Breadth & Depth     |Open source packages|Open source R packages plus propertietary packages|Open source R packages plus propertietary packages with support for parallelization and distributed workloads.|
 |[Operationalization](operationalize/about.md)  |Not available|Not available|Included|
 
-<sup>1</sup> Due to the inclusion of the Intel Math Kernel Library (MKL) in the Microsoft R stack, the performance of a generic R solution is generally better than a conventional R implementation. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a generic installation of R.
+<sup>1</sup> Because the Intel Math Kernel Library (MKL) is included in MRO, the performance of a generic R solution is generally better than a conventional R implementation. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a generic installation of R.
 
 ## Microsoft R Open
 
@@ -77,7 +77,7 @@ Learn how to [install and get started with Microsoft R Client](r-client-get-star
 
 R Server and R Client offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. You can learn and develop on R Client, and then migrate your work to R Server when you need the scale, support, and infrastructure of an operationalized server.
 
-[**Watch this 2-minute video introduction to Microsoft R Server.**](https://www.microsoft.com/en-us/cloud-platform/r-server)
+<a href="https://www.microsoft.com/en-us/cloud-platform/r-server" target="_blank">Watch this 2-minute video introduction to Microsoft R Server.</a> 
 
 ### Scale
 
