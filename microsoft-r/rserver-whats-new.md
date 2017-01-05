@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/042016"
+ms.date: "01/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

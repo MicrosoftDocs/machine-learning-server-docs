@@ -6,7 +6,7 @@ description: "Get started with Microsoft R"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/20/2016"
+ms.date: "01/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,8 +28,19 @@ ms.custom: ""
 
 # Get started with Microsoft R
 
-New to the R language or Microsoft R products and pacakges? These tutorials will help you get started.
+## How to get Microsoft R
 
+To run Microsoft R on a Windows machine, you can download and install Microsoft [R Client](r-client.md) or [R Server](rserver.md), or install [SQL Server R Services](https://msdn.microsoft.com/library/mt674876.aspx) if you have SQL Server 2016 or later.
+
+To run Microsoft R on Linux or Hadoop cluster, you can get the developer or enterprise edition of R Server for any [supported platform](rserver-install-supported-platforms.md).
+
+Azure has multiple templates for R Server. You can use HDInsight, or provision a virtual machine for R Server on specific operating systems, editions of SQL Server, or data science environments. In the Azure portal, search for "R Server" to list available options.
+
+## Tutorials
+
+New to the R language or Microsoft R products and packages? These tutorials will help you get started.
+
++ [Expore R and ScaleR in 25 functions or less](microsoft-r-getting-started-tutorial.md)
 + [Get Started with ScaleR](scaler-getting-started.md)
 + [Get started with ScaleR on Hadoop MapReduce](scaler-hadoop-getting-started.md)
 + [Get started with ScaleR on Hadoop Spark](scaler-spark-getting-started.md)
@@ -47,9 +58,6 @@ New to the R language or Microsoft R products and pacakges? These tutorials will
 + [Loan data example](scaler-getting-started-1-example-loan-data.md)
 + [Census data example](scaler-getting-started-2-example-census-data.md)
 
-## From R to Microsoft R
-
-+ [Expore R and ScaleR in 25 functions or less](microsoft-r-getting-started-tutorial.md)
 
 ## See Also
 
