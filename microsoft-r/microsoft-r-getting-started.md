@@ -58,10 +58,9 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 
 <sup>1</sup> Due to the inclusion of the Intel Math Kernel Library (MKL) in the Microsoft R stack, the performance of a generic R solution is generally better than a conventional R implementation. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a generic installation of R.
 
-## Microsoft R Server
+## Microsoft R Open
 
-[!include[Microsoft R Server](./includes/r-server/intro.md)]
-
+[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
 
 <a name="mrc"></a>
 ## Microsoft R Client
@@ -70,14 +69,15 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 
 Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
 
+## Microsoft R Server
 
-## Microsoft R Open
-
-[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
+[!include[Microsoft R Server](./includes/r-server/intro.md)]
 
 ## Why choose R Server over R Client
 
 R Server and R Client offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. You can learn and develop on R Client, and then migrate your work to R Server when you need the scale, support, and infrastructure of an operationalized server.
+
+[**Watch this 2-minute video introduction to Microsoft R Server.**](https://www.microsoft.com/en-us/cloud-platform/r-server)
 
 ### Scale
 
@@ -106,6 +106,20 @@ For feature information and next steps, see [Operationalization with R Server](o
 
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Operationalization is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](rserver-install-supported-platforms.md).
+
+### R Server Platforms
+
+|Microsoft R Server platforms|Description|Install|Get Started|
+|----------------------------|-----------|:-----:|:----------------:|
+|R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](../../rserver-install-hadoop.md)|[Doc](../../scaler-hadoop-getting-started.md)|
+|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis on Teradata|[Doc](../../rserver-install-teradata-server.md)|[Doc](../../scaler-teradata-getting-started.md)|
+|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](../../rserver-install-linux-server.md)|[Doc](../../scaler-getting-started.md)|
+|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](../../rserver-install-windows.md)|[Doc](../../scaler-getting-started.md)|
+|SQL Server R Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
+
+<br />
+For a list of supported operating systems, see [Supported platforms in Microsoft R Server](../../rserver-install-supported-platforms.md).
+
 
 ## Next Steps
 

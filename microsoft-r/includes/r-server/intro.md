@@ -9,16 +9,15 @@ Although generic R scripts tend to run faster on MRO via Intel MKL, the major be
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The operationalization feature (available in Microsoft R Server only) provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about Operationalization](../../operationalize/about.md)
 
-**Watch this 2-minute video introduction to Microsoft R Server.**
+[**Watch this 2-minute video introduction to Microsoft R Server.**](https://www.microsoft.com/en-us/cloud-platform/r-server)
 
-<div align=center><iframe src="https://www.microsoft.com/en-us/cloud-platform/r-server" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
-
-|Microsoft R Server platforms|Description|Install|ScaleR Get Started|
+|Microsoft R Server platforms|Description|Install|Get Started|
 |----------------------------|-----------|:-----:|:----------------:|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](../../rserver-install-hadoop.md)|[Doc](../../scaler-hadoop-getting-started.md)|
-|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis|[Doc](../../rserver-install-teradata-server.md)|[Doc](../../scaler-teradata-getting-started.md)|
+|R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis on Teradata|[Doc](../../rserver-install-teradata-server.md)|[Doc](../../scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](../../rserver-install-linux-server.md)|[Doc](../../scaler-getting-started.md)|
 |R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](../../rserver-install-windows.md)|[Doc](../../scaler-getting-started.md)|
+|SQL Server R Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />
 For a list of supported operating systems, see [Supported platforms in Microsoft R Server](../../rserver-install-supported-platforms.md).
