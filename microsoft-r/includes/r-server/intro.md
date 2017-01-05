@@ -4,7 +4,7 @@ Although generic R scripts tend to run faster on MRO via Intel MKL, the major be
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The operationalization feature (available in Microsoft R Server only) provides the tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about Operationalization](../../operationalize/about.md)
 
-<a href="https://www.microsoft.com/en-us/cloud-platform/r-server" target="_blank">Watch this 2-minute video introduction to Microsoft R Server.</a> 
+<a href="https://www.microsoft.com/en-us/cloud-platform/r-server" target="_blank"><b>Watch this 2-minute video introduction to Microsoft R Server.</b></a> 
 
 > [!Note]
 > Performance can be affected by external factors outside the R code, including competing demands on server resources, the type of query plan that is created, schema changes, the need to update statistics or create a new query plan, fragmentation and so on. It is possible that a stored procedure containing R code might run in seconds under one workload, but take minutes when there are other services running. We recommend that you monitor multiple aspects of server performance, including networking for remote compute contexts, when quantifying R job performance.
