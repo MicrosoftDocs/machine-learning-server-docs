@@ -34,7 +34,7 @@ To run Microsoft R on a Windows machine, you can download and install Microsoft 
 
 To run Microsoft R on Linux or Hadoop cluster, you can get the developer or enterprise edition of R Server for any [supported platform](rserver-install-supported-platforms.md).
 
-Azure has multiple templates for R Server. You can use HDInsight, or provision a virtual machine for R Server on specific operating systems, editions of SQL Server, or data science environments. In the Azure portal, search for "R Server" to list available options.
+Cloud-based alternatives are also an option. On Azure, you can sign up for HDInsight, or provision a virtual machine for R Server on specific operating systems, editions of SQL Server, or data science environments. In the Azure portal, search for "R Server" to review the list services and templates.
 
 ## Tutorials
 
@@ -47,11 +47,11 @@ New to the R language or Microsoft R products and packages? These tutorials will
 + [Get Started with ScaleR on Teradata](scaler-teradata-getting-started.md)
 + [Get Started with PemaR](pemar-getting-started.md)
 
-## ScaleR > sample data
+## ScaleR sample data
 
 + [Sample data available in the RevoScaleR package](scaler-user-guide-sample-data.md)
 
-## ScaleR > a deeper dive
+## ScaleR deeper dive
 
 + [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
 + [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
