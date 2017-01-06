@@ -5,7 +5,7 @@ description: "Installation and configuration Microsoft R Server 9.0.1 on Hadoop"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/19/2016"
+ms.date: "01/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -314,17 +314,17 @@ Install the Cloudera Manager parcels as follows:
 3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
   From the mounted img file:
-		cp /mnt/mrsimage/MRS-9.0.5-* /opt/cloudera/parcel-repo
+		cp /mnt/mrsimage/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
 
   From the unpacked tar file:
-		cp /tmp/MRS90HADOOP/MRS-9.0.5-* /opt/cloudera/parcel-repo
-
+		cp /tmp/MRS90HADOOP/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
+ 
 4. You should have the following files in your parcel repo:
 
 		MRO-3.3.2-el6.parcel
-		MRO-3.3.2-el7.parcel
-		MRS-3.3.2-sles11.parcel
-		MRS-3.3.2-trusty.parcel
+		MRO-3.3.2-el6.parcel.sha
+		MRS-9.0.1-el6.parcel
+		MRS-9.0.1-el6.parcel.sha
 
   Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others). Parcels should not have a file extension. If any parcels have a .sha file extension, please rename the file to remove the extension.
 
