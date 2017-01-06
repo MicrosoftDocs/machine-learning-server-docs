@@ -6,7 +6,7 @@ description: "Learn about the benefits of ScaleR and how to use it in custom scr
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/17/2016"
+ms.date: "01/05/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -110,4 +110,4 @@ All of the main analysis functions in ScaleR use updating or external memory alg
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](/scaler/scaler.md)
+[RevoScaleR Functions](scaler/scaler.md)
