@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "mrsdeploy Web Service functions in Microsoft R (vignette)"
+title: "mrsdeploy Web Service functions in Microsoft R"
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block. A web service runs on R Server 9.0 instances."
-keywords: "mrsdeploy package vignette"
+keywords: "mrsdeploy package"
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "11/30/2016"
@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# mrsdeploy Web Service functions in Microsoft R (vignette)
+# mrsdeploy Web Service functions in Microsoft R
 
-This article provides the vignette documentation for Web service functions in the [mrsdeploy package](mrsdeploy.md).
+This article describes Web service functions in the [mrsdeploy package](mrsdeploy.md).
 
 ## Using web services in mrsdeploy
 
@@ -1052,6 +1052,6 @@ remoteLogout()
 
 [mrsdeploy Function Reference](mrsdeploy.md)
 
-[Vignette introduction](mrsdeploy-intro-vignette.md)
+[mrsdeploy introduction](mrsdeploy-intro-vignette.md)
 
 [Package Reference](../package-reference.md)

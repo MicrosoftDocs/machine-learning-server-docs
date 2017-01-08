@@ -110,7 +110,7 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 2. If `mrsdeploy` is not loaded, you can load it from the command line by typing `library(mrsdeploy)`.
 3. Type `help(package="mrsdeploy")`.
 
-Vignettes are available for [remote execution](mrsdeploy-remoteexec-vignette.md) and [web service deployment](mrsdeploy-websrv-vignette.md).
+Help pages are available for [remote execution](mrsdeploy-remoteexec-vignette.md) and [web service deployment](mrsdeploy-websrv-vignette.md).
 
 ## See also
 

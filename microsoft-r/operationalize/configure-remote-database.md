@@ -6,7 +6,7 @@ description: "Configure a remote database for operationalization with Microsoft 
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "12/22/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -30,6 +30,8 @@ ms.custom: ""
 **Applies to:  Microsoft R Server 9.0.1**
 
 The operationalization feature for R Server installs and uses a local SQLite database by default. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+
+The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
 + On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater

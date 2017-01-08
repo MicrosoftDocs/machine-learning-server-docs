@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "01/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,9 +34,9 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Related Documents**
 
-+ Known issues, bug fixes, and behavior changes in existing features, see the [Release notes for R Server](notes/r-server-notes.md).
-+ New feature announcements in Microsoft R Client, see [What's new in R Client](notes/r-client-notes.md).
-+ New feature announcements in SQL Server R Services (version 9.0), see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
++ [Release notes for R Server](notes/r-server-notes.md) contains information about known issues, bug fixes, and behavior changes in existing features.
++ [What's new in R Client](notes/r-client-notes.md) contains information about new features for R Client.
++ [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) contains information about new features for SQL Server R Services (version 9.0).
 
 ## New and updated packages
 
@@ -121,7 +121,7 @@ For installation and upgrade instructions, see [Install R Server for Windows](rs
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
 
-### Service and support options
+#### New service and support options for R Server for Windows
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
