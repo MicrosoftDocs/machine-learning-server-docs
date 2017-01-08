@@ -75,17 +75,17 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
     1. Add the connection string.
 
-       For SQL Server Database (**Integrated Security**), use:
+       For SQL Server Database (**Integrated Security**), use your string properties that are similar to:
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
        ```
 
-       For SQL Server Database (**SQL authentication**), use: 
+       For SQL Server Database (**SQL authentication**), use your string properties which are similar to: 
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
        ```
 
-       For PostgreSQL Database, use:
+       For PostgreSQL Database, use your string properties which will:
        ``` 
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       
