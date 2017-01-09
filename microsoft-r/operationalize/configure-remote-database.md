@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-The operationalization feature for R Server installs and uses a local SQLite database by default. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, snapshots, and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
 The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 
@@ -77,17 +77,17 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
     1. Add the connection string.
 
-       For SQL Server Database (**Integrated Security**), use:
+       For SQL Server Database (**Integrated Security**), use your string properties that are similar to:
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
        ```
 
-       For SQL Server Database (**SQL authentication**), use: 
+       For SQL Server Database (**SQL authentication**), use your string properties which are similar to: 
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
        ```
 
-       For PostgreSQL Database, use:
+       For PostgreSQL Database, use your string properties which will:
        ``` 
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       

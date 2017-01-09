@@ -109,6 +109,9 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
+   >[!IMPORTANT]
+   > Do not choose the sub-options **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines, which is described below as an **Enterprise** configuration.
+
 1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
 
 1. Return to the main menu of the utility when the configuration ends.
@@ -117,16 +120,16 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
-
 You are now ready to begin operationalizating your R analytics with R Server.
-
 
 <a name="enterprise"></a>
 ## The Enterprise Configuration
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 
-This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you must set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
+
+Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
 
 For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 

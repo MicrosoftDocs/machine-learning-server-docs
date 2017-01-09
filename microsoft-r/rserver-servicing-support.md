@@ -23,25 +23,19 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Support for Microsoft R Server Versions
+# Support Timeline for Microsoft R Server
 
-Microsoft plans to release updates for Microsoft R Server a few times per year with each update version supported for two (2) years from its general availability (GA) release date. Technical support will be provided for the entire two (2) years. However, our support structure is now dynamic, evolving into two distinct servicing phases that depend on the availability of the latest version.  
-+ Security and Critical Updates servicing phase - When running the latest version of Microsoft R Server, you will receive both Security and Critical updates.
-+ Security Updates (Only) servicing phase - After a new version of Microsoft R Server is released, support for older versions will reduce to Security updates only for the remainder of the two (2) year support lifecycle (shown in Figure 1).  
+Microsoft R Server will be released a few times per year with each update version supported for two (2) years from its general availability (GA) release date. Furthermore, customers will also receive critical updates for the first year from general availability (GA) of each release as shown in the diagram below. 
 
-## Support Timeline
+This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
+
 ![Servicing Support](./media/rserver-servicing-support.png)
 <br>_Figure 1. Example of servicing support_
 
 <br>
 
->[!NOTE]
->The latest version of Microsoft R Server is always in the Security and Critical Updates servicing phase. This means that in the event that you encounter a code defect that warrants a critical update, you must have the latest version installed in order to receive a fix. All other supported versions will only be eligible to receive security updates. All support ends after the two (2) year lifecycle for a current branch version has expired. At that time, customers must update to a supported version.
-
-<br>
-
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
-|8.0.0                |1/1/2016                           |1/1/2018                          |
-|8.0.5|7/1/2016|7/1/2018|
-|9.0.1|1/1/2017|1/1/2019|
+|Microsoft R Server 8.0.0                |1/1/2016                           |1/1/2018                          |
+|Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
+|Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
