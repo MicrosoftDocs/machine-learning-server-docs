@@ -33,6 +33,8 @@ This release of Microsoft R Server now includes an even better operationalizatio
 
 >Looking for older "DeployR 8.x" documentation? [Start here](../deployr-about.md).
 
+<div align=center><iframe src="https://www.youtube.com/embed/InP1UO8BNSo" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+ 
 <br>
 
 ### What You Get with R Server Operationalization
