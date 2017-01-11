@@ -33,6 +33,8 @@ The operationalization feature for R Server installs and uses a local SQLite dat
 
 The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 
+> Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.
+
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
 + On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater
 + On Linux: PostgreSQL 9.2 or greater 
