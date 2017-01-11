@@ -30,9 +30,9 @@ ms.custom: ""
 
 ## How to get Microsoft R
 
-To run Microsoft R on a Windows machine, you can download and install Microsoft [R Client](r-client.md) or [R Server](rserver.md), or install [SQL Server R Services](https://msdn.microsoft.com/library/mt674876.aspx) if you have SQL Server 2016 or later.
+On Windows, you can download and install [Microsoft R Client](r-client.md), [Microsoft R Server for Windows](rserver.md), or install [SQL Server R Services](https://msdn.microsoft.com/library/mt674876.aspx) if you have SQL Server 2016 or later.
 
-To run Microsoft R on Linux or Hadoop cluster, you can get the developer or enterprise edition of R Server for any [supported platform](rserver-install-supported-platforms.md).
+On Linux or a Hadoop cluster, you can get the developer or enterprise edition of R Server for any [supported platform](rserver-install-supported-platforms.md).
 
 Cloud-based alternatives are also an option. On Azure, you can sign up for HDInsight, or provision a virtual machine for R Server on specific operating systems, editions of SQL Server, or data science environments. In the [Azure portal](https://ms.portal.azure.com), search for "R Server" to review the list services and templates.
 
