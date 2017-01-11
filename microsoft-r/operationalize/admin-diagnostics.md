@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Diagnostic Testing of R Server's Operationalization Configuration
+# Diagnostics & Troubleshooting of R Server's Operationalization
 
 **Applies to:  Microsoft R Server 9.0.1**
 
@@ -58,14 +58,14 @@ The set of diagnostic tests include:
 
    1. Rerun the diagnostic test to make sure all is running smoothly now.
 
-1. To retrieve the 'raw details' on the health of the system and review the output, choose **Get raw server status** .
+1. To retrieve the 'raw details' on the health of the system and review the output, choose **Get raw server status**.
 
 1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
       1. Enter the R code you want to run and trace. 
       1. Press the Enter key (carriage return) to start the trace.
       1. Review the trace output.
 
-1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution** :  
+1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution**:  
       1. Enter the service name and version following the syntax `<service-name>/<version>` such as `my-service/1.1`. 
       1. Press the Enter key (carriage return) to start the trace.
       1. Review the trace output to better understand how the execution is running or failing.
@@ -74,7 +74,7 @@ The set of diagnostic tests include:
 
 ## Log Files
 
-Review the log and configuration files for any component that was identified as experiencing issues.
+Review the log and configuration files for any component that was identified as experiencing issues. The [logging level](#loglevel) can be changed to capture more or less information.
 
 **Table: Path to log files by node and operating system**
 
@@ -86,7 +86,55 @@ Review the log and configuration files for any component that was identified as 
 *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
 
 
-> If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+> If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
+
+<a name="loglevel"></a>
+
+## Logging Levels
+
+By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information. 
+
+The following logging levels are available:
++ `Verbose`: The most detailed comprehensive logging level of all activity, which is rarely (if ever) enabled in production environments
+
++ `Debug`: Logs robust details including internal system events, which are not necessarily observable
+
++ `Information`: Logs system events that correspond to its responsibilities and functions
+
++ `Warning`: Logs only when service is degraded, endangered, or may be behaving outside of its expected parameters.  (Default level)
+
++ `Error`: Logs only errors (functionality is unavailable or expectations broken)
+
++ `Fatal`: Logs only fatal events that crash the application
+
+**To update the logging level:**
+
+   1. On each compute node AND each web node, open the `appsettings.json` external JSON configuration file.
+
+      |`appsettings.json`|Path on Web Node|Path on Compute Node|
+      |----------------|--------|------------|
+      |Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
+      |Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ </small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
+
+      *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+
+   1. Search for the section starting with `"Logging": {`
+
+   1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the `Debug` level.
+
+   1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the `Debug` level. Use the same value as for `"Default"`.
+
+   1. Save the file.
+
+   1. [Restart](admin-utility.md#startstop) the node services. 
+
+   1. Repeat these changes on every compute node and every web node.
+      >Each node should have the same `appsettings.json` properties.
+
+   1. Repeat the same operation(s) that where running when the error(s) occurred. 
+   
+   1. Collect the [log files](#logs) from each node for debugging.
+
 
 
 ## Troubleshooting

@@ -49,14 +49,46 @@ The following table broadly compares members of the Microsoft R product family. 
 
 Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Open can be categorized as shown in this table. This table slices key features by components. Additional capability provided in R Client and R Server is delivered via propertietary packages in Microsoft R.
 
-|Features   |Microsoft R Open|Microsoft R Client|Microsoft R Server|
-|-----------|----------------|------------------|-----------|
-|Storage   |Memory bound.<br/>Can only process datasets that fit into the available memory.|Memory bound.<br/>Can process datasets that fit into the available memory.<br/>Operates on large volumes when connected to a remote R Server.|Data chunking across multiple disks.<br/>Operates on bigger volumes & factors.|  
-|Speed of Analysis    |Multithreaded via MKL<sup>1</sup> for non-ScaleR functions.|Multithreaded via MKL<sup>1</sup> for non-ScaleR functions.<br/>Up to 2 threads for ScaleR functions with a local compute context.|Full parallel threading & processing.|
-|Analytic Breadth & Depth     |Open source packages.|Open source R packages plus propertietary packages.|Open source R packages plus propertietary packages with support for parallelization and distributed workloads.|
-|[Operationalization](operationalize/about.md)  |Not available|Not available|Included|
 
-<sup>1</sup> Because the Intel Math Kernel Library (MKL) is included in MRO, the performance of a generic R solution is generally better. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a conventional installation of R.
+<table>
+    <thead>
+        <tr>
+            <th width=10%></th>
+            <th width=23%>Microsoft R Open</th>
+            <th width=32%>Microsoft R Client</th>
+            <th width=35%>Microsoft R Server</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Storage</b></td>
+            <td>Memory bound<sup>1</sup></td>
+            <td>Memory bound<sup>1</sup> &amp; operates on large volumes when connected to R Server.</td>
+            <td>Data chunking across multiple disks.<br />Operates on bigger volumes &amp; factors.</td>
+        </tr>
+        <tr>
+            <td><b>Speed of Analysis</b></td>
+            <td>Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions.</td>
+            <td>Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions, but only up to 2 threads for ScaleR functions with a local compute context.</td>
+            <td>Full parallel threading &amp; processing for RevoScaleR functions as well as for non-RevoScaleR functions (via MKL<sup>2</sup>) in both local and remote compute contexts.</td>
+        </tr>
+        <tr>
+            <td><b>Analytic Breadth &amp; Depth</b></td>
+            <td>Open source packages only.</td>
+            <td>Open source R packages plus proprietary packages.</td>
+            <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads.</td>
+        </tr>
+        <tr>
+            <td><b><a href="operationalize/about.md">Operationalization</a> of R Analytics</b></td>
+            <td>Not available</td>
+            <td>Not available</td>
+            <td>Includes the instant deployment and easy consumption of R analytics, interactive remote code execution, speedy realtime scoring, scalability, and enterprise-grade security.</td>
+        </tr>
+    </tbody>
+</table>
+<sup>1</sup> Memory bound because product can only process datasets that fit into the available memory.
+
+<sup>2</sup> Because the Intel Math Kernel Library (MKL) is included in MRO, the performance of a generic R solution is generally better. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a conventional installation of R.
 
 ## Microsoft R Open
 
@@ -79,7 +111,7 @@ R Server and R Client offer virtually identical packages, but each one targets d
 
 ### Scale
 
-On R Server, the ScaleR technology in the RevoScaleR package offers almost unbounded scale in running R workloads in parallel and distributed configurations. Although you can call ScaleR functions on a system having just R Client, ScaleR is throttled on R Client: datasets must fit in memory, and processing is capped at a maximum of two processors on the local system. Only R Server gives you ScaleR at full capaciyy, with support for remote compute context, data chunking, parallelization, and distributed workloads.
+On R Server, the ScaleR technology in the RevoScaleR package offers almost unbounded scale in running R workloads in parallel and distributed configurations. Although you can call ScaleR functions on a system having just R Client, ScaleR is throttled on R Client: datasets must fit in memory, and processing is capped at a maximum of two processors on the local system. Only R Server gives you ScaleR at full capacity, with support for remote compute context, data chunking, parallelization, and distributed workloads.
 
 Given a platform that supports it, functions in ScaleR provide high performance, parallelized, and distributable analytics functions that scale from small data sets in memory to huge data sets stored on disk on a cluster of computers. The analytics functions provided include summary statistics, cubes and crosstabs, linear models, logistic regression, generalized linear models, kmeans clustering, decision trees, and decision forests. These algorithms are parallelized and distributed automatically, and process data in chunks so that all of your data does not need to be in memory at one time; you can use the same analysis code for your giant data set as you do for a small data set in memory.
 
@@ -121,7 +153,7 @@ For a list of supported operating systems, see [Supported platforms in Microsoft
 
 ## Next Steps
 
-If you are new to Microsoft R, we recommend starting with R Client and an integrated development environment like **R Tools for Visual Studio (RTVS)**. This configuration is free of charge. It gives you MRO with full support of all base R functions so that you can write R-only solutions, but also includes the Microsoft R proprietary packages that run locally on your development computer.
+If you are new to Microsoft R, we recommend starting with R Client and an integrated development environment like **R Tools for Visual Studio (RTVS)**. This configuration is free of charge. It gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes the Microsoft R proprietary packages that run locally on your development computer.
 
 Using just MRO and RTVS, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
