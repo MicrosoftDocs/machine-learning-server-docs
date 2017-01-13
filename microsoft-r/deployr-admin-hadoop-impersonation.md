@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Using Hadoop Impersonation and DeployR"
+title: "Using Hadoop Impersonation | DeployR 8.x"
 description: "DeployR and Hadoop Impersonation"
 keywords: ""
 author: "j-martens"

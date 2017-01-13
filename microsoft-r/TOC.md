@@ -156,7 +156,6 @@
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
-## [Install R Client](r-client-install.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
 
 # [Microsoft R Open](r-open.md)

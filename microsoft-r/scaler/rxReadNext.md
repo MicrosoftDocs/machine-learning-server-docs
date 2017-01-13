@@ -4,7 +4,7 @@
 title: "ScaleR Functions rxReadNext"
 description: "ScaleR Functions: rxReadNext"
 keywords: "RevoScaleR, ScaleR, rxReadNext"
-author: "j-martens"
+author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "reference"

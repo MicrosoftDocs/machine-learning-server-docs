@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Diagnostics & Troubleshooting"
+title: "Diagnostics & Troubleshooting | DeployR 8.x"
 description: "Diagnostic Testing and Troubleshooting FAQS for DeployR"
 keywords: ""
 author: "j-martens"

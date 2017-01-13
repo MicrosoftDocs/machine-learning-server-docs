@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Landing"
+title: "Website Redirect | DeployR 8.x"
 description: "DeployR introduction and overview."
 keywords: ""
 author: "j-martens"
