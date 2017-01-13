@@ -90,7 +90,7 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
     + Accept the Microsoft R Client license terms.
 
-    + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](../../r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
+    + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
 
     + Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
