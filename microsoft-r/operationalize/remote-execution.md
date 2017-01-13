@@ -71,8 +71,8 @@ Deployment and administration tasks require an authenticated connection. Authent
 
 For authentication, you can choose from the following approaches, which are valid on all supported platforms:
 
-- **remote_login()** using an on premises Active Directory server on your network.
-- **remote_login_aad()** using Azure Active Directory in the cloud.
+- **remoteLogin()** using an on premises Active Directory server on your network.
+- **remoteLoginAAD()** using Azure Active Directory in the cloud.
 
 For on premises Active Directory, users will need to authenticate via the `/user/login` API, passing a username and password.
 
@@ -84,13 +84,13 @@ The remote command line allows you to directly interact with an R Server 9.0.1 i
 
 ## How to create a remote session
 
-The `remote_login` and `remote_login_aad` functions are used to authenticate against R Server, creating a remote session.
+The `remoteLogin` and `remoteLoginAAD` functions are used to authenticate against R Server, creating a remote session.
 
 **Example**
 
 ```R
 #authenticate against Microsoft R Server
-remote_login("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
+remoteLogin("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
 
 #authenticate against the R Server using Azure Active Directory
 remoteLoginAAD("http://localhost:12800",

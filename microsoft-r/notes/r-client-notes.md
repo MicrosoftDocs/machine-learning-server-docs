@@ -38,8 +38,8 @@ The following release notes apply to Microsoft R Client, which can be downloaded
   + `MicrosoftML` - adds machine learning algorithms to R script that executes on either R Client or R Server
   + `olapR`- adds MDX query support through connections to OLAP cubes on a SQL Server 2016 Analysis Services instance
   + and the packages bundled with [Microsoft R Open 3.3.2](https://mran.microsoft.com/rro/installed/#enhance)
-
-  <br>**[Learn more about these new packages and those that have been updated in this release.]**(../rserver-whats-new.md#new-and-updated-packages)
+  
+  Learn more about [the new and updated packages in this release](../rserver-whats-new.md#new-and-updated-packages).
 + Updated end-user license agreement
 + Telemetry collection is now enabled. [Learn more](../rserver-optout-telemetry.md) about this feature and how to turn it off.
 
