@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Operationalization of R Analytics | Microsoft R Server Docs"
+title: "Operationalization: Compare 8.x to 9.x | Microsoft R Server Docs"
 description: "Operationalization of R Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"

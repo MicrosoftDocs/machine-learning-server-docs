@@ -6,7 +6,7 @@ description: "R Client Readme"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "06/13/2016"
+ms.date: "1/12/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,6 +25,8 @@ ms.custom: ""
 ---
 
 #What's New in Microsoft R Client
+
+[See here](../microsoft-r-getting-started.md#compare-prods) for a comparison between R Client and R Server.
 
 ## Microsoft R Client 3.3.2
 
@@ -57,4 +59,3 @@ The following release notes apply to Microsoft R Client 1.0:
 
 + With Microsoft R Client, you have the ability to push the compute context to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop in order to benefit from disk scalability, greater performance and speed.
 
-[See here](../microsoft-r-getting-started.md#compare-prods) for a comparison between R Client and R Server.

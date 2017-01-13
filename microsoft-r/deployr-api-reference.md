@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR API Overview"
+title: "DeployR API Overview | DeployR 8.x"
 description: "DeployR API Reference Guide"
 keywords: ""
 author: "j-martens"
