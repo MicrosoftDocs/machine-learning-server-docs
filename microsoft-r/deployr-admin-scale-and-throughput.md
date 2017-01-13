@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: " Scale & Throughput in DeployR"
+title: " Scale & Throughput | DeployR 8.x"
 description: "Understanding Scale and Throughput in DeployR"
 keywords: "scalability, throughput, DeployR"
 author: "j-martens"

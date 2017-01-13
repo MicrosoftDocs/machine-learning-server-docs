@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Security in DeployR: Server Access Controls"
+title: "Security: Server Access Controls | DeployR 8.x"
 description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
 keywords: ""
 author: "j-martens"

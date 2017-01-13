@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Enabling DeployR on the Cloud (Azure, AWS)"
+title: "Enabling DeployR on the Cloud (Azure, AWS) | DeployR 8.x"
 description: "How to Enable DeployR on Azure and AWS (Cloud)"
 keywords: ""
 author: "j-martens"

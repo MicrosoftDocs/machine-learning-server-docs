@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Administration Console Help"
+title: "DeployR Administration Console Help | DeployR 8.x"
 description: "R Scripts to DeployR Administration Console Help"
 keywords: ""
 author: "j-martens"
