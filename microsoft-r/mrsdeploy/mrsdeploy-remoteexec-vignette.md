@@ -36,13 +36,13 @@ To establish a remote session, issue a remote login request, which in turn authe
 
 ### Create a remote session
 
-The `remote_login` and `remote_login_aad` functions are used to authenticate against R Server, creating a remote session.
+The `remoteLogin` and `remoteLoginAAD` functions are used to authenticate against R Server, creating a remote session.
 
 **Example**
 
 ```R
 #authenticate against Microsoft R Server
-remote_login("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
+remoteLogin("https://localhost:12800", session=TRUE, diff=TRUE, commandline=TRUE)
 
 #authenticate against the R Server using Azure Active Directory
 remoteLoginAAD("http://localhost:12800",
