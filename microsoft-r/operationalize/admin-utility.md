@@ -33,11 +33,11 @@ You can configure the operationalization feature for Microsoft R Server using th
 
 Use the utility to:
 + [Configure R Server for Operationalization](configuration-initial.md) front-ends and back-ends
-+ [Set a local admin password](admin-utility#admin-password)
-+ [Stop and restart](admin-utility.md#startstop) web and compute node services
-+ [Update the service ports](admin-utility.md#ports)
++ [Set a local admin password](#admin-password)
++ [Stop and restart](#startstop) web and compute node services
++ [Update the service ports](#ports)
 + [Run diagnostic tests](admin-diagnostics.md)
-+ [Encrypt credentials](admin-utility.md#encrypt)
++ [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](admin-evaluate-capacity.md)
 
 
