@@ -32,7 +32,7 @@ ScaleR functions are provided through the **RevoScaleR** package installed for f
 
 Using ScaleR functions requires a ScaleR engine to support your logic. As noted, a ScaleR engine exists in R Client, R Server, and in any Microsoft product or service that uses these products. R Client is free, community-supported via forums, and provides scale at much lower levels (2 processors, data resides in-memory). R Server is a commercial enterprise-grade product. It runs on more platforms at much greater scale, with service level agreements and support from Microsoft.
 
-ScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](/scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
+ScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [ScaleR equivalents for many common base R functions](scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and ScaleR functions.
 
 ## What can you do with ScaleR?
 

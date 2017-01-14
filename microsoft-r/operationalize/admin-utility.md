@@ -29,7 +29,17 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1**
 
-[!include[Admin Utility Introduction](../includes/o16n/admin-utility-intro.md)]
+You can configure the operationalization feature for Microsoft R Server using the administration utility. 
+
+Use the utility to:
++ [Configure R Server for Operationalization](configuration-initial.md) front-ends and back-ends
++ [Set a local admin password](#admin-password)
++ [Stop and restart](#startstop) web and compute node services
++ [Update the service ports](#ports)
++ [Run diagnostic tests](admin-diagnostics.md)
++ [Encrypt credentials](#encrypt)
++ [Evaluate the configuration's capacity](admin-evaluate-capacity.md)
+
 
 <br>
 <a name="launch"></a>
@@ -127,8 +137,8 @@ For security purposes, we strongly recommend that you encrypt the connection str
       1. From the main menu, choose the option **Encrypt Credentials**.
 
       1. Specify where is the encryption certificate installed: 
-        + Local machine (Computer account)
-        + Current user (My user account)
+    + Local machine (Computer account)
+    + Current user (My user account)
 
         The list of available certificates appears.
 

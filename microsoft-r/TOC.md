@@ -11,7 +11,7 @@
 ### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
 ### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
 ## [Get started on Hadoop MapReduce](scaler-hadoop-getting-started.md)
-## [Get started on Hadoop Spark](scaler-spark-getting-started.md)
+## [Get started on Apache Spark](scaler-spark-getting-started.md)
 ## [Get Started on Teradata](scaler-teradata-getting-started.md)
 ## [Get Started with PemaR](pemar-getting-started.md)
 ## [From R-to-ScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
