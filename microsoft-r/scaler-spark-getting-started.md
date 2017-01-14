@@ -34,7 +34,7 @@ While this article is not a Hadoop or Spark tutorial, you can complete the tasks
 
 For other tutorials and examples, see [Get started with ScaleR](scaler-getting-started.md).
 
-### Data Sources and Functions Supported in Hadoop
+### Data Sources and Functions Supported in Spark
 
 The **RevoScaleR** package provides a set of custom data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
 
