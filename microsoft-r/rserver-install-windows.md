@@ -30,31 +30,27 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 ## Licensing, install options, and support
 
-As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement, regardless of how you install it. Developers can install the developer edition, which provides the same features, except it is licensed for smaller developer workloads.
+How you install R Server will determine which support policy is in effect, location of R binaries, and availability of certain features.
 
-How you install R Server will determine which support policy is in effect, location of R binaries, and availability of certain features. 
+Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Developers can install the developer edition, which provides the same features, except it is licensed for smaller developer workloads.
 
-Options include the following:
+Installation and support options include the following:
 
-* Install R Server for Windows using a standalone Windows installer. Support is under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912).
-* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, serviced under the SQL Server support policy. 
-* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, serviced under the SQL Server support policy.
-
-For more information about the SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
+* Install R Server for Windows using a standalone Windows installer. Servicing is under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912).
+* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, serviced under the SQL Server support policy. For more information about the SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
+* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, also serviced under the SQL Server support policy.
 
 **R binaries** 
 
-Each installer installs the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
+Each installer places the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
 
 **Feature availability**
 
-On Windows, R Server operationalization is available right now if you use the standalone Windows installer. Projected availability through a SQL Server installer is the first half of 2017.
+On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. Projected availability through a SQL Server installer is the first half of 2017.
 
 ## How to install R Server 9.0.1 on Windows using the standalone Windows installer
 
-In this release, you can use a simplified setup program for R Server for Windows. Using this setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). 
-
-> You must use the Windows installer if you want to [operationalize your R Server](operationalize/about.md) and use the mrsdeploy package to set up remote execution, web service deployment, or use dedicated web and compute node configurations. Operationalization is not yet available in the SQL Server installer.
+As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes [operationalization](operationalize/about.md).
 
 ### Prerequisites
 
