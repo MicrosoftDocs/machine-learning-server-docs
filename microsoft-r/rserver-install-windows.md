@@ -45,8 +45,7 @@ The following table summarizes installers and service plan combinations.
 | Installer | Service plan | Benefits |
 |-----------|--------------|----------|
 |[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
-|[Install SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> | Integration with the database engine. |
-| - | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | You can unbind an existing R Services instance from the SQL Server support plan and rebind it to Modern Lifecyc.  For more information, see https://msdn.microsoft.com/en-US/library/mt791781.aspx |
+|[Install SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> <br><br>[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Integration with the database engine. <br><br>Alternativley, you can unbind an existing R Services instance from the SQL Server support plan and rebind it to Modern Lifecyc.  For more information, see https://msdn.microsoft.com/en-US/library/mt791781.aspx |
 |[Install R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
@@ -151,7 +150,7 @@ Get the rserversetup.zip or rserversetup.exe file from the [download sites](#Dow
 
 **Step 3: Run setup**
 
-Follow the instructions on [how to install the server](#Run-Setup).
+Copy all of the downloaded files to the computer behind the firewall, and then rollow the instructions on [how to install the server](#Run-Setup).
 
 
 ## Install earlier versions of R Server for Windows
