@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/14/2016"
+ms.date: "01/18/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,25 +26,27 @@ ms.custom: ""
 
 # Run Microsoft R Server for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows.
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows. For description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-R Server offers feature parity across platforms. Whether you use Windows or another platform, R Server is mostly the same in all contexts, with the exception of data-specific and platform helper functions created specifically for Hadoop MapReduce, Spark, SQL Server, or Teradata. For description of components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md).
+## Licensing, installation options, and support
 
-To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
+As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement, regardless of how you install it. Developers can install the developer edition, which provides the same features, except it is licensed for smaller developer workloads.
 
-## How to install R Server 9.0.1 on Windows
+Approaches for installation will determine which support policy is in effect. Options include the following:
 
-In this release, you can use a simplified setup program for R Server for Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation on R Server for Windows.
+* Install R Server for Windows, using a standalone Windows installer,  supported under the Modern Lifecycle support policy.
+* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, supported under the SQL Server support policy. 
+* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, supported under the SQL Server support policy.
 
-The setup program you use determines feature availability and the service and support policy.
+For more information about the SQL Server support policy, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
 
-+ Simplified setup installs the [9.0.1 feature set](rserver-whats-new.md) that includes operationalization.
+> Each installer installs the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
 
-  Using this setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). Modern lifecycle policy is designed for rapid release cycles. Individual versions age out sooner, but newer features roll out more frequently.
+## How to install R Server 9.0.1 on Windows using the standalone Windows installer
 
-+ SQL Server vNext setup installs the [9.0.0 feature set](https://msdn.microsoft.com/library/mt604847.aspx). Operationalization is not provided in this feature set.
+In this release, you can use a simplified setup program for R Server for Windows. Using this setup, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912). 
 
-  Using SQL Server Setup, SQL Server's support policy is in effect (search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. For more information about installation options in SQL Server, see [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).
+> You must use the Windows installer if you want to [operationalize your R Server](operationalize/about.md) and use the mrsdeploy package to set up remote execution, web service deployment, or use dedicated web and compute node configurations. Operationalization is not yet available in the SQL Server installer.
 
 ### Prerequisites
 
@@ -56,7 +58,7 @@ The setup program you use determines feature availability and the service and su
 
 + You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup installs R Open for you, but it is also downloadable from the [MRAN web site](https://mran.microsoft.com/).
 
-The following additional components are installed by Setup.
+The following additional components are installed by Setup and required for an R Server installation on Windows.
 
 | Component | Version |
 |-----------|---------|
