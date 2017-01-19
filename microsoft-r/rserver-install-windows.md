@@ -52,7 +52,13 @@ The following table summarizes installers and service plan combinations.
 
 **R binaries** 
 
-The SQL Server installer places the R libraries under the database engine instance name folder created during setup (for example, \Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER). With the standalone Windows installer, binaries are installed under \Program Files\Microsoft R\R_SERVER\Library.
+The Windows installer and SQL Server installer create different folder paths for the R libraries. This is something to be aware of when using tools like R Tools for Visual Studio (RTVS) or RStudio, both of which retain library file location.
+
+| File location | Installer |
+|---------------|-----------|
+|C:\Program Files\Microsoft\R Server\R_SERVER | Windows installer |
+|C:\Program Files\Microsoft SQL Server\130\R_SERVER | SQL Server Setup, R Server (Standalone) |
+|C:\Program Files\Microsoft SQL Server\<instance_name>\R_SERVICES | SQL Server Setup, R Services (In-Database) |
 
 **Feature availability**
 
