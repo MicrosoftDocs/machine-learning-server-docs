@@ -31,7 +31,8 @@ This article specifies supported operating systems, distributions, and database 
 
 This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
 
->All supported operating systems are 64-bit only
+> [!Note]
+> All supported operating systems are 64-bit only
 
 **Microsoft R Server (Windows or Linux)**
 
@@ -63,7 +64,8 @@ After installation, you can [configure](operationalize/configuration-initial.md)
 + Linux: CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04 _Note: Projected availability on SLES in 2017_
 + Hadoop: Linux-based edge nodes on CentOS/RHEL 7.x, Ubuntu 14.04
 
-> R Server operationalization is not available on Windows if you use the SQL Server installer. You must use the standalone Windows installer to get operatization functionality.
+> [!Note]
+> R Server operationalization is not available on Windows if you use the SQL Server installer. You must use the standalone Windows installer to get operationalization functionality.
 
 ## Microsoft R Server 8.0.5
 

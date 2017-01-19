@@ -26,27 +26,33 @@ ms.custom: ""
 
 # Run Microsoft R Server for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-## Licensing, install options, and support
+## Licensing, installation options, and support
 
-How you install R Server will determine which support policy is in effect, location of R binaries, and availability of certain features.
+How you install R Server determines the support policy, location of R binaries, and the availability of certain features.
 
-Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Developers can install the developer edition, which provides the same features, except it is licensed for smaller developer workloads.
+Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Besides the enterprise edition, developers and data scientists can install the developer edition, delivering the same features, but licensed for smaller developer workloads.
 
-Installation and support options include the following:
+There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle support policy. SQL Server support policy offers updates and customer support over a longer period, but is tied to the SQL Server release schedule. In contrast, the span of tje Modern Lifecycle support policy is shorter (typically just a few years) but it comes with more frequent updates, which means you get new features sooner. 
 
-* Install R Server for Windows using a standalone Windows installer. Servicing is under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912).
-* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, serviced under the SQL Server support policy. For more information about the SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
-* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, also serviced under the SQL Server support policy.
+The following table summarizes installation options and service model combinations. 
+
+| Installer | Service plan | Benefits |
+|-----------|--------------|----------|
+|Install R Server for Windows using a standalone Windows installer | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
+|Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> | Integration with the database engine. |
+|Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
+
+<sup>1</sup> Fo details about SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)).
 
 **R binaries** 
 
-Each installer places the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
+The SQL Server installer places the R libraries under the database engine instance name folder created during setup (for example, \Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER). With the standalone Windows installer, binaries are installed under \Program Files\Microsoft R\RSERVER\Library.
 
 **Feature availability**
 
-On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. Projected availability through a SQL Server installer is the first half of 2017.
+On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server intaller. Projected availability through a SQL Server installer is the first half of 2017.
 
 ## How to install R Server 9.0.1 on Windows using the standalone Windows installer
 
@@ -84,6 +90,7 @@ You can download the installation program from the following locations:
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
 
+> [!Note]
 > A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Windows is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ### Run Setup
