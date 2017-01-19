@@ -431,8 +431,8 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 
 3.  At a DOS command prompt, go to the directory for R and start RServe. Pay particular attention to the messages printed to the window. For example:
 
-        cd C:\Program Files\Microsoft SQL Server\130\R_SERVER\
-        Rserve8.0.5
+        cd C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64
+        Rserve
 
 4.  If you see the message "R\_HOME must be set in the environment or Registry", then you must define that environment variable as follows:
 
