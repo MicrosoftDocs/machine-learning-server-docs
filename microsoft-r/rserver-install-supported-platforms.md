@@ -63,7 +63,6 @@ After installation, you can [configure](operationalize/configuration-initial.md)
 + Linux: CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04 _Note: Projected availability on SLES in 2017_
 + Hadoop: Linux-based edge nodes on CentOS/RHEL 7.x, Ubuntu 14.04
 
-> !NOTE 
 > R Server operationalization is not available on Windows if you use the SQL Server installer. You must use the standalone Windows installer to get operatization functionality.
 
 ## Microsoft R Server 8.0.5

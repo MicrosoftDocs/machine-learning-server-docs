@@ -26,21 +26,29 @@ ms.custom: ""
 
 # Run Microsoft R Server for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows. For description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. You can run R Server on a wide range of computing platforms, including Microsoft Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-## Licensing, installation options, and support
+## Licensing, install options, and support
 
 As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement, regardless of how you install it. Developers can install the developer edition, which provides the same features, except it is licensed for smaller developer workloads.
 
-Approaches for installation will determine which support policy is in effect. Options include the following:
+How you install R Server will determine which support policy is in effect, location of R binaries, and availability of certain features. 
 
-* Install R Server for Windows, using a standalone Windows installer,  supported under the Modern Lifecycle support policy.
-* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, supported under the SQL Server support policy. 
-* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, supported under the SQL Server support policy.
+Options include the following:
 
-For more information about the SQL Server support policy, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
+* Install R Server for Windows using a standalone Windows installer. Support is under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912).
+* Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a Database engine instance, serviced under the SQL Server support policy. 
+* Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer, serviced under the SQL Server support policy.
 
-> Each installer installs the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
+For more information about the SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)). SQL Server support policy offers servicing updates and hot fixes over a longer time frame, but newer features roll out more slowly. 
+
+**R binaries** 
+
+Each installer installs the R libraries in different file paths. If you use the SQL Server installer, look for R binaries under the instance name folder created during setup. Using the standalone Windows installer, binaries are installed under \Program Files\Microsoft R.
+
+**Feature availability**
+
+On Windows, R Server operationalization is available right now if you use the standalone Windows installer. Projected availability through a SQL Server installer is the first half of 2017.
 
 ## How to install R Server 9.0.1 on Windows using the standalone Windows installer
 
