@@ -36,7 +36,7 @@ How you install R Server determines the support policy, location of R binaries, 
 
 Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Besides the enterprise edition, developers and data scientists can install the free developer edition, delivering the same features, but licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
-There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle. SQL Server offers updates and customer support over a longer period, but feature updates are tied to the SQL Server release schedule. In contrast, support for any given product is shorter under the Modern Lifecycle (typically just a few years) but releases are delivered more frequently, which means you get fixes and new features sooner. 
+If your objective is running R Server on a Windows computer, there are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle. SQL Server offers updates and customer support over a longer period, but feature updates are tied to the SQL Server release schedule. In contrast, support for any given product is shorter under the Modern Lifecycle (typically just a few years) but releases are delivered more frequently, which means you get fixes and new features sooner. 
 
 The following table summarizes installation options and service model combinations. 
 
@@ -87,14 +87,12 @@ The following additional components are installed by Setup and required for an R
 You can download the installation program from the following locations:
 
 + [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
++ [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) enterprise edition. Sign in, search for SQL Server 2016 Enterprise edition, and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.
 + [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
-
-> [!Note]
-> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Windows is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ### Run Setup
 
