@@ -43,12 +43,12 @@ The following table summarizes installers and service plan combinations.
 | Installer | Service plan | Benefits |
 |-----------|--------------|----------|
 |[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
-|[Install SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> or [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) <sup>2</sup> | Integration with the database engine.   |
-|[Install R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
+|[Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) | SQL Server support policy<sup>1</sup> or [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) <sup>2</sup> | Integration with the database engine.   |
+|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/ibrary/mt674874.aspx) | SQL Server support policy<sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
-<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The value of your license is not diminished. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what is typical for SQL Server deployments.
+<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster clip than what is typical for SQL Server deployments.
 
 **R binaries** 
 
@@ -62,7 +62,7 @@ The Windows installer and SQL Server installer create different folder paths for
 
 **Feature availability**
 
-On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server intaller. Projected availability through a SQL Server installer is the first half of 2017.
+On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
 
 <a name="howtoinstall"></a>
 ## How to install R Server 9.0.1 on Windows using the standalone Windows installer
@@ -156,7 +156,7 @@ Get the rserversetup.zip or rserversetup.exe file from the [download sites](#Dow
 
 **Step 3: Run setup**
 
-Copy all of the downloaded files to the computer behind the firewall, and then rollow the instructions on [how to install the server](#Run-Setup).
+Copy all of the downloaded files to the computer behind the firewall, and then follow the instructions on [how to install the server](#Run-Setup).
 
 
 ## Install earlier versions of R Server for Windows
