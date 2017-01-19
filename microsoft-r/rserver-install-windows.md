@@ -100,10 +100,10 @@ RServerSetup.exe provides an installation wizard for standalone server deploymen
 
 Post-installation, you can review log files. Log files (RServerSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
 
-Additionally, you should install a development tool on the server to code script or solutions that use R Server features. We recommend the following development environment:
+Optionally, consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
 
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/)
-+ [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
++ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
++ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 ### Connect to R Server and validate installation
 
@@ -113,12 +113,12 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
-3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. If you want to load a package that's not automatically available, such as `mrsdpeloy`, type `library("mrsdeploy")`.
+3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. 
 4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`.
 
 ### Configure R Server for operationalization
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code.
+To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ##Side-by-side installation
 
@@ -126,7 +126,7 @@ You can install R Server 9.0.1 and previous major versions side-by-side on the s
 
 ## Install earlier versions of R Server for Windows
 
-Earlier versions are supported, but are no longer available on Microsoft download sites. If you already have one of the older supported versions, you can use the links in this section to access installation instructions.
+Earlier versions are supported, but with limited availability on Microsoft download sites. If you already have one of the older supported versions, you can use the links in this section to access installation instructions.
 
 | Version | Details|
 |---------|--------|
