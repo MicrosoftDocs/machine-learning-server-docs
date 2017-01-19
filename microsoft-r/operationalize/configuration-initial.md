@@ -188,6 +188,12 @@ For added security, you can [configure SSL](security-https.md) as well as authen
 
 1. From the sub-menu, choose the option to **Configure a compute node**.
 
+1. When the configuration utility is finished, open port 12805. 
+
+   + On Linux: If using the IPTABLES firewall or equivalent service on Linux, then use the `iptables` command (or the equivalent) to open port 12805.
+
+   + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
+
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
 <br>

@@ -116,6 +116,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
         }
         ```
 
+   >[!IMPORTANT]
+   >Also make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  authentication will fail.
+
 1. If using a certificate for access token signing, do the following: 
 
    >You must use a certificate for access token signing whenever you have multiple web nodes so the tokens are signed consistently by every web node in your configuration. 
