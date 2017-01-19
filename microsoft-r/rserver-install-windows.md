@@ -26,7 +26,9 @@ ms.custom: ""
 
 # Run Microsoft R Server for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Windows. 
+
+For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
 
 ## Licensing, installation options, and support
 
@@ -34,26 +36,27 @@ How you install R Server determines the support policy, location of R binaries, 
 
 Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Besides the enterprise edition, developers and data scientists can install the free developer edition, delivering the same features, but licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
-There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle support policy. SQL Server support policy offers updates and customer support over a longer period, but is tied to the SQL Server release schedule. In contrast, the span of the Modern Lifecycle support policy is shorter (typically just a few years) but it comes with more frequent updates, which means you get new features sooner. 
+There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle. SQL Server offers updates and customer support over a longer period, but feature updates are tied to the SQL Server release schedule. In contrast, support for any given product is shorter under the Modern Lifecycle (typically just a few years) but releases are delivered more frequently, which means you get fixes and new features sooner. 
 
 The following table summarizes installation options and service model combinations. 
 
 | Installer | Service plan | Benefits |
 |-----------|--------------|----------|
-|Install R Server for Windows using a standalone Windows installer | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
-|Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> | Integration with the database engine. |
-|Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
+|[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
+|[Install SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> | Integration with the database engine. |
+|[Install R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
 **R binaries** 
 
-The SQL Server installer places the R libraries under the database engine instance name folder created during setup (for example, \Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER). With the standalone Windows installer, binaries are installed under \Program Files\Microsoft R\RSERVER\Library.
+The SQL Server installer places the R libraries under the database engine instance name folder created during setup (for example, \Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER). With the standalone Windows installer, binaries are installed under \Program Files\Microsoft R\R_SERVER\Library.
 
 **Feature availability**
 
 On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server intaller. Projected availability through a SQL Server installer is the first half of 2017.
 
+<a name="howtoinstall"></a>
 ## How to install R Server 9.0.1 on Windows using the standalone Windows installer
 
 As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes [operationalization](operationalize/about.md).
