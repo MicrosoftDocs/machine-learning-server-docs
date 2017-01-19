@@ -32,9 +32,9 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 How you install R Server determines the support policy, location of R binaries, and the availability of certain features.
 
-Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Besides the enterprise edition, developers and data scientists can install the developer edition, delivering the same features, but licensed for smaller developer workloads.
+Licensing is the same regardless of how you install the server. As an enterprise server, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Besides the enterprise edition, developers and data scientists can install the free developer edition, delivering the same features, but licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
-There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle support policy. SQL Server support policy offers updates and customer support over a longer period, but is tied to the SQL Server release schedule. In contrast, the span of tje Modern Lifecycle support policy is shorter (typically just a few years) but it comes with more frequent updates, which means you get new features sooner. 
+There are three installation options and two service models to choose from: SQL Server support policy or Modern Lifecycle support policy. SQL Server support policy offers updates and customer support over a longer period, but is tied to the SQL Server release schedule. In contrast, the span of the Modern Lifecycle support policy is shorter (typically just a few years) but it comes with more frequent updates, which means you get new features sooner. 
 
 The following table summarizes installation options and service model combinations. 
 
@@ -44,7 +44,7 @@ The following table summarizes installation options and service model combinatio
 |Install [SQL Server R Services (In-database)](https://msdn.microsoft.com/library/mt604845.aspx) as part of a SQL Server Database engine instance | SQL Server support policy <sup>1</sup> | Integration with the database engine. |
 |Install [R Server (Standalone)](https://msdn.microsoft.com/ibrary/mt674874.aspx) using the SQL Server installer | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
 
-<sup>1</sup> Fo details about SQL Server support, search for "SQL Server 2016" on [this page](https://support.microsoft.com/en-us/lifecycle)).
+<sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
 **R binaries** 
 
