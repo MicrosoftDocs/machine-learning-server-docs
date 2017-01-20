@@ -48,7 +48,7 @@ The following table summarizes installers and service plan combinations.
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
-<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster clip than what is typical for SQL Server deployments.
+<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster clip than what is typical for SQL Server deployments.
 
 **R binaries** 
 

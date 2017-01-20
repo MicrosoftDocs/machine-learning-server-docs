@@ -5,7 +5,7 @@ description: "Enforce YARN queue usage for a  Microsoft R Server installation on
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/14/2016"
+ms.date: "01/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,10 +34,10 @@ RxHadoopMR(.., hadoopSwitches='-Dmapreduce.job.queuename=mrsjobs')
 ## Spark
 Use the "extraSparkConfig" option to direct jobs to a specific YARN queue.
 ````
-RxSpark(.., extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
+RxSpark(.., extraSparkConfig='--conf spark.yarn.queue=mrsjobs')
 
 RxSparkConnect(..,
-     extraSparkConfig='-conf spark.yarn.queue=mrsjobs')
+     extraSparkConfig='--conf spark.yarn.queue=mrsjobs')
 ````
 
 ## Overrides
@@ -78,7 +78,7 @@ This procedure involves creating a custom R package which contains the function 
   This package is for internal Company ABC use only -- not for redistribution.
   ~~~~
 
-3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory.
+3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. Please note that the `RxSparkConnect` function is only available in V9 and later releases. 
 
   ~~~~
     # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
@@ -95,7 +95,7 @@ This procedure involves creating a custom R package which contains the function 
         hswitch <- gsub(' +',' ',hswitch)
         x <- unlist(strsplit(hswitch," "))
         i <- grep('queue',x)
-        y <- paste(x[- i],collapse=' ')
+        y <- paste(x[- c(i-1,i)],collapse=' ')
       } 	
 
     # add in the required queue info
@@ -114,11 +114,11 @@ This procedure involves creating a custom R package which contains the function 
         hswitch <- gsub(' +',' ',hswitch)
         x <- unlist(strsplit(hswitch," "))
         i <- grep('queue',x)
-        y <- paste(x[- i],collapse=' ')
+        y <- paste(x[- c(i-1,i)],collapse=' ')
       }
 
       # add in the required queue info
-      dotargs$extraSparkConfig <- paste(y,'-conf spark.yarn.queue=mrsjobs')
+      dotargs$extraSparkConfig <- paste(y,'--conf spark.yarn.queue=mrsjobs')
       do.call( RevoScaleR::RxSpark, dotargs )
   } }
 
@@ -133,11 +133,11 @@ This procedure involves creating a custom R package which contains the function 
         hswitch <- gsub(' +',' ',hswitch)
         x <- unlist(strsplit(hswitch," "))
         i <- grep('queue',x)
-        y <- paste(x[- i],collapse=' ')
+        y <- paste(x[- c(i-1,i)],collapse=' ')
       }
 
       # add in the required queue info
-      dotargs$extraSparkConfig <- paste(y,'-conf spark.yarn.queue=mrsjobs')
+      dotargs$extraSparkConfig <- paste(y,'--conf spark.yarn.queue=mrsjobs')
       do.call( RevoScaleR::RxSparkConnect, dotargs )
   }
 ~~~~

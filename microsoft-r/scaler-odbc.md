@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "RevoScaleR ODBC Data Import Guide"
+title: "RevoScaleR ODBC data import"
 description: "Microsoft R Server data import with ODBC."
 keywords: ""
-author: "richcalaway"
+author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/17/2016"
+ms.date: "01/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,37 +24,26 @@ ms.custom: ""
 
 ---
 
-# RevoScaleR ODBC Data Import Guide
+# RevoScaleR ODBC Data Import
 
-## Before You Begin
+RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing database management systems and databases.
 
-RevoScaleR allows you to read data from virtually any database for which you can obtain an ODBC driver. ODBC stands for “Open Database Connectivity,” and is a standard software interface for accessing database management systems, which are usually conflated with the databases they manage and simply called “databases.”
+ODBC connectivity is managed by an ODBC *Driver Manager*. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, there are two commonly available ODBC driver managers, unixODBC and iodbc, along with commercial implementations of the Windows ODBC driver manager which are sometimes distributed with commercial database drivers. *RevoScaleR supports unixODBC, but not iodbc.* It is important that the version of unixODBC you install be compatible with the databases you need to connect to. See the section Configuring unixODBC for complete details.
 
-ODBC connectivity is managed by an ODBC *Driver Manager*. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, there are two commonly available ODBC driver managers, unixODBC and iodbc, along with commercial implementations of the Windows ODBC driver manager which are sometimes distributed with commercial database drivers. *RevoScaleR works and has been tested with unixODBC, but not iodbc.* It is important that the version of unixODBC you install be compatible with the databases you need to connect to. See the section Configuring unixODBC for complete details.
-
-This guide is not intended for use with Teradata—if you need to connect to a Teradata data warehouse, see the manual [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
-
-Internally, we have tested the following databases:
-
--   SQLite 3
--   SQL Server 2008 and 2014
--   Oracle Express
--   MySQL® 5.1
+These instructions do not apply to Teradata. If you need to connect to a Teradata data warehouse, see [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
 
 For each database you intend to use as a data source, you must do the following:
 
-1.  Install and configure the database. The database may be installed locally or on a server.
-2.  Add data to the database. This will involve different steps with different databases.
-3.  Install the appropriate ODBC driver(s) on your local machine. These should be 64-bit drivers.
-4.  Create an *RxOdbcData* data source using information appropriate to your database installation.
-5.  Use the *rxImport* function to read data from the data source into an .xdf file for further use by RevoScaleR.
-
-This manual will focus on steps 3 through 5 above; some resources to help you with steps 1 and 2 can be found in the Appendix. In most organizations, however, these steps will be handled by your local database administrator; this person is also the one to ask for the database-specific information required in step 4.
+1.  Install the appropriate ODBC driver(s) on your local machine. These should be 64-bit drivers.
+2.  Create an `RxOdbcData` data source using information appropriate to your database installation.
+3.  Use the `rxImport` function to read data from the data source into an .xdf file for further use by RevoScaleR.
+4.  Use the `rxDataStep` to write data back to the data source.
 
 ## Some Quick Examples
 
 If you have a configured database and the necessary ODBC drivers, actually extracting data is quite straightforward. For example, most Windows systems come with SQL Server ODBC drivers pre-installed, so you can go right to work extracting data from a SQL server database with just a username, password, and a few specifics like the actual database name and table you want to extract data from. These can be combined into a single SQL connection string and then used to extract data as follows (note that some drivers and operating systems may require somewhat different syntax, so for example, the curly braces around the driver name may need to be omitted; Linux drivers typically will reject connection strings containing white space, etc.):
 
+~~~~
 sConnectionStr \<- "Driver={SQL Server};Server=win-database01;
  Database=TestData;Uid=mktest;Pwd=sqlpwd;"
 
@@ -66,9 +55,11 @@ sConnectionStr \<- "Driver={SQL Server};Server=win-database01;
 	claimsFile <- RxXdfData("claimsFromODBC.xdf")
 	rxImport(claimsDS, claimsFile, overwrite=TRUE)
 	rxGetInfo(claimsFile, getVarInfo=TRUE, numRows=10)
+~~~~
 
 This returns the following:
-	
+
+~~~~	
 	File name: claimsFromODBC.xdf 
 	Number of observations: 128 
 	Number of variables: 6 
@@ -92,41 +83,66 @@ This returns the following:
 	8       8 17-20     10+    B   11      1
 	9       9 17-20     0-3    C  189      9
 	10     10 17-20     4-7    C  288     13
-	
+~~~~	
 
-Since we are extracting all the data from the table with our SQL query, it can be simpler to just provide the table argument to RxOdbcData:
+Since we are extracting all the data from the table with our SQL query, it can be simpler to just provide the table argument to `RxOdbcData`:
 
+~~~~
 		sConnectionStr <- "Driver={SQL Server};Server=win-database01; 
 			Database=TestData; Uid=mktest; Pwd=sqlpwd;"
 	claimsDS2 <- RxOdbcData(table="claims",	connectionString=sConnectionStr)
 		claimsFile <- RxXdfData("claimsFromODBC.xdf")
 		rxImport(claimsDS2, claimsFile, overwrite=TRUE)
 		rxGetInfo(claimsFile, getVarInfo=TRUE, numRows=10) 
-
+~~~~
 
 This gives the same results as before.
+
+This last example is unrelated to previous examples, but it demonstrates writing a table back to the database. This operation includes use of the `RxOdbcData` data source and the `rxDataStep` function. 
+
+~~~~
+myTable <- RxOdbcData(table="mtcars", connectionString = connectionString)
+rxDataStep(mtcars, myTable, overwrite=TRUE) 
+head(myTable) 
+rxGetInfo(myTable, getVarInfo=TRUE) 
+myCars <- rxDataStep(myTable) 
+head(myCars)
+~~~~
 
 ## Configuring unixODBC
 
 If you intend to use ODBC connectivity in a Linux environment, you must install unixODBC. You can check to see if unixODBC has been installed on your system using the following command:
 
+~~~~
 rpm –qa | grep unixODBC
+~~~~
 
 If this returns nothing, you can install unixODBC using the following commands:
 
 On RHEL systems:
 
+~~~~
 sudo yum install unixODBC
+~~~~
 
 On SLES systems:
 
+~~~~
 sudo zypper install unixODBC
+~~~~
 
 ## Installing ODBC Drivers
 
-ODBC drivers are available for most commercial and open-source databases, either from the database vendor or third parties. Usually, the simplest way to find the appropriate driver is to use your favorite search engine and query “ODBC driver for \<database\>.” The download page will generally give you all the necessary installation instructions.
+ODBC drivers are available for most commercial and open-source databases, either from the database vendor or third parties. 
 
-It is important to note that the ODBC drivers need to be installed on your local machine even if you are using a remote database server; the ODBC drivers are used by the database clients that will actually access the database.
+ODBC drivers must be installed on your local machine as well as the remote database server. Local drivers are used by the database client library to connect to remote data sources.
+
+Internally, we have tested the following databases:
+
+-   SQLite 3
+-   SQL Server 2008 and 2014
+-   Oracle Express
+-   MySQL® 5.1
 
 ### Installing SQLite and the SQLite ODBC Drivers on Windows
 
@@ -338,11 +354,11 @@ You first need to specify the name of your DSN. On Linux, this will be the same 
 
 ### Limitations on SQL Queries
 
-The sqlQuery argument to *RxOdbcData* is limited to data extraction queries (SELECT and SHOW statements, primarily) because *RxOdbcData* is currently intended to be used for reading data from the database into a .xdf file. In particular, INSERT queries are not supported. Also, because each query is used to populate a single .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported. Compound queries, however, that produce a single extracted table, (that is, queries linked by AND or OR, or involving multiple FROM clauses) are supported.
+The sqlQuery argument to `RxOdbcData` is limited to data extraction queries (SELECT and SHOW statements, primarily) because *RxOdbcData* is currently intended to be used for reading data from the database into a .xdf file. In particular, INSERT queries are not supported. Also, because each query is used to populate a single .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported. Compound queries, however, that produce a single extracted table, (that is, queries linked by AND or OR, or involving multiple FROM clauses) are supported.
 
 ## Specifying Variable Data Types
 
-Data stored in databases may be stored differently from how you want to store the data in R. You can use the *colClasses*, *colInfo*, and *stringsAsFactors* arguments to *RxOdbcData* to specify how columns are stored in R. The *stringsAsFactors* argument is the simplest to use; if specified, any character string column not otherwise accounted for by the *colClasses* or *colInfo* argument is stored as a factor in R, with levels defined according to the unique character strings found in the column. The *colClasses* argument allows you to specify a particular class for a particular variable; *colInfo* is similar, but it also allows you to specify a set of levels for a factor variable. The following example shows all three arguments being combined to allow us to modify the data types of several variables in the claims data:
+Data stored in databases may be stored differently from how you want to store the data in R. You can use the `colClasses`, `colInfo`, and `stringsAsFactors` arguments to `RxOdbcData` to specify how columns are stored in R. The `stringsAsFactors` argument is the simplest to use; if specified, any character string column not otherwise accounted for by the `colClasses` or `colInfo` argument is stored as a factor in R, with levels defined according to the unique character strings found in the column. The `colClasses` argument allows you to specify a particular class for a particular variable; `colInfo` is similar, but it also allows you to specify a set of levels for a factor variable. The following example shows all three arguments being combined to allow us to modify the data types of several variables in the claims data:
 
 	sConnectionStr <- "Driver={SQL Server};Server=win-database01; Database=TestData;Uid=mktest;Pwd=sqlpwd;";
 	colInfoList <- list("car.age" = list(type = "factor", levels = c("0-3", 
@@ -372,22 +388,4 @@ This returns the following:
 	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
 	Var 6: number, Type: integer, Low/High: (0, 434)
 
-## Appendix: Setting Up Databases
 
-RevoScaleR assumes you have data; configuring databases is beyond the scope of this document. However, if you are new to databases, it can help to have some place to start. This appendix is intended as a pointer to additional resources that can help you get started building your own databases.
-
-### Major Database Web Sites
-
--   **SQLite**: <http://www.sqlite.org/>
--   **MySQL**: <http://www.mysql.com/>
--   **SQL Server**: <http://www.microsoft.com/sqlserver/en/us/default.aspx>
--   **Oracle**: <http://www.oracle.com/>
--   **Sybase**: <http://www.sybase.com/>
-
-### Getting Started Documentation
-
--   **SQLite**: <http://www.sqlite.org/quickstart.html>
--   **MySQL**: <http://dev.mysql.com/doc>
--   **SQL Server**: <http://technet.microsoft.com/en-us/library/bb500434.aspx>
--   **Oracle Express**: <http://download.oracle.com/docs/cd/B25329_01/doc/admin.102/b25610/toc.htm>
--   **Sybase**: <http://download.sybase.com/pdfdocs/asg1150e/tutorial.pdf>
