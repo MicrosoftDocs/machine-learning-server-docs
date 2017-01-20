@@ -149,8 +149,9 @@ By default, installers reach out to Microsoft download sites to get required and
 | Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
 | Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
-| Microsoft Visual C++ 2015 Redistributable | 14.0.23026.0 | https://go.microsoft.com/fwlink/?linkid=828641 |
+| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24215.1<sup>1</sup> | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
 
+<sup>1</sup> Build numbers are displayed in the license agreement page when you install the redistributable. With regards to the Visual C++ 2015 redistributable, the build version is different for offline and internet-connected R Server installations. When performing an offline install, be sure to use Update 3 (build 14.0.24215.1), as listed in the table above.
 
 **Step 2: Download the installer**
 
