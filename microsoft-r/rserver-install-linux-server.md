@@ -48,13 +48,12 @@ If these requirements cannot be met, you can install R Server manually. First, v
 ## Download sites
 
 + [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
++ [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) enterprise edition. Sign in, search for R Server for Linux. A selection for **R Server for Linux 9.0.1** is provided on this site.
 + [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
     - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
-
-> A download option on [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) for R Server for Linux is pending. VLSC is expected to have an ISO available for the 9.0.1 release in January 2017.
 
 ## System Requirements
 

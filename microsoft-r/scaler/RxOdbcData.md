@@ -6,7 +6,7 @@ description: "RxOdbcData function in the RevoScaleR package in Microsoft R."
 keywords: "RevoScaleR, ScaleR, RxOdbcData"
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "09/14/2016"
+ms.date: "01/14/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -96,6 +96,14 @@ rxImport(claimsOdbcSource, claimsXdfFileName, overwrite = TRUE)
 # Read xdf file into a data frame
 claimsIn <- rxDataStep(inData = claimsXdfFileName)
 head(claimsIn)
+
+# Write a table to the database 
+myTable <- RxOdbcData(table="mtcars", connectionString = connectionString)
+rxDataStep(mtcars, myTable, overwrite=TRUE) 
+head(myTable) 
+rxGetInfo(myTable, getVarInfo=TRUE) 
+myCars <- rxDataStep(myTable) 
+head(myCars)
 
 # Clean-up: delete the new file
 file.remove( claimsXdfFileName)
