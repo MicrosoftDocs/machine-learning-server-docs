@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/18/2017"
+ms.date: "01/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -34,9 +34,9 @@ For a description of R Server components, benefits, and usage scenarios, see [In
 
 How you install R Server determines the support policy, location of R binaries, and the availability of certain features.
 
-Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. Another option for developers and data scientists is to install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
+Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
-If your objective is running R Server on a Windows computer, there are three installers (listed below) and two service models to choose from. **SQL Server support policy** offers updates and customer support over a longer period, but feature updates are tied to the SQL Server release schedule. **Modern Lifecycle** is condensed over a two year period. Releases are delivered more frequently, which means you get fixes and new features sooner.
+If your objective is running R Server on a Windows computer, there are three installers (listed below) and two service models to choose from. **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. **Modern Lifecycle** is concentrated over a two year period, with the advantage of a faster releqase cycle, delivering fixes and features sooner.
 
 The following table summarizes installers and service plan combinations. 
 
@@ -48,7 +48,7 @@ The following table summarizes installers and service plan combinations.
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
-<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster clip than what is typical for SQL Server deployments.
+<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what is typical for SQL Server deployments.
 
 **R binaries** 
 
@@ -135,7 +135,7 @@ You can install R Server 9.0.1 and previous major versions side-by-side on the s
 
 ## Offline installation and firewall considerations
 
-By default, installers reach out to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download components manually on a computer that has internet access, copy the files to another computer behind the firewall, and re-run setup.
+By default, installers reach out to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download invididual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup.
 
 **Step 1: Download the prerequisites**
 
@@ -154,9 +154,13 @@ By default, installers reach out to Microsoft download sites to get required and
 
 Get the rserversetup.zip or rserversetup.exe file from the [download sites](#Download).
 
-**Step 3: Run setup**
+**Step 3: Install each individual component**
 
-Copy all of the downloaded files to the computer behind the firewall, and then follow the instructions on [how to install the server](#Run-Setup).
+Component downloads are installers. Double-click each file to begin installation. Install each component.
+
+**Step 4: Run R Server setup**
+
+After all of the prerequisites are are installed, you can begin R Server installation. Refer to [how to install the server](#Run-Setup) for more information.
 
 
 ## Install earlier versions of R Server for Windows

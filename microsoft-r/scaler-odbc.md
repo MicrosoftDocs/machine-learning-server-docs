@@ -144,13 +144,13 @@ Internally, we have tested the following databases:
 -   Oracle Express
 -   MySQL® 5.1
 
-### Installing SQLite and the SQLite ODBC Drivers on Windows
+**Installing SQLite and the SQLite ODBC Drivers on Windows**
 
 SQLite is a “serverless database” that allows you store a complete database, with tables, indices, and views, in a single disk file. It is simple to install; you simply download the three Windows binary zip files from <http://www.sqlite.org/download.html> and extract them into your C:\\Windows\\System32 folder.
 
 An ODBC driver for SQLite is available at <http://www.ch-werner.de/sqliteodbc>. We have tested versions .88 and later; version .92 has a known incompatibility in that RevoScaleR is unable to obtain correct row position data using that version. We recommend version .93 or later. Download the 64-bit executable and run the executable to install the appropriate driver.
 
-### Installing SQLite and the SQLite ODBC Drivers on Linux
+**Installing SQLite and the SQLite ODBC Drivers on Linux**
 
 SQLite is a “serverless database” that allows you store a complete database, with tables, indices, and views, in a single disk file. To install SQLite and the SQLite ODBC drivers on Linux, perform the following steps:
 
@@ -186,11 +186,11 @@ SQLite is a “serverless database” that allows you store a complete database,
 		Setup=/usr/local/lib/libsqlite3odbc.so
 		Threading=2
 
-### Installing MySQL ODBC Drivers on Windows
+**Installing MySQL ODBC Drivers on Windows**
 
 MSI installers for 64-bit MySQL ODBC drivers are available at the MySQL Web site, <http://dev.mysql.com/downloads/connector/odbc/>. Download and run the appropriate installer to install the driver.
 
-### Installing MySQL ODBC Connector on Red Hat Enterprise Linux
+**Installing MySQL ODBC Connector on Red Hat Enterprise Linux**
 
 MySQL has connectors that work with either the standard yum installs of the unixODBC driver manager or with the latest unixODBC 2.3.1. If you are using the standard yum install, use the mysql-connector-odbc-5.1.12-1.rhel5.x86\_64.rpm which you can download from their website, <http://dev.mysql.com/downloads/connector/odbc/>. Download and run the appropriate installer to install the connector.
 
@@ -204,7 +204,7 @@ Once you have installed the connector, configure your installation by editing th
 
 ## Using ODBC Data Sources
 
-### Working with SQLite Files 
+**Working with SQLite Files** 
 
 SQLite is a special database system in that it is file-based and serverless. Each file corresponds to a database, which may contain multiple tables, indexes, etc. Because there is no server, there are no credentials to worry about (file permissions remain important, however). So, in general, working with a SQLite database is quite simple—the connection string needs to specify only the driver (on Windows, the name of the driver is the name shown in the Drivers tab of the ODBC Data Source Administrator under Name) and the file name, as in the following example:
 
@@ -220,7 +220,7 @@ SQLite is a special database system in that it is file-based and serverless. Eac
 		rxGetInfo(SQLiteOutfile, getVarInfo=TRUE, numRows=10) 
 
 
-### Working with SQL Server
+**Working with SQL Server**
 
 In the section Some Quick Examples, we gave an example of extracting data from a SQL Server database using a connection string. We now show the same example, but instead of using a connection string, we use the server, dsn, user, and password arguments:
 
@@ -257,7 +257,7 @@ As before, we get the claims data:
 	9       9 17-20     0-3    C  189      9
 	10     10 17-20     4-7    C  288     13
 
-## Working with Oracle Express 
+**Working with Oracle Express**
 
 Oracle Express is a free version of the popular Oracle database management system. It is intended as a “starter” version; working with other offerings from Oracle uses the same ODBC drivers. Here we give the Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
 
@@ -352,7 +352,7 @@ You first need to specify the name of your DSN. On Linux, this will be the same 
 	airlineODBCSource <- RxOdbcData(sqlQuery = sUserSQL, connectionString = sConnectionStr, useFastRead = TRUE)
 	rxImport(airlineODBCSource, airlineXDFName, overwrite = TRUE)
 
-### Limitations on SQL Queries
+**Limitations on SQL Queries**
 
 The sqlQuery argument to `RxOdbcData` is limited to data extraction queries (SELECT and SHOW statements, primarily) because *RxOdbcData* is currently intended to be used for reading data from the database into a .xdf file. In particular, INSERT queries are not supported. Also, because each query is used to populate a single .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported. Compound queries, however, that produce a single extracted table, (that is, queries linked by AND or OR, or involving multiple FROM clauses) are supported.
 
