@@ -158,11 +158,11 @@ Get the rserversetup.zip or rserversetup.exe file from the [download sites](#Dow
 
 **Step 3: Install each individual component**
 
-Component downloads are installers. Double-click each file to begin installation. Install each component.
+Component downloads are installers. Double-click each file to begin installation. Order of installation is not important.
 
 **Step 4: Run R Server setup**
 
-After all of the prerequisites are are installed, you can begin R Server installation. Refer to [how to install the server](#Run-Setup) for more information.
+After all of the prerequisites are installed, you can begin R Server installation. Refer to [how to install the server](#Run-Setup) for more information.
 
 
 ## Install earlier versions of R Server for Windows
