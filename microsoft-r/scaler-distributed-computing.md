@@ -6,7 +6,7 @@ description: "Microsoft R Server in-database and cluster computing using the Sca
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "01/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -990,6 +990,77 @@ With our *kMeansRSR* function, we can then repeat the computation from before:
 	system.time(kMeansRSR(x, 10, 35, 20))
 
 With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
+
+### Sharing Data Efficiently Between Parallel Processes 
+
+Data can be shared between `rxExec` parallel processes by copying it to the environment of each process through the `execObjects` option to `rxExec`, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share.  
+
+The following example shows how this can be done when parallelizing the computation of statistics on subsets of a larger data table.  
+
+We’ll start by creating some sample data using the **data.table** package.  
+
+~~~~
+	library(data.table)
+
+	nrows <- 5e6
+	test.data  <- data.table(tag=sample(LETTERS[1:7], nrows, replace=TRUE), 
+							a=runif(nrows), b=runif(nrows))
+
+	# get the unique tags that we'll subset by 
+	tags <- unique(test.data$tag)
+	tags
+~~~~
+
+Next we’ll setup for use of the **doParallel** backend. 
+
+~~~~
+	library(doParallel) 
+	(nCore <- parallel::detectCores(all.tests = TRUE, logical = FALSE) )
+	cl <- makeCluster(nCore, useXDR = F)
+	registerDoParallel(cl)
+	rxSetComputeContext(RxForeachDoPar())
+
+	# set MKL thread to 1 to avoid contention 
+	setMKLthreads(1)  
+~~~~
+
+Now we’ll create a function for computing statistics on a selected subset of the data table by passing in both the data table and the tag value to subset by. We’ll then run the function using `rxExec` for each tag value.
+
+~~~~
+	filterTest <- function(d, ztag) {
+	sum(subset(d, tag==ztag, select=a)) 
+	}
+	system.time({
+	res1 <- rxExec(filterTest, test.data, rxElemArg(tags))
+	}) 
+	##   user  system elapsed 
+	##   9.67    7.40   22.05 
+~~~~
+
+To see the impact of sharing the file via a common storage location rather than passing it to each parallel process we’ll save the data table into an RDS file, which is an efficient way of storing individual R objects, create a new version of the function that reads the data table from the RDS file, and then re-run `rxExec` using the new function. 
+
+~~~~
+	saveRDS(test.data, 'c:/temp/tmp.rds', compress=FALSE)
+	filterTest <- function(ztag) {
+	d <- readRDS('c:/temp/tmp.rds')
+	sum(subset(d, tag==ztag, select=a)) 
+	}
+
+	system.time({
+	res2 <- rxExec(filterTest, rxElemArg(tags))
+	}) 
+	##   user  system elapsed 
+	##   0.03    0.00   11.01 
+
+	# make sure the results match 
+	identical(res2, res2)  
+	## [1] TRUE 
+
+	# close up shop 
+	stopCluster(cl)
+~~~~
+
+Although results may vary, in this case we’ve reduced the elapsed time by 50% by sharing the data table rather than passing it as an in-memory object to each parallel process.   
 
 ### Parallel Random Number Generation
 
