@@ -36,7 +36,7 @@ How you install R Server determines the support policy, location of R binaries, 
 
 Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
-If your objective is running R Server on a Windows computer, there are three installers (listed below) and two service models to choose from. **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. **Modern Lifecycle** is concentrated over a two year period, with the advantage of a faster releqase cycle, delivering fixes and features sooner.
+If your objective is running R Server on a Windows computer, there are three installers (listed below) and two service plans to choose from. Regarding service plans, the **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. **Modern Lifecycle** is concentrated over a two year period, with the advantage of a faster releqase cycle, delivering fixes and features sooner.
 
 The following table summarizes installers and service plan combinations. 
 
@@ -44,15 +44,17 @@ The following table summarizes installers and service plan combinations.
 |-----------|--------------|----------|
 |[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
 |[Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) | SQL Server support policy<sup>1</sup> or [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) <sup>2</sup> | Integration with the database engine.   |
-|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/ibrary/mt674874.aspx) | SQL Server support policy<sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy. |
+|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/ibrary/mt674874.aspx) | SQL Server support policy<sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy<sup>3</sup>. |
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
 <sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what is typical for SQL Server deployments.
 
+<sup>3</sup> You can provision an Azure virtual machine running Windows that has SQL Server R Server (Standalone) already installed. This VM is provisioned under the SQL Server service plan, but you could rebind to the Modern Lifecycle support policy. For more information, see [Provision an R Server Virtual Machine](https://msdnstage.redmond.corp.microsoft.com/library/mt759780.aspx).
+
 **R binaries** 
 
-The Windows installer and SQL Server installer create different folder paths for the R libraries. This is something to be aware of when using tools like R Tools for Visual Studio (RTVS) or RStudio, both of which retain library file location.
+The Windows installer and SQL Server installer create different library folder paths for the R packages. This is something to be aware of when using tools like R Tools for Visual Studio (RTVS) or RStudio, both of which retain library folder location references.
 
 | File location | Installer |
 |---------------|-----------|
