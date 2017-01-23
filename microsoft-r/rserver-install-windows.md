@@ -44,7 +44,7 @@ The following table summarizes installers and service plan combinations.
 |-----------|--------------|----------|
 |[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
 |[Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) | SQL Server support policy<sup>1</sup> or [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) <sup>2</sup> | Integration with the database engine.   |
-|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/ibrary/mt674874.aspx) | SQL Server support policy<sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy<sup>3</sup>. |
+|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) | SQL Server support policy<sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy<sup>3</sup>. |
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
