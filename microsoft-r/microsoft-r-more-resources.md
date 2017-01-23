@@ -48,7 +48,7 @@ The following resources are available to you:
 ## R Server on Azure 
 * [Azure ML Support Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=MachineLearning) 
 * [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
-* [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/partners/microsoft-r-products/microsoft-r-server/)
+* [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=r+server)
 * [Adding Azure Data Lake Storage Access to your VM](http://packages.revolutionanalytics.com/doc/8.0.0/azure/ADLS%20Setup%20for%20an%20R%20Server%20VM%20on%20Azure.pdf)
 
 ## R Tools for Visual Studio
