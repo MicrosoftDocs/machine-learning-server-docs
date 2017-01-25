@@ -87,7 +87,7 @@
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
 #### [R execution security](operationalize/security-rserve.md)
-#### [Remote database configuration](operationalize/configure-remote-database.md)
+#### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
 ### Integration for App Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)

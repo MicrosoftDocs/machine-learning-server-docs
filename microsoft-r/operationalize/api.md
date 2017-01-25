@@ -35,6 +35,8 @@ The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/9.0
 
 The APIs available for operationalization with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
 
+<a name="core"></a>
+
 ## Core Operationalization APIs
 
 These core REST APIs expose the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications.  These APIs enable you to publish Microsoft R Server-hosted **R analytics web services**, making the full capabilities of R available to application developers on a simple yet powerful REST API. The core R Server operationalization APIs can be grouped into several categories as shown in this table. 
@@ -45,7 +47,7 @@ Authentication|These APIs provide authentication related operations and access w
 Web Services|These APIs facilitate the publishing and management of user-defined analytic web services (create, delete, update, list, discover). Each web service is uniquely defined by a `name` and `version` for easy service consumption and meaningful machine-readable discovery approaches. When a service is published (<code>POST /services/{name}/{version}</code>), an endpoint is registered and a [custom Swagger-based JSON file is generated](app-developer-get-started.md).|<a href="https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis" target="_blank">Help</a>
 Session|These APIs provide functionality for R session management (create, delete, update, list, console output, history, and workspace and working directory files)|<a href="https://microsoft.github.io/deployr-api-docs/9.0.1/#session-apis" target="_blank">Help</a>
 Snapshot|These APIs provide different operations to access and manage workspace snapshots. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. |<a href="https://microsoft.github.io/deployr-api-docs/9.0.1/#snapshot-apis" target="_blank">Help</a>
-Status|This API allows you to retrieve a health report for the system.|<a href="https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis" target="_blank">Help</a>
+Status|This API returns a health report of the configuration, including the number of nodes, pool size, and other details. A [similar diagnostic report](admin-diagnostics.md) is available on the server.|<a href="https://microsoft.github.io/deployr-api-docs/9.0.1/#status-apis" target="_blank">Help</a>
 
 <br>
 

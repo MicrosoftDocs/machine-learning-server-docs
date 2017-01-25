@@ -50,7 +50,7 @@ The set of diagnostic tests include:
 
 1. If you haven't authenticated yet, you'll need to provide your username and password. 
 
-1. To retrieve a 'health check' of the configuration including a code execution test, choose **Test configuration**.
+1. For a 'health report' of the configuration including a code execution test, choose **Test configuration**.
 
    1. Review the test results. If any issues arise, investigate the [log files](#logs) and attempt to resolve the issues.
 
@@ -58,7 +58,10 @@ The set of diagnostic tests include:
 
    1. Rerun the diagnostic test to make sure all is running smoothly now.
 
-1. To retrieve the 'raw details' on the health of the system and review the output, choose **Get raw server status**.
+   >[!NOTE]
+   >You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
+
+1. For the 'raw details' on the health of the system and review the output, choose **Get raw server status**.
 
 1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
       1. Enter the R code you want to run and trace. 
