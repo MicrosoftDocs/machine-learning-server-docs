@@ -24,7 +24,7 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
-<!--
+
 # Managing Web Services
 
 
@@ -62,4 +62,3 @@ Whenever a web service is published (<code>POST /services/{name}/{version}</code
 If you use a snapshot when developing your web service, the session snapshot information will be baked into the service API when published and available to any authenticated user consuming that web service later.
 
 Please note that while only the web service author can update, publish, or delete a service, any authenticated user can retrieve a list of services or consume a service. 
--->
