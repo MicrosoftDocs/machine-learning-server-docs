@@ -89,7 +89,7 @@
 #### [R execution security](operationalize/security-rserve.md)
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
-### Integration for App Developers
+### Application Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)

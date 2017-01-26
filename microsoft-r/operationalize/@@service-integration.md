@@ -24,10 +24,17 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
-
+<!--
 # Integrate Web Services into Applications 
 
 **Applies to:  Microsoft R Server 9.0.1**
+
+
+ As the intelligent app developer, I learnt from the data scientist about the R analytics he/she deployed. I can run/test them in a test harness and then integrate them into my app.
+If implemented, also document the one click deployment from RTVS/R Studio. deploy R analytics (scripts, models) to the production environment by a button click or right click on the R assets in RTVS/RStudio
+
+
+
 
 >@@FUTURE DIRECTION
 > + Integration Workflow
@@ -86,3 +93,4 @@ This Swagger-based JSON file contains the definitions of every API specific to t
 Using a Swagger code generation tool, you can convert the Swagger-based file into an API client. The client simplifies the way in which you consume this published web service, simplifing the making of calls, encoding of data, and markup response handling on the API.
 
 Learn how to get a [code generation tool, download the Swagger files, and generate a client library stub](app-developer-get-started.md).
+-->
