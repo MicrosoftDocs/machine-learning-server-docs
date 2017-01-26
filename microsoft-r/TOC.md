@@ -78,7 +78,7 @@
 ## [Operationalization](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
 ### [Setup](operationalize/configuration-initial.md)
-### Administration
+### Administors
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics.md)
