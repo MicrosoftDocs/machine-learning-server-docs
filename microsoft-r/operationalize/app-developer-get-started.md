@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Getting Started for Application Developers 
+# Get Started for Application Developers 
 
 **Applies to:  Microsoft R Server 9.0.1**
 
