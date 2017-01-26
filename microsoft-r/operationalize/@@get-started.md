@@ -24,8 +24,9 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
-<!--
 # Start Operationalizing Your R Analytics
+
+<!--
 
 A new introductory document, About DeployR, is needed. It would present a high level graphic illustrating a cycle of Develop – Test – Deploy/Manage. Then it should drill down on each of these environments.
  
