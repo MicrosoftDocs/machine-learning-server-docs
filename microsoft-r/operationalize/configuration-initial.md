@@ -120,6 +120,9 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
+>[!Important]
+>R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
+
 You are now ready to begin operationalizating your R analytics with R Server.
 
 <a name="enterprise"></a>
@@ -209,7 +212,9 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 **Step 3: Configure Web Node(s)**
 
->**Note:** It is possible to run the operationalization web node service from within IIS.
+
+>[!Note]
+>It is possible to run the operationalization web node service from within IIS.
 
 1. On each machine, install Microsoft R Server:
    + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
@@ -256,6 +261,9 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 Your web node is now configured. Repeat these steps for each web node you want to add.
+
+>[!Important]
+>R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
 <br>
 
