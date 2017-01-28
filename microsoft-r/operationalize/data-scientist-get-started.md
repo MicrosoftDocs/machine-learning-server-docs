@@ -27,44 +27,42 @@ ms.custom: ""
 
 # Get Started for Data Scientists
 
-Now that you've learned about [R Server's operationalization feature](about.md), we can dig into how data scientists can deploy,  consume, and share web services with R Server in order to operationalize their R analytics.
+Now that you've learned about [R Server's operationalization feature](about.md), we can dig into how data scientists can deploy,  consume, and share web services in order to operationalize their R analytics.
 
-Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package shipped with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
+Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package that ships with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is a stateless execution in an R shell on the compute node. Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) are available to provide programmatic access to a service's lifecycle directly. 
+An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service backed by an R code block or script that you provide. The package also provides functions for establishing a [remote execution](remote-execution.md) session in a console application.  [Learn more about this package](../mrsdeploy/mrsdeploy.md)  Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
-Once deployed, the web service can be (1) consumed directly in R by a data scientist and/or (2) [integrated into an application by an application developer using a .JSON file and swagger](app-developer-get-started.md).
+Once deployed, the web service can be: 
++ Consumed directly in R by another data scientist, for testing purposes for example 
++ [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 ![Operationalization Engine](../media/o16n/data-scientist-easy-deploy.png) 
 
 ## What You'll Need
 
-You'll develop your R analytics locally with R Client, deploy them to Microsoft R Server as web services, and then consume or share it from R Server.
+You'll develop your R analytics locally with R Client, deploy them to Microsoft R Server as web services, and then consume or share them.
 
 **On the local client**, you'll need to [install R Client](../r-client-get-started.md) first.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  Once you have this set up, you can develop your R analytics in your local R IDE using the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) that was installed with Microsoft R Client (and R Server). 
 
-**On the remote server**, you'll need an installed instance of [Microsoft R Server](../rserver.md) with its [operationalization feature configured](configuration-initial.md). Once R Server is configured for operationalization, you'll be able to connect to it from your local machine, deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services from R Server. 
+**On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../rserver.md) with its [operationalization feature configured](configuration-initial.md). Once R Server is configured for operationalization, you'll be able to connect to it from your local machine, deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. 
 
-## Example: Deploy a Model as a Service
+## How to deploy a model as a service
 
 This example walks you through the deployment of a simple model as a web service hosted in R Server.
 
 >[!IMPORTANT]
 > This example assumes you have configured an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). It also assumes you have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
-### Run Prediction Locally
+### Step 1: Modeling locally
 
-1. Download the sample files (a .R script and .rds model and .rds data file) to a local directory, such as `C:/temp/example`.
+1. Launch your R IDE. 
 
-   @@ CAN WE PROVIDE FILES FOR DOWNLOAD?
+   <!--@In our example, we are using R Tools | Visual Studio (RTVS), but any popular R IDE should work.-->
    
-   @@ WHERE DO THEY GET THE MODEL AND DATA FROM?
+   <!--@SCREEN [RTVS with R Client installed]-->
 
-1. Launch your R IDE. In our example, we are using R Tools | Visual Studio (RTVS), but any popular R IDE should work.
-   
-   @SCREEN [RTVS with R Client installed]
-
-1. Set the working directory to the local folder in which you saved scripts, models, data files and so on. 
+1. Set the working directory to the local folder in which you saved the scripts, models, data files and so on. 
 
    In our example, we executed the following commands:
    ```
@@ -76,45 +74,44 @@ This example walks you through the deployment of a simple model as a web service
    setwd("C:/temp/example”)
    ```
 
-1. Load the R script into the IDE so that you can examine the script contents. In our example, we loaded `RServer_FlightPredictionDemo.r` 
-   
-   @SCREEN [RTVS SHOWING SCRIPT CODE  RServer_FlightPredictionDemo.r]
+1. Run the R code to create the model.  
 
-1. Run code to load the model, associate the model with the training data’s column info, and then wrap the prediction with a scoring function (`flightPrediction`) for easy prediction, and finally test the function to verify that it works as expected. Note that the function’s input data is a batch data set for scoring.  
+   In our example, the model, `mt-model`, is creating using the dataset `mtcars`, which is a built-in data frame in R.
 
-   In our example, we executed the following commands:
    ```
    ######################################################
-   #        CREATE AND TEST A SCORING FUNCTION          #
+   #    CREATE AND TEST A LOGISTIC REGRESSION MODEL     #
    ######################################################
     
-   # Load the predictive model 
-   logitModel <- readRDS('logitModel.rds')
- 
-   # Create a list to pass the data colum info together with the model object
-   trainingData <- readRDS('trainingDF.rds')
-   colInfo <- rxCreateColInfo(trainingData)
- 
-   modelInfo <- list(predictiveModel = logitModel, colInfo = colInfo)
- 
-   # Wrap up the prediction to a function for easy consumption
-   flightPrediction <- function(flightData) {
-      data <- rxImport(flightData, colInfo = modelInfo$colInfo)
-      rxPredict(modelInfo$predictiveModel, data, type = "response")
+   # logistic regression vehicle transmission to estimate 
+   # the probability of a vehicle being fitted with a 
+   # manual transmission base on horsepower (hp) and weight (wt)
+
+   # create glm model with mtcars dataset
+   mt-model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+
+   # wrap prediction in scoring function
+   manualTransmission <- function(hp, wt) {
+     newdata <- data.frame(hp = hp, wt = wt)
+     predict(mt-model, newdata, type = "response")
    }
- 
-   # Test if the function works as expected
-   testData <- readRDS('testDF.rds')
-   flightPrediction(testData)
+   
+   # test scoring function by printing results
+   print(manualTransmission(120, 2.8)) # 0.6418125
    ```
 
-1. Examine the results of the locally executed code. In this example, the results show 900 predictions for each row of the data set.
+1. Examine the results of the locally executed code. 
+
+   <!--In this example, the results show @.-->
    
-   @SCREEN [RTVS SHOWING RESULTS]
+   <!--@SCREEN [RTVS SHOWING RESULTS]-->
 
-1. From your local R IDE, log into Microsoft R Server **with your credentials** using one of the authentication functions found [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin`, `remoteLoginAAD`, or `remoteLoginAD`).  These are functions from the `mrsdeploy` package. In our example, we use Azure Active Directory for authentication. 
+### Step 2: Publishing the model on R Server as a web service
 
-   In our example, we executed the following commands:
+1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin`, `remoteLoginAAD`, or `remoteLoginAD`).  Ask your administrator for authentication details if you do not have any.
+
+   In our example, we used Azure Active Directory for authentication.
+
    ```
    ######################################################
    #          LOG INTO MICROSOFT R SERVER               #
@@ -130,72 +127,95 @@ This example walks you through the deployment of a simple model as a web service
        )
    ``` 
 
-   @SCREEN [RTVS PROOF OF SUCCESSFUL CONNECTION TO MRS.]
+   <!--@SCREEN [RTVS PROOF OF SUCCESSFUL CONNECTION TO MRS.]-->
 
    Now, you are successfully connected to the remote R Server.
 
-1. To publish a web service, you'll need to copy the model, scripts, data and so on to Microsoft R Server. 
+1. Publish the model as a web service to R Server using the `publishService()` function from the `mrsdeploy` package.  Learn more about managing and publishing web services using this package [in this article](../mrsdeploy/mrsdeploy-websrv-vignette.md).
 
-   @@ HOW DO THE FILES END UP ON R SERVER SO THEY CAN RUN AND TEST IT THERE? 
-
-   @@ WHERE EXACTLY DO THE FILES NEED TO BE?
-
-1. Publish the model as a web service using the `publishService()` function from the `mrsdeploy` package.  In order to publish it, you'll need to specify:
+   To publish it, you'll need to specify:
    + A name for the service 
-   + The data file and model 
+   + The code and the model 
    + Any inputs 
    + The output that application developers will need to integrate in their applications. 
    + A version number for the service, if you'll be sharing it with others.   
 
-   @@ SHOULD WE COVER VERSIONING AT THIS POINT? EACH TIME YOU TRY THIS CODE, USE A UNIQUE VERSION NUMBER. 
+   <!--@ SHOULD WE COVER VERSIONING AT THIS POINT? EACH TIME YOU TRY THIS CODE, USE A UNIQUE VERSION NUMBER. -->
 
-   @@ DO WE ADD A WARNING NOTE HERE SAYING THAT YOU CANNOT PUBLISH FROM A REMOTE SESSION AND POINT TO THAT REMOTE EXECUTION DOCUMENTATION HERE?
+   <!-- @ DO WE ADD A WARNING NOTE HERE SAYING THAT YOU CANNOT PUBLISH FROM A REMOTE SESSION AND POINT TO THAT REMOTE EXECUTION DOCUMENTATION HERE?-->
 
-   In our example, we executed the following commands to publish a web service called `FlightPredictionService` using the model `modelInfo` and a scoring function called `flightPrediction`. It takes as an input ???@@. The scoring function returned ???.@@
+   In our example, we executed these commands to publish a web service called `mtService` using the model called `mt-model` and a scoring function called `manualTransmission`. As an input, it takes a list of vehicle horsepower and vehicle weight represented as R numerica. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission.
+
    ```
-   ######################################################
-   #          PUBLISH MODEL AS A SERVICE                #
-   ######################################################
+   ##########################################################
+   #              PUBLISH MODEL AS A SERVICE                #
+   ##########################################################
    
+   # load object `mt-model` into the global environment 
+   # of your local R session
+   status <- getRemoteObject(c("model")) 
+
+   # return objects in current session. 
+   # verify if model loaded
+   ls()
+
+   # publish as service called `mtService` with version `v1.0.0`
+   # and assign it to the variable `api`
    api <- publishService(
-     "FlightPredictionService",
-     code = flightPrediction,
-     model = modelInfo,
-     inputs = list(newflightdata = "data.frame"), 
-     outputs = list(answer = "data.frame"), 
-     v = 'v1.0.0'
+     mtService,
+     code = manualTransmission,
+     model = mt-model,
+     inputs = list(hp = "numeric", wt = "numeric"),
+     outputs = list(answer = "numeric"),
+     v = "v1.0.0"
    )
    ``` 
 
-   With this line of code, you have now deployed and hosted a web service in a remote instance of Microsoft R server.
+   With this line of code, we've now deployed version `v1.0.0` of web service `mtService` in the remote instance of Microsoft R server.
 
-1. @WHAT IS THIS?
-
-   ```
-   api$capabilities()
-   ``` 
-
-1. Right from your R prompt, verify that the published service returns the same results when you run it against the R Server production environment. Run the scoring code.
+1. Right from your R prompt, run the scoring code to verify that the published service returns the same results when you run it against the R Server production environment. 
  
    In our example, we executed the following commands:
    ```
-   ######################################################
-   #        RUN SCORING FUNCTION ON R SERVER            #
-   ######################################################
+   ##########################################################
+   #           RUN SCORING FUNCTION ON R SERVER             #
+   ##########################################################
    
-   result <- api$flightPrediction(testData)
-   print(result$output("answer"))
+   # Print the service
+   api
+   
+   # Test consume service by calling the function,
+   # `manualTransmission`, contained in the service
+   result <- api$manualTransmission(120, 2.8)
+
+   # Print response output named `answer`
+   print(result$output("answer")) # 0.6418125
    ``` 
 
-   In our example, we observe the same 900+ prediction results as we did when it was locally executed.
-
-   @SCREEN [RTVS SHOWING SAME 900+ RESULTS.]
+   In our example, we observe the same results as we did when it was locally executed.
 
    >[!NOTE]
    >As long as the package versions are the same on R Server as they are locally, you should get the same results.
 
-1. You can now collaborate and hand off your predictive web service to **other authenticated users of R Server**, such as:
+<a name="share"></a>
+
+### Step 3: Sharing the service with others
+
+You can now collaborate and hand off your predictive web service to **other authenticated users of R Server**, such as:
 
    + Other data scientists, who can consume this service in R as long as they know the service name and version. They might want to further test the service before it is shared with a wider audience. 
 
    + Application developers, who can consume the service if you send them the Swagger-based JSON file produced when the web service was published. Using this JSON file and by specifying the required inputs to the service, the developer can integrate it into his or her application.  [Learn more.](app-developer-get-started.md)
+
+
+<!--## Example: Deploy an R script as a service-->
+
+## How to execute R code remotely
+
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using `pause()` and `resume()` functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+
+Requirements for remote execution include:
+
++ You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
++ You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
+

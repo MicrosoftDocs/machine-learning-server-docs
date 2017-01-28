@@ -78,7 +78,7 @@
 ## [Operationalization](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
 ### [Setup](operationalize/configuration-initial.md)
-### Administors
+### Administrators
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics.md)
@@ -89,12 +89,13 @@
 #### [R execution security](operationalize/security-rserve.md)
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
+### Data Scientists
+#### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 ### Application Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
 
-## [Remote execution](operationalize/remote-execution.md)
 
 
 ## DeployR 8.x doc archives
@@ -157,6 +158,7 @@
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
+## [Remote execution with R Server](operationalize/remote-execution.md)
 
 # [Microsoft R Open](r-open.md)
 
