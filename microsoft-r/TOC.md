@@ -96,7 +96,6 @@
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
 
-## [Remote execution](operationalize/remote-execution.md)
 
 
 ## DeployR 8.x doc archives
@@ -159,6 +158,7 @@
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
+## [Remote execution with R Server](operationalize/remote-execution.md)
 
 # [Microsoft R Open](r-open.md)
 

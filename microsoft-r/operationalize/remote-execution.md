@@ -27,14 +27,14 @@ ms.custom: ""
 
 # Remote Execution in Microsoft R Server
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
 
 Remote execution is the ability to issue commands from either R Server or R Client to a session running on a remote R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
 
-Requirements for using this feature include:
+Requirements for remote execution include:
 
-+ All nodes must be version 9.0.1.
-+ R Server must be operationalized before it can host remote sessions invoked from another machine.
++ You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
++ You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
 ## Using the remote command line
 
