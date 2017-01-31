@@ -144,6 +144,9 @@ The following logging levels are available:
 
 This section contains pointers to help you troubleshoot some problems that can occur.
 
+>[!IMPORTANT]
+>If the sections below don't solve your issue, please file a ticket with technical support and/or post your question in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+
 ### "BackEndConfiguration is missing URI" Error
 
 If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then verify that your compute nodes are installed and [declared](configuration-initial.md#webnode) prior to installing the web node. 
@@ -154,6 +157,14 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
    --- End of inner exception stack trace ---
 ```
 
+### “Cannot establish connection with the web node” Error
+
+If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Verify the following:
++ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Operationalization Administration](admin-utility.md#launch)
++ Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
++ Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](admin-utility.md#startstop)
+
+If the issue persists, check if you can post to the `login` API using curl, fiddler, or something similar and share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
