@@ -49,10 +49,18 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 ## How to deploy a model as a service
 
-This example walks you through the deployment of a simple model as a web service hosted in R Server. We'll use the following script in our example:
+This example walks you through the deployment of a simple model as a web service hosted in R Server. 
+
+>[!IMPORTANT]
+> This example assumes you have configured an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). It also assumes you have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
+
+
+We'll use the following script in our example:
    ```
+   ##             MODEL DEPLOYMENT EXAMPLE                 ##
+
    ##########################################################
-   #       CREATE AND TEST A LOGISTIC REGRESSION MODEL      #
+   #       Create & Test a Logistic Regression Model        #
    ##########################################################
     
    # Logistic regression vehicle transmission to estimate 
@@ -74,7 +82,7 @@ This example walks you through the deployment of a simple model as a web service
    print(manualTransmission(120, 2.8)) # 0.6418125
 
    ##########################################################
-   #             LOG INTO MICROSOFT R SERVER                #
+   #            Log into Microsoft R Server                 #
    ##########################################################
    
    # Authenticate with Azure AD using `mrsdeploy` pkg function
@@ -89,7 +97,7 @@ This example walks you through the deployment of a simple model as a web service
        )
 
    ##########################################################
-   #              PUBLISH MODEL AS A SERVICE                #
+   #             Publish Model as a Service                 #
    ##########################################################
 
    # Publish as service using `publishService()` function from 
@@ -106,7 +114,7 @@ This example walks you through the deployment of a simple model as a web service
    )
 
    ##########################################################
-   #            CONSUME SERVICE ON R SERVER IN R            #
+   #                 Consume Service in R                   #
    ##########################################################
    
    # Print the service
@@ -121,7 +129,7 @@ This example walks you through the deployment of a simple model as a web service
    print(result$output("answer")) # 0.6418125   
 
    ##########################################################
-   #       GET SERVICE-SPECIFIC SWAGGER FILE FROM R         #
+   #         Get Service-specific Swagger File in R         #
    ##########################################################
    
    # Download Swagger-based JSON file that defines this service
@@ -137,10 +145,7 @@ This example walks you through the deployment of a simple model as a web service
    # Share Swagger-based JSON with those who need to consume it
    ```
 
->[!IMPORTANT]
-> This example assumes you have configured an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). It also assumes you have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
-
-### Step 1: Modeling locally
+### (1) Model locally
 
 1. Launch your R IDE. 
 
@@ -176,7 +181,7 @@ This example walks you through the deployment of a simple model as a web service
 
 <br> 
 
-### Step 2: Publishing the model on R Server as a web service
+### (2) Publish model as a web service
 
 1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin`, `remoteLoginAAD`, or `remoteLoginAD`).  Ask your administrator for authentication details if you do not have any.
 
@@ -209,6 +214,7 @@ This example walks you through the deployment of a simple model as a web service
    <!--@ SHOULD WE COVER VERSIONING AT THIS POINT? EACH TIME YOU TRY THIS CODE, USE A UNIQUE VERSION NUMBER. -->
 
    <!-- @ DO WE ADD A WARNING NOTE HERE SAYING THAT YOU CANNOT PUBLISH FROM A REMOTE SESSION AND POINT TO THAT REMOTE EXECUTION DOCUMENTATION HERE?-->
+   <br>
 
    Learn more about managing and publishing web services using this package [in this article](../mrsdeploy/mrsdeploy-websrv-vignette.md).
 
@@ -240,7 +246,7 @@ This example walks you through the deployment of a simple model as a web service
 
 1. During the same session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger file is generated when the service was published. It will be downloaded to the local file system. 
 
-   See Step 3 below for code to get this file after the session ends.
+   See part 3 below for code to get this file after the session ends.
 
    ```
    swagger <- api$swagger()
@@ -251,12 +257,11 @@ This example walks you through the deployment of a simple model as a web service
 
 <a name="share"></a>
 
-### Step 3: Sharing the service with others
+### (3) Share service with others 
 
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now collaborate and hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
-   + **Other data scientists**, who can consume this service in R as long as they know the service name and version. They might want to further test the service before it is shared with a wider audience.  Using the function `getServices` from `mrsdeploy` package in an authenticated R session, they can download the Swagger-based JSON file to the local file system.  
-
+   + **Other data scientists**, who can consume this service in R as long as they know the service name and version. They might want to further test the service before it is shared with a wider audience.  Using the function `getServices` from `mrsdeploy` package in an authenticated R session, they can download the Swagger-based JSON file to the local file system.  Using our example above, the Swagger file for the service name `mtService` and version `v1.0.0` is retrieved as follows:
      ```
      api <- getServices('mtService', ‘v1.0.0')
      ```
