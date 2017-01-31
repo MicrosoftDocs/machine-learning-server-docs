@@ -265,19 +265,47 @@ When the web service is published, a Swagger-based JSON file is generated automa
 
 Data scientists can also explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
 
-   + **Other data scientists**, who can explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. With this function, they can download the Swagger-based JSON file to the local file system by specifying the service by name and version.  Using our example above, the Swagger file for the service name `mtService` and version `v1.0.0` is retrieved as follows:
-     ```R
-     api <- getServices("mtService", "v1.0.0")
-     swagger <- api$swagger()
-     cat(swagger, file = "swagger.json", append = FALSE)
-     ```
+#### Collaborate with data scientists
 
-   + **Application developers**, who integrate the service  into their applications using the service-specific Swagger-based JSON file along with the required inputs. The application developers can get the Swagger-based JSON file in one of two ways:
-      1. They can request the file  **as an authenticated user with an [active bearer token](app-developer-get-started.md#authentication) in the request header** since all API calls must be authenticated.  [Learn more.](app-developer-get-started.md)  The URL is formed as follows:
-         ```R
-         /api/<service-name>/<service-version>/swagger.json
-         ```
-      1. You can also send them the Swagger file you've downloaded yourself, which can sometimes be a faster approach.   
+Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
+
+As the owner of the service, you can share the name and version number for the service with fellow data scientists. 
+
+After authenticating, other data scientists can use the `getServices` function in R to call the service. Then they can get details about the service and start consuming it.
+
+```R
+api <- getServices("mtService", "v1.0.0")
+
+# Print capabilities to see what service can do
+print(api$getCapabilities())
+     
+# Start interacting with the service, for example:
+# Calling the function, `manualTransmission`
+# contained in this service
+result <- api$manualTransmission(120, 2.8)
+```
+
+#### Collaborate with application developers
+
+Application developers can integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
+   
+The application developers can get the Swagger-based JSON file in one of two ways:
+
++ You can also send them the Swagger file you've downloaded yourself, which can sometimes be a faster approach.  Get the Swagger with:
+   ```
+   api <- getServices("<name>", "<version>")
+   swagger <- api$swagger()
+   cat(swagger, file = "swagger.json", append = FALSE) 
+   ```
+
++ Or, they can request the file  **as an authenticated user with an [active bearer token](app-developer-get-started.md#authentication) in the request header** (since all API calls must be authenticated).   
+
+  The URL is formed as follows:
+  ```
+  GET /api/<service-name>/<service-version>/swagger.json
+  ```
+
+Once the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)".  
 
 <!--## Example: Deploy an R script as a service-->
 
