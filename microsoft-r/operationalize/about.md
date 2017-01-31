@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Operationalization with R Server
 
-**Applies to:  Microsoft R Server 9.0.1**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find older "DeployR 8.x" documentation [here](../deployr-about.md).)
+**Applies to:  Microsoft R Server 9.0.1**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](../deployr-about.md).)
 
 Today, more and more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare and manufacturing. Typically, the data scientists first build out the predictive models and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
@@ -52,15 +52,29 @@ Once you [configure R Server for operationalization](configuration-initial.md) f
 
 ## Operationalization Actors
 
+Microsoft R Server offers the **best-in-class deployment** experience for the administrator, data scientists, and application developers alike. 
+
 ![Personas](../media/o16n/about-personas.png)
 
-Microsoft R Server offers the **best-in-class deployment** experience. 
+### Administrators
 
-+ **Administrator**. The [easy set-up](configuration-initial.md) of Microsoft R Server's operationalization feature includes **enterprise grade security and reliability** on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability, as well as seamless integration with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](security-authentication.md). Connections can be secured [SSL/TLS 1.2](security-https.md) You can also use the [diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools provided. Check out this [Administrator Get Started](admin-get-started.md) guide.
+The [easy set-up](configuration-initial.md) of Microsoft R Server's operationalization feature includes **enterprise grade security and reliability** on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools are provided to help you tune and manage. 
 
-+ **Data Scientists**. In a single line of code, data scientists can deploy  models or any arbitrary R code as web services. Check out this [Data Scientist Get Started](data-scientist-get-started.md) guide.
+R Server's operationalization engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](security-authentication.md). Connections can also be secured [SSL/TLS 1.2](security-https.md).
 
-+ **Application Developers**. Using their favorite development environment, developers can easily integrate those web services into their apps using Swagger-based [REST APIs](api.md) with any programming languages including R.  They can perform fast scoring: real time & batch. Check out this [Application Developer Get Started](app-developer-get-started.md) guide.
+&gt;&gt; Learn more in this [Administrator Get Started](admin-get-started.md) guide.
+
+### Data Scientists
+
+In a single line of code, data scientists can deploy  models or any arbitrary R code as analytic web services. 
+
+&gt;&gt; Learn more in this [Data Scientist Get Started](data-scientist-get-started.md) guide.
+
+### Application Developers
+
+Using their favorite development environment, application developers can easily integrate those web services into their apps using Swagger-based [REST APIs](api.md) with any programming languages including R. They can perform fast scoring: real time & batch. 
+
+&gt;&gt; Learn more in this [Application Developer Get Started](app-developer-get-started.md) guide.
 
 <br>
 
