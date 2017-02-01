@@ -129,7 +129,7 @@ There is no doubt that, as an administrator, you've experienced failures with se
 
 When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-diagnostics.md) to attempt to identify the underlying cause of the problem.
 
-Beyond the diagnostics tool, the [Troubleshooting](admin-diagnostics#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
+Beyond the diagnostics tool, the [Troubleshooting](admin-diagnostics.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
 ## More Resources
 

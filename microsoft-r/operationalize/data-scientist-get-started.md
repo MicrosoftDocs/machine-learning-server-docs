@@ -241,7 +241,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In our example, we observe the same results as we did when it was locally executed.
 
    >[!NOTE]
-   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution#create-a-diff-report). 
+   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#create-a-diff-report). 
 
 1. During the authenticated session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger file is generated when the service was published. It will be downloaded to the local file system. 
 
@@ -329,7 +329,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Introduction to the mrsdeploy package in Microsoft R](../mrsdeploy/mrsdeploy-intro-vignette.md)
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Remote Execution](remote-execution.md)
-+ [mrsdeploy Web Service functions in Microsoft R](mrsdeploy-websrv-vignette.md)
++ [mrsdeploy Web Service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)
