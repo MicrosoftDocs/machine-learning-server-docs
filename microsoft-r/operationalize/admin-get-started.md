@@ -129,7 +129,7 @@ There is no doubt that, as an administrator, you've experienced failures with se
 
 When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-diagnostics.md) to attempt to identify the underlying cause of the problem.
 
-<!--Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.-->
+Beyond the diagnostics tool, the [Troubleshooting](admin-diagnostics.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
 ## More Resources
 
@@ -144,11 +144,10 @@ This section provides a quick summary of useful links for administrators working
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)
-<!---   [Scale & Throughput](deployr-admin-scale-and-throughput.md)-->
 
 **Other Getting Started Guides**
 -   [Application Developers](app-developer-get-started.md)
-<!---   [Data Scientists](deployr-data-scientist-getting-started.md)-->
+-   [Data Scientists](data-scientist-get-started.md)
 
 **Support Channel**
 -   [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

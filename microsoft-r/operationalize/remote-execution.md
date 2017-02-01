@@ -29,12 +29,25 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
 
-Remote execution is the ability to issue commands from either R Server or R Client to a session running on a remote R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
 
-Requirements for remote execution include:
+With remote execution, you can:
++ Log into and out of an R Server remotely
++ Generate diff reports of the local and remote environments
++ Reconcile these local and R Server environments
++ Offload heavy processing on server
++ Execute R scripts and code remotely
++ Work with R objects/files remotely
++ Create and manage snapshots of the remote environment for reuse
 
-+ You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
+![Remote Execution](../media/o16n/remote-execution.png) 
+
+
+>[!IMPORTANT]
+> Requirements for remote execution include:
+> + An R Integrated Development Environment (IDE) configured to work with [Microsoft R Client](../r-client-get-started.md). 
+> + [Authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
+
 
 ## Using the remote command line
 
@@ -81,6 +94,51 @@ Both Active Directory and Azure Active Directory return an access token. This ac
 In general, all mrsdeploy operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
 
 The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
+
+## Remote execution functions in a nutshell
+
+
+
+|Remote Connection||
+| --- | --- |
+|remoteLogin|Remote login to the R Server with AD or admin credentials|
+|remoteLoginAAD|Remote login to R Server server using Azure AD|
+|remoteLogout|Logout of the remote session on the R Server|
+
+<br>
+
+|Remote Execution||
+| --- | --- |
+|remoteExecute|Remote execution of either R code or an R script|
+|remoteScript|Wrapper function for remote script execution|
+|diffLocalRemote|Generate a 'diff' report between local and remote|
+|pause|Pause remote connection and back to local|
+|resume|Return the user to the 'REMOTE >' command prompt|
+
+
+<br>
+
+|Snapshots||
+| --- | --- |
+|createSnapshot|Create a snapshot of the remote session (workspace and working directory)|
+|loadSnapshot|Load a snapshot from the server into remote session (workspace & working directory)|
+|listSnapshots|Get a list of snapshots for the current user|
+|downloadSnapshot|Download a snapshot from the server|
+|deleteSnapshot|Delete a snapshot from the server|
+
+<br>
+
+|Remote Object Management||
+| --- | --- |
+|listRemoteFiles|Get a list of files in the working directory of the remote session|
+|deleteRemoteFile|Delete a file from the working directory of the remote R session|
+|getRemoteFile|Copy a file from the working directory of the remote R session|
+|putLocalFile|Copy a file from the local machine to the working directory of the remote R session|
+|getRemoteObject|Get an object from the remote R session|
+|putLocalObject|Put an object from the local R session and load it into the remote R session|
+|getRemoteWorkspace|Take all objects from the remote R session and load them into the local R session|
+|putLocalWorkspace|Take all objects from the local R session and load them into the remote R session|
+
 
 ## How to create a remote session
 
@@ -223,6 +281,9 @@ REMOTE> pause()
 
 ## Snapshots and why they are useful
 
+Snapshot functions are very useful for remote execution scenarios. It can save the whole workspace and working directory so that you can pick up from exactly where you left last time. Thank about saving and loading a game.
+
+
 If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a remote R session saved to Microsoft R Server, which includes:
 
 + The session's workspace along with the installed R packages
@@ -234,6 +295,9 @@ Snapshots are only accessible to the user who creates them and cannot be shared 
 
 The following functions are available for working with snapshots:  
 `listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
+
+> [!IMPORTANT] 
+> While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the Request-Response time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
 
 
 **Example**
