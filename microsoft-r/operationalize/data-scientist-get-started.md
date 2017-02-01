@@ -181,7 +181,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ### (2) Publish model as a web service
 
-1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin`, `remoteLoginAAD`, or `remoteLoginAD`).  Ask your administrator for authentication details if you do not have any.
+1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  Ask your administrator for authentication details if you do not have any.
 
    In our example, we used Azure Active Directory for authentication.
 
@@ -241,7 +241,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In our example, we observe the same results as we did when it was locally executed.
 
    >[!NOTE]
-   >As long as the package versions are the same on R Server as they are locally, you should get the same results.
+   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution#create-a-diff-report). 
 
 1. During the authenticated session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger file is generated when the service was published. It will be downloaded to the local file system. 
 
@@ -291,7 +291,7 @@ Application developers can integrate web services into their applications using 
    
 The application developers can get the Swagger-based JSON file in one of two ways:
 
-+ You can also send them the Swagger file you've downloaded yourself, which can sometimes be a faster approach.  Get the Swagger with:
++ You can send them the Swagger-based JSO file you've downloaded yourself, which can sometimes be a faster approach.  You can get the file with:
    ```
    api <- getServices("<name>", "<version>")
    swagger <- api$swagger()
@@ -305,7 +305,7 @@ The application developers can get the Swagger-based JSON file in one of two way
   GET /api/<service-name>/<service-version>/swagger.json
   ```
 
-Once the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)".  
+Once the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
 
 <!--## Example: Deploy an R script as a service-->
 
@@ -318,3 +318,22 @@ Requirements for remote execution include:
 + You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
 + You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
+## More Resources
+
+This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
+
+>Use the table of contents to find all of the guides and documentation needed by the administrator.
+
+**Key Documents**
++ [About Operationalization](about.md)
++ [Introduction to the mrsdeploy package in Microsoft R](../mrsdeploy/mrsdeploy-intro-vignette.md)
++ [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
++ [Remote Execution](remote-execution.md)
++ [mrsdeploy Web Service functions in Microsoft R](mrsdeploy-websrv-vignette.md)
+
+**Other Getting Started Guides**
++ [Application Developers](app-developer-get-started.md)
++ [Administrators](admin-get-started.md)
+
+**Support Channel**
++ [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
