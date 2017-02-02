@@ -97,7 +97,9 @@ The following additional components are installed by Setup and required for an R
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
 | Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.23026.0 |
 
-<a name="Download"><a/>
+<a name="download"><a/>
+### Download R Server installer
+
 Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
 
 **Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
