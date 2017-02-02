@@ -78,23 +78,6 @@ To use remote execution for the duration of a session in an R console applicatio
 2. In the **R Interactive** window at the command prompt, type `install.packages("mrsdeploy")`.
 3. Also in **R Interactive**, type `library(mrsdeploy)` to load the package.
 
-## About authenticated access to mrsdeploy operations
-
-Deployment and administration tasks require an authenticated connection. Authentication of a user identity is handled via Active Directory. Neither R Server, nor the former DeployR server component that is now embedded in R Server, will store or manage user names and passwords.
-
-For authentication, you can choose from the following approaches, which are valid on all supported platforms:
-
-- **remoteLogin()** using an on premises Active Directory server on your network.
-- **remoteLoginAAD()** using Azure Active Directory in the cloud.
-
-For on premises Active Directory, users will need to authenticate via the `/user/login` API, passing a username and password.
-
-Both Active Directory and Azure Active Directory return an access token. This access token is then passed in the request header of every subsequent mrsdeploy request. If the user does not provide a valid login, an HTTP 401 status code is returned.
-
-In general, all mrsdeploy operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
-
-The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
-
 ## Remote execution functions in a nutshell
 
 
@@ -138,6 +121,24 @@ The remote command line allows you to directly interact with an R Server 9.0.1 i
 |putLocalObject|Put an object from the local R session and load it into the remote R session|
 |getRemoteWorkspace|Take all objects from the remote R session and load them into the local R session|
 |putLocalWorkspace|Take all objects from the local R session and load them into the remote R session|
+
+
+## About authenticated access to mrsdeploy operations
+
+Deployment and administration tasks require an authenticated connection. Authentication of a user identity is handled via Active Directory. R Server will never store or manage usernames and passwords.
+
+For authentication, you can choose from the following approaches, which are valid on all supported platforms:
+
+- **remoteLogin()** using an on-premises Active Directory server on your network
+- **remoteLoginAAD()** using Azure Active Directory in the cloud
+
+For on premises Active Directory, users will need to authenticate via the `/user/login` API, passing a username and password.
+
+Both Active Directory and Azure Active Directory return an access token. This access token is then passed in the request header of every subsequent mrsdeploy request. If the user does not provide a valid login, an HTTP 401 status code is returned.
+
+In general, all mrsdeploy operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
+
+The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server. Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To establish a remote session, you must issue a remote login request, which in turn authenticates your user identity on the remote server.
 
 
 ## How to create a remote session

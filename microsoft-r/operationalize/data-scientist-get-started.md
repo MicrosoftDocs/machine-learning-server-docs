@@ -230,12 +230,6 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    # Print response output named `answer`
    print(result$output("answer")) # 0.6418125   
-
-   # During this authenticated session, you can download the  
-   # Swagger-based JSON file that defines this service, or do it
-   # later with api <- getServices("<name>", "<version>")
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE) 
    ``` 
 
    In our example, we observe the same results as we did when it was locally executed.
@@ -243,9 +237,12 @@ Now let's dive into this example down. Let's start by creating the model locally
    >[!NOTE]
    >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#create-a-diff-report). 
 
-1. During the authenticated session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger file is generated when the service was published. It will be downloaded to the local file system. 
+### (3) Get the Swagger-based JSON file
 
-   See part 3 below for code to get this file after the session ends.
+During the authenticated session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
+
+>[!NOTE]
+>See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
 
    ```R
    swagger <- api$swagger()
@@ -256,7 +253,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 <a name="share"></a>
 
-### (3) Share service with others 
+## How to share a service with others 
 
 >[!IMPORTANT]
 > Anyone who wishes to consume the service must have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
@@ -265,7 +262,7 @@ When the web service is published, a Swagger-based JSON file is generated automa
 
 Data scientists can also explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
 
-#### Collaborate with data scientists
+### Collaborate with data scientists
 
 Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
 
@@ -274,25 +271,33 @@ As the owner of the service, you can share the name and version number for the s
 After authenticating, other data scientists can use the `getServices` function in R to call the service. Then they can get details about the service and start consuming it.
 
 ```R
+# Get service using `getServices()` function from `mrsdeploy` package.
+# Assign service to the variable `api`.
 api <- getServices("mtService", "v1.0.0")
 
-# Print capabilities to see what service can do
+# Print capabilities to see what service can do.
 print(api$getCapabilities())
      
 # Start interacting with the service, for example:
 # Calling the function, `manualTransmission`
-# contained in this service
+# contained in this service.
 result <- api$manualTransmission(120, 2.8)
+
+# Since you're authenticated, get this service's `swagger.json`.
+swagger <- api$swagger()
+cat(swagger, file = "swagger.json", append = FALSE)
 ```
 
-#### Collaborate with application developers
+<a name="swagger-app-dev"></a>
+
+### Collaborate with application developers
 
 Application developers can integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
    
 The application developers can get the Swagger-based JSON file in one of two ways:
 
 + You can send them the Swagger-based JSO file you've downloaded yourself, which can sometimes be a faster approach.  You can get the file with:
-   ```
+   ```R
    api <- getServices("<name>", "<version>")
    swagger <- api$swagger()
    cat(swagger, file = "swagger.json", append = FALSE) 
