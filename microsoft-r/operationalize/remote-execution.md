@@ -163,6 +163,11 @@ remoteLoginAAD("http://localhost:12800",
 
 
 ```
+
+<a name="switch"></a>
+
+## How to switch between sessions or logout
+
 Once the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the
 remote R session. To switch back to the local R session, type `pause()`. To terminate the remote R session,
 type `exit`, at the `REMOTE>` prompt. If you have switched to the local R session, you can go back to the
@@ -227,7 +232,7 @@ The following functions are available for working with files:  `putLocalFile()`,
 ```R
 #execute a script remotely that generated 2 R objects we are interested in retrieving
 >remoteExecute("C:/myScript.R")
-#retreive the R objects from the remote R session and load them into our local R session
+#retrieve the R objects from the remote R session and load them into our local R session
 >getRemoteObject(c("model","out"))
 
 #an R script depends upon an R object named `data` to be available. Move the local
@@ -241,7 +246,7 @@ The following functions are available for working with files:  `putLocalFile()`,
 #execute an R script remotely
 >remoteScript("c/myScript2.R")
 ```
-## A word on plot
+## A word on plots
 
 When you plot remotely, the default plot size is 400 x 400 pixels. If you desire higher-resolution output, you must tell the remote session the size of plot to create. On a local session, you might do the following:
 
@@ -279,6 +284,12 @@ REMOTE> pause()
 #From the local command prompt, execute your remote script
 > remote_script("myscript.R")
 ```
+
+## Publishing web services
+
+If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
+
+Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
 
 ## Snapshots and why they are useful
 

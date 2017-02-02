@@ -38,6 +38,9 @@ Through the **mrsdeploy** package, you can deploy R script or code as a *web ser
 
 Publishes an R code block as a new web service running on R Server.
 
+>[!IMPORTANT]
+>In the case where you are working with a [remote R session](../operationalize/remote-execution.md) and you want to publish a web service, do so in your local session. If you try to publish remotely, you'll get this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the remote execution function `pause()` to return the R command line in your local session, publish your service, and then use the `resume()` function to continue running R code from the remote command line in the remote R session. [Learn more...](../operationalize/remote-execution.md#switch)
+
 **Arguments**
 
 - `name` - (required) The web service name.
@@ -217,7 +220,7 @@ See more [examples](#delete-service).
 Defines the client instance of a published service. This acts as the `client stub`
 to consume the service and view its service holdings.
 
-The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getService](#discover).
+The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getServices](#discover).
 
 **Supported public functions:**
 
@@ -330,7 +333,7 @@ swagger <- api$swagger(json = FALSE)
 
 ## Service Examples
 
-First authenticate using _Azure Active Directory_ or _On Premise Active Directory_
+First authenticate using _Azure Active Directory_ or _On Premises Active Directory_
 
 
 ```R
