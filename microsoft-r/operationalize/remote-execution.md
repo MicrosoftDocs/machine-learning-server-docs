@@ -226,7 +226,7 @@ The following functions are available for working with files:  `putLocalFile()`,
 
 ```R
 #execute a script remotely that generated 2 R objects we are interested in retrieving
->remoteExecute("C:/myScript.R')
+>remoteExecute("C:/myScript.R")
 #retreive the R objects from the remote R session and load them into our local R session
 >getRemoteObject(c("model","out"))
 

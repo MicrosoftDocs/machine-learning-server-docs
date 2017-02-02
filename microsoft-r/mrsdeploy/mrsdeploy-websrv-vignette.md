@@ -59,8 +59,8 @@ Publishes an R code block as a new web service running on R Server.
 - `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
    names and their corresponding [Data Types](#io-data-types)
 - `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#io-data-types)
-    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
-- `v` - (optional) Defines a unique web service version. If the version is left blank, a unique \code{guid} will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.
+    Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.
+- `v` - (optional) Defines a unique web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.
 - `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
 - `destination` (optional) The codegen output directory location.
 - `descr` - (optional) The description of the web service.
@@ -109,8 +109,8 @@ The `updateService` function updates a published web service.
 - `snapshot` (optional) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.
 - `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
    names and they're corresponding [Data Types](#io-data-types)
-- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and they're corresponding  [Data Types](#io-data-types)
-    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
+- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and theire corresponding  [Data Types](#io-data-types)
+    Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.
 - `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
 - `destination` (optional) The codegen output directory location.
 - `descr` - (optional) The description of the web service.
@@ -593,7 +593,7 @@ print(result)
 
 ## Workflow Examples
 
-There are different approaches to _publishing_ and _updateing_  a service depending on
+There are different approaches to _publishing_ and _updating_  a service depending on
 your workflow needs as it relates to the `code` and `model` arguments.
 All approaches are equivalent.
 
