@@ -38,10 +38,8 @@ By default, installers connect to Microsoft download sites to get required and u
 | Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
 | Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24215.1<sup>1</sup> | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
-| SRO_3.3.2.0_1033.cab| http://go.microsoft.com/fwlink/?LinkID=834568 |
-
-<sup>1</sup> Build numbers are displayed in the license agreement page when you install the redistributable. With regards to the Visual C++ 2015 redistributable, the build version is different for offline and internet-connected R Server installations. When performing an offline install, be sure to use Update 3 (build 14.0.24215.1), as listed in the table above.
+| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
+| SRO_3.3.2.0_1033.cab| none | http://go.microsoft.com/fwlink/?LinkID=834568 |
 
 ## Download the installer
 
@@ -53,9 +51,8 @@ Get the rserversetup.zip or rserversetup.exe file from one of these locations:
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
-    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
+    - Make sure you're in the right place before searching the **Downloads** list. The URL should start with *my.visualstudio.com*.
 
-If you download the .zip file, right-click to extract all files.
 
 ## Verify file downloads
 
@@ -75,7 +72,7 @@ After downloading all of the prerequisites and the rserversetup, your download f
 
 ## Transfer all of the downloaded files to the target server
 
-Use a flash drive or another mechanism to copy the necessary files to the offline server. Place all the files in the same folder.
+Use a flash drive or another mechanism to copy all of the files listed above to the offline server. Place all the files in the same folder.
 
 ## Install each individual component
 
@@ -87,9 +84,9 @@ Do not install the .cab file. RServerSetup.exe will take what it needs from the 
 
 A few of the installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
 
-## Copy the .cab to the same folder as RServerSetup
+## Extract the setup files and copy the .cab to the same folder as RServerSetup
 
-In previous steps, you downloaded a .cab file and .zip file, and then extracted files from the .zip. Copy the .cab file and place it in the same folder as the extracted setup file, RServerSetup.exe.
+In previous steps, you downloaded and then copied .zip file to the offline server. You should now extract the zipped files. In the resulting folder, copy the .cab file and place it in the same folder as the extracted setup file, RServerSetup.exe.
 
 ## Run R Server setup
 
