@@ -65,17 +65,17 @@ This option provides a zipped file, free to developers who sign up for Visual St
 
 After downloading all of the prerequisites and the RServerSetup, your download folder should contain the following files:
 
-`vcredist_x64.exe` ** redistributable for Visual Studio 2013 C++
-`vc_redist.x64.exe` ** redistributable for Visual Studio 2015 C++
-`DotnetCore.1.0.1-Runtime-x64.exe` 
-`NDP452-KB2901954-Web.exe`
-`SQL_AS_OLEDB.msi`
-`microsoft-r-open-3.3.2.msi`
-`MSMpiSetup.exe`
+    `vcredist_x64.exe` ** redistributable for Visual Studio 2013 C++
+    `vc_redist.x64.exe` ** redistributable for Visual Studio 2015 C++
+    `DotnetCore.1.0.1-Runtime-x64.exe` 
+    `NDP452-KB2901954-Web.exe`
+    `SQL_AS_OLEDB.msi`
+    `microsoft-r-open-3.3.2.msi`
+    `MSMpiSetup.exe`
 
-`SRO_3.3.2.0_1033.cab` ** download but don't install
+    `SRO_3.3.2.0_1033.cab` ** download but don't install
 
-`en_r_server_901_for_windows_X64_9649035.zip` ** contains RServerSetup
+    `en_r_server_901_for_windows_X64_9649035.zip` ** contains RServerSetup
 
 ## Transfer files to the target server
 
