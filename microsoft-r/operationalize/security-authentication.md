@@ -96,6 +96,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 
+      >[!IMPORTANT]
+      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  authentication will fail.
+
       For example:
       ```
       "LDAP": {
@@ -115,9 +118,6 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
             ]
         }
         ```
-
-   >[!IMPORTANT]
-   >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  authentication will fail.
 
 1. If using a certificate for access token signing, do the following: 
 
@@ -142,10 +142,12 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       ```
 1. Save changes to `appsettings.json`.
 
-1. Launch the administrator's utility and:
-   1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
+1. [Restart the web node](admin-utility.md#startstop) using the administration utility so that the changes can take effect.
  
-   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
+1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
+
+   >[!IMPORTANT]
+   >In the event that you run into any connection issues when configuring R Server for Active Directory/LDAP, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. Repeat these steps on each machine hosting the web node.
 

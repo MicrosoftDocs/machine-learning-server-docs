@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Remote Execution in Microsoft R Server
+# Execute on a remote Microsoft R Server
 
 **Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call functions from the `mrsdeploy` package, or from code that calls the operationalization APIs.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the operationalization APIs.
 
 With remote execution, you can:
 + Log into and out of an R Server remotely
@@ -43,85 +43,34 @@ With remote execution, you can:
 ![Remote Execution](../media/o16n/remote-execution.png) 
 
 
->[!IMPORTANT]
-> Requirements for remote execution include:
-> + An R Integrated Development Environment (IDE) configured to work with [Microsoft R Client](../r-client-get-started.md). 
-> + [Authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
-
 
 ## Using the remote command line
 
 The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
-To establish a remote session, issue a remote login request, which in turn authenticates your user identity on the remote server. Once the session is established, you can switch between local and remote command lines through the `pause()` and `resume()` functions.
+To establish a remote session, issue a remote login request using the login functions in the `mrsdeploy` package, which in turn authenticates your user identity on the remote server. Once the session is established, you can switch between local and remote command lines through the `pause()` and `resume()` functions.
 
 ## Supported configurations
 
 For remote execution, participating nodes can be either of the following configurations:
 
-+ Two machines running R Server 9.0.1
-+ One machine running R Server 9.0.1 and one machine running R Client 3.3.2, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
++ Two machines running R Server 9.0.1, even if on different supported platforms, such as one Linux and one Windows.
++ One machine running R Client 3.3.2 and one machine running R Server 9.0.1, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
 
-R Server can be any platform, as long as both are version 9.0.1. For example, you can establish a remote connection between Linux and Windows as along as both are running R Server 9.0.1, or the Windows machine has R Client 3.3.2.
+The requirements for remote execution include:
 
-## How to get and use mrsdeploy
++ An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../r-client-get-started.md). 
++ [Authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
-Functions used in remote execution are provided in the `mrsdeploy` package, available in installations of [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client) and [Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver), on all [supported platforms](https://msdn.microsoft.com/microsoft-r/rserver-install-supported-platforms).
+## How to use mrsdeploy
 
-+ On R Client, the `mrsdeploy` package is loaded automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
+The R functions used for remote execution are provided in the `mrsdeploy` package. However, **the `mrsdeploy` package can only be used once Microsoft R Server has been configured for operationalization**.  For more information, see [Configuring R Server for Operationalization](configuration-initial.md).
 
-+ On R Server, the `mrsdeploy` package is enabled and configured through R Server operationalization. This configuration step is required. For more information, see [Configuring R Server for Operationalization](configuration-initial.md).
++ On R Client, the `mrsdeploy` package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 
-To use remote execution for the duration of a session in an R console application, run `install.packages("mrsdeploy")` and `library(mrsdeploy)` before calling its functions. We recommend [R Tools for Visual Studio (RTVS)](https://www.visualstudio.com/vs/rtvs/) on a Windows computer, or RStudio or another R IDE on a non-Windows workstation.
++ On R Server, the `mrsdeploy` package is installed, **but not loaded**. Therefore, you'll have to load it before using any  `mrsdeploy` functions. At the remote R prompt (`REMOTE >`), type `library(mrsdeploy)` to load the package.
 
-1. Open an R project in RTVS.
-2. In the **R Interactive** window at the command prompt, type `install.packages("mrsdeploy")`.
-3. Also in **R Interactive**, type `library(mrsdeploy)` to load the package.
-
-## Remote execution functions in a nutshell
-
-
-
-|Remote Connection||
-| --- | --- |
-|remoteLogin|Remote login to the R Server with AD or admin credentials|
-|remoteLoginAAD|Remote login to R Server server using Azure AD|
-|remoteLogout|Logout of the remote session on the R Server|
-
-<br>
-
-|Remote Execution||
-| --- | --- |
-|remoteExecute|Remote execution of either R code or an R script|
-|remoteScript|Wrapper function for remote script execution|
-|diffLocalRemote|Generate a 'diff' report between local and remote|
-|pause|Pause remote connection and back to local|
-|resume|Return the user to the 'REMOTE >' command prompt|
-
-
-<br>
-
-|Snapshots||
-| --- | --- |
-|createSnapshot|Create a snapshot of the remote session (workspace and working directory)|
-|loadSnapshot|Load a snapshot from the server into remote session (workspace & working directory)|
-|listSnapshots|Get a list of snapshots for the current user|
-|downloadSnapshot|Download a snapshot from the server|
-|deleteSnapshot|Delete a snapshot from the server|
-
-<br>
-
-|Remote Object Management||
-| --- | --- |
-|listRemoteFiles|Get a list of files in the working directory of the remote session|
-|deleteRemoteFile|Delete a file from the working directory of the remote R session|
-|getRemoteFile|Copy a file from the working directory of the remote R session|
-|putLocalFile|Copy a file from the local machine to the working directory of the remote R session|
-|getRemoteObject|Get an object from the remote R session|
-|putLocalObject|Put an object from the local R session and load it into the remote R session|
-|getRemoteWorkspace|Take all objects from the remote R session and load them into the local R session|
-|putLocalWorkspace|Take all objects from the local R session and load them into the remote R session|
-
+For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](../mrsdeploy/mrsdeploy.md).
 
 ## About authenticated access to mrsdeploy operations
 
@@ -163,6 +112,11 @@ remoteLoginAAD("http://localhost:12800",
 
 
 ```
+
+<a name="switch"></a>
+
+## How to switch between sessions or logout
+
 Once the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the
 remote R session. To switch back to the local R session, type `pause()`. To terminate the remote R session,
 type `exit`, at the `REMOTE>` prompt. If you have switched to the local R session, you can go back to the
@@ -226,8 +180,8 @@ The following functions are available for working with files:  `putLocalFile()`,
 
 ```R
 #execute a script remotely that generated 2 R objects we are interested in retrieving
->remoteExecute("C:/myScript.R')
-#retreive the R objects from the remote R session and load them into our local R session
+>remoteExecute("C:/myScript.R")
+#retrieve the R objects from the remote R session and load them into our local R session
 >getRemoteObject(c("model","out"))
 
 #an R script depends upon an R object named `data` to be available. Move the local
@@ -241,7 +195,7 @@ The following functions are available for working with files:  `putLocalFile()`,
 #execute an R script remotely
 >remoteScript("c/myScript2.R")
 ```
-## A word on plot
+## A word on plots
 
 When you plot remotely, the default plot size is 400 x 400 pixels. If you desire higher-resolution output, you must tell the remote session the size of plot to create. On a local session, you might do the following:
 
@@ -270,7 +224,7 @@ dev.off()
 
 ```R
 #Save the script to a file (i.e. myscript.R )
-#Switch from the remote session to the local session by typing "pause()"" on the REMOTE command line
+#Switch from the remote session to the local session by typing pause() on the REMOTE command line
 REMOTE> pause()
 >
 ```
@@ -279,6 +233,12 @@ REMOTE> pause()
 #From the local command prompt, execute your remote script
 > remote_script("myscript.R")
 ```
+
+## Publishing web services
+
+If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
+
+Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
 
 ## Snapshots and why they are useful
 
@@ -318,4 +278,4 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Next steps
 
-Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, see the [Web Service vignette](../mrsdeploy/mrsdeploy-websrv-vignette.md).
+Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, see the [Web Service article](../mrsdeploy/mrsdeploy-websrv-vignette.md).

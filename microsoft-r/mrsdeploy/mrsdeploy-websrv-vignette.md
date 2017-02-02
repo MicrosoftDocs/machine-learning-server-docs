@@ -38,6 +38,9 @@ Through the **mrsdeploy** package, you can deploy R script or code as a *web ser
 
 Publishes an R code block as a new web service running on R Server.
 
+>[!IMPORTANT]
+>In the case where you are working with a [remote R session](../operationalize/remote-execution.md) and you want to publish a web service, do so in your local session. If you try to publish remotely, you'll get this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the remote execution function `pause()` to return the R command line in your local session, publish your service, and then use the `resume()` function to continue running R code from the remote command line in the remote R session. [Learn more...](../operationalize/remote-execution.md#switch)
+
 **Arguments**
 
 - `name` - (required) The web service name.
@@ -59,8 +62,8 @@ Publishes an R code block as a new web service running on R Server.
 - `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
    names and their corresponding [Data Types](#io-data-types)
 - `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#io-data-types)
-    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
-- `v` - (optional) Defines a unique web service version. If the version is left blank, a unique \code{guid} will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.
+    Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.
+- `v` - (optional) Defines a unique web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.
 - `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
 - `destination` (optional) The codegen output directory location.
 - `descr` - (optional) The description of the web service.
@@ -109,8 +112,8 @@ The `updateService` function updates a published web service.
 - `snapshot` (optional) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.
 - `inputs` - (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter
    names and they're corresponding [Data Types](#io-data-types)
-- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and they're corresponding  [Data Types](#io-data-types)
-    Note: If \code{code} is defined as a \code{function} then only one output value can be claimed.
+- `outputs` - (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and theire corresponding  [Data Types](#io-data-types)
+    Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.
 - `alias` - (optional) An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).
 - `destination` (optional) The codegen output directory location.
 - `descr` - (optional) The description of the web service.
@@ -217,7 +220,7 @@ See more [examples](#delete-service).
 Defines the client instance of a published service. This acts as the `client stub`
 to consume the service and view its service holdings.
 
-The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getService](#discover).
+The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getServices](#discover).
 
 **Supported public functions:**
 
@@ -330,7 +333,7 @@ swagger <- api$swagger(json = FALSE)
 
 ## Service Examples
 
-First authenticate using _Azure Active Directory_ or _On Premise Active Directory_
+First authenticate using _Azure Active Directory_ or _On Premises Active Directory_
 
 
 ```R
@@ -593,7 +596,7 @@ print(result)
 
 ## Workflow Examples
 
-There are different approaches to _publishing_ and _updateing_  a service depending on
+There are different approaches to _publishing_ and _updating_  a service depending on
 your workflow needs as it relates to the `code` and `model` arguments.
 All approaches are equivalent.
 

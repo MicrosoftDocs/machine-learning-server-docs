@@ -114,7 +114,9 @@ We'll use the following script in our example:
    #                 Consume Service in R                   #
    ##########################################################
    
-   # Print capabilities that define the service holdings (inputs/outputs)
+   # Print capabilities that define the service holdings: service 
+   # name, version, descriptions, inputs, outputs, and the 
+   # name of the function to be consumed
    print(api$getCapabilities())
    
    # Consume service by calling function, `manualTransmission`
@@ -200,7 +202,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using the `publishService()` function from the `mrsdeploy` package.
+1. Publish the model as a web service to R Server using [the `publishService()` function](../mrsdeploy/mrsdeploy-websrv-vignette.md) from the `mrsdeploy` package.
 
    To publish it, you'll need to specify:
    + A name for the service (required)
@@ -209,19 +211,15 @@ Now let's dive into this example down. Let's start by creating the model locally
    + The output that application developers will need to integrate in their applications. 
    + A unique version number for the service, if you'll be sharing it with others.   
 
-   <!--@ SHOULD WE COVER VERSIONING AT THIS POINT? EACH TIME YOU TRY THIS CODE, USE A UNIQUE VERSION NUMBER. -->
+   >[!IMPORTANT]
+   >In the case where you are working with a [remote R session](remote-execution.md) and you want to publish a web service, do so in your local session. If you try to publish remotely, you'll get this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the remote execution function `pause()` to return the R command line in your local session, publish your service, and then use the `resume()` function to continue running R code from the remote command line in the remote R session.
 
-   <!-- @ DO WE ADD A WARNING NOTE HERE SAYING THAT YOU CANNOT PUBLISH FROM A REMOTE SESSION AND POINT TO THAT REMOTE EXECUTION DOCUMENTATION HERE?-->
-   <br>
-
-   Learn more about managing and publishing web services using this package [in this article](../mrsdeploy/mrsdeploy-websrv-vignette.md).
-
-   In our example, we executed these commands to publish a web service called `mtService` using the model called `carsModel` and a function called `manualTransmission`. As an input, it takes a list of vehicle horsepower and vehicle weight represented as R numerica. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. We then download the Swagger-based JSON file that was generated when the service was published to our local file system.
-
-   `getCapabilities()` will return the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed.
+   In this example, we executed these commands to publish a web service (`mtService`) using a model (`carsModel`) and a function (`manualTransmission`). As an input, it takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
    ```R
-   # Print capabilities that define the service holdings (inputs/outputs)
+   # Print capabilities that define the service holdings: service 
+   # name, version, descriptions, inputs, outputs, and the 
+   # name of the function to be consumed
    print(api$getCapabilities())
    
    # Consume service by calling function, `manualTransmission`
@@ -239,15 +237,17 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ### (3) Get the Swagger-based JSON file
 
-During the authenticated session in which you published the service, download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
+During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
+
+In this example, we executed these commands to download the Swagger-based JSON file:
+
+```R
+swagger <- api$swagger()
+cat(swagger, file = "swagger.json", append = FALSE) 
+``` 
 
 >[!NOTE]
 >See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
-
-   ```R
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE) 
-   ``` 
    
 <br> 
 

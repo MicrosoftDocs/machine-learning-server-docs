@@ -249,7 +249,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
-
+<small>![-](../media/award.png) signifies the most popular functions</small>
 <br />
 
 <br />
@@ -335,6 +335,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
+<small>![-](../media/award.png) signifies the most popular functions</small>
+
 
 <br/>
 
@@ -348,6 +350,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxLinePlot`  |![-](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
 |`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[See package](scaler.md#findmore)</small>|
+
+<small>![-](../media/award.png) signifies the most popular functions</small>
 
 <br />
 
@@ -469,6 +473,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
     </tr>
 </table>
+
+<small>![-](../media/award.png) signifies the most popular functions</small>
 
 <br />
 
@@ -618,6 +624,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
+<small>![-](../media/award.png) signifies the most popular functions</small>
+
 <br />
 <a name="compute"></a>
 ##Compute Context Functions
@@ -739,6 +747,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
     </tr>
 </table>
 
+<small>![-](../media/award.png) signifies the most popular functions</small>
+
 <br/>
 <a name="data"></a>
 ##Data Source Functions
@@ -808,6 +818,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
     </tr>
 </table>
+
+<small>![-](../media/award.png) signifies the most popular functions</small>
 
 <br />
 
@@ -930,6 +942,8 @@ These functions and many more can be used for high performance computing and dis
     </tr>
 </table>
 
+<small>![-](../media/award.png) signifies the most popular functions</small>
+
 <br />
 ##Utility Functions
 
@@ -1017,6 +1031,8 @@ These functions and many more can be used for high performance computing and dis
         </td>
     </tr>
 </table>
+
+<small>![-](../media/award.png) signifies the most popular functions</small>
 
 <br />
 <br />

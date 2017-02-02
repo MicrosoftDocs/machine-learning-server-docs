@@ -52,6 +52,7 @@
 
 ## [Installation](rserver.md)
 ### [R Server for Windows](rserver-install-windows.md)
+#### [Install offline](rserver-install-windows-offline.md)
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server.md)
@@ -174,7 +175,7 @@
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
 ### [mrsdeploy introduction](mrsdeploy/mrsdeploy-intro-vignette.md)
-### [mrsdeploy remote execution](mrsdeploy/mrsdeploy-remoteexec-vignette.md)
+### [Remote execution with mrsdeploy](operationalize/remote-execution.md)
 ### [mrsdeploy web service](mrsdeploy/mrsdeploy-websrv-vignette.md)
 ## [RevoPemaR Function Reference](pemar/pemar.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
