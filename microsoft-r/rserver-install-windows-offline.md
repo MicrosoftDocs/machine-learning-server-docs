@@ -45,14 +45,15 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
 
-+ [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
-+ [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) enterprise edition. Sign in, search for SQL Server 2016 Enterprise edition, and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.
-+ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
+**Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
+
+**Option 2: [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)** This option provides the enterprise edition. Sign in, search for SQL Server 2016 Enterprise edition, and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.**
+
+**Option 3: [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)** This option provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
     - Click **Join or Access Now** and enter your account information.
     - Click **Downloads**, and then search for *Microsoft R*.
     - Make sure you're in the right place before searching the **Downloads** list. The URL should start with *my.visualstudio.com*.
-
 
 ## Verify file downloads
 
