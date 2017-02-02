@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server on computer
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/20/2017"
+ms.date: "02/01/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,19 +26,22 @@ ms.custom: ""
 
 # Run Microsoft R Server for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Windows. 
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. 
 
 For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
 
 ## Licensing, installation options, and support
 
-How you install R Server determines the support policy, location of R binaries, and the availability of certain features.
+How you install R Server determines the support policy, location of R binaries, and the availability of certain features. 
 
-Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
+**Support Policy** 
 
-If your objective is running R Server on a Windows computer, there are three installers (listed below) and two service plans to choose from. Regarding service plans, the **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. **Modern Lifecycle** is concentrated over a two year period, with the advantage of a faster releqase cycle, delivering fixes and features sooner.
+Two service plans are available for R Server for Windows:
 
-The following table summarizes installers and service plan combinations. 
++ **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. 
++ **Modern Lifecycle** is concentrated over a two year period. It offers a faster release cycle, delivering fixes and features sooner.
+
+To get either one of these policies, use an installer configures your server for updates and support. The following table summarizes installers and service plan combinations. 
 
 | Installer | Service plan | Benefits |
 |-----------|--------------|----------|
@@ -51,6 +54,9 @@ The following table summarizes installers and service plan combinations.
 <sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what is typical for SQL Server deployments.
 
 <sup>3</sup> You can provision an Azure virtual machine running Windows that has SQL Server R Server (Standalone) already installed. This VM is provisioned under the SQL Server service plan, but you could rebind to the Modern Lifecycle support policy. For more information, see [Provision an R Server Virtual Machine](https://msdnstage.redmond.corp.microsoft.com/library/mt759780.aspx).
+
+> [!NOTE]
+> Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#downloads).
 
 **R binaries** 
 
@@ -116,6 +122,7 @@ Optionally, consider adding a development tool on the server to build script or 
 + [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
+<a name="connect-validate"></a>
 ### Connect to R Server and validate installation
 
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
@@ -137,34 +144,7 @@ You can install R Server 9.0.1 and previous major versions side-by-side on the s
 
 ## Offline installation and firewall considerations
 
-By default, installers reach out to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download invididual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup.
-
-**Step 1: Download the prerequisites**
-
-| Component | Version | Download Link |
-|-----------|---------|--------|
-| .NET Framework | 4.5.2 | https://www.microsoft.com/net/download/framework |
-| Microsoft R Open | 3.3.2 | [MRAN web site](https://mran.microsoft.com/download/) |
-| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 | https://go.microsoft.com/fwlink/?linkid=834405 |
-| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
-| Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
-| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24215.1<sup>1</sup> | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
-
-<sup>1</sup> Build numbers are displayed in the license agreement page when you install the redistributable. With regards to the Visual C++ 2015 redistributable, the build version is different for offline and internet-connected R Server installations. When performing an offline install, be sure to use Update 3 (build 14.0.24215.1), as listed in the table above.
-
-**Step 2: Download the installer**
-
-Get the rserversetup.zip or rserversetup.exe file from the [download sites](#Download).
-
-**Step 3: Install each individual component**
-
-Component downloads are installers. Double-click each file to begin installation. Order of installation is not important.
-
-**Step 4: Run R Server setup**
-
-After all of the prerequisites are installed, you can begin R Server installation. Refer to [how to install the server](#Run-Setup) for more information.
-
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
 
 ## Install earlier versions of R Server for Windows
 
