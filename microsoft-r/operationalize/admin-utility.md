@@ -50,7 +50,7 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Windows:**
 
-+ You can launch the administration utility using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**. 
++ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**. 
 
 + Alternately, open a command line window with administrator privileges and enter the following commands:
   ```

@@ -175,7 +175,7 @@
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
 ### [mrsdeploy introduction](mrsdeploy/mrsdeploy-intro-vignette.md)
-### [mrsdeploy remote execution](mrsdeploy/mrsdeploy-remoteexec-vignette.md)
+### [Remote execution with mrsdeploy](operationalize/remote-execution.md)
 ### [mrsdeploy web service](mrsdeploy/mrsdeploy-websrv-vignette.md)
 ## [RevoPemaR Function Reference](pemar/pemar.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
