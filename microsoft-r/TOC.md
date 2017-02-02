@@ -52,7 +52,7 @@
 
 ## [Installation](rserver.md)
 ### [R Server for Windows](rserver-install-windows.md)
-#### [Install offline](rserver-install-windows-offline.md)
+#### [Offline installation](rserver-install-windows-offline.md)
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server.md)
