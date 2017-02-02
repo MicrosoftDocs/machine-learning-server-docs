@@ -129,7 +129,7 @@ Optionally, consider adding a development tool on the server to build script or 
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 <a name="connect-validate"></a>
-### Connect to R Server and validate installation
+### Connect and validate installation
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
 
 As a verification step, you can connect to the server and execute a few ScaleR functions to validate the installation.
@@ -141,9 +141,9 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
-### Configure R Server for operations
+## Configure R Server for operations
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Side-by-side installation
 
