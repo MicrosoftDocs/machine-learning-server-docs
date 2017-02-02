@@ -72,7 +72,7 @@ In general, all mrsdeploy operations are available to authenticated users. There
 
 After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
 
-+ [Remote Execution](mrsdeploy-remoteexec-vignette.md)
++ [Remote Execution](../operationalize/remote-execution.md)
 + [Web Service](mrsdeploy-websrv-vignette.md)
 
 ## See also
