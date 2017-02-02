@@ -60,7 +60,7 @@ This option provides a zipped file, free to developers who sign up for Visual St
 1. Click **Join or Access Now** and enter your account information.
 2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
 3. Click **Downloads**, and then search for *Microsoft R*.
-    - 
+
 ## Check files
 
 After downloading all of the prerequisites and the RServerSetup, your download folder should contain the following files:
