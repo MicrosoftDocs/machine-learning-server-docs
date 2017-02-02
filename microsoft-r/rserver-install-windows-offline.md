@@ -63,19 +63,17 @@ This option provides a zipped file, free to developers who sign up for Visual St
 
 ## Check files
 
-After downloading all of the prerequisites and the RServerSetup, your download folder should contain the following files:
+After downloading all of the prerequisites and the RServerSetup, you should have these files:
 
-    `vcredist_x64.exe` ** redistributable for Visual Studio 2013 C++
-    `vc_redist.x64.exe` ** redistributable for Visual Studio 2015 C++
-    `DotnetCore.1.0.1-Runtime-x64.exe` 
-    `NDP452-KB2901954-Web.exe`
-    `SQL_AS_OLEDB.msi`
-    `microsoft-r-open-3.3.2.msi`
-    `MSMpiSetup.exe`
-
-    `SRO_3.3.2.0_1033.cab` ** download but don't install
-
-    `en_r_server_901_for_windows_X64_9649035.zip` ** contains RServerSetup
+    vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
+    vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
+    DotnetCore.1.0.1-Runtime-x64.exe`
+    NDP452-KB2901954-Web.exe
+    SQL_AS_OLEDB.msi
+    microsoft-r-open-3.3.2.msi
+    MSMpiSetup.exe
+    SRO_3.3.2.0_1033.cab ** download but don't install
+    en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
 ## Transfer files to the target server
 
@@ -109,10 +107,10 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
-3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. 
-4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`.
+3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
+4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-You should also run the [Administrator Utility](operationalize/admin-utility.md) for additional configuration required for remote access and execution, web service deployment, and multi-server installation.
+Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
 ## See Also
 
