@@ -77,17 +77,17 @@ After downloading all of the prerequisites and the RServerSetup, you should have
 
 ## Transfer files to the target server
 
-Use a flash drive or another mechanism to copy all of the files listed above to the offline server. Place all the files in the same folder.
+Use a flash drive or another mechanism to transfer files listed to the offline server. Put all files in the same folder.
 
 ## Install prerequisites
 
-+ Component downloads are self-executing. Double-click each file to begin installation. 
-+ Install all of the prerequisites first, followed by R Server installer last. 
-+ Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts are required.
+Component downloads are self-executing. Double-click each file to begin installation. 
 
-Do not install the .cab file. RServerSetup.exe will take what it needs from the .cab when you run the installer.
+Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts may be required.
 
-A few of the installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
+Do not install the .cab file or run the .exe. RServerSetup.exe will take what it needs from the .cab when you run the installer in the next step.
+
+Several installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
 
 ## Unzip setup files and copy the .cab
 
