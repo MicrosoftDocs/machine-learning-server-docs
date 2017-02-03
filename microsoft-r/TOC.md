@@ -174,6 +174,7 @@
 ## [foreach Functions for Parallelizing Loops](foreach.md)
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
+### [Connect to R Server with mrsdeploy](mrsdeploy/mrsdeploy-connection.md)
 ### [Remote execution with mrsdeploy](operationalize/remote-execution.md)
 ### [mrsdeploy web service](mrsdeploy/mrsdeploy-websrv-vignette.md)
 ## [RevoPemaR Function Reference](pemar/pemar.md)

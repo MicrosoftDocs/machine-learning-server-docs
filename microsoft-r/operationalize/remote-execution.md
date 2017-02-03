@@ -29,20 +29,16 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the operationalization APIs.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the operationalization APIs. You can use remote execution to offload heavy processing on server as well as test your work.
 
 With remote execution, you can:
-+ Log into and out of an R Server remotely
-+ Generate diff reports of the local and remote environments
-+ Reconcile these local and R Server environments
-+ Offload heavy processing on server
-+ Execute R scripts and code remotely
-+ Work with R objects/files remotely
-+ Create and manage snapshots of the remote environment for reuse
++ [Log into and out of an R Server remotely]()
++ [Generate diff reports of the local and remote environments](#diff) and reconcile any differences
++ [Execute R scripts and code remotely](#run)
++ [Work with R objects/files remotely](#objects)
++ [Create and manage snapshots of the remote environment for reuse](#snapshot)
 
 ![Remote Execution](../media/o16n/remote-execution.png) 
-
-
 
 ## Using the remote command line
 
@@ -97,11 +93,17 @@ REMOTE>pause()  #switches the user to the local R session
 REMOTE>exit  #logout and terminate the remote R session
 > 
 ```
+
+
+<a name="diff"></a>
+
 ## Create a diff report
 A `diff` report is available so you can see and manage differences between the local and remote R environments.
 The diff report contains information regarding R versions, R packages installed locally, but not on the remote
 session, and differences between R package versions. This report is shown by default when you log in, but can be
 run anytime by executing the function: `diffLocalRemote()`.
+
+<a name="run"></a>
 
 ## Execute an R script remotely
 
@@ -126,6 +128,9 @@ REMOTE>pause()
 #execute an R script remotely
 >remoteScript("c/myScript.R")    
 ```
+
+<a name="objects"></a>
+
 ## Work with R objects and files remotely
 
 Once you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model (i.e. `m<-lm(x~y)` ), and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `getRemoteObject()`.
@@ -194,11 +199,7 @@ REMOTE> pause()
 > remote_script("myscript.R")
 ```
 
-## Publishing web services
-
-If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
-
-Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
+<a name="snapshot"></a>
 
 ## Snapshots and why they are useful
 
@@ -235,6 +236,14 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 #execute an R script remotely
 >remoteScript("c/myScript2.R")
 ```
+
+
+## Publishing web services
+
+If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
+
+Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
+
 
 ## Next steps
 
