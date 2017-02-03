@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "02/02/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,10 +29,12 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the operationalization APIs. You can use remote execution to offload heavy processing on server as well as test your work.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server as well as test your work.
+
+Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the operationalization APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
-+ [Log into and out of an R Server remotely]()
++ [Log into and out of an R Server remotely](../mrsdeploy/mrsdeploy-connection.md)
 + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences
 + [Execute R scripts and code remotely](#run)
 + [Work with R objects/files remotely](#objects)
@@ -40,19 +42,11 @@ With remote execution, you can:
 
 ![Remote Execution](../media/o16n/remote-execution.png) 
 
-## Using the remote command line
-
-The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
-
-To establish a remote session, issue a remote login request using the login functions in the `mrsdeploy` package, which in turn authenticates your user identity on the remote server. Once the session is established, you can switch between local and remote command lines through the `pause()` and `resume()` functions.
-
-[Learn more...](../mrsdeploy/mrsdeploy-connection.md#switch)
-
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the `mrsdeploy` package. However, **the `mrsdeploy` package can only be used once Microsoft R Server has been configured for operationalization**.
+The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **once Microsoft R Server has been configured for operationalization**.
 
-Read the introduction in the article ["`mrsdeploy` functions"](../mrsdeploy/mrsdeploy-connection.md) for the supported R Client and R Server configurations for this package and remote execution.  In that article, you can also learn how to load the package.
+Read the introductory article ["`mrsdeploy` functions"](../mrsdeploy/mrsdeploy.md) for the supported R Client and R Server configurations for this package and remote execution as well as for a list of the [remote execution functions](../mrsdeploy/mrsdeploy.md#remote-functions) contained in that package.  In that article, you can also learn how to load the package.
 
 ## How to create a remote session
 

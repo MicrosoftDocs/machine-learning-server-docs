@@ -85,6 +85,7 @@ We'll use the following script in our example:
    ##########################################################
    
    # Authenticate with Azure AD using `mrsdeploy` pkg function
+   # session = false so no remote R session started
    remoteLoginAAD(
        "https://rserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
@@ -183,11 +184,12 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ### (2) Publish model as a web service
 
-1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  Ask your administrator for authentication details if you do not have any.
+1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  Ask your administrator for authentication details if you do not have any.
 
    In our example, we used Azure Active Directory for authentication.
 
    ```R   
+   # session = false so no remote R session started
    remoteLoginAAD(
        "https://rserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
@@ -233,7 +235,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In our example, we observe the same results as we did when it was locally executed.
 
    >[!NOTE]
-   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#create-a-diff-report). 
+   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
 
 ### (3) Get the Swagger-based JSON file
 
