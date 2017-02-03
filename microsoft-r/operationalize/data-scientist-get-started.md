@@ -331,10 +331,9 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Key Documents**
 + [About Operationalization](about.md)
-+ [Introduction to the mrsdeploy package in Microsoft R](../mrsdeploy/mrsdeploy-intro-vignette.md)
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Remote Execution](remote-execution.md)
-+ [mrsdeploy Web Service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
++ [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)
