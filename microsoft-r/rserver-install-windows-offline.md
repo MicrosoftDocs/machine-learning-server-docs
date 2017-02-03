@@ -28,7 +28,7 @@ ms.custom: ""
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup.
 
-## Download the prerequisites
+## Download prerequisites
 
 | Component | Version | Download Link |
 |-----------|---------|--------|
@@ -38,66 +38,68 @@ By default, installers connect to Microsoft download sites to get required and u
 | Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
 | Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24215.1<sup>1</sup> | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
-| SRO_3.3.2.0_1033.cab| http://go.microsoft.com/fwlink/?LinkID=834568 |
+| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
+| SRO_3.3.2.0_1033.cab| none | http://go.microsoft.com/fwlink/?LinkID=834568 |
 
-<sup>1</sup> Build numbers are displayed in the license agreement page when you install the redistributable. With regards to the Visual C++ 2015 redistributable, the build version is different for offline and internet-connected R Server installations. When performing an offline install, be sure to use Update 3 (build 14.0.24215.1), as listed in the table above.
-
-## Download the installer
+## Download an installer
 
 Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
 
-+ [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx).
-+ [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) enterprise edition. Sign in, search for SQL Server 2016 Enterprise edition, and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.
-+ [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
+**Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
 
-    - Click **Join or Access Now** and enter your account information.
-    - Click **Downloads**, and then search for *Microsoft R*.
-    - Be sure that you are connected to Visual Studio Dev Essentials before searching the **Downloads** list. You're in the right place if the URL starts with *my.visualstudio.com*.
+Subscribers can download software at given subscription levels. Depending on your subscription, you can get the developer or enterprise edition.
 
-If you download the .zip file, right-click to extract all files.
+**Option 2: [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)** 
 
-## Verify file downloads
+This option provides the enterprise edition. Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.**
 
-After downloading all of the prerequisites and the rserversetup, your download folder should contain the following files:
+**Option 3: [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)** 
 
-`vcredist_x64.exe` ** redistributable for Visual Studio 2013 C++
-`vc_redist.x64.exe` ** redistributable for Visual Studio 2015 C++
-`DotnetCore.1.0.1-Runtime-x64.exe` 
-`NDP452-KB2901954-Web.exe`
-`SQL_AS_OLEDB.msi`
-`microsoft-r-open-3.3.2.msi`
-`MSMpiSetup.exe`
+This option provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
 
-`SRO_3.3.2.0_1033.cab` ** download but don't install
+1. Click **Join or Access Now** and enter your account information.
+2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
+3. Click **Downloads**, and then search for *Microsoft R*.
 
-`en_r_server_901_for_windows_X64_9649035.zip` ** contains RServerSetup
+## Check files
 
-## Transfer all of the downloaded files to the target server
+After downloading all of the prerequisites and the RServerSetup, you should have these files:
 
-Use a flash drive or another mechanism to copy the necessary files to the offline server. Place all the files in the same folder.
+    vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
+    vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
+    DotnetCore.1.0.1-Runtime-x64.exe`
+    NDP452-KB2901954-Web.exe
+    SQL_AS_OLEDB.msi
+    microsoft-r-open-3.3.2.msi
+    MSMpiSetup.exe
+    SRO_3.3.2.0_1033.cab ** download but don't install
+    en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
-## Install each individual component
+## Transfer files to the target server
 
-+ Component downloads are self-executing. Double-click each file to begin installation. 
-+ Install all of the prerequisites first, followed by R Server installer last. 
-+ Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts are required.
+Use a flash drive or another mechanism to transfer files listed to the offline server. Put all files in the same folder.
 
-Do not install the .cab file. RServerSetup.exe will take what it needs from the .cab when you run the installer.
+## Install prerequisites
 
-A few of the installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
+Component downloads are self-executing. Double-click each file to begin installation. 
 
-## Copy the .cab to the same folder as RServerSetup
+Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts may be required.
 
-In previous steps, you downloaded a .cab file and .zip file, and then extracted files from the .zip. Copy the .cab file and place it in the same folder as the extracted setup file, RServerSetup.exe.
+Do not install the .cab file or run the .exe. RServerSetup.exe will take what it needs from the .cab when you run the installer in the next step.
 
-## Run R Server setup
+Several installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
+
+## Unzip setup files and copy the .cab
+
+In previous steps, you downloaded and then copied .zip file to the offline server. You should now extract the zipped files. In the resulting folder, copy the .cab file and place it in the same folder as the extracted setup file, RServerSetup.exe.
+
+## Run RServerSetup
 
 Expand the folder containing `RServerSetup.exe` and double-click to start the wizard. 
 
 Post-installation, you can review log files. Log files (RServerSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
 
-## Connect to R Server and validate installation
+## Connect and validate installation
 
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
 
@@ -105,9 +107,10 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
-3. At the command line, type `search()` to view a list of objects already loaded. You should see the `RevoScaleR` package in the list. 
-4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`.
+3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
+4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
+Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
 ## See Also
 
