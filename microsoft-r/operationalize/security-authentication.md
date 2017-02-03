@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication for Operationalization w
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "02/02/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -269,7 +269,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **When authenticating with the `mrsdeploy` package, do the following:**
 
-To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../mrsdeploy/mrsdeploy.md).
+To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
 
 ```
 remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
@@ -284,3 +284,6 @@ remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
 ```
 
 You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
+
+>[!IMPORTANT]
+>Take special note of the arguments `session` (creates remote R session) and `commandline` (dictates if you enter on the remote command line prompt or local one) as these influence the state of your command line. [Learn more...](../mrsdeploy/mrsdeploy-connection.md)
