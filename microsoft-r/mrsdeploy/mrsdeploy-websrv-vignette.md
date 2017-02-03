@@ -1055,6 +1055,6 @@ remoteLogout()
 
 [mrsdeploy Function Reference](mrsdeploy.md)
 
-[mrsdeploy introduction](mrsdeploy-intro-vignette.md)
+[Remote Execution](../operationalize/remote-execution.md)
 
 [Package Reference](../package-reference.md)

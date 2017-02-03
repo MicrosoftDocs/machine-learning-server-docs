@@ -99,6 +99,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       >[!IMPORTANT]
       >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  authentication will fail.
 
+      <br>
+      
+      >[!IMPORTANT]
+      >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+
       For example:
       ```
       "LDAP": {
@@ -147,7 +152,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
    >[!IMPORTANT]
-   >In the event that you run into any connection issues when configuring R Server for Active Directory/LDAP, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+   >In the event that you run into any connection issues when configuring R Server for Active Directory/LDAP, we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. Repeat these steps on each machine hosting the web node.
 

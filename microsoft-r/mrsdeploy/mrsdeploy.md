@@ -26,11 +26,38 @@ ms.custom: ""
 
 # mrsdeploy functions
 
-The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide. It's used to access the [operationalization capabilities](~/operationalize/about.md) in R Server.
-
-Each feature can be used independently but the greatest value is achieved when you can leverage both. You need access to an R Server 9.0.1 instance on your corporate network or in an Azure solution (such as Azure HDInsight) to use `mrsdeploy`. In a remote execution scenario, both nodes must have a copy of the `mrsdeploy` package, installed as part of R Server 9.0.1 or R Client 3.3.2. For more information about requirements and supported configurations, see [Introduction to the mrsdeploy](mrsdeploy-intro-vignette.md).
+The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
+
+## Supported configurations
+
+For remote execution, participating nodes can be either of the following configurations:
+
++ Two machines running R Server 9.0.1, even if on different supported platforms, such as one Linux and one Windows.
++ One machine running R Client 3.3.2 and one machine running R Server 9.0.1, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
+
+The requirements for remote execution include:
+
++ An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../r-client-get-started.md). 
++ [Authenticated access](../operationalize/security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../operationalize/configuration-initial.md).
+
+<a name="use-mrsdeploy"></a>
+
+## How to use mrsdeploy
+
+**The `mrsdeploy` package can only be used once Microsoft R Server has been configured for operationalization**.  For more information, see [Configuring R Server for Operationalization](../operationalize/configuration-initial.md).
+
++ On R Client, the `mrsdeploy` package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
+
++ On R Server, the `mrsdeploy` package is installed, **but not loaded**. Therefore, you'll have to load it before using any  `mrsdeploy` functions. At the R prompt in the R Server session, type `library(mrsdeploy)` to load the package.
+
+For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](../mrsdeploy/mrsdeploy.md).
+
+
+## How to authentication and create a session
+
+To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. For more information, see [Connecting to R Server to use mrsdeploy](mrsdeploy-connection.md).
 
 ## Remote execution functions
 
@@ -38,7 +65,7 @@ The following functions are used to initialize and interact with a session on a 
 
 Learn more about executing remotely from your local machine in this "[Remote Execution](../operationalize/remote-execution.md)" article.
 
-#### Login and Logout functions
+#### Server connection functions
 
 Remote sessions are created when you log in and closed when you log out.
 
@@ -118,15 +145,17 @@ R Packages often include embedded help pages, documenting the syntax and paramet
 3. Type `help(package="mrsdeploy")`.
 
 
+## Next steps
+
+After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
+
++ [Remote Execution](../operationalize/remote-execution.md)
+
++ [Web Service](mrsdeploy-websrv-vignette.md)
+
 ## See also
 
-[Package Help](~/package-reference.md)
-
-[Introduction to mrsdeploy](mrsdeploy-intro-vignette.md)
-
-[Remote Execution](../operationalize/remote-execution.md)
-
-[Web service deployment](mrsdeploy-websrv-vignette.md)
+[Package Reference](../package-reference.md)
 
 [Install R Server](~/rserver.md)
 
