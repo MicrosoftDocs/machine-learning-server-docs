@@ -44,7 +44,7 @@ In general, all `mrsdeploy` operations are available to authenticated users. The
 
 The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). If authenticating with:
 
-+ A **on-premises connection** using Active Directory server on your network or the [default administrator account](./operationalize/security-authentication.md#local) for R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
++ A **on-premises connection** using Active Directory server on your network or the [default administrator account](../operationalize/security-authentication.md#local) for R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
 
   ```R
   > remoteLogin(
@@ -59,7 +59,7 @@ The function you use depends on the [type of authentication and deployment in yo
 
 + **Azure Active Directory in the cloud**, use the `remoteLoginAAD` function. For the entire set of arguments for this function, check the R help topic in the package help.  
 
-  If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication#azure-active-directory). For example:
+  If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication.md#azure-active-directory). For example:
 
   ```R
   > remoteLoginAAD(
