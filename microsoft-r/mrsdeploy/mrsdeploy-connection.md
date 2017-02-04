@@ -42,9 +42,9 @@ This article explains the authentication functions, the arguments they accept, a
 
 In general, all `mrsdeploy` operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
 
-The function you use depends on the type of authentication and deployment in your organization. If authenticating with:
+The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). If authenticating with:
 
-+ A **on-premises Active Directory server on your network**, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
++ A **on-premises connection** using Active Directory server on your network or the [default administrator account](./operationalize/security-authentication.md#local) for R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
 
   ```R
   > remoteLogin(
@@ -63,17 +63,16 @@ The function you use depends on the type of authentication and deployment in you
 
   ```R
   > remoteLoginAAD(
-            endpoint,
+            endpoint, #SIGN-ON URL value from Web Application
             authuri = https://login.windows.net,
-            tenantid = myMRSServer.contoso.com,
-            clientid = 00000000-0000-0000-0000-000000000000,
-            resource = 00000000-0000-0000-0000-000000000000,
+            tenantid = "<AAD_DOMAIN>", #domain of AAD account such as: myMRServer.contoso.com
+            clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application such as 00000000-0000-0000-0000-000000000000,
+            resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application such as 00000000-0000-0000-0000-000000000000,
             session = TRUE,
             diff = TRUE,
             commandline = TRUE
     )
   ```
-
 
 Once you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. If the user does not provide a valid login, an HTTP 401 status code is returned.
 
@@ -83,39 +82,6 @@ Take special note of the arguments `session` and `commandline` as these influenc
 | --- | --- |
 |`session`|If TRUE, create a remote session in R Server. <br>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
-
-<a name="switch"></a>
-
-## Switch between sessions or logout
-
-Once you log into the remote R server with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
-
-![Switch](../media/o16n/mrsdeploy-connect-switch.png)
-
-When the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the remote R session. 
-
-Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To switch back to the local R session, type `pause()`. If you have switched to the local R session, you can go back to the remote R session by typing `resume()`.
-
-To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remote_logout()`.
-
-|Convenience Functions|Description|
-|---|---|
-|`pause()`|When executed from the remote R session, returns the user to the local `> ` command prompt.|
-|`resume()`|When executed from the local R session, returns the user to the `REMOTE>` command prompt, and sets a remote execution context.|
-
-**Example**
-
-```R
-#execute some R commands on the remote session
-REMOTE>x<-rnorm(1000)
-REMOTE>hist(x)
-
-REMOTE>pause()  #switches the user to the local R session
->resume()  
-
-REMOTE>exit  #logout and terminate the remote R session
-> 
-```
 
 ## Remote connection states                                                                                                                                                        
 These `session` and `commandline` login parameters are subtle yet can produce bold context switches from your local R workspace. Depending on their values, you can end up in one of three post authentication command line states in the R console:
@@ -232,3 +198,37 @@ In this example, we define an interactive authentication workflow without a remo
 
 >[!IMPORTANT] 
 >You can only manage web services from your local session. Attempting to use the service APIs during a remote interaction will result in a error.
+
+
+<a name="switch"></a>
+
+## Switch between sessions or logout
+
+Once you log into the remote R server with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
+
+![Switch](../media/o16n/mrsdeploy-connect-switch.png)
+
+When the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the remote R session. 
+
+Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To switch back to the local R session, type `pause()`. If you have switched to the local R session, you can go back to the remote R session by typing `resume()`.
+
+To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remote_logout()`.
+
+|Convenience Functions|Description|
+|---|---|
+|`pause()`|When executed from the remote R session, returns the user to the local `> ` command prompt.|
+|`resume()`|When executed from the local R session, returns the user to the `REMOTE>` command prompt, and sets a remote execution context.|
+
+**Example**
+
+```R
+#execute some R commands on the remote session
+REMOTE>x<-rnorm(1000)
+REMOTE>hist(x)
+
+REMOTE>pause()  #switches the user to the local R session
+>resume()  
+
+REMOTE>exit  #logout and terminate the remote R session
+> 
+```
