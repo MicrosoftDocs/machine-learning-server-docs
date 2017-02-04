@@ -48,9 +48,13 @@ R Server's offers seamless integration with authentication solutions for operati
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. 
+
+While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
+
+To log into Microsoft R Server with this user for remote execution or web service functionalities, use `remoteLogin()` as described in the article "[Connecting to R Server with mrsdeploy](../mrsdeploy/mrsdeploy-connection.md)".
 
 <a name="ldap"></a>
 
@@ -155,6 +159,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >In the event that you run into any connection issues when configuring R Server for Active Directory/LDAP, we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. Repeat these steps on each machine hosting the web node.
+
+1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
+
 
 <br>
 

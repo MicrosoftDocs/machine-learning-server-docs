@@ -34,7 +34,7 @@ Data scientists work locally with [Microsoft R Client](../r-client-get-started.m
 An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service backed by an R code block or script that you provide. The package also provides functions for establishing a [remote execution](remote-execution.md) session in a console application.  [Learn more about this package](../mrsdeploy/mrsdeploy.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
 Once deployed, the web service can be: 
-+ Consumed directly in R by another data scientist, for testing purposes for example 
++ [Consumed directly in R by another data scientist](#data-scientists-share), for testing purposes for example 
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 ![Operationalization Engine](../media/o16n/data-scientist-easy-deploy.png) 
@@ -148,7 +148,7 @@ We'll use the following script in our example:
 
 Now let's dive into this example down. Let's start by creating the model locally, then publish it, and then share it with other authenticated users.
 
-### (1) Model locally
+### A. Model locally
 
 1. Launch your R IDE. 
 
@@ -182,7 +182,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 <br> 
 
-### (2) Publish model as a web service
+### B. Publish model as a web service
 
 1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  Ask your administrator for authentication details if you do not have any.
 
@@ -237,7 +237,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    >[!NOTE]
    >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
 
-### (3) Get the Swagger-based JSON file
+### C. Get the Swagger-based JSON file
 
 During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
 
@@ -263,6 +263,8 @@ cat(swagger, file = "swagger.json", append = FALSE)
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
 Data scientists can also explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
+
+<a name="data-scientists-share"></a>
 
 ### Collaborate with data scientists
 

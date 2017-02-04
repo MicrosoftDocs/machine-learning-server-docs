@@ -52,7 +52,7 @@ Read the introductory article ["`mrsdeploy` functions"](../mrsdeploy/mrsdeploy.m
 
 To create a remote session, you must first authenticate with R Server using one of the `mrsdeploy` login functions:  `remoteLogin()` and `remoteLoginAAD()`. With these functions, you can authenticate, set the arguments to create a remote R session on the R Server ( `session = TRUE` ) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
-Read the article ["Connecting to R Server with mrsdeploy"](../mrsdeploy/mrsdeploy-connection.md) for the authentication details, functions and syntax. 
+Read the article ["Connecting to R Server with mrsdeploy"](../mrsdeploy/mrsdeploy-connection.md) for more on authentication with `mrsdeploy` and syntax. 
 
 <a name="switch"></a>
 
