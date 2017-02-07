@@ -41,7 +41,7 @@ You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To
 
 Once you provision your virtual machine from the image, you can start exploring your data and modeling right away. The data on the virtual machine is stored on the cloud and highly available. 
 
-> There is no software charges for this data science VM image. You only pay for the Azure usage fees, which is dependent on the size of the virtual machine you will be provisioning with this VM image. More details on the compute fees can be found  [here](https://azure.microsoft.com/en-us/marketplace/partners/microsoft-ads/standard-data-science-vm/).
+> There is no software charges for this data science VM image. You only pay for the Azure usage fees, which is dependent on the size of the virtual machine you are provisioning with this VM image. More details on the compute fees can be found  [here](https://azure.microsoft.com/en-us/marketplace/partners/microsoft-ads/standard-data-science-vm/).
 
 
 ## Learn More

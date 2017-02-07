@@ -118,7 +118,7 @@ We'll use the following script in our example:
    # Print capabilities that define the service holdings: service 
    # name, version, descriptions, inputs, outputs, and the 
    # name of the function to be consumed
-   print(api$getCapabilities())
+   print(api$capabilities())
    
    # Consume service by calling function, `manualTransmission`
    # contained in this service
@@ -137,9 +137,9 @@ We'll use the following script in our example:
    cat(swagger, file = "swagger.json", append = FALSE)
 
    # Authenticated users can get the Swagger-based JSON file in R
-   # by name at a later time using the function `getServices` from 
+   # by name at a later time using the function `getService` from 
    # `mrsdeploy` package such as:
-   # api <- getServices("mtService", "v1.0.0")
+   # api <- getService("mtService", "v1.0.0")
    # swagger <- api$swagger()
    # cat(swagger, file = "swagger.json", append = FALSE)
 
@@ -219,25 +219,46 @@ Now let's dive into this example down. Let's start by creating the model locally
    In this example, we executed these commands to publish a web service (`mtService`) using a model (`carsModel`) and a function (`manualTransmission`). As an input, it takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
    ```R
-   # Print capabilities that define the service holdings: service 
-   # name, version, descriptions, inputs, outputs, and the 
-   # name of the function to be consumed
-   print(api$getCapabilities())
+   # Publish as service using `publishService()` function from 
+   # `mrsdeploy` package. Name service `mtService` and provide
+   # unique version number. Assign service to the variable `api`
+   api <- publishService(
+     mtService,
+     code = manualTransmission,
+     model = carsModel,
+     inputs = list(hp = "numeric", wt = "numeric"),
+     outputs = list(answer = "numeric"),
+     v = "v1.0.0"
+   )
+   ```
+
+<br> 
+
+### C. Consume the new service in R to test it
+
+Consume the service in R directly after publishing it to verify that the results are as expected.
+
+```R
+# Print capabilities that define the service holdings: service 
+# name, version, descriptions, inputs, outputs, and the 
+# name of the function to be consumed
+print(api$capabilities())
    
-   # Consume service by calling function, `manualTransmission`
-   # contained in this service
-   result <- api$manualTransmission(120, 2.8)
+# Consume service by calling function, `manualTransmission`
+# contained in this service
+result <- api$manualTransmission(120, 2.8)
 
-   # Print response output named `answer`
-   print(result$output("answer")) # 0.6418125   
-   ``` 
+# Print response output named `answer`
+print(result$output("answer")) # 0.6418125   
 
-   In our example, we observe the same results as we did when it was locally executed.
+``` 
 
-   >[!NOTE]
-   >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
+In our example, we observe the same results as we did when it was locally executed.
 
-### C. Get the Swagger-based JSON file
+>[!NOTE]
+>As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
+
+### D. Get the Swagger-based JSON file
 
 During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
 
@@ -272,15 +293,15 @@ Other data scientist may want to explore, test, and consume Web services directl
 
 As the owner of the service, you can share the name and version number for the service with fellow data scientists. 
 
-After authenticating, other data scientists can use the `getServices` function in R to call the service. Then they can get details about the service and start consuming it.
+After authenticating, other data scientists can use the `getService` function in R to call the service. Then they can get details about the service and start consuming it.
 
 ```R
-# Get service using `getServices()` function from `mrsdeploy` package.
+# Get service using `getService()` function from `mrsdeploy` package.
 # Assign service to the variable `api`.
-api <- getServices("mtService", "v1.0.0")
+api <- getService("mtService", "v1.0.0")
 
 # Print capabilities to see what service can do.
-print(api$getCapabilities())
+print(api$capabilities())
      
 # Start interacting with the service, for example:
 # Calling the function, `manualTransmission`
@@ -302,7 +323,7 @@ The application developers can get the Swagger-based JSON file in one of two way
 
 + You can send them the Swagger-based JSO file you've downloaded yourself, which can sometimes be a faster approach.  You can get the file with:
    ```R
-   api <- getServices("<name>", "<version>")
+   api <- getService("<name>", "<version>")
    swagger <- api$swagger()
    cat(swagger, file = "swagger.json", append = FALSE) 
    ```

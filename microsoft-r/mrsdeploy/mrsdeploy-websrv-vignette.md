@@ -32,6 +32,11 @@ This article describes Web service functions in the [mrsdeploy package](mrsdeplo
 
 Through the **mrsdeploy** package, you can deploy R script or code as a *web service* that you create and manage using functions in the package. After the service is published, it can be consumed by others from R or from your language of choice via [Swagger](http://swagger.io/).
 
+See these articles for other related information:
++ [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
++ [Data scientist get started guide](../operationalize/data-scientist-get-started.md)
++ [Application developer get started guide](../operationalize/app-developer-get-started.md)
+
 ## Service APIs
 
 ### Publish
@@ -136,7 +141,7 @@ See more [examples](#update-service).
 
 ### Discover
 
-The `getServices` function gets a published web service for consumption.
+The `getService` function gets a published web service for consumption.
 
 **Arguments**
 
@@ -150,7 +155,7 @@ An [Api](#api-client) instance as an [R6](https://cran.r-project.org/web/package
 **Example**
 
 ```R
-api <- getServices("addition", "v1.0.0")
+api <- getService("addition", "v1.0.0")
 
 result <- api$add(10, 20)
 ```
@@ -220,7 +225,7 @@ See more [examples](#delete-service).
 Defines the client instance of a published service. This acts as the `client stub`
 to consume the service and view its service holdings.
 
-The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getServices](#discover).
+The services `Api` client instance is returned from: [publishService](#publish), [updateService](#update), [getService](#discover).
 
 **Supported public functions:**
 
@@ -235,7 +240,7 @@ The services `Api` client instance is returned from: [publishService](#publish),
 **Examples:**
 
 ```R
-api <- getServices("transmission", "v1.0.0")
+api <- getService("transmission", "v1.0.0")
 print(api)
 
 cap <- api$capabilities()
@@ -793,7 +798,7 @@ services
 transmission <- services[[1]]
 transmission
 
-api <- getServices(transmission$name, transmission$version)
+api <- getService(transmission$name, transmission$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -870,7 +875,7 @@ services
 transmission <- services[[1]]
 transmission
 
-api <- getServices(transmission$name, transmission$version)
+api <- getService(transmission$name, transmission$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -886,7 +891,7 @@ services <- listServices(serviceName)
 length(services) # gone
 
 # Error: No service found for `serviceName` version "v1.0.0"
-api <- getServices(serviceName, "v1.0.0")
+api <- getService(serviceName, "v1.0.0")
 
 remoteLogout()
 ```
@@ -952,7 +957,7 @@ services
 transmission <- services[[1]]
 transmission
 
-api <- getServices(transmission$name, transmission$version)
+api <- getService(transmission$name, transmission$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -968,7 +973,7 @@ services <- listServices(serviceName)
 length(services) # gone
 
 # Error: No service found for `serviceName` version "v1.0.0"
-api <- getServices(serviceName, "v1.0.0")
+api <- getService(serviceName, "v1.0.0")
 
 remoteLogout()
 ```
@@ -1030,7 +1035,7 @@ services
 transmission <- services[[1]]
 transmission
 
-api <- getServices(transmission$name, transmission$version)
+api <- getService(transmission$name, transmission$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -1046,7 +1051,7 @@ services <- listServices(serviceName)
 length(services) # gone
 
 # Error: No service found for "transmission" version "v1.0.0"
-api <- getServices(serviceName, "v1.0.0")
+api <- getService(serviceName, "v1.0.0")
 
 remoteLogout()
 ```

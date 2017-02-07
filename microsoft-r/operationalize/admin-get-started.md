@@ -87,9 +87,9 @@ The external configuration file, `appsettings.json` defines a number of policies
 | |Path on Web Node|Path on Compute Node|
 |----------------|--------|------------|
 |Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
-|Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ </small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
+|Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/</small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
 
-*<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+*<small> where `<MRS_home>` is the path to the Windows Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
  
 ### Asynchronous Batch Sizes
 

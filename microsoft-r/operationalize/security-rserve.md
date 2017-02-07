@@ -38,7 +38,7 @@ This forked version of RServe is the R execution component for the operationaliz
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
-R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve will only accept socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
+R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
 >[!Important]
 >The operationalization compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process.
@@ -60,7 +60,7 @@ In order to mitigate some of the risks associated with RServe, the service is se
 
 + Read-only permissions to the R library to prevent users from installing packages from their R scripts
 
-+ Write permissions to the R working directory `<MRS_home>\deployr\Rserve\workdir`, which is the directory under which R sessions and service calls will store artifacts, files, and workspaces
++ Write permissions to the R working directory `<MRS_home>\deployr\Rserve\workdir`, which is the directory under which R sessions and service calls store artifacts, files, and workspaces
 <br>
 
 >[!Important]

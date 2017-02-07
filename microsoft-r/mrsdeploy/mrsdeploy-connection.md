@@ -42,39 +42,75 @@ This article explains the authentication functions, the arguments they accept, a
 
 In general, all `mrsdeploy` operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
 
-The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). If authenticating with:
+The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
 
-+ A **on-premises connection** using Active Directory server on your network or the [default administrator account](../operationalize/security-authentication.md#local) for R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
+### On premises authentication
 
-  ```R
-  > remoteLogin(
-            endpoint, 
-            session = TRUE, 
-            diff = TRUE,
-            commandline = TRUE
-            username = NULL,
-            password = NULL,
-    )
-  ```
+If you are authenticating using Active Directory server on your network or the [default administrator account](../operationalize/security-authentication.md#local) for an on-premises instance of R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
 
-+ **Azure Active Directory in the cloud**, use the `remoteLoginAAD` function. For the entire set of arguments for this function, check the R help topic in the package help.  
+```R
+> remoteLogin(
+          endpoint, 
+          session = TRUE, 
+          diff = TRUE,
+          commandline = TRUE
+          username = NULL,
+          password = NULL,
+  )
+```
+  
+|`remoteLogin` Argument|Description|
+|--- | --- |
+|endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](../operationalize/admin-utility.md#launch).|
+|session|If TRUE, create a remote session.|
+|diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
+|commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
+|prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
+|username|If NULL, user is prompted to enter your AD or [local R Server](../operationalize/security-authentication.md#local) username|
+|password|If NULL, user is prompted to enter password|
 
-  If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication.md#azure-active-directory). For example:
 
-  ```R
-  > remoteLoginAAD(
-            endpoint, #SIGN-ON URL value from Web Application
-            authuri = https://login.windows.net,
-            tenantid = "<AAD_DOMAIN>", #domain of AAD account such as: myMRServer.contoso.com
-            clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application such as 00000000-0000-0000-0000-000000000000,
-            resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application such as 00000000-0000-0000-0000-000000000000,
-            session = TRUE,
-            diff = TRUE,
-            commandline = TRUE
-    )
-  ```
+If you do not specify a username and password as arguments to the login function, you'll be prompted for your AD or [local R Server](../operationalize/security-authentication.md#local) username and password. 
 
-Once you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. If the user does not provide a valid login, an HTTP 401 status code is returned.
+
+### Cloud authentication
+
+If you are authenticating using Azure Active Directory in the cloud, use the `remoteLoginAAD` function. For the entire set of arguments for this function, check the R help topic in the package help.  
+
+```R
+> remoteLoginAAD(
+          endpoint, 
+          authuri = https://login.windows.net,
+          tenantid = "<AAD_DOMAIN>", 
+          clientid = "<NATIVE_APP_CLIENT_ID>", 
+          resource = "<WEB_APP_CLIENT_ID>", 
+          session = TRUE,
+          diff = TRUE,
+          commandline = TRUE
+  )
+```  
+
+If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication.md#azure-active-directory). For example:
+
+|`remoteLoginAAD` Argument|Description|
+|--- | --- |
+|endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number. This is the SIGN-ON URL value from the web application|
+|authuri|The URI of the authentication service for Azure Active Directory.|
+|tenantid|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account such as: myMRServer.contoso.com|
+|clientid|The client ID of the AAD "native" application for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
+|resource|The resource ID is the clientID from the AAD "Web" application  for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
+|session|If TRUE, create a remote session.|
+|diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
+|commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
+|prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
+|username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`|
+|password|If NULL, user is prompted to enter password|
+
+<br>
+
+### Arguments for remote execution 
+
+If you plan to use `mrsdeploy` to start a remote session on R Server and execute code remotely, you'll need to create that remote session and specify if you'd like to start on the local or remote commandline upon login.
 
 Take special note of the arguments `session` and `commandline` as these influence the state of your command line.
 
@@ -82,6 +118,12 @@ Take special note of the arguments `session` and `commandline` as these influenc
 | --- | --- |
 |`session`|If TRUE, create a remote session in R Server. <br>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
+
+### Access tokens
+
+Once you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
+
+Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned.
 
 ## Remote connection states                                                                                                                                                        
 These `session` and `commandline` login parameters are subtle yet can produce bold context switches from your local R workspace. Depending on their values, you can end up in one of three post authentication command line states in the R console:
@@ -202,7 +244,7 @@ In this example, we define an interactive authentication workflow without a remo
 
 <a name="switch"></a>
 
-## Switch between sessions or logout
+## Switch between remote and local sessions
 
 Once you log into the remote R server with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
 
@@ -211,8 +253,6 @@ Once you log into the remote R server with the argument `session = TRUE`, a remo
 When the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the remote R session. 
 
 Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To switch back to the local R session, type `pause()`. If you have switched to the local R session, you can go back to the remote R session by typing `resume()`.
-
-To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remote_logout()`.
 
 |Convenience Functions|Description|
 |---|---|
@@ -232,3 +272,9 @@ REMOTE>pause()  #switches the user to the local R session
 REMOTE>exit  #logout and terminate the remote R session
 > 
 ```
+
+## Logout of a remote session
+
+To terminate the remote R session while you are on the remote command line, type `exit` at the `REMOTE>` prompt.  
+
+To terminate the remote session from the local R session, type `remoteLogout()`.
