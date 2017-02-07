@@ -47,7 +47,7 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 >[!IMPORTANT] 
 >We strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  
 
-This section walks you through the steps for securing the connections between the client application and the web node. Doing so will encrypt the communication between client and web node to prevent traffic from being modified or read.
+This section walks you through the steps for securing the connections between the client application and the web node. Doing so encrypts the communication between client and web node to prevent traffic from being modified or read.
 
 
 

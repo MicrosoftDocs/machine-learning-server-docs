@@ -101,7 +101,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 
       >[!IMPORTANT]
-      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  authentication will fail.
+      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  the authentication fails.
 
       <br>
       
@@ -160,7 +160,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
+1. Share the connection details with any users who authenticates with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLogin()` function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
 
 
 <br>
@@ -179,7 +179,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Select the **Applications** tab at the top. 
 
-1. Now, create a web app that will be tied to the Azure Active Directory as follows: 
+1. Now, create a web app that is tied to the Azure Active Directory as follows: 
 
    1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
  
@@ -205,7 +205,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Click **Save**. The application is created.
 
-1. Now, create a native app, which will link the web app to the Microsoft R Server operationalization server as follows:
+1. Now, create a native app, which links the web app to the Microsoft R Server operationalization server as follows:
 
    1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
 
@@ -271,6 +271,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
 1. Repeat these steps on each machine hosting the web node.
+
+1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md). Note that if you do not specify a username and password as arguments to the login functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
 <br>
 

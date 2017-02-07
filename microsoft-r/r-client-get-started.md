@@ -76,7 +76,7 @@ To benefit from disk scalability, performance and speed, you can push the comput
 
 **Setup Requirements:**
 
-Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component is required before setup can continue. Installing this component will require a computer restart.
+Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component is required before setup can continue. Installing this component requires a computer restart.
 
 **How to Install (with Internet Access):**
 
@@ -118,7 +118,7 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
    + Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
 
-   + Run `RClientSetup.exe`, which will also find the cab file in the same folder, and follow the onscreen prompts.
+   + Run `RClientSetup.exe`, which then finds the cab file in the same folder, and follow the onscreen prompts.
 
 > Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
  
@@ -149,7 +149,7 @@ Once you've [installed R Client](#installrclient), the next step is to configure
 
   1. Launch RTVS.
   1. From the **R Tools** menu, choose **Change R to Microsoft R Client**.
-  1. When you launch RTVS, R Client will now be the default R engine.
+  1. When you launch RTVS, R Client is now the default R engine.
 
 <br> 
 
@@ -161,7 +161,7 @@ Once you've [installed R Client](#installrclient), the next step is to configure
   1. [Update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R).
      1. From the **Tools** menu, choose **Global Options**.
      1. In the  **General** tab, update the path to R to point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64`.
-  1. When you launch RStudio, R Client will now be the default R engine.
+  1. When you launch RStudio, R Client is now the default R engine.
    
 <br><a name="try-r-client"></a>
 
@@ -201,7 +201,7 @@ This execution might require several minutes.
    ```
    if (!require("RevoScaleR")) {
      cat("RevoScaleR package does not seem to exist. 
-         \nThis means that the functions starting with 'rx' will not run. 
+         \nThis means that the functions starting with 'rx' cannot run. 
          \nIf you have Microsoft R Client installed, please switch the R engine.
          \nFor example, in R Tools for Visual Studio: 
          \nR Tools -> Options -> R Engine. 
