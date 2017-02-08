@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication for Operationalization w
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/02/2017"
+ms.date: "02/08/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -54,7 +54,7 @@ While this might be sufficient when trying this feature out with a [one-box conf
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
-To log into Microsoft R Server with this user for remote execution or web service functionalities, use `remoteLogin()` as described in the article "[Connecting to R Server with mrsdeploy](../mrsdeploy/mrsdeploy-connection.md)".
+To log into Microsoft R Server with this user for remote execution or web service functionalities, use `remoteLogin()` as described in the article "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
 <a name="ldap"></a>
 
@@ -160,7 +160,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who authenticates with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLogin()` function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
+1. Share the connection details with any users who authenticates with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLogin()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
 
 
 <br>
@@ -272,13 +272,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md). Note that if you do not specify a username and password as arguments to the login functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
+1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md). Note that if you do not specify a username and password as arguments to the login functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
 <br>
 
 **When authenticating with the `mrsdeploy` package, do the following:**
 
-To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../mrsdeploy/mrsdeploy-connection.md).
+To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
 
 ```
 remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
@@ -286,13 +286,13 @@ remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
            tenantid = "<AAD_DOMAIN>", #domain of AAD account such as: myMRServer.contoso.com
            clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
            resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
-           session = TRUE,
+           session = TRUE, #creates remote R session
            diff=TRUE,
-           commandline=TRUE,
+           commandline=TRUE, #puts you on the remote commandline
            prompt = "MY-PROMPT> ")  
 ```
 
 You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
 >[!IMPORTANT]
->Take special note of the arguments `session` (creates remote R session) and `commandline` (dictates if you enter on the remote command line prompt or local one) as these influence the state of your command line. [Learn more...](../mrsdeploy/mrsdeploy-connection.md)
+>Take special note of the arguments `session` (creates remote R session) and `commandline` (dictates if you enter on the remote command line prompt or local one) as these influence the state of your command line. [Learn more...](../operationalize/mrsdeploy-connection.md)

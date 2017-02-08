@@ -6,7 +6,7 @@ description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/02/2017"
+ms.date: "02/08/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -55,27 +55,26 @@ The requirements for remote execution include:
 For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](../mrsdeploy/mrsdeploy.md).
 
 
-## How to authentication and create a session
+## Authentication functions and creating remote sessions
 
-To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. For more information, see [Connecting to R Server to use mrsdeploy](mrsdeploy-connection.md).
+To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. 
+
+Learn more about these functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+
+|Function | Description |
+|---------|---------|
+|`remoteLogin` |Authenticates the user via Active Directory and creates a remote R session and puts you at the remote command line unless you specify otherwise.|
+|`remoteLoginAAD `|Authenticates the user via Azure Active Directory and creates a remote R session and puts you at the remote command line unless you specify otherwise.|
+|`remoteLogout` |Logout of the remote session on the R Server.|
+
 
 <a name="remote-functions"></a>
 
 ## Remote execution functions
 
-The following functions are used to initialize and interact with a session on a [remote R Server](../operationalize/remote-execution.md).
+The following functions are used to initialize and interact with a session on a [remote R Server](../operationalize/remote-execution.md).  Remote sessions are created when you authenticate and closed when you log out.
 
 Learn more about executing remotely from your local machine in this "[Remote Execution](../operationalize/remote-execution.md)" article.
-
-#### Server connection functions
-
-Remote sessions are created when you log in and closed when you log out.
-
-|Function | Description |
-|---------|---------|
-|`remoteLogin` |Authenticates the user via Active Directory and creates a remote R session.|
-|`remoteLoginAAD `|Authenticates the user via Azure Active Directory and creates a remote R session. |
-|`remoteLogout` |Logout of the remote session on the R Server.|
 
 #### Execution functions
 

@@ -92,6 +92,7 @@
 #### [R package management](operationalize/package-management.md)
 ### Data Scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
+#### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
 ### Application Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
@@ -174,7 +175,7 @@
 ## [foreach Functions for Parallelizing Loops](foreach.md)
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
-### [Connect to R Server with mrsdeploy](mrsdeploy/mrsdeploy-connection.md)
+### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
 ### [Remote execution with mrsdeploy](operationalize/remote-execution.md)
 ### [mrsdeploy web service](mrsdeploy/mrsdeploy-websrv-vignette.md)
 ## [RevoPemaR Function Reference](pemar/pemar.md)

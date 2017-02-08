@@ -6,7 +6,7 @@ description: "R Package Management with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "02/08/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -181,7 +181,7 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session.    
+1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).  
 
    + For example, for Azure Active Directory:
      ```
@@ -190,9 +190,9 @@ The packages you install using this method do not 'contaminate' the production e
                    tenantid = "myMRSServer.contoso.com",
                    clientid = "00000000-0000-0000-0000-000000000000",
                    resource = "00000000-0000-0000-0000-000000000000",
-                   session=TRUE,
+                   session=FALSE,
                    diff=TRUE,
-                   commandline=TRUE)
+                   commandline=FALSE)
    
      REMOTE> 
      ```

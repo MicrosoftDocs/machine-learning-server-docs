@@ -33,7 +33,7 @@ This article describes Web service functions in the [mrsdeploy package](mrsdeplo
 Through the **mrsdeploy** package, you can deploy R script or code as a *web service* that you create and manage using functions in the package. After the service is published, it can be consumed by others from R or from your language of choice via [Swagger](http://swagger.io/).
 
 See these articles for other related information:
-+ [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
++ [Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)
 + [Data scientist get started guide](../operationalize/data-scientist-get-started.md)
 + [Application developer get started guide](../operationalize/app-developer-get-started.md)
 
