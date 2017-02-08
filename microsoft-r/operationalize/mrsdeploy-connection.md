@@ -40,6 +40,9 @@ This article explains the authentication functions, the arguments they accept, a
 
 `mrsdeploy` provides two functions for authentication against R Server: `remoteLogin()` and `remoteLoginAAD()`. With these functions, you can not only authenticate, but also use their arguments to create a remote R session on the R Server if desired, and even place yourself in the remote command line upon login. 
 
+>[!NOTE]
+>Unless you specify otherwise, the `remoteLogin()` and `remoteLoginAAD()` functions not only logs you in, but also creates a remote R session on the R Server instance and put you on the remote command line.
+
 In general, all `mrsdeploy` operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
 
 The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
@@ -58,13 +61,16 @@ If you are authenticating using Active Directory server on your network or the [
           password = NULL,
   )
 ```
-  
+
+>[!NOTE]
+>Unless you specify otherwise using the arguments below, this function not only logs you in, but also creates a remote R session the R Server instance and put you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
+
 |`remoteLogin` Argument|Description|
 |--- | --- |
 |endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](../operationalize/admin-utility.md#launch).|
-|session|If TRUE, create a remote session.|
+|session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
-|commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
+|commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|
 |prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
 |username|If NULL, user is prompted to enter your AD or [local R Server](../operationalize/security-authentication.md#local) username|
 |password|If NULL, user is prompted to enter password|
@@ -90,6 +96,9 @@ If you are authenticating using Azure Active Directory in the cloud, use the `re
   )
 ```  
 
+>[!NOTE]
+>Unless you specify otherwise using the arguments below, this function will not only log you in, but also create a remote R session on the R Server instance and put you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
+
 If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication.md#azure-active-directory). For example:
 
 |`remoteLoginAAD` Argument|Description|
@@ -99,10 +108,10 @@ If you do not know your `tenantid`, `clientid`, or other details, please contact
 |tenantid|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account such as: myMRServer.contoso.com|
 |clientid|The client ID of the AAD "native" application for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
 |resource|The resource ID is the clientID from the AAD "Web" application  for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
-|session|If TRUE, create a remote session.|
+|session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
-|prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
+|prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.  **If omitted, it is the same as `= TRUE`.**|
 |username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`|
 |password|If NULL, user is prompted to enter password|
 
@@ -116,7 +125,7 @@ Take special note of the arguments `session` and `commandline` as these influenc
 
 |Argument|Description|
 | --- | --- |
-|`session`|If TRUE, create a remote session in R Server. <br>If FALSE, do not create any remote R sessions.|
+|`session`|If TRUE, create a remote session in R Server. <br>If omitted, it will still create a remote session.<br>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
 
 ### Access tokens
@@ -131,6 +140,9 @@ These `session` and `commandline` login parameters are subtle yet can produce bo
 ### Create remote R session and go to remote command line (1)
 
 In this state, we'll authenticate using one of the two aforementioned login functions with the default argument `session = TRUE` to create a remote R session, and the default argument `commandline = TRUE` to transition to the remote R command line.
+
+>[!NOTE]
+>Unless you specify `session = FALSE`, this function not only logs you in, but also creates a remote R session on the R Server instance. And, unless you specify `commandline = FALSE`, you are on the remote command line upon login. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 
 |Command|State|
 |---|---|

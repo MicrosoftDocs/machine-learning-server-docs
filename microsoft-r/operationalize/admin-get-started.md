@@ -6,7 +6,7 @@ description: "Getting started for DeployR Administrators: high level introdution
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/20/2016"
+ms.date: "02/08/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
