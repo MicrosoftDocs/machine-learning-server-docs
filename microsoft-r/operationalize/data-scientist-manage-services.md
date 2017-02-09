@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Managing and using web services in R
+# Working with web services in R
 
 This article describes how you can interact with and manage analytic web services directly in R using functions in the [mrsdeploy package](../mrsdeploy/mrsdeploy.md). This R package is installed with both Microsoft R Client and Microsoft R Server. Note that a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -33,8 +33,7 @@ Using `mrsdeploy` with a [properly configured R Server](../mrsdeploy/mrsdeploy.m
 Once hosted in R Server, these web services can be discovered by other authenticated users. These users can [consume the web services in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
 
-## Permissions and descriptions by web service function
-
+## Permissions and function descriptions
 In addition to the authentication functions, the following functions are used to bundle R code or R scripts as web services.
 
 >[!IMPORTANT]
@@ -47,8 +46,8 @@ In this release, you can only manage (update/delete) the web services you've pub
 |Web service functions | Description |Your Service|Other Services
 |---------|-------------|-----|----|
 |`publishService` |Publishes R code as a web service on R Server. |Yes|N/A|
-|`updateService` |Updates an existing web service on an R Server instance. |Yes |
-|`deleteService `|Deletes a web service on an R Server instance. |Yes |
+|`updateService` |Updates an existing web service on an R Server instance. |Yes |No|
+|`deleteService `|Deletes a web service on an R Server instance. |Yes|No|
 |`listServices` |Returns a list of published web services on the R Server instance. |Yes|Yes|
 |`getService` |Returns a web service object for consumption. |Yes|Yes|
 
@@ -74,16 +73,16 @@ Any authenticated user can also retrieve a list of the available services hosted
 
 ## Web Service Versions
  
-Every web service is versioned, which allows the user who published a service to roll back to an older version at any time.
+Every web service is versioned, which allows the user who published a service to roll back to an older version at any time as well as designate specific versions of a web service for production usage.
 
-We highly recommend that anyone in your organization creating web services use a consistent and meaningful versioning convention such as [semantic versioning](http://semver.org/). Versioning improves the release of services for service publishers and makes it easier for consumers to identify the services they are calling. 
+We highly recommend that everyone in your organization who is publishing web services use a consistent and meaningful versioning convention such as [semantic versioning](http://semver.org/). Versioning improves the release of services for service contributors and owners, and makes it easier for service consumers to identify the services they are calling. 
 
-If you do not provide one, a Globally Unique Identifier (GUID) is automatically used as a version. But a GUID version number is not easy to remember for those consuming your services. Since the GUID is not a meaningful version number, the intention is allow the user publishing the service to treat the service as a <i>development</i> version (seen only by the author) until it is ready to be promoted and shared. From there, a more meaningful version number can be chosen during service publishing to represent a stable release.
+If you do not provide a version number when publishing, a Globally Unique Identifier (GUID) is automatically used as a version. But that GUID version number is not easy to remember for those consuming your services. Since the GUID is not a meaningful version number, the intention is allow the user publishing the service to treat the service as a <i>development</i> version (seen only by the author) until it is ready to be promoted and shared. From there, a more meaningful version number can be chosen during service publishing to represent a stable release.
 <!--
 @@ TESTING
 testing is done by publishing in your dev sandbox without a version and consuming in R to see that it matches what you developed locally. You can use the functions to update and using package functions and eventually when satisfied you can publish with a version for consumption by others. 
 -->
-## Publish and management functions
+## Publish and manage in R
 
 <a name="publishService"></a>
 ### Publish web services
@@ -91,6 +90,7 @@ testing is done by publishing in your dev sandbox without a version and consumin
 In order to deploy your analytics, you must publish them as new web services running on R Server. Each service is uniquely defined by a `name` and `version`.  Additionally, each web service includes the R code and any necessary model assets, the required inputs, and the output application developers will need to integrate in their applications. 
 
 The `mrsdeploy` function for publishing as web services is `publishService`. 
+
 |Function|Response|
 |----|----|
 |`publishService(...)`|Returns an API instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)|
@@ -202,7 +202,7 @@ The `mrsdeploy` function for deleting a web services is `deleteService`.
 
 |Function|Response|
 |----|----|
-|`deleteService(...)`|If it is successful, it returns a success status and message. If it fails for any reason, then it stops execution with error message.|
+|`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|
 
 
 <a name="deleteService"></a>
@@ -223,13 +223,7 @@ result <- deleteService("mtService", "v1.0.0")
 print(result)
 ```
 
-Returns:
-```R
-[1] "Service mtService version v1.0.0 deleted."
-```
-
-
-## Service interaction functions
+## Interact with services in R
 
 ### List web services
 
@@ -258,13 +252,16 @@ Example:
 # Return metadata for all services hosted on this R Server
 services <- listServices()
 
-# Return metadata for every version of the service "mtService" hosted on this R Server
+# Return metadata for every version of the 
+# service "mtService" hosted on this R Server
 services <- listServices("mtService")
 
-# Return metadata for version v1.0.0 of the service "mtService" hosted on this R Server
+# Return metadata for version v1.0.0 of the 
+# service "mtService" hosted on this R Server
 addition <- listServices("mtService", "v1.0.0")
 
-# View service capabilities/schema. For example, the input schema:
+# View service capabilities/schema. 
+# For example, the input schema:
 #   list(name = "wt", type = "numeric")
 #   list(name = "dist", type = "numeric")
 print(mtService)
