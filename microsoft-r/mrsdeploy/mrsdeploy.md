@@ -30,6 +30,8 @@ The `mrsdeploy` package provides functions for establishing a remote session in 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
 
+<a name="configure"></a>
+
 ## Supported configurations
 
 For remote execution, participating nodes can be either of the following configurations:

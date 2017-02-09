@@ -93,6 +93,7 @@
 ### Data Scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
+#### [Managing and using web services in R](operationalize/data-scientist-manage-services.md)
 ### Application Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
