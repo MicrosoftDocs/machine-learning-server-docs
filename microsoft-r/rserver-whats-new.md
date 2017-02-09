@@ -30,7 +30,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 + [Machine learning algorthms](microsoftml-introduction.md)
 + [Remote execution](operationalize/remote-execution.md)
-+ [Web service deployment](mrsdeploy/mrsdeploy-websrv-vignette.md)
++ [Web service deployment](operationalize/data-scientist-manage-services.md)
 
 **Related Documents**
 

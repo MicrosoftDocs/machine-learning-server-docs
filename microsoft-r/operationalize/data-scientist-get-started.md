@@ -202,7 +202,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the `publishService()` function](../mrsdeploy/mrsdeploy-websrv-vignette.md) from the `mrsdeploy` package.
+1. Publish the model as a web service to R Server using [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package.
 
    To publish it, you'll need to specify:
    + A name for the service (required)
@@ -350,7 +350,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Remote Execution](remote-execution.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
-+ [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
++ [mrsdeploy web service functions in Microsoft R](../operationalize/data-scientist-manage-services.md)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)
