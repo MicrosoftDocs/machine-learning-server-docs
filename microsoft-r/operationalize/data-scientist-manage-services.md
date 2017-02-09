@@ -33,7 +33,7 @@ Using `mrsdeploy` with a [properly configured R Server](../mrsdeploy/mrsdeploy.m
 Once hosted in R Server, these web services can be discovered by other authenticated users. These users can [consume the web services in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
 
-## Function quick reference
+## Quick reference
 
 In addition to the authentication functions, the following functions are used to bundle R code or R scripts as web services.
 
@@ -42,7 +42,7 @@ In addition to the authentication functions, the following functions are used to
 
 From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
 
-|Function | Description |
+|Web service functions | Description |
 |---------|-------------|
 |`publishService` |Publishes an R code block as a new web service running on R Server. |
 |`updateService` |Updates an existing web service on an R Server instance. |
@@ -83,7 +83,7 @@ testing is done by publishing in your dev sandbox without a version and consumin
 -->
 ## Publish and management functions
 
-### Publish web services with publishService()
+### Publish web services
 
 In order to deploy your analytics, you must publish them as new web services running on R Server. Each service is uniquely defined by a `name` and `version`.  Additionally, each web service includes the R code and any necessary model assets, the required inputs, and the output application developers will need to integrate in their applications. 
 
@@ -156,7 +156,7 @@ api <- publishService(
 
 See full examples in the "Workflow" examples at the end of this article.
 
-### Update web services with updateService()
+### Update web services
 
 If you want to change your web service after you've published it, but keep the same name and version, you can use `updateService`. and specify what needs to change, such as the R code, model, inputs, and so on. You can change one or more of the arguments at the same time. When you update a service, it overwrites that named version.
 
@@ -211,7 +211,7 @@ api <- updateService(
 )
 ```
 
-### Delete web services with deleteService()
+### Delete web services
 
 When you no longer want to keep a web service, you can delete it. Only the user who initially created the web service can use this function.
 
@@ -223,7 +223,7 @@ deleteService(arguments...)
 
 <a name="deleteService"></a>
 
-### Arguments for deleteService 
+#### Arguments for deleteService 
 
 The following arguments are accepted for `deleteService`:
 
@@ -256,9 +256,9 @@ Returns:
 ```
 
 
-## Web Service Interaction function 
+## Service interaction functions
 
-### Return list of web services with listServices()
+### List available web services
 
 Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to restrict the list to return a specific web service or all versions of a given web service. 
 
@@ -349,7 +349,7 @@ $operationId
 manualTransmission
 ```
 
-### Retrieve service objects with getService()
+### Retrieve service objects
 
 Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. Once the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
@@ -401,7 +401,7 @@ Once you get the service object you can consume it. SHOULD THIS BE PART OF GETSE
 ## Workflow examples
 
 
-### Publish service based on local `model` object
+### Publish with local `model` object
 
 ```R
 library(mrsdeploy)
@@ -496,7 +496,7 @@ status
 remoteLogout()
 ```
 
-### Publish service based on local `.RData` file
+### Publish with local `.RData` file
 
 ```R
 library(mrsdeploy)
@@ -578,7 +578,7 @@ remoteLogout()
 ```
 
 
-### Publish service based on local `.R` file
+### Publish with local `.R` file
 
 ```R
 library(mrsdeploy)
@@ -654,7 +654,7 @@ api <- getService(serviceName, "v1.0.0")
 remoteLogout()
 ```
 
-### Publish service based on local `.RData` and `.R` file
+### Publish with local `.RData` and `.R`
 
 ```R
 library(mrsdeploy)
