@@ -100,10 +100,10 @@ We'll use the following script in our example:
    ##########################################################
 
    # Publish as service using `publishService()` function from 
-   # `mrsdeploy` package. Name service `mtService` and provide
+   # `mrsdeploy` package. Name service "mtService" and provide
    # unique version number. Assign service to the variable `api`
    api <- publishService(
-     mtService,
+     "mtService",
      code = manualTransmission,
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
@@ -217,14 +217,11 @@ Now let's dive into this example down. Let's start by creating the model locally
    >[!IMPORTANT]
    >In the case where you are working with a [remote R session](remote-execution.md) and you want to publish a web service, do so in your local session. If you try to publish remotely, you'll get this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the remote execution function `pause()` to return the R command line in your local session, publish your service, and then use the `resume()` function to continue running R code from the remote command line in the remote R session.
 
-   In this example, we executed these commands to publish a web service (`mtService`) using a model (`carsModel`) and a function (`manualTransmission`). As an input, it takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
+   In this example, we executed these commands to publish a web service (`"mtService"`) using a model (`carsModel`) and a function (`manualTransmission`). As an input, it takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
    ```R
-   # Publish as service using `publishService()` function from 
-   # `mrsdeploy` package. Name service `mtService` and provide
-   # unique version number. Assign service to the variable `api`
    api <- publishService(
-     mtService,
+     "mtService",
      code = manualTransmission,
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
@@ -355,7 +352,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [About Operationalization](about.md)
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Remote Execution](remote-execution.md)
-+ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
++ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
 + [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
 
 **Other Getting Started Guides**

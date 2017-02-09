@@ -234,11 +234,14 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services
 
-If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
+Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, begin with the [Data scientist get started](data-scientist-get-started.md)  guide.
 
-Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
+If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
 
 
-## Next steps
+## See also
 
-Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, see the [Web Service article](../mrsdeploy/mrsdeploy-websrv-vignette.md).
++ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
++ [Data scientist get started guide](data-scientist-get-started.md)
++ [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
