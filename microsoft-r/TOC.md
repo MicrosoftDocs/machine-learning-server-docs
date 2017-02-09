@@ -94,6 +94,8 @@
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
 #### [Managing and using web services in R](operationalize/data-scientist-manage-services.md)
+#### [Remote execution](operationalize/remote-execution.md)
+
 ### Application Developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
@@ -176,9 +178,6 @@
 ## [foreach Functions for Parallelizing Loops](foreach.md)
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
-### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
-### [Remote execution with mrsdeploy](operationalize/remote-execution.md)
-### [mrsdeploy web service](mrsdeploy/mrsdeploy-websrv-vignette.md)
 ## [RevoPemaR Function Reference](pemar/pemar.md)
 ## [RevoScaleR Function Reference](scaler/scaler.md)
 ### [Common ScaleR Functions](scaler/scaler.md)

@@ -244,4 +244,4 @@ If you intend to publish a web service while you have a remote R session, you sh
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
 + [Data scientist get started guide](data-scientist-get-started.md)
-+ [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
++ [Manage web services in Microsoft R](../operationalize/data-scientist-manage-services.md)

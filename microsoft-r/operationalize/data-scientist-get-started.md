@@ -57,94 +57,91 @@ This example walks you through the deployment of a simple model as a web service
 
 We'll use the following script in our example:
 
-   ```R
-   ##             MODEL DEPLOYMENT EXAMPLE                 ##
+```R
+##             MODEL DEPLOYMENT EXAMPLE                 ##
 
-   ##########################################################
-   #       Create & Test a Logistic Regression Model        #
-   ##########################################################
+##########################################################
+#       Create & Test a Logistic Regression Model        #
+##########################################################
     
-   # Logistic regression vehicle transmission to estimate 
-   # the probability of a vehicle being fitted with a 
-   # manual transmission base on horsepower (hp) and weight (wt)
+# Logistic regression vehicle transmission to estimate 
+# the probability of a vehicle being fitted with a 
+# manual transmission base on horsepower (hp) and weight (wt)
 
-   # Create glm model with `mtcars` dataset
-   carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+# Create glm model with `mtcars` dataset
+carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
 
-   # Wrap prediction in a function
-   manualTransmission <- function(hp, wt) {
+# Wrap prediction in a function
+manualTransmission <- function(hp, wt) {
      newdata <- data.frame(hp = hp, wt = wt)
      predict(carsModel, newdata, type = "response")
-   }
+}
    
-   # test function by printing results
-   print(manualTransmission(120, 2.8)) # 0.6418125
+# test function by printing results
+print(manualTransmission(120, 2.8)) # 0.6418125
 
-   ##########################################################
-   #            Log into Microsoft R Server                 #
-   ##########################################################
+##########################################################
+#            Log into Microsoft R Server                 #
+##########################################################
    
-   # Authenticate with Azure AD using `mrsdeploy` pkg function
-   # session = false so no remote R session started
-   remoteLoginAAD(
+# Authenticate with Azure AD using `mrsdeploy` pkg function
+# session = false so no remote R session started
+remoteLoginAAD(
        "https://rserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
        tenantid = "microsoft.com", 
        clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f", 
        resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0", 
        session = FALSE 
-   )
+)
 
-   ##########################################################
-   #             Publish Model as a Service                 #
-   ##########################################################
+##########################################################
+#             Publish Model as a Service                 #
+##########################################################
 
-   # Publish as service using `publishService()` function from 
-   # `mrsdeploy` package. Name service "mtService" and provide
-   # unique version number. Assign service to the variable `api`
-   api <- publishService(
+# Publish as service using `publishService()` function from 
+# `mrsdeploy` package. Name service "mtService" and provide
+# unique version number. Assign service to the variable `api`
+api <- publishService(
      "mtService",
      code = manualTransmission,
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
      outputs = list(answer = "numeric"),
      v = "v1.0.0"
-   )
+)
 
-   ##########################################################
-   #                 Consume Service in R                   #
-   ##########################################################
+##########################################################
+#                 Consume Service in R                   #
+##########################################################
    
-   # Print capabilities that define the service holdings: service 
-   # name, version, descriptions, inputs, outputs, and the 
-   # name of the function to be consumed
-   print(api$capabilities())
+# Print capabilities that define the service holdings: service 
+# name, version, descriptions, inputs, outputs, and the 
+# name of the function to be consumed
+print(api$capabilities())
    
-   # Consume service by calling function, `manualTransmission`
-   # contained in this service
-   result <- api$manualTransmission(120, 2.8)
+# Consume service by calling function, `manualTransmission`
+# contained in this service
+result <- api$manualTransmission(120, 2.8)
 
-   # Print response output named `answer`
-   print(result$output("answer")) # 0.6418125   
+# Print response output named `answer`
+print(result$output("answer")) # 0.6418125   
 
-   ##########################################################
-   #         Get Service-specific Swagger File in R         #
-   ##########################################################
+##########################################################
+#         Get Service-specific Swagger File in R         #
+##########################################################
    
-   # During this authenticated session, download the  
-   # Swagger-based JSON file that defines this service
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE)
+# During this authenticated session, download the  
+# Swagger-based JSON file that defines this service
 
-   # Authenticated users can get the Swagger-based JSON file in R
-   # by name at a later time using the function `getService` from 
-   # `mrsdeploy` package such as:
-   # api <- getService("mtService", "v1.0.0")
-   # swagger <- api$swagger()
-   # cat(swagger, file = "swagger.json", append = FALSE)
+# To get the JSON file at a later time, use getService to 
+# return the service object before calling the swagger.
+# api <- getService("mtService", "v1.0.0")
+swagger <- api$swagger()
+cat(swagger, file = "swagger.json", append = FALSE)
 
-   # Share Swagger-based JSON with those who need to consume it
-   ```
+# Share Swagger-based JSON with those who need to consume it
+```
 
 Now let's dive into this example down. Let's start by creating the model locally, then publish it, and then share it with other authenticated users.
 
@@ -205,7 +202,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the `publishService()` function](../mrsdeploy/mrsdeploy-websrv-vignette.md) from the `mrsdeploy` package.
+1. Publish the model as a web service to R Server using [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package.
 
    To publish it, you'll need to specify:
    + A name for the service (required)
@@ -353,7 +350,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Remote Execution](remote-execution.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
-+ [mrsdeploy web service functions in Microsoft R](../mrsdeploy/mrsdeploy-websrv-vignette.md)
++ [mrsdeploy web service functions in Microsoft R](../operationalize/data-scientist-manage-services.md)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)

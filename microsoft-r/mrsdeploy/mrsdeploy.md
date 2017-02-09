@@ -127,7 +127,7 @@ Use these functions to indicate whether the payload is a code block or script.
 
 ## Web service functions
 
-The following functions are used to bundle R code or script as a web service. The [web service deployment](mrsdeploy-websrv-vignette.md) can be published to the local server or remotely if you set up a remote session.
+The following functions are used to bundle R code or script as a web service. The [web service deployment](../operationalize/data-scientist-manage-services.md) can be published to the local server or remotely if you set up a remote session.
 
 |Function | Description |
 |---------|-------------|
@@ -154,7 +154,7 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Remote Execution](../operationalize/remote-execution.md)
 
-+ [Web Service](mrsdeploy-websrv-vignette.md)
++ [Web Service](../operationalize/data-scientist-manage-services.md)
 
 ## See also
 
