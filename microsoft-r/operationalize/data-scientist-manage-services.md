@@ -69,19 +69,22 @@ Any authenticated user can also retrieve a list of the available services hosted
 |Retrieve a service object|Yes|Yes|
 -->
 
-<a name="version"></a>
+<a name="versioning"></a>
 
-## Web Service Versions
- 
-Every web service is versioned, which allows the user who published a service to roll back to an older version at any time as well as designate specific versions of a web service for production usage.
+## Versioning
 
-We highly recommend that everyone in your organization who is publishing web services use a consistent and meaningful versioning convention such as [semantic versioning](http://semver.org/). Versioning improves the release of services for service contributors and owners, and makes it easier for service consumers to identify the services they are calling. 
+Every time a web service is published, a version is assigned to the web service. Versioning enables users' publishing services to better manage the release of their services and for those users consuming the services to more easily identify what they are 
+calling. 
 
-If you do not provide a version number when publishing, a Globally Unique Identifier (GUID) is automatically used as a version. But that GUID version number is not easy to remember for those consuming your services. Since the GUID is not a meaningful version number, the intention is allow the user publishing the service to treat the service as a <i>development</i> version (seen only by the author) until it is ready to be promoted and shared. From there, a more meaningful version number can be chosen during service publishing to represent a stable release.
-<!--
-@@ TESTING
-testing is done by publishing in your dev sandbox without a version and consuming in R to see that it matches what you developed locally. You can use the functions to update and using package functions and eventually when satisfied you can publish with a version for consumption by others. 
--->
+When publishing, you can specify a version or one can be generated for you:
+
++ To specify a version, use any alphanumeric string that is meaningful to those who will consume the service in your organizatio, such as `2.0`, `v1.0.0`, `v1.0.0-alpha`, `v1.0.0-test`, `test-1`. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
+
++ If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference 
+number. While GUID version numbers are harder to remember for those consuming your services, they are useful when the service you are working on is still in a developmental phase and not ready to be shared in production.  Later, when you are ready to share this service with others,you can publish the service again with a more meaningful version label. 
+
+<!--@@ HOW IS THIS ONLY SEEN BY THE AUTHOR? DOESN'T "LIST" RETURN IT?-->
+
 ## Publish and manage in R
 
 <a name="publishService"></a>
@@ -110,7 +113,7 @@ The following arguments are accepted for `publishService`:
 |`snapshot`|Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
 |`inputs`|Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
 |`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
-|`v` |Defines a unique web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share.|
+|`v` |Defines a unique alphanumeric web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. [Learn more...](#versioning)|
 |`alias` |An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
@@ -217,7 +220,6 @@ The following arguments are accepted for `deleteService`:
 
 #### Example
 
-Example:
 ```R
 result <- deleteService("mtService", "v1.0.0")
 print(result)
@@ -247,7 +249,6 @@ The following arguments are accepted for `listServices`:
 
 #### Example
 
-Example:
 ```R
 # Return metadata for all services hosted on this R Server
 services <- listServices()
@@ -267,7 +268,7 @@ addition <- listServices("mtService", "v1.0.0")
 print(mtService)
 ```
 
-Returns:
+This example returns:
 ```R
 $creationTime
 [1] "2017-02-13T19:44:26.2611422"
@@ -317,10 +318,6 @@ manualTransmission
 ### Retrieve service objects
 
 Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. Once the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
-
-```
-getService(arguments...)
-```
 
 The `mrsdeploy` function for retrieving a service object is `getService`. 
 
@@ -738,6 +735,3 @@ api <- getService("mtService", "v1.0.4")
 
 remoteLogout()
 ```
-
-
-

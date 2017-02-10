@@ -64,20 +64,22 @@ We'll use the following script in our example:
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
     
-# Logistic regression vehicle transmission to estimate 
-# the probability of a vehicle being fitted with a 
-# manual transmission base on horsepower (hp) and weight (wt)
+# Use logistic regression equation of vehicle transmission 
+# in the data set mtcars to estimate the probability of 
+# a vehicle being fitted with a manual transmission 
+# based on horsepower (hp) and weight (wt)
+
 
 # Create glm model with `mtcars` dataset
 carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
 
-# Wrap prediction in a function
+# Produce a prediction function that can use the model
 manualTransmission <- function(hp, wt) {
      newdata <- data.frame(hp = hp, wt = wt)
      predict(carsModel, newdata, type = "response")
 }
    
-# test function by printing results
+# test function locally by printing results
 print(manualTransmission(120, 2.8)) # 0.6418125
 
 ##########################################################
@@ -155,19 +157,19 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. Run the R code to create the model.  
 
-   In our example, the GLM model, `carsModel`, is creating using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission base on horsepower (hp) and weight (wt)
+   In our example, the GLM model, `carsModel`, is creating using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission based on horsepower (hp) and weight (wt)
 
    ```R
    # Create glm model with `mtcars` dataset
    carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
 
-   # Wrap prediction in a function
+   # Produce a prediction function that can use the model
    manualTransmission <- function(hp, wt) {
      newdata <- data.frame(hp = hp, wt = wt)
      predict(carsModel, newdata, type = "response")
    }
    
-   # test function by printing results
+   # test function locally by printing results
    print(manualTransmission(120, 2.8)) # 0.6418125
    ```
 
@@ -284,7 +286,7 @@ Data scientists can also explore and consume Web services directly in R using so
 
 ### Collaborate with data scientists
 
-Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
+Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
 As the owner of the service, you can share the name and version number for the service with fellow data scientists so they can call the service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
 
