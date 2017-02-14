@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/08/2017"
+ms.date: "02/14/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -244,4 +244,4 @@ If you intend to publish a web service while you have a remote R session, you sh
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
 + [Data scientist get started guide](data-scientist-get-started.md)
-+ [Manage web services in Microsoft R](../operationalize/data-scientist-manage-services.md)
++ [Working with web services in R](../operationalize/data-scientist-manage-services.md)

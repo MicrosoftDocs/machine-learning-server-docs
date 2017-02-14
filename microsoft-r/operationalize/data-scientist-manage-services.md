@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Managing Web Services in Microsoft R"
+title: "Working with web services in R"
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block. A web service runs on R Server 9.0 instances."
 keywords: "mrsdeploy package"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/08/2017"
+ms.date: "02/14/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -817,3 +817,13 @@ status
 
 remoteLogout()
 ```
+
+
+
+## See also
+
++ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
++ [Data scientist get started guide](data-scientist-get-started.md)
++ [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
++ [Application developer get started guide](../operationalize/app-developer-get-started.md)
