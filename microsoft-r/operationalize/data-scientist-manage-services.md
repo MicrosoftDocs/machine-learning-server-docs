@@ -130,8 +130,8 @@ api <- publishService(
 The following table lists the supported data types for the [publishService](#publishService) and [updateService](#updateService) function input and output schemas:
 
 |I/O data types:|`numeric` |`integer`|`logical`|`character`|`vector`|`matrix`|`data.frame`|
-|--------|----------|---------|---------|-----------|--------|--------|------------|
-|**Supported**<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|FALSE<br>(logical & character matrix<br>not supported) |TRUE<br>Note:  Coercing an object during I/O<br> is a user-defined task|
+|--------|:----------:|:---------:|:---------:|:-----------:|:--------:|:--------:|:------------:|
+|**Full Support**<br><br><br><br>|Yes<br><br><br><br>|Yes<br><br><br><br>|Yes<br><br><br><br>|Yes<br><br><br><br>|Yes<br><br><br><br>|Some.<br>(Not logical & character matrices) |Yes<br>Note: Coercing an object during I/O is a user-defined task|
 
 
 <a name="versioning"></a>
@@ -252,15 +252,15 @@ The following arguments are accepted for `listServices`:
 
 ```R
 # Return metadata for all services hosted on this R Server
-services <- listServices()
+allServices <- listServices()
 
 # Return metadata for every version of the 
 # service "mtService" hosted on this R Server
-services <- listServices("mtService")
+mtServiceAll <- listServices("mtService")
 
 # Return metadata for version v1.0.0 of the 
 # service "mtService" hosted on this R Server
-addition <- listServices("mtService", "v1.0.0")
+mtServiceV1 <- listServices("mtService", "v1")
 
 # View service capabilities/schema. 
 # For example, the input schema:
@@ -278,7 +278,7 @@ $name
 [1] "mtService"
 
 $version
-[1] "v1.0.0"
+[1] "v1"
 
 $description
 NULL
@@ -374,7 +374,7 @@ You can use the following supported public functions to interact with the API cl
 
 ```R
 # Get service using `getService()` function from `mrsdeploy`.
-#Assign service to the variable `api`
+# Assign service to the variable `api`
 api <- getService("mtService", "v1.0.0")
 
 # Print capabilities to see what service can do.
@@ -389,12 +389,12 @@ print(cap$inputs)
 print(cap$outputs)
 print(cap$swagger)
 
-# consume
+# Start interacting with the service by calling it with the
+# generic name `consume` based on I/O schema
 result <- api$consume(120, 2.8)
 
-# Start interacting with the service by calling the 
-# function `manualTransmission` contained in the service.
-# Consume function using remote procedure call `alias`
+# Or, start interacting with the service using the alias argument
+# that was defined at publication time.
 result <- api$manualTransmission(120, 2.8)
 
 # Since you're authenticated, get this service's `swagger.json`.
@@ -423,9 +423,13 @@ As the owner of the service, you can share the name and version number for the s
 #        Get Swagger File for Service in R Later         #
 ##########################################################
 
-# Authenticate with R Server using `remoteLogin`.
-# session = false so no remote R session started
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
    
 # Get service using `getService()` function from `mrsdeploy`
 # Assign service to the variable `api`.
@@ -473,7 +477,9 @@ Get the Swagger-based JSON file in one of two ways:
 
 ## Workflows: publish-to-consume 
 
-The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. In each example, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.
+The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. 
+
+In each example, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.
 
 Remember that R code can come from: 
   1. A filepath to an R script, such as:  `code = "/path/to/R/script.R"`
@@ -481,8 +487,8 @@ Remember that R code can come from:
   1. A function handle, such as:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`
 
 Similarly, a model can come from an `object` or a file-path to an external representation of R objects to be loaded and used with `code`:
-  1. File-path to an `.RData` file holding R objects to be loaded, such as: `model = "/path/to/glm-model.RData"`
-  1. File-path to an `.R` file which will be evaluated into an environment and loaded, such as: `model = "/path/to/glm-model.R"`
+  1. File path to an `.RData` file holding R objects to be loaded, such as: `model = "/path/to/glm-model.RData"`
+  1. File path to an `.R` file which will be evaluated into an environment and loaded, such as: `model = "/path/to/glm-model.R"`
   1. An object, such as: `model = am.glm`
 
 The base path for files is set to your working directory.  
@@ -490,8 +496,8 @@ The base path for files is set to your working directory.
 + To specify a different base path for `code` and `model` arguments, use:  
 
   ```R
-  opts <- serviceOption()`
-  opts$set("data-dir", ‘/base/path/to/some-other/location’))
+  opts <- serviceOption()
+  opts$set("data-dir", "/base/path/to/some-other/location"))
   ```
   
 + To clear the path and specify full paths, use:
@@ -503,7 +509,7 @@ The base path for files is set to your working directory.
 
 ### Using local objects for code and model
 
-In this example, the code comes from an object (`code = manualTransmission,`) and the model comes from a model object (`model = carsModel,`).
+In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
 
 ```R
 ##########################################################
@@ -535,10 +541,13 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 #            Log into Microsoft R Server                 #
 ##########################################################
    
-# Authenticate with the local admin account using 
-# `mrsdeploy` pkg function `remoteLogin`.
-# session = false so no remote R session started
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
 
 ##########################################################
 #             Publish Model as a Service                 #
@@ -581,34 +590,7 @@ print(result$output("answer")) # 0.6418125
 swagger <- api$swagger()
 cat(swagger, file = "swagger.json", append = FALSE)
 
-# Share Swagger-based JSON so others can consume it
-
-##########################################################
-#        Get Swagger File for Service in R Later         #
-##########################################################
-
-# Authenticate with R Server using `remoteLogin`.
-# session = false so no remote R session started
-remoteLogin("http://localhost:12800", session = FALSE)
-   
-# Get service using `getService()` function from `mrsdeploy`
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission`
-# contained in this service.
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125  
-
-# Since you're authenticated now, get `swagger.json`.
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
+# Now you can share Swagger-based JSON so others can consume it
 
 ##########################################################
 #          Delete service version when finished          #
@@ -631,14 +613,20 @@ remoteLogout()
 
 ### Using local `.RData` file
 
-In this example, the code is still an object (`code = manualTransmission,`), but the model now comes from an .Rdata file (`model = "transmission.RData"`).
+In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
 
 model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
 save(model, file = "transmission.RData")
@@ -695,14 +683,20 @@ remoteLogout()
 
 ### Using `.R` files
 
-In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`).
+In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
 ```R
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
 
 # Information can come from a file
 model <- "model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)"
@@ -758,14 +752,20 @@ remoteLogout()
 ### Using `.RData` and `.R`
 
 
-In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`).
+In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
 
 # model
 model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
