@@ -6,7 +6,7 @@ description: "Operationalization of R Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "2/08/2017"
+ms.date: "2/14/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -294,7 +294,7 @@ This section provides a quick summary of useful links for data scientists operat
 **Key Documents**
 + [About Operationalization](about.md)
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
-+ [Remote Execution](remote-execution.md)
++ [Execute on a remote Microsoft R Server](remote-execution.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
 + [mrsdeploy web service functions in Microsoft R](../operationalize/data-scientist-manage-services.md)
 
@@ -304,3 +304,5 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Support Channel**
 + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+
+

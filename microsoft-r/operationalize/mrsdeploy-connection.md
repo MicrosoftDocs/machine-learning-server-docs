@@ -6,7 +6,7 @@ description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "2/02/2017"
+ms.date: "2/14/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -290,3 +290,14 @@ REMOTE>exit  #logout and terminate the remote R session
 To terminate the remote R session while you are on the remote command line, type `exit` at the `REMOTE>` prompt.  
 
 To terminate the remote session from the local R session, type `remoteLogout()`.
+
+
+
+
+## See also
+
++ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [Data scientist get started guide](data-scientist-get-started.md)
++ [Working with web services in R](../operationalize/data-scientist-manage-services.md)
++ [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
++ [Application developer get started guide](../operationalize/app-developer-get-started.md)
