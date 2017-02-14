@@ -92,11 +92,13 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 #            Log into Microsoft R Server                 #
 ##########################################################
    
-# Authenticate with the local admin account using 
-# `mrsdeploy` pkg function `remoteLogin`.
-# session = false so no remote R session started
-
-remoteLogin("http://localhost:12800", session = FALSE)
+# Use `remoteLogin` to authenticate with R Server using 
+# the local admin account. Use session = false so no 
+# remote R session started
+remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
 
 ##########################################################
 #             Publish Model as a Service                 #
@@ -148,10 +150,6 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. Launch your R IDE. 
 
-   <!--@In our example, we are using R Tools | Visual Studio (RTVS), but any popular R IDE should work.-->
-   
-   <!--@SCREEN [RTVS with R Client installed]-->
-
 1. Load the `mrsdeploy` package which is already installed with R Server.
 
    ```
@@ -184,13 +182,17 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   In our example, we used the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+   For simplicity, our example uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
 
    ```R  
-   remoteLogin("http://localhost:12800", session = FALSE)
+   # Use `remoteLogin` to authenticate with R Server using 
+   # the local admin account. Use session = false so no 
+   # remote R session started
+   remoteLogin("http://localhost:12800", 
+            username = “admin”, 
+            password = “{{YOUR_PASSWORD}}”,
+            session = FALSE)
    ``` 
-
-   <!--@SCREEN [RTVS PROOF OF SUCCESSFUL CONNECTION TO MRS.]-->
 
    Now, you are successfully connected to the remote R Server.
 
@@ -304,5 +306,3 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Support Channel**
 + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
-
