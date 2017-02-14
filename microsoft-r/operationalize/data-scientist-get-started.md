@@ -34,7 +34,7 @@ Data scientists work locally with [Microsoft R Client](../r-client-get-started.m
 An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service backed by an R code block or script that you provide. The package also provides functions for establishing a [remote execution](remote-execution.md) session in a console application.  [Learn more about this package](../mrsdeploy/mrsdeploy.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/9.0.1/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
 Once deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](#data-scientists-share), for testing purposes for example 
++ [Consumed directly in R by another data scientist](data-scientist-manage-services.md#data-scientists-share), for testing purposes for example 
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 ![Operationalization Engine](../media/o16n/data-scientist-easy-deploy.png) 
@@ -59,6 +59,12 @@ We'll use the following script in our example:
 
 ```R
 ##             MODEL DEPLOYMENT EXAMPLE                 ##
+
+##########################################################
+#         Load mrsdeploy package on R Server             #
+##########################################################
+
+library(mrsdeploy)
 
 ##########################################################
 #       Create & Test a Logistic Regression Model        #
@@ -130,10 +136,6 @@ print(result$output("answer")) # 0.6418125
    
 # During this authenticated session, download the  
 # Swagger-based JSON file that defines this service
-
-# To get the JSON file at a later time, use getService to 
-# return the service object before calling the swagger.
-# api <- getService("mtService", "v1.0.0")
 swagger <- api$swagger()
 cat(swagger, file = "swagger.json", append = FALSE)
 
@@ -149,6 +151,12 @@ Now let's dive into this example down. Let's start by creating the model locally
    <!--@In our example, we are using R Tools | Visual Studio (RTVS), but any popular R IDE should work.-->
    
    <!--@SCREEN [RTVS with R Client installed]-->
+
+1. Load the `mrsdeploy` package which is already installed with R Server.
+
+   ```
+   library(mrsdeploy)
+   ```
 
 1. Run the R code to create the model.  
 
@@ -262,57 +270,11 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
-Data scientists can also explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
+1. Other data scientists can explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
+2. Application developers can call and integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
 
-<a name="data-scientists-share"></a>
+Learn more about sharing the Swagger-based JSON file and collaborating with others in the article ["Working with web services in R"](data-scientist-manage-services.md).
 
-### Collaborate with data scientists
-
-Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
-
-As the owner of the service, you can share the name and version number for the service with fellow data scientists so they can call the service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
-
-```R
-# Get service using `getService()` function from `mrsdeploy` package.
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-     
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission`
-# contained in this service.
-result <- api$manualTransmission(120, 2.8)
-
-# Since you're authenticated, get this service's `swagger.json`.
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
-```
-
-<a name="swagger-app-dev"></a>
-
-### Collaborate with application developers
-
-Application developers can call and integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
-
-Once the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
-   
-Get the Swagger-based JSON file in one of two ways:
-
-+ A data scientist can send them the Swagger-based JSON file they've downloaded, which can sometimes be a faster approach. In R, you can get the file with the following code and send it to the application developer:
-   ```R
-   api <- getService("<name>", "<version>")
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE) 
-   ```
-
-+ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](app-developer-get-started.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
-  ```
-  GET /api/<service-name>/<service-version>/swagger.json
-  ```
-
-<!--## Example: Deploy an R script as a service-->
 
 ## How to execute R code remotely
 
@@ -323,7 +285,7 @@ Requirements for remote execution include:
 + You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
 + You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
-## More Resources
+## More resources
 
 This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
 
