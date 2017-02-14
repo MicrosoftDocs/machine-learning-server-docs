@@ -86,16 +86,11 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 #            Log into Microsoft R Server                 #
 ##########################################################
    
-# Authenticate with Azure AD using `mrsdeploy` pkg function
+# Authenticate with the local admin account using 
+# `mrsdeploy` pkg function `remoteLogin`.
 # session = false so no remote R session started
-remoteLoginAAD(
-       "https://rserver.contoso.com:12800", 
-       authuri = "https://login.windows.net", 
-       tenantid = "microsoft.com", 
-       clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f", 
-       resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0", 
-       session = FALSE 
-)
+
+remoteLogin("http://localhost:12800", session = FALSE)
 
 ##########################################################
 #             Publish Model as a Service                 #
@@ -175,29 +170,16 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. Examine the results of the locally executed code. 
 
-   <!--In this example, the results show @.-->
-   
-   <!--@SCREEN [RTVS SHOWING RESULTS]-->
-
 <br> 
 
 ### B. Publish model as a web service
 
 1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   Learn more about the authentication functions and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
-
-   In our example, we used Azure Active Directory for authentication with the `remoteLoginAAD` function and `session = false` so that no remote R session is started.
+   In our example, we used the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
 
    ```R  
-   remoteLoginAAD(
-       "https://rserver.contoso.com:12800", 
-       authuri = "https://login.windows.net", 
-       tenantid = "microsoft.com", 
-       clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f", 
-       resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0", 
-       session = FALSE 
-   )
+   remoteLogin("http://localhost:12800", session = FALSE)
    ``` 
 
    <!--@SCREEN [RTVS PROOF OF SUCCESSFUL CONNECTION TO MRS.]-->

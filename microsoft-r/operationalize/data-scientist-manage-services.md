@@ -69,22 +69,6 @@ Any authenticated user can also retrieve a list of the available services hosted
 |Retrieve a service object|Yes|Yes|
 -->
 
-<a name="versioning"></a>
-
-## Versioning
-
-Every time a web service is published, a version is assigned to the web service. Versioning enables users' publishing services to better manage the release of their services and for those users consuming the services to more easily identify what they are 
-calling. 
-
-When publishing, you can specify a version or one can be generated for you:
-
-+ To specify a version, use any alphanumeric string that is meaningful to those who will consume the service in your organizatio, such as `2.0`, `v1.0.0`, `v1.0.0-alpha`, `v1.0.0-test`, `test-1`. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
-
-+ If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference 
-number. While GUID version numbers are harder to remember for those consuming your services, they are useful when the service you are working on is still in a developmental phase and not ready to be shared in production.  Later, when you are ready to share this service with others,you can publish the service again with a more meaningful version label. 
-
-<!--@@ HOW IS THIS ONLY SEEN BY THE AUTHOR? DOESN'T "LIST" RETURN IT?-->
-
 ## Publish and manage in R
 
 <a name="publishService"></a>
@@ -96,7 +80,10 @@ The `mrsdeploy` function for publishing as web services is `publishService`.
 
 |Function|Response|
 |----|----|
-|`publishService(...)`|Returns an API instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)|
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+
+
+
 
 From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
 
@@ -108,13 +95,13 @@ The following arguments are accepted for `publishService`:
 |Arguments|Description|
 |----|----|
 |`name` *|The unique web service name. It is a string so use quotes such as "MyService". We recommend that you use a name that is easy understood and fits a nice URL so people can remember it.|
-|`code` *|R code to publish. `code` can take the form of:<br>1. A filepath to an R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`|
+|`code` *|R code to publish. If you use a path, the base path is your current working directory.  `code` can take the form of:<br>1. A filepath to an R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`|
 |`model`|An `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to an `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to an `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. The .R file will be evaluated into an environment and loaded internally. For example:<br> &nbsp;  &nbsp; `model = am.glm`|
 |`snapshot`|Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
 |`inputs`|Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
 |`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
 |`v` |Defines a unique alphanumeric web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. [Learn more...](#versioning)|
-|`alias` |An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).|
+|`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
 <sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
@@ -144,8 +131,22 @@ The following table lists the supported data types for the [publishService](#pub
 
 |I/O data types:|`numeric` |`integer`|`logical`|`character`|`vector`|`matrix`|`data.frame`|
 |--------|----------|---------|---------|-----------|--------|--------|------------|
-|**Fully Supported?**<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|FALSE<br>(logical & character matrix<br>not supported) |TRUE<br>Note:  Coercing an object during I/O<br> is a user-defined task|
+|**Supported**<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|TRUE<br><br><br>|FALSE<br>(logical & character matrix<br>not supported) |TRUE<br>Note:  Coercing an object during I/O<br> is a user-defined task|
 
+
+<a name="versioning"></a>
+
+## Version web services
+
+Every time a web service is published, a version is assigned to the web service. Versioning enables users' publishing services to better manage the release of their services and for those users consuming the services to more easily identify what they are 
+calling. 
+
+When publishing, you can specify a version. If you don't, then one is generated for you.
+
++ To specify a version, use any alphanumeric string that is meaningful to those who will consume the service in your organization, such as `2.0`, `v1.0.0`, `v1.0.0-alpha`, `v1.0.0-test`, `test-1`. Meaningful versions are very helpful when you are ready to share your services with others. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
+
++ If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference 
+number. While GUID version numbers are harder to remember for those consuming your services, they are useful when the service you are working on is still in a developmental phase and not ready to be shared in production. In fact, `listServices` will only return GUID-versioned services to the user who published that service, thereby preventing these 'developmental' services from being discovered by others inadvertently. Later, when you are ready to share this service with others, you can publish the service again with a more meaningful version label. 
 
 ### Update web services
 
@@ -158,7 +159,7 @@ The `mrsdeploy` function for updating as web services is `updateService`.
 
 |Function|Response|
 |----|----|
-|`updateService(...)`|Returns an API instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)|
+|`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
 
 <a name="updateService"></a>
 
@@ -168,12 +169,12 @@ The following arguments are accepted for `updateService`:
 |----|----|
 |`name`*|The web service name you want to update. It is a string so use quotes such as "MyService".|
 |`v`*|Identifies the version of the web service to be updated.|
-|`code` *|R code to publish. `code` can take the form of:<br>1. A filepath to an R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`|
+|`code`|R code to publish. If you use specify a path, the base path is your current working directory.  `code` can take the form of:<br>1. A filepath to an R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`|
 |`model`|An `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to an `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to an `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. The .R file will be evaluated into an environment and loaded internally. For example:<br> &nbsp;  &nbsp; `model = am.glm`|
 |`snapshot` |Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
 |`inputs` |Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
 |`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
-|`alias` |An alias name of the predication RPC function used to consume the service. If `code` is a function it will use that function name by default. See [Api](#api-client).|
+|`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
 <sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
@@ -183,7 +184,7 @@ For more information on input and output data types, see the above section [I/O 
 #### Example
 
 ```R
-# For web service called transmission with version number v1.0.0,
+# For web service called mtService with version number v1.0.0,
 # update the model carsModel, code, inputs, and description. 
 # Assign it to a variable called api.
 api <- updateService(
@@ -229,7 +230,7 @@ print(result)
 
 ### List web services
 
-Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to restrict the list to return a specific web service or all versions of a given web service. 
+Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to restrict the list to return a specific web service or all labeled versions of a given web service. Please note that `listServices` returns all label-versioned services, it will only return GUID-versioned services to the user who published the service in order to prevent premature discovery of these 'developmental' services by others. [Learn more](#version).
 
 The `mrsdeploy` function for listing available web services is `listServices`. 
 
@@ -323,7 +324,7 @@ The `mrsdeploy` function for retrieving a service object is `getService`.
 
 |Function|Response|
 |----|----|
-|`getService(...)`|An API instance as an [R6](https://cran.r-project.org/web/packages/R6/index.html)|
+|`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
 
 <a name="getService"></a>
 
@@ -351,8 +352,58 @@ print(api$capabilities())
 result <- api$manualTransmission(120, 2.8)
 ```
 
+<a name="api-client"></a>
+
+### Interact with the API client
+
+When you publish, update or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a `client stub` for consuming that service and viewing its service holdings. 
+
+You can use the following supported public functions to interact with the API client instance.
+
+#### Supported public functions
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `print`       |	Print method that lists all members of the object      |
+| `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
+| `consume`     |	Consume the service based on I/O schema                |
+| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the `publishService` function). |
+| `swagger`     |	Displays the service's `swagger` specification         |
+
+#### Example
+
+```R
+# Get service using `getService()` function from `mrsdeploy`.
+#Assign service to the variable `api`
+api <- getService("mtService", "v1.0.0")
+
+# Print capabilities to see what service can do.
+print(api)
+
+# Print the service name, version, inputs, outputs, and the
+# Swagger-based JSON file used to consume the service 
+cap <- api$capabilities()
+print(cap$name)
+print(cap$version)
+print(cap$inputs)
+print(cap$outputs)
+print(cap$swagger)
+
+# consume
+result <- api$consume(120, 2.8)
+
+# Start interacting with the service by calling the 
+# function `manualTransmission` contained in the service.
+# Consume function using remote procedure call `alias`
+result <- api$manualTransmission(120, 2.8)
+
+# Since you're authenticated, get this service's `swagger.json`.
+swagger <- api$swagger(json = FALSE)
+cat(swagger)
+```
+
 <!--
-### CONSUME @@
+### Consume Service in R
 
 Once you get the service object you can consume it. SHOULD THIS BE PART OF GETSERVICE
 
@@ -373,8 +424,37 @@ Once you get the service object you can consume it. SHOULD THIS BE PART OF GETSE
 
 ## Workflows: publish-to-consume 
 
+The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. In each example, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.
 
-### Local `model` object and remote session
+Remember that R code can come from: 
+  1. A filepath to an R script, such as:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`
+  1. A block of R code as a character string, such as:<br> &nbsp;  &nbsp; `code = "result <- x + y"`
+  1. A function handle, such as:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`
+
+Similarly, a model can come from an `object` or a file-path to an external representation of R objects to be loaded and used with `code`:
+  1. File-path to an `.RData` file holding R objects to be loaded, such as:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`
+  1. File-path to an `.R` file which will be evaluated into an environment and loaded, such as:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`
+  1. An object. The .R file will be evaluated into an environment and loaded internally, such as:<br> &nbsp;  &nbsp; `model = am.glm`
+
+The base path for files is set to your working directory.  
+
++ To specify a different base path for `code` and `model` arguments, use:  
+
+  ```R
+  opts <- serviceOption()`
+  opts$set("data-dir", ‘/base/path/to/some-other/location’))
+  ```
+  
++ To clear the path and specify full paths, use:
+
+  ```R
+  opts <- serviceOption()
+  opts$set("data-dir", NULL))
+  ```
+
+### Using local objects for code and model
+
+In this example, the code comes from an object (`code = manualTransmission,`) and the model comes from a model object (`model = carsModel,`).
 
 ```R
 library(mrsdeploy)
@@ -405,35 +485,10 @@ remoteLoginAAD(
        "https://rserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
        tenantid = "microsoft.com", 
-       clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f", 
-       resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0", 
-       session = TRUE 
+       clientid = "00000000-0000-0000-0000-000000000000", 
+       resource = "00000000-0000-0000-0000-000000000000", 
+       session = FALSE 
 )
-
-# --- Remote R session ---------------------------------------------------------
-
-# Create glm model with `mtcars` dataset from the remote R session on R Server
-carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
-
-manualTransmission <- function(hp, wt) {
-  newdata <- data.frame(hp = hp, wt = wt)
-  predict(carsModel, newdata, type = "response")
-}
-
-# test function by printing results
-print(manualTransmission(120, 2.8)) # 0.6418125
-
-ls()
-pause()  # return to the local session
-
-# --- Local R session ----------------------------------------------------------
-
-# load object `model` into GlobalEnv of the local R session
-status <- getRemoteObject(c("carsModel"))
-ls()
-
-# Use unique service names to avoid collisions between examples
-mtService <- paste0("transmission", round(as.numeric(Sys.time()), 0))
 
 # Publish as service using `publishService()` function from 
 # `mrsdeploy` package. Name service "mtService" and provide
@@ -441,7 +496,7 @@ mtService <- paste0("transmission", round(as.numeric(Sys.time()), 0))
 api <- publishService(
   "mtService",
   code = manualTransmission,
-  model = model,
+  model = carsModel,
   inputs = list(hp = "numeric", wt = "numeric"),
   outputs = list(answer = "numeric"),
   v = "v1.0.1"
@@ -465,12 +520,12 @@ cat(swagger, file = "swagger.json", append = FALSE)
 services <- listServices("mtService")
 services
 
-transmission <- services[[1]]
-transmission
+mtService <- services[[1]]
+mtService
 
 # To get the JSON file at a later time, use getService to 
 # return the service object before calling the swagger.
-api <- getService(transmission$name, transmission$version)
+api <- getService(mtService$name, mtService$version)
 api
 
 # Start interacting with the service, for example:
@@ -498,7 +553,9 @@ status
 remoteLogout()
 ```
 
-### Local `.RData` file
+### Using local `.RData` file
+
+In this example, the code is still an object (`code = manualTransmission,`), but the model now comes from an .Rdata file (`model = "transmission.RData"`).
 
 ```R
 library(mrsdeploy)
@@ -509,8 +566,8 @@ remoteLoginAAD(
   "https://dhost.com",
   authuri = "https://login.windows.net",
   tenantid = "microsoft.com",
-  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
-  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  clientid = "00000000-0000-0000-0000-000000000000",
+  resource = "00000000-0000-0000-0000-000000000000",
   session = FALSE
 )
 
@@ -524,13 +581,6 @@ manualTransmission <- function(hp, wt) {
 
 # test locally: 0.6418125
 print(manualTransmission(120, 2.8))
-
-# base dir for `code` and `model` args
-opts <- serviceOption()
-opts$set("data-dir", getwd())
-
-# Use unique service names to avoid collisions between examples
-mtService <- paste0("transmission", round(as.numeric(Sys.time()), 0))
 
 api <- publishService(
    "mtService",
@@ -555,10 +605,10 @@ swagger
 services <- listServices("mtService")
 services
 
-transmission <- services[[1]]
-transmission
+mtService <- services[[1]]
+mtService
 
-api <- getService(transmission$name, transmission$version)
+api <- getService(mtService$name, mtService$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -580,7 +630,9 @@ remoteLogout()
 ```
 
 
-### Local `.R` file
+### Using `.R` files
+
+In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`).
 
 ```R
 library(mrsdeploy)
@@ -591,8 +643,8 @@ remoteLoginAAD(
   "https://dhost.com",
   authuri = "https://login.windows.net",
   tenantid = "microsoft.com",
-  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
-  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  clientid = "00000000-0000-0000-0000-000000000000",
+  resource = "00000000-0000-0000-0000-000000000000",
   session = FALSE
 )
 
@@ -603,9 +655,6 @@ code <- "newdata <- data.frame(hp = hp, wt = wt)\n
 
 cat(model, file = "transmission.R", append = FALSE)
 cat(code, file = "transmission-code.R", append = FALSE)
-
-# Use unique service names to avoid collisions between examples
-"mtService" <- paste0("transmission", round(as.numeric(Sys.time()), 0))
 
 api <- publishService(
    "mtService",
@@ -632,10 +681,10 @@ swagger
 services <- listServices("mtService")
 services
 
-transmission <- services[[1]]
-transmission
+mtService <- services[[1]]
+mtService
 
-api <- getService(transmission$name, transmission$version)
+api <- getService(mtService$name, mtService$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -650,13 +699,16 @@ status
 services <- listServices("mtService")
 length(services) # gone
 
-# Error: No service found for "transmission" version "v1.0.3"
+# Error: No service found for "mtService" version "v1.0.3"
 api <- getService("mtService", "v1.0.3")
 
 remoteLogout()
 ```
 
-### Local `.RData` and `.R`
+### Using `.RData` and `.R`
+
+
+In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`).
 
 ```R
 library(mrsdeploy)
@@ -667,8 +719,8 @@ remoteLoginAAD(
   "https://dhost.com",
   authuri = "https://login.windows.net",
   tenantid = "microsoft.com",
-  clientid = "5599bff3-2ec2-4975-9068-28acf86a3b6f",
-  resource = "b9667d00-1c06-4b9d-a94f-06ecb71822b0",
+  clientid = "00000000-0000-0000-0000-000000000000",
+  resource = "00000000-0000-0000-0000-000000000000",
   session = FALSE
 )
 
@@ -680,13 +732,6 @@ save(model, file = "transmission.RData")
 code <- "newdata <- data.frame(hp = hp, wt = wt)\n
          answer <- predict(model, newdata, type = "response")"
 cat(code, file = "transmission-code.R", sep="n", append = TRUE)
-
-# base dir for `code` and `model` args
-opts <- serviceOption()
-opts$set("data-dir", getwd())
-
-# Use unique service names to avoid collisions between examples
-"mtService" <- paste0("transmission", round(as.numeric(Sys.time()), 0))
 
 api <- publishService(
    "mtService",
@@ -712,10 +757,10 @@ swagger
 services <- listServices("mtService")
 services
 
-transmission <- services[[1]]
-transmission
+mtService <- services[[1]]
+mtService
 
-api <- getService(transmission$name, transmission$version)
+api <- getService(mtService$name, mtService$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125

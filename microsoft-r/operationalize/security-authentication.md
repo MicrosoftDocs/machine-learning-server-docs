@@ -96,7 +96,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
       |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
       |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
-      |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted). For security purposes, you must [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
+      |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 

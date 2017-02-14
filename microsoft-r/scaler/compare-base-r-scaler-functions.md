@@ -4,7 +4,7 @@
 title: "ScaleR Functions"
 description: "ScaleR Functions"
 keywords: "RevoScaleR, ScaleR"
-author: "j-martens"
+author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "06/13/2016"
 ms.topic: "reference"
