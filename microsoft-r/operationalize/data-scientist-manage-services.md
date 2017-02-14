@@ -507,15 +507,12 @@ In this example, the code comes from an object (`code = manualTransmission,`) an
 
 ```R
 ##########################################################
-#         Load mrsdeploy package on R Server             #
-##########################################################
-
-library(mrsdeploy)
-
-##########################################################
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
-    
+
+# Load mrsdeploy package on R Server     
+library(mrsdeploy)
+
 # Use logistic regression equation of vehicle transmission 
 # in the data set mtcars to estimate the probability of 
 # a vehicle being fitted with a manual transmission 
@@ -541,7 +538,6 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 # Authenticate with the local admin account using 
 # `mrsdeploy` pkg function `remoteLogin`.
 # session = false so no remote R session started
-
 remoteLogin("http://localhost:12800", session = FALSE)
 
 ##########################################################
@@ -557,7 +553,7 @@ api <- publishService(
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
      outputs = list(answer = "numeric"),
-     v = "v1.0.1"
+     v = "v1.0.0"
 )
 
 ##########################################################
@@ -597,7 +593,7 @@ remoteLogin("http://localhost:12800", session = FALSE)
    
 # Get service using `getService()` function from `mrsdeploy`
 # Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.1")
+api <- getService("mtService", "v1.0.0")
 
 # Print capabilities to see what service can do.
 print(api$capabilities())
@@ -620,7 +616,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 # User who published service or user with owner role can
 # remove the service when it is no longer needed
-status <- deleteService("mtService", "v1.0.1")
+status <- deleteService("mtService", "v1.0.0")
 status
 
 ##########################################################
@@ -629,15 +625,7 @@ status
 
 # Log off of R Server
 remoteLogout()
-
 ```
-
-
-
-
-
-
-
 
 
 
@@ -650,14 +638,7 @@ library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLoginAAD(
-  "https://dhost.com",
-  authuri = "https://login.windows.net",
-  tenantid = "microsoft.com",
-  clientid = "00000000-0000-0000-0000-000000000000",
-  resource = "00000000-0000-0000-0000-000000000000",
-  session = FALSE
-)
+remoteLogin("http://localhost:12800", session = FALSE)
 
 model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
 save(model, file = "transmission.RData")
@@ -708,12 +689,6 @@ cap$swagger
 status <- deleteService(cap$name, cap$version)
 status
 
-services <- listServices("mtService")
-length(services) # gone
-
-# Error: No service found for `"mtService"` version "v1.0.2"
-api <- getService("mtService", "v1.0.2")
-
 remoteLogout()
 ```
 
@@ -727,14 +702,7 @@ library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLoginAAD(
-  "https://dhost.com",
-  authuri = "https://login.windows.net",
-  tenantid = "microsoft.com",
-  clientid = "00000000-0000-0000-0000-000000000000",
-  resource = "00000000-0000-0000-0000-000000000000",
-  session = FALSE
-)
+remoteLogin("http://localhost:12800", session = FALSE)
 
 # Information can come from a file
 model <- "model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)"
@@ -784,12 +752,6 @@ cap$swagger
 status <- deleteService(cap$name, cap$version)
 status
 
-services <- listServices("mtService")
-length(services) # gone
-
-# Error: No service found for "mtService" version "v1.0.3"
-api <- getService("mtService", "v1.0.3")
-
 remoteLogout()
 ```
 
@@ -803,14 +765,7 @@ library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
 
-remoteLoginAAD(
-  "https://dhost.com",
-  authuri = "https://login.windows.net",
-  tenantid = "microsoft.com",
-  clientid = "00000000-0000-0000-0000-000000000000",
-  resource = "00000000-0000-0000-0000-000000000000",
-  session = FALSE
-)
+remoteLogin("http://localhost:12800", session = FALSE)
 
 # model
 model <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
@@ -859,12 +814,6 @@ cap$swagger
 
 status <- deleteService(cap$name, cap$version)
 status
-
-services <- listServices("mtService")
-length(services) # gone
-
-# Error: No service found for `"mtService"` version "v1.0.4"
-api <- getService("mtService", "v1.0.4")
 
 remoteLogout()
 ```
