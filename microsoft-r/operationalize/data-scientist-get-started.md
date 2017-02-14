@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Get Started for Data Scientists
 
-Now that you've learned about [R Server's operationalization feature](about.md), we can dig into how data scientists can deploy,  consume, and share web services in order to operationalize their R analytics.
+Now that you've learned about [R Server's operationalization feature](about.md), we can dig into how data scientists can deploy and consume web services in order to operationalize their R analytics.
 
 Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package that ships with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
@@ -296,9 +296,9 @@ This section provides a quick summary of useful links for data scientists operat
 **Key Documents**
 + [About Operationalization](about.md)
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
-+ [mrsdeploy web service functions in Microsoft R](../operationalize/data-scientist-manage-services.md)
++ [Working with web services in R](../operationalize/data-scientist-manage-services.md)
++ [Execute on a remote Microsoft R Server](remote-execution.md)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)
