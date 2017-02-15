@@ -96,6 +96,19 @@ If you are authenticating using Azure Active Directory in the cloud, use the `re
   )
 ```  
 
+For example,
+
+```
+remoteLoginAAD(
+       "https://rserver.contoso.com:12800", 
+       authuri = "https://login.windows.net", 
+       tenantid = "microsoft.com", 
+       clientid = "00000000-0000-0000-0000-000000000000", 
+       resource = "00000000-0000-0000-0000-000000000000", 
+       session = FALSE 
+)
+```
+
 >[!NOTE]
 >Unless you specify otherwise using the arguments below, this function will not only log you in, but also create a remote R session on the R Server instance and put you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 
