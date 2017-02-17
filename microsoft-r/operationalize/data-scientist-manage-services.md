@@ -230,7 +230,9 @@ print(result)
 
 ### List web services
 
-Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to restrict the list to return a specific web service or all labeled versions of a given web service.
+Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to filter the list to return a specific web service or all labeled versions of a given web service.
+
+You can only see the R code for the web services that you published or manage. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used when the web service was published.
 
 The `mrsdeploy` function for listing available web services is `listServices`. 
 
