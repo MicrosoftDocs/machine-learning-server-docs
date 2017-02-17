@@ -39,7 +39,6 @@ ms.custom: ""
 
 ----------------------------
 
-
 By default, when you configure Microsoft R Server for operationalization, authenticated users can publish, list, and get any web services. Additionally, users can also update and delete their own web services.
 
 You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options for operationalization"](security-authentication.md).
@@ -70,7 +69,7 @@ A user can belong to multiple groups, and therefore it is possible to be assigne
 When roles are enabled, the administrator has the choices of putting groups (of users) into these roles.
 
 |Role |Definition|Can do |Cannot do|
-|--|--|--|--|
+|-------------|------------|-----------------|---------------------|
 |`Owner` |When declared, these users can publish<br> and manage any service.|Publish any service <br>Update any service <br>Delete any service <br>List all services <br>Consume any service |N/A| 
 |`Contributor` |When declared, these users can publish and <br>manage their services, but no one else's.|Publish any service <br>Update his/her service <br>Delete his/her service <br>List all services <br>Consume any service|Update someone else's service<br>Delete someone else's service| 
 |`Reader`|Never declared, this is a catchall role is given <br>to any authenticated user that does not assigned a role <br>when the Contributor role has be declared. <br>These users can only list and consume services.|List all services<br>Consume any service|Publish any service <br>Update any service <br>Delete any service|
@@ -87,7 +86,7 @@ You can choose from the following states:
 1. "Contributor" and "Owner" are explicitly declared
 
 |When these roles are declared|Everyone else is implicitly assigned to:|
-|--|:--:|
+|-----|:--------------------:|
 |no roles (default)|"Contributor"|
 |"Owner" only|"Contributor"|
 |"Contributor" only|"Reader"|
