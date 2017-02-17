@@ -114,7 +114,7 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
    + Log in with administrator privileges.
 
-   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to a folder on the machine that has restricted internet access.
+   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files in the same directory as `RClientSetup.exe` or under `<path>\temp`. 
 
    + Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
 
