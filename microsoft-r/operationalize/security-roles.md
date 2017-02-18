@@ -133,9 +133,10 @@ If you configure R Server to [use Active Directory/LDAP authentication](security
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 
-#### Example
+#### Example of roles for AD/LDAP
 
-For example:
+Here is an example of roles declared for AD/LDAP in `appsettings.json` on the web node:
+
 ```
  "Authorization": { 
     "AzureActiveDirectory": { 
@@ -181,6 +182,7 @@ On each web node, declare the roles in the external JSON configuration file, `ap
    1. Once open, click the **Applications** tab at the top.
    1. Open [the web application you created when you configured R Server for AAD authentication](security-authentication.md#aad).
    1. With the application open, click the **Manage Manifest** button at the bottom of the page. A popup menu appears.
+
       ![Manifest](../media/o16n/security-auth-2.png)
    1. Choose **Download manifest** and save the file locally.
    1. Edit the manifest file in a text editor.  
@@ -191,6 +193,7 @@ On each web node, declare the roles in the external JSON configuration file, `ap
    1. In the **Configure** tab, scroll to the **Keys** section, take note of the key as you'll need to add this to the configuration file `appsettings.json` so R Server can validate the group names at authentication time.  
    1. In the same tab, scroll to the **Permissions to other applications** section. 
    1. Click on the **Delegated Permissions** listbox and make sure that the **Read directory data** checkbox is enabled.
+
       ![Checkbox](../media/o16n/security-auth-1.png) 
 
 1. On each R Server web node, update the configuration file in order to declare the roles and the groups that belong them. 
@@ -227,8 +230,7 @@ On each web node, declare the roles in the external JSON configuration file, `ap
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 
 
-
-#### Example 
+#### Example of roles for AAD
 
 Here is an example of roles declared for AAD in `appsettings.json` on the web node:
 ```
