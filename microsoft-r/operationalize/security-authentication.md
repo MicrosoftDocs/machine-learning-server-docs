@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Authentication Options for Operationalization
+# Authentication options for operationalization
 
 **Applies to:  Microsoft R Server 9.0.1**
 
@@ -48,9 +48,9 @@ R Server's offers seamless integration with authentication solutions for operati
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. 
+During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not recommended with [enterprise configurations](configuration-initial.md#enterprise).
+While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configuration-initial.md#enterprise).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -72,6 +72,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 + Applications use simple BIND to transport credentials and authenticate against a Domain Controller. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
 + Use of proxy binding or password change over LDAP, which requires LDAP-S. Bind to an AD LDS instance Through a Proxy Object
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
+
+>[!WARNING]
+> You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
 
 **On each web node, do the following:**
 
@@ -199,7 +202,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
-   1. Add a Client **Key** by selecting a key duration. Take note of this key as your application developers and data scientists will need it later to authenticate.
+   1. Add a client **Keys** by selecting a key duration and take note of the key. 
+   
+      >[!IMPORTANT] 
+      > Take note of this key as your application developers and data scientists will need it later to authenticate. You will also need this key if you choose to use roles to give permissions to certain users.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -256,6 +262,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       "Enabled": false,
       ```
 
+>[!WARNING]
+> You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
+
 1. Enable Azure Active Directory as the authentication method:  `"Enabled": true,`
 
 1. Update the other properties in that section so that they match the values in the Azure Management portal.  Properties include:
@@ -296,3 +305,4 @@ You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and
 
 >[!IMPORTANT]
 >Take special note of the arguments `session` (creates remote R session) and `commandline` (dictates if you enter on the remote command line prompt or local one) as these influence the state of your command line. [Learn more...](../operationalize/mrsdeploy-connection.md)
+<br>

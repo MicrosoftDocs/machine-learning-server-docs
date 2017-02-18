@@ -53,13 +53,31 @@ If you are authenticating using Active Directory server on your network or the [
 
 ```R
 > remoteLogin(
-          endpoint, 
+          https://YourHostEndpoint, 
           session = TRUE, 
           diff = TRUE,
           commandline = TRUE
           username = NULL,
           password = NULL,
   )
+```
+
+For example, here is an AD authentication that creates a remote R session, but prompts for a username and password. That username can be the Active DIrectory/LDAP username and password, or the local admin account and its password.
+
+```R
+>  remoteLogin("http://localhost:12800", 
+            session = FALSE)
+```
+
+Or this example where we authenticate with the local `admin` account and password, create a remote R session, go to the remote session's command prompt upon login, and returns a report of the differences between local and remote environments.
+
+```R
+>  remoteLogin("http://localhost:12800", 
+            username = "admin", 
+            password = "{{YOUR_PASSWORD}}",
+            diff = TRUE,
+            session = TRUE
+            commandline = TRUE)
 ```
 
 >[!NOTE]
@@ -96,10 +114,10 @@ If you are authenticating using Azure Active Directory in the cloud, use the `re
   )
 ```  
 
-For example,
+For example, here is an AAD authentication that will not create a remote R session, but will prompt for a username and password.
 
-```
-remoteLoginAAD(
+```R
+>  remoteLoginAAD(
        "https://rserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
        tenantid = "microsoft.com", 
