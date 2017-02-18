@@ -175,7 +175,7 @@ If you configure R Server to [use Azure Active Directory](security-authenticatio
 On each web node, declare the roles in the external JSON configuration file, `appsettings.json` as follows:
 
 1. In the Azure Classic Portal, update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD. To do that, you must:
-   1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) 
+   1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/).
 
    1. In the left menu, choose **Active Directory**.
    1. Select the active directory you want to open.
