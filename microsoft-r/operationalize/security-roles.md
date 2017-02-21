@@ -104,6 +104,7 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 1. Search for the following section: `"Authorization": {`
 
 1. In that section, add one or both roles ("Owner" and "Contributor"). Then, map one or more security groups to each R Server role such as:
+
    ```"Authorization": {```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Owner": [ "Administrators" ],```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Contributor": [ "RProgrammers", "Quality" ]```<br>```}``` 
    
 
