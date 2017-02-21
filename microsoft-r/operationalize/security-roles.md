@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Roles to control web service permissions
 
-**Applies to:  Microsoft R Server 9.1.0**
+**Applies to:  Microsoft R Server 9.1**
 
 By default, when you configure Microsoft R Server for operationalization, authenticated users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
 
@@ -72,6 +72,8 @@ You can choose from the following states:
 1. Only one role is explicitly declared
 1. "Contributor" and "Owner" are explicitly declared
 
+<br>
+
 |When these roles are declared|Everyone else is implicitly assigned to:|
 |-----|:--------------------:|
 |_no roles (default state)_|"Contributor"|
@@ -93,7 +95,7 @@ If you only have the default local administrator account, `admin`, set up for R 
 
 If you configure R Server to [use Active Directory/LDAP authentication](security-authentication.md#ldap), then you can configure it to assign roles using Active Directory groups as follows:
 
-#### Step 1. Add the roles to R Server
+#### Step 1. Add the roles to R Server on each web node
 
 On each R Server web node, edit the `appsettings.json` configuration file in order to declare the roles and the groups that belong them. 
 
@@ -102,13 +104,8 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 1. Search for the following section: `"Authorization": {`
 
 1. In that section, add one or both roles ("Owner" and "Contributor"). Then, map one or more security groups to each R Server role such as:
-
-```
-"Authorization": { 
-       "Owner": [ "Administrators" ], 
-       "Contributor": [ "RProgrammers", "Quality" ]       
-    } 
-```    
+   ```"Authorization": {```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Owner": [ "Administrators" ],```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Contributor": [ "RProgrammers", "Quality" ]```<br>```}``` 
+   
 
 #### Step 2. Allow R Server to check groups in Azure (Azure Active Directory ONLY)
 
@@ -119,15 +116,22 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 1. Select the active directory you want to open.
 
 1. Once open, click the **Applications** tab at the top.
+
 1. Open [the web application you created when you configured R Server for AAD authentication](security-authentication.md#aad).
-1. With the application open, click the **Manage Manifest** button at the bottom of the page. A popup menu appears.
+
+1. With the application open, go to the bottom of the page and click the **Manage Manifest > Download Manifest**. A popup menu appears.
    ![Manifest](../media/o16n/security-auth-2.png)
-1. Choose **Download manifest** and save the file locally.
-1. Open the manifest file in a text editor and ensure that the property `"groupMembershipClaims":` looks like this:       
+
+1. Open the manifest file in a text editor and ensure that the property `"groupMembershipClaims"` looks like this:
+
    ```"groupMembershipClaims": "SecurityGroup"```
+
 1. Save the manifest file.
+
 1. Back in the portal, click the **Manage Manifest > Upload Manifest** on the toolbar at the bottom of the window. Upload the edited file back into the portal.
+
 1. In the **Configure** tab, scroll to the **Keys** section. Take note of the key as you must add this to the `"AzureActiveDirectory"` section of the `appsettings.json` configuration file. This will enable R Server to validate the group names at authentication time.  
+
 1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
 
    ![Checkbox](../media/o16n/security-auth-1.png) 
