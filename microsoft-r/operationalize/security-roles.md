@@ -25,57 +25,44 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Permissions and roles that limit web service interactions
+# Roles to control web service permissions
 
 **Applies to:  Microsoft R Server 9.1.0**
 
-
-**open questions/things to research:**
-
-
-+ DESIGN: <https://microsoft.sharepoint.com/teams/immlrevo/_layouts/15/WopiFrame.aspx?sourcedoc=%7b710c6a65-528c-4fa8-8f21-0db75f80117c%7d&action=edit>
-
-+ P2. Roles handled in the admin utility   (is this going to make it in?)
-
-----------------------------
-
-By default, when you configure Microsoft R Server for operationalization, authenticated users can publish, list, and get any web services. Additionally, users can also update and delete their own web services.
+By default, when you configure Microsoft R Server for operationalization, authenticated users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
 
 You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options for operationalization"](security-authentication.md).
 
 ## What do I need?
 
-To assign groups of users in your Active Directory to operationalization roles, you must have:
+To assign groups of users in your Active Directory to R Server roles for web services, you must have:
 
 + An instance of Microsoft R Server that is [configured for operationalization](../operationalize/configuration-initial.md)
 
-+ Authentication for this instance must be via [Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD)](../operationalize/security-authentication.md) 
-
++ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/security-authentication.md)
+   >[!NOTE]
+   > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
+  
 + The names of the groups that contain the users to whom you want to give special permissions
 
-+ The password for [the local `admin` account](../operationalize/security-authentication.md#local) for operationalization
-
-## Groups versus operationalization roles
+## Groups versus roles for web services
 
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
-You can leverage the AD groups you've already defined in your organization to assign a collection of users to R Server operationalization roles. 
+You can leverage the AD groups you've already defined in your organization to assign a collection of users to roles for web services. 
 
-In R Server, the administrator can assign one or more Active Directory groups to one or more operationalization roles: "Owner", "Contributor", and "Reader". These roles give specific permissions related to publishing and interacting with web services. When a user attempts to authenticate, R Server will check to see whether you've declared roles for operationalization. If you have, then R Server checks to see to which group the user belongs. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role declaration states"** for more information.
+In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. These roles give specific permissions related to publishing and interacting with web services. When a user attempts to authenticate, R Server will check to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role declaration states"** for more information.
 
 A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions.
 
-## Standard operationalization roles
+## Roles for web service interactions
 
-When roles are enabled, the administrator has the choices of putting groups (of users) into these roles.
+When roles are declared in the configuration file, the administrator has the choices of putting groups (of users) into these roles.
 
 |Role |Definition|Can do with<br>web services |Cannot do with<br>web services|
 |-------------|------------|-----------------|---------------------|
-|`Owner` |When declared, these users can publish<br> and manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
-|`Contributor` |When declared, these users can publish and <br>manage their services, but no one else's.|● Publish any service <br>● Update his/her service <br>● Delete his/her service <br>● List all services <br>● Consume any service|● Update someone else's service<br>● Delete someone else's service| 
-|`Reader`|Never declared, this is a catchall role is given <br>to any authenticated user that does not assigned a role <br>when the Contributor role has be declared. <br>These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
-
-You only have to configure the roles to the groups that have elevated permissions ("Owner", "Contributor"). The Reader role, on the other hand, is implicitly assigned to any other authenticated user that isn't assigned the "Owner" or "Contributor" role.
-
+|`Owner` |When declared, these users can manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
+|`Contributor` |When declared, these users can publish and <br>manage their services, but no one else's.|● Publish any service <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
+|`Reader`|Never declared, this is a catchall role is given to any<br>authenticated user that is not assigned another role (see below) <br>These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
 
 ## Role declaration states
 
@@ -102,51 +89,79 @@ If you only have the default local administrator account, `admin`, set up for R 
 
 
 
-
-
 ## Declaring roles for AD/LDAP users
 
 If you configure R Server to [use Active Directory/LDAP authentication](security-authentication.md#ldap), then you can configure it to assign roles using Active Directory groups as follows:
 
-#### Steps
+#### Step 1. Add the roles to R Server
 
-1. On each R Server web node, open the `appsettings.json` configuration file in order to declare the roles and the groups that belong them. 
+On each R Server web node, edit the `appsettings.json` configuration file in order to declare the roles and the groups that belong them. 
 
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+1. Open [the `appsetting.json` file](admin-configuration-file.md).
 
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
-   
-1. Search for the following section: `"LDAP": {`
+1. Search for the following section: `"Authorization": {`
 
-   >[!NOTE]
-   > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
+1. In that section, add one or both roles ("Owner" and "Contributor"). Then, map one or more security groups to each R Server role such as:
 
-1. Add the roles to which you want to map AAD groups under the `"AzureActiveDirectory": {` section. You can add one or both roles ("Owner" and "Contributor"). You can map one or more AD groups to each role such as:
+```
+"Authorization": { 
+       "Owner": [ "Administrators" ], 
+       "Contributor": [ "RProgrammers", "Quality" ]       
+    } 
+```    
 
-   ```"Owner": [ "GroupName1" ],``` 
+#### Step 2. Allow R Server to check groups in Azure (Azure Active Directory ONLY)
 
-   ```"Contributor": [ "GroupName2", "GroupName3" ]```
+1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD as follows:
 
-1. In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP": {` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD.
+1. In the left menu, choose **Active Directory**.
 
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
+1. Select the active directory you want to open.
+
+1. Once open, click the **Applications** tab at the top.
+1. Open [the web application you created when you configured R Server for AAD authentication](security-authentication.md#aad).
+1. With the application open, click the **Manage Manifest** button at the bottom of the page. A popup menu appears.
+   ![Manifest](../media/o16n/security-auth-2.png)
+1. Choose **Download manifest** and save the file locally.
+1. Open the manifest file in a text editor and ensure that the property `"groupMembershipClaims":` looks like this:       
+   ```"groupMembershipClaims": "SecurityGroup"```
+1. Save the manifest file.
+1. Back in the portal, click the **Manage Manifest > Upload Manifest** on the toolbar at the bottom of the window. Upload the edited file back into the portal.
+1. In the **Configure** tab, scroll to the **Keys** section. Take note of the key as you must add this to the `"AzureActiveDirectory"` section of the `appsettings.json` configuration file. This will enable R Server to validate the group names at authentication time.  
+1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
+
+   ![Checkbox](../media/o16n/security-auth-1.png) 
+
+
+#### Step 3. Validate the groups against AD/LDAP or AAD.
+
+Return to [the `appsetting.json` file](admin-configuration-file.md) and do the following:
+
++ **(Azure Active Directory ONLY)**. In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key created in the portal is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](security-authentication.md#aad).
+
+  >[!IMPORTANT]
+  > For more security, we recommend you [encrypt the key](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
+
+  >[!NOTE]
+  > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
+
++ **(Active Directory/LDAP ONLY)**. In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](security-authentication.md#ldap).
+
+
+#### Step 4. Apply the changes to R Server
+
+1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local `admin` account](../operationalize/security-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 
-#### Example of roles for AD/LDAP
+### Example
 
 Here is an example of roles declared for AD/LDAP in `appsettings.json` on the web node:
 
 ```
- "Authorization": { 
-    "AzureActiveDirectory": { 
-       "Enabled": false,
-       ...
-    }, 
-    "LDAP": {
+
+"LDAP": {
        "Enabled": true,
-       "Owner": [ "Administrators" ], 
-       "Contributor": [ "RProgrammers", "Quality" ] 
        "Values": [
                 {
                     "Host": "<host_ip>",
@@ -161,94 +176,22 @@ Here is an example of roles declared for AD/LDAP in `appsettings.json` on the we
                     "SearchFilter": "cn={0}"
                 }
             ]
+        ...    
         }
-      ...
-    }  
-```
 
-## Declaring roles for AAD users
-
-If you configure R Server to [use Azure Active Directory](security-authentication.md#aad)(AAD), then you can configure it to assign roles using AAD groups as follows:
-
-####Steps 
-
-On each web node, declare the roles in the external JSON configuration file, `appsettings.json` as follows:
-
-1. In the Azure Classic Portal, update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD. To do that, you must:
-   1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/).
-
-   1. In the left menu, choose **Active Directory**.
-   1. Select the active directory you want to open.
-   1. Once open, click the **Applications** tab at the top.
-   1. Open [the web application you created when you configured R Server for AAD authentication](security-authentication.md#aad).
-   1. With the application open, click the **Manage Manifest** button at the bottom of the page. A popup menu appears.
-
-      ![Manifest](../media/o16n/security-auth-2.png)
-   1. Choose **Download manifest** and save the file locally.
-   1. Edit the manifest file in a text editor.  
-   1. Ensure that the property `"groupMembershipClaims":` looks like this:  `"groupMembershipClaims": "SecurityGroup"`.
-   1. Save the manifest file.
-   1. Back in the portal, click  the **Manage Manifest** button at the bottom of the page again.
-   1. Choose **Upload Manifest** and upload the edited file back into the portal.
-   1. In the **Configure** tab, scroll to the **Keys** section, take note of the key as you'll need to add this to the configuration file `appsettings.json` so R Server can validate the group names at authentication time.  
-   1. In the same tab, scroll to the **Permissions to other applications** section. 
-   1. Click on the **Delegated Permissions** listbox and make sure that the **Read directory data** checkbox is enabled.
-
-      ![Checkbox](../media/o16n/security-auth-1.png) 
-
-1. On each R Server web node, update the configuration file in order to declare the roles and the groups that belong them. 
-
-   1. Open the `appsettings.json` configuration file.
-
-      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
-   
-   1. Search for the following section: `"AzureActiveDirectory": {`
-
-      >[!NOTE]
-      > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
-   
-   1. Add the roles to which you want to map AAD groups under the `"AzureActiveDirectory": {` section. You can add one or both roles ("Owner" and "Contributor"). See example below. You can map one or more AD groups to each role such as:
-
-      ```"Owner": [ "GroupName1" ],``` 
-
-      ```"Contributor": [ "GroupName2", "GroupName3" ]```
- 
-   1. In order for R Server to verify that the groups you've declared are valid in AAD, you must declare the alphanumberic client key for the application you created in AAD to the `"Key": ` property in the `"AzureActiveDirectory": {` section.  See example below.
-
-      ```"Key": "ABCD000000000000000000000000WXYZ"```
-      
-      >[!NOTE]
-      > For more security, we recommend you [encrypt the key](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
-
-      >[!NOTE]
-      > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
-
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
-
-1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
-
-
-#### Example of roles for AAD
-
-Here is an example of roles declared for AAD in `appsettings.json` on the web node:
-```
- "Authorization": { 
-    "AzureActiveDirectory": { 
-       "Enabled": true,
-       "Owner": [ "Administrators" ], 
-       "Contributor": [ "RProgrammers", "Quality" ] 
+ "AzureActiveDirectory": { 
+       "Enabled": false,
        "Values": [ 
           { 
              "Authority": "https://login.windows.net/rserver.contoso.com", 
              "Audience": "00000000-0000-0000-0000-000000000000" 
            } 
         ]
-      "Key": "ABCD000000000000000000000000WXYZ"   
-    }, 
-    "LDAP": {
-       "Enabled": false,
-      ...
+       "Key": "ABCD000000000000000000000000WXYZ"   
+    },
+
+"Authorization": { 
+       "Owner": [ "Administrators" ], 
+       "Contributor": [ "RProgrammers", "Quality" ]       
     }  
-```   
+```
