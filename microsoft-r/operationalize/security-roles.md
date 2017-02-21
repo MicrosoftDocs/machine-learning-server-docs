@@ -164,39 +164,30 @@ Return to [the `appsetting.json` file](admin-configuration-file.md) and do the f
 Here is an example of roles declared for AD/LDAP in `appsettings.json` on the web node:
 
 ```
-
-"LDAP": {
-       "Enabled": true,
-       "Values": [
-                {
-                    "Host": "<host_ip>",
-                    "UseLDAPS": "True",
-                    "SkipCertificateValidation": "True",
-                    "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
-                    "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
-                    "QueryUserPasswordEncrypted": true,
-                    "QueryUserPassword": 
-                    "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
-                    "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
-                    "SearchFilter": "cn={0}"
-                }
-            ]
-        ...    
-        }
-
- "AzureActiveDirectory": { 
-       "Enabled": false,
-       "Values": [ 
-          { 
-             "Authority": "https://login.windows.net/rserver.contoso.com", 
-             "Audience": "00000000-0000-0000-0000-000000000000" 
-           } 
-        ]
-       "Key": "ABCD000000000000000000000000WXYZ"   
-    },
-
-"Authorization": { 
-       "Owner": [ "Administrators" ], 
-       "Contributor": [ "RProgrammers", "Quality" ]       
-    }  
+Authentication: {
+       "AzureActiveDirectory": {
+              "Enabled": false,
+              "Authority": "https://login.windows.net/rserver.contoso.com",
+              "Audience": "00000000-0000-0000-0000-000000000000",
+              "Key": "ABCD000000000000000000000000WXYZ"  
+       },
+       "LDAP": {
+              "Enabled": true,
+              "Host": "<host_ip>",
+              "UseLDAPS": "True",
+              "SkipCertificateValidation": "True",
+              "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
+              "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
+              "QueryUserPasswordEncrypted": true,
+              "QueryUserPassword":
+"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+              "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
+              "SearchFilter": "cn={0}"       
+       }
+}
+ 
+"Authorization": {
+   "Owner": [ "Administrators" ],
+   "Contributor": [ "RProgrammers", "Quality" ]      
+}
 ```
