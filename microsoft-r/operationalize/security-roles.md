@@ -118,7 +118,7 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 
 1. Once open, click the **Applications** tab at the top.
 
-1. Open [the web application you created when you configured R Server for AAD authentication](security-authentication.md#aad).
+1. Open the web application you created when you [configured R Server for AAD authentication](security-authentication.md#aad).
 
 1. With the application open, go to the bottom of the page and click the **Manage Manifest > Download Manifest**. A popup menu appears.
    ![Manifest](../media/o16n/security-auth-2.png)
