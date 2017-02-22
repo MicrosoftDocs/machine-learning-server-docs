@@ -206,7 +206,7 @@ The Microsoft Managed R Archive Network (MRAN) provides daily snapshots of all o
 
 There are two ways to create the package repository: either copy all the packages from a given MRAN snapshot, or create a new repository and populate it with just those packages you want to be available to your users. We will describe both procedures using MRAN and miniCRAN.
 
-**Note:** The miniCRAN package itself is dependent on 18 other CRAN packages, among which is the RCurl package, which has a system dependency on the curl-devel package. Similarly, package XML has a dependency on libxml2-devel. We recommend, therefore, that you build your local repository initially on a machine with full Internet access, so that you can easily satisfy all these dependencies. Once created, you can either move the repository to a different location within your firewall, or simply disable the machine’s Internet access.
+**Note:** The miniCRAN package itself is dependent on 18 other CRAN packages, among which is the RCurl package, which has a system dependency on the curl-devel package. Similarly, package XML has a dependency on libxml2-devel. We recommend, therefore, that you build your local repository initially on a machine with full Internet access, so that you can easily satisfy all these dependencies. After created, you can either move the repository to a different location within your firewall, or simply disable the machine’s Internet access.
 
 ### Installing miniCRAN
 

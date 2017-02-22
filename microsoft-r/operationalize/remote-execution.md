@@ -44,7 +44,7 @@ With remote execution, you can:
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **once Microsoft R Server has been configured for operationalization**.
+The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **After Microsoft R Server has been configured for operationalization**.
 
 Read the introductory article ["`mrsdeploy` functions"](../mrsdeploy/mrsdeploy.md) for the supported R Client and R Server configurations for this package and remote execution as well as for a list of the [remote execution functions](../mrsdeploy/mrsdeploy.md#remote-functions) contained in that package.  In that article, you can also learn how to load the package.
 
@@ -58,7 +58,7 @@ Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/mrs
 
 ## How to switch between sessions or logout
 
-Once you [log into the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
+After you [log into the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
 
 ![Switch](../media/o16n/mrsdeploy-connect-switch-context.png)
 
@@ -127,7 +127,7 @@ REMOTE>pause()
 
 ## Work with R objects and files remotely
 
-Once you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model (i.e. `m<-lm(x~y)` ), and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `getRemoteObject()`.
+After you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model (i.e. `m<-lm(x~y)` ), and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `getRemoteObject()`.
 
 Conversely, if you have a local R object that you want to make available to your remote R session, you can use the function `putLocalObject()`. If you want to sync your local and remote workspaces, the functions `putLocalWorkspace()` and `getRemoteWorkspace()` can be used.
 
@@ -234,7 +234,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services
 
-Once you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, begin with the [Data scientist get started](data-scientist-get-started.md)  guide.
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, begin with the [Data scientist get started](data-scientist-get-started.md)  guide.
 
 If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
 

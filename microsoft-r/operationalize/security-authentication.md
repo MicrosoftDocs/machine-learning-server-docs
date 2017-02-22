@@ -114,22 +114,22 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       For example:
       ```
       "LDAP": {
-            "Enabled": true,
-            "Values": [
-                {
-                    "Host": "<host_ip>",
-                    "UseLDAPS": "True",
-                    "SkipCertificateValidation": "True",
-                    "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
-                    "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
-                    "QueryUserPasswordEncrypted": true,
-                    "QueryUserPassword": "eyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzEeyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzEeyJ0IjoiNzJFNDg5QUQ1RDQ4MEM1NURCMDRDMjM1MkQ1OTVEQ0I2RkQzQzE",
-                    "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
-                    "SearchFilter": "cn={0}"
-                }
-            ]
-        }
-        ```
+              "Enabled": true,
+              "Host": "<host_ip>",
+              "UseLDAPS": "True",
+              "SkipCertificateValidation": "True",
+              "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
+              "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
+              "QueryUserPasswordEncrypted": true,
+              "QueryUserPassword":
+"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+              "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
+              "SearchFilter": "cn={0}"       
+      }
+      ```
+
+
+1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
 
 1. If using a certificate for access token signing, do the following: 
 
@@ -198,14 +198,14 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Click the checkmark to continue and add the application.
 
-   1. Once the application has been added, click the **Configure** tab. 
+   1. After the application has been added, click the **Configure** tab. 
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
    1. Add a client **Keys** by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as your application developers and data scientists will need it later to authenticate. You will also need this key if you choose to use roles to give permissions to certain users.
+      > Take note of this key as your application developers and data scientists will need it later to authenticate. You will also need this key if you choose to [use roles to give web services permissions to certain users](security-roles.md). See example below.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -227,7 +227,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Click the checkmark to continue and add the application.
 
-   1. Once the application has been added, click the **Configure** tab. 
+   1. After the application has been added, click the **Configure** tab. 
 
    1. Copy the **Client ID** for the native app. You will use it when enabling AAD in Microsoft R Server in a later step.
 
@@ -260,10 +260,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    ```
    "AzureActiveDirectory": {
       "Enabled": false,
-      ```
+   ```
 
->[!WARNING]
-> You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
+   >[!WARNING]
+   > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
 
 1. Enable Azure Active Directory as the authentication method:  `"Enabled": true,`
 
@@ -273,6 +273,17 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |----------------|-------------------------------|
    |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login. For example, if the AAD account domain is `myMRServer.contoso.com`, then the `Authority` would be `https://login.windows.net/myMRSServer.contoso.com`|
    |`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
+
+   ```
+   "AzureActiveDirectory": {
+        "Enabled": false,
+        "Authority": "https://login.windows.net/rserver.contoso.com",
+        "Audience": "00000000-0000-0000-0000-000000000000",
+        "Key": "ABCD000000000000000000000000WXYZ"  
+   },   
+   ```
+
+1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
@@ -287,22 +298,4 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **When authenticating with the `mrsdeploy` package, do the following:**
 
-To authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
-
-```
-remoteLoginAAD("http://localhost:12800", #SIGN-ON URL value from Web Application
-           authuri = "https://login.windows.net",
-           tenantid = "<AAD_DOMAIN>", #domain of AAD account such as: myMRServer.contoso.com
-           clientid = "<NATIVE_APP_CLIENT_ID>",  #clientID from AAD Native Application
-           resource = "<WEB_APP_CLIENT_ID>", #clientID from AAD Web Application
-           session = TRUE, #creates remote R session
-           diff=TRUE,
-           commandline=TRUE, #puts you on the remote commandline
-           prompt = "MY-PROMPT> ")  
-```
-
-You'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
-
->[!IMPORTANT]
->Take special note of the arguments `session` (creates remote R session) and `commandline` (dictates if you enter on the remote command line prompt or local one) as these influence the state of your command line. [Learn more...](../operationalize/mrsdeploy-connection.md)
-<br>
+Learn how to authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).

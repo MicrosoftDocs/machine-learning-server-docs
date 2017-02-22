@@ -151,7 +151,7 @@ For more general sequences, use the *seq* function:
 
 ### Exploratory Data Analysis
 
-Once you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the `plot` function, which provides a default graphical view of the data:
+After you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the `plot` function, which provides a default graphical view of the data:
 
 	plot(michelson)
 	plot(normalDat)
