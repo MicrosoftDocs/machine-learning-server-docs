@@ -30,7 +30,7 @@ This article describes how you can interact with and manage analytic web service
 
 Using `mrsdeploy` with a [properly configured R Server](../mrsdeploy/mrsdeploy.md#configure) allows you to publish R functions (models, R scripts, arbitrary R code) exposed as **analytic web services** in as little as a single line of R code. A web service might contain not only the model, but also the prediction script used to create it.
 
-Once hosted in R Server, these web services can be discovered by other authenticated users. These users can [consume the web services in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
+After hosted in R Server, these web services can be discovered by other authenticated users. These users can [consume the web services in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
 
 ## Permissions and function descriptions
@@ -320,7 +320,7 @@ manualTransmission
 
 ### Retrieve service objects
 
-Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. Once the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
+Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
 The `mrsdeploy` function for retrieving a service object is `getService`. 
 
@@ -408,7 +408,7 @@ cat(swagger)
 
 ### Consume web services
 
-Once a web service has been published, it can be consumed. Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically to define the service to facilitate consumption and integration.
+After a web service has been published, it can be consumed. Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically to define the service to facilitate consumption and integration.
 
 When you publish a service, you should let people know that is ready for them to try out. There are several ways for users to consume services. If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
 
@@ -459,7 +459,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Application developers can call and integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
 
-Once the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
+After the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
    
 Get the Swagger-based JSON file in one of two ways:
 

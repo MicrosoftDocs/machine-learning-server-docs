@@ -116,7 +116,7 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 
 1. Select the active directory you want to open.
 
-1. Once open, click the **Applications** tab at the top.
+1. After open, click the **Applications** tab at the top.
 
 1. Open the web application you created when you [configured R Server for AAD authentication](security-authentication.md#aad).
 
