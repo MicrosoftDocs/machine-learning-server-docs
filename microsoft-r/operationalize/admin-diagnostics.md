@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Diagnostics & Troubleshooting of R Server's Operationalization
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
@@ -81,6 +81,8 @@ Review the log and configuration files for any component that was identified as 
 
 **Table: Path to log files by node and operating system**
 
+@@
+
 |Operating System|Path on Web Node|Path on Compute Node|
 |----------------|--------|------------|
 |Windows|&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\logs |&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
@@ -112,14 +114,7 @@ The following logging levels are available:
 
 **To update the logging level:**
 
-   1. On each compute node AND each web node, open the `appsettings.json` external JSON configuration file.
-
-      |`appsettings.json`|Path on Web Node|Path on Compute Node|
-      |----------------|--------|------------|
-      |Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
-      |Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ </small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
-
-      *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+   1. On each compute node AND each web node, [open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. Search for the section starting with `"Logging": {`
 

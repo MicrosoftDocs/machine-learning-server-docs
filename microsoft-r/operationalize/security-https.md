@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Connection Security (SSL/TLS) for Operationalization
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
 
@@ -58,11 +58,7 @@ This section walks you through the steps for securing the connections between th
    >
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
-1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
-
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
 1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -192,11 +188,7 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Update the external JSON configuration file, `appsettings.json` to configure the HTTPS port for the compute node:
-   1. Open the `appsettings.json` configuration file.
-
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -281,8 +273,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Log into each web node machine.
 
-   1. On the `appsettings.json` file using the following command:
-      ```sudo vi /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/appsettings.json```
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
       ```
@@ -316,11 +307,7 @@ This section walks you through the steps for authenticating the web node with th
    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
-
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
@@ -343,7 +330,7 @@ This section walks you through the steps for authenticating the web node with th
 1. **On each compute node:**
     > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _private_ key.
 
-   1. Open the external JSON configuration file, `appsettings.json` file.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

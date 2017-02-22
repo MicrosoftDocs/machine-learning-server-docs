@@ -27,7 +27,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**
 
->Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
 The DeployR API exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the DeployR server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments.
 

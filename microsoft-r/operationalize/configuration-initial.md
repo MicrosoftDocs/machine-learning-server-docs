@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Configuring R Server for Operationalization
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
@@ -221,11 +221,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
    + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
 
 1. Declare the IP addresses of every compute node with each web node.
-   1. Open the external configuration file, `appsettings.json` file.
-
-      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Getting Started - Administrators
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 This guide is for system administrators of the operationalization feature in R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
 
@@ -75,21 +75,7 @@ The operationalization feature supports a wide range of runtime policies that af
 
 ### General
 
-The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node, including:
-
-+ On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
-
-+ On the compute node, this configuration file governs SSL, logging, R shell pool size, R execution ports, and more.
-
-
-**Table: Path to `appsettings.json` by node and operating system**
-
-| |Path on Web Node|Path on Compute Node|
-|----------------|--------|------------|
-|Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
-|Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/</small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
-
-*<small> where `<MRS_home>` is the path to the Windows Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the `appsettings.json` configuration file for R Server"](admin-configuration-file.md).
  
 ### Asynchronous Batch Sizes
 

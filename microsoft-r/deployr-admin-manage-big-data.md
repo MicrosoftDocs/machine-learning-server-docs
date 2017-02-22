@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**
 
->Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
 There may be times when your DeployR user community needs access to genuinely large data files, or big data. These data files might be too big to be copied from the Web or copied from their local machines to the server.
 

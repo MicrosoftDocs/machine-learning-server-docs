@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Access Token Management for API Requests
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the `POST /login HTTP/1.1` API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
 
@@ -124,7 +124,7 @@ A valid bearer token (with active `access_token` or `refresh_token` properties) 
 
 The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days).  After the `access_token` expires, an active `refresh_token` can be used to get a new `access_token` / `refresh_token` pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  
 
-Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#refresh-user-access-token)  to refresh a token. 
+Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token)  to refresh a token. 
 
 #### Example: Refresh access_token
 
@@ -161,7 +161,7 @@ A `refresh_token` should be revoked:
 + If a user is no longer permitted to make requests on the API, or 
 + If the `access_token` or `refresh_token` have been compromised.
 
-Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#delete-user-access-token)  to revoke a token. 
+Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#delete-user-access-token)  to revoke a token. 
 
 #### Example: Revoke token
 

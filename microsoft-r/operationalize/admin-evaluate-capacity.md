@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Evaluate Load Balancing Capacity
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
 
@@ -137,12 +137,8 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 **To update the thread pool:**
 
-   1. On each compute nodes, open the `appsettings.json` external JSON configuration file.
+   1. On each compute nodes, [open the `appsettings.json` configuration file](admin-configuration-file.md).
 
-      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\` where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.
-
-      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/`.
-   
    1. Search for the section starting with `"Pool": {`
 
    1. Set the `InitialSize`. This is the number of R shells that will be pre-created for your users each time the compute node is restarted.
@@ -156,5 +152,6 @@ Since each compute node has its own thread pool for R shells, configuring multip
    1. Repeat these changes on every compute node.
 
 
+>[!Note]
 >Each compute node should have the same `appsettings.json` properties.
 

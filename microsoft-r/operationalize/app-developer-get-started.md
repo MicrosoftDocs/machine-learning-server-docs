@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Get Started for Application Developers 
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine readable representation of a RESTful API that enables support for interactive documentation, client SDK generation and discoverability.
 
@@ -53,11 +53,11 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 ### Get the Swagger File
 
-To simplify the integration, R Server provides several [Swagger templates](http://swagger.io/) each defining the list of resources that are available in the REST API and the operations that can be called on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/9.0.1/) in `rserver-swagger-9.0.1.json`. Additionally, another unique Swagger-based JSON file is also generated for each and every web service version that is published.  
+To simplify the integration, R Server provides several [Swagger templates](http://swagger.io/) each defining the list of resources that are available in the REST API and the operations that can be called on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/) in `rserver-swagger-9.0.1.json`. Additionally, another unique Swagger-based JSON file is also generated for each and every web service version that is published.  
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|[Download](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json) `rserver-swagger-9.0.1.json`, which contains the set of core operationalization APIs.
+Core&nbsp;APIs|[Download](https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.0.1.json) `rserver-swagger-9.0.1.json`, which contains the set of core operationalization APIs.
 Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](data-scientist-manage-services.md#swagger-app-dev)
 
 
@@ -153,7 +153,7 @@ This example shows how you can use the `rserver-9.0.1.json` swagger file to buil
 
 Build and use a core client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json).
+1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.0.1.json).
 
 1. Build the statically generated client library files for CSharp from the `rserver-9.0.1.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.

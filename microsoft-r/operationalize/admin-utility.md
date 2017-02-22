@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization Administration Utility | Microsoft R Server Docs"
+title: "Administration Utility | Microsoft R Server Docs"
 description: "Operationalization of R Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "3/15/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,7 +27,7 @@ ms.custom: ""
 
 # R Server Operationalization Administration
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 You can configure the operationalization feature for Microsoft R Server using the administration utility. 
 
@@ -64,10 +64,12 @@ These instructions describe how to launch the Administrator Utility.
 1. Launch the administration utility script with `root` or `sudo` privileges.
 
 1. At the prompt, enter the following commands:
-   ```
-   cd /usr/lib64/microsoft-deployr/9.0.1
-   dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
-   ```
+   + For R Server 9.1: @@@
+
+     ```
+     cd /usr/lib64/microsoft-deployr/9.0.1
+     dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
+     ```
 
 <br><a name="admin-password"></a>
 
@@ -146,11 +148,7 @@ For security purposes, we strongly recommend that you encrypt the connection str
 
       1. Enter information you want to encrypt.  The tool will return an encrypted string.
 
-1. Open the configuration file, `appsettings.json`.
-
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 

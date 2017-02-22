@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**
 
->Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
 This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with [application developers](deployr-application-developer-getting-started.md).
 

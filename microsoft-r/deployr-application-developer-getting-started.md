@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**
 
->Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
 This guide for application developers introduces DeployR, the *R Integration Server*. If you are an application developer or a systems integrator, then this guide explains what DeployR can do for you.
 

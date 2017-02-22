@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Authentication options for operationalization
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 R Server's offers seamless integration with authentication solutions for operationalization. To secure connections and communications, you have several options:
 
@@ -80,12 +80,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
-   1. Open the `appsettings.json` configuration file.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
-      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
-   
    1. Search for the section starting with `"LDAP": {`
    
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
@@ -250,11 +246,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each Web node, enable Azure AD by doing the following:**
 
-1. Open the `appsettings.json` configuration file.
-
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
 1. Search for the section starting with:
    ```

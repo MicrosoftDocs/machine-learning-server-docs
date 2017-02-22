@@ -82,7 +82,8 @@
 ### Administrators
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
-#### [Diagnostics & Troubleshooting](operationalize/admin-diagnostics.md)
+#### [Diagnostics & troubleshooting](operationalize/admin-diagnostics.md)
+#### [Advanced configuration file](operationalize/admin-configuration-file.md)
 #### [Capacity evaluation](operationalize/admin-evaluate-capacity.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
@@ -90,6 +91,7 @@
 #### [R execution security](operationalize/security-rserve.md)
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
+
 ### Data Scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
