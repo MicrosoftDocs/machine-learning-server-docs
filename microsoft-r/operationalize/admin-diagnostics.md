@@ -75,20 +75,43 @@ The set of diagnostic tests include:
 
 <a name="logs"></a>
 
-## Log Files
+## Log files
 
 Review the log and configuration files for any component that was identified as experiencing issues. The [logging level](#loglevel) can be changed to capture more or less information.
 
-**Table: Path to log files by node and operating system**
+### Windows logs path
 
-@@
+The logs can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
 
-|Operating System|Path on Web Node|Path on Compute Node|
-|----------------|--------|------------|
-|Windows|&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\logs |&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
-|Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs| 
+|Node|Path on version 9.1|
+|----|------------|
+|Web|<MRS_home>\o16n\Microsoft.RServer.WebNode\logs|
+|Compute|<MRS_home>\o16n\Microsoft.RServer.ComputeNode\logs|
 
-*<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+<br>
+
+|Node|Path on version 9.0.1|
+|----|------------|
+|Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs|
+|Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
+
+
+### Linux logs path
+
+The logs can be found here: 
+
+
+|Node|Path on version 9.1|
+|----|------------|
+|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.WebNode/logs|
+|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.ComputeNode/logs|
+
+<br>
+
+|Node|Path on version 9.0.1|
+|----|------------|
+|Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs|
+|Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs|
 
 
 > If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.

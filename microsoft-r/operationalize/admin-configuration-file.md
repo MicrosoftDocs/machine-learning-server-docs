@@ -37,45 +37,36 @@ The external configuration file, `appsettings.json`, defines a number of policie
 
 The location of this file depends on the R Server version and operating system you have. 
 
+### Windows path to config file
 
-## R Server 9.1
+The logs can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
 
-#### Windows
-
-The configuration file, `appsettings.json`, can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
-
-   + Web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\`
-
-   + Compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\`
+|Node|Path on version 9.1|
+|----|------------|
+|Web|<MRS_home>\o16n\Microsoft.RServer.WebNode|
+|Compute|<MRS_home>\o16n\Microsoft.RServer.ComputeNode|
 
 <br>
 
-#### Linux 
+|Node|Path on version 9.0.1|
+|----|------------|
+|Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI|
+|Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd|
 
-The configuration file, `appsettings.json`, can be found here: 
 
-   + Web node: `/usr/lib64/microsoft-deployr/9.1.0/Microsoft.DeployR.Server.WebAPI/`.
+### Linux path to config file
 
-   + Compute node: `/usr/lib64/microsoft-deployr/9.1.0/Microsoft.DeployR.Server.BackEnd/`.
+The logs can be found here: 
 
-<br>
 
-## R Server 9.0.1
-
-#### Windows
-
-The configuration file, `appsettings.json`, can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
-
-   + Web node: `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\`
-
-   + Compute node: `<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\`
+|Node|Path on version 9.1|
+|----|------------|
+|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.WebNode|
+|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.ComputeNode|
 
 <br>
 
-#### Linux 
-
-The configuration file, `appsettings.json`, can be found here: 
-
-   + Web node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
-
-   + Compute node: `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/`.
+|Node|Path on version 9.0.1|
+|----|------------|
+|Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI|
+|Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd|

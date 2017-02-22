@@ -53,23 +53,22 @@ These instructions describe how to launch the Administrator Utility.
 + You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**. 
 
 + Alternately, open a command line window with administrator privileges and enter the following commands:
-  ```
-  cd <MRS_home>\deployr
-  dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
-  ```
+
+  |Version|Commands|
+  |----|------------|
+  |9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
+  |9.0.1|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+
   where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 **On Linux:**
 
-1. Launch the administration utility script with `root` or `sudo` privileges.
++ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
 
-1. At the prompt, enter the following commands:
-   + For R Server 9.1: @@@
-
-     ```
-     cd /usr/lib64/microsoft-deployr/9.0.1
-     dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
-     ```
+  |Version|Commands|
+  |----|------------|
+  |9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
+  |9.0.1|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
 
 <br><a name="admin-password"></a>
 
