@@ -26,7 +26,7 @@ ms.custom: ""
 
 # mrsdeploy functions
 
-The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a Web service backed by an R code block or script that you provide.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
+The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
 

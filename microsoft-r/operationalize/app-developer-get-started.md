@@ -76,7 +76,7 @@ You can now provide some custom headers and make other changes before using the 
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. Once a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
 
 Before you interact with the core APIs, first authenticate and get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization:
 
@@ -118,7 +118,7 @@ Before you interact with the core APIs, first authenticate and get the bearer ac
 
 + **Active Directory LDAP or Local Admin** 
 
-  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). Once authenticated, the user will not need to provide credentials again as long as the token is still valid.
+  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid.
 
   Here's an example of Active Directory/LDAP authentication in CSharp:
 
@@ -139,7 +139,7 @@ Before you interact with the core APIs, first authenticate and get the bearer ac
 
 ### Interact with the APIs
 
-Once your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core operationalization APIs. 
+After your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core operationalization APIs. 
 
 ```
 <swagger-client-title> client = new <swagger-client-title>(new Uri("https://<host>:<port>"));

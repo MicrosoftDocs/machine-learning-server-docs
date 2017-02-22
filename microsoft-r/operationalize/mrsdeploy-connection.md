@@ -28,28 +28,34 @@ ms.custom: ""
 
 The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a console application for the purposes of executing code on that server
-+ Publishing and managing a web service backed by an R code block or script that you provide.  
++ Publishing and managing a web service that is backed by the R code block or script you provided.  
 
-Each feature can be used independently but the greatest value is achieved when you can leverage both to produce various, creative R development and analytic deployment solutions.
-
-Since every API call must be authenticated in R Server, the `mrsdeploy` functions, which place API calls on your behalf, are no different. For R Server, authentication of a user identity is handled via Active Directory. R Server will never store or manage usernames and passwords.
+Each feature can be used independently, but the greatest value is achieved when you can leverage both.
 
 This article explains the authentication functions, the arguments they accept, and how to switch between remote and local sessions. 
 
 ## Authentication
 
-`mrsdeploy` provides two functions for authentication against R Server: `remoteLogin()` and `remoteLoginAAD()`. With these functions, you can not only authenticate, but also use their arguments to create a remote R session on the R Server if desired, and even place yourself in the remote command line upon login. 
+This section describes how you authenticate to R Server, either on-premises or in the cloud, by using the functions in `mrsdeploy`.
 
->[!NOTE]
->Unless you specify otherwise, the `remoteLogin()` and `remoteLoginAAD()` functions not only logs you in, but also creates a remote R session on the R Server instance and put you on the remote command line.
+In R Server, every API call between the Web server and client must be authenticated. The mrsdeploy functions, which place API calls on your behalf, are no different. Authentication of user identity is handled via Active Directory. R Server will never store or manage usernames and passwords.
 
-In general, all `mrsdeploy` operations are available to authenticated users. There is currently no role-based authorization model that specifically allows or denies specific operations. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.
+By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, [role-based authorization](security-roles.md) can be used and assigned to control the permissions around web services. 
 
-The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
+
+
+`mrsdeploy` provides two functions for authentication against R Server: `remoteLogin()` and `remoteLoginAAD()`. These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
+ The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
+
+
 
 ### On premises authentication
 
-If you are authenticating using Active Directory server on your network or the [default administrator account](../operationalize/security-authentication.md#local) for an on-premises instance of R Server, use the `remoteLogin` function. This function calls `/user/login` API, which requires a username and password. For the entire set of arguments for this function, check the R help topic in the package help. For example:
+Use the remoteLogin function in these scenarios:
++ you are authenticating using Active Directory server on your network
++ you are using the [default administrator account](../operationalize/security-authentication.md#local) for an on-premises instance of R Server
+
+This function calls `/user/login` API, which requires a username and password. For example:
 
 ```R
 > remoteLogin(
@@ -99,7 +105,7 @@ If you do not specify a username and password as arguments to the login function
 
 ### Cloud authentication
 
-If you are authenticating using Azure Active Directory in the cloud, use the `remoteLoginAAD` function. For the entire set of arguments for this function, check the R help topic in the package help.  
+If you are authenticating using Azure Active Directory in the cloud, use the `remoteLoginAAD` function. For example:  
 
 ```R
 > remoteLoginAAD(
@@ -130,7 +136,7 @@ For example, here is an AAD authentication that will not create a remote R sessi
 >[!NOTE]
 >Unless you specify otherwise using the arguments below, this function will not only log you in, but also create a remote R session on the R Server instance and put you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 
-If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details as described here](../operationalize/security-authentication.md#azure-active-directory). For example:
+If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../operationalize/security-authentication.md#azure-active-directory). For example:
 
 |`remoteLoginAAD` Argument|Description|
 |--- | --- |
@@ -150,7 +156,9 @@ If you do not know your `tenantid`, `clientid`, or other details, please contact
 
 ### Arguments for remote execution 
 
-If you plan to use `mrsdeploy` to start a remote session on R Server and execute code remotely, you'll need to create that remote session and specify if you'd like to start on the local or remote commandline upon login.
+If you plan to use `mrsdeploy` to start a remote session on R Server and execute code remotely, there are two key parts to the command:
+1. Create that remote session
+2. Indicate whether you'd like to open a local or remote command prompt upon login.
 
 Take special note of the arguments `session` and `commandline` as these influence the state of your command line.
 
@@ -159,14 +167,16 @@ Take special note of the arguments `session` and `commandline` as these influenc
 |`session`|If TRUE, create a remote session in R Server. <br>If omitted, it will still create a remote session.<br>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
 
+For more details on remote execution, see [this article](remote-execution.md).
+
 ### Access tokens
 
-Once you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
+After you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
 
 Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned.
 
 ## Remote connection states                                                                                                                                                        
-These `session` and `commandline` login parameters are subtle yet can produce bold context switches from your local R workspace. Depending on their values, you can end up in one of three post authentication command line states in the R console:
+Depending on how you configure the `session` and `commandline` login parameters are subtle, your execution context can switch between local and remote contexts.
 
 ### Create remote R session and go to remote command line (1)
 
@@ -289,7 +299,7 @@ In this example, we define an interactive authentication workflow without a remo
 
 ## Switch between remote and local sessions
 
-Once you log into the remote R server with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
+After you log into the remote R server with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
 
 ![Switch](../media/o16n/mrsdeploy-connect-switch.png)
 

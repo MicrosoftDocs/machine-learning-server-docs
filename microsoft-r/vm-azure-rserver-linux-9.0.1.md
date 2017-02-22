@@ -57,7 +57,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
    >- You'll need an Azure subscription to create the VM.
    >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/)
 
-1. Once the VM is deployed and running, [connect](#connect) to the VM to begin interacting with R Server. 
+1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with R Server. 
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride)

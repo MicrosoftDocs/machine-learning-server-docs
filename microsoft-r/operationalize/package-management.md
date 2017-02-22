@@ -170,7 +170,7 @@ The packages you install using this method do not 'contaminate' the production e
 >[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
 
-**Note:** Once you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
+**Note:** After you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
 
 **To install packages within an R session:**
 

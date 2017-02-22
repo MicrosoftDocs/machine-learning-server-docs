@@ -417,7 +417,7 @@ To make the connection to an HPC Server cluster, you need to know the following 
 - The path to the Microsoft R Server or R Client bin\x64 directory.
 - The name of the data directory created to hold .xdf files on each of the nodes.
 
-Once you have this information, you can create your distributed compute context object by calling RxHpcServer, substituting in the information for your setup in as appropriate:
+After you have this information, you can create your distributed compute context object by calling RxHpcServer, substituting in the information for your setup in as appropriate:
 
     myCluster <- RxHpcServer(
 		headNode="cluster-head2",

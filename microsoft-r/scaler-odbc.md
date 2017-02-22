@@ -196,7 +196,7 @@ MySQL has connectors that work with either the standard yum installs of the unix
 
 If you are using the unixODBC 2.3.1 driver manager, use the mysql-connector-odbc-5.2.4-1.rhel5.x86\_64.rpm, available on the same site.
 
-Once you have installed the connector, configure your installation by editing the files 'odbc.ini' and 'odbcinst.ini'. The default location for these is the system /etc folder. If you create them somewhere else, you can ensure they are found by setting the following environment variables
+After you have installed the connector, configure your installation by editing the files 'odbc.ini' and 'odbcinst.ini'. The default location for these is the system /etc folder. If you create them somewhere else, you can ensure they are found by setting the following environment variables
 
 		export ODBCINI=/path/to/odbc.ini
 

@@ -399,7 +399,7 @@ When running all but the shortest analyses in Hadoop, it can be convenient to le
 	myHadoopNoWaitCluster <- RxHadoopMR(myHadoopCluster, wait = FALSE)
 	rxSetComputeContext(myHadoopNoWaitCluster)
 
-Once you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
+After you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
 
 	job1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxGetJobStatus(job1)
@@ -715,7 +715,7 @@ Here’s how to get started with each of these approaches.
 
 #### Accessing data via ODBC
 
-Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. After you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
 
 	mySQL = "SELECT * FROM CustData"
 	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
