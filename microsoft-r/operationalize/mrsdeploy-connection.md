@@ -26,6 +26,9 @@ ms.custom: ""
 
 # Connecting to R Server with mrsdeploy
 
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+
+
 The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a console application for the purposes of executing code on that server
 + Publishing and managing a web service that is backed by the R code block or script you provided.  

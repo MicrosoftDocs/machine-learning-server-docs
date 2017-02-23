@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Execute on a remote Microsoft R Server
 
-**Applies to:  Microsoft R Client 3.3.2 and Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Client 3.3.2, Microsoft R Server 9.0.1/9.1**
 
 Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server as well as test your work.
 
