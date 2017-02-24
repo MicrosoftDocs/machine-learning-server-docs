@@ -128,9 +128,6 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       }
       ```
 
-
-1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
-
 1. If using a certificate for access token signing, do the following: 
 
    >You must use a certificate for access token signing whenever you have multiple web nodes so the tokens are signed consistently by every web node in your configuration. 
@@ -205,7 +202,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    1. Add a client **Keys** by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as your application developers and data scientists will need it later to authenticate. You will also need this key if you choose to [use roles to give web services permissions to certain users](security-roles.md). See example below.
+      > Take note of this key as your application developers and data scientists will need it later to authenticate. See example below.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -282,8 +279,6 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
         "Key": "ABCD000000000000000000000000WXYZ"  
    },   
    ```
-
-1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
