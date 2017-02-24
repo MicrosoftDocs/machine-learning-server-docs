@@ -124,8 +124,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       }
       ```
 
-
-1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
+1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
 
 1. If using a certificate for access token signing, do the following: 
 
@@ -201,7 +200,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    1. Add a client **Keys** by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as your application developers and data scientists will need it later to authenticate. You will also need this key if you choose to [use roles to give web services permissions to certain users](security-roles.md). See example below.
+      > Take note of this key as your application developers and data scientists will need it later to authenticate. This key is also needed if you configure [roles to give web services permissions to certain users](security-roles.md). See example below.
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -275,7 +274,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    },   
    ```
 
-1. If you want to declare [roles to give web services permissions to certain users](security-roles.md), you can do so now.
+1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
@@ -286,8 +285,5 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md). Note that if you do not specify a username and password as arguments to the login functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
-<br>
-
-**When authenticating with the `mrsdeploy` package, do the following:**
-
-Learn how to authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
+>[!IMPORTANT]
+>Learn how to authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package using the steps in this article: ["Connecting to R Server with mrsdeploy"](../operationalize/mrsdeploy-connection.md).
