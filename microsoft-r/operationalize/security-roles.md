@@ -107,8 +107,9 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 
    ```"Authorization": {```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Owner": [ "Administrators" ],```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Contributor": [ "RProgrammers", "Quality" ]```<br>```}``` 
    
+#### Step 2. Allow R Server to check groups in Azure Active Directory
 
-#### Step 2. Allow R Server to check groups in Azure (Azure Active Directory ONLY)
+R Server must be given the ability to verify the groups you declare against those in AAD or and AD/LDAP.  For AAD, you have an extra step to make that possible. For AD/LDAP, the default settings when you [set up R Server for AD/LDAP](security-authentication.md#ldap) as sufficient.
 
 1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD as follows:
 
@@ -136,7 +137,6 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
 1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
 
    ![Checkbox](../media/o16n/security-auth-1.png) 
-
 
 #### Step 3. Validate the groups against AD/LDAP or AAD.
 
