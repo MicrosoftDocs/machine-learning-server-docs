@@ -129,11 +129,6 @@ When you need to use data from your Azure storage account, there are several opt
 + Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files.](https://azure.microsoft.com/en-us/documentation/articles/storage-how-to-use-files-linux/)
 
 
-## Use Data in an Azure Data Lake Storage (ADLS) account
-
-You can read data from ADLS storage using the `RevoscaleR` package. Simply reference the storage account in the same way that you would an HDFS file system, by using `webHDFS`. For more information, see this [setup guide](http://go.microsoft.com/fwlink/?LinkId=723452).
-
-
 ## Resources & Documentation
 
 Additional documentation about Microsoft R can be found in this MSDN library using the table of contents on your left.
