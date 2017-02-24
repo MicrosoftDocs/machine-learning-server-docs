@@ -57,7 +57,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
    >- You'll need an Azure subscription to create the VM.
    >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/)
 
-1. Once the VM is deployed and running, [connect](#connect) to the VM to begin interacting with R Server. 
+1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with R Server. 
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride)
@@ -127,11 +127,6 @@ When you need to use data from your Azure storage account, there are several opt
 + Copy the data from your storage account to the local file system using a utility, such as[AzCopy.](https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/)
 
 + Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files.](https://azure.microsoft.com/en-us/documentation/articles/storage-how-to-use-files-linux/)
-
-
-## Use Data in an Azure Data Lake Storage (ADLS) account
-
-You can read data from ADLS storage using the `RevoscaleR` package. Simply reference the storage account in the same way that you would an HDFS file system, by using `webHDFS`. For more information, see this [setup guide](http://go.microsoft.com/fwlink/?LinkId=723452).
 
 
 ## Resources & Documentation

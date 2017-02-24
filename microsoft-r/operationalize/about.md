@@ -41,7 +41,7 @@ Introducing Microsoft R Server, the operationalization engine for your advanced 
 
 ## What You Get with R Server Operationalization
 
-Once you [configure R Server for operationalization](configuration-initial.md) for R Server, you can: 
+After you [configure R Server for operationalization](configuration-initial.md) for R Server, you can: 
 
 ||Key Operationalization Features|
 |-|-|

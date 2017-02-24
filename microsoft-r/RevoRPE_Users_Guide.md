@@ -1011,7 +1011,7 @@ The Call Stack window appears as follows:
 
 ![Call Stack Window](media/RevoRPE_Users_Guide/call_stack_window.jpg)
 
-Once you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed.
+After you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed.
 
 > ![NOTE]
 > If you are sourcing rather than running files, clicking on the last source() entry will simply take you to the first line of the currently executing file.
@@ -1402,7 +1402,7 @@ To add a file to a project:
 
 #### Creating an R Package as an R Project
 
-You can use the project type R Package Project to create a new R package. The package is created as an R project containing a DESCRIPTION file, a NAMESPACE file, and R and man directories for holding R scripts and .Rd format help files, respectively. As in all new R projects in the RPE, an empty R script is created for you, but in the R Package Project it is in the R directory. (A README file is also created with instructions for making the package skeleton ready to build. Once you have your package ready to go, you can safely delete this file from your package.)
+You can use the project type R Package Project to create a new R package. The package is created as an R project containing a DESCRIPTION file, a NAMESPACE file, and R and man directories for holding R scripts and .Rd format help files, respectively. As in all new R projects in the RPE, an empty R script is created for you, but in the R Package Project it is in the R directory. (A README file is also created with instructions for making the package skeleton ready to build. After you have your package ready to go, you can safely delete this file from your package.)
 
 To create an R Package Project:
 
@@ -1426,7 +1426,7 @@ As you add functions to your R script, you can create help files for them:
 
 (You don’t need to have an R package to create help files, however. The Rd Help File template is available in all R project types.)
 
-The DESCRIPTION file is a template that you will need to edit before building your package, and the NAMESPACE file is a stub to which you should add directives. Complete details for both of these steps can be found in the R manual Writing R Extensions (R-exts.pdf). Once you have completed these steps, you can build your package by right-clicking the package name and then clicking **Build R Package** from the context menu.
+The DESCRIPTION file is a template that you will need to edit before building your package, and the NAMESPACE file is a stub to which you should add directives. Complete details for both of these steps can be found in the R manual Writing R Extensions (R-exts.pdf). After you have completed these steps, you can build your package by right-clicking the package name and then clicking **Build R Package** from the context menu.
 
 #### Managing Solution Startup
 

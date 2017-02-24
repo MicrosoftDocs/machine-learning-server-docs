@@ -56,7 +56,7 @@ The following resources are available to you:
 
 ## Documentation Roadmap
 
-The best place to start are the Getting Started guides available on this site. Once you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
+The best place to start are the Getting Started guides available on this site. After you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
 The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 

@@ -474,7 +474,7 @@ To install a package:
 1.  On the **Packages** menu, click **Install Packages...**. If you have not specified a CRAN mirror, you are prompted to select one.
 2.  Select one or more packages from the list that appears, and then click **OK**.
 
-Once a package is installed, you can load it as described above.
+After a package is installed, you can load it as described above.
 
 By default, R searches for packages in the CRAN and CRAN (extras) repositories. CRAN has mirrors around the world; use the **Set CRAN Mirror…** option to select one near you, or to choose a different mirror if the one you have chosen is unavailable or slow for some reason. Use the **Select Repositories…** option to choose different or additional repositories.
 
