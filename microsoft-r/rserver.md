@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Introducing Microsoft R Server"
-description: "Microsoft R Server introduction"
+description: "Microsoft R Server for hosting and managing parallel and distributed workloads of R processes on servers"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/01/2016"
+ms.date: "2/28/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -103,7 +103,7 @@ In this release, the [mrsdeploy package](mrsdeploy/mrsdeploy.md) gives you the a
 
 To review specific OS and database platform versions that can be used for an R Server deployment, see [Supported platforms](rserver-install-supported-platforms.md).
 
-## See Also
+## See also
 
 [Learning Resources](microsoft-r-more-resources.md)
 
