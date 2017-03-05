@@ -69,10 +69,15 @@ Use `rpm -qi <package-name>` to install any packages that are missing from your 
 Next, unpack the Microsoft R distributions, starting with MRO, followed by MRS.
 
 1. Log in as root or a user with sudo privileges.
-2. Switch to the **/tmp** directory (assuming it's the download location)
+
+2. Switch to the **/tmp** directory (assuming it's the download location).
+
 3. Unpack the MRO gzipped file:
+
         `[tmp] $ tar zxvf microsoft-r-open-3.3.2.tar.gz`
+
 4. Unpack the MRS gzipped file:
+
         `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
 
 ## Check files
@@ -84,15 +89,25 @@ Files are unpacked into child folders: **microsoft-r-open** and  **MRS90Linux**.
 R Open is deployed by running the install script with no parameters.
 
 1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+
 2. Verify system repositories are up to date:
+
 		`[username] $ sudo yum clean all`
+
 3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
+
 		`[username] $ cd /tmp`
+
 4. Change to the `microsoft-r-open` directory containing the installation script:
+
         `[tmp] $ cd microsoft-r-open`
+
 5. Run the script.
+
 		`[microsoft-r-open] $ sudo bash install.sh`
+
 6. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+
 7. Repeat to accept license terms for the Intel MKL libraries, and to start the installation.
 
 When finished, the installer output shows the packages and location of the log file.
@@ -102,9 +117,13 @@ When finished, the installer output shows the packages and location of the log f
 R Server for Linux is deployed by running the install script with no parameters.
 
 1. Change to the `MRS90LINUX` directory containing the installation script:
+
    `[tmp] $ cd ..\MRS90LINUX`
+
 2. Run the script.
-`[MRS90LINUX] $ sudo bash install.sh`
+
+   `[MRS90LINUX] $ sudo bash install.sh`
+
 3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
 4. Installer output shows the packages and location of the log file.
@@ -112,12 +131,18 @@ R Server for Linux is deployed by running the install script with no parameters.
 ## Verify installation
 
 1. List installed packages and get package names:
+
    `[MRS90LINUX] $ yum list \*microsoft\*`
    `[MRS90LINUX] $ yum list \*deployr\*`
+
 2. Check the version of Microsoft R Open using `rpm -qi`:
+
    `[MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+
 3. Check the version of Microsoft R Server:
+
    `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
+
 4. Partial output is as follows (note version 9.0.1):
 
 	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
@@ -129,12 +154,15 @@ R Server for Linux is deployed by running the install script with no parameters.
 As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
+
    `$ cd MRS90LINUX`
 
 2. Start the program:
+
    `$ Revo64`
 
 3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
+
    `> rxSummary(~., iris)`
 
   Output from the iris dataset should look similar to the following:
@@ -166,7 +194,7 @@ As a verification step, run the Revo64 program.
          virginica  50
 ~~~~
 
-4. To quit the program, type `q()` at the command line with no arguments.
+To quit the program, type `q()` at the command line with no arguments.
 
 ## Configure R Server for Operationalization
 
