@@ -30,7 +30,7 @@ By default, installers connect to Microsoft download sites to get required and u
 
 ## Download packages
 
-Using an internet-connected computer, download the packages listed in [**Package dependencies for Microsoft R Server 9.0.1**](rserver-install-linux-hadoop-packages.md). 
+Using an internet-connected computer, download the packages listed in [Package dependencies for Microsoft R Server 9.0.1](rserver-install-linux-hadoop-packages.md). 
 
 ## Download R Open installer
 
@@ -62,7 +62,7 @@ Use a flash drive or another mechanism to transfer downloaded packages from the 
 
 ## Manually install package dependencies
 
-Use `rpm -qi <*package-name*>` to install any packages that are missing from your system.
+Use `rpm -qi <package-name>` to install any packages that are missing from your system.
 
 ## Unpack the distribution
 
@@ -102,9 +102,9 @@ When finished, the installer output shows the packages and location of the log f
 R Server for Linux is deployed by running the install script with no parameters.
 
 1. Change to the `MRS90LINUX` directory containing the installation script:
-        `[tmp] $ cd ..\MRS90LINUX`
+   `[tmp] $ cd ..\MRS90LINUX`
 2. Run the script.
-		`[MRS90LINUX] $ sudo bash install.sh`
+`[MRS90LINUX] $ sudo bash install.sh`
 3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
 4. Installer output shows the packages and location of the log file.
@@ -112,33 +112,34 @@ R Server for Linux is deployed by running the install script with no parameters.
 ## Verify installation
 
 1. List installed packages and get package names:
-        `[MRS90LINUX] $ yum list \*microsoft\*`
-        `[MRS90LINUX] $ yum list \*deployr\*`
+   `[MRS90LINUX] $ yum list \*microsoft\*`
+   `[MRS90LINUX] $ yum list \*deployr\*`
 2. Check the version of Microsoft R Open using `rpm -qi`:
-		`[MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+   `[MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
 3. Check the version of Microsoft R Server:
-        `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
+   `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
 4. Partial output is as follows (note version 9.0.1):
 
-		Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
-		Version     : 9.0.1                               Vendor: Microsoft
-		. . .
+	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
+	 Version     : 9.0.1                               Vendor: Microsoft
+	 . . .
 
 ## Start Revo64
 
 As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
-        $ cd MRS90LINUX
+   `$ cd MRS90LINUX`
 
 2. Start the program:
-		$ Revo64
+   `$ Revo64`
 
 3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
-        > rxSummary(~., iris)
+   `> rxSummary(~., iris)`
 
   Output from the iris dataset should look similar to the following:
 
+~~~~
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
         Computation time: 0.005 seconds.
         Call:
@@ -163,6 +164,7 @@ As a verification step, run the Revo64 program.
          setosa     50
          versicolor 50
          virginica  50
+~~~~
 
 4. To quit the program, type `q()` at the command line with no arguments.
 
