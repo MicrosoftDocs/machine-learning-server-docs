@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Run Microsoft R Server for Windows"
-description: "How to install, connect to, and use Microsoft R Server on computers running the Windows operating system."
+title: "Install R Server for Windows"
+description: "How to install, connect to, and use Microsoft R Server 9.0.1 on computers running the Windows operating system."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "02/01/2017"
+ms.date: "03/02/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,15 +24,19 @@ ms.custom: ""
 
 ---
 
-# Run Microsoft R Server for Windows
+# Install R Server 9.0.1 for Windows
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. 
 
 For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-## Licensing, installation options, and support
+## Licensing and support
 
 How you install R Server determines the support policy, location of R binaries, and the availability of certain features. 
+
+**Licensing**
+
+R Server for Windows is licensed as a SQL Server enterprise feature. Licensing is the same regardless of how you install the server (standalone or as part of SQL Server). In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#download).
 
 **Support Policy** 
 
@@ -55,10 +59,7 @@ To get a specific policy, use an installer that configures your server to use it
 
 <sup>3</sup> You can provision an Azure virtual machine running Windows that has SQL Server R Server (Standalone) already installed. This VM is provisioned under the SQL Server service plan, but you could rebind to the Modern Lifecycle support policy. For more information, see [Provision an R Server Virtual Machine](https://msdnstage.redmond.corp.microsoft.com/library/mt759780.aspx).
 
-> [!NOTE]
-> Licensing is the same regardless of how you install the server. As an enterprise feature, R Server on a Windows computer is licensed under the SQL Server enterprise license agreement. In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#download).
-
-**R binaries** 
+**Location of R binaries** 
 
 The Windows installer and SQL Server installer create different library folder paths for the R packages. This is something to be aware of when using tools like R Tools for Visual Studio (RTVS) or RStudio, both of which retain library folder location references.
 
@@ -73,9 +74,9 @@ The Windows installer and SQL Server installer create different library folder p
 On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
 
 <a name="howtoinstall"></a>
-## How to install R Server 9.0.1 on Windows using the standalone Windows installer
+## How to install
 
-As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes [operationalization](operationalize/about.md).
+This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes [operationalization](operationalize/about.md).
 
 ### Prerequisites
 
@@ -131,7 +132,7 @@ Optionally, consider adding a development tool on the server to build script or 
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 <a name="connect-validate"></a>
-### Connect and validate installation
+### Connect and validate
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
 
 As a verification step, you can connect to the server and execute a few ScaleR functions to validate the installation.
@@ -143,19 +144,19 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
-## Configure R Server for operations
+## Configure for operations
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Side-by-side installation
 
-You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version. As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service.
+You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version (one 8.x and one 9.x installation on the same machine). As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service and then use each one independently.
 
-## Offline installation and firewall considerations
+## Offline installation
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
 
-## Install earlier versions of R Server for Windows
+## Install earlier versions
 
 Earlier versions are supported, but with limited availability on Microsoft download sites. If you already have one of the older supported versions, you can use the links in this section to access installation instructions.
 
