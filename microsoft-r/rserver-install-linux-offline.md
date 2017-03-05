@@ -74,11 +74,11 @@ Next, unpack the Microsoft R distributions, starting with MRO, followed by MRS.
 
 3. Unpack the MRO gzipped file:
 
-        `[tmp] $ tar zxvf microsoft-r-open-3.3.2.tar.gz`
+  `[tmp] $ tar zxvf microsoft-r-open-3.3.2.tar.gz`
 
 4. Unpack the MRS gzipped file:
 
-        `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
+  `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
 
 ## Check files
 
@@ -133,7 +133,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 1. List installed packages and get package names:
 
    `[MRS90LINUX] $ yum list \*microsoft\*`
-   
+
    `[MRS90LINUX] $ yum list \*deployr\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
@@ -169,30 +169,30 @@ As a verification step, run the Revo64 program.
   Output from the iris dataset should look similar to the following:
 
 ~~~~
-        Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
-        Computation time: 0.005 seconds.
-        Call:
-        rxSummary(formula = ~., data = iris)
+  Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
+  Computation time: 0.005 seconds.
+  Call:
+  rxSummary(formula = ~., data = iris)
 
-        Summary Statistics Results for: ~.
-        Data: iris
-        Number of valid observations: 150
+  Summary Statistics Results for: ~.
+  Data: iris
+  Number of valid observations: 150
 
-         Name         Mean     StdDev    Min Max ValidObs MissingObs
-         Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
-         Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
-         Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
-         Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
+  Name         Mean     StdDev    Min Max ValidObs MissingObs
+  Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
+  Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
+  Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
+  Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
 
-        Category Counts for Species
-        Number of categories: 3
-        Number of valid observations: 150
-        Number of missing observations: 0
+  Category Counts for Species
+  Number of categories: 3
+  Number of valid observations: 150
+  Number of missing observations: 0
 
-         Species    Counts
-         setosa     50
-         versicolor 50
-         virginica  50
+  Species    Counts
+  setosa     50
+  versicolor 50
+  virginica  50
 ~~~~
 
 To quit the program, type `q()` at the command line with no arguments.
