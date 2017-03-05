@@ -92,19 +92,19 @@ R Open is deployed by running the install script with no parameters.
 
 2. Verify system repositories are up to date:
 
-		`[username] $ sudo yum clean all`
+  `[username] $ sudo yum clean all`
 
 3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
 
-		`[username] $ cd /tmp`
+  `[username] $ cd /tmp`
 
 4. Change to the `microsoft-r-open` directory containing the installation script:
 
-        `[tmp] $ cd microsoft-r-open`
+  `[tmp] $ cd microsoft-r-open`
 
 5. Run the script.
 
-		`[microsoft-r-open] $ sudo bash install.sh`
+  `[microsoft-r-open] $ sudo bash install.sh`
 
 6. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -118,7 +118,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. Change to the `MRS90LINUX` directory containing the installation script:
 
-   `[tmp] $ cd ..\MRS90LINUX`
+  `[tmp] $ cd ..\MRS90LINUX`
 
 2. Run the script.
 
@@ -133,6 +133,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 1. List installed packages and get package names:
 
    `[MRS90LINUX] $ yum list \*microsoft\*`
+   
    `[MRS90LINUX] $ yum list \*deployr\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
