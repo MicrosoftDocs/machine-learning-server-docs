@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/04/2017"
+ms.date: "03/03/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -178,7 +178,7 @@ This section lists the feature announcements of recent previous releases.
 
 ### Announced in Microsoft R Server 8.0.3
 
-+ R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. For a description of the features in 8.0.3, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
++ R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. Version 8.0.3 is succeeded by version 9.0.1 in SQL Server. Features are cumulative so what shipped in 8.0.3 is still available in 9.0.1. For a description of features, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 
 ### Announced in Microsoft R Server 8.0.0
