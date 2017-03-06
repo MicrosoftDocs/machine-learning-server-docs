@@ -60,8 +60,8 @@ When roles are declared in the configuration file, the administrator has the cho
 
 |Role |Definition|Can do with<br>web services |Cannot do with<br>web services|
 |-------------|------------|-----------------|---------------------|
-|`Owner` |When declared, these users can manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
-|`Contributor` |When declared, these users can publish and manage their services, but no one else's.|● Publish any service <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
+|`Owner` |These users can manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
+|`Contributor` |These users can publish and manage their services. They cannot manage the services' of others.|● Publish any service <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
 |`Reader`|Never declared, this is a catchall role is given to any authenticated user that is not assigned another role (see below). These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
 
 ## Role declaration states
