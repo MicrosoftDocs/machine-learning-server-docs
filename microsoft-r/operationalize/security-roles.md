@@ -50,7 +50,7 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you've already defined in your organization to assign a collection of users to roles for web services. 
 
-In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. These roles give specific permissions related to publishing and interacting with web services. When a user attempts to authenticate, R Server will check to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role declaration states"** for more information.
+In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. There exists a third role, "Reader", whenever the "Contributor" role is declared. The "Reader" role is a catchall role given to any authenticated user that is not assigned another role.  Roles give specific permissions related to publishing and interacting with web services. When a user attempts to authenticate, R Server will check to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role declaration states"** for more information.
 
 A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions.
 
@@ -61,8 +61,8 @@ When roles are declared in the configuration file, the administrator has the cho
 |Role |Definition|Can do with<br>web services |Cannot do with<br>web services|
 |-------------|------------|-----------------|---------------------|
 |`Owner` |When declared, these users can manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
-|`Contributor` |When declared, these users can publish and <br>manage their services, but no one else's.|● Publish any service <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
-|`Reader`|Never declared, this is a catchall role is given to any<br>authenticated user that is not assigned another role (see below) <br>These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
+|`Contributor` |When declared, these users can publish and manage their services, but no one else's.|● Publish any service <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
+|`Reader`|Never declared, this is a catchall role is given to any authenticated user that is not assigned another role (see below). These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
 
 ## Role declaration states
 
@@ -91,9 +91,9 @@ If you only have the default local administrator account, `admin`, set up for R 
 
 
 
-## Declaring roles for AD/LDAP users
+## Declaring roles for AD/LDAP and Azure AD users
 
-If you configure R Server to [use Active Directory/LDAP authentication](security-authentication.md#ldap), then you can configure it to assign roles using Active Directory groups as follows:
+If you configure R Server to [use Active Directory/LDAP or Azure Active Directory authentication](security-authentication.md), then you can configure it to assign roles using Active Directory groups as follows:
 
 #### Step 1. Add the roles to R Server on each web node
 
