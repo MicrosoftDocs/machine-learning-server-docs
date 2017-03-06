@@ -26,8 +26,7 @@ ms.custom: ""
 
 # Connecting to R Server with mrsdeploy
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
-
+**Applies to:  Microsoft R Server 9.1, Microsoft R Server 9.0.1**
 
 The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a console application for the purposes of executing code on that server
@@ -39,7 +38,7 @@ This article explains the authentication functions, the arguments they accept, a
 
 ## Authentication
 
-This section describes how you authenticate to R Server, either on-premises or in the cloud, by using the functions in `mrsdeploy`.
+This section describes how to authenticate to R Server on-premises or in the cloud using the functions in `mrsdeploy`.
 
 In R Server, every API call between the Web server and client must be authenticated. The mrsdeploy functions, which place API calls on your behalf, are no different. Authentication of user identity is handled via Active Directory. R Server will never store or manage usernames and passwords.
 
