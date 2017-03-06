@@ -25,9 +25,13 @@ ms.custom: ""
 ---
 # Opting out of usage data collection
 
+**Applies to:** version 9.0.1 and later
+
 By default, telemetry data is collected during your usage of Microsoft R Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 
 To turn data collection off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
+To check the server version, open an R IDE, such the R Console (RGui.exe). The console app reports server version information for both Microsoft R Open and R Server.
 
 ## Permission Requirements
 

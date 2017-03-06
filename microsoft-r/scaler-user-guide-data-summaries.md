@@ -6,7 +6,7 @@ description: "Summarizing data in RevoScaleR."
 keywords: ""
 author: "richcalaway"
 manager: "jhubbard"
-ms.date: "03/17/2016"
+ms.date: "03/03/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -122,7 +122,6 @@ To reset the low and high values, we use the same process with the original valu
 ## Formulas for rxSummary
 
 The *rxSummary* function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. With one exception, the formula given to *rxSummary* may not contain a response variable, so that *rxSummary* is generally given a formula of the form “~ predictors.” For example, returning to the CensusWorkers data file we used in Chapter 4, we can obtain a data summary of that file as follows:
-of that file as follows:
 
 	# Formulas in rxSummary
 	  
