@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/18/2017"
+ms.date: "03/06/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,7 +32,7 @@ This article specifies supported operating systems, distributions, and database 
 This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
 
 > [!Note]
-> All supported operating systems are 64-bit only
+> 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 **Microsoft R Server (Windows or Linux)**
 
