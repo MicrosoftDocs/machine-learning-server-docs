@@ -50,21 +50,27 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you've already defined in your organization to assign a collection of users to roles for web services. 
 
-In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. There exists a third role, "Reader", whenever the "Contributor" role is declared. The "Reader" role is a catchall role given to any authenticated user that is not assigned another role.  Roles give specific permissions related to publishing and interacting with web services. When a user attempts to authenticate, R Server will check to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role declaration states"** for more information.
+In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. Roles give specific permissions related to publishing and interacting with web services:
++ `Owner`: users assigned to this role can manage any service.
++ `Contributor`: users assigned to this role can publish and manage their services. They cannot manage the services' of others.
++ `Reader`: a catchall role implicitly given to any authenticated user that is not assigned another role. It is never explicitly declared. See next table. These users can only list and consume services.
 
 A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions.
+
+When a user attempts to authenticate, R Server will check to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role configuration states"** for more information.
+
 
 ## Roles for web service interactions
 
 When roles are declared in the configuration file, the administrator has the choices of putting groups (of users) into these roles.
 
-|Role |Definition|Can do with<br>web services |Cannot do with<br>web services|
+|Role |Can do with<br>web services |Cannot do with<br>web services|
 |-------------|------------|-----------------|---------------------|
-|`Owner` |These users can manage any service.|● Publish any service <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
-|`Contributor` |These users can publish and manage their services. They cannot manage the services' of others.|● Publish any service, including new versions of web services published by someone else <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
-|`Reader`|This role is never declared. This 'catchall' role is given to any authenticated user that is not assigned another role. See next table. These users can only list and consume services.|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
+|`Owner` |● Publish any service, including new versions<br>&nbsp;&nbsp; of web services published by someone else <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
+|`Contributor` |● Publish any service, including new versions<br>&nbsp;&nbsp; of web services published by someone else <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
+|`Reader`|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
 
-## Role declaration states
+## Role configuration states
 
 You can choose from the following states:
 
