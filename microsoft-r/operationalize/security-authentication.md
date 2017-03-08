@@ -197,7 +197,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
-   1. Add a client **Keys** by selecting a key duration and take note of the key. 
+   1. Add a client **Keys** for the web app by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
       > Take note of this key as your application developers and data scientists will need it later to authenticate. This key is also needed if you configure [roles to give web services permissions to certain users](security-roles.md). See example below.

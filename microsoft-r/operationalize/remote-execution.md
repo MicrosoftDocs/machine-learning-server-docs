@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/14/2017"
+ms.date: "03/14/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -66,17 +66,16 @@ When the `REMOTE>` command line is displayed in the R console, any R commands en
 
 Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To switch back to the local R session, type `pause()`. If you have switched to the local R session, you can go back to the remote R session by typing `resume()`.
 
-To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remote_logout()`.
+To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remoteLogout()`.
 
 |Convenience Functions|Description|
 |---|---|
 |`pause()`|When executed from the remote R session, returns the user to the local `> ` command prompt.|
 |`resume()`|When executed from the local R session, returns the user to the `REMOTE>` command prompt, and sets a remote execution context.|
 
-
-**Example**
-
 ```R
+#EXAMPLE: SESSION SWITCHING 
+
 #execute some R commands on the remote session
 REMOTE>x<-rnorm(1000)
 REMOTE>hist(x)
@@ -102,25 +101,35 @@ run anytime by executing the function: `diffLocalRemote()`.
 ## Execute an R script remotely
 
 If you have R scripts on your local machine, you can execute them remotely by using the function `remoteScript()`.
-This function takes a path to an R script to be executed remotely. You also have options
-to save or display any plots that might have been generated during script execution. The function returns a list
-containing the status of the execution (success/failure), the console output generated, and a list of files created.
+This function takes a path to an R script to be executed remotely. You also have options to save or display any plots that might have been generated during script execution. The function returns a list containing the status of the execution (success/failure), the console output generated, and a list of files created.
 
-If your R Script has R Package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server,
-or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
+>[!NOTE]
+>If you need more granular control of a remote execution scenario, use the `remoteExecute()` function.
 
-If you need more granular control of a remote execution scenario, you can use the `remoteExecute()` function.
+### Package dependencies
 
-**Example**
+If your R script has R package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server, or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
+
+### Asynchronous remote execution
+
+If you want to continue working in your development environment during the remote script execution, you can execute your R script asynchronously. This is particularly useful when you are running scripts that have long execution times. 
+
+To execute an R script asynchronously, set the `async` parameter for `remoteScript()`  to `TRUE`. When `remoteScript()` is executed, the script is run asynchronously in a new remote R console window. All R console output and any plots from that execution are returned to the same window.
 
 ```R
+#EXAMPLE: REMOTE SCRIPT EXECUTION 
+
 #install a package for the life of the session
 REMOTE>install.packages("bitops")
 
 #switch to the local R session
 REMOTE>pause()
+
 #execute an R script remotely
->remoteScript("c/myScript.R")    
+>remoteScript("C:/myScript.R")    
+
+#execute that script again in another window asynchronously
+>remoteScript("C:/myScript.R", async=TRUE)  
 ```
 
 <a name="objects"></a>
@@ -135,9 +144,10 @@ Similar capabilities are available for files that need to be moved between the l
 
 The following functions are available for working with files:  `putLocalFile()`, `getRemoteFile()`, `listRemoteFiles()` and `deleteRemoteFile()`.
 
-**Example**
 
 ```R
+#EXAMPLE: REMOTE R OBJECTS AND FILES 
+
 #execute a script remotely that generated 2 R objects we are interested in retrieving
 >remoteExecute("C:/myScript.R")
 #retrieve the R objects from the remote R session and load them into our local R session
@@ -147,16 +157,19 @@ The following functions are available for working with files:  `putLocalFile()`,
 #instance of `data` to the remote R session
 >putLocalObject("data")
 #execute an R script remotely
->remoteScript("c/myScript2.R")
+>remoteScript("C:/myScript2.R")
 
 #push a data file to the remote R session
 >putLocalFile("C:/data/survey.csv")
 #execute an R script remotely
->remoteScript("c/myScript2.R")
+>remoteScript("C:/myScript2.R")
 ```
+
 ## A word on plots
 
-When you plot remotely, the default plot size is 400 x 400 pixels. If you desire higher-resolution output, you must tell the remote session the size of plot to create. On a local session, you might do the following:
+When you plot remotely, the default plot size is 400 x 400 pixels. If you desire higher-resolution output, you must tell the remote session the size of plot to create. 
+
+On a local session, you might do the following:
 
 ```R
 > png(filename="myplot.png", width=1440, height=900)
@@ -170,7 +183,7 @@ When working on the REMOTE command line, you need to combine these 3 statements 
 REMOTE> png(filename="myplot.png", width=1440, height=900);ggplot(aes(x=value, group=am, colour=factor(am)), data=mtcarsmelt) + geom_density() + facet_wrap(~variable, scales="free");dev.off()
 ```
 
-As an alternative you can use the remoteScript function. Do the following:
+As an alternative you can use the `remoteScript()` function as follows:
 
 ```R
 #Open a new script window in your IDE
@@ -190,7 +203,7 @@ REMOTE> pause()
 
 ```R
 #From the local command prompt, execute your remote script
-> remote_script("myscript.R")
+> remoteScript("myscript.R")
 ```
 
 <a name="snapshot"></a>
@@ -216,9 +229,9 @@ The following functions are available for working with snapshots:
 > While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the Request-Response time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
 
 
-**Example**
-
 ```R
+#EXAMPLE: USING SNAPSHOTS
+
 #configure our remote session
 REMOTE>install.packages(c("arules","bitops","caTools"))
 >putLocalFile("C:/data/survey_reference.csv")
@@ -228,7 +241,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 #whenever I need the modeling environment, reload the snapshot
 >loadSnapshot(snapshot_id)  
 #execute an R script remotely
->remoteScript("c/myScript2.R")
+>remoteScript("C:/myScript2.R")
 ```
 
 
