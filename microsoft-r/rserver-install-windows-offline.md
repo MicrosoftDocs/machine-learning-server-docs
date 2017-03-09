@@ -26,13 +26,7 @@ ms.custom: ""
 
 # Offline installation instructions for R Server for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can:
-
-Step 1: Download prerequisites  on an internet-connected computer
-Step 1: Download installer on an internet-connected computer
-Step 3: Copy all files to a disconnected computer behind the firewall
-Step 4: Manually install each prerequisite
-Step 5: Run RServerSetup
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download files, transfer files to an offline server, manually install each prerequisite, and then install R Server.
 
 <a name="download"><a/>
 ## Download executables
@@ -47,9 +41,9 @@ Step 5: Run RServerSetup
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
 | Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
 
-## Download an RServerSetup installer
+## Download RServerSetup
 
-Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
+Get the zipped installer ffrom one of these locations: 
 
 **Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
 
@@ -69,7 +63,7 @@ This option provides a zipped file, free to developers who sign up for Visual St
 
 ## Check files
 
-After downloading all of the prerequisites and the RServerSetup, you should have all of these files:
+After downloading prerequisites and the R Server installer, you should have all of these files:
 
     vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
     vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
@@ -80,7 +74,7 @@ After downloading all of the prerequisites and the RServerSetup, you should have
     MSMpiSetup.exe
     en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
-## Copy files to the target server
+## Transfer files to the target server
 
 Use a flash drive or another mechanism to transfer files listed above to the offline server. Put all files in the same folder.
 
