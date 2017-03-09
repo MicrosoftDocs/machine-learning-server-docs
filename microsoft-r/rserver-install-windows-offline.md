@@ -40,26 +40,18 @@ By default, installers connect to Microsoft download sites to get required and u
 | Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
 | Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
+| SRO_3.3.2.0_1033.cab | none | http://go.microsoft.com/fwlink/?LinkID=834568 |
 
-## Download RServerSetup
+<a name="download"><a/>
+### Download R Server installer
 
-Get the zipped installer ffrom one of these locations: 
+Get the zipped RServerSetup installer file from one of the following download sites.
 
-**Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
-
-Subscribers can download software at given subscription levels. Depending on your subscription, you can get the developer or enterprise edition.
-
-**Option 2: [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)** 
-
-This option provides the enterprise edition. Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.**
-
-**Option 3: [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)** 
-
-This option provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
-
-1. Click **Join or Access Now** and enter your account information.
-2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
-3. Click **Downloads**, and then search for *Microsoft R*.
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## Check files
 
@@ -72,6 +64,7 @@ After downloading prerequisites and the R Server installer, you should have all 
     SQL_AS_OLEDB.msi
     microsoft-r-open-3.3.2.msi
     MSMpiSetup.exe
+    SRO_3.3.2.0_1033.cab
     en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
 ## Transfer files to the target server
@@ -92,14 +85,14 @@ Manually install the prerequisites, prior to unzipping and running RServerSetup.
 
 Installation of the .NET Framework requires a restart.
 
-Installation of Microsoft R Open (microsoft-r-open-3.3.2.msi) installs the Intel MKL package and a CAB file (SRO_3.3.2.0_1033.cab). In the next step, manually copy the CAB file to a new folder location.
+Actions for the .cab and .zip file are covered next.
 
 ## Unzip setup files and copy the .cab
 
 In previous steps, you downloaded the RServerSetup installer and then copied .zip file to the offline server. You should now extract the zipped files. 
 
 1. Right-click en_r_server_901_for_windows_X64_9649035.zip > Extract All.
-2. In the folder containing extracted files, move the SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. 
+2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. 
 
 By default, the folder is **MRS90Windows**.
 
