@@ -89,7 +89,7 @@ Actions for the .cab and .zip file are covered next.
 
 ## Unzip setup files and copy the .cab
 
-In previous steps, you downloaded the RServerSetup installer and then copied .zip file to the offline server. You should now extract the zipped files. 
+In previous steps, you downloaded a .cab, the RServerSetup installer, and then copied both files to the offline server. You should now extract the zipped files. 
 
 1. Right-click en_r_server_901_for_windows_X64_9649035.zip > Extract All.
 2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. 
