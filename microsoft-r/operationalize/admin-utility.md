@@ -65,12 +65,12 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Linux:**
 
-+ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+Launch the administration utility script with `root` or `sudo` privileges with the following commands:
 
-  |Version|Commands|
-  |----|------------|
-  |9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
-  |9.0.1|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
+|Version|Commands|
+|----|------------|
+|9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
+|9.0.1|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
 
 <br><a name="admin-password"></a>
 
@@ -78,6 +78,7 @@ These instructions describe how to launch the Administrator Utility.
 
 When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `admin`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
+>[!NOTE]
 >The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
 
 **To set or update the local admin account password:**

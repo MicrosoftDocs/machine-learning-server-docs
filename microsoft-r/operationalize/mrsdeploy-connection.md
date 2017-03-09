@@ -136,13 +136,15 @@ For example, here is an AAD authentication that will not create a remote R sessi
 
 If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../operationalize/security-authentication.md#azure-active-directory). For example:
 
+<a name="aad-arguments"></a>
+
 |`remoteLoginAAD` Argument|Description|
 |--- | --- |
 |endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number. This is the SIGN-ON URL value from the web application|
 |authuri|The URI of the authentication service for Azure Active Directory.|
-|tenantid|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account such as: myMRServer.contoso.com|
-|clientid|The client ID of the AAD "native" application for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
-|resource|The resource ID is the clientID from the AAD "Web" application  for the Azure Active Directory account such as 00000000-0000-0000-0000-000000000000.|
+|tenantid|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
+|clientid|The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
+|resource|The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
 |session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|

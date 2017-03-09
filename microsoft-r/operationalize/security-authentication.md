@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication for Operationalization w
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/08/2017"
+ms.date: "03/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,7 +29,11 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
-R Server's offers seamless integration with authentication solutions for operationalization. To secure connections and communications, you have several options:
+R Server's offers seamless integration with authentication solutions for operationalization.
+
+![Security](../media/o16n/security.png)
+
+To secure connections and communications, you have several options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
@@ -37,12 +41,6 @@ R Server's offers seamless integration with authentication solutions for operati
 |[Active Directory / LDAP](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations|
 |[Active Directory / LDAP-S](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|For [enterprise](configuration-initial.md) cloud configurations|
-
-<br>
-
-![Security](../media/o16n/security.png)
-
-<br>
 
 <a name="local"></a>
 
@@ -94,8 +92,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
       |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
       |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
-      |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
+      |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
 
@@ -117,8 +115,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
               "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
               "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
               "QueryUserPasswordEncrypted": true,
-              "QueryUserPassword":
-"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+              "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
               "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
               "SearchFilter": "cn={0}"       
       }
@@ -169,7 +166,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 [Azure Active Directory (AAD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
-**In the Azure Classic Portal, do the following:**
+**Step 1: Log into the Azure classic portal**
 
 1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and navigate to **Active Directory** in the left hand pane. Copy the URL in your browser address bar. You will use this to configure your Azure Active Directory app.
 
@@ -177,13 +174,15 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Select the **Applications** tab at the top. 
 
-1. Now, create a web app that is tied to the Azure Active Directory as follows: 
+**Step 2: Create a web application**
+
+Now, create a web app that is tied to the Azure Active Directory as follows: 
 
    1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
  
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 
-   1. In the wizard, enter a **Name** for your application, such as `rserver_web`.
+   1. In the wizard, enter a **Name** for your application, such as `R Server Web app`.
 
    1. For the **Type**, click the **Web Application And/Or Web API**. 
 
@@ -194,25 +193,30 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    1. Click the checkmark to continue and add the application.
 
    1. After the application has been added, click the **Configure** tab. 
+      ![Configure web application](../media/o16n/webapp1.png)
 
    1. Copy the **Client ID** for the web app. You will configure your Native application and Microsoft R Server to use this later.
 
-   1. Add a client **Keys** for the web app by selecting a key duration and take note of the key. 
+   1. Add a client key to the **Keys** section for this web app by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
       > Take note of this key as your application developers and data scientists will need it later to authenticate. This key is also needed if you configure [roles to give web services permissions to certain users](security-roles.md). See example below.
+
+      ![Configure web application](../media/o16n/webapp2.png)
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
    1. Click **Save**. The application is created.
 
-1. Now, create a native app, which links the web app to the Microsoft R Server operationalization server as follows:
+**Step 3: Create a native application**
+
+Now, create a native app. This app links the web app to the Microsoft R Server operationalization server.
 
    1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
 
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 
-   1. In the wizard, enter a **Name** for your native application, such as `rserver_native`.
+   1. In the wizard, enter a **Name** for your native application, such as `R Server Native app`.
 
    1. For the **Type**, click the **Native Client Application**. 
 
@@ -241,9 +245,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Click **Save**. 
 
-<br>
-
-**On each Web node, enable Azure AD by doing the following:**
+**Step 4: Enable Azure AD on each web node**
 
 1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
@@ -262,16 +264,23 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    |Azure AD Properties|Definition|
    |----------------|-------------------------------|
+   |`Enabled`|To use AAD for authentication, set to `true`. Else, set to `false`.|
    |`Authority`|Use `https://login.windows.net/<URL to AAD login>` where `<URL to AAD login>` is the URL to the AAD login. For example, if the AAD account domain is `myMRServer.contoso.com`, then the `Authority` would be `https://login.windows.net/myMRSServer.contoso.com`|
-   |`Audience`|Use the `CLIENT ID` value for the web app you copied from the Azure management portal.|
+   |`Audience`|Use the `CLIENT ID` value for the WEB app you created in the Azure management portal.|
+   |`ClientId`|Use the `CLIENT ID` value for the NATIVE app you created in the Azure management portal.|
+   |`Key`|This is the key for the WEB application you took note of above.  |
+   |`KeyEncrypted`|We highly recommend that you [encrypt login credentials](admin-utility.md#encrypt) before adding the information to this file. If you do, set this to `true`. For plain text, set to `false`.|
 
+   For example:
    ```
    "AzureActiveDirectory": {
-        "Enabled": false,
-        "Authority": "https://login.windows.net/rserver.contoso.com",
-        "Audience": "00000000-0000-0000-0000-000000000000",
-        "Key": "ABCD000000000000000000000000WXYZ"  
-   },   
+      "Enabled": true,
+      "Authority": "https://login.windows.net/rserver.contoso.com",
+      "Audience": "00000000-0000-0000-0000-000000000000",
+      "ClientId": "00000000-0000-0000-0000-000000000000",
+      "Key": "ABCD000000000000000000000000WXYZ", 
+      "KeyEncrypted": true
+    }
    ```
 
 1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
@@ -279,11 +288,15 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
+   1. Run the [diagnostic tests](admin-diagnostics.md) to test the configuration.
 
-1. Repeat these steps on each machine hosting the web node.
+1. Repeat these steps on each machine hosting a web node.
 
-1. Share the connection details with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md). Note that if you do not specify a username and password as arguments to the login functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
+**Step 5: Share the required AAD connection details with your users**
+
+Share the connection details such as the values for Authority, Audience, and so on with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
+
+Note that if you do not specify a username and password as arguments to the login call or R functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
 >[!IMPORTANT]
 >Learn how to authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package using the steps in this article: ["Connecting to R Server with mrsdeploy"](../operationalize/mrsdeploy-connection.md).
