@@ -40,9 +40,7 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 + An instance of Microsoft R Server that is [configured for operationalization](../operationalize/configuration-initial.md)
 
 + Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/security-authentication.md)
-   >[!NOTE]
-   > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
-  
+
 + The names of the groups that contain the users to whom you want to give special permissions
 
 ## Groups versus roles for web services
@@ -151,7 +149,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 Return to [the `appsetting.json` file](admin-configuration-file.md) and do the following:
 
-+ **(Azure Active Directory ONLY)**. In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](security-authentication.md#aad).
++ **For Azure Active Directory: ** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](security-authentication.md#aad).
 
   >[!IMPORTANT]
   > For more security, we recommend you [encrypt the key](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
@@ -159,7 +157,7 @@ Return to [the `appsetting.json` file](admin-configuration-file.md) and do the f
   >[!NOTE]
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
 
-+ **(Active Directory/LDAP ONLY)**. In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](security-authentication.md#ldap).
++ **For Active Directory/LDAP:**. In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](security-authentication.md#ldap).
 
 
 #### Step 3. Apply the changes to R Server
