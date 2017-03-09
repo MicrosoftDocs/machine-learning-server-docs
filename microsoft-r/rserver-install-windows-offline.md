@@ -26,9 +26,16 @@ ms.custom: ""
 
 # Offline installation instructions for R Server for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup.
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can:
 
-## Download prerequisites
+Step 1: Download prerequisites  on an internet-connected computer
+Step 1: Download installer on an internet-connected computer
+Step 3: Copy all files to a disconnected computer behind the firewall
+Step 4: Manually install each prerequisite
+Step 5: Run RServerSetup
+
+<a name="download"><a/>
+## Download executables
 
 | Component | Version | Download Link |
 |-----------|---------|--------|
@@ -39,9 +46,8 @@ By default, installers connect to Microsoft download sites to get required and u
 | Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
 | Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
 | Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
-| SRO_3.3.2.0_1033.cab| none | http://go.microsoft.com/fwlink/?LinkID=834568 |
 
-## Download an installer
+## Download an RServerSetup installer
 
 Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
 
@@ -63,7 +69,7 @@ This option provides a zipped file, free to developers who sign up for Visual St
 
 ## Check files
 
-After downloading all of the prerequisites and the RServerSetup, you should have these files:
+After downloading all of the prerequisites and the RServerSetup, you should have all of these files:
 
     vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
     vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
@@ -72,16 +78,15 @@ After downloading all of the prerequisites and the RServerSetup, you should have
     SQL_AS_OLEDB.msi
     microsoft-r-open-3.3.2.msi
     MSMpiSetup.exe
-    SRO_3.3.2.0_1033.cab ** download but don't install
     en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
-## Transfer files to the target server
+## Copy files to the target server
 
-Use a flash drive or another mechanism to transfer files listed to the offline server. Put all files in the same folder.
+Use a flash drive or another mechanism to transfer files listed above to the offline server. Put all files in the same folder.
 
-## Install prerequisites
+## Manually install prerequisites
 
-Manually install the prerequisites, prior to running RServerSetup. Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts may be required.
+Manually install the prerequisites, prior to unzipping and running RServerSetup. Installation order is important. Begin at the top of list, starting with vcredist_x64 and work your way down. Restarts may be required.
 
     vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
     vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
@@ -91,19 +96,22 @@ Manually install the prerequisites, prior to running RServerSetup. Installation 
     microsoft-r-open-3.3.2.msi
     MSMpiSetup.exe
 
-Do not install the .cab file or run the .exe. RServerSetup.exe will take what it needs from the .cab when you run the installer in the next step.
+Installation of the .NET Framework requires a restart.
 
-Several installers use Windows SmartScreen and an internet connection to determine if an installer is legitimate. When prompted with a **Run** or **Don't Run** choice, you will need to click **Run** to continue.
+Installation of Microsoft R Open (microsoft-r-open-3.3.2.msi) installs the Intel MKL package and a CAB file (SRO_3.3.2.0_1033.cab). In the next step, manually copy the CAB file to a new folder location.
 
 ## Unzip setup files and copy the .cab
 
-In previous steps, you downloaded and then copied .zip file to the offline server. You should now extract the zipped files. In the resulting folder, copy the .cab file and place it in the same folder as the extracted setup file, RServerSetup.exe.
+In previous steps, you downloaded the RServerSetup installer and then copied .zip file to the offline server. You should now extract the zipped files. 
+
+1. Right-click en_r_server_901_for_windows_X64_9649035.zip > Extract All.
+2. In the folder containing extracted files, move the SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. 
+
+By default, the folder is **MRS90Windows**.
 
 ## Run RServerSetup
 
-Expand the folder containing `RServerSetup.exe` and double-click to start the wizard. 
-
-Post-installation, you can review log files. Log files (RServerSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
+Double-click `RServerSetup.exe` to start the wizard. 
 
 ### Log files
 
