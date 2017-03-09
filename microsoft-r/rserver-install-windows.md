@@ -42,14 +42,14 @@ In a development context, developers and data scientists can install the free de
 
 **Support Policy** 
 
-Two service plans <sup>1</sup>  are available for R Server for Windows, and the installation method determines which one is in effect.
+Two support plans <sup>1</sup>  are available for R Server for Windows. The installation method determines which one is in effect.
 
 | Service Plan | Details | How to get this plan |
 |--------------|---------|----------------------|
 |[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Requires running the latest version of R Server. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
 | **SQL Server support policy** | Updates are on the SQL Server release schedule. | [Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2</sup> <sup>3</sup>| 
 
-<sup>1</sup> For details about support lifecycles, go to [Microsoft Lifecycle Support](https://support.microsoft.com/lifecycle/selectindex). Use the index to navigate to either **R Server** or **SQl Server 2016**.
+<sup>1</sup> For details about support policies, go to [Microsoft Lifecycle Policy](https://support.microsoft.com/lifecycle/selectindex). Use the index to navigate to either **R Server** or **SQl Server 2016**.
 
 <sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://msdn.microsoft.com/library/mt791781.aspx) and rebind it to Modern Lifecycle. The terms and duration of your license is the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what might be typical for SQL Server deployments.
 
@@ -97,23 +97,13 @@ The following additional components are installed by Setup and required for an R
 <a name="download"><a/>
 ### Download R Server installer
 
-Get the rserversetup.zip or rserversetup.exe file from one of these locations: 
+Get the rserversetup.zip or rserversetup.exe file from one of the following download sites.
 
-**Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
-
-Subscribers can download software at given subscription levels. Depending on your subscription, you can get the developer or enterprise edition.
-
-**Option 2: [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)** 
-
-This option provides the enterprise edition. Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.**
-
-**Option 3: [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)** 
-
-This option provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
-
-1. Click **Join or Access Now** and enter your account information.
-2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
-3. Click **Downloads**, and then search for *Microsoft R*.
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 <a name="Run-Setup"></a>
 ### Run Setup
