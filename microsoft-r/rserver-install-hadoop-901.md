@@ -252,7 +252,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
 
-Assuming that the packages for Microsoft R Open and Microsoft R Server are already installed, a manual or custom installation must create the appropriate folders and set permissions.
+Assuming that the packages for Microsoft R Open and Microsoft R Server are already unpacked, a manual or custom installation must create the appropriate folders and set permissions.
 
 **RPM or DEB Installers**
 

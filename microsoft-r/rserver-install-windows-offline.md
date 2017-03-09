@@ -6,7 +6,7 @@ description: "How to install R Server without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "02/02/2017"
+ms.date: "03/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -81,9 +81,15 @@ Use a flash drive or another mechanism to transfer files listed to the offline s
 
 ## Install prerequisites
 
-Component downloads are self-executing. Double-click each file to begin installation. 
+Manually install the prerequisites, prior to running RServerSetup. Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts may be required.
 
-Installation order is important. Begin at the top of list, starting with vcredist_x64, and work your way down. Restarts may be required.
+    vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
+    vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
+    DotnetCore.1.0.1-Runtime-x64.exe`
+    NDP452-KB2901954-Web.exe
+    SQL_AS_OLEDB.msi
+    microsoft-r-open-3.3.2.msi
+    MSMpiSetup.exe
 
 Do not install the .cab file or run the .exe. RServerSetup.exe will take what it needs from the .cab when you run the installer in the next step.
 
@@ -98,6 +104,10 @@ In previous steps, you downloaded and then copied .zip file to the offline serve
 Expand the folder containing `RServerSetup.exe` and double-click to start the wizard. 
 
 Post-installation, you can review log files. Log files (RServerSetup_<timestamp>.log) can be found in your system temp directory. An easy way to navigate to the directory is to enter %temp% as a Run command or search operation.
+
+### Log files
+
+Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
 
 ## Connect and validate installation
 

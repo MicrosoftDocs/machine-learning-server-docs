@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server 9.0.1 on co
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/02/2017"
+ms.date: "03/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,22 +36,18 @@ How you install R Server determines the support policy, location of R binaries, 
 
 **Licensing**
 
-R Server for Windows is licensed as a SQL Server enterprise feature. Licensing is the same regardless of how you install the server (standalone or as part of SQL Server). In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#download).
+R Server for Windows is licensed as a SQL Server enterprise feature. Licensing is the same regardless of how you install the server (standalone, standalone as part of SQL Server, or embedded in a relational database instance as SQL Server R Services). 
+
+In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#download).
 
 **Support Policy** 
 
-Two service plans are available for R Server for Windows:
+Two service plans are available for R Server for Windows, and the installation method determines which one is in effect.
 
-+ **SQL Server support policy** offers updates and customer support on a longer servicing plan, but with less frequent feature updates, per the SQL Server release schedule. 
-+ **Modern Lifecycle** is concentrated over a two year period. It delivers fixes and features sooner.
-
-To get a specific policy, use an installer that configures your server to use it. The following table summarizes installers and service plan combinations. 
-
-| Installer | Service plan | Benefits |
-|-----------|--------------|----------|
-|[Install R Server for Windows using a standalone Windows installer](#howtoinstall) | [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) | Faster turnaround of new feature releases. |
-|[Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) | SQL Server support policy<sup>1</sup> or [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) <sup>2</sup> | Integration with the database engine.   |
-|[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) | SQL Server support policy <sup>1</sup> | Not integrated with the database engine. Choose this option if you want a standalone server with the SQL Server support policy <sup>3</sup>. |
+| Service Plan | Details | How to get this plan |
+|--------------|---------|----------------------|
+|[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Recommended for standalone server installations. Servicing is concentrated over a two year period. This policy delivers fixes and features sooner. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
+| **SQL Server support policy** <sup>1</sup> | Offers updates per the SQL Server release schedule. The release schedule is longer, but with fewer updates. | [Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) or [Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2</sup> <sup>3</sup>|
 
 <sup>1</sup> For details about SQL Server support, go to **[Modern Lifecycle Support](https://support.microsoft.com/en-us/lifecycle) > Search for products**, and then enter "SQL Server 2016" as the search term.
 
@@ -124,12 +120,9 @@ This option provides a zipped file, free to developers who sign up for Visual St
 
 RServerSetup.exe checks for prerequisites, prompts for acceptance of user agreements, and gives you the option of choosing a different program directory. At the end of the wizard, you click **Run** to install R Server and required components.
 
-Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in your system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
+### Log files
 
-Optionally, consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
-
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
-+ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
+Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
 
 <a name="connect-validate"></a>
 ### Connect and validate
@@ -143,6 +136,14 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+
+### Install tools (optional)
+
+Consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
+
++ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
++ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
+
 
 ## Configure for operations
 
