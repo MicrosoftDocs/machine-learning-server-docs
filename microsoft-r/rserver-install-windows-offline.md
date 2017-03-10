@@ -29,7 +29,7 @@ ms.custom: ""
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download files, transfer files to an offline server, manually install each prerequisite, and then install R Server.
 
 <a name="download"><a/>
-## Download executables
+## Download prerequisites
 
 | Component | Version | Download Link |
 |-----------|---------|--------|
@@ -43,7 +43,7 @@ By default, installers connect to Microsoft download sites to get required and u
 | SRO_3.3.2.0_1033.cab | none | http://go.microsoft.com/fwlink/?LinkID=834568 |
 
 <a name="download"><a/>
-### Download R Server installer
+## Download R Server installer
 
 Get the zipped RServerSetup installer file from one of the following download sites.
 
@@ -100,7 +100,7 @@ By default, the folder is **MRS90Windows**.
 
 Double-click `RServerSetup.exe` to start the wizard. 
 
-### Log files
+## View log files
 
 Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
 
