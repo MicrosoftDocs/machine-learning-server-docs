@@ -37,7 +37,7 @@ R is a great modeling tool, but **the challenge lies in how to effectively opera
 
 ![Operationalization Engine](../media/o16n/about-traditional-challenge.png) 
 
-Introducing Microsoft R Server, the operationalization engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+Introducing Microsoft R Server, the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 ## What You Get with R Server Operationalization
 

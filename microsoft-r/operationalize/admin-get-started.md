@@ -28,6 +28,8 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
+>To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to R Server for operationalization, read the [About](about.md) topic.
+
 This guide is for system administrators of the operationalization feature in R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
 
 As an administrator, your key responsibilities are to ensure configuration for the operationalization feature is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
@@ -38,7 +40,6 @@ As an administrator, your key responsibilities are to ensure configuration for t
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-diagnostics.md) and numerous recommendations.
 
->For a general introduction to R Server for operationalization, read the [About](about.md) topic.
 
 ## Setup R Server for Operationalization
 
