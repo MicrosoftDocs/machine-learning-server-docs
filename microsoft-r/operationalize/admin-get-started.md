@@ -42,7 +42,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 ## Setup R Server for Operationalization
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you must first [configure R Server for operationalization](configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+To benefit from Microsoft R Server’s web service deployment and remote execution features, you must first [configure R Server](configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
 
 All configurations have at least a single web node and single compute node:
 
