@@ -85,16 +85,15 @@ Manually install the prerequisites, prior to unzipping and running RServerSetup.
 
 Installation of the .NET Framework requires a restart.
 
-Actions for the .cab and .zip file are covered next.
+Ignore the .cab and .zip file. You will use them in the next step.
 
 ## Unzip setup files and copy the .cab
 
-In previous steps, you downloaded a .cab, the RServerSetup installer, and then copied both files to the offline server. You should now extract the zipped files. 
+1. Right-click en_r_server_901_for_windows_X64_9649035.zip > **Extract All**.
+2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. By default, the folder for RServerSetup.exe is **MRS90Windows**.
+3. Copy SRO_3.3.2.0_1033.cab to the temp folder: \Users\<account-name>\AppData\Local\Temp\. 
 
-1. Right-click en_r_server_901_for_windows_X64_9649035.zip > Extract All.
-2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. 
-
-By default, the folder is **MRS90Windows**.
+Copying the .cab file a second time to the Temp folder is a workaround measure that allows setup to continue. If you get an installation error, check the setup logs (RServer_<timestamp>.log) for instances of Temp folders. The temp folder used for the default cache directory is the correct folder for the .cab file.
 
 ## Run RServerSetup
 
@@ -112,8 +111,9 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
-3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
-4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
+3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package.
+4. Type `print(Revo.version)` to show the software version.
+5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
