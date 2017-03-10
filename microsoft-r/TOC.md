@@ -1,6 +1,6 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 
-# [Get started with Microsoft R](microsoft-r-get-started-node.md)
+# [Get Started with Microsoft R](microsoft-r-get-started-node.md)
 ## [Get Started with ScaleR](scaler-getting-started.md)
 ### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
 ### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
@@ -77,7 +77,7 @@
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
-### Configure operationalization
+### Configure for operationalization
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Setup and configure web and compute nodes](operationalize/configuration-initial.md)
 #### [Diagnostics & troubleshooting](operationalize/admin-diagnostics.md)
@@ -90,8 +90,6 @@
 #### [R execution security](operationalize/security-rserve.md)
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
-
-## [Remote execution](operationalize/remote-execution.md)
 
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
@@ -154,6 +152,8 @@
 ##### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
 ##### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+
+## [Remote execution](operationalize/remote-execution.md)
 
 
 
