@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Getting Started - Administrators
+# Configuring: Get Started for Administrators
 
 **Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
