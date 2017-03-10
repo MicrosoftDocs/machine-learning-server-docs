@@ -200,7 +200,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    1. Add a client key to the **Keys** section for this web app by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as your application developers and data scientists will need it later to authenticate. This key is also needed if you configure [roles to give web services permissions to certain users](security-roles.md). See example below.
+      > Take note of this key as you'll need it if you choose to configure [roles to give web services permissions to certain users](security-roles.md). See example below.
 
       ![Configure web application](../media/o16n/webapp2.png)
 

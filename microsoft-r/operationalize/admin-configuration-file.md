@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Editing the `appsettings.json` configuration file for R Server
+# R Server configuration file (appsettings.json)
 
 **Applies to:  Microsoft R Server 9.0.1 & 9.1**
 

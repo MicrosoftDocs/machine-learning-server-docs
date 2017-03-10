@@ -54,23 +54,6 @@ In this release, you can only manage (update/delete) the web services you've pub
 |`getService` |Returns a web service object for consumption. |Yes|Yes|
 
 
-<!--
-## Permissions 
-
-Any authenticated user can publish an analytic web service to a given R Server instance. 
-
-In this release, you can manage (update/delete) the web services you've published; however, you can not manage the services published by other users. 
-
-Any authenticated user can also retrieve a list of the available services hosted in R Server as well as retrieve service objects from them and consume them regardless of whether they published those services or not.
-
-|Published web service actions|Your services|Other services|
-|----|:----:|:----:|
-|Update a service|Yes |
-|Delete a service|Yes |
-|List the services|Yes|Yes|
-|Retrieve a service object|Yes|Yes|
--->
-
 ## Publish and manage in R
 
 <a name="publishService"></a>
@@ -364,7 +347,7 @@ When you publish, update or get a web service, an API instance is returned as an
 
 You can use the following supported public functions to interact with the API client instance.
 
-#### Supported public functions
+#### Supported public functions for general usage
 
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
@@ -373,6 +356,28 @@ You can use the following supported public functions to interact with the API cl
 | `consume`     |	Consume the service based on I/O schema                |
 | consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the `publishService` function). |
 | `swagger`     |	Displays the service's `swagger` specification         |
+
+
+#### Supported public functions for batch scoring
+
+In addition to the public functions above, these functions can be used for asynchronous ("batch") scoring.
+For an example of batch scoring interactions, [see this article.](data-scientist-batch-mode.md)
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `batch` |	Register web service that will be batched         |
+| `start` |	Starts the execution of a batch scoring operation such as `batch$start()` |
+| `cancel` |	Cancel the current batch execution such as `batch$cancel()|
+| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+| `file` |	Get the results of the execution by filename  |
+| `download` |	Download all files or just the helper function (default dest = getwd())  |
+
+
+
+
+
+
+
 
 #### Example
 
@@ -408,11 +413,13 @@ cat(swagger)
 
 <a name="consume-service"></a>
 
-### Consume web services
+### Consume web services 
 
 After a web service has been published, it can be consumed. Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically to define the service to facilitate consumption and integration.
 
-When you publish a service, you should let people know that is ready for them to try out. There are several ways for users to consume services. If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
+When you publish a service, you should let people know that is ready for them to try out. Users can get the Swagger file they need to consume the service directly in R or via the API.  If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
+
+Also, users can consume the service directly using the "Request Response" consumption approach described in this article or using ["Batch" consumption (described here](data-scientist-batch-mode.md)).
 
 <a name="data-scientists-share"></a>
 
@@ -421,6 +428,9 @@ When you publish a service, you should let people know that is ready for them to
 Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
 As the owner of the service, you can share the name and version number for the service with fellow data scientists so they can call the service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
+
+>[!NOTE]
+> It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
 
 ```R
 ##########################################################
