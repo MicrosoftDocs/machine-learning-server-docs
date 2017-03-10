@@ -93,7 +93,7 @@
 
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [Introduction](operationalize/about.md)
-### [Version 9 vs 8 comparison](operationalize/about-compare-to-8.0.5.md)
+### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
@@ -156,7 +156,7 @@
 ##### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
 ##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 
-## [Remote execution](operationalize/remote-execution.md)
+## [Execute code on remote R Server](operationalize/remote-execution.md)
 
 
 
