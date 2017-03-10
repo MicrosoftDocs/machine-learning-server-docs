@@ -93,12 +93,12 @@
 
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [Introduction](operationalize/about.md)
-### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
-### Data Scientists
+### [Version 9 vs 8 comparison](operationalize/about-compare-to-8.0.5.md)
+### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
 #### [Working with web services in R](operationalize/data-scientist-manage-services.md)
-### Application Developers
+### Application developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
