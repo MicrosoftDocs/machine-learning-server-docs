@@ -353,7 +353,7 @@ Ordinary arithmetic acts *element-by-element* on matrices:
 	[2,]   25  169   16
 	[3,]   49  225    4
 
-Matrix multiplication in the linear algebra sense requires a special operator, *%*%:*
+Matrix multiplication in the linear algebra sense requires a special operator, `%*%`:
 
 	A %*% A
 
@@ -514,11 +514,15 @@ If we think that we may want to do the same analysis on a larger data set later,
 
 ### Step 2: Retrieve metadata
 
-There are a number of basic methods we can use to quickly get some information about the data set and its variables that will work on the output of *rxImport*, whether it is a data frame or *RxXdfData* object. For example, to get the number of rows, cols, and names of the imported data:
+There are a number of basic methods we can use to quickly get some information about the data set and its variables that will work on the output of *rxImport*, whether it is a data frame or *RxXdfData* object. 
+
+Input: Get the number of rows, cols, and names of the imported data:
 
 	nrow(mortData)
 	ncol(mortData)
 	names(mortData)
+
+Output:
 
 	> nrow(mortData)
 	[1] 10000
@@ -532,6 +536,8 @@ To print out the first few rows of the data set, you can use *head()*:
 
 	head(mortData, n = 3)
 
+Output:
+
 	creditScore houseAge yearsEmploy ccDebt year default
 	1 691 16 9 6725 2000 0
 	2 691 4 4 5077 2000 0
@@ -541,7 +547,7 @@ The *rxGetInfo* function allows you to quickly get information about your data s
 
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=3)
 
-The output shows us:
+Output:
 
 	Data frame: mortData
 	Data frame: mortData
@@ -564,7 +570,7 @@ The output shows us:
 
 The *rxDataStep* function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
 
-	mortDataNew &lt;- rxDataStep(
+	mortDataNew <- rxDataStep(
 		# Specify the input data set
 		inData = mortData,
 		# Put in a placeholder for an output file
@@ -572,12 +578,12 @@ The *rxDataStep* function provides a framework for the majority of your data man
 		# Specify any variables to keep or drop
 		varsToDrop = c("year"),
 		# Specify rows to select
-		rowSelection = creditScore &lt; 850,
+		rowSelection = creditScore < 850,
 		# Specify a list of new variables to create
 		transforms = list(
 			catDebt = cut(ccDebt, breaks = c(0, 6500, 13000),
 				labels = c("Low Debt", "High Debt")),
-			lowScore = creditScore &lt; 625))
+			lowScore = creditScore < 625))
 
 Our new data set, *mortDataNew*, will not have the variable year, but adds two new variables: a categorical variable named *catDebt* that uses R’s cut function to break the *ccDebt* variable into two categories, and a logical variable, *lowScore*, that will be TRUE for individuals with low credit scores. These *transforms* expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data. With the *rowSelection* argument, we have also removed any observations with high credit scores, above or equal to 850. We can use the *rxGetVarInfo* function to confirm:
 
