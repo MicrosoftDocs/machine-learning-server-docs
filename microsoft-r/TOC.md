@@ -92,6 +92,7 @@
 #### [R package management](operationalize/package-management.md)
 
 ## [Deploy and consume analytics](operationalize/about.md)
+### [Introduction](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
 ### Data Scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
