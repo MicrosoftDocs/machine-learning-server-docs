@@ -93,12 +93,14 @@
 
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
-### [Get started for data scientists](operationalize/data-scientist-get-started.md)
-### [Get started for application developers](operationalize/app-developer-get-started.md)
-### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
-### [Working with web services in R](operationalize/data-scientist-manage-services.md)
-### [API overview](operationalize/api.md)
-### [API access token management](operationalize/security-access-tokens.md)
+### Data Scientists
+#### [Get started for data scientists](operationalize/data-scientist-get-started.md)
+#### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
+#### [Working with web services in R](operationalize/data-scientist-manage-services.md)
+### Application Developers
+#### [Get started for application developers](operationalize/app-developer-get-started.md)
+#### [API overview](operationalize/api.md)
+#### [API access token management](operationalize/security-access-tokens.md)
 ### [Archive] DeployR 8.x docs
 #### [Install DeployR](deployr-installation.md)
 ##### [Install DeployR for R Server for Windows](deployr-install-on-windows.md)
