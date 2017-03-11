@@ -28,13 +28,13 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
-This article described how to use batch processing with analytic web services.  
+There are several approaches to analytic web service consumption: 
+1. "Request Response" consumption via direct interaction in R or API calls as [described here](data-scientist-manage-services.md#consume-service)
+1. Asynchronous consumption via batch processing/execution in R or API calls as described in this article
 
-Batch processing refers to the execution and consumption of code in the form of a web service without manual intervention, whereas interactive "Request Response" processing for consumption requires human intervention on the command line. A batch is a group of one or more  asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server will immediately execute those operations for you N times. 
+Asynchronous batch processing refers to the execution and consumption of code in the form of a web service without manual intervention. A batch is a group of one or more  asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server will immediately execute those operations for you N times. 
 
-While web services can still be consumed using the "Request Response" mode [described here](data-scientist-manage-services.md#consume-service), there are scenarios and circumstances that make batch processing a more interesting approach. 
-
-An asynchronous batch call to a web service involves the following:
+Asynchronous batch consumption of a web service involves the following:
 + Call the service by name/version
 + Define a batch operation by name 
 + Start the batch operation
@@ -43,36 +43,30 @@ An asynchronous batch call to a web service involves the following:
 
 A [series of public API functions](data-scientist-manage-services.md#api-client) can be used to programmatically accomplish the task. 
 
+========================
 
+Other assumptions/questions:
 
+1. O16N now supports two new inputs: rdata.frame and csv so we can use arrays, or lists.  
+   - Batch specific only?? Or accepted input to any web service produced by O16N via mrsdeploy or API?  Is that true? 
+   - What about for realtime scoring?
 
+1. Should we have a consumption article that covers both request/response vs batch? Or leave R/R where it is and have a batch specific topic?
 
-Other assumptions:
+1. There are several new public function. They are:
 
-O16N now supports two new inputs: rdata.frame and csv.  Not batch specific. Accepted input to any web service produced by O16N via mrsdeploy or API.  Is that true? What about for realtime scoring?
+   | Function      | Description                                            |
+   | ------------- |--------------------------------------------------------|
+   | `batch` |	Register web service that will be batched         |
+   | `start` |	Starts the execution of a batch scoring operation such as `batch$start()` |
+   | `cancel` |	Cancel the current batch execution such as `batch$cancel()|
+   | `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+   | `file` |	Get the results of the execution by filename  |
+   | `download` |	Download all files or just the helper function (default dest = getwd())  |
 
+1. Is there a new mrsdeploy function too? Are the examples below still current? 
 
-
-
-
-
-Asynchronous consume via batch processing
-Request response consume via direct interaction
-
-	• Batch scoring/deployment (Sean)  - 2 new inputs  rdata.frame and csv.
-		○ 5 new functions() in mrsdeploy (register, start, cancel job, get results, get associated files)
-		○ Consume via Request-response interaction or batch interaction (like Azure)
-
-
-What is “Request-response interactions” and “batch interactions”. It will describe the 5 new public API functions in mrsdeploy package.  
-
-We’ll need an example users can actually try out of the box on their own.
-
-Existing mrsdeploy docs and this new article will reference support of new inputs (rdata.frame and csv).
-
-
-
-
+1. We’ll need an example users can actually try out of the box on their own. Nothing that relies on data files or models the users don't have access to or instructions on how to create. 
 
 
 ## Workflow overview

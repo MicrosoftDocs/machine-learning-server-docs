@@ -110,6 +110,8 @@ This function takes a path to an R script to be executed remotely. You also have
 
 If your R script has R package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server, or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
 
+<a name="async"></a>
+
 ### Asynchronous remote execution
 
 If you want to continue working in your development environment during the remote script execution, you can execute your R script asynchronously. This is particularly useful when you are running scripts that have long execution times. 
