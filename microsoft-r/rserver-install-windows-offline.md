@@ -67,11 +67,11 @@ After downloading prerequisites and the R Server installer, you should have all 
     SRO_3.3.2.0_1033.cab
     en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
 
-## Transfer files to the target server
+## Transfer files
 
 Use a flash drive or another mechanism to transfer files listed above to the offline server. Put all files in the same folder.
 
-## Manually install prerequisites
+## Install prerequisites
 
 Manually install the prerequisites, prior to unzipping and running RServerSetup. Installation order is important. Begin at the top of list, starting with vcredist_x64 and work your way down. Restarts may be required.
 
@@ -87,7 +87,7 @@ Installation of the .NET Framework requires a restart.
 
 Ignore the .cab and .zip file. You will use them in the next step.
 
-## Unzip setup files and copy the .cab
+## Unzip setup and copy .cab
 
 1. Right-click en_r_server_901_for_windows_X64_9649035.zip > **Extract All**.
 2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. By default, the folder for RServerSetup.exe is **MRS90Windows**.
@@ -103,7 +103,7 @@ Double-click `RServerSetup.exe` to start the wizard.
 
 Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
 
-## Connect and validate installation
+## Connect and validate
 
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
 
@@ -116,6 +116,10 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+
+## Configure operationalization
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## See Also
 
