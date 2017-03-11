@@ -56,11 +56,11 @@ This option provides a zipped file, free to developers who sign up for Visual St
 2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
 3. Click **Downloads**, and then search for *Microsoft R*.
 
-## Transfer files to the target server
+## Transfer files
 
 Use a flash drive or another mechanism to transfer downloaded packages from the dependency list, `microsoft-r-open-3.3.2.tar.gz`, and `en_r_server_901_for_linux_x64_9648602.gz` to your disconnected server. Copy the files to a writable directory, such as **/tmp**.
 
-## Manually install package dependencies
+## Install package dependencies
 
 Use `rpm -qi <package-name>` to install any packages that are missing from your system.
 
@@ -197,9 +197,9 @@ As a verification step, run the Revo64 program.
 
 To quit the program, type `q()` at the command line with no arguments.
 
-## Configure R Server for Operationalization
+## Configure operationalization
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## See Also
 

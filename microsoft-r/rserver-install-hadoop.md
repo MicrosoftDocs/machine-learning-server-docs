@@ -6,7 +6,7 @@ description: "Hadoop installation and configuration guide for Microsoft R Server
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/05/2016"
+ms.date: "03/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

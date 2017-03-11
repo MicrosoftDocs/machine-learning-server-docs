@@ -47,7 +47,7 @@ Two support plans <sup>1</sup>  are available for R Server for Windows. The inst
 | Service Plan | Details | How to get this plan |
 |--------------|---------|----------------------|
 |[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Requires running the latest version of R Server. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
-| SQL Server support policy | Updates are on the SQL Server release schedule. | [Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2</sup> <sup>3</sup>| 
+| SQL Server support policy | Service updates are on the SQL Server release schedule. | [Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2, </sup> <sup>3</sup>| 
 
 <sup>1</sup> For details, go to [Microsoft Lifecycle Policy](https://support.microsoft.com/lifecycle/selectindex). Use the index to navigate to **R Server** or **SQl Server 2016**.
 
@@ -82,7 +82,7 @@ This section walks you through an R Server 9.0.1 deployment on Windows using the
 
 + You must accept the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
-+ You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup installs R Open for you, but it is also downloadable from the [MRAN web site](https://mran.microsoft.com/download/).
++ You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
 
 The following additional components are installed by Setup and required for an R Server installation on Windows.
 
@@ -118,12 +118,13 @@ Post-installation, you can review log files (RServerSetup_<timestamp>.log) locat
 ### Connect and validate
 R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
 
-As a verification step, you can connect to the server and execute a few ScaleR functions to validate the installation.
+As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
 
 1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
 3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
-4. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
+4. Type `print(Revo.version)` to show the software version.
+5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
@@ -135,9 +136,9 @@ Consider adding a development tool on the server to build script or solutions us
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 
-## Configure for operations
+## Configure operationalization
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. Doing so will enable you to operationalize your R code. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Side-by-side installation
 
