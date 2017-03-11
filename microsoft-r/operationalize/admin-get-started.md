@@ -41,7 +41,7 @@ As an administrator, your key responsibilities are to ensure configuration for t
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-diagnostics.md) and numerous recommendations.
 
 
-## Setup R Server for Operationalization
+## Configure web & compute nodes for analytic deployment and remote execution
 
 To benefit from Microsoft R Server’s web service deployment and remote execution features, you must first [configure R Server](configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
 
@@ -56,13 +56,13 @@ The simplest configuration is a single web node and compute node on a single mac
 [Learn more on how to configure for operationalization.](configuration-initial.md) 
 
 
-## Security Policies
+## Security policies
 
 User access to the R Server and the operationalization services offered on its [API](api.md) are entirely under your control as the server administrator. R Server's operationalization feature offers seamless integration with popular enterprise security solutions like Active Directory LDAP or Azure Active Directory. You can configure R Server to [authenticate](security-authentication.md) using these methods to establish a trust relationship between your user community and the operationalization engine for R Server. Your users can then supply simple `username` and `password` credentials in order to verify their identity. [A token will be issued to an authenticated user.](security-access-tokens.md)
 
 However, authentication is only one part of the full set of [security](security.md) features, which includes full [HTTPS/SSL encryption](security-https.md) support and [CORS support](security-cors.md). 
 
-## R Package Policies
+## R package policies
 
 The primary function of the operationalization feature is to support the execution of R code on behalf of client applications. One of your key objectives as an administrator is to ensure a reliable, consistent execution environment for that code.
 
@@ -70,7 +70,7 @@ The R code developed and deployed by data scientists within your community will 
 
 Making sure that these R package dependencies are available to the code executing on R Server's operationalization feature requires active participation from you, the administrator. There are several R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](package-management.md).
 
-## Runtime Policies
+## Runtime policies
 
 The operationalization feature supports a wide range of runtime policies that affect many aspects of the server runtime environment. As an administrator, you can select the preferred policies that best reflect the needs of your user community.
 
@@ -78,7 +78,7 @@ The operationalization feature supports a wide range of runtime policies that af
 
 The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the `appsettings.json` configuration file for R Server"](admin-configuration-file.md).
  
-### Asynchronous Batch Sizes
+### Asynchronous batch sizes
 
 Your users can perform speedy real-time and batch scoring. To reduce the risk of resource exhaustion by a single user, you can set the maximum number of operations that a single caller can execute in parallel during a specific asynchronous batch job. 
 
@@ -97,7 +97,7 @@ For data storage high availability, you can leverage the high availability capab
 
 <!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
 
-### Scalability & Throughput
+### Scalability & throughput
 
 In the context of a discussion on runtime policies, the topics of scalability and throughput are closely related. Some of the most common questions that arise when planning the configuration and provisioning of R Server for operationalization are:
 
@@ -118,7 +118,7 @@ When those failures occur in the operationalization environment, we recommend yo
 
 Beyond the diagnostics tool, the [Troubleshooting](admin-diagnostics.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
-## More Resources
+## More resources
 
 This section provides a quick summary of useful links for administrators working with R Server's operationalization feature.
 
