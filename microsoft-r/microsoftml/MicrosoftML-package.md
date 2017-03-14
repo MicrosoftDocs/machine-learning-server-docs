@@ -48,42 +48,42 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 
 ### Machine learning algorithms
 
-* [rxFastTrees](rxFastTrees.md): An implementation of FastRank, an efficient implementation  of the MART gradient boosting algorithm.  
-* [rxFastForest](rxFastForest.md): A random forest and Quantile regression forest  implementation using [rxFastTrees](rxFastTrees.md).  
-* [rxLogisticRegression](LogisticRegression.md): Logistic regression using L-BFGS.  
-* [rxOneClassSvm](OneClassSvm.md): One class support vector machines.  
-* [rxNeuralNet](NeuralNet.md): Binary, multi-class, and regression neural net.  
-* [rxFastLinear](rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression.  
+* [rxFastTrees](packagehelp/rxFastTrees.md): An implementation of FastRank, an efficient implementation  of the MART gradient boosting algorithm.  
+* [rxFastForest](packagehelp/rxFastForest.md): A random forest and Quantile regression forest  implementation using [rxFastTrees](packagehelp/rxFastTrees.md).  
+* [rxLogisticRegression](packagehelp/LogisticRegression.md): Logistic regression using L-BFGS.  
+* [rxOneClassSvm](packagehelp/OneClassSvm.md): One class support vector machines.  
+* [rxNeuralNet](packagehelp/NeuralNet.md): Binary, multi-class, and regression neural net.  
+* [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression.  
 
 
 ### Scoring
 
-* [rxPredict.mlModel](rxPredict.md): Scores using a model created by one of the machine learning algorithms.  
+* [rxPredict.mlModel](packagehelp/rxPredict.md): Scores using a model created by one of the machine learning algorithms.  
 
 
 ### Helper functions for arguments
 
-* [expLoss](loss.md): Specifications for exponential classification loss function.  
-* [logLoss](loss.md): Specifications for log classification loss function.  
-* [hingeLoss](loss.md): Specifications for hinge classification loss function.  
-* [smoothHingeLoss](loss.md): Specifications for smooth hinge classification loss function.  
-* [poissonLoss](loss.md): Specifications for poisson regression loss function.  
-* [squaredLoss](loss.md): Specifications for squared regression loss function.  
-* [linearKernel](Kernel.md): Specification for linear kernel.  
-* [rbfKernel](Kernel.md): Specification for radial basis function kernel.  
-* [polynomialKernel](Kernel.md): Specification for polynomial kernel.  
-* [sigmoidKernel](Kernel.md): Specification for sigmoid kernel.  
-* [minCount](minCount.md): Specification for feature selection in count mode. 
-* [mutualInformation](mutualInformation.md): Specification for feature selection in mutual information mode. 
+* [expLoss](packagehelp/loss.md): Specifications for exponential classification loss function.  
+* [logLoss](packagehelp/oss.md): Specifications for log classification loss function.  
+* [hingeLoss](packagehelp/loss.md): Specifications for hinge classification loss function.  
+* [smoothHingeLoss](packagehelp/loss.md): Specifications for smooth hinge classification loss function.  
+* [poissonLoss](packagehelp/loss.md): Specifications for poisson regression loss function.  
+* [squaredLoss](packagehelp/loss.md): Specifications for squared regression loss function.  
+* [linearKernel](vKernel.md): Specification for linear kernel.  
+* [rbfKernel](packagehelp/Kernel.md): Specification for radial basis function kernel.  
+* [polynomialKernel](packagehelp/Kernel.md): Specification for polynomial kernel.  
+* [sigmoidKernel](packagehelp/Kernel.md): Specification for sigmoid kernel.  
+* [minCount](packagehelp/minCount.md): Specification for feature selection in count mode. 
+* [mutualInformation](packagehelp/mutualInformation.md): Specification for feature selection in mutual information mode. 
  
 
 ### Helper functions for machine learning transforms
 
-* [featurizeText](featurizeText.md): Transformation to produce a bag of counts of ngrams in a given text.  It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
-* [concat](concat.md): Transformation to create a single vector-valued column from multiple columns.  
-* [categorical](categorical.md): Create indicator vector using categorical transform with dictionary.  
-* [categoricalHash](categoricalHash.md): Converts the categorical value into an indicator array by hashing.  
-* [selectFeatures](selectFeatures.md): Selects features from the specified variables.  
+* [featurizeText](packagehelp/featurizeText.md): Transformation to produce a bag of counts of ngrams in a given text.  It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
+* [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
+* [categorical](packagehelp/categorical.md): Create indicator vector using categorical transform with dictionary.  
+* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing.  
+* [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables.  
 
 
 > [!NOTE]
