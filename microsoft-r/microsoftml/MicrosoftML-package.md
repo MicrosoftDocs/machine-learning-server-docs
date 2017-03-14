@@ -64,12 +64,12 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 ### Helper functions for arguments
 
 * [expLoss](packagehelp/loss.md): Specifications for exponential classification loss function.  
-* [logLoss](packagehelp/oss.md): Specifications for log classification loss function.  
+* [logLoss](packagehelp/loss.md): Specifications for log classification loss function.  
 * [hingeLoss](packagehelp/loss.md): Specifications for hinge classification loss function.  
 * [smoothHingeLoss](packagehelp/loss.md): Specifications for smooth hinge classification loss function.  
 * [poissonLoss](packagehelp/loss.md): Specifications for poisson regression loss function.  
 * [squaredLoss](packagehelp/loss.md): Specifications for squared regression loss function.  
-* [linearKernel](vKernel.md): Specification for linear kernel.  
+* [linearKernel](packagehelp/Kernel.md): Specification for linear kernel.  
 * [rbfKernel](packagehelp/Kernel.md): Specification for radial basis function kernel.  
 * [polynomialKernel](packagehelp/Kernel.md): Specification for polynomial kernel.  
 * [sigmoidKernel](packagehelp/Kernel.md): Specification for sigmoid kernel.  
