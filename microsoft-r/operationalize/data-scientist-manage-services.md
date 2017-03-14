@@ -357,21 +357,37 @@ You can use the following supported public functions to interact with the API cl
 | consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the `publishService` function). |
 | `swagger`     |	Displays the service's `swagger` specification         |
 
+<a name="api-client-batch"></a>
 
-#### Supported public functions for batch scoring
+#### Supported public functions for batch consumption
 
-In addition to the public functions above, these functions can be used for asynchronous ("batch") scoring.
-For an example of batch scoring interactions, [see this article.](data-scientist-batch-mode.md)
+In addition to the public functions above, these functions can be used for asynchronous ("batch") executions on these web services. For an example of batch consumption, [see this article.](data-scientist-batch-mode.md)
+
+**Batch functions performed on the service object**
+Once you get the service object, you can use these public functions on that service.
 
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
-| `batch` |	Register web service that will be batched         |
-| `start` |	Starts the execution of a batch scoring operation such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution such as `batch$cancel()|
+| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
+| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
+| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
 | `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+| `results` |	Download all files or just the helper function (default dest = getwd())  |
 | `file` |	Get the results of the execution by filename  |
 | `download` |	Download all files or just the helper function (default dest = getwd())  |
 
+**Batch functions performed on the batch object**
+Once you have the batch object, you can use these public functions to interact with it.
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
+| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
+| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
+| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+| `results` |	Download all files or just the helper function (default dest = getwd())  |
+| `file` |	Get the results of the execution by filename  |
+| `download` |	Download all files or just the helper function (default dest = getwd())  |
 
 
 
@@ -419,7 +435,7 @@ After a web service has been published, it can be consumed. Whenever the web ser
 
 When you publish a service, you should let people know that is ready for them to try out. Users can get the Swagger file they need to consume the service directly in R or via the API.  If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
 
-Also, users can consume the service directly using the "Request Response" consumption approach described in this article or using ["Batch" consumption (described here](data-scientist-batch-mode.md)).
+Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described below. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
 
 <a name="data-scientists-share"></a>
 
@@ -433,13 +449,12 @@ As the owner of the service, you can share the name and version number for the s
 > It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
 
 ```R
-##########################################################
-#        Get Swagger File for Service in R Later         #
-##########################################################
+##########################################################################
+#      Perform Request-Response Consumption & Get Swagger Back in R      #
+##########################################################################
 
-# Use `remoteLogin` to authenticate with R Server using 
-# the local admin account. Use session = false so no 
-# remote R session started
+# Use `remoteLogin` to authenticate with R Server using the local admin 
+# account. Use session = false so no remote R session started
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
             password = “{{YOUR_PASSWORD}}”,
@@ -453,8 +468,7 @@ api <- getService("mtService", "v1.0.0")
 print(api$capabilities())
 
 # Start interacting with the service, for example:
-# Calling the function, `manualTransmission`
-# contained in this service.
+# Calling the function, `manualTransmission` contained in this service.
 result <- api$manualTransmission(120, 2.8)
 
 # Print response output named `answer`
