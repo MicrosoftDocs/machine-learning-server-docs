@@ -154,13 +154,26 @@ myBatch <- service4Batch$batch(records)
 
 ### Get the service
 
-You can get a service using its name and version with the `getService()` function from `mrsdeploy`. This function is covered in detail in [this article](data-scientist-manage-services.md).
+Batching begins by retrieving the web service containing the code you'll run against the inputs you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. 
 
-The result is a service object. In our example, that service object is called `service4Batch`.
+```R   
+service4Batch <- getService("mtService", "v1.0.0")
+```
+
+This function is covered in detail in [this article](data-scientist-manage-services.md). 
+
+**Arguments**
+
+- `name`: the name of the web service
+- `version`: the version of the web service
+
+**Return**
+
+The result is a service object, which in our example is called `service4Batch`.
 
 ### Define the record data to be batched
 
-With the service object, you can define the record data that will be batched when the web service object (in our example, `service4Batch`) is consumed. 
+Next, use the batch public api function `$batch` to define the input record data for the batch and set the number of concurrent threads for processing. 
 
 ```R
 myBatch <- service4Batch$batch(inputs, parallelCount = 10)
@@ -168,23 +181,45 @@ myBatch <- service4Batch$batch(inputs, parallelCount = 10)
 
 **Arguments**
 
-- inputs: `data.frame`, or a `list`
-- parallelCount: default is `10`
+- `inputs`: data.frame or a flat list converted to a data.frame using the base R function, `read.csv`.
+- `parallelCount`: Number of concurrent threads that can be dedicated to processing records in the 
+batch. Default value is 10. Take care not to set a number so high that it negatively impacts performance.
 
 **Return**
 
-The `Batch` object
+The result is a batch object, which in our example is called `myBatch`.
 
 
+#### Define the record data from a `data.frame`
+
+```R
+# mtcars is a data.frame of 11 cols and 32 rows of numerics
+# Assign the data.frame to 'records' variable.
+# Use 'records' as input into batch execution.
+# Reduce thread count to 5.
+records <- mtcars
+
+myBatch <- myService$batch(records, parallelCount = 5)
+```
 
 
+#### Define the record data from a flat list via the base R function `read.csv()` 
 
-myBatch <- service$batch(records, parallelCount = 5)
+```R
+# mtcars is in a CSV file this time. 
+# Use read.csv function to read it in as a data.frame.
+# Assign that data.frame to 'records' variable.
+# Use 'records' as input into batch execution.
+records <- read.csv("mtcars.csv")
+myBatch  <- service$batch(records)
+```
+```R
+# mtcars from a TSV file this time. 
+# Declare the separator.
+records <- read.csv("mtcars.tsv", sep = "\t")
+myBatch  <- service$batch(records)
+```
 
-
-parallelCount Number of threads used to process entries in the 
-batch. Default value is 10. Please make sure not to use too 
-high of a number because it might negatively impact performance.
 
 
 
@@ -220,50 +255,6 @@ getBatch(id)
 
 The `Batch` object
 
-## Register Batch by `data.frame` directly
-
-```R
-# Get service to batch
-service <- getService("mtcars")
-
-#
-# Register batch by `data.frame` 
-#
-# mtcars is a data.frame of 11 cols with names (mpg, cyl, ..., carb)
-# and 32 rows of numerics 
-#
-records <- mtcars
-
-batch <- service$batch(records, parallelCount = 5)
-```
-
-## Register by data.frame/flat list via the base R function `read.csv()` 
-
-```R
-# Get service to batch
-service <- getService("mtcars")
-
-#
-# Register batch by Comma-separated data (.csv)
-#
-# mtcars is a data.frame of 11 cols with names (mpg, cyl, ..., carb)
-# and 32 rows of numerics 
-#
-
-records <- read.csv("mtcars.csv")
-batch <- service$batch(records)
-
-#
-# Register batch by Tab-separated data (.tsv) 
-#
-# mtcars is a data.frame of 11 cols with names (mpg, cyl, ..., carb)
-# and 32 rows of numerics 
-#
-
-records <- read.csv("mtcars.tsv", sep = "\t")
-batch <- service$batch(records)
-
-```
 
 ### List the Batch execution identifiers
 
