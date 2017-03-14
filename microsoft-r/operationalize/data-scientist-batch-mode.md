@@ -61,17 +61,17 @@ remoteLogin("http://localhost:12800",
             session = FALSE)
    
 # Get the service using `getService()` function from `mrsdeploy`
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
+# Assign service to the variable `service4Batch`.
+service4Batch <- getService("mtService", "v1.0.0")
 
 # Define the record data for the batch execution task.  Record data comes 
 # from a data.frame called mtcars. Note: mtcars is a data.frame of 
 # 11 cols with names (mpg, cyl, ..., carb) and 32 rows of numerics. 
 record <- mtcars
-batch <- api$batch(records) 
+batch <- service4Batch$batch(records) 
 
 # Set thread count using parallelCount. Default is 10.
-# batch <- api$batch(records, parallelCount = 5) 
+# batch <- service4Batch$batch(records, parallelCount = 5) 
 
 # Start the batch task
 batch$start()
@@ -128,73 +128,29 @@ for(i in seq(batchRes$totalItemCount)) {
 print(result$output("answer")) # 0.6418125  
 
 # Since you're authenticated already, get `swagger.json` file now.
-swagger <- api$swagger()
+swagger <- service4Batch$swagger()
 cat(swagger, file = "swagger.json", append = FALSE)
 ``` 
 
-## Call web service and define record data
+## Step 1 & 2: Call web service and define record data
 
 Once you have authenticated (see workflow example), you can retrieve the web service, assign it to a variable, and define the inputs to it as record data in a data frame (or CSV, TSV, ...). 
 
-Generally speaking, the process for asynchronous batch consumption of a web service involves the following:
-1. Call the web service on which the batch execution should be run
-1. Define the record data for the batch execution task
-1. Start the task
-1. Monitor and interact with the task and its results
-1. Get the execution results and download any files produced
 
-========================
+```R   
+# Get the service using `getService()` function from `mrsdeploy`
+# Assign service to the variable `service4Batch`.
+service4Batch <- getService("mtService", "v1.0.0")
 
-Other assumptions/questions:
+# Define the record data for the batch execution task.  Record data comes 
+# from a data.frame called mtcars. Note: mtcars is a data.frame of 
+# 11 cols with names (mpg, cyl, ..., carb) and 32 rows of numerics. 
+record <- mtcars
+batch <- service4Batch$batch(records) 
 
-1. O16N now supports two new inputs: rdata.frame and csv so we can use arrays, or lists.  
-   - Batch specific only?? Or accepted input to any web service produced by O16N via mrsdeploy or API?  Is that true? 
-   - What about for realtime scoring?
-
-1. There are several new public function. They are:
-
-**Batch functions performed on the service object**
-Once you get the service object, you can use these public functions on that service.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
-| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
-| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
-| `results` |	Download all files or just the helper function (default dest = getwd())  |
-| `file` |	Get the results of the execution by filename  |
-| `download` |	Download all files or just the helper function (default dest = getwd())  |
-
-**Batch functions performed on the batch object**
-Once you have the batch object, you can use these public functions to interact with it.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
-| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
-| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
-| `results` |	Download all files or just the helper function (default dest = getwd())  |
-| `file` |	Get the results of the execution by filename  |
-| `download` |	Download all files or just the helper function (default dest = getwd())  |
-
-1. We’ll need an example users can actually try out of the box on their own. Nothing that relies on data files or models the users don't have access to or instructions on how to create. 
-
-1. Call the service by name/version
-1. Define the data records, as a data.frame or flat list, to be batched
-1. Start the batch execution
-1. Get the batch results and any associated files
-1. When necessary, cancel the batch execution
-
-
-
- A Batch Execution Service (BES) is a service that handles high volume, asynchronous, scoring of a batch of data records. 
-
-
-Define a Batch
-
-
+# Set thread count using parallelCount. Default is 10.
+# batch <- service4Batch$batch(records, parallelCount = 5) 
+```
 
 batch-task <- service$batch(records, parallelCount = 5)
 
@@ -307,6 +263,72 @@ The `Batch` object
 **Return**
 
 List of batch execution identifiers
+
+
+
+
+
+
+
+
+
+Generally speaking, the process for asynchronous batch consumption of a web service involves the following:
+1. Call the web service on which the batch execution should be run
+1. Define the record data for the batch execution task
+1. Start the task
+1. Monitor and interact with the task and its results
+1. Get the execution results and download any files produced
+
+========================
+
+Other assumptions/questions:
+
+1. O16N now supports two new inputs: rdata.frame and csv so we can use arrays, or lists.  
+   - Batch specific only?? Or accepted input to any web service produced by O16N via mrsdeploy or API?  Is that true? 
+   - What about for realtime scoring?
+
+1. There are several new public function. They are:
+
+**Batch functions performed on the service object**
+Once you get the service object, you can use these public functions on that service.
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
+| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
+| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
+| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+| `results` |	Download all files or just the helper function (default dest = getwd())  |
+| `file` |	Get the results of the execution by filename  |
+| `download` |	Download all files or just the helper function (default dest = getwd())  |
+
+**Batch functions performed on the batch object**
+Once you have the batch object, you can use these public functions to interact with it.
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
+| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
+| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
+| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
+| `results` |	Download all files or just the helper function (default dest = getwd())  |
+| `file` |	Get the results of the execution by filename  |
+| `download` |	Download all files or just the helper function (default dest = getwd())  |
+
+1. We’ll need an example users can actually try out of the box on their own. Nothing that relies on data files or models the users don't have access to or instructions on how to create. 
+
+1. Call the service by name/version
+1. Define the data records, as a data.frame or flat list, to be batched
+1. Start the batch execution
+1. Get the batch results and any associated files
+1. When necessary, cancel the batch execution
+
+
+
+ A Batch Execution Service (BES) is a service that handles high volume, asynchronous, scoring of a batch of data records. 
+
+
+
 
 ## `Batch` object
 
