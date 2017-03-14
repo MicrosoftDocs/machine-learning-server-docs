@@ -1,0 +1,280 @@
+--- 
+ 
+# required metadata 
+title: "Machine Learning Text Transform" 
+description: " Text transforms that can be performed on data before training  a model. " 
+keywords: ", stopwordsDefault, featurizeText, stopwordsCustom, termDictionary, transform" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "03/13/2017" 
+ms.topic: "reference" 
+ms.prod: "microsoft-r" 
+ms.service: "" 
+ms.assetid: "" 
+ 
+# optional metadata 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
+ms.technology: "r-server" 
+ms.custom: "" 
+ 
+--- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #`stopwordsDefault`: Machine Learning Text Transform 
+ ##Description
+ 
+Text transforms that can be performed on data before training 
+a model.
+ 
+ 
+ ##Usage
+
+```   
+  stopwordsDefault()
+  
+  stopwordsCustom(dataFile = "")
+  
+  termDictionary(terms = "", dataFile = "", sort = "occurrence")
+  
+  featurizeText(vars, language = "English",
+    tokenizer = mluGetValidTokenizer()[1], stopwordsRemover = NULL,
+    case = "lower", keepDiacritics = FALSE, keepPunctuations = TRUE,
+    keepNumbers = TRUE, ngramLength = 1, skipLength = 0,
+    dictionary = NULL, featureExtractor = ngramCount(),
+    vectorNormalizer = "l2", ...)
+ 
+```
+ 
+ ##Arguments
+
+   
+  
+ ### `dataFile`
+ character: <string>. Data file containing the terms (short form data) 
+  
+  
+  
+ ### `terms`
+ An optional character vector of terms or categories. 
+  
+  
+  
+ ### `sort`
+ Specifies how to order items when vectorized. Two orderings are supported:   
+*   `"occurrence"`: items appear in the order encountered.    
+*   `"value"`: items are sorted according to their default comparison.  For example, text sorting will be case sensitive (e.g., 'A' then 'Z'   then 'a').   
+ 
+  
+  
+  
+ ### `vars`
+ A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
+  
+  
+  
+ ### `language`
+ Secifies the language used in the data set. The following  values are supported:   
+*   `"AutoDetect"`: for automatic language detection.    
+*   `"English"`.    
+*   `"French"`.    
+*   `"German"`.    
+*   `"Dutch"`.    
+*   `"Italian"`.    
+*   `"Spanish"`.    
+*   `"Japanese"`.   
+ 
+  
+  
+  
+ ### `tokenizer`
+ Specifies the type of tokenizer to use when tokenizing the  text. Two types are supported:  
+*   `"word"`: Splits text into tokens using natural language word  tokenizer.    
+*   `"char"`: Splits text into tokens using fixed-length character  sequences.  
+ 
+  
+  
+  
+ ### `stopwordsRemover`
+ Specifies the stopwords remover to use. There are three options supported:   
+*   `NULL` No stopwords remover is used.   
+*   `stopwordsDefault`: A precompiled language-specific lists  of stop words is used that includes the most common words from Microsoft   Office.    
+*   `stopwordsCustom`: A user-defined list of stopwords. It accepts   the following option: `dataFile`.   
+ 
+  
+  
+  
+ ### `case`
+ Text casing using the rules of the invariant culture. Takes the following values:   
+*   `"lower"`.   
+*   `"upper"`. 
+*   `"none"`.   
+ 
+  
+  
+  
+ ### `keepDiacritics`
+ `FALSE` to remove diacritical marks; `TRUE` to  retain diacritical marks. The default value is `FALSE`. 
+  
+  
+  
+ ### `keepPunctuations`
+ `FALSE` to remove punctuation; `TRUE` to  retain punctuation. The default value is `TRUE`. 
+  
+  
+  
+ ### `keepNumbers`
+ `FALSE` to remove numbers; `TRUE` to retain numbers. The default value is `TRUE`. 
+  
+  
+  
+ ### `ngramLength`
+ An integer that specifies the maximum number of words in an n-gram (consecutive word sequence). The sum of `skipLength` and `ngramLength` must be less than or equal to `10`. The default  value is 1. 
+  
+  
+  
+ ### `skipLength`
+ An integer that specifies the maximum number of tokens to skip when constructing an n-gram. If the value specified as skip length is `k`, then n-grams can contain up to k skips (not necessarily consecutive). For example, if `k=2`, then the 3-grams extracted from the text "the sky is blue today" are: "the sky is", "the sky blue", "the sky today", "the is blue", "the is today" and "the blue today". The default  value is 0. 
+  
+  
+  
+ ### `dictionary`
+ A `termDictionary` of whitelisted terms which accepts the following options:  
+*   `terms`,   
+*   `dataFile`, and  
+*   `sort`.   
+Note that the stopwords list takes precedence over the dictionary whitelist as the stopwords are removed before the dictionary terms are whitelisted. 
+  
+  
+  
+ ### `featureExtractor`
+ Specifies the feature extraction arguments. There  are two different feature extraction mechanisms:   
+*   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
+*   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
+ 
+  
+  
+  
+ ### `vectorNormalizer`
+ Normalize vectors (rows) individually by rescaling them to unit norm. Takes one of the following values:   
+*   `"none"`.    
+*   `"l2"`.    
+*   `"l1"`.    
+*   `"linf"`. 
+ The default value is `"l2"`. 
+  
+  
+  
+ ### ` ...`
+ Additional arguments sent to the compute engine. 
+  
+ 
+ 
+ ##Details
+ 
+`featurizeText` produces a bag of counts of n-grams (sequences 
+of consecutive words) from a given text. It does so by either building a
+dictionary of n-grams and using the id in the dictionary as the index in the
+bag or by hashing each n-gram and using the hash value as the index in the
+bag. The text transform is applied to text input columns. It offers language
+detection, tokenization, stopwords removing, text normalization and feature
+generation. It supports the following languages by default: English, French,
+German, Dutch, Italian, Spanish and Japanese.
+
+The n-grams are represented as count vectors, with vector slots
+corresponding to either n-grams (created using `ngramCount`) or their
+hashes (created using `ngramHash`). Slot values in the vector can be
+scaled via `"tf"` (term frequency - number of occurrences of the slot
+in the text), `"idf"` (inverse document frequency across the corpus),
+or `"tdidf"`.
+ 
+ 
+ ##Value
+ 
+A `maml` object defining the transform.
+ 
+ ##Author(s)
+ 
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
+ 
+ ##See Also
+ 
+[ngramCount](ngram.md), [ngramHash](ngram.md),
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md), [rxNeuralNet](NeuralNet.md),
+[rxOneClassSvm](OneClassSvm.md), [rxLogisticRegression](LogisticRegression.md).
+   
+ ##Examples
+
+ ```
+   
+  trainReviews <- data.frame(review = c( 
+          "This is great",
+          "I hate it",
+          "Love it",
+          "Do not like it",
+          "Really like it",
+          "I hate it",
+          "I like it a lot",
+          "I kind of hate it",
+          "I do like it",
+          "I really hate it",
+          "It is very good",
+          "I hate it a bunch",
+          "I love it a bunch",
+          "I hate it",
+          "I like it very much",
+          "I hate it very much.",
+          "I really do love it",
+          "I really do hate it",
+          "Love it!",
+          "Hate it!",
+          "I love it",
+          "I hate it",
+          "I love it",
+          "I hate it",
+          "I love it"),
+       like = c(TRUE, FALSE, TRUE, FALSE, TRUE,
+          FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE,
+          FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, 
+          FALSE, TRUE, FALSE, TRUE), stringsAsFactors = FALSE
+      )
+  
+      testReviews <- data.frame(review = c(
+          "This is great",
+          "I hate it",
+          "Love it",
+          "Really like it",
+          "I hate it",
+          "I like it a lot",
+          "I love it",
+          "I do like it",
+          "I really hate it",
+          "I love it"), stringsAsFactors = FALSE)
+  
+  
+  outModel <- rxLogisticRegression(like ~ reviewTran, data = trainReviews,
+      mlTransforms = list(featurizeText(vars = c(reviewTran = "review"),
+      stopwordsRemover = stopwordsDefault(), keepPunctuations = FALSE)))
+  # 'hate' and 'love' have non-zero weights
+  summary(outModel)
+  
+  # Use the model to score
+  scoreOutDF5 <- rxPredict(outModel, data = testReviews, 
+      extraVarsToWrite = "review")
+  scoreOutDF5
+ 
+```
+ 
+ 
+ 
