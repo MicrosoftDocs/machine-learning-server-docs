@@ -368,13 +368,9 @@ Once you get the service object, you can use these public functions on that serv
 
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
-| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
-| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
-| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
-| `results` |	Download all files or just the helper function (default dest = getwd())  |
-| `file` |	Get the results of the execution by filename  |
-| `download` |	Download all files or just the helper function (default dest = getwd())  |
+| `batch` |Define the data records  to be batched and the concurrent thread count. [Learn more...](data-scientist-get-started#batch-function)|
+| `getBatchExecutions` |Get the list of batch execution identifiers. |
+| `getBatch` |Get batch object using its unique execution identifier |
 
 **Batch functions performed on the batch object**
 Once you have the batch object, you can use these public functions to interact with it.
