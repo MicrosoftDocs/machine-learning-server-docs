@@ -300,6 +300,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
++ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
 
 **Other Getting Started Guides**

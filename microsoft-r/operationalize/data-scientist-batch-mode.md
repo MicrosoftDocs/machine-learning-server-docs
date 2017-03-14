@@ -36,11 +36,10 @@ The typical approach to consuming web services, ["Request Response" consumption]
 
 Generally speaking, the process for asynchronous batch consumption of a web service involves the following:
 1. Call the web service on which the batch execution should be run
-1. Define the record data for the batch execution task
-1. Start the task
+1. Define the data records for the batch execution task
+1. Start the batch execution task
 1. Monitor and interact with the task and its results
 1. Get the execution results and download any files produced
-
 
 Use these following [public API functions](data-scientist-manage-services.md#api-client-batch)  to define, start, and interact with your batch executions.
 
@@ -79,7 +78,7 @@ myBatch <- service4Batch$batch(records)
 myBatch$start()
 
 # Get the task id to reference during or after its execution:
-myBatch$id()
+id <- myBatch$id()
 
 # If you need to cancel the batch execution, try this:
 # myBatch$cancel()
@@ -143,14 +142,14 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Once you have authenticated (see workflow example), you can retrieve the web service, assign it to a variable, and define the inputs to it as record data in a data frame (or CSV, TSV, ...). 
 
-Batching begins by retrieving the web service containing the code you'll run against the inputs you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. 
+Batching begins by retrieving the web service containing the code against which you'll score the data records you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. The `getService` function is covered in detail in [this article](data-scientist-manage-services.md). 
 
-**For example:**
+For example:
 ```R   
 service4Batch <- getService("mtService", "v1.0.0")
 ```
 
-This function is covered in detail in [this article](data-scientist-manage-services.md). 
+ 
 
 **Arguments**
 
@@ -163,11 +162,9 @@ The result is a service object, which in our example is called `service4Batch`.
 
 <a name="batch-function"></a>
 
-## Step 2: Define the record data to be batched
+## Step 2: Define the data records to be batched
 
-Next, use the batch public api function `$batch` to define the input record data for the batch and set the number of concurrent threads for processing. 
-
-**For example:**
+Next, use the batch public api function `$batch` to define the input record data for the batch and set the number of concurrent threads for processing. For example:
 ```R
 myBatch <- service4Batch$batch(inputs, parallelCount = 10)
 ```
@@ -221,26 +218,23 @@ The result is a batch object, which in our example is called `myBatch`.
 
 Next, use the public api functions to start the asynchronous batch execution on the batch object, monitor the execution, or even cancel it.
 
-### Start 
-Start the batch task with the public function `start()`. R Server starts the batch execution and assigns an ID to the execution.
-
-**For example:**
+### Start batch execution task
+Start the batch task with the public function `start()`. R Server starts the batch execution and assigns an ID to the execution and returns the batch object. For example:
 ```R
 myBatch$start()
 ```
 
-### Get batch id
-Get the task id to reference during or after its execution with the public function `id()`. R Server returns the ID for the named batch object.
+>[!NOTE]
+> We suggest you always use the `id` function after you start the execution so that you can find it easily with this id later such as: `myBatch$start()$id()`
 
-**For example:**
+### Get batch id
+Get the batch task's identifier to reference during or after its execution with the public function `id()`. R Server returns the ID for the named batch object. For example:
 ```R
 myBatch$id()
 ```
 
-### Monitor results and status
-You can monitor the batch execution results with the public function `results()` and the status of the batch execution using the public function `STATUS`.
-
-**For example:**
+### Monitor execution results and status
+You can monitor the batch execution results with the public function `results()` and the status of the batch execution using the public function `STATUS`. For example:
 ```R
 batchRes <- NULL
 while(TRUE) {
@@ -254,76 +248,10 @@ while(TRUE) {
 ```
 
 ### Cancel execution
-Cancel the batch execution of the named batch object using the public function `cancel()`.
-
-**For example:**
-
+Cancel the named batch execution using the public function `cancel()`. R Server returns the batch object. For example:
 ```R
 myBatch$cancel()
 ```
-
-
-
-
-
-
-========================
-
-Other assumptions/questions:
-
-1. O16N now supports two new inputs: rdata.frame and csv so we can use arrays, or lists.  
-   - Batch specific only?? Or accepted input to any web service produced by O16N via mrsdeploy or API?  Is that true? 
-   - What about for realtime scoring?
-
-1. There are several new public function. They are:
-
-
-```R
-# Register service to be batched
-batch <- service$batch(inputs, parallelCount = 10)
-
-# Find batch using its execution identifier
-batch <- service$getBatch(id)
-
-# Get the list of batch execution identifiers
-ids <- service$getBatchExecutions()
-```
-
-**Batch functions performed on the service object**
-Once you get the service object, you can use these public functions on that service.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `batch` |Define the data records  to be batched and the concurrent thread count. [Learn more...](data-scientist-get-started#batch-function)|
-| `getBatchExecutions` |Get the list of batch execution identifiers. |
-| `getBatch` |Get batch object using its unique execution identifier |
-
-**Batch functions performed on the batch object**
-Once you have the batch object, you can use these public functions to interact with it.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
-| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
-| `results` |	Download all files or just the helper function (default dest = getwd())  |
-| `file` |	Get the results of the execution by filename  |
-| `download` |	Download all files or just the helper function (default dest = getwd())  |
-
-1. We’ll need an example users can actually try out of the box on their own. Nothing that relies on data files or models the users don't have access to or instructions on how to create. 
-
-1. Call the service by name/version
-1. Define the data records, as a data.frame or flat list, to be batched
-1. Start the batch execution
-1. Get the batch results and any associated files
-1. When necessary, cancel the batch execution
-
-
-
-
-
- A Batch Execution Service (BES) is a service that handles high volume, asynchronous, scoring of a batch of data records. 
-
 
 
 
@@ -361,34 +289,6 @@ batch$download(index, fileName, dest = "~admin/dev/null")
 batch$download(index)
 ```
 
-### Start batch execution
-
-```R
-start()
-```
-
-**Return**
-
-The `Batch` object
-
-### Cancel batch execution
-
-```R
-cancel()
-```
-**Return**
-
-The `Batch` object
-
-### Get execution identifier
-
-```R
-id()
-```
-
-**Return**
-
-The execution identifier
 
 ### Get batch execution results
 
@@ -467,7 +367,51 @@ List of lists of batch execution results
 ## See also
 
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
 + [Data scientist get started guide](data-scientist-get-started.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
 + [Application developer get started guide](../operationalize/app-developer-get-started.md)
+
+
+
+
+@@@@@@@@@
+
+
+
+========================
+
+Other assumptions/questions:
+
+1. O16N now supports two new inputs: rdata.frame and csv so we can use arrays, or lists.  
+   - Batch specific only?? Or accepted input to any web service produced by O16N via mrsdeploy or API?  Is that true? 
+   - What about for realtime scoring?
+
+
+**Batch functions performed on the service object**
+Once you get the service object, you can use these public functions on that service.
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `batch` |Define the data records  to be batched and the concurrent thread count. [Learn more...](data-scientist-get-started#batch-function)|
+| `getBatchExecutions` |Get the list of batch execution identifiers |
+| `getBatch` |Get batch object using its unique execution identifier |
+
+**Batch functions performed on the batch object**
+
+Once you have the batch object, you can use these public functions to interact with it.
+
+| Function      | Description                                            |
+| ------------- |--------------------------------------------------------|
+| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
+| `cancel` |	Cancel the named batch execution|
+| `id` |	Get the execution identifier for the named batch process         |
+| `results` |	Poll for batch execution results, partial or full results as defined|
+| `STATUS` |	Poll for the status of the batch execution (failed, complete, ...)|
+| `listFiles` | List of every file that was generated by this execution index  |
+| `fileContent` | Print the contents of the named file generated by the batch execution  |
+| `download` |	Download one or all files from execution index (default dest = getwd())  |
+| `execution` |	Get results for a given index row returned as an array  |
+
+1. We’ll need an example users can actually try out of the box on their own. Nothing that relies on data files or models the users don't have access to or instructions on how to create. 

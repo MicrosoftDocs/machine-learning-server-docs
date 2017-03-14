@@ -849,5 +849,6 @@ remoteLogout()
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
 + [Data scientist get started guide](data-scientist-get-started.md)
++ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
 + [Application developer get started guide](../operationalize/app-developer-get-started.md)
