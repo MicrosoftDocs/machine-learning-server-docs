@@ -347,8 +347,6 @@ When you publish, update or get a web service, an API instance is returned as an
 
 You can use the following supported public functions to interact with the API client instance.
 
-#### Supported public functions for general usage
-
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
 | `print`       |	Print method that lists all members of the object      |
@@ -356,39 +354,7 @@ You can use the following supported public functions to interact with the API cl
 | `consume`     |	Consume the service based on I/O schema                |
 | consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the `publishService` function). |
 | `swagger`     |	Displays the service's `swagger` specification         |
-
-<a name="api-client-batch"></a>
-
-#### Supported public functions for batch consumption
-
-In addition to the public functions above, these functions can be used for asynchronous ("batch") executions on these web services. For an example of batch consumption, [see this article.](data-scientist-batch-mode.md)
-
-**Batch functions performed on the service object**
-Once you get the service object, you can use these public functions on that service.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `batch` |Define the data records  to be batched and the concurrent thread count. [Learn more...](data-scientist-get-started#batch-function)|
-| `getBatchExecutions` |Get the list of batch execution identifiers. |
-| `getBatch` |Get batch object using its unique execution identifier |
-
-**Batch functions performed on the batch object**
-Once you have the batch object, you can use these public functions to interact with it.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `batch` |	Define the data records, as a data.frame or flat list, to be batched, such as: `batch(records, parallelCount = 5)` |
-| `start` |	Starts the execution of a batch scoring operation, such as `batch$start()` |
-| `cancel` |	Cancel the current batch execution, such as `batch$cancel()`|
-| `id` |	Get the execution identifier for the current batch process, such as `id <- batch$id()`         |
-| `results` |	Download all files or just the helper function (default dest = getwd())  |
-| `file` |	Get the results of the execution by filename  |
-| `download` |	Download all files or just the helper function (default dest = getwd())  |
-
-
-
-
-
+| `batch` |Define the data records to be batched... In addition to the public functions above, there are many functions you can use to  consume a service asynchronously via batch execution. [For public functions for batch, see this article](data-scientist-batch-mode.md#public-fx-batch).|
 
 
 #### Example
