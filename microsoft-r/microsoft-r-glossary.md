@@ -6,7 +6,7 @@ description: "DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "11/30/2016"
+ms.date: "03/15/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,7 +32,7 @@ ms.custom: ""
 <hr>
 
 
-<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;[D](#D) &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;[O](#O) &nbsp;[P](#P) &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
+<big>**Quick Links:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;[D](#D) &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;[O](#O) &nbsp;[P](#P) &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[W](#W) &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>
 
 <hr>
 
@@ -79,7 +79,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
 
 **Distributed computing**
-<div style="margin:15px; margin-bottom:25px;">Similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple servers. <a href="scaler-distributed-computing.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. <a href="scaler-distributed-computing.md">Learn more…</a></div>
 
 <!--
 <br>
@@ -114,10 +114,10 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> H </b></big>
 
 <a name="hpa"></a>**High-performance analytics (HPA)**
-<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPA refers to functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">HPA is paradigm describing the distribution of data across multiple cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. <p/> ScaleR, which is designed to process large data one chunk at a time, is also designed to process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. <p/> In ScaleR, HPA is evident in functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md">Learn more…</a></div>
 
 <a name="hpc"></a>**High-performance computing (HPC)**
-<div style="margin:15px; margin-bottom:25px;">In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.</div>
+<div style="margin:15px; margin-bottom:25px;">HPC is a paradigm for sharing tasks among multiple computing resources. HPC mechanisms are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. Common tasks tackled with HPC mechanisms include the family of [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problems, a term used to describe workloads that are naturally modular, self-contained, and independent. Examples include element-by-element computations on arrays, or computation of membership in the Mandelbrot set. This family of problems also includes many types of simulation, where each individual run is independent. <p/> In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.</div>
 
 <!--
 <br>
@@ -203,7 +203,8 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> P </b></big>
 
 <a name="parallel"></a>**Parallel computing**
-<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. <a href="scaler-distributed-computing.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. ScaleR performs parallel computing on any computer with multiple computing cores. <a href="scaler-distributed-computing.md">Learn more…</a></div>
+ 
 
 <!--
 <br>
@@ -275,17 +276,16 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Term**
 
-
+-->
 <br>
 
 <a name="W"></a>
 <hr>
 <big><b> W </b></big>
 
-**Term**
+**Write Once, Deploy Anywhere (WODA)**
+<div style="margin:15px; margin-bottom:25px;">Refers to the ability to create script locally, with the option of running it remotely on any supported platform with minimal changes. In practice, some distributed platforms have specialized data handling requirements. You may have to specify a context-specific *data source* along with the *compute context* to enable execution on a different platform. In most cases, the bulk of your analysis scripts can proceed with no further changes.</div>
 
-
--->
 <br>
 
 <a name="X"></a>

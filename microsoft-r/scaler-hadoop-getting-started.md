@@ -82,24 +82,23 @@ This tutorial introduces several high performance analytics features of **RevoSc
 5.  Summarize your data.
 6.  Fit a linear model to the data.
 
->[!NOTE]
-> The instructions in this article assume you're using the "/var/RevoShare" and "/var/RevoShare/$USER" directories in the native file system and "/share", "/user/RevoShare" and "/user/RevoShare/$USER" in the Hadoop Distributed File System on the Hadoop cluster.
-
 ### Check versions
 
 Supported distributions of Hadoop are listed in [Supported platforms](rserver-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](rserver-install-hadoop-805.md).
 
-### About sample data
+You can confirm the server version by typing `print(Revo.version)`.
 
-Sample data is required if you intend to follow the steps. This guide uses the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
+### Download sample data
 
-This guide also uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory.
+Sample data is required if you intend to follow the steps. The tutorial uses the *Airline 2012 On-Time Data Set,* a set of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
+
+This tutorial also uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory.
 
 You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 ### Start R Server
 
-Microsoft R Server for Hadoop runs on Linux. On Linux hosts (including nodes of your Hadoop cluster), you can start R Server by typing the following at the shell prompt:
+Microsoft R Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start R Server by typing `Revo64` at the shell prompt.  
 
 	[<username>]$ cd MRSLinux90
 	[<username> MRSLinux90]$ Revo64
@@ -108,16 +107,16 @@ You will see a `>` prompt, indicating an R Server session, and the ability to is
 
 ### Create a compute context
 
-A *compute context* specifies the computing resources to be used by **ScaleR**’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether you are running from a node of your cluster or from a client accessing the cluster remotely.
+A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via MapReduce) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether commands are issued from a node of your cluster or from a client accessing the cluster remotely.
 
 #### Define a Compute Context on the Cluster
 
-If you are running on one of the nodes of the Hadoop cluster (which may be an edge node), you can define a Hadoop MapReduce compute context that uses the default values:
+On a node of the Hadoop cluster (which may be an edge node), define a Hadoop MapReduce compute context using default values:
 
 	$ myHadoopCluster <- RxHadoopMR()
 
 >[!NOTE]
-> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must both exist and be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
+> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
 	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
 		sep="/" )
