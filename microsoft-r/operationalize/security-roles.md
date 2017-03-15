@@ -182,7 +182,6 @@ Authentication: {
               "Enabled": true,
               "Host": "<host_ip>",
               "UseLDAPS": "True",
-              "SkipCertificateValidation": "True",
               "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
               "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
               "QueryUserPasswordEncrypted": true,
