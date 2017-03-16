@@ -66,6 +66,7 @@ We'll use the following script in our example:
 #         Load mrsdeploy package on R Server             #
 ##########################################################
 
+# If R Server 9.0.1, load package:
 library(mrsdeploy)
 
 ##########################################################
