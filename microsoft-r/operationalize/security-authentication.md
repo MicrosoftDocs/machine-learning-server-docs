@@ -117,12 +117,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
               "Enabled": true,
               "Host": "<host_ip>",
               "UseLDAPS": "True",
-              "SkipCertificateValidation": "True",
               "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
               "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
               "QueryUserPasswordEncrypted": true,
-              "QueryUserPassword":
-"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+              "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
               "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
               "SearchFilter": "cn={0}"       
       }
