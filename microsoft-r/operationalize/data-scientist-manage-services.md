@@ -114,6 +114,7 @@ The following arguments are accepted for `publishService`:
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
+
 <sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
 
 
@@ -202,14 +203,15 @@ The following arguments are accepted for `updateService`:
 |----|----|
 |`name`*|The web service name you want to update. It is a string so use quotes such as "MyService".|
 |`v`*|Identifies the version of the web service to be updated.|
-|`code`|R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`|
-|`model`|An `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`|
-|`snapshot` |Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
-|`inputs` |Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
-|`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
+|`code`|If `serviceType = R`, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` does not accepted.|
+|`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object. Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`|
+|`snapshot` |Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
+|`inputs` |Available only for `serviceType = R`. Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
+|`outputs` |Available only for `serviceType = R`.  (Note: `Realtime` defaults to data.frame automatically.) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
+
 <sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
 
 For more information on input and output data types, see the above section [I/O Data Types](#data-types).
