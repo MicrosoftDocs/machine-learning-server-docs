@@ -57,76 +57,33 @@ In this release, you can only manage (update/delete) the web services you've pub
 ## Publish and manage in R
 
 <a name="publishService"></a>
+
 ### Publish web services
 
 In order to deploy your analytics, you must publish them as new web services running on R Server. Each service is uniquely defined by a `name` and `version`.  Additionally, each web service can include R code and any necessary model assets, the required inputs, and the output application developers will need to integrate in their applications. 
 
-### Service Types
+<a name="type"></a>
 
-In R Server 9.1 and higher, you can publish web services capable of realtime scoring. The low-latency performance gains associated with these types of web services.
+#### Service Types
 
+In R Server 9.1 and higher, you can publish several types of web services. They are:
 
-<Link to Jeannine's real-time overview @@LINK COMING LATER>
++ `R`: This standard web service type offers fast execution and scoring of arbitrary R code and R models. You can specify this service type using the `publishService` function in the `mrsdeploy` package or using the API directly.  
 
-Whenever you publish a model along with some code, it is transformed into a run-time analytic web service. With those services, other data scientists and applicationd developers can benefit from fast, portable scoring.
++ `Realtime`: This web service type offers even lower latency than the R type for supported R models published without any other R code. With lower latency, you have better load and can score more models in parallel. The additional scoring performance boost you experience when consuming a web service of this type is due to:
+   + No additional resources or time spent spinning up an R sessions for each call. Supported models are scored without the need for this session.
+   + Once a model is loaded into memory once, they won't need to be reloaded for the next call
+   
+   Only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see @@Supported Prediction Functions.  <Link to Jeannine's real-time overview @@LINK COMING LATER>
+   
+   This service type takes a data.frame as input and also outputs a data.frame. You can specify this service type using the `publishService` function or using the API directly. 
 
-However, if you are interested in publishing only a model, you can get low-latency, 
-
-Similar to PublishService(), you can create a web service from a model using PublishPredictionService(). Using the new function,  you can enjoy lower latency and increased scoring performance of around 10x faster with supported model formats over PublishService(). However, unlike  PublishService(), you cannot include any arbitrary R code along with that model with PublishPredictionService(). You can only provide the model and score against it. Only R models produced using the rxPredict() function in the RevoScaleR R package and the mxPredict() function in the Microsoft ML R package are supported with this function.  These packages are installed with R Server and R Client. Refer to the help pages in those R packages for more information on these functions.
-
-If you publish an model  those models can be used for runtime or realtime scoring. The benefit for realtime scoring 
-
-
-
-
-
++ `Python`:  This web service type offers fast execution and scoring of Python code and models. You can create an `Python` type service via the API directly on Windows platforms only. It is not available through the `mrsdeploy` R package.
 
 
+In R Server 9.0.1, only the `R` service type is supported.
 
-
-
-
-What is real-time scoring?
-A typical  data science process for scoring using R involves loading input data, loading a trained model, and executing predictions based on a native R function. Although scoring is much faster than training, there can be performance overhead related to factors such as:
--	The size of the model. Even if the model is already trained and stored in a SQL Server table, the model must be read from the table, deserialized, and loaded into R.
--	Time required to load and run R. It might take several hundred milliseconds to set up the process for R script execution, and R processes are invoked for every call
-When scoring on new data needs to be done as part of an INSERT transaction in near-real-time, the addition of R into the workload often means that performance requirements cannot be met.
-To improve the performance of scoring operations, SQL Server now includes native SQL Server functions that perform scoring from a trained R model. Instead of loading the R runtime to make prediction calls, you can supply input data and perform scoring by calling a T-SQL function, all without leaving the SQL Server process. 
-Eliminating R calls from the scoring process has these additional benefits:
-¥	No additional resources or time spent launching an external process
-¥	Scale across cores and nodes
-¥	Leverage existing database resources for scoring workloads
-¥	More secure - data is kept inside the compliance boundary
-
-How native Scoring Works
-SQL Server 2016 and 2017 (version) includes trusted dynamic linked libraries that run a limited set of supported prediction algorithms in-process. Because the scoring algorithms are implemented as C libraries, R does not need to be installed on the database server; all you need is access to a trained model that has been stored in a SQL Server table. Moreover, because the scoring algorithms are based on RevoScaleR with supports chunking, you can score multiple rows in one call, and run multiple parallel threads.
-In SQL Server 2017, you call the real-time prediction libraries using a new system table-valued function PREDICT.
-This function invokes functionality that is similar to prediction functions in comparable R libraries, such as the rxPredict or mxPredict functions. 
--	As input, the T-SQL PREDICT function takes a trained model, data, and a set of parameters. 
--	It will return score or classification results, with options to return a probability score, confidence interval, errors, or other options supported by the equivalent prediction  function. 
-Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Function arguments and response
+#### Function arguments and response
 
 The `mrsdeploy` function for publishing as web services is `publishService`. 
 
@@ -147,9 +104,9 @@ The following arguments are accepted for `publishService`:
 |Arguments|Description|
 |----|----|
 |`name` *|The unique web service name. It is a string so use quotes such as "MyService". We recommend that you use a name that is easy understood and fits a nice URL so people can remember it.|
-|`serviceType`|The type of service that is produced when published. Options include:<br>1. `serviceType = R`, which produces a web service published containing any arbitrary R code which is executed at runtime. <br>2. `serviceType = Realtime`, which means the service contains a supported model object (see `model` argument below) and no other code or snapshot.<br>3. If omitted or null, `R` is assumed.<br>Note: `Python` web services are supported for SQL Server users on Windows via the API only.|
+|`serviceType`|The type of service that is produced when published ([Learn more about types](#type)). Options include:<br>1. `serviceType = R`: contains any arbitrary R code or models. If omitted or null, `R` is assumed. <br>2. `serviceType = Realtime`: contains only a supported model object (see `model` argument below).<br>Note: `Python` web services are supported for Windows users via the API only.|
 |`code` *|Required when `serviceType = R`, this is the R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, omit `code` argument or set to NULL.|
-|`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example:<br> &nbsp;  &nbsp; `model = rxPredict.glm`<br>|
+|`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`<br>|
 |`snapshot`|Available only for `serviceType = R`. Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
 |`inputs`|Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
 |`outputs` |Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
@@ -253,7 +210,6 @@ The following arguments are accepted for `updateService`:
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
-|`maintainer` |Username who has complete control over this service. You can use this argument to enable another user to maintain the web service.|
 <sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
 
 For more information on input and output data types, see the above section [I/O Data Types](#data-types).
