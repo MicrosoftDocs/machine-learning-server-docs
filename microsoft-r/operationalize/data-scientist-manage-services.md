@@ -78,7 +78,7 @@ In R Server 9.1 and higher, you can publish several types of web services. They 
    
    This service type takes a data.frame as input and also outputs a data.frame. You can specify this service type using the `publishService` function or using the API directly. 
 
-+ `Python`:  This web service type offers fast execution and scoring of Python code and models. You can create an `Python` type service via the API directly on Windows platforms only. It is not available through the `mrsdeploy` R package.
++ `Python`:  This web service type offers fast execution and scoring of Python code and models. You can create a `Python` type service via the API directly on Windows platforms only. It is not available through the `mrsdeploy` R package.
 
 
 In R Server 9.0.1, only the `R` service type is supported.
@@ -203,7 +203,7 @@ The following arguments are accepted for `updateService`:
 |----|----|
 |`name`*|The web service name you want to update. It is a string so use quotes such as "MyService".|
 |`v`*|Identifies the version of the web service to be updated.|
-|`code`|If `serviceType = R`, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` does not accepted.|
+|`code`|If `serviceType = R`, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` is not accepted.|
 |`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object. Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`|
 |`snapshot` |Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
 |`inputs` |Available only for `serviceType = R`. Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
@@ -570,7 +570,8 @@ Get the Swagger-based JSON file in one of two ways:
 
 The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. 
 
-In each example of a web services of `serviceType = R`, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  For web services of `serviceType = R`, keep in mind that:
+In each example of a web services of `serviceType = R`, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  [Learn more about web service types.](#types)
+For web services of `serviceType = R`, keep in mind that:
 + R code must come from: 
   + A filepath to a local R script
   + A block of R code as a character string

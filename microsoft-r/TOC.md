@@ -86,6 +86,7 @@
 #### [Capacity evaluation](operationalize/admin-evaluate-capacity.md)
 #### [Authentication](operationalize/security-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/security-https.md)
+#### [Managing permissions with roles](operationalize/security-roles.md)
 #### [Cross-origin resource sharing](operationalize/security-cors.md)
 #### [R execution security](operationalize/security-rserve.md)
 #### [Database configuration](operationalize/configure-remote-database.md)
