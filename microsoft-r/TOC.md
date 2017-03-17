@@ -179,7 +179,7 @@
 # [Package Reference](package-reference.md)
 ## [foreach Functions for Parallelizing Loops](foreach.md)
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-###[MicrosoftML-package](microsoftml/microsoftml-package.md)
+##[MicrosoftML-package](microsoftml/microsoftml-package.md)
 ###[categorical](microsoftml/packagehelp/categorical.md)
 ###[categoricalHash](microsoftml/packagehelp/categoricalHash.md)
 ###[concat](microsoftml/packagehelp/concat.md)

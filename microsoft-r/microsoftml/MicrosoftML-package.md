@@ -6,7 +6,7 @@ description: " A package that provides state-of-the-art machine learning algorit
 keywords: ", MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "03/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -37,14 +37,14 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 
 | Item | Data |
 | :---| :--- |
-|  Package:  |  MicrosoftML |
-|  Type:  |  Package |
-|  Version:  |  0.0.5 |
-|  License:  |  file LICENSE |
-|  LazyLoad:  |  yes |
+|  Package  |  MicrosoftML |
+|  Type  |  Package |
+|  Version  |  1.0.0 |
+|  License  |  file LICENSE |
+|  LazyLoad  |  yes |
 
 
-##Key functions/algorithms in the package
+##Key algorithms and transforms in the package
 
 ### Machine learning algorithms
 
@@ -55,6 +55,13 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 * [rxNeuralNet](packagehelp/NeuralNet.md): Binary, multi-class, and regression neural net.  
 * [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression.  
 
+### Machine learning transforms
+
+* [featurizeText](packagehelp/featurizeText.md): Transformation to produce a bag of counts of ngrams in a given text.  It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
+* [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
+* [categorical](packagehelp/categorical.md): Create indicator vector using categorical transform with dictionary.  
+* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing.  
+* [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables. 
 
 ### Scoring
 
@@ -77,15 +84,7 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 * [mutualInformation](packagehelp/mutualInformation.md): Specification for feature selection in mutual information mode. 
  
 
-### Helper functions for machine learning transforms
-
-* [featurizeText](packagehelp/featurizeText.md): Transformation to produce a bag of counts of ngrams in a given text.  It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
-* [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
-* [categorical](packagehelp/categorical.md): Create indicator vector using categorical transform with dictionary.  
-* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing.  
-* [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables.  
-
-
+ 
 > [!NOTE]
 > To list all public functions, type library(help="MicrosoftML") at the R prompt.
 >
