@@ -142,8 +142,8 @@ Once you get the service object, use these public functions on that object.
 | Function      | Description                                            |Reference|
 | ------------- |--------------------------------------------------------|:-----:|
 | `batch` |Define the data records to be batched and the thread count|[view](#batch-function)|
-| `getBatchExecutions` |Get the list of batch execution identifiers |[view](#-fx)|
-| `getBatch` |Get batch object using its unique execution identifier |[view](#)|
+| `getBatchExecutions` |Get the list of batch execution identifiers |[view]|
+| `getBatch` |Get batch object using its unique execution identifier |[view]|
 
 **Batch functions performed on the batch object**
 
@@ -183,6 +183,7 @@ txService <- getService("mtService", "v1.0.0")
 
 Next, use the public api function `batch` to define the input record data for the batch and set the number of concurrent threads for processing. 
 
+**Syntax:** `batch(inputs, parallelCount = 10)`
 
 |Argument|Description|
 |----|----|
@@ -201,7 +202,7 @@ txBatch <- myService$batch(mtcars, parallelCount = 5)
 # INPUT = Flat CSV converted to a data.frame using read.csv 
 # Assign data.frame to 'records' variable. Then, use 'records' as input.
 records <- read.csv("mtcars.csv")
-txBatch  <- myService$batch(records)
+txBatch  <- myService$batch(records, parallelCount = 15)
       
 # INPUT = TSV file converted to a data.frame using read.csv 
 # Declare the separator
@@ -215,7 +216,7 @@ Next, use the public api functions to start the asynchronous batch execution on 
 
 <a name="start-fx"></a>
 
-#### Start batch execution task
+### Start batch execution task
 Start the batch task with `start()`. R Server starts the batch execution and assigns an ID to the execution and returns the batch object. 
 
 **Syntax:** `start()`
@@ -235,7 +236,7 @@ txBatch$start()
 
 <a name="id-fx"></a>
 
-#### Get batch id
+### Get batch id
 Get the batch task's identifier to reference during or after its execution using `id()`. 
 
 **Syntax:** `id()`
@@ -252,7 +253,7 @@ txBatch$id()
 
 <a name="cancel-fx"></a>
 
-#### Cancel execution
+### Cancel execution
 Cancel the named batch execution using `cancel()`.
 
 **Syntax:** `cancel()`
@@ -277,7 +278,7 @@ While the batch task is running, you can monitor and poll the results. Once the 
 
 <a name="results-fx"></a>
 
-#### Monitor and get execution results
+### Monitor and get execution results
 There are several public functions you can use to get the results and status of a batch execution.
 
 
@@ -316,7 +317,7 @@ for(i in seq(batchRes$totalItemCount)) {
 
 <a name="listfiles-fx"></a>
 
-#### Get list of generated files
+### Get list of generated files
 
 Retrieve a list of every file that was generated during the batch execution for a given data record, or index, with `listFiles()`. This can be made part of a loop to get the list of the files for every data record (see workflow example for a loop). 
 
@@ -335,7 +336,7 @@ files <- txBatch$listFiles(i)
 
 <a name="fileContent-fx"></a>
 
-#### Display file contents
+### Display file contents
 
 Display the file contents of a named file returned in the above list with `fileContent()`. R Server returns the ID for the named batch object. 
 
@@ -359,7 +360,7 @@ for(i in seq(batchRes$totalItemCount)) {
 ```
 <a name="download-fx"></a>
 
-#### Download generated files 
+### Download generated files 
 
 Download the file(s) from a specific execution index using `download()`. By default, files are downloaded to the current working directory `getwd()` unless a different `dest = "<path>"` is specified. You can choose to download a specific file or all files. 
 

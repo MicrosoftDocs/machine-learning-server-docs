@@ -365,7 +365,7 @@ NULL
 $snapshotId
 [1] "05053e85-c9d0-43cb-9be8-8dccf2b5da54"
 
-$publishedBy
+$versionPublishedBy
 [1] "rserver-user"
 
 $inputParameterDefinitions
