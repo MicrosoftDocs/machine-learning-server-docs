@@ -62,6 +62,20 @@ In this release, you can only manage (update/delete) the web services you've pub
 
 In order to deploy your analytics, you must publish them as new web services running on R Server. Each service is uniquely defined by a `name` and `version`.  Additionally, each web service can include R code and any necessary model assets, the required inputs, and the output application developers will need to integrate in their applications. 
 
+<a name="realtime"></a>
+
+#### Realtime web services
+
+The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming on of these `Realtime` web service is due to the fact that:
+   + No need for an R session with these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
+   + No need to reload a model for subsequent calls once it's loaded into memory
+
+To publish a `Realtime` web service, you must:
+  + Specify `serviceType = Realtime`
+  + Have a supported model object. Only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see @@Supported Prediction Functions.  <Link to Jeannine's real-time overview @@LINK COMING LATER>
+  + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
+
+<!--
 <a name="type"></a>
 
 #### Service Types
@@ -82,6 +96,7 @@ In R Server 9.1 and higher, you can publish several types of web services. They 
 
 
 In R Server 9.0.1, only the `R` service type is supported.
+-->
 
 #### Function arguments and response
 
@@ -103,13 +118,13 @@ The following arguments are accepted for `publishService`:
 
 |Arguments|Description|
 |----|----|
+|`serviceType`|The type of service that is produced when published ([Learn more about types](#realtime)). Options include: <br>1. `serviceType = Realtime`: contains only a supported model object (see `model` argument below) published from a Windows platform.<br>2. A standard R web service containing any arbitrary R code or models. If this argument is omitted, then the standard type is assumed.|
 |`name` *|The unique web service name. It is a string so use quotes such as "MyService". We recommend that you use a name that is easy understood and fits a nice URL so people can remember it.|
-|`serviceType`|The type of service that is produced when published ([Learn more about types](#type)). Options include:<br>1. `serviceType = R`: contains any arbitrary R code or models. If omitted or null, `R` is assumed. <br>2. `serviceType = Realtime`: contains only a supported model object (see `model` argument below).<br>Note: `Python` web services are supported for Windows users via the API only.|
-|`code` *|Required when `serviceType = R`, this is the R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, omit `code` argument or set to NULL.|
-|`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`<br>|
-|`snapshot`|Available only for `serviceType = R`. Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
-|`inputs`|Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
-|`outputs` |Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
+|`code` *|Required for standard web services, this is the R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, omit `code` argument or set to NULL.|
+|`model`|For standard web services, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`<br>|
+|`snapshot`|Identifier of the snapshot to load. Can replace the `model` argument or be merged with it. Not applicable to `Realtime` type services. |
+|`inputs`|Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.|
+|`outputs` | Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
 |`v` |Defines a unique alphanumeric web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. [Learn more...](#versioning)|
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
@@ -122,7 +137,7 @@ The following arguments are accepted for `publishService`:
 
 See full examples in the ["Workflow" examples](#workflow) at the end of this article.
 
-Example of a `R` runtime web service:
+Example of a standard web service:
 ```R
 # Publish web service called mtService and 
 # assign version number v1.0.0
@@ -203,11 +218,11 @@ The following arguments are accepted for `updateService`:
 |----|----|
 |`name`*|The web service name you want to update. It is a string so use quotes such as "MyService".|
 |`v`*|Identifies the version of the web service to be updated.|
-|`code`|If `serviceType = R`, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` is not accepted.|
-|`model`|If `serviceType = R`, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object. Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`|
-|`snapshot` |Available only for `serviceType = R`. (Note: `Realtime` defaults to data.frame automatically.) Identifier of the snapshot to load. Can replace the `model` argument or be merged with it.|
-|`inputs` |Available only for `serviceType = R`. Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types).|
-|`outputs` |Available only for `serviceType = R`.  (Note: `Realtime` defaults to data.frame automatically.) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types)<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
+|`code`|For standard web services, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` is not accepted.|
+|`model`|For standard web services, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object. Currently, only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see Supported Prediction Functions @@LINK COMING LATER. For example, `model = rxPredict.glm`|
+|`snapshot` |Identifier of the snapshot to load. Can replace the `model` argument or be merged with it. Not applicable to `Realtime` type services. |
+|`inputs` |Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.|
+|`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
@@ -570,8 +585,8 @@ Get the Swagger-based JSON file in one of two ways:
 
 The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. 
 
-In each example of a web services of `serviceType = R`, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  [Learn more about web service types.](#types)
-For web services of `serviceType = R`, keep in mind that:
+In each example of standard web services, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  
+For standard web services, keep in mind that:
 + R code must come from: 
   + A filepath to a local R script
   + A block of R code as a character string
@@ -581,11 +596,11 @@ For web services of `serviceType = R`, keep in mind that:
   + File path to an `.R` file which will be evaluated into an environment and loaded
   + A model object
 
-In the example of a web services of `serviceType = Realtime`, keep in mind that:
+In the example of [a `Realtime` web service](#realtime), keep in mind that:
 + R code is not supported
 + The model must be:
   + A model object
-  + A supported model formats @@ADD LINK TO SUPPORTED FORMATS
+  + A supported model formats
 
 
 

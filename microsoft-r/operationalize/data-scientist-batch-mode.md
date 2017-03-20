@@ -189,7 +189,7 @@ Next, use the public api function `batch` to define the input record data for th
 |Argument|Description|
 |----|----|
 |`inputs`|Specify the R data.frame name directly, or specify a flat list filename and convert it to a data.frame using the base R function, `read.csv`. |
-|`parallelCount`|Default value is 10. Specify the number of concurrent threads that can be dedicated to processing records in the batch. Take care not to set a number so high that it negatively impacts performance.|
+|`parallelCount`|Default value is 10. Specify the number of concurrent threads that can be dedicated to processing records in the batch.  Take care not to set a number so high that it negatively impacts performance.|
 
 **Returns:** The batch object
 

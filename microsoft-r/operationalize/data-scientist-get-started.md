@@ -275,10 +275,11 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
-1. Other data scientists can explore and consume Web services directly in R using some of the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. 
-2. Application developers can call and integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
+Services can be consumed in multiple ways: 
+1. Direct consumption in R using the `mrsdeploy` package, which installed with Microsoft R Server and R Client. Approaches include "Request - Response" and "Asynchronous Batch Execution".
+2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
 
-Learn more about sharing the Swagger-based JSON file and collaborating with others in the article ["Working with web services in R"](data-scientist-manage-services.md).
+Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](data-scientist-manage-services.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
 
 
 ## How to execute R code remotely
