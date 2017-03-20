@@ -51,17 +51,77 @@ For a quick review of the end-to-end workflow for asynchronous batch executions 
 Here we use the `mtService` web service that was published using the example in the [Get Started for Data Scientist](data-scientist-get-started.md) article. 
 
 ```R
+
+##           MODEL DEPLOYMENT & BATCH CONSUMPTION EXAMPLE               ##
+
+##########################################################################
+#              Create & Test a Logistic Regression Model                 #
+##########################################################################
+
+# Use logistic regression equation of vehicle transmission in the data set 
+# 'mtcars' to estimate the probability of a vehicle being fitted with a 
+# manual transmission based on horsepower (hp) and weight (wt)
+
+# Create glm model with `mtcars` dataset
+carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
+
+# Produce a prediction function that can use the model
+manualTransmission <- function(hp, wt) {
+  # --- Build a plot to demonstrate files in results ---
+  png(file = "Histogram.png", bg = "transparent")
+  hist(mtcars$hp, breaks = 10, col = "red", xlab = "Horsepower",
+       main="Histogram of Horsepower")
+  dev.off()
+  
+  # --- Perdict and return answer ---
+  newdata <- data.frame(hp = hp, wt = wt)
+  predict(carsModel, newdata, type = "response")
+}
+
+# test function locally by printing results
+print(manualTransmission(120, 2.8)) # 0.6418125
+
+##########################################################################
+#                 Log into Microsoft R Server                            #
+##########################################################################
+
+# Use `remoteLogin` to authenticate local admin account with R Server. 
+# Use session = false so that no remote R session started
+remoteLogin("",
+            username = "admin",
+            password = "{{PASSWORD}}",
+            session = FALSE)
+
+##########################################################################
+#                   Publish Model as a Service                          #
+##########################################################################
+
+# Publish as service using `publishService()` function from `mrsdeploy` 
+# package. Name service "mtService" and provide unique version number.
+# Assign service to the variable `api`
+api <- publishService(
+  "mtService",
+  code = manualTransmission,
+  model = carsModel,
+  inputs = list(hp = "numeric", wt = "numeric"),
+  outputs = list(answer = "numeric"),
+  artifacts = c("Histogram.png"),
+  v = "v1.0.0"
+)
+
+# Consume service by calling function, `manualTransmission` contained 
+# in this service
+result <- api$manualTransmission(120, 2.8)
+
+# Print response output named `answer`
+print(result$output("answer")) # 0.6418125   
+
+##########################################################################
+
 ##########################################################################
 #            Perform Batch Consumption & Get Swagger in R                #
 ##########################################################################
 
-# Use `remoteLogin` to authenticate with R Server using the local admin 
-# account. Use session = false so no remote R session started
-remoteLogin("http://localhost:12800", 
-            username = "admin", 
-            password = "{{YOUR_PASSWORD}}",
-            session = FALSE)
-   
 # Get the service using `getService()` function from `mrsdeploy`
 # Assign service to the variable `txService`.
 txService <- getService("mtService", "v1.0.0")
@@ -70,17 +130,17 @@ txService <- getService("mtService", "v1.0.0")
 # from a data.frame called mtcars. Note: mtcars is a data.frame of 
 # 11 cols with names (mpg, cyl, ..., carb) and 32 rows of numerics. 
 # Assign to the batch object called 'txBatch'.
-record <- mtcars
+records <- head(mtcars[, c(4, 6)], 2) # hp & wt
 txBatch <- txService$batch(records) 
 
 # Set thread count using parallelCount. Default is 10.
 # txBatch <- txService$batch(records, parallelCount = 5) 
 
 # Start the batch task
-txBatch$start()
+txBatch <- txBatch$start() 
 
-# Get the task id to reference during or after its execution:
-id <- txBatch$id()
+# Get the task execution id to reference during or after its execution:
+id <- txBatch$id() 
 
 # If you need to cancel the batch execution, try this:
 # txBatch$cancel()
@@ -90,42 +150,42 @@ id <- txBatch$id()
 # Assign returned results to batch result object we called 'batchres'.
 batchRes <- NULL
 while(TRUE) {
-   batchRes <- txBatch$results()
-
-   if (batchRes$status == txBatch$STATUS$failed) { stop("Batch execution failed") } 
-   if (batchRes$status == txBatch$STATUS$complete) { break }
-      
-   Sys.sleep(3)
+  batchRes <- txBatch$results()
+  
+  if (batchRes$state == txBatch$STATE$failed) { stop("Batch execution failed") } 
+  if (batchRes$state == txBatch$STATE$complete) { break }
+  
+  message("Polling for asynchronous batch to complete...")
+  Sys.sleep(3)
 }
-      
+
 # Once the batch task is complete, get the execution records by index from 
 # the batch results object, 'batchRes'. This object is the service output.
 
 # For every record, return these results (totalItemCount = # of data records)
 for(i in seq(batchRes$totalItemCount)) {
-
-   #1. List of every file that was generated by this execution index.
-       files <- txBatch$listFiles(i)
-    
-   #2. Display the file contents of each file returned in the above list.
-       for (fileName in files) {
-          content <- txBatch$fileContent(i, fileName)
-          if (is.null(content)) { stop("Unable to get file") }
-       }
- 
-   #3. Download files from execution index to the current working directory  
-       # unless a dest = "<path>" is specified.
-
-       # Download of a single named file
-       txBatch$download(i, "HistogramFile.png")
-
-       # Download of all files
-       txBatch$download(i, dest = getwd())
-   
-   #4. Get results for a given index row returned as an array 
-       # assign it to 'exe' and output a data frame for each row. 
-       exe <- batchRes$execution(i)
-       singleRowDataFrame <- exe$outputParameters$output
+  
+  #1. List of every file that was generated by this execution index.
+  files <- txBatch$listFiles(i)
+  
+  #2. Display the file contents of each file returned in the above list.
+  for (fileName in files) {
+    content <- txBatch$fileContent(i, fileName)
+    if (is.null(content)) { stop("Unable to get file") }
+  }
+  
+  #3. Download files from execution index to the current working directory  
+  # unless a dest = "<path>" is specified.
+  
+    # Download of a single named file
+    txBatch$download(i, "Histogram.png")
+  
+    # Download of all files
+    txBatch$download(i, dest = getwd())
+  
+  #4. Get results for a given index row 
+  answer <- batchRes$execution(1)$outputParameters$answer
+  answer
 }
 ``` 
 
@@ -155,7 +215,7 @@ Once you have the batch object, use these public functions to interact with it.
 | `start` |Starts the execution of a batch scoring operation |[view](#start-fx)|
 | `cancel` |Cancel the named batch execution|[view](#cancel-fx)|
 | `id` |Get the execution identifier for the named batch process|[view](#id-fx)|
-| `STATUS` |Poll for the status of the batch execution (failed, complete, ...)|[view](#results-fx)|
+| `STATE` |Poll for the state of the batch execution (failed, complete, ...)|[view](#results-fx)|
 | `results` |Poll for batch execution results, partial or full results as defined|[view](#results-fx)|
 | `execution` |Get results for a given index row returned as an array  |[view](#exe-fx)|
 | `listFiles` |List of every file that was generated by this execution index  |[view](#listfiles-fx)|
@@ -175,6 +235,8 @@ The `getService` function is covered in detail in [this article](data-scientist-
 
 **Example:**
 ```R   
+# Get the service using `getService()` function from `mrsdeploy`
+# Assign service to the variable `txService`.
 txService <- getService("mtService", "v1.0.0")
 ```
 
@@ -198,7 +260,8 @@ Next, use the public api function `batch` to define the input record data for th
 # INPUTS = data.frame
 # Use mtcars data.frame as input. Assign to batch object 'txBatch'.
 # Reduce thread count to 5.
-txBatch <- myService$batch(mtcars, parallelCount = 5)
+records <- head(mtcars[, c(4, 6)], 2) # hp & wt
+txBatch <- txService$batch(records, parallelCount = 5)
 
 # INPUT = Flat CSV converted to a data.frame using read.csv 
 # Assign data.frame to 'records' variable. Then, use 'records' as input.
@@ -228,7 +291,8 @@ No arguments.
 
 **Example:**
 ```R
-txBatch$start()     
+txBatch <- txBatch$start() 
+     
 ```
 
 >[!NOTE]
@@ -248,7 +312,7 @@ No arguments.
 
 **Example:**
 ```R
-txBatch$id()    
+id <- txBatch$id()    
 ```
 
 <a name="findbatch-fx"></a>
@@ -321,7 +385,7 @@ There are several public functions you can use to get the results and status of 
   + **Returns:** A batch result object is returned, which in our example is called `batchRes`. 
 
 + Get the status of the batch execution. 
-  + **Syntax:** `STATUS`
+  + **Syntax:** `STATE`
     no arguments
   + **Returns:** The status of the batch execution. 
 
@@ -335,10 +399,11 @@ while(TRUE) {
    batchRes <- txBatch$results(partialResult = TRUE)
 
    # Check STATUS of the task
-   if (batchRes$status == txBatch$STATUS$failed) { stop("Batch execution failed") } 
-   if (batchRes$status == txBatch$STATUS$complete) { break }
+   if (batchRes$state == txBatch$STATE$failed) { stop("Batch execution failed") } 
+   if (batchRes$state == txBatch$STATE$complete) { break }
 
-   # Repeat check every 3 seconds   
+   # Repeat check every 3 seconds
+   message("Polling for asynchronous batch to complete...")   
    Sys.sleep(3)
 }
 ```
@@ -364,10 +429,12 @@ In this example, we  monitor the results, return partial results every three sec
 # In a loop, get results for a given index row returned as an array in a loop
 # assign it to 'exe' and output a data frame for each row.
 for(i in seq(batchRes$totalItemCount)) {
-   exe <- batchRes$execution(i)
-   singleRowDataFrame <- exe$outputParameters$output
+   answer <- batchRes$execution(1)$outputParameters$answer
+   answer
 }
 ```
+
+
 <a name="listfiles-fx"></a>
 
 ### Get list of generated files
@@ -411,6 +478,7 @@ for(i in seq(batchRes$totalItemCount)) {
        }
 }       
 ```
+
 <a name="download-fx"></a>
 
 ### Download generated files 
@@ -433,7 +501,7 @@ In this example, we download a named file for the 5th index to a specified direc
 
 ```R
 #Download a named file for 5th index to the specified directory
-txBatch$download(5, "HistogramFile.png", dest = "C:/bgates/batchfiles/")
+txBatch$download(5, "Histogram.png", dest = "C:/bgates/batchfiles/")
 
 # Download all files for a given index to the default current R working directory in a loop
 for(i in seq(batchRes$totalItemCount)) {

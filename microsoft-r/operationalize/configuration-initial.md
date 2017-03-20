@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configuration Operationalization for R Server | Microsoft R Server Docs"
+title: "Configure R Server for Operationalization | Microsoft R Server Docs"
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: ""
 author: "j-martens"
