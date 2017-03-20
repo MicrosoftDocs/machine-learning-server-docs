@@ -120,6 +120,9 @@ This configuration is useful when you want to explore what it is to operationali
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
+1. From the main utility menu, choose the option **Stop and start services** and restart the web and compute nodes to define them as a service.
+
+
 >[!Important]
 >R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
@@ -191,10 +194,13 @@ For added security, you can [configure SSL](security-https.md) as well as authen
 
 1. From the sub-menu, choose the option to **Configure a compute node**.
 
-1. When the configuration utility is finished, open port 12805: 
+1. When the configuration is finished, open port 12805: 
    + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
 
    + On Linux: If using the IPTABLES firewall or equivalent service on Linux, then use the `iptables` command (or the equivalent) to open port 12805.
+
+1. From the main utility menu, choose the option **Stop and start services** and restart the compute node to define it as a service.
+
 
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
@@ -255,6 +261,8 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
         Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
    1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
+
+   1. From the main utility menu, choose the option **Stop and start services** and restart the web node to define it as a service.
 
    1. Exit the utility.
 
