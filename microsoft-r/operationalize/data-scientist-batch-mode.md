@@ -30,8 +30,6 @@ ms.custom: ""
 
 The typical approach to consuming web services, ["Request Response" consumption](data-scientist-manage-services.md#consume-service), involves a single API call to execute the code in that web service once. In this article, you'll learn how to perform "Asynchronous Batch" consumption. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server will immediately execute those operations once for every row of data provided. 
 
-
-
 ## Asynchronous batch workflow
 
 Generally speaking, the process for asynchronous batch consumption of a web service involves the following:
@@ -44,15 +42,16 @@ Use these following [public API functions](data-scientist-manage-services.md#api
 
 ![Batch execution](../media/o16n/data-scientist-batch.png) 
 
+<a name="try-batch"></a>
+
 **End-to-end workflow example**
 
-For a quick review of the end-to-end workflow for asynchronous batch executions of web services, check out this example. 
+For a quick overview of end-to-end workflow for asynchronous batch executions of web services, check out this example. 
 
-Here we use the `mtService` web service that was published using the example in the [Get Started for Data Scientist](data-scientist-get-started.md) article. 
+Here, we publish the same `mtService` web service that was published [in this tutorial](data-scientist-get-started.md) article. Next, we consume that web service asynchronously. 
 
 ```R
-
-##           MODEL DEPLOYMENT & BATCH CONSUMPTION EXAMPLE               ##
+##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
 
 ##########################################################################
 #              Create & Test a Logistic Regression Model                 #
