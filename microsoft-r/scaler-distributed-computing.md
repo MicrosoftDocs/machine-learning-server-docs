@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "ScaleR Distributed Computing Guide"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and library."
+title: "Compute context for distributed and parallel processing in Microsoft R"
+description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/19/2017"
+ms.date: "03/15/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,33 +24,19 @@ ms.custom: ""
 
 ---
 
-# ScaleR Distributed Computing
+# Compute context and distributed computing in ScaleR
 
-## Introduction
+ScaleR functions can be used to distribute computations over more than one R Server or R Client instance, allowing you to run multiple workloads in parallel on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer or platform. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
 
-*Parallel computing* is the process of breaking a given job into computationally independent components and running those independent components on separate threads, cores, or computers and then combining the results into a single returned result. Since its first release, **RevoScaleR** has performed parallel computing on any computer with multiple computing cores. *Distributed computing* is often used as a synonym for parallel computing, but in **RevoScaleR** we make the following distinction: *distributed computing* always refers to computations distributed over more than one computer, while *parallel computing* can occur on one computer or many.
+A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like RxSpark, RxHadoopMR, or RxInSQLServer are used to set the compute contenxt. Typically, you will specify different parameters depending on whether commands are issued locally or remotely.
 
-Distributed computing capabilities are built into **RevoScaleR**. This means that you can develop complex analysis scripts on your local computer, create one or more *compute contexts* for use with distributed computing resources, and then seamlessly move between executing scripts on the local computer and in a distributed context. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific *data source* along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
+ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
-**RevoScaleR**’s distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
-
-<a name="chunking"></a>
->**Important!** Microsoft R Client has several limitations to consider:
+> [!NOTE]
+> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that come with a dependency on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
 >
->1. There are a maximum of two threads for processing RevoScaleR HPA functions.
->
->2. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows.
 
-
-### Distributed Computing: A Primer
-
-Distributed computing is everywhere these days, with much buzz in the media about “cloud computing,” distributed file systems such as Hadoop, and distributed databases such as the Teradata data warehouse. As enterprises attempt to extract business intelligence from ever growing data sources, distributed computing provides the best hope for successfully harnessing adequate computing power to perform the necessary analyses.
-
-The essence of distributed computing, and parallel computing in general, is finding a way to break down a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Over the past thirty years, a number of mechanisms for distributed computing have been proposed and implemented, including PVM (Parallel Virtual Machine), MPI (Message-Passing Interface), and Linda (an example of a shared virtual memory model). Most such mechanisms were optimized to share tasks among the various computing resources, but could be slowed if large amounts of data needed to be transferred. These mechanisms are frequently discussed together under the general term *high-performance computing (HPC)*. HPC mechanisms are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. Common tasks tackled with HPC mechanisms include the family of *embarrassingly parallel* problems, such as element-by-element computations on arrays, or computation of membership in the Mandelbrot set. This family of problems also includes many types of simulation, where each individual run is independent of any others being computed.
-
-To effectively deal with large data, a different paradigm is required. *High-performance analytics (HPA)* typically require less processing on a given chunk of data but focus on efficiently feeding data to the cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. **RevoScaleR**, which is designed to process large data a chunk at a time, was built from the ground up so that each chunk of data could be processed independently, and so the extension to distributed computing is completely natural. **RevoScaleR** also provides a mechanism for processing distributed data, so that each computing resource needs access only to that portion of the total data source required for its particular computation.
-
-### Distributed Computing with RevoScaleR
+## Distributed computing
 
 **RevoScaleR** provides two main approaches for distributed computing. The first, the *master node* path, exemplifies the high-performance analytics approach: by simply establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
 
@@ -66,9 +52,9 @@ To effectively deal with large data, a different paradigm is required. *High-per
 - rxBTrees
 - rxNaiveBayes
 
-In the master node approach, you submit a job by calling a **RevoScaleR** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results. Examples of using the master node approach can be found in Chapter 3 and Chapter 4.
+In the master node approach, you submit a job by calling a **RevoScaleR** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results.
 
-The second approach is via the **RevoScaleR** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the tradition high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. Examples of this approach can be found in Chapter 6.
+The second approach is via the **RevoScaleR** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the traditional high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
 
 <a name="scaler-compute-context"></a>
 ## Compute Contexts

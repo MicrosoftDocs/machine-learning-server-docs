@@ -399,10 +399,10 @@ This execution might require several minutes.
     ```
 
 #### Step 6: Predict using Decision Tree
-1. Choose and apply the Logistic Regression learning algorithm.
+1. Choose and apply the Decision Tree learning algorithm.
     ```
     # Build a decision tree model.
-    dTree1_mrs <- rxDTree(modelFormula, data = test, reportProgress = 1)
+    dTree1_mrs <- rxDTree(modelFormula, data = train, reportProgress = 1)
 
     # Find the Best Value of cp for Pruning rxDTree Object.
     treeCp_mrs <- rxDTreeBestCp(dTree1_mrs)
