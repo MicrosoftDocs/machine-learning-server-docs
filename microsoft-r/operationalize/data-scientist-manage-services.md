@@ -79,28 +79,6 @@ To publish a `Realtime` web service, you must:
   + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
 
 See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
-<!--
-<a name="type"></a>
-
-#### Service Types
-
-In R Server 9.1 and higher, you can publish several types of web services. They are:
-
-+ `Script`: This standard web service type offers fast execution and scoring of arbitrary R code and R models. You can specify this service type using the `publishService` function in the `mrsdeploy` package or using the API directly.  
-
-+ `Realtime`: This web service type offers even lower latency than the R type for supported R models published without any other R code. With lower latency, you have better load and can score more models in parallel. The additional scoring performance boost you experience when consuming a web service of this type is due to:
-   + No additional resources or time spent spinning up an R sessions for each call. Supported models are scored without the need for this session.
-   + Once a model is loaded into memory once, they won't need to be reloaded for the next call
-   
-   Only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see @@Supported Prediction Functions.  <Link to Jeannine's real-time overview @@LINK COMING LATER>
-   
-   This service type takes a data.frame as input and also outputs a data.frame. You can specify this service type using the `publishService` function or using the API directly. 
-
-+ `Python`:  This web service type offers fast execution and scoring of Python code and models. You can create a `Python` type service via the API directly on Windows platforms only. It is not available through the `mrsdeploy` R package.
-
-
-In R Server 9.0.1, only the `R` service type is supported.
--->
 
 #### Function arguments and response
 
@@ -109,9 +87,6 @@ The `mrsdeploy` function for publishing as web services is `publishService`.
 |Function|Response|
 |----|----|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
-
-
-
 
 From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
 
