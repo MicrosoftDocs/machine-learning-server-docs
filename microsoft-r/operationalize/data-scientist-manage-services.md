@@ -66,7 +66,7 @@ In order to deploy your analytics, you must publish them as new web services run
 
 #### Realtime web services
 
-The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming on of these `Realtime` web services is due to the fact that there is:
+The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
    + No need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
 
    + No need to reload a model for subsequent calls once it's loaded into memory
@@ -77,6 +77,7 @@ To publish a `Realtime` web service, you must:
   + Have a supported model object. Only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see @@Supported Prediction Functions.  <Link to Jeannine's real-time overview @@LINK COMING LATER>
   + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
 
+See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
 <!--
 <a name="type"></a>
 
@@ -153,17 +154,18 @@ api <- publishService(
 )
 ```
 
-Example of a `Realtime` web service:
+Example of a `Realtime` web service ([see full example](#realtime-example):
 ```R
-# Publish web service called kyphosisLogRegModel 
-# Supply a supported model object for Realtime type 
-# Assign version number v1.0.0
-api <- publishService(
-     "kyphosisLogRegModel",
+# Publish as service using `publishService()` function. 
+# Define its name `kyphosisService` and version `v1.0`
+# Assign service to the variable `realtimeApi`.
+realtimeApi <- publishService(
      serviceType = "Realtime",
+     name = "kyphosisService",
      code = NULL,
-     model = rxLogit(Kyphosis ~ Age, data=kyphosis),
-     v = "v1.0.0",
+     model = kyphosisModel,
+     v = "v1.0",
+    alias = "kyphosisService"
 )
 ```
 
@@ -182,8 +184,6 @@ The following table lists the supported data types for the [publishService](#pub
 |`vector`|Yes|
 |`matrix`|Partial<br>(Not for logical & character matrices)|
 |`data.frame`|Yes<br>Note: Coercing an object during <br>I/O is a user-defined task|
-
-
 
 <a name="versioning"></a>
 
@@ -598,12 +598,12 @@ For standard web services, keep in mind that:
   + File path to an `.R` file which will be evaluated into an environment and loaded
   + A model object
 
-In the example of [a `Realtime` web service](#realtime), keep in mind that:
+In the example of [a `Realtime` web service](#realtime-example), keep in mind that:
 + R code is not supported
 + The model must be:
   + A model object
   + A supported model formats
-
+[Learn more about realtime services.](#realtime)
 
 
 The base path for files is set to your working directory.  
@@ -618,7 +618,7 @@ The base path for files is set to your working directory.
   opts$set("data-dir", NULL))
   ```
 
-### Using local objects for code and model (runtime R service)
+### Using local objects for R code and R model 
 
 In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
 
@@ -722,7 +722,7 @@ remoteLogout()
 
 
 
-### Using local `.RData` file  (runtime R service)
+### Using local `.RData` file 
 
 In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
@@ -793,7 +793,7 @@ remoteLogout()
 ```
 
 
-### Using `.R` files (runtime R service)
+### Using `.R` code and model files 
 
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
@@ -862,7 +862,7 @@ status
 remoteLogout()
 ```
 
-### Using `.RData` and `.R` (runtime R service)
+### Using `.RData` and `.R` files
 
 
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
@@ -932,37 +932,28 @@ status
 remoteLogout()
 ```
 
+<a name="realtime-example"></a>
 
-### Using a supported local model object (Realtime service)
+### Publish Realtime service with supported local model object
 
-Avaiable for R Server 9.1 and later. In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
+Realtime web services are available for users of R Server 9.1 and later on Windows platforms. In this example, the model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package and the Rpart `kyphosis` dataset is available to all R users.
 
 ```R
+##          REALTIME WEB SERVICE EXAMPLE                ##
+ 
 ##########################################################
-#       Create & Test a Logistic Regression Model        #
+#   Create/Test Logistic Regression Model with rxLogit   #
 ##########################################################
-
-# Load mrsdeploy package on R Server     
-library(mrsdeploy)
-
-# Use logistic regression equation of vehicle transmission 
-# in the data set mtcars to estimate the probability of 
-# a vehicle being fitted with a manual transmission 
-# based on horsepower (hp) and weight (wt)
-
-
-# Create glm model with `mtcars` dataset
-carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
-
-# Produce a prediction function that can use the model
-manualTransmission <- function(hp, wt) {
-     newdata <- data.frame(hp = hp, wt = wt)
-     predict(carsModel, newdata, type = "response")
-}
-   
-# test function locally by printing results
-print(manualTransmission(120, 2.8)) # 0.6418125
-
+    
+# Create logistic regression model 
+# using rxLogit modeling function from RevoScaleR package
+# and the standard `kyphosis` dataset
+kyphosisModel <- rxLogit(Kyphosis ~ Age, data=kyphosis)
+ 
+# Test the model locally
+testData <- data.frame(Kyphosis=c("absent"), Age=c(71), Number=c(3), Start=c(5))
+rxPredict(kyphosisModel, data = testData)  # Kyphosis_Pred: 0.1941938
+ 
 ##########################################################
 #            Log into Microsoft R Server                 #
 ##########################################################
@@ -971,68 +962,52 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 # the local admin account. Use session = false so no 
 # remote R session started
 remoteLogin("http://localhost:12800", 
-            username = “admin”, 
+            username = "admin", 
             password = “{{YOUR_PASSWORD}}”,
             session = FALSE)
 
 ##########################################################
-#             Publish Model as a Service                 #
+#    Publish Kyphosis Model as a Realtime Service        #
 ##########################################################
-
-# Publish as service using `publishService()` function from 
-# `mrsdeploy` package. Name service "mtService" and provide
-# unique version number. Assign service to the variable `api`
-api <- publishService(
-     "mtService",
-     code = manualTransmission,
-     model = carsModel,
-     inputs = list(hp = "numeric", wt = "numeric"),
-     outputs = list(answer = "numeric"),
-     v = "v1.0.0"
+ 
+# Publish as service using `publishService()` function. 
+# Define its name `kyphosisService` and version `v1.0`
+# Assign service to the variable `realtimeApi`.
+realtimeApi <- publishService(
+     serviceType = "Realtime",
+     name = "kyphosisService",
+     code = NULL,
+     model = kyphosisModel,
+     v = "v1.0",
+    alias = "kyphosisService"
 )
-
+ 
 ##########################################################
-#                 Consume Service in R                   #
+#           Consume Realtime Service in R                #
 ##########################################################
    
 # Print capabilities that define the service holdings: service 
 # name, version, descriptions, inputs, outputs, and the 
 # name of the function to be consumed
-print(api$capabilities())
+print(realtimeApi$capabilities())
    
-# Consume service by calling function, `manualTransmission`
+# Consume service by calling function, `kyphosisService`
 # contained in this service
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125   
-
+realtimeResult <- realtimeApi$kyphosisService(testData)
+ 
+# Print response output
+print(realtimeResult$outputParameters) # 0.1941938   
+ 
 ##########################################################
-#       Get Swagger File for this Service in R Now       #
+#         Get Service-specific Swagger File in R         #
 ##########################################################
    
 # During this authenticated session, download the  
 # Swagger-based JSON file that defines this service
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
-
-# Now you can share Swagger-based JSON so others can consume it
-
-##########################################################
-#          Delete service version when finished          #
-##########################################################
-
-# User who published service or user with owner role can
-# remove the service when it is no longer needed
-status <- deleteService("mtService", "v1.0.0")
-status
-
-##########################################################
-#                   Log off of R Server                  #
-##########################################################
-
-# Log off of R Server
-remoteLogout()
+rtSwagger <- realtimeApi$swagger()
+cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
+ 
+# Share Swagger-based JSON with those who need to consume it
 ```
 
 ## See also
