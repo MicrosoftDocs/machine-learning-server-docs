@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "MicrosoftML functions"
+title: "Overview of MicrosoftML functions"
 description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# MicrosoftML functions
+# Overview of MicrosoftML functions
 
 The **MicrosoftML** package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as featurization, classification, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
@@ -83,7 +83,7 @@ The **`rxLogisticRegression()`** algorithm is used to predict the value of a cat
 
 **Tasks supported**: binary and multiclass classification
 
-##Get help on MicrosoftML functions
+## Get help on MicrosoftML functions
 
 Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
 
