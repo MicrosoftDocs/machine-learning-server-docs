@@ -90,13 +90,13 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
  
 ## What's next?
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
 
-[Overview of MicrosoftML functions](microsoftml/overview-microsoftml-functions.md)
+[Overview of MicrosoftML functions](../overview-microsoftml-functions.md)
 
-[MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+[MicrosoftML algorithm cheat sheet](../microsoftml-algorithm-cheat-sheet.md)
 
 
 ##Author(s)
