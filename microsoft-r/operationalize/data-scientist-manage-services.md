@@ -66,13 +66,14 @@ In order to deploy your analytics, you must publish them as new web services run
 
 #### Realtime web services
 
-The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming on of these `Realtime` web service is due to the fact that:
-   + No need for an R session with these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
+The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming on of these `Realtime` web services is due to the fact that there is:
+   + No need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
+
    + No need to reload a model for subsequent calls once it's loaded into memory
 
 To publish a `Realtime` web service, you must:
-  + Be on a Windows platform (additional platforms in future releases); the resulting web service can be consumed on any platforms
-  + Specify `serviceType = Realtime`
+  + Publish from a Windows platform (additional platforms in future releases); the resulting web service can be consumed on any platforms
+  + Specify the argument `serviceType = Realtime`
   + Have a supported model object. Only a limited number of model types and scoring functions are supported. For a list of prediction functions supported in this release, see @@Supported Prediction Functions.  <Link to Jeannine's real-time overview @@LINK COMING LATER>
   + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
 
@@ -626,7 +627,7 @@ In this example, the code comes from an object (`code = manualTransmission`) and
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
 
-# Load mrsdeploy package on R Server     
+# For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # Use logistic regression equation of vehicle transmission 
@@ -726,6 +727,7 @@ remoteLogout()
 In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
+# For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
@@ -796,6 +798,7 @@ remoteLogout()
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
 ```R
+# For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
@@ -865,6 +868,7 @@ remoteLogout()
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
+# For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
@@ -931,7 +935,7 @@ remoteLogout()
 
 ### Using a supported local model object (Realtime service)
 
-In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
+Avaiable for R Server 9.1 and later. In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
 
 ```R
 ##########################################################
