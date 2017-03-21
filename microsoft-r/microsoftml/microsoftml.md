@@ -30,7 +30,11 @@ ms.custom: ""
 
 ##Description
  
-The MicrosoftML-package package provides state-of-the-art machine learning algorithms for R developed by Microsoft. It is used with the **RevoScaleR** package.
+The MicrosoftML-package package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
+
+This topic includes links to the reference documentation for the ML algorithms and transforms, and for the scoring and helper functions.
+
+
  
 
 
@@ -82,7 +86,13 @@ The MicrosoftML-package package provides state-of-the-art machine learning algor
 * [minCount](packagehelp/minCount.md): Specification for feature selection in count mode. 
 * [mutualInformation](packagehelp/mutualInformation.md): Specification for feature selection in mutual information mode. 
  
+## Get help on MicrosoftML functions from the R console
 
+To see the **MicrosoftML** functions that can be called from the R console:
+
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="MicrosoftML")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
  
 > [!NOTE]
 > To list all public functions, type library(help="MicrosoftML") at the R prompt.

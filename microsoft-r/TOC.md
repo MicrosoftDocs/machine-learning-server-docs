@@ -19,6 +19,7 @@
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
+##[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
@@ -179,7 +180,6 @@
 # [Package Reference](package-reference.md)
 ## [foreach Functions for Parallelizing Loops](foreach.md)
 ## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-##[MicrosoftML-package](microsoftml/microsoftml-package.md)
 ###[categorical](microsoftml/packagehelp/categorical.md)
 ###[categoricalHash](microsoftml/packagehelp/categoricalHash.md)
 ###[concat](microsoftml/packagehelp/concat.md)
