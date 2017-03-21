@@ -31,15 +31,19 @@ ms.custom: ""
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
+## Configurations: One-box vs Enterprise
+
 All configurations have at least a single web node and single compute node:
 
 + A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
 
-The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
+The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**. Learn how to [configure for Enterprise scenarios](configure-enterprise.md).
 
 This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
+
+## Supported R Server Platforms
 
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
@@ -48,6 +52,7 @@ This feature uses a SQLite 3.7+ database by default, but can be [configured to u
 >- CentOS/RHEL 7.x
 
 <a name="onebox"></a>
+
 ## The Basic One-Box Configuration
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
