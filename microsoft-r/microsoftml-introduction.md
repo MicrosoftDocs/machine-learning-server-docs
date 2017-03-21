@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "03/20/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -67,7 +67,7 @@ Algorithm | ML task supported | Scalability | Application Examples
 **`rxNeuralNet()`** <br>Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
 **`rxLogisticRegression()`** <br>Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
 
-For more information, see [MicrosoftML functions](microsoftml/microsoftml.md) and the documentation for the individual transforms and functions in the product help.
+For more information, see [MicrosoftML functions](overview-microsoftml-functions.md) For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
 
 For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
 
@@ -82,6 +82,9 @@ MicrosoftML is currently available in **Microsoft R Server for Windows** and in 
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[MicrosoftML functions](microsoftml/microsoftml.md)
+[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+
+[MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md) for references documentation for the key algorithms and transforms in the MicrosoftML package.
 
 [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+
