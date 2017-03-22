@@ -48,7 +48,7 @@ Use these following [public API functions](data-scientist-manage-services.md#api
 
 For a quick overview of end-to-end workflow for asynchronous batch executions of web services, check out this example. 
 
-Here, we publish the same `mtService` web service that was published [in this tutorial](data-scientist-get-started.md) article. Next, we consume that web service asynchronously. 
+Here, we publish the same web service that was published [in this tutorial](data-scientist-get-started.md) article. Next, we consume that web service asynchronously. 
 
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
@@ -95,11 +95,14 @@ remoteLogin("",
 #                   Publish Model as a Service                          #
 ##########################################################################
 
+# Generate a unique serviceName for demos and assign to variable serviceName
+serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+
 # Publish as service using `publishService()` function from `mrsdeploy` 
-# package. Name service "mtService" and provide unique version number.
+# package. Use the name variable and provide unique version number.
 # Assign service to the variable `api`
 api <- publishService(
-  "mtService",
+  serviceName,
   code = manualTransmission,
   model = carsModel,
   inputs = list(hp = "numeric", wt = "numeric"),
@@ -123,7 +126,7 @@ print(result$output("answer")) # 0.6418125
 
 # Get the service using `getService()` function from `mrsdeploy`
 # Assign service to the variable `txService`.
-txService <- getService("mtService", "v1.0.0")
+txService <- getService(serviceName, "v1.0.0")
 
 # Define the record data for the batch execution task.  Record data comes 
 # from a data.frame called mtcars. Note: mtcars is a data.frame of 

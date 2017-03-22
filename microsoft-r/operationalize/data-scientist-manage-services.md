@@ -639,11 +639,15 @@ remoteLogin("http://localhost:12800",
 #             Publish Model as a Service                 #
 ##########################################################
 
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
+
 # Publish as service using `publishService()` function from 
-# `mrsdeploy` package. Name service "mtService" and provide
+# `mrsdeploy` package. Use the service name variable and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
-     "mtService",
+     serviceName,
      code = manualTransmission,
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
@@ -684,7 +688,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 # User who published service or user with owner role can
 # remove the service when it is no longer needed
-status <- deleteService("mtService", "v1.0.0")
+status <- deleteService(serviceName, "v1.0.0")
 status
 
 ##########################################################
@@ -726,8 +730,12 @@ manualTransmission <- function(hp, wt) {
 # test locally: 0.6418125
 print(manualTransmission(120, 2.8))
 
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
+
 api <- publishService(
-   "mtService",
+   serviceName,
    code = manualTransmission,
    model = "transmission.RData",
    inputs = list(hp = "numeric", wt = "numeric"),
@@ -746,13 +754,13 @@ cat(swagger)
 swagger <- api$swagger(json = FALSE)
 swagger
 
-services <- listServices("mtService")
+services <- listServices(serviceName)
 services
 
-mtService <- services[[1]]
-mtService
+serviceName <- services[[1]]
+serviceName
 
-api <- getService(mtService$name, mtService$version)
+api <- getService(serviceName$name, serviceName$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -794,8 +802,12 @@ code <- "newdata <- data.frame(hp = hp, wt = wt)\n
 cat(model, file = "transmission.R", append = FALSE)
 cat(code, file = "transmission-code.R", append = FALSE)
 
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
+
 api <- publishService(
-   "mtService",
+   serviceName,
    code = "transmission-code.R",
    model = "transmission.R",
    inputs = list(hp = "numeric", wt = "numeric"),
@@ -816,13 +828,13 @@ cat(swagger)
 swagger <- api$swagger(json = FALSE)
 swagger
 
-services <- listServices("mtService")
+services <- listServices(serviceName)
 services
 
-mtService <- services[[1]]
-mtService
+serviceName <- services[[1]]
+serviceName
 
-api <- getService(mtService$name, mtService$version)
+api <- getService(serviceName$name, serviceName$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -865,8 +877,12 @@ code <- "newdata <- data.frame(hp = hp, wt = wt)\n
          answer <- predict(model, newdata, type = "response")"
 cat(code, file = "transmission-code.R", sep="n", append = TRUE)
 
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
+
 api <- publishService(
-   "mtService",
+   serviceName,
    code = "transmission-code.R",
    model = "transmission.RData",
    inputs = list(hp = "numeric", wt = "numeric"),
@@ -886,13 +902,13 @@ cat(swagger)
 swagger <- api$swagger(json = FALSE)
 swagger
 
-services <- listServices("mtService")
+services <- listServices(serviceName)
 services
 
-mtService <- services[[1]]
-mtService
+serviceName <- services[[1]]
+serviceName
 
-api <- getService(mtService$name, mtService$version)
+api <- getService(serviceName$name, serviceName$version)
 api
 result <- api$manualTransmission(120, 2.8)
 print(result$output("answer")) # 0.6418125
@@ -944,17 +960,21 @@ remoteLogin("http://localhost:12800",
 ##########################################################
 #    Publish Kyphosis Model as a Realtime Service        #
 ##########################################################
+
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("kyphosis", round(as.numeric(Sys.time()), 0))
  
 # Publish as service using `publishService()` function. 
-# Define its name `kyphosisService` and version `v1.0`
+# Use the variable name for the service and version `v1.0`
 # Assign service to the variable `realtimeApi`.
 realtimeApi <- publishService(
      serviceType = "Realtime",
-     name = "kyphosisService",
+     name = serviceName,
      code = NULL,
      model = kyphosisModel,
      v = "v1.0",
-    alias = "kyphosisService"
+     alias = "kyphosisService"
 )
  
 ##########################################################
@@ -966,10 +986,9 @@ realtimeApi <- publishService(
 # name of the function to be consumed
 print(realtimeApi$capabilities())
    
-# Consume service by calling function, `kyphosisService`
-# contained in this service
-realtimeResult <- realtimeApi$kyphosisService(testData)
- 
+# Consume service by calling function contained in this service
+realtimeResult <- realtimeApi$serviceName(testData)
+ 
 # Print response output
 print(realtimeResult$outputParameters) # 0.1941938   
  

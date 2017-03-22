@@ -107,11 +107,15 @@ remoteLogin("http://localhost:12800",
 #             Publish Model as a Service                 #
 ##########################################################
 
+# Generate a unique serviceName for demos 
+# and assign to variable serviceName
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
+
 # Publish as service using `publishService()` function from 
 # `mrsdeploy` package. Name service "mtService" and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
-     "mtService",
+     serviceName,
      code = manualTransmission,
      model = carsModel,
      inputs = list(hp = "numeric", wt = "numeric"),
