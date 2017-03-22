@@ -51,9 +51,10 @@ All configurations have at least a single web node and single compute node:
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
 
-The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
+There are two types of configuration:
+1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](configure-enterprise.md) article.
 
-[Learn more on how to configure for operationalization.](configuration-initial.md) 
+1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in this [Enterprise configuration](configure-enterprise.md) article.
 
 
 ## Security policies
