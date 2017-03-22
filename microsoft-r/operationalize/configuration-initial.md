@@ -33,26 +33,20 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 ## One-box vs enterprise configurations
 
-All configurations have at least a single web node and single compute node:
+All configurations have at least a single web node and single compute node. **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
+**Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells. By default, a SQLite 3.7+ database is installed, but you can, and in some cases must, install and [use a SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
 
-+ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
+R Server offers two types of configuration for operationalization/deployment:
+1. **One-box configuration**: the simplest configuration is a single web node and compute node on a single machine, which is described in this article.
 
-+ A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
-
-There are two types of configuration:
-1. **One-box**: the simplest configuration is a single web node and compute node on a single machine, which is described in this article.
-
-1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in the **[Enterprise configuration](configure-enterprise.md)**configure-enterprise article.
-
-This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
+1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration is described in detail in the **[Enterprise configuration](configure-enterprise.md)** article.
 
 ## Supported platforms for Operationalization
 
->[!Important]
->The operationalization feature for Microsoft R Server is supported on:
->- Windows Server 2012 R2, Windows Server 2016
->- Ubuntu 14.04, Ubuntu 16.04,
->- CentOS/RHEL 7.x
+The operationalization feature for Microsoft R Server is supported on:
+- Windows Server 2012 R2, Windows Server 2016
+- Ubuntu 14.04, Ubuntu 16.04,
+- CentOS/RHEL 7.x
 
 <a name="onebox"></a>
 
