@@ -39,18 +39,17 @@ Scaling up web nodes enables an active-active configuration that allows you to l
 
 For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
+![Enterprise Configuration](../media/o16n/configure-enterprise.png)
+
+If you'd like to learn more about web nodes and compute nodes or about the one-box configuration, [see here](configuration-initial.md). 
+
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
 >- Windows Server 2012 R2, Windows Server 2016
 >- Ubuntu 14.04, Ubuntu 16.04,
 >- CentOS/RHEL 7.x
 
-![Enterprise Configuration](../media/o16n/configure-enterprise.png)
-
-If you'd like to learn more about web nodes and compute nodes or about the one-box configuration, [see here](configuration-initial.md). 
-<br>
-
-## 1. Configure a Remote Database
+## 1. Configure a database
 
 By default, the web node configuration sets up a local SQLite database. If you want to use a different or remote database, follow these instructions to [configure that database](configure-remote-database.md) (SQL Server or PostgreSQL).
 
@@ -123,7 +122,7 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 
 <br><a name="webnode"></a>
 
-## 3. Configure web node(s)**
+## 3. Configure web node(s)
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
@@ -183,7 +182,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 >R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
 
-## 4. Configure Enterprise-Grade Security
+## 4. Configure enterprise-grade security
 
 In production environments, we strongly recommend the following approaches:
 
