@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Configuring R Server for Operationalization (Enterprise Configuration)
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services. This article describes how to perform an enterprise configuration of these features. 
 
