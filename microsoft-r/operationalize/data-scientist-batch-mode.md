@@ -96,7 +96,7 @@ remoteLogin("",
 ##########################################################################
 
 # Generate a unique serviceName for demos and assign to variable serviceName
-serviceName <- paste0("transmission", round(as.numeric(Sys.time()), 0))
+serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
 # Publish as service using `publishService()` function from `mrsdeploy` 
 # package. Use the name variable and provide unique version number.

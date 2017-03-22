@@ -987,8 +987,8 @@ realtimeApi <- publishService(
 print(realtimeApi$capabilities())
    
 # Consume service by calling function contained in this service
-realtimeResult <- realtimeApi$serviceName(testData)
- 
+realtimeResult <- realtimeApi$kyphosisService(testData)
+
 # Print response output
 print(realtimeResult$outputParameters) # 0.1941938   
  
