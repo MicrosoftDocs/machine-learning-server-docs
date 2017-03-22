@@ -51,7 +51,7 @@ The operationalization feature for Microsoft R Server is supported on:
 
 ## 1. Configure a database
 
-By default, the web node configuration sets up a local SQLite database. If you want to use a different or remote database, follow these instructions to [configure that database](configure-remote-database.md) (SQL Server or PostgreSQL).
+By default, the web node configuration sets up a local SQLite database. By default, the web node configuration sets up a local SQLite database.  If you want to use a different or remote database, follow these instructions to [configure that database](configure-remote-database.md) (SQL Server or PostgreSQL).
 
 If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
 
@@ -110,7 +110,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 1. From the sub-menu, choose the option to **Configure a compute node**.
 
-1. When the configuration is finished, open port 12805: 
+1. When the configuration  utility is finished, open port 12805: 
    + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
 
    + On Linux: If using the IPTABLES firewall or equivalent service on Linux, then use the `iptables` command (or the equivalent) to open port 12805.
@@ -119,6 +119,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
+
 
 <a name="webnode"></a>
 
@@ -130,26 +131,23 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 >[!Note]
 >It is possible to run the operationalization web node service from within IIS.
 
+
 1. On each machine, install Microsoft R Server:
    + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
    + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
 
 1. Declare the IP addresses of every compute node with each web node.
-   1. Open the external configuration file, `appsettings.json` file.
-
-      + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-      + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-   1. Update the `"Uris": {` properties to declare each compute node:
+   1. Update the `"Uris": {` properties to declare each compute node. You can specify a port or a range of ports as follows:
       ```
       "Uris": {
          "Values": [
            "http://<IP-ADDRESS-OF-COMPUTE-NODE-1>:12805",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-2>:12805",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-3>:12805"       
+           "http://<IP-ADDRESS-OF-COMPUTE-NODE-2>:40000-40099",
+           "http://<IP-ADDRESS-OF-COMPUTE-NODE-N>:30000-30010"       
          ]
        }
        ```
@@ -181,8 +179,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 >[!Important]
 >R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
-
-## 4. Configure enterprise-grade security
+## 4. Setup enterprise-grade security
 
 In production environments, we strongly recommend the following approaches:
 
