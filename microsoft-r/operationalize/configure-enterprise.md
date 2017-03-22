@@ -39,15 +39,15 @@ Scaling up web nodes enables an active-active configuration that allows you to l
 
 For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
+The operationalization feature for Microsoft R Server is supported on:
+- Windows Server 2012 R2, Windows Server 2016
+- Ubuntu 14.04, Ubuntu 16.04,
+- CentOS/RHEL 7.x
+
 ![Enterprise Configuration](../media/o16n/configure-enterprise.png)
 
-If you'd like to learn more about web nodes and compute nodes or about the one-box configuration, [see here](configuration-initial.md). 
-
->[!Important]
->The operationalization feature for Microsoft R Server is supported on:
->- Windows Server 2012 R2, Windows Server 2016
->- Ubuntu 14.04, Ubuntu 16.04,
->- CentOS/RHEL 7.x
+>[!Note]
+>To learn more about web nodes and compute nodes as well as about the one-box configuration, [see here](configuration-initial.md). 
 
 ## 1. Configure a database
 
@@ -120,7 +120,7 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 Your compute node is now configured. Repeat these steps for each compute node you want to add.
 
-<br><a name="webnode"></a>
+<a name="webnode"></a>
 
 ## 3. Configure web node(s)
 
