@@ -42,7 +42,7 @@ All configurations have at least a single web node and single compute node:
 There are two types of configuration:
 1. **One-box**: the simplest configuration is a single web node and compute node on a single machine, which is described in this article.
 
-1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in the [Enterprise configuration](configure-enterprise.md) article.
+1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in the **[Enterprise configuration](configure-enterprise.md)**configure-enterprise article.
 
 This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
 

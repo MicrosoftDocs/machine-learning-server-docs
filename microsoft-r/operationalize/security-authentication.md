@@ -38,9 +38,9 @@ To secure connections and communications, you have several options:
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
 |[Local `admin` account](#local)|For [one-box](configuration-initial.md) configurations|
-|[Active Directory / LDAP](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations|
-|[Active Directory / LDAP-S](#ldap)|For [enterprise](configuration-initial.md) on-premise configurations with SSL/TLS enabled|
-|[Azure Active Directory](#aad)|For [enterprise](configuration-initial.md) cloud configurations|
+|[Active Directory / LDAP](#ldap)|For [enterprise](configure-enterprise.md) on-premise configurations|
+|[Active Directory / LDAP-S](#ldap)|For [enterprise](configure-enterprise.md) on-premise configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|For [enterprise](configure-enterprise.md) cloud configurations|
 
 <a name="local"></a>
 

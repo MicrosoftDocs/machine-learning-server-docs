@@ -37,7 +37,7 @@ You can use roles to further control who can publish, update and delete web serv
 
 To assign groups of users in your Active Directory to R Server roles for web services, you must have:
 
-+ An instance of Microsoft R Server that is [configured for operationalization](../operationalize/configuration-initial.md)
++ An instance of Microsoft R Server that is [configured for operationalization](../operationalize/configure-enterprise.md)
 
 + Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/security-authentication.md)
 
