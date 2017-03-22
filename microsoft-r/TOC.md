@@ -81,7 +81,8 @@
 
 ## [Operationalization](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)
-### [Setup](operationalize/configuration-initial.md)
+### [Setup one-box configuration](operationalize/configuration-initial.md)
+### [Setup enterprise configuration](operationalize/configure-enterprise.md)
 ### Administrators
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [Administration utility](operationalize/admin-utility.md)
@@ -150,6 +151,7 @@
 ### [APIs and Client Libraries](deployr-tools-and-samples.md)
 #### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 #### [API Overview](deployr-api-reference.md)
+#### [API Reference Doc](https://microsoft.github.io/deployr-api-docs/)
 #### [Client Library Tutorial](deployr-client-library.md)
 #### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
 #### [API Explorer Tool](deployr-api-explorer-tool.md)
