@@ -31,15 +31,22 @@ ms.custom: ""
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
+## One-box vs enterprise configurations
+
 All configurations have at least a single web node and single compute node:
 
 + A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
 
 + A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
 
-The simplest configuration is a single web node and compute node on a single machine, called a **one-box configuration**.  You can also install multiple components on multiple machines, which is referred to as an  **enterprise configuration**.
+There are two types of configuration:
+1. **One-box**: the simplest configuration is a single web node and compute node on a single machine, which is described in this article.
+
+1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in the [Enterprise configuration](configure-enterprise.md) article.
 
 This feature uses a SQLite 3.7+ database by default, but can be [configured to use SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md).
+
+## Supported platforms for Operationalization
 
 >[!Important]
 >The operationalization feature for Microsoft R Server is supported on:
@@ -48,7 +55,8 @@ This feature uses a SQLite 3.7+ database by default, but can be [configured to u
 >- CentOS/RHEL 7.x
 
 <a name="onebox"></a>
-## The Basic One-Box Configuration
+
+## How to configure on one box
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
 
@@ -124,167 +132,3 @@ This configuration is useful when you want to explore what it is to operationali
 >R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
 You are now ready to begin operationalizating your R analytics with R Server.
-
-<a name="enterprise"></a>
-## The Enterprise Configuration
-
-With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
-
-This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
-
-Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
-
-For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
-
-![Enterprise Configuration](../media/o16n/setup-enterprise-ready.png)
-
-<br>
-
-<a name="add-compute-nodes"></a>
-
-**Step 1: Configure Compute Node(s)**
-
->**Note:** A compute node can be configured on its own machine or on the same machine as the web node.
-
-1. On each machine, install the same R Server version you installed on the web node.
-
-1. If on the following Linux flavors, then add a few symlinks:  (If on Windows, skip to the next step)
-
-   + On CentOS 7.1, CentOS 7.2:
-     ```
-      cd /usr/lib64
-      sudo ln -s libpcre.so.1   libpcre.so.0
-      sudo ln -s libicui18n.so.50   libicui18n.so.36
-      sudo ln -s libicuuc.so.50 libicuuc.so.36
-      sudo ln -s libicudata.so.50 libicudata.so.36
-     ```
-
-   + On Ubuntu 14.04:
-     ```
-      sudo apt-get install libicu-dev
-
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
-
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.52 libicui18n.so.36
-      ln -s libicuuc.so.52 libicuuc.so.36
-      ln -s libicudata.so.52 libicudata.so.36
-     ```
-
-   + On Ubuntu 16.04:
-     ```
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
-
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.55 libicui18n.so.36
-      ln -s libicuuc.so.55 libicuuc.so.36
-      ln -s libicudata.so.55 libicudata.so.36
-     ```
-
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
-
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
-
-1. From the sub-menu, choose the option to **Configure a compute node**.
-
-1. When the configuration utility is finished, open port 12805: 
-   + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
-
-   + On Linux: If using the IPTABLES firewall or equivalent service on Linux, then use the `iptables` command (or the equivalent) to open port 12805.
-
-Your compute node is now configured. Repeat these steps for each compute node you want to add.
-
-<br>
-
-**Step 2: Configure a Remote Database**
-
-By default, the web node configuration sets up a local SQLite database. If you want to use a remote database, follow these instructions to [configure remote database](configure-remote-database.md) (SQL Server or PostgreSQL).
-
-If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
-
-> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
-
-<br><a name="webnode"></a>
-
-**Step 3: Configure Web Node(s)**
-
-
->[!Note]
->It is possible to run the operationalization web node service from within IIS.
-
-1. On each machine, install Microsoft R Server:
-   + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
-   + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
-
-1. Declare the IP addresses of every compute node with each web node.
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
-
-   1. In the file, search for the section starting with `"BackEndConfiguration": {` .
-
-   1. Update the `"Uris": {` properties to declare each compute node:
-      ```
-      "Uris": {
-         "Values": [
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-1>:12805",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-2>:12805",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-3>:12805"       
-         ]
-       }
-       ```
-
-      > Do not update any other properties in this file at this point. It will be updated during the compute node configuration.
-
-   1. Close and save the file.
-
-   1. Repeat these steps on each web node to declare each and every compute node.
-
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
-   1. From the main menu, choose the option to **Configure R Server for Operationalization**.
-
-   1. From the sub-menu, choose the option to **Configure a web node**.     
-
-   1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
-        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
-
-   1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
-
-   1. Exit the utility.
-
-1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
-
-Your web node is now configured. Repeat these steps for each web node you want to add.
-
->[!Important]
->R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
-
-<br>
-
-**Step 4: Configure Enterprise-Grade Security**
-
-In production environments, we strongly recommend the following approaches:
-
-1. [Configure SSL/TLS](security-https.md) and install the necessary certificates.
-
-1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).  
-
-1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
-
-<br>
-
-**Step 5: Provision on the Cloud**
-
-If provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
-
-<br>
-
-**Step 6: Post Configuration**
-
-1. [Update service ports](admin-utility.md#ports), if needed.
-
-1. [Run diagnostic tests](admin-diagnostics.md).
-
-1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.
