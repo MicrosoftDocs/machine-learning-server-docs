@@ -189,7 +189,7 @@ Once you have registered a distributed compute context, any of the following fun
 
 We refer, here and elsewhere, to these functions (except `rxExec`) as the **RevoScaleR** *high-performance analytics*, or HPA functions. 
 
-The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing with rxExec](#Parallel-Computing-with-rxExec).
+The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing with rxExec](#parallel-computing-with-rxexec).
 
 Another class of distributed computing functions is the informational functions, such as `rxGetInfo` and `rxGetVarInfo`. Before beginning data analysis, you can use `rxGetInfo` to confirm the data set is available on the compute resources. 
 
@@ -601,7 +601,7 @@ In Windows, simply pressing the Esc will return the cursor to your screen. Depen
 
 Similarly, on Red Hat Enterprise Linux, pressing Ctrl-C will return the cursor to your screen, and either cancel the job or convert it to a non-waiting job.
 
-For all jobs that run on the cluster, the object `rxgLastPendingJob` is automatically created. You can use the `rxgLastPendingJob` object to retrieve your results later or to cancel the job. For more information, see [Non-Waiting Jobs](#Non-Waiting-Jobs).
+For all jobs that run on the cluster, the object `rxgLastPendingJob` is automatically created. You can use the `rxgLastPendingJob` object to retrieve your results later or to cancel the job. For more information, see [Non-Waiting Jobs](#non-waiting-jobs).
 
 <a name="non-waiting-jobs"></a>
 ## Non-Waiting jobs for background processing
