@@ -51,9 +51,9 @@ Status|This API returns a health report of the configuration, including the numb
 
 <br>
 
-The core APIs are accessible from and described in  `rserver-swagger-9.0.1.json`, **a Swagger-based JSON document**. Download this file from <a href="https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.0.1.json" target="_blank">https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.0.1.json</a>. [Swagger](http://swagger.io/) is a popular specification for a JSON file that describes REST APIs.  
+The core APIs are accessible from and described in  `rserver-swagger-<version>.json`, **a Swagger-based JSON document**. Download this file from https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-<version>.json, where `<version>` is the 3-digit R Server version number. Swagger is a popular specification for a JSON file that describes REST APIs.  
 
-You can access all of these core APIs using a client library built from `rserver-swagger-9.0.1.json` using [these instructions and example](app-developer-get-started.md).
+You can access all of these core APIs using a client library built from `rserver-swagger-<version>.json` using [these instructions and example](app-developer-get-started.md).
 
 Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) directly to list, discover, and consume services. [Learn more in this vignette](../operationalize/data-scientist-manage-services.md).
 
