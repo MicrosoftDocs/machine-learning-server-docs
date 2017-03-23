@@ -504,6 +504,9 @@ As the owner of the service, you can share the name and version number for the s
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
 
+
+In this example, replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 ```R
 ##########################################################################
 #      Perform Request-Response Consumption & Get Swagger Back in R      #
@@ -596,6 +599,10 @@ The base path for files is set to your working directory.
 ### Using local objects for R code and R model 
 
 In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
+
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 
 ```R
 ##########################################################
@@ -705,6 +712,9 @@ remoteLogout()
 
 In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 ```R
 # For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
@@ -780,6 +790,10 @@ remoteLogout()
 
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
+
 ```R
 # For R Server 9.0.1, load mrsdeploy package on R Server     
 library(mrsdeploy)
@@ -853,6 +867,10 @@ remoteLogout()
 
 
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
+
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 
 ```R
 # For R Server 9.0.1, load mrsdeploy package on R Server     
@@ -928,6 +946,9 @@ remoteLogout()
 ### Publish Realtime service with supported local model object
 
 Realtime web services are available for users of R Server 9.1 and later on Windows platforms. In this example, the model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package and the Rpart `kyphosis` dataset is available to all R users.
+
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
 ##          REALTIME WEB SERVICE EXAMPLE                ##

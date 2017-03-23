@@ -59,6 +59,9 @@ This example walks you through the deployment of a simple model as a web service
 
 We'll use the following script in our example:
 
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 ```R
 ##             MODEL DEPLOYMENT EXAMPLE                 ##
 

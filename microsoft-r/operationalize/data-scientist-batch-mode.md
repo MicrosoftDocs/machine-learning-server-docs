@@ -50,6 +50,9 @@ For a quick overview of end-to-end workflow for asynchronous batch executions of
 
 Here, we publish the same web service that was published [in this tutorial](data-scientist-get-started.md) article. Next, we consume that web service asynchronously. 
 
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
 
