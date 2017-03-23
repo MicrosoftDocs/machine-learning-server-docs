@@ -603,6 +603,7 @@ Similarly, on Red Hat Enterprise Linux, pressing Ctrl-C will return the cursor t
 
 For all jobs that run on the cluster, the object `rxgLastPendingJob` is automatically created. You can use the `rxgLastPendingJob` object to retrieve your results later or to cancel the job. For more information, see [Non-Waiting Jobs](#Non-Waiting-Jobs).
 
+<a name="non-waiting-jobs"></a>
 ## Non-Waiting jobs for background processing
 
 By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). As you can imagine, you might want a different interaction model if you are sending time-intensive jobs to your distributed compute context. Decoupling your current session from in-progress jobs will enable jobs to proceed in the background while you continue to work on your R Console for the duration of the computation. This can be useful if you expect the distributed computations to take a significant amount of time, and when such computations are managed by a job scheduler.
@@ -811,6 +812,7 @@ You can also use `rxCleanupJobs` to clean up individual jobs:
 
 	rxCleanupJobs(job1)
 
+<a name="parallel-computing-with-rxexec"></a>
 ## Parallel Computing with rxExec
 
 While the **RevoScaleR** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the `rxExec` function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class*. 
@@ -1569,7 +1571,6 @@ To create or modify data on each node, use the data manipulation functions withi
 	}
 	rxExec( newAirData )
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 ### Installing Packages on Each Node
 
