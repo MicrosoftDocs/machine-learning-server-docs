@@ -333,7 +333,10 @@ id <- txBatch$id()
 
 **Example:**
 ```R
-getBatch(id)
+service <- getService("name", "version")
+# Get a Services existing batch by execution Id
+txBatch <- service$getBatch("my-executionId")   
+print(txBatch)
 ```
 
 <a name="listids-fx"></a>
@@ -383,10 +386,10 @@ While the batch task is running, you can monitor and poll the results. Once the 
 There are several public functions you can use to get the results and status of a batch execution.
 
 + Monitor or get the batch execution results
-  + **Syntax:** `results(partialResults = TRUE)`
+  + **Syntax:** `results(showPartialResults = TRUE)`
     |Argument|Description|
     |----|----|
-    |`partialResults`|This argument returns the already processed results of the batch execution even if it has not been fully completed. If `partialResults = FALSE`, then it will only return the results if the execution has completed.|
+    |`showPartialResults`|This argument returns the already processed results of the batch execution even if it has not been fully completed. If `showPartialResults = FALSE`, then it will only return the results if the execution has completed.|
   + **Returns:** A batch result object is returned, which in our example is called `batchRes`. 
 
 + Get the status of the batch execution. 
@@ -401,7 +404,7 @@ batchRes <- NULL
 while(TRUE) {
    # Send any results, including partial results, for txBatch task
    # Assign it to the batch result variable batchRes: 
-   batchRes <- txBatch$results(partialResult = TRUE)
+   batchRes <- txBatch$results(showPartialResult = TRUE)
 
    # Check STATUS of the task
    if (batchRes$state == txBatch$STATE$failed) { stop("Batch execution failed") } 

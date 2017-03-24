@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.0.1 & 9.1**
 
-The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">operationalization REST APIs</a> are exposed by R Server's operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](configuration-enterprise.md). With the operationalization feature configured, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
+The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">operationalization REST APIs</a> are exposed by R Server's operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](configure-enterprise.md). With the operationalization feature configured, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
 ><big>Looking for a specific core API call? <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">Look in this online API reference</a>.</big>
 
