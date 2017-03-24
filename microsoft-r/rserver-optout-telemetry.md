@@ -6,7 +6,7 @@ description: "Learn how to turn off telemetry data collection on Microsoft R Ser
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/05/2016"
+ms.date: "03/24/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Opting out of usage data collection
+# Opting out of usage data collection (Micorosft R)
 
 **Applies to:** version 9.0.1 and later
 
@@ -31,11 +31,17 @@ By default, telemetry data is collected during your usage of Microsoft R Server 
 
 To turn data collection off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 
-To check the server version, open an R IDE, such the R Console (RGui.exe). The console app reports server version information for both Microsoft R Open and R Server.
+## Version Requirements
+
+To verify server version is 9.0.1 or later (or 3.3.2 for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
+
+    > print(Revo.version)
 
 ## Permission Requirements
 
-If you are running R as administrator, the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session.
+Opting out of telemetry requires administrator rights. The instructions below explain how to run RGui.exe as an administrator.
+
+As an administrator, running the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session.
 
 Without a parameter, running `rxPrivacyControl()` returns the current setting. Similarly, if you are not an administrator, `rxPrivacyControl()` returns just the current setting.
 

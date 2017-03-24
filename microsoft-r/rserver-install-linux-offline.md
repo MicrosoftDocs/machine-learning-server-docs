@@ -6,7 +6,7 @@ description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/02/2017"
+ms.date: "03/24/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,12 +28,17 @@ ms.custom: ""
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup.
 
+> [!NOTE]
+> Offline setup for Linux is not supported by Microsoft Customer Support. If you have problems with these instructions, please use the feedback button to provide more information about specific errors.
+
 ## Download packages
 
 Using an internet-connected computer, download the packages listed in [Package dependencies for Microsoft R Server 9.0.1](rserver-install-linux-hadoop-packages.md). 
 
 <a name="download"><a/>
 ## Download prerequisites
+
+**mrsdeploy** installation, which is now integrated with R Server and R Client setup, requires .NET Core.
 
 | Component | Version | Download Link |
 |-----------|---------|--------|
