@@ -6,7 +6,7 @@ description: "Microsoft R Server in-database and cluster computing using the Sca
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/15/2017"
+ms.date: "03/23/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -33,101 +33,115 @@ A *compute context* specifies the computing resources to be used by ScaleR’s d
 ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
 > [!NOTE]
-> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that come with a dependency on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
+> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
 >
 
 ## Distributed computing
 
-**RevoScaleR** provides two main approaches for distributed computing. The first, the *master node* path, exemplifies the high-performance analytics approach: by simply establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
+**RevoScaleR** provides two main approaches for distributed computing: master node and rxExec. 
 
-- rxSummary
-- rxLinMod
-- rxLogit
-- rxGlm
-- rxCovCor (and its convenience functions, rxCov, rxCor, and rxSSCP)
-- rxCube and rxCrossTabs
-- rxKmeans
-- rxDTree
-- rxDForest
-- rxBTrees
-- rxNaiveBayes
+The first, the *master node* path, exemplifies the high-performance analytics approach. By establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
+
+- `rxSummary`
+- `rxLinMod`
+- `rxLogit`
+- `rxGlm`
+- `rxCovCor` (and its convenience functions, `rxCov`, `rxCor`, and `rxSSCP`)
+- `rxCube` and `rxCrossTabs`
+- `rxKmeans`
+- `rxDTree`
+- `rxDForest`
+- `rxBTrees`
+- `rxNaiveBayes`
 
 In the master node approach, you submit a job by calling a **RevoScaleR** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results.
 
-The second approach is via the **RevoScaleR** function rxExec, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The rxExec approach exemplifies the traditional high-performance computing approach: when using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
+The second approach is via the **RevoScaleR** function `rxExec`, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The `rxExec` approach exemplifies the traditional high-performance computing approach: when using `rxExec`, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
 
 <a name="scaler-compute-context"></a>
 ## Compute Contexts
 
-A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ScaleR. The default compute context tells the ScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as *rxLinMod* are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via *rxExec* are done sequentially.
+A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ScaleR. The default compute context tells the ScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as `rxLinMod` are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via `rxExec` are done sequentially.
 
-If you have supported distributed computing resources available to you, you can create a compute context object for those distributed computing resources, set your compute context using *rxOptions*, and then use those distributed computing resources in subsequent calls to ScaleR.
+If you have distributed computing resources available to you, you can create a compute context object for those resources, set your compute context using `rxOptions`, and then use those distributed computing resources in subsequent calls to ScaleR.
 
-You can create multiple compute context objects, and switch between them easily. You can also easily update existing compute context objects, for example, to add new computers as they come online.
+You can create multiple compute context objects and switch between them easily. You can also modify existing compute context objects, for example, to add new computers as they come online.
 
 The principal compute contexts are the following:
 
-- RxLocalSeq: the default compute context described above. This compute context is available on all platforms.
+- `RxLocalSeq`: the default compute context. This compute context is available on all platforms.
 
-- RxHadoopMR: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera (CDH4) or Hortonworks (HDP 1.3) cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using RxHadoopMR compute contexts, see the [Get Started with ScaleR on Hadoop](scaler-hadoop-getting-started.md).
+- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks ` cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md).
 
-- RxInTeradata: the compute context used to distribute computations in a Teradata appliance. For details on creating and using RxInTeradata compute contexts, see the [Get Started with ScaleR on Teradata](scaler-teradata-getting-started.md).
+- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Get started with ScaleR on Teradata](scaler-teradata-getting-started.md).
 
-The RxInSqlServer compute context is a special case—it is similar to RxInTeradata in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using RxInSqlServer compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
+The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
 
-Two other specialized compute contexts, both of which are relevant only in HPC computations via *rxExec*, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
+Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
 
 ### Compute Contexts and Data Sources
 
-In the local compute context, all of ScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the RxInTeradata compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
+In the local compute context, all of ScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the `RxInTeradata` compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
 
-| Data Source | RxLocalSeq | RxHadoopMR | RxInTeraData | RxInSqlServer |
+| Data Source | `RxLocalSeq` | `RxHadoopMR` | `RxInTeraData` | `RxInSqlServer` |
 |-------------|------------|------------|--------------|---------------|
-| Delimited Text (RxTextdata) | X | X |   |   |
-| Fixed-Format Text (RxTextData) | X |   |   |   |
-| .xdf data files (RxXdfData) | X | X |   |   |
-| SAS data files (RxSasData) | X |   |   |   |
-| SPSS data files (RxSpssData) | X |   |   |   |
-| ODBC data (RxOdbcData) | X |   |   |   |
-| Teradata database (RxTeradata) | X |   | X |   |
-| SQL Server database (RxSqlServerData) |   |   |   | X |
+| Delimited Text (`RxTextdata`) | X | X |   |   |
+| Fixed-Format Text (`RxTextData`) | X |   |   |   |
+| .xdf data files (`RxXdfData`) | X | X |   |   |
+| SAS data files (`RxSasData`) | X |   |   |   |
+| SPSS data files (`RxSpssData`) | X |   |   |   |
+| ODBC data (`RxOdbcData`) | X |   |   |   |
+| Teradata database (`RxTeradata`) | X |   | X |   |
+| SQL Server database (`RxSqlServerData`) |   |   |   | X |
 
-Even when using a single data source type, however, there may be some differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop File System are somewhat different from .xdf files created in a non-distributed file system. For more information, see [Get Started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, prediction in a distributed compute context requires that the data be split across the available nodes. See ["Managing Distributed Data"](#managing-distributed-data) for details.
+Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See ["Managing Distributed Data"](#managing-distributed-data) for details.
 
 ### Waiting and Non-waiting Compute Contexts
 
-By default, compute contexts are *waiting* (or *blocking*), that is, your R session waits for results from the job before returning control to you. For most ScaleR jobs, which return in a few seconds to perhaps a minute for a large data logistic regression, this is an appropriate choice. However, when running a big job (several minutes to several hours) on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session.  In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. To set the compute context object to run “no wait” jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
+By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). For ScaleR jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
 
-Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters; you define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from  all the jobs.
+To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
+
+Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
 
 ### Automatically Retrieving Cluster Console Output
 
-If you would like the console output from each of the cluster R processes to be printed to your user console, specify *consoleOutput=TRUE* in your compute context.
+If you want console output from each of the cluster R processes printed to your user console, specify *consoleOutput=TRUE* in your compute context.
 
 ### Updating a Compute Context
 
-Once you have created a compute context object, you can modify it easily by using the same function you used to originally create it. Pass the name of the original object as its first argument, and then specify only those arguments you wish to modify as additional arguments. For example, if you want to change only the wait parameter of an HPC Server compute context *myCluster* from TRUE to FALSE, you can do that easily as follows:
+Once you have a compute context object, modify it using the same function that originally creates it. Pass the name of the original object as its first argument, and then specify only those arguments you wish to modify as additional arguments. 
 
-	myCluster <- RxHpcServer(myCluster, wait=FALSE)
+For example, to change only the `suppressWarning` parameter of a Spark compute context *myHadoopCluster* from TRUE to FALSE:
 
-To obtain a list of the parameters available to change and their default values, use the args function with the name of the compute context constructor, for example:
+    myHadoopCluster <- RxSpark(myHadoopCluster, suppressWarning = FALSE)
 
-	args(RxHpcServer)
+To list parameters and default values, use the `args` function with the name of the compute context constructor, for example:
+
+	args(RxSpark)
 
 which gives the following output:
 
-	function (object, headNode = "", revoPath = NULL, shareDir = "",
-	    workingDir = NULL, dataPath = NULL, wait = TRUE, consoleOutput = FALSE,
-	    configFile = NULL, nodes = NULL, computeOnHeadNode = FALSE,
-	    minElems = -1, maxElems = -1, priority = 2, exclusive = FALSE,
-	    autoCleanup = TRUE, dataDistType = "all", packagesToLoad = NULL,
-	    email = NULL, resultsTimeout = 15, groups = "ComputeNodes")
+	function (object, hdfsShareDir = paste("/user/RevoShare", Sys.info()[["user"]], 
+		sep = "/"), shareDir = paste("/var/RevoShare", Sys.info()[["user"]], 
+		sep = "/"), clientShareDir = rxGetDefaultTmpDirByOS(), sshUsername = Sys.info()[["user"]], 
+		sshHostname = NULL, sshSwitches = "", sshProfileScript = NULL, 
+		sshClientDir = "", nameNode = rxGetOption("hdfsHost"), jobTrackerURL = NULL, 
+		port = rxGetOption("hdfsPort"), onClusterNode = NULL, wait = TRUE, 
+		numExecutors = rxGetOption("spark.numExecutors"), executorCores = rxGetOption("spark.executorCores"), 
+		executorMem = rxGetOption("spark.executorMem"), driverMem = "4g", 
+		executorOverheadMem = rxGetOption("spark.executorOverheadMem"), 
+		extraSparkConfig = "", persistentRun = FALSE, sparkReduceMethod = "auto", 
+		idleTimeout = 3600, suppressWarning = TRUE, consoleOutput = FALSE, 
+		showOutputWhileWaiting = TRUE, autoCleanup = TRUE, workingDir = NULL, 
+		dataPath = NULL, outDataPath = NULL, fileSystem = NULL, packagesToLoad = NULL, 
+		resultsTimeout = 15, ...) 
 
-You can modify an existing compute context and set the modified context as the current compute context by calling *rxSetComputeContext*. For example, if you have defined *myCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call *rxSetComputeContext* as follows:
+You can temporarily modify an existing compute context and set the modified context as the current compute context by calling `rxSetComputeContext`. For example, if you have defined *myHadoopCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call `rxSetComputeContext` as follows:
 
-	rxSetComputeContext(myCluster, wait=FALSE)
+	rxSetComputeContext(myHadoopCluster, wait=FALSE)
 
-The *rxSetComputeContext* function returns the previous compute context, so it can be used in constructions like the following:
+The `rxSetComputeContext` function returns the previous compute context, so it can be used in constructions like the following:
 
     oldContext <- rxSetComputeContext(myCluster, wait=FALSE)
     …
@@ -136,52 +150,55 @@ The *rxSetComputeContext* function returns the previous compute context, so it c
     # restore previous compute context
     rxSetComputeContext(oldContext)
 
-You can specify the compute context by name, as we have done here, but you can also specify it by calling a compute context constructor in the call to *rxSetComputeContext*. For example, to return to the local sequential compute context after using a cluster context, you can call *rxSetComputeContext* as follows:
+You can specify the compute context by name, as we have done here, but you can also specify it by calling a compute context constructor in the call to `rxSetComputeContext`. For example, to return to the local sequential compute context after using a cluster context, you can call `rxSetComputeContext` as follows:
 
 	rxSetComputeContext(RxLocalSeq())
 
-In this case, you can also use the descriptive string “local” to do the same thing:
+In this case, you can also use the descriptive string "local" to do the same thing:
 
 	rxSetComputeContext("local")
 
 ### Creating Additional Compute Contexts
 
-For a given set of distributed computing resources, you may find it convenient to have multiple compute context objects. For example, you might have one compute context for waiting or blocking jobs and one for no-wait or non-blocking jobs. Or you might define one that uses all available nodes and another that specifies a particular set of nodes. Because the initial specification of a compute context can be somewhat tedious, it is usually simplest to create additional compute contexts by modifying an existing compute context, in precisely the same way as we updated a compute context in the previous section. For example, suppose instead of simply modifying our existing compute context from *wait=TRUE* to *wait=FALSE*, we create a new compute context for non-waiting jobs:
+Given a set of distributed computing resources, you might wan to create multiple compute context objects to vary the configuration. For example, you might have one compute context for waiting or blocking jobs and another for no-wait or non-blocking jobs. Or you might define one that uses all available nodes and another that specifies a particular set of nodes. 
 
-	myNoWaitCluster <- RxHpcServer(myCluster, wait=FALSE)
+Because the initial specification of a compute context can be somewhat tedious, it is usually simplest to create additional compute contexts by modifying an existing compute context, in precisely the same way as we updated a compute context in the previous section. For example, suppose instead of simply modifying our existing compute context from *wait=TRUE* to *wait=FALSE*, we create a new compute context for non-waiting jobs:
 
-You may find it convenient to store your most commonly used compute context objects in an R script, or add their definitions to an R startup file.
+	myNoWaitCluster <- RxSpark(myHadoopCluster, wait=FALSE)
+
+> [!TIP]
+> Store commonly used compute context objects in an R script, or add their definitions to an R startup file.
+>
 
 ## Running Distributed Analyses
 
 Once you have registered a distributed compute context, any of the following functions can be used to perform distributed computations:
 
-- rxSummary
-- rxLinMod
-- rxLogit
-- rxGlm
-- rxCovCor (and its convenience functions, rxCov, rxCor, and rxSSCP)
-- rxCube and rxCrossTabs
-- rxKmeans
-- rxDTree
-- rxDForest
-- rxBTrees
-- rxNaiveBayes
-- rxExec
+- `rxSummary`
+- `rxLinMod`
+- `rxLogit`
+- `rxGlm`
+- `rxCovCor` (and its convenience functions, `rxCov`, `rxCor`, and `rxSSCP`)
+- `rxCube` and `rxCrossTabs`
+- `rxKmeans`
+- `rxDTree`
+- `rxDForest`
+- `rxBTrees`
+- `rxNaiveBayes`
+- `rxExec`
 
-We refer, here and elsewhere, to these functions (except *rxExec*) as the **RevoScaleR** *high-performance analytics*, or HPA functions. The exception, *rxExec*, is used to execute an arbitrary function on specified nodes (or cores) of your compute context; it can be used for traditional high-performance computing functions. The *rxExec* function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. We defer further discussion of *rxExec* until the Chapter 6.
+We refer, here and elsewhere, to these functions (except `rxExec`) as the **RevoScaleR** *high-performance analytics*, or HPA functions. 
 
-Another class of distributed computing functions is the informational functions, such as *rxGetInfo* and *rxGetVarInfo*. Before beginning our data analysis, we first want to check to make sure that the data set we will be using is available on the compute resources. As a very simple example, we will ask each node for basic information about our data set using the *rxGetInfo* function. (In this chapter, we assume a simple compute context that takes default values for everything except the five site- and user-specific parameters; in particular, this makes all jobs waiting jobs, that is, the R prompt does not return until the job is completed.)
+The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing with rxExec](#parallel-computing-with-rxexec).
 
-We begin with the data source we created in our getting started guide, airData. We call *rxGetInfo* as follows:
+Another class of distributed computing functions is the informational functions, such as `rxGetInfo` and `rxGetVarInfo`. Before beginning data analysis, you can use `rxGetInfo` to confirm the data set is available on the compute resources. 
+
+You can request basic information about a data set from each node using the `rxGetInfo` function. Assuming a data source named "airData", you can call `rxGetInfo` as follows:
 
 	rxGetInfo(data=airData)
 
-(If you have not just come from working through a getting started guide, you can define airData as follows:
-
-	airData <- RxXdfData("AirOnTime2012.xdf")
-
-where we assume AirOntime2012.xdf is in your dataPath. This file, together with a number of other large data files, is available from the [data set download site](http://packages.revolutionanalytics.com/datasets).)
+> [!NOTE]
+> To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf"` to load the data on a cluster.
 
 On a five-node HPC Server cluster, the call to *rxGetInfo* returns the following:
 
@@ -224,9 +241,15 @@ This confirms that our data set is in fact available on all nodes of our cluster
 
 ### Obtaining A Data Summary
 
-When you run one of **RevoScaleR**’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. Again, in the simplest case, the job is considered *blocking*, so that control is not returned until the computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
+The `rxSummary` function returns summary statistics on a data set, including datasets that run in a distributed context.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+When you run one of **RevoScaleR**’s HPA functions in a distributed compute context, it automatically distributes the computation among the available compute resources and coordinates the returned values to create the final return value. 
+
+Assuming a job is waiting (or blocking), control is not returned until a computation is complete. We assume that the airline data has been copied to the appropriate data directory on all the computing resources and its location specified by the airData data source object.
+
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
 For example, we start by taking a summary of three variables from the airline data:
 
@@ -264,14 +287,16 @@ We get the following results (identical to what we would have gotten from the sa
 
 ### Computing Average Arrival Delay Using rxCube
 
-We can perform an rxCube computation using the same data set to compute the average arrival delay for departures for each hour of the day for each day of the week. Again, the code is identical to the code used when performing the computations on a single computer, as are the results.
+We can perform an `rxCube` computation using the same data set to compute the average arrival delay for departures for each hour of the day for each day of the week. Again, the code is identical to the code used when performing the computations on a single computer, as are the results.
 
 	delayArrCube <- rxCube(ArrDelay ~ F(CRSDepTime):DayOfWeek,
 		data=airData, blocksPerRead=30)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
-Notice that in this case we have returned an *rxCube* object.  We can use this object locally to, for example, extract a data frame and plot the results:
+Notice that in this case we have returned an `rxCube` object. We can use this object locally to, for example, extract a data frame and plot the results:
 
     plotData <- rxResultsDF( delayArrCube )
     names(plotData)[1] <- "DepTime"
@@ -281,7 +306,7 @@ Notice that in this case we have returned an *rxCube* object.  We can use this o
 
 ### Cross-Tabulating Arrival Delay
 
-The rxCrossTabs function provides essentially the same computations as rxCube, but presents the results in a more traditional cross-tabulation. Here we look at late flights (those whose arrival delay is 15 or greater) by late departure and day of week:
+The `rxCrossTabs` function provides essentially the same computations as `rxCube`, but presents the results in a more traditional cross-tabulation. Here we look at late flights (those whose arrival delay is 15 or greater) by late departure and day of week:
 
 	crossTabs <- rxCrossTabs(formula = ArrDel15 ~ F(DepDel15):DayOfWeek,
 	                         data = airData, means = TRUE)
@@ -313,7 +338,9 @@ which yields:
 
 ### Computing a Covariance or Correlation Matrix
 
-The rxCovCor function is used to compute covariance and correlation matrices; the convenience functions rxCov, rxCor, and rxSSCP all depend upon it and are usually used in practical situations. (See the [*RevoScaleR User’s Guide*](scaler-user-guide-covcor.md) for examples.) The following example shows how the main function can be used directly:
+The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](scaler-user-guide-covcor.md).
+
+The following example shows how the main function can be used directly:
 
     covForm <- ~ DepDelayMinutes + ArrDelayMinutes + AirTime
     cov <- rxCovCor(formula = covForm, data = airData, type = "Cov")
@@ -484,8 +511,9 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 
 You may notice when running distributed computations that you get virtually no feedback while running waiting jobs. Since the computations are in general not running on the same computer as your R Console, the “usual” feedback is not returned by default. However, you can set the *consoleOutput* parameter in your compute context to TRUE to enable return of console output from all the nodes. For example, here we update our compute context *myCluster* to include *consoleOutput=TRUE*:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
-
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
 	myCluster <- RxHpcServer(myCluster, consoleOutput=TRUE)
 	rxOptions(computeContext=myCluster)
@@ -567,13 +595,23 @@ Then, rerunning our previous example results in much more verbose output:
 
 ### Converting a Waiting Job to a Non-Waiting Job and Cancelling a Job
 
-Suppose you submit a job a “waiting” job, and then realize that you’d prefer to be able to work in your R session on the local computer while it is running.  In Windows, simply pressing the Esc will return the cursor to your screen. Depending on how quickly you press Esc, your job will either be canceled (if it has not yet been accepted by the job scheduler), or will continue to run on the cluster. For all jobs that run on the cluster, the object *rxgLastPendingJob* is automatically created.  Similarly, on Red Hat Enterprise Linux, pressing Ctrl-C will return the cursor to your screen, and either cancel the job or convert it to a non-waiting job.
+Suppose you submit a job as a "waiting" job, and then realize that you’d prefer to be able to work in your R session on the local computer while it is running. 
 
-You can use the *rxgLastPendingJob* object to retrieve your results later or to cancel the job.  (See Chapter 4 on Non-Waiting Jobs for more information.)
+In Windows, simply pressing the Esc will return the cursor to your screen. Depending on how quickly you press Esc, your job will either be canceled (if it has not yet been accepted by the job scheduler), or will continue to run on the cluster. 
 
+Similarly, on Red Hat Enterprise Linux, pressing Ctrl-C will return the cursor to your screen, and either cancel the job or convert it to a non-waiting job.
+
+<<<<<<< HEAD
+<a name="non-waiting-jobs"></a>
 ## Non-Waiting Jobs
+=======
+For all jobs that run on the cluster, the object `rxgLastPendingJob` is automatically created. You can use the `rxgLastPendingJob` object to retrieve your results later or to cancel the job. For more information, see [Non-Waiting Jobs](#non-waiting-jobs).
+>>>>>>> dev
 
-In the previous chapter, we focused exclusively on *waiting* or *blocking* jobs. In this chapter we concentrate on *non-waiting* or *non-blocking* jobs, which allow you to send time-intensive jobs to your distributed compute context where they can proceed on their own while you continue to work on your R Console for the duration of the computation. This can be useful, for example, if you expect the distributed computations to take a significant amount of time, and when such computations are managed by a job scheduler.
+<a name="non-waiting-jobs"></a>
+## Non-Waiting jobs for background processing
+
+By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). As you can imagine, you might want a different interaction model if you are sending time-intensive jobs to your distributed compute context. Decoupling your current session from in-progress jobs will enable jobs to proceed in the background while you continue to work on your R Console for the duration of the computation. This can be useful if you expect the distributed computations to take a significant amount of time, and when such computations are managed by a job scheduler.
 
 ### Creating Non-Blocking Jobs
 
@@ -588,13 +626,13 @@ To create non-waiting jobs, you simply set wait=FALSE in your compute context ob
 		wait=FALSE)
 	rxOptions(computeContext=myNoWaitCluster)
 
-When *wait* is set to *FALSE*, a job information object rather than a job results object is returned from the submitted job. You should always *assign* this result so that you can use it to obtain job status while the job is running and obtain the job results when the job completes. For example, returning to our initial waiting job example, calling *rxExec* to get data set information, in the non-blocking case we augment our call to *rxExec* with an assignment, and then use the assigned object as input to the *rxGetJobStatus* and *rxGetJobResults* functions:
+When *wait* is set to *FALSE*, a job information object rather than a job results object is returned from the submitted job. You should always *assign* this result so that you can use it to obtain job status while the job is running and obtain the job results when the job completes. For example, returning to our initial waiting job example, calling `rxExec` to get data set information, in the non-blocking case we augment our call to `rxExec` with an assignment, and then use the assigned object as input to the `rxGetJobStatus` and `rxGetJobResults` functions:
 
 	airData <- "AirlineData87to08.xdf"
 	job1 <- rxExec(rxGetInfo, data=airData)
 	rxGetJobStatus(job1)
 
-If you call rxGetJobStatus quickly, it may show us that the job is "running", but if called after a few seconds (or longer if another job of higher priority is ahead in the queue) it should report "finished", at which point we can ask for the results:
+If you call `rxGetJobStatus` quickly, it may show us that the job is "running", but if called after a few seconds (or longer if another job of higher priority is ahead in the queue) it should report "finished", at which point we can ask for the results:
 
 	rxGetJobResults(job1)
 
@@ -652,7 +690,7 @@ If we are using our R Productivity Environment, we can view the job status by cl
 
 > The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 
-We can then call rxGetJobResults to obtain the actual computation results:
+We can then call `rxGetJobResults` to obtain the actual computation results:
 
 	delayArr <- rxGetJobResults(delayArrJobInfo)
 	delayArr
@@ -682,7 +720,7 @@ As in the blocking case, this gives the following results:
 
 ### Capturing the Job Information
 
-If you forget to assign the job information object when you first submit your job, don’t panic. **RevoScaleR** saves the job information for the last pending job as the object *rxgLastPendingJob*. You can assign this value to a more specific name at any time until you submit another non-blocking job.
+If you forget to assign the job information object when you first submit your job, don’t panic. **RevoScaleR** saves the job information for the last pending job as the object `rxgLastPendingJob`. You can assign this value to a more specific name at any time until you submit another non-blocking job.
 
 	rxOptions(computeContext=myNoWaitCluster)
 	rxLinMod(ArrDelay ~ DayOfWeek, data="AirlineData87to08.xdf",  
@@ -690,21 +728,23 @@ If you forget to assign the job information object when you first submit your jo
 	delayArrJobInfo <- rxgLastPendingJob
 	rxGetJobStatus(delayArrJobInfo)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
-Also, as in all R sessions, the last value returned can be accessed as *.Last.value;* if you remember immediately that you forgot to assign the result, you can simply assign *.Last.value* to your desired job name and be done.
+Also, as in all R sessions, the last value returned can be accessed as `.Last.value;` if you remember immediately that you forgot to assign the result, you can simply assign `.Last.value` to your desired job name and be done.
 
-For jobs older than the last pending job, you can use *rxGetJobs* to obtain all the jobs associated with a given compute context. More details on *rxGetJobs* can be found in the next chapter.
+For jobs older than the last pending job, you can use `rxGetJobs` to obtain all the jobs associated with a given compute context. More details on `rxGetJobs` can be found in the next section.
 
 ### Canceling a Non-Waiting Job
 
-Suppose you submit a job and realize you’ve mis-specified the formula. In the non-waiting case, it is easy to cancel your job simply by calling *rxCancelJob* with the job information object you saved when you submitted the job:
+Suppose you submit a job and realize you’ve mis-specified the formula. In the non-waiting case, it is easy to cancel your job simply by calling `rxCancelJob` with the job information object you saved when you submitted the job:
 
 	rxCancelJob(job1)
 
 ### Non-Waiting Logistic Regression
 
-Logistic regression uses an iteratively re-weighted least squares algorithm, and thus in general requires multiple passes through the data for successive iterations. This makes it a logical candidate for non-waiting distributed computing. For example, we replicated the large airline data set 8 times to create a data set with about one billion observations. We also added a variable Late to indicate which flights were at least fifteen minutes late. To find the probability of a late flight by day of week, we perform the following logistic regression:
+Logistic regression uses an iteratively re-weighted least squares algorithm, and thus in general requires multiple passes through the data for successive iterations. This makes it a logical candidate for non-waiting distributed computing. For example, we replicated the large airline data set 8 times to create a data set with about one billion observations. We also added a variable "Late" to indicate which flights were at least fifteen minutes late. To find the probability of a late flight by day of week, we perform the following logistic regression:
 
 	job2 <- rxLogit(Late ~ DayOfWeek, data = "AirlineData87to08Rep8.xdf")
 
@@ -745,15 +785,17 @@ We obtain the following results:
 	Condition number of final variance-covariance matrix: 78.6309
 	Number of iterations: 2
 
-## Cleaning Up after Distributed Computing
+## Clean up job artifacts using rxGetJobs and rxCleanJobs (distributed computing)
 
-Normally, whenever a waiting job completes or whenever you call *rxGetJobResults* to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the *autoCleanup* flag to the compute context constructor, which defaults to *TRUE*.) However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But **RevoScaleR** also supplies a number of tools to help you remove any accumulated artifacts.
+Normally, whenever a waiting job completes or whenever you call `rxGetJobResults` to obtain the results of a non-waiting job, any artifacts created during the distributed computation are automatically removed. (This is controlled by the `autoCleanup` flag to the compute context constructor, which defaults to *TRUE*.) 
 
-The first of these, *rxGetJobs*, allows you to get a list of all the jobs associated with a given compute context. By default, it matches just the head node (if available) and shared directory specified in the compute context; if you re-use these two specifications, ALL the jobs associated with that head node and shared directory are returned:
+However, if a waiting job fails to complete for some reason, or you do not collect all the results from your non-waiting jobs, you may begin to accumulate artifacts on your distributed computing resources. Eventually, this could fill the storage space on these resources, causing system slowdown or malfunction. It is therefore a best practice to make sure you clean up your distributed computing resources from time to time. One way to do this is to simply use standard operating system tools to delete files from the various shared and working directories you specified in your compute context objects. But **RevoScaleR** also supplies a number of tools to help you remove any accumulated artifacts.
+
+The first of these, `rxGetJobs`, allows you to get a list of all the jobs associated with a given compute context. By default, it matches just the head node (if available) and shared directory specified in the compute context; if you re-use these two specifications, ALL the jobs associated with that head node and shared directory are returned:
 
 	myJobs <- rxGetJobs(myNoWaitCluster)
 
-To restrict the matching to only those jobs associated with that specific compute context, specify *exactMatch=TRUE* when calling *rxGetJobs*.
+To restrict the matching to only those jobs associated with that specific compute context, specify *exactMatch=TRUE* when calling `rxGetJobs`.
 
 	myJobs <- rxGetJobs(myNoWaitCluster, exactMatch=TRUE)
 
@@ -763,30 +805,33 @@ To obtain the jobs from a specified range of times, use the *startTime* and *end
 		startTime=as.POSIXct("2013/01/16 0:00"),
 		endTime=as.POSIXct("2013/01/16 23:59"))
 
-Once you’ve obtained the list of jobs, you can try to clean them up using *rxCleanupJobs*:
+Once you’ve obtained the list of jobs, you can try to clean them up using `rxCleanupJobs`:
 
 	rxCleanupJobs(myJobs)
 
-If any of the jobs is in a "finished" state, *rxCleanupJobs* will not clean up that job but instead warn you that the job is finished and that you can access the results with *rxGetJobResults*. This helps prevent data loss. You can, however, force the cleanup by specifying *force=TRUE* in the call to *rxCleanupJobs*:
+If any of the jobs is in a "finished" state, `rxCleanupJobs` will not clean up that job but instead warn you that the job is finished and that you can access the results with `rxGetJobResults`. This helps prevent data loss. You can, however, force the cleanup by specifying *force=TRUE* in the call to `rxCleanupJobs`:
 
 	rxCleanupJobs(myJobs, force=TRUE)
 
-You can also use *rxCleanupJobs* to clean up individual jobs:
+You can also use `rxCleanupJobs` to clean up individual jobs:
 
 	rxCleanupJobs(job1)
 
+<a name="parallel-computing-with-rxexec"></a>
 ## Parallel Computing with rxExec
 
-While the **RevoScaleR** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the *rxExec* function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class* described in Chapter 1. In this chapter, we will use parallel computations to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering.
+While the **RevoScaleR** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the `rxExec` function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class*. 
 
-In general, the only required arguments to rxExec are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation. Most of these are introduced in the examples of this chapter, and the remainder are discussed in Section 6.10. The rxExec help file discusses all of these arguments in detail.
+In this article, you will learn how `rxExec` can be used to perform parallel computations. To demonstate, you'll use script to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering.
+
+In general, the only required arguments to `rxExec` are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation.
 
 >[!IMPORTANT]
-> Before trying the examples in this chapter, set your compute context to one of the following: RxLocalParallel, RxHpcServer, RxHadoopMR, or RxInTeradata (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE* if available; later in the chapter we will show how some of the examples can be rewritten to work in a non-blocking compute context, but start with the simpler, blocking case.
+> Before trying the examples, set your compute context to one of the following: `RxLocalParallel`, `RxSpark`, `RxHadoopMR`, or `RxInTeradata` (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE*.
 
 ### Playing Dice: A Simulation
 
-A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11 on your initial roll, you win. If you roll 2, 3, or 12, you lose. If you roll a 4, 5, 6, 8, 9, or 10, that number becomes your *point* and you continue rolling until you either roll your point again (in which case you win) or roll a 7, in which case you lose. The game is easily simulated in R using the following function:
+A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11 on your initial roll, you win. If you roll 2, 3, or 12, you lose. Roll a 4, 5, 6, 8, 9, or 10, NS that number becomes your *point* and you continue rolling until you either roll your point again (in which case you win) or roll a 7, in which case you lose. The game is easily simulated in R using the following function:
 
 	playDice <- function()
 	{
@@ -825,7 +870,7 @@ A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11
 		result
 	}
 
-We will now use rxExec to play thousands of games to help determine the probability of a win. Using a five-node HPC Server cluster, we play the game 10000 times, 2000 times on each node:
+We will now use `rxExec` to play thousands of games to help determine the probability of a win. Using a five-node HPC Server cluster, we play the game 10000 times, 2000 times on each node:
 
 	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000)
 	table(unlist(z))
@@ -865,7 +910,7 @@ For each group size, 5000 random tests were performed. For this run, the followi
 	     3     25     50
 	0.0078 0.5710 0.9726
 
-Make sure your compute context is set to a “waiting” context.  Then distribute this computation for groups of 2 to 100 using *rxExec* as follows, using *rxElemArg* to specify a different argument for each call to pbirthday, and then using the *taskChunkSize* argument to pass these arguments to the nodes in chunks of 20:
+Make sure your compute context is set to a “waiting” context.  Then distribute this computation for groups of 2 to 100 using `rxExec` as follows, using *rxElemArg* to specify a different argument for each call to pbirthday, and then using the *taskChunkSize* argument to pass these arguments to the nodes in chunks of 20:
 
 	z <- rxExec(pbirthday, n=rxElemArg(2:100), taskChunkSize=20)
 
@@ -915,7 +960,7 @@ The following function retains the basic computation but returns a vector of res
 		unlist(lapply(xvec, mandelbrot, y0=y0, lim=lim))
 	}
 
-We can then distribute this computation by computing several rows at a time on each compute resource. In the following, we create an input x vector of length 240, a y vector of length 240, and specify the iteration limit as 100. We then call *rxExec* with our *vmandelbrot* function, giving 1/5 of the y vector to each computational node in our five node HPC Server cluster. This should be done in a compute context with *wait=TRUE*. Finally, we put the results into a 240x240 matrix and create an image plot that shows the familiar Mandelbrot set:
+We can then distribute this computation by computing several rows at a time on each compute resource. In the following, we create an input x vector of length 240, a y vector of length 240, and specify the iteration limit as 100. We then call `rxExec` with our *vmandelbrot* function, giving 1/5 of the y vector to each computational node in our five node HPC Server cluster. This should be done in a compute context with *wait=TRUE*. Finally, we put the results into a 240x240 matrix and create an image plot that shows the familiar Mandelbrot set:
 
 	x.in <- seq(-2.0, 0.6, length.out=240)
 	y.in <- seq(-1.3, 1.3, length.out=240)
@@ -931,7 +976,7 @@ The resulting plot is shown below (not all graphics devices support the useRaste
 
 ### Naïve Parallel k-Means Clustering
 
-**RevoScaleR** has a built-in analysis function, *rxKmeans*, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context.
+**RevoScaleR** has a built-in analysis function, `rxKmeans`, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context.
 
 The kmeans function implements several *iterative relocation* algorithms for clustering. An iterative relocation algorithm starts from an initial classification and then iteratively moves data points from one cluster to another to reduce sums of squares. One possible starting point is to simply pick cluster centers at random and then assign points to each cluster so that the sum of squares is minimized. If this procedure is repeated many times for different sets of centers, the set with the smallest error can be chosen.
 
@@ -1125,7 +1170,7 @@ For distributed compute contexts, rxExec starts the random number streams on a p
 
 ### Working with Results from Non-Blocking Jobs
 
-So far in this chapter, all of our examples have required a blocking, or waiting, compute context so that we could make immediate use of the results returned by rxExec. But as we saw in the chapter on non-blocking jobs, some computations will be so time consuming that it is not practical to wait on the results. In such cases, it is probably best to divide your analysis into two or more pieces, one of which can be structured as a non-blocking job, and then use the pending job (or more usefully, the job results, when available) as input to the remaining pieces.
+So far, all of our examples have required a blocking, or waiting, compute context so that we could make immediate use of the results returned by rxExec. But as we saw in the section on non-blocking jobs, some computations will be so time consuming that it is not practical to wait on the results. In such cases, it is probably best to divide your analysis into two or more pieces, one of which can be structured as a non-blocking job, and then use the pending job (or more usefully, the job results, when available) as input to the remaining pieces.
 
 For example, let’s return to the birthday example, and see how to restructure our analysis to use a non-blocking job for the distributed computations. The pbirthday function itself requires no changes, and our variable specifying the number of ntests can be used as is:
 
@@ -1242,13 +1287,13 @@ It is important to recognize the distinction between running an HPA function wit
 
 ### Using rxExec in the Local Compute Context
 
-By default, if you call *rxExec* in the local compute context, your computation is run sequentially on your local machine. However, you can incorporate parallel computing on your local machine using the special compute context RxLocalParallel as follows:
+By default, if you call `rxExec` in the local compute context, your computation runS sequentially on your local machine. However, you can incorporate parallel computing on your local machine using the special compute context `RxLocalParallel` as follows:
 
 	rxSetComputeContext(RxLocalParallel())
 
 This allows the ParallelR package doParallel to distribute the computation among the available cores of your computer.
 
-If you are using random numbers in the local parallel context, be aware that rxExec chooses a number of workers based on the number of tasks and the current value of rxGetOption(“numCoresToUse”). If you want to guarantee that each task is run with a separate random number stream, set rxOptions(numCoresToUse) equal to the number of tasks, and explicitly set timesToRun to the number of tasks. For example, if we want a list consisting of five sets of uniform random numbers, we could do the following to obtain reproducible results:
+If you are using random numbers in the local parallel context, be aware that `rxExec` chooses a number of workers based on the number of tasks and the current value of `rxGetOption("numCoresToUse")`. to guarantee each task runS with a separate random number stream, set `rxOptions(numCoresToUse)` equal to the number of tasks, and explicitly set *timesToRun* to the number of tasks. For example, if we want a list consisting of five sets of uniform random numbers, we could do the following to obtain reproducible results:
 
 	rxOptions(numCoresToUse=5)
 	x1 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
@@ -1258,11 +1303,11 @@ If you are using random numbers in the local parallel context, be aware that rxE
 **numCoresToUse** is a scalar integer specifying the number of cores to use. If you set this parameter to either -1 or a value in excess of available cores, ScaleR will use however many cores are available. Increasing the number of cores also increases the amount of memory required for ScaleR analysis functions.
 
 >[!NOTE]
->HPA functions are not affected by the RxLocalParallel compute context; they will run locally and in the usual internally distributed fashion when the RxLocalParallel compute context is in effect.
+> HPA functions are not affected by the `RxLocalParallel` compute context; they will run locally and in the usual internally distributed fashion when the `RxLocalParallel` compute context is in effect.
 
 ### Using rxExec with foreach Back Ends
 
-If you do not have access to a Hadoop cluster or enterprise database, but do have access to a cluster via PVM, MPI, socket, or NetWorkSpaces connections or a multicore workstation, you can use rxExec with an arbitrary foreach backend (doParallel, doSNOW, doMPI, etc.) Simply register your parallel backend as usual and then set your RevoScaleR compute context using the special compute context RxForeachDoPar:
+If you do not have access to a Hadoop cluster or enterprise database, but do have access to a cluster via PVM, MPI, socket, or NetWorkSpaces connections or a multicore workstation, you can use `rxExec` with an arbitrary foreach backend (doParallel, doSNOW, doMPI, etc.) Simply register your parallel backend as usual and then set your RevoScaleR compute context using the special compute context `RxForeachDoPar`:
 
 	rxSetComputeContext(RxForeachDoPar())
 
@@ -1273,14 +1318,14 @@ For example, here is how you might start a SNOW-like cluster connection with the
 	registerDoParallel(cl)
 	rxSetComputeContext(RxForeachDoPar())
 
-You then call rxExec as usual. The computations are automatically directed to the registered foreach back end.
+You then call `rxExec` as usual. The computations are automatically directed to the registered foreach back end.
 
 >[!WARNING]
-> HPA functions are not usually affected by the RxForeachDoPar compute context; they will run locally and in the usual internally distributed fashion when the RxForeachDoPar compute context is in effect. The one exception is when HPA functions are called within rxExec; in this case it is possible that the internal threading of the HPA functions can be affected by the launch mechanism of the parallel backend workers. The doMC backend and the multicore-like backend of doParallel both use forking to launch their workers; this is known to be incompatible with the HPA functions.
+> HPA functions are not usually affected by the `RxForeachDoPar` compute context; they will run locally and in the usual internally distributed fashion when the RxForeachDoPar compute context is in effect. The one exception is when HPA functions are called within `rxExec`; in this case it is possible that the internal threading of the HPA functions can be affected by the launch mechanism of the parallel backend workers. The doMC backend and the multicore-like backend of doParallel both use forking to launch their workers; this is known to be incompatible with the HPA functions.
 
 ### Controlling rxExec Computations
 
-As we have seen in these examples, there are several arguments to *rxExec* that allow you to fine-tune your *rxExec* commands. Both the birthday example and the Mandelbrot example used the *taskChunkSize* argument to specify how many tasks should go to each worker. The Mandelbrot example also used the *execObjects* argument, which can be used to pass either a character vector or an environment containing objects—the objects specified by the vector or contained in the environment are added to the environment of the function specified in the FUN argument, unless that environment is locked, in which case they are added to the parent frame in which *FUN* is evaluated. (If you use an environment, it should be one you create with *parent=emptyenv();* this allows you to pass only those objects you need to the function’s environment.) These two examples also show the use of *rxElemArg* in passing arguments to the workers. In the kmeans example, we met the *elemType* and *timesToRun* arguments. The *packagesToLoad* argument allows you to specify packages to load on each worker. The *consoleOutput* and *autoCleanup* flags serve the same purpose as their counterparts in the compute context constructor functions—that is, they can be used to specify whether console output should be displayed or the associated task files should be cleaned up on job completion for an individual call to *rxExec*.
+As we have seen in these examples, there are several arguments to `rxExec` that allow you to fine-tune your `rxExec` commands. Both the birthday example and the Mandelbrot example used the *taskChunkSize* argument to specify how many tasks should go to each worker. The Mandelbrot example also used the *execObjects* argument, which can be used to pass either a character vector or an environment containing objects—the objects specified by the vector or contained in the environment are added to the environment of the function specified in the FUN argument, unless that environment is locked, in which case they are added to the parent frame in which *FUN* is evaluated. (If you use an environment, it should be one you create with *parent=emptyenv();* this allows you to pass only those objects you need to the function’s environment.) These two examples also show the use of *rxElemArg* in passing arguments to the workers. In the kmeans example, we met the *elemType* and *timesToRun* arguments. The *packagesToLoad* argument allows you to specify packages to load on each worker. The *consoleOutput* and *autoCleanup* flags serve the same purpose as their counterparts in the compute context constructor functions—that is, they can be used to specify whether console output should be displayed or the associated task files should be cleaned up on job completion for an individual call to 'rxExec'.
 
 Two additional arguments remain to be introduced: *oncePerElem* and *continueOnFailure*. The *oncePerElem* argument restricts the called function to be run just once per allotted node; this is frequently used with the *timesToRun* argument to ensure that each occurrence is run on a separate node. The *oncePerElem* argument, however, can only be set to *TRUE* if *elemType="nodes"*. It must be set to *FALSE* if *elemType="cores"*.
 
@@ -1289,7 +1334,7 @@ If *oncePerElem* is *TRUE* and *elemType="nodes"*, *rxExec*’s results are retu
 The *continueOnFailure* argument is used to say that a computation should continue even if one or more of the compute elements fails for some reason; this is useful, for example, if you are running several thousand independent simulations and It doesn’t matter if you get results for all of them. Using *continueOnFailure=TRUE* (the default), you will get results for all compute elements that finish the simulation and error messages for the compute elements that fail.
 
 >[!NOTE]
-> The arguments *elemType*, *consoleOutput*, *autoCleanup*, *continueOnFailure*, and *oncePerElem* are ignored by the special compute contexts RxLocalParallel and RxForeachDoPar.
+> The arguments *elemType*, *consoleOutput*, *autoCleanup*, *continueOnFailure*, and *oncePerElem* are ignored by the special compute contexts 'RxLocalParallel' and 'RxForeachDoPar`.
 
 ## Using RevoScaleR with foreach: Package doRSR
 
@@ -1334,7 +1379,7 @@ This returns the multiplied matrix:
 
 ### A Simple Simulation: Playing Dice
 
-We introduced the simulation function playDice in the previous chapter; it simulates a single game of dice rolling. We then used rxExec to play 10000 games. Now we will use foreach to play 10000 games:
+We introduced the simulation function playDice in the previous section. It simulates a single game of dice rolling. We then used rxExec to play 10000 games. Now we will use foreach to play 10000 games:
 
 	z1 <- foreach(i=1:10000, .options.rsr=list(chunkSize=2000)) %dopar% playDice()
 	table(unlist(z1))		
@@ -1346,7 +1391,7 @@ Again, we get about the expected number of wins. If you time the rxExec version 
 
 ### Another Version of kmeans
 
-Also in the previous chapter, we created a function kmeansRSR to perform a naïve parallelization of the standard R kmeans function. We can do the same thing with foreach directly as follows:
+Also in the previous section, we created a function kmeansRSR to perform a naïve parallelization of the standard R kmeans function. We can do the same thing with foreach directly as follows:
 
 	kMeansForeach <- function(x, centers=5, iter.max=10, nstart=1)
 	{
@@ -1427,8 +1472,13 @@ We are now ready to fit a simple linear model:
 	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
 		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+<<<<<<< HEAD
+=======
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
+>>>>>>> dev
 When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
 
 	Call:
@@ -1484,7 +1534,9 @@ You can predict (or score) from a fitted model in a distributed context, but in 
 	rxPredict(AirlineLmDist, data="DistAirlineData.xdf", 	outData="errDistAirlineData.xdf",
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
 The output data is also split, in this case holding fitted values, residuals, and standard errors for the predicted values.
 
@@ -1509,7 +1561,9 @@ The result is two new data files, airlineData.testSplitVar.Train.xdf and airline
 	rxPredict(AirlineLmDist, data="airlineData.testSplitVar.Test.xdf",
 		computeStdErrors=TRUE, computeResiduals=TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
+> [!NOTE]
+> The `blocksPerRead` argument is ignored if script runs locally using R Client.
+>
 
 ### Performing Data Operations on Each Node
 
@@ -1525,7 +1579,6 @@ To create or modify data on each node, use the data manipulation functions withi
 	}
 	rxExec( newAirData )
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](#chunking)
 
 ### Installing Packages on Each Node
 
