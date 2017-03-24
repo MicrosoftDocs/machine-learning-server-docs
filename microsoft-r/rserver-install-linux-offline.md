@@ -32,37 +32,40 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Using an internet-connected computer, download the packages listed in [Package dependencies for Microsoft R Server 9.0.1](rserver-install-linux-hadoop-packages.md). 
 
+<a name="download"><a/>
+## Download prerequisites
+
+| Component | Version | Download Link |
+|-----------|---------|--------|
+| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
+
 ## Download R Open installer
 
 Get Microsoft R Open (MRO) 3.3.2 from the [MRAN web site](https://mran.microsoft.com/download/), choosing the distribution for your Linux operating system. The filename is `microsoft-r-open-3.3.2.tar.gz`.
 
+<a name="download"><a/>
 ## Download R Server installer
 
-Get Microsoft R Server (MRS) 9.0.1 for Linux from one of the following locations. The filename is `en_r_server_901_for_linux_x64_9648602.gz`. 
+Get Microsoft R Server (MRS) 9.0.1 for Linux from one of the following download sites. The filename is `en_r_server_901_for_linux_x64_9648602.gz`. 
 
-**Option 1: [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx)**
-
-Subscribers can download software at given subscription levels. Depending on your subscription, you can get the developer or enterprise edition.
-
-**Option 2: [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409)** 
-
-This option provides the enterprise edition. Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site.**
-
-**Option 3: [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409)** 
-
-This option provides a zipped file, free to developers who sign up for Visual Studio Dev Essentials. This is the Developer edition of Microsoft R Server; it has the same features as Enterprise except it is licensed for development scenarios.
-
-1. Click **Join or Access Now** and enter your account information.
-2. Make sure you're in the right place. The URL should start with *my.visualstudio.com*.
-3. Click **Downloads**, and then search for *Microsoft R*.
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer downloaded packages from the dependency list, `microsoft-r-open-3.3.2.tar.gz`, and `en_r_server_901_for_linux_x64_9648602.gz` to your disconnected server. Copy the files to a writable directory, such as **/tmp**.
+Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, should be transferring the following files:
+
++ packages from the dependency list
++ .NET Core
++ `microsoft-r-open-3.3.2.tar.gz`
++ `en_r_server_901_for_linux_x64_9648602.gz`
 
 ## Install package dependencies
 
-Use `rpm -qi <package-name>` to install any packages that are missing from your system.
+Run `rpm -qi <package-name>` to install any packages that are missing from your system.
 
 ## Unpack the distribution
 
