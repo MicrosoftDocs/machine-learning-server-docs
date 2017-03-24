@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Importing Data
+# Importing data using ScaleR in Microsoft R
 
 The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
 
