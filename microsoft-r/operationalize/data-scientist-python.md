@@ -43,7 +43,21 @@ Generate the python client library. you can learn about all of the API calls you
 
 ![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
 
-## 1. Generate client library in Python
+
+### Example: publish Python web service
+
+This example assumes you have completed Part 1:
++ You have Autorest as your Swagger code generator installed and you are familiar with it.
++ You've already downloaded the Swagger file containing the core operationalization APIs for your version of R Server. 
++ You have already generated a Python client library from that Swagger file.
+
+```python
+
+@@ SAMPLE BEING DEVELOPED
+
+```
+
+## Part 1. Generate client library in Python
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You'll be using it to generate the API client libraries in Python. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -81,15 +95,14 @@ To simplify this process, bearer access tokens are issued so that users need not
 
 Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
 
-
 1. Open the Python code editor of your choice such as Jupyter, Visual Studio, VS Code, or iPython for example.
 
 1. In the editor, import the generated client library to make it accessible in Python. Specify the parent directory of the client library. In our example, the Autorest generated client library is under `C:\Users\rserver-user\Documents\Python\deployrclient`:
 
-```python
-# Import the generated client library. 
-import deployrclient
-```
+   ```python
+   # Import the generated client library. 
+   import deployrclient
+   ```
 
 1. Add the authentication logic to the script to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
@@ -159,35 +172,38 @@ After your client library has been generated and you've build the authentication
 
 1. Create or call a Python model you'll use when you publish the web service.
 
-```python
-#Import SVM and Datasets from the SciKitLearn library
-execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
-execute_response = client.execute_code(id,execute_request, headers)
-execute_response.success
-
-#create an untrained Support Vector Classifier object and load the Iris Dataset
-execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
-execute_response = client.execute_code(id,execute_request, headers)
-execute_response.success
-
-#Define two rows of sample data
-workspace_object = deployrclient.models.WorkspaceObject("plant_1",[7,3.2,4.7,1.4])
-workspace_object_2 = deployrclient.models.WorkspaceObject("plant_2",[3,2.6,3,2.5])
-
-#Train the model and test it against simple data
-execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
+   ```python
+   #Import SVM and Datasets from the SciKitLearn library
+   execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
+   execute_response = client.execute_code(id,execute_request, headers)
+   execute_response.success
+   
+   #create an untrained Support Vector Classifier object and load the Iris Dataset
+   execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+   execute_response = client.execute_code(id,execute_request, headers)
+   execute_response.success
+   
+   #Define two rows of sample data
+   workspace_object = deployrclient.models.WorkspaceObject("plant_1",[7,3.2,4.7,1.4])
+   workspace_object_2 = deployrclient.models.WorkspaceObject("plant_2",[3,2.6,3,2.5])
+   
+   #Train the model and test it against simple data
+   execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
                                                       "result=clf.predict(plant_1)\n"+
                                                       "other_result=clf.predict(plant_2)"
                                                       ,[workspace_object,workspace_object_2], #Input Parameters
                                                       ["result", "other_result"]) #Output parameter names
-execute_response = client.execute_code(id,execute_request, headers)
-if(execute_response.success):
-    for result in execute_response.output_parameters:
-        print("{0}: {1}".format(result.name,result.value))
-else:
-    print (execute_response.error_message)
-```
+   execute_response = client.execute_code(id,execute_request, headers)
+   if(execute_response.success):
+       for result in execute_response.output_parameters:
+           print("{0}: {1}".format(result.name,result.value))
+   else:
+       print (execute_response.error_message)
+   ```
 
+
+
+##THE FOLLOWING DOC IS TO BE IGNORED> NOT FOR PYTHON
 
 <a name="clientlib-core"></a>
 
