@@ -31,27 +31,29 @@ By default, installers connect to Microsoft download sites to get required and u
 > [!NOTE]
 > Offline setup for Linux is not supported by Microsoft Customer Support. If you have problems with these instructions, please use the feedback button to provide more information about specific errors.
 
-## Download packages
-
-Using an internet-connected computer, download the packages listed in [Package dependencies for Microsoft R Server 9.0.1](rserver-install-linux-hadoop-packages.md). 
-
 <a name="download"><a/>
 ## Download prerequisites
 
-**mrsdeploy** installation, which is now integrated with R Server and R Client setup, requires .NET Core.
+Using an internet-connected computer, download .NET Core. The R Server installer for **mrsdeploy** is built on .NET Core. Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
+
+The file name is 'dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz'.
 
 | Component | Version | Download Link |
 |-----------|---------|--------|
-| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
+| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=827529 |
 
 ## Download R Open installer
 
-Get Microsoft R Open (MRO) 3.3.2 from the [MRAN web site](https://mran.microsoft.com/download/), choosing the distribution for your Linux operating system. The filename is `microsoft-r-open-3.3.2.tar.gz`.
+Get Microsoft R Open (MRO) 3.3.2 from the [MRAN web site](https://mran.microsoft.com/download/), choosing the distribution for your Linux operating system. 
+
+The filename is `microsoft-r-open-3.3.2.tar.gz`.
 
 <a name="download"><a/>
 ## Download R Server installer
 
-Get Microsoft R Server (MRS) 9.0.1 for Linux from one of the following download sites. The filename is `en_r_server_901_for_linux_x64_9648602.gz`. 
+Get Microsoft R Server (MRS) 9.0.1 for Linux from one of the following download sites. 
+
+The filename is `en_r_server_901_for_linux_x64_9648602.gz`. 
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -59,14 +61,18 @@ Get Microsoft R Server (MRS) 9.0.1 for Linux from one of the following download 
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
+## Download packages
+
+MRO and MRS have package dependencies. With an internet connection, installation is not blocked by dependencies because Setup can retrieve any packages it needs. Without a connection, you will need to review the list of dependencies, identify which ones are missing on your computer, and then download and transfer the packages to your system. For an initial list, see [Package dependencies for Microsoft R Server 9.0.1](rserver-install-linux-hadoop-packages.md). Actual dependencies could be more or less depending on your system.
+
 ## Transfer files
 
 Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, should be transferring the following files:
 
-+ packages from the dependency list
-+ .NET Core
++ `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
 + `microsoft-r-open-3.3.2.tar.gz`
 + `en_r_server_901_for_linux_x64_9648602.gz`
++ packages from the dependency list
 
 ## Install package dependencies
 
