@@ -160,13 +160,14 @@ After your client library has been generated and you've build the authentication
    ```python
    #Since already logged into R Server, create a Python session.
    #Define session using name (`Session 1`) and type `runtime_type="Python"`.
-   create_session_request = deployrclient.models.CreateSessionRequest("Session 1", runtime_type="Python") # Don't forget the runtime type
+   #Remember to specify the Python runtime type.
+   create_session_request = deployrclient.models.CreateSessionRequest("Session 1", runtime_type="Python")
    #Start the session. 
-   #Remember to include headers in every method call to the server
+   #Remember to include headers in every method call to the server.
    #Returns a session ID.
    response = client.create_session(create_session_request, headers) 
    
-   #Store the session ID in a variable called `id`
+   #Store the session ID in a variable called `id`.
    id = response.session_id
    ```
 
@@ -203,8 +204,9 @@ After your client library has been generated and you've build the authentication
 
 
 
-##THE FOLLOWING DOC IS TO BE IGNORED> NOT FOR PYTHON
+## THE FOLLOWING DOC IS TO BE IGNORED> NOT FOR PYTHON
 
+## IGNORE THE REST
 <a name="clientlib-core"></a>
 
 ## Example: Core Client Library from Swagger (in CSharp)
