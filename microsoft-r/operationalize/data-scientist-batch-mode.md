@@ -307,7 +307,7 @@ txBatch <- txBatch$start()
 <a name="id-fx"></a>
 
 ### Get batch ID
-Get the batch task's identifier to reference during or after its execution using `id()`. 
+Get the batch task's identifier from the service object so you can reference it during or after its execution using `id()`. 
 
 **Syntax:** `id()`
 
