@@ -96,6 +96,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
+      |`UniqueUserIdentifierAttributeName`|The attribute name that stores the unique user id for each user.|
+      |`DisplayNameAttributeName`|The attribute name that stores the display name for each user.|
+      |`EmailAttributeName`|The attribute name that stores the email address for each user.|
 
       >[!IMPORTANT]
       >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  the authentication fails.
@@ -116,7 +119,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
               "QueryUserPasswordEncrypted": true,
               "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
               "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
-              "SearchFilter": "cn={0}"       
+              "SearchFilter": "cn={0}"  
+              "UniqueUserIdentifierAttributeName": "userPrincipalName",
+              "DisplayNameAttributeName": "name",
+              "EmailAttributeName": "mail"     
       }
       ```
 

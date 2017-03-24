@@ -167,7 +167,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 ### "BackEndConfiguration is missing URI" Error
 
-If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then verify that your compute nodes are installed and [declared](configuration-initial.md#webnode) prior to installing the web node. 
+If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then verify that your compute nodes are installed and [declared](configure-enterprise.md#webnode) prior to installing the web node. 
 
 ```
 Unhandled Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> Microsoft.DeployR.Server.App.Common.Exceptions.ConfigurationException: BackEndConfiguration is missing URIs

@@ -38,7 +38,7 @@ Generally speaking, the process for asynchronous batch consumption of a web serv
 1. Start (or cancel) the batch execution task
 1. Monitor task and interact with results
 
-Use these following [public API functions](data-scientist-manage-services.md#api-client-batch)  to define, start, and interact with your batch executions.
+Use these following [public API functions](#public-fx-batch)  to define, start, and interact with your batch executions.
 
 ![Batch execution](../media/o16n/data-scientist-batch.png) 
 
