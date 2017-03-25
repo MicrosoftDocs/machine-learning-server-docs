@@ -89,11 +89,13 @@ Ignore the .cab and .zip file. You will use them in the next step.
 
 ## Unzip setup and copy .cab
 
-1. Right-click en_r_server_901_for_windows_X64_9649035.zip > **Extract All**.
-2. Copy SRO_3.3.2.0_1033.cab to the same folder containing RServerSetup.exe. By default, the folder for RServerSetup.exe is **MRS90Windows**.
-3. Copy SRO_3.3.2.0_1033.cab to the temp folder: \Users\<account-name>\AppData\Local\Temp\. 
+1. Right-click en_r_server_901_for_windows_X64_9649035.zip > **Extract All** to unpack the files. Create or choose the folder to store the files.
+2. Copy SRO_3.3.2.0_1033.cab to the subfolder containing RServerSetup.exe. After unpacking the files, the folder containing  RServerSetup.exe is **MRS90Windows**.
+3. Copy SRO_3.3.2.0_1033.cab to the temp folder: \Users\Admin\AppData\Local\Temp\. An easy way to find the Temp directory is to type `%temp%` in the Cortana "Ask me anything" search bar.
 
-Copying the .cab file a second time to the Temp folder is a workaround measure that allows setup to continue. If you get an installation error, check the setup logs (RServer_<timestamp>.log) for instances of Temp folders. The temp folder used for the default cache directory is the correct folder for the .cab file.
+Copying the .cab file a second time to the Temp folder is a workaround measure that allows setup to continue. 
+
+There are multiple Temp folders on a Windows computer, so if you get an installation error, it's possible the Temp folder is not the right one. To verify, check the setup logs (RServer_<timestamp>.log) for instances of Temp folders. The Temp folder used for the *default cache directory* is the correct folder for the .cab file.
 
 ## Run RServerSetup
 

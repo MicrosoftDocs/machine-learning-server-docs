@@ -29,6 +29,8 @@ This article lists the Linux packages required for running or building Microsoft
 
 For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a manual install of dependent packages is required.
 
+You can download files from your Linux or Hadoop vendor. You can also use this site: [http://mirror.centos.org](http://mirror.centos.org/centos/7.3.1611/os/x86_64/Packages/).
+
 ## Package dependencies for Microsoft R Server 9.0.1
 
 Package  | Architecture  | Version  | Repository  | Size
