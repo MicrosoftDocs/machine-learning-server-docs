@@ -243,3 +243,7 @@ You can reload the snapshot (installed packages, objects, files) within the cont
 ```
 
 You can request that a package be installed across the configuration for all users by the administrator once you've sufficiently tested the package(s) as described in this section.
+
+>[!WARNING]
+>**R Server 9.0 users!** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
+`library("<packagename>", lib.loc=getwd())`
