@@ -106,10 +106,14 @@ This function takes a path to an R script to be executed remotely. You also have
 to save or display any plots that might have been generated during script execution. The function returns a list
 containing the status of the execution (success/failure), the console output generated, and a list of files created.
 
-If your R Script has R Package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server,
+If your R Script has R package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server,
 or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
 
 If you need more granular control of a remote execution scenario, you can use the `remoteExecute()` function.
+
+>[!WARNING]
+>**R Server 9.0 users!** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
+`library("<packagename>", lib.loc=getwd())`
 
 **Example**
 
@@ -207,13 +211,17 @@ If you need a prepared environment for remote script execution that includes any
 
 A snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created.
 
+>[!WARNING]
+>**R Server 9.0 users!** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
+`library("<packagename>", lib.loc=getwd())`
+
 Snapshots are only accessible to the user who creates them and cannot be shared across users.
 
 The following functions are available for working with snapshots:  
 `listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
 
 > [!IMPORTANT] 
-> While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the Request-Response time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
+> While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
 
 
 **Example**
