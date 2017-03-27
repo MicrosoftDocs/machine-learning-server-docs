@@ -48,7 +48,7 @@ R Server provides various [API calls](api.md) that permit the execution of R scr
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
 
-If your operationalization configuration requires additional compute capacity, [additional compute nodes](configuration-initial.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities.
+If your operationalization configuration requires additional compute capacity, [additional compute nodes](configure-enterprise.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities.
 
 <a name="isolation"></a>
 
