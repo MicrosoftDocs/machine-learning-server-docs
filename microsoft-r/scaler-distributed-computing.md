@@ -601,7 +601,12 @@ In Windows, simply pressing the Esc will return the cursor to your screen. Depen
 
 Similarly, on Red Hat Enterprise Linux, pressing Ctrl-C will return the cursor to your screen, and either cancel the job or convert it to a non-waiting job.
 
+<<<<<<< HEAD
+<a name="non-waiting-jobs"></a>
+## Non-Waiting Jobs
+=======
 For all jobs that run on the cluster, the object `rxgLastPendingJob` is automatically created. You can use the `rxgLastPendingJob` object to retrieve your results later or to cancel the job. For more information, see [Non-Waiting Jobs](#non-waiting-jobs).
+>>>>>>> dev
 
 <a name="non-waiting-jobs"></a>
 ## Non-Waiting jobs for background processing
@@ -1467,10 +1472,13 @@ We are now ready to fit a simple linear model:
 	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
 		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
 
+<<<<<<< HEAD
+=======
 > [!NOTE]
 > The `blocksPerRead` argument is ignored if script runs locally using R Client.
 >
 
+>>>>>>> dev
 When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
 
 	Call:
