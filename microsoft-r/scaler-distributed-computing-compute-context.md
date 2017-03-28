@@ -56,7 +56,7 @@ The principal compute contexts are the following:
 
 The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
 
-Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
+Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](scaler-distributed-computing-parallel-jobs.md).
 
 ### Compute Contexts and Data Sources
 
@@ -73,13 +73,13 @@ In the local compute context, all of ScaleR’s supported data sources are avail
 | Teradata database (`RxTeradata`) | X |   | X |   |
 | SQL Server database (`RxSqlServerData`) |   |   |   | X |
 
-Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See ["Managing Distributed Data"](#managing-distributed-data) for details.
+Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](scaler-distributed-computing.md#managing-distributed-data) for details.
 
 ### Waiting and Non-waiting Compute Contexts
 
 By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). For ScaleR jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
 
-To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
+To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](scaler-distributed-computing-background-jobs.md#non-waiting-jobs).
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
 
