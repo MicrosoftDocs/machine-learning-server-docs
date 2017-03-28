@@ -27,7 +27,7 @@ ms.custom: ""
 
 # R Package Management for Operationalization
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes a number of functions that make it easy to download and install these packages. Whenever you or your users are writing, testing, and deploying R scripts, it is imperative that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
 
@@ -70,7 +70,7 @@ This production-safe approach provides an excellent way to:
       library(miniCRAN)
       ```   
    
-   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open will be used. For example, for Microsoft R Server 9.0.1 that date is 2016-11-01.
+   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open will be used. For example, for Microsoft R Server 9.1.0 that date is 2017-03-15.
 
       ```
       # Define the package source: a CRAN mirror, or an MRAN snapshot

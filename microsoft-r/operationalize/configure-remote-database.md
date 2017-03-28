@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Configuring an SQL Server or PostgreSQL Database
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, snapshots, and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 

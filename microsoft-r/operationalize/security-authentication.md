@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Authentication options for operationalization
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 R Server's offers seamless integration with authentication solutions for operationalization.
 

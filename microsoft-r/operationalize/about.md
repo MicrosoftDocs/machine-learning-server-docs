@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Operationalization with R Server
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](../deployr-about.md).)
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](../deployr-about.md).)
 
 Today, more and more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare and manufacturing. Typically, the data scientists first build out the predictive models and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
@@ -41,12 +41,12 @@ Introducing Microsoft R Server, the deployment engine for your advanced R analyt
 
 ## What You Get with R Server Operationalization
 
-After you [configure R Server for operationalization](configuration-initial.md) for R Server, you can: 
+After you [configure R Server for operationalization](configuration-initial.md), you can: 
 
 ||Key Operationalization Features|
 |-|-|
-|![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services in one line of code<br>● Developers use Swagger-based [REST APIs](api.md) that are [easy to consume](app-developer-get-started.md) <br>&nbsp; &nbsp; with any programming languages including R|
-|![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in other platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](configuration-initial.md) <br>● Model on-premise, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
+|![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](api.md) that are [easy to consume](app-developer-get-started.md) <br>&nbsp; &nbsp; with any programming languages including R|
+|![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](configuration-initial.md) <br>● Model on-premise, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
 |![3](../media/o16n/about-3.png)|● Perform fast scoring: real time & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools|
 |![4](../media/o16n/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](security-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](security-https.md)<br>● Enterprise grade high availability|
 

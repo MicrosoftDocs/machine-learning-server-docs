@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Working with web services in R
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 This article describes how you can interact with and manage analytic web services directly in R using functions in the [mrsdeploy package](../mrsdeploy/mrsdeploy.md). This R package is installed with both Microsoft R Client and Microsoft R Server. Note that a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -350,7 +350,7 @@ $myPermissionsOnService
 ```
 
 
-In R Server 9.0.1, the example returns:
+In R Server 9.0, the example returns:
 ```R
 $creationTime
 [1] "2017-02-13T19:44:26.2611422"
@@ -609,7 +609,7 @@ In this example, the code comes from an object (`code = manualTransmission`) and
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
 
-# For R Server 9.0.1, load mrsdeploy package on R Server     
+# For R Server 9.0, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # Use logistic regression equation of vehicle transmission 
@@ -716,7 +716,7 @@ In this example, the code is still an object (`code = manualTransmission`), but 
 >Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
-# For R Server 9.0.1, load mrsdeploy package on R Server     
+# For R Server 9.0, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
@@ -795,7 +795,7 @@ In this example, the code (`code = transmission-code.R,`) and the model comes fr
 
 
 ```R
-# For R Server 9.0.1, load mrsdeploy package on R Server     
+# For R Server 9.0, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------
@@ -873,7 +873,7 @@ In this example, the code (`code = transmission-code.R,`) comes from an R script
 
 
 ```R
-# For R Server 9.0.1, load mrsdeploy package on R Server     
+# For R Server 9.0, load mrsdeploy package on R Server     
 library(mrsdeploy)
 
 # --- AAD login ----------------------------------------------------------------

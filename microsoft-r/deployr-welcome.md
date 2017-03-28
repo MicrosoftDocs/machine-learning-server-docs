@@ -27,7 +27,7 @@ ms.custom: ""
 
 This page provides links to the MSDN documentation for the versions of DeployR Enterprise shipped with Microsoft R Server and SQL Server.
 
-## Looking for v9.0.1 documentation?
+## Looking for v9 documentation?
 
 Start here:
 

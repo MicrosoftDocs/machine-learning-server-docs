@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Evaluate Load Balancing Capacity
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
 

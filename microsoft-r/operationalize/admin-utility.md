@@ -27,7 +27,7 @@ ms.custom: ""
 
 # R Server Operationalization Administration
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 You can configure the operationalization feature for Microsoft R Server using the administration utility. 
 
@@ -59,7 +59,7 @@ These instructions describe how to launch the Administrator Utility.
   |Version|Commands|
   |----|------------|
   |9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
-  |9.0.1|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+  |9.0|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
 
   where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -70,7 +70,7 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 |Version|Commands|
 |----|------------|
 |9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
-|9.0.1|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
+|9.0|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
 
 <br><a name="admin-password"></a>
 

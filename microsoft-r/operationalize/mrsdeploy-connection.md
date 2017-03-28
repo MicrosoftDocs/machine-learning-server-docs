@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Connecting to R Server with mrsdeploy
 
-**Applies to:  Microsoft R Server 9.1, Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a console application for the purposes of executing code on that server
@@ -299,7 +299,7 @@ In this example, we define an interactive authentication workflow without a remo
 
 ## Switch between remote and local sessions
 
-After you [log into the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.0.1 instance on another machine. 
+After you [log into the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the remote R session. 
 

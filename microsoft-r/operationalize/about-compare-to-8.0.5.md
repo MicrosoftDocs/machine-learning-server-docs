@@ -32,7 +32,7 @@ The following table presents some of the main differences between the operationa
 >[!Important]
 >R Server's operationalization feature is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
 
-Release|Microsoft R Server 8.0.5|Microsoft R Server 9.0.1
+Release|Microsoft R Server 8.0.5|Microsoft R Server 9
 ----|-----|------
 Name of feature|DeployR|Operationalization
 Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure operationalization](configuration-initial.md) and enable R Server to deploy and host web services

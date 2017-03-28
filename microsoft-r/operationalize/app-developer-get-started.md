@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Get Started for Application Developers 
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine readable representation of a RESTful API that enables support for interactive documentation, client SDK generation and discoverability.
 

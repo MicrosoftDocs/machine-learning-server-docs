@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Get Started for Data Scientists
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 Now that you've learned about [R Server's operationalization feature](about.md), we can dig into how data scientists can deploy and consume web services in order to operationalize their R analytics.
 
@@ -69,7 +69,7 @@ We'll use the following script in our example:
 #         Load mrsdeploy package on R Server             #
 ##########################################################
 
-# If R Server 9.0.1, load package:
+# If R Server 9.0, load package:
 library(mrsdeploy)
 
 ##########################################################

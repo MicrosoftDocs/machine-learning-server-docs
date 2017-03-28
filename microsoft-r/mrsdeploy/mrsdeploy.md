@@ -26,6 +26,8 @@ ms.custom: ""
 
 # mrsdeploy functions
 
+**Applies to:  Microsoft R Server 9.x**
+
 The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
@@ -36,8 +38,8 @@ This topic is a high-level description of package functionality. These functions
 
 For remote execution, participating nodes can be either of the following configurations:
 
-+ Two machines running R Server 9.0.1, even if on different supported platforms, such as one Linux and one Windows.
-+ One machine running R Client 3.3.2 and one machine running R Server 9.0.1, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
++ Two machines running the same version of R Server (v9+), even if on different supported platforms, such as one Linux and one Windows.
++ One machine running R Client 3.3.2 and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
 
 The requirements for remote execution include:
 

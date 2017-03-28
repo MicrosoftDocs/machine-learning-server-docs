@@ -27,7 +27,7 @@ ms.custom: ""
 
 # R Server configuration file (appsettings.json)
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 The external configuration file, `appsettings.json`, defines a number of policies used when deploying and operationalizing web services with R Server. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node.
 
@@ -48,7 +48,7 @@ The logs can be found as follows where `<MRS_home>` is the path to the Microsoft
 
 <br>
 
-|Node|Path on version 9.0.1|
+|Node|Path on version 9.0|
 |----|------------|
 |Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI|
 |Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd|
@@ -66,7 +66,7 @@ The logs can be found here:
 
 <br>
 
-|Node|Path on version 9.0.1|
+|Node|Path on version 9.0|
 |----|------------|
 |Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI|
 |Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd|

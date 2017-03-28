@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Diagnostics & Troubleshooting of R Server's Operationalization
 
-**Applies to:  Microsoft R Server 9.0.1 & 9.1**
+**Applies to:  Microsoft R Server 9.x**
 
 You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
@@ -90,7 +90,7 @@ The logs can be found as follows where `<MRS_home>` is the path to the Microsoft
 
 <br>
 
-|Node|Path on version 9.0.1|
+|Node|Path on version 9.0|
 |----|------------|
 |Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs|
 |Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
@@ -108,7 +108,7 @@ The logs can be found here:
 
 <br>
 
-|Node|Path on version 9.0.1|
+|Node|Path on version 9.0|
 |----|------------|
 |Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs|
 |Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs|
