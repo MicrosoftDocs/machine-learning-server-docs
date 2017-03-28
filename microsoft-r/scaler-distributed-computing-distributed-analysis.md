@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed computing overview (ScaleR in Microsoft R)"
+title: "Distributed analysis (ScaleR in Microsoft R)"
 description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
@@ -24,153 +24,7 @@ ms.custom: ""
 
 ---
 
-# Distributed computing overview (ScaleR in Microsoft R)
-
-ScaleR functions can be used to distribute computations over more than one R Server or R Client instance, allowing you to run multiple workloads in parallel on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer or platform. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
-
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like RxSpark, RxHadoopMR, or RxInSQLServer are used to set the compute contenxt. Typically, you will specify different parameters depending on whether commands are issued locally or remotely.
-
-ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
-
-> [!NOTE]
-> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
->
-
-## Distributed computing
-
-**RevoScaleR** provides two main approaches for distributed computing: master node and rxExec. 
-
-The first, the *master node* path, exemplifies the high-performance analytics approach. By establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
-
-- `rxSummary`
-- `rxLinMod`
-- `rxLogit`
-- `rxGlm`
-- `rxCovCor` (and its convenience functions, `rxCov`, `rxCor`, and `rxSSCP`)
-- `rxCube` and `rxCrossTabs`
-- `rxKmeans`
-- `rxDTree`
-- `rxDForest`
-- `rxBTrees`
-- `rxNaiveBayes`
-
-In the master node approach, you submit a job by calling a **RevoScaleR** analysis function (we will also call these functions *HPA functions*). One of your available computing resources takes the job, thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing nodes; gathers the results of the independent, parallel computations; and finalizes and returns the results.
-
-The second approach is via the **RevoScaleR** function `rxExec`, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The `rxExec` approach exemplifies the traditional high-performance computing approach: when using `rxExec`, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
-
-<!--<a name="scaler-compute-context"></a>
-## Compute Contexts
-
-A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ScaleR. The default compute context tells the ScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as `rxLinMod` are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via `rxExec` are done sequentially.
-
-If you have distributed computing resources available to you, you can create a compute context object for those resources, set your compute context using `rxOptions`, and then use those distributed computing resources in subsequent calls to ScaleR.
-
-You can create multiple compute context objects and switch between them easily. You can also modify existing compute context objects, for example, to add new computers as they come online.
-
-The principal compute contexts are the following:
-
-- `RxLocalSeq`: the default compute context. This compute context is available on all platforms.
-
-- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks ` cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md).
-
-- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Get started with ScaleR on Teradata](scaler-teradata-getting-started.md).
-
-The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
-
-Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](#parallel-computing-with-rxexec).
-
-### Compute Contexts and Data Sources
-
-In the local compute context, all of ScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the `RxInTeradata` compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
-
-| Data Source | `RxLocalSeq` | `RxHadoopMR` | `RxInTeraData` | `RxInSqlServer` |
-|-------------|------------|------------|--------------|---------------|
-| Delimited Text (`RxTextdata`) | X | X |   |   |
-| Fixed-Format Text (`RxTextData`) | X |   |   |   |
-| .xdf data files (`RxXdfData`) | X | X |   |   |
-| SAS data files (`RxSasData`) | X |   |   |   |
-| SPSS data files (`RxSpssData`) | X |   |   |   |
-| ODBC data (`RxOdbcData`) | X |   |   |   |
-| Teradata database (`RxTeradata`) | X |   | X |   |
-| SQL Server database (`RxSqlServerData`) |   |   |   | X |
-
-Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See ["Managing Distributed Data"](#managing-distributed-data) for details.
-
-### Waiting and Non-waiting Compute Contexts
-
-By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). For ScaleR jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
-
-To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](#non-waiting-jobs).
-
-Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
-
-### Automatically Retrieving Cluster Console Output
-
-If you want console output from each of the cluster R processes printed to your user console, specify *consoleOutput=TRUE* in your compute context.
-
-### Updating a Compute Context
-
-Once you have a compute context object, modify it using the same function that originally creates it. Pass the name of the original object as its first argument, and then specify only those arguments you wish to modify as additional arguments. 
-
-For example, to change only the `suppressWarning` parameter of a Spark compute context *myHadoopCluster* from TRUE to FALSE:
-
-    myHadoopCluster <- RxSpark(myHadoopCluster, suppressWarning = FALSE)
-
-To list parameters and default values, use the `args` function with the name of the compute context constructor, for example:
-
-	args(RxSpark)
-
-which gives the following output:
-
-	function (object, hdfsShareDir = paste("/user/RevoShare", Sys.info()[["user"]], 
-		sep = "/"), shareDir = paste("/var/RevoShare", Sys.info()[["user"]], 
-		sep = "/"), clientShareDir = rxGetDefaultTmpDirByOS(), sshUsername = Sys.info()[["user"]], 
-		sshHostname = NULL, sshSwitches = "", sshProfileScript = NULL, 
-		sshClientDir = "", nameNode = rxGetOption("hdfsHost"), jobTrackerURL = NULL, 
-		port = rxGetOption("hdfsPort"), onClusterNode = NULL, wait = TRUE, 
-		numExecutors = rxGetOption("spark.numExecutors"), executorCores = rxGetOption("spark.executorCores"), 
-		executorMem = rxGetOption("spark.executorMem"), driverMem = "4g", 
-		executorOverheadMem = rxGetOption("spark.executorOverheadMem"), 
-		extraSparkConfig = "", persistentRun = FALSE, sparkReduceMethod = "auto", 
-		idleTimeout = 3600, suppressWarning = TRUE, consoleOutput = FALSE, 
-		showOutputWhileWaiting = TRUE, autoCleanup = TRUE, workingDir = NULL, 
-		dataPath = NULL, outDataPath = NULL, fileSystem = NULL, packagesToLoad = NULL, 
-		resultsTimeout = 15, ...) 
-
-You can temporarily modify an existing compute context and set the modified context as the current compute context by calling `rxSetComputeContext`. For example, if you have defined *myHadoopCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call `rxSetComputeContext` as follows:
-
-	rxSetComputeContext(myHadoopCluster, wait=FALSE)
-
-The `rxSetComputeContext` function returns the previous compute context, so it can be used in constructions like the following:
-
-    oldContext <- rxSetComputeContext(myCluster, wait=FALSE)
-    …
-    # do some computing with a non-waiting compute context
-    …
-    # restore previous compute context
-    rxSetComputeContext(oldContext)
-
-You can specify the compute context by name, as we have done here, but you can also specify it by calling a compute context constructor in the call to `rxSetComputeContext`. For example, to return to the local sequential compute context after using a cluster context, you can call `rxSetComputeContext` as follows:
-
-	rxSetComputeContext(RxLocalSeq())
-
-In this case, you can also use the descriptive string "local" to do the same thing:
-
-	rxSetComputeContext("local")
-
-### Creating Additional Compute Contexts
-
-Given a set of distributed computing resources, you might wan to create multiple compute context objects to vary the configuration. For example, you might have one compute context for waiting or blocking jobs and another for no-wait or non-blocking jobs. Or you might define one that uses all available nodes and another that specifies a particular set of nodes. 
-
-Because the initial specification of a compute context can be somewhat tedious, it is usually simplest to create additional compute contexts by modifying an existing compute context, in precisely the same way as we updated a compute context in the previous section. For example, suppose instead of simply modifying our existing compute context from *wait=TRUE* to *wait=FALSE*, we create a new compute context for non-waiting jobs:
-
-	myNoWaitCluster <- RxSpark(myHadoopCluster, wait=FALSE)
-
-> [!TIP]
-> Store commonly used compute context objects in an R script, or add their definitions to an R startup file.
->
-
-## Running Distributed Analyses
+# Running Distributed Analyses
 
 Once you have registered a distributed compute context, any of the following functions can be used to perform distributed computations:
 
@@ -593,7 +447,7 @@ Then, rerunning our previous example results in much more verbose output:
 	Computation time: 0.471 seconds.
 	======  CLUSTER-HEAD2  ( process  1 ) has completed run at  Thu Aug 11 15:56:11 2011  ======
 
-### Converting a Waiting Job to a Non-Waiting Job and Cancelling a Job
+<!--### Converting a Waiting Job to a Non-Waiting Job and Cancelling a Job
 
 Suppose you submit a job as a "waiting" job, and then realize that you’d prefer to be able to work in your R session on the local computer while it is running. 
 
@@ -1410,14 +1264,13 @@ Also in the previous section, we created a function kmeansRSR to perform a naïv
 Recall that the idea was to run a specified number of kmeans fits, then find the best set of results, where “best” is the result with the lowest within-group sum of squares. We can run this function as follows:
 
 	x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
-	kMeansForeach(x, 10, 35, 20)-->
+	kMeansForeach(x, 10, 35, 20)
 
-<a name="managing-distributed-data"></a>
 ## Managing Distributed Data
 
 There are several basic approaches to data management in distributed computing:
 
-1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see "Distributing Data with rxSplit" below.
+1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see ["Distributing Data with rxSplit"](#distributing-data-with-rxsplit)).
 
 2.	In the Hadoop Distributed File System, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend “composite” .xdf files, which are specialized files designed to be managed by HDFS.
 
@@ -1531,7 +1384,7 @@ The output data is also split, in this case holding fitted values, residuals, an
 
 ### Creating Split Training and Test Data Sets
 
-One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](scaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
+One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see ["Parallel Random Number Generation"](#parallel-random-number-generation)), the split becomes reproducible:
 
 	rxExec(rxSplit, inData="C:/data/distributed/DistAirlineData.xdf",
 		outFilesBase="airlineData",
@@ -1566,5 +1419,4 @@ To create or modify data on each node, use the data manipulation functions withi
 	        (DepDelay > -60) & (ActualElapsedTime > 0) & (CRSElapsedTime > 0),
 			blocksPerRead = 20, overwrite = TRUE)
 	}
-	rxExec( newAirData )
-
+	rxExec( newAirData )-->
