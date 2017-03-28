@@ -40,7 +40,7 @@ This article documents the known issues, bug fixes, and notifications about stat
 + R Server is built on Microsoft R Open 3.3.2 (R 3.3.2).
 + R packages added to MRO include `curl`, `Jsonlite`, and `R6`.
 + R packages added to R Server include `mrupdate` (for automated update checks) and `CompatibilityAPI` (to check for feature compatibility between versions).
-+ DeployR (now referred to as Operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
++ DeployR (now referred to as operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
 
 ###Deprecated or Discontinued
 

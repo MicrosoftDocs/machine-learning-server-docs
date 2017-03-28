@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Operationalization with R Server
+# Operationalizing analytics with R Server
 
 **Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](../deployr-about.md).)
 

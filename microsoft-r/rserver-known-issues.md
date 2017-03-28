@@ -84,7 +84,7 @@ automatically binned.
 ### R Base and Recommended Packages
 + In the `nls` function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The `nls` help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
 
-### Operationalization (formerly DeployR)
+### Operationalize (Deploy & Consume Web Services) _features formerly referred to as DeployR_
 
 + When Azure active directory authentication is the only form of authentication enabled, it is not possible to run diagnostics.
  

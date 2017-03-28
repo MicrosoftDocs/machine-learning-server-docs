@@ -136,9 +136,9 @@ Consider adding a development tool on the server to build script or solutions us
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 
-## Configure operationalization
+## Configure R Server to operationalize your analytics
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Side-by-side installation
 
@@ -165,4 +165,4 @@ Earlier versions are supported, but with limited availability on Microsoft downl
 
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
 
-[Configure R Server for Operationalization](operationalize/configuration-initial.md)
+[Configure R Server to  operationalize your analytics](operationalize/configuration-initial.md)

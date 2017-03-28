@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Operationalization: Compare 8.x to 9.x | Microsoft R Server Docs"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Operationalizing: Compare 8.x to 9.x | Microsoft R Server Docs"
+description: "Operationalizing Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Comparing Operationalization in R Server 9.0 to DeployR 8.x
+# Operationalizing with R Server: compare 9.x to DeployR 8.x
 
 The following table presents some of the main differences between the operationalization feature in Microsoft R Server 9.0 and the DeployR feature available in R Server 8.0.5.
 
