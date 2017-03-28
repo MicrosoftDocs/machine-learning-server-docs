@@ -53,10 +53,12 @@ This section walks you through the steps for securing the connections between th
 
 #### Windows: Using Your Default ASP .NET Core Web Server to Encrypt Traffic
 
-1. On each machine hosting the web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
-   > Make sure the name of the certificate matches the domain name of the web node URL. 
-   >
-   > Also, take note of the `Subject` name of the certificate as you'll need this info later.
+1. On each machine hosting the web node, open the certificate store:
+
+   1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+   1. Make sure the name of the certificate matches the domain name of the web node URL. 
+   1. Set the private key permissions to `NETWORK SERVICE`. (On the Security tab, add the Network Service account with Read access.)
+   1. Take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
@@ -66,7 +68,7 @@ This section walks you through the steps for securing the connections between th
    ```
    {
        "Kestrel": {
-           "Port": <https-port-number>,
+           "Port": 443,
            "HttpsEnabled": true,
            "HttpsCertificate": {
                "StoreName": "My",        
@@ -78,6 +80,8 @@ This section walks you through the steps for securing the connections between th
 
 1. Close and save the file.
 
+1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
+
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
 1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
@@ -86,30 +90,32 @@ This section walks you through the steps for securing the connections between th
 
 > Make sure the name of the certificate matches the domain name of the web node URL. 
 
-1. On each machine hosting a web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+On each machine hosting a web node:
+1. Open the certificate store:
+
+   1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+   1. Make sure the name of the certificate matches the domain name of the web node URL. 
+   1. Set the private key permissions to `NETWORK SERVICE`. (On the Security tab, add the Network Service account with Read access.)
+
 <a name="iis"></a>
 
 1. Launch IIS.
 
-1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+   1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+   1. Click on **Bindings** under the **Actions** pane on the right.
+   1. Click on **Add**.
+   1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
+   1. Select the SSL certificate you installed previously. 
+   1. Click **OK** to create the new HTTPS binding.
+   1. Back in the **Connections** pane, select the website name.
+   1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
+   1. Select the checkbox to **Require SSL** and require a client certificate.
 
-1. Click on **Bindings** under the **Actions** pane on the right.
-
-1. Click on **Add**.
-
-1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
-
-1. Select the SSL certificate you installed previously. 
-
-1. Click **OK** to create the new HTTPS binding.
-
-1. Back in the **Connections** pane, select the website name.
-
-1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
-
-1. Select the checkbox to **Require SSL** and require a client certificate.
+1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
 1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+
+1. Repeat on every web node.
 
 > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 <br />
@@ -155,6 +161,8 @@ On each Linux machine hosting a web node:
 1. Close and save `nginx.conf`.
 
 1. Restart NGINX service.
+
+1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and R Server. 
 
 1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
 

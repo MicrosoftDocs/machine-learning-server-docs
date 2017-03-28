@@ -57,7 +57,7 @@ To simplify the integration, R Server provides several Swagger templates each de
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-<version>.json, where `<version>` is the 3-digit R Server version number.
+Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
 Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](data-scientist-manage-services.md#swagger-app-dev)
 
 
@@ -149,11 +149,11 @@ After your client library has been generated and you've build the authentication
 
 ## Example: Core Client Library from Swagger (in CSharp)
 
-This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application.  
+This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json` where <version> is the R Server product version.
 
 Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.1.0.json.
+1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/swagger/9.1.0/rserver-swagger-9.1.0.json.
 
 1. Build the statically generated client library files for CSharp from the `rserver-swagger-9.1.0.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
