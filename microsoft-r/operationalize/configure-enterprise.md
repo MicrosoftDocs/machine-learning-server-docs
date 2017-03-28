@@ -141,17 +141,41 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
-   1. Update the `"Uris": {` properties to declare each compute node. You can specify a port or a range of ports as follows:
-      ```
-      "Uris": {
-         "Values": [
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-1>:12805",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-2>:40000-40099",
-           "http://<IP-ADDRESS-OF-COMPUTE-NODE-N>:30000-30010"       
-         ]
-       }
-       ```
+   1. Update the `"Uris": {` properties to declare each compute node. 
+   
+      + In R Server 9.1, you must specify the Uri for each compute node individually using the `Values` property and/or specify port ranges (or IP octets) using the `Ranges` property.
 
+        For example, both of the following snippets result in the same specification of four compute nodes:
+        ```
+        "Uris": {
+           "Values": [
+             “http://10.1.1.1:12805”, 
+             “http://10.0.0.1:12805”, 
+             “http://10.0.0.2:12805”, 
+             “http://10.0.0.3:12805”
+           ]
+        }
+        ```
+
+        ```
+        "Uris": {
+           "Values": [“http://10.0.0.1:12805”],
+           "Ranges": [“http://10.0.0.1-3:12805”]
+        }
+        ```
+   
+      + In R Server 9.0, you must specify the Uri for each compute node individually using the `Values` property. For example, this snippet results in four compute nodes:
+        ```
+        "Uris": {
+           "Values": [
+             “http://10.1.1.1:12805”, 
+             “http://10.0.0.1:12805”, 
+             “http://10.0.0.2:12805”, 
+             “http://10.0.0.3:12805”
+           ]
+        }
+        ```
+ 
       > Do not update any other properties in this file at this point. It will be updated during the compute node configuration.
 
    1. Close and save the file.
