@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Enterprise-Grade Security: Authentication | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication for Operationalization with Microsoft R Server"
+title: "Publish and consume Python web services | Microsoft R Server Docs"
+description: "Publish and consume Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -48,7 +48,7 @@ Generate the python client library. you can learn about all of the API calls you
 
 This example assumes you have completed Part 1:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
-+ You've already downloaded the Swagger file containing the core operationalization APIs for your version of R Server. 
++ You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
 
 ```python
@@ -61,7 +61,7 @@ This example assumes you have completed Part 1:
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You'll be using it to generate the API client libraries in Python. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
-1. Download the Swagger file containing the core operationalization APIs for your version of R Server from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number. To simplify the integration, R Server provides several Swagger templates each defining the list of resources that are available in the REST API and the operations that can be called on those resources.  
+1. Download the Swagger file containing the core APIs for your version of R Server from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number. To simplify the integration, R Server provides several Swagger templates each defining the list of resources that are available in the REST API and the operations that can be called on those resources.  
    
    For example, for R Server 9.1.0 you would download from:
    ```
@@ -91,9 +91,9 @@ This example assumes you have completed Part 1:
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
 
-Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
+Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
 
 1. Open the Python code editor of your choice such as Jupyter, Visual Studio, VS Code, or iPython for example.
 
@@ -149,7 +149,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 ## 3. Interact with APIs to publish a service
 
-After your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core operationalization APIs to create a Python session, create a model, and then publish a web service using that model.
+After your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
 
 1. Create a Python session on R Server by specifying a session name and indicating that you want a Python session (`runtime_type="Python"`). 
 
@@ -211,7 +211,7 @@ After your client library has been generated and you've build the authentication
 
 ## Example: Core Client Library from Swagger (in CSharp)
 
-This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application.  
+This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core APIs from your application.  
 
 Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
 
@@ -235,7 +235,7 @@ Build and use a core R Server 9.1.0 client library from swagger in CSharp and Az
    PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
    ```
 
-1. Use the statically-generated client library files to call the operationalization APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
+1. Use the statically-generated client library files to call the APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
 
    ```
    // --- IMPORT NAMESPACE TYPES -------------------------------------------------------
@@ -298,7 +298,7 @@ Build and use a core R Server 9.1.0 client library from swagger in CSharp and Az
    headers.Add("Authorization", $"Bearer {accessToken}");
    ```
 
-1. Begin consuming the core operationalization APIs.
+1. Begin consuming the core APIs.
    ```
    // --- INVOKE API -----------------------------------------------------------------
 
@@ -340,7 +340,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
    ```
 
-1. Use the statically-generated client library files to call the operationalization APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
+1. Use the statically-generated client library files to call the APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
 
    ```
    // --- IMPORT NAMESPACE TYPES -------------------------------------------------------
@@ -372,7 +372,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    // --- AUTHENTICATE WITH ACTIVE DIRECTORY -----------------------------------------
    // Note - Update these with your appropriate values
    // Once authenticated, user won't provide credentials again until token is invalid. 
-   // You can now begin to interact with the operationalization APIs
+   // You can now begin to interact with the APIs
    // --------------------------------------------------------------------------------
    var loginRequest = new LoginRequest("LDAP_USERNAME", "LDAP_PASSWORD");
    var loginResponse = client.Login(loginRequest);

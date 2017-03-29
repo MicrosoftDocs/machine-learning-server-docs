@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Token Management for Operationalization API Requests | Microsoft R Server Docs"
-description: "Token Management for Operationalization API Requests with Microsoft R Server"
+title: "Token Management for API Requests | Microsoft R Server Docs"
+description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -31,7 +31,7 @@ ms.custom: ""
 
 Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the `POST /login HTTP/1.1` API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
 
 <br>
 
@@ -54,7 +54,7 @@ Tokens can be generated in one of two ways:
 
 + If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
-[Learn more about authentication methods for operationalization...](security-authentication.md)
+[Learn more about these authentication methods.](security-authentication.md)
 
 #### Example: Token creation request 
 

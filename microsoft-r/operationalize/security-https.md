@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Enterprise-Grade Security: SSL / TLS 1.2 | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 for Operationalization with Microsoft R Server"
+description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Connection Security (SSL/TLS) for Operationalization
+# Connection Security (SSL/TLS)
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -170,7 +170,7 @@ On each Linux machine hosting a web node:
 
 1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
-Now, you can access R Server's operationalization services securely on https://<webnode-server-name> from your client applications.
+Now, you can access R Server to operationalize analytics securely on https://<webnode-server-name> from your client applications.
  
 
 <br />

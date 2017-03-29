@@ -67,12 +67,12 @@ The Windows installer and SQL Server installer create different library folder p
 
 **Feature availability**
 
-On Windows, R Server [operationalization](operationalize/about.md) is available right now if you use the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
+On Windows, you can [operationalize your analytics](operationalize/about.md) with R Server right now if you configure the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
 
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes [operationalization](operationalize/about.md).
+This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
 
 ### Prerequisites
 

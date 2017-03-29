@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Cross-Origin Resource Sharing for Operationalization
+# Cross-Origin Resource Sharing
 
 **Applies to:  Microsoft R Server 9.x**
 

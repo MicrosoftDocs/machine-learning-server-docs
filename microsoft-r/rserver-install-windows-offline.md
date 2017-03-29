@@ -133,4 +133,4 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
 
-[Configure R Server for Operationalization](operationalize/configuration-initial.md)
+[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

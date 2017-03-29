@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Roles and Groups | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication Roles for Operationalization with Microsoft R Server"
+description: "Enterprise-Grade Security: Authentication Roles with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -29,15 +29,15 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
-By default, when you configure Microsoft R Server for operationalization, authenticated users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
+By default, authenticated R Server  users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
 
-You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options for operationalization"](security-authentication.md).
+You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options"](security-authentication.md).
 
 ## What do I need?
 
 To assign groups of users in your Active Directory to R Server roles for web services, you must have:
 
-+ An instance of Microsoft R Server that is [configured for operationalization](../operationalize/configure-enterprise.md)
++ An instance of Microsoft R Server that is [configured to operationalize analytics](../operationalize/configure-enterprise.md)
 
 + Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/security-authentication.md)
 
@@ -88,13 +88,13 @@ You can choose from the following states:
 
 ## Web service permissions after role change
 
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an operationalization role in the `appsettings.json` file anymore. 
+A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an R Server role in the `appsettings.json` file anymore. 
 
 Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publis a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still be allowed to interact with that web service version as you did before, but you won't be allowed to update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
 
 ## Declaring roles for the local `admin` account
 
-If you only have the default local administrator account, `admin`, set up for R Server's operationalization, then this is the only user and the `admin` user is implicitly assigned to the "Contributor" role.
+If you only have the default local administrator account, `admin`, defined for R Server, then this is the only user and the `admin` user is implicitly assigned to the "Contributor" role.
 
 
 

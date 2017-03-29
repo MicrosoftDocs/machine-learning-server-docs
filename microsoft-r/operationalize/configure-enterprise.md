@@ -33,7 +33,8 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 
-This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
+This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
+**Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
 

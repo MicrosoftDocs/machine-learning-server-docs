@@ -77,7 +77,7 @@
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
-### [Configure for operationalization](operationalize/admin-get-started.md)
+### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [One-box configuration](operationalize/configuration-initial.md)
 #### [Enterprise configuration](operationalize/configure-enterprise.md)

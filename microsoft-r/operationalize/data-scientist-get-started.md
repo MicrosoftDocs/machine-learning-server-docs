@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Operationalization: Get Started for Data Scientists | Microsoft R Docs"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Get Started for Data Scientists: Operationalize Your Analytics | Microsoft R Docs"
+description: "Operationalize Your Analytics with Microsoft R Server Get Started"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"

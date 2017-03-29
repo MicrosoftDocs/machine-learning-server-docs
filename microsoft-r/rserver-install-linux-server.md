@@ -340,4 +340,4 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
-[Configure R Server for Operationalization](operationalize/configuration-initial.md)
+[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Enterprise-Grade Security: Authentication | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication for Operationalization with Microsoft R Server"
+description: "Enterprise-Grade Security: Authentication with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Authentication options for operationalization
+# Authentication options for R Server when operationalizing analytics
 
 **Applies to:  Microsoft R Server 9.x**
 
-R Server's offers seamless integration with authentication solutions for operationalization.
+R Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
 
 ![Security](../media/o16n/security.png)
 
@@ -46,7 +46,7 @@ To secure connections and communications, you have several options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, `admin`, is created for R Server's operationalization feature. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, `admin`, is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
 While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configure-enterprise.md).
 
@@ -215,7 +215,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 **Step 3: Create a native application**
 
-Now, create a native app. This app links the web app to the Microsoft R Server operationalization server.
+Now, create a native app. This app links the web app to the Microsoft R Server web node.
 
    1. In the **Applications** tab, click **ADD** at the bottom to create a new app registration. A dialog appears.
 
