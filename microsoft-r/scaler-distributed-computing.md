@@ -32,7 +32,7 @@ Often, developers and data scientists will write script that runs locally on one
 
 *Distributed computing* across multiple nodes is an R Server-only capability. The platform must be Hadoop or Teradata, both of which provide a job scheduler for allocating jobs, and a master node for tracking the work and coordinating the results. To handle an R Server job, all nodes in the cluster must be same version.
 
-*Parallel processing* leverages the computing power of a single machine. Typically, jobs that can run in parallel include data import, modeling or training over a collection of partitions (one thread per partition), or XXXX.
+*Parallel processing* leverages the computing power of a single machine. Examples of jobs that can run in parallel include data import and linear modeling .
 
 On R Server, ScaleR functions can make full use of the computational power of the underlying platform. [R Client](r-client.md), which is a free version that runs only Windows, is restricted to in-memory data and a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
 

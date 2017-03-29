@@ -43,7 +43,7 @@ Given a registered a distributed compute context, any of the following functions
 - `rxNaiveBayes`
 - `rxExec`
 
-Except for `rxExec`, we refer to these functions as the **RevoScaleR** *high-performance analytics*, or HPA functions. 
+Except for `rxExec`, we refer to these functions as the RevoScaleR *high-performance analytics*, or HPA functions. 
 
 The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](scaler-distributed-computing-parallel-jobs.md).
 
@@ -58,7 +58,7 @@ You can request basic information about a data set from each node using the `rxG
 > [!NOTE]
 > To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf"` to load the data on a cluster.
 
-On a five-node HPC Server cluster, the call to *rxGetInfo* returns the following:
+On a five-node cluster, the call to *rxGetInfo* returns the following:
 
     $CLUSTER_HEAD2
     File name: C:\data-RevoScaleR-AcceptanceTest\AirOnTime2012.xdf
