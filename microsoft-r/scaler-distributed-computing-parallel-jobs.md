@@ -26,24 +26,14 @@ ms.custom: ""
 
 # Running jobs in parallel (ScaleR in Microsoft R)
 
-ScaleR functions can be used to distribute computations over more than one R Server or R Client instance, allowing you to run multiple workloads in parallel on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer or platform. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
-
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like RxSpark, RxHadoopMR, or RxInSQLServer are used to set the compute contenxt. Typically, you will specify different parameters depending on whether commands are issued locally or remotely.
-
-ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
-
-> [!NOTE]
-> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
->
+ScaleR function library includes functions that are engineered to work in parallel automatically. Additionally, a special purpose function called `rxExec` can be used to manually construct parallelization. With `rxExec`, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop or Teradata. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class*. 
 
 <a name="parallel-computing-with-rxexec"></a>
 ## Parallel Computing with rxExec
 
-While the **RevoScaleR** HPA functions are engineered to work in parallel automatically, other R functions always run sequentially. As we have seen, the `rxExec` function allows you to take an arbitrary function and run it in parallel on your distributed computing resources. This in turn allows you to tackle a large variety of parallel computing problems, in particular those of the *high-performance computing class*. 
+In this section, you will learn how `rxExec` can be used to perform parallel computations. To demonstrate, you'll use script to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering.
 
-In this article, you will learn how `rxExec` can be used to perform parallel computations. To demonstate, you'll use script to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering.
-
-In general, the only required arguments to `rxExec` are the function to be run and any required arguments of that function. Additional arguments can be used to control the computation.
+In general, the only required arguments to `rxExec` are the function to be run and any required arguments of that function. Additional optional arguments can be used to control the computation.
 
 >[!IMPORTANT]
 > Before trying the examples, set your compute context to one of the following: `RxLocalParallel`, `RxSpark`, `RxHadoopMR`, or `RxInTeradata` (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE*.
@@ -89,7 +79,7 @@ A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11
 		result
 	}
 
-We will now use `rxExec` to play thousands of games to help determine the probability of a win. Using a five-node HPC Server cluster, we play the game 10000 times, 2000 times on each node:
+We will now use `rxExec` to play thousands of games to help determine the probability of a win. Using a Hadoop 5-node cluster, we play the game 10000 times, 2000 times on each node:
 
 	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000)
 	table(unlist(z))
@@ -129,7 +119,7 @@ For each group size, 5000 random tests were performed. For this run, the followi
 	     3     25     50
 	0.0078 0.5710 0.9726
 
-Make sure your compute context is set to a “waiting” context.  Then distribute this computation for groups of 2 to 100 using `rxExec` as follows, using *rxElemArg* to specify a different argument for each call to pbirthday, and then using the *taskChunkSize* argument to pass these arguments to the nodes in chunks of 20:
+Make sure your compute context is set to a “waiting” context. Then distribute this computation for groups of 2 to 100 using `rxExec` as follows, using *rxElemArg* to specify a different argument for each call to pbirthday, and then using the *taskChunkSize* argument to pass these arguments to the nodes in chunks of 20:
 
 	z <- rxExec(pbirthday, n=rxElemArg(2:100), taskChunkSize=20)
 
@@ -193,53 +183,53 @@ The resulting plot is shown below (not all graphics devices support the useRaste
 
 ![Mandelbrot Plot](media/rserver-scaler-distributed-computing/mandelbrot_plot.png)
 
-### Naïve Parallel k-Means Clustering
+### Naïve Parallel k-Means Clustering
 
-**RevoScaleR** has a built-in analysis function, `rxKmeans`, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context.
+**RevoScaleR** has a built-in analysis function, `rxKmeans`, to perform distributed k-means, but in this section we see how the regular R kmeans function can be put to use in a distributed context.
 
-The kmeans function implements several *iterative relocation* algorithms for clustering. An iterative relocation algorithm starts from an initial classification and then iteratively moves data points from one cluster to another to reduce sums of squares. One possible starting point is to simply pick cluster centers at random and then assign points to each cluster so that the sum of squares is minimized. If this procedure is repeated many times for different sets of centers, the set with the smallest error can be chosen.
+The kmeans function implements several *iterative relocation* algorithms for clustering. An iterative relocation algorithm starts from an initial classification and then iteratively moves data points from one cluster to another to reduce sums of squares. One possible starting point is to simply pick cluster centers at random and then assign points to each cluster so that the sum of squares is minimized. If this procedure is repeated many times for different sets of centers, the set with the smallest error can be chosen.
 
-We can do this with the ordinary kmeans function, which has a parameter *nstart* that tells it how many times to pick the starting centers, and also to pick the set of centers that returns a result with smallest error:
+We can do this with the ordinary kmeans function, which has a parameter *nstart* that tells it how many times to pick the starting centers, and also to pick the set of centers that returns a result with smallest error:
+    x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
+    system.time(kmeans(x, centers=10, iter.max = 35, nstart = 400))
 
-	x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
-	system.time(kmeans(x, centers=10, iter.max = 35, nstart = 400))
+On a Dell XPS laptop with 8GB of RAM, this takes about a minute and a half.
 
-On a Dell XPS laptop with 8GB of RAM, this takes about a minute and a half.
+To parallelize this efficiently, we should do the following:
 
-To parallelize this efficiently, we should do the following:
+- Pass the data to a specified number of computing resources just once.
 
-- Pass the data to a specified number of computing resources just once.
-- Split the work into smaller tasks for passing to each computing resource.
-- Combine the results from all the computing resources so the best result is returned.
+- Split the work into smaller tasks for passing to each computing resource.
 
-In the case of *kmeans*, we can ask for the computations to be done by *cores*, rather than by *nodes*. (Currently, the *elemType* argument is honored only for *RxHpcServer* compute contexts. See the *rxExec* help file for details.) And because we are distributing the computation, we can do fewer repetitions (*nstarts*) on each compute element. We can do all of this with the following function (again, this should be run with a compute context for which *wait=TRUE*):
+- Combine the results from all the computing resources so the best result is returned.
 
-	kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1)
-	{
-		numTimes <- 20
-		results <- rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
-			nstart=nstart, elemType="cores", timesToRun=numTimes)
-		best <- 1
-		bestSS <- sum(results[[1]]$withinss)
-		for (j in 1:numTimes)
-		{
-		      jSS <- sum(results[[j]]$withinss)
-		      if (bestSS > jSS)
-		      {
-		              best <- j
-		             bestSS <- jSS
-			  }
-		}
-		results[[best]]
-	}
+In the case of *kmeans*, we can ask for the computations to be done by *cores*, rather than by *nodes*. Because we are distributing the computation, we can do fewer repetitions (*nstarts*) on each compute element. We can do all of this with the following function (again, this should be run with a compute context for which *wait=TRUE*):
 
-Notice that in our *kMeansRSR* function we are letting the underlying *kmeans* function find nstart sets of centers per call and the choice of “best” is done in our function after we have called *kmeans numTimes*. No parallelization is done to *kmeans* itself.
+    kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1)
+    {
+        numTimes <- 20
+        results <- rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
+            nstart=nstart, timesToRun=numTimes)
+        best <- 1
+        bestSS <- sum(results[[1]]$withinss)
+        for (j in 1:numTimes)
+        {
+              jSS <- sum(results[[j]]$withinss)
+              if (bestSS > jSS)
+              {
+                      best <- j
+                     bestSS <- jSS
+              }
+        }
+        results[[best]]
+    }
 
-With our *kMeansRSR* function, we can then repeat the computation from before:
+Notice that in our *kMeansRSR* function we are letting the underlying *kmeans* function find nstart sets of centers per call and the choice of "best" is done in our function after we have called *kmeans numTimes*. No parallelization is done to *kmeans* itself.
 
-	system.time(kMeansRSR(x, 10, 35, 20))
+With our *kMeansRSR* function, we can then repeat the computation from before:
+    system.time(kMeansRSR(x, 10, 35, 20))
 
-With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
+With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
 
 ### Sharing Data Efficiently Between Parallel Processes 
 
@@ -315,7 +305,7 @@ Although results may vary, in this case we’ve reduced the elapsed time by 50% 
 <a name="parallel-random-number-generation"></a>
 ### Parallel Random Number Generation
 
-When generating random numbers in parallel computation, a frequent problem is the possibility of highly correlated random number streams. High quality parallel random number generators avoid this problem. RevoScaleR includes several high quality parallel random number generators and these can be used with rxExec to improve the quality of your parallel simulations.
+When generating random numbers in parallel computation, a frequent problem is the possibility of highly correlated random number streams. High quality parallel random number generators avoid this problem. RevoScaleR includes several high quality parallel random number generators and these can be used with `rxExec `to improve the quality of your parallel simulations.
 
 By default, a parallel version of the Mersenne-Twister random number generator is used that supports 6024 separate substreams. We can set it to work on our dice example by setting a non-null seed:
 
@@ -347,7 +337,7 @@ We can build reproducibility into our naïve k-means example as follows:
 	kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1, numTimes = 20, seed = NULL)
 	{
 		results <- rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
-			nstart=nstart, elemType="cores", timesToRun=numTimes, RNGseed = seed)
+			nstart=nstart, timesToRun=numTimes, RNGseed = seed)
 		best <- 1
 		bestSS <- sum(results[[1]]$withinss)
 		for (j in 1:numTimes)
@@ -440,7 +430,7 @@ The other examples are a bit trickier, in that the result of the calls to rxExec
 	{
 		numTimes <- 20
 		rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
-			nstart=nstart, elemType="cores", timesToRun=numTimes)
+			nstart=nstart, timesToRun=numTimes)
 	}
 
 	findKmeansBest <- function(results){
@@ -500,8 +490,7 @@ To this point, none of the functions we have called with rxExec has been a RevoS
 
 If we call the above function with rxExec on a five-node cluster compute context, we get five simulations running simultaneously, and can easily produce 1000 simulations as follows:
 
-	rxExec(SimAndEstimatePoisson, nobs=50000, trials=10, elemType = "nodes",
-	    taskChunkSize=5, timesToRun=100)
+	rxExec(SimAndEstimatePoisson, nobs=50000, trials=10, taskChunkSize=5, timesToRun=100)
 
 It is important to recognize the distinction between running an HPA function with a distributed compute context, and calling an HPA function using rxExec with a distributed compute context. In the former case, we are fitting just one model, using the distributed compute context to farm out portions of the computations, but ultimately returning just one model object. In the latter case, we are calculating one model per task, the tasks being farmed out to the various nodes or cores as desired, and a list of models is returned.
 
@@ -545,7 +534,7 @@ You then call `rxExec` as usual. The computations are automatically directed to 
 
 ### Controlling rxExec Computations
 
-As we have seen in these examples, there are several arguments to `rxExec` that allow you to fine-tune your `rxExec` commands. Both the birthday example and the Mandelbrot example used the *taskChunkSize* argument to specify how many tasks should go to each worker. The Mandelbrot example also used the *execObjects* argument, which can be used to pass either a character vector or an environment containing objects—the objects specified by the vector or contained in the environment are added to the environment of the function specified in the FUN argument, unless that environment is locked, in which case they are added to the parent frame in which *FUN* is evaluated. (If you use an environment, it should be one you create with *parent=emptyenv();* this allows you to pass only those objects you need to the function’s environment.) These two examples also show the use of *rxElemArg* in passing arguments to the workers. In the kmeans example, we met the *elemType* and *timesToRun* arguments. The *packagesToLoad* argument allows you to specify packages to load on each worker. The *consoleOutput* and *autoCleanup* flags serve the same purpose as their counterparts in the compute context constructor functions—that is, they can be used to specify whether console output should be displayed or the associated task files should be cleaned up on job completion for an individual call to 'rxExec'.
+As we have seen in these examples, there are several arguments to `rxExec` that allow you to fine-tune your `rxExec` commands. Both the birthday example and the Mandelbrot example used the *taskChunkSize* argument to specify how many tasks should go to each worker. The Mandelbrot example also used the *execObjects* argument, which can be used to pass either a character vector or an environment containing objects—the objects specified by the vector or contained in the environment are added to the environment of the function specified in the FUN argument, unless that environment is locked, in which case they are added to the parent frame in which *FUN* is evaluated. (If you use an environment, it should be one you create with *parent=emptyenv();* this allows you to pass only those objects you need to the function’s environment.) These two examples also show the use of *rxElemArg* in passing arguments to the workers. In the kmeans example, we covered the *timesToRun* argument. The *packagesToLoad* argument allows you to specify packages to load on each worker. The *consoleOutput* and *autoCleanup* flags serve the same purpose as their counterparts in the compute context constructor functions—that is, they can be used to specify whether console output should be displayed or the associated task files should be cleaned up on job completion for an individual call to 'rxExec'.
 
 Two additional arguments remain to be introduced: *oncePerElem* and *continueOnFailure*. The *oncePerElem* argument restricts the called function to be run just once per allotted node; this is frequently used with the *timesToRun* argument to ensure that each occurrence is run on a separate node. The *oncePerElem* argument, however, can only be set to *TRUE* if *elemType="nodes"*. It must be set to *FALSE* if *elemType="cores"*.
 
@@ -637,158 +626,3 @@ Recall that the idea was to run a specified number of kmeans fits, then find the
 	x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
 	kMeansForeach(x, 10, 35, 20)
 
-<!--## Managing Distributed Data
-
-There are several basic approaches to data management in distributed computing:
-
-1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see ["Distributing Data with rxSplit"](#distributing-data-with-rxsplit)).
-
-2.	In the Hadoop Distributed File System, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend “composite” .xdf files, which are specialized files designed to be managed by HDFS.
-
-3.	In a Teradata Distributed Data Warehouse, you can perform distributed computations in-database using the RxInTeradata compute context.
-
-For distributing high volumes of data over large networks, custom-engineered network/file-server solutions are probably appropriate.
-
-## Distributing Data with rxSplit  
-
-For some computations, such as those involving distributed prediction, it is most efficient to perform the computations on a distributed data set, one in which each node sees only the data it is supposed to work on. You can split an .xdf file into portions suitable for distribution using the function *rxSplit*. For example, to split the large airline data into five files for distribution on a five node cluster, you could use *rxSplit* as follows:
-
-	rxOptions(computeContext="local")
-	bigAirlineData <- "C:/data/AirlineData87to08.xdf"
-	rxSplit(bigAirlineData, numOutFiles=5)
-
-By default, *rxSplit* simply appends a number in the sequence from 1 to *numOutFiles* to the base file name to create the new file names, and in this case the resulting file names, for example, “AirlineData87to081.xdf”, are a bit confusing. You can exercise greater control over the output file names by using the *outFilesBase* and *outFilesSuffixes* arguments. With *outFilesBase*, you can specify either a single character string to be used for all files or a character vector the same length as the desired number of files. The latter option is useful, for example, if you would like to create four files with the same file name, but different paths:
-
-	nodepaths <- paste("compute", 10:13, sep="")
-	basenames <- file.path("C:", nodepaths, "DistAirlineData")
-	rxSplit(bigAirlineData, outFilesBase=basenames)
-
-This creates the four directories C:/compute10, etc., and creates a file named “DistAirlineData.xdf” in each directory. You will want to do something like this when using distributed data with the standard **RevoScaleR** analysis functions such as rxLinMod and rxLogit.
-
-You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
-
-	rxSplit(bigAirlineData, outFileSuffixes=paste("-", 1:5, sep=""))
-
-The splitBy argument specifies whether to split your data file row-by-row or block-by-block. The default is *splitBy="rows"*, to split by blocks instead, specify *splitBy="blocks"*. The *splitBy* argument is ignored if you also specify the *splitByFactor* argument as a character string representing a valid factor variable. In this case, one file is created per level of the factor variable.
-
-The *rxSplit* function works in the local compute context only; once you’ve split the file you need to distribute the resulting files to the individual nodes using the techniques of the previous sections. You should then specify a compute context with the flag *dataDistType* set to *"split"*. Once you have done this, HPA functions such as *rxLinMod* will know to split their computations according to the data on each node.
-
-### Data Analysis with Split Data
-
-To use split data in your distributed data analysis, the first step is generally to split the data using rxSplit, which as we have seen is a local operation. So the next step is then to copy the split data to your cluster nodes. For the HPA functions such as rxLinMod, the split data must be found somewhere in your specified *dataPath* on each node. For example, to perform this example, we copied the split airline data DistAirlineData.xdf to the C:\data\distributed directory on each of the nodes compute10, compute11, compute12, and compute13. We could, however, have placed the split data in a different place on each node, so long as each of the locations was somewhere in the list of directories in *dataPath*.
-
-Next, create a compute context that specifies *dataDistType="split"*. For example, here is our original HPC Server cluster compute context, with this flag added and with the distributed data folder added to the data path:
-
-	myCluster <- RxHpcServer(
-	headNode="cluster-head2",
-	revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
-	    shareDir="\\AllShare\\myName",
-	dataPath=c("C:\\data","C:\\data\\distributed"),
-	dataDistType="split")
-	rxSetComputeContext(myCluster)
-
-We are now ready to fit a simple linear model:
-
-	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
-		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
-
-When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
-
-	Call:
-	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = "DistAirlineData.xdf",
-	    cube = TRUE, blocksPerRead = 30)
-
-	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
-	File name: C:\data\distributed\DistAirlineData.xdf
-	Dependent variable(s): ArrDelay
-	Total independent variables: 7
-	Number of valid observations: 120947440
-	Number of missing observations: 2587529
-
-	Coefficients:
-	                    ArrDelay
-	DayOfWeek=Monday    6.669515
-	DayOfWeek=Tuesday   5.960421
-	DayOfWeek=Wednesday 7.091502
-	DayOfWeek=Thursday  8.945047
-	DayOfWeek=Friday    9.606953
-	DayOfWeek=Saturday  4.187419
-	DayOfWeek=Sunday    6.525040
-
-With data in the .xdf format, you have your choice of using the full data set or a split data set on each node. For other data sources, you must have the data split across the nodes. For example, the airline data’s original form is a set of .csv files, one for each year from 1987 to 2008. (Additional years are now available, but have not been included in our big airline data.) If we copy the year 2000 data to compute10, the year 2001 data to compute11, the year 2002 data to compute12, and the year 2003 data to compute13 with the file name SplitAirline.csv, we can analyze the data as follows:
-
-	textDS <- RxTextData( file = "C:/data/distributed/SplitAirline.csv",
-	              varsToKeep = c( "ArrDelay", "CRSDepTime", "DayOfWeek" ),
-	              colInfo = list(ArrDelay   = list( type = "integer" ),
-	                        CRSDepTime = list( type = "integer" ),
-	                        DayOfWeek  = list( type = "integer" ) )
-	           )
-	rxSummary( ArrDelay ~ F( DayOfWeek, low = 1, high = 7 ), textDS )
-
-We can then perform an rxLogit model to classify flights as “Late” as follows:
-
-	computeLate <- function( dataList )
-	{
-	    dataList$Late <- dataList$ArrDelay>15
-	    return( dataList )
-	}
-
-	rxLogitFitSplitCsv <- rxLogit( Late ~ CRSDepTime + F( DayOfWeek, low = 1,
-	                          high = 7 ), data = textDS,
-	                          transformVars = c( "ArrDelay" ),
-	                          transformFunc=computeLate, verbose=1 )
-
-### Distributed Prediction
-
-You can predict (or score) from a fitted model in a distributed context, but in this case, your data *must* be split. For example, if we fit our distributed linear model with *covCoef=TRUE* (and *cube=FALSE*), we can compute standard errors for the predicted values:
-
-	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
-		data="DistAirlineData.xdf",  covCoef=TRUE, blocksPerRead=30)
-	rxPredict(AirlineLmDist, data="DistAirlineData.xdf", 	outData="errDistAirlineData.xdf",
-		computeStdErrors=TRUE, computeResiduals=TRUE)
-
-> [!NOTE]
-> The `blocksPerRead` argument is ignored if script runs locally using R Client.
->
-
-The output data is also split, in this case holding fitted values, residuals, and standard errors for the predicted values.
-
-### Creating Split Training and Test Data Sets
-
-One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see ["Parallel Random Number Generation"](#parallel-random-number-generation)), the split becomes reproducible:
-
-	rxExec(rxSplit, inData="C:/data/distributed/DistAirlineData.xdf",
-		outFilesBase="airlineData",
-		outFileSuffixes=c("Test", "Train"),
-		splitByFactor="testSplitVar",
-		varsToKeep=c("Late", "ArrDelay", "DayOfWeek", "CRSDepTime"),
-		overwrite=TRUE,
-		transforms=list(testSplitVar = factor( sample(c("Test", "Train"),
-			size=.rxNumRows, replace=TRUE, prob=c(.10, .9)),
-			levels= c("Test", "Train"))), rngSeed=17, consoleOutput=TRUE)
-
-The result is two new data files, airlineData.testSplitVar.Train.xdf and airlineData.testSplitVar.Test.xdf, on each of your nodes. We can fit the model to the training data and predict with the test data as follows:
-
-	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
-		data="airlineData.testSplitVar.Train.xdf",  covCoef=TRUE, blocksPerRead=30)
-	rxPredict(AirlineLmDist, data="airlineData.testSplitVar.Test.xdf",
-		computeStdErrors=TRUE, computeResiduals=TRUE)
-
-> [!NOTE]
-> The `blocksPerRead` argument is ignored if script runs locally using R Client.
->
-
-### Performing Data Operations on Each Node
-
-To create or modify data on each node, use the data manipulation functions within rxExec. For example, suppose that after looking at the airline data we decide to create a “cleaner” version of it by keeping only the flights where: there is information on the arrival delay,  the flight did not depart more than one hour early, and the actual and scheduled flight time is positive. We can put a call to *rxDataStep* (and any other code we want processed) into a function to be processed on each node via *rxExec*:
-
-	newAirData <-  function()
-	{
-	    airData <- "AirlineData87to08.xdf"
-	    rxDataStep(inData = airData, outFile = "C:\\data\\airlineNew.xdf",
-		   rowSelection = !is.na(ArrDelay) &
-	        (DepDelay > -60) & (ActualElapsedTime > 0) & (CRSElapsedTime > 0),
-			blocksPerRead = 20, overwrite = TRUE)
-	}
-	rxExec( newAirData )
--->

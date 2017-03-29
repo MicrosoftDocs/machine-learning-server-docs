@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed computing overview (ScaleR in Microsoft R)"
+title: "Distributed and parallel computing overview (ScaleR in Microsoft R)"
 description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
@@ -24,21 +24,27 @@ ms.custom: ""
 
 ---
 
-# Distributed computing overview (ScaleR in Microsoft R)
+# Distributed and parallel computing with ScaleR in Microsoft R
 
-ScaleR functions can be used to distribute computations over more than one R Server or R Client instance, allowing you to run multiple workloads in parallel on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer or platform. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
+In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](scaler-distributed-computing-compute-context.md) that identifies the platform.
 
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like RxSpark, RxHadoopMR, or RxInSQLServer are used to set the compute contenxt. Typically, you will specify different parameters depending on whether commands are issued locally or remotely.
+Often, developers and data scientists will write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. In a local compute context, you might run commands to prepare data or set up variables, and then shift to an RxSpark context to run data analysis.
 
-ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
+*Distributed computing* across multiple nodes is an R Server-only capability. The platform must be Hadoop or Teradata, both of which provide a job scheduler for allocating jobs, and a master node for tracking the work and coordinating the results. To handle an R Server job, all nodes in the cluster must be same version.
+
+*Parallel processing* leverages the computing power of a single machine. Typically, jobs that can run in parallel include data import, modeling or training over a collection of partitions (one thread per partition), or XXXX.
+
+On R Server, ScaleR functions can make full use of the computational power of the underlying platform. [R Client](r-client.md), which is a free version that runs only Windows, is restricted to in-memory data and a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
+
+Because RevoScaleR is availalbe on both R Server and R Client, you can develop complex analysis scripts using ScaleR functions on your local computer, create one or more compute contexts for use with distributed computing resources, and then seamlessly move between executing scripts on the local computer and in a distributed context. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
 
 > [!NOTE]
-> RevoScaleR is available in both R Server and R Client. You can develop script in R Client for execution on R Server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
+> R Client is limited to two threads for processing and in-memory datasets. To avoid paging data to disk, R Client is engineered to ignore the `blocksPerRead` argument, which results in all data being read into memory. If your datasets exceed memory, push the compute context to a Microsoft R Server instance on a supported platform (Hadoop, Linux, Windows, Teradata, SQL Server).
 >
 
-## Distributed computing
+## Distributed computing overview
 
-**RevoScaleR** provides two main approaches for distributed computing: master node and rxExec. 
+**RevoScaleR** provides two main approaches for distributed computing: master node and `rxExec`. 
 
 The first, the *master node* path, exemplifies the high-performance analytics approach. By establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
 
@@ -63,9 +69,9 @@ The second approach is via the **RevoScaleR** function `rxExec`, which allows yo
 
 There are several basic approaches to data management in distributed computing:
 
-1.	On systems with traditional file systems, you can either put all the data on all the nodes or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes rather than accessed over a network; for large data sets, the computation time for network-accessed data can be many times slower than for local data. In these systems, we recommend using standard .xdf files or “split” .xdf files (see "Distributing Data with rxSplit" below.
+1.	On systems having a non-distributed, disk-by-disk file system (such as nfs or NTFS), you can either put all the data on all the nodes, or distribute only the data that a node requires for its computations to that particular node. In such file systems, it is important that the data be local to the nodes to avoid adding network latency to the computation time. On non-distributed file systems, we recommend using standard .xdf files or "split" .xdf files (see "Distributing Data with rxSplit" below).
 
-2.	In the Hadoop Distributed File System, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend “composite” .xdf files, which are specialized files designed to be managed by HDFS.
+2.	In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend “composite” .xdf files, which are specialized files designed to be managed by HDFS.
 
 3.	In a Teradata Distributed Data Warehouse, you can perform distributed computations in-database using the RxInTeradata compute context.
 

@@ -26,10 +26,10 @@ ms.custom: ""
 
 # Running background jobs (ScaleR in Microsoft R) 
 
-<a name="non-waiting-jobs"></a>
-## Non-Waiting jobs for background processing
+In Microsoft R, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
 
-In Microsoft R, you can run jobs interactively, waiting for results before continuing, or you can rum them in the background.
+<a name="non-waiting-jobs"></a>
+## Non-Waiting jobs
 
 By default, all jobs are "waiting jobs" or "blocking jobs" (where control of the R prompt is not returned until the job is complete). As you can imagine, you might want a different interaction model if you are sending time-intensive jobs to your distributed compute context. Decoupling your current session from in-progress jobs will enable jobs to proceed in the background while you continue to work on your R Console for the duration of the computation. This can be useful if you expect the distributed computations to take a significant amount of time, and when such computations are managed by a job scheduler.
 

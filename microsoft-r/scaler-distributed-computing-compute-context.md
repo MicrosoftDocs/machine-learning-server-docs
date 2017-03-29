@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Compute context (ScaleR in Microsoft R)
 
-ScaleR functions can be used to distribute computations over more than one R Server or R Client instance, allowing you to run multiple workloads in parallel on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer or platform. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
+ScaleR functions can be used to distribute computations over more than one R Server instance, allowing you to run workloads on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a ScaleR engine on a different computer. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
 
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like RxSpark, RxHadoopMR, or RxInSQLServer are used to set the compute contenxt. Typically, you will specify different parameters depending on whether commands are issued locally or remotely.
+A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. ScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
 
 ScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
@@ -38,7 +38,7 @@ ScaleR's distributed computing capabilities vary by platform and the details for
 
 
 <a name="scaler-compute-context"></a>
-## Compute Contexts
+## Compute Contexts Overview
 
 A *compute context object*, or more briefly a *compute context*, is the key to distributed computing with ScaleR. The default compute context tells the ScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as `rxLinMod` are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via `rxExec` are done sequentially.
 
@@ -58,7 +58,20 @@ The `RxInSqlServer` compute context is a special case—it is similar to `RxInTe
 
 Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](scaler-distributed-computing-parallel-jobs.md).
 
-### Compute Contexts and Data Sources
+## Set a Compute Context
+
+The default compute context is local. The following examples illustrate the syntax for setting compute context for several platforms.
+
+For Spark:
+
+    myHadoopCluster <- RxSpark(myHadoopCluster)
+
+For MapReduce:
+
+    myHadoopCluster <- RxHadoopMR(myHadoopCluster)
+
+
+## Compute Contexts and Data Sources
 
 In the local compute context, all of ScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be severely limited. The most extreme case is the `RxInTeradata` compute context, which supports only the RxTeradata data source—this makes sense, as the computations are being performed on data inside the Teradata database. The following table shows the available combinations of compute contexts and data sources (x indicates available):
 
@@ -75,7 +88,7 @@ In the local compute context, all of ScaleR’s supported data sources are avail
 
 Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](scaler-distributed-computing.md#managing-distributed-data) for details.
 
-### Waiting and Non-waiting Compute Contexts
+## Waiting and Non-waiting Compute Contexts
 
 By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). For ScaleR jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
 
@@ -83,11 +96,11 @@ To set the compute context object to run "no wait" jobs, set the argument *wait*
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
 
-### Automatically Retrieving Cluster Console Output
+## Automatically Retrieving Cluster Console Output
 
 If you want console output from each of the cluster R processes printed to your user console, specify *consoleOutput=TRUE* in your compute context.
 
-### Updating a Compute Context
+## Update a Compute Context
 
 Once you have a compute context object, modify it using the same function that originally creates it. Pass the name of the original object as its first argument, and then specify only those arguments you wish to modify as additional arguments. 
 
@@ -137,7 +150,7 @@ In this case, you can also use the descriptive string "local" to do the same thi
 
 	rxSetComputeContext("local")
 
-### Creating Additional Compute Contexts
+## Create Additional Compute Contexts
 
 Given a set of distributed computing resources, you might wan to create multiple compute context objects to vary the configuration. For example, you might have one compute context for waiting or blocking jobs and another for no-wait or non-blocking jobs. Or you might define one that uses all available nodes and another that specifies a particular set of nodes. 
 
