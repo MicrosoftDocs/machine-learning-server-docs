@@ -287,6 +287,12 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		> cd MRS90HADOOP; sudo bash ./install.sh -a -p
 		> exit
 
+### Install additional packages on each node using rxExec
+
+Once you have R Server installed on a node, you can the `rxExec` function in RevoScaleR to install additional packages, including third-party packages from CRAN or another repository. For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
+
+	rxExec(install.packages, "SuppDists")
+
 ## Multinode installation using Cloudera Manager
 
 The following steps walk you through a multinode installation using Cloudera Manager to create a Cloudera Manager parcel for an R Server installation.
