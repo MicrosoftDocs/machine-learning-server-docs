@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Server Operationalization Administration
+# Administration utility for operationalizing analytics with R Server
 
 **Applies to:  Microsoft R Server 9.x**
 

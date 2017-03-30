@@ -27,15 +27,15 @@ ms.custom: ""
 
 # Operationalizing with R Server: compare 9.x to DeployR 8.x
 
-The following table presents some of the main differences between the operationalization feature in Microsoft R Server 9.0 and the DeployR feature available in R Server 8.0.5.
+The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the DeployR 8.0.5 available in R Server 8.0.5.
 
 >[!Important]
->R Server's operationalization feature is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
+>R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
 
 Release|Microsoft R Server 8.0.5|Microsoft R Server 9
 ----|-----|------
-Name of feature|DeployR|Operationalization
-Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure operationalization](configuration-initial.md) and enable R Server to deploy and host web services
+Name of feature|DeployR|_integrated in R Server_
+Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure R Server to operationalize analytics](configuration-initial.md) and enable R Server to deploy and host web services
 Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using [new `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) or from a REST API.
 Application Integration|Use client libraries and RBroker framework|[Swagger-based API for quicker exploration and integration](app-developer-get-started.md)
 Architecture|Apache Tomcat|ASP .Net Core
@@ -46,9 +46,9 @@ Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Com
 APIs|Over 100 RESTful APIs|[About 40 RESTful APIs](api.md)<br> (not backwards compatible)
 
 
-Some term equilavents in the new operationalization feature:
+Some term equilavents in the R Server 9.x:
 
-|DeployR 8.x|Operationalization in R Server 9|
+|Version 8|Version 9|
 |------------|---------------|
 |Projects|Sessions|
 |RBroker pool|Now part of web services implementation with an internal pool of R shells|

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Troubleshooting and Diagnostics - Operationalization  | Microsoft R Server Docs"
-description: "Troubleshooting and Diagnostic for Operationalization of R Analytics with Microsoft R Server"
+title: "Troubleshooting and Diagnostics | Microsoft R Server Docs"
+description: "Troubleshooting and Diagnostic Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Diagnostics & Troubleshooting of R Server's Operationalization
+# Diagnostics & Troubleshooting
 
 **Applies to:  Microsoft R Server 9.x**
 
-You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
+You can assess the state and health of your web and compute node environment with the set of diagnostic tests found in this Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
 
 The set of diagnostic tests include:
@@ -178,7 +178,7 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 ### “Cannot establish connection with the web node” Error
 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Verify the following:
-+ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Operationalization Administration](admin-utility.md#launch)
++ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
 + Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](admin-utility.md#startstop)
 

@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configuring R Server for Operationalization (One-Box Configuration)
+# Configuring R Server to operationalize analytics (One-Box Configuration)
 
 **Applies to:  Microsoft R Server 9.x**
 

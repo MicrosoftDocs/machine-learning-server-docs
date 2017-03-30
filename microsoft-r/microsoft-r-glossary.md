@@ -76,7 +76,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. <a href="scaler-getting-started.md#data-chunking-and-scaler">Learn more…</a></div>
 
 **DeployR**
-<div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalization</i></a></div>
+<div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalizing Analytics</i></a></div>
 
 **Distributed computing**
 <div style="margin:15px; margin-bottom:25px;">The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. <a href="scaler-distributed-computing.md">Learn more…</a></div>
@@ -194,8 +194,8 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <hr>
 <big><b> O </b></big>
 
-<a name="o16n"></a>**Operationalization**
-<div style="margin:15px; margin-bottom:25px;">Configure the operationalization feature for Microsoft R Server to act as a deployment server and host analytic web services. <a href="operationalize/about.md">Learn more…</a></div>
+<a name="o16n"></a>**Operationalizing Analytics**
+<div style="margin:15px; margin-bottom:25px;">Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. <a href="operationalize/about.md">Learn more…</a></div>
 
 
 <a name="P"></a>
