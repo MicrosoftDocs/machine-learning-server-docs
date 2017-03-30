@@ -6,7 +6,7 @@ description: "Quick start tutorial install Microsoft R Server on a free Cloudera
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/29/2017"
+ms.date: "03/30/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""

@@ -25,12 +25,17 @@ ms.custom: ""
 
 # Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-Microsoft R Server installation on CDH is enhanced in 9.1.0. If you have previous experience installing R Server on CDH, please review installation instructions for the current release to use the new workflow.
+Microsoft R Server installation on CDH is enhanced in 9.1.0. If you have prior experience installing R Server on CDH, please review our updated installation instructions to learn about the new workflow.
 
-## Recommended operating systems
+## Feature installation restrictions
 
-The parcel generator script can optionally include the MicrosoftML package if the underlying operating system is CentOS/RHEL 7.x.  On Ubuntu or SLES, the parcel generator script excludes MicrosoftML.
+R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either cannot be included in the parcel, or included only if the underlying operating system is a specific platform and version.
 
++ `MicrosoftML` can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. 
+
++ `mrsdeploy` cannot be included in the parcel at all.
+
+The workaround is to perform a manual installation of individual packages. For instructions, see TBD.
 
 ## See Also
 
