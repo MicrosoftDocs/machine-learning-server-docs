@@ -25,9 +25,34 @@ ms.custom: ""
 
 # Quick start: Install a free R Server on Cloudera QuickStart VM
 
+You can install the free developer edition of Microsoft R Server on a free Cloudera sandbox to explore full-featured R Server at no cost in a Hadoop environment. By deploying R Server on a distributed computing platform, you enable big data scenarios for machine learning and analysis.
+
+## Prerequisites
+
++ VMWare
+
++ Disk space <###>
+
+Tested on a Windows 10 operating system.
+
+## Set up a Cloudera VM
+
+Go to https://www.cloudera.com/downloads/quickstart_vms/5-8.html 
+
+Choose VMWare option.
+
+## Install R Server 9.1.0 developer edition
+
+https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-windows#download-r-server-installer 
+
+## Verify installation
+
 TBD
 
+## Next steps
+
+TBD
 
 ## See Also
 
-
+TBD
