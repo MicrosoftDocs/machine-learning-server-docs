@@ -155,8 +155,8 @@ id <- txBatch$id()
 # Assign returned results to batch result object we called 'batchres'.
 batchRes <- NULL
 while(TRUE) {
-  batchRes <- txBatch$results()
-  
+  batchRes <- txBatch$results(showPartialResult = TRUE)  #Default is true
+
   if (batchRes$state == txBatch$STATE$failed) { stop("Batch execution failed") } 
   if (batchRes$state == txBatch$STATE$complete) { break }
   
