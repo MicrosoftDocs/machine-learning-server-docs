@@ -78,6 +78,7 @@
 ##### [Install R Server 9.0.1 on CDH](rserver-install-hadoop-create-r-package-cloudera-manager.md)
 ##### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
 #### [Post-install configuration](rserver-install-hadoop-configuration-r-workloads.md)
+##### [Manual package installation](rserver-install-hadoop-manual-package.md)
 ##### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 ##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
