@@ -40,5 +40,4 @@ You can add greater enterprise security around Microsoft R Server such as:
 
 Additionally, we recommend that you review the following [Security Considerations](security-rserve.md).
 
-
 ![Security](../media/o16n/security.png)
