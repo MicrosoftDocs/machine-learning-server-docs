@@ -89,9 +89,9 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 
 # Use `remoteLogin` to authenticate local admin account with R Server. 
 # Use session = false so that no remote R session started
-remoteLogin("",
-            username = "admin",
-            password = "{{PASSWORD}}",
+remoteLogin("http://localhost:12800", 
+            username = "admin", 
+            password = "{{YOUR_PASSWORD}}",
             session = FALSE)
 
 ##########################################################################

@@ -102,8 +102,8 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 # the local admin account. Use session = false so no 
 # remote R session started
 remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
+            username = "admin", 
+            password = "{{YOUR_PASSWORD}}",
             session = FALSE)
 
 ##########################################################
