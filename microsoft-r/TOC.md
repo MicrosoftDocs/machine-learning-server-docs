@@ -19,9 +19,9 @@
 #[Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
 ##[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-##[MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md)
+##[MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-##[How to deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md)
+##[How to install and deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md)
 ##[Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)

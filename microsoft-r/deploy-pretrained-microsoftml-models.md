@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to deploy pretrained models with MicrosoftML"
+title: "How to install and deploy pretrained models with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
@@ -23,6 +23,6 @@ ms.custom: ""
 
 ---
 
-# How to deploy pretrained models with MicrosoftML
+# How to install and deploy pretrained models with MicrosoftML
 
 TBD
