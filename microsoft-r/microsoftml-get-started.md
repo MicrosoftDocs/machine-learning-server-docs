@@ -31,7 +31,7 @@ ms.custom: ""
 - For an overview of the data transforms and machine learning algorithms provided by the MicrosoftML package, see [Overview of MicrosoftML functions](overview-microsoftml-functions.md).
 - For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
 - For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
-- For an introduction to the pretrained models, see [How to deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+- To get started with the pretrained models, see [How to install and deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 - For MicrosoftML samples and quickstarts, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
 
 
