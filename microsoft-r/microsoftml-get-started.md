@@ -46,7 +46,7 @@ The **MicrosoftML** package is currently available on the following platforms:
  
 If you want to have access to the pretrained models, you must check the **ML Model** box when configuring options for the install.
 
-For additional information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms).
+For additional information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
 
 ## What’s new?
 
