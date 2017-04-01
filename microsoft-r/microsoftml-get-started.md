@@ -35,7 +35,7 @@ ms.custom: ""
 - For MicrosoftML samples and quickstarts, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
 
 
-## Platform availability
+## [Platform availability](#platform-availability)
 The **MicrosoftML** package is currently available on the following platforms:
 
 - [Microsoft R Server for Windows](rserver-install-windows.md)
