@@ -26,6 +26,43 @@ ms.custom: ""
 
 # What's New in R Server 9.0.1
 
+
+## Microsoft R Server 9.1.0
+
+This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring scenarious, support for Python web services, and asynchronous batch consumption of services. Key features in this release include the following:
+
++ [Machine learning algorthms](microsoftml-introduction.md)
++ [Remote execution](operationalize/remote-execution.md)
++ [Web service deployment](operationalize/data-scientist-manage-services.md)
+ 
+## New and updated packages
+
++ The `curl` package has been updated to version 2.3
++ The `jsonlite` package has been updated to version 1.3 
++ The following RevoMods functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
+    + `?` (use the standard R `?`, previously masked)
+    + `q` (use the standard R `q` function, previously masked)
+    + `quit` (use the standard R `quit` function, previously masked)
+    + `revoPlot` (use the standard R `plot` function)
+    + `revoSource` (use the standard R `source` function)
+ 
+### Operationalizing analytics 
+ 
++ Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  [Learn more about roles](/operationalize/security-roles.md).
+ 
++ Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. [Learn more about `Realtime` web services](/operationalize/data-scientist-manage-services.md#realtime).
+ 
++ Python code and models can now be published as web services. Support for this feature is limited to Microsoft R Server for Windows installations where Python was enabled. [Learn more about publishing and consuming Python web services](/operationalize/data-scientist-python.md).
+ 
++ Web services can now be consumed asynchronously via batch execution. Previously, web services could only be consumed using [the Request-Response method](/operationalize/data-scientist-manage-services.md#consume-service). [Learn more about asynchronous batch consumption](/operationalize/data-scientist-batch-mode.md).
+
+
+### Executing remotely 
++ Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  [Learn more about asynchronous remote execution](/operationalize/remote-execution.md#async).
+
+
+## 9.0.1
+
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
 + [Machine learning algorthms](microsoftml-introduction.md)

@@ -39,7 +39,7 @@ The location of this file depends on the R Server version and operating system y
 
 ### Windows path to config file
 
-The logs can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
+The file can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
 
 |Node|Path on version 9.1|
 |----|------------|
@@ -56,7 +56,7 @@ The logs can be found as follows where `<MRS_home>` is the path to the Microsoft
 
 ### Linux path to config file
 
-The logs can be found here: 
+The file can be found here: 
 
 
 |Node|Path on version 9.1|

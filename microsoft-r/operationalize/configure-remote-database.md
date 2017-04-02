@@ -64,7 +64,11 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
        + For SQL Server, look for `"postgresql": {`.
 
-    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. For example:
+    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. 
+       >[!WARNING]
+       >You can only have one database enabled at a time. 
+       
+       For example:
        ```
         "ConnectionStrings": {
                 "sqlserver": {

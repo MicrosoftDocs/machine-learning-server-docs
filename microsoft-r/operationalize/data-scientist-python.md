@@ -36,7 +36,7 @@ This article is for data scientists who wants to learn how to publish Python cod
 Python web services are supported on Windows platforms on which Python was enabled during installation. Expanded platform support in future releases.
 
 
-## Swagger workflow
+##  Workflow Publish Python web service
 
 Download the core API swagger file. 
 Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
@@ -46,7 +46,7 @@ Generate the python client library. you can learn about all of the API calls you
 
 ### Example: publish Python web service
 
-This example assumes you have completed Part 1:
+This example assumes you have the following (all of which are covered in Part 1):
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
@@ -63,7 +63,7 @@ This example assumes you have completed Part 1:
 
 1. Download the Swagger file containing the core APIs for your version of R Server from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number. To simplify the integration, R Server provides several Swagger templates each defining the list of resources that are available in the REST API and the operations that can be called on those resources.  
    
-   For example, for R Server 9.1.0 you would download from:
+   For example, for R Server 9.1 you would download from:
    ```
    https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.1.0.json
    ```
@@ -87,7 +87,7 @@ This example assumes you have completed Part 1:
    
    ![autorest output path](../media/o16n/data-scientist-python-client-library.png)
 
-## 2. Add authentication and header logic to your script
+## Part 2. Add authentication and header logic to your script
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
@@ -106,9 +106,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 1. Add the authentication logic to the script to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
-   + For AD/LDAP or the `admin` account authentication:
-
-     For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
+   + **For AD/LDAP or the `admin` account authentication**, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
 
      >[!IMPORTANT]
      >Every call must be authenticated. Therefore, remember to include headers with tokens to every single request.
@@ -124,9 +122,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      token_response = client.login(login_request)
      ```
 
-   + For Azure Active Directory (AAD): 
-
-     For AAD, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
+   + **For Azure Active Directory (AAD)**, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
 
      >[!IMPORTANT]
      >Every call must be authenticated. Therefore, remember to include headers with tokens to every single request.
@@ -135,7 +131,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      ????@@
      ```     
 
-1. Add the `Bearer` access token so that it can be included in every subsequent request header. Then, check that R Server is currently running.  In this example, using a client library generated by Autorest.
+1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
 
      ```python
      #Add the returned access token to the headers variable
@@ -147,9 +143,12 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      print(status_response.status_code)
      ```
 
-## 3. Interact with APIs to publish a service
+## Part 3. Use APIs to publish a service
 
-After your client library has been generated and you've build the authentication logic into your application, you can begin to interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
+After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
+
+>[!IMPORTANT]
+>You must (1) be authenticated before you publish a service or make any other call and (2) remember to include `headers` in every request.
 
 1. Create a Python session on R Server by specifying a session name and indicating that you want a Python session (`runtime_type="Python"`). 
 
@@ -162,39 +161,49 @@ After your client library has been generated and you've build the authentication
    #Define session using name (`Session 1`) and type `runtime_type="Python"`.
    #Remember to specify the Python runtime type.
    create_session_request = deployrclient.models.CreateSessionRequest("Session 1", runtime_type="Python")
-   #Start the session. 
+
+   #Make the call to start the session. 
    #Remember to include headers in every method call to the server.
    #Returns a session ID.
    response = client.create_session(create_session_request, headers) 
    
-   #Store the session ID in a variable called `id`.
+   #Store the session ID in a variable called `id` 
+   #to be able to identify it later at execution time.
    id = response.session_id
    ```
 
-1. Create or call a Python model you'll use when you publish the web service.
+1. Create or call a Python model that you'll publish as a web service. 
+
+   In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  
 
    ```python
-   #Import SVM and Datasets from the SciKitLearn library
+   #Import SVM and datasets from the SciKit-Learn library
    execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
    execute_response = client.execute_code(id,execute_request, headers)
+   #Report if it was a success
    execute_response.success
    
-   #create an untrained Support Vector Classifier object and load the Iris Dataset
+   #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
    execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+   #Now, go create the object and preload Iris Dataset in R Server
    execute_response = client.execute_code(id,execute_request, headers)
+   #Report if it was a success
    execute_response.success
    
-   #Define two rows of sample data
-   workspace_object = deployrclient.models.WorkspaceObject("plant_1",[7,3.2,4.7,1.4])
-   workspace_object_2 = deployrclient.models.WorkspaceObject("plant_2",[3,2.6,3,2.5])
-   
-   #Train the model and test it against simple data
+   #Define two rows from the Iris Dataset as a sample for scoring
+   workspace_object = deployrclient.models.WorkspaceObject("variety_1",[7,3.2,4.7,1.4])
+   workspace_object_2 = deployrclient.models.WorkspaceObject("variety_2",[3,2.6,3,2.5])
+
+   #Define how to train the classifier model; what to predict; what to return
    execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
-                                                      "result=clf.predict(plant_1)\n"+
-                                                      "other_result=clf.predict(plant_2)"
+                                                      "result=clf.predict(variety_1)\n"+
+                                                      "other_result=clf.predict(variety_2)"
                                                       ,[workspace_object,workspace_object_2], #Input Parameters
                                                       ["result", "other_result"]) #Output parameter names
+   #Now, go train that model on the Iris Dataset in R Server
    execute_response = client.execute_code(id,execute_request, headers)
+
+   #If successful, print name and result of each output parameter. Else, print error.
    if(execute_response.success):
        for result in execute_response.output_parameters:
            print("{0}: {1}".format(result.name,result.value))
@@ -202,6 +211,7 @@ After your client library has been generated and you've build the authentication
        print (execute_response.error_message)
    ```
 
+1. Publish this SVM model as a Python web service in R Server.
 
 
 ## THE FOLLOWING DOC IS TO BE IGNORED> NOT FOR PYTHON
