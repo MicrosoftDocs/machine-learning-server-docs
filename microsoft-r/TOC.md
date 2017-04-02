@@ -30,6 +30,7 @@
 ### [Background jobs](scaler-distributed-computing-background-jobs.md)
 ### [Distributed analysis](scaler-distributed-computing-distributed-analysis.md)
 ### [Parallel jobs](scaler-distributed-computing-parallel-jobs.md)
+### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
 ## [Transform and Subset Data](scaler-user-guide-data-transform.md)
 ## [Data Summaries](scaler-user-guide-data-summaries.md)
 ## [Crosstabs](scaler-user-guide-crosstabs.md)
