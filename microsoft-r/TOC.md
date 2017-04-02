@@ -16,9 +16,15 @@
 ## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
 ## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
-# [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
+#[Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
+##[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+##[MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+##[Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+##[Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
+
+# [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Introduction to ScaleR](scaler-user-guide-introduction.md)
 ## [Introduction to PemaR](pemar-getting-started.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
