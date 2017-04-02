@@ -270,6 +270,7 @@
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
+### Functions and data sets
 #### [AirlineData87to08](scaler/packagehelp/AirlineData87to08.md) 
 #### [AirlineDemoSmall](scaler/packagehelp/AirlineDemoSmall.md) 
 #### [AirOnTime87to12](scaler/packagehelp/AirOnTime87to12.md) 
