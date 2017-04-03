@@ -50,8 +50,7 @@ ms.custom: ""
  
  ##Details
  
-`Revo.home` returns the path to the MicrosoftR package installation
-directory, or its licenses subdirectory. 
+`Revo.home` returns the path to the Microsoft R package installation directory, or its licenses subdirectory. 
  
  
  ##Value

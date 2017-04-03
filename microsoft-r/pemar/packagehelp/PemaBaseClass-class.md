@@ -42,7 +42,7 @@ The targeted generator [PemaBaseClass](PemaBaseClass.md)
  
  
  ##Author(s)
- Microsoft Corporation [<mrspack@microsoft.com](<mrspack@microsoft.com)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

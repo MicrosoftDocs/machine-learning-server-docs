@@ -94,7 +94,7 @@ returns a generator function suitable for creating objects from the class, invis
  
  
  ##Author(s)
- Microsoft Corporation [mrspack@microsoft.com](mrspack@microsoft.com)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  
