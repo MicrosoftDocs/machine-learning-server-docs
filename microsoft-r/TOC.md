@@ -211,6 +211,7 @@
 ### [selectFeatures](microsoftml/packagehelp/selectFeatures.md)
 
 ## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
+###[mrsdeploy package help summary page](mrsdeploy/packagehelp/mrsdeploy.md) 
 ###[createSnapshot](mrsdeploy/packagehelp/createSnapshot.md) 
 ###[deleteRemoteFile](mrsdeploy/packagehelp/deleteRemoteFile.md) 
 ###[deleteService](mrsdeploy/packagehelp/deleteService.md) 
@@ -228,7 +229,6 @@
 ###[listServices](mrsdeploy/packagehelp/listServices.md) 
 ###[listSnapshots](mrsdeploy/packagehelp/listSnapshots.md) 
 ###[loadSnapshot](mrsdeploy/packagehelp/loadSnapshot.md) 
-###[mrsdeploy](mrsdeploy/packagehelp/mrsdeploy.md) 
 ###[publishService](mrsdeploy/packagehelp/publishService.md) 
 ###[putLocalFile](mrsdeploy/packagehelp/putLocalFile.md) 
 ###[putLocalObject](mrsdeploy/packagehelp/putLocalObject.md) 
@@ -246,12 +246,11 @@
 ###[serviceOption](mrsdeploy/packagehelp/serviceOption.md) 
 ###[updateService](mrsdeploy/packagehelp/updateService.md)
 
-## [olapR Function Reference](olapr/olapr.md)
+## [olapR Function Reference](olapr/Olapr.md)
 ###[Execute2D](olapR/packagehelp/Execute2D.md) 
 ###[ExecuteMD](olapR/packagehelp/ExecuteMD.md) 
 ###[Explore](olapR/packagehelp/Explore.md) 
 ###[OlapConnection](olapR/packagehelp/OlapConnection.md) 
-###[OlapR](olapR/packagehelp/OlapR.md) 
 ###[Query](olapR/packagehelp/Query.md)
 
 ## [RevoPemaR Function Reference](pemar/pemar.md)
@@ -262,7 +261,6 @@
 ###[pemaCompute](pemar/packagehelp/pemaCompute.md) 
 ###[PemaMean-class](pemar/packagehelp/PemaMean-class.md) 
 ###[PemaMean](pemar/packagehelp/PemaMean.md) 
-###[RevoPemaR-package](pemar/packagehelp/RevoPemaR-package.md) 
 ###[setPemaClass](pemar/packagehelp/setPemaClass.md)
 
 ## [RevoScaleR Function Reference](scaler/scaler.md)
@@ -270,6 +268,9 @@
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
+### [revoAnalytics-package](scaler/packagehelp/revoAnalytics-package.md) 
+### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
+### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md) 
 ### Functions and data sets
 #### [AirlineData87to08](scaler/packagehelp/AirlineData87to08.md) 
 #### [AirlineDemoSmall](scaler/packagehelp/AirlineDemoSmall.md) 
@@ -289,9 +290,6 @@
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 #### [prune.rxDTree](scaler/packagehelp/prune.rxDTree.md) 
-#### [revoAnalytics-package](scaler/packagehelp/revoAnalytics-package.md) 
-#### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
-#### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md) 
 #### [rxAddInheritance](scaler/packagehelp/rxAddInheritance.md) 
 #### [rxBTrees](scaler/packagehelp/rxBTrees.md) 
 #### [rxCancelJob](scaler/packagehelp/rxCancelJob.md) 

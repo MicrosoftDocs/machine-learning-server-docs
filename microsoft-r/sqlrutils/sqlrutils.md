@@ -2,9 +2,9 @@
 
 # required metadata
 title: "sqlrutils Functions"
-description: "sqlrutils Functions"
+description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: "sqlrutils package reference"
-author: "HeidiSteen"
+author: "richcalaway"
 manager: "jhubbard"
 ms.date: "04/02/2017"
 ms.topic: "reference"
@@ -26,24 +26,27 @@ ms.custom: ""
 
 # sqlrutils functions
 
-The `sqlrutils` package provides functions for ... 
+The **sqlrutils** package provides functions for executing stored procedures on SQL Server from R script.
 
 
-## How to view function help in the package
+## Get help on sqlrutils functions from the R console
 
-R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages for `sqlrutils`, follow these steps.
+To see the **sqlrutils** functions that can be called from the R console:
 
-1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. If `sqlrutils` is not loaded, you can load it from the command line by typing `library(sqlrutils)`.
-3. Type `help(package="sqlrutils")`.
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `sqlrutils` from the command line by typing `library(sqlrutils)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="sqlrutils")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
+ 
+> [!NOTE]
+> To list all public functions, type library(help="sqlrutils") at the R prompt.
+>
 
-
-## Next steps
 
 
 ## See also
 
-[Package Reference](../package-reference.md)
+[Package Reference](~/package-reference.md)
 
 [Install R Server](~/rserver.md)
 

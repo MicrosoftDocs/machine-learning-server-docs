@@ -2,7 +2,7 @@
 
 # required metadata
 title: "RevoUtils Functions"
-description: "RevoUtils Functions"
+description: "A package providing utility functions useful for script running on the Microsoft R ScaleR engine."
 keywords: "RevoUtils package reference"
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -26,16 +26,20 @@ ms.custom: ""
 
 # RevoUtils functions
 
-The `v` package provides functions for ... 
+A package providing utility functions.
 
+## Get help on RevoUtils functions from the R console
 
-## How to view function help in the package
+To see the **RevoUtils** functions that can be called from the R console:
 
-R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages for `RevoUtils`, follow these steps.
-
-1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. If `RevoUtils` is not loaded, you can load it from the command line by typing `library(RevoUtils)`.
-3. Type `help(package="RevoUtils")`.
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `RevoUtils` from the command line by typing `library(RevoUtils)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoUtils")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
+ 
+> [!NOTE]
+> To list all public functions, type library(help="RevoUtils") at the R prompt.
+>
 
 
 ## Next steps

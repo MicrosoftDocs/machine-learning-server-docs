@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: " RevoPemaR: Parallel External Memory Algorithms in R " 
-description: " A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.  When used with the **RevoScaleR** package, analyses can be distributed automatically  on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters.    " 
+title: " RevoPemaR: Parallel External Memory Algorithms in R" 
+description: "A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes." 
 keywords: "RevoPemaR, RevoPemaR-package, package" 
 author: "richcalaway" 
 manager: "jhubbard" 
@@ -24,23 +24,16 @@ ms.custom: ""
  
 --- 
  
- 
- 
- 
  #`RevoPemaR-package`:  RevoPemaR: Parallel External Memory Algorithms in R 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
  ##Description
  
-A package that provides a framework for creating Parallel External Memory Algorithms in R
-using R Reference Classes.
+A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 
-When used with the **RevoScaleR** package, analyses can be distributed automatically 
-on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances,
-IBM Platform Computing LSF clusters, and Windows HPC Server clusters. 
- 
- 
+When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters. For additional documentation, see [Get started with PemaR functions in Microsoft R](../pemar-getting-started.md).
+
  
  ##Details
  
@@ -51,30 +44,24 @@ IBM Platform Computing LSF clusters, and Windows HPC Server clusters.
 |  Version:  |  0.1.0 |
 |  License:  |  Apache License 2.0 |
 |  LazyLoad:  |  yes |
+
+## Class library
+
+|Class | Description |
+|------|-------------|
+|`PemaBaseClass`|A base reference class generator for parallel external memory algorithms.|
+|`setPemaClass`|Returns a generator function for creating a parallel external memory algorithm reference class.|
+|`pemaCompute`|Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
+
+## Get help on RevoPemaR functions from the R console
+
+To see the **RevoPemaR** functions that can be called from the R console:
+
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `RevoPemaR` from the command line by typing `library(RevoPemaR)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoPemaR")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
  
-To get started, read the manual "RevoPemaR Getting Started Guide"
-(doc/RevoPemaR_Getting_Started.pdf). The key functions in the package
-are as follows (to list all public functions, type library(help="RevoPemaR")
-at the R prompt):
-
-
-###`PemaBaseClass`
-a base reference class generator for parallel external memory algorithms.
-
-
-###`setPemaClass`
-returns a generator function for creating a parallel external  memory algorithm reference class
-
-
-###`pemaCompute`
-estimates a parallel external memory algorithm as described by a PEMA reference class object
-
-
-
- 
- 
- ##Author(s)
- Microsoft Corporation [mrspack@microsoft.com](mrspack@microsoft.com)
- 
- 
- 
+> [!NOTE]
+> To list all public functions, type library(help="RevoPemaR") at the R prompt.
+>

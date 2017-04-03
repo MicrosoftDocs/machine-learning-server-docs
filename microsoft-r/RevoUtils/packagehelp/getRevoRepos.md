@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: " Get Path to Revolution Analytics Package Repositories " 
-description: " `getRevoRepos` returns the path to either the Revolution Analytics CRAN mirror or the versioned package source repository maintained by Revolution Analytics. " 
+title: " Get Path to Package Repositories " 
+description: " `getRevoRepos` returns the path to either the Revolution Analytics CRAN mirror or the versioned package source repository maintained by Microsoft. " 
 keywords: ", getRevoRepos,  ~kwd1 ,  ~kwd2 " 
 author: "richcalaway" 
 manager: "jhubbard" 
