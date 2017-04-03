@@ -101,8 +101,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`DisplayNameAttributeName`|The attribute name that stores the display name for each user.|
       |`EmailAttributeName`|The attribute name that stores the email address for each user.|
 
-      >[!IMPORTANT]
-      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or  the authentication fails.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
+      >[!WARNING]
+      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 
       <br>
       
