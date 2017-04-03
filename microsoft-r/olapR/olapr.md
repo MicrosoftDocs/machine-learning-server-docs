@@ -142,3 +142,10 @@ To see the **olapR** functions that can be called from the R console:
 > To list all public functions, type library(help="olapR") at the R prompt.
 >
 
+## See also
+
+[Package Reference](~/package-reference.md)
+
+[Install R Server](~/rserver.md)
+
+[Install R Client](~/r-client.md)

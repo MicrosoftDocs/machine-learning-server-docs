@@ -65,3 +65,11 @@ To see the **RevoPemaR** functions that can be called from the R console:
 > [!NOTE]
 > To list all public functions, type library(help="RevoPemaR") at the R prompt.
 >
+
+## See also
+
+[Package Reference](~/package-reference.md)
+
+[Install R Server](~/rserver.md)
+
+[Install R Client](~/r-client.md)

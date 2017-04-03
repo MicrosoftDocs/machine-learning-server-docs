@@ -62,24 +62,15 @@ List the different published web services on the R Server instance.
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
 
-The service `name` and service `v` version are optional. This
-call allows you to retrieve service information regarding:
+The service `name` and service `v` version are optional. This call allows you to retrieve service information regarding:
 
++  All services published
 
++ All versioned services for a specific named service
 
-1 
- All services published
++ A specific version for a named service
 
-1 
- All versioned services for a specific named service
-
-1 
- A specific version for a named service
-
-
-
-Users can use this information along with the `discover_service`
-operation to interact with and consume the web service.
+Users can use this information along with the `discover_service` operation to interact with and consume the web service.
  
  
  ##Value

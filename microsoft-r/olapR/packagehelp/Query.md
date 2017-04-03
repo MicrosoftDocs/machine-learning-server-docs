@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "olapR Query Construction" 
-description: "`Query` constructs a "Query" object. Set functions are used to build and modify the axes and cube name. " 
+description: "Constructs a "Query" object. Set functions are used to build and modify the axes and cube name. " 
 keywords: "olapR, Query" 
 author: "richcalaway" 
 manager: "jhubbard" 
@@ -23,7 +23,6 @@ ms.technology: "r-server"
 ms.custom: "" 
  
 --- 
- 
  
  #`Query`: olapR Query Construction
 

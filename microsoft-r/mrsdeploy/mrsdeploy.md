@@ -162,7 +162,7 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 ## See also
 
-[Package Reference](../package-reference.md)
+[Package Reference](~/package-reference.md)
 
 [Install R Server](~/rserver.md)
 
