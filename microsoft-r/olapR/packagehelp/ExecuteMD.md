@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "olapR executeMD Methods" 
-description: "   Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. " 
+description: "Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. " 
 keywords: "olapR, executeMD" 
 author: "richcalaway" 
 manager: "jhubbard" 

@@ -268,9 +268,9 @@
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
-### [revoAnalytics-package](scaler/packagehelp/revoAnalytics-package.md) 
-### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
-### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)
+### [revoAnalytics-package](scaler/revoAnalytics-package.md) 
+### [RevoScaleR-defunct](scaler/RevoScaleR-defunct.md) 
+### [RevoScaleR-deprecated](scaler/RevoScaleR-deprecated.md)
 ### Data sets
 #### [AirlineData87to08](scaler/packagehelp/AirlineData87to08.md) 
 #### [AirlineDemoSmall](scaler/packagehelp/AirlineDemoSmall.md) 

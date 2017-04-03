@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "olapR execute2D Methods" 
-description: "   Takes a Query object or an MDX string, and returns the result as a data frame. " 
+description: "Takes a Query object or an MDX string, and returns the result as a data frame. " 
 keywords: "olapR, execute2D" 
 author: "richcalaway" 
 manager: "jhubbard" 

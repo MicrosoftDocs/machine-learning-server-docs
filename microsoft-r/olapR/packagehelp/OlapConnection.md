@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "olapR OlapConnection Creation" 
-description: "   `OlapConnection` constructs a "OlapConnection" object. " 
+description: "OlapConnection constructs an OlapConnection object. " 
 keywords: "olapR, OlapConnection" 
 author: "richcalaway" 
 manager: "jhubbard" 
