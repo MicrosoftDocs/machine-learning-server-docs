@@ -263,16 +263,12 @@ After you understand the mechanics of remote execution, consider incorporating w
 
 To publish a web service after you've created a remote session (argument `session = TRUE` with `remoteLogin()` or `remoteLoginAAD()`), you have two approaches:
 
-+ Return to your local session to publish.  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
++ Publish from your local session:  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session. Then, publish your service. Use `resume()` from your local prompt to return to the commandline in the remote R session.
 
-+ Authenticate from the remote session again to allow connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with your username and password with `remoteLogin()` or `remoteLoginAAD()`. But this time, set the argument `session = FALSE` so that a second remte session is NOT created. You are now authenticated and able to publish directly from the `REMOTE>` prompt.
++ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with your username and password with `remoteLogin()` or `remoteLoginAAD()`. But this time, set the argument `session = FALSE` so that a second remote session is NOT created. You are now authenticated and able to publish directly from the `REMOTE>` prompt.
 
   >[!WARNING]
-  >If you try to publish a web service from the remote R session without authenticating from that session, you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
-
-1.  
-1. Now, you can call the `publishService()` function from the `REMOTE>` prompt. 
- 
+  >If you try to publish a web service from the remote R session without authenticating from that session, you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
 
 ## See also
 
