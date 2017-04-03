@@ -33,7 +33,7 @@ A package providing utility functions.
 |Class | Description |
 |------|-------------|
 |[`getRevoRepos`](packagehelp/getRevoRepos.md) | Path to the package repositories. |
-|[`readNews]`(packagehelp/readNews.md)  | Read R or package NEWS files.|
+|[`readNews`](packagehelp/readNews.md)  | Read R or package NEWS files.|
 |[`Revo.home`](packagehelp/Revo.home.md)  | Path the Home directory. |
 |[`RevoInfo`](packagehelp/RevoInfo.md)  | Functions giving information about Microsoft R.|
 |[`totalSystemMemory`](packagehelp/totalSystemMemory.md) |Uses operating system tools to return total system memory. |
