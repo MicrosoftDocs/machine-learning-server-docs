@@ -32,7 +32,7 @@ ms.custom: ""
  
 A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 
-When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters. For additional documentation, see [Get started with PemaR functions in Microsoft R](~/pemar-getting-started.md).
+When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters. For additional documentation, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
 
  
  ##Details
