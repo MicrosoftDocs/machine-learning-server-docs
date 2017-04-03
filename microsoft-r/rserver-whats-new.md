@@ -45,17 +45,17 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
  
 ### Operationalizing analytics 
  
-+ Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  [Learn more about roles](/operationalize/security-roles.md).
++ Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](/operationalize/security-roles.md).
  
-+ Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. [Learn more about `Realtime` web services](/operationalize/data-scientist-manage-services.md#realtime).
++ Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](/operationalize/data-scientist-manage-services.md#realtime).
  
-+ Python code and models can now be published as web services. Support for this feature is limited to Microsoft R Server for Windows installations where Python was enabled. [Learn more about publishing and consuming Python web services](/operationalize/data-scientist-python.md).
++ Python code and models can now be published as web services. Support for this feature is limited to Microsoft R Server for Windows installations where Python was enabled. Learn more about publishing and consuming [Python web services](/operationalize/data-scientist-python.md).
  
-+ Web services can now be consumed asynchronously via batch execution. Previously, web services could only be consumed using [the Request-Response method](/operationalize/data-scientist-manage-services.md#consume-service). [Learn more about asynchronous batch consumption](/operationalize/data-scientist-batch-mode.md).
++ Web services can now be consumed asynchronously via batch execution. Previously, web services could only be consumed using [the Request-Response method](/operationalize/data-scientist-manage-services.md#consume-service). Learn more about [asynchronous batch consumption](/operationalize/data-scientist-batch-mode.md).
 
 
 ### Executing remotely 
-+ Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  [Learn more about asynchronous remote execution](/operationalize/remote-execution.md#async).
++ Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  Learn more about [asynchronous remote execution](/operationalize/remote-execution.md#async).
 
 
 ## Announced in Microsoft R Server 9.0.1
