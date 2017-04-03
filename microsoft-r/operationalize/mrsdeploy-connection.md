@@ -169,11 +169,14 @@ Take special note of the arguments `session` and `commandline` as these influenc
 
 For more details on remote execution, see [this article](remote-execution.md).
 
+>[!WARNING]
+>In the case where you are working with a [remote R session](../operationalize/remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
+
 ### Access tokens
 
 After you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
 
-Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned.
+Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
 ## Remote connection states                                                                                                                                                        
 Depending on how you configure the `session` and `commandline` login parameters are subtle, your execution context can switch between local and remote contexts.

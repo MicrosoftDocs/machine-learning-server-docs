@@ -56,7 +56,7 @@ In this release, you can only manage (update/delete) the web services you've pub
 
 ## Publish and manage in R
 
-<a name="publishService"></a>
+<a name="publishservice"></a>
 
 ### Publish web services
 
@@ -90,8 +90,8 @@ The `mrsdeploy` function for publishing as web services is `publishService`.
 
 From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
 
->[!IMPORTANT]
->In the case where you are working with a [remote R session](../operationalize/remote-execution.md), keep in mind that you can only publish from the local session. If you attempt to publish remotely, it will fail with this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. If you are in your remote session, [switch back](../operationalize/remote-execution.md#switch) to the local commandline to publish your service. 
+>[!WARNING]
+>In the case where you are working with a [remote R session](../operationalize/remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
 
 The following arguments are accepted for `publishService`:
 
@@ -151,7 +151,7 @@ realtimeApi <- publishService(
 
 #### I/O data types
 
-The following table lists the supported data types for the [publishService](#publishService) and [updateService](#updateService) function input and output schemas:
+The following table lists the supported data types for the [publishService](#publishservice) and [updateService](#updateService) function input and output schemas:
 
 |I/O data types|Full support?|
 |--------|:----------:|

@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Client 3.3.x, Microsoft R Server 9.x**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server as well as test your work.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server as well as test your work.  It is especially useful while developing and testing your analytics.
 
 Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
@@ -255,13 +255,24 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 >remoteScript("C:/myScript2.R")
 ```
 
+<a name="publish-remote-session">
 
 ## Publishing web services
 
-After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information, begin with the [Data scientist get started](data-scientist-get-started.md)  guide.
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](data-scientist-manage-services.md#publishservice)  guide. 
 
-If you intend to publish a web service while you have a remote R session, you should never do so from the remote command line or you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the `pause()` function to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
+To publish a web service after you've created a remote session (argument `session = TRUE` with `remoteLogin()` or `remoteLoginAAD()`), you have two approaches:
 
++ Return to your local session to publish.  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session, publish your service, and then `resume()` if you want to continue running R code from the remote command line in the remote R session.
+
++ Authenticate from the remote session again to allow connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with your username and password with `remoteLogin()` or `remoteLoginAAD()`. But this time, set the argument `session = FALSE` so that a second remte session is NOT created. You are now authenticated and able to publish directly from the `REMOTE>` prompt.
+
+  >[!WARNING]
+  >If you try to publish a web service from the remote R session without authenticating from that session, you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. 
+
+1.  
+1. Now, you can call the `publishService()` function from the `REMOTE>` prompt. 
+ 
 
 ## See also
 
