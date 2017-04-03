@@ -172,7 +172,7 @@ After your client library has been generated and you've built the authentication
    id = response.session_id
    ```
 
-1. Create or call a Python model that you'll publish as a web service. 
+1. Create or call a model in Python that you'll publish as a web service. 
 
    In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  
 

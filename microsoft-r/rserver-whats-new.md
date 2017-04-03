@@ -24,10 +24,7 @@ ms.custom: ""
 
 ---
 
-# What's New in R Server 9.0.1
-
-
-## Microsoft R Server 9.1.0
+# What's New in R Server 9.1.0
 
 This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring scenarious, support for Python web services, and asynchronous batch consumption of services. Key features in this release include the following:
 
@@ -61,7 +58,7 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 + Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  [Learn more about asynchronous remote execution](/operationalize/remote-execution.md#async).
 
 
-## 9.0.1
+## Announced in Microsoft R Server 9.0.1
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
