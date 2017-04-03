@@ -89,13 +89,14 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |LDAP Properties|Definition|
       |---------------|-------------------------------|
       |`Host`|Address of the Active Directory server|
+      |`Port`|Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
       |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
       |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
       |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
       |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
       |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
-      |`SearchFilter`|The pattern to be used for the user search. {0} is the user's DN.|
+      |`SearchFilter`|The pattern to be used for the user search. `"SearchFilter": "cn={0}"` is for each user's DN. In legacy systems, some use `"SearchFilter": "sAMAccountName={0}"`|
       |`UniqueUserIdentifierAttributeName`|The attribute name that stores the unique user id for each user.|
       |`DisplayNameAttributeName`|The attribute name that stores the display name for each user.|
       |`EmailAttributeName`|The attribute name that stores the email address for each user.|
