@@ -61,24 +61,17 @@ Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to 
 
 OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spreadsheets. "Cubes" can extend to any number of dimensions, and can be operated using the MDX (MultiDimensional Expression) query language. 
 
-### Overhead and Query Construction
+## Function library
 
-* [OlapConnection](OlapConnection.md): Create the connection string to access the Analysis Services Database.
+|Function | Description |
+|---------|-------------|
+|[`OlapConnection`](packagehelp/OlapConnection.md) |Create the connection string to access the Analysis Services Database. |
+|[`Query`](packagehelp/Query.md) |Construct a Query object to use on the Analysis Services Database. Use cube, axis, columns, rows, pages, chapters, slicers to add details to the query.|
+|[`executeMD`](packagehelp/ExecuteMD.md) |Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. |
+|[`execute2D`](packagehelp/Execute2D.md)|Takes a Query object or an MDX string, and returns the result as a 2D data frame. |
+|[`explore`](packagehelp/Explore.md)|Allows for exploration of cube metadata. |
 
-* [Query](Query.md): Construct a Query object to use on the Analysis Services Database. Use cube, axis, columns, rows, pages, chapters, slicers to add details to the query.
-
-### Execution
-
-* [executeMD](ExecuteMD.md): Takes a Query object or an MDX string, and returns the result as a multi-dimensional array.
-
-* [execute2D](Execute2D.md): Takes a Query object or an MDX string, and returns the result as a 2D data frame.
-
-### Exploration
-
-* [explore](Explore.md): Allows for exploration of cube metadata.
-
-
-##MDX Example
+##MDX concepts
 
 MDX is the query language for multidimensional OLAP cubes. Cube data can be accessed using a variety of operations:
 
@@ -103,7 +96,7 @@ WHERE [Sales Territory].[Sales Territory Country].[Australia]
 
 Using the Analysis Services Tutorial Olap cube, this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
  
- ##olapR Examples
+ ##olapR examples
 
  ```
    

@@ -28,6 +28,20 @@ ms.custom: ""
 
 The **sqlrutils** package provides functions for executing stored procedures on SQL Server from R script.
 
+## Class library
+
+|Class | Description |
+|------|-------------|
+|[`executeStoredProcedure`](packagehelp/executeStoredProcedure.md)| Execute a SQL stored procedure.|
+|[`getInputParameters`](packagehelp/getInputParameters.md)| Get a list of input parameters to the stored procedure.| 
+|[`InputData`](packagehelp/InputData.md)| Input data for the stored procedure. | 
+|[`InputParameter`](packagehelp/InputParameter.md)| Input parameters for the stored procedure.| 
+|[`OutputData`](packagehelp/OutputData.md)| Output from the stored procedure.| 
+|[`OutputParameter`](packagehelp/OutputParameter.md) | Output parameters from the stored procedure.|
+|[`registerStoredProcedure`](packagehelp/registerStoredProcedure.md) | Register the stored procedure with a database.|
+|[`setInputDataQuery`](packagehelp/setInputDataQuery.md)| Assign a query to an input data parameter of the stored procedure.| 
+|[`setInputParameterValue`](packagehelp/setInputParameterValue.md)| Assign a value to the an input parameter of the stored procedure.| 
+|[`StoredProcedure`](packagehelp/StoredProcedure.md)| A stored procedure object.|
 
 ## Get help on sqlrutils functions from the R console
 

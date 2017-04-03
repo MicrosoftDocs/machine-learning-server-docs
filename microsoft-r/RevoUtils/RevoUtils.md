@@ -28,6 +28,16 @@ ms.custom: ""
 
 A package providing utility functions.
 
+## Class library
+
+|Class | Description |
+|------|-------------|
+|[`getRevoRepos`](packagehelp/getRevoRepos.md) | Path to the package repositories. |
+|[`readNews]`(packagehelp/readNews.md)  | Read R or package NEWS files.|
+|[`Revo.home`](packagehelp/Revo.home.md)  | Path the Home directory. |
+|[`RevoInfo`](packagehelp/RevoInfo.md)  | Functions giving information about Microsoft R.|
+|[`totalSystemMemory`](packagehelp/totalSystemMemory.md) |Uses operating system tools to return total system memory. |
+
 ## Get help on RevoUtils functions from the R console
 
 To see the **RevoUtils** functions that can be called from the R console:
@@ -41,13 +51,9 @@ To see the **RevoUtils** functions that can be called from the R console:
 > To list all public functions, type library(help="RevoUtils") at the R prompt.
 >
 
-
-## Next steps
-
-
 ## See also
 
-[Package Reference](../package-reference.md)
+[Package Reference]((~/package-reference.md)
 
 [Install R Server](~/rserver.md)
 

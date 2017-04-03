@@ -47,9 +47,7 @@ ms.custom: ""
  
  ##Details
  
-`RevoLicense` displays the Microsoft R license. `revo` 
-displays the Microsoft R Server
-home page. `readme` displays the Microsoft R release notes.
+`RevoLicense` displays the Microsoft R license. `revo` displays the Microsoft R Server home page. `readme` displays the Microsoft R release notes.
  
  
  ##Value

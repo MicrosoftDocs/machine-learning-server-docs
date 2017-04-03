@@ -1038,13 +1038,18 @@ These functions and many more can be used for high performance computing and dis
 <br />
 
 <a name="findmore"></a>
-##How to view function help in the package
+## Get help on RevoScaleR functions from the R console
 
-R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages, follow these steps.
+To see the **RevoScaleR** functions that can be called from the R console:
 
-1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. At the command line, type `help(package="<package-name>")`. For example, `help(package="RevoScaleR")` or `help(package="MicrosoftML")`. This opens a package description providing a list of functions.
-3. Alternatively, type `?<function_name>` to open the help file for that function, such as: `?rxGetOption`.
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `RevoScaleR` from the command line by typing `library(RevoScaleR)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoScaleR")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
+ 
+> [!NOTE]
+> To list all public functions, type library(help="RevoScaleR") at the R prompt.
+>
 
 **Search for an object**
 
