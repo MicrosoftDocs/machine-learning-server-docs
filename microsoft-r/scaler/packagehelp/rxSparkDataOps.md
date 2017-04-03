@@ -6,7 +6,7 @@ description: " Use these functions to remove or list all cached `RxParquetData` 
 keywords: "RevoScaleR, rxSparkRemoveData, rxSparkListData" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxSparkRemoveData`: Remove or list cached RxParquetData or RxHiveData
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

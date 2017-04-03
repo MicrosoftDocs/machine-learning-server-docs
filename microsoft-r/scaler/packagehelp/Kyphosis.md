@@ -6,7 +6,7 @@ description: " The kyphosis data in .xdf format. "
 keywords: "RevoScaleR, Kyphosis, Kyphosis.xdf, datasets" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`Kyphosis`: Data on a Post-Operative Spinal Defect
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

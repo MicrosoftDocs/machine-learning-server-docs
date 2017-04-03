@@ -6,7 +6,7 @@ description: " Execute a command to define, manipulate, or control SQL data (but
 keywords: "RevoScaleR, rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxExecuteSQLDDL`:  Execute SQL Command for Data Manipulation, Definition, or Control 
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

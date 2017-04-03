@@ -6,7 +6,7 @@ description: " Simulated data on mortgage defaults. "
 keywords: "RevoScaleR, mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -39,7 +39,7 @@ ms.custom: ""
  
  #`mortDefaultSmall`: Smaller Mortgage Default Demonstration Data
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

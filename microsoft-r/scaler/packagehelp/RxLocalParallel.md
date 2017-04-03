@@ -6,7 +6,7 @@ description: " Creates a local compute context object that uses the doParallel b
 keywords: "RevoScaleR, RxLocalParallel, IO" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`RxLocalParallel`: Generate Local Parallel Compute Context
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

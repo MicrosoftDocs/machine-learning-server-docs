@@ -6,7 +6,7 @@ description: " Obtain covariance and correlation matrices for the coefficient es
 keywords: "RevoScaleR, rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -40,7 +40,7 @@ ms.custom: ""
  
  #`rxCovCoef`: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

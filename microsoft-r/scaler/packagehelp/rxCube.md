@@ -6,7 +6,7 @@ description: " Use `rxCube` to create efficiently represented contingency tables
 keywords: "RevoScaleR, rxCube, print.rxCube, summary.rxCube, as.data.frame.rxCube, subset.rxCube, [.rxCube, category, models" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,7 +32,7 @@ ms.custom: ""
  
  #`rxCube`: Cross Tabulation
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

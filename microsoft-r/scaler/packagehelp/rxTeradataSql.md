@@ -6,7 +6,7 @@ description: " Execute an arbitrary SQL statement that does not return data in a
 keywords: "RevoScaleR, rxTeradataSql, rxTeradataTableExists, rxTeradataDropTable, file" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`rxTeradataSql`:  rxTeradataSql 
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

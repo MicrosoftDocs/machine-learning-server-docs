@@ -6,7 +6,7 @@ description: " The functions or variables listed here are no longer part of Revo
 keywords: "RevoScaleR, "RevoScaleR-defunct", rxGetVarInfoXdf, rxGetInfoXdf" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`"RevoScaleR-defunct"`: Defunct functions in RevoScaleR
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

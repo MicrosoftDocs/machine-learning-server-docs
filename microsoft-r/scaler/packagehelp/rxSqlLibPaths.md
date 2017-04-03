@@ -6,7 +6,7 @@ description: " **NOTE: This new API is in pre-release mode and subject to change
 keywords: "RevoScaleR, rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxSqlLibPaths`: Search Paths for Packages in SQL compute context
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

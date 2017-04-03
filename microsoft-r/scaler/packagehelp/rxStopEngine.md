@@ -6,7 +6,7 @@ description: " `rxStopEngine` stops the remote Spark application. "
 keywords: "RevoScaleR, rxStopEngine, rxStopEngine,RxSpark-method, rxStopEngine,RxDistributedHpa-method, rxStopEngine,RxHadoopMR-method, rxStopEngine,RxHpcServer-method, rxStopEngine,RxInSqlServer-method, rxStopEngine,RxInTeradata-method, rxStopEngine,RxLsfCluster-method, computecontext" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -34,7 +34,7 @@ ms.custom: ""
  
  #`rxStopEngine`: Stop Distributed Computing Engine
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

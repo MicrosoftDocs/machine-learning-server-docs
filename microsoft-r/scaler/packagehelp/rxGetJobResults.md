@@ -6,7 +6,7 @@ description: " Obtain distributed computing results and processing status. "
 keywords: "RevoScaleR, rxGetJobResults, rxGetJobStatus, IO" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxGetJobResults`:  Obtain Distributed Computing Job Status and Results 
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  
  ##Description

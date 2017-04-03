@@ -2,11 +2,11 @@
  
 # required metadata 
 title: " RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation " 
-description: "A package that provides high performance, scalable, portable, parallelized, full-featured predictive  and descriptive analytics in R. " 
+description: " A package that provides high performance, scalable, portable, parallelized, full-featured predictive  and descriptive analytics in R. Its high performance analytics (HPA) algorithms are threaded and   distributable and scale from small to huge data. It also provides high performance computing (HPC)   capabilities.   Its HPA algorithms include descriptive statistics, cross-tabulations, linear regression,  covariance and correlation matrices, logistic regression, generalized linear models,  k-means clustering, classification and regression trees, and decision forests. Its HPC  functionality allows distribution of the execution of essentially any R function across  cores and nodes, delivering the results back to the user.  Analyses can be distributed automatically on Hadoop clusters (using distributions from Cloudera, Hortonworks, or MapR), HDInsight clusters with Spark, in SQL Server 2016 databases, and in Teradata data warehouses. RevoScaleR also provides support for data import, data transformations, sorting, merging, and reading and writing to the **RevoScaleR** data file format (.xdf) on appropriate platforms.  " 
 keywords: "RevoScaleR, RevoScaleR-package, package" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`RevoScaleR-package`:  RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation 
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

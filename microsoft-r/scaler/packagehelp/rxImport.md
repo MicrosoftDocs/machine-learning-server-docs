@@ -6,7 +6,7 @@ description: " Import data into an .xdf file or `data.frame`. "
 keywords: "RevoScaleR, rxImport, file, connection" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxImport`: Import Data to .xdf or data frame
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

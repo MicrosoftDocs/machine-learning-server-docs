@@ -6,7 +6,7 @@ description: " Converts RevoScaleR rxNaiveBayes objects to a (limited) e1071 nai
 keywords: "RevoScaleR, as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`as.naiveBayes`: Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

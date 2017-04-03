@@ -6,7 +6,7 @@ description: "   Class for the RevoScaleR Local Compute Context.   "
 keywords: "RevoScaleR, RxLocalSeq-class, show,RxLocalSeq-method, classes" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`RxLocalSeq-class`: Class RxLocalSeq
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

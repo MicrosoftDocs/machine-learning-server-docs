@@ -6,7 +6,7 @@ description: " Converts objects containing generalized linear model results to a
 keywords: "RevoScaleR, as.glm, as.glm.rxLogit, as.glm.rxGlm" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`as.glm`: Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

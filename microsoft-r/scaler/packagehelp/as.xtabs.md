@@ -6,7 +6,7 @@ description: " Converts objects containing cross tabulation results to an xtabs 
 keywords: "RevoScaleR, as.xtabs, as.xtabs.rxCrossTabs, as.xtabs.rxCube, category, models" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`as.xtabs`: Conversion of a RevoScaleR Cross Tabulation Object to an xtabs Object
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

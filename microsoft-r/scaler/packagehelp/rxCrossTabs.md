@@ -6,7 +6,7 @@ description: " Use `rxCrossTabs` to create contingency tables from cross- classi
 keywords: "RevoScaleR, rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ ms.custom: ""
  
  #`rxCrossTabs`: Cross Tabulation
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

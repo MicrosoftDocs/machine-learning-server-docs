@@ -6,7 +6,7 @@ description: " Converts objects containing decision tree results to an randomFor
 keywords: "RevoScaleR, as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,7 +30,7 @@ ms.custom: ""
  
  #`as.randomForest`: Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

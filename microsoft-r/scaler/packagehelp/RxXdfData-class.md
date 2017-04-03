@@ -6,7 +6,7 @@ description: " Xdf data source connection class. "
 keywords: "RevoScaleR, RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -39,7 +39,7 @@ ms.custom: ""
  
  #`RxXdfData-class`: Class RxXdfData
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

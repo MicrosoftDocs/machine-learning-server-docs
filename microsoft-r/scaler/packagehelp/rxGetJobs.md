@@ -6,7 +6,7 @@ description: " Returns a list of job objects associated with the given compute c
 keywords: "RevoScaleR, rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInTeradata-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -34,7 +34,7 @@ ms.custom: ""
  
  #`rxGetJobs`:  Get Distributed Computing Jobs 
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

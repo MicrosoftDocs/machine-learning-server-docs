@@ -6,7 +6,7 @@ description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census dat
 keywords: "RevoScaleR, CensusWorkers, CensusWorkers.xdf, datasets" 
 author: "richcalaway" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`CensusWorkers`: Subset of IPUMS 2000 U.S. Census Data
 
- Applies to version {PRODUCT_VERSION} of package RevoScaleR.
+ Applies to version 9.0.1 of package RevoScaleR.
  
  ##Description
  

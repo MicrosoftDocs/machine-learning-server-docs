@@ -268,7 +268,6 @@
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
-### [revoAnalytics-package](scaler/revoAnalytics-package.md) 
 ### [RevoScaleR-defunct](scaler/RevoScaleR-defunct.md) 
 ### [RevoScaleR-deprecated](scaler/RevoScaleR-deprecated.md)
 ### Data sets
@@ -282,6 +281,7 @@
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 ### Functions
+#### [Functions by category](scaler/packagehelp/revoAnalytics-package.md) 
 #### [as.gbm](scaler/packagehelp/as.gbm.md) 
 #### [as.glm](scaler/packagehelp/as.glm.md) 
 #### [as.kmeans](scaler/packagehelp/as.kmeans.md) 
