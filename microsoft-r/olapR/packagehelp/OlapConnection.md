@@ -24,9 +24,6 @@ ms.custom: ""
  
 --- 
  
- 
- 
- 
  #`OlapConnection`: olapR OlapConnection Creation
 
  Applies to version 1.0.0 of package olapR.

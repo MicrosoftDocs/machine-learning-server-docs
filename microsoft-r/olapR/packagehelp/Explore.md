@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "olapR explore Method" 
-description: "   Allows for exploration of cube metadata " 
+description: "Allows for exploration of cube metadata " 
 keywords: "olapR, explore" 
 author: "richcalaway" 
 manager: "jhubbard" 
