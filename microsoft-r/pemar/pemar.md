@@ -1,57 +1,75 @@
----
+--- 
+ 
+# required metadata 
+title: " RevoPemaR: Parallel External Memory Algorithms in R" 
+description: "A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes." 
+keywords: "RevoPemaR, RevoPemaR-package, package" 
+author: "richcalaway" 
+manager: "jhubbard" 
+ms.date: "04/03/2017" 
+ms.topic: "reference" 
+ms.prod: "microsoft-r" 
+ms.service: "" 
+ms.assetid: "" 
+ 
+# optional metadata 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
+ms.technology: "r-server" 
+ms.custom: "" 
+ 
+--- 
+ 
+ #`RevoPemaR-package`:  RevoPemaR: Parallel External Memory Algorithms in R 
 
-# required metadata
-title: "PemaR Functions"
-description: "PemaR function reference for the RevoPemaR package in Microsoft R."
-keywords: "RevoPemaR, PemaR"
-author: "HeidiSteen"
-manager: "jhubbard"
-ms.date: "11/26/2016"
-ms.topic: "reference"
-ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
+ Applies to version 8.0.3 of package RevoPemaR.
+ 
+ ##Description
+ 
+A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 
-# optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.technology: "r-server"
-ms.custom: ""
+When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters. For additional documentation, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
 
----
-
-# PemaR Functions
-
-The `RevoPemaR` package provides a framework for writing custom Parallel External Memory Algorithms (PEMA) for execution on R Server. An external memory algorithm is used to process data in chunks, in parallel, typically on different nodes of a server cluster. The results are then combined and processed at the end (or at the end of each iteration). The `RevoPemaR` package makes use of the R reference classes introduced by John Chambers in R 2.12.
-
-This topic is a high-level description of package functionality. For step-by-step instructions on usage, see [Get started with PemaR](~/pemar-getting-started.md).
+ 
+ ##Details
+ 
+| Col  1 | Col  2 |
+| :---| :--- |
+|  Package:  |  RevoPemaR |
+|  Type:  |  Package |
+|  Version:  |  0.1.0 |
+|  License:  |  Apache License 2.0 |
+|  LazyLoad:  |  yes |
 
 ## Class library
 
 |Class | Description |
 |------|-------------|
-|PemaBaseClass|A base reference class generator for parallel external memory algorithms.|
-|setPemaClass|Returns a generator function for creating a parallel external memory algorithm reference class.|
-|pemaCompute|Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
+|[`PemaBaseClass`](packagehelp/PemaBaseClass-class.md) |A base reference class generator for parallel external memory algorithms.|
+|[`setPemaClass`](packagehelp/setPemaClass.md)|Returns a generator function for creating a parallel external memory algorithm reference class.|
+|[`pemaCompute`](packagehelp/pemaCompute.md) |Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
 
-<a name="findmore"></a>
-##How to view function help in the package
+## Get help on RevoPemaR functions from the R console
 
-R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages for `RevoPemaR`, follow these steps.
+To see the **RevoPemaR** functions that can be called from the R console:
 
-1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. At the command line, type `library(RevoPemaR)`.
-3. Type `help(package="RevoPemaR")`.
-
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `RevoPemaR` from the command line by typing `library(RevoPemaR)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoPemaR")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
+ 
+> [!NOTE]
+> To list all public functions, type library(help="RevoPemaR") at the R prompt.
+>
 
 ## See also
 
-[Get started with PemaR](../pemar-getting-started.md)
+[Package Reference](~/package-reference.md)
 
-[Package Help](../package-reference.md)
+[Install R Server](~/rserver.md)
 
-[Write custom chunking algorithms in ScaleR](../scaler-getting-started-4-write-chunking-algorithms.md)
+[Install R Client](~/r-client.md)

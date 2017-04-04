@@ -1,0 +1,76 @@
+--- 
+ 
+# required metadata 
+title: "Get a list of files in the working directory of the remote session." 
+description: " Get a list of all the files that are in the working directory of the remote session. " 
+keywords: "mrsdeploy, listRemoteFiles" 
+author: "richcalaway" 
+manager: "jhubbard" 
+ms.date: "03/23/2017" 
+ms.topic: "reference" 
+ms.prod: "microsoft-r" 
+ms.service: "" 
+ms.assetid: "" 
+ 
+# optional metadata 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
+ms.technology: "r-server" 
+ms.custom: "" 
+ 
+--- 
+ 
+ 
+ 
+ 
+ #`listRemoteFiles`: Get a list of files in the working directory of the remote session.
+
+ Applies to version 1.0 of package mrsdeploy.
+ 
+ ##Description
+ 
+Get a list of all the files that are in the working directory of the remote session.
+ 
+ 
+ ##Usage
+
+```   
+  listRemoteFiles()
+ 
+```
+ 
+ ##Details
+ 
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
+ 
+ 
+ ##Value
+ 
+A character vector containing the file names in the working directory of the remote session.
+ 
+ ##See Also
+ 
+[getRemoteFile](getRemoteFile.md)
+
+[deleteRemoteFile](deleteRemoteFile.md)
+
+[putLocalFile](putLocalFile.md)
+   
+ ##Examples
+
+ ```
+   
+  ## Not run:
+ 
+files<-listRemoteFiles()
+ ## End(Not run) 
+  
+ 
+```
+ 
+ 

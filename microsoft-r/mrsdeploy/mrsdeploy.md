@@ -138,14 +138,18 @@ The following functions are used to bundle R code or script as a web service. Th
 |`deleteService `|Deletes a web service on an R Server instance. |
 
 <a name="findmore"></a>
+## Get help on mrsdeploy functions from the R console
 
-## How to view function help in the package
+To see the **mrsdeploy** functions that can be called from the R console:
 
-R Packages often include embedded help pages, documenting the syntax and parameters of each function. To view the list of functions and associated help pages for `mrsdeploy`, follow these steps.
-
-1. Launch an R console with `Rgui.exe` or start another preferred R IDE such as R Tools for Visual Studio (RTVS) or RStudio.
-2. If `mrsdeploy` is not loaded, you can load it from the command line by typing `library(mrsdeploy)`.
-3. Type `help(package="mrsdeploy")`.
+1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
+2. Load `mrsdeploy` from the command line by typing `library(mrsdeploy)`.
+1. In the console, open the package help by typing the following at the R prompt: `help(package="mrsdeploy")`.
+1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
+ 
+> [!NOTE]
+> To list all public functions, type library(help="mrsdeploy") at the R prompt.
+>
 
 
 ## Next steps
@@ -158,7 +162,7 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 ## See also
 
-[Package Reference](../package-reference.md)
+[Package Reference](~/package-reference.md)
 
 [Install R Server](~/rserver.md)
 
