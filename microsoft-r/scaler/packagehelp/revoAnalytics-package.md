@@ -24,9 +24,6 @@ ms.custom: ""
  
 --- 
  
- 
- 
- 
  #`RevoScaleR-package`:  RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation 
 
  Applies to version 9.0.1 of package RevoScaleR.
