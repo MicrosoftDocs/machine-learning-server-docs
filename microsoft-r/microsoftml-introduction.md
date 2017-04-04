@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "03/20/2016"
+ms.date: "04/03/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -73,7 +73,9 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## Getting started with MicrosoftML
 
-MicrosoftML is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**. For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
+MicrosoftML is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**. For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
+
+MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
 
 
 ## What's next?
@@ -84,7 +86,7 @@ MicrosoftML is currently available in **Microsoft R Server for Windows** and in 
 
 [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 
-[MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md) for references documentation for the key algorithms and transforms in the MicrosoftML package.
+[MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for references documentation for the key algorithms and transforms in the MicrosoftML package.
 
 [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 

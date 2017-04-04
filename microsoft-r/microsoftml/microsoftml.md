@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: " MicrosoftML: State-of-the-Art Machine Learning R Algorithms from Microsoft Corporation " 
-description: " A package that provides state-of-the-art machine learning algorithms for R, developed  by Microsoft. It is used with the **RevoScaleR** package.   " 
-keywords: ", MicrosoftML-package, package" 
+title: "MicrosoftML: State-of-the-art machine learning R algorithms" 
+description: "A package that provides state-of-the-art machine learning algorithms for R, developed  by Microsoft. It is used with the **RevoScaleR** package." 
+keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/20/2017" 
+ms.date: "04/03/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,7 @@ ms.custom: ""
  
  
  
-# MicrosoftML: State-of-the-Art Machine Learning R Algorithms from Microsoft Corporation  
+# MicrosoftML: State-of-the-art machine learning R algorithms  
 
 ##Description
  

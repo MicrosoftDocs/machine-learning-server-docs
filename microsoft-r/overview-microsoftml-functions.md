@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "03/20/2017"
+ms.date: "04/03/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -85,7 +85,7 @@ The **`rxLogisticRegression()`** algorithm is used to predict the value of a cat
 
 ## Get help on MicrosoftML functions
 
-Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
+Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md).
 
 To see the **MicrosoftML** functions that can be called from the R console:
 
