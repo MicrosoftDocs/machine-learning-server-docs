@@ -73,11 +73,15 @@ The standard web services published with R Server offers fast execution and scor
 
 To publish a `Realtime` web service, you must:
   + Published to R Server for Windows or SQL Server R Services (additional platforms in future releases); the resulting web service can be consumed on any platforms
-  + Specify the argument `serviceType = Realtime`
-  + Have a supported model object that was created using one of the following functions:
-    + `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, `rxDForest` from the `RevoScaleR` package
-  + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
 
+  + Specify the argument `serviceType = Realtime`
+
+  + Have a supported model object that was created using one of the following functions:
+    + From the `RevoScaleR` package, `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, `rxDForest`
+    + From the `MicrosoftML` package, the transforms and learning functions including: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`
+
+  + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
+ 
 See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
 
 #### Function arguments and response

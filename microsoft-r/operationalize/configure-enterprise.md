@@ -62,6 +62,42 @@ Another configuration, referred to as "one-box", consists of a single web node a
 
 @@ By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
 
+For an offline installation, you must follow first follow the offline
+
+**Uninstall**
+
+`-uninstall`
+
+
+
+One box offline installation:
+`-silentoneboxinstall`
+Prompted for admin password (what if AAD)
+
+Enterprise offline installation:
+
+`-silentinstall`
+Prompted for admin password (what if AAD)
+
+`-silentwebnodeinstall`
+Prompted for admin password (what if AAD)
+
+`-silentcomputenodeinstall`
+@@No prompt for password????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Supported platforms**
 
 The web nodes and compute nodes are supported on:
