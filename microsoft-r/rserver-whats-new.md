@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "What's New in Microsoft R Server"
-description: "Updates, improvements, and changes in this release of Microsoft R Server"
+title: "What's New in Microsoft R Server 9.1.0"
+description: "Updates, improvements, and changes in this release of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/03/2017"
+ms.date: "04/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,7 +26,7 @@ ms.custom: ""
 
 # What's New in R Server 9.1.0
 
-This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring scenarious, support for Python web services, and asynchronous batch consumption of services. Key features in this release include the following:
+This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring, support for Python web services, and asynchronous batch consumption of services. Key features in this release include the following:
 
 + [Machine learning algorthms](microsoftml-introduction.md)
 + [Remote execution](operationalize/remote-execution.md)
@@ -34,15 +34,30 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
  
 ## New and updated packages
 
-+ The `curl` package has been updated to version 2.3
-+ The `jsonlite` package has been updated to version 1.3 
-+ The following RevoMods functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
++ The **RevoScaleR** package has been updated to version #.# and includes new `rxExecBy` for parallel processing of partitioned data. Multithreaded support is available in enhanced versions of `rxImport` and `rxDataStep`. Merging data frames in Spark compute context is ehanced in `rxMerge`.
++ The **curl** package has been updated to version 2.3
++ The **jsonlite** package has been updated to version 1.3 
+
+**Discontinued and deprecated functions**
+
+In **RevoScaleR**, discontinued functions include
+For more information, see [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md).
+
++ The following **RevoMods** functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
     + `?` (use the standard R `?`, previously masked)
     + `q` (use the standard R `q` function, previously masked)
     + `quit` (use the standard R `quit` function, previously masked)
     + `revoPlot` (use the standard R `plot` function)
     + `revoSource` (use the standard R `source` function)
- 
+
+### "Pleasingly Parallel" processing with rxExecBy
+
+A growing demand exists for the ability to efficiently handle a large numbers of small models, where modeling or processing is over data collected for singular entities -- devices, people, days -- and the data sets are relatively small in comparison with big data use cases that is often typical of R workloads. 
+
+In this release, you can leverage the new `rxExecBy` function against unordered datasets, which are then sorted and grouped into partitioned data (one partition per entity), and then processed using whatever function or operation you want to apply. For example, to preject the health outcomes of individuals in a weightloss study, you could run predictive analysis over data collected for each person. Processing executes in parallel on platforms that support it. 
+
+To learn more, see [Quick start: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
+
 ### Operationalizing analytics 
  
 + Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](/operationalize/security-roles.md).
@@ -57,8 +72,15 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 ### Executing remotely 
 + Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  Learn more about [asynchronous remote execution](/operationalize/remote-execution.md#async).
 
+### Installation and configuration enhancements
 
-## Announced in Microsoft R Server 9.0.1
+R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager, our new parcel generator script, and custom service descriptors. For details, see [Install R Server on CDH](rserver-install-hadoop-910-cdh.md).
+
+## Previous releases
+
+If you haven't upgraded recently, you can review the feature announcments from the last several releases to learn about cumulative updates.
+
+### Microsoft R Server 9.0.1 Announcements
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
@@ -72,7 +94,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 + [What's new in R Client](notes/r-client-notes.md) contains information about new features for R Client.
 + [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) contains information about new features for SQL Server R Services (version 9.0).
 
-## New and updated packages
+#### New and updated packages in 9.0.1
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux, Hadoop, and [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/) is projected for the first quarter of 2017.
 
@@ -100,7 +122,7 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 > [!NOTE]
 > Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](rserver-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
 
-## General updates
+#### General updates in 9.0.1
 
 <a name="operationalize"></a>
 ### Operationalization features
@@ -120,7 +142,7 @@ For feature information and next steps, see [Operationalization with R Server](o
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
 
-### R Server for Linux
+#### R Server 9.0.1 for Linux
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
 
@@ -142,7 +164,7 @@ Additional new ScaleR functions for Spark 2.0:
 
 For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
 
-### R Server for Windows
+#### R Server 9.0.1 for Windows
 
 As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
 
@@ -155,7 +177,7 @@ For installation and upgrade instructions, see [Install R Server for Windows](rs
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
 
-#### New service and support options for R Server for Windows
+**New service and support options for R Server for Windows**
 
 R Server for Windows can be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) or under [SQL Server's support policy (search for "SQL Server 2016" on this page)](https://support.microsoft.com/en-us/lifecycle). For support information for R Server in general, see [Support for Microsoft R Server Versions](rserver-servicing-support.md).
 
@@ -165,11 +187,8 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
 + In the upcoming SQL Server vNext CTP 1.1 release, you will be able to unbind your SQL Server R Services instance and replace it with a 9.0.1 version that offers operationalization features and the Modern Lifecycle Support policy. Check [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) for the latest information on CTP 1.1 when it becomes available.
 
-##Previously released features
 
-This section lists the feature announcements of recent previous releases.
-
-### Announced in Microsoft R Server 8.0.5
+### Microsoft R Server 8.0.5 Announcements
 
 + On **Linux**:
   + Support for RedHat RHEL 7.x has been added.
@@ -210,12 +229,12 @@ This section lists the feature announcements of recent previous releases.
 
     + This release is of DeployR Enterprise only.
 
-### Announced in Microsoft R Server 8.0.3
+### Microsoft R Server 8.0.3 Announcments
 
 + R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. Version 8.0.3 is succeeded by version 9.0.1 in SQL Server. Features are cumulative so what shipped in 8.0.3 is still available in 9.0.1. For a description of features, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 
-### Announced in Microsoft R Server 8.0.0
+### Microsoft R Server 8.0.0 Announcements
 
 + Revolution R Open is now Microsoft R Open, and Revolution R Enterprise is now generically known as Microsoft R Services, and specifically Microsoft R Server for Linux platforms.
 
