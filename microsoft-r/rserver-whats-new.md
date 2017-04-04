@@ -42,7 +42,7 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 
 In **RevoScaleR**, deprecated and discontinued functions are covered in [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md). You can also review the [release notes](notes/r-server-notes.md).
 
-In **RevoMods**, the following functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3). For details, see [release notes](notes/r-server-notes.md).
+In **RevoMods**, we deprecated several functions that were intended solely for use by the R Productivity Environment, which itself was discontinued in Microsoft R Server 8.0.3. For details about obsolete functions, see [release notes](notes/r-server-notes.md).
 
 ## "Pleasingly Parallel" processing with rxExecBy
 

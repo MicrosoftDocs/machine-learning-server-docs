@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "GQuickstarts for MicrosoftML"
+title: "Quickstarts for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
