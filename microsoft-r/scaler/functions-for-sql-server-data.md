@@ -42,16 +42,16 @@ In addition to defining a data source, you can execute DDL statements from R, if
 The following functions let you define a new compute context, switch compute contexts, or identify the current compute context.
 + [RxComputeContext](packagehelp/rxComputeContext.md) - Create a compute context.
 + [rxInSqlServer](packagehelp/rxInSqlServer.md) - Generate a SQL Server compute context that lets **ScaleR** functions run in SQL Server R Services.
-+ [rxGetComputeContext](packagehelp/rxGetComputeContext.md) - Get the current compute context.
++ [rxGetComputeContext](packagehelp/rxSetComputeContext.md) - Get the current compute context.
 + [rxSetComputeContext](packagehelp/rxSetComputeContext.md) - Specify which compute context to use. The local compute context is available by default, or you can specify the keyword **local**.
 
 ## Functions for Using a Data Source
 After you have created a data source object, you can open it to get data, or write new data to it. Depending on the size of the data in the source, you can also define the batch size as part of the data source and move data in chunks.
-+ [rxIsOpen](packagehelp/rxIsOpen.md) - Check whether a data source is available
-+ [rxOpen](packagehelp/rxOpen.md) - Open a data source for reading
-+ [rxReadNext](packagehelp/rxReadNext.md) - Read data from a source
-+ [rxWriteNext](packagehelp/rxWriteNext.md) - Write data to the target
-+ [rxClose](packagehelp/rxClose.md) - Close a data source
++ [rxIsOpen](packagehelp/rxOpen-methods.md) - Check whether a data source is available
++ [rxOpen](packagehelp/rxOpen-methods.md) - Open a data source for reading
++ [rxReadNext](packagehelp/rxOpen-methods.md) - Read data from a source
++ [rxWriteNext](packagehelp/rxOpen-methods.md) - Write data to the target
++ [rxClose](packagehelp/rxOpen-methods.md) - Close a data source
 
 
 ## Functions that work with XDF Files

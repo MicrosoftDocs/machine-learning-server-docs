@@ -217,7 +217,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Read data from a source</td>
         <td>
-            <center><small>[**View**](packagehelp/rxReadNext.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxOpen-methods.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetFileSystem`</td>
@@ -1027,7 +1027,7 @@ These functions and many more can be used for high performance computing and dis
         <td>`rxWriteNext`</td>
         <td> </td>
         <td>Writes the next chunk when moving data between ScaleR data sources.</td>
-        <td><center><small>[**View**](packagehelp/rxWriteNext.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxOpen-methods.md)</small></center>
         </td>
     </tr>
 </table>
