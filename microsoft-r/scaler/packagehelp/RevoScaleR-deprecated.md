@@ -329,7 +329,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxOptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](/rxOptions.md)  
    
   
     
