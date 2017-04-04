@@ -59,7 +59,7 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade from 9.0  to 9.1 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below. ** 
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
 
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
@@ -68,66 +68,19 @@ To replace an older version, you can uninstall the older distribution before ins
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
    
-1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
-   
-   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).  The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
    + Linux: `/etc/deployr/current`
 
-1. If you had SQLite before and backed it up in Step 1, now you must manually move `deployrdb_9.0.0.db` under:
+1. If you backed up a SQLite database in Step 1, now you must manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
    + Linux: `/etc/deployr/current/frontend`
 
    If you are using a SQL Server or PostgreSQL database, you can skip this step.
 
-1. Follow the instructions below to install Microsoft R Server 9.1 and set up your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+1. Follow the instructions below to install Microsoft R Server 9.1 and configure your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
 
    If found, you will be asked if you want to upgrade. If you answer `y`, the node will be installed and the prior edits you made to the configuration in 9.0 are automatically available in 9.1. You can safely ignore the Python warning during upgrade. 
-
-
-## Unattended installs
-
-
-IGNORE THIS SECTION: STILL NEEDS TO BE WRITTEN
-
-You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag ("yes" or "accept default" to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
-
-flag | Option | Description
------|--------|------------
- -a | --accept-eula | Accept all end user license agreements.
- -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -p | --hadoop-components | Install Hadoop components.
- -s | --silent | Perform a silent, unattended install.
- -u | --unattended | Perform an unattended install.
- -h | --help | Print this help text.
-
-For a standard unattended install, run the following script:
-
-	./install.sh –a –s
-
-
-
-
-**Silent configurations**
-One box offline installation:
-`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentinstall <password>`
-`-silentoneboxinstall` argument to launching adminutil
-Set the local admin password (you can define another authentication method later such as AAD)
-
-Enterprise offline installation:
-
-`-silentwebnodeinstall`  argument to launching adminutil
-Prompted for admin password (what if AAD)
-
-`-silentcomputenodeinstall`  argument to launching adminutil
-@@No prompt for password????
-
-
-
-
-
-
-
 
 
 ## How to perform an enterprise configuration
@@ -194,7 +147,11 @@ In an enterprise configuration, you can set up one or more compute nodes.
       ln -s libicudata.so.55 libicudata.so.36
      ```
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. 
+
+    >[!NOTE]
+    >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next 2 steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -269,12 +226,17 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
    1. Repeat these steps on each web node to declare each and every compute node.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
+
+    >[!NOTE]
+    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next 3 steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.
+
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
    1. From the sub-menu, choose the option to **Configure a web node**.     
 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
-        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
+        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md#local).
 
    1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
 
