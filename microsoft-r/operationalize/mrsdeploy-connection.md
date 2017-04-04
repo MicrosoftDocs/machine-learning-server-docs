@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "mrsdeploy Functions"
-description: "mrsdeploy Functions"
-keywords: "mrsdeploy package reference"
+title: "Logging into R Server and connecting with mrsdeploy"
+description: "Logging into R Server and connecting with mrsdeploy"
+keywords: "remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "2/14/2017"

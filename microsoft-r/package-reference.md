@@ -6,7 +6,7 @@ description: "Function reference for R packages in Microsoft R, including Micros
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/26/2016"
+ms.date: "04/03/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,16 +32,17 @@ This section contains the function reference documentation for proprietary *revo
 
 |Package | Description |
 |----|----|
-|[foreach](foreach.md)|A set of tools that allow you to run any R code or script that can be expressed as a for-loop as a set of parallel tasks.|
 |[MicrosoftML](microsoftml/microsoftml.md)|A collection of functions in Microsoft R used for machine learning at scale.|
 |[mrsdeploy](mrsdeploy/mrsdeploy.md)|Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance.|
+|[olapR](olapR/OlapR.md)|A collection of functions for constructing MDX queries against an OLAP cube.|
 |[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. |
 |[RevoPemaR](pemar/pemar.md) | Developer functions for coding custom parallel external memory algorithms. |
 |RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (`*`). |
 |RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only (`*`).  |
 |RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only (`*`). |
-|RevoUtils|Utility functions useful when programming and developing R packages. Reference documentation is online only (`*`). |
+|[RevoUtils](revoutils/revoutils.md)|Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (`*`). |
+|[sqlrutils](sqlrutils/sqlrutils.md)|A collection of functions for executing stored procedures against SQL Server.|
 
 `*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
 
