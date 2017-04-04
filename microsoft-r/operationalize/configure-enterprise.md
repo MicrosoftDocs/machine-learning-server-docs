@@ -61,26 +61,57 @@ The web nodes and compute nodes are supported on:
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
 
-1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
-   If you are using SQL Server or PostgreSQL, you do not need to do this step.
+### Upgrade a compute node
 
-   >[!Warning]
-   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
-   
-1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).  The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+
+   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
    + Linux: `/etc/deployr/current`
 
-1. If you backed up a SQLite database in Step 1, now you must manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
-   + Linux: `/etc/deployr/current/frontend`
+1. Install Microsoft R Server:
+      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-   If you are using a SQL Server or PostgreSQL database, you can skip this step.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
-1. Follow the instructions below to install Microsoft R Server 9.1 and configure your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-   If found, you will be asked if you want to upgrade. If you answer `y`, the node will be installed and the prior edits you made to the configuration in 9.0 are automatically available in 9.1. You can safely ignore the Python warning during upgrade. 
+1. From the sub-menu, choose the option to **Configure a compute node**.
+
+1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically setup using the configuration you had for R Server 9.0. 
+   Your compute node is now configured. 
+
+1. Repeat these steps for each compute node.
+
+### Upgrade a web node
+
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+
+   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Linux: `/etc/deployr/current`
+
+1. Install Microsoft R Server:
+      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
+
+1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+
+1. From the sub-menu, choose the option to **Configure a web node**.     
+
+1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically setup using the configuration you had for R Server 9.0. 
+   Note: You can safely ignore the Python warning during upgrade.
+
+1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](admin-diagnostics.md).
+
+1. Exit the utility. Your web node is now configured. 
+
+1. Repeat these steps for each web node.
+
 
 
 ## How to perform an enterprise configuration

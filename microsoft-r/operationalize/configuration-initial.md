@@ -48,9 +48,35 @@ The web nodes and compute nodes are supported on:
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x
 
+
+## How to upgrade from 9.0  to 9.1 
+
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
+
+1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
+
+   If you are using SQL Server or PostgreSQL, you do not need to do this step.
+
+   >[!Warning]
+   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
+   
+1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).  The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Linux: `/etc/deployr/current`
+
+1. If you backed up a SQLite database in Step 1, now you must manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
+   + Linux: `/etc/deployr/current/frontend`
+
+   If you are using a SQL Server or PostgreSQL database, you can skip this step.
+
+1. Follow the instructions below to install Microsoft R Server 9.1 and configure your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+
+   If found, you will be asked if you want to upgrade. If you answer `y`, the node will be installed and the prior edits you made to the configuration in 9.0 are automatically available in 9.1. You can safely ignore the Python warning during upgrade. 
+
 <a name="onebox"></a>
 
-## How to configure on one box
+## How to perform a one-box enterprise
 
 With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
 
