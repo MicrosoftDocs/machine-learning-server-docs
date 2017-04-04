@@ -33,7 +33,7 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 
-## Architecture
+## Enterprise architecture
 
 This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  
 
@@ -64,7 +64,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a compute node
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
 
    The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -87,7 +87,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a web node
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
 
    The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -118,12 +118,14 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### 1. Configure a database
 
-By default, the web node configuration sets up a local SQLite database. By default, the web node configuration sets up a local SQLite database.  If you want to use a different or remote database, follow these instructions to [configure that database](configure-remote-database.md) (SQL Server or PostgreSQL).
+By default, the web node configuration sets up a local SQLite database. We strongly recommend that you use a SQL Server or PostgreSQL database for this configuration to achieve higher availability. In fact, you cannot use SQLite database at all if you have multiple web nodes or need a remote database. 
 
-If you plan to configure multiple web nodes, then you **must** set up a [remote SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+Follow these instructions to [configure that database](configure-remote-database.md).
 
->[!NOTE] 
-> Create this database and register it in the configuration file below BEFORE the service for the control node is started.
+If you intend to configure multiple web nodes, then you **must** set up a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
+
+>[!WARNING] 
+>Choose and configure your database now. If you attempt to configure a different database later, you'll lose the data in your current database.
 
 <a name="add-compute-nodes"></a>
 

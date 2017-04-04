@@ -32,14 +32,52 @@ ms.custom: ""
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
 
-## One-box vs enterprise configurations
+## One-box vs enterprise architectures
 
-All configurations have at least a single web node and single compute node. **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing. **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells. By default, a SQLite 3.7+ database is installed, but you can, and in some cases must, install and [use a SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
+All configurations have at least a single web node and single compute node. 
+
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
+
++ **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
+
+
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
+
++ **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells. 
+
+While you can scale up the number of nodes if you choose an [Enterprise configuration](configure-enterprise.md).
+
+
+By default, a SQLite 3.7+ database is installed, but you can, and in some cases must, install and [use a SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
 
 R Server offers two types of configuration for operationalization/deployment:
 1. **One-box configuration**: the simplest configuration is a single web node and compute node on a single machine, which is described in this article.
 
 1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration is described in detail in the **[Enterprise configuration](configure-enterprise.md)** article.
+
+
+## One-box architecture
+
+This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  
+
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
+
++ **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
+
+Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
+
+For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
+
+Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](configuration-initial.md). 
+
+
+
+
+With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
+
+This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage.
+
+![One-box configuration](../media/o16n/setup-onebox.jpeg)
 
 ## Supported platforms 
 
@@ -51,38 +89,48 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade from 9.0  to 9.1 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
+To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
 
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
-   If you are using SQL Server or PostgreSQL, you do not need to do this step.
+   (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
    
-1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).  The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
+
+   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
    + Linux: `/etc/deployr/current`
 
-1. If you backed up a SQLite database in Step 1, now you must manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
+1. If you backed up a SQLite database in Step 1, manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
    + Linux: `/etc/deployr/current/frontend`
 
-   If you are using a SQL Server or PostgreSQL database, you can skip this step.
+   (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
+   
+1. Install Microsoft R Server:
+      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-1. Follow the instructions below to install Microsoft R Server 9.1 and configure your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
-   If found, you will be asked if you want to upgrade. If you answer `y`, the node will be installed and the prior edits you made to the configuration in 9.0 are automatically available in 9.1. You can safely ignore the Python warning during upgrade. 
+1. From the menus, choose **Configure R Server for Operationalization** and then choose **Configure for one box**. The configuration script begins.
+
+1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
+
+1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](admin-diagnostics.md).
+
+1. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
+
+1. Repeat these steps for each web node.
 
 <a name="onebox"></a>
 
 ## How to perform a one-box enterprise
 
-With one-box configurations, as the name suggests, everything runs on a single machine and set-up is a breeze. This configuration includes an operationalization web node and compute node on the same machine. It also relies on the default local SQLite database.
 
-This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage.
-
-![One-box configuration](../media/o16n/setup-onebox.jpeg)
 
 **To configure on a single machine:**
 
