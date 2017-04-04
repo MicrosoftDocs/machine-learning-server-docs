@@ -33,7 +33,7 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 
-**Architecture**
+## Architecture
 
 This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  
 
@@ -50,39 +50,79 @@ Another configuration, referred to as "one-box", consists of a single web node a
 ![Enterprise Configuration](../media/o16n/configure-enterprise.png)
 
 
-**Side-by-side installation**
+## Supported platforms
 
-@@@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
+The web nodes and compute nodes are supported on:
+- Windows Server 2012 R2, Windows Server 2016
+- Ubuntu 14.04, Ubuntu 16.04,
+- CentOS/RHEL 7.x
 
-**Upgrade versions**
+## How to upgrade from 9.0  to 9.1 
 
-@@@ If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). Carefully review the steps below.  
 
-**Offline installation**
+>[!Note]
+>Side-by-side installations of R Server web nodes and compute nodes are not supported at this time.
 
-@@ By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
+1. If you are using the default SQLite database, `deployrdb_9.0.0.db`, you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
-For an offline installation, you must follow first follow the offline
+   If you are using SQL Server or PostgreSQL, you do not need to do this step.
 
-**Uninstall**
+   >[!Warning]
+   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0.1 first, you will not be able to retrieve your database data.
+   
+1. Uninstall Microsoft R Server 9.0.1 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+   
+   During uninstall, your configuration files are automatically stashed under this directory for your convenience so that you can retrieve them later:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Linux: `/etc/deployr/current`
 
-`-uninstall`
+1. If you had SQLite before and backed it up in Step 1, now you must move `deployrdb_9.0.0.db` under:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
+   + Linux: `/etc/deployr/current/frontend`
+
+   If you are using a SQL Server or PostgreSQL database, you can skip this step.
+
+1. Follow the instructions below to install Microsoft R Server 9.1.0 and set up your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+
+   If found, you will be asked to confirm whether you want to upgrade or not. If you answer `y`, the node will be installed and configured as it was before in 9.0.1. You can safely ignore the Python warning during upgrade. 
+
+
+## Unattended installs
+
+
+IGNORE THIS SECTION: STILL NEEDS TO BE WRITTEN
+
+You can bypass the interactive install steps of the Microsoft R Server install script with the -y flag ("yes" or "accept default" to all prompts except that you also agree to the license agreement). Additional flags can be used to specify which of the usual install options you want, as follows:
+
+flag | Option | Description
+-----|--------|------------
+ -a | --accept-eula | Accept all end user license agreements.
+ -d | --download-mro |  Download microsoft r open for distribution to an offline system.
+ -p | --hadoop-components | Install Hadoop components.
+ -s | --silent | Perform a silent, unattended install.
+ -u | --unattended | Perform an unattended install.
+ -h | --help | Print this help text.
+
+For a standard unattended install, run the following script:
+
+	./install.sh –a –s
 
 
 
+
+**Silent configurations**
 One box offline installation:
-`-silentoneboxinstall`
-Prompted for admin password (what if AAD)
+`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentinstall <password>`
+`-silentoneboxinstall` argument to launching adminutil
+Set the local admin password (you can define another authentication method later such as AAD)
 
 Enterprise offline installation:
 
-`-silentinstall`
+`-silentwebnodeinstall`  argument to launching adminutil
 Prompted for admin password (what if AAD)
 
-`-silentwebnodeinstall`
-Prompted for admin password (what if AAD)
-
-`-silentcomputenodeinstall`
+`-silentcomputenodeinstall`  argument to launching adminutil
 @@No prompt for password????
 
 
@@ -93,19 +133,9 @@ Prompted for admin password (what if AAD)
 
 
 
+## How to perform an enterprise configuration
 
-
-
-
-
-**Supported platforms**
-
-The web nodes and compute nodes are supported on:
-- Windows Server 2012 R2, Windows Server 2016
-- Ubuntu 14.04, Ubuntu 16.04,
-- CentOS/RHEL 7.x
-
-## 1. Configure a database
+### 1. Configure a database
 
 By default, the web node configuration sets up a local SQLite database. By default, the web node configuration sets up a local SQLite database.  If you want to use a different or remote database, follow these instructions to [configure that database](configure-remote-database.md) (SQL Server or PostgreSQL).
 
@@ -116,14 +146,16 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 <a name="add-compute-nodes"></a>
 
-## 2. Configure compute nodes
+### 2. Configure compute nodes
 
 In an enterprise configuration, you can set up one or more compute nodes. 
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. On each machine, install the same R Server version you installed on the web node.
+1. On each machine, install Microsoft R Server:
+   + On Windows, install R Server for Windows: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Linux, install R Server for Linux: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
 1. If on the following Linux flavors, then add a few symlinks:  (If on Windows, skip to the next step)
 
@@ -181,16 +213,14 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 
 <a name="webnode"></a>
 
-## 3. Configure web nodes
+### 3. Configure web nodes
 
 In an enterprise configuration, you can set up one or more web nodes. Please note that it is possible to run the web node service from within IIS.
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. On each machine, install Microsoft R Server:
-   + On Windows, install [R Server for Windows](../rserver-install-windows.md). 
-   + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
+1. On each machine, install the same R Server version you installed on the compute node.
 
 1. Declare the IP addresses of every compute node with each web node.
    1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
@@ -259,7 +289,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 >[!Important]
 >R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
-## 4. Setup enterprise-grade security
+### 4. Setup enterprise-grade security
 
 In production environments, we strongly recommend the following approaches:
 
@@ -270,12 +300,12 @@ In production environments, we strongly recommend the following approaches:
 1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
 
 
-## 5. Provision on the cloud
+### 5. Provision on the cloud
 
 If you are provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
 
 
-## 6. Post configuration steps
+### 6. Post configuration steps
 
 1. [Update service ports](admin-utility.md#ports), if needed.
 
