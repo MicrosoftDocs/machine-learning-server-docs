@@ -35,7 +35,7 @@ The following functions let you define a SQL Server data source. A data source o
 In addition to defining a data source, you can execute DDL statements from R, if you have the necessary permissions on the instance and database.
 + [RxSqlServerData](packagehelp/RxSqlServerData.md) - Define a SQL Server  data source object
 + [rxSqlServerDropTable](packagehelp/rxSqlServerDropTable.md) - Drop a SQL Server  table
-+ [rxSqlServerTableExists](packagehelp/rxSqlServerTableExists.md) - Check for the existence of a database table or object
++ [rxSqlServerTableExists](packagehelp/rxSqlServerDropTable.md) - Check for the existence of a database table or object
 + [rxExecuteSQLDDL](packagehelp/rxExecuteSQLDDL.md) - Execute a command to define, manipulate, or control SQL data, but not return data  
 
 ## Functions for Defining or Managing a Compute Context

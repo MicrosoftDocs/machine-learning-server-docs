@@ -103,7 +103,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetInfo`</td>
@@ -119,7 +119,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetVarInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetVarInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetVarInfo`</td>
@@ -231,7 +231,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Retrieve the current file system type.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetFileSystem.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSetFileSystem.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxHdfsFileSystem`</td>
@@ -306,7 +306,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Splits an .xdf file or data frame into multiple .xdf files or data frames.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSplit.md)</small></center>
+            <center><small>[**View**](packagehelp/rxSplitXdf.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -314,7 +314,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Multi-key sorting of the variables an .xdf file or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSort.md)</small></center>
+            <center><small>[**View**](packagehelp/rxSortXdf.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -322,7 +322,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Merges two .xdf files or data frames using a variety of merge types.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxMerge.md)</small></center>
+            <center><small>[**View**](packagehelp/rxMergeXdf.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -349,7 +349,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |`rxHistogram`       |![-](../media/award.png)|Creates a histogram from data.|<small>[**View**](packagehelp/rxHistogram.md)</small>|
 |`rxLinePlot`  |![-](../media/award.png)|Creates a line plot from data.|<small>[**View**](packagehelp/rxLinePlot.md)</small>|
 | `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[**View**](packagehelp/rxLorenz.md)</small>|
-|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[**View**](packagehelp/rxRocCurve.md)</small>|
+|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[**View**](packagehelp/rxRoc.md)</small>|
 
 <small>![-](../media/award.png) signifies the most popular functions</small>
 
@@ -437,7 +437,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxFisherTest.md)</small></center>
+            <center><small>[**View**](packagehelp/rxChiSquaredTest.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -445,7 +445,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxKendallCor.md)</small></center>
+            <center><small>[**View**](packagehelp/rxChiSquaredTest.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -469,7 +469,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the odds ratio on a two-by-two `xtabs` object.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxOddsRatio.md)</small></center>
+            <center><small>[**View**](packagehelp/rxRiskRatio.md)</small></center>
         </td>
     </tr>
 </table>
@@ -595,7 +595,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the covariance matrix for a set of variables.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxCov.md)</small></center>
+            <center><small>[**View**](packagehelp/rxCovCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -603,7 +603,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the correlation matrix for a set of variables.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxCor.md)</small></center>
+            <center><small>[**View**](packagehelp/rxCovCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -611,7 +611,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the sum of squares / cross-product matrix for a set of variables.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSSCP.md)</small></center>
+            <center><small>[**View**](packagehelp/rxCovCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -658,7 +658,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Gets the current compute context.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetComputeContext.md)</small></center>
+            <center><small>[**View**](packagehelp/rxSetComputeContext.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -849,7 +849,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxRngNewStream.md)</small></center>
+            <center><small>[**View**](packagehelp/rxRng.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -857,7 +857,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxRngDelStream.md)</small></center>
+            <center><small>[**View**](packagehelp/rxRng.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -865,7 +865,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[**View**](packagehelp/`rxRngGetStream.md)</small></center>
+            <center><small>[**View**](packagehelp/rxRng.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -873,7 +873,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxRngSetStream.md)</small></center>
+            <center><small>[**View**](packagehelp/rxRng.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -905,7 +905,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobStatus.md)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobResults.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -975,7 +975,7 @@ These functions and many more can be used for high performance computing and dis
         </td>
         <td>Retrieves a specific `RevoScaleR`-option.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetOption.md)</small></center>
+            <center><small>[**View**](packagehelp/rxOptions.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -991,7 +991,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Sets the thread pool state.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSetEnableThreadPool.md)</small></center>
+            <center><small>[**View**](packagehelp/rxGetEnableThreadPool.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -1006,7 +1006,7 @@ These functions and many more can be used for high performance computing and dis
         <td>`rxIsOpen`</td>
         <td> </td>
         <td>Indicates whether a data source can be accessed.</td>
-        <td><center><small>[**View**](packagehelp/rxIsOpen.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxOpen-methods.md)</small></center>
         </td>
     </tr>
     <tr>

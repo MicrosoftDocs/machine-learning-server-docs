@@ -89,14 +89,14 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarInfo`</td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetVarInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetVarInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>
@@ -480,7 +480,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobStatus.md)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobResults.md)</small></center>
         </td>
     </tr>
     <tr>

@@ -77,13 +77,11 @@
 ##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
-#### [ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 ### [R Server for Teradata DB](scaler-teradata-getting-started.md)
 #### [Install on Teradata](rserver-install-teradata-server.md)
 ##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-#### [ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 
 ## [Operationalization](operationalize/about.md)
 ### [9.0 & 8.0.5 feature comparison](operationalize/about-compare-to-8.0.5.md)

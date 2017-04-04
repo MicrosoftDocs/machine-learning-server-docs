@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Deprecated functions in RevoScaleR" 
-description: " These functions are provided for compatibility with  older versions of RevoScaleR only, and may be defunct as soon as the next release.  " 
+description: "These functions are provided for compatibility with  older versions of RevoScaleR only, and may be defunct as soon as the next release." 
 keywords: "RevoScaleR, "RevoScaleR-deprecated", rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
 author: "richcalaway" 
 manager: "jhubbard" 

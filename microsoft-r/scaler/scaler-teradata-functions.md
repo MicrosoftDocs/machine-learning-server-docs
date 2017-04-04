@@ -82,14 +82,14 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarInfo`</td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetVarInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetVarInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>
@@ -347,7 +347,7 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
         </td>
         <td>Gets the current compute context.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetComputeContext.md)</small></center>
+            <center><small>[**View**](packagehelp/rxSetComputeContext.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -391,7 +391,7 @@ Of course, not all data source types are available on all compute contexts.
 
         <td>Check for the existence of a database table or object.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxTeradataTableExists.md)</small></center>
+            <center><small>[**View**](packagehelp/rxTeradataSql.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -401,7 +401,7 @@ Of course, not all data source types are available on all compute contexts.
         </td>
         <td>Drop a table.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxTeradataDropTable.md)</small></center>
+            <center><small>[**View**](packagehelp/rxTeradataSql.md)</small></center>
         </td>
     </tr>    
     <tr>
@@ -456,7 +456,7 @@ The Teradata compute context has a number of helpful functions used for high per
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobStatus.md)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobResults.md))</small></center>
         </td>
     </tr>
     <tr>
