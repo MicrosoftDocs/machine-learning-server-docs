@@ -27,7 +27,7 @@ ms.custom: ""
  
  
  
- #`"RevoScaleR-defunct"`: Defunct functions in RevoScaleR
+ #`RevoScaleR-defunct`: Defunct functions in RevoScaleR
 
  Applies to version 9.0.1 of package RevoScaleR.
  

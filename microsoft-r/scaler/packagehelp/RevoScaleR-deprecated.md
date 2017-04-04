@@ -32,7 +32,7 @@ ms.custom: ""
  
  
  
- #`"RevoScaleR-deprecated"`: Deprecated functions in RevoScaleR
+ #`RevoScaleR-deprecated`: Deprecated functions in RevoScaleR
 
  Applies to version 9.0.1 of package RevoScaleR.
  

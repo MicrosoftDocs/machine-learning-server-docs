@@ -126,7 +126,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Modifies variable information in an .xdf file or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSetVarInfo.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSetVarInfoXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>
@@ -1020,7 +1020,7 @@ These functions and many more can be used for high performance computing and dis
         <td>`rxSqlServerTableExists`</td>
         <td> </td>
         <td>Execute an SQL statement that checks for a table's existance.</td>
-        <td><center><small>[**View**](packagehelp/rxSqlServerTableExists.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxSqlServerDropTable.md)</small></center>
         </td>
     </tr>
     <tr>

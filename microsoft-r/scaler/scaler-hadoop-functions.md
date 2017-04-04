@@ -359,14 +359,14 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <td> </td>
     <td>Creates a persistent Spark compute context. </td>
     <td>
-        <center><small>[**View**](packagehelp/rxSparkConnect.md)<center></small></td>
+        <center><small>[**View**](packagehelp/RxSpark.md)<center></small></td>
     </tr>
     <tr>
     <td>`rxSparkDisconnect`</td>
     <td> </td>
     <td> Disconnects a Spark session and return to a local compute context.</td>
     <td>
-        <center><small>[**View**](packagehelp/rxSparkDisconnect.md)<center></small></td>
+        <center><small>[**View**](packagehelp/RxSpark.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxInstalledPackages`</td>
@@ -436,18 +436,18 @@ Of course, not all data source types are available on all compute contexts. For 
             <center><small>[**View**](packagehelp/RxParquetData.md)<center></small></td>
         </tr>
         <tr>
-        <td>`rxSparkListData` </td>
+        <td>`rxSparkDataOps` </td>
         <td> </td>
         <td>Lists cached `RxParquetData` or `RxHiveData` data source objects. </td>
         <td>
-            <center><small>[**View**](packagehelp/rxSparkListData.md)<center></small></td>   
+            <center><small>[**View**](packagehelp/rxSparkDataOps.md)<center></small></td>   
         </tr>
         <tr>
         <td>`rxSparkRemoveData`</td>
         <td> </td>
         <td>Removes cached `RxParquetData` or `RxHiveData` data source objects.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSparkRemoveData.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSparkDataOps.md)<center></small></td>
         </tr>
 </table>
 
@@ -504,7 +504,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the available distributed computing job information objects.</td>
         <td>
-                <center><small>[**View**](packagehelp/`rxGetJobs.md)</small></center>
+                <center><small>[**View**](packagehelp/rxGetJobs.md)</small></center>
         </td>
     </tr>
 </table>
@@ -542,7 +542,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Return the current Hadoop version.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopVersion.md)</small></center>
+            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -550,7 +550,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCopyFromClient.md)</small></center>
+            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -558,7 +558,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file from the native file system to HDFS. Wraps the Hadoop `fs -copyFromLocal` command.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCopyFromLocal.md)</small></center>
+            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -566,7 +566,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop `fs -cp` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCopy.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -574,7 +574,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Remove a file in HDFS. Wraps the Hadoop `fs -rm` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopRemove.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -582,7 +582,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>List files in an HDFS directory. Wraps the Hadoop `fs -ls` or `fs -lsr` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/findmore.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -590,7 +590,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopMakeDir.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -598,7 +598,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Move a file in HDFS. Wraps the Hadoop `fs -mv` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopMove.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -606,7 +606,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopRemoveDir.md)</small></center>
+                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
         </td>
     </tr>
 </table>
