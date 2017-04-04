@@ -31,6 +31,7 @@ ms.custom: ""
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
+
 ## One-box vs enterprise configurations
 
 All configurations have at least a single web node and single compute node. **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing. **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells. By default, a SQLite 3.7+ database is installed, but you can, and in some cases must, install and [use a SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
@@ -40,9 +41,9 @@ R Server offers two types of configuration for operationalization/deployment:
 
 1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration is described in detail in the **[Enterprise configuration](configure-enterprise.md)** article.
 
-## Supported platforms for Operationalization
+## Supported platforms 
 
-The operationalization feature for Microsoft R Server is supported on:
+The web nodes and compute nodes are supported on:
 - Windows Server 2012 R2, Windows Server 2016
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x

@@ -33,22 +33,41 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 
-This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
-**Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
+**Architecture**
+
+This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  
+
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
+
++ **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
 
 For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
-The operationalization feature for Microsoft R Server is supported on:
-- Windows Server 2012 R2, Windows Server 2016
-- Ubuntu 14.04, Ubuntu 16.04,
-- CentOS/RHEL 7.x
+Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](configuration-initial.md). 
 
 ![Enterprise Configuration](../media/o16n/configure-enterprise.png)
 
->[!Note]
->To learn more about web nodes and compute nodes as well as about the one-box configuration, [see here](configuration-initial.md). 
+
+**Side-by-side installation**
+
+@@@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
+
+**Upgrade versions**
+
+@@@ If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+
+**Offline installation**
+
+@@ By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
+
+**Supported platforms**
+
+The web nodes and compute nodes are supported on:
+- Windows Server 2012 R2, Windows Server 2016
+- Ubuntu 14.04, Ubuntu 16.04,
+- CentOS/RHEL 7.x
 
 ## 1. Configure a database
 
@@ -61,7 +80,9 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 
 <a name="add-compute-nodes"></a>
 
-## 2. Configure compute node(s)
+## 2. Configure compute nodes
+
+In an enterprise configuration, you can set up one or more compute nodes. 
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
@@ -124,17 +145,15 @@ Your compute node is now configured. Repeat these steps for each compute node yo
 
 <a name="webnode"></a>
 
-## 3. Configure web node(s)
+## 3. Configure web nodes
+
+In an enterprise configuration, you can set up one or more web nodes. Please note that it is possible to run the web node service from within IIS.
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
->[!Note]
->It is possible to run the operationalization web node service from within IIS.
-
-
 1. On each machine, install Microsoft R Server:
-   + On Windows, install [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt671127.aspx). 
+   + On Windows, install [R Server for Windows](../rserver-install-windows.md). 
    + On Linux, install [R Server for Linux](../rserver-install-linux-server.md).  
 
 1. Declare the IP addresses of every compute node with each web node.
