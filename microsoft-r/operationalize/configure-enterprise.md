@@ -59,33 +59,30 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade from 9.0  to 9.1 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). Carefully review the steps below.  
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below. ** 
 
->[!Note]
->Side-by-side installations of R Server web nodes and compute nodes are not supported at this time.
-
-1. If you are using the default SQLite database, `deployrdb_9.0.0.db`, you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
+1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    If you are using SQL Server or PostgreSQL, you do not need to do this step.
 
    >[!Warning]
-   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0.1 first, you will not be able to retrieve your database data.
+   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
    
-1. Uninstall Microsoft R Server 9.0.1 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
+1. Uninstall Microsoft R Server 9.0 as described in the article [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md). 
    
-   During uninstall, your configuration files are automatically stashed under this directory for your convenience so that you can retrieve them later:
+   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
    + Linux: `/etc/deployr/current`
 
-1. If you had SQLite before and backed it up in Step 1, now you must move `deployrdb_9.0.0.db` under:
+1. If you had SQLite before and backed it up in Step 1, now you must manually move `deployrdb_9.0.0.db` under:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
    + Linux: `/etc/deployr/current/frontend`
 
    If you are using a SQL Server or PostgreSQL database, you can skip this step.
 
-1. Follow the instructions below to install Microsoft R Server 9.1.0 and set up your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
+1. Follow the instructions below to install Microsoft R Server 9.1 and set up your web and compute nodes. When you launch the Administration utility to configure web and compute nodes, the utility checks to see if any configuration files or SQLite database files are present in the folders mentioned above. 
 
-   If found, you will be asked to confirm whether you want to upgrade or not. If you answer `y`, the node will be installed and configured as it was before in 9.0.1. You can safely ignore the Python warning during upgrade. 
+   If found, you will be asked if you want to upgrade. If you answer `y`, the node will be installed and the prior edits you made to the configuration in 9.0 are automatically available in 9.1. You can safely ignore the Python warning during upgrade. 
 
 
 ## Unattended installs
@@ -147,6 +144,9 @@ If you plan to configure multiple web nodes, then you **must** set up a [remote 
 <a name="add-compute-nodes"></a>
 
 ### 2. Configure compute nodes
+
+>[!Note]
+>Side-by-side installations of R Server web nodes and compute nodes are not supported at this time.
 
 In an enterprise configuration, you can set up one or more compute nodes. 
 
