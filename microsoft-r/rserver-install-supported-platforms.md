@@ -29,14 +29,14 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 9.1.0
 
-All SKUs include Microsoft R Open 3.3.3, based on R-3.3.3, and require 64-bit operating systems with x86-compatible Intel architcutre.
+All SKUs include Microsoft R Open 3.3.3, based on R-3.3.3, and require 64-bit operating systems with x86-compatible Intel architecture.
 
 | SKU | Platforms |
 |-----|-----------|
-| R Server for Hadoop | **Hadoop Distributions:** Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** RHEL 6.x and 7.x, SUSE SLES11 (minus some features <sup>1</sup> ), Ubuntu 14.04 (minus some features <sup>1</sup> )<br/>**Spark versions:** 1.6 and 2.0. <sup>2</sup> |
-| R Server for Linux | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x , SUSE Linux Enterprise Server 11 (SLES11), Ubuntu 14.04 and 16.04|
-| R Server for Windows | Windows 7 SP1, Windows 8.1, Windows 10, Windows Server 2012 R2, Windows Server 2016 | 
-| R Server for Teradata | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
+| **R Server for Hadoop** | **Hadoop Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (minus some features <sup>1</sup> ), Ubuntu 14.04 (minus some features <sup>1</sup> )<br/>**Spark versions:** <sup>2</sup><br/>1.6 and 2.0.  |
+| **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br/>SUSE Linux Enterprise Server 11 (SLES11)<br/>Ubuntu 14.04 and 16.04|
+| **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
+| **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
 
 Hardware and software requirements for SQL Server R Services and R Server (Standalone) in SQL Server can be found in[SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
 

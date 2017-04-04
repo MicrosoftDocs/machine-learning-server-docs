@@ -1,9 +1,12 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 
-# [Get Started with Microsoft R](microsoft-r-get-started-node.md)
-## [Quick start: Install free R Server on Cloudera QuickStart VM](quickstart-cdh-vm.md)
-## [Quick start: Get ready with tools and sample data](quickstart-sample-data-tools.md)
-## [Quick start: Parallel processing on partitioned data](quickstart-rxexecby.md)
+# Quickstart
+## [Quickstart: Install free R Server on Cloudera QuickStart VM](quickstart-cdh-vm.md)
+## [Quickstart: Get ready with tools and sample data](quickstart-sample-data-tools.md)
+## [Quickstart: Parallel processing on partitioned data](quickstart-rxexecby.md)
+## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
+
+# [Get Started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [Learn ScaleR functions for large data analysis](scaler-getting-started.md)
 ### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
 ### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
