@@ -426,14 +426,14 @@ Of course, not all data source types are available on all compute contexts. For 
         <td> </td>
         <td>Generates a Hive Data Source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxHiveData.md)<center></small></td>
+            <center><small>[**View**](packagehelp/RxSparkData.md)<center></small></td>
         </tr>
         <tr>
         <td>`RxParquetData`</td>
         <td> </td>
         <td>Generates a Parquet Data Source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxParquetData.md)<center></small></td>
+            <center><small>[**View**](packagehelp/RxSparkData.md)<center></small></td>
         </tr>
         <tr>
         <td>`rxSparkDataOps` </td>
