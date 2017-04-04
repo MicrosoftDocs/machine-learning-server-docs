@@ -46,20 +46,20 @@ In **RevoScaleR**, deprecated functions and recommended replacements include the
 
 |Deprecated | Replacement |
 |-----------|------------|
-|`rxGetNodes` | [`rxGetAvailableNodes`](rxGetAvailableNodes.md)| 
-|`RxHpcServer` | [`RxSpark`](rxSpark.md) or [`RxHadoopMR`](rxHadoopMR.md)| 
-|`rxImportToXdf` | [`rxImport`](rxImport.md) |
-|`rxDataStepXdf` | [`rxDataStep`](rxDataStep.md) |
-|`rxDataFrameToXdf` | [`rxDataStep`](rxDataStep.md) |
-|`rxXdfToDataFrame` | [`rxDataStep`](rxDataStep.md) |
-|`rxSortXdf` | [`rxSort`](rxSortXdf.md) |
+|`rxGetNodes` | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
+|`RxHpcServer` | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
+|`rxImportToXdf` | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxDataStepXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataFrameToXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxXdfToDataFrame` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxSortXdf` | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
 
 The following functions are discontinued:
 
- + `rxGetVarInfoXdf` (use [`rxGetVarInfo`](rxGetVarInfoXdf.md))
- + `rxGetInfoXdf` (Use [`rxGetInfo`](rxGetInfoXdf.md))
+ + `rxGetVarInfoXdf` (use [`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))
+ + `rxGetInfoXdf` (Use [`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))
 
-For more information, see [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md).
+For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
 
 In **RevoMods** functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
 
