@@ -106,8 +106,8 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
  ##Details
  
-[rxGetVarInfo](rxGetVarInfoXdf.md) should be used instead of `rxGetVarInfoXdf`.
-[rxGetInfo](rxGetInfoXdf.md) should be used instead of `rxGetInfoXdf`.
+[rxGetVarInfo](packagehelp/rxGetVarInfoXdf.md) should be used instead of `rxGetVarInfoXdf`.
+[rxGetInfo](packagehelp/rxGetInfoXdf.md) should be used instead of `rxGetInfoXdf`.
  
  
  ##Author(s)
@@ -116,7 +116,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
  ##See Also
  
-[rxGetVarInfo](rxGetVarInfoXdf.md),
-[rxGetInfo](rxGetInfoXdf.md),
+[rxGetVarInfo](packagehelp/rxGetVarInfoXdf.md),
+[rxGetInfo](packagehelp/rxGetInfoXdf.md),
 ["RevoScaleR-deprecated"](RevoScaleR-deprecated.md).
    
