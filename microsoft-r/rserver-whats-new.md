@@ -42,20 +42,15 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 
 In **RevoScaleR**, deprecated and discontinued functions are covered in [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md). You can also review the [release notes](notes/r-server-notes.md).
 
-In **RevoMods**, the following functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
-    + `?` (use the standard R `?`, previously masked)
-    + `q` (use the standard R `q` function, previously masked)
-    + `quit` (use the standard R `quit` function, previously masked)
-    + `revoPlot` (use the standard R `plot` function)
-    + `revoSource` (use the standard R `source` function)
+In **RevoMods**, we deprecated several functions that were intended solely for use by the R Productivity Environment, which itself was discontinued in Microsoft R Server 8.0.3. For details about obsolete functions, see [release notes](notes/r-server-notes.md).
 
 ## "Pleasingly Parallel" processing with rxExecBy
 
-A growing demand exists for the ability to efficiently handle a large numbers of small models, where modeling or processing is over data collected for singular entities -- devices, people, days -- and the data sets are relatively small in comparison with big data use cases that is often typical of R workloads. 
+Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities -- such as devices, people, products, days -- where the per-entity data sets are relatively small in comparison with big data use cases so often typical of R workloads. 
 
-In this release, you can leverage the new `rxExecBy` function against unordered datasets, which are then sorted and grouped into partitioned data (one partition per entity), and then processed using whatever function or operation you want to apply. For example, to preject the health outcomes of individuals in a weightloss study, you could run predictive analysis over data collected for each person. Processing executes in parallel on platforms that support it. 
+In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run predictive analysis over data collected about each person. Using `rxExecBy`, partitioning and processing executes in parallel on platforms that support it. 
 
-To learn more, see [Quick start: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
+To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
 
 ## Operationalizing analytics 
  
