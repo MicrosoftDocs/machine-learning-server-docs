@@ -54,6 +54,11 @@ To set or change the password for the local administrator account after the conf
 
 To log into Microsoft R Server with this user for remote execution or web service functionalities, use `remoteLogin()` as described in the article "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
+
+>[!WARNING]
+> If you enable Azure Active Directory or Active Directory/LDAP authentication, this `admin` account can no longer be used to authenticate with R Server.
+
+
 <a name="ldap"></a>
 
 ## Active Directory and LDAP/LDAP-S

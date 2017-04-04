@@ -65,7 +65,7 @@ This example assumes you have the following (all of which are covered in Part 1)
    
    For example, for R Server 9.1 you would download from:
    ```
-   https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.1.0.json
+   https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json
    ```
 
 1. Generate the client library by passing the `rserver-swagger-<version>.json` file to the Swagger code generator and specifying the language you want. In this case, you should specify Python.  
@@ -167,9 +167,9 @@ After your client library has been generated and you've built the authentication
    #Returns a session ID.
    response = client.create_session(create_session_request, headers) 
    
-   #Store the session ID in a variable called `id` 
+   #Store the session ID in a variable called `session_id` 
    #to be able to identify it later at execution time.
-   id = response.session_id
+   session_id = response.session_id
    ```
 
 1. Create or call a model in Python that you'll publish as a web service. 
@@ -179,14 +179,14 @@ After your client library has been generated and you've built the authentication
    ```python
    #Import SVM and datasets from the SciKit-Learn library
    execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
-   execute_response = client.execute_code(id,execute_request, headers)
+   execute_response = client.execute_code(session_id,execute_request, headers)
    #Report if it was a success
    execute_response.success
    
    #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
    execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
    #Now, go create the object and preload Iris Dataset in R Server
-   execute_response = client.execute_code(id,execute_request, headers)
+   execute_response = client.execute_code(session_id,execute_request, headers)
    #Report if it was a success
    execute_response.success
    
@@ -201,7 +201,7 @@ After your client library has been generated and you've built the authentication
                                                       ,[workspace_object,workspace_object_2], #Input Parameters
                                                       ["result", "other_result"]) #Output parameter names
    #Now, go train that model on the Iris Dataset in R Server
-   execute_response = client.execute_code(id,execute_request, headers)
+   execute_response = client.execute_code(session_id,execute_request, headers)
 
    #If successful, print name and result of each output parameter. Else, print error.
    if(execute_response.success):

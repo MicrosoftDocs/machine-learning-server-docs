@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Connecting to R Server with mrsdeploy
+# Logging into R Server with mrsdeploy
 
 **Applies to:  Microsoft R Server 9.x**
 
