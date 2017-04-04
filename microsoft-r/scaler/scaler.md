@@ -30,7 +30,7 @@ ms.custom: ""
 
 The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
-This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  If you want to see the entire set of `RevoScaleR` functions,  [follow these steps.](#findmore)
+This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  For a list of the entire set of `RevoScaleR` functions, see [ScaleR functions by category](packagehelp/revoAnalytics-package.md)
 
 While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](scaler-hadoop-functions.md)
@@ -85,7 +85,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxImport.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxDataStep`</td>
@@ -94,7 +94,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxDataStep.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetInfo`</td>
@@ -103,7 +103,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetInfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetInfo`</td>
@@ -112,140 +112,140 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSetInfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarInfo`</td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetVarInfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetVarInfo`</td>
         <td> </td>
         <td>Modifies variable information in an .xdf file or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSetVarInfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>
         <td> </td>
         <td>Retrieves variable names from a data source or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetVarNames.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxCreateColInfo`</td>
         <td> </td>
         <td>Generates a 'colInfo' list from a data source.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxCreateColInfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxCompressXdf`</td>
         <td> </td>
         <td>Compresses an existing .xdf file, or a directory of .xdf files.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxCompressXdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxXdfData`</td>
         <td> </td>
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxXdfData.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxTextData`</td>
         <td> </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxTextData.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxSasData`</td>
         <td> </td>
         <td>Creates a SAS data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxSasData.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxSpssData`</td>
         <td> </td>
         <td>Creates a SPSS data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxSpssData.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxOdbcData`</td>
         <td> </td>
         <td>Creates a ODBC data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxOdbcData.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxTeradata`</td>
         <td> </td>
         <td>Creates a Teradata data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/RxTeradata.md)<center></small></td>
     </tr>
     <tr>
         <td>`RxSqlServerData`</td>
         <td> </td>
         <td>Creates a SQL Server data source object.</td>
         <td>
-            <center><small>[**View**](RxSqlServerData.md)<center></small></td>
+            <center><small>[**View**](packagehelp/RxSqlServerData.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxOpen`</td>
         <td> </td>
         <td>Opens a data source for reading.</td>
         <td>
-            <center><small>[**View**](rxOpen.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxOpen-methods.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxClose`</td>
         <td> </td>
         <td>Closes a data source.</td>
         <td>
-            <center><small>[**View**](rxClose.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxOpen-methods.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxReadNext`</td>
         <td> </td>
         <td>Read data from a source</td>
         <td>
-            <center><small>[**View**](rxReadNext.md)<center></small></td>
+            <center><small>[**View**](packagehelp/rxReadNext.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxSetFileSystem`</td>
         <td> </td>
         <td>Specify a file system type for data for import.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxSetFileSystem.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetFileSystem`</td>
         <td> </td>
         <td>Retrieve the current file system type.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxGetFileSystem.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxHdfsFileSystem`</td>
         <td> </td>
         <td>Creates an HDFS file system object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxHdfsFileSystem.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxNativeFileSystem`</td>
         <td> </td>
         <td>Creates a native file system object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)<center></small></td>
+            <center><small>[**View**](packagehelp/rxNativeFileSystem.md)<center></small></td>
     </tr>
 </table>
 
@@ -272,7 +272,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxDataStep.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -282,7 +282,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxFactors.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -290,7 +290,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Get fuzzy distances for a character vector.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetFuzzyDist.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -298,7 +298,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Get fuzzy keys for a character vector.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetFuzzyKeys.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -306,7 +306,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Splits an .xdf file or data frame into multiple .xdf files or data frames.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSplit.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -314,15 +314,15 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Multi-key sorting of the variables an .xdf file or data frame.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSort.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxMerge`</td>
         <td> </td>
-        <td>Merges two .xdf files or data frames using avariety of merge types.</td>
+        <td>Merges two .xdf files or data frames using a variety of merge types.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxMerge.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -330,7 +330,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>SQL Server R Services only. Runs an arbitrary SQL DDL command.</td>
         <td>
-            <center><small>[**View**](rxExecuteSQLDDL.md)</small></center>
+            <center><small>[**View**](packagehelp/rxExecuteSQLDDL.md)</small></center>
         </td>
     </tr>
 </table>
@@ -346,10 +346,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 |Function Name          | |Description|Help|
 |-----------------------|:-:|-----------------------|:--------------:|
-|`rxHistogram`       |![-](../media/award.png)|Creates a histogram from data.|<small>[See package](scaler.md#findmore)</small>|
-|`rxLinePlot`  |![-](../media/award.png)|Creates a line plot from data.|<small>[See package](scaler.md#findmore)</small>|
-| `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[See package](scaler.md#findmore)</small>|
-|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[See package](scaler.md#findmore)</small>|
+|`rxHistogram`       |![-](../media/award.png)|Creates a histogram from data.|<small>[**View**](packagehelp/rxHistogram.md)</small>|
+|`rxLinePlot`  |![-](../media/award.png)|Creates a line plot from data.|<small>[**View**](packagehelp/rxLinePlot.md)</small>|
+| `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[**View**](packagehelp/rxLorenz.md)</small>|
+|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[**View**](packagehelp/rxRocCurve.md)</small>|
 
 <small>![-](../media/award.png) signifies the most popular functions</small>
 
@@ -375,7 +375,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxQuantile.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -385,7 +385,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSummary.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -395,7 +395,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Formula-based cross-tabulation of data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxCrossTabs.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -405,7 +405,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results. Writing output to .xdf file not supported.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxCube.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -413,7 +413,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Marginal summaries of cross-tabulations.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxMarginals.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -421,7 +421,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Converts cross tabulation results to an `xtabs` object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/as.xtabs.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -429,7 +429,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxChiSquaredTest.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -437,7 +437,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxFisherTest.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -445,7 +445,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxKendallCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -453,7 +453,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Apply a function to pairwise combinations of rows and columns of an `xtabs` object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxPairwiseCrossTab.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -461,7 +461,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the relative risk on a two-by-two `xtabs` object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxRiskRatio.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -469,7 +469,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the odds ratio on a two-by-two `xtabs` object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxOddsRatio.md)</small></center>
         </td>
     </tr>
 </table>
@@ -497,7 +497,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a linear model to data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxLinMod.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -507,7 +507,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a logistic regression model to data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxLogit.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -517,7 +517,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a generalized linear model to data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGlm.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -527,7 +527,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxCovCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -537,7 +537,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a classification or regression tree to data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxDTree.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -547,7 +547,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxBTrees.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -557,7 +557,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Fits a classification or regression decision forest to data.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxDForest.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -567,7 +567,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxPredict.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -577,7 +577,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Performs k-means clustering.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxKmeans.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -587,7 +587,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Performs Naive Bayes classification.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxNaiveBayes.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -595,7 +595,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the covariance matrix for a set of variables.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxCov.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -603,7 +603,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the correlation matrix for a set of variables.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxCor.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -611,7 +611,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Calculate the sum of squares / cross-product matrix for a set of variables.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSSCP.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -619,7 +619,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxRoc.md)</small></center>
         </td>
     </tr>
 </table>
@@ -648,7 +648,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Sets a compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSetComputeContext.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -658,7 +658,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Gets the current compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetComputeContext.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -668,7 +668,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Creates an in-data, file-based Hadoop compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxHadoopMR.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -678,7 +678,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxSpark.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -688,7 +688,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         </td>
         <td>Creates an in-database compute context for Teradata.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxInTeradata.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -696,7 +696,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
             <td> </td>
             <td>Creates an in-database compute context for SQL Server.</td>
             <td>
-                <center><small>[See package](scaler.md#findmore)</small></center>
+                <center><small>[**View**](packagehelp/RxInSqlServer.md)</small></center>
             </td>
     </tr>
     <tr>
@@ -704,7 +704,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxComputeContext.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -712,7 +712,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a local compute context for `rxExec` using sequential computations.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxLocalSeq.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -720,7 +720,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a local compute context for `rxExec` using the `parallel` package as backend.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxLocalParallel.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -728,21 +728,21 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a compute context for `rxExec`using the current `foreach` parallel backend.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxForeachDoPar.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxInstalledPackages`</td>
         <td> </td>
         <td>Returns the list of installed packages for a compute context.</td>
-        <td><center><small>[**View**](rxInstalledPackages.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxInstalledPackages.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxFindPackage`</td>
         <td> </td>
         <td>Returns the path to one or more packages for a compute context.</td>
-        <td><center><small>[**View**](rxFindPackage.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxFindPackage.md)</small></center>
         </td>
     </tr>
 </table>
@@ -767,7 +767,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxXdfData.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -775,7 +775,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxTextData.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -783,7 +783,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a SAS data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxSasData.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -791,7 +791,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a SPSS data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxSpssData.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -799,7 +799,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a ODBC data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxOdbcData.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -807,14 +807,14 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Creates a Teradata data source object.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/RxTeradata.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`RxSqlServerData`</td>
         <td> </td>
         <td>Creates a SQL Server data source object.</td>
-        <td><center><small>[**View**](RxSqlServerData.md)</small></center>
+        <td><center><small>[**View**](packagehelp/RxSqlServerData.md)</small></center>
         </td>
     </tr>
 </table>
@@ -841,7 +841,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxExec.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -849,7 +849,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxRngNewStream.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -857,7 +857,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxRngDelStream.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -865,7 +865,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/`rxRngGetStream.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -873,7 +873,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Support for Parallel Random Number Generation.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxRngSetStream.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -881,7 +881,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get all the available nodes on a distributed compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetAvailableNodes.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -889,7 +889,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get information on nodes specified for a distributed compute context.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetNodeInfo.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -897,7 +897,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Test round trip from user through computation node(s) in a cluster or cloud.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxPingNodes.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -905,7 +905,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobStatus.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -913,7 +913,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get the return object(s) of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobResults.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -921,7 +921,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Get the console output from a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetJobOutput.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -929,7 +929,7 @@ These functions and many more can be used for high performance computing and dis
             <td> </td>
             <td>Get the available distributed computing job information objects.</td>
             <td>
-                <center><small>[See package](scaler.md#findmore)</small></center>
+                <center><small>[**View**](packagehelp/rxGetJobs.md)</small></center>
             </td>
     </tr>
     <tr>
@@ -937,7 +937,7 @@ These functions and many more can be used for high performance computing and dis
             <td> </td>
             <td>Get the first occurrence of a specified input file in a set of specified paths.</td>
             <td>
-                <center><small>[See package](scaler.md#findmore)</small></center>
+                <center><small>[**View**](packagehelp/rxLocateFile.md)</small></center>
             </td>
     </tr>
 </table>
@@ -965,7 +965,7 @@ These functions and many more can be used for high performance computing and dis
         </td>
         <td>Gets or sets `RevoScaleR`-specific options.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxOptions.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -975,7 +975,7 @@ These functions and many more can be used for high performance computing and dis
         </td>
         <td>Retrieves a specific `RevoScaleR`-option.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetOption.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -983,7 +983,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxGetEnableThreadPool.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -991,7 +991,7 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Sets the thread pool state.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxSetEnableThreadPool.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -999,35 +999,35 @@ These functions and many more can be used for high performance computing and dis
         <td> </td>
         <td>Construct `variable.selection` argument for `rxLinMod`.</td>
         <td>
-            <center><small>[See package](scaler.md#findmore)</small></center>
+            <center><small>[**View**](packagehelp/rxStepControl.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxIsOpen`</td>
         <td> </td>
         <td>Indicates whether a data source can be accessed.</td>
-        <td><center><small>[**View**](rxIsOpen.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxIsOpen.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxSqlServerDropTable`</td>
         <td> </td>
         <td>Execute an SQL statement that drops a table.</td>
-        <td><center><small>[**View**](rxSqlServerDropTable.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxSqlServerDropTable.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxSqlServerTableExists`</td>
         <td> </td>
         <td>Execute an SQL statement that checks for a table's existance.</td>
-        <td><center><small>[**View**](rxSqlServerTableExists.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxSqlServerTableExists.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxWriteNext`</td>
         <td> </td>
         <td>Writes the next chunk when moving data between ScaleR data sources.</td>
-        <td><center><small>[**View**](rxWriteNext.md)</small></center>
+        <td><center><small>[**View**](packagehelp/rxWriteNext.md)</small></center>
         </td>
     </tr>
 </table>
