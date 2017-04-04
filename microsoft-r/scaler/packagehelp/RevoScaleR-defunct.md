@@ -3,7 +3,7 @@
 # required metadata 
 title: "Defunct functions in RevoScaleR" 
 description: "The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.  " 
-keywords: "RevoScaleR, "RevoScaleR-defunct", rxGetVarInfoXdf, rxGetInfoXdf" 
+keywords: "RevoScaleR, RevoScaleR-defunct, rxGetVarInfoXdf, rxGetInfoXdf" 
 author: "richcalaway" 
 manager: "jhubbard" 
 ms.date: "04/03/2017" 
@@ -23,10 +23,7 @@ ms.technology: "r-server"
 ms.custom: "" 
  
 --- 
- 
- 
- 
- 
+
  #`RevoScaleR-defunct`: Defunct functions in RevoScaleR
 
  Applies to version 9.0.1 of package RevoScaleR.

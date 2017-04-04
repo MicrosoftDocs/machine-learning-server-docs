@@ -6,7 +6,7 @@ description: "Readme file for Microsoft R Server release, documenting known issu
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/04/2016"
+ms.date: "04/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,6 +32,43 @@ This article documents the known issues, bug fixes, and notifications about stat
 + For feature announcements, see [What's new in R Server](../rserver-whats-new.md).
 + For Microsoft R Client, see [Release notes for R Client](r-client-notes.md).
 + For SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
+
+## Microsoft R Server 9.1.0
+ 
+###Changed in this release
++ R Server is built on Microsoft R Open 3.3.3 (R 3.3.3).
++ The `curl` package has been updated to version 2.3
++ The `jsonlite` package has been updated to version 1.2
+
+###Deprecated or Discontinued
+ 
+In **RevoScaleR**, deprecated functions and recommended replacements include the following:
+
+|Deprecated | Replacement |
+|-----------|------------|
+|`rxGetNodes` | [`rxGetAvailableNodes`](rxGetAvailableNodes.md)| 
+|`RxHpcServer` | [`RxSpark`](rxSpark.md) or [`RxHadoopMR`](rxHadoopMR.md)| 
+|`rxImportToXdf` | [`rxImport`](rxImport.md) |
+|`rxDataStepXdf` | [`rxDataStep`](rxDataStep.md) |
+|`rxDataFrameToXdf` | [`rxDataStep`](rxDataStep.md) |
+|`rxXdfToDataFrame` | [`rxDataStep`](rxDataStep.md) |
+|`rxSortXdf` | [`rxSort`](rxSortXdf.md) |
+
+The following functions are discontinued:
+
+ + `rxGetVarInfoXdf` (use [`rxGetVarInfo`](rxGetVarInfoXdf.md))
+ + `rxGetInfoXdf` (Use [`rxGetInfo`](rxGetInfoXdf.md))
+
+For more information, see [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md).
+
+In **RevoMods** functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
+
++ `?` (use the standard R `?`, previously masked)
++ `q` (use the standard R `q` function, previously masked)
++ `quit` (use the standard R `quit` function, previously masked)
++ `revoPlot` (use the standard R `plot` function)
++ `revoSource` (use the standard R `source` function)
+
 
 ## Microsoft R Server 9.0.1
 
