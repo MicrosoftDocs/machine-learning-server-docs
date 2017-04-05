@@ -12,8 +12,8 @@
 ### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
 ### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
 ## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
-## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 ## [Quickstart: Parallel processing on partitioned data at scale](quickstart-rxexecby.md)
+## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
 #[Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)

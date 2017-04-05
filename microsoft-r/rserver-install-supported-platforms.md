@@ -36,14 +36,14 @@ All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and requ
 
 | SKU | Platforms |
 |-----|-----------|
-| **R Server for Hadoop** | **Hadoop Distributions:** <sup> 1</sup><br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (minus some features <sup>2</sup> ), Ubuntu 14.04 (minus some features <sup>2</sup> )<br/>**Spark Versions:* <sup> 3</sup> <br/>Versions 1.6 and 2.0.  |
+| **R Server for Hadoop** | **Hadoop <sup> 1</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (<sup>2</sup> ), Ubuntu 14.04 (<sup>2</sup> )<br/>**Spark <sup> 3</sup>Versions:**  <br/>Versions 1.6 and 2.0.  |
 | **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br/>SUSE Linux Enterprise Server 11 (SLES11)<br/>Ubuntu 14.04 and 16.04|
 | **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
 | **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
 
 Hardware and software requirements for SQL Server R Services and R Server (Standalone) in SQL Server can be found in[SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
 
-<sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we only support R Server on CDH, HDP, and MapR.
+<sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for R Server on CDH, HDP, and MapR.
 
 <sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1.0 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1.0 on CDH](rserver-install-hadoop-910-cdh.md).
 

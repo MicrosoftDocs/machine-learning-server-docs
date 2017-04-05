@@ -34,9 +34,23 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
  
 ## New and updated packages
 
-+ The **RevoScaleR** package has been updated to version #.# and includes new `rxExecBy` for parallel processing of partitioned data. Multithreaded support is available in enhanced versions of `rxImport` and `rxDataStep`. Merging data frames in Spark compute context is ehanced in `rxMerge`.
++ The **RevoScaleR** package has been updated to version 9.1.0. 
 + The **curl** package has been updated to version 2.3
 + The **jsonlite** package has been updated to version 1.3 
+
+**New and Updated Functions in RevoScaleR**
+
+| Function | Status | Changes |
+|----------|-------------|
+| `rxExecBy` | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
+| `rxExecByPartition` | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
+| `rxDataStep` | Enhanced | Multithreaded support. |
+| `rxGetPartitions` | New | Gets the partitions of a previously partitioned Xdf data source. |
+| `rxImport` | Enhanced | Multithreaded support. |
+| `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
+| `rxSerializeModel` | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
+| `rxSyncPackages` | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+
 
 **Discontinued and deprecated functions**
 
