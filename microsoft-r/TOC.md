@@ -203,9 +203,9 @@
 ### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
 
-# [Package Reference](package-reference.md)
+# [Package and Function Reference](package-reference.md)
 
-## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [MicrosoftML](microsoftml/microsoftml.md)
 ### [categorical](microsoftml/packagehelp/categorical.md)
 ### [categoricalHash](microsoftml/packagehelp/categoricalHash.md)
 ### [concat](microsoftml/packagehelp/concat.md)
@@ -228,8 +228,7 @@
 ### [rxPredict](microsoftml/packagehelp/rxPredict.md)
 ### [selectFeatures](microsoftml/packagehelp/selectFeatures.md)
 
-## [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md)
-###[mrsdeploy package help summary page](mrsdeploy/packagehelp/mrsdeploy.md) 
+## [mrsdeploy](mrsdeploy/mrsdeploy.md)
 ###[createSnapshot](mrsdeploy/packagehelp/createSnapshot.md) 
 ###[deleteRemoteFile](mrsdeploy/packagehelp/deleteRemoteFile.md) 
 ###[deleteService](mrsdeploy/packagehelp/deleteService.md) 
@@ -264,14 +263,14 @@
 ###[serviceOption](mrsdeploy/packagehelp/serviceOption.md) 
 ###[updateService](mrsdeploy/packagehelp/updateService.md)
 
-## [olapR Function Reference](olapr/Olapr.md)
+## [olapR](olapr/Olapr.md)
 ###[Execute2D](olapR/packagehelp/Execute2D.md) 
 ###[ExecuteMD](olapR/packagehelp/ExecuteMD.md) 
 ###[Explore](olapR/packagehelp/Explore.md) 
 ###[OlapConnection](olapR/packagehelp/OlapConnection.md) 
 ###[Query](olapR/packagehelp/Query.md)
 
-## [RevoPemaR Function Reference](pemar/pemar.md)
+## [RevoPemaR](pemar/pemar.md)
 ###[PemaBaseClass-class](pemar/packagehelp/PemaBaseClass-class.md) 
 ###[PemaBaseClass](pemar/packagehelp/PemaBaseClass.md) 
 ###[PemaByGroup-class](pemar/packagehelp/PemaByGroup-class.md) 
@@ -281,7 +280,7 @@
 ###[PemaMean](pemar/packagehelp/PemaMean.md) 
 ###[setPemaClass](pemar/packagehelp/setPemaClass.md)
 
-## [RevoScaleR Function Reference](scaler/scaler.md)
+## [RevoScaleR](scaler/scaler.md)
 ### [Overview: Common ScaleR Functions](scaler/scaler.md)
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
@@ -451,14 +450,14 @@
 #### [rxXdfFileName](scaler/packagehelp/rxXdfFileName.md) 
 #### [rxXdfToText](scaler/packagehelp/rxXdfToText.md)
 
-## [RevoUtils Function Reference](RevoUtils/RevoUtils.md)
+## [RevoUtils](RevoUtils/RevoUtils.md)
 ###[getRevoRepos](RevoUtils/packagehelp/getRevoRepos.md) 
 ###[readNews](RevoUtils/packagehelp/readNews.md) 
 ###[Revo.home](RevoUtils/packagehelp/Revo.home.md) 
 ###[RevoInfo](RevoUtils/packagehelp/RevoInfo.md) 
 ###[totalSystemMemory](RevoUtils/packagehelp/totalSystemMemory.md)
 
-## [sqlrutils Function Reference](sqlrutils/sqlrutils.md)
+## [sqlrutils](sqlrutils/sqlrutils.md)
 ###[executeStoredProcedure](sqlrutils/packagehelp/executeStoredProcedure.md) 
 ###[getInputParameters](sqlrutils/packagehelp/getInputParameters.md) 
 ###[InputData](sqlrutils/packagehelp/InputData.md) 

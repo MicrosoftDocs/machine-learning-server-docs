@@ -106,12 +106,12 @@ Use these functions to indicate whether the payload is a code block or script.
 |`putLocalFile` |Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a data file needs to be accessed by a script running on the remote R session. |
 |`getRemoteFile` |Downloads the file from the working directory of the remote R session into the working directory of the local R session. |
 |`deleteRemoteFile` |Deletes the file from the working directory of the remote R session. |
-|`putLocalObject` |Puts an object from the workspace of the local R session and loads it into the workspace of the remote R session. |
 
 #### Object functions
 
 |Function | Description |
 |---------|---------|
+|`putLocalObject` |Puts an object from the workspace of the local R session and loads it into the workspace of the remote R session. |
 |`getRemoteObject` |Gets an object from the workspace of the remote R session and loads it into the workspace of the local R session. |
 |`putLocalWorkspace`|Takes all objects from the local R session and loads them into the remote R session. |
 |`getRemoteWorkspace`|Takes all objects from the remote R session and loads them into the local R session. |

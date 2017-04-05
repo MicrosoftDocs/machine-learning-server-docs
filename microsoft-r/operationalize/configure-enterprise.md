@@ -24,8 +24,7 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
-
-# Configuring R Server for Operationalization (Enterprise Configuration)
+# Configuring R Server to operationalize analytics (Enterprise Configuration)
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -35,13 +34,15 @@ With an enterprise configuration, you can work with your production-grade data w
 
 ## Enterprise architecture
 
-This configuration includes one or more web nodes and one or more compute nodes, each of which can scaled independently.  
+This configuration includes one or more web nodes, one or more compute nodes, and a database.   
 
-+ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. Web nodes also access the data in the database and send requests to the compute node for processing.
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
 
-+ **Compute nodes** are used to execute R code as a session or service. Each compute node has its own pool of R shells.  Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own pool of R shells. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
-Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
++ The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you setup a [SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
+
+In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
 
 For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
@@ -57,7 +58,7 @@ The web nodes and compute nodes are supported on:
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x
 
-## How to upgrade from 9.0  to 9.1 
+## How to upgrade an enterprise configuration from 9.0 to 9.1 
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
 
