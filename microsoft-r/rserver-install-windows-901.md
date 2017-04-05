@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Install R Server 9.x for Windows"
-description: "How to install, connect to, and use Microsoft R Server 9.x on computers running the Windows operating system."
+title: "Install R Server for Windows"
+description: "How to install, connect to, and use Microsoft R Server 9.0.1 on computers running the Windows operating system."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/05/2017"
+ms.date: "03/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,84 +24,11 @@ ms.custom: ""
 
 ---
 
-# Install R Server 9.x for Windows
+# Install R Server 9.0.1 for Windows
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. 
 
 For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
-
-<a name="howtoinstall"></a>
-## How to install
-
-This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. Your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
-
-### Prerequisites
-
-+ A supported version of Windows. For an up-to-date list, see [Supported platforms](rserver-install-supported-platforms.md).
-
-+ **.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link if you need to install it first. A computer restart is required after the .NET Framework is installed.
-
-+ Acceptance of the the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
-
-+ You must agree to an installation of **R Open**, fully compatible with R-3.3.3. R Open is Microsoft's distribution of the R language and base functions. R Server setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
-
-The following additional components are installed by Setup and required for an R Server installation on Windows.
-
-| Component | Version |
-|-----------|---------|
-| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 |
-| Microsoft .NET Core | 1.1.0 |
-| Microsoft MPI | 7.1.12437.25 |
-| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.23026.0 |
-
-<a name="download"><a/>
-### Download R Server installer
-
-Get the zipped RServerSetup installer file from one of the following download sites.
-
-| Site | Edition | Details |
-|------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
-
-<a name="Run-Setup"></a>
-### Run Setup
-
-1. Double-click **RServerSetup.exe** to start the wizard.
-2. Accept the SQL Server license agreement for R Server and th license agreement for Microsoft R Open.
-3. At the end of the wizard, click **Install**.
-
-### Log files
-
-Post-installation, you can check the log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
-
-<a name="connect-validate"></a>
-### Connect and validate
-R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
-
-As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
-
-1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
-2. Double-click Rgui.exe to start the R Console application.
-3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
-4. Type `print(Revo.version)` to show the software version.
-5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
-
-Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
-
-### Install tools (optional)
-
-Consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
-
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
-+ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
-
-
-## Configure R Server to operationalize your analytics
-
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Licensing and support
 
@@ -141,6 +68,77 @@ The Windows installer and SQL Server installer create different library folder p
 **Feature availability**
 
 On Windows, you can [operationalize your analytics](operationalize/about.md) with R Server right now if you configure the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
+
+<a name="howtoinstall"></a>
+## How to install
+
+This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. As noted, using the standalone windows installer, R Server for Windows is serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+
+### Prerequisites
+
++ A supported version of Windows. For an up-to-date list, see [Supported platforms](rserver-install-supported-platforms.md).
+
++ **.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link if you need to install it first. A computer restart is required after the .NET Framework is installed.
+
++ You must accept the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
+
++ You must agree to an installation of **R Open**. R Open is Microsoft's distribution of packages providing the R language and base functions. It is fully compatible with open source R and the R language, but includes performance optimizations that make R Open a better choice for R Server operations. Setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
+
+The following additional components are installed by Setup and required for an R Server installation on Windows.
+
+| Component | Version |
+|-----------|---------|
+| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 |
+| Microsoft .NET Core | 1.0.1 |
+| Microsoft MPI | 7.1.12437.25 |
+| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
+| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.23026.0 |
+
+<a name="download"><a/>
+### Download R Server installer
+
+Get the zipped RServerSetup installer file from one of the following download sites.
+
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+<a name="Run-Setup"></a>
+### Run Setup
+
+RServerSetup.exe checks for prerequisites, prompts for acceptance of user agreements, and gives you the option of choosing a different program directory. At the end of the wizard, you click **Run** to install R Server and required components.
+
+### Log files
+
+Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
+
+<a name="connect-validate"></a>
+### Connect and validate
+R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
+
+As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
+
+1. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
+2. Double-click Rgui.exe to start the R Console application.
+3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
+4. Type `print(Revo.version)` to show the software version.
+5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
+
+Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+
+### Install tools (optional)
+
+Consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
+
++ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
++ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
+
+
+## Configure R Server to operationalize your analytics
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Side-by-side installation
 

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "R Server installation for Linux systems"
-description: "Install Microsoft R Server 9.0.1 on Linux."
+title: "R Server 9.1.00 installation for Linux systems"
+description: "Install Microsoft R Server 9.1.0 on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -23,13 +23,13 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# R Server Installation for Linux Systems
+# R Server 9.1.0 Installation for Linux Systems
 
-This article explains how to install Microsoft R Server 9.0.1 on a standalone Linux server.
+This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
 **Side-by-side Installation**
 
-You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
+You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 9.0.1, you must uninstall it before you can install 9.1.0.
 
 **Upgrade Versions**
 
@@ -53,7 +53,7 @@ Get the zipped RServerSetup installer file from one of the following download si
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server for Linux 9.0.1** is provided on this site. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server for Linux 9.1.0** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## System Requirements
@@ -112,10 +112,10 @@ R Server for Linux is deployed by running the install script with no parameters.
 
    `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
 
-4. Partial output is as follows (note version 9.0.1):
+4. Partial output is as follows (note version 9.1.0):
 
 	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
-	 Version     : 9.0.1                               Vendor: Microsoft
+	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
 
 ## Start Revo64
