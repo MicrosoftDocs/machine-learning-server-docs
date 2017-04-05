@@ -215,7 +215,7 @@ REMOTE> pause()
 
 <a name="snapshot"></a>
 
-## Snapshots and why they are useful
+## R session snapshots
 
 Snapshot functions are very useful for remote execution scenarios. It can save the whole workspace and working directory so that you can pick up from exactly where you left last time. Thank about saving and loading a game.
 
@@ -257,7 +257,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 <a name="publish-remote-session">
 
-## Publishing web services
+## Publishing web services in a remote session
 
 After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](data-scientist-manage-services.md#publishservice)  guide. 
 
@@ -265,10 +265,52 @@ To publish a web service after you've created a remote session (argument `sessio
 
 + Publish from your local session:  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session. Then, publish your service. Use `resume()` from your local prompt to return to the commandline in the remote R session.
 
-+ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with your username and password with `remoteLogin()` or `remoteLoginAAD()`. But this time, set the argument `session = FALSE` so that a second remote session is NOT created. You are now authenticated and able to publish directly from the `REMOTE>` prompt.
++ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with `remoteLogin()` or `remoteLoginAAD()`. But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to login from a remote session, you will not be prompted for user credentials. You must pass valid values for `username` and `password` to this function. Then, you'll be authenticated and able to publish from the `REMOTE>` prompt.
 
-  >[!WARNING]
-  >If you try to publish a web service from the remote R session without authenticating from that session, you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
+>[!WARNING]
+>If you try to publish a web service from the remote R session without authenticating from that session, you'll get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
+
+Learn more about authenticating with `remoteLogin()` or `remoteLoginAAD()` in this article "[Logging into R Server with mrsdeploy](mrsdeploy-connection.md)".
+
+```R
+> ## AAD AUTHENTICATION TO PUBLISH FROM REMOTE SESSION ##
+
+> remoteLoginAAD(
+       "https://rserver.contoso.com:12800", 
+       authuri = "https://login.windows.net", 
+       tenantid = "microsoft.com", 
+       clientid = "00000000-0000-0000-0000-000000000000", 
+       resource = "00000000-0000-0000-0000-000000000000", 
+       session = TRUE 
+)
+
+Your REMOTE R session is now active.
+Commands: 
+        - pause() to switch to local session & leave remote session on hold.
+        - resume() to return to remote session.
+        - exit to leave (and terminate) remote session.
+
+REMOTE> remoteLoginAAD(
+       "https://rserver.contoso.com:12800", 
+       authuri = "https://login.windows.net", 
+       tenantid = "microsoft.com", 
+       clientid = "00000000-0000-0000-0000-000000000000", 
+       resource = "00000000-0000-0000-0000-000000000000", 
+       session = FALSE
+       username = “{{YOUR_USERNAME}}”
+       password = “{{YOUR_PASSWORD}}” 
+)
+
+REMOTE>api <- publishService(
+     serviceName,
+     code = manualTransmission,
+     model = carsModel,
+     inputs = list(hp = "numeric", wt = "numeric"),
+     outputs = list(answer = "numeric"),
+     v = "v1.0.0"
+)
+```
+
 
 ## See also
 

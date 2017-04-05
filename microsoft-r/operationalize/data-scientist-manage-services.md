@@ -66,7 +66,7 @@ In order to deploy your analytics, you must publish them as new web services run
 
 #### Realtime web services
 
-The standard web services published with R Server offers fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
+The standard web services published with R Server offer fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
    + No need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
 
    + No need to reload a model for subsequent calls once it's loaded into memory
