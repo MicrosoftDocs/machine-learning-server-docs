@@ -95,11 +95,6 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a web node
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
-
-   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
-   + Linux: `/etc/deployr/current`
 
 1. Terminate all services and tasks associated with your web and compute nodes. 
    1. Stop each web node using the administration utility [as described here](admin-utility.md#startstop). 
@@ -107,6 +102,12 @@ To replace an older version, you can uninstall the older distribution before ins
    1. Stop the Rserve service.
       + On Windows, stop RServe in the Services dialog.
       + On Linux, use `systemctl stop rserve`.
+
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
+
+   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
       + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
