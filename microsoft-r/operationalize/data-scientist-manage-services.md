@@ -60,27 +60,36 @@ In this release, you can only manage (update/delete) the web services you've pub
 
 ### Publish web services
 
-In order to deploy your analytics, you must publish them as new web services running on R Server. Each service is uniquely defined by a `name` and `version`.  Additionally, each web service can include R code and any necessary model assets, the required inputs, and the output application developers will need to integrate in their applications. 
+In order to deploy your analytics, you must publish them as new web services running on R Server so that they can be consumed. Each service is uniquely defined by a `name` and `version`.   
+
+#### Standard web services
+
+Web services offer fast execution and scoring of arbitrary R code and R models. In addition to a name and version, a standard web service is also defined by its R code and any necessary model assets, the required inputs, and the output application developers will need to integrate the service in their applications.
+
+
 
 <a name="realtime"></a>
 
 #### Realtime web services
 
-The standard web services published with R Server offer fast execution and scoring of arbitrary R code and R models by default. Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
+Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. 
+
+The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
    + No need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
 
    + No need to reload a model for subsequent calls once it's loaded into memory
 
-To publish a `Realtime` web service, you must:
+To publish a `Realtime` R web service, you must:
   + Published to R Server for Windows or SQL Server R Services (additional platforms in future releases); the resulting web service can be consumed on any platforms
 
   + Specify the argument `serviceType = Realtime`
 
-  + Have a supported model object that was created using one of the following functions:
-    + From the `RevoScaleR` package, `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, `rxDForest`
-    + From the `MicrosoftML` package, the transforms and learning functions including: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`
+  + Have a model object that was created with following supported functions:
+    + From `RevoScaleR` package, [these specific functions](../scaler/scaler.md): `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` functions
+    
+    + From `MicrosoftML` package, only the [machine learning tasks and transform tasks functions](../microsoftml/microsoftml.md), which include `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`
 
-  + Leave code, inputs, or outputs undefined since it takes a data.frame as input and output by default.
+  + Leave the code argument undefined. Also leave inputs or outputs undefined since they both only accept a data.frame.
  
 See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
 
@@ -101,7 +110,7 @@ The following arguments are accepted for `publishService`:
 
 |Arguments|Description|
 |----|----|
-|`serviceType`|The type of service produced when published: <br>1. `serviceType = Script` contains arbitrary R code, R scripts and/or models. If omitted or null, `Script` is assumed.<br>2. `serviceType = Realtime` contains only a supported model object (see `model` argument below) published to R Server for Windows or SQL Server R Services (consumable on any platform). ([Learn more about this type.](#realtime))|
+|`serviceType`|The type of service produced when published: <br>1. `serviceType = Script` (standard web service) contains arbitrary R code, R scripts and/or models. If omitted or null, `Script` is assumed.<br>2. `serviceType = Realtime` contains only a supported model object (see `model` argument below) published to R Server for Windows or SQL Server R Services (consumable on any platform). ([Learn more about this type.](#realtime))|
 |`name` *|The unique web service name. It is a string so use quotes such as "MyService". We recommend that you use a name that is easy understood and fits a nice URL so people can remember it.|
 |`code` *|Required for standard web services, this is the R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, omit `code` argument or set to NULL.|
 |`model`|For standard web services, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported [(see here)](#realtime).  For example, `model = rxPredict.glm`<br>|
