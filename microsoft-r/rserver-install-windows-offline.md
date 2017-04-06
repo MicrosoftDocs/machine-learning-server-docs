@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Offline installation instructions for R Server 9.x for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download files, transfer files to an offline server, manually install each prerequisite, and then install R Server.
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
-This release incorporates several requirements, resulting in fewer downloads. The following components are embedded in the Windows installer:
+This release incorporates several requirements, resulting in fewer prerequisites that have to be downloaded in advance. The following components are now embedded in the Windows installer:
 
 * Microsoft .NET Core 1.1
 * Microsoft MPI 7.1
@@ -45,7 +45,7 @@ This release incorporates several requirements, resulting in fewer downloads. Th
 | SRO_3.3.3.0_1033.cab | http://go.microsoft.com/fwlink/?LinkID=842800 |
 | MLM_9.1.0.0_1033.cab | http://go.microsoft.com/fwlink/?LinkID=845098 |
 
-Setup will look for these files in the setup user's %temp% directory (for example, `C:\Users\<user-name>\AppData\Local\Temp`).
+You can download these files to any location, but during installation, setup will look for them in the setup user's %temp% directory (for example, `C:\Users\<user-name>\AppData\Local\Temp`).
 
 <a name="download"><a/>
 ## Download R Server installer
@@ -66,11 +66,11 @@ Use a flash drive or another mechanism to transfer the following to the offline 
 + MLM_9.1.0.0_1033.cab 
 + RServerSetup.exe 
 
-Put all files in the setup user's temp folder: `C:\Users\<<user-name>>\AppData\Local\Temp`
+Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. RServerSetup.exe can also be placed in the temp folder, or another folder like Downloads.
 
 ## Run RServerSetup
 
-RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first.
+RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
 
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In Configure installation, you will see a list of required components that Setup installs, plus two optional components:
