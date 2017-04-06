@@ -79,13 +79,12 @@ To replace an older version, you can uninstall the older distribution before ins
    + Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+    + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+    + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-      >[!IMPORTANT]
-      >If you are installing in an offline environment, you must also manually install .NET core dependency before configuring any nodes.
-      >+ Install .NET core 1.0.1 for R Server 9.0
-      >+ Install .NET core 1.1 for R Server 9.1.0
+    >[!IMPORTANT]
+    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
+    >+ Install .NET core 1.1 for R Server 9.1.0
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
@@ -115,13 +114,12 @@ To replace an older version, you can uninstall the older distribution before ins
    + Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+    + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+    + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-      >[!IMPORTANT]
-      >If you are installing in an offline environment, you must also manually install .NET core dependency before configuring any nodes.
-      >+ Install .NET core 1.0.1 for R Server 9.0
-      >+ Install .NET core 1.1 for R Server 9.1.0
+    >[!IMPORTANT]
+    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
+    >+ Install .NET core 1.1 for R Server 9.1.0
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
@@ -170,7 +168,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    + On Linux, install R Server for Linux: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
     >[!IMPORTANT]
-    >If you are installing in an offline environment, you must also manually install .NET core dependency before configuring any nodes.
+    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
     >+ Install .NET core 1.0.1 for R Server 9.0
     >+ Install .NET core 1.1 for R Server 9.1.0
 
@@ -242,11 +240,11 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
 1. On each machine, install the same R Server version you installed on the compute node.
-    >[!IMPORTANT]
-    >If you are installing in an offline environment, you must also manually install .NET core dependency before configuring any nodes.
-    >+ Install .NET core 1.0.1 for R Server 9.0
-    >+ Install .NET core 1.1 for R Server 9.1.0
-    
+   >[!IMPORTANT]
+   >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
+   >+ Install .NET core 1.0.1 for R Server 9.0
+   >+ Install .NET core 1.1 for R Server 9.1.0
+
 1. Declare the IP addresses of every compute node with each web node.
    1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 

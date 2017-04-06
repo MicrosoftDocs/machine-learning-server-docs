@@ -91,13 +91,12 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
    
 1. Install Microsoft R Server:
-      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-      >[!IMPORTANT]
-      >If you are installing in an offline environment, you must also manually install .NET core dependency before configuring any nodes.
-      >+ Install .NET core 1.0.1 for R Server 9.0
-      >+ Install .NET core 1.1 for R Server 9.1.0
+   >[!IMPORTANT]
+   >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
+   >+ Install .NET core 1.1 for R Server 9.1.0
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
