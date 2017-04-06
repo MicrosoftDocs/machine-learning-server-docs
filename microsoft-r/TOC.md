@@ -111,7 +111,7 @@
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
-#### [Connect to R Server with mrsdeploy](operationalize/mrsdeploy-connection.md)
+#### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
 #### [Work with web services in R](operationalize/data-scientist-manage-services.md)
 #### [Publish & consume R services in R](operationalize/data-scientist-manage-services.md)
 #### [Publish & consume Python services](operationalize/data-scientist-python.md)
