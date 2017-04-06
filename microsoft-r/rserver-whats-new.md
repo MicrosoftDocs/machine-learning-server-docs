@@ -41,7 +41,7 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 **New and Updated Functions in RevoScaleR**
 
 | Function | Status | Changes |
-|----------|-------------|
+|----------|--------|---------|
 | `rxExecBy` | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
 | `rxExecByPartition` | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
 | `rxDataStep` | Enhanced | Multithreaded support. |
@@ -58,11 +58,12 @@ In **RevoScaleR**, deprecated and discontinued functions are covered in [discont
 
 In **RevoMods**, we deprecated several functions that were intended solely for use by the R Productivity Environment, which itself was discontinued in Microsoft R Server 8.0.3. For details about obsolete functions, see [release notes](notes/r-server-notes.md).
 
-## "Pleasingly Parallel" processing with rxExecBy
+<a name="rxexecby"></a>
+## "Pleasingly Parallel" processing with rxExecBy on Spark and SQL Server
 
-Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities -- such as devices, people, products, days -- where the per-entity data sets are relatively small in comparison with big data use cases so often typical of R workloads. 
+Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities -- such as devices, people, products, days -- where the per-entity data sets are relatively small in comparison with big data scenarios so often typical of R workloads. 
 
-In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run predictive analysis over data collected about each person. Using `rxExecBy`, partitioning and processing executes in parallel on platforms that support it. 
+In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  
 
 To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
 
@@ -80,7 +81,7 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 ## Executing remotely 
 + Remote execution can now be performed asynchronously using the `mrsdeploy` R package.  Learn more about [asynchronous remote execution](/operationalize/remote-execution.md#async).
 
-## Installation improvements
+## Installation improvements for deployment on Cloudera
 
 R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager, our new parcel generator script, and custom service descriptors. For details, see [Install R Server on CDH](rserver-install-hadoop-910-cdh.md).
 
