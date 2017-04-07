@@ -136,9 +136,9 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      #Provide the AAD connection parameters your admin gave you
      url = "https://deployr-dogfood.mrs.microsoft-tst.com"
      authuri = https://login.windows.net,
-     tenantid = "<AAD_DOMAIN>", 
-     clientid = "<NATIVE_APP_CLIENT_ID>", 
-     resource = "<WEB_APP_CLIENT_ID>", 
+     tenantid = "<<AAD_DOMAIN>>", 
+     clientid = "<<NATIVE_APP_CLIENT_ID>>", 
+     resource = "<<WEB_APP_CLIENT_ID>>", 
 
      #Acquire authentication token using AAD Device Code Login
      context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
@@ -311,6 +311,7 @@ After your client library has been generated and you've built the authentication
 <br>
 <br>
 <br>
+
 ```python
 ###This can all be replaced by generating a client library with autorest
 #Import the requests library to make requests on the server
@@ -368,7 +369,8 @@ print(json.dumps(resp.json(), indent = 1, sort_keys = True))
 ```
 <br>
 @@HOW DO I DOWNLOAD THE SWAGGER FILE TO MY MACHINE
-
+<br>
+<br>
 <br>
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
@@ -407,9 +409,6 @@ s.delete(url+"/services/Iris/V2.0")
 
 Download the core API swagger file. 
 Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
-
-![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
-
 
 ### Example
 
