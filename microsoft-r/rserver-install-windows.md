@@ -70,15 +70,19 @@ Get the zipped RServerSetup installer file from one of the following download si
 <a name="Run-Setup"></a>
 ### Run Setup
 
-THe download is a self-extracting executable. It's not necessary to unzip it first.
+RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
 
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. Accept the SQL Server license agreement for R Server, as well as the license agreement for Microsoft R Open.
-3. At the end of the wizard, click **Install** to run setup.
+2. In Configure installation, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
+    + R Server (Standalone)
+    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
+3. Accept the SQL Server license agreement for R Server, as well as the license agreement for Microsoft R Open.
+4. Optionally, change the home directory for R Server.
+5. At the end of the wizard, click **Install** to run setup.
 
 ### Log files
 
-Post-installation, you can check the log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
+Post-installation, you can check the log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows.
 
 <a name="connect-validate"></a>
 ### Connect and validate
