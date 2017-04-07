@@ -198,45 +198,6 @@ After authentication, you can start a Python session and create a model you'll p
    session_id = response.session_id
    ```
 
-1. Create and train a model in Python that you'll publish as a web service. 
-
-   In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  
-
-   ```python
-   #Import SVM and datasets from the SciKit-Learn library
-   execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
-   execute_response = client.execute_code(session_id,execute_request, headers)
-   #Report if it was a success
-   execute_response.success
-   
-   #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
-   execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
-   #Now, go create the object and preload Iris Dataset in R Server
-   execute_response = client.execute_code(session_id,execute_request, headers)
-   #Report if it was a success
-   execute_response.success
-   
-   #Define two rows from the Iris Dataset as a sample for scoring
-   workspace_object = deployrclient.models.WorkspaceObject("variety_1",[7,3.2,4.7,1.4])
-   workspace_object_2 = deployrclient.models.WorkspaceObject("variety_2",[3,2.6,3,2.5])
-
-   #Define how to train the classifier model; what to predict; what to return
-   execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
-                                                      "result=clf.predict(variety_1)\n"+
-                                                      "other_result=clf.predict(variety_2)"
-                                                      ,[workspace_object,workspace_object_2], #Input Parameters
-                                                      ["result", "other_result"]) #Output parameter names
-   #Now, go train that model on the Iris Dataset in R Server
-   execute_response = client.execute_code(session_id,execute_request, headers)
-
-   #If successful, print the name and result of each output parameter. Else, print error.
-   if(execute_response.success):
-       for result in execute_response.output_parameters:
-           print("{0}: {1}".format(result.name,result.value))
-   else:
-       print (execute_response.error_message)
-   ```
-
 1. Create or call a model in Python that you'll publish as a web service. 
 
    In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  This dataset is available here: http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html 
