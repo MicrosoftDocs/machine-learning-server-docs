@@ -36,15 +36,19 @@ This article is for data scientists who wants to learn how to publish Python cod
 Python web services are supported on Windows platforms on which Python was enabled during installation. Expanded platform support in future releases.
 
 
-##  Workflow Publish Python web service
+##  Workflow: Publish Python web service
 
-Download the core API swagger file. 
-Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
+1. Download the core API swagger file. 
+1. Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
+1. Import the library.
+1. Authenticate.
+1. Create a session.
+1. Publish the service.
 
 ![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
 
 
-### Example: publish Python web service
+## Example
 
 This example assumes you have the following (all of which are covered in Part 1):
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
@@ -57,7 +61,7 @@ This example assumes you have the following (all of which are covered in Part 1)
 
 ```
 
-## Part 1. Generate client library in Python
+### Part 1. Generate core client library in Python
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You'll be using it to generate the API client libraries in Python. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -77,7 +81,7 @@ This example assumes you have the following (all of which are covered in Part 1)
 
    You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences, such as renaming the namespace.
    
-1. Explore the client library to see the various API calls you can make. 
+1. Explore the core client library to see the various API calls you can make. 
 
    In our example, Autorest generated some directories and files for the Python client library on your local system. By default, the namespace (and directory) is `deployrclient` and might look like this:
    
@@ -87,7 +91,16 @@ This example assumes you have the following (all of which are covered in Part 1)
    
    ![autorest output path](../media/o16n/data-scientist-python-client-library.png)
 
-## Part 2. Add authentication and header logic to your script
+1. Import the library to make it accessible in the Python code editor of your choice such as Jupyter, Visual Studio, VS Code, or iPython for example.
+
+   Specify the parent directory of the client library. In our example, the Autorest generated client library is under `C:\Users\rserver-user\Documents\Python\deployrclient`:
+
+   ```python
+   # Import the generated client library. 
+   import deployrclient
+   ```   
+
+### Part 2. Add authentication and header logic to your script
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
@@ -95,21 +108,9 @@ To simplify this process, bearer access tokens are issued so that users need not
 
 Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
 
-1. Open the Python code editor of your choice such as Jupyter, Visual Studio, VS Code, or iPython for example.
-
-1. In the editor, import the generated client library to make it accessible in Python. Specify the parent directory of the client library. In our example, the Autorest generated client library is under `C:\Users\rserver-user\Documents\Python\deployrclient`:
-
-   ```python
-   # Import the generated client library. 
-   import deployrclient
-   ```
-
 1. Add the authentication logic to the script to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
    + **For AD/LDAP or the `admin` account authentication**, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
-
-     >[!IMPORTANT]
-     >Every call must be authenticated. Therefore, remember to include headers with tokens to every single request.
 
      ```python
      #Using client library generated from Autorest
@@ -117,21 +118,21 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      client = deployrclient.DeployRClient("http://localhost:12800")
 
      #Define the login request and provide credentials 
-     login_request = deployrclient.models.LoginRequest("rserver-user","1@2@3@4@5@6@7")
+     login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
      #Make a call to the /login API. Store the returned an access token in a variable
      token_response = client.login(login_request)
      ```
 
    + **For Azure Active Directory (AAD)**, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
 
-     >[!IMPORTANT]
-     >Every call must be authenticated. Therefore, remember to include headers with tokens to every single request.
-
      ```python
      ????@@
      ```     
 
 1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
+
+     >[!IMPORTANT]
+     >Every API call must be authenticated. Therefore, remember to include headers with tokens to every single request.
 
      ```python
      #Add the returned access token to the headers variable
@@ -143,14 +144,14 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      print(status_response.status_code)
      ```
 
-## Part 3. Use APIs to publish a service
+### Part 3. Create a session, code/model, and a snapshot
 
-After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
+After authentication, you can start a Python session and create a model you'll publish later. You can include any Python code or models in a web service. Once you've set up your session environment, you can even save it as a snapshot so you can reload your session as you had it before. 
 
 >[!IMPORTANT]
->You must (1) be authenticated before you publish a service or make any other call and (2) remember to include `headers` in every request.
+>Remember to include `headers` in every request.
 
-1. Create a Python session on R Server by specifying a session name and indicating that you want a Python session (`runtime_type="Python"`). 
+1. Create a Python session on R Server. You must specify a name and the Python language (`runtime_type="Python"`). 
 
    If you don't set the runtime type to Python, it defaults to R.
 
@@ -171,6 +172,9 @@ After your client library has been generated and you've built the authentication
    #to be able to identify it later at execution time.
    session_id = response.session_id
    ```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@REMOVE SNAPSHOT AND REMOTE SESSION PIECE OF THE PUZZLE.@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 1. Create or call a model in Python that you'll publish as a web service. 
 
@@ -211,7 +215,77 @@ After your client library has been generated and you've built the authentication
        print (execute_response.error_message)
    ```
 
-1. Publish this SVM model as a Python web service in R Server.
+### Part 4. Publish as a web service in Python
+
+After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
+
+>[!NOTE]
+>Remember that you must be authenticated before you make any API calls. Therefore, include `headers` in every request.
+
+1. @@@@@Publish this SVM model as a Python web service in R Server.
+
+1. Publish a service that contains arbitrary Python function that doubles the number passed into it. 
+
+   >[!IMPORTANT]
+   > To ensure that the web service is registered as a Python service, be sure to specify `runtime_type="Python"`. If you don't set the runtime type to Python, it defaults to R.
+
+   ```python
+   #Set `x` for the integer input
+   x = deployrclient.models.ParameterDefinition(name = "x", type = "integer")
+   #Set `y` for the doubled integer output
+   y = deployrclient.models.ParameterDefinition(name = "y", type = "integer")
+
+   #Define the publish request, the code, and the arguments for the service.
+   #Specify the inputs, outputs, and set the runtime_type="Python"`.
+   publish_request = deployrclient.models.PublishWebServiceRequest(code = "y = x * 2", 
+                                                                   description = "Doubles the input.",
+                                                                   input_parameter_definitions = [x], 
+                                                                   output_parameter_definitions = [y],
+                                                                   runtime_type = "Python")
+
+   #Publish the service using the specified name, version.
+   client.publish_web_service_version("Double", "V1.0", publish_request, headers)
+   ```
+
+1. Get and examine the service holdings and metadata for the service.
+
+@@ DOES THIS GET ALL SERVICES OR JUST THE DOUBLE ONE??
+
+   ```python
+   # Inspect holdings and metadata for service Double V1.0.
+   for service in client.get_all_web_services(headers):
+       #print the service information
+       print(service)
+       #Print each input and output parameter
+       print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
+       print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
+   ```
+
+1. Consume the service in the current session.
+
+   ```python
+   resp = client.get_web_service_swagger("Double","V1.0",headers)
+   print(resp)
+   ```
+
+##  Workflow: Consume Python web service
+
+Download the core API swagger file. 
+Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
+
+![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
+
+
+### Example
+
+This example assumes you have the following (all of which are covered in Part 1):
++ You have Autorest as your Swagger code generator installed and you are familiar with it.
++ You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
++ You have already generated a Python client library from that Swagger file.
+
+```python
+
+@@ SAMPLE BEING DEVELOPED
 
 
 ## THE FOLLOWING DOC IS TO BE IGNORED> NOT FOR PYTHON
