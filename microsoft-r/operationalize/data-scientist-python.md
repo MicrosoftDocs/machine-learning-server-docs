@@ -39,11 +39,13 @@ Python web services are supported on Windows platforms on which Python was enabl
 ##  Workflow: Publish Python web service
 
 1. Download the core API swagger file. 
-1. Generate the python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
-1. Import the library.
-1. Authenticate.
-1. Create a session.
-1. Publish the service.
+1. Generate a statically generated Python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
+1. Import the library into your Python editor.
+1. Add authentication logic.
+1. Create a Python session.
+1. Prepare the environment (load libraries, load data, create models, train models, generate objects, ...)
+1. Create a snapshot to preserve the environment.
+1. Publish the web service and embed this snapshot.
 
 ![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
 
@@ -72,7 +74,7 @@ This example assumes you have the following (all of which are covered in Part 1)
    https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json
    ```
 
-1. Generate the client library by passing the `rserver-swagger-<version>.json` file to the Swagger code generator and specifying the language you want. In this case, you should specify Python.  
+1. Generate the statically-generated client library by passing the `rserver-swagger-<version>.json` file to the Swagger code generator and specifying the language you want. In this case, you should specify Python.  
 
    For example, if you use AutoRest to generate a Python client library, it might look like this, where `<version>` is the 3-digit R Server version number:
    ```
@@ -144,7 +146,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      print(status_response.status_code)
      ```
 
-### Part 3. Create a session, code/model, and a snapshot
+### Part 3. Create a session, the model, and a snapshot
 
 After authentication, you can start a Python session and create a model you'll publish later. You can include any Python code or models in a web service. Once you've set up your session environment, you can even save it as a snapshot so you can reload your session as you had it before. 
 
@@ -172,13 +174,49 @@ After authentication, you can start a Python session and create a model you'll p
    #to be able to identify it later at execution time.
    session_id = response.session_id
    ```
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@REMOVE SNAPSHOT AND REMOTE SESSION PIECE OF THE PUZZLE.@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+1. Create and train a model in Python that you'll publish as a web service. 
+
+   In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  
+
+   ```python
+   #Import SVM and datasets from the SciKit-Learn library
+   execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
+   execute_response = client.execute_code(session_id,execute_request, headers)
+   #Report if it was a success
+   execute_response.success
+   
+   #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
+   execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+   #Now, go create the object and preload Iris Dataset in R Server
+   execute_response = client.execute_code(session_id,execute_request, headers)
+   #Report if it was a success
+   execute_response.success
+   
+   #Define two rows from the Iris Dataset as a sample for scoring
+   workspace_object = deployrclient.models.WorkspaceObject("variety_1",[7,3.2,4.7,1.4])
+   workspace_object_2 = deployrclient.models.WorkspaceObject("variety_2",[3,2.6,3,2.5])
+
+   #Define how to train the classifier model; what to predict; what to return
+   execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
+                                                      "result=clf.predict(variety_1)\n"+
+                                                      "other_result=clf.predict(variety_2)"
+                                                      ,[workspace_object,workspace_object_2], #Input Parameters
+                                                      ["result", "other_result"]) #Output parameter names
+   #Now, go train that model on the Iris Dataset in R Server
+   execute_response = client.execute_code(session_id,execute_request, headers)
+
+   #If successful, print the name and result of each output parameter. Else, print error.
+   if(execute_response.success):
+       for result in execute_response.output_parameters:
+           print("{0}: {1}".format(result.name,result.value))
+   else:
+       print (execute_response.error_message)
+   ```
 
 1. Create or call a model in Python that you'll publish as a web service. 
 
-   In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  
+   In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  This dataset is available here: http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html 
 
    ```python
    #Import SVM and datasets from the SciKit-Learn library
@@ -215,6 +253,28 @@ After authentication, you can start a Python session and create a model you'll p
        print (execute_response.error_message)
    ```
 
+1. Create a snapshot of this Python session so this environment can be saved in the web service and reproduce at consume time. Note that 
+   you can only include a snapshot that you've created when publishing.
+
+   Snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files and artifacts. Snapshots save the whole workspace and working directory. 
+
+   When publishing, you can only include a snapshot you've created. 
+
+   > [!NOTE] 
+   > While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python `del` function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
+
+   ```python
+   #Create a snapshot of the current session
+   client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
+
+   #Return the snapshot ID so you can reference it in the publish service function later.
+   response.snapshot_id
+
+   #If you forget the ID later, you can always list every snapshot to get the ID again.
+   for snapshot in client.list_snapshots(headers):
+       print(snapshot)
+   ```
+
 ### Part 4. Publish as a web service in Python
 
 After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
@@ -222,37 +282,39 @@ After your client library has been generated and you've built the authentication
 >[!NOTE]
 >Remember that you must be authenticated before you make any API calls. Therefore, include `headers` in every request.
 
-1. @@@@@Publish this SVM model as a Python web service in R Server.
-
-1. Publish a service that contains arbitrary Python function that doubles the number passed into it. 
+1. Publish this SVM model as a Python web service in R Server. This web service will score a vector that gets passed to it.
 
    >[!IMPORTANT]
    > To ensure that the web service is registered as a Python service, be sure to specify `runtime_type="Python"`. If you don't set the runtime type to Python, it defaults to R.
 
    ```python
-   #Set `x` for the integer input
-   x = deployrclient.models.ParameterDefinition(name = "x", type = "integer")
-   #Set `y` for the doubled integer output
-   y = deployrclient.models.ParameterDefinition(name = "y", type = "integer")
+   #Define a web service that determines the iris variety by scoring 
+   #a vector of sepal length and width, petal length and width
 
-   #Define the publish request, the code, and the arguments for the service.
-   #Specify the inputs, outputs, and set the runtime_type="Python"`.
-   publish_request = deployrclient.models.PublishWebServiceRequest(code = "y = x * 2", 
-                                                                   description = "Doubles the input.",
-                                                                   input_parameter_definitions = [x], 
-                                                                   output_parameter_definitions = [y],
-                                                                   runtime_type = "Python")
+   #Set `flower_data` for the sepal and petal length and width
+   flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
+   #Set `iris_type` for the variety of iris
+   iris_type = deployrclient.models.ParameterDefinition(name = "iris_type", type = "vector")
 
-   #Publish the service using the specified name, version.
-   client.publish_web_service_version("Double", "V1.0", publish_request, headers)
+   #Define the publish request for the web service and its arguments.
+   #Specify the code, inputs, outputs, snapshot, and runtime_type="Python"`.
+   publish_request = deployrclient.models.PublishWebServiceRequest(
+       code = "iris_type = [names[x] for x in clf.predict(flower_data)]", 
+       input_parameter_definitions = [flower_data], 
+       output_parameter_definitions = [iris_type],
+       runtime_type = "Python",
+       snapshot_id = response.snapshot_id)
+
+   #Publish the service using the specified name (iris), version (V1.0)
+   client.publish_web_service_version("Iris", "V1.0", publish_request, headers)
    ```
 
 1. Get and examine the service holdings and metadata for the service.
 
-@@ DOES THIS GET ALL SERVICES OR JUST THE DOUBLE ONE??
+   @@ DOES THIS GET ALL SERVICES OR JUST Iris V1.0?
 
    ```python
-   # Inspect holdings and metadata for service Double V1.0.
+   # Inspect holdings and metadata for service Iris V1.0.
    for service in client.get_all_web_services(headers):
        #print the service information
        print(service)
@@ -261,12 +323,100 @@ After your client library has been generated and you've built the authentication
        print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
    ```
 
-1. Consume the service in the current session.
+
+
+
+```python
+###This can all be replaced by generating a client library with autorest
+#Import the requests library to make requests on the server
+import requests
+#Import the JSON library to use for pretty printing of json responses
+import json
+
+#Create a requests `Session` object.
+s = requests.Session()
+
+#Record the URL  @@@OF WHAT AND FOR WHAT???
+url = "http://localhost:12800"
+
+#Give it the authentication headers
+s.headers = headers
+## @@WHAT IS THIS?????
+resp = s.get(url+"/api/Iris/V1.0/swagger.json")
+#Print out the valid paths  @@PATHS OF WHAT???
+# @@DOES THIS PRINT THE WHOLE SWAGGER TO SCREEN
+print(json.dumps(resp.json()["paths"], indent = 1, sort_keys = True))
+```
+
+@@ WHICH LINE OR LINES PRINTS OUT THE SERVICE SPECIFIC SWAGGER FILE CONTENTS??
+
+
+```python
+# print out the input and output parameters
+print("Input")
+print(json.dumps(resp.json()["definitions"]["InputParameters"], indent = 1, sort_keys = True))
+print("Output")
+print(json.dumps(resp.json()["definitions"]["WebServiceResult"], indent = 1, sort_keys = True))
+```
+
+ 
+
+```python
+## @@ WHAT IS THIS DOING
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[7,3.2,4.7,1.4]})
+## @@ WHAT IS THIS DOING... WHY DON'T YOU HAVE PATHS LIKE ABOVE??  DOES IT ONLY PRINT A SMALL PIECE OF THE SWAGGER TO THE SCREEN
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+```
+
+
+```python
+## @@ WHAT IS THIS DOING THAT THE PREVIOUS SECTION DID NOT
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[3,2.6,3,2.5]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+```
+
+
+
+```python
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[5.1,3.5,1.4,.2]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+```
+
+@@HOW DO I DOWNLOAD THE SWAGGER FILE TO MY MACHINE
+
+
+1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
    ```python
-   resp = client.get_web_service_swagger("Double","V1.0",headers)
-   print(resp)
+   #Define what needs to be updated. Here we add a description.
+   update_request = deployrclient.models.UpdateWebServiceRequest(
+       description = "Determines iris type using length and width of sepal and petal")
+
+   #Update the service using its name and version number
+   client.update_web_service_version("Iris", "V1.0", update_request, headers)
    ```
+
+@@ EASY EXAMPLE OF SOMETHING WE COULD CHANGE TO PUBLISH A V2.0 OF THIS. I'LL THEN DELETE 2.0 LATER
+
+@@CODE EXAMPLE FOR LIST SERVICES
+
+
+```python
+#Deletes the second version of the service
+s.delete(url+"/services/Iris/V2.0")
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##  Workflow: Consume Python web service
 
@@ -297,17 +447,6 @@ This example assumes you have the following (all of which are covered in Part 1)
 
 This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core APIs from your application.  
 
-Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
-
-1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/swagger/rserver-swagger-9.1.0.json.
-
-1. Build the statically generated client library files for CSharp from the `rserver-swagger-9.1.0.json` swagger. 
-   Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
-
-   ```
-   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-9.1.0.json -Namespace IO.Swagger.Client
-   ```
-
 1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 
    + `Microsoft.Rest.ClientRuntime`
    + `Microsoft.IdentityModel.Clients.ActiveDirectory`
@@ -320,19 +459,6 @@ Build and use a core R Server 9.1.0 client library from swagger in CSharp and Az
    ```
 
 1. Use the statically-generated client library files to call the APIs. In your application code, import the required namespace types and create an API client to manage the API calls:
-
-   ```
-   // --- IMPORT NAMESPACE TYPES -------------------------------------------------------
-   // Use the namespace provided with `AutoRest.exe -Namespace IO.Swagger.Client`
-   using IO.Swagger.Client;
-   using IO.Swagger.Client.Models;
-       
-   using Microsoft.IdentityModel.Clients.ActiveDirectory;
-   using Microsoft.Rest
-
-   // --- CREATE API CLIENT -------------------------------------------------------------
-   SwaggerClientTitle client = new SwaggerClientTitle(new Uri("https://rserver.contoso.com:12800"));
-   ```
 
 1. Add the authentication workflow to your application.  In this example, the organization has Azure Active Directory.
 
