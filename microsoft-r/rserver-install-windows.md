@@ -33,7 +33,9 @@ For a description of R Server components, benefits, and usage scenarios, see [In
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.0.1 deployment on Windows using the standalone Windows installer. Your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+This section walks you through an R Server 9.x deployment on Windows using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+
+If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
 
 ### Prerequisites
 
@@ -43,17 +45,16 @@ This section walks you through an R Server 9.0.1 deployment on Windows using the
 
 + Acceptance of the the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
-+ You must agree to an installation of **R Open**, fully compatible with R-3.3.3. R Open is Microsoft's distribution of the R language and base functions. R Server setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
++ Agree to an installation of **R Open**, fully compatible with R-3.3.3. R Open is Microsoft's distribution of the R language and base functions. R Server setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
 
-The following additional components are installed by Setup and required for an R Server installation on Windows.
+The following additional components are included in Setup and required for an R Server on Windows.
 
-| Component | Version |
-|-----------|---------|
-| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 |
-| Microsoft .NET Core | 1.1.0 |
-| Microsoft MPI | 7.1.12437.25 |
-| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.23026.0 |
+* Microsoft .NET Core 1.1
+* Microsoft MPI 7.1
+* AS OLE DB (SQL Server 2016) provider
+* Microsoft R Open 3.3.3.
+* Microsoft Visual C++ 2013 Redistributable
+* Microsoft Visual C++ 2015 Redistributable
 
 <a name="download"><a/>
 ### Download R Server installer
@@ -69,9 +70,11 @@ Get the zipped RServerSetup installer file from one of the following download si
 <a name="Run-Setup"></a>
 ### Run Setup
 
+THe download is a self-extracting executable. It's not necessary to unzip it first.
+
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. Accept the SQL Server license agreement for R Server and th license agreement for Microsoft R Open.
-3. At the end of the wizard, click **Install**.
+2. Accept the SQL Server license agreement for R Server, as well as the license agreement for Microsoft R Open.
+3. At the end of the wizard, click **Install** to run setup.
 
 ### Log files
 
@@ -91,17 +94,16 @@ As a verification step, connect to the server and execute a few ScaleR functions
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
-### Install tools (optional)
+## Configure R Server to operationalize your analytics
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+
+## Install development tools (optional)
 
 Consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
 
 + [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
 + [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
-
-
-## Configure R Server to operationalize your analytics
-
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Licensing and support
 
@@ -142,13 +144,21 @@ The Windows installer and SQL Server installer create different library folder p
 
 On Windows, you can [operationalize your analytics](operationalize/about.md) with R Server right now if you configure the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
 
-## Side-by-side installation
+## Upgrade and side-by-side
 
-You can install R Server 9.0.1 and previous major versions side-by-side on the same computer, but you can only install one copy of each major version (one 8.x and one 9.x installation on the same machine). As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install SQL Server R Services as part of a multi-instance relational database engine service and then use each one independently.
+There is no in-place upgrade that will overwrite an existing installation. You must uninstall older versions manually before running the setup program of a newer version. 
+
+Side-by-side installation is supported for major versions such as 8.x and 9.x on the same computer, but only one copy of each major version can exist on the same machine (for example, 9.1.0 and 8.0.5). 
+
+## Deploy at scale
+
+As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install [SQL Server R Services](sql-server-r-services.md) as part of a multi-instance relational database engine service and then use each one independently.
+
+Another scalable topology is to install multiple R Servers, each configured as either a dedicated web node or compute node. Nodes can be clustered using NLB or Windows failover clustering. For more information, see [Operationalize your analytics](operationalize/about.md).
 
 ## Offline installation
 
-By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install each component, and then run setup. For instructions, see [Offline installation](rserver-install-windows-offline.md).
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access. For instructions, see [Offline installation](rserver-install-windows-offline.md).
 
 ## Install earlier versions
 
