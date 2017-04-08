@@ -25,15 +25,19 @@ ms.custom: ""
 
 # Install R Server 9.0.1 on Cloudera Distribution Including Apache Hadoop (CDH)
 
-We recommend the latest version of [R Server for Hadoop](rserver-install-cloudera.md) for the most features and simplicity of installation, but if you have an older download of R Server for Hadoop 9.0.1, you can use the following instructions to create a parcel in Cloudera Manager. Multi-node installation is also covered in this article.
+We recommend the latest version of [R Server for Hadoop](rserver-install-cloudera.md) for the most features and for simplicity of installation, but if you have an older download of R Server for Hadoop 9.0.1, you can use the following instructions to create a parcel in Cloudera Manager. Multi-node installation is also covered in this article.
 
 ## Create an R Package Parcel for Cloudera Manager
 
 If you are using Cloudera Manager to manage your Cloudera Hadoop cluster, you can use the Microsoft R Server Parcel Generator to create a Cloudera Manager parcel containing additional R packages, and use the resulting parcel to distribute those packages across all the nodes of your cluster.
 
-The Microsoft R Server Parcel Generator is a Python script that takes a library of R packages and creates a Cloudera Manager parcel that **excludes any base or recommended packages, or packages included with the standard Microsoft R Server distribution**. Make sure to consider any dependencies your packages might have and be sure to include those in your library. If you installed Microsoft R Server with Cloudera Manager parcels, you will find the Parcel Generator in the *Revo.home()/scripts* directory. (You may need to ensure that the script has execute permission using the chmod command, or you can call it as “python generate\_r\_parcel.py”.)
+The Microsoft R Server Parcel Generator is a Python script that takes a library of R packages and creates a Cloudera Manager parcel that **excludes any base or recommended packages, or packages included with the standard Microsoft R Server distribution**. Make sure to consider any dependencies your packages might have and be sure to include those in your library. 
 
-When you call the script, you must provide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
+You can find the generate_r_parcel.py script at the following link: https://aka.ms/generate_r_parcel.py
+
+You can find the Parcel Generator used to run the script in the *MRS-x.y.z/bin* directory. You might need to ensure that the script has execute permission using the `chmod` command, or you can call it as `python generate\_r\_parcel.py`.)
+
+When calling the script, yprovide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
 
 	generate_r_parcel.py –p "RevoUserPkgs" –v "0.1" –l /home/RevoUser/R/library
 

@@ -45,7 +45,7 @@ In this release, most components required for R Server installation are embedded
 
 + Disk space must be a minimum of 500 MB.
 
-+ **.NET Framework 4.5.2** or later. 
++ .NET Framework 4.5.2 or later. 
 
 <a name="download"><a/>
 ## Download required components

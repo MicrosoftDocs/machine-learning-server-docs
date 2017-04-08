@@ -27,9 +27,18 @@ ms.custom: ""
 --------------------
 This article lists the Linux packages required for running or building Microsoft R packages on Linux and Hadoop platforms.
 
-For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a manual install of dependent packages is required.
+For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a separate download followed by manual install of dependent packages is required.
 
 You can download files from your Linux or Hadoop vendor. You can also use this site: [http://mirror.centos.org](http://mirror.centos.org/centos/7.3.1611/os/x86_64/Packages/).
+
+## Package dependencies for Microsoft R Server 9.1.0
+
+CentOS_RHEL_DEPENDENCIES="cairo fontconfig freetype libICE libSM libX11 libX11-common libXau libXft libXrender libXt libgomp libpng libthai libxcb pango pixman"
+
+SUSE_DEPENDENCIES="cairo fontconfig freetype xorg-x11-libICE xorg-x11-libSM xorg-x11-libX11 xorg-x11-libXau libXft xorg-x11-libXrender xorg-x11-libXt libgomp43 libpng12-0 libthai xorg-x11-libxcb pango"
+
+DEBIAN_DEPENDENCIES="libxt6 libsm6 libpango1.0-0 libgomp1 curl"
+
 
 ## Package dependencies for Microsoft R Server 9.0.1
 

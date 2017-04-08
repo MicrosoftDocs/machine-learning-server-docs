@@ -24,11 +24,11 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 9.0.1 on Hadoop
 
-Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop.md).
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 9.0.1. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop.md).
 
 **Side-by-side Installation**
 
-You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Hadoop, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
+You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Hadoop, but not minor versions. For example, you already installed Microsoft R Server 8.0, you must uninstall it before installing 8.0.5.
 
 **Upgrade Versions**
 
@@ -275,7 +275,7 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		> cd MRS90HADOOP; sudo bash ./install.sh -a -p
 		> exit
 
-### Install additional packages on each node using rxExec
+## Install additional packages on each node using rxExec
 
 Once you have R Server installed on a node, you can the `rxExec` function in RevoScaleR to install additional packages, including third-party packages from CRAN or another repository. For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
 

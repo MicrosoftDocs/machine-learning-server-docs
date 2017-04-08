@@ -40,7 +40,7 @@ If you previously installed version 9.0.1, be sure to uninstall it before procee
 
 + Disk space must be a minimum of 500 MB.
 
-+ **.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link if you need to install it first. A computer restart is required after the .NET Framework is installed.
++ .NET Framework 4.5.2 or later. The installer checks for this version of the .NET Framework and provides a download link if you need to install it first. A computer restart is required after the .NET Framework is installed.
 
 The following additional components are included in Setup and required for an R Server on Windows.
 

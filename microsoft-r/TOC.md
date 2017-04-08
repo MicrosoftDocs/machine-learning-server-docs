@@ -61,7 +61,7 @@
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Offline installation](rserver-install-linux-offline.md)
 #### [Uninstall from Linux](rserver-install-linux-uninstall.md)
-#### [Install an older version](rserver-install-hadoop-901.md)
+#### [Install an older version](rserver-install-linux-server-901.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
 
@@ -78,8 +78,8 @@
 #### Post-install configuration
 ##### [Add packages manually](rserver-install-hadoop-manual-package.md)
 ##### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
-##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
+##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 #### [Install an older version](rserver-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](rserver-install-hadoop-901.md)

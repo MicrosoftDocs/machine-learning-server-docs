@@ -29,6 +29,13 @@ This article explains how to add packages to an existing R Server installed on L
 
 If used the parcel generator to install R Server on CDH, the following instructions are useful for adding `MicrosoftML` and `mrsdeploy` to your R Server installation.
 
+
+## Install additional packages on each node using rxExec
+
+Once you have R Server installed on a node, you can the `rxExec` function in RevoScaleR to install additional packages, including third-party packages from CRAN or another repository. For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
+
+	rxExec(install.packages, "SuppDists")
+	
 ---
 copied from linux/hadoop install
 ---
