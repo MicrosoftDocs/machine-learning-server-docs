@@ -32,12 +32,7 @@ This article explains how to install Microsoft R Server 9.1.0 on a standalone Wi
 
 If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
 
-<a name="howtoinstall"></a>
-## How to install
-
-This section walks you through an R Server 9.x deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
-
-### System requirements
+## System requirements
 
 + Operating system must be a supported version of Windows on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
 
@@ -55,6 +50,11 @@ The following additional components are included in Setup and required for an R 
 * Microsoft R Open 3.3.3
 * Microsoft Visual C++ 2013 Redistributable
 * Microsoft Visual C++ 2015 Redistributable
+
+<a name="howtoinstall"></a>
+## How to install
+
+This section walks you through an R Server 9.x deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
 
 <a name="download"><a/>
 ### Download R Server installer

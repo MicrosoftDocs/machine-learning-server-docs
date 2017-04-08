@@ -60,23 +60,19 @@
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Offline installation](rserver-install-linux-offline.md)
-#### [Uninstall from Linux](rserver-install-uninstall-upgrade.md)
+#### [Uninstall from Linux](rserver-install-linux-uninstall.md)
 #### [Install an older version](rserver-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
 
 ### [R Server for Hadoop](rserver-install-hadoop.md)
 #### [Install on Hadoop](rserver-install-hadoop.md)
-
 ##### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
 ###### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
 ###### [Deploy and activate](rserver-install-cloudera-deploy-activate.md)
 ###### [Rollback to previous version](rserver-install-cloudera-rollback.md)
-
 ##### [Command line installation (CDH, HDP, MapR)](rserver-install-hadoop-command-line.md)
-
 ##### [Offline install](rserver-install-hadoop-offline.md)
-
 ##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
 
 #### Post-install configuration

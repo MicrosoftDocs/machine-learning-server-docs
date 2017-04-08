@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Server installation for Linux systems"
+title: "R Server 9.0.1 installation for Linux systems"
 description: "Install Microsoft R Server 9.0.1 on Linux."
 keywords: ""
 author: "HeidiSteen"
@@ -23,13 +23,13 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# R Server Installation for Linux Systems
+# R Server 9.0.1 Installation for Linux Systems
 
-This article explains how to install Microsoft R Server 9.0.1 on a standalone Linux server.
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](rserver-install-linux-server.md).
 
 **Side-by-side Installation**
 
-You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
+You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. For example, if you already installed Microsoft R Server 8.0, you must uninstall it before you can install 8.0.5.
 
 **Upgrade Versions**
 
@@ -45,16 +45,6 @@ Installer requirements include the following:
 
 If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
-<a name="download"><a/>
-## Download R Server installer
-
-Get the zipped RServerSetup installer file from one of the following download sites.
-
-| Site | Edition | Details |
-|------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server for Linux 9.0.1** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## System Requirements
 
