@@ -24,7 +24,7 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 9.0.1 on Hadoop
 
-This article explains how to install the latest version of Microsoft R Server 9.0.1 on a Hadoop cluster.
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop.md).
 
 **Side-by-side Installation**
 
@@ -38,7 +38,6 @@ If you want to replace an older version rather than run side-by-side, you can un
 
 A summary of setup tasks is as follows:
 
-- Download the software
 - Unzip to extract packages and an install script (install.sh)
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
@@ -51,24 +50,13 @@ The install script downloads and installs Microsoft R Open (microsoft-r-server-m
 
 In contrast with previous releases, this version  comes with a requirement for `root` installation. Non-root installations are not supported.
 
-<a name="download"><a/>
-## Download R Server installer
-
-Get the zipped RServerSetup installer file from one of the following download sites.
-
-| Site | Edition | Details |
-|------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Hadoop. A selection for **R Server for Hadoop 9.0.1** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
-
 ## Recommendations for installation
 
 We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R Server. Although the task will eventually get reassigned to a node that has R Server, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
-1. Sign in to [Azure Portal](https://ms.portal.azure.com).
+1. Sign in to [Azure portal](https://ms.portal.azure.com).
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
@@ -293,78 +281,10 @@ Once you have R Server installed on a node, you can the `rxExec` function in Rev
 
 	rxExec(install.packages, "SuppDists")
 
-## Multinode installation using Cloudera Manager
-
-The following steps walk you through a multinode installation using Cloudera Manager to create a Cloudera Manager parcel for an R Server installation.
-
-Two parcels are required:
-
-- *Microsoft R Open* parcel installs open source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
-- *Microsoft R Server* parcel installs proprietary components on the nodes of your Cloudera cluster.
-
-Install the Cloudera Manager parcels as follows:
-
-1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel](https://rserverdistribution.azureedge.net/production/MRO/3.3.2/485/1033/f9644b5c602b4479bcdaa88d55cdd977/MRO-3.3.2-Cloudera.tar.gz). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
-
-2. Download and unpack the R Server distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
-
-  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
-
-		mkdir /mnt/mrsimage
-		mount –o loop MRS90HADOOP.img /mnt/mrsimage
-
-  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
-
-		tar zxvf MRS90HADOOP.tar.gz
-
-3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
-
-  From the mounted img file:
-		cp /mnt/mrsimage/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
-
-  From the unpacked tar file:
-		cp /tmp/MRS90HADOOP/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
- 
-4. You should have the following files in your parcel repo:
-
-		MRO-3.3.2-el6.parcel
-		MRO-3.3.2-el6.parcel.sha
-		MRS-9.0.1-el6.parcel
-		MRS-9.0.1-el6.parcel.sha
-
-  Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others). Parcels should not have a file extension. If any parcels have a .sha file extension, please rename the file to remove the extension.
-
-5. In your browser, open Cloudera Manager.
-
-6. Click **Hosts** in the upper navigation bar to bring up the All Hosts page.
-
-7. Click **Parcels** to bring up the Parcels page.
-
-8. Click **Check for New Parcels**. MRO and MRS parcels should each appear with a **Distribute** button. After clicking **Check for New Parcels** you may need to click on **Location > All Clusters** on the left to see the new parcels.
-
-9. Click the MRO **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
-
-10. Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
-
-11. Click the MRS **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
-
-
 ## Configure R Server to operationalize your analytics
 
 Developers might want to configure R Server after its installation to benefit from the deployment and consumption of web services on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time.  We recommend that you set up the ["one-box configuration"](operationalize/configuration-initial.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
 
-
-
-
-## Troubleshoot installation problems
-
-See [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for tips.
-
-If you want to start over, see [Uninstall Microsoft R Server](rserver-install-uninstall-upgrade.md) for instructions.
-
-## Next steps
-
-To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](scaler-hadoop-getting-started.md).
 
 ## See Also
 
