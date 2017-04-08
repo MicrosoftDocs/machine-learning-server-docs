@@ -39,6 +39,48 @@ Tools and sample data
 
 TBD
 
+## Practicum
+
+Many of our enterprise customers don’t have a big data, big model problem. They have a small data many models problem. That is, the customers want to train separate models such as ARIMA (for time-series forecasting) or boosted trees within groups such as “smart meters” or “aircraft engines” or “products”. The trained models can then be used for time-series predictions, or to score fresh data for each of those small data partitions. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, and loan approvals for bank branches.  
+
+### Sample code for small data many models feature 
+
+~~~~
+cc <- rxSparkConnect(reset = TRUE) 
+ 
+delayFunc <- function(key, data, params) { 
+    df <- rxImport(inData = data) 
+    rxLinMod(ArrDelay ~ CRSDepTime, data = df) 
+} 
+ 
+airlineData <- 
+    RxTextData( 
+        "/share/SampleData/AirlineDemoSmall.csv", 
+        colInfo = list( 
+            ArrDelay = list(type = "numeric"), 
+            DayOfWeek = list(type = "factor") 
+        ), 
+        fileSystem = RxHdfsFileSystem() 
+    ) 
+ 
+returnObjs <- rxExecBy(airlineData, c("DayOfWeek"), delayFunc)  
+ 
+rxSparkDisconnect(cc)
+
+~~~~
+ 
+Things to Try 
+ 
+Reading data from a Hive table and passing it directly as input to rxExecBy() 
+
+Return values of different types from the user defined function 
+List 
+Single value 
+R data frame 
+
+Introduce errors in processing certain partitions (using the stop() function) and see the return status appropriately reflected 
+Use multiple keys in the "keys" argument
+
 ## See Also
 
 TBD
