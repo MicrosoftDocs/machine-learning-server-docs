@@ -26,33 +26,33 @@ ms.custom: ""
 
 # Install R Server 9.x for Windows
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. 
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For more information about the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). To learn more about features in the latest release, see [What's New in R Server](rserver-whats-new.md).
+This article explains how to install Microsoft R Server 9.1.0 on a standalone Windows server that has an internet connection.
+
+If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
 
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.x deployment on Windows using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+This section walks you through an R Server 9.x deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
 
-If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
+### System requirements
 
-### Prerequisites
++ Operating system must be a supported version of Windows on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
 
-+ A supported version of Windows. For an up-to-date list, see [Supported platforms](rserver-install-supported-platforms.md).
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
+
++ Disk space must be a minimum of 500 MB.
 
 + **.NET Framework 4.5.2** or later. The installer checks for this version of the .NET Framework and provides a download link if you need to install it first. A computer restart is required after the .NET Framework is installed.
-
-+ Acceptance of the the end user agreement. This agreement explains that R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
-
-+ Agree to an installation of **R Open**, fully compatible with R-3.3.3. R Open is Microsoft's distribution of the R language and base functions. R Server setup downloads and installs R Open from the [MRAN web site](https://mran.microsoft.com/download/).
 
 The following additional components are included in Setup and required for an R Server on Windows.
 
 * Microsoft .NET Core 1.1
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
-* Microsoft R Open 3.3.3.
+* Microsoft R Open 3.3.3
 * Microsoft Visual C++ 2013 Redistributable
 * Microsoft Visual C++ 2015 Redistributable
 
@@ -76,9 +76,11 @@ RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it
 2. In Configure installation, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
     + R Server (Standalone)
     + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
-3. Accept the SQL Server license agreement for R Server, as well as the license agreement for Microsoft R Open.
+3. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 4. Optionally, change the home directory for R Server.
 5. At the end of the wizard, click **Install** to run setup.
+
+<sup>1</sup> R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
 ### Log files
 

@@ -56,6 +56,7 @@
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline installation](rserver-install-windows-offline.md)
+
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Offline installation](rserver-install-linux-offline.md)
@@ -63,33 +64,41 @@
 #### [Install an older version](rserver-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
+
 ### [R Server for Hadoop](rserver-install-hadoop.md)
 #### [Install on Hadoop](rserver-install-hadoop.md)
+
 ##### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
 ###### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
 ###### [Deploy and activate](rserver-install-cloudera-deploy-activate.md)
 ###### [Rollback to previous version](rserver-install-cloudera-rollback.md)
+
 ##### [Command line installation (CDH, HDP, MapR)](rserver-install-hadoop-command-line.md)
+
 ##### [Offline install](rserver-install-hadoop-offline.md)
+
 ##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
-#### [Post-install configuration](rserver-install-hadoop-configuration-r-workloads.md)
-##### [Manual package installation](rserver-install-hadoop-manual-package.md)
+
+#### Post-install configuration
+##### [Add packages manually](rserver-install-hadoop-manual-package.md)
 ##### [Adjust Hadoop configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 ##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 #### [Install an older version](rserver-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](rserver-install-hadoop-901.md)
-##### [Install R Server 9.0.1 on CDH](rserver-install-hadoop-create-r-package-cloudera-manager.md)
+##### [Install R Server 9.0.1 on CDH](rserver-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
 #### [Get started on Spark](scaler-spark-getting-started.md)
 #### [Get started on MapReduce](scaler-hadoop-getting-started.md)
+
 ### [R Server for Teradata DB](scaler-teradata-getting-started.md)
 #### [Install on Teradata](rserver-install-teradata-server.md)
 ##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
+
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [One-box configuration](operationalize/configuration-initial.md)

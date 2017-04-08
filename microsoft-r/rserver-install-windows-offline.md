@@ -33,19 +33,29 @@ In this release, most components required for R Server installation are embedded
 * Microsoft .NET Core 1.1
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
-* Microsoft R Open 3.3.3.
+* Microsoft R Open 3.3.3
 * Microsoft Visual C++ 2013 Redistributable
 * Microsoft Visual C++ 2015 Redistributable
 
+## System requirements
+
++ Operating system must be a supported version of Windows on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
+
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
+
++ Disk space must be a minimum of 500 MB.
+
++ **.NET Framework 4.5.2** or later. 
+
 <a name="download"><a/>
-## Download prerequisites
+## Download required components
+
+Without an internet connection, the following components must be downloaded to a separate device and transferred to the target machine.
 
 | Component | Description | Download Link |
 |-----------|-------------|---------------|
 | SRO_3.3.3.0_1033.cab | R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
 | MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
-
-You can download these files to any location, but during installation, setup will look for them in the setup user's %temp% directory (for example, `C:\Users\<user-name>\AppData\Local\Temp`).
 
 <a name="download"><a/>
 ## Download R Server installer
@@ -70,6 +80,8 @@ Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData
 
 ## Run RServerSetup
 
+If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
+
 RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
 
 1. Double-click **RServerSetup.exe** to start the wizard.
@@ -77,9 +89,11 @@ RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it
     + R Server (Standalone)
     + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
 3. In an offline installation scenario, you ware notified if either prerequisite is missing, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
-4. Accept the SQL Server license agreement for R Server, as well as the license agreement for Microsoft R Open.
+4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 5. Optionally, change the home directory for R Server.
 5. At the end of the wizard, click **Install** to run setup.
+
+<sup>1</sup> R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
 ## View log files
 

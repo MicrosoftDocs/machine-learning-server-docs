@@ -25,46 +25,50 @@ ms.custom: ""
 
 # R Server 9.1.0 Installation for Linux Systems
 
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For informaton about the latest release, see [What's New in R Server](rserver-whats-new.md).
+
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
-**Side-by-side Installation**
+If you previously installed version 9.0.1, please [uninstall the older version](rserver-install-uninstall-upgrade.md) before installing 9.1.0.
 
-You can install major versions of R Server (such as an 8.x and 9.x) side-by-side on Linux, but not minor versions. If you already installed Microsoft R Server 9.0.1, you must uninstall it before you can install 9.1.0.
+<a name="howtoinstall"></a>
+## How to install
 
-**Upgrade Versions**
+This section walks you through an R Server 9.x deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
 
-If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+### System requirements
 
-**Requirements**
++ Operating system must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
 
-Installer requirements include the following:
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
--   An internet connection
--   A package manager (yum for RHEL systems, zypper for SLES systems)
--   Root or as super user permissions
++ Disk space must be a minimum of 500 MB.
 
-If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](rserver-install-linux-offline.md).
+
++ A package manager (yum for RHEL systems, zypper for SLES systems)
+
++ Root or super user permissions
+
+The following additional components are included in Setup and required for R Server.
+
+* Microsoft .NET Core 1.1
+* Microsoft MPI 7.1
+* AS OLE DB (SQL Server 2016) provider
+* Microsoft R Open 3.3.3
+* Microsoft Visual C++ 2013 Redistributable
+* Microsoft Visual C++ 2015 Redistributable
 
 <a name="download"><a/>
-## Download R Server installer
+### Download R Server installer
 
 Get the zipped RServerSetup installer file from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server for Linux 9.1.0** is provided on this site. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
-
-## System Requirements
-
-**Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
-
-**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
-
-**Memory:** A minimum of 2 GB of RAM is required; 8 GB or more are recommended.
-
-**Disk Space:** A minimum of 500 MB of disk space is required.
 
 ## Unpack the distribution
 
@@ -92,17 +96,17 @@ R Server for Linux is deployed by running the install script with no parameters.
 
    `[MRS90LINUX] $ sudo bash install.sh`
 
-3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-4. Installer output shows the packages and location of the log file.
+4. Repeat for the R Server license agreement: click Enter, click **q** when finished reading, click **y** to accept the terms.
+
+Installation begins immediately. Installer output shows the packages and location of the log file.
 
 ## Verify installation
 
 1. List installed packages and get package names:
 
    `[MRS90LINUX] $ yum list \*microsoft\*`
-   
-   `[MRS90LINUX] $ yum list \*deployr\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
@@ -110,11 +114,11 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 3. Check the version of Microsoft R Server:
 
-   `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
+   `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
 4. Partial output is as follows (note version 9.1.0):
 
-	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
+	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
 	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
 
@@ -316,9 +320,9 @@ You can install the latest Microsoft R Server side-by-side with an existing Micr
 
 If you have an installed R script in your /usr/bin directory and then install Microsoft R Server, the automated installer detects that R exists and does not prompt you to link R to Revo64. In this case, you can use both versions of R simply by calling them by their respective script names, “R” and “Revo64”. To have Microsoft R Server become your default R, do the following:
 
-1.  Rename the R script by appending the R version, for example 3.2.2:
+1.  Rename the R script by appending the R version, for example 3.3.3:
 
-		mv /usr/bin/R /usr/bin/R-3.2.2
+		mv /usr/bin/R /usr/bin/R-3.3.3
 
 2.  Create a symbolic link from the Revo64 script to R:
 
@@ -330,11 +334,9 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)
 
-[Install R Server 8.0 for Linux](rserver-install-linux-server-800.md)
+[Install R Server 9.0.1 for Linux](rserver-install-linux-server-901.md)
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
-
-[Install R Server 8.0.5 for Hadoop](rserver-install-hadoop-805.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 
