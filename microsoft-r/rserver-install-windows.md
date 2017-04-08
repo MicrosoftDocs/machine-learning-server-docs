@@ -30,7 +30,7 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Windows server that has an internet connection.
 
-If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
+If you previously installed version 9.0.1, be sure to uninstall it before proceeding.
 
 ## System requirements
 

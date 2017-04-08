@@ -29,7 +29,7 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
-If you previously installed version 9.0.1, please [uninstall the older version](rserver-install-uninstall-upgrade.md) before installing 9.1.0.
+If you previously installed version 9.0.1, be sure to [uninstall the older version](rserver-install-linux-uninstall.md) before proceeding.
 
 ## System requirements
 
@@ -70,7 +70,7 @@ Get the zipped RServerSetup installer file from one of the following download si
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-## Unpack the distribution
+### Unpack the distribution
 
 Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
 
@@ -84,7 +84,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
   `[tmp] $ tar zxvf en_r_server_910_for_linux_x64_9648602.gz`
 
-## Run the MRS install script
+### Run the MRS install script
 
 R Server for Linux is deployed by running the install script with no parameters.
 
@@ -102,7 +102,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   Installation begins immediately. Installer output shows the packages and location of the log file.
 
-## Verify installation
+### Verify installation
 
 1. List installed packages and get package names:
 
@@ -124,7 +124,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 	 . . .
 ```
 
-## Start Revo64
+### Start Revo64
 
 As a verification step, run the Revo64 program.
 
