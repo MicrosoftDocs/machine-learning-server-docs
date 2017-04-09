@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Hadoop installation and configuration for Microsoft R Server"
-description: "Hadoop installation and configuration guide for Microsoft R Server version 9.0.1 and 8.0.5"
+description: "Hadoop installation and configuration guide for Microsoft R Server"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/10/2017"
+ms.date: "04/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Hadoop installation and configuration for Microsoft R Server
 
-Microsoft R Server is a scalable data analytics server that can be deployed as a single-user workstation, a local network of connected servers, or on a Hadoop cluster in the cloud. The following links explain how to install, configure, and maintain an R Server deployment on Hadoop.
+Microsoft R Server is a scalable data analytics server that can be deployed as a single-user workstation, a local network of connected servers, or on a Hadoop cluster in the cloud. On Hadoop, R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 
 ### Requirements and Dependencies
 
@@ -34,17 +34,16 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 
 ### Step-by-Step
 
-- [Uninstall Microsoft R to upgrade to newer versions](rserver-install-uninstall-upgrade.md)
-- [Install Microsoft R Server 9.0.1 on Hadoop](rserver-install-hadoop-901.md)
-- [Install Microsoft R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
-- [Install Microsoft R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
-- [Adjust your Hadoop cluster configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
-- [Create an R package parcel for Hadoop cluster using Cloudera Manager](rserver-install-hadoop-create-r-package-cloudera-manager.md)
+- [Command line installation for any supported platform](rserver-install-hadoop-commandline.md)
+- [Install an R package parcel using Cloudera Manager](rserver-install-cloudera.md)
+- [Offline installation](rserver-install-hadoop-offline.md)
+- [Manual package installation](rserver-install-hadoop-manual-package.md)
 - [Configure R Server to operationalize R code and host analytic web services](operationalize/configuration-initial.md)
 
 ### Other Resources
 
-- [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+- [Uninstall Microsoft R to upgrade to newer versions](rserver-install-uninstall-upgrade.md)
+- [Adjust your Hadoop cluster configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 - [Enforcing YARN queue usage on R Server for Hadoop](rserver-install-hadoop-yarnqueueusage.md)
 - [Get started with ScaleR and Hadoop](scaler-hadoop-getting-started.md)
 - [Get started with ScaleR and Spark](scaler-spark-getting-started.md)
