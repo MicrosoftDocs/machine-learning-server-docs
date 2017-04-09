@@ -6,7 +6,7 @@ description: "Required Linux packages for a Microsoft R Server installation on L
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/05/2016"
+ms.date: "04/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -31,14 +31,43 @@ For computers with an internet connection, setup will download and add any missi
 
 You can download files from your Linux or Hadoop vendor. You can also use this site: [http://mirror.centos.org](http://mirror.centos.org/centos/7.3.1611/os/x86_64/Packages/).
 
+For a list of supported operating systems and versions, see [Supported platforms](rserver-install-supported-platforms.md).
+
 ## Package dependencies for Microsoft R Server 9.1.0
 
-CentOS_RHEL_DEPENDENCIES="cairo fontconfig freetype libICE libSM libX11 libX11-common libXau libXft libXrender libXt libgomp libpng libthai libxcb pango pixman"
+**Applies to:** CentOS, RedHat Enterprise Linux (RHEL), SUSE SLES (<sup>1</sup>)
 
-SUSE_DEPENDENCIES="cairo fontconfig freetype xorg-x11-libICE xorg-x11-libSM xorg-x11-libX11 xorg-x11-libXau libXft xorg-x11-libXrender xorg-x11-libXt libgomp43 libpng12-0 libthai xorg-x11-libxcb pango"
+Package  |  Version  | Repository  |
+---------|-----------|-------------|
+cairo   | 1.8.8-6.el6_6   | base  | 
+fontconfig  |2.8.0-5.el6  | base  | 
+freetype  | 2.3.11-17.el6  | base  | 
+libICE  |  1.0.6-1.el6  | base  | 
+libSM  |  1.2.1-2.el6  | base  | 
+libX11  | 1.6.3-2.el6  | base  | 
+libX11-common  | | 1.6.3-2.el6  | base  | 
+libXau  |  1.0.6-4.el6  | base  | 
+libXft  | 2.3.2-1.el6  | base  | 
+libXrender  | 0.9.8-2.1.el6_8.1  | updates  | 
+libXt  |  1.1.4-6.1.el6  | base  | 
+libgomp  | 4.4.7-17.el6  | base  | 
+libpng  | 2:1.2.49-2.el6_7  | base  | 
+libthai  | 0.1.12-3.el6  | base  | 
+libxcb  | 1.11-2.el6  | base  | 
+pango  | 1.28.1-11.el6  | base  | 
+pixman  | 0.32.8-1.el6  | base  | 
 
-DEBIAN_DEPENDENCIES="libxt6 libsm6 libpango1.0-0 libgomp1 curl"
+<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: "cairo fontconfig freetype xorg-x11-libICE xorg-x11-libSM xorg-x11-libX11 xorg-x11-libXau libXft xorg-x11-libXrender xorg-x11-libXt libgomp43 libpng12-0 libthai xorg-x11-libxcb pango"
 
+**Applies to:** Debian
+
+Package  |
+---------|
+libXt  | 
+libSM6  |  
+libpango1.0-0 |
+libgomp1  |
+curl  | 
 
 ## Package dependencies for Microsoft R Server 9.0.1
 

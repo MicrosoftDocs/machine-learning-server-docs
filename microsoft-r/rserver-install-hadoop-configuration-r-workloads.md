@@ -43,7 +43,7 @@ The memory available for R is the difference between the container’s memory li
 	<name>mapreduce.reduce.java.opts</name>
 	<value>-Xmx1229m</value>
 
-**in yarn-site.xml**
+**yarn-site.xml**
 
 	<name>yarn.nodemanager.resource.memory-mb</name>
 	<value>3198</value>

@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Server 9.1.00 installation for Linux systems"
+title: "R Server 9.1.0 installation for Linux systems"
 description: "Install Microsoft R Server 9.1.0 on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/07/2016"
+ms.date: "04/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -58,6 +58,10 @@ The following additional components are included in Setup and required for R Ser
 ## How to install
 
 This section walks you through an R Server 9.x deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+
+> [!Tip]
+> Review [recommendations and best practices](rserver-install-linux-manage-install.md) for deployments in locked down environments.
+>
 
 <a name="download"><a/>
 ### Download R Server installer
@@ -192,35 +196,9 @@ For a standard unattended install, run the following script:
 
 	./install.sh –a –s
 
-<a name="manage-installation"></a>
-## Manage your installation
+## Installing to a read-only file system
 
-In this section, we discuss file management for your Microsoft R Server installation, including file ownership, file permissions, and so on.
-
-### File ownership
-
-By default, the installed R Server files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user to reduce security concerns. In such an environment, you might want to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
-
-1. Install Microsoft R Server as root, as usual.
-2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
-3. Use the **chown** command to change ownership of the files (in the example below, we assume RUser has been made a member of the dev group; this command requires root privileges):
-
-		chown -R RUser:dev /usr/lib64/MRS90LINUX
-
-
-### Use Revo64 as default R
-
-If you installed base R followed by Microsoft R Server, the automated installer detects that R exists and does not prompt you to link R to Revo64. In this case, you can use both versions of R simply by calling them by their respective script names, “R” and “Revo64”. 
-
-To have Microsoft R Server become your default R, do the following:
-
-1.  Rename the R script by appending the R version, for example 3.3.3:
-
-		mv /usr/bin/R /usr/bin/R-3.3.3
-
-2.  Create a symbolic link from the Revo64 script to R:
-
-		ln -s /usr/bin/Revo64 /usr/bin/R
+In enterprise environments, it is common for enterprise utilities to be mounted as read-only file systems, so that ordinary operations cannot corrupt the tools. Obviously, new applications can be added to such systems only by first unmounting them, then re-mounting them for read/write, installing the software, and then re-mounting as read-only. This must be done by a system administrator.
 
 ## Remove Microsoft R Server
 
