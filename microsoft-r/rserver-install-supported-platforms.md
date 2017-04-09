@@ -36,7 +36,7 @@ All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and requ
 
 | SKU | Platforms |
 |-----|-----------|
-| **R Server for Hadoop** | **Hadoop <sup> 1</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (<sup>2</sup> ), Ubuntu 14.04 (<sup>2</sup> )<br/>**Spark <sup> 3</sup>Versions:**  <br/>Versions 1.6 and 2.0.  |
+| **R Server for Hadoop** | **Hadoop <sup> 1</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (<sup>2</sup> ), Ubuntu 14.04 (<sup>2</sup> )<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
 | **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br/>SUSE Linux Enterprise Server 11 (SLES11)<br/>Ubuntu 14.04 and 16.04|
 | **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
 | **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |

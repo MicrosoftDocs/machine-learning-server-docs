@@ -55,7 +55,7 @@ To have Microsoft R Server become your default R, do the following:
 
 		ln -s /usr/bin/Revo64 /usr/bin/R
 
-## Set up a local package repository behind a corporate firewall
+## Set up a local package repository behind a firewall
 
 One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes a number of functions that make it easy to download and install these packages. However, in many enterprise environments, access to the Internet is limited or non-existent. In such environments, it is useful to create a local package repository that users can access from within the corporate firewall.
 
@@ -69,7 +69,7 @@ There are two ways to create the package repository: either copy all the package
 > The miniCRAN package itself is dependent on 18 other CRAN packages, among which is the RCurl package, which has a system dependency on the curl-devel package. Similarly, package XML has a dependency on libxml2-devel. We recommend, therefore, that you build your local repository initially on a machine with full Internet access, so that you can easily satisfy all these dependencies. After created, you can either move the repository to a different location within your firewall, or simply disable the machine’s Internet access.
 >
 
-### Approach 1: Create a local repository using miniCRAN
+### Approach 1: use miniCRAN
 
 On a system with Internet access, the easiest way to install the miniCRAN package (or any R package) is to start R and use the install.packages function:
 
@@ -77,7 +77,7 @@ On a system with Internet access, the easiest way to install the miniCRAN packag
 
 If your system already contains all the system prerequisites, this will normally download and install all of miniCRAN’s R package dependencies as well as miniCRAN itself. If a system dependency is missing, compilation of the first package that needs that dependency will fail, typically with a specific but not particularly helpful message. In our testing, we have found that an error about curl-config not being found indicates that the curl-devel package is missing, and an error about libxml2 indicates the libxml2-devel package is missing. If you get such an error, exit R, use yum or zypper to install the missing package, then restart R and retry the install.packages command.
 
-### Approach 1: Create a repository from an MRAN snapshot
+### Approach 2: use an MRAN snapshot
 
 Creating a repository from an MRAN snapshot is very straightforward:
 

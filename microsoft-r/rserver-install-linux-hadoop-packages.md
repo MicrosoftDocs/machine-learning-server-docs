@@ -45,7 +45,7 @@ freetype  | 2.3.11-17.el6  | base  |
 libICE  |  1.0.6-1.el6  | base  | 
 libSM  |  1.2.1-2.el6  | base  | 
 libX11  | 1.6.3-2.el6  | base  | 
-libX11-common  | | 1.6.3-2.el6  | base  | 
+libX11-common  | 1.6.3-2.el6  | base  | 
 libXau  |  1.0.6-4.el6  | base  | 
 libXft  | 2.3.2-1.el6  | base  | 
 libXrender  | 0.9.8-2.1.el6_8.1  | updates  | 
@@ -57,17 +57,17 @@ libxcb  | 1.11-2.el6  | base  |
 pango  | 1.28.1-11.el6  | base  | 
 pixman  | 0.32.8-1.el6  | base  | 
 
-<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: "cairo fontconfig freetype xorg-x11-libICE xorg-x11-libSM xorg-x11-libX11 xorg-x11-libXau libXft xorg-x11-libXrender xorg-x11-libXt libgomp43 libpng12-0 libthai xorg-x11-libxcb pango"
+<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: `cairo`, `fontconfig`, `freetype`, `xorg-x11-libICE`, `xorg-x11-libSM`, `xorg-x11-libX11`, `xorg-x11-libXau`, `libXft`, `xorg-x11-libXrender`, `xorg-x11-libXt`, `libgomp43`, `libpng12-0`, `libthai`, `xorg-x11-libxcb pango'
 
-**Applies to:** Debian
+**Applies to:** Ubuntu
 
-Package  |
----------|
-libXt  | 
-libSM6  |  
-libpango1.0-0 |
-libgomp1  |
-curl  | 
+The following Debian packages are required for running R Server on Ubuntu.
+
++ libXt
++ libSM6
++ libpango1.0-0
++ libgomp1
++ curl
 
 ## Package dependencies for Microsoft R Server 9.0.1
 
