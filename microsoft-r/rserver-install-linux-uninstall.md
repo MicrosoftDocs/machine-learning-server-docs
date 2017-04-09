@@ -24,13 +24,13 @@ ms.custom: ""
 ---
 # Uninstall R Server to upgrade to a newer version
 
-This article explains how to uninstall Microsoft R Server on Linux. Upgrading to any new version of R Server, regardless of whether it's a major or minor release, requires that you first uninstall the existing deployment so that you can install the new distribution.
+This article explains how to uninstall Microsoft R Server on Linux. Unless you are upgrading from 9.0.1 to the [the latest version 9.1.0](rserver-install-linux-server.md), upgrading any major or minor release requires that you first uninstall the existing deployment so that you can install the new distribution.
 
-When you do reinstall R Server, we recommend [the latest version](rserver-install-linux-server.md) because it provides the newest features, including significant enhancements to the installers.
+For 9.0.1-to-9.1.0, the install script automatically removes previous versions of R Server or Microsoft R Open 3.3.2 if they are detected so that setup can install newer versions.
 
 ## Program version and file locations
 
-There are several approaches for identifying a program version, including `rpm -qi` as noted in the installation instructions.
+As a first step, use **yum** and **rpm** to check for program version and file locations.
 
 List installed packages and get package names:
 

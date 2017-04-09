@@ -113,7 +113,7 @@ To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
 
 To learn more, see [mrsdeploy Function Reference](mrsdeploy/mrsdeploy.md).
 
-**olapR package** lets you run MDX queries and connect directly to OLAP cubes on SQL Server 2016 Analysis Services from your R solution. You can manually create and then paste in an MDX query, or use an R-style API to choose a cube, axes, and slicers.
+**olapR package** lets you run MDX queries and connect directly to OLAP cubes on SQL Server 2016 Analysis Services from your R solution. You can manually create and then paste in an MDX query, or use an R-style API to choose a cube, axes, and slicers. This package is available on R Server for Windows, SQL Server R Services, and an R Server (Standalone) installation through SQL Server.
 
 To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/library/mt790485.aspx).
 

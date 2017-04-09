@@ -25,6 +25,8 @@ ms.custom: ""
 
 # Rollback to previous version
 
+**Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
+
 In terms of CDH installation and administration, Microsoft R Server 9.1.0 release is structured differently from previous releases. The 9.1.0 release leverages the CDH rollback feature to downgrade to the previous version. You can use the following instructions to roll back to an earlier distribution of Microsoft R Server 9.0.1 or 8.0.5 
 
 
@@ -32,6 +34,4 @@ In terms of CDH installation and administration, Microsoft R Server 9.1.0 releas
 
 ## See Also
 
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md)

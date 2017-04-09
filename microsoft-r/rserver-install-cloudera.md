@@ -31,9 +31,9 @@ Microsoft R Server installation on CDH is enhanced in 9.1.0. If you have prior e
 
 R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either cannot be included in the parcel, or included only if the underlying operating system is a specific platform and version.
 
-+ `MicrosoftML` can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. 
++ `MicrosoftML` can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. If CDH runs on any other operating system, such as Ubuntu or SUSE, the `MicrosoftML` package cannot be included.
 
-+ `mrsdeploy` cannot be included in the parcel at all.
++ `mrsdeploy` is always excluded in a parcel installation. This package has a .NET Core dependency and cannot be added to a parcel.
 
 The workaround is to perform a manual installation of individual packages. For instructions, see TBD.
 

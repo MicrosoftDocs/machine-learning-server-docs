@@ -29,7 +29,7 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
-If you previously installed version 9.0.1, be sure to [uninstall the older version](rserver-install-linux-uninstall.md) before proceeding.
+Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with Microsoft R Open 3.3.2. The install script automatically removes previous versions if they are detected so that setup can proceed.
 
 ## System requirements
 
@@ -47,17 +47,13 @@ If you previously installed version 9.0.1, be sure to [uninstall the older versi
 
 The following additional components are included in Setup and required for R Server.
 
-* Microsoft .NET Core 1.1
-* Microsoft MPI 7.1
-* AS OLE DB (SQL Server 2016) provider
 * Microsoft R Open 3.3.3
-* Microsoft Visual C++ 2013 Redistributable
-* Microsoft Visual C++ 2015 Redistributable
+* Microsoft .NET Core 1.1 for Linux (required for mrsdeploy and MicrosoftML use cases)
 
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.x deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md) and use the MicrosoftML package.
 
 > [!Tip]
 > Review [recommendations and best practices](rserver-install-linux-manage-install.md) for deployments in locked down environments.
@@ -87,6 +83,22 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 3. Unpack the file:
 
   `[tmp] $ tar zxvf en_r_server_910_for_linux_x64_9648602.gz`
+
+The distribution includes the following files:
+
+| File | Description |
+|------|-------------|
+|`install.sh` | Script for installing R Server. |
+|`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](rserver-install-cloudera.md). |
+| `EULA.txt` | End user license agreements for each separately licensed component. |
+| DEB | Microsoft R packages for deployment on Ubuntu. |
+| RPM | Microsoft R packages for deployment on CentOS/RHEL and SUSE |
+
+The distribution is unpacked into an `MRS90LINUX` folder at the download location. MSR packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
+
+> [!Important]
+> Package names in the R Server distribution have changed in the 9.0.1 release. Instead of DeployrR-named packages, the new package names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.
+>
 
 ### Run the MRS install script
 
@@ -187,7 +199,9 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
+ -m | --models | Install Microsoft ML models.
  -p | --hadoop-components | Install Hadoop components.
+ -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
@@ -198,7 +212,7 @@ For a standard unattended install, run the following script:
 
 ## Installing to a read-only file system
 
-In enterprise environments, it is common for enterprise utilities to be mounted as read-only file systems, so that ordinary operations cannot corrupt the tools. Obviously, new applications can be added to such systems only by first unmounting them, then re-mounting them for read/write, installing the software, and then re-mounting as read-only. This must be done by a system administrator.
+In enterprise environments, it is common for enterprise utilities to be mounted as read-only file systems, so that ordinary operations cannot corrupt the tools. New applications can be added to such systems only by first unmounting them, then re-mounting them for read/write, installing the software, and then re-mounting as read-only. This must be done by a system administrator.
 
 ## Remove Microsoft R Server
 

@@ -25,11 +25,9 @@ ms.custom: ""
 
 # Generate a parcel
 
-
+**Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
 
 ## See Also
 
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md)
