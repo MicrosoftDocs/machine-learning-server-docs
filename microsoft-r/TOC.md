@@ -60,7 +60,7 @@
 ### [R Server for Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Offline installation](rserver-install-linux-offline.md)
-#### [Install management and recommendations](rserver-install-linux-manage-install.md)
+#### [Manage your installation](rserver-install-linux-manage-install.md)
 #### [Uninstall from Linux](rserver-install-linux-uninstall.md)
 #### [Install an older version](rserver-install-linux-server-901.md)
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)

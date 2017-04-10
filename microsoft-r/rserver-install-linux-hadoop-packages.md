@@ -39,35 +39,35 @@ For a list of supported operating systems and versions, see [Supported platforms
 
 Package  |  Version  | Repository  |
 ---------|-----------|-------------|
-cairo   | 1.8.8-6.el6_6   | base  | 
-fontconfig  |2.8.0-5.el6  | base  | 
-freetype  | 2.3.11-17.el6  | base  | 
-libICE  |  1.0.6-1.el6  | base  | 
-libSM  |  1.2.1-2.el6  | base  | 
-libX11  | 1.6.3-2.el6  | base  | 
-libX11-common  | 1.6.3-2.el6  | base  | 
-libXau  |  1.0.6-4.el6  | base  | 
-libXft  | 2.3.2-1.el6  | base  | 
-libXrender  | 0.9.8-2.1.el6_8.1  | updates  | 
-libXt  |  1.1.4-6.1.el6  | base  | 
-libgomp  | 4.4.7-17.el6  | base  | 
-libpng  | 2:1.2.49-2.el6_7  | base  | 
-libthai  | 0.1.12-3.el6  | base  | 
-libxcb  | 1.11-2.el6  | base  | 
-pango  | 1.28.1-11.el6  | base  | 
-pixman  | 0.32.8-1.el6  | base  | 
+`cairo`   | 1.8.8-6.el6_6   | base  | 
+`fontconfig`  |2.8.0-5.el6  | base  | 
+`freetype`  | 2.3.11-17.el6  | base  | 
+`libICE`  |  1.0.6-1.el6  | base  | 
+`libSM`  |  1.2.1-2.el6  | base  | 
+`libX11`  | 1.6.3-2.el6  | base  | 
+`libX11-common`  | 1.6.3-2.el6  | base  | 
+`libXau` |  1.0.6-4.el6  | base  | 
+`libXft`  | 2.3.2-1.el6  | base  | 
+`libXrender`  | 0.9.8-2.1.el6_8.1  | updates  | 
+`libXt`  |  1.1.4-6.1.el6  | base  | 
+`libgomp`  | 4.4.7-17.el6  | base  | 
+`libpng`  | 2:1.2.49-2.el6_7  | base  | 
+`libthai`  | 0.1.12-3.el6  | base  | 
+`libxcb`  | 1.11-2.el6  | base  | 
+`pango`  | 1.28.1-11.el6  | base  | 
+`pixman`  | 0.32.8-1.el6  | base  | 
 
-<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: `cairo`, `fontconfig`, `freetype`, `xorg-x11-libICE`, `xorg-x11-libSM`, `xorg-x11-libX11`, `xorg-x11-libXau`, `libXft`, `xorg-x11-libXrender`, `xorg-x11-libXt`, `libgomp43`, `libpng12-0`, `libthai`, `xorg-x11-libxcb pango'
+<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: `cairo`, `fontconfig`, `freetype`, `xorg-x11-libICE`, `xorg-x11-libSM`, `xorg-x11-libX11`, `xorg-x11-libXau`, `libXft`, `xorg-x11-libXrender`, `xorg-x11-libXt`, `libgomp43`, `libpng12-0`, `libthai`, `xorg-x11-libxcb pango`
 
 **Applies to:** Ubuntu
 
 The following Debian packages are required for running R Server on Ubuntu.
 
-+ libXt
-+ libSM6
-+ libpango1.0-0
-+ libgomp1
-+ curl
++ `libXt`
++ `libSM6`
++ `libpango1.0-0`
++ `libgomp1`
++ `curl`
 
 ## Package dependencies for Microsoft R Server 9.0.1
 

@@ -25,11 +25,15 @@ ms.custom: ""
 
 # Manual package installation (Microsoft R Server for Linux or Hadoop)
 
-An alternative to running the install.sh script at the command line is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
+An alternative to running the install.sh script at the command line is to manually install each package and component.
 
-With root privilege, you can use the `rpm -qi` command to install each package in the R Server distribution.
+## Syntax
 
-For example: `rpm -qi microsoft-r-open-3.3.3.x6486.rpm`
+With root privilege, you can use the `rpm -qi` command to install each package in the R Server distribution. The following example illustrates the syntax.
+
+	`rpm -qi microsoft-r-open-3.3.3.x6486.rpm`
+
+## Steps
 
 1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
 
@@ -69,7 +73,7 @@ A manual or custom installation must create the appropriate folders and set perm
 
 ## Install additional packages on each node using rxExec
 
-Once you have R Server installed on a node, you can use the `rxExec` function in RevoScaleR to install additional packages, including third-party packages from CRAN or another repository. 
+Once you have R Server installed on a node, you can use the `rxExec` function in [RevoScaleR](scaler/scaler.md) to install additional packages, including third-party packages from CRAN or another repository. 
 
 For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
 

@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Quick start: Parallel processing on partitioned data with rxExecBy
 
-Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models can then be used for time-series predictions, or to score fresh data for each of those small data partitions. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, and loan approvals for bank branches.
+Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models could be used for time-series predictions, or to score fresh data for each small data partition. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, or loan approvals for bank branches.
 
 The new `rxExecBy` function in [RevoScaleR](scaler/scalerd.md) is designed for use cases calling for high-volume parallel processing over a large number of small data sets. Given this data profile, you can use `rxExecBy` to read in the data, partition the data, and then call a function to iterate over each partition in parallel.
 
