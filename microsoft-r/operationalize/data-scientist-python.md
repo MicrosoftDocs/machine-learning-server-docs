@@ -407,6 +407,11 @@ s.delete(url+"/services/Iris/V2.0")
 
 
 
+
+
+
+
+
 ##  Workflow: Consume Python web service
 
 Download the core API swagger file. 
@@ -427,11 +432,55 @@ This example assumes you have the following (all of which are covered in Part 1)
 
 1. Authenticate with R Server using the local admin account, Active Directory/LDAP, or Azure Active Directory. [Learn more...](#python-auth)
 
+   In our example, we'll authenticate using Azure Active Directory.
+
+     ```python
+     #Import the ADAL ibrary used for AAD authentication
+     import adal
+
+     #Provide the AAD connection parameters your admin gave you
+     url = "https://deployr-dogfood.mrs.microsoft-tst.com"
+     authuri = https://login.windows.net,
+     tenantid = "<<AAD_DOMAIN>>", 
+     clientid = "<<NATIVE_APP_CLIENT_ID>>", 
+     resource = "<<WEB_APP_CLIENT_ID>>", 
+
+     #Acquire authentication token using AAD Device Code Login
+     context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
+     code = context.acquire_user_code(resource, clientid)
+     print(code['message'])
+     token = context.acquire_token_with_device_code(resource, code, clientid)
+     #The authentication code returned must be entered at https://aka.ms/devicelogin 
+     ```      
+
 1. Add the `Bearer` access token returned when you authenticated. This token was returned during authentication and **must be included in every subsequent request header**. 
    ```python
    #Set the headers to be equal to the token response
    headers = {"Authorization":"Bearer "+token["accessToken"]}
    ```
+
+   @@WHY ARE BOTH OF THESE HERE AND HOW ARE THEY DIFFERENT?
+
+   ```python
+   # Set the headers to use the AAD accessToken as the authentication token
+   s = requests.session()
+   s.headers = headers 
+   ```
+
+1. Add the following package dependencies to your project in your editor: 
+   + The Python [Requests](http://docs.python-requests.org/en/master/) library included with the Ananconda distribution installed by R Server
+   + The JSON library used to pretty print the JSON responses
+
+   ```python
+   #Import the requests library to make requests on the server
+   import requests
+   #Import the JSON library for the pretty printing of responses
+   import json
+   ```
+
+   
+
+
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You'll be using it to generate the API client libraries in Python. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -470,74 +519,6 @@ This example assumes you have the following (all of which are covered in Part 1)
    import deployrclient
    ```   
 
-<a name="python-auth"></a>
-
-### Part 2. Add authentication and header logic to your script
-
-Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
-
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
-
-Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
-
-1. Add the authentication logic to the script to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
-
-   + **For AD/LDAP or the `admin` account authentication**, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
-
-     ```python
-     #Using client library generated from Autorest
-     #Create client instance and point it at an R Server. In this case, R Server is local.
-     client = deployrclient.DeployRClient("http://localhost:12800")
-
-     #Define the login request and provide credentials 
-     login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
-     #Make a call to the /login API. Store the returned an access token in a variable
-     token_response = client.login(login_request)
-     ```
-
-   + **For Azure Active Directory (AAD)**, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request. 
-   
-     If you do not know your connection settings, please contact your administrator.
-
-     ```python
-     #Import the AAD authentication library
-     import adal
-
-     #Provide the AAD connection parameters your admin gave you
-     url = "https://deployr-dogfood.mrs.microsoft-tst.com"
-     authuri = https://login.windows.net,
-     tenantid = "<<AAD_DOMAIN>>", 
-     clientid = "<<NATIVE_APP_CLIENT_ID>>", 
-     resource = "<<WEB_APP_CLIENT_ID>>", 
-
-     #Acquire authentication token using AAD Device Code Login
-     context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
-     code = context.acquire_user_code(resource, clientid)
-     print(code['message'])
-     token = context.acquire_token_with_device_code(resource, code, clientid)
-     #The authentication code returned must be entered at https://aka.ms/devicelogin 
-     ```     
-
-     @@@ Where do we set session true or false???
-
-1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
-
-     >[!IMPORTANT]
-     >Every API call must be authenticated. Therefore, remember to include headers with tokens to every single request.
-
-     ```python
-     #Add the returned access token to the headers variable
-     headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
-
-     #Verify that the server is running
-     #Remember to include `headers` in every request!
-     status_response = client.status(headers) 
-     print(status_response.status_code)
-     ```
-
-    @@You USED THE FOLLOWING IN YOUR AAD EXAMPLE: `headers = {"Authorization":"Bearer "+token["accessToken"]}`  Which is better?????
-
-
 
 ### Part 3. Create a session, the model, and a snapshot
 
@@ -570,29 +551,16 @@ After authentication, you can start a Python session and create a model you'll p
 
 
 
-```python
-```
 
 
 
 
 
-In this example, we are going to use the Python [Requests](http://docs.python-requests.org/en/master/) library, which is included with the Ananconda distribution installed by RServer
 
 
-```python
-#Import the requests library to make requests on the server
-import requests
-#Import the JSON library to use for pretty printing of json responses
-import json
-```
 
 
-```python
-# Set the headers to use the AAD accessToken as the authentication token
-s = requests.session()
-s.headers = headers 
-```
+
 
 First we get a list of all the services, and print out their names, version and language
 

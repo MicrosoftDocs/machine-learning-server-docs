@@ -34,7 +34,7 @@ By default, installers connect to Microsoft download sites to get required and u
 <a name="download"><a/>
 ## Download setup prerequisites
 
-Using an internet-connected computer, download .NET Core. The R Server installer for **mrsdeploy** is built on .NET Core. Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
+Using an internet-connected computer, download .NET Core. When configuring R Server to operationalize your analytics or for remote execution, the administration tool you use is built on .NET Core.  Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
 
 The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
 
