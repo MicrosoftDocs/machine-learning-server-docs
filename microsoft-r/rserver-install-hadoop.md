@@ -27,10 +27,10 @@ ms.custom: ""
 
 Microsoft R Server is a scalable data analytics server that can be deployed as a single-user workstation, a local network of connected servers, or on a Hadoop cluster in the cloud. On Hadoop, R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 
-### Requirements and Dependencies
+### Platforms and Dependencies
 
-- [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md)
-- [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md)
+- [Supported operating systems for Microsoft R Server](rserver-install-supported-platforms.md)
+- [Package dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md)
 
 ### Step-by-Step
 
@@ -39,11 +39,15 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 - [Offline installation](rserver-install-hadoop-offline.md)
 - [Manual package installation](rserver-install-hadoop-manual-package.md)
 - [Configure R Server to operationalize R code and host analytic web services](operationalize/configuration-initial.md)
-
-### Other Resources
-
 - [Uninstall Microsoft R to upgrade to newer versions](rserver-install-uninstall-upgrade.md)
+
+### Configuration
+
 - [Adjust your Hadoop cluster configuration for R Server workloads](rserver-install-hadoop-configuration-r-workloads.md)
 - [Enforcing YARN queue usage on R Server for Hadoop](rserver-install-hadoop-yarnqueueusage.md)
+- [Manage your R installation on Linux](rserver-install-linux-manage-install.md)
+
+### Start R workloads
+
 - [Get started with ScaleR and Hadoop](scaler-hadoop-getting-started.md)
 - [Get started with ScaleR and Spark](scaler-spark-getting-started.md)

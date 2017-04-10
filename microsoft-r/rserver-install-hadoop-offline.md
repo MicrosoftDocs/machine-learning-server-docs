@@ -71,7 +71,7 @@ The filename is `en_r_server_910_for_linux_x64_9648602.gz`.
 Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, should be transferring the following files:
 
 + `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
-+ `microsoft-r-open-3.3.2.tar.gz`
++ `microsoft-r-open-3.3.3.tar.gz`
 + `en_r_server_910_for_linux_x64_9648602.gz`
 + packages from the dependency list
 

@@ -27,7 +27,34 @@ ms.custom: ""
 
 An alternative to running the install.sh script at the command line is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.
 
-Assuming that the packages for Microsoft R Open and Microsoft R Server are already unpacked, a manual or custom installation must create the appropriate folders and set permissions.
+With root privilege, you can use the `rpm -qi` command to install each package in the R Server distribution.
+
+For example: `rpm -qi microsoft-r-open-3.3.3.x6486.rpm`
+
+1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+
+2. Verify system repositories are up to date:
+		[username] $ `sudo yum clean all`
+
+3. Download and unpack the R Server distribution, following the instructions provided in [Offline installation](rserver-install-hadoop-offline.md).
+
+4. Start with the .NET Core package from [http://www.microsoft.com/net/core](http://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
+
+5. You should have the following packages, which should be installed in this order:
+
+	microsoft-r-open-mro-3.3.3.x86_64.rpm
+	microsoft-r-server-packages-9.1.rpm
+	microsoft-r-server-hadoop-9.1.rpm
+	microsoft-r-server-mml-9.1.rpm
+	microsoft-r-server-mlm-9.1.rpm
+	microsoft-r-server-config-rserve-9.1.rpm
+	microsoft-r-server-computenode-9.1.rpm
+	microsoft-r-server-webnode-9.1.rpm
+	microsoft-r-server-adminutil-9.1.rpm
+
+## Create folders and set permissions
+
+A manual or custom installation must create the appropriate folders and set permissions.
 
 **RPM or DEB Installers**
 

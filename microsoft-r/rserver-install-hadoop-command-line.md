@@ -25,21 +25,19 @@ ms.custom: ""
 
 # Command line installation for R Server 9.x on Hadoop (CDH, HDP, MapR)
 
-R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, HortonWorks, and MapR. On Hadoop, R Server requires HDFS and Yarn. The programming model can be Spark, MapReduce, or both.
+R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, HortonWorks, and MapR. For most users, installing R Server on a cluster involves running the same series of steps on each data node of the cluster. A summary of setup tasks is as follows:
 
-A summary of setup tasks is as follows:
-
-- Unzip to extract packages and an install script (install.sh)
+- Download the installer
+- Unpack the distribution
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation
+- Repeat on the next data node.
 
-The install script downloads and installs Microsoft R Open (microsoft-r-server-mro-9.0.1.x86_64.rpm) and the .NET Core for Linux.
-
-Installation requires administrator permissions and must be performed as a `root` installation. Non-root installations are not supported.
+The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](rserver-install-hadoop-offline.md) instead.
 
 ## Recommendations for installation
 
-We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R Server. Although the task will eventually get reassigned to a node that has R Server, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
+We recommend installing R Server on all data nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R Server. Although the task will eventually get reassigned to a node that has R Server, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
@@ -47,7 +45,9 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
-## System requirements
+## Installation requirements
+
+Installation requires administrator permissions and must be performed as a `root` installation. Non-root installations are not supported.
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
@@ -55,7 +55,7 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 
-In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+## System requirements
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
@@ -65,6 +65,15 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Disk Space:** A minimum of 500 MB of disk space is required on each node for R Server. Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
+## Download R Server installer
+
+Get the zipped RServerSetup installer file from one of the following download sites.
+
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Hadoop** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## Unpack the distribution
 
@@ -224,7 +233,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 7. To quit the program, type `q()` at the command line with no arguments.
 
 <a name="DistributedInstallation"><a/>
-## Distributed Installation
+## Automate a distributed installation
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. Examples include the following
 
