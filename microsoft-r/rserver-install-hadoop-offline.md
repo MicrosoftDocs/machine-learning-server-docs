@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Offline install for Microsoft R Server 9.x for Linux"
-description: "How to install R Server on Linux without an internet connection"
+title: "Offline install for Microsoft R Server 9.1.0 for Hadoop"
+description: "How to install R Server on Hadoop without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/29/2017"
+ms.date: "04/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,14 +24,14 @@ ms.custom: ""
 
 ---
 
-# Offline installation instructions for R Server 9.x for Linux
+# Offline installation instructions for R Server 9.1.0 for Hadoop
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-> [!NOTE]
-> If you have problems with these instructions, please use the feedback button to provide details.
+Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with Microsoft R Open 3.3.2. The install script automatically removes previous versions if they are detected so that setup can proceed.
 
 <a name="download"><a/>
+
 ## Download setup prerequisites
 
 Using an internet-connected computer, download .NET Core. When configuring R Server to operationalize your analytics or for remote execution, the administration tool you use is built on .NET Core.  Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
@@ -43,7 +43,8 @@ The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
 | Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=827529 |
 | Visual Studio C++ | TBD | TBD tag.gz file |
 
-## Download packages
+
+## Download package dependencies
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
 
@@ -53,33 +54,37 @@ Use this syntax to download specific packages:
 yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 ~~~~
 
-## Download R Open installer
+## Download R Server dependencies
 
-You can get Microsoft R Open (MRO) 3.3.2 from the [MRAN web site](https://mran.microsoft.com/download/), choosing the distribution for your Linux operating system. 
+From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
-The filename is `microsoft-r-open-3.3.2.tar.gz`.
+| Component | Version | Download Link |
+|-----------|---------|---------------|
+| Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
+| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/core) |
 
-<a name="download"><a/>
+The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. The .NET Core download page provides platform-specific instructions. For offline scenarios, you will need to adapt the instructions for your system.
+
 ## Download R Server installer
 
-You can get Microsoft R Server (MRS) 9.x for Linux from one of the following download sites. 
-
-The filename is `en_r_server_910_for_linux_x64_9648602.gz`. 
+You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following download sites. 
 
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.1.0** is provided on this site. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Hadoop 9.1.0** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+The filename is `en_r_server_910_for_hadoop_x64_9648602.gz`. 
 
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, should be transferring the following files:
+Use a flash drive or another mechanism to transfer downloaded files to a writable directory on the master node, such as **/tmp**, on your disconnected server. To summarize, you should be transferring the following files:
 
 + `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `en_r_server_910_for_linux_x64_9648602.gz`
-+ packages from the dependency list
++ `en_r_server_910_for_hadoop_x64_9648602.gz`
++ any missing packages from the dependency list
 
 ## Install package dependencies
 
@@ -93,38 +98,11 @@ Next, unpack the distributions for prerequisites, MRO, and MRS.
 
 2. Switch to the **/tmp** directory (assuming it's the download location).
 
-3. Unpack the .NET Core redistribution:
-
-  `[tmp] $ tar zxvf dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
-  
-4. Unpack the Visual Studio C++ redistribution:
-
-  `[tmp] $ tar zxvf XXXXXX.tar.gz`
-
-5. Unpack the MRO gzipped file:
-
-  `[tmp] $ tar zxvf microsoft-r-open-3.3.2.tar.gz`
-
-6. Unpack the MRS gzipped file:
-
-  `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
-
-## Check files
-
-Files are unpacked into child folders: **microsoft-r-open** and  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and an install script (install.sh)
+3. Unpack the .NET Core redistribution:MRS90HADOOP**. If you list the contents, you will see licensing documents, subfolders, and scripts.
 
 ## Install .NET Core
 
-TBD.
-
-## Install Visual Studio C++ redistributable
-
-TBD.
-
-## Run the MRO install script
-
-R Open is deployed by running the install script with no parameters.
-
+Adapt the [.NET Core installation instructions](https://www.microsoft.com/net/core) provided for the Linux operating system you are using.
 
 ## Run the MRO install script
 
@@ -156,15 +134,15 @@ When finished, the installer output shows the packages and location of the log f
 
 ## Run the MRS install script
 
-R Server for Linux is deployed by running the install script with no parameters.
+R Server for Hadoop is deployed by running the install script with no parameters.
 
-1. Change to the `MRS90LINUX` directory containing the installation script:
+1. Change to the `MRS90HADOOP` directory containing the installation script:
 
-  `[tmp] $ cd ..\MRS90LINUX`
+  `[tmp] $ cd ..\MRS90HADOOP`
 
 2. Run the script.
 
-   `[MRS90LINUX] $ sudo bash install.sh`
+   `[MRS90HADOOP] $ sudo bash install.sh`
 
 3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -174,22 +152,20 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. List installed packages and get package names:
 
-   `[MRS90LINUX] $ yum list \*microsoft\*`
-
-   `[MRS90LINUX] $ yum list \*deployr\*`
+   `[MRS90HADOOP] $ yum list \*microsoft\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
-   `[MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+   `[MRS90HADOOP] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
 
 3. Check the version of Microsoft R Server:
 
-   `[MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.x86_64`
+   `[MRS90HADOOP] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
 
-4. Partial output is as follows (note version 9.0.1):
+4. Partial output is as follows (note version 9.1.0):
 
 	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
-	 Version     : 9.0.1                               Vendor: Microsoft
+	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
 
 ## Start Revo64
@@ -198,7 +174,7 @@ As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
 
-   `$ cd MRS90LINUX`
+   `$ cd MRS90HADOOP`
 
 2. Start the program:
 
@@ -249,6 +225,10 @@ Review the following walkthroughs to move forward with using R Server and the Re
 
 + [Get started with ScaleR on Spark](scaler-spark-getting-started.md)
 + [Get started with ScaleR on MapReduce](scaler-hadoop-getting-started.md)
+
+## Next Steps
+
+Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 

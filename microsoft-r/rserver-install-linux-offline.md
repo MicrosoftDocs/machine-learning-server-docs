@@ -65,7 +65,7 @@ The filename is `en_r_server_910_for_linux_x64_9648602.gz`.
 
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, should be transferring the following files:
+Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, you should be transferring the following files:
 
 + `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
@@ -98,7 +98,7 @@ Next, unpack the distributions for prerequisites, MRO, and MRS.
 
 ## Check files
 
-Files are unpacked into child folders: **microsoft-r-open** and  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and an install script (install.sh)
+Files are unpacked into child folders: **microsoft-r-open** and  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and scripts.
 
 ## Install .NET Core
 
@@ -219,9 +219,11 @@ To quit the program, type `q()` at the command line with no arguments.
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
-## See Also
+## Next Steps
 
-[Run R Server for Windows](rserver-install-windows.md)
+Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+
+## See Also
 
 [Supported platforms](rserver-install-supported-platforms.md)
 
