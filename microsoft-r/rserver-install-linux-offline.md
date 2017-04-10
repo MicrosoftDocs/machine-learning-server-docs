@@ -34,6 +34,12 @@ Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with M
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
 
+Use this syntax to download specific packages:
+
+~~~~
+yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
+~~~~
+
 ## Download R Server dependencies
 
 From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.

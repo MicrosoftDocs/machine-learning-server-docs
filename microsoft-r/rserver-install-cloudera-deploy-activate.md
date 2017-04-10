@@ -27,8 +27,7 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-Microsoft R Server installation on CDH is enhanced in 9.1.0. If you have previous experience installing R Server on CDH, please review installation instructions for the current release to use the new workflow.
-
+Microsoft R Server installation on CDH is enhanced in 9.1.0. This release adds support custom service descriptors so that you can manage R Server from within Cloudera Manager.
 
 After installing the parcels, the next step is to download, install, and run the Microsoft R Server Custom Service Descriptor. In Cloudera Manager, installation and activation are decoupled so that you can have multiple versions of a software package in the cluster. Only version can be active at any time.
 

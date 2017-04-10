@@ -34,7 +34,7 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 
 ### Step-by-Step
 
-- [Command line installation for any supported platform](rserver-install-hadoop-commandline.md)
+- [Command line installation for any supported platform](rserver-install-hadoop-command-line.md)
 - [Install an R package parcel using Cloudera Manager](rserver-install-cloudera.md)
 - [Offline installation](rserver-install-hadoop-offline.md)
 - [Manual package installation](rserver-install-hadoop-manual-package.md)

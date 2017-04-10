@@ -25,17 +25,29 @@ ms.custom: ""
 
 # Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-Microsoft R Server installation on CDH is enhanced in 9.1.0. If you have prior experience installing R Server on CDH, please review our updated installation instructions to learn about the new workflow.
+Microsoft R Server installation on CDH is enhanced in 9.1.0 in two important ways. First, instead of using pre-built parcels downloaded from Microsoft, you can generate your own parcel using a new generate_mrs_parcel.sh script. Secondly, we added support for Custom Service Descriptors (CSDs). You can now deploy, configure, and monitor R Server in CDH as a managed service in Cloudera Manager.
+
+If you have prior experience installing R Server on CDH, the new workflow consists of the following steps:
+
++ Download and unpack the R Server distribution for Hadoop using the instructions in this article.
++ Run the generate_mrs_parcel.sh script to create a parcel file.
++ Deploy the parcel.
++ Deploy the CSD
++ Activate R Server in Cloudera Manager.
+
+## Download and unpack the MRS distribution
+
+TBD
 
 ## Feature installation restrictions
 
 R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either cannot be included in the parcel, or included only if the underlying operating system is a specific platform and version.
 
-+ `MicrosoftML` can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. If CDH runs on any other operating system, such as Ubuntu or SUSE, the `MicrosoftML` package cannot be included.
++ `MicrosoftML` is conditionally available. The package can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. If CDH runs on any other operating system, such as Ubuntu or SUSE, the `MicrosoftML` package cannot be included.
 
-+ `mrsdeploy` is always excluded in a parcel installation. This package has a .NET Core dependency and cannot be added to a parcel.
++ `mrsdeploy` is excluded from a parcel installation. This package has a .NET Core dependency and cannot be added to a parcel.
 
-The workaround is to perform a manual installation of individual packages. For instructions, see TBD.
+The workaround is to perform a manual installation of individual packages. For instructions, see [Manual package installation](rserver-hadoop-manual-package.md).
 
 ## See Also
 

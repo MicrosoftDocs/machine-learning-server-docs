@@ -29,7 +29,7 @@ ms.custom: ""
 
 In terms of CDH installation and administration, Microsoft R Server 9.1.0 release is structured differently from previous releases. The 9.1.0 release leverages the CDH rollback feature to downgrade to the previous version. You can use the following instructions to roll back to an earlier distribution of Microsoft R Server 9.0.1 or 8.0.5 
 
-
+1. In Cloudera Manager, click Cloudera
 
 
 ## See Also

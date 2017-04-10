@@ -91,8 +91,9 @@ The distribution includes the following files:
 |`install.sh` | Script for installing R Server. |
 |`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](rserver-install-cloudera.md). |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
-| DEB | Microsoft R packages for deployment on Ubuntu. |
-| RPM | Microsoft R packages for deployment on CentOS/RHEL and SUSE |
+| DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
+| RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE |
+| Parcel folder | Contains files used to generate a parcel for installation on CDH. |
 
 The distribution is unpacked into an `MRS90LINUX` folder at the download location. MSR packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
 
@@ -104,17 +105,23 @@ The distribution is unpacked into an `MRS90LINUX` folder at the download locatio
 
 R Server for Linux is deployed by running the install script with no parameters.
 
-1. Change to the `MRS90LINUX` directory containing the installation script:
+1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+
+2. Verify system repositories are up to date:
+
+  `[username] $ sudo yum clean all`
+
+3. Change to the `MRS90LINUX` directory containing the installation script:
 
   `[tmp] $ cd ..\MRS90LINUX`
 
-2. Run the script.
+4. Run the script.
 
    `[MRS90LINUX] $ sudo bash install.sh`
 
-3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-4. Repeat for the R Server license agreement: click Enter, click **q** when finished reading, click **y** to accept the terms.
+6. Repeat for the R Server license agreement: click Enter, click **q** when finished reading, click **y** to accept the terms.
 
   Installation begins immediately. Installer output shows the packages and location of the log file.
 

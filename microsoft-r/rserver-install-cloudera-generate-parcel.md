@@ -27,7 +27,7 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-In previous releases, parcel installation required downloading two pre-build parcel files. The 9.1.0 release improves upon this experience by providing a parcel generator script. The script guides you through a series of steps and produces a single parcel file in the end.
+In previous releases, parcel installation required downloading two pre-built parcel files. The 9.1.0 release improves upon this experience by providing a parcel generator script. The script guides you through a series of steps and produces a single parcel file in the end.
 
 The script name is `generate_mrs_parcel.sh`.
 

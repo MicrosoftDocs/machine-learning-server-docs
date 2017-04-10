@@ -47,6 +47,12 @@ The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
 
+Use this syntax to download specific packages:
+
+~~~~
+yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
+~~~~
+
 ## Download R Open installer
 
 You can get Microsoft R Open (MRO) 3.3.2 from the [MRAN web site](https://mran.microsoft.com/download/), choosing the distribution for your Linux operating system. 
