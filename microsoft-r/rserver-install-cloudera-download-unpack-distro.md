@@ -29,9 +29,11 @@ Microsoft R Server installation on CDH is enhanced in 9.1.0 in two important way
 
 If you have prior experience installing R Server on CDH, the new workflow consists of the following steps:
 
-1. [Download and unpack the R Server distribution for Hadoop on the master node](rserver-install-cloudera-download-unpack-distro.md)
-2. [Run the generate_mrs_parcel.sh script to create a parcel file](rserver-install-cloudera-generate-parcel.md)
-3. [Add Microsoft R Server as a service using a Custom Service Descriptor (CSD)](rserver-install-cloudera-deploy-activate.md)
+1. Download and unpack the R Server distribution for Hadoop on the master node.
+2. Run the generate_mrs_parcel.sh script to create a parcel file.
+3. Deploy the parcel.
+4. Deploy the CSD
+5. Activate R Server in Cloudera Manager.
 
 ## Feature installation restrictions
 
