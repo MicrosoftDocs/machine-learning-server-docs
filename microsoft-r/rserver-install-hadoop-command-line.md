@@ -261,3 +261,14 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		> exit
 
 Each command must run on a single logical line, even if it spans two lines below due to space constraints. Lines beginning with `>` indicate commands typed into an interactive pdsh session.
+
+## Enable Remote Connections and Analytic Deployment
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+
+## Next Steps
+
+Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
+
++ [Get started with ScaleR on Spark](scaler-spark-getting-started.md)
++ [Get started with ScaleR on MapReduce](scaler-hadoop-getting-started.md)

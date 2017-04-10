@@ -79,3 +79,13 @@ For example, to install the `SuppDists` package on all the nodes of your cluster
 
 	rxExec(install.packages, "SuppDists")
 	
+## Enable Remote Connections and Analytic Deployment
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+
+## Next Steps
+
+Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
+
++ [Get started with ScaleR on Spark](scaler-spark-getting-started.md)
++ [Get started with ScaleR on MapReduce](scaler-hadoop-getting-started.md)
