@@ -6,7 +6,7 @@ description: "Quick start for Microsoft R: Parallel processing on partitioned da
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/30/2017"
+ms.date: "04/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,25 +25,26 @@ ms.custom: ""
 
 # Quick start: Parallel processing on partitioned data with rxExecBy
 
-You can partition an arbitrary dataset into thousands or millions of partitions, and then iterate over each partition using almost any user-defined or analytical or statistical function from the collection of Microsoft R packages. The new `rxExecBy` function in RevoScaleR streamlines this task by scanning, sorting, and grouping data into partitions, and then calling whatever function you have specified over each partition. Inputs include a data source, a key used to group and partition data, and a function used to perform an operation.
+Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models can then be used for time-series predictions, or to score fresh data for each of those small data partitions. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, and loan approvals for bank branches.
 
-Consider the airline dataset with flight delay data values for multiple airports, over multiple years. In just the small dataset alone, there are over #### data points. Suppose you wanted to understand the flight delays by day of the week, for example, the average delay for Mondays, Tuesdays, and so forth. The script in this tutorial shows you how to accomplish this task using the new `rxExecBy` function.
+The new `rxExecBy` function in [RevoScaleR](scaler/scalerd.md) is designed for use cases calling for high-volume parallel processing over a large number of small data sets. Given this data profile, you can use `rxExecBy` to read in the data, partition the data, and then call a function to iterate over each partition in parallel.
 
-## Prerequisites
+## How to use rxExecBy
 
-R Server or R Client
+`rxExecBy` takes four inputs and produces an output for each partition, in whatever product the user-defined function computes. The function can be almost any user-defined or analytical or statistical function from the collection of Microsoft R packages, able to [execute jobs in parallel](scaler-dsitributed-computing-parallel-jobs.md). The data sets can be .csv files loaded via RxTextData. The parallel processing occurs when you run the `rxExecby` script on a platform offering distributed computing. In this case, either Spark or SQL Server R Services.
 
-Tools and sample data
+Input criteria | Method |
+---------------|--------|
+Data sources | RxTextData, RxXdfData, RxHiveData, RxParquetData, RxOrcData, rxSparkDataOps |
+Keys | Choose one or more fields used to group data, such as an ID.
+Compute context | rxSpark, rxInSQLServer |
+User-defined functions | rxLinMod, rxLogit, rxPredict, rxGlm, rxCovCor, rxDtree, and others |
 
-## Load, process, and return results
+## Sample code using Airline data set 
 
-TBD
+To demonstrate `rxExecBy`, we will use the airline dataset with flight delay data values for multiple airports, over multiple years. In just the small dataset alone, there are over #### data points. 
 
-## Practicum
-
-Many of our enterprise customers don’t have a big data, big model problem. They have a small data many models problem. That is, the customers want to train separate models such as ARIMA (for time-series forecasting) or boosted trees within groups such as “smart meters” or “aircraft engines” or “products”. The trained models can then be used for time-series predictions, or to score fresh data for each of those small data partitions. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, and loan approvals for bank branches.  
-
-### Sample code for small data many models feature 
+In our demonstration, our objective is to understand the flight delays by day of the week; in other words, the average delay for Mondays, Tuesdays, and so forth. The script in this tutorial shows you how to accomplish this task using  `rxExecBy`.
 
 ~~~~
 cc <- rxSparkConnect(reset = TRUE) 
@@ -68,19 +69,7 @@ returnObjs <- rxExecBy(airlineData, c("DayOfWeek"), delayFunc)  
 rxSparkDisconnect(cc)
 
 ~~~~
- 
-Things to Try 
- 
-Reading data from a Hive table and passing it directly as input to rxExecBy() 
-
-Return values of different types from the user defined function 
-List 
-Single value 
-R data frame 
-
-Introduce errors in processing certain partitions (using the stop() function) and see the return status appropriately reflected 
-Use multiple keys in the "keys" argument
 
 ## See Also
 
-TBD
+[RevoScaleR](scaler/scalerd.md)
