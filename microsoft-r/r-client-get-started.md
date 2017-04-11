@@ -120,7 +120,7 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
    + Run `RClientSetup.exe`, which then finds the cab file in the same folder, and follow the onscreen prompts.
 
-> Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
+1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
  
 **What's Installed with R Client**<br>
 

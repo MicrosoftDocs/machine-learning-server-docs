@@ -65,26 +65,28 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a compute node
 
-1. Terminate all services and tasks associated with your web and compute nodes. 
-   1. Stop each compute node using the administration utility [as described here](admin-utility.md#startstop). 
+1. Terminate all services and tasks associated with your node. 
+   + On Windows: 
+     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
+     1. Stop RServe in the Services dialog.
    
-   1. Stop the Rserve service.
-      + On Windows, stop RServe in the Services dialog.
-      + On Linux, use `systemctl stop rserve`.
+   + On Linux: 
+     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
+     1. Stop RServe using `systemctl stop rserve`.
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
-   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
-   + Linux: `/etc/deployr/current`
+   + On Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-    + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-    + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+     >[!IMPORTANT]
+     >For SQL Server Machine Learning Services, you must also:
+     >1. Manually install .NET Core 1.1.
+     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-    >[!IMPORTANT]
-    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
-    >+ Install .NET core 1.1 for R Server 9.1.0
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
@@ -99,27 +101,28 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a web node
 
-
-1. Terminate all services and tasks associated with your web and compute nodes. 
-   1. Stop each web node using the administration utility [as described here](admin-utility.md#startstop). 
+1. Terminate all services and tasks associated with your node. 
+   + On Windows: 
+     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
+     1. Stop RServe in the Services dialog.
    
-   1. Stop the Rserve service.
-      + On Windows, stop RServe in the Services dialog.
-      + On Linux, use `systemctl stop rserve`.
+   + On Linux: 
+     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
+     1. Stop RServe using `systemctl stop rserve`.
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
-   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
-   + Linux: `/etc/deployr/current`
+   + On Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-    + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-    + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+     >[!IMPORTANT]
+     >For SQL Server Machine Learning Services, you must also:
+     >1. Manually install .NET Core 1.1.
+     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-    >[!IMPORTANT]
-    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
-    >+ Install .NET core 1.1 for R Server 9.1.0
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
@@ -163,15 +166,15 @@ In an enterprise configuration, you can set up one or more compute nodes.
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. On each machine, install Microsoft R Server:
-   + On Windows, install R Server for Windows: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-   + On Linux, install R Server for Linux: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+1. Install Microsoft R Server:
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+     >[!IMPORTANT]
+     >For SQL Server Machine Learning Services, you must also:
+     >1. Manually install .NET Core 1.1.
+     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-    >[!IMPORTANT]
-    >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
-    >+ Install .NET core 1.0.1 for R Server 9.0
-    >+ Install .NET core 1.1 for R Server 9.1.0
-
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   
 1. If on the following Linux flavors, then add a few symlinks:  (If on Windows, skip to the next step)
 
    + On CentOS 7.1, CentOS 7.2:
@@ -240,10 +243,13 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
 1. On each machine, install the same R Server version you installed on the compute node.
-   >[!IMPORTANT]
-   >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
-   >+ Install .NET core 1.0.1 for R Server 9.0
-   >+ Install .NET core 1.1 for R Server 9.1.0
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+     >[!IMPORTANT]
+     >For SQL Server Machine Learning Services, you must also:
+     >1. Manually install .NET Core 1.1.
+     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
 1. Declare the IP addresses of every compute node with each web node.
    1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).

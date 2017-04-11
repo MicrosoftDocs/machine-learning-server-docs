@@ -70,33 +70,35 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
-   
-1. Terminate all services and tasks associated with your web and compute nodes. 
-   1. Stop each web node and each compute node in the administration utility [as described here](admin-utility.md#startstop). 
-   
-   1. Stop the Rserve service.
-      + On Windows, stop RServe in the Services dialog.
-      + On Linux, use `systemctl stop rserve`.
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). 
+1. Terminate all services and tasks associated with your nodes. 
+   + On Windows: 
+     1. Use the administration utility to [stop the compute and web node services](admin-utility.md#startstop). 
+     1. Stop RServe in the Services dialog.
+   
+   + On Linux: 
+     1. Use the administration utility to [stop the compute and web node services](admin-utility.md#startstop). 
+     1. Stop RServe using `systemctl stop rserve`.
 
-   The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
-   + Linux: `/etc/deployr/current`
+1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+
+   + On Linux: `/etc/deployr/current`
 
 1. If you backed up a SQLite database in Step 1, manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
    + Linux: `/etc/deployr/current/frontend`
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
-   
-1. Install Microsoft R Server:
-   + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-   + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-   >[!IMPORTANT]
-   >If installing in an offline environment, you must also manually these dependencies before configuring any nodes.
-   >+ Install .NET core 1.1 for R Server 9.1.0
+1. Install Microsoft R Server:
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+     >[!IMPORTANT]
+     >For SQL Server Machine Learning Services, you must also:
+     >1. Manually install .NET Core 1.1.
+     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
 
