@@ -30,6 +30,20 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with Microsoft R Open 3.3.2. The install script automatically removes previous versions if they are detected so that setup can proceed.
 
+<a name="download"><a/>
+
+## Download setup prerequisites
+
+Using an internet-connected computer, download .NET Core. When configuring R Server to operationalize your analytics or for remote execution, the administration tool you use is built on .NET Core.  Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
+
+The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
+
+| Component | Version | Download Link |
+|-----------|---------|--------|
+| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=827529 |
+| Visual Studio C++ | TBD | TBD tag.gz file |
+
+
 ## Download package dependencies
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
