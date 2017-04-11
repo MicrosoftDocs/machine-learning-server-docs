@@ -33,7 +33,7 @@ If you have prior experience installing R Server on CDH, the new workflow consis
 2. [Run the generate_mrs_parcel.sh script to create a parcel file](rserver-install-cloudera-generate-parcel.md)
 3. [Add Microsoft R Server as a service using a Custom Service Descriptor (CSD)](rserver-install-cloudera-deploy-activate.md)
 
-## Feature installation restrictions
+## Feature restrictions in a parcel installation
 
 R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either cannot be included in the parcel, or included only if the underlying operating system is a specific platform and version.
 

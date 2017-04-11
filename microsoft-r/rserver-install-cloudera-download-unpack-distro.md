@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Server installation on Cloudera CDH"
-description: "Install Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)."
+title: "Download and unpack an R Server distribution on Cloudera CDH"
+description: "Download and unpack an R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/29/2017"
+ms.date: "04/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,27 +23,31 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
+# Download and unpack an R Server distribution on Cloudera CDH
 
-Microsoft R Server installation on CDH is enhanced in 9.1.0 in two important ways. First, instead of using pre-built parcels downloaded from Microsoft, you can generate your own parcel using a new generate_mrs_parcel.sh script. Secondly, we added support for Custom Service Descriptors (CSDs). You can now deploy, configure, and monitor R Server in CDH as a managed service in Cloudera Manager.
+If you are using a parcel installer to deploy R Server 9.1.0 using Cloudera Manager, the first step is to download and unpack the distribution on the master node.
 
-If you have prior experience installing R Server on CDH, the new workflow consists of the following steps:
+## Download R Server installer
 
-1. Download and unpack the R Server distribution for Hadoop on the master node.
-2. Run the generate_mrs_parcel.sh script to create a parcel file.
-3. Deploy the parcel.
-4. Deploy the CSD
-5. Activate R Server in Cloudera Manager.
+Get the zipped RServerSetup installer file from one of the following download sites.
 
-## Feature installation restrictions
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Hadoop. A selection for **R Server 9.1.0 for Hadoop** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either cannot be included in the parcel, or included only if the underlying operating system is a specific platform and version.
+## Unpack the distribution
 
-+ `MicrosoftML` is conditionally available. The package can be included in the parcel if the underlying operating system is CentOS/RHEL 7.x. If CDH runs on any other operating system, such as Ubuntu or SUSE, the `MicrosoftML` package cannot be included.
+Download the software to a writable directory, such as **/tmp**, unpack the distribution and then run the installation script.
 
-+ `mrsdeploy` is excluded from a parcel installation. This package has a .NET Core dependency and cannot be added to a parcel.
+The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
-The workaround is to perform a manual installation of individual packages. For instructions, see [Manual package installation](rserver-hadoop-manual-package.md).
+1. Log in as root or a user with super user privileges (`sudo su`).
+2. Switch to the **/tmp** directory (assuming it's the download location)
+3. Unpack the file:
+        `[tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
+
 
 ## See Also
 

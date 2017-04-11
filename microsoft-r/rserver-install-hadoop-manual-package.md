@@ -31,7 +31,7 @@ An alternative to running the install.sh script at the command line is to manual
 
 With root privilege, you can use the `rpm -qi` command to install each package in the R Server distribution. The following example illustrates the syntax.
 
-	`rpm -qi microsoft-r-open-3.3.3.x6486.rpm`
+	`rpm -i microsoft-r-open-3.3.3.x6486.rpm`
 
 ## Steps
 
