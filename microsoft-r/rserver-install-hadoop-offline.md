@@ -49,7 +49,9 @@ From an internet-connected computer, download Microsoft R Open (MRO) .NET Core f
 | Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
 | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/core) |
 
-The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. The .NET Core download page provides platform-specific instructions. For offline scenarios, you will need to adapt the instructions for your system.
+The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. 
+
+The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list.
 
 ## Download R Server installer
 
@@ -61,15 +63,13 @@ You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following 
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Hadoop 9.1.0** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-The filename is `en_r_server_910_for_hadoop_x64_9648602.gz`. 
-
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer downloaded files to a writable directory on the master node, such as **/tmp**, on your disconnected server. To summarize, you should be transferring the following files:
+Use a tool like [SmarTTY](smartty.sysprogs.com) or [PuTTY](www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. You should be transferring the following files:
 
-+ `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
++ `dotnet-<linux-os-name>-x64.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `en_r_server_910_for_hadoop_x64_9648602.gz`
++ `microsoft_r_server_9.1.0.tar.gz`
 + any missing packages from the dependency list
 
 ## Install package dependencies
@@ -80,7 +80,7 @@ On the target system which is disconnected from the internet, run `rpm -qi <pack
 
 Next, unpack the distributions for prerequisites, MRO, and MRS.
 
-1. Log in as root or a user with sudo privileges.
+1. Log in as root or a user with super user privileges (`sudo su`).
 
 2. Switch to the **/tmp** directory (assuming it's the download location).
 

@@ -6,7 +6,7 @@ description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/29/2017"
+ms.date: "04/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -30,6 +30,31 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with Microsoft R Open 3.3.2. The install script automatically removes previous versions if they are detected so that setup can proceed.
 
+## Download R Server dependencies
+
+From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
+
+| Component | Version | Download Link |
+|-----------|---------|---------------|
+| Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
+| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) |
+
+The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. 
+
+The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. 
+
+Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list.
+
+## Download R Server installer
+
+You can get Microsoft R Server (MRS) 9.1.0 for Linux from one of the following download sites. 
+
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Linux 9.1.0** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
 ## Download package dependencies
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
@@ -40,36 +65,16 @@ Use this syntax to download specific packages:
 yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 ~~~~
 
-## Download R Server dependencies
-
-From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
-
-| Component | Version | Download Link |
-|-----------|---------|---------------|
-| Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
-| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/core) |
-
-The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. The .NET Core download page provides platform-specific instructions. For offline scenarios, you will need to adapt the instructions for your system.
-
-## Download R Server installer
-
-You can get Microsoft R Server (MRS) 9.1.0 for Linux from one of the following download sites. 
-
-| Site | Edition | Details |
-|------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.1.0** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
-
-The filename is `en_r_server_910_for_linux_x64_9648602.gz`. 
+> [!Tip]
+> It's possible your Linux machine already has some or all of the package dependencies installed. You can attempt a preliminary install of just MRO, .NET Core, and MRS to see how far you get. Setup reports which dependencies are missing, giving you a list of exactly what you need.
 
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. To summarize, you should be transferring the following files:
+Use a tool like [SmarTTY](smartty.sysprogs.com) or [PuTTY](www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. You should be transferring the following files:
 
-+ `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
++ `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `en_r_server_910_for_linux_x64_9648602.gz`
++ `microsoft_r_server_9.1.0.tar.gz`
 + any missing packages from the dependency list
 
 ## Install package dependencies
@@ -86,7 +91,7 @@ Next, unpack the distributions for prerequisites, MRO, and MRS.
 
 3. Unpack the .NET Core redistribution:
 
-  `[tmp] $ tar zxvf dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz`
+  `[tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz`
 
 5. Unpack the MRO gzipped file:
 
@@ -94,7 +99,7 @@ Next, unpack the distributions for prerequisites, MRO, and MRS.
 
 6. Unpack the MRS gzipped file:
 
-  `[tmp] $ tar zxvf en_r_server_910_for_linux_x64_9648602.gz`
+  `[tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
 
 ## Check files
 
@@ -108,7 +113,7 @@ Adapt the [.NET Core installation instructions](https://www.microsoft.com/net/co
 
 R Open is deployed by running the install script with no parameters.
 
-1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+1. Log in as root or a user with super user privileges (`sudo su`).
 
 2. Verify system repositories are up to date:
 

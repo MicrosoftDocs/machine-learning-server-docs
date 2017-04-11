@@ -62,7 +62,7 @@ This section walks you through an R Server 9.1.0 deployment using the `install.s
 <a name="download"><a/>
 ### Download R Server installer
 
-Get the zipped RServerSetup installer file from one of the following download sites.
+Get the zipped RServerSetup installer file from one of the following download sites. 
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -76,15 +76,15 @@ Download the software to a writable directory, such as **/tmp**, unpack the dist
 
 The distribution includes one installer for Microsoft R Server. For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as **/tmp**):
 
-1. Log in as root or a user with sudo privileges.
+1. Log in as root or a user with super user privileges (`sudo su`).
 
 2. Switch to the **/tmp** directory (assuming it's the download location)
 
 3. Unpack the file:
 
-  `[tmp] $ tar zxvf en_r_server_910_for_linux_x64_9648602.gz`
+  `[tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
 
-The distribution includes the following files:
+The distribution is unpacked into an `MRS90LINUX` folder at the download location. The distribution includes the following files:
 
 | File | Description |
 |------|-------------|
@@ -95,10 +95,10 @@ The distribution includes the following files:
 | RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE |
 | Parcel folder | Contains files used to generate a parcel for installation on CDH. |
 
-The distribution is unpacked into an `MRS90LINUX` folder at the download location. MSR packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
+MRS packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
 
 > [!Important]
-> Package names in the R Server distribution have changed in the 9.0.1 release. Instead of DeployrR-named packages, the new package names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.
+> Package names in the R Server distribution have changed in the 9.1.0 release. Instead of DeployrR-themed package names, the new names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.
 >
 
 ### Run the MRS install script
@@ -113,7 +113,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 3. Change to the `MRS90LINUX` directory containing the installation script:
 
-  `[tmp] $ cd ..\MRS90LINUX`
+  `[tmp] $ cd MRS90LINUX`
 
 4. Run the script.
 
@@ -216,10 +216,6 @@ flag | Option | Description
 For a standard unattended install, run the following script:
 
 	./install.sh –a –s
-
-## Installing to a read-only file system
-
-In enterprise environments, it is common for enterprise utilities to be mounted as read-only file systems, so that ordinary operations cannot corrupt the tools. New applications can be added to such systems only by first unmounting them, then re-mounting them for read/write, installing the software, and then re-mounting as read-only. This must be done by a system administrator.
 
 ## Remove Microsoft R Server
 

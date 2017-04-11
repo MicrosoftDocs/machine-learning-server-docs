@@ -31,6 +31,11 @@ For computers with an internet connection, setup will download and add any missi
 
 You can download files from your Linux or Hadoop vendor. You can also use this site: [http://mirror.centos.org](http://mirror.centos.org/centos/7.3.1611/os/x86_64/Packages/).
 
+Use this syntax to download specific packages:
+~~~~
+yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
+~~~~
+
 For a list of supported operating systems and versions, see [Supported platforms](rserver-install-supported-platforms.md).
 
 ## Package dependencies for Microsoft R Server 9.1.0
