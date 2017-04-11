@@ -32,7 +32,7 @@ Covers file management (ownership and permissions), creating a local package rep
 By default, R Server files are installed with read-write permission for owner and read-only permission for group and world. Directories are installed with execute permission as well, to permit them to be traversed. If you need to modify these permissions, you can use the [**chmod** command](https://en.wikipedia.org/wiki/Chmod). 
 
 > [!Note]
-> For files owned by root, use **chod** with root privileges.
+> For files owned by root, use **chmod** with root privileges.
 >
 
 ## File ownership

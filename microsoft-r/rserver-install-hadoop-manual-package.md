@@ -35,7 +35,7 @@ With root privilege, you can use the `rpm -qi` command to install each package i
 
 ## Steps
 
-1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+1.  Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
 
 2. Verify system repositories are up to date:
 		[username] $ `sudo yum clean all`
