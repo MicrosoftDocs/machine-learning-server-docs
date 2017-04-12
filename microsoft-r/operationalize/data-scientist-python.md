@@ -54,13 +54,20 @@ This example assumes you have the following (all of which are covered in **Part 
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
 
+>[!IMPORTANT]
+>This example uses the local `admin` account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
+
 ```python
+##################################################
+##       IMPORT GENERATED CLIENT LIBRARY        ##
+##################################################
+
+# Import the generated client library. 
+import deployrclient
+
 ##################################################
 ##              AUTHENTICATION                  ##
 ##################################################
-
-##EXAMPLE USES LOCAL ADMIN ACCOUNT FOR SIMPLICITY
-##USE THE CREDENTIALS AND AUTH TYPE FOR YOUR ORG
 
 #Using client library generated from Autorest
 #Create client instance and point it at an R Server. In this case, R Server is local.
