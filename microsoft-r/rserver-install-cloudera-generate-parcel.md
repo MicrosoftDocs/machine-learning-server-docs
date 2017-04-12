@@ -90,7 +90,7 @@ You are also asked to specify the underlying operating system. If the platform s
 
 When the script is finished, the location of the parcel, checksum, and CSD is printed to the console. Remember the files do not yet exist. This is just a dry run. Running the script without -n generates the files.
 
-  ![console output messages][/media/rserver-install-cloudera/parcelgeneratoroutput.png]
+  ![console output messages][./media/rserver-install-cloudera/parcelgeneratoroutput.png]
 
 ## Step 4: Review flags
 

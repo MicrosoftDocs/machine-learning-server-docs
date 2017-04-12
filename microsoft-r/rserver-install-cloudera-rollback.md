@@ -27,10 +27,17 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-In terms of CDH installation and administration, Microsoft R Server 9.1.0 release is structured differently from previous releases. The 9.1.0 release leverages the CDH rollback feature to downgrade to the previous version. You can use the following instructions to roll back to an earlier distribution of Microsoft R Server 9.0.1 or 8.0.5 
+If you deployed and activated Microsoft R Server using a parcel and Custom Service Descriptor (CSD), you have the option of rolling back the active deployment in Cloudera Manager. You might do this if there is an older version of R Server in your cluster that you need to activate.
 
-1. In Cloudera Manager, click Cloudera
+You can have multiple versions of R Server in Cloudera, but only can be active at any given time.
 
+1. In Cloudera Manager, click the Parcel icon to open the parcel list.
+
+2. Find MRS and click **Deactivate**.
+
+The parcel still exists, but R Server is not operational in the cluster.
+
+The above steps only work for 9.1.0 and later. If you have an older version of R Server, see [Install R Server 9.0.1 on CDH](rserver-install-cloudera-901.md) for information about how it was installed.
 
 ## See Also
 
