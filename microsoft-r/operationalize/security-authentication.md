@@ -109,12 +109,12 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       >[!IMPORTANT]
       >The entities created by the users, specifically web services and snapshots, are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
       >
-      >For example, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+      >For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
       >
       >Similarly, if your organization makes changes to its usernames, those users will not be able to access the web services and snapshots they created in the past unless they are [assigned to the `Owner` role](security-roles.md).  
 
       <br>
-      
+
       >[!WARNING]
       >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 

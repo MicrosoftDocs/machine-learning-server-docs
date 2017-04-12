@@ -110,7 +110,12 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 1. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
 
-1. Repeat these steps for each web node.
+1. Repeat these steps for each node.
+
+   >[!WARNING]
+   >The entities created by the users, specifically web services and snapshots, are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+
+
 
 <a name="onebox"></a>
 
