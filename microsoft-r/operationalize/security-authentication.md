@@ -102,17 +102,18 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
       |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
       |`SearchFilter`|The pattern to be used for the user search. `"SearchFilter": "cn={0}"` is for each user's DN. In legacy systems, some use `"SearchFilter": "sAMAccountName={0}"`|
-      |`UniqueUserIdentifierAttributeName`|The attribute name that stores the unique user id for each user.|
-      |`DisplayNameAttributeName`|The attribute name that stores the display name for each user.|
-      |`EmailAttributeName`|The attribute name that stores the email address for each user.|
+      |`UniqueUserIdentifierAttributeName`|(Version 9.1) The attribute name that stores the unique user id for each user. If you are configuring roles, you must ensure that the username returned for this value matches the username returned by `SearchFilter`. |
+      |`DisplayNameAttributeName`|(Version 9.1) The attribute name that stores the display name for each user.|
+      |`EmailAttributeName`|(Version 9.1) The attribute name that stores the email address for each user.|
+
+      >[!IMPORTANT]
+      >The entities created by the users, specifically web services and snapshots, are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
+      >For example, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+      >Similarly, if your organization makes changes to its usernames, those users will not be able to access the web services and snapshots they created in the past unless they are [assigned to the `Owner` role](security-roles.md).  
 
       >[!WARNING]
-      >Make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
+      >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 
-      <br>
-      
-      >[!IMPORTANT]
-      >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
       For example:
       ```
@@ -131,6 +132,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
               "EmailAttributeName": "mail"     
       }
       ```
+      <br>
+      
+      >[!NOTE]
+      >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
 

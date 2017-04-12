@@ -115,7 +115,10 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
    ```"Authorization": {```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Owner": [ "Administrators" ],```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Contributor": [ "RProgrammers", "Quality" ]```<br>```}``` 
 
    >[!WARNING]
-   >For AD/LDAP authentications, be careful not to use the `CN=` portion of the distinguished names. For example, if the distinguished name appears as `CN=Administrators`, enter only `Administrators` here.
+   >For AD/LDAP authentications:
+   >1. Be careful not to use the `CN=` portion of the distinguished names. For example, if the distinguished name appears as `CN=Administrators`, enter only `Administrators` here.
+   
+   >2. Ensure that the username returned for the value of `UniqueUserIdentifierAttributeName` matches the username returned by `SearchFilter`. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
    
 <!--#### Step 2. Allow R Server to check groups in Azure Active Directory
 

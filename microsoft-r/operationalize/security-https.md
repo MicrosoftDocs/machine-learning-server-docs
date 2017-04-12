@@ -53,11 +53,15 @@ This section walks you through the steps for securing the connections between th
 
 #### Windows: Using Your Default ASP .NET Core Web Server to Encrypt Traffic
 
-1. On each machine hosting the web node, open the certificate store:
+1. On each machine hosting the web node, install and configure the certificate in the certificate store. For example, if you launch "Manage Computer Certificates" from your Windows Start menu, you can:
 
    1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
    1. Make sure the name of the certificate matches the domain name of the web node URL. 
-   1. Set the private key permissions to `NETWORK SERVICE`. (On the Security tab, add the Network Service account with Read access.)
+   1. Set the private key permissions. 
+      1. Right click on the certificate and choose Manage private certificate from the menu.
+      1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
+      ![Group](../media/o16n/security-http-addgroup.png) 
+       
    1. Take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
@@ -95,8 +99,10 @@ On each machine hosting a web node:
 
    1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
    1. Make sure the name of the certificate matches the domain name of the web node URL. 
-   1. Set the private key permissions to `NETWORK SERVICE`. (On the Security tab, add the Network Service account with Read access.)
-
+   1. Set the private key permissions. 
+      1. Right click on the certificate and choose Manage private certificate from the menu.
+      1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
+      ![Group](../media/o16n/security-http-addgroup.png) 
 <a name="iis"></a>
 
 1. Launch IIS.

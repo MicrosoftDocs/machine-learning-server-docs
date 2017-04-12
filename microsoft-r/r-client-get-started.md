@@ -65,7 +65,7 @@ To benefit from disk scalability, performance and speed, you can push the comput
 **System Requirements:**
 
 &nbsp;&nbsp;&nbsp;&nbsp;Operating Systems: &nbsp;&nbsp;&nbsp;  64-bit versions of **Microsoft Windows 7, 8.1, and 10**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Free disk space: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 600+ MB recommended, after installation of all prerequisites <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Free disk space: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2 GN recommended, after installation of all prerequisites <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Available RAM: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4+ GB recommended <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Internet access: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Needed to download R Client and any dependencies   
 
@@ -114,11 +114,13 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
    + Log in with administrator privileges.
 
-   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files in the same directory as `RClientSetup.exe` or under `<path>\temp`. 
+   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files under `%temp%`. 
 
-   + Install the prerequisites first. Remember that the .NET Framework installation requires a computer restarted.
+   + Install the prerequisites first. 
+   
+   + Restart your computer is you installed the .NET Framework.
 
-   + Run `RClientSetup.exe`, which then finds the cab file in the same folder, and follow the onscreen prompts.
+   + Run `RClientSetup.exe`, which then finds the cab file in the temp folder, and follow the onscreen prompts.
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
  
