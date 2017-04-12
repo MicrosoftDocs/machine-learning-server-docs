@@ -38,7 +38,7 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 + The **curl** package has been updated to version 2.3
 + The **jsonlite** package has been updated to version 1.3 
 
-**RevoScaleR 9.10 Function Updates**
+**RevoScaleR 9.1.0 Function Updates**
 
 | Function | Status | Changes |
 |----------|--------|---------|
