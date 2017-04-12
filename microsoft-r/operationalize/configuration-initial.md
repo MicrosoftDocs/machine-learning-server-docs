@@ -64,21 +64,15 @@ The web nodes and compute nodes are supported on:
 
 To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
 
+>[!IMPORTANT]
+>Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
-
-1. Terminate all services and tasks associated with your nodes. 
-   + On Windows: 
-     1. Use the administration utility to [stop the compute and web node services](admin-utility.md#startstop). 
-     1. Stop RServe in the Services dialog.
-   
-   + On Linux: 
-     1. Use the administration utility to [stop the compute and web node services](admin-utility.md#startstop). 
-     1. Stop RServe using `systemctl stop rserve`.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -95,8 +89,8 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
      >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     >1. Manually install .NET Core 1.1.
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 

@@ -65,14 +65,8 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a compute node
 
-1. Terminate all services and tasks associated with your node. 
-   + On Windows: 
-     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
-     1. Stop RServe in the Services dialog.
-   
-   + On Linux: 
-     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
-     1. Stop RServe using `systemctl stop rserve`.
+>[!IMPORTANT]
+>Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -101,14 +95,8 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ### Upgrade a web node
 
-1. Terminate all services and tasks associated with your node. 
-   + On Windows: 
-     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
-     1. Stop RServe in the Services dialog.
-   
-   + On Linux: 
-     1. Use the administration utility to [stop the node services](admin-utility.md#startstop). 
-     1. Stop RServe using `systemctl stop rserve`.
+>[!IMPORTANT]
+>Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
