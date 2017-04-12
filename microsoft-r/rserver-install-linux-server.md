@@ -78,7 +78,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
 1. Log in as root or a user with super user privileges (`sudo su`).
 
-2. Switch to the **/tmp** directory (assuming it's the download location)
+2. Switch to the **/tmp** directory (assuming it's the download location).
 
 3. Unpack the file:
 
