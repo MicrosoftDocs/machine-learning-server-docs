@@ -29,12 +29,12 @@ Cloudera offers a parcel installation methodology for adding services and featur
 
 If you've used parcel installation in previous releases of Microsoft R Server, the 9.1.0 release is enhanced in two respects. First, instead of using pre-built parcels downloaded from Microsoft, you can generate your own parcel using a new generate_mrs_parcel.sh script. Secondly, we added support for Custom Service Descriptors (CSDs). You can now deploy, configure, and monitor R Server in CDH as a managed service in Cloudera Manager.
 
-The new revised workflow consists of the following steps:
+The new revised workflow is a two-part exercise:
 
-1. [Run the generate_mrs_parcel.sh script to create a parcel file](rserver-install-cloudera-generate-parcel.md)
-2. [Add Microsoft R Server as a service using a Custom Service Descriptor (CSD)](rserver-install-cloudera-deploy-activate.md)
++ [Part 1: At the console, run script to output parcel and CSD filese](rserver-install-cloudera-generate-parcel.md)
++ [Part 2: In Cloudera manager, deploy parcels and add MRS as a managed service](rserver-install-cloudera-deploy-activate.md)
 
-Download and unpacking the distribution remains the same. Instructions are include with the parcel generation article.
+Download and unpacking the distribution remains the same. Instructions are included in Part 1.
 
 **Feature restrictions in a parcel installation**
 

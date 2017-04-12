@@ -93,29 +93,27 @@ Next, unpack the distributions for .NET Core and MRS.
 
 3. Unpack the .NET Core redistribution:
 
-  `[tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz`
+  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz`
 
 6. Unpack the MRS gzipped file:
 
-  `[tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
+  `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
 
 ## Check files
 
-Files are unpacked into child folders: **microsoft-r-open** and  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
+Files are unpacked into  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
 
-.NET Core is unpacked into **/shared/Microsoft.NETCore.App/1.1.1**. You must enable a channel for this collection before you can install it.
+.NET Core is unpacked into **/shared/Microsoft.NETCore.App/1.1.1**. 
 
-## Install .NET Core offline
+## Set the symbolic link for .NET Core
 
-In this step, enable a channel for the
+Run the following command to make .NET Core accessible to R Server.
+
+  `[root@localhost tmp] $ ln -s /path/to/dotnet-core/dotnet /usr/local/bin/dotnet`
 
 ## Copy microsoft-r-open tar.gz to MRS90LINUX
 
-The install.sh script file for R Server looks for the gzipped tar file for MRO.
-
-1. Log in as root or a user with super user privileges (`sudo -s`).
-
-2. Copy the file to the same folder containing install.sh.
+The install.sh script file for R Server looks for the gzipped tar file for MRO. Assuming root permissions, copy the gzipped MRO tar file to the same folder containing the installation script.
 
   `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90LINUX`
 
@@ -123,13 +121,13 @@ The install.sh script file for R Server looks for the gzipped tar file for MRO.
 
 R Server for Linux is deployed by running the install script with no parameters.
 
-1. Change to the `MRS90LINUX` directory containing the installation script:
+1. Switch to the `MRS90LINUX` directory containing the installation script:
 
-  `[tmp] $ cd MRS90LINUX`
+  `[root@localhost tmp] $ cd MRS90LINUX`
 
 2. Run the script.
 
-   `[tmp MRS90LINUX] $ sudo bash install.sh`
+   `[root@localhost MRS90LINUX] $ bash install.sh`
 
 3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
