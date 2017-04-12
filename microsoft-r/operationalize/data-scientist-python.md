@@ -167,7 +167,8 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
      print(status_response.status_code)
      ```
 
-    @@You USED THE FOLLOWING IN YOUR AAD EXAMPLE: `headers = {"Authorization":"Bearer "+token["accessToken"]}`  Which is better?????
+    @@IN THE APP DEV EXAMPLE YOU CREATED, YOU USED THIS CODE. WHICH IS BETTER? 
+    @@`headers = {"Authorization":"Bearer "+token["accessToken"]}` 
 
 
 
