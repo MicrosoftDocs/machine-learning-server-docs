@@ -114,6 +114,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       >Similarly, if your organization makes changes to its usernames, those users will not be able to access the web services and snapshots they created in the past unless they are [assigned to the `Owner` role](security-roles.md).  
 
       <br>
+      
       >[!WARNING]
       >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 
