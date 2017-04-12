@@ -80,7 +80,224 @@ headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
 #Remember to include `headers` in every request!
 status_response = client.status(headers) 
 print(status_response.status_code)
+
+
+##################################################
+##        CREATE SESSION, MODEL, SNAPSHOT       ##
+##################################################
+
+#Since already logged into R Server, create a Python session.
+#Define session using name (`Session 1`) and type `runtime_type="Python"`.
+#Remember to specify the Python runtime type.
+create_session_request = deployrclient.models.CreateSessionRequest("Session 1", runtime_type="Python")
+
+#Make the call to start the session. 
+#Remember to include headers in every method call to the server.
+#Returns a session ID.
+response = client.create_session(create_session_request, headers) 
+   
+#Store the session ID in a variable called `session_id` 
+#to be able to identify it later at execution time.
+session_id = response.session_id
+
+#Create model - Import SVM and datasets from the SciKit-Learn library
+execute_request = deployrclient.models.ExecuteRequest("from sklearn import svm\nfrom sklearn import datasets")
+execute_response = client.execute_code(session_id,execute_request, headers)
+#Report if it was a success
+execute_response.success
+   
+#Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
+execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+#Now, go create the object and preload Iris Dataset in R Server
+execute_response = client.execute_code(session_id,execute_request, headers)
+#Report if it was a success
+execute_response.success
+   
+#Define two rows from the Iris Dataset as a sample for scoring
+workspace_object = deployrclient.models.WorkspaceObject("species_1",[7,3.2,4.7,1.4])
+workspace_object_2 = deployrclient.models.WorkspaceObject("species_2",[3,2.6,3,2.5])
+
+#Define how to train the classifier model; what to predict; what to return
+execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
+                                                      "result=clf.predict(species_1)\n"+
+                                                      "other_result=clf.predict(species_2)"
+                                                      ,[workspace_object,workspace_object_2], #Input
+                                                      ["result", "other_result"]) #Output
+
+#Now, go train that model on the Iris Dataset in R Server
+execute_response = client.execute_code(session_id,execute_request, headers)
+
+#If successful, print name and result of each output parameter. Else, print error.
+if(execute_response.success):
+    for result in execute_response.output_parameters:
+        print("{0}: {1}".format(result.name,result.value))
+else:
+    print (execute_response.error_message)
+
+#Create a snapshot of the current session
+client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
+#Return the snapshot ID so you can reference it in the publish service function later.
+response.snapshot_id
+#If you forget the ID later, you can always list every snapshot to get the ID again.
+for snapshot in client.list_snapshots(headers):
+    print(snapshot)
+
+##################################################
+##        PUBLISH AS A SERVCIE IN PYTHON        ##
+##################################################
+
+#Define a web service that determines the iris species by scoring 
+#a vector of sepal length and width, petal length and width
+
+#Set `flower_data` for the sepal and petal length and width
+flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
+#Set `iris_species` for the species of iris
+iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "vector")
+
+#Define the publish request for the web service and its arguments.
+#Specify the code, inputs, outputs, and snapshot.
+#Don't forget to set runtime_type="Python"`.
+publish_request = deployrclient.models.PublishWebServiceRequest(
+       code = "iris_species = [names[x] for x in clf.predict(flower_data)]", 
+       input_parameter_definitions = [flower_data], 
+       output_parameter_definitions = [iris_species],
+       runtime_type = "Python",
+       snapshot_id = response.snapshot_id)
+
+#Publish the service using the specified name (iris), version (V1.0)
+client.publish_web_service_version("Iris", "V1.0", publish_request, headers)
+
+##################################################
+##           CONSUME SERVICE IN PYTHON          ##
+##################################################
+
+# Inspect holdings and metadata for service Iris V1.0.
+for service in client.get_web_service_version("Iris","V1.0", headers):
+    #print the service information (metadata such as a description or who published)
+    print(service)
+    #Print each input and output parameter as they are defined in the service definition object
+    print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
+    print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
+
+#Import the requests library to make requests on the server
+import requests
+#Import the JSON library to use for pretty printing of json responses
+import json
+
+#Create a requests `Session` object.
+s = requests.Session()
+
+#Record the R Server endpoint URL hosting the web services you created before
+url = "http://localhost:12800"
+
+#Give the request.Session object the authentication headers 
+#so you don't have to repeat it with each request.
+s.headers = headers
+
+#Retrieve the service-specific swagger file using the requests library.
+swagger_resp = s.get(url+"/api/Iris/V1.0/swagger.json")
+
+#Either, download the service-specific swagger file to my local machine using the json library.
+with open('iris_swagger.json','w') as f:
+   (json.dump(client.get_web_service_swagger("Iris","V1.0",headers),f, indent = 1))
+
+#Or, print just what you need from the Swagger file, 
+#such as the routing paths for the endpoints to be consumed.
+print(json.dumps(swagger_resp.json()["paths"], indent = 1, sort_keys = True))
+
+#Or, print the input and output parameters as they are defined in the Swagger.io format
+print("Input")
+print(json.dumps(swagger_resp.json()["definitions"]["InputParameters"], indent = 1, sort_keys = True))
+print("Output")
+print(json.dumps(swagger_resp.json()["definitions"]["WebServiceResult"], indent = 1, sort_keys = True))
+
+#Make the request to consume the service using these flower_data inputs
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[7,3.2,4.7,1.4]})
+#Print the output
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+
+#Use input from another Iris species.
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[3,2.6,3,2.5]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+
+#Use input from another Iris species.
+resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[5.1,3.5,1.4,.2]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+
+##################################################
+##          MANAGE SERVICES IN PYTHON           ##
+##################################################
+
+#Update the web service to add a description useful
+#Define what needs to be updated. Here we add a description.
+update_request = deployrclient.models.UpdateWebServiceRequest(
+    description = "Determines iris species using length and width of sepal and petal")
+#Now update it by specifying the service name and version number
+client.update_web_service_version("Iris", "V1.0", update_request, headers)
+
+#Or, publish another version of the web service, but this time 
+#the service returns the Iris species as a string instead of as a list of strings.
+flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
+iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "string")
+ 
+#Define the publish request for the service and its arguments.
+#Specify the changed code, inputs, outputs, and snapshot.
+#Don't forget to set runtime_type="Python"`.
+publish_request = deployrclient.models.PublishWebServiceRequest(code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
+                                                                description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
+                                                                input_parameter_definitions = [flower_data],
+                                                                output_parameter_definitions = [iris_species],
+                                                                runtime_type = "Python",
+                                                                snapshot_id = response.snapshot_id)
+ 
+#Now, publish the service with version (V2.0)
+client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
+ 
+#Make the request to consume the service using these flower_data inputs and print output
+resp = s.post(url+"/api/Iris/V2.0",json={"flower_data":[5.1,3.5,1.4,.2]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+
+#Return a list all web services, including those created by other users or in different languages.
+for service in client.get_all_web_services(headers):
+    #print the service information
+    print(service)
+    #Print each input and output parameter
+    print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
+    print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
+
+#Delete the second version we just published.
+client.delete_web_service_version("Iris","V2.0",headers)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Part 1. Generate core client library in Python
 
