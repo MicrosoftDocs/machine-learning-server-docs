@@ -313,7 +313,7 @@ After your client library has been generated and you've built the authentication
        print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
    ```
 
-   @@ WHAT IS THE DIFFERENCE BETWEEN THIS CODE BLOCK AND THE INPUTS/OUTPUTS ABOVE?
+   @@ WHAT IS THE DIFFERENCE BETWEEN THE CODE BLOCK BELOW AND THE INPUTS/OUTPUTS ABOVE?
 
    ```python
    # print out the input and output parameters
