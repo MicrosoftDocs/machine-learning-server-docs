@@ -41,7 +41,7 @@ A parcel installation of Microsoft R Server on CDH is a 2-part process. In part 
 
 3. In the parcel details page, **MRS** should have a status of *Download* with an option to *Distribute*. Click **Distribute** to roll out MRS on available data nodes.
 
-   ![parcel details in cloudera manager](./media/rserver-install-cloudera/cloudera-manager-parcel-detail.png)
+   ![parcel details in cloudera manager](./media/rserver-install-cloudera/cloudera-manager-mrs-parcel-detail.png)
 
 4. Status changes to *distributed*. Click **Activate** on the button to make MRS operational in the cluster.
 
