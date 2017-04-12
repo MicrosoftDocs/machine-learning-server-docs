@@ -228,12 +228,12 @@ print(json.dumps(resp.json(), indent = 1, sort_keys = True))
 ##          MANAGE SERVICES IN PYTHON           ##
 ##################################################
 
-#Update the web service to add a description useful
 #Define what needs to be updated. Here we add a description.
-update_request = deployrclient.models.UpdateWebServiceRequest(
-    description = "Determines iris species using length and width of sepal and petal")
+#Be sure to specify the runtime_type again.
+update_request = deployrclient.models.PublishWebServiceRequest(
+    description = "Determines iris species using length and width of sepal and petal", runtime_type = "Python")
 #Now update it by specifying the service name and version number
-client.update_web_service_version("Iris", "V1.0", update_request, headers)
+client.patch_web_service_version("Iris", "V1.0", update_request, headers)
 
 #Or, publish another version of the web service, but this time 
 #the service returns the Iris species as a string instead of as a list of strings.
@@ -600,10 +600,11 @@ After your client library has been generated and you've built the authentication
 
    ```python
    #Define what needs to be updated. Here we add a description.
-   update_request = deployrclient.models.UpdateWebServiceRequest(
-       description = "Determines iris species using length and width of sepal and petal")
+   #Be sure to specify the runtime_type again.
+   update_request = deployrclient.models.PublishWebServiceRequest(
+       description = "Determines iris species using length and width of sepal and petal", runtime_type = "Python")
    #Now update it by specifying the service name and version number
-   client.update_web_service_version("Iris", "V1.0", update_request, headers)
+   client.patch_web_service_version("Iris", "V1.0", update_request, headers)
    ```
 
 1. Publish another version of the web service, but this time the service returns the Iris species as a string instead of as a list of strings.
