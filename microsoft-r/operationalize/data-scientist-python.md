@@ -33,18 +33,14 @@ This article is for data scientists who wants to learn how to publish Python cod
 
 ## Supported platforms
 
-Python web services are supported on Windows platforms on which Python was enabled during installation. Expanded platform support in future releases.
+Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
 
 
 ##  Workflow: Publish Python web service
 
-1. Download the core API swagger file. 
-1. Generate a statically generated Python client library. you can learn about all of the API calls you can use to publish, manage, and consume Python web services.
-1. Import the library into your Python editor.
-1. Add authentication logic.
-1. Create a Python session.
-1. Prepare the environment (load libraries, load data, create models, train models, generate objects, ...)
-1. Create a snapshot to preserve the environment.
+1. Generate core client library in Python. 
+1. Add authentication and header logic.
+1. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
 1. Publish the web service and embed this snapshot.
 1. Try out the web service by consuming it in your session.
 
@@ -53,15 +49,37 @@ Python web services are supported on Windows platforms on which Python was enabl
 
 ## Example
 
-This example assumes you have the following (all of which are covered in Part 1):
+This example assumes you have the following (all of which are covered in **Part 1**):
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
 
 ```python
+##################################################
+##              AUTHENTICATION                  ##
+##################################################
 
-@@ SAMPLE BEING DEVELOPED
+##EXAMPLE USES LOCAL ADMIN ACCOUNT FOR SIMPLICITY
+##USE THE CREDENTIALS AND AUTH TYPE FOR YOUR ORG
 
+#Using client library generated from Autorest
+#Create client instance and point it at an R Server. In this case, R Server is local.
+client = deployrclient.DeployRClient("http://localhost:12800")
+
+#Define the login request and provide credentials 
+#Update these values with the connection parameters your admin gave you
+login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
+
+#Make a call to the /login API. Store the returned an access token in a variable
+token_response = client.login(login_request)
+
+#Add the returned access token to the headers variable
+headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
+
+#Verify that the server is running
+#Remember to include `headers` in every request!
+status_response = client.status(headers) 
+print(status_response.status_code)
 ```
 
 ### Part 1. Generate core client library in Python
@@ -116,17 +134,17 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    + **For AD/LDAP or the `admin` account authentication**, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
 
-     ```python
-     #Using client library generated from Autorest
-     #Create client instance and point it at an R Server. In this case, R Server is local.
-     client = deployrclient.DeployRClient("http://localhost:12800")
+   ```python
+   #Using client library generated from Autorest
+   #Create client instance and point it at an R Server. In this case, R Server is local.
+   client = deployrclient.DeployRClient("http://localhost:12800")
 
-     #Define the login request and provide credentials 
-     #Update these values with the connection parameters your admin gave you
-     login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
-     #Make a call to the /login API. Store the returned an access token in a variable
-     token_response = client.login(login_request)
-     ```
+   #Define the login request and provide credentials 
+   #Update these values with the connection parameters your admin gave you
+   login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
+   #Make a call to the /login API. Store the returned an access token in a variable
+   token_response = client.login(login_request)
+   ```
 
    + **For Azure Active Directory (AAD)**, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request. 
    
@@ -154,23 +172,18 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
 
-     >[!IMPORTANT]
-     >Every API call must be authenticated. Therefore, remember to include headers with tokens to every single request.
+   >[!IMPORTANT]
+   >Every API call must be authenticated. Therefore, remember to include headers with tokens to every single request.
 
-     ```python
-     #Add the returned access token to the headers variable
-     headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
+   ```python
+   #Add the returned access token to the headers variable
+   headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
 
-     #Verify that the server is running
-     #Remember to include `headers` in every request!
-     status_response = client.status(headers) 
-     print(status_response.status_code)
-     ```
-
-    @@IN THE APP DEV EXAMPLE YOU CREATED, YOU USED THIS CODE. WHICH IS BETTER? 
-    @@`headers = {"Authorization":"Bearer "+token["accessToken"]}` 
-
-
+   #Verify that the server is running
+   #Remember to include `headers` in every request!
+   status_response = client.status(headers) 
+   print(status_response.status_code)
+   ```
 
 ### Part 3. Create a session, the model, and a snapshot
 
@@ -220,13 +233,13 @@ After authentication, you can start a Python session and create a model you'll p
    execute_response.success
    
    #Define two rows from the Iris Dataset as a sample for scoring
-   workspace_object = deployrclient.models.WorkspaceObject("variety_1",[7,3.2,4.7,1.4])
-   workspace_object_2 = deployrclient.models.WorkspaceObject("variety_2",[3,2.6,3,2.5])
+   workspace_object = deployrclient.models.WorkspaceObject("species_1",[7,3.2,4.7,1.4])
+   workspace_object_2 = deployrclient.models.WorkspaceObject("species_2",[3,2.6,3,2.5])
 
    #Define how to train the classifier model; what to predict; what to return
    execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
-                                                      "result=clf.predict(variety_1)\n"+
-                                                      "other_result=clf.predict(variety_2)"
+                                                      "result=clf.predict(species_1)\n"+
+                                                      "other_result=clf.predict(species_2)"
                                                       ,[workspace_object,workspace_object_2], #Input
                                                       ["result", "other_result"]) #Output
 
@@ -276,21 +289,21 @@ After your client library has been generated and you've built the authentication
    > To ensure that the web service is registered as a Python service, be sure to specify `runtime_type="Python"`. If you don't set the runtime type to Python, it defaults to R.
 
    ```python
-   #Define a web service that determines the iris variety by scoring 
+   #Define a web service that determines the iris species by scoring 
    #a vector of sepal length and width, petal length and width
 
    #Set `flower_data` for the sepal and petal length and width
    flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
-   #Set `iris_type` for the variety of iris
-   iris_type = deployrclient.models.ParameterDefinition(name = "iris_type", type = "vector")
+   #Set `iris_species` for the species of iris
+   iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "vector")
 
    #Define the publish request for the web service and its arguments.
    #Specify the code, inputs, outputs, and snapshot.
    #Don't forget to set runtime_type="Python"`.
    publish_request = deployrclient.models.PublishWebServiceRequest(
-       code = "iris_type = [names[x] for x in clf.predict(flower_data)]", 
+       code = "iris_species = [names[x] for x in clf.predict(flower_data)]", 
        input_parameter_definitions = [flower_data], 
-       output_parameter_definitions = [iris_type],
+       output_parameter_definitions = [iris_species],
        runtime_type = "Python",
        snapshot_id = response.snapshot_id)
 
@@ -299,31 +312,21 @@ After your client library has been generated and you've built the authentication
    ```
 
 
-### Part 5. Consume the service in the session
+### Part 5. Consume the service in the same session
 
-1. Get and examine the service holdings and metadata for the service.
+1. In the same session, get service holdings and metadata for the service.
 
    ```python
    # Inspect holdings and metadata for service Iris V1.0.
    for service in client.get_web_service_version("Iris","V1.0", headers):
-       #print the service information
+       #print the service information (metadata such as a description or who published)
        print(service)
-       #Print each input and output parameter
+       #Print each input and output parameter as they are defined in the service definition object
        print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
        print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
    ```
 
-   @@ WHAT IS THE DIFFERENCE BETWEEN THE CODE BLOCK BELOW AND THE INPUTS/OUTPUTS ABOVE?
-
-   ```python
-   # print out the input and output parameters
-   print("Input")
-   print(json.dumps(resp.json()["definitions"]["InputParameters"], indent = 1, sort_keys = True))
-   print("Output")
-   print(json.dumps(resp.json()["definitions"]["WebServiceResult"], indent = 1, sort_keys = True))
-   ```
-
-1. Consume the service directly in the session.
+1. Examine the service holdings and prepare to consume. 
    ```python
    #Import the requests library to make requests on the server
    import requests
@@ -333,31 +336,43 @@ After your client library has been generated and you've built the authentication
    #Create a requests `Session` object.
    s = requests.Session()
 
-   #Record the URL  @@@OF WHAT AND FOR WHAT???
+   #Record the R Server endpoint URL hosting the web services you created before
    url = "http://localhost:12800"
 
-   #Give it the authentication headers
+   #Give the request.Session object the authentication headers 
+   #so you don't have to repeat it with each request.
    s.headers = headers
 
    #Retrieve the service-specific swagger file using the requests library.
-   resp = s.get(url+"/api/Iris/V1.0/swagger.json")
+   swagger_resp = s.get(url+"/api/Iris/V1.0/swagger.json")
 
-   #Download the service-specific swagger file to my local machine using json library.
+   #Either, download the service-specific swagger file to my local machine using the json library.
    with open('iris_swagger.json','w') as f:
       (json.dump(client.get_web_service_swagger("Iris","V1.0",headers),f, indent = 1))
 
-   #Print the routing paths that represents the endpoints that can be consumed.
-   print(json.dumps(resp.json()["paths"], indent = 1, sort_keys = True))
- 
-   # @@ WHAT IS THIS DOING?
+   #Or, print just what you need from the Swagger file, 
+   #such as the routing paths for the endpoints to be consumed.
+   print(json.dumps(swagger_resp.json()["paths"], indent = 1, sort_keys = True))
+
+   #Or, print the input and output parameters as they are defined in the Swagger.io format
+   print("Input")
+   print(json.dumps(swagger_resp.json()["definitions"]["InputParameters"], indent = 1, sort_keys = True))
+   print("Output")
+   print(json.dumps(swagger_resp.json()["definitions"]["WebServiceResult"], indent = 1, sort_keys = True))
+   ```
+
+1. Consume the service by supplying some input and getting the Iris species. 
+   ```python
+   #Make the request to consume the service using these flower_data inputs
    resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[7,3.2,4.7,1.4]})
-   # @@ WHAT IS THIS DOING?
+   #Print the output
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
 
-   ## @@ WHAT IS THIS DOING THAT THE PREVIOUS SECTION DID NOT
+   ##Use input from another Iris species.
    resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[3,2.6,3,2.5]})
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
 
+   ##Use input from another Iris species.
    resp = s.post(url+"/api/Iris/V1.0",json={"flower_data":[5.1,3.5,1.4,.2]})
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
@@ -369,32 +384,32 @@ After your client library has been generated and you've built the authentication
    ```python
    #Define what needs to be updated. Here we add a description.
    update_request = deployrclient.models.UpdateWebServiceRequest(
-       description = "Determines iris type using length and width of sepal and petal")
+       description = "Determines iris species using length and width of sepal and petal")
    #Now update it by specifying the service name and version number
    client.update_web_service_version("Iris", "V1.0", update_request, headers)
    ```
 
-1. Publish another version of the web service, but this time the service returns the Iris variety as a string instead of as a list of strings.
+1. Publish another version of the web service, but this time the service returns the Iris species as a string instead of as a list of strings.
 
    ```python
-   #Publish a new version of the web service that determines the iris variety
+   #Publish a new version of the web service that determines the iris species
    flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
-   iris_type = deployrclient.models.ParameterDefinition(name = "iris_type", type = "string")
+   iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "string")
  
    #Define the publish request for the service and its arguments.
    #Specify the changed code, inputs, outputs, and snapshot.
    #Don't forget to set runtime_type="Python"`.
-   publish_request = deployrclient.models.PublishWebServiceRequest(code = "iris_type = [names[x] for x in clf.predict(flower_data)][0]",
-                                                                description = "Determines the type of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
+   publish_request = deployrclient.models.PublishWebServiceRequest(code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
+                                                                description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
                                                                 input_parameter_definitions = [flower_data],
-                                                                output_parameter_definitions = [iris_type],
+                                                                output_parameter_definitions = [iris_species],
                                                                 runtime_type = "Python",
                                                                 snapshot_id = response.snapshot_id)
  
    #Now, publish the service with version (V2.0)
    client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
  
-   ##Print @@@
+   #Make the request to consume the service using these flower_data inputs and print output
    resp = s.post(url+"/api/Iris/V2.0",json={"flower_data":[5.1,3.5,1.4,.2]})
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
@@ -409,7 +424,7 @@ After your client library has been generated and you've built the authentication
        #Print each input and output parameter
        print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
        print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
-
+   ```
 
 1. Delete the second version we just published.
 
