@@ -69,7 +69,7 @@ After downloading specific packages, use this command to install each package:
 
 ## Transfer files
 
-Use a tool like [SmarTTY](smartty.sysprogs.com) or [PuTTY](www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your internet-restricted server. Files to be transferred include the following:
+Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your internet-restricted server. Files to be transferred include the following:
 
 + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
