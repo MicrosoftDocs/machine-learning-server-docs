@@ -107,7 +107,7 @@ execute_response = client.execute_code(session_id,execute_request, headers)
 execute_response.success
    
 #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
-execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()\nnames={0:'I. setosa',1:'I. versicolor',2:'I. virginica'}")
 #Now, go create the object and preload Iris Dataset in R Server
 execute_response = client.execute_code(session_id,execute_request, headers)
 #Report if it was a success
@@ -135,7 +135,7 @@ else:
     print (execute_response.error_message)
 
 #Create a snapshot of the current session
-client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
+response = client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
 #Return the snapshot ID so you can reference it in the publish service function later.
 response.snapshot_id
 #If you forget the ID later, you can always list every snapshot to get the ID again.
@@ -373,7 +373,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
      #Update these values with the AAD connection parameters your admin gave you.
      #Once authenticated, user won't provide credentials again until token is invalid.
-     url = "https://deployr-dogfood.mrs.microsoft-tst.com"
+     url = "http://localhost:12800"
      authuri = https://login.windows.net,
      tenantid = "<<AAD_DOMAIN>>", 
      clientid = "<<NATIVE_APP_CLIENT_ID>>", 
@@ -443,7 +443,7 @@ After authentication, you can start a Python session and create a model you'll p
    execute_response.success
    
    #Define the untrained Support Vector Classifier (SVC) object and the dataset to be preloaded
-   execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()")
+   execute_request = deployrclient.models.ExecuteRequest("clf=svm.SVC()\niris=datasets.load_iris()\nnames={0:'I. setosa',1:'I. versicolor',2:'I. virginica'}")
    #Now, go create the object and preload Iris Dataset in R Server
    execute_response = client.execute_code(session_id,execute_request, headers)
    #Report if it was a success
@@ -483,7 +483,7 @@ After authentication, you can start a Python session and create a model you'll p
 
    ```python
    #Create a snapshot of the current session
-   client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
+   response = client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
 
    #Return the snapshot ID so you can reference it in the publish service function later.
    response.snapshot_id
