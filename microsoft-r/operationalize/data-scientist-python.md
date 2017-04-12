@@ -238,8 +238,8 @@ After authentication, you can start a Python session and create a model you'll p
        print (execute_response.error_message)
    ```
 
-1. Create a snapshot of this Python session so this environment can be saved in the web service and reproduce at consume time. Note that 
-   you can only include a snapshot that you've created when publishing.
+1. Create a snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. Note that 
+   you can only use a snapshot that you've created.
 
    Snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files and artifacts. Snapshots save the whole workspace and working directory. 
 
@@ -294,6 +294,9 @@ After your client library has been generated and you've built the authentication
    #Publish the service using the specified name (iris), version (V1.0)
    client.publish_web_service_version("Iris", "V1.0", publish_request, headers)
    ```
+
+
+### Part 5. Consume the service in the session
 
 1. Get and examine the service holdings and metadata for the service.
 
@@ -356,6 +359,8 @@ After your client library has been generated and you've built the authentication
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
+### Part 6. Manage services in Python
+
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
    ```python
@@ -391,7 +396,7 @@ After your client library has been generated and you've built the authentication
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-1. List all web services. Then, delete the second version we just published.
+1. List all web services, including those created by other users or in different languages.
 
    ```python
    #List all web services
@@ -402,6 +407,10 @@ After your client library has been generated and you've built the authentication
        print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
        print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
 
+
+1. Delete the second version we just published.
+
+   ```python
    #Deletes the second version of the service
    client.delete_web_service_version("Iris","V2.0",headers)
    ```
