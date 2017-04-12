@@ -46,13 +46,14 @@ The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server 9.x](rserver-install-linux-hadoop-packages.md).
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
 
-Use this syntax to download specific packages:
+List the existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
 
-~~~~
-yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
-~~~~
+  `ls -l /usr/lib64/lib*`
+
+> [!Note]
+> It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
 
 ## Download R Server dependencies
 

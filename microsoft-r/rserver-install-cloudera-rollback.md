@@ -27,9 +27,10 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-If you deployed and activated Microsoft R Server using a parcel and Custom Service Descriptor (CSD), you have the option of rolling back the active deployment in Cloudera Manager. You might do this if there is an older version of R Server in your cluster that you need to activate.
+If you deployed and activated Microsoft R Server using a parcel and Custom Service Descriptor (CSD), you have the option of rolling back the active deployment in Cloudera Manager. You might do this if there is an older version of R Server in your cluster that you want to use instead.
 
-You can have multiple versions of R Server in Cloudera, but only can be active at any given time.
+> [!Note]
+> You can have multiple versions of R Server in Cloudera, but only can be active at any given time.
 
 1. In Cloudera Manager, click the Parcel icon to open the parcel list.
 

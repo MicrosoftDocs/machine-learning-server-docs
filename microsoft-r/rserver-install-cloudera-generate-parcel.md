@@ -27,13 +27,13 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** script file, support files provided in the R Server 9.1.0 distribution, and Cloudera Manager. Do not run the install.sh script. The instructions in this article walk you through all necessary steps, from download to service activation in your cluster.
+When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** script file, support files provided in the R Server 9.1.0 distribution, and Cloudera Manager. Do not run the install.sh script. The instructions in this article walk you through steps performed at the console, prior to using Cloudera Manager.
 
-In previous releases, parcel installation required downloading two pre-built parcel files. The 9.1.0 release improves upon this experience by providing a parcel generator script. The script guides you through a series of steps and produces the following output:
+In previous releases, parcel installation required downloading two pre-built parcel files. The 9.1.0 release improves upon this experience by providing a parcel generator script. The script produces the following output:
 
 + a parcel
 + a checksum
-+ a Custom Service Descriptor (CSD) that adds Microsoft R Server as a managed service in Cloudera
++ a Custom Service Descriptor (CSD) that integreates Microsoft R Server as a managed service in Cloudera
 
 Before you start, be aware of the following limitations:
  
@@ -56,8 +56,8 @@ The first step is to download a gzipped tar file of the R Server 9.1.0 distribut
 
 After downloading the software to a writable directory, such as **/tmp**, the second step is to unpack the distribution.
 
-1. On the master node, log in as root or a user with super user privileges (`sudo su`).
-2. Switch to the **/tmp** directory (assuming it's the download location)
+1. On the master node, log in as root or a user with super user privileges (`sudo su`). In our examples, the master node is a machine named `cdh4-mn0`.
+2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp`
 3. Unpack the file:
         `[root@cdh4-mn0 tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
 
@@ -78,7 +78,7 @@ The parcel generator script is now available in the **tmp** directory. The scrip
 
 The script downloads Microsoft R Open and builds a parcel by extracting information from RPM packages. You can append flags to run unattended setup or customize feature selections.
 
-1. Switch to the MRS90HADOOP directory.
+1. Switch to the MRS90HADOOP directory: `cd /MRS90HADOOP`
 
 2. Run the script without actually invoking its operations:
 

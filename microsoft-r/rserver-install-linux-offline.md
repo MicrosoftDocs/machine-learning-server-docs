@@ -58,14 +58,14 @@ You can get Microsoft R Server (MRS) 9.1.0 for Linux from one of the following d
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md).
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
 
-After downloading specific packages, use this command to install each package:
+List the existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
 
-  `rpm -i <package-name>`
+  `ls -l /usr/lib64/lib*`
 
-> [!Tip]
-> It's possible your Linux machine already has package dependencies installed. You can attempt a preliminary install of just MRO, .NET Core, and MRS to see how far you get. Setup reports which dependencies are missing, giving you a list of exactly what you need. By way of illustration, on a few systems, only libpng12 had to be installed.
+> [!Note]
+> It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
 
 ## Transfer files
 
