@@ -29,12 +29,14 @@ This article lists the Linux packages required for running or building Microsoft
 
 For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a separate download followed by manual install of dependent packages is required.
 
-You can download files from your Linux or Hadoop vendor. You can also use this site: [http://mirror.centos.org](http://mirror.centos.org/centos/7.3.1611/os/x86_64/Packages/).
+You can download files from your Linux or Hadoop vendor. 
 
-Use this syntax to download specific packages:
+You can use this syntax to download specific packages:
 ~~~~
 yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 ~~~~
+
+Alternativley, for offline installations, you can download packages over an internet connection, upload to an internet-restricted Linux machine, and then use `rpm -i <package-name>` to install the package.
 
 For a list of supported operating systems and versions, see [Supported platforms](rserver-install-supported-platforms.md).
 

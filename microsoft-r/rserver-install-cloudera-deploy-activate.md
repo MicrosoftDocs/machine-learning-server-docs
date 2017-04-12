@@ -27,33 +27,51 @@ ms.custom: ""
 
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
-Microsoft R Server installation on CDH is enhanced in 9.1.0. This release adds support custom service descriptors so that you can manage R Server from within Cloudera Manager.
+A parcel installation of Microsoft R Server on CDH is a 2-part process. In part 1, you [generated a parcel and Custom Service Descriptor (CSD) for Microsoft R Server (MRS) 9.1.0](rserver-install-cloudera-generate-parcel.md). This article is part 2. Because you copied the parcel and CSD to the Cloudera repositories, you can now use Cloudera Manager to deploy the parcel, activate and roll out R Server, and add MRS as a service administered within Cloudera Manager.
 
-After installing the parcels, the next step is to download, install, and run the Microsoft R Server Custom Service Descriptor. In Cloudera Manager, installation and activation are decoupled so that you can have multiple versions of a software package in the cluster. Only version can be active at any time.
+## Step 1: Distribute the MRS parcel
 
-1. Download the CSD file.
-1. Copy the CSD file MRS-9.1.0-CONFIG.jar to the Cloudera CSD directory, typically /opt/cloudera/csd.
-2.	Modify the permissions of CSD file as follows: 
-        sudo chmod 644 /opt/cloudera/csd/MRS-9.1.0-CONFIG.jar
-        sudo chown cloudera-scm:cloudera-scm /opt/cloudera/csd/MRS-9.1.0-CONFIG.jar
-3.	Stop and restart the cloudera-scm-server service using the following shell commands:
-        sudo service cloudera-scm-server stop
-        sudo service cloudera-scm-server start
-4.	Confirm the CSD is installed by checking the Custom Service Descriptor list in Cloudera Manager at http://<cloudera-manager-server>:7180/cmf/csd/list
-5.	On the Cloudera Manager home page, click the dropdown beside the cluster name and click **Add a Service**.
-6.	From the Add Service Wizard, select **Microsoft R Server** and click **Continue**.
-7.	Select **all hosts**, and click **Continue**.
-8.	Accept defaults through the remainder of the wizard.
+1. In Cloudera Manager, click the parcel icon on the top right menu bar.
 
-## Script inputs
+   ![parcel icon in cloudera manager][media/rserver-install-cloudera/cloudera-manager-parcel-icon.png]
 
-~~~~
-    -j or --location                    Folder location where CSD jar file is located
-    -c or --clustername                 Cloudera Cluster Name
-    -u or --username                    Username for connection to cloudera manager server
-    -p or --password                    Password for connection to cloudera manager server
-~~~~
+2. Find **MRS** in the parcel list. If you don't see it, check the parcel repo folder (by default, /opt/cloudera/parcel-repo) for `MRS-9.1.0-el7.parcel` and `MRS-9.1.0-el7.parcel.sha`. The machine should be the master node of the cluster. 
+
+   ![parcel list in cloudera manager][media/rserver-install-cloudera/cloudera-manager-parcel-list.png]
+
+3. In the parcel details page, **MRS** should have a status of *Download* with an option to *Distribute*. Click **Distribute** to roll out MRS on available data nodes.
+
+   ![parcel details in cloudera manager][media/rserver-install-cloudera/cloudera-manager-parcel-detail.png]
+
+4. Status changes to *distributed*. Click **Activate** on the button to make MRS operational in the cluster.
+
+   ![Activate button in parcel detial][media/rserver-install-cloudera/cloudera-manager-activate-button.png]
+
+You are finished with this task when status is "distributed, activated" and the next available action is *Deactivate*.
+
+## Step 2: Add MRS as a service
+
+1. In Cloudera Manager home page, click the down arrow by the cluster name and choose **Add Service**.
+
+   ![add service command in cloudera manager][media/rserver-install-cloudera/cloudera-manager-add-service.png]
+
+2. Find and select **Microsoft R Server** and click **Continue**.
+
+   ![add Microsoft R Server][media/rserver-install-cloudera/cloudera-manager-add-mrs-service.png]
+
+3. In the next page, add role assignments by choosing data nodes on which to run the service. Click **Continue**.
+
+4. On the last page, click **Finish** to start the service.
+
+R Server should now be available to use.
+
+## Next Steps
+
+Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
+
++ [Get started with ScaleR on Spark](scaler-spark-getting-started.md)
++ [Get started with ScaleR on MapReduce](scaler-hadoop-getting-started.md)
 
 ## See Also
 
-[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md)
+[R Server installation on Hadoop overview](rserver-install-hadoop.md)

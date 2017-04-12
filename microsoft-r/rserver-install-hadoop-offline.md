@@ -28,7 +28,7 @@ ms.custom: ""
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1 or with Microsoft R Open 3.3.2. The install script automatically removes previous versions if they are detected so that setup can proceed.
+Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1, nor Microsoft R Open 3.3.3 with version 3.3.2. The install script automatically replaces previous minor versions, including the preview version of .NET Core, if they are detected so that setup can proceed.
 
 <a name="download"><a/>
 

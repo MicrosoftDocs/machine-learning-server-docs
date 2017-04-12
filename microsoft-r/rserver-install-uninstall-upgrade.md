@@ -50,10 +50,15 @@ List installed packages and get package names:
 
 - `yum list \*microsoft\*`
 
-Get version information:
+You might see a list like this:
 
-- `rpm -qi microsoft-r-open-mro-3.3.x86_64`
-- `rpm -qi microsoft-r-server-packages-9.1.x86_64`
+- `microsoft-r-open-foreachiterators-3.3.x86_64`
+- `microsoft-r-open-mkl-3.3.x86_64`
+- `microsoft-r-open-mro-3.3.x86_64`
+
+You can get verbose version information using this syntax:
+
+- `rpm -qi <package-name>`
 
 Alternatively, you might see these paths, given a Cloudera Manager parcel installation.
 
@@ -64,19 +69,21 @@ Alternatively, you might see these paths, given a Cloudera Manager parcel instal
 
 Packages are registered in a database that tracks all package installations in the cluster. To update the database, use a package manager to remove the package: **yum** for Red Hat and CentOS, or **zypper** for SUSE.
 
-Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` (for example, `sudo yum erase microsoft-r-server-mro-3.3.x86_64`).
+Log in as root or a user with super user privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` (for example, `sudo yum erase microsoft-r-open-mro-3.3.x86_64`).
 
-## How to uninstall 9.0.1
+## How to uninstall 9.x
 
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
-        yum erase microsoft-r-server-mro--3.2.x86_64
+        sudo yum erase microsoft-r-open-mro-3.3.x86_64
 
-2. On the root node, verify the location of other files that need to be removed: `
+2. Repeat for Microsoft R Server.
 
-        ls /usr/lib64/microsoft-r/9.0
+3. On the root node, verify the location of other files that need to be removed. You might see 3.3 for MRO and 9.0.1 (or 9.1.0) for R Server:
 
-3. Remove the entire directory:
+        ls /usr/lib64/microsoft-r/
+
+4. Remove the entire directory:
 
         rm -fr /usr/lib64/microsoft-r
 

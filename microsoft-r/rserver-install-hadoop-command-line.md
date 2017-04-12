@@ -35,6 +35,8 @@ R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, H
 
 The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](rserver-install-hadoop-offline.md) instead.
 
+Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1, nor Microsoft R Open 3.3.3 with version 3.3.2. The install script automatically replaces previous minor versions, including the preview version of .NET Core, if they are detected so that setup can proceed.
+
 ## Recommendations for installation
 
 We recommend installing R Server on all data nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R Server. Although the task will eventually get reassigned to a node that has R Server, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
@@ -84,19 +86,19 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 1. Log in as root or a user with super user privileges (`sudo su`).
 2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
-        `[tmp] $ tar zxvf en_r_server_910_for_hadoop_x64_9648875.gz`
+        `[tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
 
 
 ## Run the install script
 
 The Hadoop component is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
-1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+1. Log in as root or as a user with super user privileges (`sudo -s`). 
 2. Verify system repositories are up to date:
 		[username] $ `sudo yum clean all`
-3. Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS90HADOOP if you unpacked the tar.gz file):
+3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS90HADOOP if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`
-		[username tmp] $ `cd /MRS90HADOOP`
+		[username tmp] $ `cd MRS90HADOOP`
 4. Run the script with the **-p** parameter, specifying the Hadoop component:
 		[username tmp MRS90HADOOP] $ `sudo bash install.sh -p`
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
