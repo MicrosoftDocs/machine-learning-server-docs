@@ -38,16 +38,17 @@ Python web services are supported on Windows platforms on which Python was enabl
 
 ##  Workflow
 
-1. Generate core client library in Python. 
-1. Add authentication and header logic.
-1. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
-1. Publish the web service and embed this snapshot.
-1. Try out the web service by consuming it in your session.
++ Prerequisite: Generate core client library in Python. 
++ 1. Add authentication and header logic.
++ 2. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
++ 3. Publish the web service and embed this snapshot.
++ 4. Try out the web service by consuming it in your session.
++ 5. Manage the service
 
-![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
+![Swagger Workflow](../media/o16n/data-scientist-python-workflow.png)
 
 
-### Full Example
+## Full Example
 
 This example assumes you have satisfied the prerequisites, including:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
@@ -125,11 +126,12 @@ workspace_object = deployrclient.models.WorkspaceObject("species_1",[7,3.2,4.7,1
 workspace_object_2 = deployrclient.models.WorkspaceObject("species_2",[3,2.6,3,2.5])
 
 #Define how to train the classifier model; what to predict; what to return
-execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
-                                                      "result=clf.predict(species_1)\n"+
-                                                      "other_result=clf.predict(species_2)"
-                                                      ,[workspace_object,workspace_object_2], #Input
-                                                      ["result", "other_result"]) #Output
+execute_request = deployrclient.models.ExecuteRequest(
+    "clf.fit(iris.data, iris.target)\n"+
+    "result=clf.predict(species_1)\n"+
+    "other_result=clf.predict(species_2)",
+    [workspace_object,workspace_object_2], #Input
+    ["result", "other_result"]) #Output
 
 #Now, go train that model on the Iris Dataset in R Server
 execute_response = client.execute_code(session_id,execute_request, headers)
@@ -250,12 +252,13 @@ iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", t
 #Define the publish request for the service and its arguments.
 #Specify the changed code, inputs, outputs, and snapshot.
 #Don't forget to set runtime_type="Python"`.
-publish_request = deployrclient.models.PublishWebServiceRequest(code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
-                                                                description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
-                                                                input_parameter_definitions = [flower_data],
-                                                                output_parameter_definitions = [iris_species],
-                                                                runtime_type = "Python",
-                                                                snapshot_id = response.snapshot_id)
+publish_request = deployrclient.models.PublishWebServiceRequest(
+    code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
+    description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
+    input_parameter_definitions = [flower_data],
+    output_parameter_definitions = [iris_species],
+    runtime_type = "Python",
+    snapshot_id = response.snapshot_id)
  
 #Now, publish the service with version (V2.0)
 client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
@@ -277,7 +280,7 @@ client.delete_web_service_version("Iris","V2.0",headers)
 ```
 
 
-### Prerequisite: Generate a client library
+## Prerequisite: Generate a client library
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You will use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -308,7 +311,7 @@ client.delete_web_service_version("Iris","V2.0",headers)
 
 <a name="python-auth"></a>
 
-### Part 1. Add authentication and header logic to your script
+## Part 1. Add authentication and header logic to your script
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
 To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
@@ -379,7 +382,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    print(status_response.status_code)
    ```
 
-### Part 2. Prepare the session, model, and snapshot
+## Part 2. Prepare the session, model, and snapshot
 
 After authentication, you can start a Python session and create a model you'll publish later. You can include any Python code or models in a web service. Once you've set up your session environment, you can even save it as a snapshot so you can reload your session as you had it before. 
 
@@ -431,11 +434,12 @@ After authentication, you can start a Python session and create a model you'll p
    workspace_object_2 = deployrclient.models.WorkspaceObject("species_2",[3,2.6,3,2.5])
 
    #Define how to train the classifier model; what to predict; what to return
-   execute_request = deployrclient.models.ExecuteRequest("clf.fit(iris.data, iris.target)\n"+
-                                                      "result=clf.predict(species_1)\n"+
-                                                      "other_result=clf.predict(species_2)"
-                                                      ,[workspace_object,workspace_object_2], #Input
-                                                      ["result", "other_result"]) #Output
+   execute_request = deployrclient.models.ExecuteRequest(
+       "clf.fit(iris.data, iris.target)\n"+
+       "result=clf.predict(species_1)\n"+
+       "other_result=clf.predict(species_2)",
+       [workspace_object,workspace_object_2], #Input
+       ["result", "other_result"]) #Output
 
    #Now, go train that model on the Iris Dataset in R Server
    execute_response = client.execute_code(session_id,execute_request, headers)
@@ -470,7 +474,7 @@ After authentication, you can start a Python session and create a model you'll p
        print(snapshot)
    ```
 
-### Part 3. Publish model as a web service
+## Part 3. Publish model as a web service
 
 After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
 
@@ -506,7 +510,7 @@ After your client library has been generated and you've built the authentication
    ```
 
 
-### Part 4. Consume the service in the session
+## Part 4. Consume the service in the session
 
 1. In the same session, get service holdings and metadata for the service.
 
@@ -571,7 +575,7 @@ After your client library has been generated and you've built the authentication
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-### Part 5. Manage the services
+## Part 5. Manage the services
 
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
@@ -594,12 +598,13 @@ After your client library has been generated and you've built the authentication
    #Define the publish request for the service and its arguments.
    #Specify the changed code, inputs, outputs, and snapshot.
    #Don't forget to set runtime_type="Python"`.
-   publish_request = deployrclient.models.PublishWebServiceRequest(code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
-                                                                description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
-                                                                input_parameter_definitions = [flower_data],
-                                                                output_parameter_definitions = [iris_species],
-                                                                runtime_type = "Python",
-                                                                snapshot_id = response.snapshot_id)
+   publish_request = deployrclient.models.PublishWebServiceRequest(
+       code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
+       description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
+       input_parameter_definitions = [flower_data],
+       output_parameter_definitions = [iris_species],
+       runtime_type = "Python",
+       snapshot_id = response.snapshot_id)
  
    #Now, publish the service with version (V2.0)
    client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
