@@ -5,7 +5,7 @@ title: "Quickstarts for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/03/2017"
+ms.date: "04/13/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Quickstarts for MicrosoftML
 
-Samples are described and linked here to help you get started quickly using MicrosoftML.
+Samples are described and linked here to help you get started quickly using MicrosoftML. The sentiment analysis and image featurization quickstarts both use pretrained models. These models are not install by default with Microsoft R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server.For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 ## Breast cancer prediction using rxFastLinear
 
@@ -52,4 +52,4 @@ TBD
 
 ## Run an ML analysis on an Azure Spark cluster
 
-TBD
+To create an HDInsight (Hadoop) cluster and connect it to R, see [Get started using R Server on HDInsight](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-r-server-get-started)
