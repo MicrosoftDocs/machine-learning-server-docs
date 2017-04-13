@@ -494,34 +494,33 @@ After your client library has been generated and you've built the authentication
 >[!NOTE]
 >Remember that you must be authenticated before you make any API calls. Therefore, include `headers` in every request.
 
-1. Publish this SVM model as a Python web service in R Server. This web service will score a vector that gets passed to it.
+Publish this SVM model as a Python web service in R Server. This web service will score a vector that gets passed to it.
 
-   >[!IMPORTANT]
-   > To ensure that the web service is registered as a Python service, be sure to specify `runtime_type="Python"`. If you don't set the runtime type to Python, it defaults to R.
+>[!IMPORTANT]
+> To ensure that the web service is registered as a Python service, be sure to specify `runtime_type="Python"`. If you don't set the runtime type to Python, it defaults to R.
 
-   ```python
-   #Define a web service that determines the iris species by scoring 
-   #a vector of sepal length and width, petal length and width
+```python
+#Define a web service that determines the iris species by scoring 
+#a vector of sepal length and width, petal length and width
 
-   #Set `flower_data` for the sepal and petal length and width
-   flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
-   #Set `iris_species` for the species of iris
-   iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "vector")
+#Set `flower_data` for the sepal and petal length and width
+flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
+#Set `iris_species` for the species of iris
+iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "vector")
 
-   #Define the publish request for the web service and its arguments.
-   #Specify the code, inputs, outputs, and snapshot.
-   #Don't forget to set runtime_type="Python"`.
-   publish_request = deployrclient.models.PublishWebServiceRequest(
+#Define the publish request for the web service and its arguments.
+#Specify the code, inputs, outputs, and snapshot.
+#Don't forget to set runtime_type="Python"`.
+publish_request = deployrclient.models.PublishWebServiceRequest(
        code = "iris_species = [names[x] for x in clf.predict(flower_data)]", 
        input_parameter_definitions = [flower_data], 
        output_parameter_definitions = [iris_species],
        runtime_type = "Python",
        snapshot_id = response.snapshot_id)
 
-   #Publish the service using the specified name (iris), version (V1.0)
-   client.publish_web_service_version("Iris", "V1.0", publish_request, headers)
-   ```
-
+#Publish the service using the specified name (iris), version (V1.0)
+client.publish_web_service_version("Iris", "V1.0", publish_request, headers)
+```
 
 ### 4. Consume the web service
 
@@ -590,7 +589,7 @@ This section demonstrates how to consume the service in the same session where i
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-### 5. Manage the services
+### Update, republish, list, and delete
 
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
