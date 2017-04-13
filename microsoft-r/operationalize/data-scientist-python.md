@@ -594,7 +594,7 @@ Now that we've created a web service, you can update, delete, or republish that 
 
 #### Update a web service
 
-You can update a web service to change the code, model, description, inputs, outputs and more. In our example, we update the service to add a description useful to people who might consume this service. 
+You can update a web service to change the code, model, description, inputs, outputs and more. In this example, we update the service to add a description useful to people who might consume this service. 
 
 ```python
 #Define what needs to be updated. Here we add a description.
@@ -650,7 +650,9 @@ for service in client.get_all_web_services(headers):
 
 #### Delete services
 
-Delete the second version we just published.
+You can delete services you've created. You can also delete the services of others if you belong to a role with those permissions.
+
+In this example, we delete the second web service version we just published.
 
 ```python
 #Delete the second version we just published.
