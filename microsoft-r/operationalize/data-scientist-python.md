@@ -36,7 +36,7 @@ This article is for data scientists who wants to learn how to publish Python cod
 Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
 
 
-##  Workflow: Publish Python web service
+##  Workflow
 
 1. Generate core client library in Python. 
 1. Add authentication and header logic.
@@ -47,15 +47,15 @@ Python web services are supported on Windows platforms on which Python was enabl
 ![Swagger Workflow](../media/o16n/api-swagger-workflow.png)
 
 
-## Example
+### Full Example
 
-This example assumes you have the following (all of which are covered in **Part 1**):
+This example assumes you have satisfied the prerequisites, including:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
 
 >[!IMPORTANT]
->This example uses the local `admin` account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
+>This full example uses the local `admin` account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
 
 ```python
 ##################################################
@@ -277,36 +277,7 @@ client.delete_web_service_version("Iris","V2.0",headers)
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Part 1. Generate core client library in Python
+### Prerequisite: Generate a client library
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You'll be using it to generate the API client libraries in Python. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -336,7 +307,17 @@ client.delete_web_service_version("Iris","V2.0",headers)
    
    ![autorest output path](../media/o16n/data-scientist-python-client-library.png)
 
-1. Import the library to make it accessible in the Python code editor of your choice such as Jupyter, Visual Studio, VS Code, or iPython for example.
+
+<a name="python-auth"></a>
+
+### Part 1. Add authentication and header logic to your script
+Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
+
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+
+Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
+
+1. Get started by importing the client library to make it accessible your preferred Python code editor, such as Jupyter, Visual Studio, VS Code, or iPython.
 
    Specify the parent directory of the client library. In our example, the Autorest generated client library is under `C:\Users\rserver-user\Documents\Python\deployrclient`:
 
@@ -344,15 +325,6 @@ client.delete_web_service_version("Iris","V2.0",headers)
    # Import the generated client library. 
    import deployrclient
    ```   
-
-<a name="python-auth"></a>
-
-### Part 2. Add authentication and header logic to your script
-Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
-
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
-
-Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
 
 1. Add the authentication logic to your application to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
@@ -409,7 +381,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    print(status_response.status_code)
    ```
 
-### Part 3. Create a session, the model, and a snapshot
+### Part 2. Prepare the session, model, and snapshot
 
 After authentication, you can start a Python session and create a model you'll publish later. You can include any Python code or models in a web service. Once you've set up your session environment, you can even save it as a snapshot so you can reload your session as you had it before. 
 
@@ -500,7 +472,7 @@ After authentication, you can start a Python session and create a model you'll p
        print(snapshot)
    ```
 
-### Part 4. Publish as a web service in Python
+### Part 3. Publish model as a web service
 
 After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
 
@@ -536,7 +508,7 @@ After your client library has been generated and you've built the authentication
    ```
 
 
-### Part 5. Consume the service in the same session
+### Part 4. Consume the service in the session
 
 1. In the same session, get service holdings and metadata for the service.
 
@@ -601,7 +573,7 @@ After your client library has been generated and you've built the authentication
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-### Part 6. Manage services in Python
+### Part 5. Manage the services
 
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
