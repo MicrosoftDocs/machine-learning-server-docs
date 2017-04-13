@@ -29,14 +29,16 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
+## Introduction
+
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
 
-## Supported platforms
+**Supported platforms**
 
 Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
 
 
-##  Workflow
+**Workflow**
 
 + Prerequisite: Generate core client library in Python. 
 + Add authentication and header logic.
@@ -48,7 +50,7 @@ Python web services are supported on Windows platforms on which Python was enabl
 ![Swagger Workflow](../media/o16n/data-scientist-python-workflow.png)
 
 
-## Full Example
+## End-to-end Example
 
 This example assumes you have satisfied the prerequisites, including:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
@@ -281,8 +283,11 @@ for service in client.get_all_web_services(headers):
 client.delete_web_service_version("Iris","V2.0",headers)
 ```
 
+## Walkthrough
 
-## Prerequisite: Generate a client library
+This section runs through the above example in more detail.
+
+### Prerequisite: The client library
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You will use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -313,7 +318,7 @@ client.delete_web_service_version("Iris","V2.0",headers)
 
 <a name="python-auth"></a>
 
-## Part 1. Add authentication and header logic to your script
+### 1. Add authentication/header logic
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
 To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
@@ -384,7 +389,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    print(status_response.status_code)
    ```
 
-## Part 2. Prepare the session, model, and snapshot
+### 2. Prepare session and code
 
 After authentication, you can start a Python session and create a model you'll publish later. You can include any Python code or models in a web service. Once you've set up your session environment, you can even save it as a snapshot so you can reload your session as you had it before. 
 
@@ -476,7 +481,7 @@ After authentication, you can start a Python session and create a model you'll p
        print(snapshot)
    ```
 
-## Part 3. Publish model as a web service
+### 3. Publish the model 
 
 After your client library has been generated and you've built the authentication logic into your application, you can interact with the core APIs to create a Python session, create a model, and then publish a web service using that model.
 
@@ -512,7 +517,9 @@ After your client library has been generated and you've built the authentication
    ```
 
 
-## Part 4. Consume the service in the session
+### 4. Consume the web service
+
+This section demonstrates how to consume the service in the same session where it was created.
 
 1. In the same session, get service holdings and metadata for the service.
 
@@ -577,7 +584,7 @@ After your client library has been generated and you've built the authentication
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-## Part 5. Manage the services
+### 5. Manage the services
 
 1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
 
