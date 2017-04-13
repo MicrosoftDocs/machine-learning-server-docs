@@ -39,11 +39,11 @@ Python web services are supported on Windows platforms on which Python was enabl
 ##  Workflow
 
 + Prerequisite: Generate core client library in Python. 
-+ 1. Add authentication and header logic.
-+ 2. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
-+ 3. Publish the web service and embed this snapshot.
-+ 4. Try out the web service by consuming it in your session.
-+ 5. Manage the service
++ Add authentication and header logic.
++ Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
++ Publish the web service and embed this snapshot.
++ Try out the web service by consuming it in your session.
++ Manage your services
 
 ![Swagger Workflow](../media/o16n/data-scientist-python-workflow.png)
 
@@ -54,6 +54,8 @@ This example assumes you have satisfied the prerequisites, including:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
+
+A step-by-step walkthrough with more detailed descriptions is provided below this code block.
 
 >[!IMPORTANT]
 >This full example uses the local `admin` account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
@@ -329,8 +331,9 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 1. Add the authentication logic to your application to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
-   + **For AD/LDAP or the `admin` account authentication**, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request.
+   **AD/LDAP or `admin` account authentication**
 
+   You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
    ```python
    #Using client library generated from Autorest
    #Create client instance and point it at an R Server. In this case, R Server is local.
@@ -343,29 +346,28 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    token_response = client.login(login_request)
    ```
 
-   + **For Azure Active Directory (AAD)**, you must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request. 
-   
-     If you do not know your connection settings, please contact your administrator.
+   **Azure Active Directory (AAD) authentication**
 
-     ```python
-     #Import the AAD authentication library
-     import adal
+   You must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   ```python
+   #Import the AAD authentication library
+   import adal
 
-     #Update these values with the AAD connection parameters your admin gave you.
-     #Once authenticated, user won't provide credentials again until token is invalid.
-     url = "http://localhost:12800"
-     authuri = https://login.windows.net,
-     tenantid = "<<AAD_DOMAIN>>", 
-     clientid = "<<NATIVE_APP_CLIENT_ID>>", 
-     resource = "<<WEB_APP_CLIENT_ID>>", 
+   #Update these values with the AAD connection parameters your admin gave you.
+   #Once authenticated, user won't provide credentials again until token is invalid.
+   url = "http://localhost:12800"
+   authuri = https://login.windows.net,
+   tenantid = "<<AAD_DOMAIN>>", 
+   clientid = "<<NATIVE_APP_CLIENT_ID>>", 
+   resource = "<<WEB_APP_CLIENT_ID>>", 
 
-     #Acquire authentication token using AAD Device Code Login
-     context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
-     code = context.acquire_user_code(resource, clientid)
-     print(code['message'])
-     token = context.acquire_token_with_device_code(resource, code, clientid)
-     #The authentication code returned must be entered at https://aka.ms/devicelogin 
-     ```     
+   #Acquire authentication token using AAD Device Code Login
+   context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
+   code = context.acquire_user_code(resource, clientid)
+   print(code['message'])
+   token = context.acquire_token_with_device_code(resource, code, clientid)
+   #The authentication code returned must be entered at https://aka.ms/devicelogin 
+   ```     
 
 1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
 
