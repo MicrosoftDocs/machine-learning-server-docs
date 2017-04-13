@@ -6,7 +6,7 @@ description: "A package that provides state-of-the-art machine learning algorith
 keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,7 +30,7 @@ ms.custom: ""
 
 ##Description
  
-The MicrosoftML-package package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
+The MicrosoftML package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
 
 This topic includes links to the reference documentation for the ML algorithms and transforms, and for the scoring and helper functions.
 
@@ -60,15 +60,23 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 ### Machine learning transforms
 
-* [featurizeText](packagehelp/featurizeText.md): Transformation to produce a bag of counts of ngrams in a given text.  It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
 * [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
 * [categorical](packagehelp/categorical.md): Create indicator vector using categorical transform with dictionary.  
-* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing.  
-* [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables. 
+* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing. 
+* [featurizeText](packagehelp/featurizeText.md): Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
+* [getSentiment](packagehelp/getSentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
+* [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables using a specified mode.
+* [loadImage](packagehelp/loadImage.md): Loads image data.
+* [resizeImage](packagehelp/resizeImage.md): Resizes an image to a specified dimension using a specified resizing method.
+* [extractPixels](packagehelp/extractPixels.md): Extracts the pixel values from an image.
+* [featurizeImage](packagehelp/featurizeImage.md): Featurizes an image using a pre-trained deep neural network model.
 
-### Scoring
+
+### Scoring and training
 
 * [rxPredict.mlModel](packagehelp/rxPredict.md): Scores using a model created by one of the machine learning algorithms.  
+* [rxFeaturize](packagehelp/rxFeaturize.md): Transforms data from an input data set to an output data set.
+* [rxEnsemble](packagehelp/rxEnsemble.md): trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 
 ### Helper functions for arguments

@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/03/2017"
+ms.date: "04/13/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,10 +26,9 @@ ms.custom: ""
 
 # Introduction to MicrosoftML
 
-**MicrosoftML** is a new package for Microsoft R Server that adds state-of-the-art algorithms and data transforms to Microsoft R Server functionality. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R Server brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. The **MicrosoftML** package is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**.
+**MicrosoftML** is a package that adds state-of-the-art machine learning algorithms and data transforms to **Microsoft R Server**. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R Server brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
 
-MicrosoftML adds algorithms and transforms that are used by product teams across Microsoft. This brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data.  
-
+The **MicrosoftML package** brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data. The MicrosoftML package is installed with **Microsoft R Server** and with the **SQL Server R Services**.
 
 ## What’s new?
 
@@ -52,7 +51,8 @@ The **MicrosoftML package** provides a machine learning transform pipelines that
 - **`categorical()`**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
 - **`selectFeatures()`**: selects features from the specified variables using one of the two modes: count or mutual information.
 - **`featurizeText()`**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF.
-
+- **Featurize image**: featurizes an image using the specifies pre-trained deep neural network model. 
+- **Sentiment analysis**: returns the probability that the sentiment of a natural text is positive. 
 
 ## Machine learning algorithms
 
@@ -73,9 +73,15 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## Getting started with MicrosoftML
 
-MicrosoftML is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**. For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
+MicrosoftML is currently available on various platforms in **Microsoft R Server 9.1.0 and 9.0.1** and in the **SQL R Server vNext**. 
+
+
+
+For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
+
+For a list  of these platforms, see the [Platform availability](microsoftml-get-started.md#platform-availability) section in the getting started topic.
 
 
 ## What's next?
