@@ -50,10 +50,7 @@ The workflow from publishing and consuming a Python web service is as follows:
 
 ## End-to-end example
 
-This example assumes you have satisfied the [prerequisites](#prereq), including:
-+ You have Autorest as your Swagger code generator installed and you are familiar with it.
-+ You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
-+ You have already generated a Python client library from that Swagger file.
+This example assumes you have satisfied the [prerequisites](#prereq) to generate a Python client library from that Swagger file and that you've used Autorest.
 
 A step-by-step walkthrough with more detailed descriptions is provided below this code block.
 
