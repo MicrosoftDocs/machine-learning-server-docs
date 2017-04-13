@@ -31,7 +31,8 @@ ms.custom: ""
 
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
 
-Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
+>[!IMPORTANT]
+>Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
 
 
 ## Publish-to-consume workflow
