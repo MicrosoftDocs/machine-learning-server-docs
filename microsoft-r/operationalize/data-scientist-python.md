@@ -292,6 +292,8 @@ This section runs through the above example in more detail.
 
 ### Prerequisite: the client library
 
+Before you can start authenticating with R Server and publishing your Python code and models, you must generate a client library using the Swagger document we provide. Here's how.
+
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You will use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
 1. Download the Swagger file containing the core APIs for your version of R Server. This file contains a Swagger template defining the list of REST resources and the operations that can be called on those resources. Find this file under `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number. 
