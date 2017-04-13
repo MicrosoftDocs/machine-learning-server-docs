@@ -591,7 +591,9 @@ This section demonstrates how to consume the service in the same session where i
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-### After: manage services
+### Manage the services
+
+Now that we've created a web service, you can update, delete, or republish that service. You can also list every single web server hosted with R Server. Here's how.
 
 #### Update a web service
 
