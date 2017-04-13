@@ -29,30 +29,28 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
-## Introduction
-
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
-
-**Supported platforms**
 
 Python web services are supported on Windows platforms on which Python was enabled during the installation of R Server. Expanded platform support in future releases.
 
 
-**Workflow**
+## Publish-to-consume workflow
 
-+ Prerequisite: Generate core client library in Python. 
-+ Add authentication and header logic.
-+ Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
-+ Publish the web service and embed this snapshot.
-+ Try out the web service by consuming it in your session.
-+ Manage your services
+The workflow from publishing and consuming a Python web service is as follows:
+
+1. There is a [prerequisite](#prereq) to have a client library in Python generated from the core API swagger document.
+1. Add the authentication and header logic.
+1. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
+1. Publish the web service and embed this snapshot.
+1. Try out the web service by consuming it in your session.
+1. Manage these services.
 
 ![Swagger Workflow](../media/o16n/data-scientist-python-workflow.png)
 
 
-## End-to-end Example
+## End-to-end example
 
-This example assumes you have satisfied the prerequisites, including:
+This example assumes you have satisfied the [prerequisites](#prereq), including:
 + You have Autorest as your Swagger code generator installed and you are familiar with it.
 + You've already downloaded the Swagger file containing the core APIs for your version of R Server. 
 + You have already generated a Python client library from that Swagger file.
@@ -290,7 +288,9 @@ client.delete_web_service_version("Iris","V2.0",headers)
 
 This section runs through the above example in more detail.
 
-### Prerequisite: The client library
+<a name="prereq"></a>
+
+### Prerequisite: the client library
 
 1. Install a Swagger code generator on your local machine and familiarize yourself with it. You will use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
@@ -321,7 +321,7 @@ This section runs through the above example in more detail.
 
 <a name="python-auth"></a>
 
-### 1. Add authentication/header logic
+### 1. Add authentication / header logic
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
 To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
@@ -363,8 +363,8 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    #Import the AAD authentication library
    import adal
 
-   #Update these values with the AAD connection parameters your admin gave you.
-   #Once authenticated, user won't provide credentials again until token is invalid.
+   #Define the login request and provide credentials. 
+   #Use the AAD connection parameters provided by your admin.
    url = "http://localhost:12800"
    authuri = https://login.windows.net,
    tenantid = "<<AAD_DOMAIN>>", 
@@ -589,61 +589,69 @@ This section demonstrates how to consume the service in the same session where i
    print(json.dumps(resp.json(), indent = 1, sort_keys = True))
    ```
 
-### Update, republish, list, and delete
+### After: manage services
 
-1. Update the web service to add a description useful to people who might consume this service. You can update the description, code, inputs, outputs, models, and even the snapshot. 
+#### Update a web service
 
-   ```python
-   #Define what needs to be updated. Here we add a description.
-   #Be sure to specify the runtime_type again.
-   update_request = deployrclient.models.PublishWebServiceRequest(
-       description = "Determines iris species using length and width of sepal and petal", runtime_type = "Python")
-   #Now update it by specifying the service name and version number
-   client.patch_web_service_version("Iris", "V1.0", update_request, headers)
-   ```
+You can update a web service to change the code, model, description, inputs, outputs and more. In our example, we update the service to add a description useful to people who might consume this service. 
 
-1. Publish another version of the web service, but this time the service returns the Iris species as a string instead of as a list of strings.
+```python
+#Define what needs to be updated. Here we add a description.
+#Be sure to specify the runtime_type again.
+update_request = deployrclient.models.PublishWebServiceRequest(
+    description = "Determines iris species using length and width of sepal and petal", runtime_type = "Python")
+#Now update it by specifying the service name and version number
+client.patch_web_service_version("Iris", "V1.0", update_request, headers)
+```
 
-   ```python
-   #Publish a new version of the service that returns the species 
-   #as a string instead of list of strings.
-   flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
-   iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "string")
+#### Publish another version
+
+You can also publish another version of the web service. In this example, the service will now return the Iris species as a string instead of as a list of strings.
+
+```python
+#Publish another version of the web service, but this time 
+#the service returns the species as a string instead of list of strings.
+flower_data = deployrclient.models.ParameterDefinition(name = "flower_data", type = "vector")
+iris_species = deployrclient.models.ParameterDefinition(name = "iris_species", type = "string")
  
-   #Define the publish request for the service and its arguments.
-   #Specify the changed code, inputs, outputs, and snapshot.
-   #Don't forget to set runtime_type="Python"`.
-   publish_request = deployrclient.models.PublishWebServiceRequest(
-       code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
-       description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
-       input_parameter_definitions = [flower_data],
-       output_parameter_definitions = [iris_species],
-       runtime_type = "Python",
-       snapshot_id = response.snapshot_id)
+#Define the publish request for the service and its arguments.
+#Specify the changed code, inputs, outputs, and snapshot.
+#Don't forget to set runtime_type="Python"`.
+publish_request = deployrclient.models.PublishWebServiceRequest(
+    code = "iris_species = [names[x] for x in clf.predict(flower_data)][0]",
+    description = "Determines the species of iris, based on Sepal Length, Sepal Width, Petal Length and Petal Width",
+    input_parameter_definitions = [flower_data],
+    output_parameter_definitions = [iris_species],
+    runtime_type = "Python",
+    snapshot_id = response.snapshot_id)
  
-   #Now, publish the service with version (V2.0)
-   client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
+#Now, publish the service with version (V2.0)
+client.publish_web_service_version("Iris", "V2.0", publish_request, headers)
  
-   #Make request to consume service using these flower_data inputs; print output
-   resp = s.post(url+"/api/Iris/V2.0",json={"flower_data":[5.1,3.5,1.4,.2]})
-   print(json.dumps(resp.json(), indent = 1, sort_keys = True))
-   ```
+#Make request to consume service using these flower_data inputs; print output
+resp = s.post(url+"/api/Iris/V2.0",json={"flower_data":[5.1,3.5,1.4,.2]})
+print(json.dumps(resp.json(), indent = 1, sort_keys = True))
+```
 
-1. List all web services, including those created by other users or in different languages.
+#### List services
 
-   ```python
-   #Return the list of all existing web services.
-   for service in client.get_all_web_services(headers):
-       #print the service information
-       print(service)
-       #Print each input and output parameter
-       print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
-       print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
-   ```
+Get a list of all web services, including those created by other users or in different languages.
 
-1. Delete the second version we just published.
+```python
+#Return the list of all existing web services.
+for service in client.get_all_web_services(headers):
+    #print the service information
+    print(service)
+    #Print each input and output parameter
+    print("Input Parameters: {0}".format([str(parameter) for parameter in service.input_parameter_definitions]))
+    print("Output Parameters: {0}".format([str(parameter) for parameter in service.output_parameter_definitions]))
+``` 
 
-   ```python
-   #Deletes the second version of the service
-   client.delete_web_service_version("Iris","V2.0",headers)
-   ```
+#### Delete services
+
+Delete the second version we just published.
+
+```python
+#Delete the second version we just published.
+client.delete_web_service_version("Iris","V2.0",headers)
+```
