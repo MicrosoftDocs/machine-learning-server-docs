@@ -38,8 +38,8 @@ Python web services are supported on Windows platforms on which Python was enabl
 
 The workflow from publishing and consuming a Python web service is as follows:
 
-1. Fulfill the [prerequisite](#prereq) to have a client library in Python generated from the core API swagger document.
-1. Add the authentication and header logic.
+1. Fulfill the [prerequisite](#prereq) of having a Python client library generated from the core API swagger document.
+1. Add authentication and header logic to your Python script.
 1. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
 1. Publish the web service and embed this snapshot.
 1. Try out the web service by consuming it in your session.
@@ -317,6 +317,7 @@ Before you can start authenticating with R Server and publishing your Python cod
    
    ![autorest output path](../media/o16n/data-scientist-python-client-library.png)
 
+<br>
 
 <a name="python-auth"></a>
 
@@ -650,7 +651,7 @@ for service in client.get_all_web_services(headers):
 
 #### Delete services
 
-You can delete services you've created. You can also delete the services of others if you belong to a role with those permissions.
+You can delete services you've created. You can also delete the services of others if you are [assigned to a role](security-roles.md) with those permissions.
 
 In this example, we delete the second web service version we just published.
 
