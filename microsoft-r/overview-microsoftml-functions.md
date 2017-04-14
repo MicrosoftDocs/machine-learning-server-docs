@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/13/2017"
+ms.date: "04/14/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -84,6 +84,9 @@ The **`rxNeuralNet()`** algorithm supports a user-defined multilayer network top
 The **`rxLogisticRegression()`** algorithm is used to predict the value of a categorical dependent variable from its relationship to one or more independent variables assumed to have a logistic distribution. If the dependent variable has only two possible values (success/failure), then the logistic regression is binary. If the dependent variable has more than two possible values (blood type given diagnostic test results), then the logistic regression is multinomial.
 
 **Tasks supported**: binary and multiclass classification
+
+### Real-time scoring
+The **`rxPredict()`** algorithm runs the scoring library either from SQL Server, using the stored procedure, or from R code. This real-time scoring library has been designed in C+ and optimized specifically for scoring operations. It loads a specified model from a database, define a query with new input data, and generate scores based on the model. 
 
 ## Get help on MicrosoftML functions
 
