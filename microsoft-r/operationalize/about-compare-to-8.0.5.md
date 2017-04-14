@@ -6,7 +6,7 @@ description: "Operationalizing Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,12 +27,12 @@ ms.custom: ""
 
 # Operationalizing with R Server: compare 9.x to DeployR 8.x
 
-The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the DeployR 8.0.5 available in R Server 8.0.5.
+The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5 which was available in R Server 8.0.5.
 
 >[!Important]
 >R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
 
-Release|Microsoft R Server 8.0.5|Microsoft R Server 9
+Release|Microsoft R Server 8.0.5|Microsoft R Server 9.x
 ----|-----|------
 Name of feature|DeployR|_integrated in R Server_
 Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure R Server to operationalize analytics](configuration-initial.md) and enable R Server to deploy and host web services

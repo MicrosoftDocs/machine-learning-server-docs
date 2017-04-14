@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "03/14/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Execute on a remote Microsoft R Server
+# Execute on a remote Microsoft R Server using the mrsdeploy package
 
 **Applies to:  Microsoft R Client 3.3.x, Microsoft R Server 9.x**
 

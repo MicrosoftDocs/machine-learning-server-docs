@@ -6,7 +6,7 @@ description: "Configure a remote database for operationalization with Microsoft 
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/22/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,8 +36,8 @@ The database provides internal storage for the sessions, web services, snapshots
 > Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.
 
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
-+ On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater
-+ On Linux: PostgreSQL 9.2 or greater 
++ SQL Server Professional, Standard, or Express Version 2008 or greater on a Windows machine
++ PostgreSQL 9.2 or greater on a Linux machine
 
 > [!Important]
 > Any data that was saved in the default local SQLite database will be lost if you configure a different database.

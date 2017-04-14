@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security when operationalizing with Microsoft R S
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -37,6 +37,8 @@ You can add greater enterprise security around Microsoft R Server such as:
 + Secured connections using [SSL/TLS 1.2](security-https.md). For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.** 
 
 + [Cross-Origin Resource Sharing](security-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
+
++ [Role-based access control](security-roles.md) over web services in R Server.
 
 Additionally, we recommend that you review the following [Security Considerations](security-rserve.md).
 

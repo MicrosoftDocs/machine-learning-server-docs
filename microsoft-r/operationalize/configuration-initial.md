@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Configure R Server for Operationalization | Microsoft R Server Docs"
+title: "Configure R Server for Operationalization One Box | Microsoft R Server Docs"
 description: "Configuration Operationalization for Microsoft R Server"
-keywords: ""
+keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

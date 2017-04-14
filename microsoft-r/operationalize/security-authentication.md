@@ -3,10 +3,10 @@
 # required metadata
 title: "Enterprise-Grade Security: Authentication | Microsoft R Server Docs"
 description: "Enterprise-Grade Security: Authentication with Microsoft R Server"
-keywords: ""
+keywords: "R Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "03/25/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication Roles for Operationaliza
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/14/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

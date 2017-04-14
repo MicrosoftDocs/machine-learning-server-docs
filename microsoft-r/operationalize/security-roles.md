@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication Roles with Microsoft R S
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/14/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,6 +32,9 @@ ms.custom: ""
 By default, authenticated R Server  users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
 
 You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options"](security-authentication.md).
+
+>[!IMPORTANT]
+>**This is not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services, you must set up roles again.
 
 ## What do I need?
 

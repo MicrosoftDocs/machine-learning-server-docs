@@ -6,7 +6,7 @@ description: "R Execution Security Considerations when operationalizing analytic
 keywords: "RServe; deployr-rserve"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

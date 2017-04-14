@@ -6,7 +6,7 @@ description: "Readme file for Microsoft R Server release, documenting known issu
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "04/04/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

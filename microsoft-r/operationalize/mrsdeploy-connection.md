@@ -6,7 +6,7 @@ description: "Logging into R Server and connecting with mrsdeploy"
 keywords: "remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "2/14/2017"
+ms.date: "4/19/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,8 +29,8 @@ ms.custom: ""
 **Applies to:  Microsoft R Server 9.x**
 
 The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
-+ Establishing a remote session in a console application for the purposes of executing code on that server
-+ Publishing and managing a web service that is backed by the R code block or script you provided.  
++ Establishing a remote session in a R console application for the purposes of executing code on that server
++ Publishing and managing an R web service that is backed by the R code block or script you provided.  
 
 Each feature can be used independently, but the greatest value is achieved when you can leverage both.
 

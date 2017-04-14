@@ -6,7 +6,7 @@ description: "Operationalization APIs for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -33,7 +33,7 @@ The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" t
 
 ><big>Looking for a specific core API call? <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">Look in this online API reference</a>.</big>
 
-The APIs available for operationalization with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
+The APIs available with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
 
 <a name="core"></a>
 

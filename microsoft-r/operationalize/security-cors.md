@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: CORS with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -31,7 +31,7 @@ ms.custom: ""
 
 Cross-Origin Resource Sharing (CORS) enables your client application to freely communicate and make cross-site HTTP requests for resources from a domain other than where the web node is hosted. You can enable or disable CORS in the external configuration file, `appsettings.json`. Support for CORS is disabled by default.  
 
-To enable CORS support:
+**To enable CORS support:**
 
 1. On each web node, [open the `appsettings.json` configuration file](admin-configuration-file.md).
 

@@ -6,7 +6,7 @@ description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -116,7 +116,6 @@ Example HTTP header for publishing web service:
      Authorization: Bearer eyJhbGci....
      ...
 ```
-
 
 ## Token Renewal
 

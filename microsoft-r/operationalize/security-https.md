@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft 
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

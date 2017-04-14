@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization APIs | Microsoft R Server Docs"
-description: "Operationalization APIs for Microsoft R Server"
+title: "Get Started for Application Developers  | Microsoft R Server Docs"
+description: "Get Started for Application Developers for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

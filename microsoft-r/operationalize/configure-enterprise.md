@@ -3,10 +3,10 @@
 # required metadata
 title: "Enterprise Configuration of Operationalization for R Server | Microsoft R Server Docs"
 description: "Enterprise Configuration of Operationalization for Microsoft R Server"
-keywords: ""
+keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "3/20/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

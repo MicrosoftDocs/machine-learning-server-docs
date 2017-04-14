@@ -3,7 +3,7 @@
 # required metadata
 title: "Introducing Microsoft R Client"
 description: "Microsoft R Client"
-keywords: "R Client, Microsoft R Client"
+keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "11/30/2016"

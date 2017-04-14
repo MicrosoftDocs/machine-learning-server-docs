@@ -6,7 +6,7 @@ description: "Microsoft R Client Getting Started Guide."
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "1/13/2017"
+ms.date: "4/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -88,13 +88,16 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
 
 1. Run the Microsoft R Client setup and follow the prompts:
 
+    + Accept the default installation path for Microsoft R Client or choose another location.
+
+    + Review the components that will be installed as part of Microsoft R Client. While most are required, you can choose to add additional components such as pretrained models. 
+
     + Accept the Microsoft R Client license terms.
 
     + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
 
     + Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
 
-    + Accept the default installation path for Microsoft R Client or choose another location.
 
     + Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
 
@@ -120,7 +123,9 @@ Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft
    
    + Restart your computer is you installed the .NET Framework.
 
-   + Run `RClientSetup.exe`, which then finds the cab file in the temp folder, and follow the onscreen prompts.
+   + Run `RClientSetup.exe`, which then finds the cab file in the temp folder.
+   
+   + Follow the onscreen prompts.
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
  

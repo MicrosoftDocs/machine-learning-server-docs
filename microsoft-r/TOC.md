@@ -119,7 +119,6 @@
 #### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
 #### [Work with web services in R](operationalize/data-scientist-manage-services.md)
 #### [Publish & consume R services in R](operationalize/data-scientist-manage-services.md)
-#### [Publish & consume Python services](operationalize/data-scientist-python.md)
 #### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)
 ### Application developers
 #### [Get started for application developers](operationalize/app-developer-get-started.md)
