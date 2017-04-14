@@ -5,7 +5,7 @@ title: "Get started with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/03/2017"
+ms.date: "04/13/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,7 +35,6 @@ ms.custom: ""
 - For MicrosoftML samples and quickstarts, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
 
 
-
 <a name="platform-availability"></a>
 ## Platform availability
 The **MicrosoftML** package is currently available on the following platforms:
@@ -46,7 +45,7 @@ The **MicrosoftML** package is currently available on the following platforms:
 - [Microsoft R Server 9.0.1 on Hadoop](rserver-install-hadoop.md)
 - [SQL Server R Services](sql-server-r-services.md)
  
-If you want to have access to the pretrained models, you must check the **ML Model** box when configuring options for the install.
+The pretrained ML models are not installed by default with R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server.For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 For additional information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
 

@@ -5,7 +5,7 @@ title: "How to install and deploy pretrained models with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "03/30/2017"
+ms.date: "04/13/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,9 +23,9 @@ ms.custom: ""
 
 ---
 
-# How to install and deploy pretrained machine learning  models with MicrosoftML
+# How to install and deploy pre-trained machine learning models with MicrosoftML
 
-Introduction to pretrained models. (TDB)
+Pre-trained deep neural network models for sentiment analysis and image featurization are available to use with MicrosoftML. These models require large databases and are time-consuming to train. Using pre-trained models allow users to efficiently extract relevant features from text and images.
 
 ## Installation
 
@@ -35,12 +35,6 @@ But the pretrained ML models are not installed by default. To install them, you 
 is a step during this install
 
 
-![MicrosoftML: Algorithm Cheat Sheet: Learn how to choose a Machine Learning algorithm.](./media/deploy-pretrainted-microsoftml-models/msr-config-install-ml-model.png)
+![MicrosoftML-install-pretrained-models](./media/deploy-pretrainted-microsoftml-models/msr-config-install-ml-model.png)
 
-## Quickstarts for pretrained ML models
-
-TBD
-
-### Sentiment analysis
-
-### Image featurization
+For quickstarts that show how to use pretrained models for  sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
