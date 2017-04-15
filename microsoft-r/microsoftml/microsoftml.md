@@ -74,7 +74,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 ### Scoring and training
 
-* [rxPredict.mlModel](packagehelp/rxPredict.md): Scores using a model created by one of the machine learning algorithms.  
+* [rxPredict.mlModel](packagehelp/rxPredict.md): Runs the scoring library either from SQL Server, using the stored procedure, or from R code enabling real-time scoring to provide much faster prediction performance.
 * [rxFeaturize](packagehelp/rxFeaturize.md): Transforms data from an input data set to an output data set.
 * [rxEnsemble](packagehelp/rxEnsemble.md): trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
