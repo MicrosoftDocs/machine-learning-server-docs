@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "08/09/2016"
+ms.date: "12/09/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

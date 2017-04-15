@@ -26,13 +26,17 @@ ms.custom: ""
 
 # What's New in R Server 9.1.0
 
-This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring, support for Python web services, and asynchronous batch consumption of services. Key features in this release include the following:
+This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring, and asynchronous batch consumption of services. Key features in this release include the following:
 
 + [Machine learning algorthms](microsoftml-introduction.md)
 + [Remote execution](operationalize/remote-execution.md)
 + [Web service deployment](operationalize/data-scientist-manage-services.md)
- 
+
+<a name="rclient333-package-updates"></a>
+
 ## New and updated packages
+
+The following packages have been updated in Microsoft R Server and Microsoft R Client:
 
 + The **RevoScaleR** package has been updated to version 9.1.0. 
 + The **curl** package has been updated to version 2.3
@@ -73,8 +77,6 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 + Role-based access control to analytical web services: Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](/operationalize/security-roles.md).
  
 + Scoring perform boosts with real time scoring: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](/operationalize/data-scientist-manage-services.md#realtime).
- 
-+ Publish Python code as a web service: Python code and models can now be published as web services. Support for this feature is limited to Microsoft R Server for Windows installations where Python was enabled. Learn more about publishing and consuming [Python web services](/operationalize/data-scientist-python.md).
  
 + Asynchronously batch processing for large input data: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](/operationalize/data-scientist-manage-services.md#consume-service). Learn more about [asynchronous batch consumption](/operationalize/data-scientist-batch-mode.md).
 
