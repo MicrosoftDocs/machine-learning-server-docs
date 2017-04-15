@@ -195,6 +195,8 @@
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
+## [Install R Client on Windows](r-client-install-windows.md)
+## [Install R Client on Linux](r-client-install-linux.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
