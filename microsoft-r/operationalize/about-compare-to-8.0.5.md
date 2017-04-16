@@ -42,7 +42,7 @@ Architecture|Apache Tomcat|ASP .Net Core
 Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator Account
 High Availability|Active-Active recovery not supported|Active-Active recovery supported
 Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](remote-execution.md) in the `mrsdeploy` package.
-Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Coming in late 2017 with new design 
+Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Coming with new design in future release
 APIs|Over 100 RESTful APIs|[About 40 RESTful APIs](api.md)<br> (not backwards compatible)
 
 

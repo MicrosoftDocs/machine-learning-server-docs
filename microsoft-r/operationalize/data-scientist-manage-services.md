@@ -74,10 +74,10 @@ Web services offer fast execution and scoring of arbitrary R code and R models. 
 
 Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. 
 
-The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that there is:
-   + No need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
+The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that:
+   + There is no need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
 
-   + No need to reload a model for subsequent calls once it's loaded into memory
+   + The model is cached in memory and therefore only loaded once.
 
 To publish a `Realtime` R web service, you must:
   + Published to R Server for Windows or SQL Server R Services (additional platforms in future releases); the resulting web service can be consumed on any platforms
