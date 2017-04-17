@@ -192,7 +192,7 @@
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
 
-# [SQL Server R Services](sql-server-r-services.md)
+# [SQL Server Machine Learning Services](sql-server-r-services.md)
 
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)

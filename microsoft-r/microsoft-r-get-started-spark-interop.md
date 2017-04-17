@@ -26,13 +26,11 @@ ms.custom: ""
 
 ---
 
-# Spark integration with Microsoft R Server 9.1
+# Learn how to use R Server with sparklyr (step-by-step examples)
 
-In addition to the `rxSpark` compute context used for ... , there is an additional deeper layer of integration with the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session.
+In addition to the `rxSpark` compute context used for transfer R computations to that environment, there is now an additional deeper layer of Spark integration with the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session.
 
-## Use R Server with sparklyr (step-by-step examples)
-
-### Prerequisites
+## Prerequisites
 
 + A Hadoop cluster with Spark and valid installation of Microsoft R Server
 + Microsoft R Server is configured for use with Hadoop and Spark
@@ -45,7 +43,7 @@ In addition to the `rxSpark` compute context used for ... , there is an addition
 > [!NOTE]
 > For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](scaler-spark-getting-started.md).
 
-### Load data into HDFS
+## Load data into HDFS
 
 To load SampleData into HDFS, please run these commands from within an edge node with MRS installed:
 
@@ -62,7 +60,7 @@ To load SampleData into HDFS, please run these commands from within an edge node
 	ls -la <Path-To-RevoScaleR>/SampleData/
 ````
 
-### Example One: sparklyr data with MRS modeling
+## Example One: sparklyr data with MRS modeling
 
 This example assumes dployr and sparklyr data structures, with model training and predictive analysis using Microsoft R Server.
 
@@ -78,7 +76,7 @@ This example assumes dployr and sparklyr data structures, with model training an
 > [!NOTE]
 > Data is the Standard R dataset mtcars for this example. For more information, see [Motor Trend Car Road Tests](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html).
 
-#### Sample Code
+### Sample Code
 
 ```
 	# Install sparklyr
@@ -158,11 +156,11 @@ This example assumes dployr and sparklyr data structures, with model training an
 
 	# When you are finished, close the connection to Spark
 	rxSparkDisconnect(cc)
-~~~~
+```
 
-#### Sample Output, Comments Removed
+### Sample Output, Comments Removed
 
-~~~~
+```
 	> library(RevoScaleR)
 	> library(sparklyr)
 	> library(dplyr)
@@ -267,7 +265,7 @@ This example assumes dployr and sparklyr data structures, with model training an
 	> rxSparkDisconnect(cc)
 	We have shut down the current Spark application and switched to local compute context.
 	>
-  ~~~~
+```
 
 ## Example Two: MRS data with sparklyr and dplyR modeling
 
@@ -283,7 +281,7 @@ This example uses the airline data set. It includes multiple Microsoft R Server 
 
 ###Sample Code
 
-~~~~
+```
 	# # # # # 
 	# It is assumed at this point that you have installed sparklyr
 	# Proceed to load the required libraries
@@ -392,8 +390,11 @@ This example uses the airline data set. It includes multiple Microsoft R Server 
 
 	# When you are finished, close the connection to Spark
 	rxSparkDisconnect(cc)
+```
 
-Sample Output, Comments Removed
+###Sample Output, Comments Removed
+
+```
 	> library(RevoScaleR)
 	> library(sparklyr)
 	> library(dplyr)
@@ -504,7 +505,7 @@ Sample Output, Comments Removed
 	> rxSparkDisconnect(cc)
 	We have shut down the current Spark application and switched to local compute context.
 	>
-~~~~
+```
 
 ## Conclusion
 

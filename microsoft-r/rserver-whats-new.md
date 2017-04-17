@@ -34,7 +34,7 @@ This release of R Server, built on open source R 3.3.3, includes new and updated
 
 In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). 
 
-This release includes pre-trained cognitive models for sentiment analysis and image featurizers, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsofml-get-started.md).
+This release includes pre-trained cognitive models for sentiment analysis and image featurizers, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md).
 
 
 <a name="sparkinterop"></a>
