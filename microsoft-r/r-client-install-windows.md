@@ -45,22 +45,15 @@ To benefit from disk scalability, performance and speed, you can push the comput
 
 ## Setup Requirements
 
-1. Setup provides a download link. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component is required before setup can continue. Installing this component requires a computer restart.
+On the machine onto which you are installing, follow this guidance before you begin installing:
+
+1. @@The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.
 
 1. You must install Microsoft R Client to a local drive on your computer.
 
 1. You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
-
-## What's Installed with R Client
-
-The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
-
-All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Client under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
-
-> [!NOTE]
-> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
-
+1. Close any other programs running on the system.
 
 ## How to install (with internet access)
 
@@ -68,13 +61,13 @@ All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also inc
 
 1. Download Microsoft R Client from the following link: http://aka.ms/rclient/
 
-1. Close any other programs running on the system.
-
-1. Run the Microsoft R Client setup and follow the prompts:
+1. @@Run the Microsoft R Client setup and follow the prompts:
 
     + Accept the default installation path for Microsoft R Client or choose another location.
 
-    + Review the components that will be installed as part of Microsoft R Client. While most are required, you can choose to add additional components such as pretrained models. 
+    + Review the components that will be installed as part of Microsoft R Client. 
+    
+      While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
 
     + Accept the Microsoft R Client license terms.
 
@@ -86,7 +79,7 @@ All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also inc
 
 ## How to offline install (without internet access)
 
-1. On a machine with _**unrestricted**_ internet access:
+1. @@On a machine with _**unrestricted**_ internet access:
 
    + Download Microsoft R Client from the following link: http://aka.ms/rclient/
 
@@ -108,7 +101,11 @@ All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also inc
 
    + Run `RClientSetup.exe`, which then finds the cab file in the temp folder.
    
-   + Follow the onscreen prompts.
+   + Accept the default installation path for Microsoft R Client or choose another location.
+
+   + Review the components that will be installed as part of Microsoft R Client. 
+    
+     While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
 
@@ -117,14 +114,22 @@ All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also inc
 
 ## Silent and Passive Installs
 
-To install Microsoft R Client from a script on Windows, use the following commandline switches. 
-
+@@To install Microsoft R Client from a script on Windows, use the following commandline switches. 
 
 |Mode        |Install Command|Description|
 |-----------|-------------------------------|--------------|
 |Passive|`RClientSetup.exe /passive`|No prompts, but a progress indicator|
 |Silent|`RClientSetup.exe /quiet`|No prompts nor progress indicator|
  
+
+## What's Installed with R Client
+
+The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, @@`C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+
+All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Client under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 
 ## Learn More
 
