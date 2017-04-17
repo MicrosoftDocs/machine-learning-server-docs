@@ -72,13 +72,7 @@ In **RevoMods** functions have been discontinued (all were intended for use sole
 
 ###Known Issues
 
-When running in the `RxSpark` compute context, the `rxMerge()` function exhibits the following differences compared to running in the local compute context:
-
-1.	NULL return value.
-2.	Column order may be different.
-3.	Factor columns may be written as character type.
-4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the `duplicateVarExt` parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
-
+See here: https://msdn.microsoft.com/microsoft-r/rserver-known-issues 
 
 ## Microsoft R Server 9.0.1
 

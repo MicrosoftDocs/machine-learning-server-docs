@@ -6,7 +6,7 @@ description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "03/23/2017"
+ms.date: "04/16/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,8 +28,28 @@ ms.custom: ""
 
 # Known Issues with Microsoft R Server
 
+## Microsoft R Server 9.1.0
 
-## Known Issues with Microsoft R Server 9.0.1
+### Package: RevoScaleR: RxSpark function
+
+#### The `rxMerge()` function has different behaviors in the `RxSpark` compute context
+
+In comparison with the local compute context, `rxMerge()` used in  `RxSpark` compute context has these behaviors:
+
+1.	NULL return value.
+2.	Column order may be different.
+3.	Factor columns may be written as character type.
+4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the `duplicateVarExt` parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
+
+### Package: MicrosoftML: Ensembling
+
+#### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+
+Certain machine learning transforms that don’t implement the `IRowToRowMapper` interface will fail during Ensembling. Examples include `getSentiment()` and `featurizeImage()`.
+
+To work around this error, you can pre-featurize data using `rxFeaturize()`. The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
+
+## Microsoft R Server 9.0.1
 
 ### Package: RevoScaleR
 
@@ -90,7 +110,7 @@ automatically binned.
  
 
 
-## Known Issues with Microsoft R Server 8.0.5
+## Microsoft R Server 8.0.5
 
 ### RevoScaleR
 
