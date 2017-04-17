@@ -29,7 +29,7 @@ Microsoft R Server is an enterprise class server for hosting and managing parall
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
-Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1, nor Microsoft R Open 3.3.3 with version 3.3.2. The install script automatically replaces previous minor versions, including the preview version of .NET Core, if they are detected so that setup can proceed.
+If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## System requirements
 

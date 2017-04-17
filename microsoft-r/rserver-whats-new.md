@@ -66,9 +66,9 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 ## Executing remotely 
 + Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
 
-## SQL Server Machine Learning Services - Python Preview 
+## SQL Server R Services 
 
-R Server capabilities have been built into SQL Server for several releases. The CTP 2.0 release of SQL Server 2017 launches **SQL Server Machine Learning Services** to cover R and Python use cases within SQL Server. This release, currently in preview, offers analytics and machine learning algorithms in R script or Python. For more information, see [SQL Server Machine Learning Services](sql-server-r-services.md). 
+R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
 
 ## Installation improvements for deployment on Cloudera
 

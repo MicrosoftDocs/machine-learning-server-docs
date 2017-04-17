@@ -35,7 +35,7 @@ R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, H
 
 The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](rserver-install-hadoop-offline.md) instead.
 
-Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1, nor Microsoft R Open 3.3.3 with version 3.3.2. The install script automatically replaces previous minor versions, including the preview version of .NET Core, if they are detected so that setup can proceed.
+If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## Recommendations for installation
 
