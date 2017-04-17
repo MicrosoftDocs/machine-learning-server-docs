@@ -57,7 +57,7 @@ List the existing packages in /usr/lib64 to see what is currently installed. It'
 
 ## Download R Server dependencies
 
-From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
+From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
 | Component | Version | Download Link |
 |-----------|---------|---------------|
@@ -93,45 +93,42 @@ On the target system which is disconnected from the internet, run `rpm -qi <pack
 
 ## Unpack distributions
 
-Next, unpack the distributions for prerequisites, MRO, and MRS.
+Next, unpack the distributions for .NET Core and MRS.
 
-1. Log in as root or a user with super user privileges (`sudo su`).
+> [!Important]
+> Do not unpack MRO. Instead, copy the gzipped tar file to the MRS90HADOOP directory using the instructions below.
+
+1. Log in as root or as a user with super user privileges (`sudo -s`).
 
 2. Switch to the **/tmp** directory (assuming it's the download location).
 
-3. Unpack the .NET Core redistribution:MRS90HADOOP**. If you list the contents, you will see licensing documents, subfolders, and scripts.
+3. Make a directory for .NET Core:
 
-## Install .NET Core
+  `[root@localhost tmp] $ mkdir /opt/dotnet`
 
-Adapt the [.NET Core installation instructions](https://www.microsoft.com/net/core) provided for the Linux operating system you are using.
+4. Unpack the .NET Core redistribution to the /opt/dotnet directory:
 
-## Run the MRO install script
+  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
 
-R Open is deployed by running the install script with no parameters.
+5. Set the symbolic link for .NET Core to user directories:
 
-1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
+  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
 
-2. Verify system repositories are up to date:
+6. Unpack the MRS gzipped file:
 
-  `[username] $ sudo yum clean all`
+  `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
 
-3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
+## Check files
 
-  `[username] $ cd /tmp`
+Files are unpacked into  **MRS90HADOOP**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
 
-4. Change to the `microsoft-r-open` directory containing the installation script:
+.NET Core is unpacked into **/opt/dotnet**. 
 
-  `[tmp] $ cd microsoft-r-open`
+## Copy microsoft-r-open tar.gz to MRS90HADOOP
 
-5. Run the script.
+The install.sh script file for R Server looks for the gzipped tar file for MRO. Assuming root permissions, copy the gzipped MRO tar file to the same folder containing the installation script.
 
-  `[microsoft-r-open] $ sudo bash install.sh`
-
-6. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
-
-7. Repeat to accept license terms for the Intel MKL libraries, and to start the installation.
-
-When finished, the installer output shows the packages and location of the log file.
+  `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90HADOOP`
 
 ## Run the MRS install script
 
@@ -143,11 +140,13 @@ R Server for Hadoop is deployed by running the install script with no parameters
 
 2. Run the script.
 
-   `[MRS90HADOOP] $ sudo bash install.sh`
+   `[MRS90HADOOP] $ bash install.sh`
 
-3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-4. Installer output shows the packages and location of the log file.
+4. Repeat EULA acceptance for Microsoft R Server.
+
+Installer output shows the packages and location of the log file.
 
 ## Verify installation
 

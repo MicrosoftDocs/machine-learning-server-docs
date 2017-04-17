@@ -26,7 +26,7 @@ ms.custom: ""
 
 # What's New in R Server 9.1.0
 
-This release of R Server, built on open source R 3.3.3, includes new and updated packages, extends R Server into new directions with machine learning capabilities, integration with Python for specific use cases, integration with sparklyr, and operationalization enhancements with real-time scoring and dynamic scaling of VMs. 
+This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
 <a name="machinelearning"></a>
 
@@ -68,11 +68,11 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 
 ## SQL Server R Services 
 
-R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
+R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
 
 ## Installation improvements for deployment on Cloudera
 
-R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager, our new parcel generator script, and custom service descriptors. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
+R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
 <a name="rclient333-package-updates"></a>
 

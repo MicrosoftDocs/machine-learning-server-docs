@@ -99,6 +99,10 @@ Next, unpack the distributions for .NET Core and MRS.
 
   `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
 
+5. Set the symbolic link for .NET Core to user directories:
+
+  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
+
 6. Unpack the MRS gzipped file:
 
   `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
