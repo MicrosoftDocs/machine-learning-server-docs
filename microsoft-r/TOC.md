@@ -23,6 +23,8 @@
 ##[Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
 ##[Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
 
+# [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
+
 # [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ### [Configure data import for ODBC data sources](scaler-odbc.md)
