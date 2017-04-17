@@ -80,7 +80,7 @@ You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following 
 
 ## Transfer files
 
-Use a tool like [SmarTTY](smartty.sysprogs.com) or [PuTTY](www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. You should be transferring the following files:
+Use a tool like [SmarTTY](http://smartty.sysprogs.com) or [PuTTY](http://www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. You should be transferring the following files:
 
 + `dotnet-<linux-os-name>-x64.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
