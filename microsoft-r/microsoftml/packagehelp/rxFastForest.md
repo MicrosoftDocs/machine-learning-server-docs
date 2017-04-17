@@ -3,10 +3,10 @@
 # required metadata 
 title: "Fast Forest" 
 description: " Machine Learning Fast Forest " 
-keywords: ", rxFastForest, classification, models, regression" 
+keywords: "MicrosoftML, rxFastForest, classification, models, regression" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`rxFastForest`: Fast Forest 
+ #`rxFastForest`: Fast Forest
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Machine Learning Fast Forest
@@ -45,7 +48,8 @@ Machine Learning Fast Forest
     transformFunc = NULL, transformVars = NULL, transformPackages = NULL,
     transformEnvir = NULL, blocksPerRead = rxGetOption("blocksPerRead"),
     reportProgress = rxGetOption("reportProgress"), verbose = 2,
-    computeContext = rxGetOption("computeContext"), ...)
+    computeContext = rxGetOption("computeContext"),
+    ensemble = ensembleControl(), ...)
  
 ```
  
@@ -196,6 +200,11 @@ Machine Learning Fast Forest
   
   
   
+ ### `ensemble`
+ Control parameters for ensembling. 
+  
+  
+  
  ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
@@ -259,7 +268,7 @@ for all trees in the model.
  
  ##Note
  
-This algorithm will always attempt to load the entire dataset into
+This algorithm is multi-threaded and will always attempt to load the entire dataset into
 memory.
  
  
@@ -284,8 +293,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastLinear](rxFastLinear.md),
-[rxLogisticRegression](LogisticRegression.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md), [featurizeText](featurizeText.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
 [categorical](categorical.md), [categoricalHash](categoricalHash.md),
 [rxPredict.mlModel](rxPredict.md).
    
@@ -334,7 +343,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = rxFastForestScoreDF)
  
 ```
- 
  
  
  

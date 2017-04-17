@@ -3,10 +3,10 @@
 # required metadata 
 title: "Kernel" 
 description: " Kernels supported for use in computing inner products. " 
-keywords: ", Kernel, linearKernel, maKernel, polynomialKernel, rbfKernel, sigmoidKernel, kernel" 
+keywords: "MicrosoftML, Kernel, linearKernel, maKernel, rbfKernel, polynomialKernel, sigmoidKernel, kernel" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,7 +32,13 @@ ms.custom: ""
  
  
  
- #`Kernel`: Kernel 
+ 
+ 
+ 
+ #`Kernel`: Kernel
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Kernels supported for use in computing inner products.
@@ -54,6 +60,11 @@ Kernels supported for use in computing inner products.
  ##Arguments
 
    
+  
+ ### ` ...`
+ Additional arguments passed to the Microsoft ML compute engine. 
+  
+  
   
  ### `a`
  The numeric value for a in the term (a*<x,y> + b)^d. If not specified, `(1/(number of features)` is used. 
@@ -77,11 +88,6 @@ Kernels supported for use in computing inner products.
   
  ### `coef0`
  The numeric value for c in the expression `tanh(gamma*<x,y> + c`). 
-  
-  
-  
- ### ` ...`
- Additional arguments passed to the Microsoft ML compute engine. 
   
  
  
@@ -127,7 +133,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxOneClassSvm](OneClassSvm.md)
+[rxOneClassSvm](rxOneClassSvm.md)
    
  ##Examples
 
@@ -165,6 +171,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   display(scores$sigmoidKernel)
  
 ```
- 
  
  

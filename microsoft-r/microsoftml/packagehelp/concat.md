@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Concat Transform" 
 description: " Combines several columns into a single vector-valued column. " 
-keywords: ", concat, transform" 
+keywords: "MicrosoftML, concat, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`concat`: Machine Learning Concat Transform 
+ #`concat`: Machine Learning Concat Transform
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Combines several columns into a single vector-valued column.
@@ -76,8 +79,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [featurizeText](featurizeText.md), [categorical](categorical.md),
 [categoricalHash](categoricalHash.md), [rxFastTrees](rxFastTrees.md),
-[rxFastForest](rxFastForest.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md), [rxLogisticRegression](LogisticRegression.md).
+[rxFastForest](rxFastForest.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -95,6 +98,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   summary(multiLogitOut)
  
 ```
- 
  
  

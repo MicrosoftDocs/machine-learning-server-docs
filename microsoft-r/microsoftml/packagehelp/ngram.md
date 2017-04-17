@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Feature Extractors" 
 description: " Feature Extractors that can be used with mtText. " 
-keywords: ", ngram, ngramCount, ngramHash, transform" 
+keywords: "MicrosoftML, ngram, ngramCount, ngramHash, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,11 @@ ms.custom: ""
  
  
  
- #`ngram`: Machine Learning Feature Extractors 
+ 
+ #`ngram`: Machine Learning Feature Extractors
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Feature Extractors that can be used with mtText.
@@ -38,16 +42,27 @@ Feature Extractors that can be used with mtText.
  ##Usage
 
 ```   
-  ngramCount(maxNumTerms = 1e+07, weighting = "tf")
+  ngramCount(ngramLength = 1, skipLength = 0, maxNumTerms = 1e+07,
+    weighting = "tf")
   
-  ngramHash(hashBits = 16, seed = 314489979, ordered = TRUE,
-    invertHash = 0)
+  ngramHash(ngramLength = 1, skipLength = 0, hashBits = 16,
+    seed = 314489979, ordered = TRUE, invertHash = 0)
  
 ```
  
  ##Arguments
 
    
+  
+ ### `ngramLength`
+ An integer that specifies the maximum number of tokens to take when constructing an n-gram. The default value is 1. 
+  
+  
+  
+ ### `skipLength`
+ An integer that specifies the maximum number of tokens to skip when constructing an n-gram. If the value specified as skip length is `k`, then n-grams can contain up to k skips (not necessarily consecutive). For example, if `k=2`, then the 3-grams extracted from the text "the sky is blue today" are: "the sky is", "the sky blue", "the sky today", "the is blue", "the is today" and "the blue today". The default  value is 0. 
+  
+  
   
  ### `maxNumTerms`
  An integer that specifies the maximum number of categories  to include in the dictionary. The default value is 10000000. 
@@ -86,11 +101,12 @@ Feature Extractors that can be used with mtText.
  ##Details
  
 `ngramCount` allows defining arguments for count-based feature
-extraction. It accepts two options: `maxNumTerms` and `weighting`.
+extraction. It accepts following options: `ngramLenght`, `skipLenght`,
+`maxNumTerms` and `weighting`.
 
 `ngramHash` allows defining arguments for hashing-based feature
-extraction.  It accepts the following options: `hashBits`, `seed`,
-`ordered` and `invertHash`.
+extraction.  It accepts the following options: `ngramLenght`, `skipLenght`, 
+`hashBits`, `seed`, `ordered` and `invertHash`.
  
  
  ##Value
@@ -127,15 +143,14 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
       
   outModel1 <- rxLogisticRegression(like~opinionCount, data = myData, 
       mlTransforms = list(featurizeText(vars = c(opinionCount = "opinion"), 
-          featureExtractor = ngramHash(invertHash = -1, hashBits = 3)))) 
+          wordFeatureExtractor = ngramHash(invertHash = -1, hashBits = 3)))) 
   summary(outModel1)   
          
   outModel2 <- rxLogisticRegression(like~opinionCount, data = myData, 
       mlTransforms = list(featurizeText(vars = c(opinionCount = "opinion"), 
-          featureExtractor = ngramCount(maxNumTerms = 5, weighting = "tf"))))         
+          wordFeatureExtractor = ngramCount(maxNumTerms = 5, weighting = "tf"))))         
   summary(outModel2)
  
 ```
- 
  
  

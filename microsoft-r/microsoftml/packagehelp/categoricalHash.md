@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Categorical HashData Transform" 
 description: " Categorical hash transform that can be performed on data before  training a model. " 
-keywords: ", categoricalHash, transform" 
+keywords: "MicrosoftML, categoricalHash, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`categoricalHash`: Machine Learning Categorical HashData Transform 
+ #`categoricalHash`: Machine Learning Categorical HashData Transform
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Categorical hash transform that can be performed on data before 
@@ -67,7 +70,7 @@ training a model.
   
   
  ### `invertHash`
- An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. 
+ An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. The default value is `0`. 
   
   
   
@@ -87,7 +90,7 @@ training a model.
 array by hashing the value and using the hash as an index in the bag.  If
 the input column is a vector, a single indicator bag is returned for it.
 
-`categoricalHash` is not currently supported to handle factor data.
+`categoricalHash` does not currently support handling factor data.
  
  
  ##Value
@@ -103,8 +106,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxNeuralNet](NeuralNet.md), [rxOneClassSvm](OneClassSvm.md),
-[rxLogisticRegression](LogisticRegression.md).
+[rxNeuralNet](rxNeuralNet.md), [rxOneClassSvm](rxOneClassSvm.md),
+[rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -167,6 +170,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   scoreOutDF2
  
 ```
- 
  
  

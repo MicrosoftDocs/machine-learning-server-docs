@@ -3,10 +3,10 @@
 # required metadata 
 title: "Summary of a Microsoft R Machine Learning model." 
 description: " Summary of a Microsoft R Machine Learning model. " 
-keywords: ", summary.mlModel, coef.mlModel, file, manip" 
+keywords: "MicrosoftML, summary.mlModel, coef.mlModel, file, manip" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,10 @@ ms.custom: ""
  
  
  
- #`summary.mlModel`: Summary of a Microsoft R Machine Learning model. 
+ #`summary.mlModel`: Summary of a Microsoft R Machine Learning model.
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Summary of a Microsoft R Machine Learning model.
@@ -52,7 +55,7 @@ summary  (object, top = 20, ...)
   
   
  ### `top`
- Specifies the count of top coefficients to show in the summary for linear models such as [rxLogisticRegression](LogisticRegression.md) and  [rxFastLinear](rxFastLinear.md). The bias appears first, followed by other weights, sorted by their absolute values in descending order. If set to `NULL`,  all non-zero coefficients are shown. Otherwise, only the first `top`coefficients are shown. 
+ Specifies the count of top coefficients to show in the summary for linear models such as [rxLogisticRegression](rxLogisticRegression.md) and  [rxFastLinear](rxFastLinear.md). The bias appears first, followed by other weights, sorted by their absolute values in descending order. If set to `NULL`,  all non-zero coefficients are shown. Otherwise, only the first `top`coefficients are shown. 
   
   
   
@@ -75,7 +78,7 @@ returns a list that includes the original function call and the underlying
 parameters used. The `coef` method returns a named vector of weights,
 processing information from the model object.
 
-For [rxLogisticRegression](LogisticRegression.md), the following statistics may also
+For [rxLogisticRegression](rxLogisticRegression.md), the following statistics may also
 present in the summary when `showTrainingStats` is set to `TRUE`.
 
 
@@ -117,8 +120,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxFastLinear](rxFastLinear.md), [rxOneClassSvm](OneClassSvm.md),
-[rxNeuralNet](NeuralNet.md), [rxLogisticRegression](LogisticRegression.md).
+[rxFastLinear](rxFastLinear.md), [rxOneClassSvm](rxOneClassSvm.md),
+[rxNeuralNet](rxNeuralNet.md), [rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -162,7 +165,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   scoreMultiDF[badPrediction,]
  
 ```
- 
  
  
  
