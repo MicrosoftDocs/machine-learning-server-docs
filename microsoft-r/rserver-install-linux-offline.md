@@ -6,7 +6,7 @@ description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/17/2017"
+ms.date: "04/18/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,19 +36,19 @@ From an internet-connected computer, download Microsoft R Open (MRO) and .NET Co
 
 | Component | Version | Download Link |
 |-----------|---------|---------------|
-| Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
+| Microsoft R Open | 3.3.3 | [Direct link to tar.gz file](https://go.microsoft.com/fwlink/?linkid=845297) |
 | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) |
 
 The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. 
 
-The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. 
+The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.
 
 > [!Note]
 > Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list.
 
 ## Download R Server installer
 
-You can get Microsoft R Server (MRS) 9.1.0 for Linux from one of the following download sites. 
+You can get Microsoft R Server (MRS) 9.1 for Linux from one of the following download sites. 
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -78,18 +78,15 @@ Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http
 
 ## Install package dependencies
 
-On the target system which is disconnected from the internet, run `rpm -qi <package-name>` to install any packages that are missing from your system.
+On the target system which is disconnected from the internet, run `rpm -qi <package-name>` to install any packages that are missing from your system. For example, `rpm -qi lib12png12-1-2-50-10.el7.x86_64.rpm`.
 
-## Unpack distributions
+## Unpack .NET Core and set symbolic link
 
-Next, unpack the distributions for .NET Core and MRS.
-
-> [!Important]
-> Do not unpack MRO. Instead, copy the gzipped tar file to the MRS90LINUX directory using the instructions below.
+For an offline installation of .NET Core, manually create its directory path, unpack the distribution, and then set references so that the component can be discovered by other applications.
 
 1. Log in as root or as a user with super user privileges (`sudo -s`).
 
-2. Switch to the **/tmp** directory (assuming it's the download location).
+2. Switch to the **/tmp** directory (assuming it's the download location) and execute `ls` to list the files as a verification step. You should see the tar.gz files you transferred earlier.
 
 3. Make a directory for .NET Core:
 
@@ -97,25 +94,24 @@ Next, unpack the distributions for .NET Core and MRS.
 
 4. Unpack the .NET Core redistribution to the /opt/dotnet directory:
 
-  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
+  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz /opt/dotnet`
 
 5. Set the symbolic link for .NET Core to user directories:
 
   `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
 
-6. Unpack the MRS gzipped file:
+## Unpack MRS distribution and copy MRO
+
+Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS_Linux distribution.
+
+> [!Important]
+> Do not unpack MRO. The installer looks for a gzipped tar file for MRO. 
+
+1. Unpack the MRS gzipped file. 
 
   `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
 
-## Check files
-
-Files are unpacked into  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
-
-.NET Core is unpacked into **/opt/dotnet**. 
-
-## Copy microsoft-r-open tar.gz to MRS90LINUX
-
-The install.sh script file for R Server looks for the gzipped tar file for MRO. Assuming root permissions, copy the gzipped MRO tar file to the same folder containing the installation script.
+2. A new folder called MRS90Linux is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file in /tmp to the new install folder containing the installation script (install.sh).
 
   `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90LINUX`
 
@@ -133,7 +129,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-4. Repeat EULA acceptance for Microsoft R Server.
+4. Repeat the key sequence for EULA acceptance for Microsoft R Server.
 
 Installer output shows the packages and location of the log file.
 
@@ -156,11 +152,13 @@ Installer output shows the packages and location of the log file.
   `[tmp MRS90LINUX] $ dotnet --version`
   `[tmp MRS90LINUX] $ ls -la /usr/local/bin`
 
-5. Partial output is as follows (note version 9.0.1):
+5. Partial output is as follows (note version 9.1.0):
 
-	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
+~~~~
+	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
 	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
+~~~~
 
 ## Start Revo64
 
