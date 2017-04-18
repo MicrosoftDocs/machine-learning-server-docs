@@ -26,32 +26,32 @@ ms.custom: ""
 
 ---
 
-# Known Issues and Announcements 
+# Known issues in Microsoft R Server 9.1
 
-## Known issues in Microsoft R Server 9.1
+Review the workaround steps for known issues in this release. Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](/notes/r-server-notes.md).
 
-### Issue 1: rxMerge() behaviors in RxSpark compute context
++ [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
++ [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
++ [MicrosoftML: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
 
-**Applies to: RevoScaleR package > rxMerge function**
+<a name="revoscaler-rxmerge"></a>
 
-In comparison with the local compute context, rxMerge() used in a RxSpark compute context has slightly different bheaviors:
+### rxMerge() behaviors in RxSpark compute context
+
+*Applies to: RevoScaleR package > rxMerge function*
+
+In comparison with the local compute context, rxMerge() used in a RxSpark compute context has slightly different behaviors:
 
 1.	NULL return value.
 2.	Column order may be different.
 3.	Factor columns may be written as character type.
 4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the duplicateVarExt parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
 
-### Issue 2: Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+<a name="revoscaler-rxexecby"></a>
 
-**Applies to: MicrosoftML package > Ensembling** 
+### rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
-Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
-
-To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
-
-### Issue 3: rxExecBy() terminates unexpectedly if NA values do not have a factor level
-
-**Applies to: RevoScaleR package > rxExecBy function**
+*Applies to: RevoScaleR package > rxExecBy function*
 
 R script using rxExecBy will suddenly abort if the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with 3 factor levels: Female, Male, Unknown. If values exist  that are not one of these values, the function will fail.
 
@@ -76,34 +76,15 @@ Variable information:
 Var 1: Gender
        4 factor levels: Female Male Unknown NA
 ```
+<a name="ml-ensembling"></a>
 
-## Deprecated and discontinued functions
+### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
-#### RevoScaleR Package
+*Applies to: MicrosoftML package > Ensembling*
 
-|Function| Status | Replacement |
-|-----------|----|--------|
-|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
-|`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
-|`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
-|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
-|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
-|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
+Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
-
-#### RevoMods Package
-
-In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
-
-+ `?` (use the standard R `?`, previously masked)
-+ `q` (use the standard R `q` function, previously masked)
-+ `quit` (use the standard R `quit` function, previously masked)
-+ `revoPlot` (use the standard R `plot` function)
-+ `revoSource` (use the standard R `source` function)
+To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
 ## Previous releases 
 
