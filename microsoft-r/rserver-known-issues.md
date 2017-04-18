@@ -26,28 +26,30 @@ ms.custom: ""
 
 ---
 
-# Known Issues with Microsoft R Server 9.1
+# Known Issues and Announcements for Microsoft R Server
 
-## Issue 1: The rxMerge() function has different behaviors in the RxSpark compute context
+## [1.0] Issues and workarounds in 9.1
+
+#### [1.1] rxMerge() behaviors in RxSpark compute context
 
 **Applies to: RevoScaleR package > rxMerge function**
 
-In comparison with the local compute context, rxMerge() used in RxSpark compute context has these behaviors:
+In comparison with the local compute context, rxMerge() used in a RxSpark compute context has slightly different bheaviors:
 
 1.	NULL return value.
 2.	Column order may be different.
 3.	Factor columns may be written as character type.
 4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the duplicateVarExt parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
 
-## Issue 2: Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+#### [1.2] Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 **Applies to: MicrosoftML package > Ensembling** 
 
-Certain machine learning transforms that don’t implement the `IRowToRowMapper` interface will fail during Ensembling. Examples include `getSentiment()` and `featurizeImage()`.
+Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-To work around this error, you can pre-featurize data using `rxFeaturize()`. The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
+To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
-## Issue 3: The rxExecBy() function terminates unexpectedly if NA values do not have a factor level
+#### [1.3] rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 **Applies to: RevoScaleR package > rxExecBy function**
 
@@ -55,47 +57,45 @@ R script using rxExecBy will suddenly abort if the data set presents factor colu
 
 There are two possible workarounds:
 
-+ Option 1: Add an 'NA' level using `addNA()` to catch the "not applicable" case.
++ Option 1: Add an 'NA' level using **addNA()** to catch the "not applicable" case.
 + Option 2: Clean the input dataset (remove the NA values)
 
-Psuedo code for option 1 addNA() might be:
+Pseudo code for the first option might be:
 
 `> dat$Gender = addNA(dat$Gender)`
 
-Output would now include a 4th factor level called NA:
+Output would now include a 4th factor level called NA that would catch all values not covered by the other factors:
 
-`> rxGetInfo(dat, getVarInfo = TRUE)
+```
+> rxGetInfo(dat, getVarInfo = TRUE)
 
 Data frame: dat 
 Number of observations: 97 
 Number of variables: 1 
 Variable information: 
 Var 1: Gender
-       4 factor levels: Female Male Unknown NA`
+       4 factor levels: Female Male Unknown NA
+```
 
-## Deprecated and Discontinued functions
+## [2.0] Deprecated and Discontinued functions
 
-**Applies to: RevoScaleR package** 
+#### [2.1]  RevoScaleR
 
-|Deprecated | Replacement |
-|-----------|------------|
-|`rxGetNodes` | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
-|`RxHpcServer` | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
-|`rxImportToXdf` | [`rxImport`](../scaler/packagehelp/rxImport.md) |
-|`rxDataStepXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxDataFrameToXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxXdfToDataFrame` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxSortXdf` | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
-
-|Discontinued | Replacement |
-|-------------|-------0----|
-|`rxGetVarInfoXdf` |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
-|`rxGetInfoXdf` |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
+|Function| Status | Replacement |
+|-----------|----|--------|
+|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
+|`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
+|`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
+|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
+|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
 
 For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
 
-
-**Applies to: RevoMods package** 
+#### [2.2]  RevoMods
 
 In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
 
