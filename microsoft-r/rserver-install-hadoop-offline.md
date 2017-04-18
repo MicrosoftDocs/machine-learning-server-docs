@@ -107,7 +107,7 @@ For an offline installation of .NET Core, manually create its directory path, un
 
 5. Set the symbolic link for .NET Core to user directories:
 
-  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/bin/dotnet`
+  `[root@localhost tmp] $ ln -s /opt/dotnet/dotnet /usr/bin/dotnet`
 
 ## Unpack MRS distribution and copy MRO
 
