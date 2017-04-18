@@ -4,5 +4,5 @@ Microsoft R Open provides limited performance and scalability in comparison to M
 
 Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
 
-> [!NOTE]
-> MRO is a requirement of both R Client and R Server. Customers can choose to install the version of MRO required for each product during the installation process for each product. You cannot choose a different version to use with your Microsoft R product. There is one exception to the integrated setup experience: Cloudera Manager. If you are using Cloudera Manager to install R Server for Hadoop in a multi-node configuration, you have to install MRO separately. The distribution for this package is not through MRAN. For more information and download instructions, see [Install Microsoft R Server 9.0.1 on Hadoop](../../rserver-install-hadoop-901.md).
+>[!WARNING]
+>Microsoft R Open is a requirement of both Microsoft R Client and R Server. Only install the version of Microsoft R Open required for your product. Typically, the installation of R Open is handled for you by the setup process. However, in offline scenarios when no internet connection is available on the target machine, you must manually download the R Open version using only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 

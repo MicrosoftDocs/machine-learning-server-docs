@@ -39,7 +39,7 @@ Install|Installer available separately from R Server|Integrated with R Server. U
 Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using [new `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) or from a REST API.
 Application Integration|Use client libraries and RBroker framework|[Swagger-based API for quicker exploration and integration](app-developer-get-started.md)
 Architecture|Apache Tomcat|ASP .Net Core
-Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator Account
+Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM<br><br><br>|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator account<br><br><small>[Roles](security-roles.md) are supported in R Server 9.1, but not in 9.0.1.
 High Availability|Active-Active recovery not supported|Active-Active recovery supported
 Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](remote-execution.md) in the `mrsdeploy` package.
 Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Coming with new design in future release
