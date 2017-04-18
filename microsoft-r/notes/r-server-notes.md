@@ -25,17 +25,37 @@ ms.custom: ""
 ---
 #R Server release notes (Microsoft R)
 
-This article documents the known issues, bug fixes, and notifications about status changes to function libraries, such as deprecated and discontinued functions in RevoScaleR.
-
-**Related Documents**
-
-+ For feature announcements, see [What's new in R Server](../rserver-whats-new.md).
-+ For Microsoft R Client, see [Release notes for R Client](r-client-notes.md).
-+ For SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
+This article contains notifications about status changes to features and function libraries, such as deprecated and discontinued functions in RevoScaleR.
 
 ## Microsoft R Server 9.1.0
 
-See [What's New in 9.1](./rserver-whats-new.md) and [Known issues](./rserver-known-issues.md).
+Also see [What's New in 9.1](./rserver-whats-new.md) and [Known issues](./rserver-known-issues.md).
+
+### RevoScaleR Package
+
+|Function| Status | Replacement |
+|-----------|----|--------|
+|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
+|`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
+|`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
+|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
+|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
+
+For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
+
+### RevoMods Package
+
+In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
+
++ `?` (use the standard R `?`, previously masked)
++ `q` (use the standard R `q` function, previously masked)
++ `quit` (use the standard R `quit` function, previously masked)
++ `revoPlot` (use the standard R `plot` function)
++ `revoSource` (use the standard R `source` function)
  
 ## Microsoft R Server 9.0.1
 
