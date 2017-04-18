@@ -26,11 +26,11 @@ ms.custom: ""
 
 ---
 
-# Known Issues and Announcements for Microsoft R Server
+# Known Issues and Announcements for Microsoft R Server 9.1
 
-## [1.0] Issues and workarounds in 9.1
+## Known issues
 
-#### [1.1] rxMerge() behaviors in RxSpark compute context
+#### rxMerge() behaviors in RxSpark compute context
 
 **Applies to: RevoScaleR package > rxMerge function**
 
@@ -41,7 +41,7 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 3.	Factor columns may be written as character type.
 4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the duplicateVarExt parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
 
-#### [1.2] Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+#### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 **Applies to: MicrosoftML package > Ensembling** 
 
@@ -49,7 +49,7 @@ Certain machine learning transforms that don’t implement the **IRowToRowMapper
 
 To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
-#### [1.3] rxExecBy() terminates unexpectedly if NA values do not have a factor level
+#### rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 **Applies to: RevoScaleR package > rxExecBy function**
 
@@ -77,9 +77,9 @@ Var 1: Gender
        4 factor levels: Female Male Unknown NA
 ```
 
-## [2.0] Deprecated and Discontinued functions
+## Deprecated and Discontinued functions
 
-#### [2.1]  RevoScaleR
+#### RevoScaleR Package
 
 |Function| Status | Replacement |
 |-----------|----|--------|
@@ -95,7 +95,7 @@ Var 1: Gender
 
 For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
 
-#### [2.2]  RevoMods
+#### RevoMods Package
 
 In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
 
