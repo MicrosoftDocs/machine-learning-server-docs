@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Offline install for Microsoft R Server 9.1.0 for Linux"
+title: "Offline install for Microsoft R Server 9.1 for Linux"
 description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
@@ -24,11 +24,11 @@ ms.custom: ""
 
 ---
 
-# Offline installation instructions for R Server 9.1.0 for Linux
+# Offline installation of R Server 9.1 for Linux
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## Download R Server dependencies
 
@@ -36,10 +36,8 @@ From an internet-connected computer, download Microsoft R Open (MRO) and .NET Co
 
 | Component | Version | Download Link |
 |-----------|---------|---------------|
-| Microsoft R Open | 3.3.3 | [Direct link to tar.gz file](https://go.microsoft.com/fwlink/?linkid=845297) |
+| Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) |
 | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) |
-
-The file name for MRO is `microsoft-r-open-3.3.3.tar.gz`. 
 
 The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.
 
@@ -53,14 +51,14 @@ You can get Microsoft R Server (MRS) 9.1 for Linux from one of the following dow
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Linux 9.1.0** is provided on this site. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Linux 9.1** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md).
 
-List the existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
+You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
 
   `ls -l /usr/lib64/lib*`
 
@@ -73,12 +71,12 @@ Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http
 
 + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `microsoft_r_server_9.1.0.tar.gz`
++ `microsoft-r-server-9.1.0.tar.gz`
 + any missing packages from the dependency list
 
 ## Install package dependencies
 
-On the target system which is disconnected from the internet, run `rpm -qi <package-name>` to install any packages that are missing from your system. For example, `rpm -qi lib12png12-1-2-50-10.el7.x86_64.rpm`.
+On the target system which is disconnected from the internet, run `rpm -i <package-name>` to install any packages that are missing from your system (for example, `rpm -i libpng12-1-2-50-10.el7.x86_64.rpm`).
 
 ## Unpack .NET Core and set symbolic link
 
@@ -92,32 +90,32 @@ For an offline installation of .NET Core, manually create its directory path, un
 
   `[root@localhost tmp] $ mkdir /opt/dotnet`
 
-4. Unpack the .NET Core redistribution to the /opt/dotnet directory:
+4. Unpack the .NET Core redistribution into the /opt/dotnet directory:
 
-  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz /opt/dotnet`
+  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
 
 5. Set the symbolic link for .NET Core to user directories:
 
-  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
+  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/bin/dotnet`
 
 ## Unpack MRS distribution and copy MRO
 
-Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS_Linux distribution.
+Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS90Linux folder.
 
 > [!Important]
-> Do not unpack MRO. The installer looks for a gzipped tar file for MRO. 
+> Do not unpack MRO yourself. The installer looks for a gzipped tar file for MRO. 
 
 1. Unpack the MRS gzipped file. 
 
-  `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
+  `[root@localhost tmp] $ tar zxvf microsoft-r-server-9.1.0.tar.gz`
 
-2. A new folder called MRS90Linux is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file in /tmp to the new install folder containing the installation script (install.sh).
+2. A new folder called MRS90Linux is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS90Linux folder containing the installation script (install.sh).
 
   `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90LINUX`
 
 ## Run the MRS install script
 
-R Server for Linux is deployed by running the install script with no parameters.
+R Server for Linux is deployed by running the install script with no parameters. At this point, you could opt for [unattended install](#unattended) to bypass EULA prompts.
 
 1. Switch to the `MRS90LINUX` directory containing the installation script:
 
@@ -137,20 +135,20 @@ Installer output shows the packages and location of the log file.
 
 1. List installed packages and get package names:
 
-   `[tmp MRS90LINUX] $ yum list \*microsoft\*`
+   `[root@localhost MRS90LINUX] $ yum list \*microsoft\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
-   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
+   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
 
 3. Check the version of Microsoft R Server:
 
-   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
+   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
 
 4. Check the version of .NET Core, and verify the symlink:
 
-  `[tmp MRS90LINUX] $ dotnet --version`
-  `[tmp MRS90LINUX] $ ls -la /usr/local/bin`
+  `[root@localhost MRS90LINUX] $ dotnet --version` 
+  `[root@localhost MRS90LINUX] $ ls -la /usr/local/bin`
 
 5. Partial output is as follows (note version 9.1.0):
 
@@ -211,16 +209,33 @@ To quit the program, type `q()` at the command line with no arguments.
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
+<a name="unattended"></a>
+
+## Unattended install options
+
+You can perform a silent install to bypass prompts during setup. In /tmp/MRS90Linux, run the install script with the following parameters:
+
+   `[root@localhost MRS90LINUX] $ install.sh -a -s`
+
+Additional flags are available, as follows:
+
+flag | Option | Description
+-----|--------|------------
+ -a | --accept-eula | Accept all end user license agreements.
+ -d | --download-mro |  Download microsoft r open for distribution to an offline system.
+ -m | --models | Install Microsoft ML models.
+ -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
+ -s | --silent | Perform a silent, unattended install.
+ -u | --unattended | Perform an unattended install.
+ -h | --help | Print this help text.
+
 ## Next Steps
 
 Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
-[Supported platforms](rserver-install-supported-platforms.md)
-
-[What's new in R Server](notes/r-server-notes.md)
-
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+ [Supported platforms](rserver-install-supported-platforms.md) 
+ [What's new in R Server](notes/r-server-notes.md)  
+ [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)  
+ [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

@@ -105,19 +105,19 @@ MRS packages include an admin utility, core engine and function libraries, compu
 
 R Server for Linux is deployed by running the install script with no parameters.
 
-1. Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
+1. Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume root install.
 
 2. Verify system repositories are up to date:
 
-  `[username] $ sudo yum clean all`
+  `[root@localhost tmp] $ yum clean all`
 
 3. Change to the `MRS90LINUX` directory containing the installation script:
 
-  `[username] $ cd /tmp/MRS90LINUX`
+  `[root@localhost tmp] $ cd /tmp/MRS90LINUX`
 
 4. Run the script.
 
-   `[tmp MRS90LINUX] $ sudo bash install.sh`
+   `[root@localhost MRS90LINUX] $ bash install.sh`
 
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -129,15 +129,15 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. List installed packages and get package names:
 
-   `[tmp MRS90LINUX] $ yum list \*microsoft\*`
+   `[root@localhost MRS90LINUX] $ yum list \*microsoft\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
-   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
 
 3. Check the version of Microsoft R Server:
 
-   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
 4. Partial output is as follows (note version 9.1.0):
 
@@ -153,11 +153,11 @@ As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
 
-   `[tmp MRS90LINUX] $ cd /tmp/MRS90LINUX`
+   `[root@localhost MRS90LINUX] $ cd /tmp/MRS90LINUX`
 
 2. Start the program:
 
-   `[tmp MRS90LINUX] $ Revo64`
+   `[root@localhost MRS90LINUX] $ Revo64`
 
 3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
 
@@ -198,24 +198,25 @@ To quit the program, type `q()` at the command line with no arguments.
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
-## Unattended installs
+<a name="unattended"></a>
 
-You can bypass the interactive install steps of the Microsoft R Server install script with the `-y` flag. Additional flags are available, as follows:
+## Unattended install options
+
+You can perform a silent install to bypass prompts during setup. In /tmp/MRS90Linux, run the install script with the following parameters:
+
+   `[root@localhost MRS90LINUX] $ install.sh -a -s`
+
+Additional flags are available, as follows:
 
 flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
  -m | --models | Install Microsoft ML models.
- -p | --hadoop-components | Install Hadoop components.
  -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
-
-For a standard unattended install, run the following script:
-
-	./install.sh –a –s
 
 ## Remove Microsoft R Server
 
@@ -224,14 +225,9 @@ For instructions on rolling back your installation, see
 
 ## See Also
 
-[Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)
-
-[Install R Server 9.0.1 for Linux](rserver-install-linux-server-901.md)
-
-[Install R on Hadoop overview](rserver-install-hadoop.md)
-
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md)
-
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+ [Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)  
+ [Install R Server 9.0.1 for Linux](rserver-install-linux-server-901.md)  
+ [Install R on Hadoop overview](rserver-install-hadoop.md)  
+ [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md) 
+ [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)  
+ [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
