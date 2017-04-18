@@ -29,7 +29,7 @@ This article contains notifications about status changes to features and functio
 
 ## Microsoft R Server 9.1.0
 
-Also see [What's New in 9.1](./rserver-whats-new.md) and [Known issues](./rserver-known-issues.md).
+Also see [What's New in 9.1](../rserver-whats-new.md) and [Known issues](../rserver-known-issues.md).
 
 ### RevoScaleR Package
 
