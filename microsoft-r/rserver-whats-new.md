@@ -94,6 +94,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | `rxGetPartitions` | New | Gets the partitions of a previously partitioned Xdf data source. |
 | `rxImport` | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
+| `RxOrcData` | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
 | `rxSerializeModel` | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
 | `rxSyncPackages` | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
 
