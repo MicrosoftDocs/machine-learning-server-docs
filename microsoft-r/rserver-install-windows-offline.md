@@ -54,7 +54,7 @@ Without an internet connection, the following components must be downloaded to a
 
 | Component | Description | Download Link |
 |-----------|-------------|---------------|
-| SRO_3.3.3.0_1033.cab | R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
+| SRO_3.3.3.0_1033.cab | Microsoft R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
 | MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
 
 <a name="download"><a/>

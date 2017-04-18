@@ -134,7 +134,7 @@ From an internet-connected computer, download the following:
 
    | Component | Version | Download Link |
    |-----------|---------|---------------|
-   | Microsoft R Open | 3.3.3 | [MRAN web site](https://mran.microsoft.com/download/) |
+   | Microsoft R Open | 3.3.3 | https://go.microsoft.com/fwlink/?linkid=845297 |
    | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) |
 
    The file name for Microsoft R Open is `microsoft-r-open-3.3.3.tar.gz`. 
