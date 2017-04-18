@@ -80,7 +80,7 @@ Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData
 
 ## Run RServerSetup
 
-If you previously installed version 9.0.1, please uninstall it before installing 9.1.0.
+If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
 

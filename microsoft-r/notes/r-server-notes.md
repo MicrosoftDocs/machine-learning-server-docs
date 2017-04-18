@@ -34,52 +34,9 @@ This article documents the known issues, bug fixes, and notifications about stat
 + For SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
 
 ## Microsoft R Server 9.1.0
+
+See [What's New in 9.1](./rserver-whats-new.md) and [Known issues](./rserver-known-issues.md).
  
-###Changed in this release
-+ R Server is built on Microsoft R Open 3.3.3 (R 3.3.3).
-+ The `curl` package has been updated to version 2.3
-+ The `jsonlite` package has been updated to version 1.2
-
-###Deprecated or Discontinued
- 
-In **RevoScaleR**, deprecated functions and recommended replacements include the following:
-
-|Deprecated | Replacement |
-|-----------|------------|
-|`rxGetNodes` | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
-|`RxHpcServer` | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
-|`rxImportToXdf` | [`rxImport`](../scaler/packagehelp/rxImport.md) |
-|`rxDataStepXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxDataFrameToXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxXdfToDataFrame` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxSortXdf` | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
-
-The following functions are discontinued:
-
- + `rxGetVarInfoXdf` (use [`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))
- + `rxGetInfoXdf` (Use [`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))
-
-For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
-
-In **RevoMods** functions have been discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
-
-+ `?` (use the standard R `?`, previously masked)
-+ `q` (use the standard R `q` function, previously masked)
-+ `quit` (use the standard R `quit` function, previously masked)
-+ `revoPlot` (use the standard R `plot` function)
-+ `revoSource` (use the standard R `source` function)
-
-
-###Known Issues
-
-When running in the `RxSpark` compute context, the `rxMerge()` function exhibits the following differences compared to running in the local compute context:
-
-1.	NULL return value.
-2.	Column order may be different.
-3.	Factor columns may be written as character type.
-4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the `duplicateVarExt` parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
-
-
 ## Microsoft R Server 9.0.1
 
 ###Changed in this release

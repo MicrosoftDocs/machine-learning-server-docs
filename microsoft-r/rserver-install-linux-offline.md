@@ -6,7 +6,7 @@ description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/10/2017"
+ms.date: "04/17/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,11 +28,11 @@ ms.custom: ""
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-Version 9.1.0 cannot co-exist with the previous R Server version 9.0.1, nor Microsoft R Open 3.3.3 with version 3.3.2. The install script automatically replaces previous minor versions, including the preview version of .NET Core, if they are detected so that setup can proceed.
+If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## Download R Server dependencies
 
-From an internet-connected computer, download Microsoft R Open (MRO) .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
+From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
 | Component | Version | Download Link |
 |-----------|---------|---------------|
@@ -69,7 +69,7 @@ List the existing packages in /usr/lib64 to see what is currently installed. It'
 
 ## Transfer files
 
-Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your internet-restricted server. Files to be transferred include the following:
+Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism to upload or transfer files to a writable directory, such as **/tmp**, on your internet-restricted server. Files to be transferred include the following:
 
 + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
@@ -91,9 +91,17 @@ Next, unpack the distributions for .NET Core and MRS.
 
 2. Switch to the **/tmp** directory (assuming it's the download location).
 
-3. Unpack the .NET Core redistribution:
+3. Make a directory for .NET Core:
 
-  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz`
+  `[root@localhost tmp] $ mkdir /opt/dotnet`
+
+4. Unpack the .NET Core redistribution to the /opt/dotnet directory:
+
+  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
+
+5. Set the symbolic link for .NET Core to user directories:
+
+  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
 
 6. Unpack the MRS gzipped file:
 
@@ -103,13 +111,7 @@ Next, unpack the distributions for .NET Core and MRS.
 
 Files are unpacked into  **MRS90Linux**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
 
-.NET Core is unpacked into **/shared/Microsoft.NETCore.App/1.1.1**. 
-
-## Set the symbolic link for .NET Core
-
-Run the following command to make .NET Core accessible to R Server.
-
-  `[root@localhost tmp] $ ln -s /path/to/dotnet-core/dotnet /usr/local/bin/dotnet`
+.NET Core is unpacked into **/opt/dotnet**. 
 
 ## Copy microsoft-r-open tar.gz to MRS90LINUX
 
@@ -129,9 +131,11 @@ R Server for Linux is deployed by running the install script with no parameters.
 
    `[root@localhost MRS90LINUX] $ bash install.sh`
 
-3. When prompted to accept the license terms for Microsoft R Server, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
+3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-4. Installer output shows the packages and location of the log file.
+4. Repeat EULA acceptance for Microsoft R Server.
+
+Installer output shows the packages and location of the log file.
 
 ## Verify installation
 
@@ -145,12 +149,17 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 3. Check the version of Microsoft R Server:
 
-   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.0.1.x86_64`
+   `[tmp MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
 
-4. Partial output is as follows (note version 9.0.1):
+4. Check the version of .NET Core, and verify the symlink:
+
+  `[tmp MRS90LINUX] $ dotnet --version`
+  `[tmp MRS90LINUX] $ ls -la /usr/local/bin`
+
+5. Partial output is as follows (note version 9.0.1):
 
 	 Name        : microsoft-r-server-packages-9.0     Relocations: /usr/lib64
-	 Version     : 9.0.1                               Vendor: Microsoft
+	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
 
 ## Start Revo64

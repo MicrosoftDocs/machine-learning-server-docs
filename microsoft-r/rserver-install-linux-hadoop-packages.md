@@ -32,7 +32,6 @@ For computers with an internet connection, setup will download and add any missi
 You can download files from your Linux or Hadoop vendor. 
 
 You can use this syntax to download specific packages:
-
 ~~~~
 yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 ~~~~

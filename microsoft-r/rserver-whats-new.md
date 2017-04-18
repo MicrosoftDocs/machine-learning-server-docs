@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/04/2017"
+ms.date: "04/17/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,11 +26,53 @@ ms.custom: ""
 
 # What's New in R Server 9.1.0
 
-This release of R Server, built on open source R 3.3.3, includes new and updated packages, support for realtime scoring, and asynchronous batch consumption of services. Key features in this release include the following:
+This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
-+ [Machine learning algorthms](microsoftml-introduction.md)
-+ [Remote execution](operationalize/remote-execution.md)
-+ [Web service deployment](operationalize/data-scientist-manage-services.md)
+<a name="machinelearning"></a>
+
+## Machine Learning enhancements and pre-trained models
+
+In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). 
+
+This release includes pre-trained cognitive models for sentiment analysis and image featurizers, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md).
+
+
+<a name="sparkinterop"></a>
+
+## Interoperability with sparklyr 
+
+Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](microsoft-r-get-started-spark-interop.md).
+
+<a name="rxexecby"></a>
+
+## "Pleasingly Parallel" processing with rxExecBy on Spark and SQL Server
+
+Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities (such as devices, people, products, days) where the per-entity data sets are relatively small in comparison with big data scenarios so often typical of R workloads. 
+
+In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  
+
+To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
+
+## Operationalizing analytics 
+ 
++ Role-based access control to analytical web services: Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](./operationalize/security-roles.md).
+ 
++ Scoring perform boosts with real time scoring: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](./operationalize/data-scientist-manage-services.md#realtime).
+ 
++ Asynchronously batch processing for large input data: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](./operationalize/data-scientist-manage-services.md#consume-service). Learn more about [asynchronous batch consumption](./operationalize/data-scientist-batch-mode.md).
+
++ Autoscaling of a grid of web and compute nodes on Azure. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage.
+
+## Executing remotely 
++ Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
+
+## SQL Server R Services 
+
+R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
+
+## Installation improvements for deployment on Cloudera
+
+R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
 <a name="rclient333-package-updates"></a>
 
@@ -61,34 +103,6 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 In **RevoScaleR**, deprecated and discontinued functions are covered in [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md). You can also review the [release notes](notes/r-server-notes.md).
 
 In **RevoMods**, we deprecated several functions that were intended solely for use by the R Productivity Environment, which itself was discontinued in Microsoft R Server 8.0.3. For details about obsolete functions, see [release notes](notes/r-server-notes.md).
-
-<a name="rxexecby"></a>
-
-## "Pleasingly Parallel" processing with rxExecBy on Spark and SQL Server
-
-Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities -- such as devices, people, products, days -- where the per-entity data sets are relatively small in comparison with big data scenarios so often typical of R workloads. 
-
-In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  
-
-To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
-
-## Operationalizing analytics 
- 
-+ Role-based access control to analytical web services: Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](./operationalize/security-roles.md).
- 
-+ Scoring perform boosts with real time scoring: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](./operationalize/data-scientist-manage-services.md#realtime).
- 
-+ Asynchronously batch processing for large input data: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](./operationalize/data-scientist-manage-services.md#consume-service). Learn more about [asynchronous batch consumption](./operationalize/data-scientist-batch-mode.md).
-
-+ Autoscaling of a grid of web and compute nodes on Azure. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage.
-
-## Executing remotely 
-+ Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
-
-
-## Installation improvements for deployment on Cloudera
-
-R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager, our new parcel generator script, and custom service descriptors. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
 ## Previous releases
 
@@ -243,7 +257,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
     + This release is of DeployR Enterprise only.
 
-### 8.0.3 Announcments
+### 8.0.3 Announcements
 
 + R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. Version 8.0.3 is succeeded by version 9.0.1 in SQL Server. Features are cumulative so what shipped in 8.0.3 is still available in 9.0.1. For a description of features, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
@@ -274,3 +288,7 @@ algorithms for cleaning and analyzing text data.
 + DevelopR - The R Productivity Environment (the IDE provided with Revolution R Enterprise on Windows) is not deprecated, but it will be removed from future versions of Microsoft R Services.
 
 + RevoMPM, a Multinode Package Manager, is now defunct, as it was deemed redundant. Numerous distributed shells are available, including pdsh, fabric, and PyDSH. More sophisticated provisioning tools such as Puppet, Chef, and Ansible are also available. Any of these can be used in place of RevoMPM.
+
+## See Also
+
+[What's new in R Server](rserver-whats-new.md)
