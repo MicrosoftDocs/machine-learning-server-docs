@@ -28,15 +28,17 @@ ms.custom: ""
 
 # Known issues in Microsoft R Server 9.1
 
-Review the workaround steps for known issues in this release. Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](/notes/r-server-notes.md).
+Review the workaround steps for the following known issues in this release. 
 
-+ [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
-+ [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
-+ [MicrosoftML: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
+1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
+2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
+3. [MicrosoftML: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
+
+Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md).
 
 <a name="revoscaler-rxmerge"></a>
 
-### rxMerge() behaviors in RxSpark compute context
+## rxMerge() behaviors in RxSpark compute context
 
 *Applies to: RevoScaleR package > rxMerge function*
 
@@ -49,7 +51,7 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 
 <a name="revoscaler-rxexecby"></a>
 
-### rxExecBy() terminates unexpectedly if NA values do not have a factor level
+## rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 *Applies to: RevoScaleR package > rxExecBy function*
 
@@ -78,7 +80,7 @@ Var 1: Gender
 ```
 <a name="ml-ensembling"></a>
 
-### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+## Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 *Applies to: MicrosoftML package > Ensembling*
 
