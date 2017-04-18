@@ -49,6 +49,10 @@ The [Retail churn tutorial](https://github.com/Microsoft/microsoft-r/tree/master
 The tutorial imports data from a retail database, creates a label identifying customers who have churned and features based on customer purchase history, fits a model using multiple learning algorithms, and then compares the performance of these fit models to select the best one. 
 
 
-## Run an ML analysis on an Azure Spark cluster
+## Run R Server with MicrosoftML on HDInsight/Spark clusters
 
 To create an HDInsight (Hadoop) cluster and connect it to R, see [Get started using R Server on HDInsight](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-r-server-get-started)
+
+Microsoft R Server 9.1.0 supports the [sparklyr package from RStudio](https://cran.r-project.org/web/packages/sparklyr/index.html). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. For a walkthrough on how to use this package, see [Learn how to use R Server with sparklyr](microsoft-r-get-started-spark-interop.md).
+
+For other cloud-based offerings, see [Introducing R Server on HDInsight](vm-r-server-hdinsight.md).
