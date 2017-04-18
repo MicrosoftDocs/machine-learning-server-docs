@@ -28,11 +28,11 @@ ms.custom: ""
 
 # Known Issues with Microsoft R Server 9.1
 
-## Issue 1: The rxMerge() function has different behaviors in the RxSpark compute context
+## Issue 1: rxMerge() behaviors in RxSpark
 
 **Applies to: RevoScaleR package > rxMerge function**
 
-In comparison with the local compute context, rxMerge() used in RxSpark compute context has these behaviors:
+In comparison with the local compute context, rxMerge() used in a RxSpark compute context has slightly different bheaviors:
 
 1.	NULL return value.
 2.	Column order may be different.
@@ -43,11 +43,11 @@ In comparison with the local compute context, rxMerge() used in RxSpark compute 
 
 **Applies to: MicrosoftML package > Ensembling** 
 
-Certain machine learning transforms that don’t implement the `IRowToRowMapper` interface will fail during Ensembling. Examples include `getSentiment()` and `featurizeImage()`.
+Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-To work around this error, you can pre-featurize data using `rxFeaturize()`. The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
+To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
-## Issue 3: The rxExecBy() function terminates unexpectedly if NA values do not have a factor level
+## Issue 3: rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 **Applies to: RevoScaleR package > rxExecBy function**
 
@@ -55,7 +55,7 @@ R script using rxExecBy will suddenly abort if the data set presents factor colu
 
 There are two possible workarounds:
 
-+ Option 1: Add an 'NA' level using `addNA()` to catch the "not applicable" case.
++ Option 1: Add an 'NA' level using **addNA()** to catch the "not applicable" case.
 + Option 2: Clean the input dataset (remove the NA values)
 
 Psuedo code for option 1 addNA() might be:
@@ -64,14 +64,16 @@ Psuedo code for option 1 addNA() might be:
 
 Output would now include a 4th factor level called NA:
 
-`> rxGetInfo(dat, getVarInfo = TRUE)
+```
+> rxGetInfo(dat, getVarInfo = TRUE)
 
 Data frame: dat 
 Number of observations: 97 
 Number of variables: 1 
 Variable information: 
 Var 1: Gender
-       4 factor levels: Female Male Unknown NA`
+       4 factor levels: Female Male Unknown NA
+```
 
 ## Deprecated and Discontinued functions
 
@@ -88,7 +90,7 @@ Var 1: Gender
 |`rxSortXdf` | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
 
 |Discontinued | Replacement |
-|-------------|-------0----|
+|-------------|----------|
 |`rxGetVarInfoXdf` |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
 |`rxGetInfoXdf` |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
 
