@@ -41,12 +41,3 @@ Microsoft R Client works with the following flavors of Microsoft R Server:
 |Microsoft R Server for Windows|9.1|
 |SQL Server R Services <br>SQL Server Machine Learning Services<br>(in-database & standalone)|SQL Server 2016 RTM - <br>SQL Server vNext CTP2|
 |HDInsight (cluster type: R Server)|8.0.x - 9.1|
-
-<br>
-
-
-><b>*</b> <b>Build 1.0.0</b> works with Microsoft R Server for <b>Hadoop</b> 2016 build 8.0.5 if you do the following:
->
->1. Install the `RTools` package from CRAN onto the machine running R Client.
->
->1. Explicitly add `. /usr/lib64/microsoft-r/8.0/hadoop/RevoHadoopEnvVars.site` to `/etc/profile` file.

@@ -79,13 +79,13 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. On a machine with _**unrestricted**_ internet access:
 
-   + Download Microsoft R Client from the following link: http://aka.ms/rclient/
+   + Download Microsoft R Client from http://aka.ms/rclient/.
 
-   + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?linkid=845297
+   + Download the Microsoft R Open ( *.cab) needed to install R Client from http://go.microsoft.com/fwlink/?LinkID=842800.
 
-   + Download the prerequisites, including the .NET Framework and other components previously listed.
+   + Download .NET Framework 4.5.2 from https://www.microsoft.com/download/details.aspx?id=42642.
 
-   + Copy the .cab file and R Client installer to a network share or portable drive.
+   + Copy the downloaded files to a network share or portable drive.
 
 1. On the machine with _**restricted**_ internet access:
 
@@ -93,11 +93,9 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files under `%temp%`. 
 
-   + Install the prerequisites first. 
-   
-   + Restart your computer if you installed the .NET Framework.
+   + Also, copy and install the .NET Framework.  Restart your computer if you installed the .NET Framework.
 
-   + Run `RClientSetup.exe`, which then finds the cab file in the temp folder.
+   + Run `RClientSetup.exe`, which will find the cab file in the temp folder for you.
    
    + Accept the default installation path for Microsoft R Client or choose another location.
 
@@ -111,7 +109,6 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
 
-    
 <a name=silent></a> 
 
 ## Silent and Passive Installs
