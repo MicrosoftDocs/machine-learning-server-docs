@@ -12,7 +12,7 @@
 ### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
 ### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
 ## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
-## [Quickstart: Parallel processing on partitioned data at scale](quickstart-rxexecby.md)
+## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
 ## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
 #[Get started with MicrosoftML](microsoftml-get-started.md)
@@ -49,7 +49,7 @@
 # [Microsoft R Server](rserver.md)
 
 ## [What's new](rserver-whats-new.md)
-## [Release notes](notes/r-server-notes.md)
+## [Known issues](rserver-known-issues.md)
 ## [Supported platforms](rserver-install-supported-platforms.md)
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)

@@ -28,11 +28,11 @@ ms.custom: ""
 
 # Known Issues with Microsoft R Server
 
-## Microsoft R Server 9.1.0
+## Microsoft R Server 9.1
 
-### Package: RevoScaleR: RxSpark function
+### Package: RevoScaleR
 
-#### The `rxMerge()` function has different behaviors in the `RxSpark` compute context
+#### Issue 1: The `rxMerge()` function has different behaviors in the `RxSpark` compute context
 
 In comparison with the local compute context, `rxMerge()` used in  `RxSpark` compute context has these behaviors:
 
@@ -41,13 +41,68 @@ In comparison with the local compute context, `rxMerge()` used in  `RxSpark` com
 3.	Factor columns may be written as character type.
 4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the `duplicateVarExt` parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
 
+#### Issue 2: The `rxExecBy()` function terminates unexpectedly if NA values do not have a factor level
+
+R script using `rxExecBy` will suddenly abort if the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with 3 factor levels: Female, Male, Unknown. If values exist  that are not one of these values, the function will fail.
+
+There are two possible workarounds:
+
++ Option 1: Add an 'NA' level to a`addNA()` to catch the "not applicable" case.
++ Option 2: Clean the input dataset (remove the NA values)
+
+Psuedo code for option 1 `addNA()` might be:
+
+`> dat$Gender = addNA(dat$Gender)`
+
+Output would now include a 4th factor level called NA:
+
+```
+> rxGetInfo(dat, getVarInfo = TRUE)
+
+Data frame: dat 
+Number of observations: 97 
+Number of variables: 1 
+Variable information: 
+Var 1: Gender
+       4 factor levels: Female Male Unknown NA
+```
+
+#### Deprecated and Discontinued functions in RevoScaleR
+
+|Deprecated | Replacement |
+|-----------|------------|
+|`rxGetNodes` | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
+|`RxHpcServer` | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
+|`rxImportToXdf` | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxDataStepXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataFrameToXdf` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxXdfToDataFrame` | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxSortXdf` | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
+
+|Discontinued | Replacement |
+|-------------|-------0----|
+|`rxGetVarInfoXdf` |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
+|`rxGetInfoXdf` |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
+
+For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
+
 ### Package: MicrosoftML: Ensembling
 
-#### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+#### Issue 1: Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 Certain machine learning transforms that don’t implement the `IRowToRowMapper` interface will fail during Ensembling. Examples include `getSentiment()` and `featurizeImage()`.
 
 To work around this error, you can pre-featurize data using `rxFeaturize()`. The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
+
+### Package: RevoMods
+
+In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
+
++ `?` (use the standard R `?`, previously masked)
++ `q` (use the standard R `q` function, previously masked)
++ `quit` (use the standard R `quit` function, previously masked)
++ `revoPlot` (use the standard R `plot` function)
++ `revoSource` (use the standard R `source` function)
 
 ## Microsoft R Server 9.0.1
 

@@ -257,7 +257,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
     + This release is of DeployR Enterprise only.
 
-### 8.0.3 Announcments
+### 8.0.3 Announcements
 
 + R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. Version 8.0.3 is succeeded by version 9.0.1 in SQL Server. Features are cumulative so what shipped in 8.0.3 is still available in 9.0.1. For a description of features, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
@@ -288,3 +288,7 @@ algorithms for cleaning and analyzing text data.
 + DevelopR - The R Productivity Environment (the IDE provided with Revolution R Enterprise on Windows) is not deprecated, but it will be removed from future versions of Microsoft R Services.
 
 + RevoMPM, a Multinode Package Manager, is now defunct, as it was deemed redundant. Numerous distributed shells are available, including pdsh, fabric, and PyDSH. More sophisticated provisioning tools such as Puppet, Chef, and Ansible are also available. Any of these can be used in place of RevoMPM.
+
+## See Also
+
+[What's new in R Server](rserver-whats-new.md)
