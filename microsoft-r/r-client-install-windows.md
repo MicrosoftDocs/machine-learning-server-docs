@@ -47,7 +47,7 @@ To benefit from disk scalability, performance and speed, you can push the comput
 
 On the machine onto which you are installing, follow this guidance before you begin installing:
 
-1. @@The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.
+1. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.
 
 1. You must install Microsoft R Client to a local drive on your computer.
 
@@ -61,43 +61,41 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Download Microsoft R Client from the following link: http://aka.ms/rclient/
 
-1. @@Run the Microsoft R Client setup and follow the prompts:
+1. Run the Microsoft R Client setup and follow the prompts:
 
-    + Accept the default installation path for Microsoft R Client or choose another location.
+   + Accept the default installation path for Microsoft R Client or choose another location.
 
-    + Review the components that will be installed as part of Microsoft R Client. 
+   + Review the components that will be installed as part of Microsoft R Client. 
     
-      While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
+     While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
 
-    + Accept the Microsoft R Client license terms.
+   + Accept the Microsoft R Client license terms.
 
-    + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs it for you automatically.
+   + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
-    + Optionally, install [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1), an integrated development environment available as a free add-in for any edition of Visual Studio 2015. This option is only available if the supported version of Visual Studio is already installed.  If you've selected to install it as well, accept the terms for R Tools for Visual Studio.
-
-    + Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
+   + Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
 
 ## How to offline install (without internet access)
 
-1. @@On a machine with _**unrestricted**_ internet access:
+1. On a machine with _**unrestricted**_ internet access:
 
    + Download Microsoft R Client from the following link: http://aka.ms/rclient/
 
-   + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?LinkId=834568&clcid=1033
+   + Download the Microsoft R Open ( *.cab) needed to install R Client from the following link: https://go.microsoft.com/fwlink/?linkid=845297
 
    + Download the prerequisites, including the .NET Framework and other components previously listed.
 
-   + Copy the .cab file, component executables, and R Client installer to a network share or portable drive.
+   + Copy the .cab file and R Client installer to a network share or portable drive.
 
 1. On the machine with _**restricted**_ internet access:
 
    + Log in with administrator privileges.
 
-   + Copy the .cab file, component executables, and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files under `%temp%`. 
+   + Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files under `%temp%`. 
 
    + Install the prerequisites first. 
    
-   + Restart your computer is you installed the .NET Framework.
+   + Restart your computer if you installed the .NET Framework.
 
    + Run `RClientSetup.exe`, which then finds the cab file in the temp folder.
    
@@ -107,6 +105,10 @@ On the machine onto which you are installing, follow this guidance before you be
     
      While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
 
+   + Accept the Microsoft R Client license terms.
+
+   + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
 
     
@@ -114,7 +116,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 ## Silent and Passive Installs
 
-@@To install Microsoft R Client from a script on Windows, use the following commandline switches. 
+To install Microsoft R Client from a script on Windows, use the following commandline switches. 
 
 |Mode        |Install Command|Description|
 |-----------|-------------------------------|--------------|
@@ -124,7 +126,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 ## What's Installed with R Client
 
-The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, @@`C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+The Microsoft R Client setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
 All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Client under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
 
