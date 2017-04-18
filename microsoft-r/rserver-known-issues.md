@@ -26,11 +26,11 @@ ms.custom: ""
 
 ---
 
-# Known Issues and Announcements for Microsoft R Server 9.1
+# Known Issues and Announcements 
 
-## Known issues
+## Known issues in Microsoft R Server 9.1
 
-#### rxMerge() behaviors in RxSpark compute context
+### Issue 1: rxMerge() behaviors in RxSpark compute context
 
 **Applies to: RevoScaleR package > rxMerge function**
 
@@ -41,7 +41,7 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 3.	Factor columns may be written as character type.
 4.	In a local compute context, duplicate column names are made unique by adding “.”, plus the extensions provided by the user via the duplicateVarExt parameter (for example “Visibility.Origin”). In an RxSpark compute context, the “.” is omitted.
 
-#### Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+### Issue 2: Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 **Applies to: MicrosoftML package > Ensembling** 
 
@@ -49,7 +49,7 @@ Certain machine learning transforms that don’t implement the **IRowToRowMapper
 
 To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
-#### rxExecBy() terminates unexpectedly if NA values do not have a factor level
+### Issue 3: rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 **Applies to: RevoScaleR package > rxExecBy function**
 
@@ -77,7 +77,7 @@ Var 1: Gender
        4 factor levels: Female Male Unknown NA
 ```
 
-## Deprecated and Discontinued functions
+## Deprecated and discontinued functions
 
 #### RevoScaleR Package
 
