@@ -28,14 +28,19 @@ ms.custom: ""
 
 # Learn how to use R Server with sparklyr (step-by-step examples)
 
-In addition to the `rxSpark` compute context used for transfer R computations to that environment, there is now an additional deeper layer of Spark integration with the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session.
+Micorosft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
+
++ [Example 1: sparklyr data and MRS analytics](#example1)
++ [Example 2: MRS data and sparklyr analytics](#example2)
 
 ## Prerequisites
 
+To run the example code, your environment must provide the following:
+
 + A Hadoop cluster with Spark and valid installation of Microsoft R Server
-+ Microsoft R Server is configured for use with Hadoop and Spark
++ Microsoft R Server configured for Hadoop and Spark
 + Microsoft R Server SampleData loaded into HDFS
-+ gcc and g++ installed on the edgenode that the example will be run on
++ gcc and g++ installed on the edgenode that the example runs on
 + Write permissions to the R Library Directory
 + Read/Write permissions to HDFS directory /user/RevoShare
 + An internet connection or the ability to download and manually install sparklyr
@@ -59,8 +64,9 @@ To load SampleData into HDFS, please run these commands from within an edge node
 	# and:
 	ls -la <Path-To-RevoScaleR>/SampleData/
 ````
+<a name="example1"></a>
 
-## Example One: sparklyr data with MRS modeling
+## Example 1: sparklyr data with MRS modeling
 
 This example assumes dployr and sparklyr data structures, with model training and predictive analysis using Microsoft R Server.
 
@@ -266,8 +272,9 @@ This example assumes dployr and sparklyr data structures, with model training an
 	We have shut down the current Spark application and switched to local compute context.
 	>
 ```
+<a name="example2"></a>
 
-## Example Two: MRS data with sparklyr and dplyR modeling
+## Example 2: MRS data with sparklyr and dplyR modeling
 
 This example uses the airline data set. It includes multiple Microsoft R Server approaches for loading data, such as `RxTextData` for CSV files, and `RxOrcData` or `RxParquetData` for those formats. You can try different approaches by commenting out inactive paths. Given this data, the examples shows you how to parition and train a model with sparklyr.
 
