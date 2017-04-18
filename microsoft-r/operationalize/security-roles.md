@@ -99,8 +99,6 @@ Whenever a user's role changes, that user may not longer be able to perform the 
 
 If you only have the default local administrator account, `admin`, defined for R Server, then this is the only user and the `admin` user is implicitly assigned to the "Contributor" role.
 
-
-
 ## Declaring roles for AD/LDAP and Azure AD users
 
 If you configure R Server to [use Active Directory/LDAP or Azure Active Directory authentication](security-authentication.md), then you can configure it to assign roles using Active Directory groups as follows:

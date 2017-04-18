@@ -80,7 +80,7 @@ Or this example where we authenticate with the local `admin` account and passwor
             username = "admin", 
             password = "{{YOUR_PASSWORD}}",
             diff = TRUE,
-            session = TRUE
+            session = TRUE,
             commandline = TRUE)
 ```
 
