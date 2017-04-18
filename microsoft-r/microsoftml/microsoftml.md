@@ -6,7 +6,7 @@ description: "A package that provides state-of-the-art machine learning algorith
 keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "04/13/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

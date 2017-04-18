@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/14/2017"
+ms.date: "04/18/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Introduction to MicrosoftML
 
-**MicrosoftML** is a package that adds state-of-the-art machine learning algorithms and data transforms to **Microsoft R Server**. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R Server brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
+**MicrosoftML** is a package that adds state-of-the-art machine learning algorithms and data transforms to **Microsoft R Server**. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
 
-The **MicrosoftML package** brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data. The MicrosoftML package is installed with **Microsoft R Server** and with the **SQL Server R Services**.
+The **MicrosoftML** package brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data. The MicrosoftML package is installed with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services**.
 
 
 ## Data transforms
@@ -40,8 +40,8 @@ The **MicrosoftML package** provides a machine learning transform pipelines that
 - **`categorical()`**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
 - **`selectFeatures()`**: selects features from the specified variables using one of the two modes: count or mutual information.
 - **`featurizeText()`**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF.
-- **Featurize image**: featurizes an image using the specifies pre-trained deep neural network model. 
-- **Sentiment analysis**: returns the probability that the sentiment of a natural text is positive. 
+- **`featurizeImage()`**: featurizes an image using the specified pre-trained deep neural network model. Available only on Microsoft R 9.1.0 and later.
+- **`getSentiment()`**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
 
 ## Machine learning algorithms
 
@@ -55,6 +55,7 @@ Algorithm | ML task supported | Scalability | Application Examples
 **`rxFastForest()`** <br>Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
 **`rxNeuralNet()`** <br>Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
 **`rxLogisticRegression()`** <br>Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
+- **`rxEnsemble()`**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 For more information, see [MicrosoftML functions](overview-microsoftml-functions.md) For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
 
@@ -79,7 +80,7 @@ For a list  of these platforms, see the [Platform availability](microsoftml-get-
 
 [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 
-[MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for references documentation for the key algorithms and transforms in the MicrosoftML package.
+[MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for reference documentation of the algorithms and transforms in the package.
 
 [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 
