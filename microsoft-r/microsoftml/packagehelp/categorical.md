@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Categorical Data Transform" 
 description: " Categorical transform that can be performed on data before  training a model. " 
-keywords: ", categorical, transform" 
+keywords: "MicrosoftML, categorical, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`categorical`: Machine Learning Categorical Data Transform 
+ #`categorical`: Machine Learning Categorical Data Transform
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Categorical transform that can be performed on data before 
@@ -56,7 +59,7 @@ training a model.
 *   `"ind"`: Outputs an indicator vector. The input column is a vector   of categories, and the output contains one indicator vector per slot in   the input column.    
 *   `"bag"`: Outputs a multi-set vector. If the input column is a  vector of categories, the output contains one vector, where the value in   each slot is the number of occurrences of the category in the input  vector. If the input column contains a single category, the indicator  vector and the bag vector are equivalent   
 *   `"key"`: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category.   
- 
+ The default value is `"ind"`. 
   
   
   
@@ -102,8 +105,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxNeuralNet](NeuralNet.md), [rxOneClassSvm](OneClassSvm.md),
-[rxLogisticRegression](LogisticRegression.md).
+[rxNeuralNet](rxNeuralNet.md), [rxOneClassSvm](rxOneClassSvm.md),
+[rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -167,6 +170,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   scoreOutDF1
  
 ```
- 
  
  

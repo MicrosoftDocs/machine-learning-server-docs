@@ -3,10 +3,10 @@
 # required metadata 
 title: "Optimization Algorithms" 
 description: " Specifies Optimization Algorithms for Neural Net. " 
-keywords: ", maOptimizer, adaDeltaSgd, sgd, optimizer" 
+keywords: "MicrosoftML, maOptimizer, adaDeltaSgd, sgd, optimizer" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,10 +29,13 @@ ms.custom: ""
  
  
  
- #`maOptimizer`: Optimization Algorithms 
+ #`maOptimizer`: Optimization Algorithms
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
-Specifies Optimization Algorithms for Neural Net.
+Specifies optimization algorithms for the [rxNeuralNet](rxNeuralNet.md) machine learning algorithm.
  
  
  ##Usage
@@ -103,7 +106,7 @@ Specifies Optimization Algorithms for Neural Net.
  ##Details
  
 These functions can be used for the `optimizer` argument in 
-[rxNeuralNet](NeuralNet.md). 
+[rxNeuralNet](rxNeuralNet.md). 
 
 
 * 
@@ -136,7 +139,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxNeuralNet](NeuralNet.md),
+[rxNeuralNet](rxNeuralNet.md),
    
  ##Examples
 
@@ -154,6 +157,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
           optimizer = adaDeltaSgd(decay = .9, conditioningConst = 1e-05))
  
 ```
- 
  
  

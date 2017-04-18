@@ -3,10 +3,10 @@
 # required metadata 
 title: "Classification and Regression Loss functions" 
 description: " The loss functions for classification and regression. " 
-keywords: ", loss functions, expLoss, hingeLoss, logLoss, poissonLoss, smoothHingeLoss, squaredLoss, loss" 
+keywords: "MicrosoftML, loss functions, expLoss, hingeLoss, logLoss, smoothHingeLoss, poissonLoss, squaredLoss, loss" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,19 +27,16 @@ ms.custom: ""
  
  
  
+#`loss functions`: Classification and Regression Loss functions
+
+Applies to version 1.3.0 of package MicrosoftML.
  
- 
- 
- 
- 
- 
- #`loss functions`: Classification and Regression Loss functions 
- ##Description
+##Description
  
 The loss functions for classification and regression.
  
  
- ##Usage
+##Usage
 
 ```   
   expLoss(beta = 1, ...)
@@ -65,6 +62,11 @@ The loss functions for classification and regression.
   
   
   
+ ### ` ...`
+ hidden argument. 
+  
+  
+  
  ### `margin`
  Specifies the numeric margin value. The default value is 1. 
   
@@ -72,11 +74,6 @@ The loss functions for classification and regression.
   
  ### `smoothingConst`
  Specifies the numeric value of the smoothing constant. The default value is 1. 
-  
-  
-  
- ### ` ...`
- hidden argument. 
   
  
  
@@ -126,28 +123,25 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastLinear](rxFastLinear.md), [rxNeuralNet](NeuralNet.md)
+[rxFastLinear](rxFastLinear.md), [rxNeuralNet](rxNeuralNet.md)
    
  ##Examples
 
- ```
-   
-  train <- function(lossFunction) {
+	train <- function(lossFunction) {
   
       result <- rxFastLinear(isCase ~ age + parity + education + spontaneous + induced,
-                    transforms = list(isCase = case == 1), lossFunction = logLoss(),
+                    transforms = list(isCase = case == 1), lossFunction = lossFunction,
                     data = infert,
                     type = "binary")
       coef(result)[["age"]]
-  }
+	}
   
-  age <- list()
-  age$LogLoss <- train(logLoss())
-  age$LogLossHinge <- train(hingeLoss())
-  age$LogLossSmoothHinge <- train(smoothHingeLoss())
-  age
+	age <- list()
+	age$LogLoss <- train(logLoss())
+	age$LogLossHinge <- train(hingeLoss())
+	age$LogLossSmoothHinge <- train(smoothHingeLoss())
+	age
  
-```
- 
+
  
  
