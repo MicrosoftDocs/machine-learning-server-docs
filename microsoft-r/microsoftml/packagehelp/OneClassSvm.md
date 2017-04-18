@@ -54,7 +54,7 @@ Creates a list containing the function name and arguments to train a OneClassSvm
   
   
  ### `kernel`
- A character string representing the kernel used for computing inner products. For more information, see [maKernel](Kernel.md). The following choices are available:   
+ A character string representing the kernel used for computing inner products. The following choices are available:   
 *   `rbfKernel()`: Radial basis function kernel. It's parameter  represents`gamma` in the term `exp(-gamma|x-y|^2`. If not  specified, it defaults to `1` divided by the number of features used. For example, `rbfKernel(gamma = .1)`. This is the default value. 
 *   `linearKernel()`: Linear kernel.   
 *   `polynomialKernel()`: Polynomial kernel with parameter names `a`,  `bias`, and `deg` in the term `(a*<x,y> + bias)^deg`. The  `bias`, defaults to `0`. The degree, `deg`, defaults to  `3`. If `a` is not specified, it is set to `1` divided by the number of features. For example, `maKernelPoynomial(bias = 0, deg = ``  3)`.   
