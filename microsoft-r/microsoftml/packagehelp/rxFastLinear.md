@@ -3,10 +3,10 @@
 # required metadata 
 title: "Fast Linear Model -- Stochastic Dual Coordinate Ascent" 
 description: " A Stochastic Dual Coordinate Ascent (SDCA) optimization trainer  for linear binary classification and regression.    `rxFastLinear` is a trainer based on the Stochastic Dual Coordinate Ascent (SDCA) method, a state-of-the-art optimization technique for convex objective functions. The algorithm can be scaled for use on large out-of-memory data  sets due to a semi-asynchronized implementation that supports multi-threading. primal and dual updates in a separate thread. Several choices of loss functions are also provided. The SDCA method combines several of the  best properties and capabilities of logistic regression and SVM algorithms.  For more information on SDCA, see the citations in the reference section.  Traditional optimization algorithms, such as stochastic gradient descent  (SGD), optimize the empirical loss function directly. The SDCA chooses a different approach that optimizes the dual problem instead. The dual loss function is parametrized by per-example weights. In each iteration, when a training example from the training data set is read, the corresponding example weight is adjusted so that the dual loss function is optimized with respect to the current example. No learning rate is needed by SDCA to  determine step size as is required by various gradient descent methods.  `rxFastLinear` supports binary classification with three types of loss functions currently: Log loss, hinge loss, and smoothed hinge loss.  Linear regression also supports with squared loss function. Elastic net regularization can be specified by the `l2Weight` and `l1Weight` parameters. Note that the `l2Weight` has an effect on the rate of convergence. In general, the larger the `l2Weight`, the faster  SDCA converges.  Note that `rxFastLinear` is a stochastic and streaming optimization algorithm. The results depends on the order of the training data. For reproducible results, it is recommended that one sets `shuffle` to `FALSE` and `trainThreads` to `1`. " 
-keywords: ", rxFastLinear, classification, fast, linear, regression, sdca, stochastic" 
+keywords: "MicrosoftML, rxFastLinear, classification, fast, linear, regression, sdca, stochastic" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`rxFastLinear`: Fast Linear Model -- Stochastic Dual Coordinate Ascent 
+ #`rxFastLinear`: Fast Linear Model -- Stochastic Dual Coordinate Ascent
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 A Stochastic Dual Coordinate Ascent (SDCA) optimization trainer 
@@ -71,13 +74,14 @@ reproducible results, it is recommended that one sets `shuffle` to
   rxFastLinear(formula = NULL, data, type = c("binary", "regression"),
     lossFunction = NULL, l2Weight = NULL, l1Weight = NULL,
     trainThreads = NULL, convergenceTolerance = 0.1, maxIterations = NULL,
-    shuffle = FALSE, checkFrequency = NULL, normalize = "auto",
+    shuffle = TRUE, checkFrequency = NULL, normalize = "auto",
     mlTransforms = NULL, mlTransformVars = NULL, rowSelection = NULL,
     transforms = NULL, transformObjects = NULL, transformFunc = NULL,
     transformVars = NULL, transformPackages = NULL, transformEnvir = NULL,
     blocksPerRead = rxGetOption("blocksPerRead"),
     reportProgress = rxGetOption("reportProgress"), verbose = 1,
-    computeContext = rxGetOption("computeContext"), ...)
+    computeContext = rxGetOption("computeContext"),
+    ensemble = ensembleControl(), ...)
  
 ```
  
@@ -138,7 +142,7 @@ For linear regression, squared loss [squaredLoss](loss.md) is currently supporte
   
   
  ### `shuffle`
- Specifies whether to shuffle the training data. Set `TRUE` to shuffle the data; `FALSE` not to shuffle. The default value is `FALSE`. SDCA is a stochastic optimization algorithm.  If shuffling is turned on, the training data is shuffled on each iteration. 
+ Specifies whether to shuffle the training data. Set `TRUE` to shuffle the data; `FALSE` not to shuffle. The default value is `TRUE`. SDCA is a stochastic optimization algorithm.  If shuffling is turned on, the training data is shuffled on each iteration. 
   
   
   
@@ -227,6 +231,11 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
+ ### `ensemble`
+ Control parameters for ensembling. 
+  
+  
+  
  ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
@@ -247,13 +256,8 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
  
  ##Note
  
-[logLoss](loss.md), [hingeLoss](loss.md),
-[smoothHingeLoss](loss.md), [squaredLoss](loss.md),
-[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxLogisticRegression](LogisticRegression.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md), [featurizeText](featurizeText.md),
-[categorical](categorical.md), [categoricalHash](categoricalHash.md),
-[rxPredict.mlModel](rxPredict.md).
+This algorithm is multi-threaded and will not attempt to load the entire dataset into
+memory.
  
  
  ##Author(s)
@@ -271,6 +275,16 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 
  
  
+ ##See Also
+ 
+[logLoss](loss.md), [hingeLoss](loss.md),
+[smoothHingeLoss](loss.md), [squaredLoss](loss.md),
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
+[categorical](categorical.md), [categoricalHash](categoricalHash.md),
+[rxPredict.mlModel](rxPredict.md).
+   
  ##Examples
 
  ```
@@ -318,7 +332,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   file.remove(myXdf)
  
 ```
- 
  
  
  

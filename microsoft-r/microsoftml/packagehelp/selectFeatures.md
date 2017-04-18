@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Feature Selection Transform" 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
-keywords: ", selectFeatures, feature, selection, transform" 
+keywords: "MicrosoftML, selectFeatures, feature, selection, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`selectFeatures`: Machine Learning Feature Selection Transform 
+ #`selectFeatures`: Machine Learning Feature Selection Transform
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 The feature selection transform selects features from the specified
@@ -145,7 +148,6 @@ A `maml` object defining the transform.
   summary(outModel3)
  
 ```
- 
  
  
  

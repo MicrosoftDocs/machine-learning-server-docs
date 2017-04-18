@@ -3,10 +3,10 @@
 # required metadata 
 title: "Feature Selection Count Mode" 
 description: " Count mode of feature selection used in the feature selection transform [selectFeatures](selectFeatures.md). " 
-keywords: ", minCount, count, feature, selection" 
+keywords: "MicrosoftML, minCount, count, feature, selection" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`minCount`: Feature Selection Count Mode 
+ #`minCount`: Feature Selection Count Mode
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Count mode of feature selection used in the feature selection transform
@@ -150,7 +153,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   summary(outModel3)
  
 ```
- 
  
  
  

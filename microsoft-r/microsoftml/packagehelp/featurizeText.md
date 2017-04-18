@@ -3,10 +3,10 @@
 # required metadata 
 title: "Machine Learning Text Transform" 
 description: " Text transforms that can be performed on data before training  a model. " 
-keywords: ", stopwordsDefault, featurizeText, stopwordsCustom, termDictionary, transform" 
+keywords: "MicrosoftML, stopwordsDefault, stopwordsCustom, termDictionary, featurizeText, transform" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,7 +30,13 @@ ms.custom: ""
  
  
  
- #`stopwordsDefault`: Machine Learning Text Transform 
+ 
+ 
+ 
+ #`stopwordsDefault`: Machine Learning Text Transform
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Text transforms that can be performed on data before training 
@@ -46,11 +52,10 @@ a model.
   
   termDictionary(terms = "", dataFile = "", sort = "occurrence")
   
-  featurizeText(vars, language = "English",
-    tokenizer = mluGetValidTokenizer()[1], stopwordsRemover = NULL,
+  featurizeText(vars, language = "English", stopwordsRemover = NULL,
     case = "lower", keepDiacritics = FALSE, keepPunctuations = TRUE,
-    keepNumbers = TRUE, ngramLength = 1, skipLength = 0,
-    dictionary = NULL, featureExtractor = ngramCount(),
+    keepNumbers = TRUE, dictionary = NULL,
+    wordFeatureExtractor = ngramCount(), charFeatureExtractor = NULL,
     vectorNormalizer = "l2", ...)
  
 ```
@@ -60,7 +65,7 @@ a model.
    
   
  ### `dataFile`
- character: <string>. Data file containing the terms (short form data) 
+ character: <string>. Data file containing the terms (short form data). 
   
   
   
@@ -96,20 +101,12 @@ a model.
   
   
   
- ### `tokenizer`
- Specifies the type of tokenizer to use when tokenizing the  text. Two types are supported:  
-*   `"word"`: Splits text into tokens using natural language word  tokenizer.    
-*   `"char"`: Splits text into tokens using fixed-length character  sequences.  
- 
-  
-  
-  
  ### `stopwordsRemover`
  Specifies the stopwords remover to use. There are three options supported:   
 *   `NULL` No stopwords remover is used.   
-*   `stopwordsDefault`: A precompiled language-specific lists  of stop words is used that includes the most common words from Microsoft   Office.    
+*   `stopwordsDefault`: A precompiled language-specific lists of stop words is used that includes the most common words from Microsoft Office.    
 *   `stopwordsCustom`: A user-defined list of stopwords. It accepts   the following option: `dataFile`.   
- 
+ The default value is `NULL`. 
   
   
   
@@ -118,7 +115,7 @@ a model.
 *   `"lower"`.   
 *   `"upper"`. 
 *   `"none"`.   
- 
+  The default value is `"lower"`. 
   
   
   
@@ -137,30 +134,28 @@ a model.
   
   
   
- ### `ngramLength`
- An integer that specifies the maximum number of words in an n-gram (consecutive word sequence). The sum of `skipLength` and `ngramLength` must be less than or equal to `10`. The default  value is 1. 
-  
-  
-  
- ### `skipLength`
- An integer that specifies the maximum number of tokens to skip when constructing an n-gram. If the value specified as skip length is `k`, then n-grams can contain up to k skips (not necessarily consecutive). For example, if `k=2`, then the 3-grams extracted from the text "the sky is blue today" are: "the sky is", "the sky blue", "the sky today", "the is blue", "the is today" and "the blue today". The default  value is 0. 
-  
-  
-  
  ### `dictionary`
  A `termDictionary` of whitelisted terms which accepts the following options:  
 *   `terms`,   
 *   `dataFile`, and  
 *   `sort`.   
-Note that the stopwords list takes precedence over the dictionary whitelist as the stopwords are removed before the dictionary terms are whitelisted. 
+The default value is `NULL`.  Note that the stopwords list takes precedence over the dictionary whitelist as the stopwords are removed before the dictionary terms are whitelisted. 
   
   
   
- ### `featureExtractor`
- Specifies the feature extraction arguments. There  are two different feature extraction mechanisms:   
+ ### `wordFeatureExtractor`
+ Specifies the word feature extraction arguments. There  are two different feature extraction mechanisms:   
 *   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
 *   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
- 
+ The default value is `ngramCount`. 
+  
+  
+  
+ ### `charFeatureExtractor`
+ Specifies the char feature extraction arguments. There  are two different feature extraction mechanisms:   
+*   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
+*   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
+ The default value is `NULL`. 
   
   
   
@@ -181,21 +176,47 @@ Note that the stopwords list takes precedence over the dictionary whitelist as t
  
  ##Details
  
-`featurizeText` produces a bag of counts of n-grams (sequences 
-of consecutive words) from a given text. It does so by either building a
-dictionary of n-grams and using the id in the dictionary as the index in the
-bag or by hashing each n-gram and using the hash value as the index in the
-bag. The text transform is applied to text input columns. It offers language
+The `featurizeText` transform produces a bag of counts of   
+sequences of consecutive words, called n-grams, from a given corpus of text. 
+There are two ways it can do this: 
+ 
+
+* 
+ build a dictionary of n-grams and use the id in the dictionary as the index in the bag;
+
+* 
+ hash each n-gram and use the hash value as the index in the bag.
+
+
+The purpose of hashing is to convert variable-length text documents into 
+equal-length numeric feature vectors, to support dimensionality reduction 
+and to make the lookup of feature weights faster.
+
+The text transform is applied to text input columns. It offers language
 detection, tokenization, stopwords removing, text normalization and feature
 generation. It supports the following languages by default: English, French,
 German, Dutch, Italian, Spanish and Japanese.
 
 The n-grams are represented as count vectors, with vector slots
-corresponding to either n-grams (created using `ngramCount`) or their
-hashes (created using `ngramHash`). Slot values in the vector can be
-scaled via `"tf"` (term frequency - number of occurrences of the slot
-in the text), `"idf"` (inverse document frequency across the corpus),
-or `"tdidf"`.
+corresponding either to n-grams (created using `ngramCount`) or to 
+their hashes (created using `ngramHash`). Embedding ngrams in a vector 
+space allows their contents to be compared in an efficient manner.
+The slot values in the vector can be weighted by the following factors:
+
+ 
+* 
+ term frequency - The number of occurrences of the slot in the text 
+ 
+* 
+ inverse document frequency - A ratio (the logarithm of 
+inverse relative slot frequency) that measures the information a slot 
+provides by determining how common or rare it is across the entire text.
+ 
+* 
+ term frequency-inverse document frequency - the product
+term frequency and the inverse document frequency.
+
+
  
  
  ##Value
@@ -211,8 +232,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [ngramCount](ngram.md), [ngramHash](ngram.md),
-[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md), [rxLogisticRegression](LogisticRegression.md).
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -275,6 +296,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   scoreOutDF5
  
 ```
- 
  
  

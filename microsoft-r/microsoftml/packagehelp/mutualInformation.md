@@ -3,10 +3,10 @@
 # required metadata 
 title: "Feature Selection Mutual Information Mode" 
 description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](selectFeatures.md). " 
-keywords: ", mutualInformation, feature, information, mutual, selection" 
+keywords: "MicrosoftML, mutualInformation, feature, information, mutual, selection" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`mutualInformation`: Feature Selection Mutual Information Mode 
+ #`mutualInformation`: Feature Selection Mutual Information Mode
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Mutual information mode of feature selection used in the feature selection
@@ -171,7 +174,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   summary(outModel3)
  
 ```
- 
  
  
  

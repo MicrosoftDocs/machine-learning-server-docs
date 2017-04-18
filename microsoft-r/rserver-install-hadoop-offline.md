@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Offline installation instructions for R Server 9.1.0 for Hadoop
+# Offline installation of R Server 9.1 for Hadoop
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
@@ -87,60 +87,54 @@ Use a tool like [SmarTTY](http://smartty.sysprogs.com) or [PuTTY](http://www.put
 + `microsoft_r_server_9.1.0.tar.gz`
 + any missing packages from the dependency list
 
-## Install package dependencies
+On the target system which is disconnected from the internet, run `rpm -i <package-name>` to install any packages that are missing from your system (for example, `rpm -i libpng12-1-2-50-10.el7.x86_64.rpm`).
 
-On the target system which is disconnected from the internet, run `rpm -qi <package-name>` to install any packages that are missing from your system.
+## Unpack .NET Core and set symbolic link
 
-## Unpack distributions
-
-Next, unpack the distributions for .NET Core and MRS.
-
-> [!Important]
-> Do not unpack MRO. Instead, copy the gzipped tar file to the MRS90HADOOP directory using the instructions below.
+For an offline installation of .NET Core, manually create its directory path, unpack the distribution, and then set references so that the component can be discovered by other applications.
 
 1. Log in as root or as a user with super user privileges (`sudo -s`).
 
-2. Switch to the **/tmp** directory (assuming it's the download location).
+2. Switch to the **/tmp** directory (assuming it's the download location) and execute `ls` to list the files as a verification step. You should see the tar.gz files you transferred earlier.
 
 3. Make a directory for .NET Core:
 
   `[root@localhost tmp] $ mkdir /opt/dotnet`
 
-4. Unpack the .NET Core redistribution to the /opt/dotnet directory:
+4. Unpack the .NET Core redistribution into the /opt/dotnet directory:
 
   `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
 
 5. Set the symbolic link for .NET Core to user directories:
 
-  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/local/bin/dotnet`
+  `[root@localhost tmp] $ ln -s /path/to/dotnet /usr/bin/dotnet`
 
-6. Unpack the MRS gzipped file:
+## Unpack MRS distribution and copy MRO
 
-  `[root@localhost tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
+Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS90HADOOP folder.
 
-## Check files
+> [!Important]
+> Do not unpack MRO yourself. The installer looks for a gzipped tar file for MRO. 
 
-Files are unpacked into  **MRS90HADOOP**. If you list the contents, you will see licensing documents, subfolders, and scripts. 
+1. Unpack the MRS gzipped file. 
 
-.NET Core is unpacked into **/opt/dotnet**. 
+  `[root@localhost tmp] $ tar zxvf microsoft-r-server-9.1.0.tar.gz`
 
-## Copy microsoft-r-open tar.gz to MRS90HADOOP
-
-The install.sh script file for R Server looks for the gzipped tar file for MRO. Assuming root permissions, copy the gzipped MRO tar file to the same folder containing the installation script.
+2. A new folder called MRS90HADOOP is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS90HADOOP folder containing the installation script (install.sh).
 
   `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90HADOOP`
 
 ## Run the MRS install script
 
-R Server for Hadoop is deployed by running the install script with no parameters.
+R Server for Hadoop is deployed by running the install script with no parameters. At this point, you could opt for [unattended install](#unattended) to bypass EULA prompts.
 
-1. Change to the `MRS90HADOOP` directory containing the installation script:
+1. Switch to the `MRS90HADOOP` directory containing the installation script:
 
-  `[tmp] $ cd ..\MRS90HADOOP`
+  `[root@localhost tmp] $ cd MRS90HADOOP`
 
 2. Run the script.
 
-   `[MRS90HADOOP] $ bash install.sh`
+   `[root@localhost MRS90HADOOP] $ bash install.sh`
 
 3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 

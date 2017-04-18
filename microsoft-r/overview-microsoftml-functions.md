@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/14/2017"
+ms.date: "04/18/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -30,15 +30,16 @@ The **MicrosoftML** package provides state of the art, fast, scalable machine le
 
 ## Data transforms
 
-The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. One advantage of the transform pipelines is that once you've defined a transform pipeline, you can save the pipeline and apply it to additional data.
+The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. 
 
-- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
-- **Categorical hash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
-- **Categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
-- **Select features**: selects features from the specified variables using one of the two modes: count or mutual information.
-- **Featurize text**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
-- **Featurize image**: featurizes an image using the specifies pre-trained deep neural network model. 
-- **Sentiment analysis**: returns the probability that the sentiment of a natural text is positive. Currently supports only the English language.
+- **concat**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
+- **categoricalHash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
+- **categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
+- **selectFeatures**: selects features from the specified variables using one of the two modes: count or mutual information.
+- **featurizeText**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
+- **featurizeImage**: featurizes an image using the specifies pre-trained deep neural network model. 
+- **getSentiment**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
+- **rxEnsemble**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 ## Machine learning algorithms
 
@@ -85,8 +86,11 @@ The **`rxLogisticRegression()`** algorithm is used to predict the value of a cat
 
 **Tasks supported**: binary and multiclass classification
 
-### Real-time scoring
-The **`rxPredict()`** algorithm runs the scoring library either from SQL Server, using the stored procedure, or from R code. This real-time scoring library has been designed in C+ and optimized specifically for scoring operations. It loads a specified model from a database, define a query with new input data, and generate scores based on the model. 
+### Ensemble methods
+The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to provide better predictive performance that the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. 
+
+**Tasks supported**: binary and multiclass classification, regression
+
 
 ## Get help on MicrosoftML functions
 

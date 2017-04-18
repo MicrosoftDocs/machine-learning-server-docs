@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Server 9.1.0 Command line installation (CDH, HDP, MapR)"
+title: "R Server 9.1 Command line installation (CDH, HDP, MapR)"
 description: "Hadoop installation and configuration guide for Microsoft R Server version 9.x"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/10/2017"
+ms.date: "04/18/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# Command line installation for R Server 9.x on Hadoop (CDH, HDP, MapR)
+# Command line installation for R Server 9.1 on Hadoop (CDH, HDP, MapR)
 
 R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, HortonWorks, and MapR. For most users, installing R Server on a cluster involves running the same series of steps on each data node of the cluster. A summary of setup tasks is as follows:
 
@@ -35,7 +35,7 @@ R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, H
 
 The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](rserver-install-hadoop-offline.md) instead.
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## Recommendations for installation
 
@@ -105,19 +105,42 @@ The Hadoop component is deployed by running the install script with the **-p** p
 6. Repeat to accept license terms for Microsoft R Server.
 7. Installer output shows the packages and location of the log file.
 
+<a name="unattended"></a>
+
+## Unattended install options
+
+You can perform a silent install to bypass prompts during setup. In MRS90HADOOP, run the install script with the following parameters:
+
+   `[tmp MRS90HADOOP] $ install.sh -a -s`
+
+Additional flags are available, as follows:
+
+flag | Option | Description
+-----|--------|------------
+ -a | --accept-eula | Accept all end user license agreements.
+ -d | --download-mro |  Download microsoft r open for distribution to an offline system.
+ -m | --models | Install Microsoft ML models.
+ -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
+ -s | --silent | Perform a silent, unattended install.
+ -u | --unattended | Perform an unattended install.
+ -h | --help | Print this help text.
+
 ## Verify installation
 
 1. List installed packages and get package names:
-        [MRS90HADOOP] $ `yum list \*microsoft\*`
+        `[MRS90HADOOP] $ yum list \*microsoft\*`
 2. Check the version of Microsoft R Open using `rpm -qi`:
-		[MRS90HADOOP] $ `rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
+		`[MRS90HADOOP] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
 3. Check the version of Microsoft R Server:
-        [MRS90HADOOP] $ `rpm -qi microsoft-r-server-packages-9.1.x86_64`
+        `[MRS90HADOOP] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 4. Partial output is as follows (note version 9.1.0):
+
+~~~~
 
 		Name        : microsoft-r-server-packages-9.1.0    Relocations: /usr/lib64
 		Version     : 9.1.0                             Vendor: Microsoft
 		. . .
+~~~~
 
 For further verification, check folders and permissions. Following that, you should run the Revo64 program, a sample Hadoop job, and if applicable, a sample Spark job.
 
