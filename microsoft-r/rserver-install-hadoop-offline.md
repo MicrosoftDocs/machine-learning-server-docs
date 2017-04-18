@@ -32,31 +32,9 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1.0 ve
 
 <a name="download"><a/>
 
-## Download setup prerequisites
-
-Using an internet-connected computer, download .NET Core. When configuring R Server to operationalize your analytics or for remote execution, the administration tool you use is built on .NET Core.  Unless you edit the install script to exclude an **mrsdeploy** installation, you will need .NET Core to run Setup.
-
-The file names are `dotnet-dev-centos-x64.1.0.0-preview2-003131.tar.gz` and TBD.
-
-| Component | Version | Download Link |
-|-----------|---------|--------|
-| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=827529 |
-| Visual Studio C++ | TBD | TBD tag.gz file |
-
-
-## Download package dependencies
-
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
-
-You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.):  `ls -l /usr/lib64/lib*`
-
-> [!Note]
-> It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
-
 ## Download R Server dependencies
 
 From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
-
 
 | Component | Version | Download Link | Notes |
 |-----------|---------|---------------|-------|
@@ -75,14 +53,25 @@ You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following 
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Hadoop 9.1.0** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
+## Download package dependencies
+
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
+
+You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.):  `ls -l /usr/lib64/lib*`
+
+> [!Note]
+> It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
+
 ## Transfer files
 
-Use a tool like [SmarTTY](http://smartty.sysprogs.com) or [PuTTY](http://www.putty.org) or another mechanism to transfer downloaded files to a writable directory, such as **/tmp**, on your disconnected server. You should be transferring the following files:
+Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism to upload or transfer files to a writable directory, such as **/tmp**, on your internet-restricted server. Files to be transferred include the following:
 
-+ `dotnet-<linux-os-name>-x64.1.1.tar.gz`
++ `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `microsoft_r_server_9.1.0.tar.gz`
++ `microsoft-r-server-9.1.0.tar.gz`
 + any missing packages from the dependency list
+
+## Install package dependencies
 
 On the target system which is disconnected from the internet, run `rpm -i <package-name>` to install any packages that are missing from your system (for example, `rpm -i libpng12-1-2-50-10.el7.x86_64.rpm`).
 
