@@ -28,7 +28,7 @@ ms.custom: ""
 
 # Known issues in Microsoft R Server 9.1
 
-Review the workaround steps for the following known issues in this release. 
+Review workaround steps for the following known issues in this release. 
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  

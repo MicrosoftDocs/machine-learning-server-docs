@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What's New in Microsoft R Server 9.1.0"
+title: "What's New in Microsoft R Server 9.1"
 description: "Updates, improvements, and changes in this release of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# What's New in R Server 9.1.0
+# What's New in R Server 9.1
 
 This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
@@ -66,13 +66,13 @@ Autoscaling of a grid of web and compute nodes on Azure. A script template will 
 ## Executing remotely 
 Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
 
+## R Server deployment and administration in Cloudera Manager
+
+R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
+
 ## SQL Server R Services 
 
 R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
-
-## Installation improvements for deployment on Cloudera
-
-R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
 <a name="rclient333-package-updates"></a>
 
@@ -96,13 +96,6 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
 | `rxSerializeModel` | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
 | `rxSyncPackages` | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
-
-
-**Discontinued and deprecated functions**
-
-In **RevoScaleR**, deprecated and discontinued functions are covered in [discontinued RevoScaleR functions](scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](scaler/packagehelp/RevoScaleR-deprecated.md). You can also review the [release notes](notes/r-server-notes.md).
-
-In **RevoMods**, we deprecated several functions that were intended solely for use by the R Productivity Environment, which itself was discontinued in Microsoft R Server 8.0.3. For details about obsolete functions, see [release notes](notes/r-server-notes.md).
 
 ## Previous releases
 

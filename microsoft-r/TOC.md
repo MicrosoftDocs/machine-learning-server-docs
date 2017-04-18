@@ -50,6 +50,7 @@
 
 ## [What's new](rserver-whats-new.md)
 ## [Known issues](rserver-known-issues.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
 ## [Supported platforms](rserver-install-supported-platforms.md)
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)

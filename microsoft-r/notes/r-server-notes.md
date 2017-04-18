@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Microsoft R Server release notes"
-description: "Readme file for Microsoft R Server release, documenting known issues, bug fixes, and deprecation notificiations."
+title: "Deprecated, discontinued, or changed features in R Server"
+description: "Notifications about deprecated and discontinued features, packages, and functions in Microsoft R packages."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
@@ -23,13 +23,13 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-#R Server release notes (Microsoft R)
+# Deprecated, discontinued, or changed features in Microsoft R Server
 
-This article contains notifications about status changes to features and function libraries, such as deprecated and discontinued functions in RevoScaleR.
+This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in RevoScaleR.
 
 ## Microsoft R Server 9.1.0
 
-Also see [What's New in 9.1](../rserver-whats-new.md) and [Known issues](../rserver-known-issues.md).
+Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md) and [Known issues](../rserver-known-issues.md).
 
 ### RevoScaleR Package
 
