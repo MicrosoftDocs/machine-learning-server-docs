@@ -34,15 +34,12 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 
 From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
-| Component | Version | Download Link |
-|-----------|---------|---------------|
-| Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) |
-| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) |
+| Component | Version | Download Link | Notes |
+|-----------|---------|---------------|-------|
+| Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) | Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. |
+| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) | Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list. |
 
 The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.
-
-> [!Note]
-> Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list.
 
 ## Download R Server installer
 
@@ -58,9 +55,7 @@ You can get Microsoft R Server (MRS) 9.1 for Linux from one of the following dow
 
 R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md).
 
-You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
-
-  `ls -l /usr/lib64/lib*`
+You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.):  `ls -l /usr/lib64/lib*`
 
 > [!Note]
 > It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
