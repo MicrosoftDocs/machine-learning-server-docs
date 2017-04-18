@@ -4,9 +4,9 @@
 title: "Set and Get RevoScaleR File System" 
 description: " Set and get the default file system for RevoScaleR operations. " 
 keywords: "RevoScaleR, rxSetFileSystem, rxGetFileSystem, file, connection" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxSetFileSystem`: Set and Get RevoScaleR File System
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

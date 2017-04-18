@@ -4,9 +4,9 @@
 title: "Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object" 
 description: " Converts objects containing decision tree results to an gbm object. " 
 keywords: "RevoScaleR, as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,7 +30,7 @@ ms.custom: ""
  
  #`as.gbm`: Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

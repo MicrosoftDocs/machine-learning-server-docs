@@ -4,9 +4,9 @@
 title: "Parallel External Memory Algorithm for Classification and Regression Trees" 
 description: "     Fit classification and regression trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "RevoScaleR, rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxDTree`: Parallel External Memory Algorithm for Classification and Regression Trees
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  
  ##Description

@@ -4,9 +4,9 @@
 title: "Crosstab Counts or Sums Data Frame" 
 description: " Obtain a counts, sums, or means data frame from an analysis object. " 
 keywords: "RevoScaleR, rxResultsDF, rxResultsDF.rxCrossTabs, rxResultsDF.rxCube, rxResultsDF.rxLinMod, rxResultsDF.rxLogit, rxResultsDF.rxSummary, category, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,7 +32,7 @@ ms.custom: ""
  
  #`rxResultsDF`: Crosstab Counts or Sums Data Frame
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

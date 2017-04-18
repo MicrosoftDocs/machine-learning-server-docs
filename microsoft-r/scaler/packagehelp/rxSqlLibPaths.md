@@ -4,9 +4,9 @@
 title: "Search Paths for Packages in SQL compute context" 
 description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
 keywords: "RevoScaleR, rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxSqlLibPaths`: Search Paths for Packages in SQL compute context
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

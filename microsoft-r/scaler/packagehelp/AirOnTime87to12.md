@@ -4,9 +4,9 @@
 title: "Airline On-Time Performance Data" 
 description: " Airline on-time performance data from 1987 to 2012. " 
 keywords: "RevoScaleR, AirOnTime87to12, AirOnTime87to12.xdf, AirOnTime7Pct, AirOnTime7Pct.xdf, datasets" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ ms.custom: ""
  
  #`AirOnTime87to12`: Airline On-Time Performance Data
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

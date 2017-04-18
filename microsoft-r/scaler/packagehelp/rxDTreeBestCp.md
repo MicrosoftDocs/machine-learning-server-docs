@@ -4,9 +4,9 @@
 title: " Find the Best Value of cp for Pruning rxDTree Object " 
 description: " Attempts to find the cp for optimal model pruning, where optimal is defined by default in terms of the 1 Standard Error criterion of Breiman, et al. " 
 keywords: "RevoScaleR, rxDTreeBestCp, models, tree, classif, regression" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxDTreeBestCp`:  Find the Best Value of cp for Pruning rxDTree Object 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

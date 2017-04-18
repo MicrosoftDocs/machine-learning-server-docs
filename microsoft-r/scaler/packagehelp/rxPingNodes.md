@@ -4,9 +4,9 @@
 title: " Simple Test of Compute Cluster Nodes " 
 description: " This function provides a simple test of the compute context's ability to perform a round trip through one or more  computation nodes. " 
 keywords: "RevoScaleR, rxPingNodes, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxPingNodes`:  Simple Test of Compute Cluster Nodes 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

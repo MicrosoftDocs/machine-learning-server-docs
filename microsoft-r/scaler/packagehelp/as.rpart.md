@@ -4,9 +4,9 @@
 title: "Conversion of a RevoScaleR rxDTree object to an rpart Object" 
 description: " Converts objects containing decision tree results to an rpart object. " 
 keywords: "RevoScaleR, as.rpart, as.rpart.rxDTree, category, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`as.rpart`: Conversion of a RevoScaleR rxDTree object to an rpart Object
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

@@ -4,9 +4,9 @@
 title: "Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object" 
 description: " Converts RevoScaleR rxNaiveBayes objects to a (limited) e1071 naiveBayes object. " 
 keywords: "RevoScaleR, as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`as.naiveBayes`: Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

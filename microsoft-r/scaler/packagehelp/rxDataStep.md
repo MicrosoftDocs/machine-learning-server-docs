@@ -4,9 +4,9 @@
 title: "Data Step for RevoScaleR data sources" 
 description: "    Transform data from an input data set to an output data set " 
 keywords: "RevoScaleR, rxDataStep, manip, file" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxDataStep`: Data Step for RevoScaleR data sources
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

@@ -4,9 +4,9 @@
 title: " Gets a list of operational nodes on a cluster. " 
 description: " Gets a list of operational nodes on a cluster. Note that this function will attempt to connect to the cluster when executed. " 
 keywords: "RevoScaleR, rxGetAvailableNodes, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxGetAvailableNodes`:  Gets a list of operational nodes on a cluster. 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

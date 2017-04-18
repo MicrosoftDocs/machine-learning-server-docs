@@ -4,9 +4,9 @@
 title: "Tweedie Generalized Linear Models" 
 description: " Produces a dummy generalized linear model family object that can be used with `rxGlm` to fit  Tweedie generalized linear regression models. This does NOT produce a full family object, but gives  `rxGlm` enough information to call a C++ implementation that fits a Tweedie model. The excellent  R package **tweedie** by Gordon Smyth does provide a full Tweedie family object, and that can also be  used with `rxGlm`. " 
 keywords: "RevoScaleR, rxTweedie, regression" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxTweedie`: Tweedie Generalized Linear Models
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

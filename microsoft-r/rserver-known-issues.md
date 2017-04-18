@@ -55,18 +55,18 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 
 *Applies to: RevoScaleR package > rxExecBy function*
 
-R script using rxExecBy will suddenly abort if the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with 3 factor levels: Female, Male, Unknown. If values exist  that are not one of these values, the function will fail.
+R script using rxExecBy will suddenly abort if the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with 3 factor levels: Female, Male, Unknown. If an existing value is not represented by one of the factors, the function will fail.
 
 There are two possible workarounds:
 
 + Option 1: Add an 'NA' level using **addNA()** to catch the "not applicable" case.
-+ Option 2: Clean the input dataset (remove the NA values)
++ Option 2: Clean the input dataset (remove the NA values).
 
 Pseudo code for the first option might be:
 
 `> dat$Gender = addNA(dat$Gender)`
 
-Output would now include a 4th factor level called NA that would catch all values not covered by the other factors:
+Output would now include a fourth factor level called NA that would catch all values not covered by the other factors:
 
 ```
 > rxGetInfo(dat, getVarInfo = TRUE)
