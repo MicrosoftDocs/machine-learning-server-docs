@@ -35,7 +35,7 @@ ms.custom: ""
  
  ##Description
  
-Specifies Optimization Algorithms for Neural Net.
+Specifies optimization algorithms for the [rxNeuralNet](rxNeuralNet.md) machine learning algorithm.
  
  
  ##Usage

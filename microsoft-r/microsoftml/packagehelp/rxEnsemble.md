@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Ensembles" 
-description: " Train an ensemble of models " 
+description: " Trains an ensemble of models " 
 keywords: "MicrosoftML, rxEnsemble" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Train an ensemble of models
+Trains an ensemble of models.
  
  
  ##Usage
@@ -187,9 +187,7 @@ Train an ensemble of models
  
  ##Details
  
-/coderxEnsemble is a function that trains a number of models
-of various kinds to obtain better predictive performance than could be
-obtained from a single model.
+/coderxEnsemble is a function that trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
  
  
  ##Value

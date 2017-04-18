@@ -33,8 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Neural networks for regression modeling and for Binary and
-multi-class classification.
+Neural networks for regression modeling and for Binary and multi-class classification.
  
  
  ##Usage

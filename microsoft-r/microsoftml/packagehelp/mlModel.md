@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Summary of a Microsoft R Machine Learning model." 
-description: " Summary of a Microsoft R Machine Learning model. " 
+description: "Summary of a Microsoft R Machine Learning model." 
 keywords: "MicrosoftML, summary.mlModel, coef.mlModel, file, manip" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -28,16 +28,16 @@ ms.custom: ""
  
  
  
- #`summary.mlModel`: Summary of a Microsoft R Machine Learning model.
+#`summary.mlModel`: Summary of a Microsoft R Machine Learning model.
 
  Applies to version 1.3.0 of package MicrosoftML.
  
- ##Description
+##Description
  
-Summary of a Microsoft R Machine Learning model.
+Provides a summary of a Microsoft R Machine Learning model.
  
  
- ##Usage
+##Usage
 
 ```   
  ## S3 method for class `mlModel':
@@ -66,9 +66,7 @@ summary  (object, top = 20, ...)
  
  ##Details
  
-Provides summary information about the original function call, the   
- data set used to train the model, and statistics for coefficients in the 
- model.
+Provides summary information about the original function call, the  data set used to train the model, and statistics for coefficients in the model.
  
  
  ##Value

@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Fast Forest" 
-description: " Machine Learning Fast Forest " 
+description: "Machine Learning Fast Forest" 
 keywords: "MicrosoftML, rxFastForest, classification, models, regression" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -25,18 +25,15 @@ ms.custom: ""
 --- 
  
  
- 
- 
- #`rxFastForest`: Fast Forest
+#`rxFastForest`: Fast Forest
 
  Applies to version 1.3.0 of package MicrosoftML.
  
- ##Description
+##Description
  
 Machine Learning Fast Forest
  
- 
- ##Usage
+##Usage
 
 ```   
   rxFastForest(formula = NULL, data, type = c("binary", "regression"),
@@ -53,10 +50,8 @@ Machine Learning Fast Forest
  
 ```
  
- ##Arguments
+##Arguments
 
-   
-  
  ### `formula`
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
@@ -210,40 +205,25 @@ Machine Learning Fast Forest
   
  
  
- ##Details
+##Details
  
-Decision trees are non-parametric models that perform a sequence  
-of simple tests on inputs. This decision procedure maps them to outputs 
-found in the training dataset whose inputs were similar to the instance 
-being processed. A decision is made at each node of the binary tree data
-structure based on a measure of similarity that maps each instance 
-recursively through the branches of the tree until the appropriate leaf 
+Decision trees are non-parametric models that perform a sequence of simple tests on inputs. This decision procedure maps them to outputs 
+found in the training dataset whose inputs were similar to the instance being processed. A decision is made at each node of the binary tree data structure based on a measure of similarity that maps each instance recursively through the branches of the tree until the appropriate leaf 
 node is reached and the output decision returned.
- 
 Decision trees have several advantages: 
  
- 
-* 
- They are efficient in both computation and memory usage during 
+* They are efficient in both computation and memory usage during 
  training and prediction.  
  
-* 
- They can represent non-linear decision boundaries.  
+* They can represent non-linear decision boundaries.  
  
-* 
- They perform integrated feature selection and classification.
+* They perform integrated feature selection and classification.
  
-* 
- They are resilient in the presence of noisy features. 
+* They are resilient in the presence of noisy features. 
 
 
 
-Fast forest regression is a random forest and quantile regression forest
-implementation using the regression tree learner in [rxFastTrees](rxFastTrees.md).
-The model consists of an ensemble of decision trees. Each tree in a decision
-forest outputs a Gaussian distribution by way of prediction. An aggregation
-is performed over the ensemble of trees to find a Gaussian distribution
-closest to the combined distribution for all trees in the model.
+Fast forest regression is a random forest and quantile regression forest implementation using the regression tree learner in [rxFastTrees](rxFastTrees.md). The model consists of an ensemble of decision trees. Each tree in a decision forest outputs a Gaussian distribution by way of prediction. An aggregation is performed over the ensemble of trees to find a Gaussian distribution closest to the combined distribution for all trees in the model.
 
 This decision forest classifier consists of an ensemble of decision trees.
 Generally, ensemble models provide better coverage and accuracy than single
@@ -253,26 +233,22 @@ to find a Gaussian distribution closest to the combined distribution
 for all trees in the model.
  
  
- ##Value
+##Value
  
  
+* `rxFastForest`: A `rxFastForest` object with the trained model.
  
-* 
-`rxFastForest`: A `rxFastForest` object with the trained model.
- 
-* 
-`FastForest`: A learner specification object of class `maml`
+* `FastForest`: A learner specification object of class `maml`
  for the Fast Forest trainer. 
 
 
- 
- ##Note
+##Note
  
 This algorithm is multi-threaded and will always attempt to load the entire dataset into
 memory.
  
  
- ##Author(s)
+##Author(s)
  
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
@@ -298,51 +274,50 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [categorical](categorical.md), [categoricalHash](categoricalHash.md),
 [rxPredict.mlModel](rxPredict.md).
    
- ##Examples
+##Examples
 
- ```
-   
-  # Estimate a binary classification forest
-  infert1 <- infert
-  infert1$isCase = (infert1$case == 1)
-  forestModel <- rxFastForest(formula = isCase ~ age + parity + education + spontaneous + induced,
+
+	# Estimate a binary classification forest
+
+	infert1 <- infert
+	infert1$isCase = (infert1$case == 1)
+	forestModel <- rxFastForest(formula = isCase ~ age + parity + education + spontaneous + induced,
           data = infert1)
   
-  # Create text file with per-instance results using rxPredict
-  txtOutFile <- tempfile(pattern = "scoreOut", fileext = ".txt")
-  txtOutDS <- RxTextData(file = txtOutFile)
-  scoreDS <- rxPredict(forestModel, data = infert1,
-     extraVarsToWrite = c("isCase", "Score"), outData = txtOutDS)
+	# Create text file with per-instance results using rxPredict
+
+	txtOutFile <- tempfile(pattern = "scoreOut", fileext = ".txt")
+	txtOutDS <- RxTextData(file = txtOutFile)
+	scoreDS <- rxPredict(forestModel, data = infert1, extraVarsToWrite = c("isCase", "Score"), outData = txtOutDS)
      
-  # Print the fist ten rows   
-  rxDataStep(scoreDS, numRows = 10)
+	# Print the fist ten rows   
+	rxDataStep(scoreDS, numRows = 10)
      
-  # Clean-up
-  file.remove(txtOutFile)
+	# Clean-up
+	file.remove(txtOutFile)
   
-  ######################################################################
-  # Estimate a regression fast forest
   
-  # Use the built-in data set 'airquality' to create test and train data
-  DF <- airquality[!is.na(airquality$Ozone), ]	
-  DF$Ozone <- as.numeric(DF$Ozone)
-  randomSplit <- rnorm(nrow(DF))
-  trainAir <- DF[randomSplit >= 0,]
-  testAir <- DF[randomSplit < 0,]
-  airFormula <- Ozone ~ Solar.R + Wind + Temp
+	# Estimate a regression fast forest
   
-  # Regression Fast Forest for train data
-  rxFastForestReg <- rxFastForest(airFormula, type = "regression", 
+	# Use the built-in data set 'airquality' to create test and train data
+	DF <- airquality[!is.na(airquality$Ozone), ]	
+	DF$Ozone <- as.numeric(DF$Ozone)
+	randomSplit <- rnorm(nrow(DF))
+	trainAir <- DF[randomSplit >= 0,]
+	testAir <- DF[randomSplit < 0,]
+	airFormula <- Ozone ~ Solar.R + Wind + Temp
+  
+	# Regression Fast Forest for train data
+	rxFastForestReg <- rxFastForest(airFormula, type = "regression", 
       data = trainAir)  
       
-  # Put score and model variables in data frame
-  rxFastForestScoreDF <- rxPredict(rxFastForestReg, data = testAir, 
+	# Put score and model variables in data frame
+	rxFastForestScoreDF <- rxPredict(rxFastForestReg, data = testAir, 
       writeModelVars = TRUE)
       
-  # Plot actual versus predicted values with smoothed line
-  rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = rxFastForestScoreDF)
- 
-```
+	# Plot actual versus predicted values with smoothed line
+	rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = rxFastForestScoreDF)
+
  
  
  

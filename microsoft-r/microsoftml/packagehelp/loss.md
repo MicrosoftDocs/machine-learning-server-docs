@@ -27,22 +27,16 @@ ms.custom: ""
  
  
  
- 
- 
- 
- 
- 
- 
- #`loss functions`: Classification and Regression Loss functions
+#`loss functions`: Classification and Regression Loss functions
 
- Applies to version 1.3.0 of package MicrosoftML.
+Applies to version 1.3.0 of package MicrosoftML.
  
- ##Description
+##Description
  
 The loss functions for classification and regression.
  
  
- ##Usage
+##Usage
 
 ```   
   expLoss(beta = 1, ...)
@@ -133,23 +127,21 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
    
  ##Examples
 
- ```
-   
-  train <- function(lossFunction) {
+	train <- function(lossFunction) {
   
       result <- rxFastLinear(isCase ~ age + parity + education + spontaneous + induced,
                     transforms = list(isCase = case == 1), lossFunction = lossFunction,
                     data = infert,
                     type = "binary")
       coef(result)[["age"]]
-  }
+	}
   
-  age <- list()
-  age$LogLoss <- train(logLoss())
-  age$LogLossHinge <- train(hingeLoss())
-  age$LogLossSmoothHinge <- train(smoothHingeLoss())
-  age
+	age <- list()
+	age$LogLoss <- train(logLoss())
+	age$LogLossHinge <- train(hingeLoss())
+	age$LogLossSmoothHinge <- train(smoothHingeLoss())
+	age
  
-```
+
  
  

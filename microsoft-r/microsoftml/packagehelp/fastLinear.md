@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "fastLinear" 
-description: " Creates a list containing the function name and arguments to train a  Fast Linear model with [rxEnsemble](rxEnsemble.md). " 
+description: "Creates a list containing the function name and arguments to train a  Fast Linear model with rxEnsemble." 
 keywords: "MicrosoftML, fastLinear" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -33,8 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Creates a list containing the function name and arguments to train a
- Fast Linear model with [rxEnsemble](rxEnsemble.md).
+Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](rxEnsemble.md).
  
  
  ##Usage
@@ -48,7 +47,6 @@ Creates a list containing the function name and arguments to train a
  
  ##Arguments
 
-   
   
  ### `lossFunction`
  Specifies the empirical loss function to optimize. For binary classification, the following choices are available:  
@@ -59,8 +57,6 @@ For linear regression, squared loss [squaredLoss](loss.md) is currently supporte
 *   [logLoss](loss.md) for binary classification. 
 *   [squaredLoss](loss.md) for linear regression. 
  
-  
-  
   
  ### `l2Weight`
  Specifies the L2 regularization weight. The value must be either non-negative or `NULL`. If `NULL` is specified, the  actual value is automatically computed based on data set. `NULL` is the default value. 

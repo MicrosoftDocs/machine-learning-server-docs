@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "oneClassSvm" 
-description: " Creates a list containing the function name and arguments to train a  OneClassSvm model with [rxEnsemble](rxEnsemble.md). " 
+description: "Creates a list containing the function name and arguments to train a  OneClassSvm model with rxEnsemble." 
 keywords: "MicrosoftML, oneClassSvm" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -27,17 +27,16 @@ ms.custom: ""
  
  
  
- #`oneClassSvm`: oneClassSvm
+#`oneClassSvm`: oneClassSvm
 
  Applies to version 1.3.0 of package MicrosoftML.
  
- ##Description
+##Description
  
-Creates a list containing the function name and arguments to train a
- OneClassSvm model with [rxEnsemble](rxEnsemble.md).
+Creates a list containing the function name and arguments to train a OneClassSvm model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+##Usage
 
 ```   
   oneClassSvm(cacheSize = 100, kernel = rbfKernel(), epsilon = 0.001,

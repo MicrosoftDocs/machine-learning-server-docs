@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "logisticRegression" 
-description: " Creates a list containing the function name and arguments to train a  logistic regression model with [rxEnsemble](rxEnsemble.md). " 
+description: "Creates a list containing the function name and arguments to train a  logistic regression model with rxEnsemble." 
 keywords: "MicrosoftML, logisticRegression" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -33,8 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Creates a list containing the function name and arguments to train a
- logistic regression model with [rxEnsemble](rxEnsemble.md).
+Creates a list containing the function name and arguments to train a logistic regression model with [rxEnsemble](rxEnsemble.md).
  
  
  ##Usage

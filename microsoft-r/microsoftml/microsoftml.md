@@ -34,10 +34,6 @@ The MicrosoftML package provides state-of-the-art fast, scalable machine learnin
 
 This topic includes links to the reference documentation for the ML algorithms and transforms, and for the scoring and helper functions.
 
-
- 
-
-
 | Item | Data |
 | :---| :--- |
 |  Package  |  MicrosoftML |
@@ -53,10 +49,11 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 * [rxFastTrees](packagehelp/rxFastTrees.md): An implementation of FastRank, an efficient implementation  of the MART gradient boosting algorithm.  
 * [rxFastForest](packagehelp/rxFastForest.md): A random forest and Quantile regression forest  implementation using [rxFastTrees](packagehelp/rxFastTrees.md).  
-* [rxLogisticRegression](packagehelp/LogisticRegression.md): Logistic regression using L-BFGS.  
-* [rxOneClassSvm](packagehelp/OneClassSvm.md): One class support vector machines.  
-* [rxNeuralNet](packagehelp/NeuralNet.md): Binary, multi-class, and regression neural net.  
-* [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression.  
+* [rxLogisticRegression](packagehelp/rxLogisticRegression.md): Logistic regression using L-BFGS.  
+* [rxOneClassSvm](packagehelp/rxOneClassSvm.md): One class support vector machines.  
+* [rxNeuralNet](packagehelp/rxNeuralNet.md): Binary, multi-class, and regression neural net.  
+* [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression. 
+* [rxEnsemble](packagehelp/rxEnsemble.md): trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 ### Machine learning transforms
 
@@ -65,6 +62,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing. 
 * [featurizeText](packagehelp/featurizeText.md): Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
 * [getSentiment](packagehelp/getSentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
+* [ngram](packagehelp/ngram.md): allows defining arguments for count-based and hash-based feature extraction.
 * [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables using a specified mode.
 * [loadImage](packagehelp/loadImage.md): Loads image data.
 * [resizeImage](packagehelp/resizeImage.md): Resizes an image to a specified dimension using a specified resizing method.
@@ -72,28 +70,40 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [featurizeImage](packagehelp/featurizeImage.md): Featurizes an image using a pre-trained deep neural network model.
 
 
-### Scoring and training
+### Scoring and training and model summary
 
 * [rxPredict.mlModel](packagehelp/rxPredict.md): Runs the scoring library either from SQL Server, using the stored procedure, or from R code enabling real-time scoring to provide much faster prediction performance.
 * [rxFeaturize](packagehelp/rxFeaturize.md): Transforms data from an input data set to an output data set.
-* [rxEnsemble](packagehelp/rxEnsemble.md): trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
+* [mlModel](packagehelp/mlModel.md) Provides a summary of a Microsoft R Machine Learning model.
 
 
-### Helper functions for arguments
+### Helper functions
+
+**Loss functions for classification and regression.**
 
 * [expLoss](packagehelp/loss.md): Specifications for exponential classification loss function.  
 * [logLoss](packagehelp/loss.md): Specifications for log classification loss function.  
 * [hingeLoss](packagehelp/loss.md): Specifications for hinge classification loss function.  
 * [smoothHingeLoss](packagehelp/loss.md): Specifications for smooth hinge classification loss function.  
 * [poissonLoss](packagehelp/loss.md): Specifications for poisson regression loss function.  
-* [squaredLoss](packagehelp/loss.md): Specifications for squared regression loss function.  
-* [linearKernel](packagehelp/Kernel.md): Specification for linear kernel.  
-* [rbfKernel](packagehelp/Kernel.md): Specification for radial basis function kernel.  
-* [polynomialKernel](packagehelp/Kernel.md): Specification for polynomial kernel.  
-* [sigmoidKernel](packagehelp/Kernel.md): Specification for sigmoid kernel.  
+* [squaredLoss](packagehelp/loss.md): Specifications for squared regression loss function.      
+
+**Functions for feature selection.**
+
 * [minCount](packagehelp/minCount.md): Specification for feature selection in count mode. 
 * [mutualInformation](packagehelp/mutualInformation.md): Specification for feature selection in mutual information mode. 
+
+**Functions for ensemble modeling.**
+
+* [fastTrees](packagehelp/fastTrees.md): Creates a list containing the function name and arguments to train a Fast Tree model with [rxEnsemble](packagehelp/rxEnsemble.md).
+* [fastForest](packagehelp/rxFastForest.md): Creates a list containing the function name and arguments to train a Fast Forest model with [rxEnsemble](packagehelp/rxEnsemble.md).
+* [fastLinear](packagehelp/fastLinear.md): Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](packagehelp/rxEnsemble.md).
+* [logisticRegression](packagehelp/logisticRegression.md): Creates a list containing the function name and arguments to train a  Logistic Regression model with [rxEnsemble](packagehelp/rxEnsemble.md).
+* [oneClassSvm](packagehelp/oneClassSvm.md)Creates a list containing the function name and arguments to train a OneClassSvm model with [rxEnsemble](packagehelp/rxEnsemble.md).
  
+**Functions for neural networks.**
+* [optimizer](packagehelp/optimizer.md) Specifies optimization algorithms for the [rxNeuralNet](packagehelp/rxNeuralNet.md) machine learning algorithm.
+
 ## Get help on MicrosoftML functions from the R console
 
 To see the **MicrosoftML** functions that can be called from the R console:
