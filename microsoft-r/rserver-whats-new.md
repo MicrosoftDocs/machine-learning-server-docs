@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/17/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,13 +28,20 @@ ms.custom: ""
 
 This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
+
 <a name="machinelearning"></a>
 
-## Machine Learning enhancements and pre-trained models
+## Machine Learning enhancements
 
 In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). 
 
-This release includes pre-trained cognitive models for sentiment analysis and image featurizers, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md).
+This release includes **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+
+You can now run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Get started with ScaleR on Apache Spark](scaler-spark-getting-started.md).
+
+**Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually.
+
+Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way provides much faster prediction performance in enterprise production scenarios. 
 
 
 <a name="sparkinterop"></a>
