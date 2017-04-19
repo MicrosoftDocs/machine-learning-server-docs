@@ -41,7 +41,7 @@ All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and requ
 | **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
 | **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
 
-Hardware and software requirements for SQL Server R Services and R Server (Standalone) in SQL Server can be found in[SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
+Hardware and software requirements for SQL Server Machine Learning Services and R Server (Standalone) in SQL Server can be found in[SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
 
 <sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for R Server on CDH, HDP, or MapR.
 

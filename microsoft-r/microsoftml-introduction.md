@@ -63,9 +63,9 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## Getting started with MicrosoftML
 
-MicrosoftML is currently available on various platforms in **Microsoft R Server 9.1.0 and 9.0.1** and in the **SQL Server R Services CTP2**. 
+MicrosoftML is currently available on various platforms in **Microsoft R Server 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2**. 
 
-For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
+For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
 

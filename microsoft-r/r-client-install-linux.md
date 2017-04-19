@@ -112,7 +112,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
    Installation begins immediately. Installer output shows the packages and location of the log file. 
    
-   You can now [verify the installation](#verify).
+   You can now [set up your IDE and try out some sample code](r-client-get-started.md).
 
 <br>
 
@@ -189,68 +189,13 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. When prompted to accept the license terms for Microsoft R Client, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-   Installer output shows the packages and location of the log file. You can now [verify the installation](#verify).
+   Installer output shows the packages and location of the log file. 
+   
+   You can now [set up your IDE and try out some sample code](r-client-get-started.md). Also, consider package management as described in the next section.
 
 ### Offline Package Management
 
 Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
-
-<a name="verify"></a>
-
-## Verify installation
-
-1. List installed packages and get package names:
-
-   `[root@localhost MRC_Linux] $ yum list \*microsoft\*`
-
-1. Check the version of Microsoft R Open using `rpm -qi`:
-
-   `[root@localhost MRC_Linux] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
-
-1. Verify that you see the correct version of Microsoft R Client when you run:
-
-   `[root@localhost MRC_Linux] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
-
-1. Launch the Revo64 program.
-
-   `$ cd MRC_Linux`
-
-   `$ Revo64`
-
-1. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
-
-   `> rxSummary(~., iris)`
-
-   Output from the iris dataset should look similar to the following:
-
-   ~~~~
-   Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
-   Computation time: 0.005 seconds.
-   Call:
-   rxSummary(formula = ~., data = iris)
- 
-   Summary Statistics Results for: ~.
-   Data: iris
-   Number of valid observations: 150
-
-   Name         Mean     StdDev    Min Max ValidObs MissingObs
-   Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
-   Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
-   Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
-   Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
-
-   Category Counts for Species
-   Number of categories: 3
-   Number of valid observations: 150
-   Number of missing observations: 0
- 
-   Species    Counts
-   setosa     50
-   versicolor 50
-   virginica  50
-   ~~~~
-
-   To quit the program, type `q()` at the command line with no arguments.
 
 ## Unattended installs
 

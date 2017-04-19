@@ -88,6 +88,14 @@ Certain machine learning transforms that don’t implement the **IRowToRowMapper
 
 To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
+
+## Error during Ensembling: when using modelCount with rxTextData
+
+*Applies to: MicrosoftML package > Ensembling*
+
+`modelCount = 1` does not work when used with `rxTextData()` on Hadoop/Spark.
+
+
 ## Previous releases 
 
 ### Microsoft R Server 9.0.1

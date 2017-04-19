@@ -106,4 +106,4 @@ See these additional resources to learn about R in general:
 
 ## See Also
 
-[SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx)
+[SQL Server Machine Learning Services](https://msdn.microsoft.com/library/mt604845.aspx)

@@ -117,7 +117,7 @@ How you install R Server determines the support policy, location of R binaries, 
 
 **Licensing**
 
-R Server for Windows is licensed as a SQL Server enterprise feature. Licensing is the same regardless of how you install the server (standalone, standalone as part of SQL Server, or embedded in a relational database instance as SQL Server R Services). 
+R Server for Windows is licensed as a SQL Server enterprise feature. Licensing is the same regardless of how you install the server (standalone, standalone as part of SQL Server, or embedded in a relational database instance as SQL Server Machine Learning Services). 
 
 In a development context, developers and data scientists can install the free developer edition, which delivers the same features as enterprise, but is licensed for smaller developer workloads. Each edition is available through different [download channels](#download).
 
@@ -128,7 +128,7 @@ Two support plans <sup>1</sup>  are available for R Server for Windows. The inst
 | Service Plan | Details | How to get this plan |
 |--------------|---------|----------------------|
 |[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Requires running the latest version of R Server. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
-| SQL Server support policy | Service updates are on the SQL Server release schedule. | [Install SQL Server R Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2, </sup> <sup>3</sup>| 
+| SQL Server support policy | Service updates are on the SQL Server release schedule. | [Install SQL Server Machine Learning Services (In-database) as part of a SQL Server Database engine instance](https://msdn.microsoft.com/library/mt604845.aspx) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://msdn.microsoft.com/library/mt674874.aspx) <sup>2, </sup> <sup>3</sup>| 
 
 <sup>1</sup> For details, go to [Microsoft Lifecycle Policy](https://support.microsoft.com/lifecycle/selectindex). Use the index to navigate to **R Server** or **SQl Server 2016**.
 
