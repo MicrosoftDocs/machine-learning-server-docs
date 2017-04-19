@@ -28,6 +28,7 @@ ms.custom: ""
 
 This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
+Also, check out our [blog announcement post](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/) for this release.
 <a name="machinelearning"></a>
 
 ## Machine Learning enhancements and pre-trained models
@@ -70,9 +71,11 @@ Asynchronous remote execution is now supported using the `mrsdeploy` R package. 
 
 R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
-## SQL Server R Services 
+## SQL Server R Services and Machine Learning Services
 
-R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
+In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.
+
+In SQL Server 2017, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as Machine Learning Services (In-Database). To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
 
 <a name="rclient333-package-updates"></a>
 
