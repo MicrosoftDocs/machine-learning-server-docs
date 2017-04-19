@@ -32,11 +32,13 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 
 ## Download R Server dependencies
 
-From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
+From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and will not accept alternative distributions. Other distributions might not include R packages (like intel_mkl) that R Server requires for baseline operations.
+
+The .NET Core component is required for MicrosoftML (machine learning). It is also required for mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
 | Component | Version | Download Link | Notes |
 |-----------|---------|---------------|-------|
-| Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) | Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. |
+| Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) | Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you could end up with the wrong version. |
 | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) | Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list. |
 
 The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.

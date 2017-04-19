@@ -6,7 +6,7 @@ description: " Use `rxGlm` to fit generalized linear regression models for small
 keywords: "RevoScaleR, rxGlm, models, regression" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -239,10 +239,6 @@ named vector of coefficients.
 
 ###`covCoef`
 variance-covariance matrix for the regression coefficient estimates.
-
-
-###`residual.squares`
-sum of squares of residuals.
 
 
 ###`condition.number`

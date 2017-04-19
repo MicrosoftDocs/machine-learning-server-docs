@@ -6,7 +6,7 @@ description: " Use `rxLogit` to fit logistic regression models for small or larg
 keywords: "RevoScaleR, rxLogit, models, regression" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -252,10 +252,6 @@ variance-covariance matrix for the regression coefficient estimates.
 variance-covariance matrix for the explanatory variables in the regression model.
 
 
-###`residual.squares`
-sum of squares of residuals.
-
-
 ###`condition.number`
 estimated reciprocal condition number of final weighted cross-product (X'WX) matrix.
 
@@ -282,18 +278,6 @@ p-values for coef.t.values, using the normal distribution (Pr(>|z|))
 
 ###`total.squares`
 Y'Y of raw Y's
-
-
-###`y.var`
-(Y-Ybar)'(Y-ybar) (mean deviations)
-
-
-###`sigma`
-standard error of residuals.
-
-
-###`residual.variance`
-variance of residuals.
 
 
 ###`f.pvalue`

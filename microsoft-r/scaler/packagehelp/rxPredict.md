@@ -6,7 +6,7 @@ description: " Compute predicted values and residuals using `rxLinMod`, `rxLogit
 keywords: "RevoScaleR, rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

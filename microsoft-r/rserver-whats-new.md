@@ -80,7 +80,8 @@ R Server capabilities have been built into SQL Server for several releases. To r
 
 The following packages have been updated in Microsoft R Server and Microsoft R Client:
 
-+ The **RevoScaleR** package has been updated to version 9.1.0. 
++ The **RevoScaleR** package has been updated to version 9.1.0 
++ The **mrsdeploy** package has been updated to version 1.1.0
 + The **curl** package has been updated to version 2.3
 + The **jsonlite** package has been updated to version 1.3 
 
@@ -88,15 +89,18 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 
 | Function | Status | Changes |
 |----------|--------|---------|
-| `rxExecBy` | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
-| `rxExecByPartition` | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
-| `rxDataStep` | Enhanced | Multithreaded support. |
-| `rxGetPartitions` | New | Gets the partitions of a previously partitioned Xdf data source. |
-| `rxImport` | Enhanced | Multithreaded support. |
+| [`rxExecBy`](scaler/packagehelp/rxExecBy.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
+| [`rxExecByPartition`](scaler/packagehelp/rxExecByPartition.md) | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
+| [`rxDataStep`](scaler/packagehelp/rxDataStep.md) | Enhanced | Multithreaded support. |
+| [`rxGetPartitions`](scaler/packagehelp/rxGetPartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
+| [`rxGetSparklyrConnection`](scaler/packagehelp/rxGetSparklyrConnection.md)  | New | Get a Spark compute context with sparklyr interop.  |
+| [`rxImport`](scaler/packagehelp/rxImport.md)  | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
-| `RxOrcData` | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
-| `rxSerializeModel` | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
-| `rxSyncPackages` | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+| [`RxOrcData`](scaler/packagehelp/RxSparkData.md) | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
+| [`rxSerializeModel`](scaler/packagehelp/rxSerializeModel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
+| [`rxSparkCacheData`](scaler/packagehelp/rxSparkCacheData.md) | New | Set the Cache flag in a Spark compute context.|
+| [`rxSyncPackages`](scaler/packagehelp/rxSyncPackages.md)  | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+
 
 ## Previous releases
 

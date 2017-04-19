@@ -6,7 +6,7 @@ description: " **NOTE: This new API is in pre-release mode and subject to change
 keywords: "RevoScaleR, rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -78,6 +78,7 @@ A character vector of the library paths containing both `"shared"` or `"private"
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxInstallPackages](rxInstallPackages.md),   
 [rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
 require
    
  ##Examples

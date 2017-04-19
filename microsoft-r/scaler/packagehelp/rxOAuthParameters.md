@@ -6,7 +6,7 @@ description: " Method to create parameter list to be used for getting an OAuth2 
 keywords: "RevoScaleR, rxOAuthParameters, file, connection" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

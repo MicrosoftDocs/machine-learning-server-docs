@@ -6,7 +6,7 @@ description: " Store/Retrieve R objects to/from ODBC data sources. The APIs are 
 keywords: "RevoScaleR, rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

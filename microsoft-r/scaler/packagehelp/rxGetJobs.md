@@ -6,7 +6,7 @@ description: " Returns a list of job objects associated with the given compute c
 keywords: "RevoScaleR, rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInTeradata-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

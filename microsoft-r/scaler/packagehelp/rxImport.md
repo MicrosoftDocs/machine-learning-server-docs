@@ -6,7 +6,7 @@ description: " Import data into an .xdf file or `data.frame`. "
 keywords: "RevoScaleR, rxImport, file, connection" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -64,7 +64,7 @@ Import data into an .xdf file or `data.frame`.
   
     
  ### `outFile`
- a character string representing the output .xdf file or   an [RxXdfData](RxXdfData.md) object.   If `NULL`, a data frame will be returned in memory. 
+ a character string representing the output .xdf file, a  [RxHiveData](RxSparkData.md) data source, a[RxParquetData](RxSparkData.md) data source or   a [RxXdfData](RxXdfData.md) object.   If `NULL`, a data frame will be returned in memory. 
   
    
     
