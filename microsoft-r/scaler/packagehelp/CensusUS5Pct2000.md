@@ -6,7 +6,7 @@ description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. 
 keywords: "RevoScaleR, CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

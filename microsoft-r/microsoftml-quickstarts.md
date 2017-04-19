@@ -5,7 +5,7 @@ title: "Quickstarts for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "04/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,19 +25,19 @@ ms.custom: ""
 
 # Quickstarts for MicrosoftML
 
-Samples are described and linked here to help you get started quickly using MicrosoftML. The sentiment analysis and image featurization quickstarts both use pretrained models. These models are not install by default with Microsoft R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server.For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+Samples are described and linked here to help you get started quickly using MicrosoftML. The sentiment analysis and image featurization quickstarts both use pretrained models. These models are not install by default with Microsoft R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Client and Microsoft R Server.For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 
 ## Breast cancer prediction using rxFastLinear
 
-This starter [breast cancer prediction sample](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/BreastCancerPrediction) builds a model to predict breast cancer. It uses the well known Breast Cancer UCI dataset with [`rxFastLinear`]() algorithm provided by the MicrosoftML package.
+This starter [breast cancer prediction sample](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/BreastCancerPrediction) builds a model to predict breast cancer. It uses the well-known Breast Cancer UCI dataset with [`rxFastLinear`](microsoftml/packagehelp/rxFastLinear.md)algorithm provided by the MicrosoftML package.
 
 The type of machine learning task exhibited in this sample is a binary classification problem. Specifically, a given set of cell mass characteristics is used to predict whether the mass is benign or malignant.
 
 
 ## Sentiment analysis using featurizeText
 
-The [Sentiment analysis](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/SimpleSentimentAnalysis) sample is a text analytics sample that shows how to use the [featurizeText](microsoftml/packagehelp/featurizetext.md) transform to train a model to predict if a sentence expresses positive or negative sentiments. The type of machine learning task exhibited in this sample is a supervised binary classification problem.
+The [Sentiment analysis](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/SimpleSentimentAnalysis) sample is a text analytics sample that shows how to use the [`featurizeText`](microsoftml/packagehelp/featurizetext.md) transform to featurize text data. The featurized text data is then used to train a model to predict if a sentence expresses positive or negative sentiments. The type of machine learning task exhibited in this sample is a supervised binary classification problem.
 
 More specifically, the example provided shows how to use the [featurizeText](microsoftml/packagehelp/featurizetext.md) transform in the MicrosoftML package to produce a bag of counts of n-grams (sequences of consecutive words) from the text for classification. The sample uses the [Sentiment Labelled Sentences](https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences) dataset from the UCI repository, which contains sentences that are labeled as positive or negative sentiment.
 

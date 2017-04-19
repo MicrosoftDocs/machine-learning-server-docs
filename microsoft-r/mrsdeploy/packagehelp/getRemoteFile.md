@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Copy a file from the working directory of the remote R session." 
-description: " Downloads the file from the working directory of the remote R session into the working direcoty of the local R session. " 
+title: "Get the content of a file from remote R session." 
+description: " Get the content of a file from the working directory of the remote R session. " 
 keywords: "mrsdeploy, getRemoteFile" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,13 @@ ms.custom: ""
  
  
  
- #`getRemoteFile`: Copy a file from the working directory of the remote R session.
+ #`getRemoteFile`: Get the content of a file from remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Downloads the file from the working directory of the remote R session into the working
-direcoty of the local R session.
+Get the content of a file from the working directory of the remote R session.
  
  
  ##Usage
@@ -49,7 +48,7 @@ direcoty of the local R session.
    
   
  ### `filename`
- Name of the file to copy. 
+ Name of the file in the remote working directory. 
   
   
   
@@ -66,7 +65,8 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Value
  
-`TRUE` if successful.
+raw vector of bytes if `as="raw"`. Otherwise, the text content of the file, 
+or `NULL` if the file content cannot be retrieved.
  
  ##See Also
  
@@ -82,8 +82,12 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
    
   ## Not run:
  
-getRemoteFile("c:/data/test.csv")
-getRemoteFile("c:/data/test.png", as="raw")
+content<-getRemoteFile("test.csv")
+
+raw_content<-getRemoteFile("test.png", as="raw")
+fh = file("test.png", "wb")
+writeBin(raw_content, fh)
+close(fh)
  ## End(Not run) 
   
  

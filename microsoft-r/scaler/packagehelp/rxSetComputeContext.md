@@ -6,7 +6,7 @@ description: " Get or set the active compute context for RevoScaleR computations
 keywords: "RevoScaleR, rxSetComputeContext, rxGetComputeContext, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

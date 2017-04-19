@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: " set cache value of data in Spark Compute Context, for RxXdfData, RxOrcData, RxParquetData or RxHiveData " 
-description: " Use this function to set cache value of data in Spark Compute Context, for data types: `RxParquetData`, `RxHiveData`, `RxXdfData` and `RxOrcData`. " 
-keywords: "RevoScaleR, rxSparkCacheData" 
-author: "richcalaway" 
+title: " Set the Cache Flag in Spark Compute Context " 
+description: " Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for `RxXdfData`, `RxHiveData`, `RxParquetData`, and `RxOrcData`.  " 
+keywords: "RevoScaleR, rxSparkCacheData {RevoScaleR}, rxSparkCacheData" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/06/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,10 +25,15 @@ ms.custom: ""
 --- 
  
  
- #`rxSparkCacheData`:  set cache value of data in Spark Compute Context, for RxXdfData, RxOrcData, RxParquetData or RxHiveData  
+ #`rxSparkCacheData {RevoScaleR}`:  Set the Cache Flag in Spark Compute Context 
+
+ Applies to version 9.1.0 of package RevoScaleR.
+ 
+ 
  ##Description
  
-Use this function to set cache value of data in Spark Compute Context, for data types: `RxParquetData`, `RxHiveData`, `RxXdfData` and `RxOrcData`.
+Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for `RxXdfData`, `RxHiveData`, `RxParquetData`, and `RxOrcData`. 
+ 
  
  
  ##Usage
@@ -44,25 +49,28 @@ Use this function to set cache value of data in Spark Compute Context, for data 
    
     
  ### `data`
- data need to be set cache value 
+ a data source that can be RxXdfData, RxHiveData, RxParquetData, or RxOrcData. RxTextData is currently not supported. 
   
     
  ### `cache`
- logical cacheValue want to be turned to 
+ logical value controlling whether the data should be cached or not. If `TRUE`the data will be cached in the Spark memory system after the first use for performance enhancement. 
   
  
+ 
+ 
+ ##Details
+ 
+Note that `RxHiveData` with `saveAsTempTable=TRUE` is always cached in memory regardless of the `cache` parameter setting in this function.
  
  
  ##Value
  
-data object with new cache value
- 
- 
+data object with new cache flag. 
  
  
  ##See Also
  
-rxSparkListData, rxSparkRemoveData, RxHiveData, RxParquetData, RxOrcData
+[rxSparkListData](rxSparkDataOps.md), [rxSparkRemoveData](rxSparkDataOps.md), [RxXdfData](RxXdfData.md), [RxHiveData](RxSparkData.md), [RxParquetData](RxSparkData.md), [RxOrcData](RxSparkData.md).
    
  ##Examples
 
@@ -70,9 +78,16 @@ rxSparkListData, rxSparkRemoveData, RxHiveData, RxParquetData, RxOrcData
    
   ## Not run:
  
-  hiveData <- RxHiveData(table = "table")
-  ## set cache value to TRUE
-  hiveData <- rxSparkCacheData(hiveData)
+  hiveData <- RxHiveData(table = "mytable")
+  
+  ## this does not work. The cache flag of the input hiveData is not changed, so it is still FALSE.
+  rxSparkCacheData(hiveData)
+  rxImport(hiveData) # data is not cached
+  
+  ## this works. The cache flag of hiveData is now set to TRUE.
+  hiveData <- rxSparkCacheData(hiveData)  
+  rxImport(hiveData) # data is now cached
+  
   ## set cache value to FASLE
   hiveData <- rxSparkCacheData(hiveData, FALSE)
  ## End(Not run) 

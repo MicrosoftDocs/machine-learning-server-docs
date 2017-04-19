@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Add Inheritance to Compatible Objects" 
-description: " 	Add a specific S3 class to the `"class"` of a compatible object. " 
+description: "Add a specific S3 class to the class of a compatible object. " 
 keywords: "RevoScaleR, rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

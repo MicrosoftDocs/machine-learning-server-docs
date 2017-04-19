@@ -6,7 +6,7 @@ description: " Obtain the normalized absolute path to the first occurrence of th
 keywords: "RevoScaleR, rxLocateFile, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

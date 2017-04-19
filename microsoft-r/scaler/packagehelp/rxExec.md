@@ -2,11 +2,11 @@
  
 # required metadata 
 title: " Run A Function on Multiple Nodes or Cores " 
-description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a "compute context" such as a cluster. " 
+description: " Allows distributed execution of a function in parallel across nodes (computers) or cores of a compute context such as a cluster. " 
 keywords: "RevoScaleR, rxExec, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -68,9 +68,8 @@ of a "compute context" such as a cluster.
   
  ### `elemType`
  the distributed computing mode to be used. Handling of this parameter depends upon compute context, as follows:  
-* `RxHpcServer` - Allowable types are  `"nodes"` (the default), `"cores"` or `"user"`. A `"nodes"` type means that only one instance of `FUN` is allowed to run at a time on any node (computer). Thus, that instance does not have to compete with other instances for shared resources such as cores, disks, and RAM. A `"cores"` type means that multiple instance may be run on a node, corresponding to the  number of cores on that node, but the number of instances running in parallel will not exceed the number of cores. Specify `"user"` only if you are supplying  your own distributed computing configuration file and want to override all  programatic settings.   
-* `RxInTeradata` - Allowable types are  `"nodes"` (the default) If   `elemType="nodes"` the computation is performed on each AMP of the Teradata platform.   
-* `local or `RxForeachDoPar`` - The `elemType` parameter is ignored.  
+* `RxInTeradata` - Allowable types are  `"nodes"` (the default). If   `elemType="nodes"` the computation is performed on each AMP of the Teradata platform.   
+* `local or `RxForeachDoPar` or `RxSpark` or `RxHadoopMR`` - The `elemType` parameter is ignored.  
   
   
   
@@ -91,7 +90,7 @@ of a "compute context" such as a cluster.
   
   
  ### `execObjects`
- optional character vector specifying additional objects to be  exported to the nodes for this job, or an environment containing these objects.  The specified objects are added to `FUN`'s environment, unless that environment is locked, in which case they are added to the environment in which `FUN` is evaluated. 
+ optional character vector specifying additional objects to be  exported to the nodes for this job, or an environment containing these objects.  The specified objects are added to `FUN`'s environment, unless that environment is locked, in which case they are added to the environment in which `FUN` is evaluated. For purposes of efficiency, this argument should not be used for exporting large data  objects. Passing large data through reference to a shared storage location (e.g., HDFS) is recommended. 
   
   
   
@@ -238,13 +237,6 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
    
   ## Not run:
  
-
-myCluster <- RxHpcServer(
-    headNode = "cluster-head", 
-    shareDir = "\\AllShare\username",
-    revoPath = file.path(defaultRNodePath, "bin", "x64"), 
-    workingDir = "C:\\Users\\username", 
-    wait = TRUE)
 
 ## Run function with no parameters
 rxExec(getwd)

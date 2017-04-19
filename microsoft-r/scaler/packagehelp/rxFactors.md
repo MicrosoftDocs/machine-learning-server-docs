@@ -6,7 +6,7 @@ description: " Recodes a factor variable by mapping one set of factor levels and
 keywords: "RevoScaleR, rxFactors, manip, category" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -5,7 +5,7 @@ title: "How to install and deploy pretrained models with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "04/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -47,5 +47,5 @@ For quickstarts that show how to use pretrained models for  sentiment analysis a
 
 Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-For more information on this error and the possible workarounds, see [Known issues in Microsoft R Server 9.1](rserver-known-issues.md#ml-ensembling).
+For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](rserver-known-issues.md#ml-ensembling).
 

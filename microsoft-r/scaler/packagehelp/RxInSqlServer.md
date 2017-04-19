@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Generate SQL Server In-Database Compute Context" 
-description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server." 
+description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.  Currently only supported in Windows." 
 keywords: "RevoScaleR, RxInSqlServer, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,7 +30,9 @@ ms.custom: ""
  Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
- Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server. 
+ Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.
+
+Currently only supported in Windows. 
  
  ##Usage
 
@@ -109,7 +111,7 @@ ms.custom: ""
   
     
  ### ` ...`
- additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-SQL Server computations. 
+ additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-SQL Server computations. `traceEnabled` and `traceLevel` are deprecated as of MRS 9.0.2 and will be removed from this compute context in the next major release. Please use `rxOptions(traceLevel=7)` to enable run-time tracing in-SQL Server. 
   
    
  
@@ -122,7 +124,9 @@ ms.custom: ""
  
 [RxComputeContext](RxComputeContext.md),
 [RxInSqlServer-class](RxInSqlServer-class.md),
-[RxSqlServerData](RxSqlServerData.md)
+[RxSqlServerData](RxSqlServerData.md),
+[RxInTeradata](RxInTeradata.md),
+[rxOptions](rxOptions.md).
    
  
  ##Examples
@@ -139,14 +143,14 @@ ms.custom: ""
 # Note: for improved security, read connection string from a file, such as
 # connectionString <- readLines("connectionString.txt")
 
-	connectionString <- "Server=MyServer;Database=MyDatabase;UID=MyUser;PWD=MyPassword"
-	sqlQuery <- "WITH nb AS (SELECT 0 AS n UNION ALL SELECT n+1 FROM nb where n < 9) SELECT n1.n+10*n2.n+100*n3.n+1 AS n, ABS(CHECKSUM(NewId())) 
-	rxSummary(
-		formula = ~ .,
-		data = RxSqlServerData(sqlQuery = sqlQuery, connectionString = connectionString),
-		computeContext = RxInSqlServer(connectionString = connectionString)
-		)
-		
+    connectionString <- "Server=MyServer;Database=MyDatabase;UID=MyUser;PWD=MyPassword"
+    sqlQuery <- "WITH nb AS (SELECT 0 AS n UNION ALL SELECT n+1 FROM nb where n < 9) SELECT n1.n+10*n2.n+100*n3.n+1 AS n, ABS(CHECKSUM(NewId())) 
+    rxSummary(
+        formula = ~ .,
+        data = RxSqlServerData(sqlQuery = sqlQuery, connectionString = connectionString),
+        computeContext = RxInSqlServer(connectionString = connectionString)
+        )
+        
 # Sample output:
 # Number of valid observations: 1000 
 # 

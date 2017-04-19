@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Copy a file from the local machine to the working directory of the remote R session." 
-description: " Uploads a file from the local machine and writes it to the working directory of the remote R sesion. This function is often used if a 'data' file needs to be accessed by a script running on the remote R session. " 
+title: "Upload a file from the local machine to the remote R session." 
+description: " Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a 'data' file needs to be accessed by a script running on the remote R session. " 
 keywords: "mrsdeploy, putLocalFile" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #`putLocalFile`: Copy a file from the local machine to the working directory of the remote R session.
+ #`putLocalFile`: Upload a file from the local machine to the remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
 Uploads a file from the local machine and writes it to the working directory of
-the remote R sesion. This function is often used if a 'data' file needs to be accessed
+the remote R session. This function is often used if a 'data' file needs to be accessed
 by a script running on the remote R session.
  
  
@@ -52,6 +52,12 @@ by a script running on the remote R session.
  ### `filename`
  Name of the file to copy. 
   
+ 
+ 
+ ##Details
+ 
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value

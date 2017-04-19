@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Get a list of snapshots for the current user." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+description: " Get a list of all the snapshots on the R server that are available to the current user. " 
 keywords: "mrsdeploy, listSnapshots" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,12 +29,11 @@ ms.custom: ""
  
  #`listSnapshots`: Get a list of snapshots for the current user.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Get a list of all the snapshots on the R server that are available to the current user.
  
  
  ##Usage
@@ -46,7 +45,8 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Details
  
-Get a list of all the snapshots on the R server that are available to the current user.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value

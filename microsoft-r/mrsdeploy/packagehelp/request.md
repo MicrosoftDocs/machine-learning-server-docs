@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "HTTP requests made easy and more fluent around `curl`." 
-description: " HTTP requests made easy and more fluent around `curl`. " 
+title: "HTTP requests made easy and more fluent around curl." 
+description: " HTTP requests made easy and more fluent around curl. " 
 keywords: "mrsdeploy, request" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`request`: HTTP requests made easy and more fluent around `curl`.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  

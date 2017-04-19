@@ -6,7 +6,7 @@ description: "    Transform data from an input data set to an output data set "
 keywords: "RevoScaleR, rxDataStep, manip, file" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -64,7 +64,7 @@ Transform data from an input data set to an output data set
   
     
  ### `outFile`
- a character string specifying the output .xdf file, an  [RxXdfData](RxXdfData.md) object, a [RxOdbcData](RxOdbcData.md) data source, or a [RxTeradata](RxTeradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ a character string specifying the output .xdf file, a  [RxXdfData](RxXdfData.md) object, a [RxHiveData](RxSparkData.md) data source, a  [RxParquetData](RxSparkData.md) data source, a [RxOdbcData](RxOdbcData.md) data source,  or a [RxTeradata](RxTeradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
   
   
     
@@ -84,7 +84,7 @@ Transform data from an input data set to an output data set
   
     
  ### `transforms`
- an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
+ an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. When using function call in the expression, `transformObject` should be used to pass  the function name to remote context. In addition, calling and enclosing environment of the function  are very important if the function uses undefined variable. 
   
   
     
@@ -94,7 +94,7 @@ Transform data from an input data set to an output data set
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. The recommended way to do variable transformation. See [rxTransform](rxTransform.md) for details. 
   
   
     
@@ -255,9 +255,89 @@ and output data sources must be [RxSqlServerData](RxSqlServerData.md).
   rxGetInfo(outputFile)
   
   # Use transforms list with data frame input and output data
+  # Add new columns
   myNewData <- rxDataStep(inData = myData, 
       transforms = list(a = w > 0, b = 100 * z))
   names(myNewData)
+  
+  # Use transformFunc to add new columns
+  myXformFunc <- function(dataList) {
+    dataList$b <- 100 * dataList$z
+    return (dataList)
+  }
+  myNewData <- rxDataStep(inData = myData,
+      transformFunc = myXformFunc)
+  names(myNewData)
+  
+  # Use transforms to remove columns
+  rxDataStep(inData = inputFile, outFile = outputFile,
+      transforms = list(w = NULL), overwrite = TRUE)
+  rxGetInfo(outputFile)
+  
+  # use transformFunc to remove columns
+  xform <- function(dataList) {
+    dataList$w <- NULL
+    return (dataList)
+  }
+  rxDataStep(inData = inputFile, outFile = outputFile,
+      transformFunc = xform, overwrite = TRUE)
+  rxGetInfo(outputFile)
+  
+  # use transform to change data type
+  rxDataStep(inData = inputFile, outFile = outputFile, transformVars = c("x", "y"),
+      transforms = list(x = as.numeric(x), y = as.numeric(y)), overwrite = TRUE)
+  rxGetVarInfo(outputFile)
+  
+  # use transformFunc to change data type
+  myXform <- function(dataList) {
+    dataList <- lapply(dataList, as.numeric)
+    return (dataList)
+  }
+  rxDataStep(inData = inputFile, outFile = outputFile,
+      transformFunc = myXform, overwrite = TRUE)
+  rxGetVarInfo(outputFile)
+  
+  # use transform to create new data
+  rxDataStep(inData = inputFile, outFile = outputFile,
+      transforms = list(maxZ = max(z), minW = min(w), z = NULL, w = NULL),
+      varsToDrop = c("x", "y"), overwrite = TRUE)
+  rxGetVarInfo(outputFile)
+  
+  # use transformFunc to create new data
+  xform <- function(dataList){
+    outList <- list()
+    outList$maxZ <- max(dataList$z)
+    outList$minW <- min(dataList$w)
+    return (outList)
+  }
+  rxDataStep(inData = inputFile, outFile = outputFile,
+      transformFunc = xform, overwrite = TRUE)
+  rxGetVarInfo(outputFile)
+  
+  # add new column by calling function in expression for "transform"
+  # "transform" validate the expression at server, so function name should be passed to 
+  # remote context. R looking up undefined variable in calling environment, dynamic scoping 
+  # should be used to find "const" used in function "myTransform"
+  const <- 10
+  myTransform <- function(x){
+    const <- get("const", parent.frame())
+    x * const
+  }
+  rxDataStep(inData = inputFile, outFile = outputFile,
+             transforms = list(x10 = myTransform(x)), transformObjects = list(myTransform = myTransform, const = const),
+             overwrite = TRUE)
+  rxGetVarInfo(outputFile)
+  
+  # using "transform" and "transformEnvir" to add new columns
+  env <- new.env()
+  env$constant <- 10
+  env$myTransform <- function(x){
+    x * constant
+  }
+  environment(env$myTransform) <- env
+  data <- rxDataStep(inData=inputFile, outFile = outputFile,
+      transforms = list(b = myTransform(x)), transformEnvir = env, overwrite = TRUE)
+  rxGetVarInfo(outputFile)
   
   # Specify which variables to keep in a new data file
   varsToKeep <- c("x", "w", "z")

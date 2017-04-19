@@ -6,7 +6,7 @@ description: " This is the main generator for S4 class RxXdfData, which extends 
 keywords: "RevoScaleR, RxXdfData, XdfData, head.RxXdfData, summary.RxXdfData, tail.RxXdfData, file, connection" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ This is the main generator for S4 class RxXdfData, which extends RxDataSource.
 ```   
   RxXdfData(file, varsToKeep = NULL, varsToDrop = NULL, returnDataFrame = TRUE,
           stringsAsFactors = FALSE, blocksPerRead = rxGetOption("blocksPerRead"),
-          fileSystem = NULL, createCompositeSet = NULL,
+          fileSystem = NULL, createCompositeSet = NULL, createPartitionSet = NULL,
           blocksPerCompositeFile = 3) 
   
  ## S3 method for class `RxXdfData':
@@ -64,7 +64,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
    
     
  ### `file`
- character string specifying the .xdf file. 
+ character string specifying the location of the data. For single Xdf, it is a .xdf file.  For composite Xdf, it is a directory like /tmp/airline. When using distributed compute contexts like `RxSpark`, a directory should be used since those compute contexts always use composite Xdf. 
   
   
     
@@ -99,7 +99,12 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `createCompositeSet`
- logical value or `NULL`. Used only when writing.  If `TRUE`, a composite set of files will be created instead of a single .xdf file. A directory will be created whose name is the same as the .xdf file that would otherwise be created, but with no extension. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdfd files (see `blocksPerCompositeFile` below for determining how many blocks of data will be in each file). In the metadata subdirectory  there is a single .xdfm file, which contains the meta data for all of the  .xdfd files in the  data subdirectory. When the compute context is `RxHadoopMR` a composite set of files is always created. 
+ logical value or `NULL`. Used only when writing.  If `TRUE`, a composite set of files will be created instead of a single .xdf file.  Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdfd files (see `blocksPerCompositeFile` below for determining how many blocks of data will be in each file). In the metadata subdirectory  there is a single .xdfm file, which contains the meta data for all of the  .xdfd files in the  data subdirectory. When the compute context is `RxHadoopMR` or `RxSpark`, a composite  set of files are always created. 
+  
+  
+     
+ ### `createPartitionSet`
+ logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of rxPartition. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see rxPartition for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in rxPartition and [rxGetPartitions](rxGetPartitions.md) 
   
    
      

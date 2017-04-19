@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Remote execution of either R code or an R script." 
-description: " Base function for executing a block of R code or an R script in the remote R session. " 
+description: " Base function for executing a block of R code or an R script in the remote R session " 
 keywords: "mrsdeploy, remoteExecute" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,18 +29,18 @@ ms.custom: ""
  
  #`remoteExecute`: Remote execution of either R code or an R script.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Base function for executing a block of R code or an R script in the remote R session.
+Base function for executing a block of R code or an R script in the remote R session
  
  
  ##Usage
 
 ```   
   remoteExecute(rcode, script = FALSE, inputs = NULL, outputs = NULL,
-    displayPlots = FALSE, writePlots = FALSE)
+    displayPlots = FALSE, writePlots = FALSE, recPlots = FALSE)
  
 ```
  
@@ -49,12 +49,12 @@ Base function for executing a block of R code or an R script in the remote R ses
    
   
  ### `rcode`
- The R code, or an R Script file to be executed. 
+ The R code, or an R Script file to be executed 
   
   
   
  ### `script`
- If `TRUE`, treat the `rcode` parameter as a R script file name. 
+ If `TRUE`, treat the `rcode` parameter as a R script file name 
   
   
   
@@ -64,17 +64,22 @@ Base function for executing a block of R code or an R script in the remote R ses
   
   
  ### `outputs`
- Character vector of the names of the objects to retreive.  Only primitives, vectors and dataframes can be retrieved using this function.  Use [getRemoteObject](getRemoteObject.md)to get any type of R object from the remote session. 
+ Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](getRemoteObject.md)to get any type of R object from the remote session 
   
   
   
  ### `displayPlots`
- If `TRUE`, plots generated during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine. 
+ If `TRUE`, plots generate during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine 
   
   
   
  ### `writePlots`
- If `TRUE`, plots generated during execution are copied to the working directory of the local session. 
+ If `TRUE`, plots generated during execution are copied to the working directory of the local session 
+  
+  
+  
+ ### `recPlots`
+ If `TRUE`, plots will be created using the '`recordPlot`' function in R 
   
  
  
@@ -83,15 +88,15 @@ Base function for executing a block of R code or an R script in the remote R ses
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
 
-The console output will be refreshed at a recurring rate. The default is 5000 milliseconds (5 seconds). 
-By setting the option 'mrsdeploy.console_update', you can override this value (i.e. options(mrsdeploy.console_update=7000).
-Use caution when changing this value to something less than 5000 ms, as it may place an unecessary load on the server.  
+The console output will be refreshed at a recurring rate. the default is 5000 milliseconds (5 seconds). 
+By setting the option 'mrsdeploy.console_update', you can override this value (i.e. options(mrsdeploy.console_update=7000)
+Use caution when changing this value to something less than 5000 ms, as it may place a necessary load on the deployr server.  
 Values less than 1000 will disable refreshing of the console.
  
  
  ##Value
  
-A list containing the results of the execution.
+A list containing the results of the execution
  
  ##See Also
  

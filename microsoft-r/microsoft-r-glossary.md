@@ -234,7 +234,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <div style="margin:15px; margin-bottom:25px;">See <a href="#mrs"><i>Microsoft R Server</i></a></div>
 
 **RevoScaleR**
-<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server R Services, and Microsoft R Client.   <a href="scaler/scaler.md">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client.   <a href="scaler/scaler.md">Learn more…</a></div>
 
 <br>
 
@@ -245,8 +245,8 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 **ScaleR**
 <div style="margin:15px; margin-bottom:25px;">See <i>RevoScaleR</i></div>
 
-**SQL Server R Services**
-<div style="margin:15px; margin-bottom:25px;">A feature included in SQL Server 2016 and after that supports execution of R scripts in T-SQL stored procedures. R Services integrates an R run-time with optimizations in SQL Server, including resource management and data security.</div>
+**SQL Server Machine Learning Services**
+<div style="margin:15px; margin-bottom:25px;">A feature included in SQL Server 2016 as SQL Server R Services and then renamed in SQL Server 2017 when support for Python was added to the already supported R language in T-SQL stored procedures. This product integrates an R run-time with optimizations in SQL Server, including resource management and data security.</div>
 
 <!--
 <br>

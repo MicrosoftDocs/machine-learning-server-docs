@@ -6,7 +6,7 @@ description: " Gets the console output from the various nodes in a non-waiting d
 keywords: "RevoScaleR, rxGetJobOutput, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

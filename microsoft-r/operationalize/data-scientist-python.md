@@ -27,12 +27,12 @@ ms.custom: ""
 
 # Publish and consume Python web services
 
-**Applies to:  SQL Server vNext CTP 2.0 (Public Preview)**
+**Applies to:  SQL Server 2017 CTP 2.0 (Public Preview)**
 
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
 
 >[!IMPORTANT]
->Python web services are available only with Python-enabled installs of SQL Server vNext CTP 2.0 (Public Preview). Expanded platform support in future releases.
+>Python web services are available only with Python-enabled installs of SQL Server 2017 CTP 2.0 (Public Preview). Expanded platform support in future releases.
 
 ## Publish-to-consume workflow
 

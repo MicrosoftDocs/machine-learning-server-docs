@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Load a snapshot from the server into the remote session (workspace and working directory)." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Load a snapshot from the R server into the remote session." 
+description: " Loads the specified snapshot from the R server into the remote session.The workspace is updated with the objects saved in the snapshot, and saved files are restored to the working directory. " 
 keywords: "mrsdeploy, loadSnapshot" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #`loadSnapshot`: Load a snapshot from the server into the remote session (workspace and working directory).
+ #`loadSnapshot`: Load a snapshot from the R server into the remote session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Loads the specified snapshot from the R server into the remote session.The workspace
+is updated with the objects saved in the snapshot, and saved files are restored to the working directory.
  
  
  ##Usage
@@ -55,8 +55,8 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Details
  
-Loads the specified snapshot from the server into the remote session.The workpace
-is updated with the objects saved in the snapshot, and saved files are restored to the working directory.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value

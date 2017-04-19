@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Create a snapshot of the remote session (workspace and working directory)." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Create a snapshot of the remote R session." 
+description: " Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
 keywords: "mrsdeploy, createSnapshot" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #`createSnapshot`: Create a snapshot of the remote session (workspace and working directory).
+ #`createSnapshot`: Create a snapshot of the remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Creates a snapshot of the remote R session and saves it on the server. Both the workspace
+and the files in the working directory are saved.
  
  
  ##Usage
@@ -55,8 +55,8 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Details
  
-Creates a snapshot of the remote session and saves it on the server. Both the workpace
-and the files in the working directory are saved.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value

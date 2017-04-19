@@ -6,7 +6,7 @@ description: " Creates a local compute context object.   This is the main genera
 keywords: "RevoScaleR, RxLocalSeq, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

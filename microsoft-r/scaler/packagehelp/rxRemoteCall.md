@@ -6,7 +6,7 @@ description: "Function that is executed on the master node in a distributed comp
 keywords: "RevoScaleR, rxRemoteCall, datasets" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
