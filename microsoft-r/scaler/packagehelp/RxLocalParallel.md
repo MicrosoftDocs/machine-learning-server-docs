@@ -4,9 +4,9 @@
 title: "Generate Local Parallel Compute Context" 
 description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
 keywords: "RevoScaleR, RxLocalParallel, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`RxLocalParallel`: Generate Local Parallel Compute Context
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

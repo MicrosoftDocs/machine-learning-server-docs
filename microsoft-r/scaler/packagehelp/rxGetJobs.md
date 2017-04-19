@@ -4,9 +4,9 @@
 title: " Get Distributed Computing Jobs " 
 description: " Returns a list of job objects associated with the given compute context  and matching the specified parameters. " 
 keywords: "RevoScaleR, rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInTeradata-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -34,7 +34,7 @@ ms.custom: ""
  
  #`rxGetJobs`:  Get Distributed Computing Jobs 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

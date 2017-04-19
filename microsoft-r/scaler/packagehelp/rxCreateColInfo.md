@@ -4,9 +4,9 @@
 title: " Function to generate a 'colInfo' list from a data source " 
 description: " Generates a `colInfo` list from a data source that can be used in `rxImport` or an `RxDataSource` constructor. " 
 keywords: "RevoScaleR, rxCreateColInfo, file, connection" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxCreateColInfo`:  Function to generate a 'colInfo' list from a data source 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

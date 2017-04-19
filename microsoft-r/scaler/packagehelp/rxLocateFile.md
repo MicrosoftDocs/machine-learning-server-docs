@@ -4,9 +4,9 @@
 title: " Find File on a Given Data Path " 
 description: " Obtain the normalized absolute path to the first occurrence of the specified input file  in the specified set of paths. " 
 keywords: "RevoScaleR, rxLocateFile, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxLocateFile`:  Find File on a Given Data Path 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

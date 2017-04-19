@@ -4,9 +4,9 @@
 title: "Generate SQL Server In-Database Compute Context" 
 description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server." 
 keywords: "RevoScaleR, RxInSqlServer, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`RxInSqlServer`: Generate SQL Server In-Database Compute Context
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server. 

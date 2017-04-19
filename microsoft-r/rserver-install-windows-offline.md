@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Offline install for Microsoft R Server for Windows"
-description: "How to install R Server without an internet connection"
+title: "Offline install for Microsoft R Server 9.x for Windows"
+description: "How to install R Server 9.x without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/09/2017"
+ms.date: "04/06/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,23 +24,38 @@ ms.custom: ""
 
 ---
 
-# Offline installation instructions for R Server for Windows
+# Offline installation instructions for R Server 9.x for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can download files, transfer files to an offline server, manually install each prerequisite, and then install R Server.
+By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
+
+In this release, most components required for R Server installation are embedded, which means fewer prerequisites have to be downloaded in advance. The following components are now included in the Windows installer:
+
+* Microsoft .NET Core 1.1
+* Microsoft MPI 7.1
+* AS OLE DB (SQL Server 2016) provider
+* Microsoft R Open 3.3.3
+* Microsoft Visual C++ 2013 Redistributable
+* Microsoft Visual C++ 2015 Redistributable
+
+## System requirements
+
++ Operating system must be a supported version of Windows on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
+
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
+
++ Disk space must be a minimum of 500 MB.
+
++ .NET Framework 4.5.2 or later. 
 
 <a name="download"><a/>
-## Download prerequisites
+## Download required components
 
-| Component | Version | Download Link |
-|-----------|---------|--------|
-| .NET Framework | 4.5.2 | https://www.microsoft.com/net/download/framework |
-| Microsoft R Open | 3.3.2 | [MRAN web site](https://mran.microsoft.com/download/) |
-| Microsoft AS OLE DB Provider for SQL Server 2016 | 13.0.1601.5 | https://go.microsoft.com/fwlink/?linkid=834405 |
-| Microsoft .NET Core | 1.0.1 | https://go.microsoft.com/fwlink/?linkid=834319 |
-| Microsoft MPI | 7.1.12437.25 | https://go.microsoft.com/fwlink/?linkid=834316 |
-| Microsoft Visual C++ 2013 Redistributable | 12.0.30501.0 | https://go.microsoft.com/fwlink/?linkid=799853 |
-| Microsoft Visual C++ 2015 Redistributable Update 3 | 14.0.24123 | https://www.microsoft.com/en-us/download/details.aspx?id=52685 |
-| SRO_3.3.2.0_1033.cab | none | http://go.microsoft.com/fwlink/?LinkID=834568 |
+Without an internet connection, the following components must be downloaded to a separate device and transferred to the target machine.
+
+| Component | Description | Download Link |
+|-----------|-------------|---------------|
+| SRO_3.3.3.0_1033.cab | Microsoft R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
+| MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
 
 <a name="download"><a/>
 ## Download R Server installer
@@ -53,57 +68,36 @@ Get the zipped RServerSetup installer file from one of the following download si
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-## Check files
-
-After downloading prerequisites and the R Server installer, you should have all of these files:
-
-    vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
-    vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
-    DotnetCore.1.0.1-Runtime-x64.exe`
-    NDP452-KB2901954-Web.exe
-    SQL_AS_OLEDB.msi
-    microsoft-r-open-3.3.2.msi
-    MSMpiSetup.exe
-    SRO_3.3.2.0_1033.cab
-    en_r_server_901_for_windows_X64_9649035.zip ** contains RServerSetup
-
 ## Transfer files
 
-Use a flash drive or another mechanism to transfer files listed above to the offline server. Put all files in the same folder.
+Use a flash drive or another mechanism to transfer the following to the offline server. 
 
-## Install prerequisites
++ SRO_3.3.3.0_1033.cab
++ MLM_9.1.0.0_1033.cab 
++ RServerSetup.exe 
 
-Manually install the prerequisites, prior to unzipping and running RServerSetup. Installation order is important. Begin at the top of list, starting with vcredist_x64 and work your way down. Restarts may be required.
-
-    vcredist_x64.exe ** redistributable for Visual Studio 2013 C++
-    vc_redist.x64.exe ** redistributable for Visual Studio 2015 C++
-    DotnetCore.1.0.1-Runtime-x64.exe`
-    NDP452-KB2901954-Web.exe
-    SQL_AS_OLEDB.msi
-    microsoft-r-open-3.3.2.msi
-    MSMpiSetup.exe
-
-Installation of the .NET Framework requires a restart.
-
-Ignore the .cab and .zip file. You will use them in the next step.
-
-## Unzip setup and copy .cab
-
-1. Right-click en_r_server_901_for_windows_X64_9649035.zip > **Extract All** to unpack the files. Create or choose the folder to store the files.
-2. Copy SRO_3.3.2.0_1033.cab to the subfolder containing RServerSetup.exe. After unpacking the files, the folder containing  RServerSetup.exe is **MRS90Windows**.
-3. Copy SRO_3.3.2.0_1033.cab to the temp folder: \Users\Admin\AppData\Local\Temp\. An easy way to find the Temp directory is to type `%temp%` in the Cortana "Ask me anything" search bar.
-
-Copying the .cab file a second time to the Temp folder is a workaround measure that allows setup to continue. 
-
-There are multiple Temp folders on a Windows computer, so if you get an installation error, it's possible the Temp folder is not the right one. To verify, check the setup logs (RServer_<timestamp>.log) for instances of Temp folders. The Temp folder used for the *default cache directory* is the correct folder for the .cab file.
+Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. RServerSetup.exe can also be placed in the temp folder, but you could also put it in another folder like Downloads.
 
 ## Run RServerSetup
 
-Double-click `RServerSetup.exe` to start the wizard. 
+If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+
+RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
+
+1. Double-click **RServerSetup.exe** to start the wizard.
+2. In **Configure installation**, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
+    + R Server (Standalone)
+    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
+3. In an offline installation scenario, you ware notified if either prerequisite is missing, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
+4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
+5. Optionally, change the home directory for R Server.
+5. At the end of the wizard, click **Install** to run setup.
+
+<sup>1</sup> R Server is licensed as a SQL Server enterprise feature, even though it can be installed independently of SQL Server on a Windows operating system.
 
 ## View log files
 
-Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing %temp% as a Run command or search operation in Windows.
+Post-installation, you can review log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows.
 
 ## Connect and validate
 
@@ -119,9 +113,9 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
-## Configure operationalization
+## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from Microsoft R Server’s deployment and operationalization features, you must [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. It also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## See Also
 
@@ -133,4 +127,4 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 
 [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
 
-[Configure R Server for Operationalization](operationalize/configuration-initial.md)
+[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

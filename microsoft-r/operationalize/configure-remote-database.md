@@ -6,7 +6,7 @@ description: "Configure a remote database for operationalization with Microsoft 
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/22/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Configuring an SQL Server or PostgreSQL Database
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, snapshots, and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
@@ -36,8 +36,8 @@ The database provides internal storage for the sessions, web services, snapshots
 > Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.
 
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
-+ On Windows: SQL Server Professional, Standard, or Express Version 2008 or greater
-+ On Linux: PostgreSQL 9.2 or greater 
++ SQL Server Professional, Standard, or Express Version 2008 or greater on a Windows machine
++ PostgreSQL 9.2 or greater on a Linux machine
 
 > [!Important]
 > Any data that was saved in the default local SQLite database will be lost if you configure a different database.
@@ -55,11 +55,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. Open the external configuration file, `appsettings.json` file. 
-
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+    1. [Open the `appsettings.json` configuration file](admin-configuration-file.md). 
 
     1. Locate the `ConnectionStrings` property block.
 
@@ -68,7 +64,11 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
        + For SQL Server, look for `"postgresql": {`.
 
-    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. For example:
+    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. 
+       >[!WARNING]
+       >You can only have one database enabled at a time. 
+       
+       For example:
        ```
         "ConnectionStrings": {
                 "sqlserver": {

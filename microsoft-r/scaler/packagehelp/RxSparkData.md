@@ -4,9 +4,9 @@
 title: "Generate Hive or Parquet Data Source object" 
 description: " These are constructor for HIVE and Parquet data sources which extend `RxDataSource`. These two data sources can be used only in a `RxSpark` compute context. " 
 keywords: "RevoScaleR, RxSparkData, RxHiveData, RxParquetData" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`RxSparkData`: Generate Hive or Parquet Data Source object
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

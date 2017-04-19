@@ -4,9 +4,9 @@
 title: "Create Spark compute context, connect and disconnect a Spark application" 
 description: " `RxSpark` creates a Spark compute context. `rxSparkConnect` creates the compute context object with `RxSpark` and then immediately starts the remote Spark application.  `rxSparkDisconnect` shuts down the remote Spark application with `rxStopEngine` and switches to a local compute context. All `rx*` function calls after this will run in a local compute context. " 
 keywords: "RevoScaleR, RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`RxSpark`: Create Spark compute context, connect and disconnect a Spark application
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

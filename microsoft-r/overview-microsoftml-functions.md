@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "03/20/2017"
+ms.date: "04/18/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,17 +26,20 @@ ms.custom: ""
 
 # Overview of MicrosoftML functions
 
-The **MicrosoftML** package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as featurization, classification, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
+The **MicrosoftML** package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
 ## Data transforms
 
-The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. One advantage of the transform pipelines is that once you've defined a transform pipeline, you can save the pipeline and apply it to additional data.
+The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. 
 
-- **Concatenate**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
-- **Categorical Hash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
-- **Categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
-- **Select Features**: selects features from the specified variables using one of the two modes: count or mutual information.
-- **Featurize Text**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
+- **concat**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
+- **categoricalHash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
+- **categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
+- **selectFeatures**: selects features from the specified variables using one of the two modes: count or mutual information.
+- **featurizeText**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
+- **featurizeImage**: featurizes an image using the specifies pre-trained deep neural network model. 
+- **getSentiment**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
+- **rxEnsemble**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 ## Machine learning algorithms
 
@@ -83,9 +86,15 @@ The **`rxLogisticRegression()`** algorithm is used to predict the value of a cat
 
 **Tasks supported**: binary and multiclass classification
 
+### Ensemble methods
+The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to provide better predictive performance that the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. 
+
+**Tasks supported**: binary and multiclass classification, regression
+
+
 ## Get help on MicrosoftML functions
 
-Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
+Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md).
 
 To see the **MicrosoftML** functions that can be called from the R console:
 

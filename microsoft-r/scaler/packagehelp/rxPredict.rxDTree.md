@@ -4,9 +4,9 @@
 title: "Prediction for Large Data Classification and Regression Trees" 
 description: "     Calculate predicted or fitted values for a data set from an rxDTree object. " 
 keywords: "RevoScaleR, rxPredict.rxDTree, models, tree, classif, regression, classification" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxPredict.rxDTree`: Prediction for Large Data Classification and Regression Trees
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  
  ##Description

@@ -4,9 +4,9 @@
 title: " Remote calling mechanism for distributed computing on Hadoop MapReduce clusters." 
 description: "Function that is executed by a master process in a Hadoop MapReduce cluster. This function should **not** be called directly by the user. It serves as an internal mechanism for performing remote and distributed R calls on  a Hadoop MapReduce cluster." 
 keywords: "RevoScaleR, rxRemoteHadoopMRCall, datasets" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxRemoteHadoopMRCall`:  Remote calling mechanism for distributed computing on Hadoop MapReduce clusters.
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  Function that is executed by a master process in a Hadoop MapReduce cluster.

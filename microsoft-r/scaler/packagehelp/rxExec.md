@@ -2,11 +2,11 @@
  
 # required metadata 
 title: " Run A Function on Multiple Nodes or Cores " 
-description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a compute context such as a cluster. " 
+description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a "compute context" such as a cluster. " 
 keywords: "RevoScaleR, rxExec, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxExec`:  Run A Function on Multiple Nodes or Cores 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

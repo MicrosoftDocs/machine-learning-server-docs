@@ -4,9 +4,9 @@
 title: " Converts valid computer names into valid R variable names. " 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
 keywords: "RevoScaleR, rxMakeRNodeNames, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxMakeRNodeNames`:  Converts valid computer names into valid R variable names. 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

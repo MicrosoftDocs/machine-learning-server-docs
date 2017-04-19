@@ -3,10 +3,10 @@
 # required metadata 
 title: "Fast Tree" 
 description: " Machine Learning Fast Tree " 
-keywords: ", rxFastTrees, classification, models, regression" 
+keywords: "MicrosoftML, rxFastTrees, classification, models, regression" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`rxFastTrees`: Fast Tree 
+ #`rxFastTrees`: Fast Tree
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Machine Learning Fast Tree
@@ -46,7 +49,8 @@ Machine Learning Fast Tree
     transformVars = NULL, transformPackages = NULL, transformEnvir = NULL,
     blocksPerRead = rxGetOption("blocksPerRead"),
     reportProgress = rxGetOption("reportProgress"), verbose = 2,
-    computeContext = rxGetOption("computeContext"), ...)
+    computeContext = rxGetOption("computeContext"),
+    ensemble = ensembleControl(), ...)
  
 ```
  
@@ -204,6 +208,11 @@ Machine Learning Fast Tree
   
   
   
+ ### `ensemble`
+ Control parameters for ensembling. 
+  
+  
+  
  ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
@@ -274,7 +283,7 @@ classification.
  
  ##Note
  
-This algorithm will always attempt to load the entire dataset into
+This algorithm is multi-threaded and will always attempt to load the entire dataset into
 memory.
  
  
@@ -296,8 +305,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastForest](rxFastForest.md), [rxFastLinear](rxFastLinear.md),
-[rxLogisticRegression](LogisticRegression.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md), [featurizeText](featurizeText.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
 [categorical](categorical.md), [categoricalHash](categoricalHash.md),
 [rxPredict.mlModel](rxPredict.md).
    
@@ -345,7 +354,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = fastTreeScoreDF)
  
 ```
- 
  
  
  

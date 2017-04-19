@@ -6,7 +6,7 @@ description: "Learn how to work with R Server on Linux by using a virtual machin
 keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "08/30/2016"
+ms.date: "12/30/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

@@ -26,6 +26,8 @@ ms.custom: ""
 
 # mrsdeploy functions
 
+**Applies to:  Microsoft R Server 9.x**
+
 The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
@@ -36,19 +38,19 @@ This topic is a high-level description of package functionality. These functions
 
 For remote execution, participating nodes can be either of the following configurations:
 
-+ Two machines running R Server 9.0.1, even if on different supported platforms, such as one Linux and one Windows.
-+ One machine running R Client 3.3.2 and one machine running R Server 9.0.1, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
++ Two machines running the same version of R Server (v9+), even if on different supported platforms, such as one Linux and one Windows.
++ One machine running R Client 3.3.2 and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
 
 The requirements for remote execution include:
 
 + An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../r-client-get-started.md). 
-+ [Authenticated access](../operationalize/security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../operationalize/configuration-initial.md).
++ [Authenticated access](../operationalize/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../operationalize/configuration-initial.md).
 
 <a name="use-mrsdeploy"></a>
 
 ## How to use mrsdeploy
 
-**The `mrsdeploy` package can only be used once Microsoft R Server has been configured for operationalization**.  For more information, see [Configuring R Server for Operationalization](../operationalize/configuration-initial.md).
+**The `mrsdeploy` package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../operationalize/configuration-initial.md).
 
 + On R Client, the `mrsdeploy` package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 
@@ -104,12 +106,12 @@ Use these functions to indicate whether the payload is a code block or script.
 |`putLocalFile` |Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a data file needs to be accessed by a script running on the remote R session. |
 |`getRemoteFile` |Downloads the file from the working directory of the remote R session into the working directory of the local R session. |
 |`deleteRemoteFile` |Deletes the file from the working directory of the remote R session. |
-|`putLocalObject` |Puts an object from the workspace of the local R session and loads it into the workspace of the remote R session. |
 
 #### Object functions
 
 |Function | Description |
 |---------|---------|
+|`putLocalObject` |Puts an object from the workspace of the local R session and loads it into the workspace of the remote R session. |
 |`getRemoteObject` |Gets an object from the workspace of the remote R session and loads it into the workspace of the local R session. |
 |`putLocalWorkspace`|Takes all objects from the local R session and loads them into the remote R session. |
 |`getRemoteWorkspace`|Takes all objects from the remote R session and loads them into the local R session. |
@@ -159,6 +161,8 @@ After you are logged in to a remote server, you can publish a web service or iss
 + [Remote Execution](../operationalize/remote-execution.md)
 
 + [Web Service](../operationalize/data-scientist-manage-services.md)
+
++ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 
 ## See also
 

@@ -4,9 +4,9 @@
 title: "Split a Single Data Set into Multiple Sets" 
 description: "    Split an input .xdf file or data frame into multiple .xdf files or a list of data frames. " 
 keywords: "RevoScaleR, rxSplitXdf, rxSplit, manip, file" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxSplitXdf`: Split a Single Data Set into Multiple Sets
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

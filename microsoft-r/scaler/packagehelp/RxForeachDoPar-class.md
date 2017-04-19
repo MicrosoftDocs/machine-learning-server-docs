@@ -4,9 +4,9 @@
 title: "Class RxForeachDoPar" 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
 keywords: "RevoScaleR, RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`RxForeachDoPar-class`: Class RxForeachDoPar
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

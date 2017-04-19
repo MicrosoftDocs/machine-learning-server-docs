@@ -4,9 +4,9 @@
 title: "Cross Tabulation" 
 description: " Use `rxCube` to create efficiently represented contingency tables from cross-classifying factors using a formula interface. It performs equivalent calculations to the `rxCrossTabs` function, but returns its results in a different way. " 
 keywords: "RevoScaleR, rxCube, print.rxCube, summary.rxCube, as.data.frame.rxCube, subset.rxCube, [.rxCube, category, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,7 +32,7 @@ ms.custom: ""
  
  #`rxCube`: Cross Tabulation
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Troubleshooting and Diagnostics - Operationalization  | Microsoft R Server Docs"
-description: "Troubleshooting and Diagnostic for Operationalization of R Analytics with Microsoft R Server"
+title: "Troubleshooting and Diagnostics | Microsoft R Server Docs"
+description: "Troubleshooting and Diagnostic Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/15/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Diagnostics & Troubleshooting of R Server's Operationalization
+# Diagnostics & Troubleshooting
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
-You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
+You can assess the state and health of your web and compute node environment with the set of diagnostic tests found in this Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
 
 The set of diagnostic tests include:
@@ -75,18 +75,43 @@ The set of diagnostic tests include:
 
 <a name="logs"></a>
 
-## Log Files
+## Log files
 
 Review the log and configuration files for any component that was identified as experiencing issues. The [logging level](#loglevel) can be changed to capture more or less information.
 
-**Table: Path to log files by node and operating system**
+### Windows logs path
 
-|Operating System|Path on Web Node|Path on Compute Node|
-|----------------|--------|------------|
-|Windows|&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\logs |&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
-|Linux|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs |/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs| 
+The logs can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
 
-*<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+|Node|Path on version 9.1|
+|----|------------|
+|Web|<MRS_home>\o16n\Microsoft.RServer.WebNode\logs|
+|Compute|<MRS_home>\o16n\Microsoft.RServer.ComputeNode\logs|
+
+<br>
+
+|Node|Path on version 9.0|
+|----|------------|
+|Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs|
+|Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
+
+
+### Linux logs path
+
+The logs can be found here: 
+
+
+|Node|Path on version 9.1|
+|----|------------|
+|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.WebNode/logs|
+|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.ComputeNode/logs|
+
+<br>
+
+|Node|Path on version 9.0|
+|----|------------|
+|Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs|
+|Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs|
 
 
 > If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
@@ -112,14 +137,7 @@ The following logging levels are available:
 
 **To update the logging level:**
 
-   1. On each compute node AND each web node, open the `appsettings.json` external JSON configuration file.
-
-      |`appsettings.json`|Path on Web Node|Path on Compute Node|
-      |----------------|--------|------------|
-      |Windows|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.WebAPI\ </small>|<small>&lt;MRS_Home>\deployr\Microsoft.DeployR.Server.BackEnd\</small>|
-      |Linux|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/ </small>|<small>/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/</small>|  
-
-      *<small> where `<MRS_home>` is the path to the Microsoft R Server installation directory on the compute node. To find this path, enter `normalizePath(R.home())` in your R console.</small>
+   1. On each compute node AND each web node, [open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. Search for the section starting with `"Logging": {`
 
@@ -160,7 +178,7 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 ### “Cannot establish connection with the web node” Error
 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Verify the following:
-+ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Operationalization Administration](admin-utility.md#launch)
++ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
 + Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](admin-utility.md#startstop)
 
@@ -192,3 +210,9 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
 If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](security-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
+### Configuration didn't restore after upgrade
+
+If you followed the upgrade instructions but your configuration did not persist, then put the backed up version of the appsettings.json file under the following directories and reinstall R Server 9.1 again:
+   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+
+   + On Linux: `/etc/deployr/current`

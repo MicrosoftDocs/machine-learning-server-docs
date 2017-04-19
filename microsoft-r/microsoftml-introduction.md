@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "03/20/2016"
+ms.date: "04/18/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,21 +26,9 @@ ms.custom: ""
 
 # Introduction to MicrosoftML
 
-**MicrosoftML** is a new package for Microsoft R Server that adds state-of-the-art algorithms and data transforms to Microsoft R Server functionality. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R Server brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. The **MicrosoftML** package is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**.
+**MicrosoftML** is a package that adds state-of-the-art machine learning algorithms and data transforms to **Microsoft R Server**. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
 
-MicrosoftML adds algorithms and transforms that are used by product teams across Microsoft. This brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data.  
-
-
-## What’s new?
-
-MicrosoftML supports new end-to-end scenarios that include new features and functionality. You can now:
--	Create text classification models for problems such as sentiment analysis and support ticket classification.
--	Train deep neural nets with GPU acceleration in order to solve complex problems such as retail image classification and handwriting analysis.
--	Work with high-dimensional categorical data for scenarios like online advertising click-through prediction.
--	Solve many other common machine learning tasks such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
-- Train models 2x faster than logistic regression with the Fast Linear Algorithm (SDCA).
-- Train multilayer custom nets on GPUs up to 8x faster with GPU acceleration for Neural Nets.
-- Reduce training time up to 10x while still retaining model accuracy using feature selection.
+The **MicrosoftML** package brings new machine learning functionality with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data. The MicrosoftML package is installed with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services**.
 
 
 ## Data transforms
@@ -52,7 +40,8 @@ The **MicrosoftML package** provides a machine learning transform pipelines that
 - **`categorical()`**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
 - **`selectFeatures()`**: selects features from the specified variables using one of the two modes: count or mutual information.
 - **`featurizeText()`**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF.
-
+- **`featurizeImage()`**: featurizes an image using the specified pre-trained deep neural network model. Available only on Microsoft R 9.1.0 and later.
+- **`getSentiment()`**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
 
 ## Machine learning algorithms
 
@@ -66,6 +55,7 @@ Algorithm | ML task supported | Scalability | Application Examples
 **`rxFastForest()`** <br>Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
 **`rxNeuralNet()`** <br>Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
 **`rxLogisticRegression()`** <br>Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
+- **`rxEnsemble()`**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
 For more information, see [MicrosoftML functions](overview-microsoftml-functions.md) For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
 
@@ -73,7 +63,13 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## Getting started with MicrosoftML
 
-MicrosoftML is currently available in **Microsoft R Server for Windows** and in the **SQL Server vNext**. For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
+MicrosoftML is currently available on various platforms in **Microsoft R Server 9.1.0 and 9.0.1** and in the **SQL Server R Services CTP2**. 
+
+For additional information, see [Microsoft R Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started) and [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
+
+MicrosoftML functions are provided through the **MicrosoftML** package which is installed in the freely available [Microsoft R Client](r-client.md) and in the commercial product [Microsoft R Server](rserver.md).
+
+For a list  of these platforms, see the [Platform availability](microsoftml-get-started.md#platform-availability) section in the getting started topic.
 
 
 ## What's next?
@@ -84,7 +80,7 @@ MicrosoftML is currently available in **Microsoft R Server for Windows** and in 
 
 [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 
-[MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md) for references documentation for the key algorithms and transforms in the MicrosoftML package.
+[MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for reference documentation of the algorithms and transforms in the package.
 
 [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 

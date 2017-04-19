@@ -2,11 +2,11 @@
 
 # required metadata
 title: "R Execution Security Considerations | Microsoft R Server Docs"
-description: "R Execution Security Considerations for Operationalization with Microsoft R Server"
+description: "R Execution Security Considerations when operationalizing analytics with Microsoft R Server"
 keywords: "RServe; deployr-rserve"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,26 +29,28 @@ ms.custom: ""
 
 `deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
 
-This forked version of RServe is the R execution component for the operationalization compute node for Microsoft R Server. It acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
+This forked version of RServe is the R execution component behind the compute node for Microsoft R Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own pool of R shells.  
+
+This RServe fork acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
 
 >[!IMPORTANT]
->Microsoft R Server's operationalization feature is not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
+>Microsoft R Server's web and compute nodes are not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
 
 ## The Execution Context
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the `system` function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
-R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the operationalization web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the operationalization compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
+R Server provides various [API calls](api.md) that permit the execution of R scripts and R code. All authentication takes place on the web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
 >[!Important]
->The operationalization compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process.
+>The compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process.
 >
 >However, there exist several vulnerabilities of which you should be aware. They are:
 >
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
 
-If your operationalization configuration requires additional compute capacity, [additional compute nodes](configure-enterprise.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities.
+If your configuration requires additional compute capacity, [additional compute nodes](configure-enterprise.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities.
 
 <a name="isolation"></a>
 

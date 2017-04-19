@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Token Management for Operationalization API Requests | Microsoft R Server Docs"
-description: "Token Management for Operationalization API Requests with Microsoft R Server"
+title: "Token Management for API Requests | Microsoft R Server Docs"
+description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,11 +27,11 @@ ms.custom: ""
 
 # Access Token Management for API Requests
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the `POST /login HTTP/1.1` API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
 
 <br>
 
@@ -54,7 +54,7 @@ Tokens can be generated in one of two ways:
 
 + If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
-[Learn more about authentication methods for operationalization...](security-authentication.md)
+[Learn more about these authentication methods.](security-authentication.md)
 
 #### Example: Token creation request 
 
@@ -117,14 +117,13 @@ Example HTTP header for publishing web service:
      ...
 ```
 
-
 ## Token Renewal
 
 A valid bearer token (with active `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
 
 The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days).  After the `access_token` expires, an active `refresh_token` can be used to get a new `access_token` / `refresh_token` pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  
 
-Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#refresh-user-access-token)  to refresh a token. 
+Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token)  to refresh a token. 
 
 #### Example: Refresh access_token
 
@@ -161,7 +160,7 @@ A `refresh_token` should be revoked:
 + If a user is no longer permitted to make requests on the API, or 
 + If the `access_token` or `refresh_token` have been compromised.
 
-Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/9.0.1/?tags=User#delete-user-access-token)  to revoke a token. 
+Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#delete-user-access-token)  to revoke a token. 
 
 #### Example: Revoke token
 

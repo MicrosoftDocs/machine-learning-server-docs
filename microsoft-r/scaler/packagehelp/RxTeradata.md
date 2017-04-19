@@ -4,9 +4,9 @@
 title: "Generate Teradata Data Source Object" 
 description: " This is the main generator for S4 class RxTeradata, which extends RxDataSource. " 
 keywords: "RevoScaleR, RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`RxTeradata`: Generate Teradata Data Source Object
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

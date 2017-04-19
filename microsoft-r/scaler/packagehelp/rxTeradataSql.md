@@ -4,9 +4,9 @@
 title: " rxTeradataSql " 
 description: " Execute an arbitrary SQL statement that does not return data in a Teradata data base. " 
 keywords: "RevoScaleR, rxTeradataSql, rxTeradataTableExists, rxTeradataDropTable, file" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`rxTeradataSql`:  rxTeradataSql 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

@@ -4,9 +4,9 @@
 title: "Remove Packages from Compute Context" 
 description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Removes installed packages from a compute context. " 
 keywords: "RevoScaleR, rxRemovePackages, remove, uninstall, packages, sql" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxRemovePackages`: Remove Packages from Compute Context
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

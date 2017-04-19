@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Microsoft R Server release notes"
-description: "Readme file for Microsoft R Server release, documenting known issues, bug fixes, and deprecation notificiations."
+title: "Deprecated, discontinued, or changed features in R Server"
+description: "Notifications about deprecated and discontinued features, packages, and functions in Microsoft R packages."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/04/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,16 +23,40 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-#R Server release notes (Microsoft R)
+# Deprecated, discontinued, or changed features in Microsoft R Server
 
-This article documents the known issues, bug fixes, and notifications about status changes to function libraries, such as deprecated and discontinued functions in RevoScaleR.
+This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in RevoScaleR.
 
-**Related Documents**
+## Microsoft R Server 9.1.0
 
-+ For feature announcements, see [What's new in R Server](../rserver-whats-new.md).
-+ For Microsoft R Client, see [Release notes for R Client](r-client-notes.md).
-+ For SQL Server R Services, see [What's new in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
+Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md) and [Known issues](../rserver-known-issues.md).
 
+### RevoScaleR Package
+
+|Function| Status | Replacement |
+|-----------|----|--------|
+|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
+|`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
+|`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
+|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
+|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
+
+For more information, see [discontinued RevoScaleR functions](../scaler/packagehelp/RevoScaleR-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
+
+### RevoMods Package
+
+In **RevoMods** functions are discontinued (all were intended for use solely by the R Productivity Environment discontinued in Microsoft R Server 8.0.3):
+
++ `?` (use the standard R `?`, previously masked)
++ `q` (use the standard R `q` function, previously masked)
++ `quit` (use the standard R `quit` function, previously masked)
++ `revoPlot` (use the standard R `plot` function)
++ `revoSource` (use the standard R `source` function)
+ 
 ## Microsoft R Server 9.0.1
 
 ###Changed in this release
@@ -40,7 +64,7 @@ This article documents the known issues, bug fixes, and notifications about stat
 + R Server is built on Microsoft R Open 3.3.2 (R 3.3.2).
 + R packages added to MRO include `curl`, `Jsonlite`, and `R6`.
 + R packages added to R Server include `mrupdate` (for automated update checks) and `CompatibilityAPI` (to check for feature compatibility between versions).
-+ DeployR (now referred to as Operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
++ DeployR (now referred to as operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
 
 ###Deprecated or Discontinued
 

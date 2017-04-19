@@ -6,7 +6,7 @@ description: "Learn how to work with R Server on Linux by using a virtual machin
 keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "08/30/2016"
+ms.date: "12/30/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -61,7 +61,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride)
-    + Configure R Server for [operationalization](#o16n) so it acts as a deployment server and host analytic web services. 
+    + Configure R Server to [operationalize your analytics](#o16n) so it acts as a deployment server and host analytic web services. 
 
 <a name="connect"></a>
 
@@ -117,7 +117,7 @@ Some related articles are:
 
 ## Operationalize R Analytics with R Server on the VM
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can [configure R Server for operationalization](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+In order to operationalize your analytics with Microsoft R Server, you can [configure R Server](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
 
 
 ## Access Data in an Azure Storage Account

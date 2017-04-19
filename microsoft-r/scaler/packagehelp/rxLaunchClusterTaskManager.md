@@ -4,9 +4,9 @@
 title: " Launches the job management UI for a compute context. " 
 description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxHpcServer compute contexts. " 
 keywords: "RevoScaleR, rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, rxLaunchClusterJobManager,RxHpcServer-method, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ ms.custom: ""
  
  #`rxLaunchClusterJobManager`:  Launches the job management UI for a compute context. 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

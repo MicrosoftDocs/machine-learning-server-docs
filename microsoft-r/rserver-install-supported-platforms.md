@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/06/2017"
+ms.date: "04/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,12 +27,32 @@ ms.custom: ""
 
 This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R Server, Revolution R Server, and Revolution R Workstation.
 
+> [!Note]
+> 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+
+## Microsoft R Server 9.1.0
+
+All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and require 64-bit operating systems with x86-compatible Intel architecture.
+
+| SKU | Platforms |
+|-----|-----------|
+| **R Server for Hadoop** | **Hadoop <sup> 1</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (<sup>2</sup> ), Ubuntu 14.04 (<sup>2</sup> )<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
+| **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br/>SUSE Linux Enterprise Server 11 (SLES11)<br/>Ubuntu 14.04 and 16.04|
+| **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
+| **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
+
+Hardware and software requirements for SQL Server R Services and R Server (Standalone) in SQL Server can be found in[SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
+
+<sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for R Server on CDH, HDP, and MapR.
+
+<sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1.0 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1.0 on CDH](rserver-install-cloudera.md).
+
+<sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
+
 ## Microsoft R Server 9.0.1
 
 This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
 
-> [!Note]
-> 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 **Microsoft R Server (Windows or Linux)**
 

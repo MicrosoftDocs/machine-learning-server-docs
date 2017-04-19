@@ -4,9 +4,9 @@
 title: "Utility Functions for rxDForest" 
 description: "     Utility Functions for rxDForest. " 
 keywords: "RevoScaleR, rxDForestUtils, rxVarImpPlot, rxLeafSize, rxTreeDepth, rxTreeSize, rxVarUsed, rxGetTree, models, tree, classif, regression, classification" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
  #`rxDForestUtils`: Utility Functions for rxDForest
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  
  ##Description

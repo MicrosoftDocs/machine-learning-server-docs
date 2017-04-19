@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Enterprise-Grade Security: SSL / TLS 1.2 | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 for Operationalization with Microsoft R Server"
+description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,9 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Connection Security (SSL/TLS) for Operationalization
+# Connection Security (SSL/TLS)
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
 
@@ -53,16 +53,18 @@ This section walks you through the steps for securing the connections between th
 
 #### Windows: Using Your Default ASP .NET Core Web Server to Encrypt Traffic
 
-1. On each machine hosting the web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
-   > Make sure the name of the certificate matches the domain name of the web node URL. 
-   >
-   > Also, take note of the `Subject` name of the certificate as you'll need this info later.
+1. On each machine hosting the web node, install and configure the certificate in the certificate store. For example, if you launch "Manage Computer Certificates" from your Windows Start menu, you can:
 
-1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
+   1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+   1. Make sure the name of the certificate matches the domain name of the web node URL. 
+   1. Set the private key permissions. 
+      1. Right click on the certificate and choose Manage private certificate from the menu.
+      1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
+      ![Group](../media/o16n/security-http-addgroup.png) 
+       
+   1. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
 1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -70,7 +72,7 @@ This section walks you through the steps for securing the connections between th
    ```
    {
        "Kestrel": {
-           "Port": <https-port-number>,
+           "Port": 443,
            "HttpsEnabled": true,
            "HttpsCertificate": {
                "StoreName": "My",        
@@ -82,6 +84,8 @@ This section walks you through the steps for securing the connections between th
 
 1. Close and save the file.
 
+1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
+
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
 1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
@@ -90,30 +94,34 @@ This section walks you through the steps for securing the connections between th
 
 > Make sure the name of the certificate matches the domain name of the web node URL. 
 
-1. On each machine hosting a web node, install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+On each machine hosting a web node:
+1. Open the certificate store:
+
+   1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+   1. Make sure the name of the certificate matches the domain name of the web node URL. 
+   1. Set the private key permissions. 
+      1. Right click on the certificate and choose Manage private certificate from the menu.
+      1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
+      ![Group](../media/o16n/security-http-addgroup.png) 
 <a name="iis"></a>
 
 1. Launch IIS.
 
-1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+   1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+   1. Click on **Bindings** under the **Actions** pane on the right.
+   1. Click on **Add**.
+   1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
+   1. Select the SSL certificate you installed previously. 
+   1. Click **OK** to create the new HTTPS binding.
+   1. Back in the **Connections** pane, select the website name.
+   1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
+   1. Select the checkbox to **Require SSL** and require a client certificate.
 
-1. Click on **Bindings** under the **Actions** pane on the right.
-
-1. Click on **Add**.
-
-1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
-
-1. Select the SSL certificate you installed previously. 
-
-1. Click **OK** to create the new HTTPS binding.
-
-1. Back in the **Connections** pane, select the website name.
-
-1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
-
-1. Select the checkbox to **Require SSL** and require a client certificate.
+1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
 1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+
+1. Repeat on every web node.
 
 > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
 <br />
@@ -160,13 +168,15 @@ On each Linux machine hosting a web node:
 
 1. Restart NGINX service.
 
+1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and R Server. 
+
 1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
 
 1. Repeat on each web node.
 
 1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
-Now, you can access R Server's operationalization services securely on https://<webnode-server-name> from your client applications.
+Now, you can access R Server to operationalize analytics securely on https://<webnode-server-name> from your client applications.
  
 
 <br />
@@ -192,11 +202,7 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Update the external JSON configuration file, `appsettings.json` to configure the HTTPS port for the compute node:
-   1. Open the `appsettings.json` configuration file.
-
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -281,8 +287,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Log into each web node machine.
 
-   1. On the `appsettings.json` file using the following command:
-      ```sudo vi /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/appsettings.json```
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
       ```
@@ -316,11 +321,7 @@ This section walks you through the steps for authenticating the web node with th
    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   1. Open the `appsettings.json` configuration file to configure the HTTPS port for the web node.
-
-       + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-       + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
@@ -343,7 +344,7 @@ This section walks you through the steps for authenticating the web node with th
 1. **On each compute node:**
     > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _private_ key.
 
-   1. Open the external JSON configuration file, `appsettings.json` file.
+   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

@@ -3,10 +3,10 @@
 # required metadata 
 title: "Score using a Microsoft R Machine Learning model" 
 description: " Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " 
-keywords: ", rxPredict.mlModel, manip" 
+keywords: "MicrosoftML, rxPredict.mlModel, manip" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "03/13/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,10 @@ ms.custom: ""
  
  
  
- #`rxPredict.mlModel`: Score using a Microsoft R Machine Learning model 
+ #`rxPredict.mlModel`: Score using a Microsoft R Machine Learning model
+
+ Applies to version 1.3.0 of package MicrosoftML.
+ 
  ##Description
  
 Reports per-instance scoring results in a data frame or RevoScaleR data source
@@ -53,7 +56,7 @@ rxPredict  (modelObject, data, outData = NULL,
    
   
  ### `modelObject`
- A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxFastTrees.md) or [rxLogisticRegression](LogisticRegression.md). 
+ A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxFastTrees.md) or [rxLogisticRegression](rxLogisticRegression.md). 
   
   
   
@@ -68,12 +71,12 @@ rxPredict  (modelObject, data, outData = NULL,
   
   
  ### `writeModelVars`
- If `TRUE`, variables in the model are written to the output data set in addition to the scoring variables. If variables from the input data set are transformed in the model, the transformed variables are also included. 
+ If `TRUE`, variables in the model are written to the output data set in addition to the scoring variables. If variables from the input data set are transformed in the model, the transformed variables are also included. The default value is `FALSE`. 
   
   
   
  ### `extraVarsToWrite`
- `NULL` or character vector of additional variables names from the input data to include in the `outData`. If `writeModelVars` is `TRUE`, model variables are included as well. 
+ `NULL` or character vector of additional variables names from the input data to include in the `outData`. If `writeModelVars` is `TRUE`, model variables are included as well. The default value is `NULL`. 
   
   
   
@@ -83,7 +86,7 @@ rxPredict  (modelObject, data, outData = NULL,
   
   
  ### `overwrite`
- If `TRUE`, an existing `outData` is overwritten; if `FALSE` an existing `outData` is not overwritten. 
+ If `TRUE`, an existing `outData` is overwritten; if `FALSE` an existing `outData` is not overwritten. The default  value is `FALSE`. 
   
   
   
@@ -108,7 +111,7 @@ rxPredict  (modelObject, data, outData = NULL,
   
   
  ### `verbose`
- An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
+ An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information.  The default value is `1`. 
   
   
   
@@ -151,8 +154,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxLogisticRegression](LogisticRegression.md), [rxNeuralNet](NeuralNet.md),
-[rxOneClassSvm](OneClassSvm.md).
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md).
    
  ##Examples
 
@@ -198,6 +201,5 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   file.remove(xdfOut)
  
 ```
- 
  
  

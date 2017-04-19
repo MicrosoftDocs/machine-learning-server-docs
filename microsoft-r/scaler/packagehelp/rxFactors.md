@@ -4,9 +4,9 @@
 title: " Factor Variable Recoding " 
 description: " Recodes a factor variable by mapping one set of factor levels and indices to a new set. Can also be used to convert non-factor variable into a factor. " 
 keywords: "RevoScaleR, rxFactors, manip, category" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`rxFactors`:  Factor Variable Recoding 
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

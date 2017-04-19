@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization APIs | Microsoft R Server Docs"
-description: "Operationalization APIs for Microsoft R Server"
+title: "Get Started for Application Developers  | Microsoft R Server Docs"
+description: "Get Started for Application Developers for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Get Started for Application Developers 
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine readable representation of a RESTful API that enables support for interactive documentation, client SDK generation and discoverability.
 
@@ -45,7 +45,7 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 1. Install a Swagger code generator on your local machine. 
 
-   Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Visual Studio or chocolatey) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
+   Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
    ![One-box configuration](../media/o16n/app-dev-autorest.png)
 
@@ -53,11 +53,11 @@ To access these RESTful APIs outside of R, use a Swagger code tool to generate a
 
 ### Get the Swagger File
 
-To simplify the integration, R Server provides several [Swagger templates](http://swagger.io/) each defining the list of resources that are available in the REST API and the operations that can be called on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/9.0.1/) in `rserver-swagger-9.0.1.json`. Additionally, another unique Swagger-based JSON file is also generated for each and every web service version that is published.  
+To simplify the integration, R Server provides several Swagger templates each defining the list of resources that are available in the REST API and the operations that can be called on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/) in `rserver-swagger-<version>.json`, where <version> is the 3-digit R Server version number. Additionally, another unique Swagger-based JSON file is also generated for each and every web service version that is published.  
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|[Download](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json) `rserver-swagger-9.0.1.json`, which contains the set of core operationalization APIs.
+Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
 Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](data-scientist-manage-services.md#swagger-app-dev)
 
 
@@ -65,8 +65,9 @@ Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.jso
 
 To build a client library, run the file through the Swagger code generator, and specify the language you want. If you were using AutoRest to generate a C# client library, it might look like this:
 ```
-AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace MyNamespace
+AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-<version>.json -Namespace MyNamespace
 ```
+where `<version>` is the 3-digit R Server version number
 
 You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
@@ -76,10 +77,9 @@ You can now provide some custom headers and make other changes before using the 
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every since call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
 
-Before you interact with the core APIs, first authenticate and get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization:
-
+Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
 
 + **Azure Active Directory (AAD)**
 
@@ -149,17 +149,17 @@ After your client library has been generated and you've build the authentication
 
 ## Example: Core Client Library from Swagger (in CSharp)
 
-This example shows how you can use the `rserver-9.0.1.json` swagger file to build a client library to interact with the core operationalization APIs from your application.  
+This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json` where <version> is the R Server product version.
 
-Build and use a core client library from swagger in CSharp and Azure Active Directory authentication:
+Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. [Download `rserver-swagger-9.0.1.json`](https://microsoft.github.io/deployr-api-docs/9.0.1/swagger/rserver-swagger-9.0.1.json).
+1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/swagger/9.1.0/rserver-swagger-9.1.0.json.
 
-1. Build the statically generated client library files for CSharp from the `rserver-9.0.1.json` swagger. 
+1. Build the statically generated client library files for CSharp from the `rserver-swagger-9.1.0.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
 
    ```
-   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-9.0.1.json -Namespace IO.Swagger.Client
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-9.1.0.json -Namespace IO.Swagger.Client
    ```
 
 1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 

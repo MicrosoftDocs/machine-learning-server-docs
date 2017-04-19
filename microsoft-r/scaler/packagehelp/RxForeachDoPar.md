@@ -4,9 +4,9 @@
 title: "Generate RxForeachDoPar Compute Context" 
 description: " Creates a compute context object using the registered `foreach` parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
 keywords: "RevoScaleR, RxForeachDoPar, IO" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #`RxForeachDoPar`: Generate RxForeachDoPar Compute Context
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

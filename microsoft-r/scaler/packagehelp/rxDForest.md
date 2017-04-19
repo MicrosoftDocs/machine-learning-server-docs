@@ -4,9 +4,9 @@
 title: "Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
 description: "     Fit classification and regression decision forests on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "RevoScaleR, rxDForest, plot.rxDForest, print.rxDForest, models, tree, classif, regression, classification" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`rxDForest`: Parallel External Memory Algorithm for Classification and Regression Decision Forests
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  
  ##Description

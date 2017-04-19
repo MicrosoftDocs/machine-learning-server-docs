@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization Administration Utility | Microsoft R Server Docs"
+title: "Administration Utility | Microsoft R Server Docs"
 description: "Operationalization of R Analytics with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "3/15/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,9 +25,9 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Server Operationalization Administration
+# Administration utility for operationalizing analytics with R Server
 
-**Applies to:  Microsoft R Server 9.0.1**
+**Applies to:  Microsoft R Server 9.x**
 
 You can configure the operationalization feature for Microsoft R Server using the administration utility. 
 
@@ -55,21 +55,22 @@ These instructions describe how to launch the Administrator Utility.
   > If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted". Read this article on [powershell execution policies](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) for details. 
 
 + Alternately, open a command line window with administrator privileges and enter the following commands:
-  ```
-  cd <MRS_home>\deployr
-  dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
-  ```
+
+  |Version|Commands|
+  |----|------------|
+  |9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
+  |9.0|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+
   where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 **On Linux:**
 
-1. Launch the administration utility script with `root` or `sudo` privileges.
+Launch the administration utility script with `root` or `sudo` privileges with the following commands:
 
-1. At the prompt, enter the following commands:
-   ```
-   cd /usr/lib64/microsoft-deployr/9.0.1
-   dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
-   ```
+|Version|Commands|
+|----|------------|
+|9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
+|9.0|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
 
 <br><a name="admin-password"></a>
 
@@ -77,6 +78,7 @@ These instructions describe how to launch the Administrator Utility.
 
 When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `admin`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
+>[!NOTE]
 >The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
 
 **To set or update the local admin account password:**
@@ -148,11 +150,7 @@ For security purposes, we strongly recommend that you encrypt the connection str
 
       1. Enter information you want to encrypt.  The tool will return an encrypted string.
 
-1. Open the configuration file, `appsettings.json`.
-
-   + On Windows, this file is under `<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\` where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
-
-   + On Linux, this file is under `/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/`.
+1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 

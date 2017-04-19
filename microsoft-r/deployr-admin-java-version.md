@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**
 
->Looking for the new documentation for the operationalization feature in Microsoft R Server 9.0.x ? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
 This topic describes how to update the configuration of DeployR (Apache Tomcat, etc. ) after a Java JRE/JDK.
 

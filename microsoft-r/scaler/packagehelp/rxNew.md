@@ -4,9 +4,9 @@
 title: "RevoScaleR Data Sources: Class Generator" 
 description: " This is the main generator for RxDataSource S4 classes. " 
 keywords: "RevoScaleR, rxNewDataSource, rxNewDataSource,character-method, file, connection" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  
  #`rxNewDataSource`: RevoScaleR Data Sources: Class Generator
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

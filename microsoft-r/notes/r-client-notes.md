@@ -6,7 +6,7 @@ description: "R Client Readme"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "1/12/2017"
+ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,9 +24,22 @@ ms.custom: ""
 
 ---
 
-#What's New in Microsoft R Client
+# What's New in Microsoft R Client
+
+The following release notes apply to Microsoft R Client.
 
 [See here](../microsoft-r-getting-started.md#compare-prods) for a comparison between R Client and R Server.
+
+
+## Microsoft R Client 3.3.3
+
+This release of R Client, built on open source R 3.3.3. Key features in this release include the following:
+
++ Download R Client from http://aka.ms/rclient (Windows) or http://aka.ms/rclientlinux (Linux).
+
++ Installations on Linux are now possible for R Client
+
++ Several packages installed with this release have been updated. Learn more about [the new and updated packages in this release](../rserver-whats-new.md#rclient333-package-updates).
 
 ## Microsoft R Client 3.3.2
 

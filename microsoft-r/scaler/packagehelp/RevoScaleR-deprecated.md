@@ -3,7 +3,7 @@
 # required metadata 
 title: "Deprecated functions in RevoScaleR" 
 description: "These functions are provided for compatibility with  older versions of RevoScaleR only, and may be defunct as soon as the next release." 
-keywords: "RevoScaleR, "RevoScaleR-deprecated", rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
+keywords: "RevoScaleR, RevoScaleR-deprecated, rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
 author: "richcalaway" 
 manager: "jhubbard" 
 ms.date: "04/03/2017" 
@@ -24,17 +24,9 @@ ms.custom: ""
  
 --- 
  
- 
- 
- 
- 
- 
- 
- 
- 
  #`RevoScaleR-deprecated`: Deprecated functions in RevoScaleR
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

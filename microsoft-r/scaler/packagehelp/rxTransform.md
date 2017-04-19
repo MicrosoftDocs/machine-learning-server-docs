@@ -4,9 +4,9 @@
 title: "Dynamic Variable Transformation Functions" 
 description: " Description of the recommended method for creating *on the fly* variables. " 
 keywords: "RevoScaleR, rxTransform, transformFunc, transformVars, models" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`rxTransform`: Dynamic Variable Transformation Functions
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  

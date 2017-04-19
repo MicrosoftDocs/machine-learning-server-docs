@@ -23,15 +23,15 @@ ms.technology: "deployr"
 ms.custom: ""
 ---
 
-# Microsoft R Server: Operationalization
+# Microsoft R Server: operationalizing your code
 
 This page provides links to the MSDN documentation for the versions of DeployR Enterprise shipped with Microsoft R Server and SQL Server.
 
-## Looking for v9.0.1 documentation?
+## Looking for v9 documentation?
 
 Start here:
 
-+ [About Operationalization](https://msdn.microsoft.com/microsoft-r/operationalize/about)
++ [Operationalizing with R Server](https://msdn.microsoft.com/microsoft-r/operationalize/about)
 + [Configuration](https://msdn.microsoft.com/microsoft-r/operationalize/configuration-initial)
 
 

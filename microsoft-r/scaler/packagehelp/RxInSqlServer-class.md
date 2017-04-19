@@ -4,9 +4,9 @@
 title: "Class RxInSqlServer" 
 description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server. " 
 keywords: "RevoScaleR, RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ ms.custom: ""
  
  #`RxInSqlServer-class`: Class RxInSqlServer
 
- Applies to version 9.0.1 of package RevoScaleR.
+ Applies to version 9.1.0 of package RevoScaleR.
  
  ##Description
  
