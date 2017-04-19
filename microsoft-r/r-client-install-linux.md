@@ -209,7 +209,7 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 ### Offline Package Management
 
-Review the recommendations in [Package Management](package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
+Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
 
 <a name="verify"></a>
 
