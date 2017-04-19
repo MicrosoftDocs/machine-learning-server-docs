@@ -137,8 +137,9 @@ From an internet-connected computer, download the following:
 
 1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](rserver-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
 
-   > [!Note]
-   > It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
+   If you will be building and installing packages, including miniCRAN, we recommend that you also install the following binary packages: `gcc-c++` and `gcc-gfortran`.
+   
+   It's possible your Linux machine already has package dependencies installed. By way of illustration, on a few systems, only libpng12 had to be installed.
 
    To see what is currently installed, list the existing packages in /usr/lib64. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
 
@@ -210,7 +211,7 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 ### Offline Package Management
 
-Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
+Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
 
 <a name="verify"></a>
 
