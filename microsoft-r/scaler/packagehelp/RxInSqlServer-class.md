@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Class RxInSqlServer" 
-description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server. " 
+description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.  Currently only supported in Windows. " 
 keywords: "RevoScaleR, RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -36,6 +36,8 @@ ms.custom: ""
  ##Description
  
 Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.
+
+Currently only supported in Windows.
  
  
  ## Objects from the Class 

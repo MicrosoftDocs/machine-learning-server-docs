@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate a 'diff' report between local and remote R sessions" 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Generate a diff report between local and remote R sessions" 
+description: " Generate a diff report between local and remote R sessions " 
 keywords: "mrsdeploy, diffLocalRemote" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,12 +29,11 @@ ms.custom: ""
  
  #`diffLocalRemote`: Generate a 'diff' report between local and remote R sessions
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Generate a 'diff' report between local and remote R sessions
  
  
  ##Usage
@@ -43,6 +42,12 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
   diffLocalRemote()
  
 ```
+ 
+ ##Details
+ 
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
+ 
  
  ##Examples
 

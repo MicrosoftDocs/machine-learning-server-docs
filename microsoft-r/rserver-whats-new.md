@@ -29,6 +29,8 @@ ms.custom: ""
 This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
 
 
+Also, check out our [blog announcement post](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/) for this release.
+
 <a name="machinelearning"></a>
 
 ## Machine Learning enhancements
@@ -77,9 +79,11 @@ Asynchronous remote execution is now supported using the `mrsdeploy` R package. 
 
 R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
 
-## SQL Server R Services 
+## SQL Server R Services and Machine Learning Services
 
-R Server capabilities have been built into SQL Server for several releases. To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
+In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.
+
+In SQL Server 2017, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as Machine Learning Services (In-Database). To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
 
 <a name="rclient333-package-updates"></a>
 
@@ -87,7 +91,8 @@ R Server capabilities have been built into SQL Server for several releases. To r
 
 The following packages have been updated in Microsoft R Server and Microsoft R Client:
 
-+ The **RevoScaleR** package has been updated to version 9.1.0. 
++ The **RevoScaleR** package has been updated to version 9.1.0 
++ The **mrsdeploy** package has been updated to version 1.1.0
 + The **curl** package has been updated to version 2.3
 + The **jsonlite** package has been updated to version 1.3 
 
@@ -95,15 +100,29 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 
 | Function | Status | Changes |
 |----------|--------|---------|
-| `rxExecBy` | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
-| `rxExecByPartition` | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
-| `rxDataStep` | Enhanced | Multithreaded support. |
-| `rxGetPartitions` | New | Gets the partitions of a previously partitioned Xdf data source. |
-| `rxImport` | Enhanced | Multithreaded support. |
+| [`rxExecBy`](scaler/packagehelp/rxExecBy.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
+| [`rxExecByPartition`](scaler/packagehelp/rxExecByPartition.md) | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
+| [`rxDataStep`](scaler/packagehelp/rxDataStep.md) | Enhanced | Multithreaded support. |
+| [`rxGetPartitions`](scaler/packagehelp/rxGetPartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
+| [`rxGetSparklyrConnection`](scaler/packagehelp/rxGetSparklyrConnection.md)  | New | Get a Spark compute context with sparklyr interop.  |
+| [`rxImport`](scaler/packagehelp/rxImport.md)  | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
-| `RxOrcData` | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
-| `rxSerializeModel` | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
-| `rxSyncPackages` | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+| [`RxOrcData`](scaler/packagehelp/RxSparkData.md) | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
+| [`rxSerializeModel`](scaler/packagehelp/rxSerializeModel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
+| [`rxSparkCacheData`](scaler/packagehelp/rxSparkCacheData.md) | New | Set the Cache flag in a Spark compute context.|
+| [`rxSyncPackages`](scaler/packagehelp/rxSyncPackages.md)  | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+
+**mrsdeploy 1.1.0 Function Updates**
+
+| Function | Status | Changes |
+|----------|--------|---------|
+|[`getValidatedServiceType`](mrsdeploy/packagehelp/getValidatedServiceType.md) | New | Test to see if supplied service type is supported.|
+|[`print.serviceDetails`](mrsdeploy/packagehelp/print.serviceDetails.md) | New| Defines the R print generic for `serviceDetails` during a  `listServices()`. |
+|[`print.snapshotDetails`](mrsdeploy/packagehelp/print.snapshotDetails.md) | New | Defines the R print generic for `snapshotDetails` during a  `listSnapshots()`. |
+|[`remoteScript`](mrsdeploy/packagehelp/remoteScript.md) | Enhanced | Includes a new `async` parameter to support asynchronous remote execution. |
+|[`serviceTypes`](mrsdeploy/packagehelp/serviceTypes.md)  | New | Defines the enumerated list of the supported service types.|
+|[`summary.serviceDetails`](mrsdeploy/packagehelp/summary.serviceDetails.md)  | New | Defines the R summary generic for `serviceDetails` during a  `listServices()`. |
+|[`summary.snapshotDetails`](mrsdeploy/packagehelp/summary.snapshotDetails.md)  | New | Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. |
 
 ## Previous releases
 
@@ -199,7 +218,7 @@ As noted, installation of R Server or R Client on Windows delivers the new [Micr
 
 Additionally, this release adds a simplified setup program for an  Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
-Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server vNext installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server 2017 installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 For installation and upgrade instructions, see [Install R Server for Windows](rserver-install-windows.md).
 
@@ -214,7 +233,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
 + SQL Server support policy supports released versions over a longer time frame, but updates are less frequent. This support policy is in effect when you use SQL Server Setup to install R Server for Windows.
 
-+ In the upcoming SQL Server vNext CTP 1.1 release, you will be able to unbind your SQL Server R Services instance and replace it with a 9.0.1 version that offers operationalization features and the Modern Lifecycle Support policy. Check [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) for the latest information on CTP 1.1 when it becomes available.
++ In the upcoming SQL Server 2017 CTP 1.1 release, you will be able to unbind your SQL Server R Services instance and replace it with a 9.0.1 version that offers operationalization features and the Modern Lifecycle Support policy. Check [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) for the latest information on CTP 1.1 when it becomes available.
 
 
 ### 8.0.5 Announcements
@@ -292,4 +311,7 @@ algorithms for cleaning and analyzing text data.
 
 ## See Also
 
-[What's new in R Server](rserver-whats-new.md)
+ [Introduction to R Server](rserver.md) 
+ [Install R Server on Windows](rserver-install-windows.md)  
+ [Install R Server on Linux](rserver-install-linux-server.md)  
+ [Install R Server on Hadoop](rserver-install-hadoop.md)

@@ -6,7 +6,7 @@ description: "     Various parameters that control aspects of stepwise regressio
 keywords: "RevoScaleR, rxStepControl, models, classification, regression" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: " Creates a compute context for running Microsoft R Server analyses
 keywords: "RevoScaleR, RxInTeradata-class, doPreJobValidation,RxInTeradata-method, initialize,RxInTeradata-method, show,RxInTeradata-method, classes" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

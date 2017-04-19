@@ -6,7 +6,7 @@ description: "  **NOTE: This new API is in pre-release mode and subject to chang
 keywords: "RevoScaleR, rxInstallPackages, install, use, packages, sql" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -113,6 +113,7 @@ install.packages,
 [rxFindPackage](rxFindPackage.md),
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
 [rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    

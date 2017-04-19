@@ -6,7 +6,7 @@ description: " **NOTE: This new API is in pre-release mode and subject to change
 keywords: "RevoScaleR, rxRemovePackages, remove, uninstall, packages, sql" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -115,7 +115,8 @@ Invisible `NULL`
 remove.packages,
 [rxFindPackage](rxFindPackage.md),
 [rxInstalledPackages](rxInstalledPackages.md),
-[rxInstallPackages](rxInstallPackages.md),   
+[rxInstallPackages](rxInstallPackages.md),  
+[rxSyncPackages](rxSyncPackages.md),
 [rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    

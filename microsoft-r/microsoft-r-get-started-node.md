@@ -30,7 +30,7 @@ ms.custom: ""
 
 ## How to get Microsoft R
 
-On Windows, you can download and install [Microsoft R Client](r-client.md), [Microsoft R Server for Windows](rserver.md), or install [SQL Server R Services](https://msdn.microsoft.com/library/mt674876.aspx) if you have SQL Server 2016 or later.
+On Windows, you can download and install [Microsoft R Client](r-client.md), [Microsoft R Server for Windows](rserver.md) or install [SQL Server 2017 Machine Learning Services](https://msdn.microsoft.com/library/mt674876.aspx).
 
 On Linux or a Hadoop cluster, you can get the developer or enterprise edition of R Server for any [supported platform](rserver-install-supported-platforms.md).
 

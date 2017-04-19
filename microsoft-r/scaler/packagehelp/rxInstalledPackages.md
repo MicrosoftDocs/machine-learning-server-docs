@@ -6,7 +6,7 @@ description: " Find (or retrieve) details of installed packages for a compute co
 keywords: "RevoScaleR, rxInstalledPackages, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -121,6 +121,7 @@ installed.packages,
 [rxFindPackage](rxFindPackage.md),
 [rxInstallPackages](rxInstallPackages.md),   
 [rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
 [rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    

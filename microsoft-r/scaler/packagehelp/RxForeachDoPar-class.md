@@ -6,7 +6,7 @@ description: "   Class for the RevoScaleR Compute Context using one of the forea
 keywords: "RevoScaleR, RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -45,7 +45,7 @@ The **MicrosoftML** package is currently available on the following platforms:
 - [Microsoft R Server for Linux](rserver-install-linux-server.md)
 - [Microsoft R Server 9.1.0 on Hadoop](rserver-install-hadoop.md): R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 - [Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md): uses Cloudera's parcel installation methodology to add R Server to a cluster.
-- [SQL Server Machine Learning Services](sql-server-r-services.md): The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services** on an instance of SQL Server 2016.
+- [SQL Server Machine Learning Services](sql-server-r-services.md): The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services or SQL Server Machine Learning Services** on an instance of SQL Server 2016 or 2017.
  
 The pretrained ML models are not installed by default with R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
@@ -73,7 +73,7 @@ MicrosoftML supports new end-to-end scenarios that include new features and func
 For additional information on R Server, see:
 
 - [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-- [What's New in SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
+- [What's New in SQL Server Machine Learning  Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx). 
 
 
 

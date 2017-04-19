@@ -30,7 +30,7 @@ Microsoft R Client is a free, data science tool for high performance analytics. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](r-client-compatibility.md)  
+To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and R Server for Hadoop. [Learn more about its compatibility.](r-client-compatibility.md)  
 
 You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](/operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development. 
 
@@ -45,7 +45,7 @@ You can also run your code remotely on R Server using [remoteLogin() or remoteLo
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
 
-The following additional components are included in Setup and required for R Client.
+The following additional component is included in Setup and required for R Client.
 * Microsoft R Open 3.3.3
 
 >[!WARNING]
@@ -100,7 +100,9 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
    `[root@localhost tmp] $ cd /tmp/MRC_Linux`
 
-1. Run the script.
+1. Run the script. 
+
+   To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    `[root@localhost MRC_Linux] $ bash install.sh`
 
@@ -110,7 +112,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
    Installation begins immediately. Installer output shows the packages and location of the log file. 
    
-   You can now [verify the installation](#verify).
+   You can now [set up your IDE and try out some sample code](r-client-get-started.md).
 
 <br>
 
@@ -126,14 +128,7 @@ From an internet-connected computer, download the following:
 
 1. Download Microsoft R Client for Linux from http://aka.ms/rclientlinux.
 
-1. Download Microsoft R Open  and .NET Core for Linux. Microsoft R Open provides the R distribution used by R Server. The .NET Core component is required for MicrosoftML (machine learning) and mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
-
-   | Component | Version | Download Link | Notes |
-   |-----------|---------|---------------|-------|
-   | Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) | Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. |
-   | Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) | Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list. |
-
-   The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.
+1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by R Server. [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
 
 1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](rserver-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
 
@@ -148,7 +143,6 @@ From an internet-connected computer, download the following:
 1. Transfer these files to the machine without any internet connection  to a writable directory, such as **/tmp**, on your internet-restricted server. Use a a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism.
 
    Files to be transferred include the following:
-   + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
    + `microsoft-r-open-3.3.3.tar.gz`
    + `microsoft-r-client-3.3.3.tar.gz`
    + any missing packages from the dependency list
@@ -164,20 +158,6 @@ On the target system which is disconnected from the internet:
 1. Execute `ls` to list the files as a verification step. You should see the tar.gz files you transferred earlier.
 
 1. Install any missing package dependencies. run `rpm -i <package-name>` to install any packages that are missing from your system (for example, `rpm -i libpng12-1-2-50-10.el7.x86_64.rpm`).
-
-1. Unpack .NET Core and set its symbolic link. You'll need to manually create its directory path, unpack the distribution, and then set references so that the component can be discovered by other applications.
-
-   1. Make a directory for .NET Core:
-
-      `[root@localhost tmp] $ mkdir /opt/dotnet`
-
-   1. Unpack the .NET Core redistribution into the /opt/dotnet directory:
-
-      `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
-
-   1. Set the symbolic link for .NET Core to user directories:
-
-      `[root@localhost tmp] $ ln -s /opt/dotnet/dotnet /usr/bin/dotnet`
 
    >[!Important] 
    >Do not unpack Microsoft R Open. Instead, copy the gzipped tar file to the MRC_Linux directory after you've unpacked Microsoft R Client.
@@ -199,7 +179,9 @@ R Client for Linux is deployed by running the install script with no parameters.
 
    `[root@localhost tmp] $ cd MRC_Linux`
 
-1. Run the script.
+1. Run the script. 
+
+   To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    `[root@localhost MRC_Linux] $ bash install.sh`
 
@@ -207,88 +189,19 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. When prompted to accept the license terms for Microsoft R Client, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
-   Installer output shows the packages and location of the log file. You can now [verify the installation](#verify).
+   Installer output shows the packages and location of the log file. 
+   
+   You can now [set up your IDE and try out some sample code](r-client-get-started.md). Also, consider package management as described in the next section.
 
 ### Offline Package Management
 
 Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
 
-<a name="verify"></a>
-
-## Verify installation
-
-1. List installed packages and get package names:
-
-   `[root@localhost MRC_Linux] $ yum list \*microsoft\*`
-
-1. Check the version of Microsoft R Open using `rpm -qi`:
-
-   `[root@localhost MRC_Linux] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
-
-1. Check the version of Microsoft R Server:
-
-   `[root@localhost MRC_Linux] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
-
-1. Check the version of .NET Core, and verify the symlink:
-
-   `[root@localhost MRC_Linux] $ dotnet --version` 
-
-   `[root@localhost MRC_Linux] $ ls -la /usr/local/bin`
-
-1. Partial output is as follows (note version 9.1.0):
-
-   ~~~~
-	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
-	 Version     : 9.1.0                               Vendor: Microsoft
-	 . . .
-   ~~~~
-
-1. Launch the Revo64 program.
-
-   `$ cd MRC_Linux`
-
-   `$ Revo64`
-
-1. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
-
-   `> rxSummary(~., iris)`
-
-   Output from the iris dataset should look similar to the following:
-
-   ~~~~
-   Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
-   Computation time: 0.005 seconds.
-   Call:
-   rxSummary(formula = ~., data = iris)
- 
-   Summary Statistics Results for: ~.
-   Data: iris
-   Number of valid observations: 150
-
-   Name         Mean     StdDev    Min Max ValidObs MissingObs
-   Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
-   Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
-   Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
-   Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
-
-   Category Counts for Species
-   Number of categories: 3
-   Number of valid observations: 150
-   Number of missing observations: 0
- 
-   Species    Counts
-   setosa     50
-   versicolor 50
-   virginica  50
-   ~~~~
-
-   To quit the program, type `q()` at the command line with no arguments.
-
 ## Unattended installs
 
 You can perform a silent install to bypass prompts during setup. In /tmp/MRC_Linux, run the install script with the following parameters:
 
-   `[root@localhost MRC90LINUX] $ install.sh -a -s`
+   `[root@localhost MRC_LINUX] $ install.sh -a -s -m`
 
 Additional flags are available, as follows:
 
@@ -296,8 +209,7 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -m | --models | Install Microsoft ML models.
- -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
+ -m | --models | Install Microsoft ML pretrained models.
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.

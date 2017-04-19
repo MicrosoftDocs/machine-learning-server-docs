@@ -6,7 +6,7 @@ description: " Provides a unique identifier for the process in the range [1:N] w
 keywords: "RevoScaleR, rxRemoteGetId, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

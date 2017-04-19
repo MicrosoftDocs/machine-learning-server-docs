@@ -6,7 +6,7 @@ description: "Creates a compute context for running RevoScaleR analyses inside a
 keywords: "RevoScaleR, RxInTeradata, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -89,7 +89,7 @@ ms.custom: ""
   
     
  ### ` ...`
- additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-Teradata computations. 
+ additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-Teradata computations. `traceEnabled` and `traceLevel` are deprecated as of MRS 9.0.2 and will be removed from this Compute Context in the next major release. Please use `rxOptions(traceLevel=7)` to enable run-time tracing in-Teradata 
   
    
  
@@ -103,7 +103,8 @@ ms.custom: ""
 [RxComputeContext](RxComputeContext.md),
 [RxInTeradata-class](RxInTeradata-class.md),
 [RxTeradata](RxTeradata.md),
-[RxInSqlServer](RxInSqlServer.md).
+[RxInSqlServer](RxInSqlServer.md),
+[rxOptions](rxOptions.md).
    
  
  ##Examples

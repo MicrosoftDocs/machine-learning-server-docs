@@ -6,7 +6,7 @@ description: " Efficient multi-key sorting of the variables in an .xdf file or d
 keywords: "RevoScaleR, rxSort, file" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

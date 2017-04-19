@@ -6,7 +6,7 @@ description: " Functions to specify and retrieve options needed for **RevoScaleR
 keywords: "RevoScaleR, rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -75,11 +75,12 @@ computations.
             hdfsHost = Sys.getenv("REVOHADOOPHOST"),
             hdfsPort = as.integer(Sys.getenv("REVOHADOOPPORT")),
             unixRPath = "/usr/bin/Revo64-8",
-            mrsHadoopPath = "/usr/bin/mrs-hadoop-9",
+            mrsHadoopPath = "/usr/bin/mrs-hadoop",
             spark.executorCores = 2,
             spark.executorMem = "4g",
             spark.executorOverheadMem = "4g",
             spark.numExecutors = 65535,
+            traceLevel = 0,
             ...)
             
   rxGetOption(opt, default = NULL)
@@ -285,6 +286,20 @@ computations.
   
   
     
+ ### `traceLevel`
+ Specifies the traceLevel that MRS will run with. This parameter controls MRS Logging features as well as Runtime Tracing of ScaleR functions. Levels are inclusive, (i.e. level `3:INFO` includes levels `2:WARN` and `1:ERROR` log messages). The options are:   
+*   `0`: `DISABLED` - Tracing/Logging disabled. 
+*   `1`: `ERROR`- `ERROR` coded trace points are logged to MRS log files 
+*   `2`: `WARN`- `WARN` and `ERROR` coded trace points are logged to MRS log files. 
+*   `3`: `INFO`- `INFO`, `WARN`, and `ERROR` coded trace points are logged to MRS log files. 
+*   `4`: `DEBUG`- All trace points are logged to MRS log files. 
+*   `5`: `RESERVED` - If set, will log at `DEBUG` granularity  
+*   `6`: `RESERVED` - If set, will log at `DEBUG` granularity  
+*   `7`: `TRACE`- ScaleR functions Runtime Tracing is activated and MRS log level is set to `DEBUG` granularity. 
+ 
+  
+  
+    
  ### ` ...`
  additional arguments to be passed through. 
   
@@ -329,7 +344,6 @@ value of the requested option is returned.
  
  ##See Also
  
-[RevoScaleR](revoAnalytics-package.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),

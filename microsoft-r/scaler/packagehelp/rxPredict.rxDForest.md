@@ -6,7 +6,7 @@ description: "     Calculate predicted or fitted values for a data set from an o
 keywords: "RevoScaleR, rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

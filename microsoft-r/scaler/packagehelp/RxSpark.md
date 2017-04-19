@@ -6,7 +6,7 @@ description: " `RxSpark` creates a Spark compute context. `rxSparkConnect` creat
 keywords: "RevoScaleR, RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -80,45 +80,46 @@ context.
       fileSystem = NULL,
       packagesToLoad = NULL,
       resultsTimeout = 15,
+      tmpFSWorkDir = "/dev/shm/",
         ...  )
   
   rxSparkConnect(
-    hdfsShareDir           = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
-    shareDir               = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
-    clientShareDir         = rxGetDefaultTmpDirByOS(),
-    sshUsername            = Sys.info()[["user"]],
-    sshHostname            = NULL,
-    sshSwitches            = "",
-    sshProfileScript       = NULL,
-    sshClientDir           = "",
-    nameNode               = rxGetOption("hdfsHost"),
-    jobTrackerURL          = NULL,
-    port                   = rxGetOption("hdfsPort"),
-    onClusterNode          = NULL,
-    #spark configuration
-    numExecutors           = rxGetOption("spark.numExecutors"),
-    executorCores          = rxGetOption("spark.executorCores"),
-    executorMem            = rxGetOption("spark.executorMem"),
-    driverMem              = "4g",
-    executorOverheadMem    = rxGetOption("spark.executorOverheadMem"),
-    extraSparkConfig       = "",
-    sparkReduceMethod      = "auto",
-    idleTimeout            = 10000,
-    suppressWarning        = TRUE,
-    #end (spark configuration)
-    consoleOutput          = FALSE,
-    showOutputWhileWaiting = TRUE,
-    autoCleanup            = TRUE,
-    workingDir             = NULL,
-    dataPath               = NULL,
-    outDataPath            = NULL,
-    fileSystem             = NULL,
-    packagesToLoad         = NULL,
-    resultsTimeout         = 15,
-    reset                  = FALSE,
-      ...  )
+      hdfsShareDir           = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
+      shareDir               = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
+      clientShareDir         = rxGetDefaultTmpDirByOS(),
+      sshUsername            = Sys.info()[["user"]],
+      sshHostname            = NULL,
+      sshSwitches            = "",
+      sshProfileScript       = NULL,
+      sshClientDir           = "",
+      nameNode               = rxGetOption("hdfsHost"),
+      jobTrackerURL          = NULL,
+      port                   = rxGetOption("hdfsPort"),
+      onClusterNode          = NULL,
+      numExecutors           = rxGetOption("spark.numExecutors"),
+      executorCores          = rxGetOption("spark.executorCores"),
+      executorMem            = rxGetOption("spark.executorMem"),
+      driverMem              = "4g",
+      executorOverheadMem    = rxGetOption("spark.executorOverheadMem"),
+      extraSparkConfig       = "",
+      sparkReduceMethod      = "auto",
+      idleTimeout            = 10000,
+      suppressWarning        = TRUE,
+      consoleOutput          = FALSE,
+      showOutputWhileWaiting = TRUE,
+      autoCleanup            = TRUE,
+      workingDir             = NULL,
+      dataPath               = NULL,
+      outDataPath            = NULL,
+      fileSystem             = NULL,
+      packagesToLoad         = NULL,
+      resultsTimeout         = 15,
+      reset                  = FALSE,
+      interop                = NULL,
+      tmpFSWorkDir           = "/dev/shm/",
+        ...  )
   
-  rxSparkDisconnect(computeContext = NULL)
+  rxSparkDisconnect(computeContext = rxGetOption("computeContext"))
   
  
 ```
@@ -294,18 +295,28 @@ context.
   
   
     
+ ### `tmpFSWorkDir`
+ character string specifying the temporary working directory in worker nodes.  It defaults to /dev/shm to utilize in-memory temporary file system for performance gain.  You can specify a different location if the size of /dev/shm is insufficient.  Please make sure that YARN run-as user has permission to read and write to this location 
+  
+  
+    
  ### `reset`
- if `TRUE` all cached Spark Data Frames will be freed all existing Spark applications that belong to the current user will be shut down. 
+ if `TRUE` all cached Spark Data Frames will be freed and all existing Spark applications that belong to the current user will be shut down. 
+  
+  
+    
+ ### `interop`
+ `NULL` or a character string or vector of package names for RevoScaleR interoperation. Currently, the "sparklyr" package is supported. 
+  
+  
+    
+ ### `computeContext`
+ Spark compute context to be terminated by `rxSparkDisconnect`. 
   
   
     
  ### ` ...`
  additional arguments to be passed directly to the Microsoft R Services Compute Engine. 
-  
-  
-    
- ### `computeContext`
- Spark compute context to be terminated by `rxSparkDisconnect` 
   
  
  
@@ -373,6 +384,15 @@ myHadoopCluster <- rxSparkConnect()
 
 ##rxSparkDisconnect example
 rxSparkDisconnect(myHadoopCluster)
+
+#############################################################################
+## sparklyr interoperation example
+library("sparklyr")
+cc <- rxSparkConnect(interop = "sparklyr")
+sc <- rxGetSparklyrConnection(cc)
+mtcars_tbl <- copy_to(sc, mtcars)
+hive_in_data <- RxHiveData(table = "mtcars")
+rxSummary(~., data = hive_in_data)
  ## End(Not run) 
   
  

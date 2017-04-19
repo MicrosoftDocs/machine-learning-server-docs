@@ -6,7 +6,7 @@ description: " Obtain a counts, sums, or means data frame from an analysis objec
 keywords: "RevoScaleR, rxResultsDF, rxResultsDF.rxCrossTabs, rxResultsDF.rxCube, rxResultsDF.rxLinMod, rxResultsDF.rxLogit, rxResultsDF.rxSummary, category, models" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

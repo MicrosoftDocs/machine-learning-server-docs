@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Put an object from the local R session and load it into the remote R session." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Copy an object from the local R session to the remote R session." 
+description: " Copy an object from the workspace of the local R session to the workspace  of the remote R session. " 
 keywords: "mrsdeploy, putLocalObject" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #`putLocalObject`: Put an object from the local R session and load it into the remote R session.
+ #`putLocalObject`: Copy an object from the local R session to the remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Copy an object from the workspace of the local R session to the workspace 
+of the remote R session.
  
  
  ##Usage
@@ -48,20 +48,20 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
    
   
+ ### `obj`
+ A character vector containing the names of the R Objects in the local R session to load in the remote R session 
+  
+  
+  
  ### `name`
  The name of an R list object (created if necessary) in the remote R session that will contain the R objects from the local R session.  If `name` is `NULL`, then R objects from the local R session will be loaded in the GlobalEnv of the remote R session. 
-  
-  
-  
- ### `x`
- A character vector containing the names of the R Objects in the local R session to load in the remote R session 
   
  
  
  ##Details
  
-Put an object from the workspace of the local R session and load it into the workspace 
-of the remote R session.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value
@@ -82,7 +82,6 @@ list of R objects or `NULL`
    
   ## Not run:
  
-put_local_objet("x")
 aa<-rnorm(100)
 bb<-rnorm(100)
 putLocalObject(c("aa","bb"))

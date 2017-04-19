@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Delete a snapshot from the server." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Delete a snapshot from the R server." 
+description: " Deletes the specified snapshot from the repository on the R Server. " 
 keywords: "mrsdeploy, deleteSnapshot" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,13 @@ ms.custom: ""
  
  
  
- #`deleteSnapshot`: Delete a snapshot from the server.
+ #`deleteSnapshot`: Delete a snapshot from the R server.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Deletes the specified snapshot from the repository on the R Server.
  
  
  ##Usage
@@ -55,12 +54,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Details
  
-Deletes the specified snapshot from the repository on the R Server.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value
  
-`TRUE` if sucessful.
+`TRUE` if successful.
  
  ##See Also
  

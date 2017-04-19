@@ -6,7 +6,7 @@ description: " Compute context class for clusters supporting RevoScaleR High Per
 keywords: "RevoScaleR, RxDistributedHpa-class, show,RxDistributedHpa-method, classes" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

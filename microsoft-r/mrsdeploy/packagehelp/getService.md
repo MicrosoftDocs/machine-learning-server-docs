@@ -4,9 +4,9 @@
 title: "Get a web service for consumption." 
 description: " Get a web service for consumption on running on R Server. " 
 keywords: "mrsdeploy, getService" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`getService`: Get a web service for consumption.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
@@ -70,9 +70,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-Other service.methods: [deleteService](deleteService.md),
-[listServices](listServices.md), [publishService](publishService.md),
-[serviceOption](serviceOption.md), [updateService](updateService.md)
+Other service methods: [deleteService](deleteService.md),
+[listServices](listServices.md),
+[print.serviceDetails](print.serviceDetails.md),
+[publishService](publishService.md),
+[serviceOption](serviceOption.md),
+[summary.serviceDetails](summary.serviceDetails.md),
+[updateService](updateService.md)
    
  ##Examples
 

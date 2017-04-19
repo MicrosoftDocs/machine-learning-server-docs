@@ -6,7 +6,7 @@ description: " **NOTE: This feature and the rx APIs listed below are in pre-rele
 keywords: "RevoScaleR, rxPackage, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "04/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -83,6 +83,9 @@ SQL R services provides the following core client functions for managing librari
 
 * 
  library() - same as R functionality to load the installed package and user the functionality provided by the package
+
+* 
+ [rxSyncPackages](rxSyncPackages.md)() - to synchronize packages from database on SQL server to the file system used by R
 
 
 
@@ -244,16 +247,20 @@ rxRemovePackages(pkgs = pkgs, verbose = TRUE, scope = "private", computeContext 
 #
 usePackageRxFunction <- function()
 {
-  library("dplyr")
+  library(dplyr)
+  
+  # returns list of functions contained in dplyr
+  ls(pos="package:dplyr")
   
   #
   # more code to use dplyr functionality
   #
   # ...
   #
+  
 }
-
-rxExec(usePackageRxFunction, computeContext = sqlcc)
+rxSetComputeContext(sqlcc)
+rxExec(usePackageRxFunction)
 
 
 #
