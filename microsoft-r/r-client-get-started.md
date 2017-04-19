@@ -115,6 +115,10 @@ In this example, we train a model using a large number of examples from historic
 Here is the whole script, which we'll walk through in step by step below.
 
 ```r
+    #############################################
+    ##           ENTIRE SAMPLE SCRIPT          ##
+    #############################################
+
 #Step 1: Get Started with Microsoft R Client
 #Verify R Client is installed by checking for the proprietary
 #package, `RevoScaleR`, in the R console of your R IDE.  
