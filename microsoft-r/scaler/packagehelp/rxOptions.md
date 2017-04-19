@@ -344,7 +344,6 @@ value of the requested option is returned.
  
  ##See Also
  
-[RevoScaleR](revoAnalytics-package.in.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),

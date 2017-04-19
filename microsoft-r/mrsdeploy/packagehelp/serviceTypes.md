@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "HTTP requests made easy and more fluent around `curl`." 
-description: " HTTP requests made easy and more fluent around `curl`. " 
-keywords: "mrsdeploy, request" 
+title: "Defines the enumerated list of the supported service types." 
+description: " Defines the enumerated list of the supported service types. " 
+keywords: "mrsdeploy, serviceTypes" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
@@ -27,19 +27,19 @@ ms.custom: ""
  
  
  
- #`request`: HTTP requests made easy and more fluent around `curl`.
+ #`serviceTypes`: Defines the enumerated list of the supported service types.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-HTTP requests made easy and more fluent around `curl`.
+Defines the enumerated list of the supported service types.
  
  
  ##Usage
 
 ```   
-  request(host = NULL)
+  serviceTypes()
  
 ```
  

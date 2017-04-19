@@ -4,9 +4,9 @@
 title: "Wrapper function for remote script execution." 
 description: " A simple wrapper function for executing a remote R script. " 
 keywords: "mrsdeploy, remoteScript" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`remoteScript`: Wrapper function for remote script execution.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
@@ -40,7 +40,8 @@ A simple wrapper function for executing a remote R script.
 
 ```   
   remoteScript(name, inputs = NULL, outputs = NULL, displayPlots = TRUE,
-    writePlots = TRUE)
+    writePlots = TRUE, recPlots = TRUE, async = FALSE,
+    closeOnComplete = FALSE)
  
 ```
  
@@ -54,22 +55,37 @@ A simple wrapper function for executing a remote R script.
   
   
  ### `inputs`
- JSON encoded string of R objects that are loaded into the Remote R session's workspace prior to excution.  Only R objects of type: primitives, vectors and dataframes are supported via this parameter.  Alternatively the [putLocalObject](putLocalObject.md) can be used, prior to a call to this function, to move any R object from the local workspace into the  remote R session. 
+ JSON encoded string of R objects that are loaded into the Remote R session's workspace prior to execution.  Only R objects of type: primitives, vectors and dataframes are supported via this parameter.  Alternatively the [putLocalObject](putLocalObject.md) can be used, prior to a call to this function, to move any R object from the local workspace into the  remote R session. 
   
   
   
  ### `outputs`
- Character vector of the names of the objects to retreive.  Only primitives, vectors and dataframes can be retrieved using this function.  Use [getRemoteObject](getRemoteObject.md)to get any type of R object from the remote session. 
+ Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](getRemoteObject.md)to get any type of R object from the remote session. 
   
   
   
  ### `displayPlots`
- If `TRUE`, plots generated during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine. 
+ If `TRUE`, plots generate during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine 
   
   
   
  ### `writePlots`
  If `TRUE`, plots generated during execution are copied to the working directory of the local session. 
+  
+  
+  
+ ### `recPlots`
+ If `TRUE`, plots will be created using the '`recordPlot`' function in R. 
+  
+  
+  
+ ### `async`
+ If `TRUE`, the remote script will be run asynchronously in a separate window. 
+  
+  
+  
+ ### `closeOnComplete`
+ If `TRUE`, the async R session will quit upon completion. Only applies if `async=TRUE` 
   
  
  

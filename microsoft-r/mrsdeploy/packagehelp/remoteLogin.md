@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Remote login to the Microsoft R Server." 
+title: "Remote login to the Microsoft R Server" 
 description: " Authenticates the user and creates a remote R session. " 
 keywords: "mrsdeploy, remoteLogin" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,9 +27,9 @@ ms.custom: ""
  
  
  
- #`remoteLogin`: Remote login to the Microsoft R Server.
+ #`remoteLogin`: Remote login to the Microsoft R Server
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  

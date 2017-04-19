@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "Get a web service for consumption." 
-description: " Get a web service for consumption on running on R Server. " 
-keywords: "mrsdeploy, getService" 
+title: "The print generic for serviceDetails." 
+description: " Defines the R print generic for serviceDetails during a listServices(). " 
+keywords: "mrsdeploy, print.serviceDetails" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
@@ -27,19 +27,21 @@ ms.custom: ""
  
  
  
- #`getService`: Get a web service for consumption.
+ #`print.serviceDetails`: The print generic for `serviceDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Get a web service for consumption on running on R Server.
+Defines the R print generic for `serviceDetails` during a 
+`listServices()`.
  
  
  ##Usage
 
 ```   
-  getService(name, v = character(0), destination = NULL)
+ ## S3 method for class `serviceDetails':
+print  (o, description = TRUE, code = TRUE)
  
 ```
  
@@ -47,32 +49,25 @@ Get a web service for consumption on running on R Server.
 
    
   
- ### `name`
- The web service name. 
+ ### `o`
+ The `serviceDetails` list of S3 object. 
   
   
   
- ### `v`
- The web service version. 
+ ### `description`
+ (optional) whether to print the description field. 
   
   
   
- ### `destination`
- (optional) The codegen output directory location. 
+ ### `code`
+ (optional) whether to print the code field. 
   
- 
- 
- ##Details
- 
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
  
  
  ##See Also
  
 Other service methods: [deleteService](deleteService.md),
-[listServices](listServices.md),
-[print.serviceDetails](print.serviceDetails.md),
+[getService](getService.md), [listServices](listServices.md),
 [publishService](publishService.md),
 [serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
@@ -84,8 +79,11 @@ Other service methods: [deleteService](deleteService.md),
    
   ## Not run:
  
-# Discover the `add-service` version `1.0.1`
-api <- getService("add-service", "1.0.1")
+# --- print all ---
+listServices()
+
+# --- print with optional filters ---
+print(listService(), description = FALSE, code = FALSE)
  ## End(Not run) 
   
  

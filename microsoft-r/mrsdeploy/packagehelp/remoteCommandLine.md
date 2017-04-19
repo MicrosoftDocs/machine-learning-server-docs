@@ -4,9 +4,9 @@
 title: "Display the 'REMOTE>' command prompt." 
 description: " Displays the 'REMOTE>' command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
 keywords: "mrsdeploy, remoteCommandLine" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`remoteCommandLine`: Display the 'REMOTE>' command prompt.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
@@ -41,7 +41,7 @@ entered at the R console will be executed in the remote R session.
 
 ```   
   remoteCommandLine(prompt = "REMOTE> ", displayPlots = TRUE,
-    writePlots = TRUE)
+    writePlots = FALSE, recPlots = TRUE)
  
 ```
  
@@ -61,6 +61,11 @@ entered at the R console will be executed in the remote R session.
   
  ### `writePlots`
  If `TRUE`, plots generated during execution are copied to the working directory of the local session. 
+  
+  
+  
+ ### `recPlots`
+ If `TRUE`, plots will be created using the '`recordPlot`' function in R. 
   
  
  

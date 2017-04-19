@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Download a snapshot from the server." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Download a snapshot from the R server." 
+description: " Downloads the specified snapshot from the R server in zip format. " 
 keywords: "mrsdeploy, downloadSnapshot" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,13 @@ ms.custom: ""
  
  
  
- #`downloadSnapshot`: Download a snapshot from the server.
+ #`downloadSnapshot`: Download a snapshot from the R server.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Downloads the specified snapshot from the R server in zip format.
  
  
  ##Usage
@@ -60,7 +59,8 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##Details
  
-Downloads the specified snapshot from the server, in zip format.
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
  
  
  ##Value
