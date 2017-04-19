@@ -25,7 +25,7 @@ ms.custom: ""
 
 ---
 
-# Introducing SQL Server R Services
+# Introducing Machine Learning with SQL Server
 
 [!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
 
@@ -63,10 +63,8 @@ A defining feature of the **RevoScaleR** package is that most of its functions s
 
 If you run R code within T-SQL code, the server is always used as the compute context. In this scenario, your code will call the R libraries installed on the SQL Server instance, and use secure connections to get data from the database. You can also save models in a database table, load models from a table to use for scoring, and save your results ot a databse table, all without leaving the context of SQL Server.
 
-For more information, see SQL Server 2016 Books Online:
- + [Data Exploration and Predictive Modeling with R](https://msdn.microsoft.com/library/mt590947.aspx)
- + [R Interoperability in SQL Server R Services](https://msdn.microsoft.com/library/mt709080.aspx)
-
+For more information, see [Data Exploration and Predictive Modeling with R](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/data-exploration-and-predictive-modeling-with-r)
+ 
 ### Using Development Tools
 You can develop your R solutions in your preferred R IDE. We recommend that you use a standalone R IDE when testing your code and exploring your data, rather than trying to write R code inside of T-SQL. For R Services in particular, [R Tools for Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) is a good choice, because it has strong support for both R code and integration with SQL Server, but you can use any IDE that supports database connectivity.
 
@@ -76,29 +74,29 @@ To run R code within the context of SQL Server, you have two options:
 
 ### Deploying, Managing, and Optimizing Solutions
 
-One of the primary goals of providing R Services in SQL Server is to make it easier to deploy R code in production. Typically you'll deploy your R code to production by wrapping it in a stored procedure. Stored procedures in SQL Server support parameterization, making it easy to pass in a SQL query as input, and save the results to the database.
+One of the primary goals of providing Machine Learning Services in SQL Server is to make it easier to deploy R code in production. Typically you'll deploy your R code to production by wrapping it in a stored procedure. Stored procedures in SQL Server support parameterization, making it easy to pass in a SQL query as input, and save the results to the database.
 
 Because the syntax for calling stored procedures is supported by many applications, you do not need to write any extra code to call your R code from an external application -- just pass in the data and handle the results that are returned.
 
 You can also generate visualizations and archive them locally, export them to other applications such as Reporting Services or Power BI, or send them back to your local workstation for review.
 
-Finally, because R Services is integrated with SQL Server, you can use database server tools for monitoring code execution and managing and balancing resources.
+Finally, because Machine Learning Services is integrated with SQL Server, you can use database server tools for monitoring code execution and managing and balancing resources.
 
-For more information, see SQL Server 2016 Books Online:
- + [Operationalizing Your R Code](https://msdn.microsoft.com/library/mt590864.aspx)
- + [Resource Governance for R Services](https://msdn.microsoft.com/library/mt703708.aspx)
- + [SQL Server R Services Performance Tuning](https://msdn.microsoft.com/en-us/library/mt723573.aspx)
+For more information, see these SQL Server:
+ + [Operationalizing Your R Code](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/operationalizing-your-r-code)
+ + [Resource Governance](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/resource-governance-for-r-services)
+ + [Performance Tuning](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services-performance-tuning)
 
 
 ## More Resources
 
-Learn more about SQL Server R Services here:
+Learn more about SQL Server Machine Learning Services here:
 
-+ In the [SQL Server Books Online](https://msdn.microsoft.com/en-us/library/mt604845.aspx) site, which also includes a tutorial for **SQL Server R Services**.
-+ [Data Science End-to-End Walkthrough](https://msdn.microsoft.com/library/mt612857.aspx): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
-+ [Using the RevoScaleR Packages](https://msdn.microsoft.com/library/mt637368.aspx): Deep dive on the analytical functions provided by the **ScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
-+ [Data Science Scenarios and Solution Templates](https://msdn.microsoft.com/en-us/library/mt693423.aspx): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
-+ [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://msdn.microsoft.com/en-us/library/mt683480.aspx)
++ In the [SQL Server Documentation Set](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) site, which also includes a tutorial for **SQL Server Machine Learning Services**.
++ [Data Science End-to-End Walkthrough](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
++ [Using the RevoScaleR Packages](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages): Deep dive on the analytical functions provided by the **ScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
++ [Data Science Scenarios and Solution Templates](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/data-science-scenarios-and-solution-templates): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
++ [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-advanced-analytics-for-sql-developers)
 
 
 Learn more about the [RevoScaleR package and its function here](scaler/scaler.md).
