@@ -192,7 +192,7 @@ As noted, installation of R Server or R Client on Windows delivers the new [Micr
 
 Additionally, this release adds a simplified setup program for an  Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
-Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server vNext installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
+Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server 2017 installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 For installation and upgrade instructions, see [Install R Server for Windows](rserver-install-windows.md).
 

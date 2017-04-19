@@ -35,9 +35,9 @@ The **RevoScaleR** and **MicrosoftML** packages are included when you install **
  
 In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.  
  
-In SQL Server vNext, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as **Machine Learning Services (In-Database)**.
+In SQL Server 2017, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as **Machine Learning Services (In-Database)**.
  
-SQL Server vNext includes many new features to make it easier to build and deploy machine learning solutions that use SQL Server data. Learn more about [what's new in this release.](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services)
+SQL Server 2017 includes many new features to make it easier to build and deploy machine learning solutions that use SQL Server data. Learn more about [what's new in this release.](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services)
  
 
 ## How to Work with R in SQL Server
