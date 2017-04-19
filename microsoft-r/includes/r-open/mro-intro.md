@@ -5,4 +5,4 @@ Microsoft R Open provides limited performance and scalability in comparison to M
 Visit the [MRAN Website](https://mran.microsoft.com/) to learn more about Microsoft R Open and download it.
 
 >[!WARNING]
->Microsoft R Open is a requirement of both Microsoft R Client and R Server. Only install the version of Microsoft R Open required for your product. Typically, the installation of R Open is handled for you by the setup process. However, in offline scenarios when no internet connection is available on the target machine, you must manually download the R Open version using only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+>Microsoft R Open is a requirement of both Microsoft R Client and R Server. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 

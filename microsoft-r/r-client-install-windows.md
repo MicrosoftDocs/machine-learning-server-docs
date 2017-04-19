@@ -80,7 +80,7 @@ On the machine onto which you are installing, follow this guidance before you be
 ## How to offline install (without internet access)
 
 >[!WARNING]
->Microsoft R Open is a requirement of both Microsoft R Client and R Server. Only install the version of Microsoft R Open required for your product. Typically, the installation of R Open is handled for you by the setup process. However, in offline scenarios when no internet connection is available on the target machine, you must manually download the R Open version using only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+>Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
 
 1. On a machine with _**unrestricted**_ internet access:
 
@@ -113,6 +113,9 @@ On the machine onto which you are installing, follow this guidance before you be
    + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
+
+>[!IMPORTANT]
+>Review the recommendations in [Package Management](package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
 
 <a name=silent></a> 
 
