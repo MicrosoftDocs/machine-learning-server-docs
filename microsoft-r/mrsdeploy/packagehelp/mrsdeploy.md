@@ -4,9 +4,9 @@
 title: "**mrsdeploy** Remote Execution and Web Service Deployment for Microsoft R  Server." 
 description: " Remote Execution and Web Services for R Server. " 
 keywords: "mrsdeploy, mrsdeploy-package" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ ms.custom: ""
  
  #`mrsdeploy`: **mrsdeploy** Remote Execution and Web Service Deployment for Microsoft R  Server.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
@@ -49,7 +49,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 
 
-The **remote execution** functions for `mrdseploy` are organized as 
+The **remote execution** functions for `mrsdeploy` are organized as 
 follows:
 
 Login/Logout:
@@ -143,12 +143,9 @@ Remote Command Line:
 * 
  [resume](resume.md)
 
-* 
- [resume](resume.md)
 
 
-
-The **web service** functions for `mrdseploy` are organized as 
+The **web service** functions for `mrsdeploy` are organized as 
 follows:
 
 

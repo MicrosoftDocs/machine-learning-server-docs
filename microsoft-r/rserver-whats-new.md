@@ -104,6 +104,17 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | [`rxSparkCacheData`](scaler/packagehelp/rxSparkCacheData.md) | New | Set the Cache flag in a Spark compute context.|
 | [`rxSyncPackages`](scaler/packagehelp/rxSyncPackages.md)  | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
 
+**mrsdeploy 1.1.0 Function Updates**
+
+| Function | Status | Changes |
+|----------|--------|---------|
+|[`getValidatedServiceType`](mrsdeploy/packagehelp/getValidatedServiceType.md) | New | Test to see if supplied service type is supported.|
+|[`print.serviceDetails`](mrsdeploy/packagehelp/print.serviceDetails.md) | New| Defines the R print generic for `serviceDetails` during a  `listServices()`. |
+|[`print.snapshotDetails`](mrsdeploy/packagehelp/print.snapshotDetails.md) | New | Defines the R print generic for `snapshotDetails` during a  `listSnapshots()`. |
+|[`remoteScript`](mrsdeploy/packagehelp/remoteScript.md) | Enhanced | Includes a new `async` parameter to support asynchronous remote execution. |
+|[`serviceTypes`](mrsdeploy/packagehelp/serviceTypes.md)  | New | Defines the enumerated list of the supported service types.|
+|[`summary.serviceDetails`](mrsdeploy/packagehelp/summary.serviceDetails.md)  | New | Defines the R summary generic for `serviceDetails` during a  `listServices()`. |
+|[`summary.snapshotDetails`](mrsdeploy/packagehelp/summary.snapshotDetails.md)  | New | Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. |
 
 ## Previous releases
 
@@ -292,4 +303,7 @@ algorithms for cleaning and analyzing text data.
 
 ## See Also
 
-[What's new in R Server](rserver-whats-new.md)
+ [Introduction to R Server](rserver.md) 
+ [Install R Server on Windows](rserver-install-windows.md)  
+ [Install R Server on Linux](rserver-install-linux-server.md)  
+ [Install R Server on Hadoop](rserver-install-hadoop.md)

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Take all objects from the local R session and load them into the remote R session." 
-description: " Take all objects from the local R session and load them into the remote R session. " 
+title: "Copy the workspace of the local R session." 
+description: " Copy all objects from the local R session and load them into the remote R session. " 
 keywords: "mrsdeploy, putLocalWorkspace" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #`putLocalWorkspace`: Take all objects from the local R session and load them into the remote R session.
+ #`putLocalWorkspace`: Copy the workspace of the local R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Take all objects from the local R session and load them into the remote R session.
+Copy all objects from the local R session and load them into the remote R session.
  
  
  ##Usage
@@ -42,6 +42,12 @@ Take all objects from the local R session and load them into the remote R sessio
   putLocalWorkspace()
  
 ```
+ 
+ ##Details
+ 
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
+ 
  
  ##See Also
  

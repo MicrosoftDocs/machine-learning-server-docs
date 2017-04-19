@@ -4,9 +4,9 @@
 title: "Test to see if all items in the supplied character vector are supported encoding types." 
 description: " Test to see if all items in the supplied character vector are supported encoding types. " 
 keywords: "mrsdeploy, is.encodings" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`is.encodings`: Test to see if all items in the supplied character vector are supported encoding types.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  

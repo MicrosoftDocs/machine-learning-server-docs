@@ -23,7 +23,7 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# R Server 9.1.0 Installation for Linux Systems
+# R Server 9.1 Installation for Linux Systems
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For informaton about the latest release, see [What's New in R Server](rserver-whats-new.md).
 

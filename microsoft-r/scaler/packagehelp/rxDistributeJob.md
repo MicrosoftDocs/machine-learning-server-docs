@@ -2,7 +2,7 @@
  
 # required metadata 
 title: " Distribute job across nodes of a cluster " 
-description: " Allows distributed execution of a function in parallel across nodes (computers)  of a 'compute context' such as a cluster. A helper functions checks to see if the 'compute context' is appropriate. " 
+description: " Allows distributed execution of a function in parallel across nodes (computers)  of a compute context such as a cluster. A helper functions checks to see if the compute context is appropriate. " 
 keywords: "RevoScaleR, rxDistributeJob, rxIsDistributedContext, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -82,9 +82,7 @@ An example of usage can be found in the **RevoPemaR** package.
  ##Value
  
 The result of the distributed computation.
- 
- ##Author(s)
- Microsoft Corporation [mrspack@microsoft.com](mrspack@microsoft.com)
+
  
  
  

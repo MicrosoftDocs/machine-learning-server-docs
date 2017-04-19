@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "Test to see if supplied encoding type is supported." 
-description: " Test to see if supplied encoding type is supported. " 
-keywords: "mrsdeploy, is.encoding" 
+title: "Defines the enumerated list of the supported service types." 
+description: " Defines the enumerated list of the supported service types. " 
+keywords: "mrsdeploy, serviceTypes" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
@@ -27,29 +27,20 @@ ms.custom: ""
  
  
  
- #`is.encoding`: Test to see if supplied encoding type is supported.
+ #`serviceTypes`: Defines the enumerated list of the supported service types.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Test to see if supplied encoding type is supported.
+Defines the enumerated list of the supported service types.
  
  
  ##Usage
 
 ```   
-  is.encoding(type)
+  serviceTypes()
  
 ```
- 
- ##Arguments
-
-   
-  
- ### `type`
- The encoding type to check for validity. 
-  
- 
  
  

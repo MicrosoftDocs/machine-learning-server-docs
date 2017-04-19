@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Logout of the remote session on the R Server." 
-description: " Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)  " 
+title: "Logout of the remote R session." 
+description: " Logout of the remote session on the R Server. " 
 keywords: "mrsdeploy, remoteLogout" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,14 +27,13 @@ ms.custom: ""
  
  
  
- #`remoteLogout`: Logout of the remote session on the R Server.
+ #`remoteLogout`: Logout of the remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
-
+Logout of the remote session on the R Server.
  
  
  ##Usage
@@ -43,6 +42,12 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
   remoteLogout()
  
 ```
+ 
+ ##Details
+ 
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
+ 
  
  ##See Also
  

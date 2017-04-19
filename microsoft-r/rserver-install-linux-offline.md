@@ -32,7 +32,9 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 
 ## Download R Server dependencies
 
-From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and will not accept alternative distributions. Other distributions might not include R packages (like intel_mkl) that R Server requires for baseline operations.
+From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. 
+
+MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](rserver-install-linux-manage-install.md).
 
 The .NET Core component is required for MicrosoftML (machine learning). It is also required for mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 

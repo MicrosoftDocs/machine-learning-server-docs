@@ -4,9 +4,9 @@
 title: "Retrieve, set, and list the different service options." 
 description: " Retrieve, set, and list the different service options. " 
 keywords: "mrsdeploy, serviceOption" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  
  #`serviceOption`: Retrieve, set, and list the different service options.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
@@ -69,9 +69,12 @@ A list of the current service options.
  
  ##See Also
  
-Other service.methods: [deleteService](deleteService.md),
+Other service methods: [deleteService](deleteService.md),
 [getService](getService.md), [listServices](listServices.md),
-[publishService](publishService.md), [updateService](updateService.md)
+[print.serviceDetails](print.serviceDetails.md),
+[publishService](publishService.md),
+[summary.serviceDetails](summary.serviceDetails.md),
+[updateService](updateService.md)
    
  ##Examples
 

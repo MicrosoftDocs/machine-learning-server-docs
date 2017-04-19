@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "Test to see if supplied encoding type is supported." 
-description: " Test to see if supplied encoding type is supported. " 
-keywords: "mrsdeploy, is.encoding" 
+title: "Test to see if supplied service type is supported." 
+description: " Test to see if supplied service type is supported. " 
+keywords: "mrsdeploy, getValidatedServiceType" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
@@ -27,19 +27,19 @@ ms.custom: ""
  
  
  
- #`is.encoding`: Test to see if supplied encoding type is supported.
+ #`getValidatedServiceType`: Test to see if supplied service type is supported.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Test to see if supplied encoding type is supported.
+Test to see if supplied service type is supported.
  
  
  ##Usage
 
 ```   
-  is.encoding(type)
+  getValidatedServiceType(type)
  
 ```
  
@@ -48,8 +48,12 @@ Test to see if supplied encoding type is supported.
    
   
  ### `type`
- The encoding type to check for validity. 
+ The service type to check for validity. 
   
  
+ 
+ ##Value
+ 
+type The validated type
  
  

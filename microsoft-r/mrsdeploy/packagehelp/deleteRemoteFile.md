@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Delete a file from the working directory of the remote R session." 
-description: " Deletes the file from the working directory of the remote R session. " 
+title: "Delete a file from the remote R session." 
+description: " Delete a file from the working directory of the remote R session. " 
 keywords: "mrsdeploy, deleteRemoteFile" 
-author: "richcalaway" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "04/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #`deleteRemoteFile`: Delete a file from the working directory of the remote R session.
+ #`deleteRemoteFile`: Delete a file from the remote R session.
 
- Applies to version 1.0 of package mrsdeploy.
+ Applies to version 1.1.0 of package mrsdeploy.
  
  ##Description
  
-Deletes the file from the working directory of the remote R session.
+Delete a file from the working directory of the remote R session.
  
  
  ##Usage

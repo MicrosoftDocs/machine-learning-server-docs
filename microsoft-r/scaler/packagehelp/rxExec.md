@@ -2,7 +2,7 @@
  
 # required metadata 
 title: " Run A Function on Multiple Nodes or Cores " 
-description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a compute context such as a cluster. " 
+description: " Allows distributed execution of a function in parallel across nodes (computers) or cores of a compute context such as a cluster. " 
 keywords: "RevoScaleR, rxExec, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
