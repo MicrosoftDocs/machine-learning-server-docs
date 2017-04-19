@@ -34,7 +34,7 @@ The Microsoft R product family includes:
 + <a href="#mrs">Microsoft R Server</a>
 + <a href="#mrc">Microsoft R Client</a>
 + <a href="#mro">Microsoft R Open</a>
-+ <a href="#sqlr">SQL Server R Services</a>
++ <a href="#sqlr">SQL Server Machine Learning Services</a>
 
 For a side-by-side comparison of Microsoft R Server, Microsoft R Client, and Microsoft R Open, [see here](microsoft-r-getting-started.md#compare-prods).
 <br>
@@ -67,11 +67,11 @@ Learn how to [install and get started with Microsoft R Client](r-client-get-star
 
 <br>
 <a name="sqlr"></a>
-##SQL Server R Services
+##SQL Server Machine Learning Services
 
 [!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
 
-Learn more about [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
+Learn more about [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.
 
 
 <br>
@@ -89,7 +89,7 @@ Start learning about Microsoft R today:
 
 + [Microsoft R Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
 
-+ [SQL Server R Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
++ [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
 
 + [Additional Resources](microsoft-r-more-resources.md)
 
