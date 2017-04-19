@@ -39,7 +39,7 @@ You can also run your code remotely on R Server using [remoteLogin() or remoteLo
 
 |   |   |
 | - | - |
-|Operating Systems|Supported versions include:<br>- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br>- Ubuntu 14.04 and 16.04<br>- SUSE Linux Enterprise Server 11 (SLES11)<br>Must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.|
+|Operating Systems|Supported versions include:<br>- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br>- Ubuntu 14.04 and 16.04<br>- SUSE Linux Enterprise Server 11 (SLES11)<br><br>Must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.|
 |Available RAM|2 GB of RAM is required; 8 GB or more are recommended|
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pretrained models are installed|
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
@@ -76,6 +76,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 1. Unpack the distribution and run the installation script.
 
 1. Unpack the file:
+
    `[tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz`
 
    The distribution is unpacked into an `MRC_Linux` folder at the download location. The distribution includes the following files:

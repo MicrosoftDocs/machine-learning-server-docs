@@ -255,7 +255,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 >remoteScript("C:/myScript2.R")
 ```
 
-<a name="publish-remote-session">
+<a name="publish-remote-session"></a>
 
 ## Publishing web services in a remote session
 
@@ -315,6 +315,6 @@ REMOTE>api <- publishService(
 ## See also
 
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
-+ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
++ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
 + [Data scientist get started guide](data-scientist-get-started.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)

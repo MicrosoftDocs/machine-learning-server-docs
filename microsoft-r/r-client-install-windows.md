@@ -63,19 +63,19 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Download Microsoft R Client from the following link: http://aka.ms/rclient/
 
-1. Run the Microsoft R Client setup and follow the prompts:
+1. Launch the Microsoft R Client setup and follow the prompts.
 
-   + Accept the default installation path for Microsoft R Client or choose another location.
+1. Accept the default installation path for Microsoft R Client or choose another location.
 
-   + Review the components that will be installed as part of Microsoft R Client. 
+1. Review the components that will be installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
+   While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
 
-   + Accept the Microsoft R Client license terms.
+1. Accept the Microsoft R Client license terms.
 
-   + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+1. Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
-   + Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
+1. Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
 
 ## How to offline install (without internet access)
 
