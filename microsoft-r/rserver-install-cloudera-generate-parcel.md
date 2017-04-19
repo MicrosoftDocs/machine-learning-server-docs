@@ -33,7 +33,7 @@ In previous releases, parcel installation required downloading two pre-built par
 
 + a parcel
 + a checksum
-+ a Custom Service Descriptor (CSD) that integreates Microsoft R Server as a managed service in Cloudera
++ a Custom Service Descriptor (CSD) that integrates Microsoft R Server as a managed service in Cloudera
 
 Before you start, be aware of the following limitations:
  
@@ -59,7 +59,7 @@ After downloading the software to a writable directory, such as **/tmp**, the se
 1. On the master node, log in as root or a user with super user privileges (`sudo su`). In our examples, the master node is a machine named `cdh4-mn0`.
 2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp`
 3. Unpack the file:
-        `[root@cdh4-mn0 tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
+        `[root@cdh4-mn0 tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
 The distribution is unpacked into an `MRS90HADOOP` folder at the download location. The distribution includes the following files:
 

@@ -82,7 +82,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
 3. Unpack the file:
 
-  `[tmp] $ tar zxvf microsoft_r_server_9.1.0.tar.gz`
+  `[tmp] $ tar zxvf en_microsoft_r_server_910_for_linux_x64_10323878.tar.gz`
 
 The distribution is unpacked into an `MRS90LINUX` folder at the download location. The distribution includes the following files:
 
@@ -98,7 +98,7 @@ The distribution is unpacked into an `MRS90LINUX` folder at the download locatio
 MRS packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
 
 > [!Important]
-> Package names in the R Server distribution have changed in the 9.1.0 release. Instead of DeployrR-themed package names, the new names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.
+> Package names in the R Server distribution have changed in the 9.1 release. Instead of DeployrR-themed package names, the new names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.
 >
 
 ### Run the MRS install script
@@ -115,9 +115,9 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd /tmp/MRS90LINUX`
 
-4. Run the script.
+4. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
-   `[root@localhost MRS90LINUX] $ bash install.sh`
+   `[root@localhost MRS90LINUX] $ bash install.sh -m
 
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 

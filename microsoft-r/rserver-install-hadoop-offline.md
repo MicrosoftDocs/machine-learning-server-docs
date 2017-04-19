@@ -72,7 +72,7 @@ Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http
 
 + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `microsoft-r-server-9.1.0.tar.gz`
++ `en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 + any missing packages from the dependency list
 
 ## Install package dependencies
@@ -108,7 +108,7 @@ Next, unpack the R Server distribution and copy the gzipped MRO distribution to 
 
 1. Unpack the MRS gzipped file. 
 
-  `[root@localhost tmp] $ tar zxvf microsoft-r-server-9.1.0.tar.gz`
+  `[root@localhost tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
 2. A new folder called MRS90HADOOP is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS90HADOOP folder containing the installation script (install.sh).
 
@@ -122,9 +122,9 @@ R Server for Hadoop is deployed by running the install script with no parameters
 
   `[root@localhost tmp] $ cd MRS90HADOOP`
 
-2. Run the script.
+2. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models.
 
-   `[root@localhost MRS90HADOOP] $ bash install.sh`
+   `[root@localhost MRS90HADOOP] $ bash install.sh -h -m`
 
 3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -209,8 +209,6 @@ Review the following walkthroughs to move forward with using R Server and the Re
 
 + [Get started with ScaleR on Spark](scaler-spark-getting-started.md)
 + [Get started with ScaleR on MapReduce](scaler-hadoop-getting-started.md)
-
-## Next Steps
 
 Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 

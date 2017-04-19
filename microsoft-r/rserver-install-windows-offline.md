@@ -60,7 +60,7 @@ Without an internet connection, the following components must be downloaded to a
 <a name="download"><a/>
 ## Download R Server installer
 
-Get the zipped RServerSetup installer file from one of the following download sites.
+Get the zipped installation file from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -74,15 +74,15 @@ Use a flash drive or another mechanism to transfer the following to the offline 
 
 + SRO_3.3.3.0_1033.cab
 + MLM_9.1.0.0_1033.cab 
-+ RServerSetup.exe 
++ en_microsoft_r_server_910_for_windows_x64_10324119.zip
 
-Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. RServerSetup.exe can also be placed in the temp folder, but you could also put it in another folder like Downloads.
+Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. 
 
 ## Run RServerSetup
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
-RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
+Unzip the installation files and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In **Configure installation**, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.

@@ -41,9 +41,7 @@ The .NET Core component is required for MicrosoftML (machine learning). It is al
 | Component | Version | Download Link | Notes |
 |-----------|---------|---------------|-------|
 | Microsoft R Open | 3.3.3 | [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297) | Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you could end up with the wrong version. |
-| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) | Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list. |
-
-The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.
+| Microsoft .NET Core | 1.1 | [.NET Core download site](https://www.microsoft.com/net/download/linux) | Multiple versions of .NET Core are available. Be sure to choose from the 1.1.1 (Current) list. <br/><br/>The .NET Core download page for Linux provides gzipped tar files for supported platforms. In the Runtime column, click **x64** to download a tar.gz file for the operating system you are using. The file name for .NET Core is `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`.|
 
 ## Download R Server installer
 
@@ -70,7 +68,7 @@ Use a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http
 
 + `dotnet-<linux-os-name>-x64.1.1.1.tar.gz`
 + `microsoft-r-open-3.3.3.tar.gz`
-+ `microsoft-r-server-9.1.0.tar.gz`
++ `en_microsoft-r-server-910_for_linux_x64_10323878.tar.gz`
 + any missing packages from the dependency list
 
 ## Install package dependencies
@@ -106,7 +104,7 @@ Next, unpack the R Server distribution and copy the gzipped MRO distribution to 
 
 1. Unpack the MRS gzipped file. 
 
-  `[root@localhost tmp] $ tar zxvf microsoft-r-server-9.1.0.tar.gz`
+  `[root@localhost tmp] $ tar zxvf en_microsoft_r_server_910_for_linux_x64_10323878.tar.gz`
 
 2. A new folder called MRS90Linux is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS90Linux folder containing the installation script (install.sh).
 
@@ -120,9 +118,9 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd MRS90LINUX`
 
-2. Run the script.
+2. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
-   `[root@localhost MRS90LINUX] $ bash install.sh`
+   `[root@localhost MRS90LINUX] $ bash install.sh -m`
 
 3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 

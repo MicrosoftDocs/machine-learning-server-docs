@@ -86,7 +86,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 1. Log in as root or a user with super user privileges (`sudo su`).
 2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
-        `[tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
+        `[tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
 
 ## Run the install script
@@ -99,10 +99,10 @@ The Hadoop component is deployed by running the install script with the **-p** p
 3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS90HADOOP if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`
 		[username tmp] $ `cd MRS90HADOOP`
-4. Run the script with the **-p** parameter, specifying the Hadoop component:
-		[username tmp MRS90HADOOP] $ `sudo bash install.sh -p`
+4. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models:
+		[username tmp MRS90HADOOP] $ `sudo bash install.sh -p -m`
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
-6. Repeat to accept license terms for Microsoft R Server.
+6. Repeat the key sequence to accept license terms for Microsoft R Server.
 7. Installer output shows the packages and location of the log file.
 
 <a name="unattended"></a>
@@ -119,7 +119,8 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -m | --models | Install Microsoft ML models.
+ -m | --models | Install Microsoft pretrained machine learning models.
+ -p | --hadoop | Install the Hadoop component.
  -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
