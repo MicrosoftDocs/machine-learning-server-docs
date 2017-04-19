@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "The summary generic for `serviceDetails`." 
-description: " Defines the R summary generic for `serviceDetails` during a  `listServices()`. " 
+title: "The summary generic for serviceDetails." 
+description: " Defines the R summary generic for serviceDetails during a  listServices(). " 
 keywords: "mrsdeploy, summary.serviceDetails" 
 author: "heidisteen" 
 manager: "jhubbard" 

@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "HTTP requests made easy and more fluent around `curl`." 
-description: " HTTP requests made easy and more fluent around `curl`. " 
+title: "HTTP requests made easy and more fluent around curl." 
+description: " HTTP requests made easy and more fluent around curl. " 
 keywords: "mrsdeploy, request" 
 author: "heidisteen" 
 manager: "jhubbard" 

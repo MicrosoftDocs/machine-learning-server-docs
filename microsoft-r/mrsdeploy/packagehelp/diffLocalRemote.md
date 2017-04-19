@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "Generate a 'diff' report between local and remote R sessions" 
-description: " Generate a 'diff' report between local and remote R sessions " 
+title: "Generate a diff report between local and remote R sessions" 
+description: " Generate a diff report between local and remote R sessions " 
 keywords: "mrsdeploy, diffLocalRemote" 
 author: "heidisteen" 
 manager: "jhubbard" 

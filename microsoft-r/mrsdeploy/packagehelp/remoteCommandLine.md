@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "Display the 'REMOTE>' command prompt." 
-description: " Displays the 'REMOTE>' command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
+title: "Display the REMOTE command prompt." 
+description: " Displays the REMOTE command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
 keywords: "mrsdeploy, remoteCommandLine" 
 author: "heidisteen" 
 manager: "jhubbard" 

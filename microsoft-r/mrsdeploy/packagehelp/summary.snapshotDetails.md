@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "The summary generic for `snapshotDetails`." 
-description: " Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. " 
+title: "The summary generic for snapshotDetails." 
+description: " Defines the R summary generic for snapshotDetails during a  listSnapshots(). " 
 keywords: "mrsdeploy, summary.snapshotDetails" 
 author: "heidisteen" 
 manager: "jhubbard" 
