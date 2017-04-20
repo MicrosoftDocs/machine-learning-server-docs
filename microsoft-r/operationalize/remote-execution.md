@@ -217,28 +217,40 @@ REMOTE> pause()
 
 ## R session snapshots
 
-Snapshot functions are very useful for remote execution scenarios. It can save the whole workspace and working directory so that you can pick up from exactly where you left last time. Think of it as similar to saving and loading a game.
+Session snapshot functions are very useful for remote execution scenarios. It can save the whole workspace and working directory so that you can pick up from exactly where you left last time. Think of it as similar to saving and loading a game.
 
-
+### What's in a session snapshot 
 If you need a prepared environment for remote script execution that includes any of the following: R packages, R objects and data files, consider creating a **snapshot**. A snapshot is an image of a remote R session saved to Microsoft R Server, which includes:
 
 + The session's workspace along with the installed R packages
 + Any files and artifacts in the working directory
 
-A snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading these items each time you want to execute the script, create a snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created.
-
->[!WARNING]
->**R Server 9.0 users!** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
-`library("<packagename>", lib.loc=getwd())`
+A session snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. You'll have to load any packages again as described later in this section.
 
 Snapshots are only accessible to the user who creates them and cannot be shared across users.
 
 The following functions are available for working with snapshots:  
 `listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
 
-> [!IMPORTANT] 
-> While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
+### Guidance and warnings
 
+Please take note of the following tips and recommendations around using session snapshots:
++ One caveat is that while the workspace is saved inside the session snapshot, it does not save loaded packages.  If packages are needed by your code, they should be included in the R code that is part of the web service using the `require()` function. `require()` was designed to be used to load packages from within other functions. For example, you can write code like this to load the RevoScaleR package:
+ 
+  ```R 
+  delayPrediction <- function(depTime, dayOfWeek) {
+    require(RevoScaleR)
+    test <- data.frame(CRSDepTime=depTime, DayOfWeek=factor(dayOfWeek, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
+    rxPredict(modelObject = modelInfo$predictiveModel, data = test, outData = test, verbose = 1, type = "response")
+  }
+  ```
+
++ While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, in the event that you only need a single object, consider passing that object alone itself instead of using a snapshot.
+
++ **R Server 9.0 users** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
+`library("<packagename>", lib.loc=getwd())`
+
+### Example of snapshot usage
 
 ```R
 #EXAMPLE: USING SNAPSHOTS

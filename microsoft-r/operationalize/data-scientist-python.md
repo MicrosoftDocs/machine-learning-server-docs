@@ -465,15 +465,15 @@ After authentication, you can start a Python session and create a model you'll p
        print (execute_response.error_message)
    ```
 
-1. Create a snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. Note that 
-   you can only use a snapshot that you've created.
+1. Create a session snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. Note that 
+   you can only use a session snapshot that you've created.
 
-   Snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files and artifacts. Snapshots save the whole workspace and working directory. 
+   Session snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files and artifacts. Snapshots save the whole workspace and working directory. 
 
    When publishing, you can only include a snapshot you've created. 
 
    > [!NOTE] 
-   > While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python `del` function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
+   > While session snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python `del` function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
 
    ```python
    #Create a snapshot of the current session.
