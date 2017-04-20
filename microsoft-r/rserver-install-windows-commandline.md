@@ -28,7 +28,7 @@ ms.custom: ""
 
 This article provides syntax and examples for running RServerSetup.exe from the command line. You can use command line parameters for an internet-connected or offline installation. A command line installation requires administrator permissions.
 
-Before you start, review the following articles about installation type:
+Before you start, review the following articles about each installation type:
 
 + [Install R Server 9.1. on Windows](rserver-install-windows.md) for an internet-connected installation, including system requirements, prerequisites, download links, and verification steps.
 + [Offline installation](rserver-install-windows-offline.md) for equivalent details and download links.
@@ -51,17 +51,17 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 | Parameter | Description |
 |-----------|-------------|
 | `/install` | Runs RServerSetup.exe in install mode, used to add MRS. |
-| `/uninstal`l | Removes an existing installtion of R Server. |
-| `/modify` | Looks for an existing installation of R Server 9.1 and modifies an existing installation based on install options. In this release, you could use this parameter to add the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). |
+| `/uninstal`l | Removes an existing installation of R Server. |
+| `/modify` | Looks for an existing installation of R Server 9.1 and modifies the installation based on install options. In this release, you could use `/modify` to add the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). |
 
  
 **Install Options**
 
 | Parameter | Description |
 |-----------|-------------|
-| `/offline` | Instructs setup to find .cab files on the local system in the `mediadir` location. In this release, two .cab files are required: SRO_3.3.3.0_1033.cab for MRO and MLM_9.1.0.0_1033.cab for the machine learning models.|
+| `/offline` | Instructs setup to find .cab files on the local system in the `mediadir` location. In this release, two .cab files are required: SRO_3.3.3.0_1033.cab for MRO, and MLM_9.1.0.0_1033.cab for the machine learning models.|
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
-| `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for local admin. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to this folder. |
+| `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
 | `/mediadir=""` | .cab file location setup uses to find .cab files in an offline installation. By default, setup uses `%temp%` for local admin. |
 | `/models` | Adds the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). |
  
@@ -69,18 +69,18 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 | Parameter | Description |
 |-----------|-------------|
-| `/cleanup` | Used after uninstall. Removes folders and registry settings, although some files and folders might need to be deleted manually if the folder contains user-added script or data files. |
+| `/cleanup` | Used after uninstall. Removes folders and registry settings, although some files and folders might need to be deleted manually if the folder contains files you modified or added. |
 
 
 ## Default installation
 
 The default installation adds Microsoft R Server (MRS) and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizng analytics and machine learning. The command line equivalent of a double-click invocation of RServerSetup.exe is `rserversetup.exe /install /full`.
 
-A default installation includes MicrosoftML, but not the pretrained models. You must explicitly add `/models` to an installation.
+A default installation includes the MicrosoftML package, but not the pretrained models. You must explicitly add `/models` to an installation.
 
 ## Examples
 
-1. Run setup in unattended mode with no prompts or user interaction with all features, including the pretrained models.
+1. Run setup in unattended mode with no prompts or user interaction to install all features, including the pretrained models.
 
    `rserversetup.exe /quiet /models`
 
@@ -88,7 +88,7 @@ A default installation includes MicrosoftML, but not the pretrained models. You 
 
    `rserversetup.exe /modify /models`
 
-3. Uninstall the software and clean up the registry and folders. This is a two-part process. In practice, the `cleanup` option should not be necessary.
+3. Uninstall the software and clean up the registry and folders. This is a two-step process. In practice, the `cleanup` option should not be necessary.
 
   `rserversetup.exe /uninstall` 
   `rserversetup.exe /cleanup` 

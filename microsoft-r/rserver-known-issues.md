@@ -100,7 +100,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 ## Cloudera parcel generator script implies existence of a currently unavailable script
 
-If you are performing a [parcel installation of R Server in Cloudera](rserver-cloudera-install.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
+If you are performing a [parcel installation of R Server in Cloudera](rserver-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
 
 ## Previous releases 
 
