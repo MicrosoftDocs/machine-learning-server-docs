@@ -61,7 +61,7 @@ This section walks you through an R Server 9.1 deployment using the standalone W
 
 ### Download R Server installer
 
-Get the zipped installation file from one of the following download sites.
+You can get the zipped installation file from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -73,7 +73,7 @@ Get the zipped installation file from one of the following download sites.
 
 ### Run Setup
 
-Extract the .zip download file and run setup. 
+Unzip the installation file en_microsoft_r_server_910_for_windows_x64_10324119.zip, navigate to the folder containing RServerSetup.exe, and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:

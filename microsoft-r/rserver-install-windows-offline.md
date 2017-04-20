@@ -62,7 +62,7 @@ Without an internet connection, the following components must be downloaded to a
 
 ## Download R Server installer
 
-Get the zipped installation file from one of the following download sites.
+You can get the zipped installation file from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -84,7 +84,7 @@ Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
-Unzip the installation files and then run setup.
+Unzip the installation file en_microsoft_r_server_910_for_windows_x64_10324119.zip, navigate to the folder containing RServerSetup.exe, and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
