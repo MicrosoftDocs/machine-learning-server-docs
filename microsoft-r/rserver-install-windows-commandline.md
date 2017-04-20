@@ -6,7 +6,7 @@ description: "Run unattended or scripted setup of R Server 9.1 on a Windows oper
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "04/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -50,9 +50,9 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 | Parameter | Description |
 |-----------|-------------|
-| `/install` | Runs RServerSetup.exe in install mode, used to add MRS. |
+| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md)|
 | `/uninstal`l | Removes an existing installation of R Server. |
-| `/modify` | Looks for an existing installation of R Server 9.1 and modifies the installation based on install options. In this release, you could use `/modify` to add the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). |
+| `/modify` | Runs RServerSetup.exe in modify mode. Looks for an existing installation of R Server 9.1 and gives you options for changing the install options (for example, you could add the pretrained models or uninstall the server). You can use this option to rerun (repair) an installation. |
 
  
 **Install Options**
@@ -63,13 +63,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
 | `/mediadir=""` | .cab file location setup uses to find .cab files in an offline installation. By default, setup uses `%temp%` for local admin. |
-| `/models` | Adds the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). |
- 
-**Utilities** 
-
-| Parameter | Description |
-|-----------|-------------|
-| `/cleanup` | Used after uninstall. Removes folders and registry settings, although some files and folders might need to be deleted manually if the folder contains files you modified or added. |
+| `/models` | Adds the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). Use with `/install`.|
 
 
 ## Default installation
@@ -86,12 +80,11 @@ A default installation includes the MicrosoftML package, but not the pretrained 
 
 2. Add the pretrained machine learning models to an existing installation. The pretrained models are inserted into the MicrosoftML package. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of R Server. 
 
-   `rserversetup.exe /modify /models`
+   `rserversetup.exe /install /models`
 
-3. Uninstall the software and clean up the registry and folders. This is a two-step process. In practice, the `cleanup` option should not be necessary.
+3. Uninstall the software in unattended mode.
 
-  `rserversetup.exe /uninstall` 
-  `rserversetup.exe /cleanup` 
+  `rserversetup.exe /quiet /uninstall`  
 
 4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](rserver-install-windows-offline.md).
 
