@@ -153,26 +153,17 @@ Installer output shows the packages and location of the log file.
 
    `[root@localhost MRS91Linux] $ yum list \*microsoft\*`
 
-2. Check the version of Microsoft R Open using `rpm -qi`:
+2. Once you have a package name, you get verbose version information using `rpm -qi`:
 
-   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
+   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
-3. Check the version of Microsoft R Server:
+3. Partial output is as follows (note version 9.1.0):
 
-   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
-
-4. Check the version of .NET Core, and verify the symlink:
-
-  `[root@localhost MRS91Linux] $ dotnet --version` 
-  `[root@localhost MRS91Linux] $ ls -la /usr/local/bin`
-
-5. Partial output is as follows (note version 9.1.0):
-
-~~~~
+  ```
 	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
 	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
-~~~~
+  ```
 
 ## Start Revo64
 
