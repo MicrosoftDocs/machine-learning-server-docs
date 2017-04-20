@@ -6,7 +6,7 @@ description: "How to install R Server on Linux without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,6 +29,25 @@ ms.custom: ""
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+
+## System requirements
+
++ Operating system must be a [supported version of Linux](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
+
++ Disk space must be a minimum of 500 MB.
+
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](rserver-install-linux-offline.md).
+
++ A package manager (yum for RHEL systems, zypper for SLES systems)
+
++ Root or super user permissions
+
+The following additional components are included in Setup and required for R Server.
+
+* Microsoft R Open 3.3.3
+* Microsoft .NET Core 1.1 for Linux (required for mrsdeploy and MicrosoftML use cases)
 
 ## Download R Server dependencies
 
@@ -202,10 +221,6 @@ As a verification step, run the Revo64 program.
 
 To quit the program, type `q()` at the command line with no arguments.
 
-## Enable Remote Connections and Analytic Deployment
-
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
-
 <a name="unattended"></a>
 
 ## Unattended install options
@@ -226,13 +241,26 @@ flag | Option | Description
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
 
+## Enable Remote Connections and Analytic Deployment
+
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+
+ ## What's Installed with R Server
+
+The Microsoft R Server setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. In contrast with R Client, R Server supports much larger data sets and distributed workloads.
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
 ## Next Steps
 
 Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
- [Supported platforms](rserver-install-supported-platforms.md) 
- [What's new in R Server](notes/r-server-notes.md)  
+ [Introduction to R Server](rserver.md) 
+ [What's New in R Server](rserver-whats-new.md)
+ [Supported platforms](rserver-install-supported-platforms.md)  
+ [Known Issues](rserver-known-issues.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)  
  [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

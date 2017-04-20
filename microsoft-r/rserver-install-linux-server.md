@@ -6,7 +6,7 @@ description: "Install Microsoft R Server 9.1.0 on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/09/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,15 +25,15 @@ ms.custom: ""
 
 # R Server 9.1 Installation for Linux Systems
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For information about the latest release, see [What's New in R Server](rserver-whats-new.md).
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. 
 
-This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
+This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see the instructions for an [offline installation](rserver-install-windows-offline.md).
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## System requirements
 
-+ Operating system must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
++ Operating system must be a [supported version of Linux](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
@@ -117,7 +117,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 4. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
-   `[root@localhost MRS91Linux] $ bash install.sh -m
+   `[root@localhost MRS91Linux] $ bash install.sh -m`
 
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -218,15 +218,23 @@ flag | Option | Description
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
 
-## Remove Microsoft R Server
+## What's Installed with R Server
 
-For instructions on rolling back your installation, see
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md).
+The Microsoft R Server setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. In contrast with R Client, R Server supports much larger data sets and distributed workloads.
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
+## Next Steps
+
+Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
- [Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)  
- [Install R Server 9.0.1 for Linux](rserver-install-linux-server-901.md)  
+ [Introduction to R Server](rserver.md) 
+ [What's New in R Server](rserver-whats-new.md)
+ [Supported platforms](rserver-install-supported-platforms.md)  
+ [Known Issues](rserver-known-issues.md)  
  [Install R on Hadoop overview](rserver-install-hadoop.md)  
  [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md) 
  [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)  

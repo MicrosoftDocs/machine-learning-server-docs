@@ -51,7 +51,7 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 **.NET Core platform requirements for MicrosoftML and mrsdeploy**
 
-Several features in R Server have a .NET Core dependency. These include features include [machine learning algorithms](microsoftml-introduction.md) bundled in the MicrosoftML package, plus capabilities in mrsdeploy for [operationalizing your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are available on a subset of the platforms listed above.
+Several features in R Server have a .NET Core dependency. These features include [machine learning algorithms](microsoftml-introduction.md) bundled in the MicrosoftML package, plus capabilities in mrsdeploy for [operationalizing your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are available on a subset of the platforms listed above.
 
 | SKU | MicrosoftML and mrsdeploy platform requirements |
 |-----|----------------------------------------|
