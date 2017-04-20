@@ -33,7 +33,7 @@ In previous releases, parcel installation required downloading two pre-built par
 
 + a parcel
 + a checksum
-+ a Custom Service Descriptor (CSD) that integreates Microsoft R Server as a managed service in Cloudera
++ a Custom Service Descriptor (CSD) that integrates Microsoft R Server as a managed service in Cloudera
 
 Before you start, be aware of the following limitations:
  
@@ -59,9 +59,9 @@ After downloading the software to a writable directory, such as **/tmp**, the se
 1. On the master node, log in as root or a user with super user privileges (`sudo su`). In our examples, the master node is a machine named `cdh4-mn0`.
 2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp`
 3. Unpack the file:
-        `[root@cdh4-mn0 tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
+        `[root@cdh4-mn0 tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
-The distribution is unpacked into an `MRS90HADOOP` folder at the download location. The distribution includes the following files:
+The distribution is unpacked into an `MRS91Hadoop` folder at the download location. The distribution includes the following files:
 
 | File | Description |
 |------|-------------|
@@ -78,11 +78,11 @@ The parcel generator script is now available in the **tmp** directory. The scrip
 
 The script downloads Microsoft R Open and builds a parcel by extracting information from RPM packages. You can append flags to run unattended setup or customize feature selections.
 
-1. Switch to the MRS90HADOOP directory: `cd /MRS90HADOOP`
+1. Switch to the MRS91Hadoop directory: `cd /MRS91Hadoop`
 
 2. Run the script without actually invoking its operations:
 
-    `[root@cdh4-mn0 MRS90HADOOP] $ bash generate_mrs_parcel.sh -n`
+    `[root@cdh4-mn0 MRS91Hadoop] $ bash generate_mrs_parcel.sh -n`
 
 You will be prompted to read and accept license agreements. 
   

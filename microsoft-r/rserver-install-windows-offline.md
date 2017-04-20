@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Offline install for Microsoft R Server 9.x for Windows"
-description: "How to install R Server 9.x without an internet connection"
+title: "Offline install for Microsoft R Server 9.1 for Windows"
+description: "How to install R Server 9.1 without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/06/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Offline installation instructions for R Server 9.x for Windows
+# Offline installation for R Server 9.1 for Windows
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
@@ -39,7 +39,7 @@ In this release, most components required for R Server installation are embedded
 
 ## System requirements
 
-+ Operating system must be a supported version of Windows on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended. For operating system versions, see [Supported platforms](rserver-install-supported-platforms.md). 
++ Operating system must be a [supported version of Windows](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
@@ -48,6 +48,7 @@ In this release, most components required for R Server installation are embedded
 + .NET Framework 4.5.2 or later. 
 
 <a name="download"><a/>
+
 ## Download required components
 
 Without an internet connection, the following components must be downloaded to a separate device and transferred to the target machine.
@@ -58,9 +59,10 @@ Without an internet connection, the following components must be downloaded to a
 | MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
 
 <a name="download"><a/>
+
 ## Download R Server installer
 
-Get the zipped RServerSetup installer file from one of the following download sites.
+Get the zipped installation file from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -74,21 +76,21 @@ Use a flash drive or another mechanism to transfer the following to the offline 
 
 + SRO_3.3.3.0_1033.cab
 + MLM_9.1.0.0_1033.cab 
-+ RServerSetup.exe 
++ en_microsoft_r_server_910_for_windows_x64_10324119.zip
 
-Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. RServerSetup.exe can also be placed in the temp folder, but you could also put it in another folder like Downloads.
+Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. 
 
 ## Run RServerSetup
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
-RServerSetup.exe is a self-extracting executable. It's not necessary to unzip it first. 
+Unzip the installation files and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. In **Configure installation**, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
+2. In Configure installation, choose optional components. Required components are listed, but not configurable. Options include:
     + R Server (Standalone)
-    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
-3. In an offline installation scenario, you ware notified if either prerequisite is missing, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
+    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used for machine learning.
+3. In an offline installation scenario, you are notified about missing requirements, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
 4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 5. Optionally, change the home directory for R Server.
 5. At the end of the wizard, click **Install** to run setup.
@@ -113,18 +115,39 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
+## Command line options
+
+You can run RServerSetup.exe from the command line with the following options:
+
+| Parameter | Description |
+|-----------|-------------|
+| /uninstall | Removes the software. |
+| /cleanall | Removes temporary files after the software is uninstalled. |
+
 ## Enable Remote Connections and Analytic Deployment
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
+## What's Installed with R Server
+
+The Microsoft R Server setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. In contrast with R Client, R Server supports much larger data sets and distributed workloads.
+
+The R libraries are installed under the R Server installation directory, `C:\Program Files\Microsoft\R Server\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+
+All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Server under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
+
+Consider adding a development tool on the server to build script or solutions using R Server features:
+
++ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+
 ## See Also
 
-[Run R Server for Windows](rserver-install-windows.md)
-
-[Supported platforms](rserver-install-supported-platforms.md)
-
-[What's new in R Server](notes/r-server-notes.md)
-
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+ [Introduction to R Server](rserver.md) 
+ [What's New in R Server](rserver-whats-new.md)
+ [Supported platforms](rserver-install-supported-platforms.md)  
+ [Known Issues](rserver-known-issues.md)  
+ [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
+ [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

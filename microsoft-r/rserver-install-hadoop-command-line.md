@@ -86,7 +86,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 1. Log in as root or a user with super user privileges (`sudo su`).
 2. Switch to the **/tmp** directory (assuming it's the download location)
 3. Unpack the file:
-        `[tmp] $ tar zxvf microsft-r-server-9.1.0.tar.gz`
+        `[tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
 
 ## Run the install script
@@ -96,22 +96,22 @@ The Hadoop component is deployed by running the install script with the **-p** p
 1. Log in as root or as a user with super user privileges (`sudo -s`). 
 2. Verify system repositories are up to date:
 		[username] $ `sudo yum clean all`
-3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS90HADOOP if you unpacked the tar.gz file):
+3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS91Hadoop if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`
-		[username tmp] $ `cd MRS90HADOOP`
-4. Run the script with the **-p** parameter, specifying the Hadoop component:
-		[username tmp MRS90HADOOP] $ `sudo bash install.sh -p`
+		[username tmp] $ `cd MRS91Hadoop`
+4. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models:
+		[username tmp MRS91Hadoop] $ `sudo bash install.sh -p -m`
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
-6. Repeat to accept license terms for Microsoft R Server.
+6. Repeat the key sequence to accept license terms for Microsoft R Server.
 7. Installer output shows the packages and location of the log file.
 
 <a name="unattended"></a>
 
 ## Unattended install options
 
-You can perform a silent install to bypass prompts during setup. In MRS90HADOOP, run the install script with the following parameters:
+You can perform a silent install to bypass prompts during setup. In MRS91Hadoop, run the install script with the following parameters:
 
-   `[tmp MRS90HADOOP] $ install.sh -a -s`
+   `[tmp MRS91Hadoop] $ install.sh -a -s`
 
 Additional flags are available, as follows:
 
@@ -119,7 +119,8 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -m | --models | Install Microsoft ML models.
+ -m | --models | Install Microsoft pretrained machine learning models.
+ -p | --hadoop | Install the Hadoop component.
  -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
@@ -128,11 +129,11 @@ flag | Option | Description
 ## Verify installation
 
 1. List installed packages and get package names:
-        `[MRS90HADOOP] $ yum list \*microsoft\*`
+        `[MRS91Hadoop] $ yum list \*microsoft\*`
 2. Check the version of Microsoft R Open using `rpm -qi`:
-		`[MRS90HADOOP] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
+		`[MRS91Hadoop] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
 3. Check the version of Microsoft R Server:
-        `[MRS90HADOOP] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+        `[MRS91Hadoop] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 4. Partial output is as follows (note version 9.1.0):
 
 ~~~~
@@ -155,7 +156,7 @@ Each user should ensure that the appropriate user directories exist, and if nece
 
 The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username"). Run the RevoScaleR commands in a Revo64 session.
 
-		$ `cd MRS90HADOOP`
+		$ `cd MRS91Hadoop`
 		$ `Revo64`
 		> rxHadoopMakeDir("/user/RevoShare/username")
 		> rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
@@ -278,11 +279,11 @@ The following commands use pdsh and pdcp to distribute and install Microsoft R S
 		pdshw
 		> mkdir -p /var/tmp/revo-install
 		> exit
-		pdcpw /tmp/MRS90HADOOP.tar.gz /var/tmp/revo-install
+		pdcpw /tmp/MRS91Hadoop.tar.gz /var/tmp/revo-install
 		pdshw
 		> cd /var/tmp/revo-install; yum clean all
-		> tar zxf MRS90HADOOP.tar.gz
-		> cd MRS90HADOOP; sudo bash ./install.sh -a -p
+		> tar zxf MRS91Hadoop.tar.gz
+		> cd MRS91Hadoop; sudo bash ./install.sh -a -p
 		> exit
 
 Each command must run on a single logical line, even if it spans two lines below due to space constraints. Lines beginning with `>` indicate commands typed into an interactive pdsh session.
