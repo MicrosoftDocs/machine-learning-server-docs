@@ -74,7 +74,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 ## Default installation
 
-The default installation adds Microsoft R Server (MRS) and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizng analytics and machine learning. The command line equivalent of a double-click invocation of RServerSetup.exe is `rserversetup.exe /install /full`.
+The default installation adds Microsoft R Server (MRS) and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizing analytics and machine learning. The command line equivalent of a double-click invocation of RServerSetup.exe is `rserversetup.exe /install /full`.
 
 A default installation includes the MicrosoftML package, but not the pretrained models. You must explicitly add `/models` to an installation.
 
