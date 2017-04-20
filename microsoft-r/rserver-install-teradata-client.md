@@ -6,7 +6,7 @@ description: "Microsoft R Server install guide for Teradata clients."
 keywords: ""
 author: "jeffstokes72"
 manager: "jhubbard"
-ms.date: "03/17/2016"
+ms.date: "04/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -346,19 +346,17 @@ If you will be using RxOdbcData with a DSN, you need to define an appropriate DS
 
 The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the MRAN source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
 
-## Installing Microsoft R Server on the Client
+## Installing Microsoft R Server or R Client on the Client
 
-To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in.
+To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in. For development purposes, you can install the free Developer edition of R Server on Linux or Windows:
 
-If your client machine is running Windows, you will need to obtain Revolution R Enterprise 8 for Windows. Installing the client software is a two-step process, described in the following documents:
++ [Install R Server for Linux](rserver-install-linux-server.md)	
++ [Install R Server for Windows](rserver-install-windows.md)
 
-1.	[Install Microsoft R Open for Revolution R Enterprise 8.](http://go.microsoft.com/fwlink/?LinkId=699383)
-2.	[Install Revolution R Enterprise 8 for Windows.](http://go.microsoft.com/fwlink/?LinkId=715702&clcid=0x409)
+Optionally, you can use Microsoft R Client. It also runs on Linux and Windows:
 
-If your client machine is running Red Hat Enterprise Linux or SUSE Linux Enterprise Server, you will need to obtain Microsoft R Server for Red Hat or Microsoft R Server for SLES. Installing the client software is a two-step process, described in the following documents:
-
-1.	[Install Microsoft R Open for Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkId=699383)
-2.	[Install Microsoft R Server.](http://go.microsoft.com/fwlink/?LinkID=698570&clcid=0x409)
++ [Install R Client on Linux](r-client-install-linux.md)	
++ [Install R Client on Windows](r-client-install-windows.md)
 
 ## Testing the Client Installation
 
@@ -393,7 +391,7 @@ The following commands can be used to verify that your Windows client can commun
 	      shareDir =  paste("c:/AllShare/",
 	      Sys.info()["login"], sep=""),
 	      remoteShareDir = "/tmp/revoJobs",
-	      revoPath = "/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R",
+	      revoPath = "/usr/lib64/MRO-for-MRS-9.1.0/R-3.3.3/lib64/R",
 	      consoleOutput = TRUE,
 	      wait=TRUE,
 	      autoCleanup=TRUE,
@@ -413,7 +411,7 @@ For Linux clients, the only change that should need to be made is to the shareDi
 	      shareDir =  paste("/AllShare/",
 	      Sys.info()["login"], sep=""),
 	      remoteShareDir = "/tmp/revoJobs",
-	      revoPath = "/usr/lib64/MRO-for-MRS-8.0.0/R-3.2.2/lib64/R",
+	      revoPath = "/usr/lib64/MRO-for-MRS-9.1.0/R-3.3.3/lib64/R",
 	      consoleOutput = TRUE,
 	      wait=TRUE,
 	        autoCleanup=TRUE,

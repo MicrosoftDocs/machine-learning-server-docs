@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Server 9.1.0 installation for Linux systems"
+title: "R Server 9.1 installation for Linux systems"
 description: "Install Microsoft R Server 9.1.0 on Linux."
 keywords: ""
 author: "HeidiSteen"
