@@ -33,6 +33,7 @@ Review workaround steps for the following known issues in this release.
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
 3. [MicrosoftML: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
+4. [Cloudera parcel generator script emits an erroneous message](#cdh-parcel-message)
 
 Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md).
 
@@ -95,6 +96,11 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 `modelCount = 1` does not work when used with `rxTextData()` on Hadoop/Spark.
 
+<a name="cdh-parcel-message"></a>
+
+## Cloudera parcel generator script implies existence of a currently unavailable script
+
+If you are performing a [parcel installation of R Server in Cloudera](rserver-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
 
 ## Previous releases 
 
