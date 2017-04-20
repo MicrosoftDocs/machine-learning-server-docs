@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Generate a parcel for R Server 9.1.0 on CDH"
-description: "Generate a parcel to install Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)."
+title: "Generate a parcel for R Server 9.1 on CDH"
+description: "Generate a parcel to install Microsoft R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/09/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,11 +25,11 @@ ms.custom: ""
 
 # Generate a parcel
 
-**Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
+**Applies to:** R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)
 
-When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** script file, support files provided in the R Server 9.1.0 distribution, and Cloudera Manager. Do not run the install.sh script. The instructions in this article walk you through steps performed at the console, prior to using Cloudera Manager.
+When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** instead of **install.sh**. You will also use support files provided in the R Server 9.1 distribution, followed by Cloudera Manager to complete the deployment. The instructions in this article walk you through steps performed at the console, prior to using Cloudera Manager.
 
-In previous releases, parcel installation required downloading two pre-built parcel files. The 9.1.0 release improves upon this experience by providing a parcel generator script. The script produces the following output:
+In previous releases, parcel installation required downloading two pre-built parcel files. The 9.1 release improves upon this experience by providing a parcel generator script. The script produces the following output:
 
 + a parcel
 + a checksum
@@ -44,7 +44,7 @@ A workaround is to install the packages manually. For instructions, see [Manual 
 
 ## Step 1: Download 
 
-The first step is to download a gzipped tar file of the R Server 9.1.0 distribution to the master node from one of the following download sites.
+The first step is to download a gzipped tar file of the R Server 9.1 distribution to the master node from one of the following download sites.
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -65,8 +65,8 @@ The distribution is unpacked into an `MRS91Hadoop` folder at the download locati
 
 | File | Description |
 |------|-------------|
-|`install.sh` | Script for installing R Server. |
-|`generate_mrs_parcel.sh` | Script for generating a parcel used for installing R Server on CDH |
+|`install.sh` | Script for installing R Server. Do not use this for a parcel install. |
+|`generate_mrs_parcel.sh` | Script for generating a parcel used for installing R Server on CDH. |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
 | DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
 | RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE |
@@ -101,7 +101,7 @@ flag | Option | Description
  -m | --distro-name [DISTRO]| Target Linux distribution for this parcel, one of: el6 el7 sles11
  -l | --add-mml  | Add Microsoft ML to the Parcel regardless of the target system.
  -a | --accept-eula | Accept all end user license agreements.
- -d | --download-mro | Download microsoft r open for distribution to an offline system.
+ -d | --download-mro | Download Microsoft r open for distribution to an offline system.
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
  -n | --dry-run | Don't do anything, just show what would be done.
@@ -117,7 +117,7 @@ $ bash generate_mrs_parcel.sh
 
 ## Step 5: Copy parcel
 
-Cloudera Manager finds parcels in its Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
+By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
 1. Copy `MRS-9.1.0-el7.parcel` and `MRS-9.1.0-el7.parcel.sha` to the Cloudera parcel repository, typically /opt/cloudera/parcels.
 
@@ -145,7 +145,7 @@ The Custom Service Descriptor (CSD) enables MRS monitoring and administration fr
 
 ## Next steps
 
-After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](rserver-install-cloudera-deploy-activate.md).
+After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are performed in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](rserver-install-cloudera-deploy-activate.md).
 
 ## See Also
 

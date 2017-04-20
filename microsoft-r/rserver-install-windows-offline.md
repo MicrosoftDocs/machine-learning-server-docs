@@ -87,7 +87,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 Unzip the installation files and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. In Configure installation, choose optional components. Required components are listed, but not configurable. Options include:
+2. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
     + R Server (Standalone)
     + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used for machine learning.
 3. In an offline installation scenario, you are notified about missing requirements, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
@@ -115,26 +115,24 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 
 Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
-## Command line options
-
-You can run RServerSetup.exe from the command line with the following options:
-
-| Parameter | Description |
-|-----------|-------------|
-| /uninstall | Removes the software. |
-| /cleanall | Removes temporary files after the software is uninstalled. |
-
 ## Enable Remote Connections and Analytic Deployment
 
 The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](operationalize/configure-enterprise.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## What's Installed with R Server
 
-The Microsoft R Server setup installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. In contrast with R Client, R Server supports much larger data sets and distributed workloads.
+An installation of Microsoft R Server includes the following components.
 
-The R libraries are installed under the R Server installation directory, `C:\Program Files\Microsoft\R Server\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
+| Component | Description |
+|-----------|-------------|
+| Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernal library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Server under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
+| R server proprietary packages and script engine | Includes RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and other packages described in [Package Reference](package-reference.md).
+| [Admin tool](operationalize/admin-utility.md) | Used for operationalizing analytics. | 
+| [Pretrained models](deploy-pretrained-microsoftml-models.md) | Used for sentiment analysis. | 
 
-All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also included with Microsoft R Server under `<install-directory>\bin`. Documentation for these tools can be found in the setup folder: `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options.
+R Server is engineered for distributed and parallel processing, utilizing available cores and disk storage of the local machine, with the ability to transfer workloads to other R Server instances on other platforms through compute context instructions. You can also implement a highly distributed deployment model with web nodes in an NLB and compute nodes in a failover cluster. 
+
+On Windows, libraries and datasets are located in the R Server installation directory, `C:\Program Files\Microsoft\R Server\R_SERVER`. Additionally, in this directory you will find documentation for the R base packages, sample data, and the R library.
 
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
@@ -149,5 +147,6 @@ Consider adding a development tool on the server to build script or solutions us
  [What's New in R Server](rserver-whats-new.md)
  [Supported platforms](rserver-install-supported-platforms.md)  
  [Known Issues](rserver-known-issues.md)  
+ [Command line installation](rserver-install-windows-commandline.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
  [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)

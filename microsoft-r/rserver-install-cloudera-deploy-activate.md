@@ -25,9 +25,9 @@ ms.custom: ""
 
 # Deploy and activate the MRS parcel and custom service descriptor (CSD)
 
-**Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
+**Applies to:** R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)
 
-A parcel installation of Microsoft R Server on CDH is a 2-part process. In part 1, you [generated a parcel and Custom Service Descriptor (CSD) for Microsoft R Server (MRS) 9.1.0](rserver-install-cloudera-generate-parcel.md). This article is part 2. Because you copied the parcel and CSD to the Cloudera repositories, you can now use Cloudera Manager to deploy the parcel, activate and roll out R Server, and add MRS as a service administered within Cloudera Manager.
+A parcel installation of Microsoft R Server on CDH is a 2-part process. In part 1, you [generated a parcel and Custom Service Descriptor (CSD) for Microsoft R Server (MRS) 9.1](rserver-install-cloudera-generate-parcel.md). This article is part 2. Because you copied the parcel and CSD to the Cloudera repositories, you can now use Cloudera Manager to deploy the parcel, activate and roll out R Server, and add MRS as a service administered within Cloudera Manager.
 
 ## Step 1: Distribute the MRS parcel
 
@@ -35,7 +35,7 @@ A parcel installation of Microsoft R Server on CDH is a 2-part process. In part 
 
    ![parcel icon in cloudera manager](./media/rserver-install-cloudera/cloudera-manager-parcel-icon.png)
 
-2. Find **MRS** in the parcel list. If you don't see it, check the parcel repo folder (by default, /opt/cloudera/parcel-repo) for `MRS-9.1.0-el7.parcel` and `MRS-9.1.0-el7.parcel.sha`. The machine should be the master node of the cluster. 
+2. Find **MRS** in the parcel list. If you don't see it, check the parcel-repo folder (by default, /opt/cloudera/parcel-repo) for `MRS-9.1.0-el7.parcel` and `MRS-9.1.0-el7.parcel.sha`. The machine should be the master node of the cluster. 
 
    ![parcel list in cloudera manager](./media/rserver-install-cloudera/cloudera-manager-parcel-list.png)
 
