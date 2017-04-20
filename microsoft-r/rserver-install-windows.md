@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Install R Server 9.x for Windows"
-description: "How to install, connect to, and use Microsoft R Server 9.x on computers running the Windows operating system."
+title: "Install R Server 9.1 for Windows"
+description: "How to install, connect to, and use Microsoft R Server 9.1 on computers running the Windows operating system."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/05/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# Install R Server 9.x for Windows
+# Install R Server 9.1 for Windows
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For more information about the latest release, see [What's New in R Server](rserver-whats-new.md).
 
-This article explains how to install Microsoft R Server 9.1.0 on a standalone Windows server that has an internet connection.
+This article explains how to install Microsoft R Server 9.1 on a standalone Windows server that has an internet connection.
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## System requirements
 
@@ -54,7 +54,7 @@ The following additional components are included in Setup and required for an R 
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.x deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
+This section walks you through an R Server 9.1 deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md).
 
 <a name="download"><a/>
 ### Download R Server installer
@@ -73,9 +73,9 @@ Get the zipped installation file from one of the following download sites.
 Extract the .zip download file and run setup. 
 
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. In Configure installation, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
+2. In Configure installation, choose optional components. Required components are listed, but not configurable. Options include:
     + R Server (Standalone)
-    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
+    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used for machine learning.
 3. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 4. Optionally, change the home directory for R Server.
 5. At the end of the wizard, click **Install** to run setup.
@@ -87,8 +87,10 @@ Extract the .zip download file and run setup.
 Post-installation, you can check the log files (RServerSetup_<timestamp>.log) located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows.
 
 <a name="connect-validate"></a>
+
 ### Connect and validate
-R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like RTVS or Rgui.exe connects to the server.
+
+R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://www.visualstudio.com/vs/rtvs/) or Rgui.exe connects to the server.
 
 As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
 
@@ -109,7 +111,6 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 Consider adding a development tool on the server to build script or solutions using R Server features. We recommend either one of the following development environments:
 
 + [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
-+ [Visual studio 2017 RC](https://www.visualstudio.com/vs/visual-studio-2017-rc/), which has built-in R tool support
 
 ## Licensing and support
 
@@ -146,15 +147,9 @@ The Windows installer and SQL Server installer create different library folder p
 |C:\Program Files\Microsoft SQL Server\130\R_SERVER | SQL Server Setup, R Server (Standalone) |
 |C:\Program Files\Microsoft SQL Server\<instance_name>\R_SERVICES | SQL Server Setup, R Services (In-Database) |
 
-**Feature availability**
-
-On Windows, you can [operationalize your analytics](operationalize/about.md) with R Server right now if you configure the standalone Windows installer. It is not yet available if you use the SQL Server installer. Projected availability through a SQL Server installer is the first half of 2017.
-
 ## Upgrade and side-by-side
 
-There is no in-place upgrade that will overwrite an existing installation. You must uninstall older versions manually before running the setup program of a newer version. 
-
-Side-by-side installation is supported for major versions such as 8.x and 9.x on the same computer, but only one copy of each major version can exist on the same machine (for example, 9.1.0 and 8.0.5). 
+Side-by-side installation is supported for major versions such as 8.x and 9.x on the same computer, but only one copy of each major version can exist on the same machine (for example, 9.1 and 8.0.5). 
 
 ## Deploy at scale
 
@@ -177,10 +172,7 @@ Earlier versions are supported, but with limited availability on Microsoft downl
 
 ## See Also
 
-[Supported platforms](rserver-install-supported-platforms.md)
-
-[What's new in R Server](notes/r-server-notes.md)
-
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-
-[Configure R Server to  operationalize your analytics](operationalize/configuration-initial.md)
+ [Supported platforms](rserver-install-supported-platforms.md)  
+ [What's new in R Server](notes/r-server-notes.md)  
+ [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
+ [Configure R Server to  operationalize your analytics](operationalize/configuration-initial.md)

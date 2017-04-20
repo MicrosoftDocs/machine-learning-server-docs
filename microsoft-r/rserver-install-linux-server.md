@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server 9.1 Installation for Linux Systems
 
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For informaton about the latest release, see [What's New in R Server](rserver-whats-new.md).
+Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. For a description of R Server components, benefits, and usage scenarios, see [Introduction to R Server](rserver.md). For information about the latest release, see [What's New in R Server](rserver-whats-new.md).
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection.
 
@@ -62,7 +62,7 @@ This section walks you through an R Server 9.1.0 deployment using the `install.s
 <a name="download"><a/>
 ### Download R Server installer
 
-Get the zipped RServerSetup installer file from one of the following download sites. 
+You can get the gzipped installation file from one of the following download sites.  
 
 | Site | Edition | Details |
 |------|---------|---------|
@@ -84,7 +84,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
   `[tmp] $ tar zxvf en_microsoft_r_server_910_for_linux_x64_10323878.tar.gz`
 
-The distribution is unpacked into an `MRS90LINUX` folder at the download location. The distribution includes the following files:
+The distribution is unpacked into an `MRS91Linux` folder at the download location. The distribution includes the following files:
 
 | File | Description |
 |------|-------------|
@@ -111,13 +111,13 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ yum clean all`
 
-3. Change to the `MRS90LINUX` directory containing the installation script:
+3. Change to the `MRS91Linux` directory containing the installation script:
 
-  `[root@localhost tmp] $ cd /tmp/MRS90LINUX`
+  `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
 4. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
-   `[root@localhost MRS90LINUX] $ bash install.sh -m
+   `[root@localhost MRS91Linux] $ bash install.sh -m
 
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -129,15 +129,15 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. List installed packages and get package names:
 
-   `[root@localhost MRS90LINUX] $ yum list \*microsoft\*`
+   `[root@localhost MRS91Linux] $ yum list \*microsoft\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
-   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
 
 3. Check the version of Microsoft R Server:
 
-   `[root@localhost MRS90LINUX] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
 4. Partial output is as follows (note version 9.1.0):
 
@@ -153,11 +153,11 @@ As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
 
-   `[root@localhost MRS90LINUX] $ cd /tmp/MRS90LINUX`
+   `[root@localhost MRS91Linux] $ cd /tmp/MRS91Linux`
 
 2. Start the program:
 
-   `[root@localhost MRS90LINUX] $ Revo64`
+   `[root@localhost MRS91Linux] $ Revo64`
 
 3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
 
@@ -202,9 +202,9 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 
 ## Unattended install options
 
-You can perform a silent install to bypass prompts during setup. In /tmp/MRS90Linux, run the install script with the following parameters:
+You can perform a silent install to bypass prompts during setup. In /tmp/MRS91Linux, run the install script with the following parameters:
 
-   `[root@localhost MRS90LINUX] $ install.sh -a -s`
+   `[root@localhost MRS91Linux] $ install.sh -a -s`
 
 Additional flags are available, as follows:
 

@@ -101,7 +101,7 @@ For an offline installation of .NET Core, manually create its directory path, un
 
 ## Unpack MRS distribution and copy MRO
 
-Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS90HADOOP folder.
+Next, unpack the R Server distribution and copy the gzipped MRO distribution to the MRS91Hadoop folder.
 
 > [!Important]
 > Do not unpack MRO yourself. The installer looks for a gzipped tar file for MRO. 
@@ -110,21 +110,21 @@ Next, unpack the R Server distribution and copy the gzipped MRO distribution to 
 
   `[root@localhost tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
-2. A new folder called MRS90HADOOP is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS90HADOOP folder containing the installation script (install.sh).
+2. A new folder called MRS91Hadoop is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS91Hadoop folder containing the installation script (install.sh).
 
-  `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS90HADOOP`
+  `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS91Hadoop`
 
 ## Run the MRS install script
 
 R Server for Hadoop is deployed by running the install script with no parameters. At this point, you could opt for [unattended install](#unattended) to bypass EULA prompts.
 
-1. Switch to the `MRS90HADOOP` directory containing the installation script:
+1. Switch to the `MRS91Hadoop` directory containing the installation script:
 
-  `[root@localhost tmp] $ cd MRS90HADOOP`
+  `[root@localhost tmp] $ cd MRS91Hadoop`
 
 2. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models.
 
-   `[root@localhost MRS90HADOOP] $ bash install.sh -h -m`
+   `[root@localhost MRS91Hadoop] $ bash install.sh -h -m`
 
 3. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -136,15 +136,15 @@ Installer output shows the packages and location of the log file.
 
 1. List installed packages and get package names:
 
-   `[MRS90HADOOP] $ yum list \*microsoft\*`
+   `[MRS91Hadoop] $ yum list \*microsoft\*`
 
 2. Check the version of Microsoft R Open using `rpm -qi`:
 
-   `[MRS90HADOOP] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
+   `[MRS91Hadoop] $ rpm -qi microsoft-r-open-mro-3.3.3.x86_64`
 
 3. Check the version of Microsoft R Server:
 
-   `[MRS90HADOOP] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
+   `[MRS91Hadoop] $ rpm -qi microsoft-r-server-packages-9.1.0.x86_64`
 
 4. Partial output is as follows (note version 9.1.0):
 
@@ -158,7 +158,7 @@ As a verification step, run the Revo64 program.
 
 1. Switch to the directory containing the executable:
 
-   `$ cd MRS90HADOOP`
+   `$ cd MRS91Hadoop`
 
 2. Start the program:
 

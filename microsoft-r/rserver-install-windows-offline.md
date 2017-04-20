@@ -6,7 +6,7 @@ description: "How to install R Server 9.x without an internet connection"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/06/2017"
+ms.date: "04/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -85,10 +85,10 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 Unzip the installation files and then run setup.
 
 1. Double-click **RServerSetup.exe** to start the wizard.
-2. In **Configure installation**, you will see a list of required components that Setup installs, plus two optional components. Be sure to select the first one if you want to install R Server.
+2. In Configure installation, choose optional components. Required components are listed, but not configurable. Options include:
     + R Server (Standalone)
-    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used with MicrosoftML package.
-3. In an offline installation scenario, you ware notified if either prerequisite is missing, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
+    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used for machine learning.
+3. In an offline installation scenario, you are notified about missing requirements, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
 4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 5. Optionally, change the home directory for R Server.
 5. At the end of the wizard, click **Install** to run setup.
@@ -119,12 +119,8 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 
 ## See Also
 
-[Run R Server for Windows](rserver-install-windows.md)
-
-[Supported platforms](rserver-install-supported-platforms.md)
-
-[What's new in R Server](notes/r-server-notes.md)
-
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+ [Run R Server for Windows](rserver-install-windows.md) 
+ [Supported platforms](rserver-install-supported-platforms.md)  
+ [What's new in R Server](notes/r-server-notes.md)  
+ [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
+ [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
