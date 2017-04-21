@@ -117,46 +117,21 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 **To configure on a single machine:**
 
-1. Install Microsoft R Server:
-      + On Windows, follow these instructions: [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-      + On Linux, follow these instructions: [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+1. Install Microsoft R Server and any dependencies:
 
-1. If on the following Linux flavors, then add a few symlinks:  (If on Windows, skip to the next step)
+   **On Windows**
 
-   + On CentOS 7.1, CentOS 7.2:
-     ```
-      cd /usr/lib64
-      sudo ln -s libpcre.so.1   libpcre.so.0
-      sudo ln -s libicui18n.so.50   libicui18n.so.36
-      sudo ln -s libicuuc.so.50 libicuuc.so.36
-      sudo ln -s libicudata.so.50 libicudata.so.36
-     ```
+   Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
-   + On Ubuntu 14.04:
-     ```
-      sudo apt-get install libicu-dev
+   **On Linux**
 
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
+   Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+      
+   Additional dependencies for R Server on Linux 9.0.1. If you have installed R Server 9.0.1 on Linux, you must add a few symlinks:
 
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.52 libicui18n.so.36
-      ln -s libicuuc.so.52 libicuuc.so.36
-      ln -s libicudata.so.52 libicudata.so.36
-     ```
-
-   + On Ubuntu 16.04:
-     ```
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
-
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.55 libicui18n.so.36
-      ln -s libicuuc.so.55 libicuuc.so.36
-      ln -s libicudata.so.55 libicudata.so.36
-     ```
+   |R Server 9.0.1<br>Linux|CentOS 7.x|Ubuntu 14.04|Ubuntu 16.04|
+   |--|----------------------|------------|------------|
+   |Symlinks|<small>cd /usr/lib64<br>sudo ln -s libpcre.so.1   libpcre.so.0<br>sudo ln -s libicui18n.so.50   libicui18n.so.36<br>sudo ln -s libicuuc.so.50 libicuuc.so.36<br>sudo ln -s libicudata.so.50 libicudata.so.36<br><br><br></small>|<small>sudo apt-get install libicu-dev<br>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.52 libicui18n.so.36<br>ln -s libicuuc.so.52 libicuuc.so.36<br>ln -s libicudata.so.52 libicudata.so.36</small>|<small>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.55 libicui18n.so.36<br>ln -s libicuuc.so.55 libicuuc.so.36<br>ln -s libicudata.so.55 libicudata.so.36</small>|
 
    >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
