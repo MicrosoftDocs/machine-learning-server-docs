@@ -118,11 +118,12 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 **To configure on a single machine:**
 
 1. Install Microsoft R Server and any dependencies:
-
+   <br>
    **On Windows**
 
    Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
+   <br>
    **On Linux**
 
    Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
