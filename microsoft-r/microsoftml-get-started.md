@@ -5,7 +5,7 @@ title: "Get started with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "04/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -42,7 +42,7 @@ The **MicrosoftML** package is currently available on the following platforms:
 - [Microsoft R Server for Windows](rserver-install-windows.md): install Microsoft R Server 9.1.0 on a standalone Windows server.
 - [Microsoft R Client on Windows](r-client-install-windows.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Windows machine.
 - [Microsoft R Client on Linux](r-client-install-linux.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Linux machine.
-- [Microsoft R Server for Linux](rserver-install-linux-server.md)
+- [Microsoft R Server for Linux](rserver-install-linux-server.md): install Microsoft R Server 9.1.0 on a standalone Linux server.
 - [Microsoft R Server 9.1.0 on Hadoop](rserver-install-hadoop.md): R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 - [Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md): uses Cloudera's parcel installation methodology to add R Server to a cluster.
 - [SQL Server Machine Learning Services](sql-server-r-services.md): The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services or SQL Server Machine Learning Services** on an instance of SQL Server 2016 or 2017.
