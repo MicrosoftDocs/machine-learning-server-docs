@@ -131,21 +131,17 @@ R Server for Linux is deployed by running the install script with no parameters.
 
    `[root@localhost MRS91Linux] $ yum list \*microsoft\*`
 
-2. Check the version of Microsoft R Open using `rpm -qi`:
-
-   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
-
-3. Check the version of Microsoft R Server:
+2. Once you have a package name, you get verbose version information using `rpm -qi`:
 
    `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
-4. Partial output is as follows (note version 9.1.0):
+3. Partial output is as follows (note version 9.1.0):
 
-```
+  ```
 	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
 	 Version     : 9.1.0                               Vendor: Microsoft
 	 . . .
-```
+  ```
 
 ### Start Revo64
 
@@ -159,7 +155,7 @@ As a verification step, run the Revo64 program.
 
    `[root@localhost MRS91Linux] $ Revo64`
 
-3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
+3. Run a RevoScaleR function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
 
    `> rxSummary(~., iris)`
 
