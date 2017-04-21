@@ -105,10 +105,9 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. Install Microsoft R Server:
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+
      >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
-     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     >For SQL Server Machine Learning Services, you must also manually install .NET Core 1.1 as well as add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
@@ -154,51 +153,26 @@ In an enterprise configuration, you can set up one or more compute nodes.
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. Install Microsoft R Server:
-   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
-     >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
-     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+1. Install Microsoft R Server and its dependencies:
 
-   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   **On Windows**
+
+   Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
    
-1. If on the following Linux flavors, then add a few symlinks:  (If on Windows, skip to the next step)
+   >[!IMPORTANT]
+   >For SQL Server Machine Learning Services, you must also manually install .NET Core 1.1 as well as add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
-   + On CentOS 7.1, CentOS 7.2:
-     ```
-      cd /usr/lib64
-      sudo ln -s libpcre.so.1   libpcre.so.0
-      sudo ln -s libicui18n.so.50   libicui18n.so.36
-      sudo ln -s libicuuc.so.50 libicuuc.so.36
-      sudo ln -s libicudata.so.50 libicudata.so.36
-     ```
+   **On Linux**
 
-   + On Ubuntu 14.04:
-     ```
-      sudo apt-get install libicu-dev
+   Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+      
+   Additional dependencies for R Server on Linux 9.0.1. If you have installed R Server 9.0.1 on Linux, you must add a few symlinks:
 
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
+   |R Server 9.0.1<br>Linux|CentOS 7.x|Ubuntu 14.04|Ubuntu 16.04|
+   |--|----------------------|------------|------------|
+   |Symlinks|<small>cd /usr/lib64<br>sudo ln -s libpcre.so.1   libpcre.so.0<br>sudo ln -s libicui18n.so.50   libicui18n.so.36<br>sudo ln -s libicuuc.so.50 libicuuc.so.36<br>sudo ln -s libicudata.so.50 libicudata.so.36<br><br><br></small>|<small>sudo apt-get install libicu-dev<br>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.52 libicui18n.so.36<br>ln -s libicuuc.so.52 libicuuc.so.36<br>ln -s libicudata.so.52 libicudata.so.36</small>|<small>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.55 libicui18n.so.36<br>ln -s libicuuc.so.55 libicuuc.so.36<br>ln -s libicudata.so.55 libicudata.so.36</small>|
 
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.52 libicui18n.so.36
-      ln -s libicuuc.so.52 libicuuc.so.36
-      ln -s libicudata.so.52 libicudata.so.36
-     ```
-
-   + On Ubuntu 16.04:
-     ```
-      cd /lib/x86_64-linux-gnu
-      ln -s libpcre.so.3 libpcre.so.0
-      ln -s liblzma.so.5 liblzma.so.0
-
-      cd /usr/lib/x86_64-linux-gnu
-      ln -s libicui18n.so.55 libicui18n.so.36
-      ln -s libicuuc.so.55 libicuuc.so.36
-      ln -s libicudata.so.55 libicudata.so.36
-     ```
+   >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. 
 
