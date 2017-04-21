@@ -127,39 +127,32 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 ### Verify installation
 
-1. List installed packages and get package names:
+1. List installed MRS packages:
 
-   `[root@localhost MRS91Linux] $ yum list \*microsoft\*`
+  + On RHEL: `rpm -qa | grep microsoft` 
+  + On Ubuntu: `apt list --installed | grep microsoft`
 
-2. Check the version of Microsoft R Open using `rpm -qi`:
+2. Once you have a package name, you can obtain verbose version information. For example:
 
-   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-open-mro-3.3.x86_64`
+   `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
 
-3. Check the version of Microsoft R Server:
+   Partial output is as follows (note version 9.1.0):
 
-   `[root@localhost MRS91Linux] $ rpm -qi microsoft-r-server-packages-9.1.x86_64`
-
-4. Partial output is as follows (note version 9.1.0):
-
-```
-	 Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
-	 Version     : 9.1.0                               Vendor: Microsoft
-	 . . .
-```
+   ```
+	  Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
+	  Version     : 9.1.0                               Vendor: Microsoft
+	  . . .
+   ```
 
 ### Start Revo64
 
-As a verification step, run the Revo64 program.
+As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
 
-1. Switch to the directory containing the executable:
+1. From /Home or any other working directory:
 
-   `[root@localhost MRS91Linux] $ cd /tmp/MRS91Linux`
+   `[<path>] $ Revo64`
 
-2. Start the program:
-
-   `[root@localhost MRS91Linux] $ Revo64`
-
-3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
+2. Run a RevoScaleR function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
 
    `> rxSummary(~., iris)`
 
