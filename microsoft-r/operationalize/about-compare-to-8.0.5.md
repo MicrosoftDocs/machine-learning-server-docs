@@ -51,4 +51,4 @@ Some term equilavents in the R Server 9.x:
 |Version 8|Version 9|
 |------------|---------------|
 |Projects|Sessions|
-|RBroker pool|Now part of web services implementation with an internal pool of R shells|
+|RBroker pool|Now part of web services implementation with an internal [pool of R shells](admin-evaluate-capacity.md#r-shell-pool)|
