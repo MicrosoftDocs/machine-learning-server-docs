@@ -38,7 +38,7 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 + Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
 
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own pool of R shells. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](admin-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you setup a [SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
 
@@ -154,7 +154,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
 1. Install Microsoft R Server and its dependencies:
-
+   <br>
    **On Windows**
 
    Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
@@ -162,6 +162,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    >[!IMPORTANT]
    >For SQL Server Machine Learning Services, you must also manually install .NET Core 1.1 as well as add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
+   <br>
    **On Linux**
 
    Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
@@ -204,7 +205,8 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. On each machine, install the same R Server version you installed on the compute node.
+1. On each machine, install the same R Server version you installed on the compute node.<br> 
+
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:

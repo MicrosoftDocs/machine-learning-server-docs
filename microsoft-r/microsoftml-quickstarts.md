@@ -5,7 +5,7 @@ title: "Quickstarts for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "04/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -41,6 +41,10 @@ The [Sentiment analysis](https://github.com/Microsoft/microsoft-r/tree/master/mi
 
 More specifically, the example provided shows how to use the [featurizeText](microsoftml/packagehelp/featurizetext.md) transform in the MicrosoftML package to produce a bag of counts of n-grams (sequences of consecutive words) from the text for classification. The sample uses the [Sentiment Labelled Sentences](https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences) dataset from the UCI repository, which contains sentences that are labeled as positive or negative sentiment.
 
+
+## Image featurization using featurizeImage
+
+For information on MicrosoftML support of pre-trained deep neural network models for image featurization, see [Image featurization with a pre-trained deep neural network model](https://blogs.msdn.microsoft.com/rserver/2017/04/12/image-featurization-with-a-pre-trained-deep-neural-network-model/).
 
 ## Retail churn tutorial
 

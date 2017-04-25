@@ -29,7 +29,7 @@ ms.custom: ""
 
 `deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
 
-This forked version of RServe is the R execution component behind the compute node for Microsoft R Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own pool of R shells.  
+This forked version of RServe is the R execution component behind the compute node for Microsoft R Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](admin-evaluate-capacity.md#r-shell-pool).  
 
 This RServe fork acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of `RevoScaleR`. Therefore, if you use `RevoScaleR` package functions, you benefit from multi-threaded processing in the R shell.
 

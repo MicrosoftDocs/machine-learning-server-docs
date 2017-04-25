@@ -49,10 +49,10 @@ All configurations have at least a single web node and single compute node:
 
 + A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
 
-+ A **compute node** is used to execute R code as a session or service. Each compute node has its own pool of R shells.
++ A **compute node** is used to execute R code as a session or service. Each compute node has its [own pool of R shells](admin-evaluate-capacity.md#r-shell-pool).
 
 There are two types of configuration:
-1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](configure-enterprise.md) article.
+1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](configuration-initial.md) article.
 
 1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in this [Enterprise configuration](configure-enterprise.md) article.
 
