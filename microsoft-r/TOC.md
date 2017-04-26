@@ -502,8 +502,6 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
-# [Archived Documentation](microsoft-r-old-versions.md)
-
 # [Glossary](microsoft-r-glossary.md)
 
 # [Additional Resources](microsoft-r-more-resources.md)
