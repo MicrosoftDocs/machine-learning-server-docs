@@ -6,7 +6,7 @@ description: "Microsoft R Server on HDInsight introduction"
 keywords: "Microsoft R Server, HDInsight"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/16/2016"
+ms.date: "4/26/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -37,17 +37,17 @@ We encourage you to try the Microsoft Data Science Virtual Machine to jumpstart 
 
 ## Start using Microsoft R Server/ R Services in the Cloud
 
-You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
+You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
 After you provision your virtual machine from the image, you can start exploring your data and modeling right away. The data on the virtual machine is stored on the cloud and highly available. 
 
-> There is no software charges for this data science VM image. You only pay for the Azure usage fees, which is dependent on the size of the virtual machine you are provisioning with this VM image. More details on the compute fees can be found  [here](https://azure.microsoft.com/en-us/marketplace/partners/microsoft-ads/standard-data-science-vm/).
+> There is no software charges for this data science VM image. You only pay for the Azure usage fees, which is dependent on the size of the virtual machine you are provisioning with this VM image. More details on the compute fees can be found  [here](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm).
 
 
 ## Learn More
 
-+ How to create a Microsoft Data Science VM https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/
++ [How to create a Microsoft Data Science VM](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
-+ [How to provision this virtual machine](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-data-science-provision-vm/)
++ [How to provision this virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
-+ Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/en-us/free/)
++ Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/free/)
