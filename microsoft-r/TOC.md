@@ -115,6 +115,12 @@
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
 
+### [Provision in the Cloud](vm-cloud.md)
+#### [Azure HDInsight](vm-r-server-hdinsight.md)
+#### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Microsoft Data Science VM](vm-data-science.md)
+
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [Introduction](operationalize/about.md)
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
@@ -206,12 +212,6 @@
 
 # [Microsoft R Open](r-open.md)
 
-# [Cloud-Based Offerings](vm-cloud.md)
-## [Azure HDInsight](vm-r-server-hdinsight.md)
-## [Azure Virtual Machines](vm-cloud.md)
-### [R Server for Linux](vm-azure-rserver-linux-9.0.1.md)
-### [R Server for Windows](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-### [Microsoft Data Science VM](vm-data-science.md)
 
 # [Package and Function Reference](package-reference.md)
 

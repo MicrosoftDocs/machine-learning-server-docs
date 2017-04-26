@@ -36,10 +36,10 @@ All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and requ
 
 | SKU | Platforms |
 |-----|-----------|
-| **R Server for Hadoop** | **Hadoop <sup> 1</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE SLES11 (<sup>2</sup> ), Ubuntu 14.04 (<sup>2</sup> )<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
-| **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br/>SUSE Linux Enterprise Server 11 (SLES11)<br/>Ubuntu 14.04 and 16.04|
-| **R Server for Windows** | Windows 7 SP1, Windows 8.1, Windows 10 <br/>Windows Server 2012 R2, Windows Server 2016 | 
-| **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11 (SLES11) |
+| **R Server for Hadoop** | **Hadoop <sup> 1, 5</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
+| **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
+| **R Server for Windows** | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
+| **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11(<sup>4</sup>) |
 
 Hardware and software requirements for SQL Server Machine Learning Services and R Server (Standalone) in SQL Server can be found in [SQL Server production documentation](https://docs.microsoft.com/sql/advanced-analytics/r-services/r-services).
 
@@ -49,16 +49,11 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-**.NET Core platform requirements for MicrosoftML and mrsdeploy**
+<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [machine learning algorithms](microsoftml-introduction.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
 
-Several features in R Server have a .NET Core dependency. These features include [machine learning algorithms](microsoftml-introduction.md) bundled in the MicrosoftML package, plus capabilities in mrsdeploy for [operationalizing your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are available on a subset of the platforms listed above.
+<sup>5</sup>To operationalize your analytics or use the MicrosoftML package on R Server for Hadoop, you must deploy on edge nodes in a Hadoop cluster, if the underlying operating system is CentOS/RHEL 7.x or Ubuntu 14.04. It is not supported on SUSE SLES11.
 
-| SKU | MicrosoftML and mrsdeploy platform requirements |
-|-----|----------------------------------------|
-| **R Server for Hadoop** | Deploy on edge nodes in a Hadoop cluster, if the underlying operating system is CentOS 7.x, RHEL 7.x, or Ubuntu 14.04 |
-| **R Server for Linux** | Deploy on CentOS 7.x, RHEL 7.x, Ubuntu 14.04 or 16.04 |
-| **R Server for Windows** | Deploy on Windows Server 2012 R2 or Windows Server 2016 |
-| **R Server for Teradata** | Not available on SLES11. |
+
 
 ## Microsoft R Server 9.0.1
 
