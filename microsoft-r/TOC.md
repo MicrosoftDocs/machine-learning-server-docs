@@ -213,7 +213,7 @@
 # [Microsoft R Open](r-open.md)
 
 
-# [Package and Function Reference](package-reference.md)
+# [Function Reference](package-reference.md)
 
 ## [MicrosoftML](microsoftml/microsoftml.md)
 ### [categorical](microsoftml/packagehelp/categorical.md)
