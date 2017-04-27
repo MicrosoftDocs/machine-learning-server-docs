@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "4/26/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -44,7 +44,7 @@ With remote execution, you can:
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **After Microsoft R Server has been [configured to operationalize analytics](configure-enterprise.md)**. Ask your administrator if you are unsure if this has been configured for R Server.
+The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **after Microsoft R Server has been [configured to operationalize analytics](configure-enterprise.md)** by your administrator. 
 
 Read the introductory article ["`mrsdeploy` functions"](../mrsdeploy/mrsdeploy.md) for the supported R Client and R Server configurations for this package and remote execution as well as for a list of the [remote execution functions](../mrsdeploy/mrsdeploy.md#remote-functions) contained in that package.  In that article, you can also learn how to load the package.
 
@@ -108,6 +108,14 @@ This function takes a path to an R script to be executed remotely. You also have
 
 ### Package dependencies
 If your R Script has R package dependencies, those packages must be installed on the Microsoft R server. You can either have your Administrator install them globally by logging in directly to the server, or you can install them for the duration of the remote session by using the R function `install.packages()`. Leave the `lib` parameter empty.
+
+### Limitations in a remote context
+
+Certain functions are masked from execution, such as ‘help’, ‘browser’, ‘q’ and ‘quit’.   
+
+In a remote context, you won’t be able to display vignettes or get help at your commandline prompt.  
+
+In most cases, “system” commands will work.  However, system commands that write to stdout/stderr may not display their output nor wait until the entire system command has completed before displaying output.   `install.packages` is the only exception for which we explicitly handle stdout and stderr in a remote context. 
 
 <a name="async"></a>
 
@@ -232,7 +240,7 @@ Snapshots are only accessible to the user who creates them and cannot be shared 
 The following functions are available for working with snapshots:  
 `listSnapshots()`, `createSnapshot()`, `loadSnapshot()`, `downloadSnapshot()` and `deleteSnapshot()`.
 
-### Guidance and warnings
+### Snapshot guidance and warnings
 
 Please take note of the following tips and recommendations around using session snapshots:
 + One caveat is that while the workspace is saved inside the session snapshot, it does not save loaded packages.  If packages are needed by your code, they should be included in the R code that is part of the web service using the `require()` function. `require()` was designed to be used to load packages from within other functions. For example, you can write code like this to load the RevoScaleR package:
