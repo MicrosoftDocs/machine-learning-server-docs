@@ -6,7 +6,7 @@ description: "Install Microsoft R Server 9.1.0 on Linux."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "04/28/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -107,15 +107,16 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume root install.
 
-2. Verify system repositories are up to date:
+2. Clean cached data so that the installer can get updated packages. 
 
-  `[root@localhost tmp] $ yum clean all`
+  + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
+  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean`
 
 3. Change to the `MRS91Linux` directory containing the installation script:
 
   `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
-4. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
+4. Run the script. To include the [pretrained machine learning models for MicrosoftML](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 
@@ -134,9 +135,10 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   + On RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`
 
-   Partial output is as follows (note version 9.1.0):
+Partial output is as follows (note version 9.1.0):
 
    ```
 	  Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64

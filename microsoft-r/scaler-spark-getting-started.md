@@ -848,7 +848,7 @@ As mentioned earlier, both *rxDForest* and *rxBTrees* are available on Hadoop--t
 	    nTree = rxElemArg(rep(2,8), seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,
-	    scheduleOnce = TRUE)
+	    scheduleOnce = TRUE))
 
 Equivalently, you can use nTree together with rxExec’s timesToRun argument:
 
