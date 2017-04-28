@@ -257,6 +257,9 @@ In our example, we observe the same results as we did when it was locally execut
 >[!NOTE]
 >As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
 
+>[!WARNING]
+>If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](admin-diagnostics.md#logs). 
+
 ### D. Get the Swagger-based JSON file
 
 During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
