@@ -35,17 +35,17 @@ As a first step, you should check program version and file locations.
 1. List the packages from Microsoft.
 
   + On RHEL: `yum list \*microsoft\*`   
-  + On Ubuntu: `apt list --installed | grep microsoft`
+  + On Ubuntu: `apt list --installed | grep microsoft`  
 
 2. Get verbose version information for particular packages in the list.
 
   + On RHEL: `rpm -qi microsoft-r-open-mro-3.2.x86_64` or `rpm -qi microsoft-r-server-packages-8.0.5.x86_64`      
-  + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.2.x86_64` or `dpkg --status microsoft-r-server-packages-8.0.5.x86_64`
+  + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.2.x86_64` or `dpkg --status microsoft-r-server-packages-8.0.5.x86_64`      
 
 If R Server was installed on Cloudera using parcel installation, program information looks like this:
 
-- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5)
-- `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0)
+- `/opt/cloudera/parcels/MRO-8.0.5` and `/opt/cloudera/parcels/MRS-8.0.5` (applies to 8.0.5)    
+- `/opt/cloudera/parcels/MRO-3.2.2-1` and `/opt/cloudera/parcels/MRS-8.0.0-1` (applies to 8.0)  
 
 
 ## General instructions for all versions
@@ -94,8 +94,8 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 2. Remove directories of MRS and MRO, in this order:
 
-        rm -rf /usr/lib64/MRS-8.0
-        rm -rf /usr/lib64/MRO-for-MRS-8.0.0
+        rm -rf /usr/lib64/MRS-8.0       
+        rm -rf /usr/lib64/MRO-for-MRS-8.0.0     
 
 3. Remove symlinks:
 
@@ -108,9 +108,9 @@ If you remove Microsoft R Open (microsoft-r-server-mro-8.0-8.0.5-1.x86_64), you 
 
 Uninstall order is important. Due to package dependencies, be sure to remove the packages in the order given below.
 
-        rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64
-        rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64
-        rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64
+        rpm -e microsoft-r-server-packages-8.0-8.0.5-1.x86_64   
+        rpm -e microsoft-r-server-intel-mkl-8.0-8.0.5-1.x86_64  
+        rpm -e microsoft-r-server-mro-8.0-8.0.5-1.x86_64        
 
 ## See Also
 

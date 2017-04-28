@@ -152,12 +152,12 @@ Installer output shows the packages and location of the log file.
 1. List installed MRS packages:
 
   + On RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`
+  + On Ubuntu: `apt list --installed | grep microsoft`  
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
-   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`
+   + On RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`  
+   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`  
 
 Partial output is as follows (note version 9.1.0):
 

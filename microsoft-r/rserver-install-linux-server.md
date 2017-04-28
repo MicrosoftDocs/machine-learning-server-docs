@@ -110,7 +110,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 2. Clean cached data so that the installer can get updated packages. 
 
   + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
-  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean`
+  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 
 
 3. Change to the `MRS91Linux` directory containing the installation script:
 
@@ -131,12 +131,12 @@ R Server for Linux is deployed by running the install script with no parameters.
 1. List installed MRS packages:
 
   + On RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`
+  + On Ubuntu: `apt list --installed | grep microsoft`  
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
    + On RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
-   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`
+   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`  
 
 Partial output is as follows (note version 9.1.0):
 
