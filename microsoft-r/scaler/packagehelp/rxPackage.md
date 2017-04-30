@@ -136,7 +136,7 @@ By default, SQL R services package management is disabled on a SQL server instan
 
 
 
-**`RegisterRExt.exe`** command line utility which ships with RevoScaleR package for SQL R Services allows administrators to enable package management feature at SQL server instance level and per database level. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\x64\RegisterRExe.exe`.
+**`RegisterRExt.exe`** command line utility which ships with RevoScaleR package for SQL R Services allows administrators to enable package management feature at SQL server instance level and per database level. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExt.exe`.
 
 
 To enable SQL R services package management at instance level, open an elevated command prompt and use the following command:
@@ -176,7 +176,7 @@ To disable SQL R service package management on a SQL server, the administrator n
 
 
 
-**`RegisterRExt.exe`** command line utility which ships with RevoScaleR package for SQL R Services allows administrators to disable package management feature at SQL server instance level and per database level. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\x64\RegisterRExe.exe`.
+**`RegisterRExt.exe`** command line utility which ships with RevoScaleR package for SQL R Services allows administrators to disable package management feature at SQL server instance level and per database level. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExt.exe`.
 
 To disable SQL R services package management at database level, open an elevated command prompt and use the following command:
 

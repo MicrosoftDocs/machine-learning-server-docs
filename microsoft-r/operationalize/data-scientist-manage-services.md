@@ -60,7 +60,7 @@ In this release, you can only manage (update/delete) the web services you've pub
 
 ### Publish web services
 
-In order to deploy your analytics, you must publish them as new web services running on R Server so that they can be consumed. Each service is uniquely defined by a `name` and `version`.   
+To deploy your analytics, publish them as web services hosted on R Server from where they can be consumed. Each service is uniquely defined by a `name` and `version`.   
 
 #### Standard web services
 
@@ -507,7 +507,7 @@ After a web service has been published, it can be consumed. Whenever the web ser
 When you publish a service, you should let people know that is ready for them to try out. Users can get the Swagger file they need to consume the service directly in R or via the API.  If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
 
 Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described below. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
-
+  
 <a name="data-scientists-share"></a>
 
 #### Collaborate with data scientists

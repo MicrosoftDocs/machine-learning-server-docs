@@ -216,3 +216,8 @@ If you followed the upgrade instructions but your configuration did not persist,
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
    + On Linux: `/etc/deployr/current`
+
+
+### Alphanumeric error message when consuming service
+
+If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](#logs). 

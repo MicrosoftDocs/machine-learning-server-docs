@@ -137,7 +137,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd MRS91Linux`
 
-2. Run the script. To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
+2. Run the script. To include the [pretrained machine learning models for MicrosoftML](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 
@@ -152,13 +152,14 @@ Installer output shows the packages and location of the log file.
 1. List installed MRS packages:
 
   + On RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`
+  + On Ubuntu: `apt list --installed | grep microsoft`  
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   + On RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`  
+   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`  
 
-   Partial output is as follows (note version 9.1.0):
+Partial output is as follows (note version 9.1.0):
 
    ```
 	  Name        : microsoft-r-server-packages-9.1     Relocations: /usr/lib64
