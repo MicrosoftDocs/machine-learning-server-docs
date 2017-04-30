@@ -92,10 +92,10 @@ The distribution is unpacked into an `MRS91Linux` folder at the download locatio
 |`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](rserver-install-cloudera.md). |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
 | DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
-| RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE |
+| RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE. |
 | Parcel folder | Contains files used to generate a parcel for installation on CDH. |
 
-MRS packages include an admin utility, core engine and function libraries, compute node, web node, platform packages, and machine learning.
+MRS packages include an admin utility, core engine and function libraries, compute node and web node configuration options, platform packages, and machine learning.
 
 > [!Important]
 > Package names in the R Server distribution have changed in the 9.1 release. Instead of DeployrR-themed package names, the new names are aligned to base packages. If you have script or tooling for manual R Server package installation, be sure to note the name change.

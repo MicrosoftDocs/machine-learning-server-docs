@@ -25,20 +25,22 @@ ms.custom: ""
 
 # Manual package installation (Microsoft R Server for Linux or Hadoop)
 
-An alternative to running the install.sh script at the command line is to manually install each package and component.
+An alternative to running the install.sh script at the command line is to manually install each package and component. 
 
 ## Syntax
 
-With root privilege, you can use the `rpm -qi` command to install each package in the R Server distribution. The following example illustrates the syntax.
+With root privilege, you can use a package manager to install each package in the R Server distribution. The following example illustrates the syntax.
 
-	`rpm -i microsoft-r-open-3.3.3.x6486.rpm`
+  + On RHEL: `rpm -i microsoft-r-open-mro-3.3.x86_64`     
+  + On Ubuntu: `apt-get install microsoft-r-open-mro-3.3`  
+  + On SUSE: `zypper install microsoft-r-open-mro-3.3`   
 
 ## Steps
 
 1.  Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
 
 2. Verify system repositories are up to date:
-		[username] $ `sudo yum clean all`
+		[username] $ `sudo yum clean all`	
 
 3. Download and unpack the R Server distribution, following the instructions provided in [Offline installation](rserver-install-hadoop-offline.md).
 
@@ -46,15 +48,15 @@ With root privilege, you can use the `rpm -qi` command to install each package i
 
 5. You should have the following packages, which should be installed in this order:
 
-	microsoft-r-open-mro-3.3.3.x86_64.rpm
-	microsoft-r-server-packages-9.1.rpm
-	microsoft-r-server-hadoop-9.1.rpm
-	microsoft-r-server-mml-9.1.rpm
-	microsoft-r-server-mlm-9.1.rpm
-	microsoft-r-server-config-rserve-9.1.rpm
-	microsoft-r-server-computenode-9.1.rpm
-	microsoft-r-server-webnode-9.1.rpm
-	microsoft-r-server-adminutil-9.1.rpm
+	microsoft-r-open-mro-3.3.3.x86_64.rpm	
+	microsoft-r-server-packages-9.1.rpm	
+	microsoft-r-server-hadoop-9.1.rpm	
+	microsoft-r-server-mml-9.1.rpm	
+	microsoft-r-server-mlm-9.1.rpm	
+	microsoft-r-server-config-rserve-9.1.rpm	
+	microsoft-r-server-computenode-9.1.rpm	
+	microsoft-r-server-webnode-9.1.rpm	
+	microsoft-r-server-adminutil-9.1.rpm	
 
 ## Create folders and set permissions
 
