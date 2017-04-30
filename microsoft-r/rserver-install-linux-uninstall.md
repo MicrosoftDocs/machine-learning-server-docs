@@ -38,11 +38,13 @@ As a first step, use your package manager to list the currently installed R Serv
   + On Ubuntu: `apt list --installed | grep microsoft`  
   + On SUSE: `zypper search \*microsoft-r\*`    
 
-3. Once you have a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.3.3:
+
+2. On a 9.1 installation, you will see about 9 packages. Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.3.3:
 
   + On RHEL: `rpm -qi microsoft-r-open-mro-3.3.x86_64`   
   + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.3.x86_64` 
   + On SUSE: `zypper info microsoft-r-open-mro-3.3.x86_64`     
+
 
 If R Server was installed on Cloudera using parcel installation, program information looks like this:
 
@@ -64,14 +66,14 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
   + On Ubuntu: `apt-get remove microsoft-r-open-mro-3.3`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.3`    
 
-2. Most packages are uninstalled, including Microsoft R SErver. List the remaining packages to see what's left. You should see only those packages used for operationalizing R Server analytics. Uninstall each one in the following order:
+2. Most packages are uninstalled, including Microsoft R Server. List the remaining packages to see what's left. On a 9.1. installation, you should see only those packages used for operationalizing R Server analytics. Uninstall each one in the following order:
 
   + Microsoft-r-server-adminutil-9.1.x86_64
   + Microsoft-r-server-webnode-9.1.x86_64
   + Microsoft-r-server-computenode-9.1.x86_64
   + Microsoft-r-server-config-rserve-9.1.x86_64
 
-2. On the root node, verify the location of other files that need to be removed:
+2. After packages are removed, you can remove remaining files. On the root node, verify the location of other files that need to be removed:
 
   + `$ ls /usr/lib64/microsoft-r`
 

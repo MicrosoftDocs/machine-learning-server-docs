@@ -41,7 +41,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1.0 ve
 
 + An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](rserver-install-linux-offline.md).
 
-+ A package manager (yum for RHEL systems, zypper for SLES systems)
++ A package manager (yum for RHEL systems, apt for Ubuntu, zypper for SLES systems)
 
 + Root or super user permissions
 
