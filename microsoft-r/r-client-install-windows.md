@@ -138,6 +138,14 @@ All of tools for the standard base R (RTerm, Rgui.exe, and RScript) are also inc
 > [!NOTE]
 > By default, telemetry data is collected during your usage of R Client. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 
+## How to uninstall
+
++ Remove Microsoft R Client like other applications using the Add/Remove dialog on Windows.
+
++ Alternately, you can use the same setup file used to install R Client to remove the program by specifying the /uninstall option on the command line such as:
+  ```RClientSetup.exe /uninstall```
+
+
 ## Learn More
 
 You can learn more with these guides:

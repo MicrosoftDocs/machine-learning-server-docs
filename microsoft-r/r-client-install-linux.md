@@ -45,11 +45,7 @@ You can also run your code remotely on R Server using [remoteLogin() or remoteLo
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
 
-The following additional component is included in Setup and required for R Client.
-* Microsoft R Open 3.3.3
-
->[!WARNING]
->Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+Also included and required for R Client setup is Microsoft R Open 3.3.3.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
 
 ## Setup Requirements
 
@@ -77,7 +73,9 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
 1. Unpack the file:
 
-   `[tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz`
+   ```
+   [tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz
+   ```
 
    The distribution is unpacked into an `MRC_Linux` folder at the download location. The distribution includes the following files:
 
@@ -94,17 +92,23 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
 1. Verify system repositories are up to date:
 
-   `[root@localhost tmp] $ yum clean all`
+   ```
+   [root@localhost tmp] $ yum clean all
+   ```
 
 1. Change to the `MRC_Linux` directory containing the installation script:
 
-   `[root@localhost tmp] $ cd /tmp/MRC_Linux`
+   ```
+   [root@localhost tmp] $ cd /tmp/MRC_Linux
+   ```
 
 1. Run the script. 
 
    To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
 
-   `[root@localhost MRC_Linux] $ bash install.sh`
+   ```
+   [root@localhost MRC_Linux] $ bash install.sh
+   ```
 
 1. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -138,7 +142,9 @@ From an internet-connected computer, download the following:
 
    To see what is currently installed, list the existing packages in /usr/lib64. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.)
 
-   `ls -l /usr/lib64/lib*`
+   ```
+   ls -l /usr/lib64/lib*
+   ```
 
 1. Transfer these files to the machine without any internet connection  to a writable directory, such as **/tmp**, on your internet-restricted server. Use a a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism.
 
@@ -163,13 +169,17 @@ On the target system which is disconnected from the internet:
    >Do not unpack Microsoft R Open. Instead, copy the gzipped tar file to the MRC_Linux directory after you've unpacked Microsoft R Client.
 
 1. Unpack the Microsoft R Client gzipped file:
-   `[root@localhost tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz`
+   ```
+   [root@localhost tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz
+   ```
 
    A new folder called MRC_Linux is created under /tmp. This folder contains files and packages used during setup. 
 
 1. Copy the gzipped tar file for Microsoft R Open to the MRC_Linux folder containing the installation script (install.sh).  The install.sh script file for R Client looks for the gzipped tar file for Microsoft R Open. Assuming root permissions, copy the gzipped Microsoft R Open tar file to the same folder containing the installation script.
 
-  `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRC_Linux`
+  ```
+  [root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRC_Linux
+  ```
 
 ### Run the Microsoft R Client install script
 
@@ -177,13 +187,17 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. Switch to the `MRC_Linux` directory containing the installation script:
 
-   `[root@localhost tmp] $ cd MRC_Linux`
+   ```
+   [root@localhost tmp] $ cd MRC_Linux
+   ```
 
 1. Run the script. 
 
    To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
 
-   `[root@localhost MRC_Linux] $ bash install.sh`
+   ```
+   [root@localhost MRC_Linux] $ bash install.sh
+   ```
 
 1. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 
@@ -201,7 +215,9 @@ Review the recommendations in [Package Management](/operationalize/package-manag
 
 You can perform a silent install to bypass prompts during setup. In /tmp/MRC_Linux, run the install script with the following parameters:
 
-   `[root@localhost MRC_LINUX] $ install.sh -a -s -m`
+```
+[root@localhost MRC_LINUX] $ install.sh -a -s -m
+```
 
 Additional flags are available, as follows:
 
@@ -214,6 +230,52 @@ flag | Option | Description
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
 
+## How to uninstall R Client 3.3.3
+
+1. Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` .
+
+1. Use your package manager to list the currently installed R Server packages. 
+   + If your package manager is **yum** (common for CentOS/Red Hat systems):
+
+	   ```
+     yum list \*microsoft-r\*
+     ```
+
+   + If your package manager is **apt-get** (common for Ubuntu systems):
+
+	   ```
+     apt list \*microsoft-r\*
+     ```
+
+   + If your package manager is **zypper** (common for SLES systems):
+
+	   ```
+     zypper search \*microsoft-r\*
+     ```
+
+  Packages are registered in a database that tracks all package installations in the cluster. To update the database, use your yum, apt-get, or zypper package manager to remove the package (for example, `sudo yum erase microsoft-r-server-mro-8.0`).
+
+1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
+
+   ```
+   yum erase microsoft-r-open-mro-3.3         #For CentOS/RHEL systems
+   apt-get remove microsoft-r-open-mro-3.3    #For Ubuntu systems
+   zypper remove microsoft-r-open-mro-3.3     #For SLES systems
+   ```
+
+2. On the root node, verify the location of other files that need to be removed: `
+
+   ```
+   ls /usr/lib64/microsoft-r
+   ```
+
+3. Remove the entire directory:
+
+   ```
+   rm -fr /usr/lib64/microsoft-r
+   ```
+
+   The **rm** command removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
 ## Learn More
 

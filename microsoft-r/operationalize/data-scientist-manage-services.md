@@ -507,10 +507,7 @@ After a web service has been published, it can be consumed. Whenever the web ser
 When you publish a service, you should let people know that is ready for them to try out. Users can get the Swagger file they need to consume the service directly in R or via the API.  If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
 
 Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described below. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
-
->[!WARNING]
->If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](admin-diagnostics.md#logs). 
-
+  
 <a name="data-scientists-share"></a>
 
 #### Collaborate with data scientists
