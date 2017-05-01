@@ -49,7 +49,7 @@ With root privilege, you can use a package manager to install each package in th
 5. You should have the following packages, which should be installed in this order:
 
 	microsoft-r-open-mro-3.3.3.x86_64.rpm	
-	microsoft-r-server-packages-9.1.rpm	
+	microsoft-r-server-packages-9.1.rpm		
 	microsoft-r-server-hadoop-9.1.rpm	
 	microsoft-r-server-mml-9.1.rpm	
 	microsoft-r-server-mlm-9.1.rpm	
