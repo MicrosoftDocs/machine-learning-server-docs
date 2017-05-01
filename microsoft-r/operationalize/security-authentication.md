@@ -87,64 +87,65 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
    1. Search for the section starting with `"LDAP": {`
    
-   1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  Properties include:
+   1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
       > For better security, we recommend you [encrypt the password](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
 
-      |LDAP Properties|Definition|
-      |---------------|-------------------------------|
-      |`Host`|Address of the Active Directory server|
-      |`Port`|Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
-      |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
-      |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
-      |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
-      |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
-      |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
-      |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
-      |`SearchFilter`|The pattern to be used for the user search. `"SearchFilter": "cn={0}"` is for each user's DN. In legacy systems, some use `"SearchFilter": "sAMAccountName={0}"`|
-      |`UniqueUserIdentifierAttributeName`|(Version 9.1) The attribute name that stores the unique user id for each user. If you are configuring roles, you must ensure that the username returned for this value matches the username returned by `SearchFilter`. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.|
-      |`DisplayNameAttributeName`|(Version 9.1) The attribute name that stores the display name for each user.|
-      |`EmailAttributeName`|(Version 9.1) The attribute name that stores the email address for each user.|
+   |LDAP Properties|Definition|
+   |---------------|-------------------------------|
+   |`Host`|Address of the Active Directory server|
+   |`Port`|Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
+   |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
+   |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
+   |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
+   |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
+   |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
+   |`SearchBase`|Context name to search in, relative to the base of the configured ContextSource, e.g. `'ou=users,dc=example,dc=com'`.| 
+   |`SearchFilter`|The pattern to be used for the user search. `"SearchFilter": "cn={0}"` is for each user's DN. In legacy systems, some use `"SearchFilter": "sAMAccountName={0}"`|
+   |`UniqueUserIdentifierAttributeName`|(Version 9.1) The attribute name that stores the unique user id for each user. If you are configuring roles, you must ensure that the username returned for this value matches the username returned by `SearchFilter`. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.|
+   |`DisplayNameAttributeName`|(Version 9.1) The attribute name that stores the display name for each user.|
+   |`EmailAttributeName`|(Version 9.1) The attribute name that stores the email address for each user.|
 
-      >[!IMPORTANT]
-      >The entities created by the users, specifically web services and [session snapshots](remote-execution.md#snapshot), are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
-      >
-      >For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
-      >
-      >Similarly, if your organization makes changes to its usernames, those users will not be able to access the web services and snapshots they created in the past unless they are [assigned to the `Owner` role](security-roles.md).  
+   >[!IMPORTANT]
+   >The entities created by the users, specifically web services and [session snapshots](remote-execution.md#snapshot), are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
+   >
+   >For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+   >
+   >Similarly, if your organization makes changes to its usernames, those users will not be able to access the web services and snapshots they created in the past unless they are [assigned to the `Owner` role](security-roles.md).  
 
-      <br>
+   <br>
 
-      >[!WARNING]
-      >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
+   >[!WARNING]
+   >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 
-
-      For example:
-      ```
-      "LDAP": {
-              "Enabled": true,
-              "Host": "<host_ip>",
-              "UseLDAPS": "True",
-              "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
-              "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
-              "QueryUserPasswordEncrypted": true,
-              "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
-              "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
-              "SearchFilter": "cn={0}"  
-              "UniqueUserIdentifierAttributeName": "userPrincipalName",
-              "DisplayNameAttributeName": "name",
-              "EmailAttributeName": "mail"     
-      }
-      ```
-      <br>
+   For example:
+   ```
+   "LDAP": {
+           "Enabled": true,
+           "Host": "<host_ip>",
+           "UseLDAPS": "True",
+           "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
+           "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
+           "QueryUserPasswordEncrypted": true,
+           "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+           "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
+           "SearchFilter": "cn={0}"  
+           "UniqueUserIdentifierAttributeName": "userPrincipalName",
+           "DisplayNameAttributeName": "name",
+           "EmailAttributeName": "mail"     
+   }
+   ```
+   
+   <br>
       
-      >[!NOTE]
-      >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+   >[!NOTE]
+   >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
 
 1. If using a certificate for access token signing, do the following: 
 
+   >[!Important]
    >You must use a certificate for access token signing whenever you have multiple web nodes so the tokens are signed consistently by every web node in your configuration. 
    >
    >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the web node and the LDAP server.
