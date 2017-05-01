@@ -30,7 +30,7 @@ For 9.0.1-to-9.1, the install script automatically removes previous versions of 
 
 ## Program version and file locations
 
-As a first step, use your package manager to list the currently installed R Server packages. Typically, CentOS and Red Hat systems use **yum**, Ubuntu systems use **apt-get**, and SLES systems use **zypper**):
+As a first step, use your package manager to list the currently installed R Server packages. Typically, CentOS and Red Hat systems use **yum**, Ubuntu systems use **apt-get**, and SLES systems use **zypper**:
 
 1. List the packages from Microsoft.
 
@@ -63,7 +63,7 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
   + On RHEL: `yum erase microsoft-r-open-mro-3.3.x86_64`     
-  + On Ubuntu: `apt-get remove microsoft-r-open-mro-3.3`  
+  + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.3`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.3`    
 
 2. Most packages are uninstalled, including Microsoft R Server. List the remaining packages to see what's left. On a 9.1. installation, you should see only those packages used for operationalizing R Server analytics. Uninstall each one in the following order:
