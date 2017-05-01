@@ -5,7 +5,7 @@ description: "Upgrade Microsoft R Server and the RevoScaleR package by uninstall
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "08/09/2016"
+ms.date: "05/01/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
-# Uninstall R Server to upgrade to a newer version
+# Uninstall R Server on Linux to upgrade to a newer version
 
 This article explains how to uninstall Microsoft R Server on Linux. Unless you are upgrading from 9.0.1 to the [the latest version 9.1](rserver-install-linux-server.md), upgrade requires that you first uninstall the existing deployment before installing a new distribution.
 
@@ -58,7 +58,9 @@ Packages are registered in a database that tracks all package installations in t
 
 Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo`.
 
-## How to uninstall 9.x
+The Revo64 program runs on demand so stopping and disabling the server is not required. 
+
+## How to uninstall 9.x 
 
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
@@ -66,7 +68,7 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.3`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.3`    
 
-2. Most packages are uninstalled, including Microsoft R Server. List the remaining packages to see what's left. On a 9.1. installation, you should see only those packages used for operationalizing R Server analytics. Uninstall each one in the following order:
+2. Most packages are uninstalled, including Microsoft R Server. List the remaining packages to see what's left. On a 9.1. installation, you should see only those packages used for operationalizing R Server analytics. On a 9.0.1 install, you might see just mrsdeploy. Using the syntax from the previous step, uninstall remaining packages. For 9.1, uninstall packages in the following order:
 
   + Microsoft-r-server-adminutil-9.1.x86_64
   + Microsoft-r-server-webnode-9.1.x86_64
