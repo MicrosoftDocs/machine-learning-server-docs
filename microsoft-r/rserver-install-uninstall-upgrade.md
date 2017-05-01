@@ -100,7 +100,7 @@ The Revo64 program runs on demand so stopping and disabling the server is not re
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
-5. Repeat on each node in the cluster until there are no more artifacts of an R Server installation.
+Repeat on each node in the cluster.
 
 ## How to uninstall 8.0.5
 

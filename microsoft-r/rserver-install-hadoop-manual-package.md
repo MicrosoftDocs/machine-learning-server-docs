@@ -35,18 +35,24 @@ With root privilege, you can use a package manager to install each package in th
   + On Ubuntu: `apt-get install microsoft-r-open-mro-3.3`  
   + On SUSE: `zypper install microsoft-r-open-mro-3.3`   
 
+## Prerequisites
+
+A manual package installation is similar to an offline installation. As a first step, review the instructions for [offline installation](rserver-install-hadoop-offline.md) for system prerequisites and for downloading and unpacking the distribution.
+
+After you unpack the distribution, you should see packages for RPM and DEB in the /tmp/MRS91Hadoop directory.
+
 ## Steps
 
 1.  Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
 
-2. Verify system repositories are up to date:
-		[username] $ `sudo yum clean all`	
+2. Use a package manager to verify system repositories are up to date:
 
-3. Download and unpack the R Server distribution, following the instructions provided in [Offline installation](rserver-install-hadoop-offline.md).
+  + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
+  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 	
 
-4. Start with the .NET Core package from [http://www.microsoft.com/net/core](http://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
+3. Install the .NET Core package from [http://www.microsoft.com/net/core](http://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
 
-5. You should have the following packages, which should be installed in this order:
+5. Install Microsoft R Server packages. You should have the following packages, which should be installed in this order:
 
 	microsoft-r-open-mro-3.3.3.x86_64.rpm	
 	microsoft-r-server-packages-9.1.rpm		
