@@ -239,7 +239,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
 ```
 
-## Prepare and Import Data
+## Prepare and import data
 
 1. Initialize some variables to specify the data sets.
    ```
@@ -325,7 +325,7 @@ Here is the whole script you can walk through step by step below.
     rxGetVarInfo(weather_mrs)
     ```
 
-## Pre-process Data
+## Pre-process data
 
 1. Rename some column names in the weather data to prepare it for merging.
     ```
@@ -369,7 +369,7 @@ Here is the whole script you can walk through step by step below.
                 overwrite = TRUE)
       ```
 
-## Prepare Training and Test Datasets
+## Prepare training and test datasets
 
 1. Randomly split data (80% for training, 20% for testing).
    ```
@@ -394,7 +394,7 @@ Here is the whole script you can walk through step by step below.
    test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
    ```
 
-## Predict using Logistic Regression
+## Predict using logistic regression
 
 1. Choose and apply the Logistic Regression learning algorithm.
    ```
@@ -426,7 +426,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
     ```
 
-## Predict using Decision Tree
+## Predict using decision tree
 1. Choose and apply the Decision Tree learning algorithm.
     ```
     # Build a decision tree model.
