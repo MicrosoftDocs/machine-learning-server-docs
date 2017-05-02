@@ -43,6 +43,64 @@ For more information and next steps, see the articles on [the introduction to op
 > [!NOTE]
 > In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. The ability to use R Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](rserver-install-supported-platforms.md).
 
+
+## Operationalizing analytics with R Server
+
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](../deployr-about.md).)
+
+Today, more and more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare and manufacturing. Typically, the data scientists first build out the predictive models and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
+
+## Solving Long Development Lifecycles
+
+R is a great modeling tool, but **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. 
+
+![Engine](../media/o16n/about-traditional-challenge.png) 
+
+Introducing Microsoft R Server, the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+
+## What you get when operationalizing with R Server
+
+After you [configure R Server to operationalize](configuration-initial.md), you can: 
+
+||Key Features|
+|-|-|
+|![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](api.md) that are [easy to consume](app-developer-get-started.md) <br>&nbsp; &nbsp; with any programming languages including R|
+|![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](configuration-initial.md) <br>● Model on-premise, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
+|![3](../media/o16n/about-3.png)|● Perform fast scoring: real time & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools|
+|![4](../media/o16n/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](security-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](security-https.md)<br>● Enterprise grade high availability|
+
+## Actors in Operationalizing Analytics
+
+Microsoft R Server offers the **best-in-class deployment** experience for the administrator, data scientists, and application developers alike. 
+
+![Personas](../media/o16n/about-personas.png)
+
+### Administrators
+
+The [easy configuration](configuration-initial.md) of Microsoft R Server for operationalizing analytics includes **enterprise grade security and reliability** on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](admin-diagnostics.md) and [capacity evaluation](admin-evaluate-capacity.md) tools are provided to help you tune and manage. 
+
+R Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](security-authentication.md). Connections can also be secured [SSL/TLS 1.2](security-https.md).
+
+&gt;&gt; Learn more in this [Administrator Get Started](admin-get-started.md) guide.
+
+### Data Scientists
+
+In a single line of code, data scientists can deploy  models or any arbitrary R code as analytic web services. 
+
+&gt;&gt; Learn more in this [Data Scientist Get Started](data-scientist-get-started.md) guide.
+
+### Application Developers
+
+Using their favorite development environment, application developers can easily integrate those web services into their apps using Swagger-based [REST APIs](api.md) with any programming languages including R. They can perform fast scoring: real time & batch. 
+
+&gt;&gt; Learn more in this [Application Developer Get Started](app-developer-get-started.md) guide.
+
+<br>
+
+<br>
+
+<div align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/1Nvs6QShWqY" frameborder="0" allowfullscreen></iframe></div>
+
 ## See Also
 
 [What's new in R Server](rserver-whats-new.md)

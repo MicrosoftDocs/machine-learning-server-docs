@@ -1,9 +1,9 @@
 # Overview
-## [About Microsoft R](microsoft-r-getting-started.md)
-## [Microsoft R Server](rserver.md)
-## [SQL Server Machine Learning Services](sql-server-r-services.md)
-## [Microsoft R Client](r-client.md)
-## [Microsoft R Open](r-open.md)
+## [Products and Features](overview-products-and-features.md)
+## [About Microsoft R Server](overview-server.md)
+## [About SQL Server Machine Learning Services](sql-server-r-services.md)
+## [About Microsoft R Client](r-client.md)
+## [About Microsoft R Open](r-open.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
@@ -199,13 +199,6 @@
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
-## Resouces
-### [Known issues](rserver-known-issues.md)
-### [Deprecated and discontinued features](notes/r-server-notes.md)
-### [Supported platforms](rserver-install-supported-platforms.md)
-### [Servicing support policy](rserver-servicing-support.md)
-### [Opting out of usage data collection](rserver-optout-telemetry.md)
-
 
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
@@ -216,6 +209,14 @@
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
+# Resources
+## [R Server known issues](rserver-known-issues.md)
+## [R Server supported platforms](rserver-install-supported-platforms.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
+## [Servicing support policy](rserver-servicing-support.md)
+## [Opting out of usage data collection](rserver-optout-telemetry.md)
+## [Glossary](microsoft-r-glossary.md)
+## [Additional Resources](microsoft-r-more-resources.md)
 
 # [Function Reference](package-reference.md)
 
@@ -506,6 +507,3 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
-# [Glossary](microsoft-r-glossary.md)
-
-# [Additional Resources](microsoft-r-more-resources.md)
