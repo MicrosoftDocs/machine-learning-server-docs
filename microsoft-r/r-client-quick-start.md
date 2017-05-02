@@ -31,9 +31,7 @@ This quick start shows you how to predict flight delays in R locally using R Cli
 
 Broadly speaking, in machine learning and statistics, classification is the task of identifying the class or category to which a new observation belongs on the basis of a training set of data containing observations with known categories. Classification is generally a supervised learning problem. Since this is a binary classification task, there are only two classes.
 
-In this example, you train a model using a large number of examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are as follows:
-+ Ontime flights labeled as `0`
-+ Delayed flights labeled as `1`
+In this example, you train a model using a large number of examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are `0` for ontime flights and `1` for flights delayed longer than 15 minutes.
 
 ## Time estimate
 
@@ -43,14 +41,14 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 This quick start assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 
-## Full example code
+## Example code
 
 Here is the whole script you can walk through step by step below.
 
 ```r
-    #############################################
-    ##           ENTIRE SAMPLE SCRIPT          ##
-    #############################################
+       #############################################
+       ##           ENTIRE SAMPLE SCRIPT          ##
+       #############################################
 
 #Step 1: Prep and Import Data
 #Initialize some variables to specify the data sets.
@@ -239,7 +237,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
 ```
 
-## Prepare and Import Data
+## Step 1. Prepare and import data
 
 1. Initialize some variables to specify the data sets.
    ```
@@ -325,7 +323,7 @@ Here is the whole script you can walk through step by step below.
     rxGetVarInfo(weather_mrs)
     ```
 
-## Pre-process Data
+## Step 2. Pre-process data
 
 1. Rename some column names in the weather data to prepare it for merging.
     ```
@@ -369,7 +367,7 @@ Here is the whole script you can walk through step by step below.
                 overwrite = TRUE)
       ```
 
-## Prepare Training and Test Datasets
+## Step 3. Prepare training and test datasets
 
 1. Randomly split data (80% for training, 20% for testing).
    ```
@@ -394,7 +392,7 @@ Here is the whole script you can walk through step by step below.
    test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
    ```
 
-## Predict using Logistic Regression
+## Step 4. Predict using logistic regression
 
 1. Choose and apply the Logistic Regression learning algorithm.
    ```
@@ -426,7 +424,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
     ```
 
-## Predict using Decision Tree
+## Step 5. Predict using decision tree
 1. Choose and apply the Decision Tree learning algorithm.
     ```
     # Build a decision tree model.
@@ -460,4 +458,4 @@ Here is the whole script you can walk through step by step below.
 
 ## Next steps
 
-Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](/operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 

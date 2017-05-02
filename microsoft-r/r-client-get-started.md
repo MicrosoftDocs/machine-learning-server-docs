@@ -6,7 +6,7 @@ description: "Microsoft R Client Getting Started Guide."
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "5/1/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,7 +32,7 @@ R Client allows you to work with production data locally using the full set of S
 
 To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](r-client-compatibility.md) 
 
-You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](/operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development.
+You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development.
 
 **Getting started with Microsoft R Client is as easy as 1-2-3.**
 
@@ -78,7 +78,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](/operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](/operationalize/configure-enterprise.md) for this functionality.
+>You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](operationalize/configure-enterprise.md) for this functionality.
 
 <br><a name="try-r-client"></a>
 
@@ -88,9 +88,9 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Try the **Flight delay prediction example** described in this [R Client Quick Start guide](r-client-quick-start.md). 
 
-+ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. 
++ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. 
 
-When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](/operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 
 <br>
 
@@ -98,7 +98,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 You can learn more with these guides:
 
-+ [Quick Start for Microsoft R Client](microsoft-r-quick-start.md) (example)
++ [Quick Start for Microsoft R Client](r-client-quick-start.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
