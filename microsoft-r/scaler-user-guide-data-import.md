@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Importing Data"
-description: "Data import with RevoScaleR."
+title: "Import data into Microsoft R Server"
+description: "Data ingestion in Microsoft R Server using RevoScaleR functions and XDF files."
 keywords: ""
-author: "richcalaway"
+author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.date: "05/03/2017"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -24,7 +24,14 @@ ms.custom: ""
 
 ---
 
-# Importing data using ScaleR in Microsoft R
+# Importing data in Microsoft R Server
+
+Although R Server can analyze data over a direct connection to an external data source, it's common to import data into the native XDF file format. XDF files offer numerous advantages, including chunking data in blocks for modular distribution and management, columnar storage for fast retrievable of individual variables, and precomputed metadata. 
+
+To create an XDF file, use the [rxImport](/scaler/packagehelp/rximport.md) function. This function accepts data from text files, binary files, and database files.
+
+
+## ORIGINAL DOCS
 
 The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
 

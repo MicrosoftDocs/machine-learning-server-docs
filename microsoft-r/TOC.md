@@ -1,5 +1,9 @@
 # [About Microsoft R](microsoft-r-getting-started.md)
 
+# Quickstart
+
+## [Import CSV-to-XDF on Microsoft R Server](quickstart-rserver-data-import-csv.md)
+
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
 ## [Learn ScaleR functions for large data analysis](scaler-getting-started.md)
@@ -49,13 +53,9 @@
 # [Microsoft R Server](rserver.md)
 
 ## [What's new](rserver-whats-new.md)
-## [Known issues](rserver-known-issues.md)
-## [Deprecated and discontinued features](notes/r-server-notes.md)
-## [Supported platforms](rserver-install-supported-platforms.md)
-## [Servicing support policy](rserver-servicing-support.md)
-## [Opting out of usage data collection](rserver-optout-telemetry.md)
 
 ## [Install and configure](rserver.md)
+### [Supported platforms](rserver-install-supported-platforms.md)
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
@@ -199,6 +199,10 @@
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
+## [Known issues](rserver-known-issues.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
+## [Servicing support policy](rserver-servicing-support.md)
+## [Opting out of usage data collection](rserver-optout-telemetry.md)
 
 # [SQL Server Machine Learning Services](sql-server-r-services.md)
 

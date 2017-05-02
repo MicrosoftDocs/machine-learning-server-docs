@@ -34,24 +34,32 @@ To view the files available within the package, execute the following open sourc
 
 You should see the following list:
 
-	 [1] "AirlineDemo1kNoMissing.csv" "AirlineDemoSmall.csv"      
-	 [3] "AirlineDemoSmall.xdf"       "CensusWorkers.xdf"         
-	 [5] "claims.dat"                 "claims.sas7bdat"           
-	 [7] "claims.sav"                 "claims.sd7"                
-	 [9] "claims.sqlite"              "claims.sts"                
-	[11] "claims.txt"                 "claims.xdf"                
-	[13] "claimsExtra.txt"            "claimsQuote.txt"           
-	[15] "claimsTab.txt"              "CustomerSurvey.xdf"        
-	[17] "DJIAdaily.xdf"              "fourthgraders.xdf"         
-	[19] "Kyphosis.xdf"               "mortDefaultSmall.xdf"      
-	[21] "mortDefaultSmall2000.csv"   "mortDefaultSmall2001.csv"  
-	[23] "mortDefaultSmall2002.csv"   "mortDefaultSmall2003.csv"  
-	[25] "mortDefaultSmall2004.csv"   "mortDefaultSmall2005.csv"  
-	[27] "mortDefaultSmall2006.csv"   "mortDefaultSmall2007.csv"  
-	[29] "mortDefaultSmall2008.csv"   "mortDefaultSmall2009.csv" "
+	[1] "AirlineDemo1kNoMissing.csv" "AirlineDemoSmall.csv"      
+	[3] "AirlineDemoSmall.xdf"       "AirlineDemoSmallComposite" 
+	[5] "AirlineDemoSmallOrc"        "AirlineDemoSmallParquet"   
+	[7] "AirlineDemoSmallSplit"      "AirlineDemoSmallUC.xdf"    
+	[9] "ccFraudScoreSmall.csv"      "ccFraudSmall.csv"          
+	[11] "CensusWorkers.xdf"          "claims.dat"                
+	[13] "claims.sas7bdat"            "claims.sav"                
+	[15] "claims.sd7"                 "claims.sqlite"             
+	[17] "claims.sts"                 "claims.txt"                
+	[19] "claims.xdf"                 "claims_.txt"               
+	[21] "claims4blocks.xdf"          "claimsExtra.txt"           
+	[23] "claimsParquet"              "claimsQuote.txt"           
+	[25] "claimsTab.txt"              "claimsTxt"                 
+	[27] "claimsXdf"                  "CustomerSurvey.xdf"        
+	[29] "DJIAdaily.xdf"              "fourthgraders.xdf"         
+	[31] "hyphens.txt"                "Kyphosis.xdf"              
+	[33] "mortDefaultSmall.xdf"       "mortDefaultSmall2000.csv"  
+	[35] "mortDefaultSmall2001.csv"   "mortDefaultSmall2002.csv"  
+	[37] "mortDefaultSmall2003.csv"   "mortDefaultSmall2004.csv"  
+	[39] "mortDefaultSmall2005.csv"   "mortDefaultSmall2006.csv"  
+	[41] "mortDefaultSmall2007.csv"   "mortDefaultSmall2008.csv"  
+	[43] "mortDefaultSmall2009.csv"   "mrsDebugParquet"           
+	[45] "README"                     "testAvro4.bin"             
+	[47] "Utf16leDb.sqlite"     
 
-
-Sample data is provided in multiple formats so that you can step through data import scenarios using different data formats and techniques. 
+Sample data is provided in multiple formats so that you can step through various data import scenarios using different data formats and techniques. 
 
 + XDF is the native file format engineered for fast retrieval of columnar data. In this format, data is stored in blocks, which is an advantage on distributed file systems and for import operations that include append or overwrites at the block level.	
 + CSV files are used to showcase multi-file import operations.
@@ -60,6 +68,10 @@ Sample data is provided in multiple formats so that you can step through data im
 The location of the sample data directory is stored as an option in RevoScaleR, and you can access it with the following command:
 
 	rxGetOption("sampleDataDir")
+
+To get the list of data files shown above, use the open source R command, list.files:
+
+	list.files(rxGetOption("sampleDataDir"))
 
 Most of the built-in data sets are small enough to fit in-memory. Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
