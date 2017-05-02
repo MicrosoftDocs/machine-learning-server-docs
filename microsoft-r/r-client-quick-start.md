@@ -23,21 +23,7 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-
-<!--- Purpose of a QuickStart article: To help customers complete a basic task and try the service quickly. 
-1. Include short, simple info and steps since customers may be new to service.
-2. Don't include multiple ways to complete the task, just one.--->
-
-
-# Quick Start for Microsoft R Client
-
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started.md) and its proprietary functions to benefit from parallelization and remote computing. 
-
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
-
-To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](r-client-compatibility.md)
-  
-You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](/operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development. 
+# Quick Start: Use R Client to predict delayed flights
 
 ## Objective
 
@@ -50,12 +36,12 @@ In this example, you train a model using a large number of examples from histori
 + Delayed flights labeled as `1`
 
 ## Time estimate
+
 If you have completed the prerequisites, this task will take approximately *5* minutes to complete.
 
 ## Prerequisites
 
-This quick start assumes that you have installed Microsoft R Client and configured an R integrated development environment (IDE) to use R Client. Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
-
+This quick start assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 
 ## Full example code
 
@@ -253,10 +239,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
 ```
 
-<br>
-
-
-## Prepare and Import Data (Step 1)
+## Prepare and Import Data
 
 1. Initialize some variables to specify the data sets.
    ```
@@ -265,7 +248,7 @@ Here is the whole script you can walk through step by step below.
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
    ```
 
-1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  <a href="https://msdn.microsoft.com/en-us/microsoft-r/scaler-user-guide-introduction">Learn more…</a>
+1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](scaler-user-guide-introduction.md)
    ```
    td <- tempdir()
    outFileFlight <- paste0(td, "/flight.xdf")
@@ -342,7 +325,7 @@ Here is the whole script you can walk through step by step below.
     rxGetVarInfo(weather_mrs)
     ```
 
-## Pre-process Data (Step 2)
+## Pre-process Data
 
 1. Rename some column names in the weather data to prepare it for merging.
     ```
@@ -386,7 +369,7 @@ Here is the whole script you can walk through step by step below.
                 overwrite = TRUE)
       ```
 
-## Prepare Training and Test Datasets (Step 3)
+## Prepare Training and Test Datasets
 
 1. Randomly split data (80% for training, 20% for testing).
    ```
@@ -411,7 +394,7 @@ Here is the whole script you can walk through step by step below.
    test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
    ```
 
-## Predict using Logistic Regression  (Step 4)
+## Predict using Logistic Regression
 
 1. Choose and apply the Logistic Regression learning algorithm.
    ```
@@ -443,7 +426,7 @@ Here is the whole script you can walk through step by step below.
                title = "ROC curve - Logistic regression")
     ```
 
-## Predict using Decision Tree  (Step 5)
+## Predict using Decision Tree
 1. Choose and apply the Decision Tree learning algorithm.
     ```
     # Build a decision tree model.
