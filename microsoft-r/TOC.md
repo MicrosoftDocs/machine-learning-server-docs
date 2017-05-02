@@ -1,4 +1,9 @@
-# [About Microsoft R](microsoft-r-getting-started.md)
+# Overview
+## [About Microsoft R](microsoft-r-getting-started.md)
+## [Microsoft R Server](rserver.md)
+## [SQL Server Machine Learning Services](sql-server-r-services.md)
+## [Microsoft R Client](r-client.md)
+## [Microsoft R Open](r-open.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
@@ -49,11 +54,6 @@
 # [Microsoft R Server](rserver.md)
 
 ## [What's new](rserver-whats-new.md)
-## [Known issues](rserver-known-issues.md)
-## [Deprecated and discontinued features](notes/r-server-notes.md)
-## [Supported platforms](rserver-install-supported-platforms.md)
-## [Servicing support policy](rserver-servicing-support.md)
-## [Opting out of usage data collection](rserver-optout-telemetry.md)
 
 ## [Install and configure](rserver.md)
 ### [R Server for Windows](rserver-install-windows.md)
@@ -199,19 +199,22 @@
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
+## Resouces
+### [Known issues](rserver-known-issues.md)
+### [Deprecated and discontinued features](notes/r-server-notes.md)
+### [Supported platforms](rserver-install-supported-platforms.md)
+### [Servicing support policy](rserver-servicing-support.md)
+### [Opting out of usage data collection](rserver-optout-telemetry.md)
 
-# [SQL Server Machine Learning Services](sql-server-r-services.md)
 
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
-## [Quickstart: predict flight delays](r-client-quick-start-airline-delays.md)
+## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
-
-# [Microsoft R Open](r-open.md)
 
 
 # [Function Reference](package-reference.md)
