@@ -460,4 +460,4 @@ Here is the whole script you can walk through step by step below.
 
 ## Next steps
 
-Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](/operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](../scaler/scaler.md), [`MicrosoftML` R package functions](../microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](../operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 

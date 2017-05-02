@@ -78,7 +78,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](/operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](/operationalize/configure-enterprise.md) for this functionality.
+>You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](../operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](../operationalize/configure-enterprise.md) for this functionality.
 
 <br><a name="try-r-client"></a>
 
@@ -88,9 +88,9 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Try the **Flight delay prediction example** described in this [R Client Quick Start guide](r-client-quick-start.md). 
 
-+ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. 
++ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](../scaler/scaler.md), [`MicrosoftML` R package functions](../microsoftml/microsoftml.md), and APIs. 
 
-When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](/operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](../operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 
 <br>
 
@@ -98,7 +98,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 You can learn more with these guides:
 
-+ [Quick Start for Microsoft R Client](microsoft-r-quick-start.md) (example)
++ [Quick Start for Microsoft R Client](r-client-quick-start.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
