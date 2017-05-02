@@ -60,45 +60,35 @@ The first step is to download Microsoft R Client for your operating system and i
 
 To learn more about the supported platforms or installation steps, please see the following articles:
 
-+ [Download and install Microsoft R Client for Windows](r-client-install-windows.md)
++ [Install Microsoft R Client on Windows](r-client-install-windows.md)
 
-+ [Download and install Microsoft R Client for Linux](r-client-install-linux.md)
++ [Install Microsoft R Client for Linux](r-client-install-linux.md)
 
 
 <a name="configure-ide"></a>
 
 ## Step 2: Configure Your IDE
 
-While R is a command line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. 
+While R is a command line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. To do so, you must point that IDE to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include R Tools for Visual Studio on Windows (Recommended), RStudio, or any other R development environment.
 
-After you've [installed R Client](#installrclient), you can configure your favorite R integrated development environment (IDE) to point to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) on Windows (Recommended), RStudio, or any other R development environment.<br>
++ **Set up RTVS for R Client on Windows**: [R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  To make R Client the default R engine for RTVS, choose Change R to Microsoft R Client from the R Tools menu.  
+
++ **Set up RStudio for R Client on Windows or Linux**: [RStudio](https://www.rstudio.com/products/rstudio/download2/) is another popular R IDE. To make R Client the default R engine for RStudio, [update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R). For example, point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64` on Windows. 
+
+After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
 >You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](/operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](/operationalize/configure-enterprise.md) for this functionality.
-
-**Set up RTVS for R Client on Windows**
-
-[R Tools for Visual Studio](https://msdn.microsoft.com/en-us/library/mt721271.aspx#Anchor_1) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  
-
-  1. After installing R Client, launch RTVS.
-  1. From the R Tools, choose Change R to Microsoft R Client.
-  1. When you launch RTVS, R Client is now the default R engine. In the console window, you'll see a message stating that the Microsoft R Client packages were loaded.
-
-<br>
-
-**Set up RStudio for R Client on Windows or Linux**
-
-  1. After installing R Client, launch [RStudio](https://www.rstudio.com/products/rstudio/download2/).
-  1. [Update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R). For example, point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64` on Windows.
-  1. When you launch RStudio, R Client is now the default R engine. In the console window, you'll see a message stating that the Microsoft R Client packages were loaded.
 
 <br><a name="try-r-client"></a>
 
 ## Step 3: Try Out R Client
 
-Now that you've installed R Client, you can start building and running your R code. Start R on the command-line or in your IDE. 
+Now that you've installed R Client, you can start building and running some R code. Launch R on the command-line or in your IDE and:
 
-Start working with R Client by predicting flight delays as described in this [R Client Quick Start guide](microsoft-r-quick-start.md). Or, develop your own solutions with [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. 
++ Try the **Flight delay prediction example** described in this [R Client Quick Start guide](r-client-quick-start.md). 
+
++ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](/scaler/scaler.md), [`MicrosoftML` R package functions](/microsoftml/microsoftml.md), and APIs. 
 
 When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](/operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 
@@ -108,7 +98,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 You can learn more with these guides:
 
-+ [Quick Start for Microsoft R Client](microsoft-r-quick-start.md) 
++ [Quick Start for Microsoft R Client](microsoft-r-quick-start.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
