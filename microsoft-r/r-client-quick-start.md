@@ -43,7 +43,7 @@ This quick start assumes that you have installed Microsoft R Client and launch R
 
 ## Example code
 
-Here is the whole script you can walk through step by step below.
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow.
 
 ```r
        #############################################
