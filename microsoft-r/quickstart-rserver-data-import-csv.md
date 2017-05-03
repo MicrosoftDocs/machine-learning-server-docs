@@ -28,7 +28,7 @@ ms.custom: ""
 
 Learn how to import single or multiple CSV files into the native file format of R Server: an XDF file. 
 
-XDF files are not strictly required for statistics and analytics in R Server, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also supports very fast retrieval of variables and metadata.
+XDF files are not strictly required for statistics and analytics in R Server, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also unlocks very fast retrieval of variables and metadata.
 
 To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
 
@@ -47,9 +47,11 @@ This tutorial uses functions and the built-in sample data files from the RevoSca
 
 1. Open the R console or start a Revo64 session.
 
-2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by typing the open source R command `list.files` and the RevoScaleR function **rxGetOption** at the command prompt:
+2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by entering the following command at the command prompt:
 
         list.files(rxGetOption("sampleDataDir"))
+
+The `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
 
 In the file list, notice the CSV files for mortgage defaults for the years 2000 through 2009 (such as mortDefaultSmall2000.csv). This tutorial uses those files to demonstrate the creation of an XDF file.
 
@@ -62,13 +64,17 @@ In this section, you will import a single file and learn about functions and arg
 
 ### Set the source file location
 
-**rxImport** takes several arguments, including **inData** used to specify the source of data. In this step, you create an object named *mysourcedata* in the R session to represent the file to provide. Because you're using built-in data that RevoScale knows how to find, you can use the **rxGetOpion sampleDataDir** argument to get the location and file.
+**rxImport** takes several arguments, including **inData** used to specify the source of data. 
+
+In this step, you create an object named *mysourcedata* in the R session that you will pass to **inData** in a later step. Because you're using built-in data that RevoScale knows how to find, you can use the **sampleDataDir** argument to get the location of your source file.
 
     mysourcedata <- file.path(rxGetOption("sampleDataDir", "mortDefaultSmall2000.csv"))
 
 ### Set the XDF file location
 
-**rxImport** takes an **outFile** parameter, used to specify the file path for the generated XDF. This step creates an object for a file that exists at an arbitrary location, such as C:\Users\Temp on the Windows file system. The path must consist of the file location and file name:
+**rxImport** takes an **outFile** parameter, used to specify the file path for the generated XDF. 
+
+This step creates an object for a file that exists at an arbitrary location, such as C:\Users\Temp on the Windows file system. The object must provide the file location and name:
 
     myxdf <- file.path("C:/users/temp/mortDefaultSmall2000.xdf")
 
@@ -76,15 +82,15 @@ Notice the direction of the path delimiter. By default, R script uses forward sl
 
 Also by default, RevoScaleR uses your working directory to store the file. You can use the open source R command to get its location: `getwd()`. You can use `setwd` to change it. Or you can specify the path, as we've done here.
 
-At this point, the object is created, but the XDF file won't exist until you run **rxImport**. To confirm: `file.exists(myxdf)`.
+At this point, the object is created, but the XDF file won't exist until you run **rxImport**. To test whether the file exists, enter this command: `file.exists(myxdf)`.
 
 ### Create an XDF
 
-**rxImport** requires an **inData** and an **outFile** (but only if you want an XDF). Since you have both, you are ready to run the command:
+**rxImport** requires **inData** and  **outFile** (but only if you want an XDF). Since you have both, you are ready to run the command:
 
     rxImport(inData = mysourcedata, outFile = myxdf)
 
-**rxImport** creates the file, builds and populates columns for each variable in the dataset, and then precomputes metadata for each variable and the XDF as a whole.
+**rxImport** creates the file, builds and populates columns for each variable in the dataset, and then computes metadata for each variable and the XDF as a whole.
 
 Output returned from this operation is as follows:
 
@@ -92,11 +98,11 @@ Output returned from this operation is as follows:
 
 ### Check results
 
-Use the **rxGetInfo** function to return information about an object. In this case, the object is the XDF file created in a previous step, and the info returned is the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information.
+Use the **rxGetInfo** function to return information about an object. In this case, the object is the XDF file created in a previous step, and the information returned is the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information.
 
     rxGetInfo(myxdf, getVarInfo = TRUE)
 
-Variables are based on fields in the CSV file. In this case, there are 6 variables. Precomputed metadata about each one appears in the output below.
+Output is below. Variables are based on fields in the CSV file. In this case, there are 6 variables. Precomputed metadata about each one appears in the output below.
 
     File name: C:\Users\TEMP\mortDefaultSmall2000.xdf 
     Number of observations: 10000 
@@ -117,21 +123,21 @@ Another equally important use case is to import multiple files at once. As you s
 
 ### Set a source folder location
 
-This time, the source object is a list of files, obtained through iteration over a folder using the R `list.files` function with a pattern for selecting specific files.
+This time, the source object is a list of files, obtained using the R `list.files` function with a pattern for selecting specific file names.
 
     mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)
 
 ### Set XDF output
 
-As before, you will create an object for the XDF file.
+As before, create an object for the XDF file.
 
     onelargeXdf <- file.path("C:/users/temp/mortgagelarge.xdf")
 
 ### Run rxImport to create a multi-block XDF file
 
-Importing multiple files requires the **append** argument to avoid overwriting existing content from the first iteration. Each new chunk of data is imported as a block. 
+You are now ready to create and populate the file. Importing multiple files requires the **append** argument to avoid overwriting existing content from the first iteration. Each new chunk of data is imported as a block and added to the file in successive blocks. 
 
-To iterate over multiple files, use the R `lapply` function and create a function to call **rxImport** with the append option.
+To iterate over multiple files, use the R `lapply` function and create a function to call **rxImport** with the **append** argument.
 
     lapply(mySourceFiles, FUN = function(csv_file) {
         rxImport(inData = csv_file, outFile=onelargeXdf, append = file.exists(onelargeXdf)) } )
@@ -155,7 +161,7 @@ As before, use **rxGetInfo** to view precomputed metadata. As you would expect, 
 
         rxGetInfo(onelargeXdf)
 
-Results from this command prove that you have 10 blocks. On a distributed file system, you could place these blocks on separate nodes. You can also retrieve or overwrite individual blocks.
+Results from this command prove that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks.
 
         File name: C:\Users\TEMP\mortgagelarge.xdf 
         Number of observations: 1e+05 
