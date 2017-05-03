@@ -7,7 +7,7 @@
 
 # Quickstart
 
-## [Import CSV-to-XDF on Microsoft R Server](quickstart-rserver-data-import-csv.md)
+## [Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
