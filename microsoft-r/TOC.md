@@ -1,4 +1,9 @@
-# [About Microsoft R](microsoft-r-getting-started.md)
+# Overview
+## [Products and Features](overview-products-and-features.md)
+## [About Microsoft R Server](overview-server.md)
+## [About SQL Server Machine Learning Services](sql-server-r-services.md)
+## [About Microsoft R Client](r-client.md)
+## [About Microsoft R Open](r-open.md)
 
 # Quickstart
 
@@ -204,19 +209,23 @@
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
 
-# [SQL Server Machine Learning Services](sql-server-r-services.md)
-
 # [Microsoft R Client](r-client.md)
 ## [What's New](notes/r-client-notes.md)
 ## [Get Started with R Client](r-client-get-started.md)
-## [Quick Start: Delay Prediction](r-client-quick-start.md)
+## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
-# [Microsoft R Open](r-open.md)
-
+# Resources
+## [R Server known issues](rserver-known-issues.md)
+## [R Server supported platforms](rserver-install-supported-platforms.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
+## [Servicing support policy](rserver-servicing-support.md)
+## [Opting out of usage data collection](rserver-optout-telemetry.md)
+## [Glossary](microsoft-r-glossary.md)
+## [Additional Resources](microsoft-r-more-resources.md)
 
 # [Function Reference](package-reference.md)
 
@@ -507,6 +516,3 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
-# [Glossary](microsoft-r-glossary.md)
-
-# [Additional Resources](microsoft-r-more-resources.md)

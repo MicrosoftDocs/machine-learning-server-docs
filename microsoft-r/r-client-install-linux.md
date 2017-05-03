@@ -283,6 +283,8 @@ You can learn more with these guides:
 
 + [Get Started with Microsoft R Client](r-client-get-started.md) 
 
++ [Quickstart for Microsoft R Client](r-client-quickstart-airline-delays.md) (example)
+
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
 + [Diving into Data Analysis with Microsoft R](data-analysis-in-microsoft-r.md)
