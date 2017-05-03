@@ -28,17 +28,18 @@ ms.custom: ""
 
 Learn how to import single or multiple CSV files into the native file format of R Server: an XDF file. 
 
-XDF files are not strictly required for statistics and analytics in R Server, but when data sets are large or complex, storing data as an XDF offers essential benefits. Key benefits include the ability to chunk and work with data in blocks as well as very fast retrieval of variables and metadata.
+XDF files are not strictly required for statistics and analytics in R Server, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also supports very fast retrieval of variables and metadata.
 
-To create an XDF file, you'll use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
-
-*Time estimate:*
-If you have completed the prerequisites, this task will take approximately *10* minutes to complete.
+To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
 
 Before you begin this Quickstart, have the following ready:
 
 - [R Server for Windows](rserver-install-windows.md) or [R Server Linux](rserver-install-linux-server.md) (you could also use R Client).
 - An R console application. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+
+*Time estimate:*
+
+If you have completed the prerequisites, this task will take approximately 5-10 minutes to complete.
 
 ## Locate sample data
 
@@ -48,7 +49,7 @@ This tutorial uses functions and the built-in sample data files from the RevoSca
 
 2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by typing the open source R command `list.files` and the RevoScaleR function **rxGetOption** at the command prompt:
 
-    list.files(rxGetOption("sampleDataDir"))
+        list.files(rxGetOption("sampleDataDir"))
 
 In the file list, notice the CSV files for mortgage defaults for the years 2000 through 2009 (such as mortDefaultSmall2000.csv). This tutorial uses those files to demonstrate the creation of an XDF file.
 
@@ -56,6 +57,8 @@ In the file list, notice the CSV files for mortgage defaults for the years 2000 
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.
 
 ## How to read in one file
+
+In this section, you will import a single file and learn about functions and arguments.
 
 ### Set the source file location
 
@@ -75,7 +78,7 @@ Also by default, RevoScaleR uses your working directory to store the file. You c
 
 At this point, the object is created, but the XDF file won't exist until you run **rxImport**. To confirm: `file.exists(myxdf)`.
 
-### Run rxImport to create an XDF
+### Create an XDF
 
 **rxImport** requires an **inData** and an **outFile** (but only if you want an XDF). Since you have both, you are ready to run the command:
 
@@ -116,7 +119,7 @@ Another equally important use case is to import multiple files at once. As you s
 
 This time, the source object is a list of files, obtained through iteration over a folder using the R `list.files` function with a pattern for selecting specific files.
 
-        mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)
+    mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)
 
 ### Set XDF output
 
