@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Diving into data analysis in Microsoft R"
-description: "Documentation for data science, statistics, analysis and visualization using Microsoft R functions and tools, including ScaleR functions in the RevoScaleR package."
+title: "How-to deep dives into data analysis and visualization in Microsoft R"
+description: "Documentation for data science, statistics, analysis and visualization using Microsoft R libraries and tools."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/19/2016"
+ms.date: "05/04/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,23 +24,22 @@ ms.custom: ""
 
 ---
 
-# Diving into data analysis in Microsoft R
+# How-to guides for data analysis in Microsoft R
 
-This section of the documentation is for data scientists, analysts, and statisticians. The focus of this section is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies. It includes tutorials as well as guidance for specific tasks using the [ScaleR functions](scaler-user-guide-introduction.md) in the  RevoScaleR package.
+This section of the documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Microsoft R.
 
-If you are new to R, be sure to also leverage the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
+If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
-## Tutorials
+## Quickstarts and Tutorials
 
+[Quickstart: data import csv-to-xdf](quickstart-rserver-data-import-csv.md) 
 [Get started with ScaleR and data analysis](scaler-getting-started.md)
 
-## Tasks
+## How-to guidance
 
-* [Import data](scaler-user-guide-data-import.md)
-* [Data sources](scaler-user-guide-data-source.md)
-* [Transforming and Subsetting Data](scaler-user-guide-data-transform.md)
-* [Models in ScaleR](scaler-user-guide-models.md)
+* [Data acquisition](scaler-user-guide-data-import.md)
 * [Data Summaries](scaler-user-guide-data-summaries.md)
+* [Models in ScaleR](scaler-user-guide-models.md)
 * [crosstabs](scaler-user-guide-crosstabs.md)
 * [Linear Models](scaler-user-guide-linear-model.md)
 * [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
