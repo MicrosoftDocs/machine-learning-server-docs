@@ -28,7 +28,15 @@ ms.custom: ""
 
 Although R Server can analyze data over a direct connection to an external data source, it's common to import data into the native XDF file format. XDF files offer numerous advantages, including chunking data in blocks for modular distribution and management, columnar storage for fast retrievable of individual variables, and precomputed metadata. 
 
-To create an XDF file, use the [rxImport](/scaler/packagehelp/rximport.md) function. This function accepts data from text files, binary files, and database files.
+To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
+
+Data storage alternatives
+
+| Storage	| media | usage recommendations |
+|-------|-------|-----------------------|
+| Data frame | in memory | Use with R Client or to load data over a direct connection to an external data source. You can load portions of an XDF into a data frame for faster execution times. |
+| XDF single file | on disk | TBD |
+| XDF composite files | on disk | TBD |
 
 
 ## ORIGINAL DOCS
