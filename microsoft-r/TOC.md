@@ -36,8 +36,8 @@
 
 ## [Get started with sparklyr](microsoft-r-get-started-spark-interop.md)
 
-# [How-to guides for statistics and analysis](data-analysis-in-microsoft-r.md)
-## Data
+# [How-to guidance](data-analysis-in-microsoft-r.md)
+## Data aqcuisition
 ### [Importing Data](scaler-user-guide-data-import.md)
 ### [Configure data import for ODBC data sources](scaler-odbc.md)
 ### [Data Sources](scaler-user-guide-data-source.md)
@@ -221,15 +221,6 @@
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
-
-# Resources
-## [R Server known issues](rserver-known-issues.md)
-## [R Server supported platforms](rserver-install-supported-platforms.md)
-## [Deprecated and discontinued features](notes/r-server-notes.md)
-## [Servicing support policy](rserver-servicing-support.md)
-## [Opting out of usage data collection](rserver-optout-telemetry.md)
-## [Glossary](microsoft-r-glossary.md)
-## [Additional Resources](microsoft-r-more-resources.md)
 
 # [Function Reference](package-reference.md)
 
@@ -520,3 +511,11 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
+# Resources
+## [R Server known issues](rserver-known-issues.md)
+## [R Server supported platforms](rserver-install-supported-platforms.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
+## [Servicing support policy](rserver-servicing-support.md)
+## [Opting out of usage data collection](rserver-optout-telemetry.md)
+## [Glossary](microsoft-r-glossary.md)
+## [Additional Resources](microsoft-r-more-resources.md)
