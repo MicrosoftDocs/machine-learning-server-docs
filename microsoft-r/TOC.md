@@ -2,8 +2,8 @@
 ## [Products and Features](overview-products-and-features.md)
 ## [About Microsoft R Server](overview-server.md)
 ## [About SQL Server Machine Learning Services](sql-server-r-services.md)
-## [About Microsoft R Client](r-client.md)
-## [About Microsoft R Open](r-open.md)
+## [About Microsoft R Client](overview-rclient.md)
+## [About operationalizing analytics with R Server](overview-operationalize-analytics.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
