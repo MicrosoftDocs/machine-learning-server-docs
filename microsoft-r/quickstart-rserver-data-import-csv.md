@@ -28,9 +28,9 @@ ms.custom: ""
 
 **Applies to: Microsoft R Server**
 
-XDF is the native file format for persisted data used in Microsoft R Server. CSVs are commonplace in almost every platform. In this Quickstart, we pull them together in two exercises showing how to import single CSV file, and then multiple CSV files. into one XDF. 
+XDF is the native file format for persisted data in Microsoft R Server. CSVs are commonplace on almost every platform. In this Quickstart we bring them together in two exercises showing how to import a single CSV file, and then multiple CSV files, into one XDF. 
 
-XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to modularize data into chunks, with columnar storage for variables, resulting in very fast read and write operations.
+XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to modularize data into chunks, with columnar storage for variables, for very fast read and write operations.
 
 To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. 
 

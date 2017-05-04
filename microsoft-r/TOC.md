@@ -34,7 +34,7 @@
 
 # [Get started with sparklyr](microsoft-r-get-started-spark-interop.md)
 
-# [How-to for data science](data-analysis-in-microsoft-r.md)
+# [Diving into data analysis](data-analysis-in-microsoft-r.md)
 ## Data aqcuisition
 ### [Importing Data](scaler-user-guide-data-import.md)
 ### [Configure data import for ODBC data sources](scaler-odbc.md)
