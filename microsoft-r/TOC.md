@@ -57,6 +57,8 @@
 # [Microsoft R Server](rserver.md)
 
 ## [Install and configure](rserver.md)
+### [R Server supported platforms](rserver-install-supported-platforms.md)
+
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
@@ -501,7 +503,6 @@
 
 # Resources
 ## [R Server known issues](rserver-known-issues.md)
-## [R Server supported platforms](rserver-install-supported-platforms.md)
 ## [Deprecated and discontinued features](notes/r-server-notes.md)
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
