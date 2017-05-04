@@ -28,11 +28,13 @@ ms.custom: ""
 
 **Applies to: Microsoft R Server**
 
-XDF is the native file format for persisted data used in Microsoft R Server. In this Quickstart, learn how to import single or multiple CSV files into an XDF file. 
+XDF is the native file format for persisted data used in Microsoft R Server. CSVs are commonplace in almost every platform. In this Quickstart, we pull them together in two exercises showing how to import single CSV file, and then multiple CSV files. into one XDF. 
 
-XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also unlocks very fast retrieval of variables and metadata.
+XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to modularize data into chunks, with columnar storage for variables, resulting in very fast read and write operations.
 
-To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
+To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. 
+
+By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
 
 Before you begin this Quickstart, have the following ready:
 
@@ -41,7 +43,7 @@ Before you begin this Quickstart, have the following ready:
 
 *Time estimate:*
 
-If you have completed the prerequisites, this task will take approximately 5-10 minutes to complete.
+If you have completed the prerequisites, this Quickstart will take approximately 5-10 minutes to complete.
 
 ## Locate sample data
 
