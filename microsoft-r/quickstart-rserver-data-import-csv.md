@@ -26,15 +26,17 @@ ms.custom: ""
 
 # How to import data into R Server using CSV files, rxImport, and an XDF file
 
-Learn how to import single or multiple CSV files into the native file format of R Server: an XDF file. 
+**Applies to: Microsoft R Server**
 
-XDF files are not strictly required for statistics and analytics in R Server, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also unlocks very fast retrieval of variables and metadata.
+XDF is the native file format for persisted data used in Microsoft R Server. In this Quickstart, learn how to import single or multiple CSV files into an XDF file. 
+
+XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, storing data as an XDF offers essential benefits. A key benefit includes the ability to chunk and work with data in blocks. XDF also unlocks very fast retrieval of variables and metadata.
 
 To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
 
 Before you begin this Quickstart, have the following ready:
 
-- [R Server for Windows](rserver-install-windows.md) or [R Server Linux](rserver-install-linux-server.md) (you could also use R Client).
+- [R Server for Windows](rserver-install-windows.md) or [R Server Linux](rserver-install-linux-server.md).
 - An R console application. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
 *Time estimate:*
@@ -51,7 +53,7 @@ This tutorial uses functions and the built-in sample data files from the RevoSca
 
         list.files(rxGetOption("sampleDataDir"))
 
-The `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
 
 In the file list, notice the CSV files for mortgage defaults for the years 2000 through 2009 (such as mortDefaultSmall2000.csv). This tutorial uses those files to demonstrate the creation of an XDF file.
 
@@ -76,19 +78,19 @@ In this step, you create an object named *mysourcedata* in the R session that yo
 
 This step creates an object for a file that exists at an arbitrary location, such as C:\Users\Temp on the Windows file system. The object must provide the file location and name:
 
-    myxdf <- file.path("C:/users/temp/mortDefaultSmall2000.xdf")
+    mySmallXdf <- file.path("C:/users/temp/mortDefaultSmall2000.xdf")
 
 Notice the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
 
 Also by default, RevoScaleR uses your working directory to store the file. You can use the open source R command to get its location: `getwd()`. You can use `setwd` to change it. Or you can specify the path, as we've done here.
 
-At this point, the object is created, but the XDF file won't exist until you run **rxImport**. To test whether the file exists, enter this command: `file.exists(myxdf)`.
+At this point, the object is created, but the XDF file won't exist until you run **rxImport**. To test whether the file exists, enter this command: `file.exists(mySmallXdf)`.
 
 ### Create an XDF
 
 **rxImport** requires **inData** and  **outFile** (but only if you want an XDF). Since you have both, you are ready to run the command:
 
-    rxImport(inData = mysourcedata, outFile = myxdf)
+    rxImport(inData = mysourcedata, outFile = mySmallXdf)
 
 **rxImport** creates the file, builds and populates columns for each variable in the dataset, and then computes metadata for each variable and the XDF as a whole.
 
@@ -100,7 +102,7 @@ Output returned from this operation is as follows:
 
 Use the **rxGetInfo** function to return information about an object. In this case, the object is the XDF file created in a previous step, and the information returned is the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information.
 
-    rxGetInfo(myxdf, getVarInfo = TRUE)
+    rxGetInfo(mySmallXdf, getVarInfo = TRUE)
 
 Output is below. Variables are based on fields in the CSV file. In this case, there are 6 variables. Precomputed metadata about each one appears in the output below.
 
@@ -131,7 +133,7 @@ This time, the source object is a list of files, obtained using the R `list.file
 
 As before, create an object for the XDF file.
 
-    onelargeXdf <- file.path("C:/users/temp/mortgagelarge.xdf")
+    myLargeXdf <- file.path("C:/users/temp/mortgagelarge.xdf")
 
 ### Run rxImport to create a multi-block XDF file
 
@@ -140,7 +142,7 @@ You are now ready to create and populate the file. Importing multiple files requ
 To iterate over multiple files, use the R `lapply` function and create a function to call **rxImport** with the **append** argument.
 
     lapply(mySourceFiles, FUN = function(csv_file) {
-        rxImport(inData = csv_file, outFile=onelargeXdf, append = file.exists(onelargeXdf)) } )
+        rxImport(inData = csv_file, outFile=myLargeXdf, append = file.exists(myLargeXdf)) } )
 
 Partial output from this operation reports out the processing details.
 
@@ -159,7 +161,7 @@ Partial output from this operation reports out the processing details.
 
 As before, use **rxGetInfo** to view precomputed metadata. As you would expect, the block count reflects the presence of multiple concatenated data sets.
 
-        rxGetInfo(onelargeXdf)
+        rxGetInfo(myLargeXdf)
 
 Results from this command prove that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks.
 
@@ -184,11 +186,11 @@ To practice these tasks on the sample files you just created, continue with thes
 
  Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
- 	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
+ 	`C:\Program Files\Microsoft\R Server\R_SERVER\library\RevoScaleR\demoScripts`
 
 ### Watch this video
 
-This 30-minute video is the second in a 4-part video series. It covers and expands upon the techniques you learned in this quickstart. 
+This 30-minute video is the second in a 4-part video series. It covers and expands upon the techniques you learned in this Quickstart. 
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
