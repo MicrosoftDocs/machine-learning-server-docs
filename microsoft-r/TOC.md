@@ -5,17 +5,17 @@
 ## [About Microsoft R Client](r-client.md)
 ## [About Microsoft R Open](r-open.md)
 
-# Quickstart
-## [R Client: Predict flight delays](r-client-quickstart-airline-delays.md)
+# Quickstarts
+## [R Client: Predict flight delays](r-client-quick-start-airline-delays.md)
 ## [R Server: Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
-## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
 
 #[Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
-##[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-##[MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-##[Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is RevoScaleR?](scaler-user-guide-introduction.md)
