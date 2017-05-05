@@ -32,12 +32,12 @@ Review workaround steps for the following known issues in this release.
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
-3. [MicrosoftML: Ensembling > "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
-4. [MicrosoftML: Ensembling > Model count does not work ](#ml-ensembling-modelcount)  
+3. [MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
+4. [Spark compute context: modelCount does not work with rxTextData](#ml-ensembling-modelcount)  
 5. [Cloudera: script file "install_mrs_parcel.py" does not exist ](#cdh-parcel-message) 
-6. [Cloudera: Connection error due to package dependencies on libjvm.so or libhsdf](#cdh-parcel-message) 
+6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-parcel-message) 
 
-Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md).
+Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in previous releases, see [Preview release known issues](#prev).
 
 <a name="revoscaler-rxmerge"></a>
 
@@ -83,7 +83,7 @@ Var 1: Gender
 ```
 <a name="ml-ensembling"></a>
 
-## 3. MicrosoftML error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+## 3. MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -94,7 +94,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="ml-ensembling-modelcount"></a>
 
-## 4. Error during Ensembling: when using modelCount with rxTextData
+## 4. Spark compute context: modelCount does not work with rxTextData
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -108,7 +108,7 @@ If you are performing a [parcel installation of R Server in Cloudera](rserver-in
 
 <a name="cdh-rstudio-loc-cc"></a>
 
-## 6. Cloudera: Connection error due to package dependencies on libjvm.so or libhsdf
+## 6. Cloudera: Connection error related to libjvm or libhdfs package dependencies
 
 R Server has a package dependency that is triggered only under a very specific configuration:
 
@@ -116,7 +116,7 @@ R Server has a package dependency that is triggered only under a very specific c
 + RStudio is the IDE
 + Operation runs in local compute context on an edge node in a Hadoop cluster 
 
-Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm or libhsdf package.
+Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm or libhdfs package.
 
 The workaround is to recreate the symbolic link, update the site file, and restart R Studio.
 
@@ -138,6 +138,8 @@ The workaround is to recreate the symbolic link, update the site file, and resta
   ~~~~
   sudo rstudio-server restart
   ~~~~
+
+<a name="Prev"></a>
 
 ## Previous releases 
 
