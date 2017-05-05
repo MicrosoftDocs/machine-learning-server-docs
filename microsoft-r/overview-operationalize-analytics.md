@@ -30,15 +30,13 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find archived "DeployR 8.x" docs [here](deployr-about.md).)
 
-Today, more and more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare and manufacturing. Typically, the data scientists first build out the predictive models and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
+Today, more and more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare and manufacturing. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
-Being able to operationalize your analytics is a central capability in R Server, and one of the key reasons you would choose R Server over R Client. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to host R analytics web services and remote R sessions](operationalize/admin-get-started.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
+Being able to operationalize your analytics is a central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into R Server. After installing R Server on select platforms, you'll have everything you need to [configure R Server to host R analytics web services and remote R sessions](operationalize/admin-get-started.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools to deploy R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. R Server turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
 
-
-
-## Solving Long Development Lifecycles
+## Solving long development lifecycles
 
 R is a great modeling tool, but **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. 
 
@@ -46,7 +44,7 @@ R is a great modeling tool, but **the challenge lies in how to effectively opera
 
 Introducing Microsoft R Server, the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
-## What you get when operationalizing with R Server
+## What you get
 
 After you [configure R Server to operationalize](operationalize/admin-get-started.md), you can: 
 
@@ -77,13 +75,11 @@ Microsoft R Server offers the **best-in-class deployment** experience for the ad
 
 ## Configuration
 
-You can configure R Server to operationalize analytics [on a single machine](operationalize/configuration-initial.md#onebox). It can also be [scaled](operationalize/configure-enterprise.md) for business-critical applications with multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
+You can configure R Server to operationalize analytics [on a single machine](operationalize/configuration-initial.md#onebox) or be [scaled across multiple machines](operationalize/configure-enterprise.md) for business-critical applications with multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/security.md).
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/security.md). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
 
-
-> [!NOTE]
-> In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. The ability to use R Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](rserver-install-supported-platforms.md).
+The ability to use R Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](rserver-install-supported-platforms.md).
 
 ## Next steps
 
