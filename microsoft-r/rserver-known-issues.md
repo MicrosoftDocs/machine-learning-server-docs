@@ -34,10 +34,10 @@ Review workaround steps for the following known issues in this release.
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
 3. [MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
 4. [Spark compute context: modelCount does not work with rxTextData](#ml-ensembling-modelcount)  
-5. [Cloudera: script file "install_mrs_parcel.py" does not exist ](#cdh-parcel-message) 
+5. [Cloudera: "install_mrs_parcel.py" does not exist](#cdh-parcel-message) 
 6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-parcel-message) 
 
-Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in previous releases, see [Preview release known issues](#prev).
+Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in the 9.0.1 or 8.0.5 releases, see [Previous Releases](#Prev).
 
 <a name="revoscaler-rxmerge"></a>
 
@@ -102,7 +102,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="cdh-parcel-message"></a>
 
-## 5. Cloudera: script file "install_mrs_parcel.py" does not exist 
+## 5. Cloudera: "install_mrs_parcel.py" does not exist 
 
 If you are performing a [parcel installation of R Server in Cloudera](rserver-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
 
