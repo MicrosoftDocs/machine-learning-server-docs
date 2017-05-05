@@ -141,6 +141,13 @@ The workaround is to recreate the symbolic link, update the site file, and resta
 
 ## Previous releases 
 
+This document also describes the known issues for the last several releases, listed below:
+
++ [Known issues for 9.0.1](#901)
++ [Known issues for 8.0.5](#805)
+
+<a name="901"></a>
+
 ### Microsoft R Server 9.0.1
 
 #### Package: RevoScaleR > Distributed Computing
@@ -198,6 +205,8 @@ automatically binned.
 
 + When Azure active directory authentication is the only form of authentication enabled, it is not possible to run diagnostics.
  
+
+<a name="805"></a>
 
 ### Microsoft R Server 8.0.5
 
