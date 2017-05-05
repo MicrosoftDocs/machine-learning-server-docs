@@ -6,7 +6,7 @@ description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "04/16/2017"
+ms.date: "05/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -32,14 +32,16 @@ Review workaround steps for the following known issues in this release.
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
-3. [MicrosoftML: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
-4. [Cloudera parcel generator script emits an erroneous message](#cdh-parcel-message)
+3. [MicrosoftML: Ensembling > "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
+4. [MicrosoftML: Ensembling > Model count does not work ](#ml-ensembling-modelcount)  
+5. [Cloudera: script file "install_mrs_parcel.py" does not exist ](#cdh-parcel-message) 
+6. [Cloudera: Connection error due to package dependencies on libjvm.so or libhsdf](#cdh-parcel-message) 
 
 Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md).
 
 <a name="revoscaler-rxmerge"></a>
 
-## rxMerge() behaviors in RxSpark compute context
+## 1. rxMerge() behaviors in RxSpark compute context
 
 *Applies to: RevoScaleR package > rxMerge function*
 
@@ -52,7 +54,7 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 
 <a name="revoscaler-rxexecby"></a>
 
-## rxExecBy() terminates unexpectedly if NA values do not have a factor level
+## 2. rxExecBy() terminates unexpectedly if NA values do not have a factor level
 
 *Applies to: RevoScaleR package > rxExecBy function*
 
@@ -81,7 +83,7 @@ Var 1: Gender
 ```
 <a name="ml-ensembling"></a>
 
-## Error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+## 3. MicrosoftML error during Ensembling: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -90,7 +92,9 @@ Certain machine learning transforms that don’t implement the **IRowToRowMapper
 To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
 
-## Error during Ensembling: when using modelCount with rxTextData
+<a name="ml-ensembling-modelcount"></a>
+
+## 4. Error during Ensembling: when using modelCount with rxTextData
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -98,9 +102,42 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="cdh-parcel-message"></a>
 
-## Cloudera parcel generator script implies existence of a currently unavailable script
+## 5. Cloudera: script file "install_mrs_parcel.py" does not exist 
 
 If you are performing a [parcel installation of R Server in Cloudera](rserver-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
+
+<a name="cdh-rstudio-loc-cc"></a>
+
+## 6. Cloudera: Connection error due to package dependencies on libjvm.so or libhsdf
+
+R Server has a package dependency that is triggered only under a very specific configuration:
+
++ R Server was installed on CDH via parcel generator 
++ RStudio is the IDE
++ Operation runs in local compute context on an edge node in a Hadoop cluster 
+
+Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm. or libhsdf package.
+
+The workaround is to recreate the symbolic link, update the site file, and restart R Studio.
+
+1. Create this symlink: 
+
+~~~~
+sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
+~~~~
+
+2. Copy site file and rename it to RevoHadoopEnvVars.site :
+
+~~~~
+sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
+sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
+~~~~
+
+3. Restart RStudio after the changes:
+
+~~~~
+-bash-4.1$ sudo rstudio-server restart
+~~~~
 
 ## Previous releases 
 
