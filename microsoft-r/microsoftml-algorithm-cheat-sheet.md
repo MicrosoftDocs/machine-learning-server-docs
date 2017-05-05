@@ -7,7 +7,7 @@ R Server."
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/03/2017"
+ms.date: "05/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -56,7 +56,9 @@ For a list by category of all the machine learning algorithms available in the M
   * In **unsupervised learning**, data points have no labels associated with them. Instead, the goal of an unsupervised learning algorithm is to organize the data in some way or to describe its structure. Only the `rxOneClassSvm()` algorithm used for anomaly detection is an unsupervised learner.
 
 
+## What's next?
 
+[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
 
 
 

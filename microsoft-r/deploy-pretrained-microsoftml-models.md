@@ -5,7 +5,7 @@ title: "How to install and deploy pretrained models with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "05/05/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,7 +36,7 @@ But the pretrained ML models are not installed by default. To install them, you 
 
 ![MicrosoftML-install-pretrained-models](./media/deploy-pretrainted-microsoftml-models/msr-config-install-ml-model.png)
 
-For quickstarts that show how to use pretrained models for  sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
+For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
 
 
 ## Error when Ensembling with pre-trained algorithms
