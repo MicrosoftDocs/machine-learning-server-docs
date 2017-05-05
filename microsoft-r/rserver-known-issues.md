@@ -116,28 +116,28 @@ R Server has a package dependency that is triggered only under a very specific c
 + RStudio is the IDE
 + Operation runs in local compute context on an edge node in a Hadoop cluster 
 
-Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm. or libhsdf package.
+Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm or libhsdf package.
 
 The workaround is to recreate the symbolic link, update the site file, and restart R Studio.
 
 1. Create this symlink: 
 
-~~~~
-sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
-~~~~
+  ~~~~
+  sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
+  ~~~~
 
-2. Copy site file and rename it to RevoHadoopEnvVars.site :
+2. Copy the site file to the parcel repo and rename it to RevoHadoopEnvVars.site:
 
-~~~~
-sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
-sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
-~~~~
+  ~~~~
+  sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
+  sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
+  ~~~~
 
 3. Restart RStudio after the changes:
 
-~~~~
--bash-4.1$ sudo rstudio-server restart
-~~~~
+  ~~~~
+  sudo rstudio-server restart
+  ~~~~
 
 ## Previous releases 
 
