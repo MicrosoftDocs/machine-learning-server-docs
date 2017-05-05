@@ -6,7 +6,7 @@ description: "A package that provides state-of-the-art machine learning algorith
 keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "05/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -126,9 +126,11 @@ To see the **MicrosoftML** functions that can be called from the R console:
 
 [MicrosoftML algorithm cheat sheet](../microsoftml-algorithm-cheat-sheet.md)
 
+[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md).
 
-##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+##Microsoft Technical Support
+ To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
  
  
  
