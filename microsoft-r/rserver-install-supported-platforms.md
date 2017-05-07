@@ -6,7 +6,7 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/27/2017"
+ms.date: "05/02/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,7 +36,7 @@ All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and requ
 
 | SKU | Platforms |
 |-----|-----------|
-| **R Server for Hadoop** | **Hadoop <sup> 1, 5</sup> Distributions:** <br/>Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
+| **R Server for Hadoop** | **Hadoop <sup> 1, 5</sup> Distributions:** <br/>Cloudera CDH 5.5-5.9, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>**Spark <sup> 3</sup>:**  <br/>Versions 1.6 and 2.0.  |
 | **R Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
 | **R Server for Windows** | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
 | **R Server for Teradata** | Teradata Database 14.10, 15.00, 15.10 on SUSE Linux Enterprise Server 11(<sup>4</sup>) |
@@ -78,7 +78,7 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 
 **Microsoft R Server for Hadoop**
 
-- Hadoop Distributions: Cloudera CDH 5.5-5.8, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
+- Hadoop Distributions: Cloudera CDH 5.5-5.9, Hortonworks HDP 2.3-2.5, MapR 5.0-5.2
 - Operating Systems: RHEL 6.x and 7.x, SUSE SLES11, Ubuntu 14.04 (excluding Cloudera Parcel install on Ubuntu)
 - Spark versions: 1.6 and 2.0. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 

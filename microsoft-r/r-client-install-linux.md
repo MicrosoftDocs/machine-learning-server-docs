@@ -32,7 +32,7 @@ R Client allows you to work with production data locally using the full set of S
 
 To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and R Server for Hadoop. [Learn more about its compatibility.](r-client-compatibility.md)  
 
-You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](/operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development. 
+You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development. 
 
 
 ## System Requirements
@@ -282,6 +282,8 @@ flag | Option | Description
 You can learn more with these guides:
 
 + [Get Started with Microsoft R Client](r-client-get-started.md) 
+
++ [Quickstart for Microsoft R Client](r-client-quickstart-airline-delays.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 

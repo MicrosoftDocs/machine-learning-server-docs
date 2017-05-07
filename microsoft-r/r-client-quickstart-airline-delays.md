@@ -23,11 +23,11 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quick Start: Use R Client to predict delayed flights
+# Quickstart: Use R Client to predict delayed flights
 
 ## Objective
 
-This quick start shows you how to predict flight delays in R locally using R Client. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
+This quickstart shows you how to predict flight delays in R locally using R Client. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
 
 Broadly speaking, in machine learning and statistics, classification is the task of identifying the class or category to which a new observation belongs on the basis of a training set of data containing observations with known categories. Classification is generally a supervised learning problem. Since this is a binary classification task, there are only two classes.
 
@@ -39,11 +39,11 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 ## Prerequisites
 
-This quick start assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
+This quickstart assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 
 ## Example code
 
-Here is the whole script you can walk through step by step below.
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow.
 
 ```r
        #############################################
@@ -208,7 +208,6 @@ Here is the whole script you can walk through step by step below.
     rxRocCurve("ArrDel15", "ArrDel15_Pred_Logit", data = test,
                title = "ROC curve - Logistic regression")
 
-
 #Step 5: Predict using Decision Tree
 #Choose and apply the Decision Tree learning algorithm.
     #Build a decision tree model.
@@ -221,33 +220,33 @@ Here is the whole script you can walk through step by step below.
     dTree2_mrs <- prune.rxDTree(dTree1_mrs, cp = treeCp_mrs)
 
 #Predict using new data.
-    #Predict the probability on the test dataset.
-    rxPredict(dTree2_mrs, data = test,
-              predVarNames = "ArrDel15_Pred_Tree",
-              overwrite = TRUE)
+   #Predict the probability on the test dataset.
+   rxPredict(dTree2_mrs, data = test, 
+               overwrite = TRUE)
 
-    #Calculate Area Under the Curve (AUC).
-    paste0("AUC of Decision Tree Model:",
-           rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred_Tree ", test)))
+   #Calculate Area Under the Curve (AUC).
+   paste0("AUC of Decision Tree Model:",
+               rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred ", test)))
 
-    #Plot the ROC curve.
-    rxRocCurve("ArrDel15",
-               predVarNames = c("ArrDel15_Pred_Tree", "ArrDel15_Pred_Logit"),
+   #Plot the ROC curve.
+   rxRocCurve("ArrDel15",
+               predVarNames = c("ArrDel15_Pred", "ArrDel15_Pred_Logit"),
                data = test,
-               title = "ROC curve - Logistic regression")
+               title = "ROC curve - Logistic regression")          
 ```
 
 ## Step 1. Prepare and import data
 
 1. Initialize some variables to specify the data sets.
-   ```
+
+   ```r
    github <- "https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning"
    inputFileFlightURL <- paste0(github, "Flight_Delays_Sample.csv")
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
    ```
 
 1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](scaler-user-guide-introduction.md)
-   ```
+   ```r
    td <- tempdir()
    outFileFlight <- paste0(td, "/flight.xdf")
    outFileWeather <- paste0(td, "/weather.xdf")
@@ -257,7 +256,7 @@ Here is the whole script you can walk through step by step below.
    ```
 
 1. Import the flight data.
-    ```
+   ```r
     flight_mrs <- rxImport(
       inData = inputFileFlightURL, outFile = outFileFlight,
       missingValueString = "M", stringsAsFactors = FALSE,
@@ -269,20 +268,20 @@ Here is the whole script you can walk through step by step below.
       transforms = list(CRSDepTime = floor(CRSDepTime/100)),  
       overwrite = TRUE
     )
-    ```
+   ```
 
 1. Review the first 6 rows of flight data.
-    ```
-    head(flight_mrs)
-    ```
+   ```r
+   head(flight_mrs)
+   ```
 
 1. Summarize the flight data.
-    ```
-    rxSummary(~., data = flight_mrs, blocksPerRead = 2)
-    ```
+   ```
+   rxSummary(~., data = flight_mrs, blocksPerRead = 2)
+   ```
 
 1. Import the weather data.
-    ```
+   ```r
     xform <- function(dataList) {
       # Create a function to normalize some numerical features.
       featureNames <- c(
@@ -317,16 +316,17 @@ Here is the whole script you can walk through step by step below.
       ),
       overwrite = TRUE
     )
-    ```
+   ```
 1. Review the variable information for the weather data.
-    ```
+
+   ```r
     rxGetVarInfo(weather_mrs)
-    ```
+   ```
 
 ## Step 2. Pre-process data
 
 1. Rename some column names in the weather data to prepare it for merging.
-    ```
+   ```r
     newVarInfo <- list(
       AdjustedMonth = list(newName = "Month"),
       AdjustedDay = list(newName = "DayofMonth"),
@@ -334,11 +334,12 @@ Here is the whole script you can walk through step by step below.
       AdjustedHour = list(newName = "CRSDepTime")
     )
     rxSetVarInfo(varInfo = newVarInfo, data = weather_mrs)
-    ```
+   ```
 
 1. Concatenate/Merge flight records and weather data.
    1. Join flight records and weather data at origin of the flight `OriginAirportID`.
-      ```
+
+      ```r
       originData_mrs <- rxMerge(
         inData1 = flight_mrs, inData2 = weather_mrs, outFile = outFileOrigin,
         type = "inner", autoSort = TRUE, 
@@ -349,7 +350,8 @@ Here is the whole script you can walk through step by step below.
       ```                
 
    1. Join flight records and weather data using the destination of the flight `DestAirportID`.
-      ```
+
+      ```r
       destData_mrs <- rxMerge(
         inData1 = originData_mrs, inData2 = weather_mrs, outFile = outFileDest,
         type = "inner", autoSort = TRUE, 
@@ -361,7 +363,8 @@ Here is the whole script you can walk through step by step below.
       ```
 
    1. Call `rxFactors()` function to convert `OriginAirportID` and `DestAirportID` as categorical.
-      ```
+
+      ```r
       rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,
                 factorInfo = c("OriginAirportID", "DestAirportID"),
                 overwrite = TRUE)
@@ -370,7 +373,8 @@ Here is the whole script you can walk through step by step below.
 ## Step 3. Prepare training and test datasets
 
 1. Randomly split data (80% for training, 20% for testing).
-   ```
+
+   ```r
    rxSplit(inData = outFileFinal,
            outFilesBase = paste0(td, "/modelData"),
            outFileSuffixes = c("Train", "Test"),
@@ -387,7 +391,8 @@ Here is the whole script you can walk through step by step below.
    ```
 
 1. Point to the XDF files for each set.
-   ```
+
+   ```r
    train <- RxXdfData(paste0(td, "/modelData.splitVar.Train.xdf"))
    test <- RxXdfData(paste0(td, "/modelData.splitVar.Test.xdf"))
    ```
@@ -395,7 +400,7 @@ Here is the whole script you can walk through step by step below.
 ## Step 4. Predict using logistic regression
 
 1. Choose and apply the Logistic Regression learning algorithm.
-   ```
+   ```r
    # Build the formula.
    modelFormula <- formula(train, depVars = "ArrDel15",
                            varsToDrop = c("RowNum", "splitVar"))
@@ -408,53 +413,54 @@ Here is the whole script you can walk through step by step below.
    ```
 
 1. Predict using new data.
-    ```
-    # Predict the probability on the test dataset.
+   ```r
+   # Predict the probability on the test dataset.
     rxPredict(logitModel_mrs, data = test,
               type = "response",
               predVarNames = "ArrDel15_Pred_Logit",
               overwrite = TRUE)
 
-    # Calculate Area Under the Curve (AUC).
+   # Calculate Area Under the Curve (AUC).
     paste0("AUC of Logistic Regression Model:",
            rxAuc(rxRoc("ArrDel15", "ArrDel15_Pred_Logit", test)))
 
-    # Plot the ROC curve.
+   # Plot the ROC curve.
     rxRocCurve("ArrDel15", "ArrDel15_Pred_Logit", data = test,
                title = "ROC curve - Logistic regression")
-    ```
+   ```
 
 ## Step 5. Predict using decision tree
+
 1. Choose and apply the Decision Tree learning algorithm.
-    ```
-    # Build a decision tree model.
-    dTree1_mrs <- rxDTree(modelFormula, data = train, reportProgress = 1)
 
-    # Find the Best Value of cp for Pruning rxDTree Object.
-    treeCp_mrs <- rxDTreeBestCp(dTree1_mrs)
+   ```R
+   # Build a decision tree model.
+   dTree1_mrs <- rxDTree(modelFormula, data = train, reportProgress = 1)
 
-    # Prune a decision tree created by rxDTree and return the smaller tree.
-    dTree2_mrs <- prune.rxDTree(dTree1_mrs, cp = treeCp_mrs)
-    ```
+   # Find the Best Value of cp for Pruning rxDTree Object.
+   treeCp_mrs <- rxDTreeBestCp(dTree1_mrs)
+
+   # Prune a decision tree created by rxDTree and return the smaller tree.
+   dTree2_mrs <- prune.rxDTree(dTree1_mrs, cp = treeCp_mrs)
+   ```
 
 1. Predict using new data.
-    ```
-    # Predict the probability on the test dataset.
-    rxPredict(dTree2_mrs, data = test,
-              predVarNames = "ArrDel15_Pred_Tree",
-              overwrite = TRUE)
 
-    # Calculate Area Under the Curve (AUC).
-    paste0("AUC of Decision Tree Model:",
-           rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred_Tree ", test)))
+   ```R
+   #Predict the probability on the test dataset.
+   rxPredict(dTree2_mrs, data = test, 
+               overwrite = TRUE)
 
-    # Plot the ROC curve.
-    rxRocCurve("ArrDel15",
-               predVarNames = c("ArrDel15_Pred_Tree", "ArrDel15_Pred_Logit"),
+   #Calculate Area Under the Curve (AUC).
+   paste0("AUC of Decision Tree Model:",
+               rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred ", test)))
+
+   #Plot the ROC curve.
+   rxRocCurve("ArrDel15",
+               predVarNames = c("ArrDel15_Pred", "ArrDel15_Pred_Logit"),
                data = test,
-               title = "ROC curve - Logistic regression")
-    ```
-
+               title = "ROC curve - Logistic regression")            
+   ```
 
 ## Next steps
 

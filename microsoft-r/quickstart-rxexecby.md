@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Quick start: Parallel processing on partitioned data with rxExecBy"
-description: "Quick start for Microsoft R: Parallel processing on partitioned data with rxExecBy"
+title: "Quickstart: Parallel processing on partitioned data with rxExecBy"
+description: "Quickstart for Microsoft R: Parallel processing on partitioned data with rxExecBy"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# Quick start: Parallel processing on partitioned data with rxExecBy
+# Quickstart: Parallel processing on partitioned data with rxExecBy
 
 Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models could be used for time-series predictions, or to score fresh data for each small data partition. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, or loan approvals for bank branches.
 
