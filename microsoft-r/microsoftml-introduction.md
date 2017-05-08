@@ -6,7 +6,7 @@ description: "Learn about the capabilities of MicrosoftML."
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "05/05/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -74,13 +74,15 @@ For a list  of these platforms, see the [Platform availability](microsoftml-get-
 
 ## What's next?
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](microsoft-r-getting-started.md) for platform availability of Microsoft R Server, what's new with the current release, and guidance to the MicrosoftML documentation. 
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md) on how to use the [ScaleR functions](scaler-user-guide-introduction.md) for data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies.
 
-[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+[Overview of MicrosoftML functions](overview-microsoftml-functions.md) for a brief overview of the MicrosoftML functions that enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. 
 
 [MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for reference documentation of the algorithms and transforms in the package.
 
-[MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+[MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
+
+[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
 

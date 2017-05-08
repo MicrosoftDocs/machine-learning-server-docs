@@ -1,12 +1,13 @@
 # Overview
-## [Products and features](overview-products-and-features.md)
+## [Product and feature comparison](index.md)
 ## What's new
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
-## [About Microsoft R Server](overview-server.md)
-## [About SQL Server Machine Learning Services](sql-server-r-services.md)
-## [About Microsoft R Client](overview-r-client.md)
+## [About Microsoft R Server](rserver.md)
+## [About Microsoft R Client](r-client.md)
 ## [About operationalizing analytics with R Server](overview-operationalize-analytics.md)
+## [Interoperability with R](overview-interoperability.md)
+## [About SQL Server Machine Learning Services](sql-server-r-services.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
@@ -507,4 +508,4 @@
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
 ## [Glossary](microsoft-r-glossary.md)
-## [Additional Resources](microsoft-r-more-resources.md)
+## [Additional resources](microsoft-r-more-resources.md)

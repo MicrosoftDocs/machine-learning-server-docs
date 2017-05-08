@@ -59,7 +59,7 @@ You are finished with this task when status is "distributed, activated" and the 
 
    ![add Microsoft R Server](./media/rserver-install-cloudera/cloudera-manager-add-mrs-service.png)
 
-3. In the next page, add role assignments by choosing data nodes on which to run the service. Click **Continue**.
+3. In the next page, add role assignments on all nodes used to run the service, both edge and data nodes. Click **Continue**.
 
 4. On the last page, click **Finish** to start the service.
 

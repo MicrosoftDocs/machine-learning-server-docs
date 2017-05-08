@@ -6,4 +6,8 @@ In SQL Server 2017, machine learning becomes even more powerful, with addition o
 
 SQL Server Machine Learning Services is an installation of R that runs alongside SQL Server (operating as a SQL Server service) and communicates securely with SQL Server.  During the installation process, Microsoft R Open and ScaleR libraries are installed onto SQL Server so that you can integrate your server data wth SQL Server and Microsoft’s BI tools. Because SQL Server Machine Learning Services integrates the R and Python languages with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
 
+
+>[!WARNING]
+>SQL Server Machine Learning Services is built atop of specific versions of Microsoft R Open. When installing, always use the R Open version provided by the install (or described in the installation guides) to avoid compatibility errors. You can also install and use Microsoft R Open on its own by downloading the [R Open latest version](https://mran.microsoft.com).
+
 SQL Server Machine Learning Services combines R and Python with a comprehensive set of SQL Server tools and technologies that offer superior performance, security, reliability and manageability. You can deploy R and Python solutions using convenient, familiar tools, and your production applications can call the R runtime and retrieve predictions and visuals using Transact-SQL. With Enterprise Edition, you also get the ScaleR libraries to overcome R’s inherent performance and scale limitations.
