@@ -32,7 +32,7 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Microsoft R Server 9.1
 
-All SKUs include [Microsoft R Open 3.3.3](r-open.md), based on R-3.3.3, and require 64-bit operating systems with x86-compatible Intel architecture.
+All SKUs include [Microsoft R Open 3.3.3](https://mran.microsoft.com/open/), based on R-3.3.3, and require 64-bit operating systems with x86-compatible Intel architecture.
 
 | SKU | Platforms |
 |-----|-----------|

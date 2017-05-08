@@ -1,4 +1,12 @@
-# [About Microsoft R](microsoft-r-getting-started.md)
+# Overview
+## [Microsoft R products and features](index.md)
+## What's new in Microsoft R
+### [What's new in R Server](rserver-whats-new.md)
+### [What's new in R Client](notes/r-client-notes.md)
+## [About Microsoft R Server](rserver.md)
+## [About Microsoft R Client](r-client.md)
+## [Operationalize analytics](operationalize/about.md)
+## [Interoperability with R](overview-interoperability.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
@@ -15,13 +23,13 @@
 ## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
 ## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
-#[Get started with MicrosoftML](microsoftml-get-started.md)
+# [Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
-##[Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-##[MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML function reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-##[Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
-##[Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
+## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
 
@@ -46,16 +54,11 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-# [Microsoft R Server](rserver.md)
-
-## [What's new](rserver-whats-new.md)
-## [Known issues](rserver-known-issues.md)
-## [Deprecated and discontinued features](notes/r-server-notes.md)
-## [Supported platforms](rserver-install-supported-platforms.md)
-## [Servicing support policy](rserver-servicing-support.md)
-## [Opting out of usage data collection](rserver-optout-telemetry.md)
+# Microsoft R Server
 
 ## [Install and configure](rserver.md)
+### [R Server supported platforms](rserver-install-supported-platforms.md)
+
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
@@ -121,8 +124,7 @@
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](vm-data-science.md)
 
-## [Deploy and consume analytics](operationalize/about.md)
-### [Introduction](operationalize/about.md)
+## Deploy and consume analytics
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
@@ -200,10 +202,7 @@
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
 
-# [SQL Server Machine Learning Services](sql-server-r-services.md)
-
-# [Microsoft R Client](r-client.md)
-## [What's New](notes/r-client-notes.md)
+# Microsoft R Client
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
@@ -211,11 +210,8 @@
 ## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
-# [Microsoft R Open](r-open.md)
-
 
 # [Function Reference](package-reference.md)
-
 ## [MicrosoftML](microsoftml/microsoftml.md)
 ### [categorical](microsoftml/packagehelp/categorical.md)
 ### [categoricalHash](microsoftml/packagehelp/categoricalHash.md)
@@ -503,6 +499,10 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
-# [Glossary](microsoft-r-glossary.md)
-
-# [Additional Resources](microsoft-r-more-resources.md)
+# Resources
+## [R Server known issues](rserver-known-issues.md)
+## [Deprecated and discontinued features](notes/r-server-notes.md)
+## [Servicing support policy](rserver-servicing-support.md)
+## [Opting out of usage data collection](rserver-optout-telemetry.md)
+## [Glossary](microsoft-r-glossary.md)
+## [Additional resources](microsoft-r-more-resources.md)
