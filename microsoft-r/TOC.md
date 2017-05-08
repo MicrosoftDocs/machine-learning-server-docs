@@ -5,7 +5,8 @@
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
-## [About operationalizing analytics with R Server](overview-operationalize-analytics.md)
+## [Operationalize analytics with R Server](overview-operationalize-analytics.md)
+## [R Server vs R Client: scale](overview-client-server.md)
 ## [Interoperability with R](overview-interoperability.md)
 ## [About SQL Server Machine Learning Services](sql-server-r-services.md)
 
@@ -27,7 +28,7 @@
 # [Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
 ## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [MicrosoftML function reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 ## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
 ## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)

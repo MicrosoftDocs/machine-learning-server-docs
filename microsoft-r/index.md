@@ -110,10 +110,7 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 + [Introduction to MicrosoftML](microsoftml-introduction.md)
 
-<br>
-##Learn More
-
-Start learning about Microsoft R today:
+Learn more about Microsoft R in these articles as well:
 
 + [What's new in R Server](rserver-whats-new.md)
 
