@@ -500,7 +500,6 @@
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
 
-
 # Resources
 ## [R Server known issues](rserver-known-issues.md)
 ## [Deprecated and discontinued features](notes/r-server-notes.md)

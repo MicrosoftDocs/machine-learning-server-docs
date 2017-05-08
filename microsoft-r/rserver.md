@@ -25,32 +25,6 @@ ms.custom: ""
 
 ---
 
-# required metadata
-title: "Introduction to Microsoft R Server and R Client"
-description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
-keywords: ""
-author: "j-martens"
-manager: "jhubbard"
-ms.date: "05/10/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
-
-# optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.technology:
-  - r-client
-  - r-server
-ms.custom: ""
-
----
-
 # About Microsoft R Server
 
 **R Server** is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). It provides an execution engine for solutions built using Microsoft R packages, extending open source R with support for high-performance analytics, statistical analysis, machine learning scenarios, and massively large datasets. Value-added functionality is provided through proprietary packages that install with the server.
