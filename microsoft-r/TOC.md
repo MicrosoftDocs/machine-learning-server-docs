@@ -1,6 +1,6 @@
 # Overview
-## [Product and feature comparison](index.md)
-## What's new
+## [Microsoft R products and features](index.md)
+## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
