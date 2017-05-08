@@ -52,7 +52,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 #Step 1: Prep and Import Data
 #Initialize some variables to specify the data sets.
-   github <- "https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets"
+   github <- "https://raw.githubusercontent.com/Microsoft/RTVS-docs/master/examples/MRS_and_Machine_Learning/Datasets/"
    inputFileFlightURL <- paste0(github, "Flight_Delays_Sample.csv")
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
 
@@ -226,7 +226,7 @@ This article walks through some R code you can use to predict whether a flight w
 
    #Calculate Area Under the Curve (AUC).
    paste0("AUC of Decision Tree Model:",
-               rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred ", test)))
+               rxAuc(rxRoc("ArrDel15", "ArrDel15_Pred", test)))
 
    #Plot the ROC curve.
    rxRocCurve("ArrDel15",
@@ -240,7 +240,7 @@ This article walks through some R code you can use to predict whether a flight w
 1. Initialize some variables to specify the data sets.
 
    ```r
-   github <- "https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets"
+   github <- "https://raw.githubusercontent.com/Microsoft/RTVS-docs/master/examples/MRS_and_Machine_Learning/Datasets/"
    inputFileFlightURL <- paste0(github, "Flight_Delays_Sample.csv")
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
    ```
@@ -453,7 +453,7 @@ This article walks through some R code you can use to predict whether a flight w
 
    #Calculate Area Under the Curve (AUC).
    paste0("AUC of Decision Tree Model:",
-               rxAuc(rxRoc(" ArrDel15 ", " ArrDel15_Pred ", test)))
+               rxAuc(rxRoc("ArrDel15", "ArrDel15_Pred", test)))
 
    #Plot the ROC curve.
    rxRocCurve("ArrDel15",
