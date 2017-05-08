@@ -42,12 +42,11 @@ The following table broadly compares members of the Microsoft R product family. 
 |-----------|-----|------|---------|--------------|
 |[Microsoft R Server](rserver.md) | Enterprise class server software | Commercial software | [Fully supported by Microsoft](rserver-servicing-support.md) | Adds custom functionality provided in proprietary Microsoft R packages, intended for local, remote, or distributed execution of larger datasets at scale.|
 |[Microsoft R Client](r-client.md) | Workstation version of Microsoft R | Free | Community forums <sup>1</sup>| Adds custom functionality provided in proprietary Microsoft R packages, intended for development and local execution of in-memory datasets.|
-|[Microsoft R Open](https://mran.microsoft.com/open/) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use Microsoft R Open as you would any other distribution of R. Script written against Microsoft R Open is straight R, composed of basic functions provided in publically available R packages.|
+|[Microsoft R Open](https://mran.microsoft.com/open/) | Microsoft's distribution of open source R | Free | Community forums <sup>1</sup>| Use Microsoft R Open as you would any other distribution of R. Script written against Microsoft R Open is straight R, composed of basic functions provided in publically available R packages.<br><br>**Warning!** Microsoft R Client and R Server are built atop of specific versions of Microsoft R Open. If you are installing R Client or R Server, always use the R Open version provided by the install (or described in the installation guides) to avoid compatibility errors. You can also install, explore, and use Microsoft R Open on its own by downloading the [R Open latest version](https://mran.microsoft.com).
+|
 
 <sup>1</sup> Microsoft does not offer technical support for issues encountered in either Microsoft R Open or Microsoft R Client, but you can get peer support in [MSDN forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ropen) and [StackOverflow](https://stackoverflow.com/questions/tagged/microsoft-r), to name a few.
 
->[!WARNING]
->Microsoft R Client and R Server are built atop of specific versions of Microsoft R Open. If you are installing R Client or R Server, always use the R Open version provided by the install (or described in the installation guides) to avoid compatibility errors. You can also install, explore, and use Microsoft R Open on its own by downloading the [R Open latest version](https://mran.microsoft.com).
 
 >[!IMPORTANT]
 >For information on SQL Server Machine Learning Services, please visit the corresponding documentation here: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services.
