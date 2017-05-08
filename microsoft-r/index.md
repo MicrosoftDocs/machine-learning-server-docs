@@ -49,6 +49,8 @@ The following table broadly compares members of the Microsoft R product family. 
 >[!WARNING]
 >Microsoft R Client and R Server are built atop of specific versions of Microsoft R Open. If you are installing R Client or R Server, always use the R Open version provided by the install (or described in the installation guides) to avoid compatibility errors. You can also install, explore, and use Microsoft R Open on its own by downloading the [R Open latest version](https://mran.microsoft.com).
 
+>[!IMPORTANT]
+>For information on SQL Server Machine Learning Services, please visit the corresponding documentation here: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services.
 
 ## Compare features by product
 
@@ -65,10 +67,10 @@ Features provided by [Microsoft R Server](rserver.md), [Microsoft R Client](r-cl
     </thead>
     <tbody>
         <tr>
-            <td><b>Storage</b></td>
+            <td><b>Memory & Storage</b></td>
             <td>Memory bound<sup>1</sup></td>
             <td>Memory bound<sup>1</sup> &amp; operates on large volumes when connected to R Server.</td>
-            <td>Data chunking across multiple disks.<br />Operates on bigger volumes &amp; factors.</td>
+            <td>Memory across multiple nodes as well as data chunking across multiple disks.<br />Operates on bigger volumes &amp; factors.</td>
         </tr>
         <tr>
             <td><b>Speed of Analysis</b></td>
@@ -128,11 +130,3 @@ Learn more about Microsoft R in these articles as well:
 
 + [Additional Resources](microsoft-r-more-resources.md)
 
-
-<br>
-<a name="sqlr"></a>
-##SQL Server Machine Learning Services
-
-[!include[SQL Server R Services](./includes/ss-r-services/r-services-intro.md)]
-
-Learn more about [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) on the SQL Server documentation site on MSDN.

@@ -5,10 +5,8 @@
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
-## [Operationalize analytics with R Server](/operationalize/about.md)
-## [R Server vs R Client: scale](overview-client-server.md)
+## [Operationalize analytics](operationalize/about.md)
 ## [Interoperability with R](overview-interoperability.md)
-## [About SQL Server Machine Learning Services](sql-server-r-services.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
