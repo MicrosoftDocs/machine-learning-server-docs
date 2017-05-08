@@ -6,7 +6,7 @@ description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/05/2017"
+ms.date: "05/07/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -33,9 +33,9 @@ Review workaround steps for the following known issues in this release.
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
 3. [MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
-4. [Spark compute context: modelCount does not work with rxTextData](#ml-ensembling-modelcount)  
+4. [Spark compute context: modelCount=1 does not work with rxTextData](#ml-ensembling-modelcount)  
 5. [Cloudera: "install_mrs_parcel.py" does not exist](#cdh-parcel-message) 
-6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-parcel-message) 
+6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-rstudio-loc-cc) 
 
 Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in the 9.0.1 or 8.0.5 releases, see [Previous Releases](#Prev).
 
@@ -94,11 +94,11 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="ml-ensembling-modelcount"></a>
 
-## 4. Spark compute context: modelCount does not work with rxTextData
+## 4. Spark compute context: modelCount=1 does not work with rxTextData
 
 *Applies to: MicrosoftML package > Ensembling*
 
-`modelCount = 1` does not work when used with `rxTextData()` on Hadoop/Spark.
+`modelCount = 1` does not work when used with `rxTextData()` on Hadoop/Spark. To work around this issue, set the property to greater than 1.
 
 <a name="cdh-parcel-message"></a>
 
