@@ -6,7 +6,7 @@ description: "Microsoft R Server on HDInsight introduction"
 keywords: "Microsoft R Server, HDInsight"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/26/2016"
+ms.date: "5/10/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -48,6 +48,6 @@ After you provision your virtual machine from the image, you can start exploring
 
 + [How to create a Microsoft Data Science VM](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
-+ [How to provision this virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
++ [How to provision the Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
 + Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/free/)
