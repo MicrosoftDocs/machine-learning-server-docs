@@ -54,7 +54,7 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-# [Microsoft R Server](rserver.md)
+# Microsoft R Server
 
 ## [Install and configure](rserver.md)
 ### [R Server supported platforms](rserver-install-supported-platforms.md)
@@ -124,8 +124,7 @@
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](vm-data-science.md)
 
-## [Deploy and consume analytics](operationalize/about.md)
-### [Introduction](operationalize/about.md)
+## Deploy and consume analytics
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
@@ -203,7 +202,7 @@
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
 
-# [Microsoft R Client](r-client.md)
+# Microsoft R Client
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
