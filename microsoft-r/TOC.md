@@ -207,7 +207,6 @@
 ## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
-## [Compatibility with R Server](r-client-compatibility.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
 
