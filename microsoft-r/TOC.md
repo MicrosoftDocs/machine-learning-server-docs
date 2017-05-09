@@ -36,7 +36,7 @@
 
 # [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
 
-# [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
+# [Diving into data analysis](data-analysis-in-microsoft-r.md)
 ## [Importing Data](scaler-user-guide-data-import.md)
 ### [Configure data import for ODBC data sources](scaler-odbc.md)
 ## [Data Sources](scaler-user-guide-data-source.md)
@@ -103,6 +103,10 @@
 #### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 ### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
+## [R Client for Windows/Linux](r-client-get-started.md)
+### [Install on Windows](r-client-install-windows.md)
+### [Install on Linux](r-client-install-linux.md)
+
 ## [Configure to operationalize analytics](operationalize/admin-get-started.md)
 ### [Get started for administrators](operationalize/admin-get-started.md)
 ### [One-box configuration](operationalize/configuration-initial.md)
@@ -119,15 +123,11 @@
 ### [Database configuration](operationalize/configure-remote-database.md)
 ### [R package management](operationalize/package-management.md)
 
-## [Provision in the Cloud](vm-cloud.md)
+## [Provision in the cloud](vm-cloud.md)
 ### [Azure HDInsight](vm-r-server-hdinsight.md)
 ### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
 ### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 ### [Microsoft Data Science VM](vm-data-science.md)
-
-## [R Client for Windows and Linux](r-client-get-started.md)
-### [Install on Windows](r-client-install-windows.md)
-### [Install on Linux](r-client-install-linux.md)
 
 # Deploy and consume analytics
 ## [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
@@ -208,7 +208,7 @@
 
 
 
-# [Function Reference](package-reference.md)
+# [Function reference](package-reference.md)
 ## [MicrosoftML](microsoftml/microsoftml.md)
 ### [categorical](microsoftml/packagehelp/categorical.md)
 ### [categoricalHash](microsoftml/packagehelp/categoricalHash.md)
