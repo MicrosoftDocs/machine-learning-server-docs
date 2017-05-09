@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Introducing Microsoft R Open"
-description: "Microsoft R Open introduction"
+title: "Introduction to Microsoft R Server and R Client"
+description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/05/2016"
+ms.date: "05/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,3 @@ ms.technology:
 ms.custom: ""
 
 ---
-
-# Introducing Microsoft R Open
-
-[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
