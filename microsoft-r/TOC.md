@@ -56,7 +56,7 @@
 
 # Microsoft R Server
 
-## [Install and configure](rserver.md)
+## Install and configure
 ### [R Server supported platforms](rserver-install-supported-platforms.md)
 
 ### [R Server for Windows](rserver-install-windows.md)
