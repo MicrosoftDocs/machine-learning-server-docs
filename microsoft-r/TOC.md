@@ -1,4 +1,4 @@
-# [Microsoft R overview](index.md)
+# [Overview of Microsoft R](index.md)
 ## [Microsoft R products and features](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
@@ -59,7 +59,7 @@
 
 # Install and configure
 
-## R Server
+## Microsoft R Server
 ### [R Server supported platforms](rserver-install-supported-platforms.md)
 
 ### [R Server for Windows](rserver-install-windows.md)
@@ -105,7 +105,7 @@
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
-## [R Client for Windows/Linux](r-client-get-started.md)
+## [Microsoft R Client](r-client-get-started.md)
 ### [Install on Windows](r-client-install-windows.md)
 ### [Install on Linux](r-client-install-linux.md)
 
@@ -144,7 +144,7 @@
 ### [Get started for application developers](operationalize/app-developer-get-started.md)
 ### [API overview](operationalize/api.md)
 ### [API access token management](operationalize/security-access-tokens.md)
-## [Archive] DeployR 8.x docs
+## [Archive] DeployR 8.x
 ### [Install DeployR](deployr-installation.md)
 #### [Install DeployR for R Server for Windows](deployr-install-on-windows.md)
 #### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
