@@ -94,9 +94,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |LDAP Properties|Definition|
    |---------------|-------------------------------|
    |`Host`|Address of the Active Directory server|
-   |`Port`|Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
+   |`Port`|(version 9.1+)Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
    |`UseLDAPS`|Set `true` for LDAP-S or `false` for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
-   |`BindFilter`|The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
+   |`BindFilter`|(version 9.0.1 only) The template used to do the Bind operation. For example, `"CN={0},CN=DeployR,DC=TEST,DC=COM"`. {0} is the user's DN.|
    |`QueryUserDn`|Distinguished name of user with read-only query capabilities with which to authenticate|
    |`QueryUserPassword`|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
    |`QueryUserPasswordEncrypted`|`True/False`. If `True`, it means the value of `QueryUserPassword` is an encrypted string.|
@@ -118,13 +118,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >[!WARNING]
    >For 9.0.1 Users! The unique identifier is always set to the `userPrincipalName` in version 9.0.1. Therefore, make sure that a value is defined for the `userPrincipalName` in the Active Directory Service Interfaces Editor or the authentication may fail.  In the Explorer, connect to the domain controller, find the user to authorize, and then make sure that the value for the  UserPrincipalName (UPN) property is not null.
 
-   For example:
+   For example, with R Server 9.1:
    ```
    "LDAP": {
            "Enabled": true,
            "Host": "<host_ip>",
+           "Port": "<port_number>"
            "UseLDAPS": "True",
-           "BindFilter": "CN={0},CN=DeployR,DC=TEST,DC=COM",
            "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
            "QueryUserPasswordEncrypted": true,
            "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
