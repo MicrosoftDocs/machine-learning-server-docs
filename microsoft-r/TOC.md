@@ -1,4 +1,4 @@
-# [Overview](index.md)
+# [Microsoft R overview](index.md)
 ## [Microsoft R products and features](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
@@ -9,7 +9,8 @@
 ## [Interoperability with R](overview-interoperability.md)
 
 # Quickstarts
-## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
+## [Predict flight delays with R Client](r-client-quickstart-airline-delays.md)
+## [Import CSV-to-XDF]
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
@@ -31,8 +32,7 @@
 ## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 ## [MicrosoftML function reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
-## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
+## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
 
@@ -58,56 +58,68 @@
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
 # Install and configure
-## [R Server supported platforms](rserver-install-supported-platforms.md)
 
-## [R Server for Windows](rserver-install-windows.md)
-### [Install on Windows](rserver-install-windows.md)
-### [Offline install](rserver-install-windows-offline.md)
-### [Command line install](rserver-install-windows-commandline.md)
+## R Server
+### [R Server supported platforms](rserver-install-supported-platforms.md)
 
-## [R Server for Linux](rserver-install-linux-server.md)
-### [Install on Linux](rserver-install-linux-server.md)
-### [Offline install](rserver-install-linux-offline.md)
-### [Manage your installation](rserver-install-linux-manage-install.md)
-### [Uninstall from Linux](rserver-install-linux-uninstall.md)
-### [Install an older version](rserver-install-linux-server-901.md)
-#### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
-#### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
+### [R Server for Windows](rserver-install-windows.md)
+#### [Install on Windows](rserver-install-windows.md)
+#### [Offline install](rserver-install-windows-offline.md)
+#### [Command line install](rserver-install-windows-commandline.md)
 
-## [R Server for Hadoop](rserver-install-hadoop.md)
-### [Install on Hadoop](rserver-install-hadoop.md)
-#### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
-##### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
-##### [Deploy and activate](rserver-install-cloudera-deploy-activate.md)
-##### [Rollback to previous version](rserver-install-cloudera-rollback.md)
-#### [Command line installation (CDH, HDP, MapR)](rserver-install-hadoop-command-line.md)
-#### [Offline install](rserver-install-hadoop-offline.md)
-#### [Package dependency list](rserver-install-linux-hadoop-packages.md)
-#### [Manual package installation](rserver-install-hadoop-manual-package.md)
-### Post-install configuration
-#### [Adjust Hadoop configuration](rserver-install-hadoop-configuration-r-workloads.md)
-#### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
-#### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
-### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
-#### [Install an older version](rserver-install-hadoop-901.md)
-#### [Install R Server 9.0.1](rserver-install-hadoop-901.md)
-#### [Install R Server 9.0.1 on CDH](rserver-install-cloudera-901.md)
-#### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
-### [Get started on Spark](scaler-spark-getting-started.md)
-### [Get started on MapReduce](scaler-hadoop-getting-started.md)
+### [R Server for Linux](rserver-install-linux-server.md)
+#### [Install on Linux](rserver-install-linux-server.md)
+#### [Offline install](rserver-install-linux-offline.md)
+#### [Manage your installation](rserver-install-linux-manage-install.md)
+#### [Uninstall from Linux](rserver-install-linux-uninstall.md)
+#### [Install an older version](rserver-install-linux-server-901.md)
+##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
+##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
 
-## [R Server for Teradata DB](scaler-teradata-getting-started.md)
-### [Install on Teradata](rserver-install-teradata-server.md)
-#### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
-#### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
-#### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
+### [R Server for Hadoop](rserver-install-hadoop.md)
+#### [Install on Hadoop](rserver-install-hadoop.md)
+##### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
+###### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
+###### [Deploy and activate](rserver-install-cloudera-deploy-activate.md)
+###### [Rollback to previous version](rserver-install-cloudera-rollback.md)
+##### [Command line installation (CDH, HDP, MapR)](rserver-install-hadoop-command-line.md)
+##### [Offline install](rserver-install-hadoop-offline.md)
+##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
+##### [Manual package installation](rserver-install-hadoop-manual-package.md)
+#### Post-install configuration
+##### [Adjust Hadoop configuration](rserver-install-hadoop-configuration-r-workloads.md)
+##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
+##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
+#### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
+##### [Install an older version](rserver-install-hadoop-901.md)
+##### [Install R Server 9.0.1](rserver-install-hadoop-901.md)
+##### [Install R Server 9.0.1 on CDH](rserver-install-cloudera-901.md)
+##### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
+#### [Get started on Spark](scaler-spark-getting-started.md)
+#### [Get started on MapReduce](scaler-hadoop-getting-started.md)
+
+### [R Server for Teradata DB](scaler-teradata-getting-started.md)
+#### [Install on Teradata](rserver-install-teradata-server.md)
+##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
+##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
+##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
+#### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
 ## [R Client for Windows/Linux](r-client-get-started.md)
 ### [Install on Windows](r-client-install-windows.md)
 ### [Install on Linux](r-client-install-linux.md)
 
-## [Configure to operationalize analytics](operationalize/admin-get-started.md)
+## [Pretrained models](deploy-pretrained-microsoftml-models.md)
+
+## [Provision in the cloud](vm-cloud.md)
+### [Azure HDInsight](vm-r-server-hdinsight.md)
+### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+### [Microsoft Data Science VM](vm-data-science.md)
+
+# Deploy and consume analytics
+## [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
+## [Configure R Server to operationalize](operationalize/admin-get-started.md)
 ### [Get started for administrators](operationalize/admin-get-started.md)
 ### [One-box configuration](operationalize/configuration-initial.md)
 ### [Enterprise configuration](operationalize/configure-enterprise.md)
@@ -122,15 +134,6 @@
 ### [R execution security](operationalize/security-rserve.md)
 ### [Database configuration](operationalize/configure-remote-database.md)
 ### [R package management](operationalize/package-management.md)
-
-## [Provision in the cloud](vm-cloud.md)
-### [Azure HDInsight](vm-r-server-hdinsight.md)
-### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
-### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-### [Microsoft Data Science VM](vm-data-science.md)
-
-# Deploy and consume analytics
-## [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ## Data scientists
 ### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 ### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
