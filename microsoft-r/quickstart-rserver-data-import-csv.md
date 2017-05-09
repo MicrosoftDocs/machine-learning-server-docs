@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# How to import data into R Server using CSV files, rxImport, and an XDF file
+# Quickstart: How to import data into R Server using CSV files, rxImport, and an XDF file
 
-**Applies to: Microsoft R Server**
+**Applies to:  Microsoft R Server 9.x**
 
 XDF is the native file format for persisted data in Microsoft R Server. CSVs are commonplace on almost every platform. In this Quickstart we bring them together in two exercises showing how to import a single CSV file, and then multiple CSV files, into one XDF. 
 
@@ -35,6 +35,9 @@ XDF files are not strictly required for statistical analysis and data mining, bu
 To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. 
 
 By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
+
+> [!NOTE]
+> RevoScaleR is available in both R Server and R Client. You can develop scripts in R Client for execution on R Server.  However, because chunking is not supported in R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Microsoft R Server instance.
 
 Before you begin this Quickstart, have the following ready:
 

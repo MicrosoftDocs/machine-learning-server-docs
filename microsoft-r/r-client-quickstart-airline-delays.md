@@ -23,11 +23,13 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quickstart: Use R Client to predict delayed flights
+# Quickstart: Predict delayed flights in R
+
+**Applies to:  Microsoft R Client 3.x, Microsoft R Server 9.x**
 
 ## Objective
 
-This quickstart shows you how to predict flight delays in R locally using R Client. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
+This quickstart shows you how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
 
 Broadly speaking, in machine learning and statistics, classification is the task of identifying the class or category to which a new observation belongs on the basis of a training set of data containing observations with known categories. Classification is generally a supervised learning problem. Since this is a binary classification task, there are only two classes.
 
@@ -39,7 +41,7 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 ## Prerequisites
 
-This quickstart assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
+This quickstart assumes that you have installed Microsoft R Client or Microsoft R Server and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 
 ## Example code
 

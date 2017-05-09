@@ -9,8 +9,8 @@
 ## [Interoperability with R](overview-interoperability.md)
 
 # Quickstarts
-## [Predict flight delays with R Client](r-client-quickstart-airline-delays.md)
-## [Import CSV-to-XDF]
+## [Predict flight delays](r-client-quickstart-airline-delays.md)
+## [Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
