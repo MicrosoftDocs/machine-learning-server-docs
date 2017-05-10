@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Quick Start for Microsoft R Client"
-description: "Microsoft R Client"
-keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
+description: "Microsoft R Client quickstart"
+keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "11/30/2016"
+ms.date: "5/10/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""

@@ -11,6 +11,7 @@
 # Quickstarts
 ## [Predict flight delays](r-client-quickstart-airline-delays.md)
 ## [Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
+## [Publish R model as web service](operationalize/quickstart-publish-web-service.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
 ## [What is ScaleR?](scaler-user-guide-introduction.md)
