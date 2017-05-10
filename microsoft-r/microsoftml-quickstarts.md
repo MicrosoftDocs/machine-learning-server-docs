@@ -5,7 +5,7 @@ title: "Quickstarts for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/21/2017"
+ms.date: "05/05/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -44,7 +44,12 @@ More specifically, the example provided shows how to use the [featurizeText](mic
 
 ## Image featurization using featurizeImage
 
-For information on MicrosoftML support of pre-trained deep neural network models for image featurization, see [Image featurization with a pre-trained deep neural network model](https://blogs.msdn.microsoft.com/rserver/2017/04/12/image-featurization-with-a-pre-trained-deep-neural-network-model/).
+Image featurization is the process that takes an image as input and produces a numeric vector (aka feature vector) that represents key characteristics (features) of that image. The features are extracted with an [`featurizeImage`](microsoftml/packagehelp/featurizeImage.md) transform that runs the image data through one of several available pretrained Deep Neural Net (DNN) models. Two samples are provided in the [MicrosoftML GitHub repo](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/PreTrainedModels/ImageAnalytics/ImageFeaturizer) that show how to use these DNN models.
+
+- **Sample 1: Find similar images**: Here is the scenario this sample addresses: You have a catalog of images in a repository. When you get a new image, you want to find the image from your catalog that most closely matches this new image.
+- **Sample2: Train a model to classify images**: Here is the scenario this sample addresses: train a model to classify or recognize the type of an image using labeled observations from a training set provided. Specifically, this sample trains a multiclass linear model using the [`rxLogisticRegression`](microsoftml/packagehelp/rxLogisticRegression.md) algorithm to distinguish between fish, helicopter and fighter jet images. The multiclass training task uses the feature vectors of the images from the training set to learn how to classify these images.
+
+For some additional discussion on MicrosoftML support of pre-trained deep neural network models for image featurization, see [Image featurization with a pre-trained deep neural network model](https://blogs.msdn.microsoft.com/rserver/2017/04/12/image-featurization-with-a-pre-trained-deep-neural-network-model/).
 
 ## Retail churn tutorial
 
