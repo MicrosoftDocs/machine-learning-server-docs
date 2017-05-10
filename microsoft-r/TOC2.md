@@ -204,7 +204,7 @@
 
 # Microsoft R Client
 ## [Get Started with R Client](r-client-get-started.md)
-## [Quickstart: predict flight delays](r-client-quickstart-airline-delays.md)
+## [Quickstart: predict flight delays](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)

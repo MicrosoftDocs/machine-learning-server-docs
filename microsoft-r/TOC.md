@@ -9,7 +9,7 @@
 ## [Interoperability with R](overview-interoperability.md)
 
 # Quickstarts
-## [Predict flight delays](r-client-quickstart-airline-delays.md)
+## [Run R code in Microsoft R](quickstart-r-code.md)
 ## [Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
 ## [Publish R model as web service](operationalize/quickstart-publish-web-service.md)
 

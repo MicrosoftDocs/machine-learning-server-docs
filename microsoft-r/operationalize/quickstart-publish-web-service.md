@@ -55,26 +55,10 @@ Before you begin this QuickStart, have the following ready:
 
 This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we'll walkthrough in the sections that follow.
 
-
-We'll use the following script in our example:
-
 >[!IMPORTANT]
 >Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```r
-
-##########################################################
-#                  ENTIRE SAMPLE SCRIPT                  #
-##########################################################
-
-
-##########################################################
-#         Load mrsdeploy package on R Server             #
-##########################################################
-
-# If R Server 9.0, load package:
-library(mrsdeploy)
-
 ##########################################################
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
@@ -84,6 +68,8 @@ library(mrsdeploy)
 # a vehicle being fitted with a manual transmission 
 # based on horsepower (hp) and weight (wt)
 
+# If on R Server 9.0, load mrsdeploy package now
+library(mrsdeploy)
 
 # Create glm model with `mtcars` dataset
 carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
@@ -154,24 +140,22 @@ print(result$output("answer")) # 0.6418125
 swagger <- api$swagger()
 cat(swagger, file = "swagger.json", append = FALSE)
 
-# Share Swagger-based JSON with those who need to consume it
+# Now share this Swagger-based JSON so others can consume it
 ```
 
+
+## A. Model locally
 Now let's dive into this example down. Let's start by creating the model locally, then publish it, and then share it with other authenticated users.
 
-### A. Model locally
+1. Launch your R IDE or Rgui so you can start entering R code. 
 
-1. Launch your R IDE. 
-
-1. Load the `mrsdeploy` package which is already installed with R Server.
+1. If you have R Server 9.0.1, load the `mrsdeploy` package. In R Server 9.1, this package is preloaded for you.
 
    ```
    library(mrsdeploy)
    ```
 
-1. Run the R code to create the model.  
-
-   In our example, the GLM model, `carsModel`, is creating using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission based on horsepower (hp) and weight (wt)
+1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission based on horsepower (hp) and weight (wt)
 
    ```R
    # Create glm model with `mtcars` dataset
@@ -187,15 +171,19 @@ Now let's dive into this example down. Let's start by creating the model locally
    print(manualTransmission(120, 2.8)) # 0.6418125
    ```
 
-1. Examine the results of the locally executed code. 
+1. Examine the results of the locally executed code. You'll compare these to the results of the web service later.
 
 <br> 
 
-### B. Publish model as a web service
+## B. Publish model as a web service
 
 1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   For simplicity, our example uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+   For simplicity, the code below uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+
+
+   >[!IMPORTANT]
+   >Be sure to replace the `remoteLogin()` function below with the [correct login details for your configuration](mrsdeploy-connection.md).
 
    ```R  
    # Use `remoteLogin` to authenticate with R Server using 
@@ -209,19 +197,15 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package.
+1. Publish the model as a web service to R Server using [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package. 
 
-   To publish it, you'll need to specify:
-   + A name for the service (required)
-   + The code (required) and necessary model assets 
-   + Any inputs 
-   + The output that application developers will need to integrate in their applications. 
-   + A unique version number for the service, if you'll be sharing it with others.   
+   In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
-   >[!IMPORTANT]
-   >In the case where you are working with a [remote R session](remote-execution.md) and you want to publish a web service, do so in your local session. If you try to publish remotely, you'll get this message: `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`. Instead, use the remote execution function `pause()` to return the R command line in your local session, publish your service, and then use the `resume()` function to continue running R code from the remote command line in the remote R session.
 
-   In this example, we executed these commands to publish a web service (`"mtService"`) using a model (`carsModel`) and a function (`manualTransmission`). As an input, it takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
+   When publishing, you must specify, among other parameters, a service name and version, the R code, the inputs, as well as the outputs that application developers will need to integrate in their applications. 
+
+   >[!NOTE]
+   >To publish a web service while in a remote R session, carefully [review these guidelines](remote-execution.md#publish-remote-session). 
 
    ```R
    api <- publishService(
@@ -236,7 +220,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 <br> 
 
-### C. Consume the new service in R to test it
+## C. Test the service by consuming it in R
 
 Consume the service in R directly after publishing it to verify that the results are as expected.
 
@@ -252,18 +236,15 @@ result <- api$manualTransmission(120, 2.8)
 
 # Print response output named `answer`
 print(result$output("answer")) # 0.6418125   
-
 ``` 
 
-In our example, we observe the same results as we did when it was locally executed.
-
->[!NOTE]
->As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
+The results should match the results obtained when the model was run locally earlier.
+As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
 
 >[!WARNING]
 >If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](admin-diagnostics.md#logs). 
 
-### D. Get the Swagger-based JSON file
+## D. Get the Swagger-based JSON file
 
 During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
 
@@ -276,7 +257,19 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 >[!NOTE]
 >See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
-   ```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Step 1. Prepare and import data
 
