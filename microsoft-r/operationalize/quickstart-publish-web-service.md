@@ -151,7 +151,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. If you have R Server 9.0.1, load the `mrsdeploy` package. In R Server 9.1, this package is preloaded for you.
 
-   ```
+   ```R
    library(mrsdeploy)
    ```
 
@@ -260,66 +260,12 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-## Step 1. Prepare and import data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Next steps
 
 After it has been deployed, the web service can be: 
 + [Consumed directly in R by another data scientist](data-scientist-manage-services.md#data-scientists-share), for testing purposes for example 
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
-
-
-
-
-<br> 
-
-<a name="share"></a>
-
-## How to share a service with others 
-
->[!IMPORTANT]
-> Anyone who wishes to consume the service must have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
-
-When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
-
-Services can be consumed in multiple ways: 
-1. Direct consumption in R using the `mrsdeploy` package, which installed with Microsoft R Server and R Client. Approaches include "Request - Response" and "Asynchronous Batch Execution".
-2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
-
-Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](data-scientist-manage-services.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
 
 
 ## How to execute R code remotely
