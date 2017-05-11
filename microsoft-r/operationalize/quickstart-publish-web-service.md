@@ -23,7 +23,7 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quickstart: Deploy an R Model as a web service
+# Deploy an R Model as a web service
 
 **Applies to: Microsoft R Server 9.x**
 

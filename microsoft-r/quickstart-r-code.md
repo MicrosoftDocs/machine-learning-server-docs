@@ -23,7 +23,7 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quickstart: Run R code in Microsoft R
+# Run R code in Microsoft R
 
 **Applies to: Microsoft R Client, Microsoft R Server**
 
