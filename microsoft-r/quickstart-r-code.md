@@ -45,7 +45,7 @@ This quickstart assumes that you have installed Microsoft R Client or Microsoft 
 
 ## Example code
 
-This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow including links to [sample data](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets) in the RTVS Github repository.
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow including links to [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ```r
        #############################################
