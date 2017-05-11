@@ -25,10 +25,7 @@ ms.custom: ""
 ---
 # Deploy an R Model as a web service
 
-**Applies to: Microsoft R Server 9.x**
-
->[!NOTE]
-> This code can also be run on Microsoft R Client if you connect remotely to R Server.
+**Applies to: Microsoft R Client 3.x, Microsoft R Server 9.x**
 
 ## Objective
 
