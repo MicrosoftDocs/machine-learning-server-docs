@@ -96,7 +96,7 @@ Features provided by [Microsoft R Server](rserver.md), [Microsoft R Client](r-cl
 
 ## Next Steps
 
-If you are new to Microsoft R, we recommend starting with R Client and an integrated development environment like R Tools for Visual Studio (RTVS). This configuration is free of charge. It gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
+If you are new to Microsoft R, we recommend starting with R Client and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/). This configuration is free of charge. It gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 
 Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
