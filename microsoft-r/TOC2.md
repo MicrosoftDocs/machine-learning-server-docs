@@ -1,4 +1,4 @@
-# [Overview of Microsoft R](index.md)
+# [Overview](index.md)
 ## [Microsoft R products and features](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
@@ -29,7 +29,7 @@
 ## [MicrosoftML function reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 ## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
-## [Samples for MicrosoftML](microsoftml-quickstarts.md)
+## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
 
@@ -128,7 +128,6 @@
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
-#### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
 #### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
 #### [Work with web services in R](operationalize/data-scientist-manage-services.md)
 #### [Publish & consume R services in R](operationalize/data-scientist-manage-services.md)
@@ -205,7 +204,7 @@
 
 # Microsoft R Client
 ## [Get Started with R Client](r-client-get-started.md)
-## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
+## [Quickstart: predict flight delays](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
