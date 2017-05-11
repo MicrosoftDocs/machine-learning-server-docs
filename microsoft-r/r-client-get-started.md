@@ -86,7 +86,7 @@ After you configure the IDE, a message appears in the console signaling that the
 
 Now that you've installed R Client, you can start building and running some R code. Launch R on the command-line or in your IDE and:
 
-+ Try the **Flight delay prediction example** described in this [R Client quickstart guide](r-client-quickstart-airline-delays.md). 
++ Try the **Flight delay prediction example** described in this [quickstart guide](quickstart-r-code.md) to try out a little R code. 
 
 + Or, **develop your own solutions** with some [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. 
 
@@ -98,7 +98,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 You can learn more with these guides:
 
-+ [Quickstart for Microsoft R Client](r-client-quickstart-airline-delays.md) (example)
++ [Quickstart for Microsoft R Client](quickstart-r-code.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 
