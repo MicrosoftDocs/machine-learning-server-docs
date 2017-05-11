@@ -41,11 +41,14 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 ## Prerequisites
 
-This quickstart assumes that you have installed Microsoft R Client or Microsoft R Server and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
+This quickstart assumes that you have:
++ An installed instance of Microsoft R Client or Microsoft R Server 
++ R running on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
++ An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ## Example code
 
-This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow including links to [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections.
 
 ```r
        #############################################
