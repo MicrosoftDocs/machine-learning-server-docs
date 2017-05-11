@@ -23,12 +23,12 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quickstart: Predict delayed flights in R
+# Quickstart: Deploy an R Model as a web service
 
 **Applies to: Microsoft R Server 9.x**
 
 >[!NOTE]
-> This code can be run on Microsoft R Client if you connect remotely to R Server.
+> This code can also be run on Microsoft R Client if you connect remotely to R Server.
 
 ## Objective
 

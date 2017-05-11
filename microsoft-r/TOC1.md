@@ -10,7 +10,6 @@
 
 # Quickstarts
 ## [Run R code in Microsoft R](quickstart-r-code.md)
-## [Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
 ## [Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
 
 # [Get started with RevoScaleR](microsoft-r-get-started-node.md)
