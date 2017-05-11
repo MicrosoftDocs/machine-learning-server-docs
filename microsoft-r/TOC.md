@@ -13,7 +13,7 @@
 
 ## [Supported platforms](rserver-install-supported-platforms.md)
 
-## Install Machine Learning Server
+## Machine Learning Server
 ### [Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
@@ -50,18 +50,24 @@
 #### [Get started on Spark](scaler-spark-getting-started.md)
 #### [Get started on MapReduce](scaler-hadoop-getting-started.md)
 
-## [Teradata DB](scaler-teradata-getting-started.md)
-### [Install on Teradata](rserver-install-teradata-server.md)
-#### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
-#### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
-#### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
-### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
+### [Teradata DB](scaler-teradata-getting-started.md)
+#### [Install on Teradata](rserver-install-teradata-server.md)
+##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
+##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
+##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
+#### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
-## [Install Microsoft R Client](r-client-get-started.md)
+### [Provision in the cloud](vm-cloud.md)
+#### [Azure HDInsight](vm-r-server-hdinsight.md)
+#### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Microsoft Data Science VM](vm-data-science.md)
+
+## [Microsoft R Client](r-client-get-started.md)
 ### [Install on Windows](r-client-install-windows.md)
 ### [Install on Linux](r-client-install-linux.md)
 
-## [Install Python development environment](r-client-get-started.md)
+## [Python development environment](r-client-get-started.md)
 
 ## [Configure to operationalize analytics](operationalize/admin-get-started.md)
 ### [Get started for administrators](operationalize/admin-get-started.md)
@@ -81,11 +87,6 @@
 
 ## [Pretrained models](deploy-pretrained-microsoftml-models.md)
 
-## [Provision in the cloud](vm-cloud.md)
-### [Azure HDInsight](vm-r-server-hdinsight.md)
-### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
-### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-### [Microsoft Data Science VM](vm-data-science.md)
 
 # Quickstarts
 ## [Run R code in Microsoft R](quickstart-r-code.md)
