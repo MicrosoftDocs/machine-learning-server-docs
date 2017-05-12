@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Explore R and ScaleR in 25 functions"
-description: "Execute R and ScaleR commands using R Microsoft R Client or R Server."
+title: "Explore R-to-RevoScaleR in 25 functions"
+description: "Execute R and RevoScaleR commands using R Microsoft R Client or R Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/21/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,18 +26,18 @@ ms.custom: ""
 
 ---
 
-# Explore R and ScaleR in 25 functions
+# Explore R and RevoScaleR in 25 functions
 
-If you are new to both R and Microsoft R, this brief tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. 
+If you are new to both R and Microsoft R, this short tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
-This tutorial starts with base R commands before transitioning to ScaleR functions in Microsoft R. If you already know R, you might want to skip ahead to [Explore ScaleR Functions](#ExploreScaleRFunctions).
+This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 ## Prerequisites
 
-This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe, plus sample data and commands copied directly from this tutorial. RGui.exe is a command line tool included in R distributions like MRO. The ScaleR functions are provided by RevoScaleR in either an R Client or R Server installation.
+This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe on Windows or start the Revo64 program on Linux. This tutorial uses built-in sample data in base R or RevoScaleR function library provided in either an R Client or R Server installation.
 
-1. Go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64
-2. Double-click `RGui.exe`
++ On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
++ On Linux, at the command prompt, type **Revo64**.
 
 ## Start with R
 
@@ -45,7 +45,7 @@ Because Microsoft R is built on R, this tutorial begins with an exploration of b
 
 ### Create Vectors
 
-R is an environment for analyzing data, so the natural starting point is to load some data. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s *c* function to combine the data into a vector. Type or copy the following script and paste it at the &gt; prompt at the beginning of the command line:
+R is an environment for analyzing data, so the natural starting point is to load some data. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s `c` function to combine the data into a vector. Type or copy the following script and paste it at the &gt; prompt at the beginning of the command line:
 
 	c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
 	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
@@ -67,7 +67,7 @@ R responds with a &gt; prompt. Notice that the named vector is not automatically
 	[1]  850  740  900 1070  930  850  950  980   980  880
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
 
-The `c` function is useful for typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors. For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using c as follows:
+The `c` function is useful for hand typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors. For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using `c` as follows:
 
 	michelsonNew <- c(michelson, 850, 930, 940, 970, 870)
 	
@@ -77,7 +77,7 @@ The `c` function is useful for typing in small vectors such as you might find in
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
 	[21]  850  930  940  970  870
 
-Often for testing purposes you want to use randomly generated data. R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions. To obtain a set of numbers from a normal distribution, you use the *rnorm* function:
+Often for testing purposes you want to use randomly generated data. R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions. To obtain a set of numbers from a normal distribution, you use the `rnorm` function:
 
 	normalDat <- rnorm(25)
 	normalDat
@@ -92,7 +92,7 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	[22] -0.19858329  0.13886578 -0.27933600
 	[25]  0.70891942
 
- By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the *mean* and *sd* arguments to *rnorm* to specify a different normal distribution:
+ By default, the data are generated from a standard normal with mean 0 and standard deviation 1. You can use the `mean` and `sd` arguments to `rnorm` to specify a different normal distribution:
 
 	normalSat <- rnorm(25, mean=450, sd=100)
 	normalSat
@@ -103,7 +103,7 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	[16] 406.8826 488.2447 454.1125 444.0776 320.3576
 	[21] 236.3024 360.6385 511.2733 508.2971 449.4118
 
-Similarly, you can use the *runif* function to generate random data from a uniform distribution:
+Similarly, you can use the `runif` function to generate random data from a uniform distribution:
 
 	uniformDat <- runif(25)
 	uniformDat
@@ -116,7 +116,7 @@ Similarly, you can use the *runif* function to generate random data from a unifo
 	[21] 0.41863803 0.42392873 0.24800036 0.22084038
 	[25] 0.48285406
 
-The default uniform distribution is that over the interval 0 to 1; you can specify alternatives by setting the *min* and *max* arguments:
+The default uniform distribution is that over the interval 0 to 1; you can specify alternatives by setting the `min` and `max` arguments:
 
 	uniformPerc <- runif(25, min=0, max=100)
 	uniformPerc
@@ -129,13 +129,13 @@ The default uniform distribution is that over the interval 0 to 1; you can speci
 	[21] 73.598221 63.888835 35.261694 54.481692
 	[25] 37.575176
 
-Another commonly used vector is the *sequence*, a uniformly-spaced run of numbers. For the common case of a run of integers, you can use the infix operator, :, as follows:
+Another commonly used vector is the `sequence`, a uniformly-spaced run of numbers. For the common case of a run of integers, you can use the infix operator, :, as follows:
 
 	1:10
 
 	 [1]  1  2  3  4  5  6  7  8  9 10
 
-For more general sequences, use the *seq* function:
+For more general sequences, use the `seq` function:
 
 	seq(length = 11, from = 10, to = 30)
 
@@ -158,11 +158,11 @@ After you have some data, you will want to explore it graphically. For most smal
 	plot(uniformPerc)
 	plot(1:10)
 
-For *numeric* vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:
+For numeric vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:
 
 ![](media/rserver-getting-started/image5.jpeg)
 
-For an exploration of the shape of the data, the usual tools are *stem* (to create a stemplot) and *hist* (to create a histogram):
+For an exploration of the shape of the data, the usual tools are `stem` (to create a stemplot) and `hist` (to create a histogram):
 
 	stem(michelson)
 
@@ -175,7 +175,7 @@ For an exploration of the shape of the data, the usual tools are *stem* (to crea
 
 	hist(michelson)
 
-The resulting histogram is shown as the left plot below. We can make the histogram look more like the stemplot by specifying the *nclass* argument to *hist*:
+The resulting histogram is shown as the left plot below. We can make the histogram look more like the stemplot by specifying the `nclass` argument to `hist`:
 
 	hist(michelson, nclass=5)
 
@@ -240,7 +240,7 @@ Copy and paste the table into a text editor (such as Notepad on Windows, or emac
 
 	 [1] "/Users/joe"
 
-You can then read the data into R using the *read.table* function. The argument *header=TRUE* specifies that the first line is a header of variable names:
+You can then read the data into R using the `read.table` function. The argument *header=TRUE* specifies that the first line is a header of variable names:
 
 	msStats <- read.table("msStats.txt", header=TRUE)
 	msStats
@@ -260,9 +260,9 @@ You can then read the data into R using the *read.table* function. The argument 
 	4 0.267 0.278 0.374 0.656
 	5 0.259 0.329 0.440 0.769
 
-Notice how *read.table* changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.
+Notice how `read.table` changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.
 
-Most small R data sets in daily use are data frames. The built-in package, *datasets,* is a rich source of data frames for further experimentation. In the next section, we turn our attention to the built-in data set *attitude*, part of the *datasets* package.
+Most small R data sets in daily use are data frames. The built-in package, **datasets**, is a rich source of data frames for further experimentation. In the next section, we turn our attention to the built-in data set *attitude*, part of the **datasets** package.
 
 > [!Tip]
 > Check out the *rxImport* function for an efficient and flexible way to bring data stored in a variety of data formats (e.g., text, SQL Server, ODBC, SAS, SPSS, Teradata) into a data frame in memory or an .xdf file.
@@ -271,7 +271,7 @@ Most small R data sets in daily use are data frames. The built-in package, *data
 
 The *attitude* data set is a data frame with 30 observations on 7 variables, measuring the percent proportion of favorable responses to seven survey questions in each of 30 departments. The survey was conducted in a large financial organization; there were approximately 35 respondents in each department.
 
-We mentioned that the *plot* function could be used with virtually any data set to get an initial visualization; let’s see what it gives for the *attitude* data:
+We mentioned that the `plot` function could be used with virtually any data set to get an initial visualization; let’s see what it gives for the *attitude* data:
 
 	plot(attitude)
 
@@ -283,7 +283,7 @@ The first two variables (*rating* and *complaints*) show a strong linear relatio
 
 	attitudeLM1 <- lm(rating ~ complaints, data=attitude)
 
-To view a summary of the model, we can use the summary function:
+To view a summary of the model, we can use the `summary` function:
 
 	summary(attitudeLM1)
 
@@ -304,11 +304,11 @@ To view a summary of the model, we can use the summary function:
 	Multiple R-squared: 0.6813, Adjusted R-squared: 0.6699 
 	F-statistic: 59.86 on 1 and 28 DF,  p-value: 1.988e-08 
 
-We can also try to visualize the model using plot:
+We can also try to visualize the model using `plot`:
 
 	plot(attitudeLM1)
 
-The default plot for a fitted linear model is a set of four plots; by default they are shown one at a time, and you are prompted before each new plot is displayed. To view them all at once, use the *par* function with the *mfrow* parameter to specify a 2 x 2 layout:
+The default plot for a fitted linear model is a set of four plots; by default they are shown one at a time, and you are prompted before each new plot is displayed. To view them all at once, use the `par` function with the *mfrow* parameter to specify a 2 x 2 layout:
 
 	par(mfrow=c(2,2))
 	plot(attitudeLM1)
@@ -316,11 +316,11 @@ The default plot for a fitted linear model is a set of four plots; by default th
 ![](media/rserver-getting-started/image10.jpeg)
 
 > [!Tip]
-> The *rxLinMod* function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at *rxLogit* and *rxGlm* as alternatives to *glm*, *rxKmeans* as an alternative to *kmeans*, and *rxDTree* as an alternative to *rpart*.
+> The rxLinMod function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at rxLogit and rxGlm as alternatives to `glm`, rxKmeans as an alternative to `kmeans`, and rxDTree as an alternative to `rpart`.
 
 ### Matrices and *apply* function
 
-A *matrix* is a two-dimensional data array. Unlike data frames, which can have different data types in their columns, matrices may contain data of only one type. Most commonly, matrices are used to hold numeric data. You create matrices with the *matrix* function:
+A matrix is a two-dimensional data array. Unlike data frames, which can have different data types in their columns, matrices may contain data of only one type. Most commonly, matrices are used to hold numeric data. You create matrices with the `matrix` function:
 
 	A <- matrix(c(3, 5, 7, 9, 13, 15, 8, 4, 2), ncol=3)
 	A
@@ -374,7 +374,7 @@ Matrix multiplication requires two matrices to be *conformable*, which means tha
 
 	Error in A %*% B : non-conformable arguments
 
-When you need to manipulate the rows or columns of a matrix, an incredibly useful tool is the apply function. With *apply*, you can apply a function to all the rows or columns of matrix at once. For example, to find the column products of *A*, you could use *apply* as follows:
+When you need to manipulate the rows or columns of a matrix, an incredibly useful tool is the `apply` function. With `apply`, you can apply a function to all the rows or columns of matrix at once. For example, to find the column products of *A*, you could use `apply` as follows:
 
 	apply(A, 2, prod)
 
@@ -397,7 +397,7 @@ To sort the columns of *A*, just replace *prod* with *sort*:
 
 ### Lists and *lapply* function
 
-A *list* in R is a very flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
+A `list` in R is a very flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
 
 For example, we can combine a character vector, a numeric vector, and a numeric matrix in a single list as follows:
 
@@ -414,7 +414,7 @@ For example, we can combine a character vector, a numeric vector, and a numeric 
 	[1,]    3    4
 	[2,]    5    7
 
-The function *lapply* can be used to apply the same function to each component of a list in turn:
+The function `lapply` can be used to apply the same function to each component of a list in turn:
 
 	lapply(list1, length)
 
@@ -448,7 +448,7 @@ The packages in the top two lines are automatically loaded when you start R. You
 
 	library(MASS)
 
-Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the *install.packages* function:
+Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the `install.packages` function:
 
 	install.packages("SuppDists")
 
@@ -482,7 +482,7 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
 
 > [!Tip]
-> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program.  So all of the “rx” functions mentioned in these tips are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
+> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program. All of the “rx” RevoScaleR functions mentioned in this tutorial are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
 
 ## Calling Microsoft R functions in Rscript and R CMD BATCH
 
@@ -495,26 +495,28 @@ Similarly, you should avoid the `–vanilla` construction for invoking Microsoft
 <a name="ExploreScaleRFunctions"></a>
 ## Expore ScaleR Functions
 
-The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. Even if you are relatively new to R, you can get started with just a few basic functions.
+The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. 
 
 ### Step 1: Access Data with *rxImport*
 
-The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need an ODBC driver for your data base to access it. Let’s use an example of a delimited text file available in the sample data directory of the **RevoScaleR** package, a small data set containing simulated mortgage default data. We’ll store the location of the file in a character string, then import the data into an in-memory data set (data frame) using the default settings:
+The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a locally installed ODBC driver for your database to access data on a local or remote computer. 
 
-	inDataFile <- file.path(rxGetOption("sampleDataDir"),
-		"mortDefaultSmall2000.csv")
+Let’s start simply by using a delimited text file available in the [built-in sample data directory](scaler-user-guide-sample-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
+
+	inDataFile <- file.path(rxGetOption("sampleDataDir"), "mortDefaultSmall2000.csv")
 
 	mortData <- rxImport(inData = inDataFile)
 
-If we think that we may want to do the same analysis on a larger data set later, we can prepare for that by putting placeholders in our code for output files. If we set these values to a file path, the data will be stored on disk in the efficient .xdf file format, rather than storing it in memory. The output object returned from *rxImport* would be a small object representing the .xdf file (an *RxXdfData* object), rather than a data frame containing all of the data. But for the time being, we will continue to work with the data in memory. We can do this by setting the *outFile* parameters to NULL. The following code will accomplish the same importing task of that above:
+If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and R Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
 
-	outFile <- NULL
-	outFile2 <- NULL
-	mortData <- rxImport(inData = inDataFile, outFile = outFile)
+But for the time being, let's continue to work with the data in memory. We can do this by leaving outFile out of the command, or by setting the *outFile* parameter to NULL. The following code is equivalent to the importing task of that above:
+
+	mortOutput <- NULL
+	mortData <- rxImport(inData = inDataFile, outFile = mortOutput)
 
 ### Step 2: Retrieve metadata
 
-There are a number of basic methods we can use to quickly get some information about the data set and its variables that will work on the output of *rxImport*, whether it is a data frame or *RxXdfData* object. 
+There are a number of basic methods we can use to learn about the data set and its variables that will work on the return object of *rxImport*, regardless of whether it is a data frame or *RxXdfData* object. 
 
 Input: Get the number of rows, cols, and names of the imported data:
 
@@ -543,7 +545,7 @@ Output:
 	2 691 4 4 5077 2000 0
 	3 743 18 3 3080 2000 0
 
-The *rxGetInfo* function allows you to quickly get information about your data set and its variables all at one time, including more information about variable types and ranges. Let’s try it on *mortData*, having the first 3 rows of the data set printed out:
+The rxGetInfo function allows you to quickly get information about your data set and its variables all at one time, including more information about variable types and ranges. Let’s try it on *mortData*, having the first 3 rows of the data set printed out:
 
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=3)
 
@@ -568,7 +570,7 @@ Output:
 
 ### Step 3: Select and transform data with *rxDataStep*
 
-The *rxDataStep* function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
+The rxDataStep function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
 
 	mortDataNew <- rxDataStep(
 		# Specify the input data set
@@ -585,7 +587,9 @@ The *rxDataStep* function provides a framework for the majority of your data man
 				labels = c("Low Debt", "High Debt")),
 			lowScore = creditScore < 625))
 
-Our new data set, *mortDataNew*, will not have the variable year, but adds two new variables: a categorical variable named *catDebt* that uses R’s cut function to break the *ccDebt* variable into two categories, and a logical variable, *lowScore*, that will be TRUE for individuals with low credit scores. These *transforms* expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data. With the *rowSelection* argument, we have also removed any observations with high credit scores, above or equal to 850. We can use the *rxGetVarInfo* function to confirm:
+Our new data set, *mortDataNew*, will not have the variable year, but adds two new variables: a categorical variable named *catDebt* that uses R’s `cut` function to break the *ccDebt* variable into two categories, and a logical variable, *lowScore*, that will be TRUE for individuals with low credit scores. These *transforms* expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data. 
+
+With the *rowSelection* argument, we have also removed any observations with high credit scores, above or equal to 850. We can use the rxGetVarInfo function to confirm:
 
 	rxGetVarInfo(mortDataNew)
 
@@ -600,13 +604,13 @@ Our new data set, *mortDataNew*, will not have the variable year, but adds two n
 
 ### Step 4: Visualize Data with *rxHistogram*, *rxCube*, and *rxLinePlot*
 
-The *rxHistogram* function will show us the distribution of any of the variables in our data set. For example, let’s look at credit score:
+The rxHistogram function will show us the distribution of any of the variables in our data set. For example, let’s look at credit score:
 
 	rxHistogram(~creditScore, data = mortDataNew )
 
 ![](media/rserver-getting-started/image14.png)
 
-The *rxCube* function will compute category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
+The rxCube function will compute category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
 
 	mortCube <- rxCube(~F(creditScore):catDebt, data = mortDataNew)
 
@@ -649,7 +653,9 @@ We get the following output:
 
 ### Step 6: Scale Your Analysis
 
-So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). (Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz). After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
+So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
+
+After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
 
 	# bigDataDir <- "C:/MicrosoftR/Data" # Specify the location
 	inDataFile <- file.path(bigDataDir, "mortDefault",
@@ -751,7 +757,6 @@ Note that because we have specified an output file when importing the data, the 
 
 	Condition number of final variance-covariance matrix: 1.3005
 	Number of iterations: 9
-
 
 
 ## Next Steps: A Roadmap to Documentation

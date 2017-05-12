@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyzing airline flight departure data using ScaleR in Microsoft R"
-description: "Learn the ScaleR functions found in Microsoft R Client and Microsoft R Server using this tutorial walkthrough."
+title: "Tutorial: Data manipulation and statistical analysis in Microsoft R"
+description: "Learn the RevoScaleR functions in Microsoft R Client and Microsoft R Server using this tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/17/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# ScaleR tutorial using airplane flight data (Microsoft R)
+# RevScaleR tutorial on data manipulation and statistical analysis (Microsoft R)
 
-This tutorial builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by adding more steps and functions that broaden your experience with the functions. As before, you'll work with airline sample data to complete the steps.
+This tutorial builds on what you learned in the [first tutorial](scaler-getting-started.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
-ScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
+RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
-To complete this tutorial, you will need a development tool such as **R Tools for Visual Studio** and ScaleR, which you can get through Microsoft R Client, R Server, or R in Azure.
+To complete this tutorial, you will need a development tool such as **R Tools for Visual Studio** and RevoScaleR, which you can get through Microsoft R Client, R Server, or R in Azure.
 
 ## What you will learn in this tutorial
 
@@ -50,15 +50,15 @@ Tasks you'll perform include the following:
 
 7.	Compute predicted values.
 
-## Get the airline data set
+## About the airline data set
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
-This dataset is built into ScaleR so there is nothing to download.
+This dataset is built into RevoScaleR so there is nothing to download.
 
 ## Import text data into .xdf
 
-ScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
+RevoScaleR provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns. To convert the *AirlineDemoSmall.csv* text file into the .xdf data format, use the function *rxImport*. Using this function, you can convert the string column, *DayOfWeek*, to a factor variable.
 
 1. Enter the following command to create a variable named `sampleDataDir` representing the input file in the sample data directory. The location of this directory is stored as an option. It is initialized to the location of the *SampleData* directory included in the **RevoScaleR** package. You can use the **rxGetOption** function to retrieve this location and store it as `sampleDataDir`.
 

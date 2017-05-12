@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Get started with ScaleR in Microsoft R"
-description: "Learn the ScaleR functions found in Microsoft R Client and Microsoft R Server using this tutorial walkthrough."
+title: "Basic workflow tutorial: import to summary"
+description: "Learn the basic workflow from import to data summarization using the RevScaleR functions in Microsoft R."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "12/20/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,29 +24,29 @@ ms.custom: ""
 
 ---
 
-# Get started with ScaleR and data analysis (Microsoft R)
+# Basic workflow tutorial: import to summary (Microsoft R)
 
-[ScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although ScaleR works on both small and large datasets, what ScaleR enables is analysis of very large data sets that would otherwise exceed the memory and processing capabilities of any one machine.
+[RevoScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although RevoScaleR works on both small and large datasets, what RevoScaleR enables is analysis of very large data sets that would otherwise exceed the memory and processing capabilities of any one machine.
 
-If you are new to Microsoft R and ScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. For a first "hands on" experience, this article offers a quick start: two basic lessons demonstrating data import and analysis. In a few short steps, you can interact with ScaleR functions using data from a comma delimited text file.
+If you are new to Microsoft R and RevoScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. this tutorial offers two basic lessons demonstrating data import and analysis. In a few short steps, you can practice with RevoScaleR functions using data from a comma delimited text file.
 
-ScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. ScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
+RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. RevoScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
 
 ## Prerequisites
 
-To complete this quick start as written, you will need about 15 minutes and the following components:
+To complete this tutorial as written, you will need about 15 minutes and the following components:
 
-* [Visual Studio 2015 (community edition or another edition)](https://www.visualstudio.com/downloads/)
+* [Visual Studio](https://www.visualstudio.com/downloads/)
+* [R Tools for Visual Studio download (RTVS)](https://docs.microsoft.com/en-us/visualstudio/rtvs/installation)
 * [Microsoft R Client](http://aka.ms/rclient/download) (or [Microsoft R Server](rserver.md))
-* [R Tools for Visual Studio download (RTVS)](https://www.visualstudio.com/vs/rtvs/)
 
-Setup for **Microsoft R Client** includes an option for also installing **R Tools for Visual Studio (RTVS)**. RTVS adds the R project template, R Interactive windows, R Help, and other development support.
+RTVS adds an R project template, R Interactive windows, R Help, and other development support.
 
-Microsoft R Client and R includes sample data and packages for the R language, so once you have the tools there is nothing more to download.
+Microsoft R Client and R Server include sample data and packages for the R language, so once you have the tools there is nothing more to download.
 
 ## About the sample data set
 
-*AirlineDemoSmall.csv* is the dataset used in this tutorial. It is a subset of a data set about flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
+*AirlineDemoSmall.csv* is the dataset used in this tutorial. It is built in, so there is nothing to download. The .csv file is derived from a larger data set about flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
 
 ## Start a project
 
@@ -112,11 +112,11 @@ We can also compute descriptive statistics for the variable:
 		Name     Mean     StdDev   Min Max  ValidObs MissingObs
 		ArrDelay 11.31794 40.68854 -86 1490 582628   17372
 ~~~~
-This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were cancelled.
+This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were canceled.
 
-We can use ScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Since we have our original data safely stored in a text file, we will simply add this variable to our existing airline.xdf file using the *transforms* argument to *rxDataStep*. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
+We can use RevoScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Since we have our original data safely stored in a text file, we will simply add this variable to our existing airline.xdf file using the *transforms* argument to *rxDataStep*. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
 
-The full ScaleR data step then consists of the following steps:
+The full RevoScaleR data step then consists of the following steps:
 
 1.  Read in the *data* a block (200,000 rows) at a time.
 2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
@@ -198,24 +198,24 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
 ~~~~
 
 <a name="chunking"></a>
-## Data chunking and ScaleR
+## Data chunking and RevoScaleR
 
-A primary benefit of ScaleR is its ability to apportion data into multiple parts for processing, reassembling it later for analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which ScaleR processes and analyzes very large data sets.
+A primary benefit of RevoScaleR is its ability to apportion data into multiple parts for processing, reassembling it later for analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
 
-In Microsoft R products, chunking functionality is available only when ScaleR is accessed via R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when ScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. For more information, see [Microsoft R Server](rserver.md).
+In Microsoft R products, chunking functionality is available only when RevoScaleR is accessed via R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. For more information, see [Microsoft R Server](rserver.md).
 
 ## Next steps
 
 This quick start demonstrated a basic workflow, but there are several more tutorials that go into more detail and cover more scenarios, including instructions for working with bigger data sets.
 
-  - [ScaleR tutorial using airplane flight data](scaler-getting-started-0-example-airline-data.md)
-  - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
-  - [Example: Analyzing loan data with ScaleR](scaler-getting-started-1-example-loan-data.md)
-  - [Example: Analyzing census data with ScaleR](scaler-getting-started-2-example-census-data.md)
+  - [RevoScaleR tutorial using airplane flight data](scaler-getting-started-0-example-airline-data.md)
+  - [Analyze large data with RevoScaleR](scaler-getting-started-3-analyze-large-data.md)
+  - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)
+  - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md)
 
 ### Try demo scripts
 
- Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
+ Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
 
  Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
@@ -223,33 +223,30 @@ This quick start demonstrated a basic workflow, but there are several more tutor
 
 ### Watch this video
 
-This 30-minute video is the second in a 4-part video series. It demonstrates ScaleR functions for data ingestion.
+This 30-minute video is the second in a 4-part video series. It demonstrates RevoScaleR functions for data ingestion.
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
 <a name="get-help"></a>
 ### Get function help
 
-  R packages typically include embedded package help reference and ScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
+  R packages typically include embedded package help reference and RevoScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
 
   - In R Help, click the Home button.
   - Click **Packages**.
-  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here.
+  - Scroll down and click **RevoScaleR** to open the package help. All RevoScaleR functions are documented here.
 
 ### Get more information
 
-Continue building up your knowledge of ScaleR with these additional resources.
+Continue building up your knowledge of RevoScaleR with these additional resources.
 
-- [ScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
-- [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)
-- [ScaleR Getting Started with SQL Server](https://msdn.microsoft.com/library/mt604885.aspx)
-- [ScaleR Distributed Computing Guide](scaler-distributed-computing.md)
-- [ScaleR ODBC Data Import Guide](scaler-odbc.md)
+- [Getting Started with Hadoop and RevoScaleR](scaler-hadoop-getting-started.md)    
+- [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
+- [Importing data](scaler-user-guide-data-import.md)
+- [ODBC data import](scaler-odbc.md)
 
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
-
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
-
-[RevoScaleR Functions](scaler/scaler.md)
+ [Introduction to Microsoft R](microsoft-r-getting-started.md)  
+ [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)    
+ [RevoScaleR Functions](scaler/scaler.md)       

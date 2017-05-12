@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyze a large data set with ScaleR in Microsoft R"
-description: "Learn how to work with big data using a sample airline dataset in this ScaleR tutorial walkthrough."
+title: "Tutorial: Load and analyze a large data set with RevoScaleR in Microsoft R"
+description: "Learn how to work with big data using a sample airline dataset in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Analyzing a Large Data Set with ScaleR (Microsoft R)
+# Tutorial: Load and analyze a Large Data Set with RevoScaleR (Microsoft R)
 
-This tutorial builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
+This tutorial builds on what you learned in the [first RevoScaleR tutorial](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
 ## Download the airline dataset
 
-To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+To really get a feel for RevoScaleR, you should work with functions using a larger data set. Larger data sets are available for download [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 You can use a smaller or larger data set with this tutorial. Datasets for this tutorial include the following:
 
