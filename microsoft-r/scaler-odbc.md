@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "RevoScaleR ODBC data import"
-description: "Microsoft R Server data import with ODBC."
+title: "ODBC configuration for RevoScaleR data import"
+description: "Install and verify ODBC drivers for data import in Microsoft R."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -26,24 +26,71 @@ ms.custom: ""
 
 # ODBC configuration for importing data into Microsoft R
 
-RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing database management systems and databases.
+**Applies to: Microsoft R Server and Microsoft R Client**
 
-ODBC connectivity is managed by an ODBC *Driver Manager*. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, there are two commonly available ODBC driver managers, unixODBC and iodbc, along with commercial implementations of the Windows ODBC driver manager which are sometimes distributed with commercial database drivers. *RevoScaleR supports unixODBC, but not iodbc.* It is important that the version of unixODBC you install be compatible with the databases you need to connect to. See the section Configuring unixODBC for complete details.
+RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data.
 
-These instructions do not apply to Teradata. If you need to connect to a Teradata data warehouse, see [*Microsoft R Server Client Installation Guide for Teradata*](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
+ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/). 
 
-For each database you intend to use as a data source, you must do the following:
+For each database you intend to use as a data source:
 
-1.  Install the appropriate ODBC driver(s) on your local machine. These should be 64-bit drivers.
-2.  Create an `RxOdbcData` data source using information appropriate to your database installation.
-3.  Use the `rxImport` function to read data from the data source into an .xdf file for further use by RevoScaleR.
-4.  Use the `rxDataStep` to write data back to the data source.
+1. Install an ODBC Driver Manager (Linux only).	
+2. Install ODBC drivers.	
+3. Create an `RxOdbcData` data source for the source data.	
+4. For read operations, use `rxImport` to read data from the data source into an .xdf file or in-memory data frame.	
+5. For write operations, use `rxDataStep` to write data back to the data source.
 
-## Some Quick Examples
+These instructions do not apply to Teradata. If you need to connect to a Teradata data warehouse, see [Microsoft R Server Client Installation Guide for Teradata](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
 
-If you have a configured database and the necessary ODBC drivers, actually extracting data is quite straightforward. For example, most Windows systems come with SQL Server ODBC drivers pre-installed, so you can go right to work extracting data from a SQL server database with just a username, password, and a few specifics like the actual database name and table you want to extract data from. These can be combined into a single SQL connection string and then used to extract data as follows (note that some drivers and operating systems may require somewhat different syntax, so for example, the curly braces around the driver name may need to be omitted; Linux drivers typically will reject connection strings containing white space, etc.):
+## Step 1: Install unixODBC (Linux only)
 
-~~~~
+An ODBC Driver Manager manages communication between applications and drivers. On Linux, an ODBC Driver Manager is not typically bundled in a Linux distribution. Although several driver managers are available, Microsoft R supports the unixODBC Driver Manager. 
+
+To first check whether unixODBC is installed, do the following:
+
++ On RHEL: `rpm –qa | grep unixODBC`	
++ On Ubuntu: `apt list --installed | grep unixODBC`	
++ On SLES: `zypper se unixODBC`	
+
+If unixODBC is not installed, issue the following commands to add it:
+
++ On RHEL: `sudo yum install unixodbc-devel unixodbc-bin unixodbc`
++ On Ubuntu: `sudo apt-get install unixodbc-devel unixodbc-bin unixodbc`
++ On SLES: `sudo zypper install unixODBC`
+
+For more information, SQL Server documentation provide in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of operating system. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
+
+## Step 2: Install or verify ODBC drivers
+
+Drivers for commonly used databases are often pre-installed with the operating system or database management system, but most can be downloaded from vendor web sites. 
+
+ODBC drivers must be installed on your local machine running R Server or R Client, as well as the remote database server. Local drivers are used by the database client library to connect to remote data sources.
+
+The following table provides links to download pages for several data platforms.
+
+Data platform | Driver download pages and instructions|
+-------------|---------------------------------|
+SQL Server on Linux | [Installing the Microsoft ODBC Driver for SQL Server on Linux](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-microsoft-odbc-driver-for-sql-server-on-linux) |
+Oracle Instant Client | [Oracle Instant Client Downloads](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html) |
+MySQL | [Download Connector/ODBC](https://dev.mysql.com/downloads/connector/odbc) |
+PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
+Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/connectors/hive/odcbc/2-5-12.html) |
+
+## Step 3: Create an RxOdbcData object
+
+RxOdbcData is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database, with the exception of specific platforms (Teradata and SQL Server). In Microsoft, R, those platforms have an in-database experience through rxInTeradata and rxInSQLServer,
+
+An RxOdbcData object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
+
+
+## Read data using rxImport
+
+## Write data using rxDataStep
+
+## Examples
+
+This example uses a connection string to connect to a local SQL Server instance and the AdventureWorks database. For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
+
 sConnectionStr \<- "Driver={SQL Server};Server=win-database01;
  Database=TestData;Uid=mktest;Pwd=sqlpwd;"
 
@@ -109,115 +156,8 @@ myCars <- rxDataStep(myTable)
 head(myCars)
 ~~~~
 
-## Configuring unixODBC
 
-If you intend to use ODBC connectivity in a Linux environment, you must install unixODBC. You can check to see if unixODBC has been installed on your system using the following command:
-
-~~~~
-rpm –qa | grep unixODBC
-~~~~
-
-If this returns nothing, you can install unixODBC using the following commands:
-
-On RHEL systems:
-
-~~~~
-sudo yum install unixODBC
-~~~~
-
-On SLES systems:
-
-~~~~
-sudo zypper install unixODBC
-~~~~
-
-## Installing ODBC Drivers
-
-ODBC drivers are available for most commercial and open-source databases, either from the database vendor or third parties. 
-
-ODBC drivers must be installed on your local machine as well as the remote database server. Local drivers are used by the database client library to connect to remote data sources.
-
-Internally, we have tested the following databases:
-
--   SQLite 3
--   SQL Server 2008 and 2014
--   Oracle Express
--   MySQL® 5.1
-
-**Installing SQLite and the SQLite ODBC Drivers on Windows**
-
-SQLite is a “serverless database” that allows you store a complete database, with tables, indices, and views, in a single disk file. It is simple to install; you simply download the three Windows binary zip files from <http://www.sqlite.org/download.html> and extract them into your C:\\Windows\\System32 folder.
-
-An ODBC driver for SQLite is available at <http://www.ch-werner.de/sqliteodbc>. We have tested versions .88 and later; version .92 has a known incompatibility in that RevoScaleR is unable to obtain correct row position data using that version. We recommend version .93 or later. Download the 64-bit executable and run the executable to install the appropriate driver.
-
-**Installing SQLite and the SQLite ODBC Drivers on Linux**
-
-SQLite is a “serverless database” that allows you store a complete database, with tables, indices, and views, in a single disk file. To install SQLite and the SQLite ODBC drivers on Linux, perform the following steps:
-
-1.  Ensure that you have unixODBC installed:
-
-		ls -l /usr/lib64/libodb\*
-
-2.  Obtain the SQLite sources from <http://www.sqlite.org/download.html>.
-
-3.  Unpack the sources using tar zxvf \<tarball-name\>, then cd to the directory containing the unpacked sources.
-
-4.  Run the standard configure and make commands:
-
-		./configure
-		make
-		sudo make install
-
-5.  Obtain the SQLite ODBC driver source from <http://www.ch-werner.de/sqliteodbc>. We have tested versions .88 and later; version .92 has a known incompatibility in that RevoScaleR is unable to obtain correct row position data using that version. We recommend version .88 if you are running Red Hat Enterprise Linux 5 or equivalent with standard yum install of unixODBC, otherwise version .93 or later.
-
-6.  Unpack the sources using tar zxvf \<tarball-name\>, then cd to the directory containing the unpacked sources.
-
-7.  Run the standard configure and make commands:
-
-		./configure
-		make
-		sudo make install
-
-8.  Edit the file /etc/odbcinst.ini, adding the following section:
-
-		[SQLite3 ODBC Driver]
-		Description=SQLite ODBC Driver
-		Driver=/usr/local/lib/libsqlite3odbc.so
-		Setup=/usr/local/lib/libsqlite3odbc.so
-		Threading=2
-
-**Installing MySQL ODBC Drivers on Windows**
-
-MSI installers for 64-bit MySQL ODBC drivers are available at the MySQL Web site, <http://dev.mysql.com/downloads/connector/odbc/>. Download and run the appropriate installer to install the driver.
-
-**Installing MySQL ODBC Connector on Red Hat Enterprise Linux**
-
-MySQL has connectors that work with either the standard yum installs of the unixODBC driver manager or with the latest unixODBC 2.3.1. If you are using the standard yum install, use the mysql-connector-odbc-5.1.12-1.rhel5.x86\_64.rpm which you can download from their website, <http://dev.mysql.com/downloads/connector/odbc/>. Download and run the appropriate installer to install the connector.
-
-If you are using the unixODBC 2.3.1 driver manager, use the mysql-connector-odbc-5.2.4-1.rhel5.x86\_64.rpm, available on the same site.
-
-After you have installed the connector, configure your installation by editing the files 'odbc.ini' and 'odbcinst.ini'. The default location for these is the system /etc folder. If you create them somewhere else, you can ensure they are found by setting the following environment variables
-
-		export ODBCINI=/path/to/odbc.ini
-
-		export ODBCSYSINI=/path/to/odbcinst.ini
-
-## Using ODBC Data Sources
-
-**Working with SQLite Files** 
-
-SQLite is a special database system in that it is file-based and serverless. Each file corresponds to a database, which may contain multiple tables, indexes, etc. Because there is no server, there are no credentials to worry about (file permissions remain important, however). So, in general, working with a SQLite database is quite simple—the connection string needs to specify only the driver (on Windows, the name of the driver is the name shown in the Drivers tab of the ODBC Data Source Administrator under Name) and the file name, as in the following example:
-
-		SQLiteFile <- file.path(system.file("SampleData", 
-			package="RevoScaleR"), "claims.sqlite")
-	SQLiteConnString <- sprintf(
-			"Driver={SQLite3 ODBC Driver};Database=%s",
-			SQLiteFile)
-		SQLiteDS <- RxOdbcData(sqlQuery = "SELECT * FROM claims",
-	                           connectionString=SQLiteConnString)
-		SQLiteOutfile <- "claimsFromSQLite.xdf"
-		rxImport(SQLiteDS, SQLiteOutfile, overwrite=TRUE)
-		rxGetInfo(SQLiteOutfile, getVarInfo=TRUE, numRows=10) 
+## RxOdbcData Example for SQL Server and Oracle (with arguments) 
 
 
 **Working with SQL Server**
@@ -339,8 +279,7 @@ This yields a list of tables similar to the following:
 	[139] "TestFile"                      "1987"    
 
 
-Working with MySQL Files on Red Hat Enterprise Linux
-----------------------------------------------------
+**Working with MySQL Files on Red Hat Enterprise Linux**
 
 You first need to specify the name of your DSN. On Linux, this will be the same as the name you specify for the ODBC configuration.
 

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Quickstart tutorial: Import CSV data files into R Server"
-description: "How to import CSV files into an XDF file on Microsoft R Server"
+title: "Create an XDF file in R Server"
+description: "How to import CSV and other files to create an XDF file on Microsoft R Server"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -24,47 +24,31 @@ ms.custom: ""
 
 ---
 
-# How to import data into R Server using CSV files, rxImport, and an XDF file
+# Create an XDF file in Microsoft R Server
 
 **Applies to: Microsoft R Server**
 
-XDF is the native file format for persisted data in Microsoft R Server. CSVs are commonplace on almost every platform. In this Quickstart we bring them together in two exercises showing how to import a single CSV file, and then multiple CSV files, into one XDF. 
+XDF is the native file format for persisted data in Microsoft R Server and it has the following characteristics:
 
-XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to modularize data into chunks, with columnar storage for variables, for very fast read and write operations.
++ Columnar storage, one column per variable, for efficient read-write operations of variable data. In data science and machine learning, variables rather than rowsets are the data structures typically used in models. Thus, XDF stores variables as columns.
 
-To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. 
++ Compression is applied when the file is written to disk. 
 
-By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file, which is the objective of this tutorial.
++ Data chunking using blocks in XDF.
 
-Before you begin this Quickstart, have the following ready:
+XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to modularize data into chunks, with columnar storage for variables, for very efficient read and write operations.
 
-- [R Server for Windows](rserver-install-windows.md) or [R Server Linux](rserver-install-linux-server.md).
-- An R console application. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file.
 
-*Time estimate:*
+## How to read in data from 
 
-If you have completed the prerequisites, this Quickstart will take approximately 5-10 minutes to complete.
+## How to read in one CSV file
 
-## Locate sample data
+This task uses an R console and [sample data](scaler-user-guide-sample-data.md) to illustrate an import of a single CSV file.
 
-This tutorial uses functions and the built-in sample data files from the RevoScaleR package, which is automatically loaded whenever you start an R Server session in a console application. 
+On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. 
 
-1. Open the R console or start a Revo64 session.
-
-2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by entering the following command at the command prompt:
-
-        list.files(rxGetOption("sampleDataDir"))
-
-The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
-
-In the file list, notice the CSV files for mortgage defaults for the years 2000 through 2009 (such as mortDefaultSmall2000.csv). This tutorial uses those files to demonstrate the creation of an XDF file.
-
-> [!NOTE]
-> If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.
-
-## How to read in one file
-
-In this section, you will import a single file and learn about functions and arguments.
+On Linux, you can type **Revo64** at the command line.
 
 ### Set the source file location
 
@@ -121,7 +105,7 @@ Output is below. Variables are based on fields in the CSV file. In this case, th
     Var 5: year, Type: integer, Low/High: (2000, 2000)
     Var 6: default, Type: integer, Low/High: (0, 1)
 
-## How to read in multiple files
+## How to read in multiple CSV files
 
 Another equally important use case is to import multiple files at once. As you saw in the beginning, sample data includes mortgage default data for multiple years. In this exercise, you will import all of them to a single XDF by appending one after another, again using a combination of base R commands and RevoScaleR functions.
 
@@ -184,7 +168,7 @@ To practice these tasks on the sample files you just created, continue with thes
 
 ### Try demo scripts
 
- Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. 
+ Another way to learn about data import is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you saw in this exercise. 
 
  Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
 
@@ -192,7 +176,7 @@ To practice these tasks on the sample files you just created, continue with thes
 
 ### Watch this video
 
-This 30-minute video is the second in a 4-part video series. It covers and expands upon the techniques you learned in this Quickstart. 
+This 30-minute video is the second in a 4-part video series. It covers and expands upon the techniques you learned in this task. 
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 

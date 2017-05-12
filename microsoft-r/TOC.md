@@ -6,18 +6,9 @@
 ## [About Microsoft R Open](r-open.md)
 
 # Quickstarts
-## [R Client: Predict flight delays](r-client-quick-start-airline-delays.md)
-## [R Server: Import CSV-to-XDF](quickstart-rserver-data-import-csv.md)
+## [Run R code in Microsoft R](r-client-quick-start-airline-delays.md)
 
-#[Get started with MicrosoftML](microsoftml-get-started.md)
-## [Introduction to MicrosoftML](microsoftml-introduction.md)
-## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
-## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
-
-# [Get started with RevoScaleR](microsoft-r-get-started-node.md)
+# [Tutorials](microsoft-r-get-started-node.md)
 ## [What is RevoScaleR?](scaler-user-guide-introduction.md)
 ## [Learn RevoScaleR functions for large data analysis](scaler-getting-started.md)
 ### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
@@ -34,11 +25,21 @@
 
 # [Get started with sparklyr](microsoft-r-get-started-spark-interop.md)
 
+#[Get started with MicrosoftML](microsoftml-get-started.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
+
 # [Diving into data analysis](data-analysis-in-microsoft-r.md)
-## Data aqcuisition
+## Data 
+### [Create an XDF file](rserver-create-xdf.md)
 ### [Importing Data](scaler-user-guide-data-import.md)
 ### [Configure data import for ODBC data sources](scaler-odbc.md)
 ### [Data Sources](scaler-user-guide-data-source.md)
+
 ### [Transform and Subset Data](scaler-user-guide-data-transform.md)
 ## [Statistical Summaries](scaler-user-guide-data-summaries.md)
 ## [Crosstabs](scaler-user-guide-crosstabs.md)

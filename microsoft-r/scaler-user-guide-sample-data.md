@@ -28,11 +28,26 @@ ms.custom: ""
 
 Sample data is available both within the RevoScaleR package and [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
-To view the files available within the package, execute the following open source R command at an R console command line:
+## Locate built-in sample data
 
-	list.files(system.file("SampleData", package = "RevoScaleR"))
+RevoScaleR provides functions for retrieving information about sample data. Use one of the R console applications to execute the open R `list.files` command with the RevoScaleR rxGetOption function and the SampleDataDir argument. 
 
-You should see the following list:
+1. Open the R console or start a Revo64 session.
+
+  On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+
+2. Retrieve the file list by entering the following command at the command prompt:
+
+        list.files(rxGetOption("sampleDataDir"))
+
+  The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+
+> [!NOTE]
+> If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.
+
+## File list
+
+You should see the following files 
 
 	[1] "AirlineDemo1kNoMissing.csv" "AirlineDemoSmall.csv"      
 	[3] "AirlineDemoSmall.xdf"       "AirlineDemoSmallComposite" 
@@ -64,14 +79,6 @@ Sample data is provided in multiple formats so that you can step through various
 + XDF is the native file format engineered for fast retrieval of columnar data. In this format, data is stored in blocks, which is an advantage on distributed file systems and for import operations that include append or overwrites at the block level.	
 + CSV files are used to showcase multi-file import operations.
 + Several other data formats are used for platform-specific lessons.
-
-The location of the sample data directory is stored as an option in RevoScaleR, and you can access it with the following command:
-
-	rxGetOption("sampleDataDir")
-
-To get the list of data files shown above, use the open source R command, list.files:
-
-	list.files(rxGetOption("sampleDataDir"))
 
 Most of the built-in data sets are small enough to fit in-memory. Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
