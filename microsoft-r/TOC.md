@@ -5,9 +5,12 @@
 ## [About Microsoft R Client](r-client.md)
 ## [About Microsoft R Open](r-open.md)
 ## [About RevoScaleR](scaler-user-guide-introduction.md)
+## What's New
+### [What's new in R Server](rserver-whats-new.md)
 
 # Quickstarts
 ## [Run R code in Microsoft R](r-client-quick-start-airline-delays.md)
+## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
 
 # [Tutorials](microsoft-r-get-started-node.md)
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
@@ -16,14 +19,11 @@
 ## [Load and analyze large data sets](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data example](scaler-getting-started-1-example-loan-data.md)
 ### [Census data example](scaler-getting-started-2-example-census-data.md)
-
-#[Get started with MicrosoftML](microsoftml-get-started.md)
-## [Introduction to MicrosoftML](microsoftml-introduction.md)
-## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
-## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
+## [Get started with MicrosoftML](microsoftml-get-started.md)
+### [Introduction to MicrosoftML](microsoftml-introduction.md)
+### [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+### [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+### [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 
 # Samples
 ## [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
@@ -59,11 +59,10 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-# [Microsoft R Server](rserver.md)
 
-## [What's new](rserver-whats-new.md)
-
-## [Install and configure](rserver.md)
+# Install and configure
+## [Pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Micorosft R Server](rserver.md)
 ### [Supported platforms](rserver-install-supported-platforms.md)
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
@@ -124,11 +123,11 @@
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
 
-### [Provision in the Cloud](vm-cloud.md)
-#### [Azure HDInsight](vm-r-server-hdinsight.md)
-#### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
-#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-#### [Microsoft Data Science VM](vm-data-science.md)
+## [Provision in the Cloud](vm-cloud.md)
+### [Azure HDInsight](vm-r-server-hdinsight.md)
+### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+### [Microsoft Data Science VM](vm-data-science.md)
 
 ## [Deploy and consume analytics](operationalize/about.md)
 ### [Introduction](operationalize/about.md)
