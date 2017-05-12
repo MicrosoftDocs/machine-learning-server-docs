@@ -157,6 +157,44 @@ Results from this command prove that you have 10 blocks, one for each .csv file.
         Number of blocks: 10 
         Compression type: zlib 
 
+## Example: Write XDF to HDFS
+
+This example shows how to write a data frame directly to HDFS using the built-in Iris data set:
+
+Set the user name: 
+
+    > username <- "revolution" 
+
+Set folder paths:
+
+    hdfsDataDirRoot <- paste("/user/RevoShare/", username, sep="")
+    localfsDataDirRoot <- paste("/var/RevoShare/", username, sep="")
+    setwd(localfsDataDirRoot)
+
+ 
+Set compute context: 
+
+    port <- 8020 # KEEP IF USING THE DEFAULT
+    host <- system("hostname", intern=TRUE)
+    hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
+
+    myHadoopCluster <- RxHadoopMR(
+
+    nameNode= host, 
+    port=port, 
+    consoleOutput=TRUE)
+    
+    rxSetComputeContext(myHadoopCluster)
+
+
+Write the XDF to a text file on HDFS:
+
+    air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
+    air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
+    
+    rxDataStep(air7x,air7t)
+
+
 ## Next steps
 
 As you have seen for yourself, creating an XDF file is simple when you have the right functions. The XDF file can be split into smaller parts, combined into a larger file, or distributed across multiple nodes in a distributed file system like HDFS. 

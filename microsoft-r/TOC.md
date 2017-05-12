@@ -4,26 +4,18 @@
 ## [About SQL Server Machine Learning Services](sql-server-r-services.md)
 ## [About Microsoft R Client](r-client.md)
 ## [About Microsoft R Open](r-open.md)
+## [About RevoScaleR](scaler-user-guide-introduction.md)
 
 # Quickstarts
 ## [Run R code in Microsoft R](r-client-quick-start-airline-delays.md)
 
 # [Tutorials](microsoft-r-get-started-node.md)
-## [What is RevoScaleR?](scaler-user-guide-introduction.md)
-## [Learn RevoScaleR functions for large data analysis](scaler-getting-started.md)
-### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
-### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
-#### [Loan data example](scaler-getting-started-1-example-loan-data.md)
-#### [Census data example](scaler-getting-started-2-example-census-data.md)
-### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
-### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
-### [Manage threads in RevoScaleR](scaler-user-guide-manage-threads.md)
-### [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
-## [R-to-RevoScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
-## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
-## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
-
-# [Get started with sparklyr](microsoft-r-get-started-spark-interop.md)
+## [R-to-RevoScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
+## [Basic workflow: import to summary](scaler-getting-started.md)
+## [Data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
+## [Load and analyze large data sets](scaler-getting-started-3-analyze-large-data.md)
+### [Loan data example](scaler-getting-started-1-example-loan-data.md)
+### [Census data example](scaler-getting-started-2-example-census-data.md)
 
 #[Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
@@ -33,14 +25,23 @@
 ## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
 ## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
 
-# [Diving into data analysis](data-analysis-in-microsoft-r.md)
-## Data 
-### [Create an XDF file](rserver-create-xdf.md)
-### [Importing Data](scaler-user-guide-data-import.md)
-### [Configure data import for ODBC data sources](scaler-odbc.md)
-### [Data Sources](scaler-user-guide-data-source.md)
+# Samples
+## [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
+## [Parallel processing example (with rxExecby)](quickstart-rxexecby.md)
+## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-### [Transform and Subset Data](scaler-user-guide-data-transform.md)
+# [How-to for data scientists](data-analysis-in-microsoft-r.md)
+## Data 
+### [Import Data](scaler-user-guide-data-import.md)
+### [ODBC configuration](scaler-odbc.md)
+### [Create data sources](scaler-user-guide-data-source.md)
+### [Create XDF files](rserver-create-xdf.md)
+### [Transform and subset data](scaler-user-guide-data-transform.md)
+### [Tips on computing with big data](microsoft-r-getting-started-tips.md)
+### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
+### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
+### [Manage threads in RevoScaleR](scaler-user-guide-manage-threads.md)
+
 ## [Statistical Summaries](scaler-user-guide-data-summaries.md)
 ## [Crosstabs](scaler-user-guide-crosstabs.md)
 ## Models
