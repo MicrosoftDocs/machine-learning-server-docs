@@ -14,8 +14,8 @@
 
 # [Tutorials](microsoft-r-get-started-node.md)
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
-## [Basic workflow: import to summary](scaler-getting-started.md)
-## [Data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
+## [Learn the basic workflow: import to summary](scaler-getting-started.md)
+## [Learn data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
 ## [Load and analyze large data sets](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data example](scaler-getting-started-1-example-loan-data.md)
 ### [Census data example](scaler-getting-started-2-example-census-data.md)
