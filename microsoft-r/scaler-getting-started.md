@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Basic workflow tutorial: import to summary"
-description: "Learn the basic workflow from import to data summarization using the RevScaleR functions in Microsoft R."
+title: "Tutorial: Basic workflow import-to-summary"
+description: "Learn the basic workflow from import to data summarization using the RevoScaleR functions in Microsoft R."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Basic workflow tutorial: import to summary (Microsoft R)
+# Tutorial: Learn the basic workflow from import to summary (Microsoft R)
 
 [RevoScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although RevoScaleR works on both small and large datasets, what RevoScaleR enables is analysis of very large data sets that would otherwise exceed the memory and processing capabilities of any one machine.
 

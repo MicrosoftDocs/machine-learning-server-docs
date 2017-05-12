@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Example: Analyzing census data using ScaleR in Microsoft R"
-description: "Learn how to work with big datasets using sample census data in thisample loandata in this ScaleR tutorial walkthrough.s ScaleR tutorial walkthrough."
+title: "Tutorial: Analyzing census data using RevoScaleR in Microsoft R"
+description: "Learn how to work with big datasets using sample census data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "10/14/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing US census data with ScaleR (Microsoft R)
+# Tutorial: Analyzing US census data with RevoScaleR (Microsoft R)
 
-This example builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by exploring the import and statistical ScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in an [earlier tutorial](scaler-getting-started.md) by exploring the import and statistical RevoScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download the census dataset
 

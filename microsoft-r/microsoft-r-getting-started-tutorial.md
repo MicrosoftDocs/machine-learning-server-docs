@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Explore R-to-RevoScaleR in 25 functions"
-description: "Execute R and RevoScaleR commands using R Microsoft R Client or R Server."
+title: "Tutorial: Explore R-to-RevoScaleR in 25 functions"
+description: "Explore and execute R and RevoScaleR commands using R Microsoft R Client or R Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -26,7 +26,7 @@ ms.custom: ""
 
 ---
 
-# Explore R and RevoScaleR in 25 functions
+# Tutorial: Explore R and RevoScaleR in 25 functions
 
 If you are new to both R and Microsoft R, this short tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 

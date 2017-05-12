@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Example: Analyzing loan data using ScaleR in Microsoft R"
-description: "Learn how to work with big datasets using sample loan data in this ScaleR tutorial walkthrough."
+title: "Tutorial: Analyzing loan data using RevoScaleR in Microsoft R"
+description: "Learn how to work with big datasets using sample loan data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing loan data with ScaleR (Microsoft R)
+# Tutorial: Analyzing loan data with RevoScaleR (Microsoft R)
 
-This example builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in an [earlier tutorial](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
 ## Get the mortgage default data set
 

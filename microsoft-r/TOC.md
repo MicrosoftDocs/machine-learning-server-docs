@@ -9,7 +9,7 @@
 ### [What's new in R Server](rserver-whats-new.md)
 
 # Quickstarts
-## [Run R code in Microsoft R](r-client-quick-start-airline-delays.md)
+## [Run R code in Microsoft R](r-client-quickstart-airline-delays.md)
 ## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
 
 # [Tutorials](microsoft-r-get-started-node.md)

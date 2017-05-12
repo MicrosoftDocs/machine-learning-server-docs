@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# RevScaleR tutorial on data manipulation and statistical analysis (Microsoft R)
+# Tutorial: Data manipulation and statistical analysis (Microsoft R)
 
-This tutorial builds on what you learned in the [first tutorial](scaler-getting-started.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
+This tutorial builds on what you learned in an [earlier tutorial](scaler-getting-started.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
