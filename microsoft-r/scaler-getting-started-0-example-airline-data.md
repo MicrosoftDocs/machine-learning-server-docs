@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Data manipulation and statistical analysis in Microsoft R"
+title: "Tutorial: Practice data manipulation and statistical analysis in Microsoft R"
 description: "Learn the RevoScaleR functions in Microsoft R Client and Microsoft R Server using this tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Data manipulation and statistical analysis (Microsoft R)
+# Tutorial: Practice data manipulation and statistical analysis (Microsoft R)
 
 This tutorial builds on what you learned in an [earlier tutorial](scaler-getting-started.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
