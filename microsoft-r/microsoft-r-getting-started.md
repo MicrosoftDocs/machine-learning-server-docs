@@ -90,16 +90,6 @@ Features provided by Microsoft R Server, Microsoft R Client, and Microsoft R Ope
 
 <sup>2</sup> Because the Intel Math Kernel Library (MKL) is included in MRO, the performance of a generic R solution is generally better. MKL replaces the standard R implementations of Basic Linear Algebra Subroutines (BLAS) and the LAPACK library with multithreaded versions. As a result, calls to those low-level routines tend to execute faster on Microsoft R than on a conventional installation of R.
 
-## Microsoft R Open
-
-[!include[Microsoft R Open](./includes/r-open/mro-intro.md)]
-
-<a name="mrc"></a>
-## Microsoft R Client
-
-[!include[Microsoft R Client](./includes/r-client/r-client-intro.md)]
-
-Learn how to [install and get started with Microsoft R Client](r-client-get-started.md).
 
 ## Microsoft R Server
 
