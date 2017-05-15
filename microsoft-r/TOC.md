@@ -68,7 +68,7 @@
 #### [Offline install](rserver-install-windows-offline.md)
 #### [Command line install](rserver-install-windows-commandline.md)
 
-### [R Server for Linux](rserver-install-linux-server.md)
+### [Linux](rserver-install-linux-server.md)
 #### [Install on Linux](rserver-install-linux-server.md)
 #### [Offline install](rserver-install-linux-offline.md)
 #### [Manage your installation](rserver-install-linux-manage-install.md)
@@ -77,7 +77,7 @@
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
 
-### [R Server for Hadoop](rserver-install-hadoop.md)
+### [Hadoop](rserver-install-hadoop.md)
 #### [Install on Hadoop](rserver-install-hadoop.md)
 ##### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
 ###### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
@@ -99,12 +99,18 @@
 #### [Get started on Spark](scaler-spark-getting-started.md)
 #### [Get started on MapReduce](scaler-hadoop-getting-started.md)
 
-### [R Server for Teradata DB](scaler-teradata-getting-started.md)
+### [Teradata DB](scaler-teradata-getting-started.md)
 #### [Install on Teradata](rserver-install-teradata-server.md)
 ##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
+
+### [Provision in the cloud](vm-cloud.md)
+#### [Azure HDInsight](vm-r-server-hdinsight.md)
+#### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Microsoft Data Science VM](vm-data-science.md)
 
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
@@ -122,11 +128,15 @@
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
 
-## [Provision in the Cloud](vm-cloud.md)
-### [Azure HDInsight](vm-r-server-hdinsight.md)
-### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
-### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-### [Microsoft Data Science VM](vm-data-science.md)
+## [Microsoft R Client](r-client-get-started.md)
+### [Install on Windows](r-client-install-windows.md)
+### [Install on Linux](r-client-install-linux.md)
+
+## [Python development environment](r-client-get-started.md)
+
+## [Pretrained models](deploy-pretrained-microsoftml-models.md)
+
+# How-to
 
 ## Deploy and consume analytics
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
@@ -509,3 +519,58 @@
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
 ## [Glossary](microsoft-r-glossary.md)
 ## [Additional resources](microsoft-r-more-resources.md)
+
+
+# [Get started with RevoScaleR](microsoft-r-get-started-node.md)
+## [What is ScaleR?](scaler-user-guide-introduction.md)
+## [Learn ScaleR functions for large data analysis](scaler-getting-started.md)
+### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
+### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+#### [Loan data example](scaler-getting-started-1-example-loan-data.md)
+#### [Census data example](scaler-getting-started-2-example-census-data.md)
+### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
+### [Write custom analyses for large data sets in ScaleR](scaler-user-guide-write-custom-analyses.md)
+### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
+### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
+## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
+## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
+## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
+
+# [Get started with MicrosoftML](microsoftml-get-started.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML function reference](microsoftml/microsoftml.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+## [Samples for MicrosoftML](microsoftml-quickstarts.md)
+
+# [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
+
+# [Diving into data analysis](data-analysis-in-microsoft-r.md)
+## [Importing Data](scaler-user-guide-data-import.md)
+### [Configure data import for ODBC data sources](scaler-odbc.md)
+## [Data Sources](scaler-user-guide-data-source.md)
+## [Transform and Subset Data](scaler-user-guide-data-transform.md)
+## [Data Summaries](scaler-user-guide-data-summaries.md)
+## [Crosstabs](scaler-user-guide-crosstabs.md)
+## [Models in RevoScaleR](scaler-user-guide-models.md)
+## [Linear Models](scaler-user-guide-linear-model.md)
+## [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
+## [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
+## [Decision Tree Models](scaler-user-guide-decision-tree.md)
+## [Decision Forest Models](scaler-user-guide-decision-forest.md)
+## [Stochastic Gradient Boosting](scaler-user-guide-boosting.md)
+## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
+## [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
+## [Clustering](scaler-user-guide-cluster.md)
+## [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
+## [Transform Functions](scaler-user-guide-transform-functions.md)
+## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
+
+# [Distributed and parallel computing on R Server](scaler-distributed-computing.md)
+## [Compute context](scaler-distributed-computing-compute-context.md)
+## [Distributed analysis](scaler-distributed-computing-distributed-analysis.md)
+## [Background jobs](scaler-distributed-computing-background-jobs.md)
+## [Parallel jobs](scaler-distributed-computing-parallel-jobs.md)
+## [Parallel loops using foreach](foreach.md)
+## [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
+## [Parallel algorithms with PemaR](pemar-getting-started.md)
