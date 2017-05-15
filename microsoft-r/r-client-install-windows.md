@@ -73,7 +73,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Accept the Microsoft R Client license terms.
 
-1. Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+1. Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
 1. Click **Finish** when installation is finished. A welcome screen opens to introduce you to the product and documentation.
 
@@ -110,7 +110,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Accept the Microsoft R Client license terms.
 
-   + Accept the Microsoft R Open license term. Microsoft R Client is built on [Microsoft R Open](r-open.md), Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+   + Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
 
@@ -152,7 +152,7 @@ You can learn more with these guides:
 
 + [Get Started with Microsoft R Client](r-client-get-started.md) 
 
-+ [Quickstart for Microsoft R Client](r-client-quickstart-airline-delays.md) (example)
++ [Quickstart for Microsoft R Client](quickstart-r-code.md) (example)
 
 + [Microsoft R Getting Started](microsoft-r-getting-started.md) 
 

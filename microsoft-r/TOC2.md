@@ -1,55 +1,51 @@
-# [Overview of Microsoft R](index.md)
+# [Overview](index.md)
 ## [Microsoft R products and features](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
+## [Operationalize analytics](operationalize/about.md)
+## [Interoperability with R](overview-interoperability.md)
 
-# Quickstarts
-## [Run R code in Microsoft R](r-client-quickstart-airline-delays.md)
-## [MicrosoftML quickstarts](microsoftml-quickstarts.md)
+# [Get started with RevoScaleR](microsoft-r-get-started-node.md)
+## [What is ScaleR?](scaler-user-guide-introduction.md)
+## [Learn ScaleR functions for large data analysis](scaler-getting-started.md)
+### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
+### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+#### [Loan data example](scaler-getting-started-1-example-loan-data.md)
+#### [Census data example](scaler-getting-started-2-example-census-data.md)
+### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
+### [Write custom analyses for large data sets in ScaleR](scaler-user-guide-write-custom-analyses.md)
+### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
+### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
+## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
+## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
+## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
-# [Tutorials](microsoft-r-tutorials.md)
-## [R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
-## [Learn the basic workflow](scaler-getting-started.md)
-## [Practice data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
-## Graduate to larger data sets
-### [Load and analyze large data](scaler-getting-started-3-analyze-large-data.md)
-### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
-### [Census data analysis](scaler-getting-started-2-example-census-data.md)
-## [Get started with MicrosoftML](microsoftml-get-started.md)
-### [Introduction to MicrosoftML](microsoftml-introduction.md)
-### [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-### [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-### [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+# [Get started with MicrosoftML](microsoftml-get-started.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML function reference](microsoftml/microsoftml.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Quickstarts for MicrosoftML](microsoftml-quickstarts.md)
 
-# Samples
-## [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
-## [Parallel processing example (with rxExecby)](quickstart-rxexecby.md)
-## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
+# [Get started with Microsoft R and sparklyr](microsoft-r-get-started-spark-interop.md)
 
-# [How-to for data scientists](data-analysis-in-microsoft-r.md)
-## Data 
-### [Import Data](scaler-user-guide-data-import.md)
-### [ODBC configuration](scaler-odbc.md)
-### [Create data sources](scaler-user-guide-data-source.md)
-### [Create XDF files](rserver-create-xdf.md)
-### [Transform and subset data](scaler-user-guide-data-transform.md)
-### [Tips on computing with big data](microsoft-r-getting-started-tips.md)
-### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
-### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
-### [Manage threads in RevoScaleR](scaler-user-guide-manage-threads.md)
-
-## [Statistical Summaries](scaler-user-guide-data-summaries.md)
+# [Diving into Data Analysis](data-analysis-in-microsoft-r.md)
+## [Importing Data](scaler-user-guide-data-import.md)
+### [Configure data import for ODBC data sources](scaler-odbc.md)
+## [Data Sources](scaler-user-guide-data-source.md)
+## [Transform and Subset Data](scaler-user-guide-data-transform.md)
+## [Data Summaries](scaler-user-guide-data-summaries.md)
 ## [Crosstabs](scaler-user-guide-crosstabs.md)
-## Models
-### [Models in RevoScaleR](scaler-user-guide-models.md)
-### [Linear Models](scaler-user-guide-linear-model.md)
-### [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
-### [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
-### [Decision Tree Models](scaler-user-guide-decision-tree.md)
-### [Decision Forest Models](scaler-user-guide-decision-forest.md)
+## [Models in RevoScaleR](scaler-user-guide-models.md)
+## [Linear Models](scaler-user-guide-linear-model.md)
+## [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
+## [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
+## [Decision Tree Models](scaler-user-guide-decision-tree.md)
+## [Decision Forest Models](scaler-user-guide-decision-forest.md)
 ## [Stochastic Gradient Boosting](scaler-user-guide-boosting.md)
 ## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
 ## [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
@@ -58,10 +54,11 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-# Install and configure
-## [Pretrained models](deploy-pretrained-microsoftml-models.md)
-## [Micorosft R Server](rserver.md)
-### [Supported platforms](rserver-install-supported-platforms.md)
+# Microsoft R Server
+
+## Install and configure
+### [R Server supported platforms](rserver-install-supported-platforms.md)
+
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
@@ -121,17 +118,16 @@
 #### [Database configuration](operationalize/configure-remote-database.md)
 #### [R package management](operationalize/package-management.md)
 
-## [Provision in the Cloud](vm-cloud.md)
-### [Azure HDInsight](vm-r-server-hdinsight.md)
-### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
-### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-### [Microsoft Data Science VM](vm-data-science.md)
+### [Provision in the Cloud](vm-cloud.md)
+#### [Azure HDInsight](vm-r-server-hdinsight.md)
+#### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
+#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Microsoft Data Science VM](vm-data-science.md)
 
 ## Deploy and consume analytics
 ### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
-#### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
 #### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
 #### [Work with web services in R](operationalize/data-scientist-manage-services.md)
 #### [Publish & consume R services in R](operationalize/data-scientist-manage-services.md)
@@ -205,13 +201,14 @@
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
+
 # Microsoft R Client
 ## [Get Started with R Client](r-client-get-started.md)
-## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
-
+## [Quickstart: predict flight delays](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
+
 
 # [Function Reference](package-reference.md)
 ## [MicrosoftML](microsoftml/microsoftml.md)
@@ -305,10 +302,10 @@
 ###[setPemaClass](pemar/packagehelp/setPemaClass.md)
 
 ## [RevoScaleR](scaler/scaler.md)
-### [Overview: Common RevoScaleR Functions](scaler/scaler.md)
-### [Overview: Base R & RevoScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
-### [Overview: RevoScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
-### [Overview: RevoScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
+### [Overview: Common ScaleR Functions](scaler/scaler.md)
+### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
+### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
+### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 ### [Functions by category](scaler/packagehelp/revoAnalytics-package.md) 
 ### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
 ### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)

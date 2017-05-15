@@ -6,7 +6,7 @@ description: "Learn about Microsoft R features and components in R Server, R Cli
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "01/05/2017"
+ms.date: "05/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,6 +25,7 @@ ms.technology:
 ms.custom: ""
 
 ---
+<<<<<<< HEAD
 
 # Microsoft R products and features
 
@@ -110,3 +111,5 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 ## See Also
 
 [What's new in R Server](rserver-whats-new.md)
+=======
+>>>>>>> dev

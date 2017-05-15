@@ -1,5 +1,6 @@
----
+<meta http-equiv="refresh" content="0; url=https://msdn.microsoft.com/en-us/microsoft-r/index" />
 
+<<<<<<< HEAD
 # required metadata
 title: "Introduction to Microsoft R Server and R Client"
 description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
@@ -179,3 +180,6 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 ## See Also
 
 [What's new in R Server](rserver-whats-new.md)
+=======
+# ------
+>>>>>>> dev

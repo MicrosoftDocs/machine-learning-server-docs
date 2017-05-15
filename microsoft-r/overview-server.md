@@ -6,7 +6,7 @@ description: "Learn about Microsoft R features and components in R Server, R Cli
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "01/05/2017"
+ms.date: "05/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,6 +25,7 @@ ms.technology:
 ms.custom: ""
 
 ---
+<<<<<<< HEAD
 
 # About Microsoft R Server
 
@@ -192,3 +193,5 @@ To review specific OS and database platform versions that can be used for an R S
 [What's new in R Server](rserver-whats-new.md)
 
 [Getting Started with ScaleR](scaler-getting-started.md)
+=======
+>>>>>>> dev
