@@ -33,7 +33,7 @@ Microsoft R Client can be downloaded from http://aka.ms/rclient (Windows) and ht
 
 Microsoft R Client works with the following flavors of Microsoft R Server:
 
-|R Server Offerings|Compatible with R Client 3.3.3|
+|R Server 9.1 Offerings|Compatible with R Client 3.3.3|
 |-----------|:--------------------------:|
 |Microsoft R Server for Linux|8.0.5 - 9.1|
 |Microsoft R Server for Teradata DB|8.0.5 - 9.1|

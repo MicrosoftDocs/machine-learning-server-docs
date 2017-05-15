@@ -2,11 +2,11 @@
 
 # required metadata
 title: "Quick Start for Microsoft R Client"
-description: "Microsoft R Client"
-keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
+description: "Microsoft R Client quickstart"
+keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "11/30/2016"
+ms.date: "5/10/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,11 +23,13 @@ ms.technology: "r-client"
 ms.custom: ""
 
 ---
-# Quickstart: Use R Client to predict delayed flights
+# Run R code in Microsoft R
+
+**Applies to: Microsoft R Client, Microsoft R Server**
 
 ## Objective
 
-This quickstart shows you how to predict flight delays in R locally using R Client. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
+This quickstart shows you how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
 
 Broadly speaking, in machine learning and statistics, classification is the task of identifying the class or category to which a new observation belongs on the basis of a training set of data containing observations with known categories. Classification is generally a supervised learning problem. Since this is a binary classification task, there are only two classes.
 
@@ -39,11 +41,14 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 ## Prerequisites
 
-This quickstart assumes that you have installed Microsoft R Client and launch R on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
+This quickstart assumes that you have:
++ An installed instance of Microsoft R Client or Microsoft R Server 
++ R running on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
++ An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ## Example code
 
-This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections that follow.
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections.
 
 ```r
        #############################################
