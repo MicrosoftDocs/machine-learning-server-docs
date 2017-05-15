@@ -14,7 +14,7 @@
 
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Learn the basic workflow](scaler-getting-started.md)
-## [Import CSV](microsoft-r-tutorials-tools.md)
+## [Import CSV](microsoft-r-tutorial-tools.md)
 ## [Practice data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
 ## Graduate to larger data sets
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
@@ -55,18 +55,4 @@
 ## [Transform Functions](scaler-user-guide-transform-functions.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
-# [Get started with RevoScaleR](microsoft-r-get-started-node.md)
-## [What is ScaleR?](scaler-user-guide-introduction.md)
-## [Learn ScaleR functions for large data analysis](scaler-getting-started.md)
-### [Airline data tutorial](scaler-getting-started-0-example-airline-data.md)
-### [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
-#### [Loan data example](scaler-getting-started-1-example-loan-data.md)
-#### [Census data example](scaler-getting-started-2-example-census-data.md)
-### [Write custom chunking algorithms in ScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
-### [Write custom analyses for large data sets in ScaleR](scaler-user-guide-write-custom-analyses.md)
-### [Manage threads in ScaleR](scaler-user-guide-manage-threads.md)
-### [Sample data in ScaleR](scaler-user-guide-sample-data.md)
-## [R-to-ScaleR journey in 25 functions or less](microsoft-r-getting-started-tutorial.md)
-## [Get started with parallel processing on partitioned data at scale](quickstart-rxexecby.md)
-## [Tips on computing with big data](microsoft-r-getting-started-tips.md)
 
