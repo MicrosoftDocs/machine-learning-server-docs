@@ -18,11 +18,12 @@
 ### [Load and analyze large data](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
 ### [Census data analysis](scaler-getting-started-2-example-census-data.md)
-## [Get started with MicrosoftML](microsoftml-get-started.md)
-### [Introduction to MicrosoftML](microsoftml-introduction.md)
-### [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-### [MicrosoftML Function Reference](microsoftml/microsoftml.md)
-### [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+
+# [Get started with MicrosoftML](microsoftml-get-started.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML Function Reference](microsoftml/microsoftml.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 
 # Samples
 ## [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)

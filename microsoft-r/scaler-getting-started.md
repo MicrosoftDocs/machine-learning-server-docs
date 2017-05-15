@@ -26,36 +26,22 @@ ms.custom: ""
 
 # Tutorial: Learn the basic workflow from import to summary (Microsoft R)
 
-[RevoScaleR](scaler-user-guide-introduction.md) is a collection of proprietary functions in Microsoft R Client and R Server that are used for practicing data science at scale. Although RevoScaleR works on both small and large datasets, what RevoScaleR enables is analysis of very large data sets that would otherwise exceed the memory and processing capabilities of any one machine.
+Microsoft R Server and R Client provide the open source R base language and interpreter, plus additional proprietary functional libraries like [RevoScaleR](scaler-user-guide-introduction.md) for practicing data science at scale. 
 
-If you are new to Microsoft R and RevoScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. this tutorial offers two basic lessons demonstrating data import and analysis. In a few short steps, you can practice with RevoScaleR functions using data from a comma delimited text file.
-
+Although RevoScaleR is designed for large datasets, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. This tutorial offers two basic lessons demonstrating data import and analysis using built-in sample CSV data files.
 
 ## Prerequisites
 
-To complete this tutorial as written, you will need about 15 minutes and the following components:
+To complete this tutorial as written, you will need about 15 minutes and an R console application. 
 
-* [Visual Studio](https://www.visualstudio.com/downloads/)
-* [R Tools for Visual Studio download (RTVS)](https://docs.microsoft.com/en-us/visualstudio/rtvs/installation)
-* [Microsoft R Client](http://aka.ms/rclient/download) (or [Microsoft R Server](rserver.md))
++ On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
++ On Linux, at the command prompt, type **Revo64**.
 
-RTVS adds an R project template, R Interactive windows, R Help, and other development support.
-
-Microsoft R Client and R Server include sample data and packages for the R language, so once you have the tools there is nothing more to download.
+The command prompt for a R is `>`. You can hand-type commands line by line, or copy-paste multiple commands at once. Press Enter to execute the statement.
 
 ## About the sample data set
 
 *AirlineDemoSmall.csv* is the dataset used in this tutorial. It is built in, so there is nothing to download. The .csv file is derived from a larger data set about flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. The file contains 600,000 rows of data in addition to a first row with variable names.
-
-## Start a project
-
-1. In Visual Studio, create a new R project: **File** > **New** > **Project** > **Templates** > **R**.
-
-2. Find or open the **R Interactive** window used for command line scripting. You can enter R functions at the `>` command prompt, including functions provided by ScaleR.
-
-   ![R Interactive window](media/rserver-scaler-getting-started/rtvs-r-interactive.png)
-
-In this quick start, you will enter commands individually or in groups into the interactive window.
 
 ## Import data
 
@@ -161,7 +147,7 @@ We can perform statistical analysis using a data frame or .xdf file. For example
         Condition number of final variance-covariance matrix: 16.7804
         Number of iterations: 3
 ~~~~
-The results show that in this sample, a flight on Tuesday is most likely to be very late or cancelled, followed by flights departing on Friday. In this model, Sunday is the control group, so that coefficient estimates for other days of the week are relative to Sunday. The intercept shown is the same as the coefficient you would get for Sunday if you omitted the intercept term:
+The results show that in this sample, a flight on Tuesday is most likely to be very late or canceled, followed by flights departing on Friday. In this model, Sunday is the control group, so that coefficient estimates for other days of the week are relative to Sunday. The intercept shown is the same as the coefficient you would get for Sunday if you omitted the intercept term:
 ~~~~
     logitResults2 <- rxLogit(VeryLate ~ DayOfWeek - 1, data = airData )
             summary(logitResults2)
@@ -226,26 +212,12 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
 
-<a name="get-help"></a>
-### Get function help
-
-  R packages typically include embedded package help reference and RevoScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
-
-  - In R Help, click the Home button.
-  - Click **Packages**.
-  - Scroll down and click **RevoScaleR** to open the package help. All RevoScaleR functions are documented here.
-
-### Get more information
-
-Continue building up your knowledge of RevoScaleR with these additional resources.
-
-- [Getting Started with Hadoop and RevoScaleR](scaler-hadoop-getting-started.md)    
-- [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
-- [Importing data](scaler-user-guide-data-import.md)
-- [ODBC data import](scaler-odbc.md)
-
 ## See Also
 
  [Introduction to Microsoft R](microsoft-r-getting-started.md)  
- [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)    
+ [Getting Started with Hadoop and RevoScaleR](scaler-hadoop-getting-started.md)    
+ [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
+ [Importing data](scaler-user-guide-data-import.md)     
+ [ODBC data import](scaler-odbc.md)     
  [RevoScaleR Functions](scaler/scaler.md)       
+ 

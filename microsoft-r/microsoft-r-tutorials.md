@@ -35,9 +35,12 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 + [Practice data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
 + [Get started with MicrosoftML](microsoftml-get-started.md)
 
-## RevoScaleR sample data
+## Find sample data
 
 + [Sample data available in the RevoScaleR package](scaler-user-guide-sample-data.md)
+* [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
+* [More Data Sources on MRAN site](https://mran.microsoft.com/documents/data/)
+* [Blog Post: Finding data on the internet](http://www.inside-r.org/howto/finding-data-internet)
 
 ## Graduate to larger data sets
 
@@ -45,7 +48,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 + [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
 + [Census data analysis](scaler-getting-started-2-example-census-data.md)
 
-## Microsoft R on specific platforms
+## Platform ramp-up
 
 + [Get Started with ScaleR](scaler-getting-started.md)
 + [Get started with ScaleR on Hadoop MapReduce](scaler-hadoop-getting-started.md)

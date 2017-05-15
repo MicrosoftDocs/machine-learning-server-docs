@@ -41,6 +41,8 @@ This is our simplest and most light-weight tutorial. To complete it, you can use
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
+The command prompt for a R is `>`. You can hand-type commands line by line, or copy-paste multiple commands at once. Press Enter to execute the statement.
+
 ## Start with R
 
 Because Microsoft R is built on R, this tutorial begins with an exploration of base R commands.
