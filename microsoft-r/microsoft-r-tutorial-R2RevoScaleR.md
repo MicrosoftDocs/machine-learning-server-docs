@@ -30,7 +30,7 @@ ms.custom: ""
 
 **Applies to: Microsoft R Server or R Client**
 
-If you are new to *both* R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
+If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
 This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
@@ -41,7 +41,7 @@ This is our simplest and most light-weight tutorial. To complete it, you can use
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-The command prompt for a R is `>`. You can hand-type commands line by line, or copy-paste multiple commands at once. Press Enter to execute the statement.
+The command prompt for a R is `>`. You can hand-type commands line by line, or copy-paste multiple commands (commands run in sequence).
 
 ## Start with R
 
@@ -703,11 +703,7 @@ Note that because we have specified an output file when importing the data, the 
 	Number of iterations: 9
 
 
-## Next Steps: Deeper dive into R
-
-This section is a continuation of the introduction to R.
-
-### How to load more R Packages
+## Next Steps: how to load more packages
 
 An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
 
@@ -758,107 +754,5 @@ Other packages are available through the Comprehensive R Archive Network (CRAN);
 
 On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
 
-> [!Tip]
-> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program. All of the “rx” RevoScaleR functions mentioned in this tutorial are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
-
-### Calling Microsoft R functions in Rscript and R CMD BATCH
-
-Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. 
-
-Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag `–default-packages=` to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
-
-Similarly, you should avoid the `–vanilla` construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
 
 
-### Learn about the optimized math libraries
-
-One feature of Microsoft R Server and R Client is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
-
-Matrix multiplication, eigenvalue calculations, and singular value decompositions are significantly faster using these optimized libraries. For example, we ran the following computations, first with R built from source using the standard R BLAS, then with Microsoft R Server built with the optimized math libraries:
-
-	set.seed(14)
-	x <- matrix(rnorm(1000000),nrow=1000)
-	xout <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(eigen(x))[3]
-	xout2 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(svd(x))[3]
-	xout3 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(qr(x))[3]
-	xout4 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(lm(x[,i]~x[,-i]))[3]
-	xout5 <- numeric(20)
-	for (i in 1:20) xout[i] <- system.time(t(x)%*%x)[3]
-
-The mean times for each calculation are shown below. Matrix multiplication, eigenvalue, and singular value decomposition calculations show the greatest speedups.
-
-| Calculation           | Reference Libraries  | Optimized Libraries  |
-|-----------------------|-----------|-----------|
-| eigen                 | 11.45350  | 3.63485   |
-| svd                   | 7.34740   | 1.19455   |
-| gr                    | 1.16765   | 0.93600   |
-| lm                    | 1.47795   | 1.23430   |
-| Matrix multiplication | 1.75610   | 0.09604   |
-
-
-#### Learn about R Numerics
-
-Most mathematical computations in R are performed using binary double-precision floating-point numbers. Arithmetic performed using these numbers is called *floating-point arithmetic*. In floating-point arithmetic, numbers are stored with finite precision according to internationally-recognized standards established by the IEEE. There are only finitely many floating-point numbers. In particular, there is a largest (and smallest) floating-point number. There is also a smallest nonnegative floating-point number. Consider, for example, the following R statements:
-
-	10^308 * 10
-
-		[1] Inf
-
-	2^(-1074) / 2
-
-		[1] 0
-
-illustrating that R (and floating-point arithmetic) has a somewhat limited sense of the infinite and the minutely small. When one or more terms in a computation involve the special floating-point value *inf*, the computation is said to *overflow*. Similarly, *underflow* occurs when a number too small in magnitude to be represented is encountered.
-
-The distance between the floating-point number \(1\) and the next-largest floating-point number is typically called *machine epsilon*, or just *eps* for short. We can compute *eps* with a simple R program:
-
-	eps <- 1
-	while ((1 + eps/2) != 1) { eps <- eps/2 }
-	eps
-
-	[1] 2.220446e-16
-
-In a relative sense *eps* is as large as the gaps between floating-point numbers get.
-
-In between their largest and smallest values, floating-point numbers generally only approximate real numbers. For example, although 1 and 10 *are* floating-point numbers, the rational number 1/10 has no exact binary floating-point representation. It is *very* closely approximated by a nearby floating-point number, but not close enough that arithmetic operations are always unaffected. Consider the following somewhat counter-intuitive R example:
-
-	(11/10 - 1)*10—1
-
-	[1] 8.881784e-16
-
-Yet,
-
-	(11/10)*10 - 1*10—1
-
-	[1] 0
-
-This example shows that floating-point arithmetic does not always obey the usual algebraic laws; here the distributive law is violated. The following example shows a situation in which the associative law is violated:
-
-	x <- rnorm(100000)
-	sum(x) - sum(sort(x))
-
-	[1] -8.526513e-14
-
-The violation of associativity results from the accumulation many small approximations over the summation. Re-ordering the computation can affect the result.
-
-For a good introduction to the pitfalls involving numeric computation, read _"What every computer scientist should know about floating-point arithmetic"_ by Goldberg.
-
-#### Performance Optimization and Numerics
-
-Many of the most widely-used and compute-intensive linear algebra and arithmetic operations performed by R are computed by low-level numerics libraries, including the basic linear algebra subroutine (BLAS) library. Microsoft R includes highly-tuned low-level numerics libraries that are optimized for speed on a wide variety of x86, x86-64 and IA-64 processor architectures.
-
-Many of the performance optimizations try to:
-
-- Make use of available SIMD-style vector registers and operations
-
-- Make efficient re-use of speedy processor memory caches.
-
-Both approaches often require blocking or otherwise re-ordering computations, for example to fit in a small cache.
-
-Because floating-point arithmetic always involves approximation, and the exact nature of the approximation depends upon the particular algorithms used, it is possible that the results from the highly-tuned numerics available in Microsoft R Server and R Client differ from results computed by other implementations of R, just as results can differ across system architectures. These computational differences typically manifest themselves on the order of machine epsilon.
-
-Some high-performance numerics routines, including those that use x86 SIMD vector instructions (SSE, etc.), require that their input data be loaded into memory addresses divisible by 16 bytes. Unfortunately, R does not presently guarantee alignment of data on 16-byte boundaries. Therefore, it is possible that, depending on data alignment, parts of some computations may be grouped off differently (for less efficient computation). This alignment-dependent blocking of some computations can also result in differences from run to run on the order of machine epsilon.

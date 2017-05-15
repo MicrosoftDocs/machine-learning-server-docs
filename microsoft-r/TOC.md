@@ -14,9 +14,10 @@
 
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Learn the basic workflow](scaler-getting-started.md)
+## [Import CSV](microsoft-r-tutorials-tools.md)
 ## [Practice data manipulation and statistical analysis](scaler-getting-started-0-example-airline-data.md)
 ## Graduate to larger data sets
-### [Load and analyze large data](scaler-getting-started-3-analyze-large-data.md)
+### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
 ### [Census data analysis](scaler-getting-started-2-example-census-data.md)
 
