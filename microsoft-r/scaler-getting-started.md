@@ -30,7 +30,6 @@ ms.custom: ""
 
 If you are new to Microsoft R and RevoScaleR functions, it helps to start with smaller data sets and simple analyses before graduating to larger data sets and more complex scenarios. this tutorial offers two basic lessons demonstrating data import and analysis. In a few short steps, you can practice with RevoScaleR functions using data from a comma delimited text file.
 
-RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. RevoScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
 
 ## Prerequisites
 

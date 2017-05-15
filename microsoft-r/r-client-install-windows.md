@@ -158,7 +158,7 @@ You can learn more with these guides:
 
 + [Diving into Data Analysis with Microsoft R](data-analysis-in-microsoft-r.md)
 
-+ [Get started with RevoScaleR](microsoft-r-get-started-node.md)
++ [Get started with RevoScaleR](microsoft-r-tutorials.md)
 
 + [Get started with MicrosoftML](microsoftml-get-started.md)
 

@@ -103,7 +103,7 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 + [Get started with ScaleR](scaler-getting-started.md)
 
-+ [Explore R and ScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
++ [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 
 + [Introduction to MicrosoftML](microsoftml-introduction.md)
 

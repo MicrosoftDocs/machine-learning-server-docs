@@ -28,13 +28,15 @@ ms.custom: ""
 
 # Tutorial: Explore R and RevoScaleR in 25 functions
 
-If you are new to both R and Microsoft R, this short tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
+**Applies to: Microsoft R Server or R Client**
+
+If you are new to *both* R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
 This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 ## Prerequisites
 
-This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe on Windows or start the Revo64 program on Linux. This tutorial uses built-in sample data in base R or RevoScaleR function library provided in either an R Client or R Server installation.
+This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe on Windows or start the **Revo64** program on Linux. The tutorial uses ready-to-use, built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
@@ -430,72 +432,12 @@ The function `lapply` can be used to apply the same function to each component o
 > [!Tip]
 > You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.  
 
-## R Packages
-
-An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
-
-| stats      | graphics | grDevices | utils    |
-|------------|----------|-----------|----------|
-| datasets   | methods  | base      | -         |
-| KernSmooth | MASS     | Matrix    | boot     |
-| class      | cluster  | codetools | compiler |
-| foreign    | grid     | lattice   | mgcv     |
-| nlme       | nnet     | parallel  | rpart    |
-| spatial    | splines  | stats4    | survival |
-| tcltk      | tools    | boot      |  -        |
-
-The packages in the top two lines are automatically loaded when you start R. You can load other packages using the *library* function. For example, to load the *MASS* library, which contains functions and data sets used in the book *Modern Applied Statistics with S* by Venables and Ripley, you call *library* as follows:
-
-	library(MASS)
-
-Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the `install.packages` function:
-
-	install.packages("SuppDists")
-
-	trying URL 'http://cran.fhcrc.org/src/contrib/SuppDists\_1.1-8.tar.gz'
-	Content type 'application/x-gzip' length 139864 bytes (136 Kb)
-	opened URL
-	==================================================
-	downloaded 136 Kb
-	* installing *source* package 'SuppDists' ...
-	** libs
-	** arch - x86\_64
-	g++ -arch x86\_64  -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/includ
-	e -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/include/x86\_64  -I/usr
-	/local/include    -fPIC  -g -O2 -c dists.cc -o dists.o
-	g++ -arch x86\_64 -dynamiclib -Wl,-headerpad\_max\_install\_names -undefined dynamic
-	\_lookup -single\_module -multiply\_defined suppress -L/usr/local/lib -o SuppDists.
-	so dists.o -F/opt/REvolution/Revo-3.2/Revo64/R.framework/.. -framework R -Wl,-fr
-	amework -Wl,CoreFoundation
-	** R
-	** preparing package for lazy loading
-	** help
-	*** installing help indices
-	** building package indices ...
-	* DONE (SuppDists)
-
-	The downloaded packages are in
-		'/private/var/folders/cy/cy2tNRpEHrmxPZPrN1EINU+++TI/-Tmp-/RtmpZnKn6Z/do
-	wnloaded\_packages'
-	Updating HTML index of packages in '.Library'
-
-On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
-
-> [!Tip]
-> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program. All of the “rx” RevoScaleR functions mentioned in this tutorial are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
-
-## Calling Microsoft R functions in Rscript and R CMD BATCH
-
-Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. 
-
-Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag `–default-packages=` to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
-
-Similarly, you should avoid the `–vanilla` construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
-
 <a name="ExploreScaleRFunctions"></a>
-## Expore ScaleR Functions
+## Expore RevoScaleR Functions
 
 The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. 
+
+RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. RevoScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
 
 ### Step 1: Access Data with *rxImport*
 
@@ -759,20 +701,74 @@ Note that because we have specified an output file when importing the data, the 
 	Number of iterations: 9
 
 
-## Next Steps: A Roadmap to Documentation
+## Next Steps: Deeper dive into R
 
-Having completed the tutorials, you are now ready to dive right in and start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
+This section is a continuation of the introduction to R.
 
-The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
+### How to load more R Packages
 
-Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on.
+An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
 
-Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
+| stats      | graphics | grDevices | utils    |
+|------------|----------|-----------|----------|
+| datasets   | methods  | base      | -         |
+| KernSmooth | MASS     | Matrix    | boot     |
+| class      | cluster  | codetools | compiler |
+| foreign    | grid     | lattice   | mgcv     |
+| nlme       | nnet     | parallel  | rpart    |
+| spatial    | splines  | stats4    | survival |
+| tcltk      | tools    | boot      |  -        |
+
+The packages in the top two lines are automatically loaded when you start R. You can load other packages using the *library* function. For example, to load the *MASS* library, which contains functions and data sets used in the book *Modern Applied Statistics with S* by Venables and Ripley, you call *library* as follows:
+
+	library(MASS)
+
+Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the `install.packages` function:
+
+	install.packages("SuppDists")
+
+	trying URL 'http://cran.fhcrc.org/src/contrib/SuppDists\_1.1-8.tar.gz'
+	Content type 'application/x-gzip' length 139864 bytes (136 Kb)
+	opened URL
+	==================================================
+	downloaded 136 Kb
+	* installing *source* package 'SuppDists' ...
+	** libs
+	** arch - x86\_64
+	g++ -arch x86\_64  -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/includ
+	e -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/include/x86\_64  -I/usr
+	/local/include    -fPIC  -g -O2 -c dists.cc -o dists.o
+	g++ -arch x86\_64 -dynamiclib -Wl,-headerpad\_max\_install\_names -undefined dynamic
+	\_lookup -single\_module -multiply\_defined suppress -L/usr/local/lib -o SuppDists.
+	so dists.o -F/opt/REvolution/Revo-3.2/Revo64/R.framework/.. -framework R -Wl,-fr
+	amework -Wl,CoreFoundation
+	** R
+	** preparing package for lazy loading
+	** help
+	*** installing help indices
+	** building package indices ...
+	* DONE (SuppDists)
+
+	The downloaded packages are in
+		'/private/var/folders/cy/cy2tNRpEHrmxPZPrN1EINU+++TI/-Tmp-/RtmpZnKn6Z/do
+	wnloaded\_packages'
+	Updating HTML index of packages in '.Library'
+
+On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
+
+> [!Tip]
+> The RevoScaleR package is included with every distribution of Microsoft R Server and R Client, and is automatically loaded into memory when you start the program. All of the “rx” RevoScaleR functions mentioned in this tutorial are at your fingertips.  You can get information on them by using the ? at the command line, for example: *?rxLinMod*
+
+### Calling Microsoft R functions in Rscript and R CMD BATCH
+
+Microsoft R Server and R Client are intended for high-performance computing and analytics, and some users are accustomed to running their analyses via batch mode and command-line scripting. *R CMD BATCH* generally works with Microsoft R Server and R Client with no modifications needed, but to get full advantage of the Microsoft R Server and R Client extensions with other command line invocations, you need to know a little bit about how Microsoft R Server and R Client work. 
+
+Microsoft R is 100% R, with the standard R BLAS and LAPACK libraries substituted out for the Intel Math Kernel Libraries, and with a number of additional packages. Some of these packages are added to the default package list by the *Rprofile.site* file distributed with Microsoft R Server and R Client. If you use *Rscript* (or, on some systems, the equivalent Revoscript) with a Microsoft R Server or R Client script, be sure to add the flag `–default-packages=` to your call; this ensures that the Microsoft R default packages are loaded (including the *methods* package from base R).
+
+Similarly, you should avoid the `–vanilla` construction for invoking Microsoft R Server or R Client; this method of invocation avoids evaluating the *Rprofile.site* file, so that this is equivalent to calling R without the Microsoft R Server or R Client extensions (except the MKL BLAS and LAPACK libraries).
 
 
-## Appendix
-
-### Optimized Math Libraries
+### Learn about the optimized math libraries
 
 One feature of Microsoft R Server and R Client is its inclusion of optimized libraries for linear algebra. These libraries are used throughout R’s modeling applications, including linear models, principal components analysis, and others.
 
@@ -802,7 +798,7 @@ The mean times for each calculation are shown below. Matrix multiplication, eige
 | Matrix multiplication | 1.75610   | 0.09604   |
 
 
-#### More on R Numerics
+#### Learn about R Numerics
 
 Most mathematical computations in R are performed using binary double-precision floating-point numbers. Arithmetic performed using these numbers is called *floating-point arithmetic*. In floating-point arithmetic, numbers are stored with finite precision according to internationally-recognized standards established by the IEEE. There are only finitely many floating-point numbers. In particular, there is a largest (and smallest) floating-point number. There is also a smallest nonnegative floating-point number. Consider, for example, the following R statements:
 
