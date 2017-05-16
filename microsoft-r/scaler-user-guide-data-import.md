@@ -623,7 +623,7 @@ As a more complete example, consider again the mortgage default example from *se
 
 Note that in this example we set the file system to HDFS globally so we did not need to specify the file system within the data source constructors.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 ### Note on Using RevoScaleR with rhdfs
 

@@ -33,7 +33,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 ## Quickstarts and Tutorials
 
 * [Quickstart: data import csv-to-xdf](quickstart-rserver-data-import-csv.md) 
-* [Get started with ScaleR and data analysis](scaler-getting-started.md)
+* [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 
 ## How-to guidance
 

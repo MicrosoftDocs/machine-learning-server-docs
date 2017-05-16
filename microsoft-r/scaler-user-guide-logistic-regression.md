@@ -161,7 +161,7 @@ We can then fit a logistic regression model to the training data and predict wit
 	rxPredict(logitObj, data = targetDataFileName,
 		outData = targetDataFileName, computeResiduals = TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 To view the first 30 rows of the output data file, use rxGetInfo as follows:
 
@@ -178,7 +178,7 @@ You can use rxPredict to obtain prediction standard errors and confidence interv
 		data = trainingDataFileName, blocksPerRead = 2, verbose = 1,
 		reportProgress=2, covCoef=TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 You then specify `computeStdErr=TRUE` to obtain prediction standard errors; if this is TRUE, you can also specify `interval="confidence"` to obtain a confidence interval:
 
@@ -255,7 +255,7 @@ With perfect predictions, we see the the True Positive Rate is 1 for all thresho
 
 Now let’s use actual model predictions in an ROC curve. We’ll use the small mortgage default sample data to estimate a logistic model and them compute predicted values:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 	# Using mortDefaultSmall for predictions and an ROC curve
 

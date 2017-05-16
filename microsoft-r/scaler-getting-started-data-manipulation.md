@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Tutorial: Practice data manipulation and statistical analysis (Microsoft R)
 
-This tutorial builds on what you learned in an [earlier tutorial](scaler-getting-started.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
+This tutorial builds on what you learned in an [earlier tutorial](scaler-getting-started-data-import-exploration.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
@@ -571,6 +571,78 @@ You should see the following results:
 	Condition number of final variance-covariance matrix: 3.0178
 	Number of iterations: 4
 ~~~~
+
+
+Using the same function, let's estimate whether or not a flight is “very late” depending on the day of week:
+
+~~~~
+        logitResults <- rxLogit(VeryLate ~ DayOfWeek, data = airData )
+        summary(logitResults)
+~~~~
+~~~~
+        Call:
+        rxLogit(formula = VeryLate ~ DayOfWeek, data = airData)
+
+        Logistic Regression Results for: VeryLate ~ DayOfWeek
+        File name:
+        C:\YourOutputPath\airExample.xdf
+        Dependent variable(s): VeryLate
+        Total independent variables: 8 (Including number dropped: 1)
+        Number of valid observations: 6e+05
+        Number of missing observations: 0
+        -2*LogLikelihood: 251244.7201 (Residual deviance on 599993 degrees of freedom)
+
+        Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+        (Intercept)         -3.29095    0.01745 -188.64 2.22e-16 ***
+        DayOfWeek=Monday     0.40086    0.02256   17.77 2.22e-16 ***
+        DayOfWeek=Tuesday    0.84018    0.02192   38.33 2.22e-16 ***
+        DayOfWeek=Wednesday  0.36982    0.02378   15.55 2.22e-16 ***
+        DayOfWeek=Thursday   0.29396    0.02400   12.25 2.22e-16 ***
+        DayOfWeek=Friday     0.54427    0.02274   23.93 2.22e-16 ***
+        DayOfWeek=Saturday   0.48319    0.02282   21.18 2.22e-16 ***
+        DayOfWeek=Sunday     Dropped    Dropped Dropped  Dropped    
+        ---
+        Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+        Condition number of final variance-covariance matrix: 16.7804
+        Number of iterations: 3
+~~~~
+The results show that in this sample, a flight on Tuesday is most likely to be very late or canceled, followed by flights departing on Friday. In this model, Sunday is the control group, so that coefficient estimates for other days of the week are relative to Sunday. The intercept shown is the same as the coefficient you would get for Sunday if you omitted the intercept term:
+~~~~
+    logitResults2 <- rxLogit(VeryLate ~ DayOfWeek - 1, data = airData )
+            summary(logitResults2)
+~~~~    
+
+~~~~         
+            Call:
+            rxLogit(formula = VeryLate ~ DayOfWeek - 1, data = airData)
+
+            Logistic Regression Results for: VeryLate ~ DayOfWeek - 1
+            File name:
+            	C:\YourOutputPath\airExample.xdf
+            Dependent variable(s): VeryLate
+            Total independent variables: 7
+            Number of valid observations: 6e+05
+            Number of missing observations: 0
+            -2*LogLikelihood: 251244.7201 (Residual deviance on 599993 degrees of freedom)
+
+            Coefficients:
+                                Estimate Std. Error z value Pr(>|z|)    
+            DayOfWeek=Monday    -2.89008    0.01431  -202.0 2.22e-16 ***
+            DayOfWeek=Tuesday   -2.45077    0.01327  -184.7 2.22e-16 ***
+            DayOfWeek=Wednesday -2.92113    0.01617  -180.7 2.22e-16 ***
+            DayOfWeek=Thursday  -2.99699    0.01648  -181.9 2.22e-16 ***
+            DayOfWeek=Friday    -2.74668    0.01459  -188.3 2.22e-16 ***
+            DayOfWeek=Saturday  -2.80776    0.01471  -190.9 2.22e-16 ***
+            DayOfWeek=Sunday    -3.29095    0.01745  -188.6 2.22e-16 ***
+            ---
+            Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+            Condition number of final variance-covariance matrix: 1
+            Number of iterations: 7
+~~~~
+
 
 ## Computing predicted values
 

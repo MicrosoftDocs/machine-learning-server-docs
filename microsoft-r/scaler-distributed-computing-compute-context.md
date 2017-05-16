@@ -50,9 +50,9 @@ The principal compute contexts are the following:
 
 - `RxLocalSeq`: the default compute context. This compute context is available on all platforms.
 
-- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks ` cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md).
+- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks ` cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [Practice data import and exploration on Hadoop](scaler-hadoop-getting-started.md).
 
-- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Get started with ScaleR on Teradata](scaler-teradata-getting-started.md).
+- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Practice data import and exploration on Teradata](scaler-teradata-getting-started.md).
 
 The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [ScaleR SQL Server Introduction](sql-server-r-services.md).
 
@@ -86,7 +86,7 @@ In the local compute context, all of ScaleR’s supported data sources are avail
 | Teradata database (`RxTeradata`) | X |   | X |   |
 | SQL Server database (`RxSqlServerData`) |   |   |   | X |
 
-Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Get started with ScaleR on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](scaler-distributed-computing.md#managing-distributed-data) for details.
+Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Practice data import and exploration on Hadoop](scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](scaler-distributed-computing.md#managing-distributed-data) for details.
 
 ## Waiting and Non-waiting Compute Contexts
 

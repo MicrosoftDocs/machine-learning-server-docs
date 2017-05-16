@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Tutorial: Explore R-to-RevoScaleR in 25 functions"
+title: "NEW Tutorial: Explore R-to-RevoScaleR in 25 functions"
 description: "Explore and execute R and RevoScaleR commands using R Microsoft R Client or R Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/12/2017"
+ms.date: "05/16/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,23 +36,26 @@ This tutorial starts with base R commands before transitioning to RevoScaleR fun
 
 ## Prerequisites
 
-This is our simplest and most light-weight tutorial. To complete it, you can use the command line tool RGui.exe on Windows or start the **Revo64** program on Linux. The tutorial uses ready-to-use, built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
+This is our simplest tutorial in terms of data and tools, but it also comprehensive in its coverage of base R and RevoScaleR functions. To complete it, use the command line tool RGui.exe on Windows or start the **Revo64** program on Linux. The tutorial relies on ready-to-use, built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-The command prompt for a R is `>`. You can hand-type commands line by line, or copy-paste multiple commands (commands run in sequence).
+The R command prompt is `>`. You can hand-type commands line by line, or copy-paste a multi-line command sequence.
+
+R is case-sensitive. If you hand-type commands in this example, be sure to use the correct case. File paths in R use a forward slash delimiter (/), which is required even when the file path is on the Windows file system.
 
 ## Start with R
 
 Because Microsoft R is built on R, this tutorial begins with an exploration of base R commands.
 
-### Create Vectors
+### Load data
 
-R is an environment for analyzing data, so the natural starting point is to load some data. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s `c` function to combine the data into a vector. Type or copy the following script and paste it at the &gt; prompt at the beginning of the command line:
+R is an environment for analyzing data, so the natural starting point is to load some data. For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s `c` function to combine the data into a vector. 
 
-	c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
-	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
+Type or copy the following script and paste it at the `>` prompt at the beginning of the command line:
+
+	c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880, 1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
 
  When you type the closing parenthesis and press *Enter*, R responds as follows:
 
@@ -64,7 +67,7 @@ This indicates that R has interpreted what you typed, created a vector with 20 e
 	michelson <- c(850, 740, 900, 1070, 930, 850, 950, 980, 980, 880,
 	1000, 980, 930, 650, 760, 810, 1000, 1000, 960, 960)
 
-R responds with a &gt; prompt. Notice that the named vector is not automatically printed when it is assigned. However, you can view the vector by typing its name at the prompt:
+R responds with a `>` prompt. Notice that the named vector is not automatically printed when it is assigned. However, you can view the vector by typing its name at the prompt:
 
 	> michelson
 
@@ -81,7 +84,9 @@ The `c` function is useful for hand typing in small vectors such as you might fi
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
 	[21]  850  930  940  970  870
 
-Often for testing purposes you want to use randomly generated data. R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions. To obtain a set of numbers from a normal distribution, you use the `rnorm` function:
+#### Generate random data
+
+Often for testing purposes you want to use randomly generated data. R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions. To obtain a set of numbers from a normal distribution, you use the `rnorm` function. This example generates 25 random numbers in a normal distribution.
 
 	normalDat <- rnorm(25)
 	normalDat
@@ -120,7 +125,9 @@ Similarly, you can use the `runif` function to generate random data from a unifo
 	[21] 0.41863803 0.42392873 0.24800036 0.22084038
 	[25] 0.48285406
 
-The default uniform distribution is that over the interval 0 to 1; you can specify alternatives by setting the `min` and `max` arguments:
+#### Generate a numeric sequence
+
+The default uniform distribution is over the interval 0 to 1. You can specify alternatives by setting the `min` and `max` arguments:
 
 	uniformPerc <- runif(25, min=0, max=100)
 	uniformPerc
@@ -202,7 +209,7 @@ Another useful exploratory plot, especially for comparing two distributions, is 
 ![](media/rserver-getting-started/image8.jpeg)
 
 > [!Tip]
-> These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be very informative when working directly with the data (e.g., scatter plots can produce a big blob of ink) and others may be computational intensive (e.g., require sorting data). A good starting place is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets.  And remember that RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
+> These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be very informative when working directly with the data (for example, scatter plots can produce a big blob of ink) and others may be computational intensive (if sorting is required). A better alternative is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets. Additionally, RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
 
 ### Summary Statistics
 
@@ -244,6 +251,9 @@ Copy and paste the table into a text editor (such as Notepad on Windows, or emac
 
 	 [1] "/Users/joe"
 
+> [!Tip]
+> On Windows, the working directory is probably a bin folder in program files, and by default you won't have permission to save the file at that location. Use *setwd("/Users/TEMP")* to change the working directory to /Users/TEMP and save the file.
+
 You can then read the data into R using the `read.table` function. The argument *header=TRUE* specifies that the first line is a header of variable names:
 
 	msStats <- read.table("msStats.txt", header=TRUE)
@@ -266,10 +276,15 @@ You can then read the data into R using the `read.table` function. The argument 
 
 Notice how `read.table` changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.
 
-Most small R data sets in daily use are data frames. The built-in package, **datasets**, is a rich source of data frames for further experimentation. In the next section, we turn our attention to the built-in data set *attitude*, part of the **datasets** package.
+#### Use built-in datasets package
 
-> [!Tip]
-> Check out the *rxImport* function for an efficient and flexible way to bring data stored in a variety of data formats (e.g., text, SQL Server, ODBC, SAS, SPSS, Teradata) into a data frame in memory or an .xdf file.
+Most small R data sets in daily use are data frames. The built-in package, **datasets**, is a rich source of data frames for further experimentation. 
+
+To list the data sets in this package, use this command:
+
+    ls("package:datasets")
+
+The output is an alphabetized list of data sets that are readily available for use in R functions. In the next section, we will use the built-in data set *attitude*, available through the **datasets** package.
 
 ### Linear Models
 
@@ -437,13 +452,11 @@ The function `lapply` can be used to apply the same function to each component o
 <a name="ExploreScaleRFunctions"></a>
 ## Expore RevoScaleR Functions
 
-The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. 
-
-RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. RevoScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
+The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has R Server or R Client, the RevoScaleR function library is loaded automatically.
 
 ### Load Data with *rxImport*
 
-The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a locally installed ODBC driver for your database to access data on a local or remote computer. 
+The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](scaler-odbc.md) for your database to access data on a local or remote computer. 
 
 Let’s start simply by using a delimited text file available in the [built-in sample data directory](scaler-user-guide-sample-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
 
@@ -453,7 +466,7 @@ Let’s start simply by using a delimited text file available in the [built-in s
 
 If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and R Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
 
-But for the time being, let's continue to work with the data in memory. We can do this by leaving outFile out of the command, or by setting the *outFile* parameter to NULL. The following code is equivalent to the importing task of that above:
+For now, let's continue to work with the data in memory. We can do this by omitting the outFile argument, or by setting the *outFile* parameter to NULL. The following code is equivalent to the importing task of that above:
 
 	mortOutput <- NULL
 	mortData <- rxImport(inData = inDataFile, outFile = mortOutput)
@@ -462,13 +475,13 @@ But for the time being, let's continue to work with the data in memory. We can d
 
 There are a number of basic methods we can use to learn about the data set and its variables that will work on the return object of *rxImport*, regardless of whether it is a data frame or *RxXdfData* object. 
 
-Input: Get the number of rows, cols, and names of the imported data:
+To get the number of rows, cols, and names of the imported data:
 
 	nrow(mortData)
 	ncol(mortData)
 	names(mortData)
 
-Output:
+Output for these commands are as follows:
 
 	> nrow(mortData)
 	[1] 10000
@@ -597,7 +610,7 @@ We get the following output:
 
 ### Scale your analysis
 
-So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
+Until now, our exploration has been limited to small data sets in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
 
 After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
 
@@ -705,11 +718,8 @@ Note that because we have specified an output file when importing the data, the 
 
 ## Next Steps
 
-Continue learning more about using larger data sets with RevoScaleR functions with these additional tutorials:
+Continue on to these tutorials to work with larger data set using the RevoScaleR functions:
 
 + [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)	
 + [Loan data analysis](scaler-getting-started-1-example-loan-data.md)	
 + [Census data analysis](scaler-getting-started-2-example-census-data.md)	
-
-
-

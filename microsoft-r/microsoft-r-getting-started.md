@@ -142,8 +142,8 @@ For more information and next steps, see the articles on [the introduction to op
 |----------------------------|-----------|:-----:|:----------------:|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis on Teradata|[Doc](rserver-install-teradata-server.md)|[Doc](/scaler-teradata-getting-started.md)|
-|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
-|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](rserver-install-windows.md)|[Doc](scaler-getting-started.md)|
+|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
+|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](rserver-install-windows.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
 |SQL Server Machine Learning Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />
@@ -160,7 +160,7 @@ However, because you have R Client, your script can also include functions from 
 
 Tutorials in Microsoft R product documentation will help you learn how to use the functions in the proprietary packages:  
 
-+ [Get started with ScaleR](scaler-getting-started.md)
++ [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 

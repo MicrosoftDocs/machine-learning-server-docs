@@ -78,8 +78,8 @@ For more information and next steps, see the articles on [the introduction to op
 |----------------------------|-----------|:-----:|:----------------:|
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](rserver-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis on Teradata|[Doc](rserver-install-teradata-server.md)|[Doc](/scaler-teradata-getting-started.md)|
-|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started.md)|
-|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](rserver-install-windows.md)|[Doc](scaler-getting-started.md)|
+|R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](rserver-install-linux-server.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
+|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](rserver-install-windows.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
 |SQL Server Machine Learning Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />
@@ -96,7 +96,7 @@ However, because you have R Client, your script can also include functions from 
 
 Tutorials in Microsoft R product documentation will help you learn how to use the functions in the proprietary packages:  
 
-+ [Get started with ScaleR](scaler-getting-started.md)
++ [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 
@@ -122,7 +122,7 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 |----|---|
 |[Microsoft R Open](r-open.md) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
 |[Operationalized analytics](operationalize/about.md) |An engine only in R Server used to deploy R script or code as a web service with support for remote runtime execution and to consume such services. Console users can exercise the functions in [mrsdeploy package](mrsdeploy/mrsdeploy.md). Developers can use the Swagger-APIs to create programmatic solutions. |
-|[ScaleR](scaler-getting-started.md) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
+|[ScaleR](scaler-getting-started-data-import-exploration.md) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
 |[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
 |Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](pemar/pemar.md). For the complete list, see [Package reference on MSDN](package-reference.md). |
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. Platform-specific components are available when you install R server on that platform. For more information, see [installation links](#installationlinks) below.|
@@ -192,6 +192,6 @@ To review specific OS and database platform versions that can be used for an R S
 
 [What's new in R Server](rserver-whats-new.md)
 
-[Getting Started with ScaleR](scaler-getting-started.md)
+[Getting Started with ScaleR](scaler-getting-started-data-import-exploration.md)
 =======
 >>>>>>> dev

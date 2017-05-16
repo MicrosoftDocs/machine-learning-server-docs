@@ -73,7 +73,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 <big><b> D </b></big>
 
 **Data chunking**
-<div style="margin:15px; margin-bottom:25px;">Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. <a href="scaler-getting-started.md#data-chunking-and-scaler">Learn more…</a></div>
+<div style="margin:15px; margin-bottom:25px;">Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. <a href="scaler-getting-started-data-import-exploration.md#data-chunking-and-scaler">Learn more…</a></div>
 
 **DeployR**
 <div style="margin:15px; margin-bottom:25px;">See <a href="#o16n"><i>Operationalizing Analytics</i></a></div>
