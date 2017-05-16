@@ -40,100 +40,40 @@ Using `mrsdeploy` functions, you can perform the following tasks for web service
 
 |Task| Function(s) |
 |---------|-------------|
-|Log into R Server as an authenticated user|Use the `remoteLogin` or<br>`remoteLoginAAD` function to authenticate with R Server as described in the article "[Connecting to R Server in R](../operationalize/mrsdeploy-connection.md)".|
+|Log into R Server as an authenticated user|Use the `remoteLogin` or `remoteLoginAAD` function to authenticate with R Server.|
 |Publish a service|Use `publishService` to publishes R code, scripts or models as web services on R Server. |
 |Update a service|Use `updateService` to update an existing web service. |
 |Delete a service|Use `deleteService ` to delete a web service. |
 |Get a list of all services| Use `listServices` to return a list of published web services. |
 |Get the web service object|Use `getService` to retrieve a web service object for consumption. |
 
-
+<br>
 By default, any authenticated user can publish an analytic web service to a given R Server instance. That user can also retrieve a list of the available web services as well as retrieve any web service object for consumption regardless of whether he or she published that service.  Additionally, users can update and delete the web services they've published.
  
 Beginning in version 9.1, your administrator can also **[assign role-based authorization](security-roles.md)** to further control the permissions around web services giving some users more control than others. Ask your administrator for details on your role.
 
-## Authentication
+## Authenticate
 
-To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  Learn about the login/logout functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+Before you can use the web service management functions in the `mrsdeploy` R package, you must log into R Server using the `remoteLogin` or `remoteLoginAAD`. After authentication, you can use the other functions in the package. 
+
+Learn about the login and logout functions available with the `mrsdeploy` package and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
 
-
-
-## Publish and manage in R
+## Publish, update, and delete web services
 
 <a name="publishservice"></a>
 
 ### Publish web services
 
-To deploy your analytics, publish them as web services hosted on R Server from where they can be consumed. Each service is uniquely defined by a `name` and `version`.   
+To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, they can be consumed by other users. 
+
+Each web service is uniquely defined by a `name` and `version`.   
 
 #### Standard web services
 
 Web services offer fast execution and scoring of arbitrary R code and R models. In addition to a name and version, a standard web service is also defined by its R code and any necessary model assets, the required inputs, and the output application developers will need to integrate the service in their applications.
 
 
-
-<a name="realtime"></a>
-
-#### Realtime web services
-
-Starting in R Server 9.1, you can also publish models as `Realtime` web services on Windows platforms. These `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. 
-
-The improved performance boost you experience when consuming one of these `Realtime` web services is due to the fact that:
-   + There is no need to create an R session when consuming these supported model types; therefore, no additional resources or time is spent spinning up an R session for each call. 
-
-   + The model is cached in memory and therefore only loaded once.
-
-To publish a `Realtime` R web service, you must:
-  + Published to R Server for Windows or SQL Server 2017 Machine Learning Services (additional platforms in future releases); the resulting web service can be consumed on any platforms
-
-  + Specify the argument `serviceType = Realtime`
-
-  + Have a model object that was created with following supported functions:
-    + From `RevoScaleR` package, [these specific functions](../scaler/scaler.md): `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` functions
-    
-    + From `MicrosoftML` package, only the [machine learning tasks and transform tasks functions](../microsoftml/microsoftml.md), which include `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`
-
-  + Leave the code argument undefined. Also leave inputs or outputs undefined since they both only accept a data.frame.
- 
-See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
-
-#### Function arguments and response
-
-The `mrsdeploy` function for publishing as web services is `publishService`. 
-
-|Function|Response|
-|----|----|
-|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
-
-From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
-
->[!WARNING]
->In the case where you are working with a [remote R session](../operationalize/remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
-
-The following arguments are accepted for `publishService`:
-
-|Arguments|Description|
-|----|----|
-|`serviceType`|The type of service produced when published: <br>1. `serviceType = Script` (standard web service) contains arbitrary R code, R scripts and/or models. If omitted or null, `Script` is assumed.<br>2. `serviceType = Realtime` contains only a supported model object (see `model` argument below) published to R Server for Windows or SQL Server Machine Learning Services (consumable on any platform). ([Learn more about this type.](#realtime))|
-|`name` *|The unique web service name. It is a string so use quotes such as "MyService". We recommend that you use a name that is easy understood and fits a nice URL so people can remember it.|
-|`code` *|Required for standard web services, this is the R code to publish. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, omit `code` argument or set to NULL.|
-|`model`|For standard web services, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object.  Currently, only a limited number of model types and scoring functions are supported [(see here)](#realtime).  For example, `model = rxPredict.glm`<br>|
-|`artifacts`|A character vector of filenames defining which file artifacts should be returned during service consumption. File content is encoded as a `Base64` string. |
-|`snapshot`|Identifier of [the session snapshot](remote-execution.md#snapshot) to load. Can replace the `model` argument or be merged with it. Not applicable to `Realtime` type services. |
-|`inputs`|Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.|
-|`outputs` | Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
-|`v` |Defines a unique alphanumeric web service version. If the version is left blank, a unique `{guid}` will be generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. [Learn more...](#versioning)|
-|`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
-|`destination` |The codegen output directory location.|
-|`descr` |The description of the web service.|
-
-<sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
-
-
-#### Example
-
-See full examples in the ["Workflow" examples](#workflow) at the end of this article.
 
 Example of a standard web service:
 ```R
@@ -149,6 +89,23 @@ api <- publishService(
 )
 ```
 
+See a full example in the ["Workflow" examples](#workflow) at the end of this article.
+
+
+<a name="realtime"></a>
+
+#### Realtime web services
+
+Starting in R Server 9.1, you can also publish R models as `Realtime` web services. `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost upon consumption is due to the fact that there is no need to create an R session when consuming these supported model types. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once.
+
+`Realtime` web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
+
+To publish a `Realtime` R web service, you must specify the argument `serviceType = Realtime` and use a model object  created with one of the following supported functions:
++ From `RevoScaleR` package, [these specific functions](../scaler/scaler.md): `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` functions
+    
++ From `MicrosoftML` package, only the [machine learning tasks and transform tasks functions](../microsoftml/microsoftml.md), which include `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`
+
+
 Example of a `Realtime` web service ([see full example](#realtime-example):
 ```R
 # Publish as service using `publishService()` function. 
@@ -163,6 +120,23 @@ realtimeApi <- publishService(
     alias = "kyphosisService"
 )
 ```
+
+See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
+
+
+#### Function arguments and response
+
+The `mrsdeploy` function for publishing as web services is `publishService`. 
+
+|Function|Response|
+|----|----|
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+
+For the full list of arguments for this function, see the package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md)
+
+From your local commandline, you can publish web services to a local R Server or, if you set up a remote session, [publish to remote R Server](../operationalize/remote-execution.md#publish-remote-session).
+
+
 
 <a name="data-types"></a>
 
@@ -218,9 +192,9 @@ The following arguments are accepted for `updateService`:
 |`code`|For standard web services, the R code to publish if you are updating the code. If you use a path, the base path is your local current working directory.  `code` can take the form of:<br>1. A filepath to a local R script. For example:<br> &nbsp;  &nbsp; `code = "/path/to/R/script.R"`<br>2. A block of R code as a character string. For example:<br> &nbsp;  &nbsp; `code = "result <- x + y"`<br>3. A function handle. For example:<br> &nbsp;  &nbsp; `code = function(hp, wt) {`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br> &nbsp;&nbsp;  &nbsp;&nbsp; `}`<br><br>If `serviceType = Realtime`, `code` is not accepted.|
 |`model`|For standard web services, an `object` or a file-path to an external representation of R objects to be loaded and used with `code`. The specified file can be:<br>1. File-path to a local `.RData` file holding R objects to be loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.RData"`<br>2. File-path to a local `.R` file which will be evaluated into an environment and loaded. For example:<br> &nbsp;  &nbsp; `model = "/path/to/glm-model.R"`<br>3. An object. For example:<br> &nbsp;  &nbsp; `model = am.glm`<br><br>If `serviceType = Realtime`, a model object. Currently, only a limited number of model types and scoring functions are supported [(see here)](#realtime).  For example, `model = rxPredict.glm`|
 |`artifacts`|A character vector of filenames defining which file artifacts should be returned during service consumption. File content is encoded as a `Base64` string. |
-|`snapshot` |Identifier of [the session snapshot](remote-execution.md#snapshot) to load. Can replace the `model` argument or be merged with it. Not applicable to `Realtime` type services. |
-|`inputs` |Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.|
-|`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types). Not applicable to `Realtime` type services since they default to data.frame automatically.<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
+|`snapshot` |Identifier of [the session snapshot](remote-execution.md#snapshot) to load. Can replace the `model` argument or be merged with it. <br><br>Not applicable to `Realtime` type services. |
+|`inputs` |Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list `list(x = "logical")` which describe the input parameter names and their corresponding [data types](#data-types). <br><br>Not applicable to `Realtime` type services since they take data.frame automatically.|
+|`outputs` |Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a named list `list(x = "logical")` which describe the output parameter names and their corresponding  [Data Types](#data-types). <br><br>Not applicable to `Realtime` type services since they take data.frame automatically.<br>Note: If `{code}` is defined as a `{function}` then only one output value can be claimed.|
 |`alias` |An alias name of the predication remote procedure call (RPC) function used to consume the service. If `code` is a function, it will use that function name by default. See [Api](#api-client).|
 |`destination` |The codegen output directory location.|
 |`descr` |The description of the web service.|
