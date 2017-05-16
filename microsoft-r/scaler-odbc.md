@@ -6,8 +6,8 @@ description: "Microsoft R Server data import with ODBC."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "01/19/2017"
-ms.topic: "get-started-article"
+ms.date: "05/08/2017"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# RevoScaleR ODBC Data Import
+# ODBC configuration for importing data into Microsoft R
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing database management systems and databases.
 
