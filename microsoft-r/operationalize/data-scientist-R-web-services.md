@@ -34,23 +34,29 @@ To use the `mrsdeploy` R package, R Server must be [properly configured](../mrsd
 
 Note that a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
-## Permissions and function descriptions
-In addition to the authentication functions, the following functions are used to bundle R code or R scripts as web services.
+## Tasks and permissions
 
->[!IMPORTANT]
->To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  Learn about the login/logout functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+Using `mrsdeploy` functions, you can perform the following tasks for web services in R:
 
-Any authenticated user can publish an analytic web service to a given R Server instance. They can also retrieve a list of the available services hosted in R Server as well as retrieve service objects from them for consumption them regardless of whether they published those services or not.
+|Task| Function(s) |
+|---------|-------------|
+|Log into R Server as an authenticated user|Use the `remoteLogin` or<br>`remoteLoginAAD` function to authenticate with R Server as described in the article "[Connecting to R Server in R](../operationalize/mrsdeploy-connection.md)".|
+|Publish a service|Use `publishService` to publishes R code, scripts or models as web services on R Server. |
+|Update a service|Use `updateService` to update an existing web service. |
+|Delete a service|Use `deleteService ` to delete a web service. |
+|Get a list of all services| Use `listServices` to return a list of published web services. |
+|Get the web service object|Use `getService` to retrieve a web service object for consumption. |
 
-In this release, you can only manage (update/delete) the web services you've published. You cannot manage the services published by other users. 
 
-|Web service functions | Description |Your Service|Other Services
-|---------|-------------|-----|----|
-|`publishService` |Publishes R code as a web service on R Server. |Yes|N/A|
-|`updateService` |Updates an existing web service on an R Server instance. |Yes |No|
-|`deleteService `|Deletes a web service on an R Server instance. |Yes|No|
-|`listServices` |Returns a list of published web services on the R Server instance. |Yes|Yes|
-|`getService` |Returns a web service object for consumption. |Yes|Yes|
+By default, any authenticated user can publish an analytic web service to a given R Server instance. That user can also retrieve a list of the available web services as well as retrieve any web service object for consumption regardless of whether he or she published that service.  Additionally, users can update and delete the web services they've published.
+ 
+Beginning in version 9.1, your administrator can also **[assign role-based authorization](security-roles.md)** to further control the permissions around web services giving some users more control than others. Ask your administrator for details on your role.
+
+## Authentication
+
+To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  Learn about the login/logout functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+
+
 
 
 ## Publish and manage in R
