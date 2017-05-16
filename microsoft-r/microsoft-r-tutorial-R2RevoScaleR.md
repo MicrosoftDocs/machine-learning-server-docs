@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "NEW Tutorial: Explore R-to-RevoScaleR in 25 functions"
+title: "Tutorial: Explore R-to-RevoScaleR in 25 functions"
 description: "Explore and execute R and RevoScaleR commands using R Microsoft R Client or R Server."
 keywords: ""
 author: "HeidiSteen"
