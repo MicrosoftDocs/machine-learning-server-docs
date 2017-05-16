@@ -441,7 +441,7 @@ The **RevoScaleR** package, included in Microsoft R Server and R Client, provide
 
 RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable. You can also work with base functions in the R language. RevoScaleR is built on the R language, which means you can write scripts or code that use both types of functions in the same solution.
 
-### Step 1: Access Data with *rxImport*
+### Load Data with *rxImport*
 
 The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a locally installed ODBC driver for your database to access data on a local or remote computer. 
 
@@ -458,7 +458,7 @@ But for the time being, let's continue to work with the data in memory. We can d
 	mortOutput <- NULL
 	mortData <- rxImport(inData = inDataFile, outFile = mortOutput)
 
-### Step 2: Retrieve metadata
+### Retrieve metadata
 
 There are a number of basic methods we can use to learn about the data set and its variables that will work on the return object of *rxImport*, regardless of whether it is a data frame or *RxXdfData* object. 
 
@@ -512,7 +512,7 @@ Output:
 	2 691 4 4 5077 2000 0
 	3 743 18 3 3080 2000 0
 
-### Step 3: Select and transform data with *rxDataStep*
+### Select and transform with *rxDataStep*
 
 The rxDataStep function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
 
@@ -546,7 +546,7 @@ With the *rowSelection* argument, we have also removed any observations with hig
 		2 factor levels: Low Debt High Debt
 	Var 7: lowScore, Type: logical, Low/High: (0, 1)
 
-### Step 4: Visualize Data with *rxHistogram*, *rxCube*, and *rxLinePlot*
+### Visualize with *rxHistogram*, *rxCube*, and *rxLinePlot*
 
 The rxHistogram function will show us the distribution of any of the variables in our data set. For example, let’s look at credit score:
 
@@ -564,7 +564,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 
 ![](media/rserver-getting-started/image15.png)
 
-### Step 5: Analyze Data with *rxLogit*
+### Analyze with *rxLogit*
 
 **RevoScaleR** provides the foundation for a variety of high performance, scalable data analyses. Here we’ll do a logistic regression, but you’ll probably also want to take look at computing summary statistics (*rxSummary*), computing cross-tabs (*rxCrossTabs*), estimating linear models (*rxLinMod*) or generalized linear models (*rxGlm*), and estimating variance-covariance or correlation matrices (*rxCovCor*) that can be used as inputs to other R functions such as principal components analysis and factor analysis. Now, let’s estimate a logistic regression on whether or not an individual defaulted on their loan, using credit card debt and years of employment as independent variables:
 
@@ -595,7 +595,7 @@ We get the following output:
 	Condition number of final variance-covariance matrix: 1.4455
 	Number of iterations: 9
 
-### Step 6: Scale Your Analysis
+### Scale your analysis
 
 So, we’ve finished experimenting with our small data set in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
 
@@ -703,56 +703,13 @@ Note that because we have specified an output file when importing the data, the 
 	Number of iterations: 9
 
 
-## Next Steps: how to load more packages
+## Next Steps
 
-An R *package* is a collection of R objects and documentation. The R objects may be functions, data sets, or a combination, and they are usually related in some way, although this is not an absolute requirement. The standard R distribution consists of the following packages:
+Continue learning more about using larger data sets with RevoScaleR functions with these additional tutorials:
 
-| stats      | graphics | grDevices | utils    |
-|------------|----------|-----------|----------|
-| datasets   | methods  | base      | -         |
-| KernSmooth | MASS     | Matrix    | boot     |
-| class      | cluster  | codetools | compiler |
-| foreign    | grid     | lattice   | mgcv     |
-| nlme       | nnet     | parallel  | rpart    |
-| spatial    | splines  | stats4    | survival |
-| tcltk      | tools    | boot      |  -        |
-
-The packages in the top two lines are automatically loaded when you start R. You can load other packages using the *library* function. For example, to load the *MASS* library, which contains functions and data sets used in the book *Modern Applied Statistics with S* by Venables and Ripley, you call *library* as follows:
-
-	library(MASS)
-
-Other packages are available through the Comprehensive R Archive Network (CRAN); to obtain a package you use the `install.packages` function:
-
-	install.packages("SuppDists")
-
-	trying URL 'http://cran.fhcrc.org/src/contrib/SuppDists\_1.1-8.tar.gz'
-	Content type 'application/x-gzip' length 139864 bytes (136 Kb)
-	opened URL
-	==================================================
-	downloaded 136 Kb
-	* installing *source* package 'SuppDists' ...
-	** libs
-	** arch - x86\_64
-	g++ -arch x86\_64  -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/includ
-	e -I/opt/REvolution/Revo-3.2/Revo64/R.framework/Resources/include/x86\_64  -I/usr
-	/local/include    -fPIC  -g -O2 -c dists.cc -o dists.o
-	g++ -arch x86\_64 -dynamiclib -Wl,-headerpad\_max\_install\_names -undefined dynamic
-	\_lookup -single\_module -multiply\_defined suppress -L/usr/local/lib -o SuppDists.
-	so dists.o -F/opt/REvolution/Revo-3.2/Revo64/R.framework/.. -framework R -Wl,-fr
-	amework -Wl,CoreFoundation
-	** R
-	** preparing package for lazy loading
-	** help
-	*** installing help indices
-	** building package indices ...
-	* DONE (SuppDists)
-
-	The downloaded packages are in
-		'/private/var/folders/cy/cy2tNRpEHrmxPZPrN1EINU+++TI/-Tmp-/RtmpZnKn6Z/do
-	wnloaded\_packages'
-	Updating HTML index of packages in '.Library'
-
-On Linux systems, you should not use CRAN as a source for third-party packages, because they may require a current version of R that may be different than that distributed with Microsoft R Server and R Client. Microsoft R Server and R Client sets the default repository to a fixed CRAN snapshot maintained at [mran.microsoft.com](http://mran.microsoft.com).
++ [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)	
++ [Loan data analysis](scaler-getting-started-1-example-loan-data.md)	
++ [Census data analysis](scaler-getting-started-2-example-census-data.md)	
 
 
 
