@@ -269,49 +269,6 @@ The results show that in this data set “late” flights are on average over 10
 	Col Mean  57.96692   
 ~~~~
 
-## Create a new data set with variable transformations
-
-Now use the *rxDataStep* function to create a new data set containing the variables in *ADS.xdf* plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. See the [ScaleR User's Guide](scaler-user-guide-introduction.md) for information on doing more complex transformations using a transform function. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
-
-In the example below, three new variables are created. The variable *Late* is a logical variable set to *TRUE* (or *1*) if the flight was more than 15 minutes late in arriving. The variable *DepHour* is an integer variable indicating the hour of the departure. The variable *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M.
-
-The *rxDataStep* function will read the existing data set and perform the transformations chunk by chunk, and create a new data set.
-
-~~~~
-	airExtraDS <- rxDataStep(inData = airDS, outFile="ADS2.xdf",
-		transforms=list(
-			Late = ArrDelay > 15,
-			DepHour = as.integer(CRSDepTime),
-			Night = DepHour >= 20 | DepHour <= 5))
-
-	rxGetInfo(airExtraDS, getVarInfo=TRUE, numRows=5)
-~~~~
-
-You should see the following information in your output:
-
-~~~~
-	File name: C:\YourWorkingDir\ADS2.xdf
-	Number of observations: 6e+05
-	Number of variables: 6
-	Number of blocks: 2
-	Compression type: zlib
-	Variable information:
-	Var 1: ArrDelay, Type: integer, Low/High: (-86, 1490)
-	Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
-	Var 3: DayOfWeek
-	       7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
-	Var 4: Late, Type: logical, Low/High: (0, 1)
-	Var 5: DepHour, Type: integer, Low/High: (0, 23)
-	Var 6: Night, Type: logical, Low/High: (0, 1)
-	Data (5 rows starting with row 1):
-	  ArrDelay CRSDepTime DayOfWeek  Late DepHour Night
-	1        6   9.666666    Monday FALSE       9 FALSE
-	2       -8  19.916666    Monday FALSE      19 FALSE
-	3       -2  13.750000    Monday FALSE      13 FALSE
-	4        1  11.750000    Monday FALSE      11 FALSE
-	5       -2   6.416667    Monday FALSE       6 FALSE
-~~~~
-
 ## Run a logistic regression on the new data
 
 The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving. For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
