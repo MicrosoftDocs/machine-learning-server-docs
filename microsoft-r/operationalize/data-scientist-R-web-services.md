@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# How to manage web services in R
+# How to publish, manage, and consume web services in R
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -224,13 +224,11 @@ print(result)
 
 ### List web services
 
-Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to filter the list to return a specific web service or all labeled versions of a given web service.
+Any authenticated user can retrieve a list of web services using the `listServices` function in the `mrsdeploy` package.  
 
-You can only see the R code for the web services that you published or manage. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used when the web service was published.
+You can use arguments to filter the list to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments.
 
-Use the `listServices` function in the `mrsdeploy` package to retrieve a list of all available web services.
-
-Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments. 
+If you published the web service or have the "Owner" role, you will also be able to see the R code inside that web service. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used to create the web service.
 
 |Function|Response|
 |----|----|
@@ -267,11 +265,9 @@ Example output:
 
 ### Retrieve and examine service objects
 
-Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
+Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
-Use the `getService` function in the `mrsdeploy` package to retrieve a service object.
-
-Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
+Use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
 
 |Function|Response|
 |----|----|
@@ -297,7 +293,7 @@ result <- api$manualTransmission(120, 2.8)
 
 ### Interact with API clients
 
-When you publish, update or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a `client stub` for consuming that service and viewing its service holdings. 
+When you publish, update, or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a `client stub` you can use to consumethat service and view its service holdings. 
 
 You can use the following supported public functions to interact with the API client instance.
 
@@ -306,12 +302,12 @@ You can use the following supported public functions to interact with the API cl
 | `print`       |	Print method that lists all members of the object      |
 | `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
 | `consume`     |	Consume the service based on I/O schema                |
-| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the `publishService` function). |
+| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the [`publishService` function](../mrsdeploy/packagehelp/publishService.md)). |
 | `swagger`     |	Displays the service's `swagger` specification         |
-| `batch` |Define the data records to be batched... In addition to the public functions above, there are many functions you can use to  consume a service asynchronously via batch execution. [For public functions for batch, see this article](data-scientist-batch-mode.md#public-fx-batch).|
+| `batch` |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](data-scientist-batch-mode.md#public-fx-batch).|
 
 
-#### Example
+Example:
 
 ```R
 # Get service using `getService()` function from `mrsdeploy`.
@@ -422,46 +418,49 @@ Get the Swagger-based JSON file in one of two ways:
 
 <a name="workflow"></a>
 
-## Workflows: publish-to-consume 
+## Workflows examples: from publish to consume 
 
-The following workflow examples demonstrate how to publish a web service, interact with it, and consume it. 
+The following workflow examples demonstrate how to publish a web service, interact with it, and then consume it. 
 
-In each example of standard web services, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  
-For standard web services, keep in mind that:
-+ R code must come from: 
-  + A filepath to a local R script
-  + A block of R code as a character string
-  + A function handle
-+ A model can come:
-  + File path to an `.RData` file holding the external R objects to be loaded and used with the code
-  + File path to an `.R` file which will be evaluated into an environment and loaded
-  + A model object
+### Before you begin
 
-In the example of [a `Realtime` web service](#realtime-example), keep in mind that:
-+ R code is not supported
-+ The model must be a model object of a supported model format
+>[!IMPORTANT]
+>Be sure to replace the `remoteLogin()` function in each of the examples below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
-[Learn more about realtime services.](#realtime)
+The base path for files is set to your working directory, but you can change that as follows:
 
-
-The base path for files is set to your working directory.  
 + To specify a different base path for `code` and `model` arguments, use:  
   ```R
   opts <- serviceOption()
   opts$set("data-dir", "/base/path/to/some-other/location"))
   ```
+
 + To clear the path and specify full paths, use:
   ```R
   opts <- serviceOption() s
   opts$set("data-dir", NULL))
   ```
 
-### Using local objects for R code and R model 
+### Standard web service examples
+
+In each example of standard web services, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  
+
+For standard web services, keep in mind that:
++ Any R code must come from: 
+  + A filepath to a local R script
+  + A block of R code as a character string
+  + A function handle
+
++ Any model can come:
+  + File path to an `.RData` file holding the external R objects to be loaded and used with the code
+  + File path to an `.R` file which will be evaluated into an environment and loaded
+  + A model object
+
+
+
+#### R code and model are objects
 
 In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
-
->[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 
 ```R
@@ -497,6 +496,7 @@ print(manualTransmission(120, 2.8)) # 0.6418125
 # Use `remoteLogin` to authenticate with R Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
+# REMEMBER: Replace with your login details
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
             password = “{{YOUR_PASSWORD}}”,
@@ -568,12 +568,9 @@ remoteLogout()
 
 
 
-### Using local `.RData` file 
+#### R code as object and `.RData` as file 
 
 In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
-
->[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
 # For R Server 9.0, load mrsdeploy package on R Server     
@@ -584,6 +581,7 @@ library(mrsdeploy)
 # Use `remoteLogin` to authenticate with R Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
+# REMEMBER: Replace with your login details
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
             password = “{{YOUR_PASSWORD}}”,
@@ -646,12 +644,9 @@ remoteLogout()
 ```
 
 
-### Using `.R` code and model files 
+#### Code and model as .R scripts 
 
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
-
->[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 
 ```R
@@ -663,6 +658,7 @@ library(mrsdeploy)
 # Use `remoteLogin` to authenticate with R Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
+# REMEMBER: Replace with your login details
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
             password = “{{YOUR_PASSWORD}}”,
@@ -723,14 +719,9 @@ status
 remoteLogout()
 ```
 
-### Using `.RData` and `.R` files
-
+#### Code as script and model as .RData file
 
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
-
->[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
-
 
 ```R
 # For R Server 9.0, load mrsdeploy package on R Server     
@@ -741,6 +732,7 @@ library(mrsdeploy)
 # Use `remoteLogin` to authenticate with R Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
+# REMEMBER: Replace with your login details
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
             password = “{{YOUR_PASSWORD}}”,
@@ -803,12 +795,15 @@ remoteLogout()
 
 <a name="realtime-example"></a>
 
-### Publish Realtime service with supported local model object
+### Realtime web service example
 
-Realtime web services are available for users of R Server 9.1 and later on Windows platforms. In this example, the model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package and the Rpart `kyphosis` dataset is available to all R users.
+In this example, the local model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package. Please note that the Rpart `kyphosis` dataset is available to all R users by default.
 
->[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+When publishing [a `Realtime` web service](#realtime), keep in mind that:
++ R code is not supported
++ The model must be a model object of a supported model format
+
+To learn more about the supported model formats, supported product versions, and supported platforms for realtime web services, [see here](#realtime).
 
 ```R
 ##          REALTIME WEB SERVICE EXAMPLE                ##
@@ -833,6 +828,7 @@ rxPredict(kyphosisModel, data = testData)  # Kyphosis_Pred: 0.1941938
 # Use `remoteLogin` to authenticate with R Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
+# REMEMBER: replace with the login info for your organization
 remoteLogin("http://localhost:12800", 
             username = "admin", 
             password = “{{YOUR_PASSWORD}}”,
