@@ -39,6 +39,7 @@ Tasks you can perform with web services in R include:
 + [Delete](#deleteService) an existing web service
 + [Get a list](#listServices) of all web services
 + [Get the web service object](#getService) for consumption
++ [Share](#consume-service) the service with others
 
 Note that a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -398,13 +399,13 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 #### Collaborate with application developers
 
-Application developers can call and integrate web services into their applications using each service-specific Swagger-based JSON file along with the required inputs. 
+Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
-After the application developer has this Swagger-based JSON file, he or she can create client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
+Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
    
-Get the Swagger-based JSON file in one of two ways:
+Application developers can get the Swagger-based JSON file in one of these ways:
 
-+ A data scientist can send them the Swagger-based JSON file they've downloaded, which can sometimes be a faster approach. In R, you can get the file with the following code and send it to the application developer:
++ A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This is often the faster approach. They can get the file in R with the following code and send it to the application developer:
    ```R
    api <- getService("<name>", "<version>")
    swagger <- api$swagger()
@@ -418,7 +419,7 @@ Get the Swagger-based JSON file in one of two ways:
 
 <a name="workflow"></a>
 
-## Workflows examples: from publish to consume 
+## Workflow examples 
 
 The following workflow examples demonstrate how to publish a web service, interact with it, and then consume it. 
 
@@ -443,17 +444,17 @@ The base path for files is set to your working directory, but you can change tha
 
 ### Standard web service examples
 
-In each example of standard web services, the values of the R code (`code`) and the model (`model`) are represented in different ways (as files, objects, ...), but in each case the result is the same.  
+Each standard web service example uses the same code and models and returns the same results. However, in each example, that code and model are represented in different ways such as R scripts, objects, files, and so on.  
 
 For standard web services, keep in mind that:
-+ Any R code must come from: 
++ R code can come from: 
   + A filepath to a local R script
   + A block of R code as a character string
   + A function handle
 
-+ Any model can come:
-  + File path to an `.RData` file holding the external R objects to be loaded and used with the code
-  + File path to an `.R` file which will be evaluated into an environment and loaded
++ R models can come:
+  + A filepath to an `.RData` file holding the external R objects to be loaded and used with the code
+  + A filepath to an `.R` file that is evaluated into an environment and loaded
   + A model object
 
 
