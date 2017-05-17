@@ -32,25 +32,23 @@ Learn how to interact with and manage your analytic web services in R using the 
 
 To use the `mrsdeploy` R package, R Server must be [properly configured](../mrsdeploy/mrsdeploy.md#configure) to host web services. Then, you can use the `mrsdeploy` functions to publish R models, scripts, arbitrary code exposed as **analytic web services**. These web services are discoverable by other authenticated users who can then [consume them in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
+Tasks you can perform with web services in R include:
++ [Log into R Server](#auth) as an authenticated user so you can publish or access web services
++ [Publish](#publishService) an R script, model, or arbitrary R code as a web service on R Server
++ [Update](#updateService) an existing web service
++ [Delete](#deleteService) an existing web service
++ [Get a list](#listServices) of all web services
++ [Get the web service object](#getService) for consumption
+
 Note that a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
-## Tasks and permissions
+## Permissions for managing web services
 
-Using `mrsdeploy` functions, you can perform the following tasks for web services in R:
-
-|Task| Function(s) |
-|---------|-------------|
-|Log into R Server as an authenticated user|Use the `remoteLogin` or `remoteLoginAAD` function to authenticate with R Server.|
-|Publish a service|Use `publishService` to publishes R code, scripts or models as web services on R Server. |
-|Update a service|Use `updateService` to update an existing web service. |
-|Delete a service|Use `deleteService ` to delete a web service. |
-|Get a list of all services| Use `listServices` to return a list of published web services. |
-|Get the web service object|Use `getService` to retrieve a web service object for consumption. |
-
-<br>
-By default, any authenticated user can publish an analytic web service to a given R Server instance. That user can also retrieve a list of the available web services as well as retrieve any web service object for consumption regardless of whether he or she published that service.  Additionally, users can update and delete the web services they've published.
+By default, any authenticated user can publish a web service, retrieve a list of the available web services, and retrieve any web service object for consumption regardless of whether he or she published that service.  Additionally, users can update and delete the web services they've published.
  
-Beginning in version 9.1, your administrator can also **[assign role-based authorization](security-roles.md)** to further control the permissions around web services giving some users more control than others. Ask your administrator for details on your role.
+Beginning in version 9.1, your administrator can also **[assign role-based authorization](security-roles.md)** to further restrict the permissions around web services to give some users more control over web services than others. Ask your administrator for details on your role.
+
+<a name="auth"></a>
 
 ## Authenticate
 
@@ -58,24 +56,33 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 Learn about the login and logout functions available with the `mrsdeploy` package and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
-<a name="publishservice"></a>
+<a name="publishService"></a>
 
-## Publish web services
+## Publish standard and realtime web services
 
-To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, they can be consumed by other users. 
+To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, they can be consumed by other users. There are several types of web services described in this section, including standard R web services and  [realtime web services](#realtime).
 
-Each web service is uniquely defined by a `name` and `version`.   
+Use the `publishService` function in the `mrsdeploy` package to publish a web service.
 
-### Standard web services
+Each web service is uniquely defined by a `name` and `version` and several other arguments. See the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
 
-Web services offer fast execution and scoring of arbitrary R code and R models. In addition to a name and version, a standard web service is also defined by its R code and any necessary model assets, the required inputs, and the output application developers will need to integrate the service in their applications.
+|Function|Response|
+|----|----|
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+
+You can publish web services to a local R Server from your commandline. You can also publish a web service to a remote R Server from your local commandline if you [create a remote session](../operationalize/remote-execution.md#publish-remote-session).  
 
 
+**Standard web services**
 
-Example of a standard web service:
+The default web services is called a standard web service. Standard web services offer fast execution and scoring of arbitrary R code and R models. 
+
+In addition to a name and version, a standard web service is also defined by its R code and any necessary model assets, the required inputs, and the output application developers will need to integrate the service in their applications.
+
+Example: 
 ```R
-# Publish web service called mtService and 
-# assign version number v1.0.0
+# Publish a standard service 'mtService' version 'v1.0.0'
+# Assign service to 'api' variable
 api <- publishService(
      "mtService",
      code = manualTransmission,
@@ -86,28 +93,30 @@ api <- publishService(
 )
 ```
 
-See a full example in the ["Workflow" examples](#workflow) at the end of this article.
+For a more detailed example, see the ["Workflow" examples](#workflow) at the end of this article.
 
+You can also follow this quickstart article, [Deploying an R model as a web service](../operationalize/quickstart-publish-web-service.md).
 
 <a name="realtime"></a>
 
-### Realtime web services
+**Realtime web services**
 
-Starting in R Server 9.1, you can also publish R models as `Realtime` web services. `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost upon consumption is due to the fact that there is no need to create an R session when consuming these supported model types. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once.
+Starting in R Server 9.1 another web service type was added called `Realtime`.  `Realtime` web services offer lower latency and better load so you can get results faster and score more models in parallel. The improved performance boost upon consumption is due to the fact that there is no need to create an R session when consuming these supported model types. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once.
+
+To publish a `Realtime` R web service, specify the [argument `serviceType = Realtime`](../mrsdeploy/packagehelp/publishService.md) and use a model object  created with a supported functions, such as:
++ These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`.
+    
++ These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.
+
+Only a model is accepted, and no other R code is supported with `Realtime` web services.
 
 `Realtime` web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
 
-To publish a `Realtime` R web service, you must specify the argument `serviceType = Realtime` and use a model object  created with one of the following supported functions:
-+ From `RevoScaleR` package, [these specific functions](../scaler/scaler.md): `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` functions
-    
-+ From `MicrosoftML` package, only the [machine learning tasks and transform tasks functions](../microsoftml/microsoftml.md), which include `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`
+Example: 
 
-
-Example of a `Realtime` web service ([see full example](#realtime-example):
 ```R
-# Publish as service using `publishService()` function. 
-# Define its name `kyphosisService` and version `v1.0`
-# Assign service to the variable `realtimeApi`.
+# Publish a realtime service 'kyphosisService' version 'v1.0'
+# Assign service to 'realtimeApi' variable
 realtimeApi <- publishService(
      serviceType = "Realtime",
      name = "kyphosisService",
@@ -121,65 +130,27 @@ realtimeApi <- publishService(
 See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
 
 
-### Function arguments and response
-
-The `mrsdeploy` function for publishing as web services is `publishService`. 
-
-|Function|Response|
-|----|----|
-|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
-
-For the full list of arguments for this function, see the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md)
-
-From your local commandline, you can publish web services to a local R Server or, if you set up a remote session, [publish to remote R Server](../operationalize/remote-execution.md#publish-remote-session).
-
-
-
-<a name="data-types"></a>
-
-### I/O data types
-
-The following table lists the supported data types for the [publishService](#publishservice) and [updateService](#updateService) function input and output schemas:
-
-|I/O data types|Full support?|
-|--------|:----------:|
-|`numeric`|Yes| 
-|`integer`|Yes|
-|`logical`|Yes|
-|`character`|Yes|
-|`vector`|Yes|
-|`matrix`|Partial<br>(Not for logical & character matrices)|
-|`data.frame`|Yes<br>Note: Coercing an object during <br>I/O is a user-defined task|
-
-<a name="versioning"></a>
-
-### Version web services
-
-Every time a web service is published, a version is assigned to the web service. Versioning enables users' publishing services to better manage the release of their services and for those users consuming the services to more easily identify what they are 
-calling. 
-
-When publishing, you can specify a version. If you forget to assign one, one is generated for you.
-
-+ To specify a version, use any alphanumeric string that is meaningful to those who will consume the service in your organization, such as `2.0`, `v1.0.0`, `v1.0.0-alpha`, `v1.0.0-test`, `test-1`. Meaningful versions are very helpful when you are ready to share your services with others. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
-
-+ If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference 
-number. These GUID version numbers are harder to remember for those consuming your services, so they are not popular. 
 
 <a name="updateService"></a>
+
 ## Update web services
 
-If you want to change your web service after you've published it, but keep the same name and version, you can use `updateService`. and specify what needs to change, such as the R code, model, inputs, and so on. You can change one or more of the arguments at the same time. When you update a service, it overwrites that named version.
+To change a web service after you've published it, while retaining the same name and version, use the `updateService` function. For arguments, specify what needs to change, such as the R code, model, inputs, and so on. When you update a service, it overwrites that named version.
 
->[!NOTE]
->If you want to change the name or version number, use the `publishService` function instead and specify the new name or version number. 
+Use the `updateService` function in the `mrsdeploy` package to update a web service.
 
-The `mrsdeploy` function for updating as web services is `updateService`. 
+See the [package reference help page for updateService()](../mrsdeploy/packagehelp/updateService.md) for the full description of all arguments. 
 
 |Function|Response|
 |----|----|
 |`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
 
-For example:
+
+>[!NOTE]
+>If you want to change the name or version number, use the `publishService` function instead and specify the new name or version number. 
+
+
+Example: 
 
 ```R
 # For web service called mtService with version number v1.0.0,
@@ -196,34 +167,51 @@ api <- updateService(
 ```
 
 
-For the full list of arguments for this function, see the [package reference help page for updateService()](../mrsdeploy/packagehelp/updateService.md)
 
 
+<a name="data-types"></a>
 
+## Supported I/O data types
+
+The following table lists the supported data types for the [publishService](#publishservice) and [updateService](#updateService) function input and output schemas.
+
+|I/O data types|Full support?|
+|--------|:----------:|
+|`numeric`|Yes| 
+|`integer`|Yes|
+|`logical`|Yes|
+|`character`|Yes|
+|`vector`|Yes|
+|`matrix`|Partial<br>(Not for logical & character matrices)|
+|`data.frame`|Yes<br>Note: Coercing an object during <br>I/O is a user-defined task|
+
+<a name="versioning"></a>
+
+## Versioning for web services
+
+Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. It also helps those consuming a given service to  easily identify the service. 
+
+When specifying a version at publish time, use any alphanumeric string that is meaningful to those who will consume the service in your organization. For example, you could use `2.0`, `v1.0.0`, `v1.0.0-alpha`, or `test-1`. 
+
+Meaningful versions are very helpful when you are ready to share your services with others. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
+
+If you do not specify a version when you publish, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference number for that  service. These GUID version numbers are harder to remember for those consuming your services and are therefore less desirable. 
+
+<a name="deleteService"></a>
 
 ## Delete web services
 
 When you no longer want to keep a web service, you can delete it. Only the user who initially created the web service can use this function.
 
+Use the `deleteService` function in the `mrsdeploy` package to delete a web service.
 
-The `mrsdeploy` function for deleting a web services is `deleteService`. 
+Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../mrsdeploy/packagehelp/deleteService.md) for the full description of all arguments. 
 
 |Function|Response|
 |----|----|
 |`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|
 
-
-<a name="deleteService"></a>
-
-The following arguments are accepted for `deleteService`:
-
-|Arguments|Description|
-|----|----|
-|`name`*|The web service name you want to delete. It is a string so use quotes such as "MyService".|
-|`v`*|Identifies the version of the web service to be deleted.|
-<sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
-
-### Example
+Example: 
 
 ```R
 result <- deleteService("mtService", "v1.0.0")
@@ -232,29 +220,23 @@ print(result)
 
 ## Interact with services in R
 
+<a name="listServices"></a>
+
 ### List web services
 
 Any authenticated user can retrieve a list of web services using the `listServices` function. You can use arguments to filter the list to return a specific web service or all labeled versions of a given web service.
 
 You can only see the R code for the web services that you published or manage. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used when the web service was published.
 
-The `mrsdeploy` function for listing available web services is `listServices`. 
+Use the `listServices` function in the `mrsdeploy` package to retrieve a list of all available web services.
+
+Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments. 
 
 |Function|Response|
 |----|----|
 |`listServices(...)`| R `list` containing service metadata.|
 
-
-<a name="listServices"></a>
-The following arguments are accepted for `listServices`:
-
-|Arguments|Description|
-|----|----|
-|`name`|When specified, will return only web services with that name. It is a string so use quotes such as "MyService".|
-|`v`|When specified, will return only web services with that name and specific version number.|
-<sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
-
-#### Example
+Example code:
 
 ```R
 # Return metadata for all services hosted on this R Server
@@ -275,125 +257,27 @@ mtServiceV1 <- listServices("mtService", "v1")
 print(mtService)
 ```
 
-In R Server 9.1 and later, the example returns:
-```R
-$creationTime
-[1] "2017-02-13T19:44:26.2611422"
+Example output:
 
-$name
-[1] "mtService"
+|R Server 9.1+|R Server 9.0|
+|--------|--------|
+|![9.1 output](../media/o16n/returns91.png)|![9.0 output](../media/o16n/returns90.png)|
 
-$version
-[1] "v1"
+<a name="getService"></a>
 
-$description
-NULL
-
-$snapshotId
-[1] "05053e85-c9d0-43cb-9be8-8dccf2b5da54"
-
-$versionPublishedBy
-[1] "rserver-user"
-
-$inputParameterDefinitions
-$inputParameterDefinitions[[1]]
-$inputParameterDefinitions[[1]]$name
-[1] "hp"
-
-$inputParameterDefinitions[[1]]$type
-[1] "numeric"
-
-$inputParameterDefinitions[[2]]
-$inputParameterDefinitions[[2]]$name
-[1] "wt"
-
-$inputParameterDefinitions[[2]]$type
-[1] "numeric"
-
-$outputParameterDefinitions
-$outputParameterDefinitions[[1]]
-$outputParameterDefinitions[[1]]$name
-[1] "answer"
-
-$outputParameterDefinitions[[1]]$type
-[1] "numeric"
-
-$operationId
-manualTransmission
-
-$myPermissionsOnService
-[1] "read/write"
-```
-
-
-In R Server 9.0, the example returns:
-```R
-$creationTime
-[1] "2017-02-13T19:44:26.2611422"
-
-$name
-[1] "mtService"
-
-$version
-[1] "v1"
-
-$description
-NULL
-
-$snapshotId
-[1] "05053e85-c9d0-43cb-9be8-8dccf2b5da54"
-
-$owner
-[1] "rserver-user"
-
-$inputParameterDefinitions
-$inputParameterDefinitions[[1]]
-$inputParameterDefinitions[[1]]$name
-[1] "hp"
-
-$inputParameterDefinitions[[1]]$type
-[1] "numeric"
-
-$inputParameterDefinitions[[2]]
-$inputParameterDefinitions[[2]]$name
-[1] "wt"
-
-$inputParameterDefinitions[[2]]$type
-[1] "numeric"
-
-$outputParameterDefinitions
-$outputParameterDefinitions[[1]]
-$outputParameterDefinitions[[1]]$name
-[1] "answer"
-
-$outputParameterDefinitions[[1]]$type
-[1] "numeric"
-
-$operationId
-manualTransmission
-```
-
-### Retrieve service objects
+### Retrieve and examine service objects
 
 Any authenticated user can retrieve a web service object using the `getService` function that makes it possible for the service to be consumed. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
-The `mrsdeploy` function for retrieving a service object is `getService`. 
+Use the `getService` function in the `mrsdeploy` package to retrieve a service object.
+
+Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
 
 |Function|Response|
 |----|----|
 |`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
 
-<a name="getService"></a>
-
-The following arguments are accepted for `getService`:
-
-|Arguments|Description|
-|----|----|
-|`name`*|The name of the web service whose object you want to retrieve. It is a string so use quotes such as "MyService".|
-|`v`*|The version of the web service whose object you want to retrieve.|
-<sup>&#42;</sup> If an argument is marked with an asterisk (&#42;), then the argument is __required__ by the function.
-
-#### Example
+Example:
 
 ```R
 # Get service using `getService()` function from `mrsdeploy` package.
@@ -1004,8 +888,9 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ## See also
 
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
-+ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md).
++ [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
++ [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Data scientist get started guide](data-scientist-get-started.md)
-+ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
-+ [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
-+ [Application developer get started guide](../operationalize/app-developer-get-started.md)
++ [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
++ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Application developer get started guide](app-developer-get-started.md)
