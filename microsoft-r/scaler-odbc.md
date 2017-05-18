@@ -30,22 +30,27 @@ ms.custom: ""
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data.
 
-ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the ODBC driver manager is built into the operating system. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/). 
+ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. 
 
-For each relational database you intend to use as a data source:
+To import data from a relational database management system, do the following:
 
-1. Install an ODBC Driver Manager (Linux only).	
-2. Install ODBC drivers.	
-3. Create an **RxOdbcData** data source for the source data.	
-4. For read operations, use **rxImport** to read data from the data source into an .xdf file or in-memory data frame.	
-5. For write operations, use **rxDataStep** to write data back to the data source.
+1. Install an ODBC Driver Manager (Linux only)
+2. Install ODBC drivers
+3. Create an **RxOdbcData** data source
+4. For read operations, use **rxImport** to read data
+5. For write operations, use **rxDataStep** to write data
 
-**rxOdbcData** objects are used to import relational data sources like Oracle, PostGres, MySQL, to name a few. 
+ODBC dependency exists for data import from relational database systems like Oracle, PostGres, and MySQL, to name a few.
 
-It is not intended, however, for SQL Server or Teradata. For SQL Server, we recommend using **rxSqlServerData** as the data source (see this [SQL Server tutorial for working with R objects](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata) for more information). For Teratadata, we recommend creating an **rxTeradata** data source (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+For Teradata, you can skip these steps and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
-> [!Note]
-> ODBC is primarily used for **rxOdbcData**, but is also leveraged internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection will fail. ODBC is not used for other data sources. Specifically, it's not used for accessing text files, SPSS database files, or SAS database files. RevoScaleR uses simple file access to read these files.
+For SQL Server, you should generally use **rxSqlServerData** as the data source (see this [SQL Server tutorial](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata), but you might need **rxOdbcData** if you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), or if you are importing data from Azure SQL Database.
+
+## How ODBC is used in Microsoft R
+
+ODBC support is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection would fail. 
+
+Although ODBC drivers exist for text data, Microsoft R does not use ODBC for file-based reads. Specifically, it's not used for accessing text files, SPSS database files, or SAS database files. Instead, RevoScaleR uses simple file access to read these files.
 
 ## Step 1: Install unixODBC (Linux only)
 
@@ -78,7 +83,7 @@ ODBC drivers must be installed on the machine running R Server or R Client. Use 
 
 **On Linux**
 
-
+Several ODBC drivers for unixODBC are provided as source files that you subsequently download, compile, and install. Instructions vary by vendor and are typically provided on download pages.
 
 **ODBC download sites for commonly used databases**
 

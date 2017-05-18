@@ -36,14 +36,16 @@ This tutorial starts with base R commands before transitioning to RevoScaleR fun
 
 ## Prerequisites
 
-This is our simplest tutorial in terms of data and tools, but it also comprehensive in its coverage of base R and RevoScaleR functions. To complete it, use the command line tool RGui.exe on Windows or start the **Revo64** program on Linux. The tutorial relies on ready-to-use, built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
+This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of base R and RevoScaleR functions. To complete the tasks, use the command line tool **RGui.exe** on Windows or start the **Revo64** program on Linux. 
 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
+The tutorial uses built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
+
 The R command prompt is `>`. You can hand-type commands line by line, or copy-paste a multi-line command sequence.
 
-R is case-sensitive. If you hand-type commands in this example, be sure to use the correct case. File paths in R use a forward slash delimiter (/), which is required even when the file path is on the Windows file system.
+R is case-sensitive. If you hand-type commands in this example, be sure to use the correct case. Windows users: the file paths in R take a forward slash delimiter (/), required even when the path is on the Windows file system.
 
 ## Start with R
 

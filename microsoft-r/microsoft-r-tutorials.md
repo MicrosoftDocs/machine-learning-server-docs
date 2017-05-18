@@ -34,7 +34,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 + [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 + [Practice data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
 
-## Graduate to larger data sets
+## Move forward with larger data sets
 
 + [Load and analyze large data](scaler-getting-started-3-analyze-large-data.md)
 + [Loan data analysis](scaler-getting-started-1-example-loan-data.md)

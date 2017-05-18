@@ -15,7 +15,7 @@
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 ## [Practice data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
-## Graduate to larger data sets
+## Work with larger data sets
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
 ### [Census data analysis](scaler-getting-started-2-example-census-data.md)
@@ -26,7 +26,7 @@
 ## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [How-to for data scientists](data-analysis-in-microsoft-r.md)
-## Data 
+## Load data 
 ### [Import Data](scaler-user-guide-data-import.md)
 ### [ODBC configuration](scaler-odbc.md)
 ### [Create data sources](scaler-user-guide-data-source.md)
