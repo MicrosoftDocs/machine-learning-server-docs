@@ -67,18 +67,37 @@ Use the `publishService` function in the `mrsdeploy` package to publish a web se
 
 Each web service is uniquely defined by a `name` and `version` and several other arguments. See the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
 
-|Function|Response|
-|----|----|
-|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+|Function|Response|R Help|
+|----|----|:----:|
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
 
 You can publish web services to a local R Server from your commandline. You can also publish a web service to a remote R Server from your local commandline if you [create a remote session](../operationalize/remote-execution.md#publish-remote-session).  
 
 
 **Standard web services**
 
-The default web services is called a standard web service. Standard web services offer fast execution and scoring of arbitrary R code and R models. 
+A standard web service offers fast execution and scoring of arbitrary R code and R models. 
 
-In addition to a name and version, a standard web service is also defined by its R code and any necessary model assets, the required inputs, and the output application developers will need to integrate the service in their applications.
+In addition to a name and version, a standard web service is also defined by the R code and any necessary model assets. When publishing a standard web service, you must also define the inputs required by the service as well as the output that application developers will use to integrate the service in their applications.
+
+The R code in a standard web service can come from: 
+  + A filepath to a local R script, such as:<br>
+    &nbsp;&nbsp;  `code = "/path/to/R/script.R"`
+  + A block of R code as a character string, such as:<br>
+    &nbsp;&nbsp;  `code = "result <- x + y"`
+  + A function handle, such as:<br> 
+    &nbsp;&nbsp;  `code = function(hp, wt) {`<br> 
+    &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br> 
+    &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br>
+    &nbsp;&nbsp;  `}`
+
+The R model in a standard web service can come from an `object` or a file-path to an external representation of R objects to be loaded and used with `code`, including: 
+  + A filepath to an `.RData` file holding the external R objects to be loaded and used with the code, such as:<br>
+    &nbsp;&nbsp;  `model = "/path/to/glm-model.RData"`
+  + A filepath to an `.R` file that is evaluated into an environment and loaded, such as:<br>
+    &nbsp;&nbsp;  `model = "/path/to/glm-model.R"`
+  + A model object, such as:<br>
+    &nbsp;&nbsp;  `model = am.glm`
 
 Example: 
 ```R
@@ -142,9 +161,9 @@ Use the `updateService` function in the `mrsdeploy` package to update a web serv
 
 See the [package reference help page for updateService()](../mrsdeploy/packagehelp/updateService.md) for the full description of all arguments. 
 
-|Function|Response|
-|----|----|
-|`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+|Function|Response|R Help|
+|----|----|:----:|
+|`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/updateService.md)
 
 
 >[!NOTE]
@@ -208,9 +227,9 @@ Use the `deleteService` function in the `mrsdeploy` package to delete a web serv
 
 Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../mrsdeploy/packagehelp/deleteService.md) for the full description of all arguments. 
 
-|Function|Response|
-|----|----|
-|`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|
+|Function|Response|R Help|
+|----|----|:----:|
+|`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|[View](../mrsdeploy/packagehelp/deleteService.md)
 
 Example: 
 
@@ -227,13 +246,14 @@ print(result)
 
 Any authenticated user can retrieve a list of web services using the `listServices` function in the `mrsdeploy` package.  
 
-You can use arguments to filter the list to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments.
+You can use function arguments to filter the list to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments.
 
-If you published the web service or have the "Owner" role, you will also be able to see the R code inside that web service. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used to create the web service.
+If you published the web service or have the "Owner" role, you will also be able to see the R code inside that web service. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used to create the web service. Ask your administrator about roles.
 
-|Function|Response|
-|----|----|
-|`listServices(...)`| R `list` containing service metadata.|
+|Function|Response|R Help|
+|----|----|:----:|
+|`listServices(...)`| R `list` containing service metadata.|[View](../mrsdeploy/packagehelp/listServices.md)|
+
 
 Example code:
 
@@ -270,9 +290,11 @@ Any authenticated user can retrieve a web service object for consumption. After 
 
 Use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
 
-|Function|Response|
-|----|----|
-|`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
+
+|Function|Response|R Help|
+|----|----|:----:|
+|`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/getService.md)|
+
 
 Example:
 
@@ -457,9 +479,7 @@ For standard web services, keep in mind that:
   + A filepath to an `.R` file that is evaluated into an environment and loaded
   + A model object
 
-
-
-#### R code and model are objects
+#### 1. R code and model are objects
 
 In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).
 
@@ -569,7 +589,7 @@ remoteLogout()
 
 
 
-#### R code as object and `.RData` as file 
+#### 2. R code as object and `.RData` as file 
 
 In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
@@ -645,7 +665,7 @@ remoteLogout()
 ```
 
 
-#### Code and model as .R scripts 
+#### 3. Code and model as .R scripts 
 
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
@@ -720,7 +740,7 @@ status
 remoteLogout()
 ```
 
-#### Code as script and model as .RData file
+#### 4. Code as script and model as .RData file
 
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
