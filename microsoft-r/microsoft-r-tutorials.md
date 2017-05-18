@@ -42,10 +42,12 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 ## Platform ramp-up
 
-+ [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
-+ [Practice data import and exploration on Hadoop MapReduce](scaler-hadoop-getting-started.md)
-+ [Practice data import and exploration on Hadoop Spark](scaler-spark-getting-started.md)
-+ [Practice data import and exploration on Teradata](scaler-teradata-getting-started.md)
++ [Get started with RevoScaleR on Hadoop MapReduce](scaler-hadoop-getting-started.md)
++ [Get started with RevoScaleR on Hadoop Spark](scaler-spark-getting-started.md)
++ [Get started with RevoScaleRon Teradata](scaler-teradata-getting-started.md)
+
+## Custom code
+
 + [Get Started with PemaR](pemar-getting-started.md)
 
 ## Find sample data

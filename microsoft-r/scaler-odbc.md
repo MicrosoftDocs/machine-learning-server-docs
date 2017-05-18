@@ -6,7 +6,7 @@ description: "Install and verify ODBC drivers for data import in Microsoft R."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/08/2017"
+ms.date: "05/18/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -30,7 +30,7 @@ ms.custom: ""
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data.
 
-ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. 
+ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
 
 To import data from a relational database management system, do the following:
 
@@ -40,17 +40,17 @@ To import data from a relational database management system, do the following:
 4. For read operations, use **rxImport** to read data
 5. For write operations, use **rxDataStep** to write data
 
-ODBC dependency exists for data import from relational database systems like Oracle, PostGres, and MySQL, to name a few.
+In Microsoft R, an ODBC dependency exists for data import from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few.
 
-For Teradata, you can skip these steps and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+For Teradata, you should skip these steps and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
 For SQL Server, you should generally use **rxSqlServerData** as the data source (see this [SQL Server tutorial](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata), but you might need **rxOdbcData** if you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), or if you are importing data from Azure SQL Database.
 
 ## How ODBC is used in Microsoft R
 
-ODBC support is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection would fail. 
+ODBC support is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection fails. 
 
-Although ODBC drivers exist for text data, Microsoft R does not use ODBC for file-based reads. Specifically, it's not used for accessing text files, SPSS database files, or SAS database files. Instead, RevoScaleR uses simple file access to read these files.
+Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
 
 ## Step 1: Install unixODBC (Linux only)
 
@@ -72,18 +72,23 @@ For more information, SQL Server documentation provide in-depth instructions for
 
 ## Step 2: Install or verify ODBC drivers
 
-ODBC drivers must be installed on the machine running R Server or R Client. Use the following instructions to check ODBC driver status for each operating system.
+ODBC drivers must be installed on the machine running R Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
+
+**On Linux**
+
+1. To list existing drivers: `odbcinst -q -d`
+2. Driver version information is in the odbcinst.ini file. To find the location of that file: `odbcinst -j`
+3. Typically, driver information is in /etc/odbcinst.ini. To view its contents: `gedit /etc/odbcinst.ini`
+4. To list existing ODBC data sources on the system: `odbcinst -q -s`
 
 **On Windows**
 
 1. Search for *odbc data sources* to find the ODBC Data Source Administrator (64-bit) application.
 2. In ODBC Data Source Administrator > Drivers tab, review the currently installed drivers.
 3. Use the Download links below, or do a web search, to get any additional driver you need.
-4. Install the driver using instructions provided by the vendor.
 
-**On Linux**
+If the driver you need is missing, download and install the driver using instructions provided by the vendor. A partial list of download links is provided below.
 
-Several ODBC drivers for unixODBC are provided as source files that you subsequently download, compile, and install. Instructions vary by vendor and are typically provided on download pages.
 
 **ODBC download sites for commonly used databases**
 
@@ -99,9 +104,9 @@ Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/co
 
 ## Step 3: Create an RxOdbcData object
 
-RxOdbcData is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database, with the exception of specific platforms (Teradata and SQL Server). In Microsoft R, those platforms have an in-database experience through rxInTeradata and rxInSQLServer,
+**RxOdbcData** is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database. 
 
-An RxOdbcData object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
+An **RxOdbcData** object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
 
 
 ## Read data using rxImport
