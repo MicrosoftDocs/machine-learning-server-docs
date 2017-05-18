@@ -57,22 +57,14 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 Learn about the login and logout functions available with the `mrsdeploy` package and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
-<a name="publishService"></a>
 
-## Publish standard and realtime web services
+## Publish and update web services
 
-To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, they can be consumed by other users. There are several types of web services described in this section, including standard R web services and  [realtime web services](#realtime).
+To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, you can update and manage them. They can also be consumed by other users. There are several types of web services described in this section, including standard R web services and  [realtime web services](#realtime).
 
 After you've authenticated, use the `publishService` function in the `mrsdeploy` package to publish a web service.
 
-Each web service is uniquely defined by a `name` and `version` and several other arguments. See the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
-
-|Function|Response|R Help|
-|----|----|:----:|
-|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
-
-You can publish web services to a local R Server from your commandline. You can also publish a web service to a remote R Server from your local commandline if you [create a remote session](../operationalize/remote-execution.md#publish-remote-session).  
-
+<a name="standard"></a>
 
 **Standard web services**
 
@@ -113,9 +105,6 @@ api <- publishService(
 )
 ```
 
-For a more detailed example, see the ["Workflow" examples](#workflow) at the end of this article.
-
-You can also follow this quickstart article, [Deploying an R model as a web service](../operationalize/quickstart-publish-web-service.md).
 
 <a name="realtime"></a>
 
@@ -150,10 +139,37 @@ realtimeApi <- publishService(
 See an [end-to-end realtime example](#realtime-example) and learn how to use `publishService` to create Realtime and standard script web services in the next section.
 
 
+<a name="versioning"></a>
+
+### Versioning
+
+Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. It also helps those consuming a given service to  easily identify the service. 
+
+When specifying a version at publish time, use any alphanumeric string that is meaningful to those who will consume the service in your organization. For example, you could use `2.0`, `v1.0.0`, `v1.0.0-alpha`, or `test-1`. 
+
+Meaningful versions are very helpful when you are ready to share your services with others. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
+
+If you do not specify a version when you publish, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference number for that  service. These GUID version numbers are harder to remember for those consuming your services and are therefore less desirable. 
+
+<a name="publishService"></a>
+
+### Publish service
+
+Each web service is uniquely defined by a `name` and `version` and several other arguments. See the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
+
+|Function|Response|R Help|
+|----|----|:----:|
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
+
+You can publish web services to a local R Server from your commandline. You can also publish a web service to a remote R Server from your local commandline if you [create a remote session](../operationalize/remote-execution.md#publish-remote-session).  
+
+For a detailed example, see the ["Workflow" examples](#workflow) at the end of this article.
+
+You can also follow the quickstart article "[Deploying an R model as a web service](../operationalize/quickstart-publish-web-service.md)".
 
 <a name="updateService"></a>
 
-## Update web services
+### Update service
 
 To change a web service after you've published it, while retaining the same name and version, use the `updateService` function. For arguments, specify what needs to change, such as the R code, model, inputs, and so on. When you update a service, it overwrites that named version.
 
@@ -191,7 +207,7 @@ api <- updateService(
 
 <a name="data-types"></a>
 
-## Supported I/O data types
+### Supported I/O data types
 
 The following table lists the supported data types for the [publishService](#publishservice) and [updateService](#updateService) function input and output schemas.
 
@@ -205,17 +221,6 @@ The following table lists the supported data types for the [publishService](#pub
 |`matrix`|Partial<br>(Not for logical & character matrices)|
 |`data.frame`|Yes<br>Note: Coercing an object during <br>I/O is a user-defined task|
 
-<a name="versioning"></a>
-
-## Versioning for web services
-
-Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. It also helps those consuming a given service to  easily identify the service. 
-
-When specifying a version at publish time, use any alphanumeric string that is meaningful to those who will consume the service in your organization. For example, you could use `2.0`, `v1.0.0`, `v1.0.0-alpha`, or `test-1`. 
-
-Meaningful versions are very helpful when you are ready to share your services with others. We highly recommend that everyone in your organization use a **consistent and meaningful versioning convention** such as [semantic versioning](http://semver.org/) when publishing services. 
-
-If you do not specify a version when you publish, a globally unique identifier (GUID) is automatically assigned by R Server as a unique reference number for that  service. These GUID version numbers are harder to remember for those consuming your services and are therefore less desirable. 
 
 <a name="deleteService"></a>
 
@@ -468,16 +473,7 @@ The base path for files is set to your working directory, but you can change tha
 
 Each standard web service example uses the same code and models and returns the same results. However, in each example, that code and model are represented in different ways such as R scripts, objects, files, and so on.  
 
-For standard web services, keep in mind that:
-+ R code can come from: 
-  + A filepath to a local R script
-  + A block of R code as a character string
-  + A function handle
-
-+ R models can come:
-  + A filepath to an `.RData` file holding the external R objects to be loaded and used with the code
-  + A filepath to an `.R` file that is evaluated into an environment and loaded
-  + A model object
+To learn more about standard web services, [see here](#standard).
 
 #### 1. R code and model are objects
 
@@ -818,11 +814,7 @@ remoteLogout()
 
 ### Realtime web service example
 
-In this example, the local model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package. Please note that the Rpart `kyphosis` dataset is available to all R users by default.
-
-When publishing [a `Realtime` web service](#realtime), keep in mind that:
-+ R code is not supported
-+ The model must be a model object of a supported model format
+In this example, the local model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package. Please note that the Rpart `kyphosis` dataset is available to all R users by default. 
 
 To learn more about the supported model formats, supported product versions, and supported platforms for realtime web services, [see here](#realtime).
 
