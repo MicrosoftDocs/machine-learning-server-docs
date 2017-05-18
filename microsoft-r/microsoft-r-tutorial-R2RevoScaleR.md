@@ -28,7 +28,7 @@ ms.custom: ""
 
 # Tutorial: Explore R and RevoScaleR in 25 functions
 
-**Applies to: Microsoft R Server or R Client**
+**Applies to: R Server and R Client** 
 
 If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 

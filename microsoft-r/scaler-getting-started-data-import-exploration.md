@@ -26,16 +26,17 @@ ms.custom: ""
 
 # Tutorial: Practice data import and exploration (Microsoft R)
 
-**Applies to: Microsoft R Server and R Client [**<sup>1</sup>**](#chunking)**
+**Applies to: R Server and R Client** <sup>[**1**](#chunking)</sup>
 
-Microsoft R provides a native data file format (.xdf) efficient for reading arbitrary rows and columns. In this tutorial, you will learn how to convert a CSV text file into XDF using **rxImport** from the RevoScaleR function library.  The **rxImport** function takes source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
+Microsoft R provides a native binary data file format (.xdf) designed for efficient read operations of arbitrary rows and columns. In this tutorial, you will learn how to convert a CSV text file into XDF using **rxImport** from the RevoScaleR function library. The **rxImport** function takes source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
 
 ## What you will learn in this tutorial
 
 1. Convert CSV data to the XDF data file format
 2. Get information about the data source
-3. Summarize data
-4. Create a new .xdf file, sub-setting the original data set and performing data transformations
+3. Import parameters used for selective import and conversion
+4. Summarize data
+4. Subset and transform data
 
 ## Prerequisites
 
@@ -48,7 +49,7 @@ The command prompt for a R is `>`. You can hand-type commands line by line, or c
 
 ## Locate sample data
 
-[RevoScaleR](scaler-user-guide-introduction.md) includes both functions and built-in data sets, including the *AirlineDemoSmall.csv* file. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
+[RevoScaleR](scaler-user-guide-introduction.md) includes both functions and built-in data sets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
 1. Open the R console or start a Revo64 session.
 
@@ -63,24 +64,24 @@ The open source R `list.files` command returns a file list provided by the RevoS
 
 ## About the airline data set
 
-*AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: two numeric columns, *ArrDelay* and *CRSDepTime*, and a column of strings, *DayOfWeek*. There are a total of 600,000 rows in the data file.
+*AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*. There are a total of 600,000 rows in the data file.
 
 ## Check the working directory
 
-This tutorial generates an XDF file. By default, RevoScaleR uses the *working directory* to store the file. Depending on your environment, you might not have permission to this directory. Use the following open source R command to return the working directory: 
+This tutorial generates an XDF file. By default, RevoScaleR uses the *working directory* to store files. Depending on your environment, you might not have permission to this directory. Use the following open source R command to learn the working directory location: 
 
     getwd()
 
 If the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have permission to save files to this location. To change the directory location, use either one of these approaches:
 
 + Run `setwd("/Users/TEMP")` to change the working directory to a temp directory. 
-+ Include a fully-qualified path whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"`).  
++ Specify a fully-qualified path whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"`).  
 
 Windows users, please notice the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
 
 ## Simple import
 
-As a first step, let's do a preliminary import using source data and an *outFile*. Once the data source object exists, we can examine metadata that could lead to further transformations.
+As a first step, let's do a preliminary import using source data and an *outFile*. Once the data source object exists, we can examine metadata that could lead to further transformations on successive imports.
 
 The following commands specify a source .csv file, create an .xdf file, and return an object (airXdfData) representing the data source. 
 
@@ -89,12 +90,12 @@ The following commands specify a source .csv file, create an .xdf file, and retu
 	airXdfData <- rxImport(inData=mysource, outFile = "airExample.xdf")
 ~~~~
 
-On the first line,`mysource` is an object specifying source data. The object is created using R's `file.path` command, where the folder path is provided through rxGetOption("sampleDataDir") and "AirlineDemoSmall.csv" for the file. The `sampleDataDir` is an argument of rxGetOption used to return the directory containing sample files registered with RevoScaleR. 
+On the first line,`mysource` is an object specifying source data. As you can see, the object is created using R's `file.path` command, where the folder path is provided through RevoScaleR's rxGetOption("sampleDataDir"), with "AirlineDemoSmall.csv" for the file. The *sampleDataDir* is an argument that returns the directory containing sample files registered with RevoScaleR. 
 
 On line two, `airXdfData` is a data source object returned by **rxImport**. The **rxImport** function takes several arguments, including *outFile* for the XDF file name. If you omit the *outFile* argument or set it NULL, the return *airXdfData* object is a data frame containing the data. 
 
 > [!Tip]
-> XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, an XDF can help by allocating data into chunks that can be read and refreshed independently. Additionally, XDF provides column storage for variables, which is more efficient if you want to selectively choose variables to include in a particular analysis.
+> XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, an XDF can help by compressing data and by allocating data into chunks that can be read and refreshed independently. Additionally, XDF provides column storage for variables, which is more efficient if you want to selectively choose variables to include in a particular analysis.
 
 ## Examine object metadata
 
@@ -104,7 +105,7 @@ Assuming you ran the previous two commands, you now have a `mysource` object and
     rxGetInfo(airXdfData, getVarInfo = TRUE)
 ~~~~
 
-Output includes the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information. Variables are based on fields in the CSV file. In this case, there are 3 variables. Precomputed metadata about each one appears in the output below.
+Output includes the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information. Variables are based on fields in the CSV file. In this case, there are 3 variables. 
 
     File name: C:\Users\TEMP\airExample.xdf 
     Number of observations: 6e+05 
@@ -119,14 +120,14 @@ Output includes the precomputed metadata for each variable, plus a summary of ob
 From the metadata read out, we can determine whether the number of observation is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can roll up the results accordingly. We can do all of these things in a subsequent import.
 
 > [!Tip]
-> rxImport can create a data source object without the .xdf file. If you omit the *outFile* argument or set it NULL, the return *airXdfData* object is a data frame containing the data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
+> rxImport can create a data source object without the .xdf file. If you omit the *outFile* argument or set it NULL, the return *airXdfData* object is a data frame containing the data. Another way to use rxImport is to set an existing .xdf as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
 
 ## Re-import with additional parameters
 
 The **rxImport** function takes multiple parameters that we can use to shape the import operation. In this step, we will repeat the import, overwriting the original file, and changing its structure in the process. Through parameters on the operation, we can:
 
 + Convert the string column, *DayOfWeek*, to a factor variable using the *stringsAsFactors* argument.
-+ Allocate rows into blocks. By specifying the argument *rowsPerRead*, we can read and write the data in 3 blocks of 200,000 rows each.
++ Allocate rows into blocks that we can subsequently read and write in *chunks*. By specifying the argument *rowsPerRead*, we can read and write the data in 3 blocks of 200,000 rows each.
 + Convert missing values to a specific value, such as the letter M rather than the default NA.
 
 ~~~~
@@ -137,7 +138,7 @@ The **rxImport** function takes multiple parameters that we can use to shape the
     overwrite=TRUE)
 ~~~~
 
-Running this command refreshes our airXdfData data source object and replaces the .xdf file in our working directory.
+Running this command refreshes the airXdfData data source object and replaces the .xdf file in our working directory.
 
 Metadata for the new object reflects the allocation of rows among 3 blocks and conversion of string-to-numeric data for both ArrDelay and DayOfWeek. 
 
@@ -174,7 +175,7 @@ Notice that once we supply the *colInfo* argument, we no longer need to specify 
 
 ## More metadata
 
-Using the small *airXdfData* object representing the airExample.xdf file, we can apply standard R methods to get basic information about the data set:
+Using the small *airXdfData* object representing the airExample.xdf file, we can apply standard R methods to get addititional information about the data set, such as the number of rows, columns, and the first several rows of the data set.
 
 	nrow(airXdfData)
 	ncol(airXdfData)
@@ -193,7 +194,7 @@ Using the small *airXdfData* object representing the airExample.xdf file, we can
 	5       -2   6.416667    Monday
 	6      -14  13.833333    Monday
 
-Recall that the *rxGetVarInfo* function provides additional variable information:
+Recall that previously you used the rxGetOption function with the getVarInfo argument to return the variables. An alternative is to use the standalone *rxGetVarInfo* function, which takes the name of the data object.
 
 	rxGetVarInfo(airXdfData)
 
@@ -286,7 +287,7 @@ Output from this command reflects the creation of the new variable:
 
 ## Summarizing data
 
-We already used rxSummary to get descriptive statistics on our XDF data, but let's take a closer look. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airDS* object.
+We already used rxSummary to get an initial impression of data shape, but let's take a closer look at the function to increase our understanding. The *rxSummary* function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
 
 	adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data=airXdfData)
 	adsSummary
