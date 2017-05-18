@@ -30,17 +30,22 @@ ms.custom: ""
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data.
 
-ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the ODBC driver manager is part of the operating system. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/). 
+ODBC connectivity is managed through an ODBC Driver Manager installed on the computer running Microsoft R. On Windows, the ODBC driver manager is built into the operating system. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/). 
 
-For each database you intend to use as a data source:
+For each relational database you intend to use as a data source:
 
 1. Install an ODBC Driver Manager (Linux only).	
 2. Install ODBC drivers.	
-3. Create an `RxOdbcData` data source for the source data.	
-4. For read operations, use `rxImport` to read data from the data source into an .xdf file or in-memory data frame.	
-5. For write operations, use `rxDataStep` to write data back to the data source.
+3. Create an **RxOdbcData** data source for the source data.	
+4. For read operations, use **rxImport** to read data from the data source into an .xdf file or in-memory data frame.	
+5. For write operations, use **rxDataStep** to write data back to the data source.
 
-These instructions do not apply to Teradata. If you need to connect to a Teradata data warehouse, see [Microsoft R Server Client Installation Guide for Teradata](http://go.microsoft.com/fwlink/?LinkID=698572&clcid=0x409).
+**rxOdbcData** objects are used to import relational data sources like Oracle, PostGres, MySQL, to name a few. 
+
+It is not intended, however, for SQL Server or Teradata. For SQL Server, we recommend using **rxSqlServerData** as the data source (see this [SQL Server tutorial for working with R objects](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata) for more information). For Teratadata, we recommend creating an **rxTeradata** data source (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+
+> [!Note]
+> ODBC is primarily used for **rxOdbcData**, but is also leveraged internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection will fail. ODBC is not used for other data sources. Specifically, it's not used for accessing text files, SPSS database files, or SAS database files. RevoScaleR uses simple file access to read these files.
 
 ## Step 1: Install unixODBC (Linux only)
 
@@ -58,15 +63,26 @@ If unixODBC is not installed, issue the following commands to add it:
 + On Ubuntu: `sudo apt-get install unixodbc-devel unixodbc-bin unixodbc`
 + On SLES: `sudo zypper install unixODBC`
 
-For more information, SQL Server documentation provide in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of operating system. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
+For more information, SQL Server documentation provide in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
 
 ## Step 2: Install or verify ODBC drivers
 
-Drivers for commonly used databases are often pre-installed with the operating system or database management system, but most can be downloaded from vendor web sites. 
+ODBC drivers must be installed on the machine running R Server or R Client. Use the following instructions to check ODBC driver status for each operating system.
 
-ODBC drivers must be installed on your local machine running R Server or R Client, as well as the remote database server. Local drivers are used by the database client library to connect to remote data sources.
+**On Windows**
 
-The following table provides links to download pages for several data platforms.
+1. Search for *odbc data sources* to find the ODBC Data Source Administrator (64-bit) application.
+2. In ODBC Data Source Administrator > Drivers tab, review the currently installed drivers.
+3. Use the Download links below, or do a web search, to get any additional driver you need.
+4. Install the driver using instructions provided by the vendor.
+
+**On Linux**
+
+
+
+**ODBC download sites for commonly used databases**
+
+Drivers for commonly used databases might be pre-installed with the operating system or database management system, but if not, most can be downloaded from database vendor web sites. The following table provides links to download pages for several data platforms.
 
 Data platform | Driver download pages and instructions|
 -------------|---------------------------------|
@@ -78,7 +94,7 @@ Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/co
 
 ## Step 3: Create an RxOdbcData object
 
-RxOdbcData is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database, with the exception of specific platforms (Teradata and SQL Server). In Microsoft, R, those platforms have an in-database experience through rxInTeradata and rxInSQLServer,
+RxOdbcData is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database, with the exception of specific platforms (Teradata and SQL Server). In Microsoft R, those platforms have an in-database experience through rxInTeradata and rxInSQLServer,
 
 An RxOdbcData object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
 
@@ -91,6 +107,7 @@ An RxOdbcData object supports local compute context only, which means that when 
 
 This example uses a connection string to connect to a local SQL Server instance and the AdventureWorks database. For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
 
+~~~~
 sConnectionStr \<- "Driver={SQL Server};Server=win-database01;
  Database=TestData;Uid=mktest;Pwd=sqlpwd;"
 
@@ -162,7 +179,7 @@ head(myCars)
 
 **Working with SQL Server**
 
-In the section Some Quick Examples, we gave an example of extracting data from a SQL Server database using a connection string. We now show the same example, but instead of using a connection string, we use the server, dsn, user, and password arguments:
+The previous example showed the connection using a connection string. The next example shows how to pass connection information through server, dsn, user, and password arguments:
 
 	claimsSQL = "SELECT * FROM claims"
 	claimsDS2<- RxOdbcData(sqlQuery = claimsSQL, 
@@ -199,7 +216,7 @@ As before, we get the claims data:
 
 **Working with Oracle Express**
 
-Oracle Express is a free version of the popular Oracle database management system. It is intended as a “starter” version; working with other offerings from Oracle uses the same ODBC drivers. Here we give the Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
+Oracle Express is a free version of the popular Oracle database management system intended for evaluation and education. It uses the same ODBC drivers as the commercial offerings. The follow example demonstrates an Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
 
 	tablesDS <- RxOdbcData(sqlQuery="select * from user_tables", connectionString = "DSN=ORA10GDSN;Uid=system;Pwd=X8dzlkjWQ")
 	OracleTableDF <- rxImport(tablesDS, overwrite=TRUE)
@@ -328,3 +345,13 @@ This returns the following:
 	Var 6: number, Type: integer, Low/High: (0, 434)
 
 
+## Next Steps
+
+
+## See Also
+
+ [Importing data](scaler-user-guide-data-import.md)       
+ [RevoScaleR Functions](scaler/scaler.md)   
+ [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
+ [utorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 
+ 
