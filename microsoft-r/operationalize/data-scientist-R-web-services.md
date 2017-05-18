@@ -63,7 +63,7 @@ Learn about the login and logout functions available with the `mrsdeploy` packag
 
 To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, they can be consumed by other users. There are several types of web services described in this section, including standard R web services and  [realtime web services](#realtime).
 
-Use the `publishService` function in the `mrsdeploy` package to publish a web service.
+After you've authenticated, use the `publishService` function in the `mrsdeploy` package to publish a web service.
 
 Each web service is uniquely defined by a `name` and `version` and several other arguments. See the [package reference help page for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
 
@@ -157,7 +157,7 @@ See an [end-to-end realtime example](#realtime-example) and learn how to use `pu
 
 To change a web service after you've published it, while retaining the same name and version, use the `updateService` function. For arguments, specify what needs to change, such as the R code, model, inputs, and so on. When you update a service, it overwrites that named version.
 
-Use the `updateService` function in the `mrsdeploy` package to update a web service.
+After you've authenticated, use the `updateService` function in the `mrsdeploy` package to update a web service.
 
 See the [package reference help page for updateService()](../mrsdeploy/packagehelp/updateService.md) for the full description of all arguments. 
 
@@ -223,7 +223,7 @@ If you do not specify a version when you publish, a globally unique identifier (
 
 When you no longer want to keep a web service, you can delete it. Only the user who initially created the web service can use this function.
 
-Use the `deleteService` function in the `mrsdeploy` package to delete a web service.
+After you've authenticated, use the `deleteService` function in the `mrsdeploy` package to delete a web service.
 
 Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../mrsdeploy/packagehelp/deleteService.md) for the full description of all arguments. 
 
@@ -288,7 +288,7 @@ Example output:
 
 Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
-Use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
+After you've authenticated, use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
 
 
 |Function|Response|R Help|
