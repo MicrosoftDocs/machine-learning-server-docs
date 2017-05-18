@@ -49,7 +49,7 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 **On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../rserver.md) with its [operationalization feature configured](configuration-initial.md). After R Server is configured for operationalization, you'll be able to [connect to it from your local machine](../operationalize/mrsdeploy-connection.md), deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
-## How to deploy R code and models as a web service
+## Deploy R code and models as web services
 
 You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
 
@@ -57,7 +57,7 @@ We recommend that you follow [this publish quickstart] to publish an R model as 
 
 <a name="share"></a>
 
-## How to share a service with others 
+## Share services with others for consumption 
 
 >[!IMPORTANT]
 > Anyone who wishes to consume the service must have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
@@ -71,7 +71,7 @@ Services can be consumed in multiple ways:
 Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](data-scientist-manage-services.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
 
 
-## How to execute R code remotely
+## Execute R code remotely
 
 You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using `pause()` and `resume()` functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
 
