@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Practice data manipulation and statistical analysis (Microsoft R)
+# Tutorial: Explore data manipulation and statistical analysis (Microsoft R)
 
 **Applies to: R Server and R Client** 
 

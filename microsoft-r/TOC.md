@@ -14,7 +14,7 @@
 
 ## [R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
-## [Practice data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
+## [Explore data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
 ## Work with larger data sets
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
