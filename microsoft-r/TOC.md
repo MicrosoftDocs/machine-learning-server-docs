@@ -26,8 +26,8 @@
 ## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [How-to for data scientists](data-analysis-in-microsoft-r.md)
-## Work with data 
-### [Import Data](scaler-user-guide-data-import.md)
+## Load and transform data 
+### [Import data](scaler-user-guide-data-import.md)
 ### [Data source objects](scaler-user-guide-data-source.md)
 ### [XDF files](rserver-xdf.md)
 ### [ODBC for relational data import](scaler-odbc.md)

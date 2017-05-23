@@ -46,13 +46,13 @@ To create data sources directly, use the constructors listed in the following ta
 
 ## When to create a data source
 
-For simple data import, you do not need to create a data source. You can simply specify a file path of a file that rxImport can read and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you should create a data source using a constructor from the previous list. 
+For simple data import, you do not need to create a data source. You can simply specify a file path of a file that **rxImport** can read and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you should create a data source using a constructor from the previous list. 
 
-XDF data sources are the native data file format for R Client and R Server, created through rxImport, populated with data from an external data source, and then saved to disk on an R Client or R Server machine. Using an XDF data source is recommended when you need to perform repeated analysis of a single data set. It will almost always be faster for you to import the data into the .xdf format and run your analyses on the .xdf data source.
+XDF data sources are the native data file format for R Client and R Server, created through **rxImport**, populated with data from an external data source, and then saved to disk on an R Client or R Server machine. Using an XDF data source is recommended when you need to perform repeated analysis of a single data set. It will almost always be faster for you to import the data into the .xdf format and run your analyses on the .xdf data source.
 
 ## Compute Contexts and Data Sources
 
-In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, however your choice of data sources may be severely limited. The most extreme case is the RxInTeradata compute context, which supports only the RxTeradata data source – this makes sense, as the computations are being performed on data inside the Teradata database. Please refer to the table below to see which data sources are available for each compute context (x indicates available).
+In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, however your choice of data sources may be severely limited. The most extreme case is the **RxInTeradata** compute context, which supports only the **RxTeradata** data source – this makes sense, as the computations are being performed on data inside the Teradata database. Please refer to the table below to see which data sources are available for each compute context (x indicates available).
 
 |                                |            | Compute Context |              |
 |--------------------------------|------------|-----------------|--------------|
@@ -123,32 +123,6 @@ You can view the *last* rows of a data source using the *tail* function:
 	126    126 60+     4-7    D  324     22
 	127    127 60+     8-9    D  192      6
 	128    128 60+     10+    D  123      6
-
-## Text file imports and specifying Delimiters
-
-As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
-
-	Name-Rank-SerialNumber
-	Smith-Sgt-02912
-	Johnson-Cpl-90210
-	Michaels-Pvt-02931
-	Brown-Pvt-11311
-
-The *rxImport* function does not include a parameter for specifying a delimiter; in this case, you must create an *RxTextData* data source and specify the delimiter using the *delimiter* argument:
-
-	readPath <- rxGetOption("sampleDataDir")
-	infile <- file.path(readPath, "hyphens.txt")
-	hyphensTxt <- RxTextData(infile, delimiter="-")
-	hyphensDF <- rxImport(hyphensTxt)
-	hyphensDF
-	
-	      Name Rank SerialNumber
-	1    Smith  Sgt         2912
-	2  Johnson  Cpl        90210
-	3 Michaels  Pvt         2931
-	4    Brown  Pvt        11311
-
-In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
 
 ## Using Data Sources
 
