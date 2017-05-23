@@ -39,10 +39,10 @@ To create data sources directly, use the constructors listed in the following ta
 | Text (fixed-format or delimited)   | RxTextData                  |               |
 | SAS                                | RxSasData                   |               |
 | SPSS                               | RxSpssData                  |               |
-| ODBC Database                      | RxOdbcData                  | [View](scaler-odbc.md) |
+| ODBC Database                      | RxOdbcData                  | [View](scaler-data-odbc.md) |
 | Teradata Database                  | RxTeradata                  |               |
 | SQL Server Database                | RxSqlServerData             |               |
-| .xdf data files                    | RxXdfData                   | [View](rserver-xdf.md) |
+| .xdf data files                    | RxXdfData                   | [View](scaler-data-xdf.md) |
 
 ## When to create a data source
 

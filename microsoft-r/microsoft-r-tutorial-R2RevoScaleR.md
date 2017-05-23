@@ -458,7 +458,7 @@ The **RevoScaleR** package, included in Microsoft R Server and R Client, provide
 
 ### Load Data with *rxImport*
 
-The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](scaler-odbc.md) for your database to access data on a local or remote computer. 
+The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](scaler-data-odbc.md) for your database to access data on a local or remote computer. 
 
 Let’s start simply by using a delimited text file available in the [built-in sample data directory](scaler-user-guide-sample-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
 

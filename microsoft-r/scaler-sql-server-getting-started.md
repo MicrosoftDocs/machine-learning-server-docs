@@ -105,4 +105,4 @@ Other guides to **RevoScaleR** can be found here:
 - [*RevoScaleR Getting Started Guide*](scaler-getting-started-data-import-exploration.md)
 - [*RevoScaleR User’s Guide*](scaler-user-guide-introduction.md)
 - [*RevoScaleR Distributed Computing Guide*](scaler-distributed-computing.md)
-- [*RevoScaleR ODBC Data Import Guide*](scaler-odbc.md)
+- [*RevoScaleR ODBC Data Import Guide*](scaler-data-odbc.md)

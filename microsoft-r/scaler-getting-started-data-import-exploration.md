@@ -468,5 +468,5 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
  [Getting Started with Hadoop and RevoScaleR](scaler-hadoop-getting-started.md)    
  [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
  [Importing data](scaler-user-guide-data-import.md)     
- [ODBC data import](scaler-odbc.md)     
+ [ODBC data import](scaler-data-odbc.md)     
  [RevoScaleR Functions](scaler/scaler.md)     

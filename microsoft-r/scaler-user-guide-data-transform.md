@@ -37,11 +37,6 @@ RevoScaleR provides a full set of functions for modifying, transforming, and sub
 ## Creating a Subset of Rows and Columns
 
 A common use of *rxDataStep* is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. The call to rxDataStep uses the *rowSelection* argument to select only the rows where the variable *y* is greater than .5, and the *varsToKeep* argument to keeps only the variables *y* and *z*. The *rowSelection* argument is an R expression that evaluates to *TRUE* if the observation should be kept. The *varsToKeep* argument contains a list of variable names to read in from the original data set. Because no *outFile* is specified, a data frame is returned:
-
-	######################################################## 
-	# Chapter 4: Transforming and Subsetting Data
-	Ch4Start <- Sys.time()
-	
 	
 	# Create a data frame
 	set.seed(59)

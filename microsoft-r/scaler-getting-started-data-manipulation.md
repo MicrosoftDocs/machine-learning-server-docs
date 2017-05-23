@@ -452,7 +452,7 @@ Continue building up your knowledge of ScaleR with these additional guides and t
 - [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)
 - [ScaleR User’s Guide](scaler-user-guide-introduction.md)
 - [ScaleR Distributed Computing Guide](scaler-distributed-computing.md)
-- [ScaleR ODBC Data Import Guide](scaler-odbc.md)
+- [ScaleR ODBC Data Import Guide](scaler-data-odbc.md)
 
 ## See Also
 

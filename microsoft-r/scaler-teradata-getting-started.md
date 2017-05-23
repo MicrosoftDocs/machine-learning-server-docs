@@ -43,7 +43,7 @@ More detailed examples of using **RevoScaleR** can be found in the following art
 -   [*RevoScaleR Getting Started Guide*](scaler-getting-started-data-import-exploration.md)
 -   [*RevoScaleR User’s Guide*](scaler-user-guide-introduction.md)
 -   [*RevoScaleR Distributed Computing Guide*](scaler-distributed-computing.md)
--   [*RevoScaleR ODBC Data Import Guide*](scaler-odbc.md)
+-   [*RevoScaleR ODBC Data Import Guide*](scaler-data-odbc.md)
 
 For information on other distributed computing compute contexts, see:
 

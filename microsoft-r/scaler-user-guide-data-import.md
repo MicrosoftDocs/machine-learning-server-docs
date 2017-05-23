@@ -43,7 +43,7 @@ To convert external data into a format understood by RevoScaleR, use the **rxImp
 
 		> mydataobject <-rxImport("C:/user/temp/mydatafile.csv")
 
-Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to an .xdf file saved to disk. This article covers a range of data access scenarios for multiple data source types. For more information about .xdf administration, see [XDF files](rserver-xdf.md).
+Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to an .xdf file saved to disk. This article covers a range of data access scenarios for multiple data source types. For more information about .xdf administration, see [XDF files](scaler-data-xdf.md).
 
 ## How to import a text file
 
@@ -102,7 +102,7 @@ During import, you can fix problems in the underlying data by specifying argumen
 
 ### Set a replacement string for missing values
 
-If your text data file uses a string other than NA to identify missing values, you must use the *missingValueString* argument. Only one missing value string is allowed per file. We used this briefly in Chapter 1 when we imported the AirlineDemoSmall data:
+If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](scaler-getting-started-data-import-exploration.md):
 
 	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
 	airData <- rxImport(inData = inFile, outFile="airExample.xdf", 
@@ -435,13 +435,13 @@ In normal usage, the *delimiter* argument is a single character, such as *delimi
 
 ## Importing wide data
 
-Big data mainly comes in two forms, long or wide, each presenting unique challenges. Most of the topics in the guide deal with long data, or data with many observations compared to the number of variables or columns. With wide data, or data sets with a large number of variables, there are specific considerations to take into account during import.
+Big data mainly comes in two forms, long or wide, each presenting unique challenges. The common case is long data, having many observations relative to the number of variables in the data set. With wide data, or data sets with a large number of variables, there are specific considerations to take into account during import.
 
-We highly recommend that you import your wide data into the .xdf format using the *rxImport* function whenever you plan to do repeated analyses on your dataset. For wide data with many variables it is especially convenient to store the data in an .xdf file and then read subsets of columns into a data frame in memory for specific analyses. Please see earlier sections of this chapter for specifics on importing different data formats into .xdf.
+First, we recommend importing wide data into the .xdf format using the **rxImport** function whenever you plan to do repeated analyses on your dat aset. Doing so allows you to read subsets of columns into a data frame in memory for specific analyses. For more information, see [Transform and subset data](scaler-user-guide-data-transform.md).
 
-Section 6 of this chapter mentions multiple ways in which the user can specify variable data types upon import. For wide data that contain many categorical variables, the time to import will be substantially improved by using the *colInfo* argument to define the variable levels. If an import is done using just the *stringsAsFactors* argument or is done without specifying variable levels using *colInfo*, RSR will go through the data and create new levels on a “first-come, first-served” basis for each factor variable. Each time a new level is encountered the metadata has to be updated. For a wide dataset with many factor variables this takes a considerable amount of time. Using the *colInfo* argument to define the levels first speeds up the import.
+Second, review the data set for categorical variables that can be marked as factors. If possible use the *colInfo* argument to define the levels rather than *stringsAsFactors*. Explicitly setting the levels results in faster processing speeds because you avoid recomputations of variable metadata whenever a new level is encountered. For wide data sets having a very large number of variables, the extra processing due to recomputation can be significant so its worth considering the *colInfo* argument as a way to speed up the import.
 
-For wide data, it is useful to create the *colInfo* as an object prior to using rxImport. The following is an example of defining the colInfo with factor levels for the claims data from an earlier chapter:
+Third, ifyou are using *colinfo*, considering creating it as an object prior to using **rxImport**. The following is an example of defining the colInfo with factor levels for the claims data from earlier examples:
 
 	colInfoList <- list("age" = list(type = "factor",
 	      levels = c("17-20","21-24","25-29","30-34","35-39","40-49","50-59","60+")),
@@ -450,85 +450,10 @@ For wide data, it is useful to create the *colInfo* as an object prior to using 
 	    "type" = list(type = "factor",
 	      levels = c("A","B","C","D")))
 
-
-The colInfo list can then be used as the *colInfo* argument in the *rxImport* function to get your data into .xdf format:
+The colInfo list can then be used as the *colInfo* argument in the **rxImport** function to get your data into .xdf format:
 
 	inFileClaims <- file.path(rxGetOption("sampleDataDir"),"claims.txt")
 	outFileClaims <- "claimsWithColInfo.xdf"
 	rxImport(inFile, outFile = outFileClaims, colInfo = colInfoList)
 	
 
-## Importing data into multiple XDF files for Hadoop
-
-The .xdf file format has been modified for analyses on Hadoop to store data on HDFS in a composite set of files rather than a single file. The composite set consists of a named directory with two subdirectories, ‘data’ and ‘metadata’, containing split ‘.xdfd’ files and a metadata ‘.xdfm’ files respectively. Data is split into individual ‘.xdfd’ files such that each file remains within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB). The ‘.xdfm’ file contains the metadata for all of the .xdfd files. For more in depth information about the composite XDF format and its use within a Hadoop compute context see the [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md).
-
-In most cases, a single .xdf file will be the most efficient way to store and analyze your data in a local compute context, unless you are using data from HDFS as input .(discussed in the next section). However, you can still read, write and analyze a set of composite XDF files in a local compute context.
-
-*rxImport* is used to read in a .csv file or directory of .csv files into the composite XDF format described above. When the compute context is *RxHadoopMR*, a composite set of XDF is always created. However, while working in a local compute context you must specify the option *createCompositeSet=TRUE* within the *RxXdfData* data source object being used as the *outFile* argument for *rxImport*.
-
-In the following example we demonstrate creating a composite set of .xdf files within the native file system in a local compute context. Using *rxImport*, you specify an *RxTextData* data source, in this case a directory containing the mortDefaultSmall .csv files, as the *inData* and an *RxXdfData* source object as the *outFile* argument. We define our data source objects as follows (assuming you’ve copied the 10 mortDefaultSmall .csv files into a separate directory from the SampleData folder of the RevoScaleR package):
-
-	mortDefaultCsvDir <- “C:/MRS/Data/mortDefaultCsv”
-	mortDefaultCsv <- RxTextData(mortDefaultCsvDir)
-	mortDefaultCompXdfDir <- “C:/MRS/Data/mortDefaultXdf”
-	mortDefaultCompXdf <- RxXdfData(mortDefaultCompXdfDir, createCompositeSet=TRUE)
-
-We then import the data using *rxImport*:
-
-	rxImport(inData=mortDefaultCsv, outFile=mortDefaultCompXdf)
-
-This creates a directory named ‘mortDefaultXdf’ and subdirectories ‘data’ and ‘metadata’ containing the split ‘.xdfd’ files and a metadata ‘.xdfm’ file respectively as shown below.
-
-	list.files(mortDefaultCompXdfDir, recursive=TRUE, full.names=TRUE)
-
-		[1] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_1.xdfd"  
-		[2] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_10.xdfd" 
-		[3] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_2.xdfd"  
-		[4] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_3.xdfd"  
-		[5] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_4.xdfd"  
-		[6] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_5.xdfd"  
-		[7] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_6.xdfd"  
-		[8] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_7.xdfd"  
-		[9] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_8.xdfd"  
-		[10] "C:/MRS/Data/mortDefaultXdf/data/mortDefaultXdf_9.xdfd"  
-		[11] "C:/MRS/Data/mortDefaultXdf/metadata/mortDefaultXdf.xdfm"
-
-Note that the composite XDF can then be referenced in future analyses using the data source object that was used as the *outFile* for *rxImport*. See the help file for *RxXdfData* for more information regarding how the numbers of blocks in each ‘.xdfd’ file is determined depending on the compute context.
-
-## Consuming data from the Hadoop Distributed File System (HDFS)
-
-If you are using RevoScaleR on a Linux system that is part of a Hadoop cluster, you can store and access text or xdf data files on your system’s native file system or the Hadoop Distributed File System (HDFS). By default, data is expected to be found on the native file system. If all your data is on HDFS, you can use *rxSetFileSystem* to specify this as a global option.. You can then specify your global option as follows:
-
-	rxSetFileSystem(RxHdfsFileSystem())
-
-If only some files are on HDFS, you can use *RxTextData* or *RxXdfData* data sources to specify these as files on HDFS. For example,
-
-	hdfsFS <- RxHdfsFileSystem() 
-	txtSource <- RxTextData("/test/HdfsData/AirlineCSV/CSVs/1987.csv", 
-	    fileSystem=hdfsFS)
-	xdfSource <- RxXdfData("/test/HdfsData/AirlineData1987", 
-	    fileSystem=hdfsFS)
-
-The *RxHdfsFileSystem* function is used to create a file system object for the HDFS file system; the *RxNativeFileSystem* function does the same thing for the native file system.
-
-If you are using a local compute context, you can currently use data files on HDFS as input files only; output must be written to the native file system.
-
-As a more complete example, consider again the mortgage default example from *section 2.13*. If the mortgage default composite XDF resides in the HDFS file system, we can run the example as follows:
-
-	rxSetFileSystem(RxHdfsFileSystem())
-	mortDS <- RxXdfData("/share/SampleData/mortDefaultXdf")
-	rxGetInfo(mortDS, numRows = 5)
-	rxSummary(~., data = mortDS, blocksPerRead = 2)
-	logitObj <- rxLogit(default~F(year) + creditScore + yearsEmploy + ccDebt,
-	               data = mortDS, blocksPerRead = 2,  reportProgress = 1)
-	summary(logitObj)
-
-Note that in this example we set the file system to HDFS globally so we did not need to specify the file system within the data source constructors.
-
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
-
-## Using RevoScaleR with rhdfs
-
-If you are using both RevoScaleR and the RHadoop connector package rhdfs, you need to ensure that the two do not interfere with each other. The rhdfs package depends upon the rJava package, which will prevent access to HDFS by RevoScaleR if it is called before RevoScaleR makes its connection to HDFS. To prevent this interaction, use the function rxHdfsConnect to establish a connection between RevoScaleR and HDFS. An install-time option on Linux can be used to trigger such a call from the Rprofile.site startup file. If the install-time option is not chosen, you can add it later by setting the REVOHADOOPHOST and REVOHADOOPPORT environment variables with the host name of your Hadoop name node and the name node’s port number, respectively. You can also call rxHdfsConnect interactively within a session, provided you have not yet attempted any other rJava or rhdfs commands. For example, the following call will fix a connection between the Hadoop host sandbox-01 and RevoScaleR; if you make a subsequent call to rhdfs, RevoScaleR can continue to use the previously established connection. Note, however, that once rhdfs (or any other rJava call) has been invoked, you cannot change the host or port you use to connect to RevoScaleR:
-
-	rxHdfsConnect(hostName = "sandbox-01", port = 8020)

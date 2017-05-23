@@ -27,10 +27,11 @@
 
 # [How-to for data scientists](data-analysis-in-microsoft-r.md)
 ## Load and transform data 
-### [Import data](scaler-user-guide-data-import.md)
+### [Import text data](scaler-user-guide-data-import.md)
+### [Import relational data using ODBC](scaler-data-odbc.md)
+### [Import and consume data on HDFS](scaler-data-hdfs.md)
 ### [Data source objects](scaler-user-guide-data-source.md)
-### [XDF files](rserver-xdf.md)
-### [ODBC for relational data import](scaler-odbc.md)
+### [XDF files](scaler-data-xdf.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Tips on big data computing](microsoft-r-getting-started-tips.md)
