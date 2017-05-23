@@ -25,7 +25,7 @@
 ## [Parallel processing example (with rxExecby)](quickstart-rxexecby.md)
 ## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-# [How-to for data scientists](data-analysis-in-microsoft-r.md)
+# [How-to guides](data-analysis-in-microsoft-r.md)
 ## Load and transform data 
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import relational data using ODBC](scaler-data-odbc.md)
@@ -35,12 +35,12 @@
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Tips on big data computing](microsoft-r-getting-started-tips.md)
-
 ### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
 ### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
 
-## [Statistical Summaries](scaler-user-guide-data-summaries.md)
-## [Crosstabs](scaler-user-guide-crosstabs.md)
+## Summarize data
+### [Statistical Summaries](scaler-user-guide-data-summaries.md)
+### [Crosstabs](scaler-user-guide-crosstabs.md)
 
 ## Models
 ### [Models in RevoScaleR](scaler-user-guide-models.md)

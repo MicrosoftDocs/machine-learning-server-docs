@@ -24,9 +24,11 @@ ms.custom: ""
 
 ---
 
-# Importing data in Microsoft R Server
+# Importing text data in Microsoft R Server
 
-To load data for analysis and visualization in Microsoft R, you can use a *data frame* or an .xdf file to provide the data set. A RevoScaleR function called **rxImport** is used to load the data.
+RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. This article puts the focus on text files: CSV delimited and fixed-format, plus database files accessed through simple file reads.
+
+To load data for analysis and visualization, you can use a *data frame* or an .xdf file to provide the data set to Microsoft R. A RevoScaleR function called **rxImport** is used to load the data.
 
 A data frame is the fundmantal data structure in R and is fully supported in R Server. A data frame is a tabular data structure composed of rows and columns. Columns contain variables and the first row, called the *header*, stores column names. All subsequent rows provide data values for each variable associated with a single observation. In Microsoft R, a data frame is a temporary data structure created when you connect to an external data source and load some data. It exists only for the duration of the session.
 
@@ -36,8 +38,6 @@ An .xdf file is a binary file format native to Microsoft R, used for persisting 
 > To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
 
 ## About rxImport
-
-RevoScaleR can use data from a wide range of external data sources, including text (.csv) files, database files on disk (SPSS and SAS), and relational data sources. 
 
 To convert external data into a format understood by RevoScaleR, use the **rxImport** function. Although the function takes several arguments, it's essentially just loading data. In the simplest case, you can provide a path to an input file. If your text format data set is delimited by commas or tabs, this is all that is required for simple data conversion. The following example creates a data object loaded with data from a text delimited file:
 
@@ -143,41 +143,6 @@ This produces the following output:
 
 To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
 
-## Convert date strings into Date objects
-
-The .xdf format can store dates using the standard R **Date** class. When importing data from other data formats that support dates such as SAS or SPSS, the **rxImport** function will convert dates data automatically. However, some data sets even in those formats include dates as character string data. 
-
-You can store such data more efficiently by converting it to *Date* data using the *transforms* argument. For example, suppose you have a character variable *TransactionDate* with a representative date of the form "14 Sep 2017". You could convert this to a *Date* variable using the following *transforms* argument:
-
-	transforms=list(TransactionDate=as.Date(TransactionDate, format="%d %b %Y")))
-
-The *format* argument is a character string that may contain conversion specifications, as in the example shown. These conversion specifications are described in the *strptime* help file.
-
-## Create or modify variables during import
-
-You can use the *transforms* argument to **rxImport** to create new variables or modify existing variables when you initially read the data into .xdf format. For example, we could create a new variable, *logcost*, by taking the log of the existing cost variable as follows:
-	
-	inFile <- file.path(rxGetOption("sampleDataDir"), "claims.txt")
-	outfile <- "claimsXform.xdf"
-	claimsDS <-rxImport(inFile, outFile = outfile, transforms=list(logcost=log(cost)))
-	rxGetInfo(claimsDS, getVarInfo=TRUE)
-	
-This gives the following output, showing the new variable:
-
-	File name: C:\YourOutputPath\claimsXform.xdf 
-	Number of observations: 128 
-	Number of variables: 7 
-	Number of blocks: 1 
-	Compression type: zlib
-	Variable information: 
-	Var 1: RowNum, Type: integer, Low/High: (1, 128)
-	Var 2: age, Type: character
-	Var 3: car.age, Type: character
-	Var 4: type, Type: character
-	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
-	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
-	Var 7: logcost, Type: numeric, Low/High: (2.3979, 6.7452)
-
 ### Change data types during import
 
 The **rxImport** function supports three arguments for specifying variable data types: *stringsAsFactors*, *colClasses*, and *colInfo*. For example, consider storing character data. Often data stored in text files as string data actually represents categorical or *factor* data, which can be more compactly represented as a set of integers denoting the distinct *levels* of the factor. This is common enough that users frequently want to transform *all* string data to factors. This can be done using the *stringsAsFactors* argument:
@@ -281,7 +246,112 @@ In general, variable specifications provided by the *colInfo* argument are used 
 
 Also note that the .xdf data format supports a wider variety of data types than R, allowing for efficient storage. For example, by default floating point variables are stored as 32-bit floats in .xdf files. When they are read into R for processing, they are converted to doubles (64-bit floats).
 
-## Example: Fixed-Format Data Files
+### Create or modify variables during import
+
+You can use the *transforms* argument to **rxImport** to create new variables or modify existing variables when you initially read the data into .xdf format. For example, we could create a new variable, *logcost*, by taking the log of the existing cost variable as follows:
+	
+	inFile <- file.path(rxGetOption("sampleDataDir"), "claims.txt")
+	outfile <- "claimsXform.xdf"
+	claimsDS <-rxImport(inFile, outFile = outfile, transforms=list(logcost=log(cost)))
+	rxGetInfo(claimsDS, getVarInfo=TRUE)
+	
+This gives the following output, showing the new variable:
+
+	File name: C:\YourOutputPath\claimsXform.xdf 
+	Number of observations: 128 
+	Number of variables: 7 
+	Number of blocks: 1 
+	Compression type: zlib
+	Variable information: 
+	Var 1: RowNum, Type: integer, Low/High: (1, 128)
+	Var 2: age, Type: character
+	Var 3: car.age, Type: character
+	Var 4: type, Type: character
+	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
+	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
+	Var 7: logcost, Type: numeric, Low/High: (2.3979, 6.7452)
+
+### Convert date strings into Date objects
+
+The .xdf format can store dates using the standard R **Date** class. When importing data from other data formats that support dates such as SAS or SPSS, the **rxImport** function will convert dates data automatically. However, some data sets even in those formats include dates as character string data. 
+
+You can store such data more efficiently by converting it to *Date* data using the *transforms* argument. For example, suppose you have a character variable *TransactionDate* with a representative date of the form "14 Sep 2017". You could convert this to a *Date* variable using the following *transforms* argument:
+
+	transforms=list(TransactionDate=as.Date(TransactionDate, format="%d %b %Y")))
+
+The *format* argument is a character string that may contain conversion specifications, as in the example shown. These conversion specifications are described in the *strptime* help file.
+
+### Specify a delimiter for RxTextData data 
+
+You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about **RxTextData**, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
+
+As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
+
+	Name-Rank-SerialNumber
+	Smith-Sgt-02912
+	Johnson-Cpl-90210
+	Michaels-Pvt-02931
+	Brown-Pvt-11311
+
+By creating an **RxTextData** data source for this file, you can specify the delimiter using the *delimiter* argument:
+
+	readPath <- rxGetOption("sampleDataDir")
+	infile <- file.path(readPath, "hyphens.txt")
+	hyphensTxt <- RxTextData(infile, delimiter="-")
+	hyphensDF <- rxImport(hyphensTxt)
+	hyphensDF
+	
+	      Name Rank SerialNumber
+	1    Smith  Sgt         2912
+	2  Johnson  Cpl        90210
+	3 Michaels  Pvt         2931
+	4    Brown  Pvt        11311
+
+In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
+
+## Example: Import multiple files
+
+This example demonstrates an approach for importing multiple text files at once. You can use [sample data](scaler-user-guide-smaple-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
+
+Create a source object for a list of files, obtained using the R `list.files` function with a pattern for selecting specific file names:
+
+    mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)
+
+Create an object for the XDF file at a writable location:
+
+    myLargeXdf <- file.path("C:/users/temp/mortgagelarge.xdf")
+
+To iterate over multiple files, use the R `lapply` function and create a function to call **rxImport** with the **append** argument. Importing multiple files requires the **append** argument on **rxImport** to avoid overwriting existing content from the first iteration. Each new chunk of data is imported as a block. 
+
+    lapply(mySourceFiles, FUN = function(csv_file) {
+        rxImport(inData = csv_file, outFile=myLargeXdf, append = file.exists(myLargeXdf)) } )
+
+Partial output from this operation reports out the processing details.
+
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.025 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.022 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.019 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
+
+Use **rxGetInfo** to view precomputed metadata. As you would expect, the block count reflects the presence of multiple concatenated data sets.
+
+        rxGetInfo(myLargeXdf)
+
+Results from this command confirm that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks. For more information, see [Import and consumd data on HDFS](scaler-data-hdfs.md) and [XDF files](scaler-data-xdf.md).
+
+        File name: C:\Users\TEMP\mortgagelarge.xdf 
+        Number of observations: 1e+05 
+        Number of variables: 6 
+        Number of blocks: 10 
+        Compression type: zlib 
+
+## Example: Import fixed-format data files
 
 *Fixed-format* data is text data in which each variable occupies a fixed-width column in the input data file. Column width, rather than a delimiter, gives the data its structure. You can import fixed-format data using the *rxImport* function.
 
@@ -340,7 +410,7 @@ If you have a schema file, you can still use the *colInfo* argument to specify t
 
 Fixed-width character data is treated as a special type by RevoScaleR for efficiency purposes. You can use this same type for character data in delimited data by specifying a colInfo argument with a width argument for the character column. (Typically, you will need to find the longest string in the column and specify a width sufficient to include it.)
 
-## Example: SAS Data 
+## Example: Import SAS data 
 
 The **rxImport** function can also be used to read data from SAS files having a .sas7bdat or .sd7 extension. You do not need to have SAS installed on your computer; simple file access is used to read in the data.
 
@@ -373,7 +443,7 @@ Sometimes, SAS data files on Windows come in two pieces, a *.sas7bdat* file cont
 	     formatFile = "myfile.sas7bcat")
 
 
-## Example: SPSS Data 
+## Example: Import SPSS data 
 
 The **rxImport** function can also be used to read data from SPSS files. The sample directory contains an SPSS version of the claims data as claims.sav. We can read it into .xdf format as follows:
 	
@@ -403,34 +473,6 @@ Variables in SPSS data sets often contain value labels with important informatio
 Interestingly, SPSS allows for value labels on a subset of existing values. For example, a variable with values from 1 to 99 might have value labels of “NOT HOME” for 97, “DIDN’T KNOW” for 98, and “NOT APPLICABLE” for 99. If this variable were converted to a factor in R using the value labels as the factor labels, all of the values from 1 to 96 would be set to missing because there would be no corresponding factor level. Essentially all of the actual data would be thrown away. 
 
 To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALSE*. By default, the information from the value labels is retained even if the variables aren’t converted to factors. This information can be returned using **rxGetVarInfo**. If you don’t wish to retain the information from the value labels you can specify *labelsAsInfo=FALSE*.
-
-### Specify a delimiter for RxTextData data 
-
-You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about **RxTextData**, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
-
-As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
-
-	Name-Rank-SerialNumber
-	Smith-Sgt-02912
-	Johnson-Cpl-90210
-	Michaels-Pvt-02931
-	Brown-Pvt-11311
-
-By creating an **RxTextData** data source for this file, you can specify the delimiter using the *delimiter* argument:
-
-	readPath <- rxGetOption("sampleDataDir")
-	infile <- file.path(readPath, "hyphens.txt")
-	hyphensTxt <- RxTextData(infile, delimiter="-")
-	hyphensDF <- rxImport(hyphensTxt)
-	hyphensDF
-	
-	      Name Rank SerialNumber
-	1    Smith  Sgt         2912
-	2  Johnson  Cpl        90210
-	3 Michaels  Pvt         2931
-	4    Brown  Pvt        11311
-
-In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
 	
 
 ## Importing wide data
@@ -456,4 +498,17 @@ The colInfo list can then be used as the *colInfo* argument in the **rxImport** 
 	outFileClaims <- "claimsWithColInfo.xdf"
 	rxImport(inFile, outFile = outFileClaims, colInfo = colInfoList)
 	
+## Next steps
+
+Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
+
++ [XDF files](scaler-data-xdf.md)	
++ [Data Sources](scaler-user-guide-data-source.md)	
++ [Import relational data using ODBC](scaler-data-odbc.md)
++ [Import and consumd data on HDFS](scaler-data-hdfs.md)
+
+## See also
+
+ [Tutorial: data import](scaler-getting-started-data-import-exploration.md)	
+ [Tutorial: data manipulation](scaler-getting-started-data-manipulation.md)
 

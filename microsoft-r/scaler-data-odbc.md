@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "ODBC configuration for RevoScaleR data import"
-description: "Install and verify ODBC drivers for data import in Microsoft R."
+title: "Import relational data using ODBC (Microsoft R)"
+description: "How to import relational data using ODBC and rxImport in RevoScaleR"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/18/2017"
+ms.date: "05/23/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# ODBC configuration for importing data into Microsoft R
+# Import relational data using ODBC (Microsoft R)
 
 **Applies to: Microsoft R Server and Microsoft R Client**
 
