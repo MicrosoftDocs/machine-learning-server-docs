@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Data Sources
 
-A *data source* in RevoScaleR is an R object representing a data set and constitute the return objects of rxImport and rxDataStep read and write operations. Although the data itself may be on disk, a data source is an in-memory object that allows you to treat data from disparate sources in a consistent manner within RevoScaleR. 
+A *data source* in RevoScaleR is an R object representing a data set. It constitutes the return objects of **rxImport** and **rxDataStep** read and write operations. Although the data itself may be on disk, a data source is an in-memory object that allows you to treat data from disparate sources in a consistent manner within RevoScaleR. 
 
-Behind the scenes, rxImport often creates data sources implicitly to facilitate data import. You can create explicit data sources to get more control over how data is imported. This article explains how to create a variety of data sources and use them in an analytical context.  
+Behind the scenes, **rxImport** often creates data sources implicitly to facilitate data import. You can explicitly create data sources for more control over how data is imported. This article explains how to create a variety of data sources and use them in an analytical context.  
 
 ## Data Source Constructors
 
@@ -42,7 +42,7 @@ To create data sources directly, use the constructors listed in the following ta
 | ODBC Database                      | RxOdbcData                  | [View](scaler-odbc.md) |
 | Teradata Database                  | RxTeradata                  |               |
 | SQL Server Database                | RxSqlServerData             |               |
-| .xdf data files                    | RxXdfData                   | [View](rserver-create-xdf.md) |
+| .xdf data files                    | RxXdfData                   | [View](rserver-xdf.md) |
 
 ## When to create a data source
 
@@ -136,8 +136,6 @@ As a simple example, RevoScaleR includes a sample text data file hyphens.txt tha
 
 The *rxImport* function does not include a parameter for specifying a delimiter; in this case, you must create an *RxTextData* data source and specify the delimiter using the *delimiter* argument:
 
-	#  Chapter 3: Data Sources
-	Ch3Start <- Sys.time()
 	readPath <- rxGetOption("sampleDataDir")
 	infile <- file.path(readPath, "hyphens.txt")
 	hyphensTxt <- RxTextData(infile, delimiter="-")

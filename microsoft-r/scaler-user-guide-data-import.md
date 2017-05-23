@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Import data into Microsoft R Server"
-description: "Data ingestion in Microsoft R Server using RevoScaleR functions and XDF files."
+title: "Import data into Microsoft R Server using rxImport"
+description: "Load data in Microsoft R Server using the RevoScaleR rxImport function."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/03/2017"
+ms.date: "05/22/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,60 +26,49 @@ ms.custom: ""
 
 # Importing data in Microsoft R Server
 
-Although R Server can analyze data over a direct connection to an external data source, it's common to import data into the native XDF file format. XDF files offer numerous advantages, including chunking data in blocks for modular distribution and management, columnar storage for fast retrievable of individual variables, and precomputed metadata. 
+To load data for analysis and visualization in Microsoft R, you can use a *data frame* or an .xdf file to provide the data set. A RevoScaleR function called **rxImport** is used to load the data.
 
-To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
+A data frame is the fundmantal data structure in R and is fully supported for in R Server. A data frame is a tabular data structure composed of rows and columns. Columns contain variables and the first row, called the *header*, stores column names. All rows that follow store the data values for each variable associated with a single observation. In Microsoft R, a data frame is a temporary data structure created when you connect to an external data source and load some data. It exists only for the duration of the session.
 
-Data storage alternatives
+An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. XDF files can store data in multiple physical files to accomodate very large data sets. Internally, storage is column-based, one column per variable, which is highly efficient for writing, reading, and updating variables used in statistical analysis and data mining. Additionally, .xdf files include precomputed metadata, which is instantly available with no additional processing.
 
-| Storage	| media | usage recommendations |
-|-------|-------|-----------------------|
-| Data frame | in memory | Use with R Client or to load data over a direct connection to an external data source. You can load portions of an XDF into a data frame for faster execution times. |
-| XDF single file | on disk | TBD |
-| XDF composite files | on disk | TBD |
+> [!NOte]
+> To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
 
+## Load data with rxImport
 
-## ORIGINAL DOCS
+RevoScaleR can use data from a wide range of external data sources, including text (.csv) files, database files on disk (SPSS and SAS), and relational data sources. 
 
-The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
+To convert external data into a format understood by RevoScaleR, use the **rxImport** function. Although the function takes several arguments, it's essentially just loading data. In the simplest case, you can provide a path to an input file. If your text format data set is delimited by commas or tabs, this is all that is required for simple data conversion:
 
-Smaller data sets can be imported into data frames in memory. In addition, the RevoScaleR package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns.
+		> mydataobject <-rxImport("C:/mydatafile.csv")
 
-In this chapter, we explain how to import data in various formats, how to create a data frame in memory from a subset of an .xdf file, and how to write an .xdf file to a text file.
+Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to an .xdf file saved to disk. This article covers a range of data access scenarios for multiple data source types. For more information about .xdf administration, see [XDF files](rserver-xdf.md).
 
-## Data Compression in .xdf Files
+## How to import a text delimited file
 
-Newer versions of the .xdf format support data compression via the *xdfCompressionLevel* argument to *rxImport* (and most other RevoScaleR functions that write .xdf files). You specify this as an integer in the range -1 to 9. The value -1 tells *rxImport* to use the current default compression value; the integers 1 through 9 specify increasing levels of compression—higher numbers perform more compression, but take more time. The value 0 specifies no compression.
+1. Set the location of the source file: 
 
-The .xdf format allows different blocks to have different compression levels (but not within a single call to *rxImport*). This can be useful, for example, when appending to an existing data set of unknown compression level—you can specify the compression for the new data without affecting the compression of the existing data.
+	> mySourceFile <- file.path("C:/Users/Temp/my-data-file.txt")
 
-You can specify a standard compression level for all future .xdf file writes by setting *xdfCompressionLevel* using *rxOptions*. For example, to specify a compression level of 3, use *rxOptions* as follows:
+  To try this out using [built-in samples](scaler-user-guide-sample-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
 
-	rxOptions(xdfCompressionLevel = 3)
+	# Verify the sample files exist and then set mySourceFile to the sample directory
+	> list.files(rxGetOption("sampleDataDir"))
+	> mySourceFile <- file.path(rxGetOption("sampleDataDir"), "claims.txt")
 
-The default value of this option is 1.
+2. Optionally, if you are generating an .xdf file, you can either hardcode the file path to a writeable directory, or run the first command to determine the default working directory, and the second command to switch to a writable folder.
 
-If you have one or more existing .xdf files and would like to compress them, you can use the function *rxCompressXdf*. You can specify a single file or xdf data source, a character vector of files and data sources, or the path to a directory containing .xdf files. For example, to compress all the .xdf files in the C:\\data directory, you would call *rxCompressXdf* as follows:
+	> getwd()
+	> setwd("c:/users/temp")
 
-	rxCompressXdf("C:/data", xdfCompressionLevel = 1, overwrite = TRUE)
+3. Run **rxImport** to load the data into a data frame.
 
-## Importing Delimited Text Data
+	> claimsDF <- rxImport(mySourceFile)
 
-Use the *rxImport* function to convert a text file to a data frame or .xdf file. In the simplest case, just provide the path to the input file. If your text format data set is delimited by commas or tabs, this is all that is required for simple data conversion. For example, the SampleData folder of the RevoScaleR package contains a file claims.txt containing information on car insurance claims. The following sequence of commands imports the data and returns a data frame, which we save as the object *claimsDF*:
-
-	######################################################## 
-	# Chapter 2: Importing Data
-	Ch2Start <- Sys.time()
+4. Optionally, follow up with the *rxGetInfo* function to get summary information. If we include the argument *getVarInfo=TRUE*, the summary includes the names of the variables and their types:
 	
-	#  Importing Delimited Text Data
-	readPath <- rxGetOption("sampleDataDir")
-	infile <- file.path(readPath, "claims.txt")
-	claimsDF <- rxImport(infile)
-
-
-The *rxGetInfo* function then shows us a useful summary of what’s contained in the data frame. If we include the argument *getVarInfo=TRUE*, this summary includes the names of the variables and their types:
-	
-	rxGetInfo(claimsDF, getVarInfo = TRUE)
+	> rxGetInfo(claimsDF, getVarInfo = TRUE)
 	
 		Data frame: claimsDF  
 		Number of observations: 128 
@@ -93,22 +82,48 @@ The *rxGetInfo* function then shows us a useful summary of what’s contained in
 		Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
 		Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 
+  For just variables in the data file, use the *names* function:
 
-If we want just the names of the variables in the data file, we can use the *names* function:
-
-	names(claimsDF)
+	> names(claimsDF)
 	   [1] "RowNum"  "age"     "car.age" "type"    "cost"    "number"
 
+5. To save the data into an .xdf file rather than importing data into a data frame in memory, add the *outFile* parameter. By default, the new data set is created in our current working directory:
 
-If instead of importing the data into a data frame in memory, we want to store the data in an .xdf file, we just specify the path as the *outFile*. By default, the new data set is created in our current working directory:
+	> claimsDF <- rxImport(inData=mySourceFile, outFile = "claims.xdf")
 
-	claimsDS <- rxImport(inData = infile, outFile = "claims.xdf")
+  An .xdf file is created, and instead of returning a data frame, the *rxImport* function returns a data source object. This is a small R object that contains information about a data source, in this case the name and path of the .xdf file it represents. This data source object can be used as the input data in most RevoScaleR functions. For example:
 
-An .xdf file is created, and instead of returning a data frame, the *rxImport* function returns a data source object. This is a small R object that contains information about a data source, in this case the name and path of the .xdf file it represents. This data source object can be used as the input data in most RevoScaleR functions. For example:
+	> rxGetInfo(claimsDF, getVarInfo = TRUE)
+	> names(claimsDF)
 
-	rxGetInfo( claimsDS, getVarInfo = TRUE)
-	names( claimsDS )
+## How to import fixed-format text files
 
+## How to import SAS or SPSS data files
+
+## How to import relational data
+
+## How to import multiple files
+
+## How to load an XDF into a data frame
+
+## Considerations for "wide data"
+
+
+
+## ORIGINAL DOCS
+
+The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
+
+Smaller data sets can be imported into data frames in memory. In addition, the RevoScaleR package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns.
+
+In this chapter, we explain how to import data in various formats, how to create a data frame in memory from a subset of an .xdf file, and how to write an .xdf file to a text file.
+
+
+
+
+
+
+## Considerations for character data
 
 ### Specifying a Missing Value String
 
@@ -122,42 +137,45 @@ If your text data file uses a string other than NA to identify missing values, y
 
 ## Importing Fixed-Format Data 
 
-*Fixed-format* data is text data in which each variable occupies a fixed-width column in the input data file. The format is completely specified by the width of each column and each column’s data type. You can import fixed-format data using the *rxImport* function.
+*Fixed-format* data is text data in which each variable occupies a fixed-width column in the input data file. Column width, rather than a delimiter, gives the data its structure. You can import fixed-format data using the *rxImport* function.
 
-Fixed-format data may be accompanied by a *schema file* with an .sts extension describing the width and type of each column. For complete details on creating a schema file, see page 93 of the Stat/Transfer PDF Manual (<http://www.stattransfer.com/stman10.pdf>). If you have a schema file, you can create the input data source very simply by specifying the schema file name as the input data file. For example, the RevoScaleR SampleData directory contains a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
+Optionally, fixed-format data might be associated with a *schema file* having an .sts extension. The schema describes the width and type of each column. For complete details on creating a schema file, see page 93 of the Stat/Transfer PDF Manual (<http://www.stattransfer.com/stman10.pdf>). If you have a schema file, you can create the input data source very simply by specifying the schema file name as the input data file. 
 
-#  Importing Fixed Format Data
+The [built-in samples](scaler-user-guide-sample-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
 
-	inFile <- file.path(readPath, "claims.sts")
-	claimsFF <- rxImport(inData = inFile, outFile = "claimsFF.xdf")
+	# Verify the sample files exist
+	> list.files(rxGetOption("sampleDataDir"))
 
-You can get information about the file using *rxGetInfo* as usual:
+	# (Windows only) Set a working directory for which you have write access
+	> setwd("c:/users/temp")
+
+	# Specify the source schema file, load data, and save output as a new XDF
+	> inFile <- file.path(rxGetOption("sampleDataDir"), "claims.sts")
+	> claimsFF <- rxImport(inData=inFile, outFile="claimsFF.xdf")
+
+Return summary infomration using *rxGetInfo*:
 
 	rxGetInfo(claimsFF, getVarInfo=TRUE)
 
-This gives the following output:
+	File name: C:\\YourOutputPath\\claims.xdf
 
-File name: C:\\YourOutputPath\\claims.xdf
-
-	File name: C:\YourOutputPath\claims.xdf 
-	Number of observations: 128 
-	Number of variables: 6 
-	Number of blocks: 1 
-	Compression type: zlib
-	Variable information: 
-	Var 1: RowNum, Type: numeric, Storage: float32, Low/High: (1.0000, 128.0000)
-	Var 2: age, Type: character
-	Var 3: car.age, Type: character
-	Var 4: type, Type: character
-	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
-	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
-
+		File name: C:\YourOutputPath\claims.xdf 
+		Number of observations: 128 
+		Number of variables: 6 
+		Number of blocks: 1 
+		Compression type: zlib
+		Variable information: 
+		Var 1: RowNum, Type: numeric, Storage: float32, Low/High: (1.0000, 128.0000)
+		Var 2: age, Type: character
+		Var 3: car.age, Type: character
+		Var 4: type, Type: character
+		Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
+		Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 
 To read all string data as factors, set the *stringsAsFactors* argument to *TRUE* in your call to *rxImport*
 
 	claimsFF2 <- rxImport(inFile, outFile = "claimsFF2.xdf", stringsAsFactors=TRUE)
 	rxGetInfo(claimsFF2, getVarInfo=TRUE)
-
 
 If you have fixed-format data without a schema file, you can specify the start, width, and type information for each variable using the *colInfo* argument to the *RxTextData* data source constructor, and then read in the data using *rxImport*:
 
@@ -178,9 +196,9 @@ Fixed-width character data is treated as a special type by RevoScaleR for effici
 
 # Importing SAS Data 
 
-The *rxImport* function can also be used to read data from SAS files having a .sas7bdat or .sd7 extension. You do not need to have SAS installed on your computer.
+The **rxImport** function can also be used to read data from SAS files having a .sas7bdat or .sd7 extension. You do not need to have SAS installed on your computer; simple file access is used to read in the data.
 
-The RevoScaleR SampleData directory contains a SAS version of the claims data as claims.sas7bdat. We can read it into .xdf format most simply as follows:
+The samole directory contains a SAS version of the claims data as claims.sas7bdat. We can read it into .xdf format most simply as follows:
 
 	#  Importing SAS Data
 	
@@ -188,7 +206,6 @@ The RevoScaleR SampleData directory contains a SAS version of the claims data as
 	xdfFileSAS <- "claimsSAS.xdf"
 	claimsSAS <- rxImport(inData = inFileSAS, outFile = xdfFileSAS)
 	rxGetInfo(claimsSAS, getVarInfo=TRUE)
-
 
 This gives the following output:
 
@@ -205,7 +222,6 @@ This gives the following output:
 	Var 5: cost, Type: numeric, Low/High: (11.0000, 850.0000)
 	Var 6: number, Type: numeric, Low/High: (0.0000, 434.0000)
 
-
 Sometimes, SAS data files on Windows come in two pieces, a *.sas7bdat* file containing the data and a *.sas7bcat* file containing value label information. You can read both the data and the value label information by specifying the *.sas7bdat* file with the *inData* argument and the *.sas7bcat* file with the *formatFile* argument. To do so, in the following code replace *myfile* with your SAS file name:
 
 	myData <- rxImport(inData = "myfile.sas7bdat",
@@ -215,9 +231,7 @@ Sometimes, SAS data files on Windows come in two pieces, a *.sas7bdat* file cont
 
 ## Importing SPSS Data 
 
-The *rxImport* function can also be used to read data from SPSS files.
-
-The RevoScaleR SampleData directory contains an SPSS version of the claims data as claims.sav. We can read it into .xdf format as follows:
+The *rxImport* function can also be used to read data from SPSS files. The sample directory contains an SPSS version of the claims data as claims.sav. We can read it into .xdf format as follows:
 
 	#  Importing SPSS Data
 	
@@ -381,9 +395,9 @@ This produces the following output:
 
 To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
 
-## Appending to an Existing File
+## Append new observations to an existing file
 
-If you have observations on the same variables in multiple input files, you can use the *append* argument to *rxImport* to combine them into one file. For example, we could append another copy of the claims text data set in a second block to the claimCAOrdered2.xdf file we created in section 2.6:
+If you have observations on the same variables in multiple input files, you can use the *append* argument to **rxImport** to combine them into one file. For example, we could append another copy of the claims text data set in a second block to the claimCAOrdered2.xdf file we created in section 2.6:
 	
 	#  Appending to an Existing File
 	
@@ -416,7 +430,7 @@ If you have observations on the same variables in multiple input files, you can 
 
 ## Transforming Data on Import
 
-You can use the *transforms* argument to *rxImport* to create new variables or modify existing variables when you initially read the data into .xdf format. For example, we could create a new variable, *logcost*, by taking the log of the existing cost variable as follows:
+You can use the *transforms* argument to **rxImport** to create new variables or modify existing variables when you initially read the data into .xdf format. For example, we could create a new variable, *logcost*, by taking the log of the existing cost variable as follows:
 
 	#  Transforming Data on Import
 	
@@ -461,9 +475,6 @@ Section 6 of this chapter mentions multiple ways in which the user can specify v
 
 For wide data, it is useful to create the *colInfo* as an object prior to using rxImport. The following is an example of defining the colInfo with factor levels for the claims data from an earlier chapter:
 
-
-#  Importing Wide Data
-
 	colInfoList <- list("age" = list(type = "factor",
 	      levels = c("17-20","21-24","25-29","30-34","35-39","40-49","50-59","60+")),
 	    "car.age" = list(type = "factor",
@@ -505,10 +516,9 @@ We can also create transformed variables while we are reading in the data. For e
 
 ## Splitting Data Files
 
-
 RevoScaleR makes it possible to analyze huge data sets easily and efficiently, and for most purposes the most efficient computations are done on a single .xdf file. However, there are many circumstances when you will want to work with only a portion of your data. For example, you may want to distribute your data over the nodes of a cluster; in such a case, RevoScaleR’s analysis functions will process each node’s data separately, combining all the results for the final return value. You might also want to split your data into training and test data so that you can fit a model using the training data and validate it using the test data.
 
-Use the function *rxSplit* to split your data. For example, to split variables of interest in the large 2000 U.S. Census data into five files for distribution on a five node cluster, you could use *rxSplit* as follows (change the location of the bigDataDir to the location of your downloaded file):
+Use the function **rxSplit** to split your data. For example, to split variables of interest in the large 2000 U.S. Census data into five files for distribution on a five node cluster, you could use **rxSplit** as follows (change the location of the bigDataDir to the location of your downloaded file):
 
 	#  Splitting Data Files
 	rxSetComputeContext("local")
@@ -518,7 +528,9 @@ Use the function *rxSplit* to split your data. For example, to split variables o
 		varsToKeep = c("age",  "incearn", "incwelfr", "educrec", "metro", "perwt")) 
 	names(splitFiles)
 
-By default, *rxSplit* simply appends a number in the sequence from 1 to *numOutFiles* to the base file name to create the new file names, and in this case the resulting file names, for example, “Census5PCT20001.xdf”, are a bit confusing. You can exercise greater control over the output file names by using the *outFilesBase* and *outFilesSuffixes* arguments. With *outFilesBase*, you can specify either a single character string to be used for all files or a character vector the same length as the desired number of files. The latter option is useful, for example, if you would like to create four files with the same file name, but different paths:
+By default, **rxSplit** simply appends a number in the sequence from 1 to *numOutFiles* to the base file name to create the new file names, and in this case the resulting file names, for example, “Census5PCT20001.xdf”, are a bit confusing. 
+
+You can exercise greater control over the output file names by using the *outFilesBase* and *outFilesSuffixes* arguments. With *outFilesBase*, you can specify either a single character string to be used for all files or a character vector the same length as the desired number of files. The latter option is useful, for example, if you would like to create four files with the same file name, but different paths:
 
 	nodePaths <- paste("compute", 10:13, sep="")
 	baseNames <- file.path("C:", nodePaths, "DistCensusData")
@@ -527,7 +539,7 @@ By default, *rxSplit* simply appends a number in the sequence from 1 to *numOutF
 		varsToKeep = c("age", "incearn", "incwelfr", "educrec", "metro", "perwt")) 
 	names(splitFiles2)
 
-This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You will want to do something like this when using distributed data with the standard RevoScaleR analysis functions such as *rxLinMod* and *rxLogit* in an RxHpcServer compute context.
+This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You will want to do something like this when using distributed data with the standard RevoScaleR analysis functions such as **rxLinMod** and **rxLogit** in an **RxHpcServer** compute context.
 
 You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
 
@@ -554,7 +566,7 @@ You can use the *splitByFactor* argument and a transforms argument to easily cre
 
 This takes approximately 10% of the data as a test data set, with the remainder going into the training data.
 
-If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use *rxSplit* to split data frames; see the *rxSplit* help file for details.
+If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use **rxSplit** to split data frames; see the [**rxSplit** help page](scaler/packagehelp/rxsplit.md) for details.
 
 ## Importing Data as Composite Xdf Files
 
