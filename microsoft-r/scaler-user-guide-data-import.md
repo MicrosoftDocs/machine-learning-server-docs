@@ -35,7 +35,7 @@ An .xdf file is a binary file format native to Microsoft R, used for persisting 
 > [!Note]
 > To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
 
-## Load data with rxImport
+## About rxImport
 
 RevoScaleR can use data from a wide range of external data sources, including text (.csv) files, database files on disk (SPSS and SAS), and relational data sources. 
 
@@ -155,59 +155,7 @@ If you have a schema file, you can still use the *colInfo* argument to specify t
 
 Fixed-width character data is treated as a special type by RevoScaleR for efficiency purposes. You can use this same type for character data in delimited data by specifying a colInfo argument with a width argument for the character column. (Typically, you will need to find the longest string in the column and specify a width sufficient to include it.)
 
-
-## Specify a delimiter for RxTextData data 
-
-You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument.
-
-As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
-
-	Name-Rank-SerialNumber
-	Smith-Sgt-02912
-	Johnson-Cpl-90210
-	Michaels-Pvt-02931
-	Brown-Pvt-11311
-
-By creating an **RxTextData** data source for this file, you can specify the delimiter using the *delimiter* argument:
-
-	readPath <- rxGetOption("sampleDataDir")
-	infile <- file.path(readPath, "hyphens.txt")
-	hyphensTxt <- RxTextData(infile, delimiter="-")
-	hyphensDF <- rxImport(hyphensTxt)
-	hyphensDF
-	
-	      Name Rank SerialNumber
-	1    Smith  Sgt         2912
-	2  Johnson  Cpl        90210
-	3 Michaels  Pvt         2931
-	4    Brown  Pvt        11311
-
-In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
-
-## ORIGINAL DOCS
-
-The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
-
-Smaller data sets can be imported into data frames in memory. In addition, the RevoScaleR package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns.
-
-In this chapter, we explain how to import data in various formats, how to create a data frame in memory from a subset of an .xdf file, and how to write an .xdf file to a text file.
-
-
-
-## Considerations for character data
-
-### Specifying a Missing Value String
-
-If your text data file uses a string other than NA to identify missing values, you must use the *missingValueString* argument. Only one missing value string is allowed per file. We used this briefly in Chapter 1 when we imported the AirlineDemoSmall data:
-
-	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
-	airData <- rxImport(inData = inFile, outFile="airExample.xdf", 
-		stringsAsFactors = TRUE, missingValueString = "M", 
-		rowsPerRead = 200000, overwrite = TRUE)
-	
-
-
-# Example: SAS Data 
+## Example: SAS Data 
 
 The **rxImport** function can also be used to read data from SAS files having a .sas7bdat or .sd7 extension. You do not need to have SAS installed on your computer; simple file access is used to read in the data.
 
@@ -275,7 +223,79 @@ Interestingly, SPSS allows for value labels on a subset of existing values. For 
 
 To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALSE*. By default, the information from the value labels is retained even if the variables aren’t converted to factors. This information can be returned using **rxGetVarInfo**. If you don’t wish to retain the information from the value labels you can specify *labelsAsInfo=FALSE*.
 
-## Specifying Variable Data Types
+## Specify a delimiter for RxTextData data 
+
+You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument.
+
+As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
+
+	Name-Rank-SerialNumber
+	Smith-Sgt-02912
+	Johnson-Cpl-90210
+	Michaels-Pvt-02931
+	Brown-Pvt-11311
+
+By creating an **RxTextData** data source for this file, you can specify the delimiter using the *delimiter* argument:
+
+	readPath <- rxGetOption("sampleDataDir")
+	infile <- file.path(readPath, "hyphens.txt")
+	hyphensTxt <- RxTextData(infile, delimiter="-")
+	hyphensDF <- rxImport(hyphensTxt)
+	hyphensDF
+	
+	      Name Rank SerialNumber
+	1    Smith  Sgt         2912
+	2  Johnson  Cpl        90210
+	3 Michaels  Pvt         2931
+	4    Brown  Pvt        11311
+
+In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
+
+## Specify a Missing Value String
+
+If your text data file uses a string other than NA to identify missing values, you must use the *missingValueString* argument. Only one missing value string is allowed per file. We used this briefly in Chapter 1 when we imported the AirlineDemoSmall data:
+
+	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
+	airData <- rxImport(inData = inFile, outFile="airExample.xdf", 
+		stringsAsFactors = TRUE, missingValueString = "M", 
+		rowsPerRead = 200000, overwrite = TRUE)
+	
+## Set variable metadata during import
+
+If you need to modify the name of a variable or the names of the factor levels, or add a description of a variable, you can do this using the *colInfo* argument. For example, the claims data includes a variable *type* specifying the type of car, but the levels A, B, C, and D give us no particular information. If we knew what the types signified, perhaps “Subcompact”, “Compact”, “Mid-size”, and “Full-size”, we could relabel the levels as follows:
+
+	#  Specifying Additional Variable Information
+	
+	inFileAddVars <- file.path(rxGetOption("sampleDataDir"), "claims.txt")
+	outfileTypeRelabeled <- "claimsTypeRelabeled.xdf"
+	colInfoList <- list("type" = list(type = "factor", levels = c("A", 
+	    "B", "C", "D"), newLevels=c("Subcompact", "Compact", "Mid-size", 
+	    "Full-size"), description="Body Type"))
+	claimsNew <- rxImport(inFileAddVars, outFile = outfileTypeRelabeled, 
+		colInfo = colInfoList)
+	rxGetInfo(claimsNew, getVarInfo = TRUE) 
+
+This produces the following output:
+
+	File name: C:\YourOutputPath\claimsTypeRelabeled.xdf 
+	Number of observations: 128 
+	Number of variables: 6 
+	Number of blocks: 1 
+	Compression type: zlib
+	Variable information: 
+	Var 1: RowNum, Type: integer, Low/High: (1, 128)
+	Var 2: age, Type: character
+	Var 3: car.age, Type: character
+	Var 4: type, Body Type 
+	       4 factor levels: Subcompact Compact Mid-size Full-size
+	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
+	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
+
+
+To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
+
+
+## Change data types during import
 
 The **rxImport** function supports three arguments for specifying variable data types: *stringsAsFactors*, *colClasses*, and *colInfo*. For example, consider storing character data. Often data stored in text files as string data actually represents categorical or *factor* data, which can be more compactly represented as a set of integers denoting the distinct *levels* of the factor. This is common enough that users frequently want to transform *all* string data to factors. This can be done using the *stringsAsFactors* argument:
 
@@ -378,42 +398,14 @@ In general, variable specifications provided by the *colInfo* argument are used 
 
 Also note that the .xdf data format supports a wider variety of data types than R, allowing for efficient storage. For example, by default floating point variables are stored as 32-bit floats in .xdf files. When they are read into R for processing, they are converted to doubles (64-bit floats).
 
-## Specifying Additional Variable Information
 
-If you need to modify the name of a variable or the names of the factor levels, or add a description of a variable, you can do this using the *colInfo* argument. For example, the claims data includes a variable *type* specifying the type of car, but the levels A, B, C, and D give us no particular information. If we knew what the types signified, perhaps “Subcompact”, “Compact”, “Mid-size”, and “Full-size”, we could relabel the levels as follows:
+## ORIGINAL DOCS
 
-	#  Specifying Additional Variable Information
-	
-	inFileAddVars <- file.path(rxGetOption("sampleDataDir"), "claims.txt")
-	outfileTypeRelabeled <- "claimsTypeRelabeled.xdf"
-	colInfoList <- list("type" = list(type = "factor", levels = c("A", 
-	    "B", "C", "D"), newLevels=c("Subcompact", "Compact", "Mid-size", 
-	    "Full-size"), description="Body Type"))
-	claimsNew <- rxImport(inFileAddVars, outFile = outfileTypeRelabeled, 
-		colInfo = colInfoList)
-	rxGetInfo(claimsNew, getVarInfo = TRUE) 
+The main function for importing data is *rxImport*. The *rxImport* function supports delimited text data, fixed-format text data, SAS data, SPSS data, and database data, provided you have a suitable ODBC driver for your database. Note that if you are using rxImport in a distributed compute context, you will be limited by the data types supported within your context. See the [RevoScaleR Distributed Computing Guide](./scaler-distributed-computing.md) or the various Getting Started Guides for specific compute contexts for details on which data types are supported on various distributed computing platforms.
 
-This produces the following output:
+Smaller data sets can be imported into data frames in memory. In addition, the RevoScaleR package provides a data file format (.xdf) designed to be very efficient for reading arbitrary rows and columns.
 
-	File name: C:\YourOutputPath\claimsTypeRelabeled.xdf 
-	Number of observations: 128 
-	Number of variables: 6 
-	Number of blocks: 1 
-	Compression type: zlib
-	Variable information: 
-	Var 1: RowNum, Type: integer, Low/High: (1, 128)
-	Var 2: age, Type: character
-	Var 3: car.age, Type: character
-	Var 4: type, Body Type 
-	       4 factor levels: Subcompact Compact Mid-size Full-size
-	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
-	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
-
-
-To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
-
-
-
+In this chapter, we explain how to import data in various formats, how to create a data frame in memory from a subset of an .xdf file, and how to write an .xdf file to a text file.
 
 ## Transforming Data on Import
 

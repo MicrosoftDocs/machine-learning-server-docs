@@ -33,7 +33,7 @@
 ### [ODBC for relational data import](scaler-odbc.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
-### [Tips on computing with big data](microsoft-r-getting-started-tips.md)
+### [Tips on big data computing](microsoft-r-getting-started-tips.md)
 
 ### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
 ### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
