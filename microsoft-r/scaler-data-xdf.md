@@ -26,35 +26,29 @@ ms.custom: ""
 
 # Create an XDF file in Microsoft R Server
 
-**Applies to: Microsoft R Server**
-
 XDF is the native file format for persisted data in Microsoft R Server and it offers the following benefits:
 
-+ Columnar storage, one column per variable, for efficient read-write operations of variable data. In data science and machine learning, variables rather than rowsets are the data structures typically used in analysis.  
 + Compression, applied when the file is written to disk. 
++ Columnar storage, one column per variable, for efficient read-write operations of variable data. In data science and machine learning, variables rather than rowsets are the data structures typically used in analysis.  
 + Modular data access and management so that you can work with chunks of data at a time.    
 
-XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers the ability to work with subsets of your data.
+XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers stability in the form of persisted data under your control, plus the ability to subset and transform data for repeated analysis.
 
-To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the **outFile** parameter, **rxImport** creates an XDF file.
+To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the *outFile* parameter, **rxImport** creates an XDF file.
 
 ## Example: Simple case
 
-This example uses an R console and [sample data](scaler-user-guide-sample-data.md) to illustrate an import of a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+You can create an XDF using any data that can be loaded by **rxImport**, and by specifying an *outFile* consisting of a file path to a writable directory.
+
+This example uses an R console and [sample data](scaler-user-guide-sample-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
     # Set the source file location using inData argument
     > mysourcedata <- file.path(rxGetOption("sampleDataDir", "mortDefaultSmall2000.csv"))
-
-    # On Windows, verify the working directory and change it to a writable directory if necessary
-    > getwd()
-    > setwd("C:/Users/Temp")
 
     # Set the XDF file location using the outFile argument
     > myNewXdf <- file.path("C:/users/temp/mortDefaultSmall2000.xdf")
 
 Notice the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
-
-Also by default, RevoScaleR uses your working directory to save the new file. The R command `getwd()` returns the current working diretory. You can use `setwd` to change it. Or you can specify the path, as we've done here.
 
 At this point, the object is created, but the XDF file won't exist until you run **rxImport**. 
 
@@ -66,8 +60,6 @@ At this point, the object is created, but the XDF file won't exist until you run
 Output returned from this operation is as follows:
 
     Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.022 seconds 
-
-### Check results
 
 Use the **rxGetInfo** function to return information about an object. In this case, the object is the XDF file created in a previous step, and the information returned is the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information.
 
@@ -160,7 +152,7 @@ We can also create transformed variables while we are reading in the data. For e
 	  transforms=list(ageGroup = cut(age, seq(from=20, to=70, by=10))))
 
 
-## Splitting an XDF into multiple files
+## Split an XDF into multiple files
 
 RevoScaleR makes it possible to analyze huge data sets easily and efficiently, and for most purposes the most efficient computations are done on a single .xdf file. However, there are many circumstances when you will want to work with only a portion of your data. For example, you may want to distribute your data over the nodes of a cluster; in such a case, RevoScaleR’s analysis functions will process each node’s data separately, combining all the results for the final return value. You might also want to split your data into training and test data so that you can fit a model using the training data and validate it using the test data.
 
@@ -214,88 +206,13 @@ This takes approximately 10% of the data as a test data set, with the remainder 
 
 If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use **rxSplit** to split data frames; see the [**rxSplit** help page](scaler/packagehelp/rxsplit.md) for details.
 
-## Example: Read multiple text files into XDF
+## Next steps
 
-You can place multiple XDF files into a folder and then set *inData* to the folder. Sample data includes several mortgage default data files for a series of years. This example demonstrates how to import all of them to a single XDF by appending one after another, again using a combination of base R commands and RevoScaleR functions.
+XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](scaler-data-hdfs.md).
 
-    # Set a source folder location using R `list.files` function with a pattern for selecting specific file names.
-    > mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)
+You can import multiple text files into a single XDF. For instructions, see [Import text data](scaler-user-guide-data-import.md).
 
-    # Set XDF output
-    > myLargeXdf <- file.path("C:/users/temp/mortgagelarge.xdf")
-
-You are now ready to create and populate the XDF. Importing multiple files requires the *append* argument to avoid overwriting existing content from the first iteration. Each new chunk of data is imported as a block and added to the file in successive blocks. 
-
-To iterate over multiple files, use the R `lapply` function and create a function to call **rxImport** with the *append* argument.
-
-    > lapply(mySourceFiles, FUN = function(csv_file) {
-        rxImport(inData = csv_file, outFile=myLargeXdf, append = file.exists(myLargeXdf)) } )
-
-Partial output from this operation reports out the processing details.
-
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.025 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.022 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.019 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-    Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.020 seconds 
-
-As before, use **rxGetInfo** to view precomputed metadata. As you would expect, the block count reflects the presence of multiple concatenated data sets.
-
-        rxGetInfo(myLargeXdf)
-
-Results from this command prove that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks.
-
-        File name: C:\Users\TEMP\mortgagelarge.xdf 
-        Number of observations: 1e+05 
-        Number of variables: 6 
-        Number of blocks: 10 
-        Compression type: zlib 
-
-## Example: Write XDF to HDFS
-
-This example shows how to write a data frame directly to HDFS using the built-in Iris data set:
-
-Set the user name: 
-
-    > username <- "revolution" 
-
-Set folder paths:
-
-    hdfsDataDirRoot <- paste("/user/RevoShare/", username, sep="")
-    localfsDataDirRoot <- paste("/var/RevoShare/", username, sep="")
-    setwd(localfsDataDirRoot)
-
- 
-Set compute context: 
-
-    port <- 8020 # KEEP IF USING THE DEFAULT
-    host <- system("hostname", intern=TRUE)
-    hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
-
-    myHadoopCluster <- RxHadoopMR(
-
-    nameNode= host, 
-    port=port, 
-    consoleOutput=TRUE)
-    
-    rxSetComputeContext(myHadoopCluster)
-
-
-Write the XDF to a text file on HDFS:
-
-    air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
-    air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
-    
-    rxDataStep(air7x,air7t)
-
-
-
-## See Also
+## See also
 
  [Introduction to R Server](rserver.md) 
  [Install R Server on Windows](rserver-install-windows.md)  

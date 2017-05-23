@@ -28,6 +28,45 @@ ms.custom: ""
 
 **Applies to: Microsoft R Server**
 
+This article 
+
+## Example: Write XDF to HDFS
+
+This example shows how to write a data frame directly to HDFS using the built-in Iris data set:
+
+Set the user name: 
+
+    > username <- "revolution" 
+
+Set folder paths:
+
+    hdfsDataDirRoot <- paste("/user/RevoShare/", username, sep="")
+    localfsDataDirRoot <- paste("/var/RevoShare/", username, sep="")
+    setwd(localfsDataDirRoot)
+
+ 
+Set compute context: 
+
+    port <- 8020 # KEEP IF USING THE DEFAULT
+    host <- system("hostname", intern=TRUE)
+    hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
+
+    myHadoopCluster <- RxHadoopMR(
+
+    nameNode= host, 
+    port=port, 
+    consoleOutput=TRUE)
+    
+    rxSetComputeContext(myHadoopCluster)
+
+
+Write the XDF to a text file on HDFS:
+
+    air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
+    air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
+    
+    rxDataStep(air7x,air7t)
+
 ## Importing data into multiple XDF files for Hadoop
 
 The .xdf file format has been modified for analyses on Hadoop to store data on HDFS in a composite set of files rather than a single file. The composite set consists of a named directory with two subdirectories, ‘data’ and ‘metadata’, containing split ‘.xdfd’ files and a metadata ‘.xdfm’ files respectively. Data is split into individual ‘.xdfd’ files such that each file remains within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB). The ‘.xdfm’ file contains the metadata for all of the .xdfd files. For more in depth information about the composite XDF format and its use within a Hadoop compute context see the [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md).

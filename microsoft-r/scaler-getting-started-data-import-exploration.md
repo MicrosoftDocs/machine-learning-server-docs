@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Practice data import and exploration (Microsoft R)
+# Tutorial: Data import and exploration (Microsoft R)
 
 **Applies to: R Server and R Client** <sup>[**1**](#chunking)</sup>
 

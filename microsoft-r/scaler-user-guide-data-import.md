@@ -96,7 +96,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 		> getwd()
 		> setwd("c:/users/temp")
 
-## Modifications to variables during import
+## Modifications during import
 
 During import, you can fix problems in the underlying data by specifying arguments for replacement values, changing metadata on the variable, changing data types, and creating new variables based on calculations.
 
@@ -109,7 +109,7 @@ If your text data file uses a string other than NA to identify missing values, y
 		stringsAsFactors = TRUE, missingValueString = "M", 
 		rowsPerRead = 200000, overwrite = TRUE)
 	
-### Change variable metadata during import
+### Change variable metadata
 
 If you need to modify the name of a variable or the names of the factor levels, or add a description of a variable, you can do this using the *colInfo* argument. For example, the claims data includes a variable *type* specifying the type of car, but the levels A, B, C, and D give us no particular information. If we knew what the types signified, perhaps “Subcompact”, “Compact”, “Mid-size”, and “Full-size”, we could relabel the levels as follows:
 
@@ -143,7 +143,7 @@ This produces the following output:
 
 To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
 
-### Change data types during import
+### Change data types
 
 The **rxImport** function supports three arguments for specifying variable data types: *stringsAsFactors*, *colClasses*, and *colInfo*. For example, consider storing character data. Often data stored in text files as string data actually represents categorical or *factor* data, which can be more compactly represented as a set of integers denoting the distinct *levels* of the factor. This is common enough that users frequently want to transform *all* string data to factors. This can be done using the *stringsAsFactors* argument:
 
@@ -246,7 +246,7 @@ In general, variable specifications provided by the *colInfo* argument are used 
 
 Also note that the .xdf data format supports a wider variety of data types than R, allowing for efficient storage. For example, by default floating point variables are stored as 32-bit floats in .xdf files. When they are read into R for processing, they are converted to doubles (64-bit floats).
 
-### Create or modify variables during import
+### Create or modify variables
 
 You can use the *transforms* argument to **rxImport** to create new variables or modify existing variables when you initially read the data into .xdf format. For example, we could create a new variable, *logcost*, by taking the log of the existing cost variable as follows:
 	
@@ -271,7 +271,7 @@ This gives the following output, showing the new variable:
 	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 	Var 7: logcost, Type: numeric, Low/High: (2.3979, 6.7452)
 
-### Convert date strings into Date objects
+### Convert character string dates
 
 The .xdf format can store dates using the standard R **Date** class. When importing data from other data formats that support dates such as SAS or SPSS, the **rxImport** function will convert dates data automatically. However, some data sets even in those formats include dates as character string data. 
 
@@ -281,9 +281,9 @@ You can store such data more efficiently by converting it to *Date* data using t
 
 The *format* argument is a character string that may contain conversion specifications, as in the example shown. These conversion specifications are described in the *strptime* help file.
 
-### Specify a delimiter for RxTextData data 
+### Change a delimiter (RxTextData data)
 
-You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about **RxTextData**, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
+You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
 
 As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
 
@@ -311,7 +311,7 @@ In normal usage, the *delimiter* argument is a single character, such as *delimi
 
 ## Example: Import multiple files
 
-This example demonstrates an approach for importing multiple text files at once. You can use [sample data](scaler-user-guide-smaple-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
+This example demonstrates an approach for importing multiple text files at once. You can use [sample data](scaler-user-guide-sample-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
 
 Create a source object for a list of files, obtained using the R `list.files` function with a pattern for selecting specific file names:
 
@@ -505,7 +505,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 + [XDF files](scaler-data-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import relational data using ODBC](scaler-data-odbc.md)
-+ [Import and consumd data on HDFS](scaler-data-hdfs.md)
++ [Import and consume data on HDFS](scaler-data-hdfs.md)
 
 ## See also
 

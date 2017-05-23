@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Import relational data using ODBC (Microsoft R)
 
-**Applies to: Microsoft R Server and Microsoft R Client**
+RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. 
 
-RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. ODBC connectivity is enabled through drivers and a driver manager. The ODBC driver translates database requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection from the application to the database.
+ODBC connectivity is enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection between application and database.
 
 Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
 
@@ -40,19 +40,25 @@ To import data from a relational database management system, do the following:
 4. For read operations, use **rxImport** to read data
 5. For write operations, use **rxDataStep** to write data
 
+## About ODBC  in Microsoft R
+
 In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data import from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few.
 
 For Teradata, you should avoid ODBC and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
 For SQL Server, you should generally use **rxSqlServerData** as the data source (see this [SQL Server tutorial](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata), but you might need **rxOdbcData** if you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), or if you are importing data from Azure SQL Database.
 
-## How ODBC is used in Microsoft R
-
-ODBC support is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection fails. 
+ODBC is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection fails. 
 
 Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
 
-## Step 1: Install unixODBC (Linux only)
+## How to configure ODBC for relational data access
+
+Follow these steps to configure ODBC for loading data from an external relational database.
+
+### Step 1: Install unixODBC
+
+**Linux only**
 
 An ODBC Driver Manager manages communication between applications and drivers. On Linux, an ODBC Driver Manager is not typically bundled in a Linux distribution. Although several driver managers are available, Microsoft R supports the [unixODBC Driver Manager](http://www.unixodbc.org/). 
 
@@ -70,7 +76,7 @@ If unixODBC is not installed, issue the following commands to add it:
 
 For more information, SQL Server documentation provide in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
 
-## Step 2: Install or verify ODBC drivers
+### Step 2: Install drivers
 
 ODBC drivers must be installed on the machine running R Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
 
@@ -102,15 +108,14 @@ PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
 Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/connectors/hive/odcbc/2-5-12.html) |
 
 
-## Step 3: Connect to a data source
+### Step 3: Create a connection
 
 
-## Step 4: Create an RxOdbcData object
+### Step 4: Create an RxOdbcData object
 
 **RxOdbcData** is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database. 
 
 An **RxOdbcData** object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
-
 
 
 ## Read data using rxImport
@@ -188,7 +193,7 @@ head(myCars)
 ~~~~
 
 
-## RxOdbcData Example for SQL Server and Oracle (with arguments) 
+### RxOdbcData Example for SQL Server and Oracle (with arguments) 
 
 
 **Working with SQL Server**
@@ -361,10 +366,15 @@ This returns the following:
 
 ## Next Steps
 
+Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
+
++ [XDF files](scaler-data-xdf.md)	
++ [Data Sources](scaler-user-guide-data-source.md)	
++ [Import text data](scaler-user-guide-data-import.md)
++ [Import and consume data on HDFS](scaler-data-hdfs.md)
 
 ## See Also
-
- [Importing data](scaler-user-guide-data-import.md)       
+   
  [RevoScaleR Functions](scaler/scaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
  [utorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 
