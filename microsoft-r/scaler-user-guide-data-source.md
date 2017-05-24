@@ -6,7 +6,7 @@ description: "Learn when and how to create data source objects in R code leverag
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/12/2017"
+ms.date: "05/24/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -48,7 +48,7 @@ To create data sources directly, use the constructors listed in the following ta
 
 For simple data import, you do not need to create a data source. You can simply specify a file path of a file that **rxImport** can read and RevoScaleR will read it using the default settings. However, if you need to provide additional options specific to that data source type, you should create a data source using a constructor from the previous list. 
 
-XDF data sources are the native data file format for R Client and R Server, created through **rxImport**, populated with data from an external data source, and then saved to disk on an R Client or R Server machine. Using an XDF data source is recommended when you need to perform repeated analysis of a single data set. It will almost always be faster for you to import the data into the .xdf format and run your analyses on the .xdf data source.
+[XDF data sources](scaler-data-xdf.md) are the native data file format for R Client and R Server, created through **rxImport**, populated with data from an external data source, and then saved to disk on an R Client or R Server machine. Using an XDF data source is recommended when you need to perform repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source.
 
 ## Compute Contexts and Data Sources
 

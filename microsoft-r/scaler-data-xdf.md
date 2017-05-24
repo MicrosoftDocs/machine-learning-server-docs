@@ -204,7 +204,7 @@ You can use the *splitByFactor* argument and a transforms argument to easily cre
 
 This takes approximately 10% of the data as a test data set, with the remainder going into the training data.
 
-If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use **rxSplit** to split data frames; see the [**rxSplit** help page](scaler/packagehelp/rxsplit.md) for details.
+If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use **rxSplit** to split data frames (see the **rxSplit** help page for details).
 
 ## Next steps
 

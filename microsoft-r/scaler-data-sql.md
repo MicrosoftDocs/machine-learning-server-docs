@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Import relational data using ODBC (Microsoft R)"
-description: "How to import relational data using ODBC and rxImport in RevoScaleR"
+title: "Import data from Azure SQL Database and SQL Server (Microsoft R)"
+description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -24,93 +24,119 @@ ms.custom: ""
 
 ---
 
-# Import relational data using ODBC (Microsoft R)
+# Import SQL Server relational data (Microsoft R)
 
-RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. 
+This article explains how to import relational data from a SQL table or view into a data frame or .xdf file in Microsoft R. Source data can originate from Azure SQL Database or an on-premises SQL Server instance.
 
-ODBC connectivity is enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection between application and database.
+## Prerequisites
 
-Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
++ [Azure subscription, Azure SQL Database, AdventureWorksLT	sample database](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)
++ SQL Server (any supported version and edition) with the AdventureWorks sample database	
++ Microsoft R Server 9.1 for Windows or Linux	
++ R console application (RGui.exe on Windows, or Revo64 on Linux)
 
-To import data from a relational database management system, do the following:
+Windows users, remember that R is case-sensitive and that file paths use the forward slash as a delimiter.
 
-1. Install an ODBC Driver Manager (Linux only)
-2. Install ODBC drivers
-3. Create an **RxOdbcData** data source
-4. For read operations, use **rxImport** to read data
-5. For write operations, use **rxDataStep** to write data
+## How to import from Azure SQL Database
 
-## About ODBC  in Microsoft R
+The following script demonstrates how to import data from Azure SQL database into a local XDF. This script sets the connection string, defines the SQL query, the .xdf file, and the **rxImport** command for loading data and saving the output:
 
-In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few. ODBC is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection fails. Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
+	sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-For Teradata, you should avoid ODBC and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+	sQuery <- "select ProductDescriptionID, Description, ModifiedDate from SalesLT.ProductDescription"
 
-For SQL Server, you should generally use **rxSqlServerData** as the data source (see this [SQL Server tutorial](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)), except when accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), or whenimporting data from Azure SQL Database.
+	sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
 
-## How to configure ODBC for relational data access
+	sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
 
-Follow these steps to configure ODBC for loading data from an external relational database.
+	rxImport(sDataSet, sDataFile, overwrite=TRUE)
 
-### Step 1: Install unixODBC
+	rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
 
-**Linux only**
+To understand what this script is doing, lets explore it step by step and learn how to obtain valid information for each command.
 
-An ODBC Driver Manager manages communication between applications and drivers. On Linux, an ODBC Driver Manager is not typically bundled in a Linux distribution. Although several driver managers are available, Microsoft R supports the [unixODBC Driver Manager](http://www.unixodbc.org/). 
+### Step 1: Connect
 
-To first check whether unixODBC is installed, do the following:
+Create the connection object using information from the Azure portal and ODBC Data Source Administrator.
 
-+ On RHEL: `rpm –qa | grep unixODBC`	
-+ On Ubuntu: `apt list --installed | grep unixODBC`	
-+ On SLES: `zypper se unixODBC`	
+	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-If unixODBC is not installed, issue the following commands to add it:
+The driver used on the connection is an ODBC driver. On Windows, the ODBC driver is provided by the operating system. You can run the **ODBC Data Source Administrator (64-bit)** app to verify the driver is listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](sqaler-data-odbc.md).
 
-+ On RHEL: `sudo yum install unixodbc-devel unixodbc-bin unixodbc`
-+ On Ubuntu: `sudo apt-get install unixodbc-devel unixodbc-bin unixodbc`
-+ On SLES: `sudo zypper install unixODBC`
+All of the remaining connection properties are obtained from the Azure portal.
 
-For more information, SQL Server documentation provides in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
+1. Sign in to the [Azure portal](https://ms.portal.azure.com) and locate AdventureWorksLT. 
 
-### Step 2: Install drivers
+2. In **Overview > Essentials > Connection strings**, click **Show database connection strings**.
 
-ODBC drivers must be installed on the machine running R Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
+3. On the **ODBC** tab, copy the connection information. It should look similar to the following string, except the server name and user name will be valid for your database. The password is always a placeholder, which you must replace with a valid value.
 
-**On Linux**
+	Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;
 
-1. To list existing drivers: `odbcinst -q -d`
-2. Driver version information is in the odbcinst.ini file. To find the location of that file: `odbcinst -j`
-3. Typically, driver information is in /etc/odbcinst.ini. To view its contents: `gedit /etc/odbcinst.ini`
-4. You can also list any existing ODBC data sources already on the system: `odbcinst -q -s`
+4. Replace the *sConnString* in the example script with a valid connection string having the correct server name, user name, and password, and then run the command in your R console application to create the connection object.
 
-**On Windows**
+### Step 2: Firewall
 
-1. Search for *odbc data sources* to find the ODBC Data Source Administrator (64-bit) application.
-2. In ODBC Data Source Administrator > Drivers tab, review the currently installed drivers.
+On Azure SQL Database, access is controlled through firewall rules for specific IP addresses.
 
-If the driver you need is missing, download and install the driver using instructions provided by the vendor. A partial list of download links is provided below.
+1. From your client machine running Microsoft R, sign in to the [Azure portal](https://ms.portal.azure.com) and locate AdventureWorksLT. 
 
-**ODBC download sites for commonly used databases**
+2. In **Overview**, click **Set server firewall > Add client IP** to create a rule for the local client. Click **Save** once the rule is created.
 
-Drivers for commonly used databases might be pre-installed with the operating system or database management system, but if not, most can be downloaded from database vendor web sites. The following table provides links to download pages for several data platforms.
+On a small private network, IP addresses are most likely static, and the IP address detected in the portal is probably correct. To confirm, you can use **IPConfig** on Windows or **hostname -I** on Linux to get your IP address. 
 
-Data platform | Driver download pages and instructions|
--------------|---------------------------------|
-SQL Server on Linux | [Installing the Microsoft ODBC Driver for SQL Server on Linux](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-microsoft-odbc-driver-for-sql-server-on-linux) |
-Oracle Instant Client | [Oracle Instant Client Downloads](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html) |
-MySQL | [Download Connector/ODBC](https://dev.mysql.com/downloads/connector/odbc) |
-PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
-Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/connectors/hive/odcbc/2-5-12.html) |
+On corporate networks, IP addresses can change on computer restarts, through network address translations, or other reasons described in [this article](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure).
+  
+One way to get the right IP address is from the error message reported on a connection failure. If you get the "ODBC Error in SQLDisconnect" error message, it will include this text: "Client with IP address *<ip-address>* is not allowed to access the server". The IP address reported in the message can be specified as the start and ending IP range in your firewall rule. 
 
+Producing this error is easy. Just run the entire example script (with a valid connection string), concluding with **rxImport**. When **rxImport** fails, copy the IP address reported in the message, and use it to set the firewall rule in the Azure portal. Wait a few minutes, and then retry the script.
 
-### Step 3: Create a connection
+### Step 3: Query
 
+In the R console application, create the SQL query object. The example query consists of columns from a single table, but any valid T-SQL query providing a rowset is acceptable. This table was chosen because it includes numeric data.
 
-### Step 4: Create an RxOdbcData object
+	> squery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
 
-**RxOdbcData** is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database. 
+Before attempting unqualified *SELECT * FROM* queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the *rowguid(uniqueidentifier)* column is not handled. Other unsupported data types are [listed here](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r).
 
-An **RxOdbcData** object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
+Queries with unsupported data types produce the error below. If you get this error and cannot immediately detect the unhandled data type, incrementally add fields to the query to isolate the problem.
+  
+		Unhandled SQL data type!!!
+		Could not open data source.
+		Error in doTryCatch(return(expr), name, parentenv, handler)
+
+### Step 4: RxOdbcData
+
+Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](scaler-user-guide-data-source.md).
+
+		> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
+
+### Step 5: XDF
+
+Create the XDF file to save the data to disk. Check the folder permissions for write access. 
+
+		> sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+
+By default, Windows does not allow external writes by non-local users. You might want to create a single folder, such as C:/Users/Temp, and give *Everyone* write permissions. Once the XDF is created, you can move the file elsewhere and delete the folder, or revoke the write permissions you just granted.
+
+On Linux, you can use this alternative path:
+
+		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
+
+### Step 6: rxImport
+
+Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the query with different queries without having to the delete the file each time.
+
+		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
+
+### Step 7: rxGetInfo
+
+Use **rxGetInfo** to return information about the XDF data source, plus the first 50 rows:
+
+		> rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
+
+This command shows you 
+
 
 
 ## Read data using rxImport

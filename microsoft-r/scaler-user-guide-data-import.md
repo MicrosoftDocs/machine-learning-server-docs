@@ -26,13 +26,15 @@ ms.custom: ""
 
 # Importing text data in Microsoft R Server
 
-RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. This article puts the focus on text files: CSV delimited and fixed-format, plus database files accessed through simple file reads.
+RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. 
+
+This article puts the focus on text files: delimited (.csv) and fixed-format, plus database files accessed through simple file reads.
 
 To load data for analysis and visualization, you can use a *data frame* or an .xdf file to provide the data set to Microsoft R. A RevoScaleR function called **rxImport** is used to load the data.
 
-A data frame is the fundmantal data structure in R and is fully supported in R Server. A data frame is a tabular data structure composed of rows and columns. Columns contain variables and the first row, called the *header*, stores column names. All subsequent rows provide data values for each variable associated with a single observation. In Microsoft R, a data frame is a temporary data structure created when you connect to an external data source and load some data. It exists only for the duration of the session.
+A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
 
-An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. XDF files can store data in multiple physical files to accomodate very large data sets. Similar to data frames, storage is column-based, one column per variable, which is highly efficient for targeted read-write operations on individual variables. Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
+An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. XDF files can store data in multiple physical files to accommodate very large data sets. Similar to data frames, storage is column-based, one column per variable, which is highly efficient for targeted read-write operations on individual variables. Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
 
 > [!Note]
 > To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
@@ -82,7 +84,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 		> names(claimsDF)
 	      [1] "RowNum"  "age"     "car.age" "type"    "cost"    "number"
 
-5. To save the data into an .xdf file rather than importing data into a data frame in memory, add the *outFile* parameter. Specify a path to a writeable directory:  
+5. To save the data into an .xdf file rather than importing data into a data frame in memory, add the *outFile* parameter. Specify a path to a writable directory:  
 
 		> claimsDF <- rxImport(inData=mySourceFile, outFile = "c:/users/temp/claims.xdf")
 
@@ -472,8 +474,7 @@ Variables in SPSS data sets often contain value labels with important informatio
 
 Interestingly, SPSS allows for value labels on a subset of existing values. For example, a variable with values from 1 to 99 might have value labels of “NOT HOME” for 97, “DIDN’T KNOW” for 98, and “NOT APPLICABLE” for 99. If this variable were converted to a factor in R using the value labels as the factor labels, all of the values from 1 to 96 would be set to missing because there would be no corresponding factor level. Essentially all of the actual data would be thrown away. 
 
-To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALSE*. By default, the information from the value labels is retained even if the variables aren’t converted to factors. This information can be returned using **rxGetVarInfo**. If you don’t wish to retain the information from the value labels you can specify *labelsAsInfo=FALSE*.
-	
+To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALSE*. By default, the information from the value labels is retained even if the variables aren’t converted to factors. This information can be returned using **rxGetVarInfo**. If you don’t wish to retain the information from the value labels you can specify *labelsAsInfo=FALSE*.	
 
 ## Importing wide data
 
