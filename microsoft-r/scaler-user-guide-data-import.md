@@ -100,7 +100,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 
 During import, you can fix problems in the underlying data by specifying arguments for replacement values, changing metadata on the variable, changing data types, and creating new variables based on calculations.
 
-### Set a replacement string for missing values
+### Set a replacement string
 
 If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](scaler-getting-started-data-import-exploration.md):
 
@@ -281,7 +281,7 @@ You can store such data more efficiently by converting it to *Date* data using t
 
 The *format* argument is a character string that may contain conversion specifications, as in the example shown. These conversion specifications are described in the *strptime* help file.
 
-### Change a delimiter (RxTextData data)
+### Change a delimiter
 
 You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
 
@@ -309,7 +309,11 @@ By creating an **RxTextData** data source for this file, you can specify the del
 
 In normal usage, the *delimiter* argument is a single character, such as *delimiter="\\t"* for tab-delimited data or *delimiter=","* for comma-delimited data. However, each column may be delimited by a different character; all the delimiters must be concatenated together into a single character string. For example, if you have one column delimited by a comma, a second by a plus sign, and a third by a tab, you would use the argument *delimiter=",+\\t". *
 
-## Example: Import multiple files
+## Examples
+
+This section provides example script demonstrating additional import tasks. 
+
+### Import multiple files
 
 This example demonstrates an approach for importing multiple text files at once. You can use [sample data](scaler-user-guide-sample-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
 
@@ -351,7 +355,7 @@ Results from this command confirm that you have 10 blocks, one for each .csv fil
         Number of blocks: 10 
         Compression type: zlib 
 
-## Example: Import fixed-format data files
+### Import fixed-format data
 
 *Fixed-format* data is text data in which each variable occupies a fixed-width column in the input data file. Column width, rather than a delimiter, gives the data its structure. You can import fixed-format data using the *rxImport* function.
 
@@ -410,7 +414,7 @@ If you have a schema file, you can still use the *colInfo* argument to specify t
 
 Fixed-width character data is treated as a special type by RevoScaleR for efficiency purposes. You can use this same type for character data in delimited data by specifying a colInfo argument with a width argument for the character column. (Typically, you will need to find the longest string in the column and specify a width sufficient to include it.)
 
-## Example: Import SAS data 
+### Import SAS data 
 
 The **rxImport** function can also be used to read data from SAS files having a .sas7bdat or .sd7 extension. You do not need to have SAS installed on your computer; simple file access is used to read in the data.
 
@@ -443,7 +447,7 @@ Sometimes, SAS data files on Windows come in two pieces, a *.sas7bdat* file cont
 	     formatFile = "myfile.sas7bcat")
 
 
-## Example: Import SPSS data 
+### Import SPSS data 
 
 The **rxImport** function can also be used to read data from SPSS files. The sample directory contains an SPSS version of the claims data as claims.sav. We can read it into .xdf format as follows:
 	
