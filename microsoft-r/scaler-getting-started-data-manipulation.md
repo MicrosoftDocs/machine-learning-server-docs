@@ -32,6 +32,13 @@ This tutorial builds on what you learned in the previous [data import and explor
 
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
+## What you will learn in this tutorial
+
+1. How to fit a linear model	
+2. Compute crosstabs
+3. Fit a logistic regression model
+4. Compute predicted values
+
 ## Prerequisites
 
 To complete this tutorial as written, use an R console application. 
@@ -40,13 +47,6 @@ To complete this tutorial as written, use an R console application.
 + On Linux, at the command prompt, type **Revo64**.
 
 You must also have data to work with. The previous tutorial, [Data import and exploration](scaler-getting-started-data-import-exploration.md), will get you started.
-
-## What you will learn in this tutorial
-
-1. Fit a linear model	
-2. Compute crosstabs
-3. Fit a logistic regression model
-4. Compute predicted values
 
 ## Fitting a linear model
 

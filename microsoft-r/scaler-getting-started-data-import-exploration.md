@@ -6,7 +6,7 @@ description: "Learn how to import and explore data using the RevoScaleR function
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/16/2017"
+ms.date: "05/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,14 +26,18 @@ ms.custom: ""
 
 # Tutorial: Data import and exploration (Microsoft R)
 
-**Applies to: R Server and R Client** <sup>[**1**](#chunking)</sup>
+**Applies to: R Server and R Client** <sup>[ **1**](#chunking)</sup>
 
-Microsoft R provides a native binary data file format (.xdf) designed for efficient read operations of arbitrary rows and columns. In this tutorial, you will learn how to convert a CSV text file into XDF using **rxImport** from the RevoScaleR function library. The **rxImport** function takes source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
+As a data scientist, the first order of business is typically data-related. In this tutorial, you will learn how to load a text delimited .csv file into a Microsoft R session, and use functions from the RevoScaleR library to explore the data's shape and contours. 
+
+In Microsoft R, you can work with data in-memory as a data frame, or save it to disk as an XDF file. XDF is the native binary data file format for Microsoft R. It has built-in compression, which you can configure. More importantly, it is designed around the primacy of variables (columnar data) rather than rowsets as the principal determinant of data set composition. Analysis and data mining tens to form around variables, so having a columnar storage enables efficient read-write operations for individual variables.
+
+To load a text file, you can use **rxImport** from the RevoScaleR function library. The **rxImport** function takes source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
 
 ## What you will learn in this tutorial
 
-1. Convert CSV data to the XDF data file format
-2. Obtain information about the data structure and data characteristics
+1. How to load CSV data using **rxImport** and optionally save it as an XDF
+2. HOw to obtain information about the data structure
 3. Use parameters for selective import and conversion
 4. Summarize data
 4. Subset and transform data
@@ -45,19 +49,19 @@ To complete this tutorial as written, use an R console application and built-in 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-The command prompt for a R is `>`. You can hand-type case-sensitive commands, or copy-paste multi-line commands. Press Enter to execute the statement.
+The command prompt for a R is `>`. You can hand-type case-sensitive R commands, or copy-paste multi-line commands at the console command prompt. The R interpreter can queue up multiple commands and run them in sequence.
 
 ## Locate sample data
 
 [RevoScaleR](scaler-user-guide-introduction.md) includes both functions and built-in data sets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
-1. Open the R console or start a Revo64 session.
+1. Open the R console or start a Revo64 session. The RevoScaleR library is loaded automatically.
 
 2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
 
         list.files(rxGetOption("sampleDataDir"))
 
-The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the *sampleDataDir* argument. 
 
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype rxGetOption or sampleDataDir, you will get an error instead of the file list.
@@ -427,13 +431,13 @@ You should see the following information in your output:
 ~~~~
 
 <a name="chunking"></a>
-## Data chunking availability: R Server only
+## R Client limitations on data chunking
 
-A primary benefit of RevoScaleR is its ability to apportion data into multiple parts for processing, reassembling it later for analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
+A primary benefit of RevoScaleR is its ability to appropriate data into multiple pieces for processing in parallel, reassembling it later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
 
 In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. 
 
-You can work around this limitation when you push the compute context from R Client to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. For more information, see [Microsoft R Server](rserver.md).
+You can work around this limitation by writing script on R Client, but then pushing the compute context from R Client to a remote Microsoft R Server instance. Optionally, you could also upgrade to R Server. Developer can install the developer edition of R Server, which is full-featured R Server, but licensed for development workstations instead of production server. For more information, see [Microsoft R Server](rserver.md).
 
 ## Next steps
 

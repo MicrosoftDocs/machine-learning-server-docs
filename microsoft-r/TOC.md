@@ -12,7 +12,7 @@
 
 # [Tutorials](microsoft-r-tutorials.md)
 
-## [Explore R-to-RevoScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
+## [Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Import and transform data](scaler-getting-started-data-import-exploration.md)
 ## [Visualize and analyze data](scaler-getting-started-data-manipulation.md)
 ## Work with larger data sets
