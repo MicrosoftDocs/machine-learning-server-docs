@@ -6,7 +6,7 @@ description: "How to import relational data using ODBC and rxImport in RevoScale
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/23/2017"
+ms.date: "05/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,7 +28,7 @@ ms.custom: ""
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. 
 
-ODBC connectivity is enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection between application and database.
+ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection between application and database.
 
 Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
 
@@ -188,47 +188,7 @@ head(myCars)
 ~~~~
 
 
-### RxOdbcData Example for SQL Server and Oracle (with arguments) 
-
-
-**Working with SQL Server**
-
-The previous example showed the connection using a connection string. The next example shows how to pass connection information through server, dsn, user, and password arguments:
-
-	claimsSQL = "SELECT * FROM claims"
-	claimsDS2<- RxOdbcData(sqlQuery = claimsSQL, 
-		connectionString = "DSN=MSSQLDSN;Uid=mktest;Pwd=passwd;")
-	claimsFile <- RxXdfData("claimsFromODBC.xdf")
-	rxImport(claimsDS2, claimsFile, overwrite=TRUE)
-	rxGetInfo(claimsFile, getVarInfo=TRUE, numRows=10) 
-
-As before, we get the claims data:
-
-	File name: claimsFromODBC.xdf 
-	Number of observations: 128 
-	Number of variables: 6 
-	Number of blocks: 1 
-	Variable information: 
-	Var 1: RowNum, Type: integer, Low/High: (1, 128)
-	Var 2: age, Type: character
-	Var 3: car.age, Type: character
-	Var 4: type, Type: character
-	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
-	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
-	Data (10 rows starting with row 1):
-	   RowNum   age car.age type cost number
-	1       1 17-20     0-3    A  289      8
-	2       2 17-20     4-7    A  282      8
-	3       3 17-20     8-9    A  133      4
-	4       4 17-20     10+    A  160      1
-	5       5 17-20     0-3    B  372     10
-	6       6 17-20     4-7    B  249     28
-	7       7 17-20     8-9    B  288      1
-	8       8 17-20     10+    B   11      1
-	9       9 17-20     0-3    C  189      9
-	10     10 17-20     4-7    C  288     13
-
-**Working with Oracle Express**
+### RxOdbcData Example for Oracle Express 
 
 Oracle Express is a free version of the popular Oracle database management system intended for evaluation and education. It uses the same ODBC drivers as the commercial offerings. The follow example demonstrates an Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
 
@@ -372,5 +332,5 @@ Continue on to the following data import articles to learn more about XDF, data 
    
  [RevoScaleR Functions](scaler/scaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [utorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 
+ [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 
  

@@ -52,32 +52,33 @@ For simple data import, you do not need to create a data source. You can simply 
 
 ## Compute Contexts and Data Sources
 
-In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, however your choice of data sources may be severely limited. The most extreme case is the **RxInTeradata** compute context, which supports only the **RxTeradata** data source – this makes sense, as the computations are being performed on data inside the Teradata database. Please refer to the table below to see which data sources are available for each compute context (x indicates available).
+In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, the data source object aligns to the compute context. Thus, **RxInSqlServer** only supports **RxSqlServerData** objects. Likewise for **RxInTeradata**, which supports only the **RxTeradata** data sources.
 
-|                                |            | Compute Context |              |
-|--------------------------------|------------|-----------------|--------------|
-| Data Source                    | RxLocalSeq | RxHadoopMR      | RxInTeradata |
-| Delimited Text (RxTextData)    | x          | x               |              |
-| Fixed-Format Text (RxTextData) | x          |                 |              |
-| .xdf data files (RxXdfData)    | x          | x               |              |
-| SAS data files (RxSasData)     | x          |                 |              |
-| SPSS data files (RxSpssData)   | x          |                 |              |
-| ODBC data (RxOdbcData)         | x          |                 |              |
-| Teradata database (RxTeradata) | x          |                 | x            |
+|                                |            | Compute Context |               |              |
+|--------------------------------|------------|-----------------|---------------|--------------|
+| Data Source                    | RxLocalSeq | RxHadoopMR      | RxInSqlServer | RxInTeradata |
+| Delimited Text (RxTextData)    | x          | x               |               |              |
+| Fixed-Format Text (RxTextData) | x          |                 |               |              |
+| .xdf data files (RxXdfData)    | x          | x               |               |              |
+| SAS data files (RxSasData)     | x          |                 |               |              |
+| SPSS data files (RxSpssData)   | x          |                 |               |              |
+| ODBC data (RxOdbcData)         | x          |                 |               |              |
+| SQL Server database (RxSqlServerData) | x   |                 | x             |              |
+| Teradata database (RxTeradata) | x          |                 |               |  x           |
 
-Beyond the compute context, there may also be differences in availability within a single data source type depending on the file system. For example, the composite .xdf files that we discussed in section 2.13 created on the Hadoop File System are somewhat different from .xdf created in a non-distributed file system. Similarly, as discussed in Section 2.12, you may need to split and distribute your data across the available nodes of your cluster.
+Beyond the compute context, there may also be differences in availability within a single data source type depending on the file system. For example, [composite .xdf files](scaler-data-hdfs.md) created on the Hadoop File System are somewhat different from .xdf created in a non-distributed file system. You may need to [split and distribute your data](scaler-data-xdf.md) across the available nodes of your cluster.
 
 ## Methods for Looking at Data Sources
 
-A number of standard R methods for looking at data have been provided for RevoScaleR data sources. We’ve already seen the use of *names* to view the variable names and *head* to view the first few rows. Returning to the *claimsDS* data source created in the previous section Importing Delimited Text Data, we can obtain the dimensions of our claims data using the *dim* function:
+A number of standard R methods for looking at data have been provided for RevoScaleR data sources. Most likely, you have already seen how *names* is used to view variable names, and *head* to view the first few rows. Returning to the *claimsDS* data source created in [Importing text data](scaler-user-guide-data-import.md), you can obtain the dimensions of the claims data using the *dim* function:
 
 	#  Data Sources
 	
 	readPath <- rxGetOption("sampleDataDir")
 	infile <- file.path(readPath, "claims.txt")
-	claimsDS <- rxImport(inData = infile, outFile = "claims.xdf", 
-		overwrite = TRUE)
+	claimsDS <- rxImport(inData = infile, outFile = "claims.xdf", overwrite = TRUE)
 	dim(claimsDS)
+
 	[1] 128   6  
 
 
@@ -126,18 +127,17 @@ You can view the *last* rows of a data source using the *tail* function:
 
 ## Using Data Sources
 
-Suppose, for example, that you would like to perform a linear regression on the data in the SAS file claims.sas7bdat. You would first create an RxSasData data source as follows:
+Suppose, for example, that you would like to perform a linear regression on the data in the SAS file claims.sas7bdat. You would first create an **RxSasData** data source as follows:
 	
 	inFileSAS <- file.path(rxGetOption("sampleDataDir"), "claims.sas7bdat") 
 	sourceDataSAS <- RxSasData(inFileSAS, stringsAsFactors=TRUE)
 
-
-Once we have the data source, we can remind ourselves of the variables in the data by calling the names function:
+Once we have the data source, we can retrieve variables in the data by calling the names function:
 
 	names(sourceDataSAS)
 	  [1] "RowNum"  "age"     "car_age" "type"    "cost"    "number"
 
-We can now compute our desired regression using our data source as the data argument to *rxLinMod* (more on this method in Chapter 8):
+We can now compute our desired regression using our data source as the data argument to **rxLinMod**:
 
 	rxLinMod(cost ~ age + car_age, data = sourceDataSAS)
 
@@ -177,18 +177,18 @@ Similarly, you could use the SPSS version of the claims data as follows:
 
 ## Working with an Xdf Data Source
 
-To create an .xdf data source for reading, you can use the *RxXdfData* function. For example, the following creates a data source from the built-in claims.xdf data set:
+To create an .xdf data source for reading, you can use the **RxXdfData** function. For example, the following creates a data source from the built-in claims.xdf data set:
 
 	#  Working with an Xdf Data Source
 	  
 	claimsPath <-  file.path(rxGetOption("sampleDataDir"), "claims.xdf")
 	claimsDs <- RxXdfData(claimsPath)
 
-Use the open method *rxOpen* to open the data source:
+Use the open method **rxOpen** to open the data source:
 
 	rxOpen(claimsDs)
 
-Use the method *rxReadNext* to read the next block of data from the data source:
+Use the method **rxReadNext** to read the next block of data from the data source:
 
 	claims <- rxReadNext(claimsDs)
 
@@ -248,3 +248,17 @@ We can see the coefficients by looking at a summary of the object returned:
 
 It is, of course, much faster to compute a linear model using the *rxLinMod* function, but the *biglm* package provides alternative methods of computation.
 
+## Next Steps
+
+Continue on to the following data import articles to learn more about XDF and other data formats:
+
++ [XDF files](scaler-data-xdf.md)	
++ [Import SQL Server data](scaler-data-sql.md)	
++ [Import text data](scaler-user-guide-data-import.md)
++ [Import and consume data on HDFS](scaler-data-hdfs.md)
+
+## See Also
+   
+ [RevoScaleR Functions](scaler/scaler.md)   
+ [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 

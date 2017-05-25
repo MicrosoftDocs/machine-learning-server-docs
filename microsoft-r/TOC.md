@@ -28,8 +28,8 @@
 # [How-to guides](data-analysis-in-microsoft-r.md)
 ## Load and transform data 
 ### [Import text data](scaler-user-guide-data-import.md)
-### [Import SQL Server relational data](scaler-data-sql.md)
-### [Import relational data using ODBC](scaler-data-odbc.md)
+### [Import SQL Server data](scaler-data-sql.md)
+### [Import ODBC data](scaler-data-odbc.md)
 ### [Import and consume data on HDFS](scaler-data-hdfs.md)
 ### [Data source objects](scaler-user-guide-data-source.md)
 ### [XDF files](scaler-data-xdf.md)
