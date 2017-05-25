@@ -26,9 +26,7 @@ ms.custom: ""
 
 # Importing text data in Microsoft R Server
 
-RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. 
-
-This article puts the focus on text files: delimited (.csv) and fixed-format, plus database files accessed through simple file reads.
+RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. This article puts the focus on text files: delimited (.csv) and fixed-format, plus database files accessed through simple file reads.
 
 To load data for analysis and visualization, you can use a *data frame* or an .xdf file to provide the data set to Microsoft R. A RevoScaleR function called **rxImport** is used to load the data.
 

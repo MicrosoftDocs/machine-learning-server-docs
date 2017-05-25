@@ -32,7 +32,7 @@ This tutorial builds on what you learned in the previous [data import and explor
 
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
-## What you will learn in this tutorial
+## What you will learn
 
 1. How to fit a linear model	
 2. Compute crosstabs
