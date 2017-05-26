@@ -28,7 +28,7 @@ ms.custom: ""
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. 
 
-ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database system. The ODBC Driver Manager sets up and manages the connection between application and database.
+ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database. The ODBC Driver Manager sets up and manages the connection between them.
 
 Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
 
@@ -103,19 +103,13 @@ PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
 Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/connectors/hive/odcbc/2-5-12.html) |
 
 
-### Step 3: Create a connection
+### Step 3: Connect
 
-
-### Step 4: Create an RxOdbcData object
-
-**RxOdbcData** is a type of data source object in RevoScaleR that wraps additional properties around a database connection. You can create an object for almost any relational database. 
+This step explains how to specify the connection and the **RxOdbcData** data source object that wraps additional properties around a database connection. You can create an object for almost any relational database, including SQL Server. 
 
 An **RxOdbcData** object supports local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
 
 
-## Read data using rxImport
-
-## Write data using rxDataStep
 
 ## Examples
 

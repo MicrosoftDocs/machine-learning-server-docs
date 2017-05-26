@@ -28,7 +28,7 @@ ms.custom: ""
 
 Sample data is available both within the RevoScaleR package and [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
-## Locate built-in sample data
+## Locate built-in sample data in RevoScaleR
 
 RevoScaleR provides functions for retrieving information about sample data. Use one of the R console applications to execute the open R `list.files` command with the RevoScaleR rxGetOption function and the SampleDataDir argument. 
 
@@ -82,6 +82,19 @@ Sample data is provided in multiple formats so that you can step through various
 
 Most of the built-in data sets are small enough to fit in-memory. Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
+<a name="demo-sql-data"></a>
+## How to load sample data into SQL Server
+
+You can easily upload any CSV file into SQL Server if you want to step through demos or example script in the documentation. Use SQL Server Management Studio to import the data. You must have write access on the server. The following exercise creates two databases: RevoClaimsDB based on claims.txt, and RevoAirlineDB based on AirlineDemoSmall.csv.
+
+1. In Object Explorer, create a new database using default values. Name the databases RevoClaimsDB and RevoAirlineDB.
+2. Right-click **RevoClaimsDB > Tasks > Import Data**.
+3. In Choose a data source, select **Flat File Source**. 
+4. Navigate to the sample data directory. By default, it is C:\Program Files\Microsoft\R Server\R_SERVER\Library\RevoScaleR\SampleData. Select the file.
+5. Accept the defaults and click **Next**.
+4. In Choose a destination, scroll down and select **SQL Server Native Client 11.0**. Accept the defaults.
+5. Click **Next** and then click **Finish** to create the database.
+6. Repeat for the airline demo data and any other data sets you want to upload.
 
 ## See Also
 

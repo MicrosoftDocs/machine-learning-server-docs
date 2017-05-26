@@ -271,7 +271,7 @@ This gives the following output, showing the new variable:
 	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 	Var 7: logcost, Type: numeric, Low/High: (2.3979, 6.7452)
 
-### Convert character string dates
+### Change date formats
 
 The .xdf format can store dates using the standard R **Date** class. When importing data from other data formats that support dates such as SAS or SPSS, the **rxImport** function will convert dates data automatically. However, some data sets even in those formats include dates as character string data. 
 
