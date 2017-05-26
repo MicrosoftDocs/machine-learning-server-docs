@@ -30,7 +30,7 @@ ms.custom: ""
 
 As a data scientist, the first order of business is typically data-related. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the data's shape and contours. 
 
-In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. XDF is a binary data file format native to Microsoft R. It has built-in compression, which you can configure. More importantly, it is designed around the primacy of variables (columnar data) rather than rowsets as the organizing principle of data set composition. Analysis and data mining forms around variables, so having a columnar storage enables efficient read-write operations on individual variables.
+In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. XDF is a binary data file format native to Microsoft R. It has built-in compression, which you can configure. More importantly, file composition is organized around the concept of columnar storage (one column per variable). Because statistical analysis, modeling, and data mining is formed around variables, column-based read-write operations of individual variables is key to operational efficiency.
 
 To load a text file, you can use **rxImport** from the RevoScaleR function library. The **rxImport** function loads source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
 
