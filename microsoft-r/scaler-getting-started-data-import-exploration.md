@@ -28,17 +28,9 @@ ms.custom: ""
 
 **Applies to: R Server and R Client** <sup>[ **1**](#chunking)</sup>
 
-As a data scientist, the first order of business is typically data-related. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
+As a data scientist, the first order of business is typically data acquisition. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
-In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. 
-
-A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
-
-An .xdf file is a binary file format native to Microsoft R, used for compressing and persisting data on disk. On distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. The organization of an XDF file is column-based, one column per variable, which is highly efficient for calculations based on individual variables. You can load subsets of the data for targeted analysis . Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
-
-Because statistics and predictive analytics is formed around variables, the ability to perform read-write operations on individual variables is key to computational efficiency. 
-
-To load a text file, you can use **rxImport** from the RevoScaleR function library. The **rxImport** function loads source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
+To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data that you provide as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 ## What you will learn
 
@@ -75,6 +67,16 @@ The open source R `list.files` command returns a file list provided by the RevoS
 ### About the airline data set
 
 *AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*. There are a total of 600,000 rows in the data file.
+
+### About data storage in Microsoft R
+
+In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. 
+
+A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
+
+An .xdf file is a binary file format native to Microsoft R, used for compressing and persisting data on disk. On distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. The organization of an XDF file is column-based, one column per variable, which is highly efficient for calculations based on individual variables. You can load subsets of the data for targeted analysis . Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
+
+Because statistics and predictive analytics is formed around variables, the ability to perform read-write operations on individual variables is key to computational efficiency. 
 
 ## Check the working directory
 
@@ -437,7 +439,7 @@ You should see the following information in your output:
 ~~~~
 
 <a name="chunking"></a>
-## R Client limitations on data chunking
+## About R Client limitations on data chunking
 
 A primary benefit of RevoScaleR is its ability to appropriate data into multiple pieces for processing in parallel, reassembling it later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
 
