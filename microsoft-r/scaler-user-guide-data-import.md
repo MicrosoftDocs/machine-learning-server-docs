@@ -28,22 +28,18 @@ ms.custom: ""
 
 RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. This article puts the focus on text files: delimited (.csv) and fixed-format, plus database files accessed through simple file reads.
 
-To load data for analysis and visualization, you can use a *data frame* or an .xdf file to provide the data set to Microsoft R. A RevoScaleR function called **rxImport** is used to load the data.
-
-A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
-
-An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. XDF files can store data in multiple physical files to accommodate very large data sets. Similar to data frames, storage is column-based, one column per variable, which is highly efficient for targeted read-write operations on individual variables. Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
+To store text data for analysis and visualization, you can load it into memory as a *data frame* for the duration of your session, or save it to disk as an .xdf file. For either approach, the RevoScaleR **rxImport** function is used to load the data.
 
 > [!Note]
-> To take full advantage of XDF, you need R Server (as opposed to R Client). Reading and writing chunked data on disk is exclusive to R Server.
+> To get the best use of persisted data in XDF, you need R Server (as opposed to R Client). Reading and writing *chunked data* on disk is exclusive to R Server.
 
 ## About rxImport
 
-To convert external data into a format understood by RevoScaleR, use the **rxImport** function. Although the function takes several arguments, it's essentially just loading data. In the simplest case, you can provide a path to an input file. If your text format data set is delimited by commas or tabs, this is all that is required for simple data conversion. The following example creates a data object loaded with data from a text delimited file:
+Converting external data into a format understood by RevoScaleR is achieved using the **rxImport** function. Although the function takes several arguments, it's essentially just loading data from a source file that you provide. In the simplest case, you can give it a file path. If the data is delimited by commas or tabs, this is all that is required loading the data. To illustrate, the following example creates a data object loaded with data from a local text delimited file:
 
 		> mydataobject <-rxImport("C:/user/temp/mydatafile.csv")
 
-Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to an .xdf file saved to disk. This article covers a range of data access scenarios for multiple data source types. For more information about .xdf administration, see [XDF files](scaler-data-xdf.md).
+Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to an .xdf file saved to disk. This article covers a range of data access scenarios for text files and file-based data access of SPSS and SAS data. To learn more about other data sources, see related articles in the table of contents or in the link list at the end of this article.
 
 ## How to import a text file
 

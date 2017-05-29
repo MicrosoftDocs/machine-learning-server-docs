@@ -28,9 +28,15 @@ ms.custom: ""
 
 **Applies to: R Server and R Client** <sup>[ **1**](#chunking)</sup>
 
-As a data scientist, the first order of business is typically data-related. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the data's shape and contours. 
+As a data scientist, the first order of business is typically data-related. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
-In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. XDF is a binary data file format native to Microsoft R. It has built-in compression, which you can configure. More importantly, file composition is organized around the concept of columnar storage (one column per variable). Because statistical analysis, modeling, and data mining is formed around variables, column-based read-write operations of individual variables is key to operational efficiency.
+In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. 
+
+A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
+
+An .xdf file is a binary file format native to Microsoft R, used for compressing and persisting data on disk. On distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. The organization of an XDF file is column-based, one column per variable, which is highly efficient for calculations based on individual variables. You can load subsets of the data for targeted analysis . Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
+
+Because statistics and predictive analytics is formed around variables, the ability to perform read-write operations on individual variables is key to computational efficiency. 
 
 To load a text file, you can use **rxImport** from the RevoScaleR function library. The **rxImport** function loads source data as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, it creates an XDF.
 
