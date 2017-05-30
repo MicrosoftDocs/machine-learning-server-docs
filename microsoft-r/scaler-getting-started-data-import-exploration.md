@@ -64,6 +64,16 @@ The open source R `list.files` command returns a file list provided by the RevoS
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype rxGetOption or sampleDataDir, you will get an error instead of the file list.
 
+### Locate the working directory
+
+Both R and RevoScaleR use the *working directory* to store any files that you create. Use the following open source R command to determine the working directory location: `getwd()`.
+
+Depending on your environment, you might not have permission to save files to this directory. For example, on Windows, if the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have permission to save files to that location. To change the working directory, you can run `setwd("C:/Users/TEMP")`. 
+
+Alternatively, you can specify a fully-qualified path to a writable directory whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"` on an **rxImport** call).  
+
+Windows users, please note the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
+
 ### About the airline data set
 
 *AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*. There are a total of 600,000 rows in the data file.
