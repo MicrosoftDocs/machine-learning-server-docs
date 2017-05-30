@@ -31,7 +31,7 @@
 ### [Import SQL Server data](scaler-data-sql.md)
 ### [Import ODBC data](scaler-data-odbc.md)
 ### [Import and consume data on HDFS](scaler-data-hdfs.md)
-### [Compute context](scaler-data-compute-context,md)
+### [Compute context](scaler-data-compute-context.md)
 ### [Data source objects](scaler-user-guide-data-source.md)
 ### [XDF files](scaler-data-xdf.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)

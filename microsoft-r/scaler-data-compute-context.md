@@ -43,6 +43,13 @@ Use same-version R Server instances, or compatible co-released versions of R Cli
 
 At an R command prompt, run `rxGetComputeContext()` to return the compute context. Every platform supports the default local compute context: **RxLocalSeq**. Every R session that loads the RevoScaleR function library has a base **RxComputeContext** object.
 
+## Compute context on various platforms and data sources
+
+matrix
+
+Common properties and operations
+
+
 
 ## See Also
 

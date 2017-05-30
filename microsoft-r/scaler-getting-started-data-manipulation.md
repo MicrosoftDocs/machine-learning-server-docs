@@ -33,7 +33,7 @@ This tutorial builds on what you learned in the previous [data import and explor
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as data is relatively small. R Client is limited to two threads and in-memory storage. To avoid paging to disk, it deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
 
 ## What you will learn
 

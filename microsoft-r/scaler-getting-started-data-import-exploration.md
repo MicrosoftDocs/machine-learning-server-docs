@@ -26,14 +26,14 @@ ms.custom: ""
 
 # Tutorial: Data import and exploration (Microsoft R)
 
-**Applies to: Microsoft R Client, Microsoft R Server
+**Applies to: Microsoft R Client, Microsoft R Server**
 
-As a data scientist, the first order of business is typically data acquisition. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
+In data-driven projects, one of your first tasks as a data scientst is data acquisition. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as data is relatively small. R Client is limited to [two threads and in-memory storage](#chunking). To avoid paging to disk, it deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
 
 ## What you will learn
 
@@ -69,21 +69,21 @@ The open source R `list.files` command returns a file list provided by the RevoS
 
 ### Locate the working directory
 
-Both R and RevoScaleR use the *working directory* to store any files that you create. Use the following open source R command to determine the working directory location: `getwd()`.
+Both R and RevoScaleR use the *working directory* to store any files that you create. The following open source R command provides the working directory location: `getwd()`.
 
-Depending on your environment, you might not have permission to save files to this directory. For example, on Windows, if the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have permission to save files to that location. To change the working directory, you can run `setwd("C:/Users/TEMP")`. 
+Depending on your environment, you might not have permission to save files to this directory. On Windows, if the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have write permissions on that older. To change the working directory, run `setwd("C:/Users/TEMP")`. 
 
-Alternatively, you can specify a fully-qualified path to a writable directory whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"` on an **rxImport** call).  
+Alternatively, specify a fully-qualified path to a writable directory whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"` on an **rxImport** call).  
 
 Windows users, please note the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
 
 ### About the airline data set
 
-*AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*. There are a total of 600,000 rows in the data file.
+The *AirlineDemoSmall.csv* data set is used in this tutorial. It's a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*, with a total of 600,000 rows.
 
-## Load data
+## Step 1: Load data
 
-As a first step, let's do a preliminary import using source data. Once the data is loaded, we can examine metadata that could lead to further transformations on successive imports.
+As a first step, perform a preliminary import using the airline data. We can then examine metadata that could lead to further transformations on successive imports.
 
 ~~~~
 	mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
@@ -94,18 +94,18 @@ On the first line,`mysource` is an object specifying source data created using R
 
 On line two, `airXdfData` is a data source object returned by **rxImport**, which we can query to learn about data characteristics.
 
-## Save as XDF
+## Step 2: Save as XDF
 
-To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and location of the file. Be sure to specify a writable folder. Since mysource object still exists in the session, you can simply rerun **rxImport** with *outFile* to save the data set to disk:
+Although we could work with the data in-memory as a data frame for the duration of the session, it often helps to save the data as an .xdf file for reuse at a later data. To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and and a folder for which you have write permissions:
 
 ~~~~
 	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf")
 ~~~~
 
-Common errors occuring on a file save exercise include:
+Common errors occuring on your first file save exercise might include:
 
-+ "Error: '\u' used without hext digits in character string..." indicates an invalid path delimiter. R uses forward slash delimiters (/), even if the path is on the Windows file system.	
-+ "Error in file <<file-name>>; Permission denied" is obviously a permission error. Granting write-access to the folder will resolve the error.	
++ "Error: '\u' used without hex digits in character string..." indicates an invalid path delimiter. R uses forward slash delimiters (/), even if the path is on the Windows file system.	
++ "Error in file <<file-name>>; Permission denied" is obviously a permission error. Choosing a different folder or granting write-access to the current folder will resolve the error.	
 
 
 ### About data storage in Microsoft R
@@ -122,7 +122,7 @@ Creating an .xdf is not required, but when data sets are large or complex, .xdf 
 > You can use **rxImport** to load all or part of an .xdf into a data frame by specifying an .xdf file as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
 
 
-## Examine object metadata
+## Step 3: Examine object metadata
 
 You should now have a `mysource` object and an `airXdfData` object representing the data source. Once a data source object exists, you can use the **rxGetInfo** function to return metadata and learn more about the structure. Adding the *getVarInfo* argument returns metadata about variables:
 
@@ -145,9 +145,9 @@ Notice how the output includes the precomputed metadata for each variable, plus 
 From the output, we can determine whether the number of observation is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can group observations by day. We can do all of these things in a subsequent import.
 
 > [!Tip]
-> To get just the variable information, use the standalone **rxGetVarInfo** function to return precomputed metadata about variables in the .xdf file.
+> To get just the variable information, use the standalone **rxGetVarInfo()** function to return precomputed metadata about variables in the .xdf file (for example, `rxGetVarInfo(airXdfData)`).
 
-## Re-import with changes to the data
+## Step 4: Re-import with changes to the data
 
 The **rxImport** function takes multiple parameters that can be used to modify data during import. In this exercise, repeat the import and change the data set at the same time. By adding parameters to **rxImport**, you can:
 
@@ -161,19 +161,9 @@ The **rxImport** function takes multiple parameters that can be used to modify d
     overwrite=TRUE)
 ~~~~
 
-Running this command refreshes the airXdfData data source object.
+Running this command refreshes the airXdfData data source object. Metadata for the new object reflects the allocation of rows among 3 blocks and conversion of string-to-numeric data for both ArrDelay and DayOfWeek. 
 
-> [!Note]
-> If you are using R Client, omit *rowsPerRead* and load all data into memory. [Data chunking](#chunking) using persisted data on disk is not supported in R Client. Since this particular data set is not particular large, use of blocks is just for illustration.
-
-Metadata for the new object reflects the allocation of rows among 3 blocks and conversion of string-to-numeric data for both ArrDelay and DayOfWeek. 
-
-    > rxGetInfo(airXdfData, getVarInfo = TRUE)
-    File name: C:\Users\TEMP\airExample.xdf 
-    Number of observations: 6e+05 
-    Number of variables: 3 
-    Number of blocks: 3 
-    Compression type: zlib 
+    > rxGetInfo(airXdfData)
     Variable information: 
     Var 1: ArrDelay
 	       702 factor levels: 6 -8 -2 1 -14 ... 451 430 597 513 432
@@ -183,11 +173,11 @@ Metadata for the new object reflects the allocation of rows among 3 blocks and c
 
 ### Control string conversion and factor level ordering
 
-Setting *stringsAsFactors* to TRUE has built-in behaviors that can have unintended consequences. For example, we might not want every character variable to become a factor, as evident by the factor level conversion for ArrDelay. You can use the *colClasses* argument to explicitly set the data type of a particular variable.
+Setting *stringsAsFactors* to TRUE has built-in behaviors that can have unintended consequences. For example, we might not want every character variable to become a factor. In the case of ArrDelay, the data is actually numeric. You can use the *colClasses* argument to explicitly set the data type of a particular variable.
 
-Additionally, factor levels are listed in the order in which they are encountered during import, which could result in an arbitrary list. To override the default, you can explicitly specify the levels in a predefined order using the *colInfo* argument.
+Additionally, factor levels are listed arbitrarily in the order in which they are encountered during import, which might not make sense. To override the default, you can explicitly specify the levels in a predefined order using the *colInfo* argument.
 
-Rerun the import operation to use a fixed data type for ArrDelay and an alternative fixed order for days of the week:
+Rerun the import operation to use a fixed data type for ArrDelay and a fixed order for days of the week:
 
     ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
@@ -195,64 +185,16 @@ Rerun the import operation to use a fixed data type for ArrDelay and an alternat
 	    "Friday")))
 
 	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
-	rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="character"),
+	rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"),
     overwrite=TRUE)
     ~~~~
 
 Notice that once you supply the *colInfo* argument, you no longer need to specify *stringsAsFactors* because *DayOfWeek* is the only factor variable.
 
-## Load a data subset
 
-This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the data set into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
+## Step 5: Visualize data
 
-	nrow(airXdfData)
-	ncol(airXdfData)
-	head(airXdfData)
-
-	> nrow(airXdfData)
-	[1] 600000
-	> ncol(airXdfData)
-	[1] 3
-	> head(airXdfData)
-	  ArrDelay CRSDepTime DayOfWeek
-	1        6   9.666666    Monday
-	2       -8  19.916666    Monday
-	3       -2  13.750000    Monday
-	4        1  11.750000    Monday
-	5       -2   6.416667    Monday
-	6      -14  13.833333    Monday
-
-From *nrow* we see that the number of rows is 600,000. To read 10 rows into a data frame starting with the 100,000th row:
-
-	airXdfDataSubset <- rxReadXdf(airXdfData, numRows=10, startRow=100000)
-	airXdfDataSubset
-
-This code should generate the following output:
-
-	   ArrDelay CRSDepTime DayOfWeek
-	1        -2  11.416667  Saturday
-	2        39   9.916667    Friday
-	3        NA  10.033334    Monday
-	4         1  17.000000    Friday
-	5       -17   9.983334 Wednesday
-	6         8  21.250000  Saturday
-	7        -9   6.250000    Friday
-	8       -11  15.000000    Friday
-	9         4  20.916666    Sunday
-	10       -8   6.500000  Thursday
-
-You can now look to see what the factor levels are for the *DayOfWeek* variable:
-
-	levels(myData$DayOfWeek)
-
-This command should generate the following output:
-
-	[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"    "Saturday"
-	[7] "Sunday"
-
-## Visualize data and compute statistics
-
-Let's move on to visualization using the **rxHistogram** function to show the distribution in arrival delay by day of week. Internally, this function uses the **rxCube** function to calculate information for a histogram:
+To get a sense of data shape, use the **rxHistogram** function to show the distribution in arrival delay by day of week. Internally, this function uses the **rxCube** function to calculate information for a histogram:
 
 ~~~~
 	rxHistogram(~ArrDelay|DayOfWeek,  data = airXdfData)
@@ -275,9 +217,11 @@ You can also compute descriptive statistics for the variable:
 		ArrDelay 11.31794 40.68854 -86 1490 582628   17372
 ~~~~
 
-This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that did not arrive, that is, were canceled.
+## Step 6: Create a new variable
 
-You can use RevoScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Because the original data is safely preserved in the original text file, you can simply add this variable to our existing XDF file using the *transforms* argument to **rxDataStep**. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
+This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that never arrived and thus canceled.
+
+You can use RevoScaleR’s data step functionality to create a new variable, *VeryLate*, that represents flights that were either over two hours late or canceled. Because the original data is safely preserved in the original text file, we can simply add this variable to our existing XDF file using the *transforms* argument to **rxDataStep**. The *transforms* argument takes a list of one or more R expressions, typically in the form of assignment statements. In this case, we use the following expression: *list(VeryLate = (ArrDelay \> 120 | is.na(ArrDelay))*
 
 The full RevoScaleR data step consists of the following steps:
 
@@ -304,7 +248,7 @@ Output from this command reflects the creation of the new variable:
             7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
         Var 4: VeryLate, Type: logical, Low/High: (0, 1)
 
-## Summarize data
+## Step 7: Summarize data
 
 We already used **rxSummary** to get an initial impression of data shape, but let's take a closer look at its arguments. The **rxSummary** function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
 
@@ -393,10 +337,52 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 ![ArrDelay Histogram](media/rserver-scaler-getting-started/arrdelay_histogram_2.png)
 
+## Step 8: Load a data subset
 
-## Create a new data set with variable transformations
+This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the data set into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
 
-In this task, use the **rxDataStep** function to create a new data set containing the variables in *airXdfData* plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
+	nrow(airXdfData)
+	ncol(airXdfData)
+	head(airXdfData)
+
+	> nrow(airXdfData)
+	[1] 600000
+	> ncol(airXdfData)
+	[1] 3
+	> head(airXdfData)
+	  ArrDelay CRSDepTime DayOfWeek
+	1        6   9.666666    Monday
+	2       -8  19.916666    Monday
+	3       -2  13.750000    Monday
+	4        1  11.750000    Monday
+	5       -2   6.416667    Monday
+	6      -14  13.833333    Monday
+
+From *nrow* we see that the number of rows is 600,000. To read 10 rows into a data frame starting with the 100,000th row:
+
+	airXdfDataSmall <- rxReadXdf(airXdfData, numRows=10, startRow=100000)
+	airXdfDataSmall
+
+This code should generate the following output:
+
+	   ArrDelay CRSDepTime DayOfWeek
+	1        -2  11.416667  Saturday
+	2        39   9.916667    Friday
+	3        NA  10.033334    Monday
+	4         1  17.000000    Friday
+	5       -17   9.983334 Wednesday
+	6         8  21.250000  Saturday
+	7        -9   6.250000    Friday
+	8       -11  15.000000    Friday
+	9         4  20.916666    Sunday
+	10       -8   6.500000  Thursday
+
+You can now compute summary statistics on the reduced data set
+
+
+## Step 9: Create a new data set with variable transformations
+
+In this task, use the **rxDataStep** function to create a new data set containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
 In the example below, three new variables are created. 
 
@@ -441,24 +427,14 @@ You should see the following information in your output:
 	5       -2   6.416667    Monday FALSE       6 FALSE
 ~~~~
 
-<a name="chunking"></a>
-## About R Client limitations related to data chunking
-
-A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
-
-In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. 
-
-You can work around this limitation by writing script on R Client, but then pushing the compute context from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](rserver.md).
-
 ## Next steps
 
 This tutorial demonstrated data import and exploration, but there are several more tutorials covering more scenarios, including instructions for working with bigger data sets.
 
-  - [Practice data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
+  - [Tutorial: Visualize and analyze data](scaler-getting-started-data-manipulation.md)
   - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)
   - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)
   - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md)
-
 
 ### Try demo scripts
 
@@ -476,6 +452,15 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
 > This video shows you how to create a source object for a list of files by using the R `list.files` function and patterns for selecting specific file names. It uses the multiple mortDefaultSmall*.csv files to show the approach. To create an XDF comprised of all the files, use the following syntax: `mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d*.csv", full.names=TRUE)`.
 
  <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+
+ <a name="chunking"></a>
+### Overcome R Client data chunking limitations by pushing compute context or migrating to R Server
+
+A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
+
+In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is deliberately, which results in all data being read into memory. 
+
+You can work around this limitation by writing script on R Client, but then [pushing the compute context](scaler-data-compute-context.md) from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](rserver.md).
 
 ## See Also
 
