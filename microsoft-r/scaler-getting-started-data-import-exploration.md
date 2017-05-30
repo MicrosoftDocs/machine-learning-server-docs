@@ -26,14 +26,14 @@ ms.custom: ""
 
 # Tutorial: Data import and exploration (Microsoft R)
 
-**Applies to: Microsoft R Client, Microsoft R Server <sup>[ **1**](#chunking)</sup>
+**Applies to: Microsoft R Client, Microsoft R Server
 
 As a data scientist, the first order of business is typically data acquisition. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR functionality as long as data is relatively small. R Client is limited to two threads for processing and in-memory data storage. To avoid paging data to disk, R Client deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to a Microsoft R Server instance.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as data is relatively small. R Client is limited to [two threads and in-memory storage](#chunking). To avoid paging to disk, it deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
 
 ## What you will learn
 
@@ -442,13 +442,13 @@ You should see the following information in your output:
 ~~~~
 
 <a name="chunking"></a>
-## About R Client limitations on data chunking
+## About R Client limitations related to data chunking
 
-A primary benefit of RevoScaleR is its ability to appropriate data into multiple pieces for processing in parallel, reassembling it later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
+A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
 
-In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have Microsoft R Client. R Client requires that data fit into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. 
+In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. 
 
-You can work around this limitation by writing script on R Client, but then pushing the compute context from R Client to a remote Microsoft R Server instance. Optionally, you could also upgrade to R Server. Developer can install the developer edition of R Server, which is full-featured R Server, but licensed for development workstations instead of production server. For more information, see [Microsoft R Server](rserver.md).
+You can work around this limitation by writing script on R Client, but then pushing the compute context from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](rserver.md).
 
 ## Next steps
 
