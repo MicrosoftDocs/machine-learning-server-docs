@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import data from Azure SQL Database and SQL Server (Microsoft R)"
+title: "Import SQL data from Azure SQL Database and SQL Server (Microsoft R)"
 description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: ""
 author: "HeidiSteen"

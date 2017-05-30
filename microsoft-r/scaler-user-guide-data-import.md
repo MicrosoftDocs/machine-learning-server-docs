@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import data into Microsoft R Server using rxImport"
+title: "Import text, SAS, and SPSS data into Microsoft R Server using rxImport"
 description: "Load data in Microsoft R Server using the RevoScaleR rxImport function."
 keywords: ""
 author: "HeidiSteen"
