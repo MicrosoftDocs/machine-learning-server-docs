@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server**
 
-In data-driven projects, one of your first tasks as a data scientst is data acquisition. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
+In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
@@ -81,9 +81,9 @@ Windows users, please note the direction of the path delimiter. By default, R sc
 
 The *AirlineDemoSmall.csv* data set is used in this tutorial. It's a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*, with a total of 600,000 rows.
 
-## Step 1: Load data
+## Load data
 
-As a first step, perform a preliminary import using the airline data. We can then examine metadata that could lead to further transformations on successive imports.
+As a first step, perform a preliminary import using the airline data. Initially, the data is loaded as a data frame that exists only in memory.
 
 ~~~~
 	mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
@@ -94,9 +94,9 @@ On the first line,`mysource` is an object specifying source data created using R
 
 On line two, `airXdfData` is a data source object returned by **rxImport**, which we can query to learn about data characteristics.
 
-## Step 2: Save as XDF
+## Save as XDF
 
-Although we could work with the data in-memory as a data frame for the duration of the session, it often helps to save the data as an .xdf file for reuse at a later data. To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and and a folder for which you have write permissions:
+Although we could work with the data frame for the duration of the session, it often helps to save the data as an .xdf file for reuse at a later date. To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and and a folder for which you have write permissions:
 
 ~~~~
 	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf")
@@ -122,7 +122,7 @@ Creating an .xdf is not required, but when data sets are large or complex, .xdf 
 > You can use **rxImport** to load all or part of an .xdf into a data frame by specifying an .xdf file as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
 
 
-## Step 3: Examine object metadata
+## Examine object metadata
 
 You should now have a `mysource` object and an `airXdfData` object representing the data source. Once a data source object exists, you can use the **rxGetInfo** function to return metadata and learn more about the structure. Adding the *getVarInfo* argument returns metadata about variables:
 
@@ -147,7 +147,7 @@ From the output, we can determine whether the number of observation is large eno
 > [!Tip]
 > To get just the variable information, use the standalone **rxGetVarInfo()** function to return precomputed metadata about variables in the .xdf file (for example, `rxGetVarInfo(airXdfData)`).
 
-## Step 4: Re-import with changes to the data
+## Convert on re-import
 
 The **rxImport** function takes multiple parameters that can be used to modify data during import. In this exercise, repeat the import and change the data set at the same time. By adding parameters to **rxImport**, you can:
 
@@ -192,7 +192,7 @@ Rerun the import operation to use a fixed data type for ArrDelay and a fixed ord
 Notice that once you supply the *colInfo* argument, you no longer need to specify *stringsAsFactors* because *DayOfWeek* is the only factor variable.
 
 
-## Step 5: Visualize data
+## Visualize data
 
 To get a sense of data shape, use the **rxHistogram** function to show the distribution in arrival delay by day of week. Internally, this function uses the **rxCube** function to calculate information for a histogram:
 
@@ -217,7 +217,7 @@ You can also compute descriptive statistics for the variable:
 		ArrDelay 11.31794 40.68854 -86 1490 582628   17372
 ~~~~
 
-## Step 6: Create a new variable
+## Create a new variable
 
 This first look at the data tells us two important things: arrival delay has a long “tail” for every day of the week, with a few flights delayed for well over two hours, and there are quite a few missing values (17,372). Presumably the missing values for arrival delay represent flights that never arrived and thus canceled.
 
@@ -248,7 +248,7 @@ Output from this command reflects the creation of the new variable:
             7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
         Var 4: VeryLate, Type: logical, Low/High: (0, 1)
 
-## Step 7: Summarize data
+## Summarize data
 
 We already used **rxSummary** to get an initial impression of data shape, but let's take a closer look at its arguments. The **rxSummary** function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
 
@@ -337,7 +337,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 ![ArrDelay Histogram](media/rserver-scaler-getting-started/arrdelay_histogram_2.png)
 
-## Step 8: Load a data subset
+## Load a data subset
 
 This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the data set into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
 
@@ -380,7 +380,7 @@ This code should generate the following output:
 You can now compute summary statistics on the reduced data set
 
 
-## Step 9: Create a new data set with variable transformations
+## Create a new data set with variable transformations
 
 In this task, use the **rxDataStep** function to create a new data set containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 

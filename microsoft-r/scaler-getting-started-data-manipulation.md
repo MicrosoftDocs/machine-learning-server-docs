@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Tutorial: Data manipulation and statistical analysis ((Microsoft R)"
-description: "Learn how to manipulate and analyze data using the RevoScaleR functions in Microsoft R."
+title: "Tutorial: Visualize and analyze data (Microsoft R)"
+description: "Learn how to visualize and analyze data using the RevoScaleR functions in Microsoft R."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/16/2017"
+ms.date: "05/30/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Data manipulation and statistical analysis (Microsoft R)
+# Tutorial: Visualize and analyze data (Microsoft R)
 
 **Applies to: Microsoft R Client, Microsoft R Server** 
 
