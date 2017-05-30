@@ -57,7 +57,7 @@ Create the connection object using information from the Azure portal and ODBC Da
 
 	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-The driver used on the connection is an ODBC driver. On Windows, the ODBC driver is provided by the operating system. You can run the **ODBC Data Source Administrator (64-bit)** app to verify the driver is listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](sqaler-data-odbc.md).
+The driver used on the connection is an ODBC driver. On Windows, the ODBC driver is provided by the operating system. You can run the **ODBC Data Source Administrator (64-bit)** app to verify the driver is listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](scaler-data-odbc.md).
 
 All of the remaining connection properties are obtained from the Azure portal.
 
@@ -166,7 +166,7 @@ Create the connection object using the SQL Server database driver a local server
 
 The driver used on the connection is an ODBC driver that is installed by SQL Server. You could use the default database driver provided with operating system, but SQL Server Setup also installs drivers. 
 
-On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](sqaler-data-odbc.md).
+On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](scaler-data-odbc.md).
 
 The Server=(local) refers to a local default instance connected over TCP. A named instance is specified as computername$instancename. A remote server has the same syntax, but you should verify that that remote connections are enabled. The defaults for this setting vary depending on which edition is installed.
 

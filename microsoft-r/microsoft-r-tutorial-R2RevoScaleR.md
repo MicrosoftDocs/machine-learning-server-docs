@@ -162,6 +162,19 @@ For more general sequences, use the `seq` function:
 > [!Tip]
 > If you are working with big data, you’ll still use vectors to manipulate parameters and information about your data, but you'll probably store the data in the RevoScaleR high-performance .xdf file format.
 
+## Check the working directory
+
+Both R and RevoScaleR use the *working directory* to store any files that you create. Use the following open source R command to determine the working directory location: 
+
+    getwd()
+
+Depending on your environment, you might not have permission to this directory. For example, on Windows, if the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have permission to save files to that location. To save a file on Windows, you could:
+
++ Run `setwd("C:/Users/TEMP")` to change the working directory to a writable directory. 
++ Or, specify a fully-qualified path to a writable directory whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"`).  
+
+Windows users, please note the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
+
 ### Exploratory Data Analysis
 
 After you have some data, you will want to explore it graphically. For most small data sets, the place to begin is with the `plot` function, which provides a default graphical view of the data:

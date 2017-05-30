@@ -30,7 +30,7 @@ ms.custom: ""
 
 As a data scientist, the first order of business is typically data acquisition. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
-To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data that you provide as an input and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
+To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R, and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 ## What you will learn
 
@@ -49,7 +49,7 @@ To complete this tutorial as written, use an R console application and built-in 
 
 The command prompt for a R is `>`. You can hand-type case-sensitive R commands, or copy-paste multi-line commands at the console command prompt. The R interpreter can queue up multiple commands and run them in sequence.
 
-## Locate sample data
+### Locate built-in data
 
 [RevoScaleR](scaler-user-guide-introduction.md) includes both functions and built-in data sets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
@@ -68,56 +68,28 @@ The open source R `list.files` command returns a file list provided by the RevoS
 
 *AirlineDemoSmall.csv* is the data set used in this tutorial. It is a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The *AirlineDemoSmall.csv* file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*. There are a total of 600,000 rows in the data file.
 
-### About data storage in Microsoft R
+## Load an .csv file
 
-In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. 
-
-A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
-
-An .xdf file is a binary file format native to Microsoft R, used for compressing and persisting data on disk. On distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. The organization of an XDF file is column-based, one column per variable, which is highly efficient for calculations based on individual variables. You can load subsets of the data for targeted analysis . Additionally, .xdf files include precomputed metadata, which is immediately available with no additional processing.
-
-Because statistics and predictive analytics is formed around variables, the ability to perform read-write operations on individual variables is key to computational efficiency. 
-
-## Check the working directory
-
-This tutorial generates an XDF file. By default, RevoScaleR uses the *working directory* to store files. Depending on your environment, you might not have permission to this directory. Use the following open source R command to determine the working directory location: 
-
-    getwd()
-
-If the output is something like `C:/Program Files/Microsoft/R Server/R_SERVER/bin/x64`, you won't have permission to save files to this location. To save a file, use either one of these approaches:
-
-+ Run `setwd("C:/Users/TEMP")` to change the working directory to a writable directory. 
-+ Specify a fully-qualified path to a writable directory whenever a file name is required (for example, `outFile="C:/users/temp/airExample.xdf"`).  
-
-Windows users, please note the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
-
-## Simple import
-
-As a first step, let's do a preliminary import using source data and an *outFile*. Once the data source object exists, we can examine metadata that could lead to further transformations on successive imports.
-
-The following commands specify a source object, an XDF file, and returns airXdfData representing the data source. 
+As a first step, let's do a preliminary import using source data. Once the data source object exists, we can examine metadata that could lead to further transformations on successive imports.
 
 ~~~~
 	mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
-	airXdfData <- rxImport(inData=mysource, outFile = "airExample.xdf")
+	airXdfData <- rxImport(inData=mysource)
 ~~~~
 
 On the first line,`mysource` is an object specifying source data created using R's `file.path` command. The folder path is provided through RevoScaleR's rxGetOption("sampleDataDir"), with "AirlineDemoSmall.csv" for the file. The *sampleDataDir* argument returns the directory containing sample files registered with RevoScaleR. 
 
-On line two, `airXdfData` is a data source object returned by **rxImport**. The **rxImport** function takes several arguments, including *outFile* for the XDF file name. If you omit the *outFile* argument or set it NULL, the return *airXdfData* object is a data frame containing the data. 
-
-> [!Tip]
-> XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, an XDF can help by compressing data and by allocating data into chunks that can be read and refreshed independently. Additionally, XDF provides column storage for variables, which is more efficient if you want to selectively choose variables to include in a particular analysis.
+On line two, `airXdfData` is a data source object returned by **rxImport**, which we can query to learn about data characteristics.
 
 ## Examine object metadata
 
-Assuming you ran the previous two commands, you now have a `mysource` object and an `airXdfData` object representing the data source. For existing data source objects, use the **rxGetInfo** function to return metadata and learn more about the structure. Adding the  *getVarInfo* argument returns metadata about variables:
+You should now have a `mysource` object and an `airXdfData` object representing the data source. When a data source object exists, you can use the **rxGetInfo** function to return metadata and learn more about the structure. Adding the  *getVarInfo* argument returns metadata about variables:
 
 ~~~~
     rxGetInfo(airXdfData, getVarInfo = TRUE)
 ~~~~
 
-Output includes the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information. Variables are based on fields in the CSV file. In this case, there are 3 variables. 
+Notice how the output includes the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information. Variables are based on fields in the CSV file. In this case, there are 3 variables. 
 
     File name: C:\Users\TEMP\airExample.xdf 
     Number of observations: 6e+05 
@@ -131,30 +103,24 @@ Output includes the precomputed metadata for each variable, plus a summary of ob
 
 From the output, we can determine whether the number of observation is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can group observations by day. We can do all of these things in a subsequent import.
 
-> [!Tip]
-> As noted, **rxImport** can create a data source object without the .xdf file. If you omit the *outFile* argument or set it NULL, the return object is a data frame containing the data.
->
-> Another way to use **rxImport** is to load all or part of an .xdf into a data frame by specifying an .xdf file as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
+## Re-import with changes to the data
 
-## Re-import with conversions
-
-The **rxImport** function takes multiple parameters used to modify data during import. In this exercise, repeat the import, overwriting the original file, and changing its structure in the process. Through parameters on import, you can:
+The **rxImport** function takes multiple parameters that can be used to modify data during import. In this exercise, repeat the import and change the data set at the same time. By adding parameters to **rxImport**, you can:
 
 + Convert the string column, *DayOfWeek*, to a factor variable using the *stringsAsFactors* argument.
-+ Allocate rows into blocks that you can subsequently read and write in *chunks*. By specifying the argument *rowsPerRead*, you can read and write the data in 3 blocks of 200,000 rows each.
 + Convert missing values to a specific value, such as the letter M rather than the default NA.
++ Create an .xdf file using *outFile* to enable data manipulation, including the ability to allocate rows into blocks that you can subsequently read and write in *chunks*. By specifying the argument *rowsPerRead*, you can read and write the data in 3 blocks of 200,000 rows each.
 
 ~~~~
-	mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
-    
-	airXdfData <- rxImport(inData=mysource, outFile="airExample.xdf",
+	airXdfData <- rxImport(inData=mysource, outFile="c:\Users\Temp\airExample.xdf",
 	stringsAsFactors=TRUE, missingValueString="M", rowsPerRead=200000,
     overwrite=TRUE)
 ~~~~
 
-If you are using R Client, omit *rowsPerRead* and load all data into memory. [Data chunking](#chunking) using persisted data on disk is not supported in R Client. Since this particular data set is not particular large, use of blocks is just for illustration.
+Running this command refreshes the airXdfData data source object and creates an .xdf file in our working directory. Be sure to specify a writable folder.
 
-Running this command refreshes the airXdfData data source object and replaces the .xdf file in our working directory.
+> [!Note]
+> If you are using R Client, omit *rowsPerRead* and load all data into memory. [Data chunking](#chunking) using persisted data on disk is not supported in R Client. Since this particular data set is not particular large, use of blocks is just for illustration.
 
 Metadata for the new object reflects the allocation of rows among 3 blocks and conversion of string-to-numeric data for both ArrDelay and DayOfWeek. 
 
@@ -169,6 +135,20 @@ Metadata for the new object reflects the allocation of rows among 3 blocks and c
     Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
     Var 3: DayOfWeek
         7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+
+
+### About data storage in Microsoft R
+
+In Microsoft R, you can work with in-memory data as a *data frame*, or save it to disk as an *XDF file*. As noted, **rxImport** can create a data source object with or without the .xdf file. If you omit the *outFile* argument or set it NULL, the return object is a data frame containing the data.
+
+A data frame is the fundamental data structure in R and is fully supported in R Server. It is tabular, composed of rows and columns, where columns contain variables and the first row, called the *header*, stores column names. Subsequent rows provide data values for each variable associated with a single observation. A data frame is a temporary data structure, created when you load some data. It exists only for the duration of the session.
+
+An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. The organization of an .xdf file is column-based, one column per variable, which is optimum for the variable orientation of data used in statistics and predictive analytics. With .xdf, you can load subsets of the data for targeted analysis. Also, .xdf files include precomputed metadata that is immediately available with no additional processing.
+
+Creating an .xdf is not required, but when data sets are large or complex, .xdf files can help by compressing data and by allocating data into chunks that can be read and refreshed independently. Additionally, on distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. 
+
+> [!Tip]
+> You can use **rxImport** to load all or part of an .xdf into a data frame by specifying an .xdf file as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
 
 
 ### Control factor level ordering
