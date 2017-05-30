@@ -57,10 +57,10 @@ This section of the tutorial demonstrates several approaches for fitting a model
 
 ### Fitting a Simple Model
 
-Use the *rxLinMod* function to fit a linear model using your *ADS.xdf* file. Use a single dependent variable, the factor *DayOfWeek*:
+Use the **rxLinMod** function to fit a linear model using airXdfData from the previous tutorial. Use a single dependent variable, the factor *DayOfWeek*:
 
 ~~~~
-	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
+	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airXdfData)
 	summary(arrDelayLm1)
 ~~~~
 
@@ -68,10 +68,10 @@ The resulting output is:
 
 ~~~~
 	Call:
-	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airDS)
+	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airXdfData)
 
 	Linear Regression Results for: ArrDelay ~ DayOfWeek
-	File name: C:\YourWorkingDir\ADS.xdf
+	File name: C:\Users\Temp\airExample.xdf
 	Dependent variable(s): ArrDelay
 	Total independent variables: 8 (Including number dropped: 1)
 	Number of valid observations: 582628
@@ -99,12 +99,12 @@ The resulting output is:
 
 ### Using the cube argument and plotting results
 
-If you are using categorical data in your regression, you can use the *cube* argument. If *cube* is set to TRUE and the first term of the regression is categorical (a factor or an interaction of factors), the regression is done using a partitioned inverse, which may be faster and use less memory than standard regression computation. Averages/counts of the category "bins" can be computed in addition to standard regression results. The intercept will also be automatically dropped, so that each category level will have an estimated coefficient (unlike the previous example). If *cube* is set to TRUE and the first term is not categorical, you get an error message.
+If you are using categorical data in your regression, you can use the *cube* argument. If *cube* is set to TRUE and the first term of the regression is categorical (a factor or an interaction of factors), the regression is done using a partitioned inverse, which may be faster and use less memory than standard regression computation. Averages/counts of the category "bins" can be computed in addition to standard regression results. The intercept will also be automatically dropped so that each category level will now have an estimated coefficient. If *cube* is set to TRUE and the first term is not categorical, you get an error message.
 
-Re-estimate the linear model, this time setting cube to TRUE. Then print a summary of the results:
+Re-estimate the linear model, this time setting cube to TRUE. Print a summary of the results:
 
 ~~~~
-	arrDelayLm2 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS,
+	arrDelayLm2 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airXdfData,
 	cube = TRUE)
 	summary(arrDelayLm2)
 ~~~~
@@ -113,10 +113,10 @@ You should see the following output:
 
 ~~~~
 	Call:
-	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airDS, cube = TRUE)
+	rxLinMod(formula = ArrDelay ~ DayOfWeek, data = airXdfData, cube = TRUE)
 
 	Cube Linear Regression Results for: ArrDelay ~ DayOfWeek
-	File name: C:\YourWorkingDir\ADS.xdf
+	File name: C:\Users\Temp\airExample.xdf
 	Dependent variable(s): ArrDelay
 	Total independent variables: 7
 	Number of valid observations: 582628
@@ -178,13 +178,13 @@ The following plot is generated, showing the lowest average arrival delay on Thu
 
 We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable.
 
-*F()* is not an R function, although it looks like one when used inside ScaleR formulas. An *F* expression tells ScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the *rxFormula* [package help](#get-help) for more information.
+*F()* is not an R function, although it looks like one when used inside RevoScaleR formulas. An *F* expression tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the [**rxFormula**](scaler/packagehelp/rxFormula.md) for more information.
 
 By interacting *DayOfWeek* with *F(CRSDepTime)* we are creating a dummy variable for every combination of departure hour and day of the week.
 
 ~~~~
 	arrDelayLm3 <- rxLinMod(ArrDelay ~ DayOfWeek:F(CRSDepTime),
-	data = airDS, cube = TRUE)
+	data = airXdfData, cube = TRUE)
 	arrDelayDT <- rxResultsDF(arrDelayLm3, type = "counts")
 	head(arrDelayDT, 15)
 ~~~~
@@ -223,7 +223,7 @@ You should see the following plot:
 
 ## Subset the data and compute a crosstab
 
-Create a new data set containing a subset of rows and variables.  This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the *rxDataStep* function with the following arguments:
+Create a new data set containing a subset of rows and variables. This is convenient if you intend to do lots of analysis on a subset of a large data set. To do this, we use the **rxDataStep** function with the following arguments:
 
 - *outFile:* the name of the new data set
 - *inData:*  the name of an .xdf file or an RxXdfData object representing the original data set you are subsetting
@@ -233,7 +233,7 @@ Create a new data set containing a subset of rows and variables.  This is conven
 The resulting call is as follows:
 
 ~~~~
-	airLateDS <- rxDataStep(inData = airDS, outFile = "ADS1.xdf",
+	airLateDS <- rxDataStep(inData = airXdfData, outFile = "ADS1.xdf",
 	    varsToDrop = c("CRSDepTime"),
 	    rowSelection = ArrDelay > 15)
 	ncol(airLateDS)
@@ -276,7 +276,7 @@ The results show that in this data set “late” flights are on average over 10
 
 ## Run a logistic regression on the new data
 
-The function *rxLogit* takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving. For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
+The function **rxLogit** takes a binary dependent variable. Here we will use the variable *Late*, which is *TRUE* (or *1*) if the plane was more than 15 minutes late arriving. For dependent variables we will use the *DepHour*, the departure hour, and *Night*, indicating whether or not the flight departed at night.
 
 ~~~~
 	logitObj <- rxLogit(Late~DepHour + Night, data = airExtraDS)
@@ -290,7 +290,7 @@ You should see the following results:
 	rxLogit(formula = Late ~ DepHour + Night, data = airExtraDS)
 
 	Logistic Regression Results for: Late ~ DepHour + Night
-	File name: C:\Users\sue\SVN\bigAnalytics\trunk\revoAnalytics\ADS2.xdf
+	File name: C:\Users\Temp\ADS2.xdf
 	Dependent variable(s): Late
 	Total independent variables: 3
 	Number of valid observations: 582628
@@ -313,16 +313,16 @@ You should see the following results:
 Using the same function, let's estimate whether or not a flight is “very late” depending on the day of week:
 
 ~~~~
-        logitResults <- rxLogit(VeryLate ~ DayOfWeek, data = airData )
+        logitResults <- rxLogit(VeryLate ~ DayOfWeek, data = airXdfData )
         summary(logitResults)
 ~~~~
 ~~~~
         Call:
-        rxLogit(formula = VeryLate ~ DayOfWeek, data = airData)
+        rxLogit(formula = VeryLate ~ DayOfWeek, data = airXdfData)
 
         Logistic Regression Results for: VeryLate ~ DayOfWeek
         File name:
-        C:\YourOutputPath\airExample.xdf
+        C:\Users\Temp\airExample.xdf
         Dependent variable(s): VeryLate
         Total independent variables: 8 (Including number dropped: 1)
         Number of valid observations: 6e+05
@@ -353,11 +353,11 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
 
 ~~~~         
             Call:
-            rxLogit(formula = VeryLate ~ DayOfWeek - 1, data = airData)
+            rxLogit(formula = VeryLate ~ DayOfWeek - 1, data = airXdfData)
 
             Logistic Regression Results for: VeryLate ~ DayOfWeek - 1
             File name:
-            	C:\YourOutputPath\airExample.xdf
+            	C:\Users\Temp\airExample.xdf
             Dependent variable(s): VeryLate
             Total independent variables: 7
             Number of valid observations: 6e+05
@@ -383,7 +383,7 @@ The results show that in this sample, a flight on Tuesday is most likely to be v
 
 ## Computing predicted values
 
-You can use the object returned from the call to *rxLogit* in the previous section to compute predicted values. In addition to the model object, we specify the data set on which to compute the predicted values and the data set in which to put the newly computed predicted values. In the call below, we use the same dataset for both. In general, the data set on which to compute the predicted values must be similar to the original data set used to estimate the model in the following ways; it should have the same variable names and types, and factor variables must have the same levels in the same order.
+You can use the object returned from the call to **rxLogit** in the previous section to compute predicted values. In addition to the model object, we specify the data set on which to compute the predicted values and the data set in which to put the newly computed predicted values. In the call below, we use the same dataset for both. In general, the data set on which to compute the predicted values must be similar to the original data set used to estimate the model in the following ways; it should have the same variable names and types, and factor variables must have the same levels in the same order.
 
 ~~~~
 	predictDS <- rxPredict(modelObject = logitObj, data = airExtraDS,
@@ -394,7 +394,7 @@ You can use the object returned from the call to *rxLogit* in the previous secti
 You should see the following information:
 
 ~~~~
-	File name: C:\YourWorkingDir\ADS2.xdf
+	File name: C:\Users\Temp\ADS2.xdf
 	Number of observations: 6e+05
 	Number of variables: 7
 	Number of blocks: 2
@@ -419,9 +419,11 @@ You should see the following information:
 
 ## Next steps
 
-This tutorial demonstrated how to use several important functions, but on a small data set. Next up are two additional tutorials that explore ScaleR with bigger data sets, and customization approaches if built-in functions are not quite enough.
+This tutorial demonstrated how to use several important functions, but on a small data set. Next up are additional tutorials that explore RevoScaleR with bigger data sets, and customization approaches if built-in functions are not quite enough.
 
- - [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
+ - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)	
+ - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)	
+ - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md) 
  - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
 
 ### Try demo scripts
@@ -432,35 +434,11 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
  	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
-### Watch this video
-
-This 30-minute video is the second in a 4-part video series. It demonstrates ScaleR functions for data ingestion.
-
- <div align=center><iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
-
-<a name="get-help"></a>
-### Get function help
-
-  R packages typically include embedded package help reference and ScaleR is no exception. To view embedded help, use the **R Help** tab, located next to Solution Explorer.
-
-  - In R Help, click the Home button.
-  - Click **Packages**.
-  - Scroll down and click **RevoScaleR** to open the package help. All ScaleR functions are documented here. A subset of more commonly used functions have [help pages on MSDN](/scaler/scaler.md).
-
-### Get more information
-
-Continue building up your knowledge of ScaleR with these additional guides and tutorials.
-
-- [ScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)
-- [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)
-- [ScaleR User’s Guide](scaler-user-guide-introduction.md)
-- [ScaleR Distributed Computing Guide](scaler-distributed-computing.md)
-- [ScaleR ODBC Data Import Guide](scaler-data-odbc.md)
-
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
-
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
-
-[RevoScaleR Functions](/scaler/scaler.md)
+ [ScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)	
+ [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)	
+ [What is RevoScaleR](scaler-user-guide-introduction.md)	
+ [Introduction to Microsoft R](microsoft-r-getting-started.md)	
+ [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)	
+ [RevoScaleR Functions](/scaler/scaler.md)

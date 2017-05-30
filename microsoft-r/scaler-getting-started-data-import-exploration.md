@@ -393,7 +393,7 @@ In the example below, three new variables are created.
 The **rxDataStep** function will read the existing data set and perform the transformations chunk by chunk, and create a new data set.
 
 ~~~~
-	airExtraDS <- rxDataStep(inData=airXdfData, outFile="ADS2.xdf",
+	airExtraDS <- rxDataStep(inData=airXdfData, outFile="c:/users/temp/ADS2.xdf",
 		transforms=list(
 			Late = ArrDelay > 15,
 			DepHour = as.integer(CRSDepTime),
