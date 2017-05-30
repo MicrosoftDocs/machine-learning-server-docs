@@ -26,11 +26,14 @@ ms.custom: ""
 
 # Tutorial: Data manipulation and statistical analysis (Microsoft R)
 
-**Applies to: R Server and R Client** 
+**Applies to: Microsoft R Client, Microsoft R Server** 
 
 This tutorial builds on what you learned in the previous [data import and exploration tutorial](scaler-getting-started-data-import-exploration.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
+
+> [!Note]
+> R Client and R Server are interchangeable in terms of RevoScaleR functionality as long as data is relatively small. R Client is limited to two threads for processing and in-memory data storage. To avoid paging data to disk, R Client deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to a Microsoft R Server instance.
 
 ## What you will learn
 

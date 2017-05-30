@@ -28,11 +28,14 @@ ms.custom: ""
 
 # Tutorial: Explore R and RevoScaleR in 25 functions
 
-**Applies to: R Server and R Client** 
+**Applies to: Microsoft R Client, Microsoft R Server** 
 
 If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
 This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
+
+> [!Note]
+> R Client and R Server are interchangeable in terms of RevoScaleR functionality as long as data is relatively small. R Client is limited to two threads for processing and in-memory data storage. To avoid paging data to disk, R Client deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to a Microsoft R Server instance.
 
 ## Prerequisites
 

@@ -26,11 +26,14 @@ ms.custom: ""
 
 # Tutorial: Data import and exploration (Microsoft R)
 
-**Applies to: R Server and R Client** <sup>[ **1**](#chunking)</sup>
+**Applies to: Microsoft R Client, Microsoft R Server <sup>[ **1**](#chunking)</sup>
 
 As a data scientist, the first order of business is typically data acquisition. In this tutorial, you will learn how to load a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
+
+> [!Note]
+> R Client and R Server are interchangeable in terms of RevoScaleR functionality as long as data is relatively small. R Client is limited to two threads for processing and in-memory data storage. To avoid paging data to disk, R Client deliberately ignores the *blocksPerRead* argument, which results in all data being read into memory. If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to a Microsoft R Server instance.
 
 ## What you will learn
 
