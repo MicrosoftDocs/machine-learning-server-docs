@@ -28,9 +28,9 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server**
 
-In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to explore the shape of the data. 
+In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to ascertain the shape of the data. 
 
-To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
+To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object that wraps a dataset with useful metadata. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 > [!Note]
 > R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
@@ -52,9 +52,9 @@ To complete this tutorial as written, use an R console application and built-in 
 
 The command prompt for a R is `>`. You can hand-type case-sensitive R commands, or copy-paste multi-line commands at the console command prompt. The R interpreter can queue up multiple commands and run them sequentially.
 
-### Locate built-in data
+### How to locate built-in data
 
-[RevoScaleR](scaler-user-guide-introduction.md) provides both functions and built-in data sets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
+[RevoScaleR](scaler-user-guide-introduction.md) provides both functions and built-in datasets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
 1. Open the R console or start a Revo64 session. The RevoScaleR library is loaded automatically.
 
@@ -67,7 +67,7 @@ The open source R `list.files` command returns a file list provided by the RevoS
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype rxGetOption or sampleDataDir, you will get an error instead of the file list.
 
-### Locate the working directory
+### How to locate the working directory
 
 Both R and RevoScaleR use the *working directory* to store any files that you create. The following open source R command provides the working directory location: `getwd()`.
 
@@ -77,9 +77,9 @@ Alternatively, specify a fully-qualified path to a writable directory whenever a
 
 Windows users, please note the direction of the path delimiter. By default, R script uses forward slashes as path delimiters.
 
-### About the airline data set
+### About the airline dataset
 
-The *AirlineDemoSmall.csv* data set is used in this tutorial. It's a subset of a data set containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*, with a total of 600,000 rows.
+The *AirlineDemoSmall.csv* dataset is used in this tutorial. It's a subset of a larger dataset containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The file contains three columns of data: *ArrDelay*, *CRSDepTime*, and *DayOfWeek*, with a total of 600,000 rows.
 
 ## Load data
 
@@ -116,7 +116,7 @@ A data frame is the fundamental data structure in R and is fully supported in R 
 
 An .xdf file is a binary file format native to Microsoft R, used for persisting data on disk. The organization of an .xdf file is column-based, one column per variable, which is optimum for the variable orientation of data used in statistics and predictive analytics. With .xdf, you can load subsets of the data for targeted analysis. Also, .xdf files include precomputed metadata that is immediately available with no additional processing.
 
-Creating an .xdf is not required, but when data sets are large or complex, .xdf files can help by compressing data and by allocating data into chunks that can be read and refreshed independently. Additionally, on distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large data sets. 
+Creating an .xdf is not required, but when datasets are large or complex, .xdf files can help by compressing data and by allocating data into chunks that can be read and refreshed independently. Additionally, on distributed file systems like Hadoop's HDFS, XDF files can store data in multiple physical files to accommodate very large datasets. 
 
 > [!Tip]
 > You can use **rxImport** to load all or part of an .xdf into a data frame by specifying an .xdf file as the input. Doing so instantiates a data source object for the .xdf file, but without loading its data. Having an object represent the data source can come in handy. It doesn’t take up much memory, and it can be used in many other RevoScaleR objects interchangeably with a data frame.
@@ -149,7 +149,7 @@ From the output, we can determine whether the number of observation is large eno
 
 ## Convert on re-import
 
-The **rxImport** function takes multiple parameters that can be used to modify data during import. In this exercise, repeat the import and change the data set at the same time. By adding parameters to **rxImport**, you can:
+The **rxImport** function takes multiple parameters that can be used to modify data during import. In this exercise, repeat the import and change the dataset at the same time. By adding parameters to **rxImport**, you can:
 
 + Convert the string column, *DayOfWeek*, to a factor variable using the *stringsAsFactors* argument.
 + Convert missing values to a specific value, such as the letter M rather than the default NA.
@@ -227,7 +227,7 @@ The full RevoScaleR data step consists of the following steps:
 
 1.  Read in the *data* a block (200,000 rows) at a time.
 2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
-3.  Write the data out to the data set a block at a time. The argument *overwrite=TRUE* allows us to overwrite the data file.
+3.  Write the data out to the dataset a block at a time. The argument *overwrite=TRUE* allows us to overwrite the data file.
 
 		airXdfData <- rxDataStep(inData = airXdfData, outFile = "airExample.xdf",
 		    transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))),
@@ -250,7 +250,7 @@ Output from this command reflects the creation of the new variable:
 
 ## Summarize data
 
-We already used **rxSummary** to get an initial impression of data shape, but let's take a closer look at its arguments. The **rxSummary** function takes a formula as its first argument, and the name of the data set as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
+We already used **rxSummary** to get an initial impression of data shape, but let's take a closer look at its arguments. The **rxSummary** function takes a formula as its first argument, and the name of the dataset as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
 
 	> rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data=airXdfData)
 
@@ -339,7 +339,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 ## Load a data subset
 
-This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the data set into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
+This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the dataset into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
 
 	nrow(airXdfData)
 	ncol(airXdfData)
@@ -377,12 +377,12 @@ This code should generate the following output:
 	9         4  20.916666    Sunday
 	10       -8   6.500000  Thursday
 
-You can now compute summary statistics on the reduced data set
+You can now compute summary statistics on the reduced dataset
 
 
-## Create a new data set with variable transformations
+## Create a new dataset with variable transformations
 
-In this task, use the **rxDataStep** function to create a new data set containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
+In this task, use the **rxDataStep** function to create a new dataset containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
 In the example below, three new variables are created. 
 
@@ -390,7 +390,7 @@ In the example below, three new variables are created.
 + *DepHour* is an integer variable indicating the hour of the departure. 
 + *Night* is also a logical variable, set to *TRUE* (or *1*) if the flight departed between 10 P.M. and 5 A.M. 
 
-The **rxDataStep** function will read the existing data set and perform the transformations chunk by chunk, and create a new data set.
+The **rxDataStep** function will read the existing dataset and perform the transformations chunk by chunk, and create a new dataset.
 
 ~~~~
 	airExtraDS <- rxDataStep(inData=airXdfData, outFile="c:/users/temp/ADS2.xdf",
@@ -429,7 +429,7 @@ You should see the following information in your output:
 
 ## Next steps
 
-This tutorial demonstrated data import and exploration, but there are several more tutorials covering more scenarios, including instructions for working with bigger data sets.
+This tutorial demonstrated data import and exploration, but there are several more tutorials covering more scenarios, including instructions for working with bigger datasets.
 
   - [Tutorial: Visualize and analyze data](scaler-getting-started-data-manipulation.md)
   - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)
@@ -456,7 +456,7 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
  <a name="chunking"></a>
 ### Overcome R Client data chunking limitations by pushing compute context or migrating to R Server
 
-A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large data sets.
+A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large datasets.
 
 In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is deliberately, which results in all data being read into memory. 
 

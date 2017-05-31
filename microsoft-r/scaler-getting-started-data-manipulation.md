@@ -49,18 +49,37 @@ To complete this tutorial as written, use an R console application.
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-You must also have data to work with. The previous tutorial, [Data import and exploration](scaler-getting-started-data-import-exploration.md), will get you started.
+You must also have data to work with. The previous tutorial, [Data import and exploration](scaler-getting-started-data-import-exploration.md), explains functions and usage scenarios. 
 
-## Fitting a linear model
+Run the following script to reload data from the previous tutorial:
+
+~~~~
+# create data source
+mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
+
+# set factor levels
+colInfo <- list(DayOfWeek = list(type = "factor", levels = c("Saturday", "Sunday", "Monday", "Tuesday", 
+		"Wednesday", "Thursday", "Friday")))
+
+# load data and create an XDF
+airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
+		rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"), overwrite=TRUE)
+
+# add a custom variable
+airXdfData <- rxDataStep(inData = airXdfData, outFile = "airExample.xdf",
+		transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))), overwrite = TRUE)
+~~~~
+
+## How to fit a model
 
 This section of the tutorial demonstrates several approaches for fitting a model to the sample data.
 
-### Fitting a Simple Model
+### Fit a linear model
 
 Use the **rxLinMod** function to fit a linear model using airXdfData from the previous tutorial. Use a single dependent variable, the factor *DayOfWeek*:
 
 ~~~~
-	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airXdfData)
+	arrDelayLm1 <- rxLinMod(ArrDelay ~ DayOfWeek, data=airXdfData)
 	summary(arrDelayLm1)
 ~~~~
 
