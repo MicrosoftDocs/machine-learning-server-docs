@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# Compute context (RevoScaleR in Microsoft R)
+# Compute context for distributed RevoScaleR processing on Hadoop (Microsoft R)
 
-RevoScaleR functions can be used to distribute computations over more than one R Server instance, allowing you to run workloads on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a RevoScaleR interpreter on a different computer. We call this flexibility *Write Once, Deploy Anywhere*, or *WODA*. 
+RevoScaleR functions can be used to distribute computations over more than one R Server instance, allowing you to run workloads on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a RevoScaleR interpreter on a different computer. We call this flexibility *Write Once, Deploy Anywhere*. 
 
 A *compute context* specifies the computing resources to be used by RevoScaleR’s distributable computing functions. RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
 

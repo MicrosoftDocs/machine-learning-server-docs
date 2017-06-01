@@ -181,8 +181,7 @@ Rerun the import operation to use a fixed data type for ArrDelay and a fixed ord
 
     ~~~~
 	colInfo <- list(DayOfWeek = list(type = "factor",
-	    levels = c("Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-	    "Friday")))
+	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
 
 	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
 	rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"),
@@ -229,7 +228,7 @@ The full RevoScaleR data step consists of the following steps:
 2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
 3.  Write the data out to the dataset a block at a time. The argument *overwrite=TRUE* allows us to overwrite the data file.
 
-		airXdfData <- rxDataStep(inData = airXdfData, outFile = "airExample.xdf",
+		airXdfData <- rxDataStep(inData = airXdfData, outFile = "c:/Users/Temp/airExample.xdf",
 		    transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))),
 		    overwrite = TRUE)
             

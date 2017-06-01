@@ -58,16 +58,29 @@ Run the following script to reload data from the previous tutorial:
 mysource <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
 
 # set factor levels
-colInfo <- list(DayOfWeek = list(type = "factor", levels = c("Saturday", "Sunday", "Monday", "Tuesday", 
-		"Wednesday", "Thursday", "Friday")))
+colInfo <- list(DayOfWeek = list(type = "factor",
+	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
 
 # load data and create an XDF
 airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
 		rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"), overwrite=TRUE)
 
 # add a custom variable
-airXdfData <- rxDataStep(inData = airXdfData, outFile = "airExample.xdf",
+airXdfData <- rxDataStep(inData = airXdfData, outFile = "c:/Users/Temp/airExample.xdf",
 		transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))), overwrite = TRUE)
+
+# create a second dataset with extra variables
+airExtraDS <- rxDataStep(inData=airXdfData, outFile="c:/users/temp/ADS2.xdf",
+		transforms=list(
+			Late = ArrDelay > 15,
+			DepHour = as.integer(CRSDepTime),
+			Night = DepHour >= 20 | DepHour <= 5), overwrite=TRUE)
+
+# read metadata on the airExtraDS data source
+rxGetInfo(airExtraDS, getVarInfo=TRUE, numRows=5)
+
+# read metadata on the airXdfData data source
+rxGetInfo(airXdfData, getVarInfo=TRUE)
 ~~~~
 
 ## How to fit a model
@@ -193,7 +206,7 @@ The following plot is generated, showing the lowest average arrival delay on Thu
 
 ![DayOfWeek Plot](media/rserver-scaler-getting-started/dayofweek_plot.png)
 
-### A Linear Model with Multiple Independent Variables
+### Linear model with multiple independent variables
 
 We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable.
 
@@ -252,7 +265,7 @@ Create a new data set containing a subset of rows and variables. This is conveni
 The resulting call is as follows:
 
 ~~~~
-	airLateDS <- rxDataStep(inData = airXdfData, outFile = "ADS1.xdf",
+	airLateDS <- rxDataStep(inData = airXdfData, outFile = "c:/Users/Temp/ADS1.xdf",
 	    varsToDrop = c("CRSDepTime"),
 	    rowSelection = ArrDelay > 15)
 	ncol(airLateDS)
@@ -366,7 +379,7 @@ Using the same function, let's estimate whether or not a flight is “very late�
 ~~~~
 The results show that in this sample, a flight on Tuesday is most likely to be very late or canceled, followed by flights departing on Friday. In this model, Sunday is the control group, so that coefficient estimates for other days of the week are relative to Sunday. The intercept shown is the same as the coefficient you would get for Sunday if you omitted the intercept term:
 ~~~~
-    logitResults2 <- rxLogit(VeryLate ~ DayOfWeek - 1, data = airData )
+    logitResults2 <- rxLogit(VeryLate ~ DayOfWeek - 1, data = airXdfData )
             summary(logitResults2)
 ~~~~    
 
