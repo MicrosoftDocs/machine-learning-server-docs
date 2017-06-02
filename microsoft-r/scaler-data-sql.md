@@ -6,7 +6,7 @@ description: "How to import relational data from Azure SQL and SQL Server databa
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "05/25/2017"
+ms.date: "06/02/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -57,9 +57,9 @@ Create the connection object using information from the Azure portal and ODBC Da
 
 	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-The driver used on the connection is an ODBC driver. On Windows, the ODBC driver is provided by the operating system. You can run the **ODBC Data Source Administrator (64-bit)** app to verify the driver is listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](scaler-data-odbc.md).
+First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](scaler-data-odbc.md).
 
-All of the remaining connection properties are obtained from the Azure portal.
+After `Driver`, all remaining connection properties from `Server` to `Connection Timeout` are obtained from the Azure portal:
 
 1. Sign in to the [Azure portal](https://ms.portal.azure.com) and locate AdventureWorksLT. 
 
@@ -69,7 +69,7 @@ All of the remaining connection properties are obtained from the Azure portal.
 
 		Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;
 
-4. Replace the *sConnString* in the example script with a valid connection string having the correct server name, user name, and password.
+4. In the R console, provide the *sConnString* command based on the example syntax, but with valid values for server name, user name, and password.
 
 ### 2: Set the firewall
 
@@ -93,7 +93,7 @@ Producing this error is easy. Just run the entire example script (assuming a val
 
 In the R console application, create the SQL query object. The example query consists of columns from a single table, but any valid T-SQL query providing a rowset is acceptable. This table was chosen because it includes numeric data.
 
-	> squery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
+	> sQuery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
 
 Before attempting unqualified *SELECT * FROM* queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the *rowguid(uniqueidentifier)* column is not handled. Other unsupported data types are [listed here](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r).
 
@@ -131,13 +131,13 @@ Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so t
 
 		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
 
-### 7: Return information
+### 7: Return object metadata
 
 Use **rxGetInfo** to return information about the XDF data source, plus the first 50 rows:
 
 		> rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
 
-### Step 8: rxSummary
+### 8: Return summary statistics
 
 Use **rxSummary** to produce summary statistics on the data. The `~.` is used to compute summary statistic on numeric fields.
 
@@ -158,7 +158,7 @@ The following script demonstrates how to import data from a SQL Server relationa
 
 As with the previous exercise, modifications are necessary before you can run this script successfully.
 
-### Step 1: Connect
+### 1: Set the connection
 
 Create the connection object using the SQL Server database driver a local server and the sample database.
 
@@ -170,7 +170,7 @@ On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (
 
 The Server=(local) refers to a local default instance connected over TCP. A named instance is specified as computername$instancename. A remote server has the same syntax, but you should verify that that remote connections are enabled. The defaults for this setting vary depending on which edition is installed.
 
-### Step 2: Query
+### 2: Set the query
 
 In the R console application, create the SQL query object. The example query consists of columns from a single view, but any valid T-SQL query providing a rowset is acceptable. This unqualified query works because all columns in this view are supported data types.
 
@@ -179,7 +179,7 @@ In the R console application, create the SQL query object. The example query con
 > [!Tip]
 > You could skip this step and specify the query information through **RxOdbcData** via the *table* argument. Specifically, you could write `sDataSet <- RxOdbcData(table=dbo.vDMPrep, connectionString=sConnString)`.
 
-### Step 3: RxOdbcData
+### 3: Set the data source
 
 Create an **RxOdbcData** data source object based on query results. The first example is the simple case.
 
@@ -228,7 +228,7 @@ After the modifications, the variable information includes default and custom fa
 	Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
 	Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
 
-### Step 4: XDF
+### 4: Set the output file
 
 Create the XDF file to save the data to disk. Check the folder permissions for write access. 
 
@@ -240,19 +240,19 @@ On Linux, you can use this alternative path:
 
 		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
 
-### Step 5: rxImport
+### 5: Import the data
 
 Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the script with different queries without having to the delete the file each time.
 
 		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
 
-### Step 7: rxGetInfo
+### 6: Return object metadata
 
 Use **rxGetInfo** to return information about the XDF data source:
 
 		> rxGetInfo(sDataFile, getVarInfo=TRUE)
 
-### Step 7: rxSummary
+### 7: Return summary statistics
 
 Use **rxSummary** to produce summary statistics on the data. The `~.` is used to compute summary statistic on numeric fields.
 

@@ -87,14 +87,22 @@ Most of the built-in data sets are small enough to fit in-memory. Larger data se
 
 You can easily upload any CSV file into SQL Server if you want to step through demos or example script in the documentation. Use SQL Server Management Studio to import the data. You must have write access on the server. The following exercise creates two databases: RevoClaimsDB based on claims.txt, and RevoAirlineDB based on AirlineDemoSmall.csv.
 
-1. In Object Explorer, create a new database using default values. Name the databases RevoClaimsDB and RevoAirlineDB.
+1. In Object Explorer, create a new database named *RevoClaimsDB*, using default values for everything else.
 2. Right-click **RevoClaimsDB > Tasks > Import Data**.
-3. In Choose a data source, select **Flat File Source**. 
-4. Navigate to the sample data directory. By default, it is C:\Program Files\Microsoft\R Server\R_SERVER\Library\RevoScaleR\SampleData. Select the file.
-5. Accept the defaults and click **Next**.
-4. In Choose a destination, scroll down and select **SQL Server Native Client 11.0**. Accept the defaults.
-5. Click **Next** and then click **Finish** to create the database.
-6. Repeat for the airline demo data and any other data sets you want to upload.
+3. In Choose a Data Source:
+	+ For Data source, select **Flat File Source**. 
+	+ For File name, navigate to the sample data directory (by default, it is C:\Program Files\Microsoft\R Server\R_SERVER\Library\RevoScaleR\SampleData), and select *claims.txt* and click **Open**.
+	+ For Format > Text qualifier, replace *<none>* with a double quote character ". Stripping out the double quotation marks from column headings will simplify the query syntax later when importing data into a RevoScaleR session.
+	+ Accept the rest of the defaults by clicking **Next**.
+4. In Choose a Destination:
+	+ For Destination, scroll down and select **SQL Server Native Client 11.0**. 
+	+ Server name should be local, authentication should be Windows, and the database should be *RevoClaimsDB*
+	+ Accept the defaults by clicking **Next**.
+5. In Select Source Tables and Views:
+	+ Click **Preview** to confirm that column headings do not contain double quotes. 
+	+ If you see quotes enclosing the column header names, the easiest way to remove them is start over, remembering to set the *Text qualifier* field in step 3.
+6. In Save and Run Package, click **Finish** to create the database.
+7. Repeat for the airline demo data and any other data sets you want to upload.
 
 ## See Also
 

@@ -31,7 +31,7 @@
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import SQL Server data](scaler-data-sql.md)
 ### [Import ODBC data](scaler-data-odbc.md)
-### [Import and consume HDFS data](scaler-data-hdfs.md)
+### [Import HDFS data](scaler-data-hdfs.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Transform Functions](scaler-user-guide-transform-functions.md)
 ### [Write back using rxDataStep](scaler-data-writeback.md)
