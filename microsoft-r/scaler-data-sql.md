@@ -51,7 +51,7 @@ The following script imports sample data from Azure SQL database into a local XD
 
 You can run this script in an R console application, but a few modifications are necessary before you can do it successfully. Before running the script, review it line by line to see what needs changing.
 
-### Step 1: Connect
+### 1: Set the connection
 
 Create the connection object using information from the Azure portal and ODBC Data Source Administrator.
 
@@ -71,7 +71,7 @@ All of the remaining connection properties are obtained from the Azure portal.
 
 4. Replace the *sConnString* in the example script with a valid connection string having the correct server name, user name, and password.
 
-### Step 2: Firewall
+### 2: Set the firewall
 
 On Azure SQL Database, access is controlled through firewall rules created for specific IP addresses. Creating a firewall rule is a requirement for accessing Azure SQL Database from a client application.
 
@@ -85,11 +85,11 @@ On a small private network, IP addresses are most likely static, and the IP addr
 
 On corporate networks, IP addresses can change on computer restarts, through network address translations, or other reasons described in [this article](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure). It can be hard to get the right IP address, even through **IPConfig** and **hostname -I**.
   
-One way to get the right IP address is from the error message reported on a connection failure. If you get the "ODBC Error in SQLDisconnect" error message, it will include this text: "Client with IP address *<ip-address>* is not allowed to access the server". The IP address reported in the message is that one actually used on the connection, and it should be specified as the start and ending IP range in your firewall rule. 
+One way to get the right IP address is from the error message reported on a connection failure. If you get the "ODBC Error in SQLDisconnect" error message, it will include this text: "Client with IP address *<ip-address>* is not allowed to access the server". The IP address reported in the message is that one actually used on the connection, and it should be specified as the start and ending IP range in your firewall rule in the Azure portal. 
 
 Producing this error is easy. Just run the entire example script (assuming a valid connection string and write permissions to create the XDF), concluding with **rxImport**. When **rxImport** fails, copy the IP address reported in the message, and use it to set the firewall rule in the Azure portal. Wait a few minutes, and then retry the script.
 
-### Step 3: Query
+### 3: Set the query
 
 In the R console application, create the SQL query object. The example query consists of columns from a single table, but any valid T-SQL query providing a rowset is acceptable. This table was chosen because it includes numeric data.
 
@@ -105,7 +105,7 @@ Queries with unsupported data types produce the error below. If you get this err
 
 Queries should be data extraction queries (SELECT and SHOW statements) for reading data into a data frame or .xdf file. INSERT queries are not supported. Because queries are used to populate a single data frame or .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported. Compound queries, however, producing a single extracted table (such as queries linked by AND or OR, or involving multiple FROM clauses) are supported.
 
-### Step 4: RxOdbcData
+### 4: Set the data source
 
 Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](scaler-user-guide-data-source.md).
 
@@ -113,7 +113,7 @@ Create the **RxOdbcData** data object using the connection and query object spec
 
 You could substitute **RxSqlServerData** for **RxOdbcData** if you want the option of setting the compute context to a remote SQL Server instance (for example, if you want to run **rxMerge**, **rxImport**, or **rxSort** on a remote SQL Server that also has an R Server installation on the same machine). Otherwise, **RxOdbcData** is local compute context only.
 
-### Step 5: XDF
+### 5: Set the output file
 
 Create the XDF file to save the data to disk. Check the folder permissions for write access. 
 
@@ -125,13 +125,13 @@ On Linux, you can use this alternative path:
 
 		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
 
-### Step 6: rxImport
+### 6: Import the data
 
 Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the script with different queries without having to the delete the file each time.
 
 		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
 
-### Step 7: rxGetInfo
+### 7: Return information
 
 Use **rxGetInfo** to return information about the XDF data source, plus the first 50 rows:
 
@@ -281,6 +281,7 @@ The following example uses the SalelOrderHeader table because it provides more c
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
++ [SQL Server tutorial for R](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
 + [XDF files](scaler-data-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](scaler-user-guide-data-import.md)

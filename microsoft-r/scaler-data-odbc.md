@@ -26,9 +26,7 @@ ms.custom: ""
 
 # Import relational data using ODBC (Microsoft R)
 
-RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. 
-
-ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database. The ODBC Driver Manager sets up and manages the connection between them.
+RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database. The ODBC Driver Manager sets up and manages the connection between them.
 
 Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.
 
@@ -38,15 +36,17 @@ To import data from a relational database management system, do the following:
 2. Install ODBC drivers
 3. Create an **RxOdbcData** data source
 4. For read operations, use **rxImport** to read data
-5. For write operations, use **rxDataStep** to write data
+5. For write operations, use **rxDataStep** to write data back to the data source
 
 ## About ODBC  in Microsoft R
 
-In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few. ODBC is primarily required for **rxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **rxSqlServerData**, the connection fails. Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
+In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few. ODBC is primarily required for **RxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **RxSqlServerData**, the connection fails. 
 
-For Teradata, you should avoid ODBC and create an **rxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
 
-For SQL Server, you should generally use **rxSqlServerData** as the data source (see this [SQL Server tutorial](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)), except when accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), or whenimporting data from Azure SQL Database.
+For Teradata, you should avoid ODBC and create an **RxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
+
+For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](scaler-data-sql.md).
 
 ## How to configure ODBC for relational data access
 
@@ -317,6 +317,7 @@ This returns the following:
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
++ [Write back to an ODBC data source using rxDataStep](scaler-data-writeback.md)
 + [XDF files](scaler-data-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](scaler-user-guide-data-import.md)

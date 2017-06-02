@@ -6,7 +6,6 @@
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
 
-
 # [Tutorials](microsoft-r-tutorials.md)
 ## [Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
 ## [Import and transform data](scaler-getting-started-data-import-exploration.md)
@@ -22,10 +21,10 @@
 ## [Parallel processing example (with rxExecby)](quickstart-rxexecby.md)
 ## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-## Concepts
-### [Data source objects](scaler-user-guide-data-source.md)
-### [XDF files](scaler-data-xdf.md)
-### [Compute context](scaler-data-compute-context.md)
+# Concepts
+## [Data source objects](scaler-user-guide-data-source.md)
+## [XDF files](scaler-data-xdf.md)
+## [Compute context](scaler-data-compute-context.md)
 
 # [How-to guides](data-analysis-in-microsoft-r.md)
 ## Load and transform data 
