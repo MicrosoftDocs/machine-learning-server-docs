@@ -158,7 +158,7 @@ The following script demonstrates how to import data from a SQL Server relationa
 
 As with the previous exercise, modifications are necessary before you can run this script successfully.
 
-### 1: Set the connection
+### 1 - Set the connection
 
 Create the connection object using the SQL Server database driver a local server and the sample database.
 
@@ -170,7 +170,7 @@ On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (
 
 The Server=(local) refers to a local default instance connected over TCP. A named instance is specified as computername$instancename. A remote server has the same syntax, but you should verify that that remote connections are enabled. The defaults for this setting vary depending on which edition is installed.
 
-### 2: Set the query
+### 2 - Set the query
 
 In the R console application, create the SQL query object. The example query consists of columns from a single view, but any valid T-SQL query providing a rowset is acceptable. This unqualified query works because all columns in this view are supported data types.
 
@@ -179,7 +179,7 @@ In the R console application, create the SQL query object. The example query con
 > [!Tip]
 > You could skip this step and specify the query information through **RxOdbcData** via the *table* argument. Specifically, you could write `sDataSet <- RxOdbcData(table=dbo.vDMPrep, connectionString=sConnString)`.
 
-### 3: Set the data source
+### 3 - Set the data source
 
 Create an **RxOdbcData** data source object based on query results. The first example is the simple case.
 
@@ -228,7 +228,7 @@ After the modifications, the variable information includes default and custom fa
 	Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
 	Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
 
-### 4: Set the output file
+### 4 - Set the output file
 
 Create the XDF file to save the data to disk. Check the folder permissions for write access. 
 
@@ -240,19 +240,19 @@ On Linux, you can use this alternative path:
 
 		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
 
-### 5: Import the data
+### 5 - Import the data
 
 Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the script with different queries without having to the delete the file each time.
 
 		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
 
-### 6: Return object metadata
+### 6 - Return object metadata
 
 Use **rxGetInfo** to return information about the XDF data source:
 
 		> rxGetInfo(sDataFile, getVarInfo=TRUE)
 
-### 7: Return summary statistics
+### 7 - Return summary statistics
 
 Use **rxSummary** to produce summary statistics on the data. The `~.` is used to compute summary statistic on numeric fields.
 

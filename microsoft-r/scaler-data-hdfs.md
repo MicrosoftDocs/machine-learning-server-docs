@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: Microsoft R Server for Hadoop**
 
-This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file. It also provides examples that demonstrate several common use cases for using HDFS data in a RevoScaleR session.
+This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file. Example script shows several use cases for using RevoScaleR functions with HDFS data.
 
 ## Load data from HDFS
 
@@ -55,48 +55,48 @@ The **RxHdfsFileSystem** function creates a file system object for the HDFS file
 
 ## Write XDF to HDFS
 
-The compute context determines whether you can write to the native file system or to HDFS. To get the current compute context, use **rxGetComputeContext()**.
-
-In the local compute context, out files must be written to the native file system. However, by setting the compute context to **RxHadoopMR** or **RxSpark**, you can write to HDFS.
+Once you load data from a text file or another source, you can save it as an .xdf file to either HDFS or the native file system. The compute context determines where the file can be saved. To get the current compute context, use **rxGetComputeContext()**. In a local compute context, out files must be written to the native file system. However, by setting the compute context to **RxHadoopMR** or **RxSpark**, you can write to HDFS.
 
 The following example shows how to write a data frame as an .xdf file directly to HDFS using the built-in Iris data set.
 
 1. Set the user name: 
 
-    > username <- "<your-user-name-here>" 
+    	> username <- `<your-user-name-here>` 
 
 2. Set folder paths:
 
-    hdfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
-    localfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
-    setwd(localfsDataDirRoot)
+		hdfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
+		localfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
+		setwd(localfsDataDirRoot)
  
 3. Set compute context: 
 
-    port <- 8020 # KEEP IF USING THE DEFAULT
-    host <- system("hostname", intern=TRUE)
-    hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
+		port <- 8020 # KEEP IF USING THE DEFAULT
+		host <- system("hostname", intern=TRUE)
+		hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
 
-    myHadoopCluster <- RxHadoopMR(
+		myHadoopCluster <- RxHadoopMR(
 
-    nameNode= host, 
-    port=port, 
-    consoleOutput=TRUE)
-    
-    rxSetComputeContext(myHadoopCluster)
+		nameNode= host, 
+		port=port, 
+		consoleOutput=TRUE)
+		
+		rxSetComputeContext(myHadoopCluster)
 
 4. Write the XDF to a text file on HDFS:
 
-    air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
-    air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
-    
-    rxDataStep(air7x,air7t)
+		air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
+		air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
+		
+		rxDataStep(air7x,air7t)
 
 ## Write a composite XDF
 
-A *composite XDF* refers to a collection of .xdf files rather than a single .xdf out file. You can create a composite .xdf if you want to load, refresh, and analyze a file subset. A composite set consists of a named directory with two subdirectories, *data* and *metadata*, containing split data .xdfd files and metadata .xdfm files, respectively. The .xdfm file contains the metadata for all of the .xdfd files under the same parent folder. 
+A *composite XDF* refers to a collection of .xdf files rather than a single .xdf out file. You can create a composite .xdf if you want to load, refresh, and analyze data as a collection of smaller files that can be managed independently or used collectively, depending on the need. 
 
-**RxXdfData** is used to specify a composite set, and **rxImport** is used to read in the data and output the generated files. 
+A composite set consists of a named parent directory with two subdirectories, *data* and *metadata*, containing split data .xdfd files and metadata .xdfm files, respectively. The .xdfm file contains the metadata for all of the .xdfd files under the same parent folder. 
+
+**RxXdfData** is used to specify a composite set, and **rxImport** is used to read in the data and output the generated .xdfd files. 
 
 When the compute context is **RxHadoopMR**, a composite set of XDF is always created. In a local compute context, which you can use on HDFS, you must specify the option *createCompositeSet=TRUE* within the **RxXdfData** if you want the composite set.
 
@@ -121,7 +121,7 @@ The following example demonstrates creating a composite set of .xdf files within
 	# Run rxImport to convert the data info XDF and save as a composite file
 	rxImport(AirDemoSrcObj, outFile=AirDemoXdfObj)
 
-This creates a directory named testXdf, with subdirectories data and metadata subdirectories containing the split .xdfd and .xdfm files.
+This creates a directory named testXdf, with the data and metadata subdirectories, containing the split .xdfd and .xdfm files.
 
 	list.files(AirDemoXdfDir, recursive=TRUE, full.names=TRUE)
 
@@ -160,16 +160,16 @@ Run **rxGetInfo** to return metadata, including the number of composite data fil
 
 ## Control generated file output
 
-Filenames are based on the parent directory name.
+Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](scaler-hadoop-getting-started.md).
 
-Number of .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](scaler-hadoop-getting-started.md).
+Filenames are based on the parent directory name.
 
 Rows per file are influenced by compute context: 
 
 + When compute context is local with *createCompositeSet=TRUE*, the number of blocks put into each .xdfd file in the composite set.
 + When compute context is HadoopMR, the number of rows in each .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by *rowsPerRead*. 
 
-## Load composite XDF for analysis
+## Load a composite XDF 
 
 You can reference a composite XDF using the data source object used as the *outFile* for **rxImport**. To load a composite XDF residing on the HDFS file system, set **RxXdfData** to the parent folder having data and metadata subdirectories:
 

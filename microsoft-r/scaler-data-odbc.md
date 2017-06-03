@@ -52,7 +52,7 @@ For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeabl
 
 Follow these steps to configure ODBC for loading data from an external relational database.
 
-### 1: Install unixODBC 
+### 1 - Install unixODBC 
 
 **Linux only**
 
@@ -72,7 +72,7 @@ If unixODBC is not installed, issue the following commands to add it:
 
 For more information, SQL Server documentation provides in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
 
-### 2: Install drivers
+### 2 - Install drivers
 
 ODBC drivers must be installed on the machine running R Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
 
@@ -102,7 +102,7 @@ MySQL | [Download Connector/ODBC](https://dev.mysql.com/downloads/connector/odbc
 PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
 Cloudera | [Cloudera ODBC Driver for Hive](https://www.cloudera.com/downloads/connectors/hive/odcbc/2-5-12.html) |
 
-### 3: Connect and import
+### 3 - Connect and import
 
 This step uses examples to illustrate connection strings, query strings, **RxOdbcData** data source objects, XDF objects, and import commands for various platform configurations.
 
