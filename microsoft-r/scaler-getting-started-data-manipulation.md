@@ -30,7 +30,7 @@ ms.custom: ""
 
 This tutorial builds on what you learned in the previous [data import and exploration tutorial](scaler-getting-started-data-import-exploration.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
-RevoScaleR functions can be loosely categorized as data-oriented, or platform-specific for tapping into capabilities of a particular database system, operating system, or distributed file system. This tutorial focuses on data-oriented functions to minimize the dependencies.
+This tutorial focuses on analysis and predictions.
 
 > [!Note]
 > R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.

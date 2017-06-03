@@ -26,7 +26,7 @@ ms.custom: ""
 
 ---
 
-# Learn how to use R Server with sparklyr (step-by-step examples)
+# RevoScaleR with sparklyr step-by-step examples
 
 Micorosft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
