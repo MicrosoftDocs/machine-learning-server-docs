@@ -71,7 +71,7 @@ After `Driver`, all remaining connection properties from `Server` to `Connection
 
 4. In the R console, provide the *sConnString* command based on the example syntax, but with valid values for server name, user name, and password.
 
-### 2: Set the firewall
+### 2: Set firewall rules
 
 On Azure SQL Database, access is controlled through firewall rules created for specific IP addresses. Creating a firewall rule is a requirement for accessing Azure SQL Database from a client application.
 

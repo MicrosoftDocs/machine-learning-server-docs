@@ -52,7 +52,9 @@ For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeabl
 
 Follow these steps to configure ODBC for loading data from an external relational database.
 
-### 1: Install unixODBC (Linux only)
+### 1: Install unixODBC 
+
+**Linux only**
 
 An ODBC Driver Manager manages communication between applications and drivers. On Linux, an ODBC Driver Manager is not typically bundled in a Linux distribution. Although several driver managers are available, Microsoft R supports the [unixODBC Driver Manager](http://www.unixodbc.org/). 
 
@@ -108,7 +110,7 @@ Query strings must consist of data extraction queries (SELECT and SHOW statement
 
 Recall that **RxOdbcData** provides local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
 
-#### RxOdbcData Example for SQL Server
+#### Using SQL Server
 
 This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](scaler-user-guide-sample-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
 
@@ -160,7 +162,7 @@ After re-import, variable metadata should be as follows:
 		100 factor levels: 289.00 282.00 133.00 160.00 372.00 ... 119.00 385.00 324.00 192.00 123.00
 	Var 6: number, Type: integer, Low/High: (0, 434)
 
-### RxOdbcData Example for Oracle Express 
+#### Using Oracle Express 
 
 Oracle Express is a free version of the popular Oracle database management system intended for evaluation and education. It uses the same ODBC drivers as the commercial offerings. The follow example demonstrates an Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
 
@@ -176,7 +178,7 @@ This yields a list of tables similar to the following (showing partial results f
 	  [7] "MVIEW$_ADV_LOG"                "MVIEW$_ADV_FILTERINSTANCE"    
 	  [9] "MVIEW$_ADV_LEVEL"              "MVIEW$_ADV_ROLLUP"            
 
-### RxOdbcData Example for MySQL Files on Red Hat Enterprise Linux**
+#### Using MySQL on Red Hat Enterprise Linux**
 
 As a first step, specify the name of your DSN. On Linux, this is the same name specified for the ODBC configuration.
 
