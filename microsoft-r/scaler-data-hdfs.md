@@ -92,18 +92,17 @@ The following example shows how to write a data frame as an .xdf file directly t
     
     rxDataStep(air7x,air7t)
 
-## Write a composite XDF on HDFS
+## Write a composite XDF
 
-On HDFS, the .xdf file format can store data in a composite set of files rather than a single file. A composite set consists of a named directory with two subdirectories, *data* and *metadata*, containing split data .xdfd files and metadata .xdfm files, respectively. The .xdfm file contains the metadata for all of the .xdfd files under the same parent folder. 
+A *composite XDF* refers to a collection of .xdf files rather than a single .xdf out file. You can create a composite .xdf if you want to load, refresh, and analyze a file subset. A composite set consists of a named directory with two subdirectories, *data* and *metadata*, containing split data .xdfd files and metadata .xdfm files, respectively. The .xdfm file contains the metadata for all of the .xdfd files under the same parent folder. 
 
-> [!Note]
-> Split files remain within a single HDFS block. The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](scaler-hadoop-getting-started.md).
->
-> You can split files on any platform, not just HDFS. For more information, see [XDF files](scaler-data-xdf.md).
+**RxXdfData** is used to specify a composite set, and **rxImport** is used to read in the data and output the generated files. 
+
+When the compute context is **RxHadoopMR**, a composite set of XDF is always created. In a local compute context, which you can use on HDFS, you must specify the option *createCompositeSet=TRUE* within the **RxXdfData** if you want the composite set.
 
 **To create a composite file**
 
-1. Optionally, set the compute context to **RxHadoopMR** or **RxSpark**. In these compute contexts, creating a composite set is the default. Otherwise, use the default local compute context and add *createCompositeSet* to force the composite set.
+1. Use **RxGetComputeContext()** to determine whether you need to set *createCompositeSet*. In **RxHadoopMR** or **RxSpark**, you can omit the argument. For local compute context, add *createCompositeSet=TRUE* to force the composite set.
 2. Use **RxTextData** to create a data source object based on a single file or a directory of files.
 3. Use **RxXdfData** to create an XDF for use as the *outFile* argument.
 3. Use **rxImport** function to read source files and save the output as a composite XDF.
@@ -133,7 +132,7 @@ Output should be as follows:
 		[3] "/tmp/testXdf/data/testXdf_3.xdfd"   
 		[4] "/tmp/testXdf/metadata/testXdf.xdfm"
 
-run **rxGetInfo** to return metadata, including the number of composite data files, and the first 10 rows.
+Run **rxGetInfo** to return metadata, including the number of composite data files, and the first 10 rows.
 
 	rxGetInfo(AirDemoXdfObj, getVarInfo=TRUE, numRows=10)
 			File name: /tmp/testXdf 
@@ -159,13 +158,16 @@ run **rxGetInfo** to return metadata, including the number of composite data fil
 			9        -2  20.833334    Monday
 			10      -15  11.833333    Monday
 
-## Controlling generated file output
+## Control generated file output
 
-Filenames are based on the parent directory name, but you can ap
+Filenames are based on the parent directory name.
 
-Number of files generated are based on ....
+Number of .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](scaler-hadoop-getting-started.md).
 
-Rows per file are influenced by compute context. When the compute context is HadoopMR, the number of rows in each .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by *rowsPerRead*. 
+Rows per file are influenced by compute context: 
+
++ When compute context is local with *createCompositeSet=TRUE*, the number of blocks put into each .xdfd file in the composite set.
++ When compute context is HadoopMR, the number of rows in each .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by *rowsPerRead*. 
 
 ## Load composite XDF for analysis
 

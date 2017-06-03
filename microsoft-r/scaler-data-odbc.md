@@ -178,7 +178,7 @@ This yields a list of tables similar to the following (showing partial results f
 	  [7] "MVIEW$_ADV_LOG"                "MVIEW$_ADV_FILTERINSTANCE"    
 	  [9] "MVIEW$_ADV_LEVEL"              "MVIEW$_ADV_ROLLUP"            
 
-#### Using MySQL on Red Hat Enterprise Linux**
+#### Using MySQL on Red Hat Enterprise Linux
 
 As a first step, specify the name of your DSN. On Linux, this is the same name specified for the ODBC configuration.
 
