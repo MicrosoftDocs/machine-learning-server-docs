@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Transforming and Subsetting Data"
+title: "Transform and subset data in Microsft R"
 description: "Data manipulation with RevoScaleR."
 keywords: ""
-author: "richcalaway"
+author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.date: "06/04/2017"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -24,19 +24,25 @@ ms.custom: ""
 
 ---
 
-# Transforming and Subsetting Data
+# Transform and subset data in Microsft R
 
 RevoScaleR provides a full set of functions for modifying, transforming, and subsetting data stored in memory in a data frame or in an .xdf file on disk:
 
--   *rxDataStep* is used to subset rows and/or variables and to create new variables by transforming existing variables. It also allows for easy conversion between data in data frames and .xdf files.
--   *rxSetVarInfo* is used to change variable information such as the name or description of a variable in an .xdf file or data frame. *rxSetInfo* is used to add or change a data set description.
--   *rxFactors* is used to create or modify factors (categorical variables) based on existing variables.
--   *rxSort* is used to sort a data set by one or more key variables.
--   *rxMerge* is used to merge two data sets by one or more key variables.
+| Function | Use case|
+|----------|-----------|
+| **rxDataStep** | Create a subset rows or variables, or create new variables by transforming existing variables. Also used for easy conversion between data in data frames and .xdf files. |
+| **rxSetVarInfo** | Change variable information, such as the name or description, in an .xdf file or data frame. |
+| **rxSetInfo** | Add or change a data set description. |
+| **rxFactors** | Create or modify factors (categorical variables) based on existing variables. |
+| **rxSort** | Sort a data set by one or more key variables. |
+| **rxMerge** | Merge two data sets by one or more key variables. |
 
-## Creating a Subset of Rows and Columns
 
-A common use of *rxDataStep* is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. The call to rxDataStep uses the *rowSelection* argument to select only the rows where the variable *y* is greater than .5, and the *varsToKeep* argument to keeps only the variables *y* and *z*. The *rowSelection* argument is an R expression that evaluates to *TRUE* if the observation should be kept. The *varsToKeep* argument contains a list of variable names to read in from the original data set. Because no *outFile* is specified, a data frame is returned:
+## Create a subset
+
+A common use of **rxDataStep** is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. 
+
+The call to **rxDataStep** uses the *rowSelection* argument to select only the rows where the variable *y* is greater than .5, and the *varsToKeep* argument to keeps only the variables *y* and *z*. The *rowSelection* argument is an R expression that evaluates to *TRUE* if the observation should be kept. The *varsToKeep* argument contains a list of variable names to read in from the original data set. Because no *outFile* is specified, a data frame is returned.
 	
 	# Create a data frame
 	set.seed(59)
@@ -61,7 +67,9 @@ A common use of *rxDataStep* is to create a new data set with a subset of rows a
 	Var 2: z, Type: integer, Low/High: (1, 20)
 
 
-Subsetting is particularly useful if your original data set contains millions of rows or hundreds of thousands of variables. As a smaller example, the CensusWorkers.xdf sample data file has six variables and 351,121 rows. To create a subset containing only workers who have worked less than 30 weeks in the year and five variables, we can again use *rxDataStep* with the *rowSelection* and *varsToKeep* arguments. Since the resulting data set will clearly fit in memory, we omit the *outFile* argument and assign the result of the data step, then use *rxGetInfo* to see our results as usual:
+Subsetting is particularly useful if your original data set contains millions of rows or hundreds of thousands of variables. As a smaller example, the CensusWorkers.xdf sample data file has six variables and 351,121 rows. 
+
+To create a subset containing only workers who have worked less than 30 weeks in the year and five variables, we can again use **rxDataStep** with the *rowSelection* and *varsToKeep* arguments. Since the resulting data set will clearly fit in memory, we omit the *outFile* argument and assign the result of the data step, then use **rxGetInfo** to see our results as usual:
 
 	readPath <- rxGetOption("sampleDataDir")
 	censusWorkers <- file.path(readPath, "CensusWorkers.xdf")
@@ -69,10 +77,8 @@ Subsetting is particularly useful if your original data set contains millions of
 	              varsToKeep = c("age", "sex", "wkswork1", "incwage", "perwt"))
 	rxGetInfo(partWorkers, getVarInfo = TRUE)
 
-
 The result is a data set with 14,317 rows:
 
-	The result is a data set with 14,317 rows:
 	Data frame: partWorkers 
 	Number of observations: 14317 
 	Number of variables: 5 
@@ -94,19 +100,23 @@ Alternatively, and in this case more easily, you can use *varsToDrop* to prevent
 	        rowSelection = wkswork1 < 30,
 	        varsToDrop = c("state"), overwrite = TRUE)
 
-As noted above, if you omit the *outFile* argument to *rxDataStep,* then the results will be returned in a data frame in memory. This is true whether or not the input data is a data frame or an .xdf file (assuming the resulting data is small enough to reside in memory). If an *outFile* is specified, a data source object representing the new .xdf file is returned, which can be used in subsequent RevoScaleR function calls.
+As noted above, if you omit the *outFile* argument to **rxDataStep**, then the results will be returned in a data frame in memory. This is true whether or not the input data is a data frame or an .xdf file (assuming the resulting data is small enough to reside in memory). If an *outFile* is specified, a data source object representing the new .xdf file is returned, which can be used in subsequent RevoScaleR function calls.
 
-	rxGetVarInfo( partWorkersDS )
+	rxGetVarInfo(partWorkersDS)
 
-## Transforming Data with rxDataStep
+## Transform Data with rxDataStep
 
-A crucial step in many analyses is transforming the data into the form best suited for the chosen analysis. For example, variations in scale between variables can sometimes make it convenient to take a log or a power of the original variable before fitting a linear model. In RevoScaleR, transforming data is an important issue because we are typically reading and processing data from disk, so we want to be as efficient as possible, minimizing the passes through the data. To provide maximum flexibility, RevoScaleR allows you to perform data transformations in virtually all of its functions, from the *rxImport* function discussed in the previous chapter, to the *rxDataStep* function that is the primary focus here, to the analysis functions *rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm,* *rxCrossTabs*, *rxCube, rxCovCor,* and *rxKmeans* discussed in subsequent chapters. In all these cases, the basic procedures for transforming the data are the same.
+A crucial step in many analyses is transforming the data into the form best suited for the chosen analysis. For example, variations in scale between variables can sometimes make it convenient to take a log or a power of the original variable before fitting a linear model. In RevoScaleR, transforming data is an important issue because we are typically reading and processing data from disk, so we want to be as efficient as possible, minimizing the passes through the data. 
+
+To provide maximum flexibility, RevoScaleR allows you to perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**,**rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**. In all cases, the basic approach for data transforms are the same.
 
 The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated and typically is an assignment either creating a new variable or modifying an existing variable from the original data set.
 
-### Creating and Transforming Variables
+### Create or modify a variable
 
-To create or modify variables, we use the *transforms* argument to *rxDataStep*. The *transforms* argument is specified as a list of expressions. Any R expression that operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation) can be used. Let’s begin with a simple data frame containing a small sample of transaction data:
+To create or modify variables, we use the *transforms* argument to **rxDataStep**. The *transforms* argument is specified as a list of expressions. Any R expression that operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation) can be used. 
+
+Start with a simple data frame containing a small sample of transaction data:
 	
 	#  Transforming Data with rxDataStep
 	
@@ -122,7 +132,7 @@ To create or modify variables, we use the *transforms* argument to *rxDataStep*.
 	   Age =          c( 20,  51,  32,  16,  61, 42,  35, 99, 29, 55),
 	   stringsAsFactors = FALSE)
 	
-Now we would like to perform a series of data transformations:
+Apply a series of data transformations:
 
 -   Compute the total expenditures for each store visit
 -   Compute the average category expenditure for each store visit
@@ -133,9 +143,9 @@ Now we would like to perform a series of data transformations:
 -   Create a logical variable for expenditures of $50 or more on either Food or Wine
 -   Remove the variable BuyDate from the data set
 
-The following call to rxDataStep will accomplish all of the above, returning a new data frame with the transformed variables:
+The following call to **rxDataStep** will accomplish all of the above, returning a new data frame with the transformed variables:
 
-				newExpData = rxDataStep( inData = expData, 
+	newExpData = rxDataStep( inData = expData, 
 	    transforms = list(
 	        Total      = Food + Wine + Garden + House,
 	        AveCat     = Total/4,
@@ -150,7 +160,6 @@ The following call to rxDataStep will accomplish all of the above, returning a n
 	        FoodWine = ifelse( Wine > 50, TRUE, FoodWine),
 	        BuyDate  = NULL))
 	newExpData
-
 
 The new data frame shows all of the transformed data:
 
@@ -167,9 +176,11 @@ The new data frame shows all of the transformed data:
 	10   14   56      0    23   F  55    93  23.25    FALSE  Tu   medium     TRUE
 
 
-If we had a large data set containing expenditure data in an .xdf file, we could use exactly the same transformation code; the only changes in the call to *rxDataStep* would be the *inData* and specifying an *outFile* for the newly created data set.
+If we had a large data set containing expenditure data in an .xdf file, we could use exactly the same transformation code; the only changes in the call to **rxDataStep** would be the *inData* and the addition of an *outFile* for the newly created data set.
 
-Sometimes it is useful to use computed values as part of a transformation. For example, you might want to impute missing values, replacing any missings with the variable mean. Let’s look at a simple data frame example; again the same basic code could be used for a huge data set. First create a data set with missing values:
+Sometimes it is useful to use computed values as part of a transformation. For example, you might want to impute missing values, replacing any omissions with the variable mean. Let’s look at a simple data frame example; again the same basic code could be used for a huge data set. 
+
+First create a data set with missing values:
 
 	# Create a data frame with missing values
 	set.seed(59)
@@ -181,7 +192,7 @@ Sometimes it is useful to use computed values as part of a transformation. For e
 	myData1$y[ymiss] <- NA
 	rxGetInfo(myData1, numRows = 5)
 
-The call to *rxGetInfo* shows the following:
+The call to **rxGetInfo** shows the following:
 
 	Data frame: myData1 
 	Number of observations: 100 
@@ -194,7 +205,7 @@ The call to *rxGetInfo* shows the following:
 	4  1.3998593 0.26298559
 	5         NA 0.97069679
 
-Now use *rxSummary* (discussed in detail in a later chapter) to compute summary statistics, putting the computed means into a named vector:
+Now use **rxSummary** to compute summary statistics, putting the computed means into a named vector:
 
 	# Compute the summary statistics and extract
 	# the means in a named vector
@@ -210,7 +221,7 @@ The computed statistics are:
 	y 0.54622241 0.3003457  0.04997869 0.9930338       80         20
 
 
-Next we pass the computed means into a *rxDataStep* using the *transformObjects* argument:
+Finally, we pass the computed means into a **rxDataStep** using the *transformObjects* argument:
 
 	# Use rxDataStep to replace missings with imputed mean values
 	myData2 <- rxDataStep(inData = myData1, transforms = list(
@@ -247,7 +258,7 @@ In doing a data step operation, RevoScaleR reads in a chunk of data read from th
 		ageFactor = cut(age, breaks=seq(from = 20, to = 70, by = 5), 
 	    right = FALSE)))
 
-The *rxGetInfo* function reveals the added variable:
+The **rxGetInfo** function reveals the added variable:
 
 	rxGetInfo("newCensusWorkers", getVarInfo = TRUE)
 	  File name: C:\YourOutputPath\newCensusWorkers.xdf 
@@ -274,7 +285,7 @@ For example, suppose you would like to estimate a linear model using wage income
 
 	educExp <- c(Connecticut=1795.57, Washington=1170.46, Indiana = 1289.66)
 
-We can then use *rxDataStep* to add the per capita education expenditure as a new variable using the *transforms* argument, passing *educExp* to the *transformObjects* argument as a named list:
+We can then use **rxDataStep** to add the per capita education expenditure as a new variable using the *transforms* argument, passing *educExp* to the *transformObjects* argument as a named list:
 
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
 	rxDataStep(inData = censusWorkers, outFile = "censusWorkersWithEduc",
@@ -282,7 +293,7 @@ We can then use *rxDataStep* to add the per capita education expenditure as a ne
 	         stateEducExpPC = educExp[match(state, names(educExp))] ), 
 		transformObjects= list(educExp=educExp))
 
-The *rxGetInfo* function reveals the added variable:
+The **rxGetInfo** function reveals the added variable:
 
 	rxGetInfo("censusWorkersWithEduc.xdf",getVarInfo=TRUE)
 	  File name: C:\YourOutputPath\censusWorkersWithEduc.xdf 
@@ -304,9 +315,9 @@ The *rxGetInfo* function reveals the added variable:
 	         3 factor levels: Connecticut Indiana Washington
 	  Var 7: stateEducExpPC, Type: numeric, Low/High: (1170.4600, 1795.5700)
 	  
-## Using the Data Step to Create an .xdf File from a Data Frame
+## Convert a data frame to XDF
 
-You can use all of the functionality provided by the *rxDataStep* function to create an .xdf file from a data frame for further use. For example, create a simple data frame:
+You can use all of the functionality provided by the **rxDataStep** function to create an .xdf file from a data frame for further use. For example, create a simple data frame:
 
 	#  Using the Data Step to Create an .xdf File from a Data Frame
 	
@@ -327,9 +338,9 @@ Now create an .xdf file, using a row selection and creating a new variable. The 
 	  Number of blocks: 2
 
 
-## Converting .xdf Files to Text
+## Convert XDF to Text
 
-If you need to share data with others not using .xdf data files, you can export your .xdf files to text format using the *rxDataStep* function. For example, we can write the claims.xdf file we created earlier to text format as follows:
+If you need to share data with others not using .xdf data files, you can export your .xdf files to text format using the **rxDataStep** function. For example, we can write the claims.xdf file we created earlier to text format as follows:
 
 	#  Converting .xdf Files to Text
 	claimsCsv <- RxTextData(file="claims.csv")
@@ -347,9 +358,9 @@ If you have a large number of variables, you can choose to write out only a subs
 	rxDataStep(inData=claimsXdf, outFile=claimsTxt, varsToDrop="number", 
 	            overwrite=TRUE)
 
-## Re-Blocking an .xdf File 
+## Re-Block an .xdf File 
 
-After a series of data import or row selection steps, you may find that you have an .xdf file with very uneven block sizes. This may make it difficult to efficiently perform computations by “chunk.” To find the sizes of the blocks in your .xdf file, use *rxGetInfo* with the *getBlockSizes* argument set to TRUE. For example, let’s look at the block sizes for the sample CensusWorkers.xdf file:
+After a series of data import or row selection steps, you may find that you have an .xdf file with very uneven block sizes. This may make it difficult to efficiently perform computations by “chunk.” To find the sizes of the blocks in your .xdf file, use **rxGetInf** with the *getBlockSizes* argument set to TRUE. For example, let’s look at the block sizes for the sample CensusWorkers.xdf file:
 
 	#  Re-Blocking an .xdf File
 	
@@ -365,7 +376,7 @@ The following information is provided:
 	Compression type: zlib
 	Rows per block: 95420 42503 1799 131234 34726 45439
 
-We see that, in fact, the number of rows per block varies from a low of 1799 to a high of 131,234. To create a new file with more even-sized blocks, use the rowsPerRead argument in rxDataStep:
+We see that, in fact, the number of rows per block varies from a low of 1799 to a high of 131,234. To create a new file with more even-sized blocks, use the *rowsPerRead* argument in **rxDataStep**:
 
 	newFile <- "censusWorkersEvenBlocks.xdf"
 	rxDataStep(inData = fileName, outFile = newFile, rowsPerRead = 60000)
@@ -380,9 +391,9 @@ The new file has blocks sizes of 60,000 for all but the last slightly smaller bl
 	Compression type: zlib
 	Rows per block: 60000 60000 60000 60000 60000 51121
 
-## Modifying Variable Information
+## Modify variable metadata
 
-To change variable information (rather than the data values themselves), use the function *rxSetVarInfo*. For example, using the data file created above, we can change the names of two variables and add descriptions:
+To change variable information (rather than the data values themselves), use the function **rxSetVarInfo**. For example, using the data file created above, we can change the names of two variables and add descriptions:
 	
 	#  Modifying Variable Information
 	
@@ -408,9 +419,9 @@ To change variable information (rather than the data values themselves), use the
 	Var 7: stateEducExpPC, State Per Capita Educ Exp 
 	       Type: numeric, Low/High: (1170.4600, 1795.5700)
 
-## Sorting Data
+## Sort data
 
-Many analysis and plotting algorithms require as a first step that the data be sorted. Sorting a massive data set is both memory-intensive and time-consuming, but the *rxSort* function provides an efficient solution. The *rxSort* function allows you to sort by one or many keys. A *stable* sorting routine is used, so that, in the case of ties, remaining columns are left in the same order as they were in the original data set.
+Many analysis and plotting algorithms require as a first step that the data be sorted. Sorting a massive data set is both memory-intensive and time-consuming, but the **rxSort** function provides an efficient solution. The **rxSort** function allows you to sort by one or many keys. A *stable* sorting routine is used, so that, in the case of ties, remaining columns are left in the same order as they were in the original data set.
 
 As a simple example, we can sort the census worker data by *age* and *incwage*. We will sort first by *age*, using the default increasing sort, and then by *incwage*, which we will sort in decreasing order:
 
@@ -445,9 +456,11 @@ The first few lines of the sorted file can be viewed as follows:
 
 If the sort keys contain missing values, you can use the *missingsLow* flag to specify whether they are sorted as low values (*missingsLow=TRUE*, the default) or high values (*missingsLow=FALSE*).
 
-### Removing Duplicates While Sorting
+### Remove duplicates during sort
 
-In many situations, you are sorting a large data set by a particular key, for example, userID, but are looking for a sorted list of unique userIDs. The *removeDupKeys* argument to rxSort allows you to remove the duplicate entries from a sorted list. This argument is supported only for *type="auto"* and *type="mergeSort"*; it is ignored for *type="varByVar"*. When you use *removeDupKeys=TRUE*, the first record containing a unique combination of the *sortByVars* is retained; subsequent matching records are omitted from the sorted results, but, if desired, a count of the matching records is maintained in a new *dupFreqVar* output column. For example, the following artificial data set simulates a small amount of transaction data, with a user name, a state, and a transaction amount. When we sort by the variables *users* and *state* and specify *removeDupKeys=TRUE*, the *transAmt* shown for duplicate entries is the transaction amount for the *first* transaction encountered:
+In many situations, you are sorting a large data set by a particular key, for example, userID, but are looking for a sorted list of unique userIDs. The *removeDupKeys* argument to **rxSort** allows you to remove the duplicate entries from a sorted list. This argument is supported only for *type="auto"* and *type="mergeSort"*; it is ignored for *type="varByVar"*. 
+
+When you use *removeDupKeys=TRUE*, the first record containing a unique combination of the *sortByVars* is retained; subsequent matching records are omitted from the sorted results, but, if desired, a count of the matching records is maintained in a new *dupFreqVar* output column. For example, the following artificial data set simulates a small amount of transaction data, with a user name, a state, and a transaction amount. When we sort by the variables *users* and *state* and specify *removeDupKeys=TRUE*, the *transAmt* shown for duplicate entries is the transaction amount for the *first* transaction encountered:
 
 	set.seed(17)
 	users <- sample(c("Aiden", "Ella", "Jayden", "Ava", "Max", "Grace", "Riley", 
@@ -637,7 +650,7 @@ Sorting data is, in the general case, a prerequisite to finding exact quantiles,
 	 -86   -9    0   16 1490
 
 
-## Merging Data
+## Merge data
 
 Merging allows you to combine the information from two data sets into a third data set that can be used for subsequent analysis. One example is merging account information such as account number and billing address with transaction data such as account number and purchase details to create invoices. In this case, the two files are merged on the common information, that is, the account number.
 
@@ -650,7 +663,7 @@ In RevoScaleR, you merge .xdf files and/or data frames with the rxMerge function
 
 We describe each of these types in the following sections.
 
-### Inner Merge
+### Inner merge
 
 In the default inner merge type, one or more merge key columns is specified, and only those observations for which the specified key columns match exactly are combined to create new observations in the merged data set.
 
@@ -706,7 +719,7 @@ Then we use rxMerge to create an inner merge matching on the columns *acct* and 
 	 
 Because the patient 1 in account 538 and patient 1 in account 1534 had no visits, they are omitted from the merged file. Similarly, patient 2 in account 763 had a visit, but does not have any information in the accounts file, so it too is omitted from the merged data set. Also, note that the two input data files are automatically sorted on the merge keys before merging.
 
-### Outer Merge
+### Outer merge
 
 There are three types of outer merge: left, right, and full. In a left outer merge, all the lines from the first file are present in the merged file, either matched with lines from the second file that match on the key columns, or if no match, filled out with missing values. A right outer merge is similar, except all the lines from the second file are present, either matched with matching lines from the first file or filled out with missings. A full outer merge includes all lines in both files, either matched or filled out with missings. We can use the same dentist data to illustrate the various types of outer merge:
 	
@@ -750,7 +763,7 @@ There are three types of outer merge: left, right, and full. In a left outer mer
 	  9 1534 Kath P       1     <NA>
 
 
-### One-to-one Merge
+### One-to-one merge
 
 In the one-to-one merge type, the first observation in the first data set is paired with the first observation in the second data set to create the first observation in the merged data set, the second observation is paired with the second observation to create the second observation in the merged data set, and so on. The data sets must have the same number of rows. It is equivalent to using *append=*"*cols*" in a data step.
 
@@ -784,7 +797,7 @@ A one-to-one merge of these two data sets combines the columns from the two data
 	2  2  b  y 102  e  v
 	3  3  c  z 103  f  w
 
-### Union Merge
+### Union merge
 
 A union merge is simply the concatenation of two files with the same set of variables. It is equivalent to using *append="rows"* in a data step.
 
@@ -807,7 +820,7 @@ Then use a union merge:
 
 ### Using rxMerge with .xdf files
 
-You can use *rxMerge* with a combination of .xdf files and/or data frames. For example, you specify the two the paths for two input .xdf files as the *inData1* and *inData2* arguments, and the path to an output file as the *outFile* argument. As a simple example, we can stack two copies of the claims data using the union merge type as follows:
+You can use **rxMerge** with a combination of .xdf files or data frames. For example, you specify the two the paths for two input .xdf files as the *inData1* and *inData2* arguments, and the path to an output file as the *outFile* argument. As a simple example, we can stack two copies of the claims data using the union merge type as follows:
 
 	claimsXdf <- file.path(rxGetOption("sampleDataDir"), "claims.xdf")
 	
@@ -853,7 +866,7 @@ The new .xdf file has an additional variable, EducExp:
 	         3 factor levels: Connecticut Indiana Washington
 	  Var 7: EducExp, Type: numeric, Low/High: (1170.4600, 1795.5700)
 	  
-## Creating and Recoding Factors
+## Create and recode factors
 
 Factors are variables that represent categories. An example is “sex”, which has the categories “Male” and “Female”. There are two parts to a factor variable:
 
@@ -861,7 +874,7 @@ Factors are variables that represent categories. An example is “sex”, which 
 
 2.  A vector of K character strings that are used when the factor is displayed. In R, these are normally printed without quote marks, to indicate that the variable is a factor instead of a character string.
 
-If you have character data in an .xdf file or data frame, you can use the *rxFactors* function to convert it to a factor. Let’s create a simple data frame with character data. Note that by default, *data.frame* converts character data to factor data. That is, the *stringsAsFactors* argument defaults to *TRUE*. In RevoScaleR’s *rxImport* function, *stringsAsFactors* has a default of *FALSE*.
+If you have character data in an .xdf file or data frame, you can use the **rxFactors** function to convert it to a factor. Let’s create a simple data frame with character data. Note that by default, *data.frame* converts character data to factor data. That is, the *stringsAsFactors* argument defaults to *TRUE*. In RevoScaleR’s **rxImport** function, *stringsAsFactors* has a default of *FALSE*.
 
 	# Creating factors from character data
 	  
@@ -875,7 +888,7 @@ If you have character data in an .xdf file or data frame, you can use the *rxFac
 	Var 2: sex, Type: character
 	Var 3: state, Type: character
 
-Now we can use *rxFactors* to convert the character data to factors. We can just specify a vector of variable names to convert as the *factorInfo*:
+Now we can use **rxFactors** to convert the character data to factors. We can just specify a vector of variable names to convert as the *factorInfo*:
 
 	myNewData <- rxFactors(inData = myData, factorInfo = c("sex", "state"))
 	rxGetVarInfo(myNewData)
@@ -896,9 +909,9 @@ Note that by default, the factor levels are in the order in which they are encou
 	Var 3: state
 	       2 factor levels: CA WA
 
-If you have variables that are already factors, you may want change the order of the levels, the names of the levels, and/or how they are grouped. Typically recoding a factor means changing from one set of indexes to another. For example, if the levels of “sex” are currently arranged in the order “M”, “F” and you want to change that to “F”, “M”, you need to change the index for every observation.
+If you have variables that are already factors, you may want change the order of the levels, the names of the levels, or how they are grouped. Typically recoding a factor means changing from one set of indexes to another. For example, if the levels of “sex” are currently arranged in the order “M”, “F” and you want to change that to “F”, “M”, you need to change the index for every observation.
 
-You can use the rxFactors function to recode factors in RevoScaleR. For example, suppose we have some test scores for a set of male and female subjects. We can generate such data randomly as follows:
+You can use the **rxFactors** function to recode factors in RevoScaleR. For example, suppose we have some test scores for a set of male and female subjects. We can generate such data randomly as follows:
 
 	#  Recoding Factors
 	
@@ -914,7 +927,7 @@ If we look at just the sex variable, we see the levels M or F for each observati
 	  [1] M M F M M M F M F M
 	  Levels: M F
 
-To recode this factor so that “Female” is the first level and “Male” the second, we can use rxFactors as follows:
+To recode this factor so that “Female” is the first level and “Male” the second, we can use **rxFactors** as follows:
 
 	newDF <- rxFactors(inData = DF, overwrite = TRUE,
 	          factorInfo = list(Gender = list(newLevels = c(Female = "F", 
@@ -928,9 +941,11 @@ Looking at the new Gender variable, we see how the levels have changed:
 	  [1] Male   Male   Female Male   Male   Male   Female Male   Female Male  
 	  Levels: Female Male
 
-As mentioned earlier, by default, RevoScaleR codes factor levels in the order in which they are encountered in the input file(s). This could lead you to have a State variable ordered as “Maine”, “Vermont”, “New Hampshire”, “Massachusetts”, “Connecticut”, etc. Usually, you would prefer to have the levels of such a variable sorted in alphabetical order. You can do this with rxFactors using the sortLevels flag. It is most useful to specify this flag as part of the factorInfo list for each variable, although if you have a large number of factors and want most of them to be sorted, you can also set the flag to TRUE globally and then specify sortLevels=FALSE for those variables you want to order in a different way.
+As mentioned earlier, by default, RevoScaleR codes factor levels in the order in which they are encountered in the input file(s). This could lead you to have a State variable ordered as “Maine”, “Vermont”, “New Hampshire”, “Massachusetts”, “Connecticut”, and so forth. 
 
-When using the sortLevels flag, it is useful to keep in mind that it is the *levels* that are being sorted, not the data itself, and that the levels are always character data. If you are using the individual values of a continuous variable as factor levels, you may be surprised by the sorted order of the levels: for example, the levels 1, 3, 20 are sorted as “1”, “20”, “3”.
+Usually, you would prefer to have the levels of such a variable sorted in alphabetical order. You can do this with **rxFactors** using the sortLevels flag. It is most useful to specify this flag as part of the *factorInfo* list for each variable, although if you have a large number of factors and want most of them to be sorted, you can also set the flag to TRUE globally and then specify *sortLevels=FALSE* for those variables you want to order in a different way.
+
+When using the *sortLevels* flag, it is useful to keep in mind that it is the *levels* that are being sorted, not the data itself, and that the levels are always character data. If you are using the individual values of a continuous variable as factor levels, you may be surprised by the sorted order of the levels: for example, the levels 1, 3, 20 are sorted as “1”, “20”, “3”.
 
 Another common use of factor recoding is in analyzing survey data gathered using Likert items with five or seven level responses. For example, suppose a customer satisfaction survey offered the following seven-level responses to each of four questions:
 
@@ -949,7 +964,7 @@ In analyzing this data, the survey analyst may recode the factors to focus on th
 	surveyDF <- rxDataStep(inData = 
 		file.path(rxGetOption("sampleDataDir"),"CustomerSurvey.xdf"))
 
-To recode each question as desired, we can use rxFactors as follows:
+To recode each question as desired, we can use **rxFactors** as follows:
 
 	sl <- levels(surveyDF[[1]])
 	quarterList <-  list(newLevels = list(
@@ -984,6 +999,23 @@ Looking at just Q1, we see the recoded factor:
 
 #### Recoding Factors to Ensure Variable Compatibility
 
-One important use of factor recoding in RevoScaleR is to ensure that the factor variables in two files are compatible, that is, have the same levels with the same coding. This use comes up in a variety of contexts, including prediction, merging, and distributed computing. For example, suppose you are creating a logistic regression model of whether a given airline flight will be late, and are using the first fifteen years of the airline data as a training set. You then want to test the model on the remaining years of the airline data. You need to ensure that the two files, the training set and the test set, have compatible factor variables. You can generally do this easily using rxGetInfo (with getVarInfo=TRUE) together with rxFactors. Use rxGetInfo to find all the levels in all the files, then use rxFactors to recode each file so that every factor variable contains all the levels found in any of the files.
+One important use of factor recoding in RevoScaleR is to ensure that the factor variables in two files are compatible, that is, have the same levels with the same coding. This use comes up in a variety of contexts, including prediction, merging, and distributed computing. For example, suppose you are creating a logistic regression model of whether a given airline flight will be late, and are using the first fifteen years of the airline data as a training set. You then want to test the model on the remaining years of the airline data. You need to ensure that the two files, the training set and the test set, have compatible factor variables. You can generally do this easily using **rxGetInfo** (with getVarInfo=TRUE) together with **rxFactors**. Use **rxGetInfo** to find all the levels in all the files, then use **rxFactors** to recode each file so that every factor variable contains all the levels found in any of the files.
 
-The rxMerge function automatically checks for factor variable compatibility and recodes on the fly if necessary.
+The **rxMerge** function automatically checks for factor variable compatibility and recodes on the fly if necessary.
+
+## Next Steps
+
+Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
+
++ [Transformation functions](scaler-user-guide-transform-functions.md)	
++ [XDF files](scaler-data-xdf.md)	
++ [Data Sources](scaler-user-guide-data-source.md)	
++ [Import text data](scaler-user-guide-data-import.md)
++ [Import ODBC data](scaler-data-odbc.md)
++ [Import and consume data on HDFS](scaler-data-hdfs.md)
+
+## See Also
+   
+ [RevoScaleR Functions](scaler/scaler.md)   
+ [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data visualization and analysis](scaler-getting-started-data-manipulation.md) 

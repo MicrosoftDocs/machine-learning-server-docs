@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Transform Functions"
+title: "Transform functions in Microsoft R"
 description: "RevoScaleR transform functions."
 keywords: ""
 author: "richcalaway"
 manager: "jhubbard"
-ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.date: "06/04/2017"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
 ms.assetid: ""
@@ -24,18 +24,16 @@ ms.custom: ""
 
 ---
 
-# Transform Functions
+# Transform functions in Microsoft R
 
 In previous chapters, we have used the *transforms* argument and inline transformations within formulas whenever we needed to specify a data transformation, and performed row selection with the *rowSelection* argument. In this chapter, we introduce another method for performing transformations within RevoScaleR that is extremely powerful and can be used both for transforming variables and for creating row selection variables. This method is the use of transform functions.
 
-A transform function is a function that takes as input a list of variables and returns a list of (possibly different) variables. If defined and specified (using the *transformFunc* argument to most RevoScaleR functions), a transform function is evaluated before any transformations specified in the transforms, *rowSelection*, or formula arguments. The list of variables to be passed to the transform function is specified as the *transformVars* argument.
+A *transform function* is a function that takes as input a list of variables and returns a list of (possibly different) variables. If defined and specified (using the *transformFunc* argument to most RevoScaleR functions), a transform function is evaluated before any transformations specified in the transforms, *rowSelection*, or formula arguments. The list of variables to be passed to the transform function is specified as the *transformVars* argument.
 
-### Creating Variables
+## Create variables
 
 Suppose we want to extract five variables from the *CensusWorkers* data set, but also add a factor variable based on the integer variable age. We considered this example in Chapter 4, when we used the *transforms* argument to create the new variable. We can also use a transform function to create new variables. For example, to create our factor variable, we can create the following function:
 
-	######################################################## 
-	# Chapter 18: Transform Functions
 	#  Creating Variables
 	Ch18Start <- Sys.time()
 	
@@ -101,7 +99,7 @@ The *rxGetInfo* function reveals the added and dropped variables:
 			 10 factor levels: [20,25) [25,30) [30,35) [35,40) [40,45) [45,50) 
 	  [50,55) [55,60) [60,65) [65,70)
 	  
-### Using Additional Objects or Data in a Transform Function
+## Use additional objects or data
 
 It is sometimes useful to access additional information from within a transform function. For example, you might want to match additional data in the process of creating new variables. Transform functions are evaluated in a “sterilized” environment which includes the parent environment of the function closure. To provide access to additional data within the function, you can use the *transformObjects* argument.
 
@@ -161,7 +159,7 @@ When the transform function is evaluated, it will have access to the *educExp* o
 	F-statistic:  9839 on 3 and 351117 DF,  p-value: < 2.2e-16 
 	Condition number: 1.1176
 
-### Creating a Row Selection Variable
+## Create a row selection variable
 
 One common use of the *transformFunc* argument is to create a logical variable to use as a row selection variable. For example, suppose you want to create a random sample from a massive data set. You can use the *transformFunc* argument to specify a transformation that creates a random binomial variable, which can then be coerced to logical and used for row selection. The object name *.rxRowSelection* is reserved for the row selection variable; if RevoScaleR finds this object, it is used for row selection.
 
@@ -198,7 +196,9 @@ Equivalently, we could create the temporary row selection variable using the *ro
 	df <- rxDataStep(inData = censusWorkers, 
 		rowSelection = as.logical(rbinom(.rxNumRows, 1, .10)) == TRUE)
 
-### Using Internal Variables in a Transformation Function: An Example Computing Moving Averages
+## Example: using internal variables 
+
+This example shows how to compute moving averages using internal variables in a transformation function.
 
 Four additional variables providing information on the RevoScaleR processing are available for use in your transform functions:
 
@@ -308,18 +308,24 @@ We could use this function with *rxDataStep* to add a variable to our data set, 
 
 ![](media/rserver-scaler-user-guide-18-transform-functions/image25.png)
 
-### How Transforms Are Evaluated
+## How transforms are evaluated
 
-User-defined transforms and transform functions are evaluated in essentially the same way. An evaluation environment is constructed from the base environment together with the utils, stats, and methods packages (you can modify this basic list by setting the rxOption *transformPackages*), packages specified with the *transformPackages* argument, and any specified *transformObjects*, and the closure of the transform function. (User-defined transforms are combined into a single, “hidden” transform function for evaluation.) The transform function is then evaluated in this evaluation environment. Functions that are in packages that are not part of the evaluation environment can be used, but must be prefixed by their package name and two or three colons, depending on whether the function is exported.
+User-defined transforms and transform functions are evaluated in essentially the same way. User-defined transforms are combined into an implicit transform function for evaluation purposes. At evaluation time, the process is the same whether the function is predefined or user-defined.
 
-### Transformations to Avoid
+An evaluation environment is constructed from the base environment together with the utils, stats, methods packages, any packages specified with the *transformPackages* argument, and any specified *transformObjects*, and the closure of the transform function. 
+
+Functions are then evaluated in the context of this envrionment. Function that are in packages but not part of the evaluation environment can be used if fully qualified (specifically, prefixed by the package name and two or three colons, depending on whether the function is exported).
+
+If you are using methods packages, you can modify the basic list by setting the **rxOption** *transformPackages* argument.
+
+## Transformations to avoid
 
 Transform functions are very powerful, and we recommend their use. However, there are four types of transformation that should be avoided:
 
-1.  transformations that change the length of a variable (this includes, naturally, most model-fitting functions)
-2.  transformations that depend upon all observations simultaneously (because RevoScaleR works on chunks of data, such transformations will not have access to all the data at once). Examples of such transformations are matrix operations such as poly or solve.
-3.  transformations that have the possibility of creating different mappings of factor codes to factor labels.
-4.  transformations that involve sampling with replacement. Again, this is because RevoScaleR works on chunks of data, and sampling with replacement chunk by chunk is not equivalent to sampling with replacement from the full data set.
+1. Transformations that change the length of a variable. This includes, naturally, most model-fitting functions.
+2. Transformations that depend upon all observations simultaneously. Because RevoScaleR works on chunks of data, such transformations will not have access to all the data at once. Examples of such transformations are matrix operations such as poly or solve.
+3. Transformations that have the possibility of creating different mappings of factor codes to factor labels.
+4. Transformations that involve sampling with replacement. Again, this is because RevoScaleR works on chunks of data, and sampling with replacement chunk by chunk is not equivalent to sampling with replacement from the full data set.
 
 If you change the length of one variable, you will get errors from subsequent analysis functions that not all variables are the same length. If you try to change the length of all variables (essentially, performing some sort of row selection), you need to pass all of your data through the transform function, and this can be very inefficient. We therefore recommend the row selection procedures described in previous chapters.
 
@@ -327,3 +333,21 @@ If you create a factor within a transformation function, you may get unexpected 
 
 	dataList$xfac <- as.factor(dataList$x, levels = c(1, 2,3), 
 		labels = c("One", "Two", "Three")) 
+
+
+## Next Steps
+
+Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
+
++ [Transformation functions](scaler-user-guide-transform-functions.md)	
++ [XDF files](scaler-data-xdf.md)	
++ [Data Sources](scaler-user-guide-data-source.md)	
++ [Import text data](scaler-user-guide-data-import.md)
++ [Import ODBC data](scaler-data-odbc.md)
++ [Import and consume data on HDFS](scaler-data-hdfs.md)
+
+## See Also
+   
+ [RevoScaleR Functions](scaler/scaler.md)   
+ [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data visualization and analysis](scaler-getting-started-data-manipulation.md) 

@@ -22,9 +22,9 @@
 ## [RevoScaleR with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # Concepts
+## [Compute context](scaler-data-compute-context.md)
 ## [Data source objects](scaler-user-guide-data-source.md)
 ## [XDF files](scaler-data-xdf.md)
-## [Compute context](scaler-data-compute-context.md)
 
 # [How-to guides](data-analysis-in-microsoft-r.md)
 ## Load and transform data 
