@@ -23,7 +23,7 @@ ms.technology: "r-server"
 ms.custom: ""
 ---
 
-# rxExecBy example: parallel processing on partitioned data in Microsoft R
+# RevoScaleR rxExecBy parallel processing example (Microsoft R)
 
 Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models could be used for time-series predictions, or to score fresh data for each small data partition. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, or loan approvals for bank branches.
 

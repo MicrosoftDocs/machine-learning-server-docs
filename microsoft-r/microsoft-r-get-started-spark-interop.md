@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Spark interoperability with Microsoft R Server 9.1"
+title: "RevoScaleR with Sparklyr example (Microsoft R)"
 description: "Spark interoperability with Microsoft R Server 9.1"
 keywords: ""
 author: "HeidiSteen"

@@ -18,8 +18,8 @@
 
 # Samples
 ## [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
-## [Parallel processing example (with rxExecby)](quickstart-rxexecby.md)
-## [Sparklyr example](microsoft-r-get-started-spark-interop.md)
+## [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
+## [RevoScaleR with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # Concepts
 ## [Data source objects](scaler-user-guide-data-source.md)
