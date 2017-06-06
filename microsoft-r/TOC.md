@@ -30,6 +30,7 @@
 ### [Write back using rxDataStep](scaler-data-writeback.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### Concepts
+#### [RevoScaleR](scaler-user-guide-introduction)
 #### [Compute context](scaler-data-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
 #### [XDF files](scaler-data-xdf.md)
@@ -57,3 +58,4 @@
 ### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
 ### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
 ### [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
+### [Manage threads in RevoScaleR](scaler-user-guide-manage-threads.md)
