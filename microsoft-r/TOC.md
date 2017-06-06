@@ -6,10 +6,11 @@
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
 
-# [Get started with RevoScaleR](microsoft-r-tutorials.md)
-## [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
-## [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)
-## [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)
+# Get started with RevoScaleR
+## [Tutorials](microsoft-r-tutorials.md)
+### [Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
+### [Import and transform data](scaler-getting-started-data-import-exploration.md)
+### [Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)
 ## Work with larger datasets
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
@@ -18,22 +19,28 @@
 ## Samples
 ### [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
-### [RevoScaleR with Sparklyr example](microsoft-r-get-started-spark-interop.md)
+### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [How-to guides](data-analysis-in-microsoft-r.md)
-## Load and transform data 
-### [Import text data](scaler-user-guide-data-import.md)
-### [Import SQL Server data](scaler-data-sql.md)
-### [Import ODBC data](scaler-data-odbc.md)
-### [Import HDFS data](scaler-data-hdfs.md)
-### [Transform and subset data](scaler-user-guide-data-transform.md)
-### [Transform Functions](scaler-user-guide-transform-functions.md)
-### [Write back using rxDataStep](scaler-data-writeback.md)
+## Load and transform data
 ### Concepts
 #### [Compute context](scaler-data-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
 #### [XDF files](scaler-data-xdf.md)
-#### [Data transformations]()
+#### [Transformations](scaler-user-guide-transform-functions.md)
+### [Import text data](scaler-user-guide-data-import.md)
+### [Import SQL Server data](scaler-data-sql.md)
+### [Import HDFS data](scaler-data-hdfs.md)
+### [Import ODBC data](scaler-data-odbc.md)
+### [Write back using rxDataStep](scaler-data-writeback.md)
+### [Transform and subset data](scaler-user-guide-data-transform.md)
+#### Create or modify variables
+#### Create a rowselection
+#### Create factors
+#### Convert data frame to XDF
+#### Convert XDF to Text
+### Sort data
+### Merge data
 
 ## Summarize data
 ### [Statistical Summaries](scaler-user-guide-data-summaries.md)
