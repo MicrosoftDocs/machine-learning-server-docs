@@ -99,7 +99,7 @@ The *rxGetInfo* function reveals the added and dropped variables:
 			 10 factor levels: [20,25) [25,30) [30,35) [35,40) [40,45) [45,50) 
 	  [50,55) [55,60) [60,65) [65,70)
 	  
-## Use additional objects or data
+## Add objects or data
 
 It is sometimes useful to access additional information from within a transform function. For example, you might want to match additional data in the process of creating new variables. Transform functions are evaluated in a “sterilized” environment which includes the parent environment of the function closure. To provide access to additional data within the function, you can use the *transformObjects* argument.
 
@@ -196,7 +196,7 @@ Equivalently, we could create the temporary row selection variable using the *ro
 	df <- rxDataStep(inData = censusWorkers, 
 		rowSelection = as.logical(rbinom(.rxNumRows, 1, .10)) == TRUE)
 
-## Example: using internal variables 
+## Use internal variables 
 
 This example shows how to compute moving averages using internal variables in a transformation function.
 
@@ -350,4 +350,4 @@ Continue on to the following data-related articles to learn more about XDF, data
    
  [RevoScaleR Functions](scaler/scaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data visualization and analysis](scaler-getting-started-data-manipulation.md) 
+ [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 

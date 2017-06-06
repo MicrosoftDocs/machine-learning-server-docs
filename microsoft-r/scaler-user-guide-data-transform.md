@@ -4,7 +4,7 @@
 title: "Transform and subset data in Microsft R"
 description: "Data manipulation with RevoScaleR."
 keywords: ""
-author: "HeidiSteen"
+author: "richcalaway"
 manager: "jhubbard"
 ms.date: "06/04/2017"
 ms.topic: "article"
@@ -1018,4 +1018,4 @@ Continue on to the following data-related articles to learn more about XDF, data
    
  [RevoScaleR Functions](scaler/scaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data visualization and analysis](scaler-getting-started-data-manipulation.md) 
+ [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 

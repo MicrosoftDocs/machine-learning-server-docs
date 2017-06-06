@@ -32,7 +32,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 + [Expore R and ScaleR in 25 functions or less](microsoft-r-tutorial-R2RevoScaleR.md)
 + [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
-+ [Practice data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md)
++ [Practice data manipulation and statistical analysis](scaler-getting-started-data-visualization-analysis.md)
 
 ## Move forward with larger data sets
 

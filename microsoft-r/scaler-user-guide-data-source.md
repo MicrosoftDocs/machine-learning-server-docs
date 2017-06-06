@@ -325,4 +325,4 @@ Continue on to the following data import articles to learn more about XDF and ot
    
  [RevoScaleR Functions](scaler/scaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-manipulation.md) 
+ [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-visualization-analysis.md) 

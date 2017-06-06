@@ -509,5 +509,5 @@ Continue on to the following data import articles to learn more about XDF, data 
 ## See also
 
  [Tutorial: data import](scaler-getting-started-data-import-exploration.md)	
- [Tutorial: data manipulation](scaler-getting-started-data-manipulation.md)
+ [Tutorial: data manipulation](scaler-getting-started-data-visualization-analysis.md)
 
