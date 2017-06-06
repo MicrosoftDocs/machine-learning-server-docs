@@ -23,6 +23,54 @@ ms.technology: "r-server"
 ms.custom: ""
 
 ---
+# Data transformations using RevoScaleR functions (Microsoft R)
+
+Loading an initial dataset is typically just the first step in a continuum of data manipulation tasks that last until your inquiry runs its course. Common examples of data manipulation include isolating a subset, slicing a dataset by variables or rows,and  converting or merging variables into new forms, often resulting in new data structures along the way.
+
+There are two main approaches to data transformation using the RevoScaleR library:
+
++ Define and reference an external function that performs a transformation. 
++ Define transformation statements inline using a function's *transforms* argument. Embedded transformations are supported in **rxImport**, **rxDataStep**, and in analysis functions like **rxLinMod** and **rxCube**, to name a few.
+
+Embedded transformations are easier, but external functions allow for a greater degree of complexity and reuse. The following section uses an example to illustrate both approaches.
+
+## Compare approaches
+
+Embedded transformations...
+
+Externally defined functions can assume a complex structure. 
+
+## Arguments used in transformations
+
+The following table numerates the arguments used in data manipulation tasks.
+
+| Argument | Usage |
+|----------|-------|
+
+
+## Functions supporting transformations
+
+The following functions can be used for data manipulation tasks.
+
+| Function | Use case|
+|----------|-----------|
+| **rxDataStep** | Create a subset rows or variables, or create new variables by transforming existing variables. Also used for easy conversion between data in data frames and .xdf files. 
+| **rxImport** | Invoke a transformation while loading data into a data frame or .xdf file.
+| **rxSetVarInfo** | Change variable information, such as the name or description, in an .xdf file or data frame. |
+| **rxSetInfo** | Add or change a data set description. |
+| **rxCube** | |
+| **rxLinMod** | |
+| **rxLogit** | |
+
+| **rxFactors** | Create or modify factors (categorical variables) based on existing variables. |
+| **rxSort** | Sort a data set by one or more key variables. |
+| **rxMerge** | Merge two data sets by one or more key variables. |
+
+
+## H
+
+
+---
 
 # Transform functions in Microsoft R
 
@@ -339,7 +387,7 @@ If you create a factor within a transformation function, you may get unexpected 
 
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
-+ [Transformation functions](scaler-user-guide-transform-functions.md)	
++ [How to transform and subset data](scaler-user-guide-transforms.md)	
 + [XDF files](scaler-data-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](scaler-user-guide-data-import.md)

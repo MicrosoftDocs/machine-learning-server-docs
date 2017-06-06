@@ -206,6 +206,39 @@ This takes approximately 10% of the data as a test data set, with the remainder 
 
 If your .xdf file is relatively small, you may want to set *outFilesBase = ""* so that a list of data frames is returned instead of having files created. You can also use **rxSplit** to split data frames (see the **rxSplit** help page for details).
 
+## Re-Block an .xdf File 
+
+After a series of data import or row selection steps, you may find that you have an .xdf file with very uneven block sizes. This may make it difficult to efficiently perform computations by “chunk.” To find the sizes of the blocks in your .xdf file, use **rxGetInf** with the *getBlockSizes* argument set to TRUE. For example, let’s look at the block sizes for the sample CensusWorkers.xdf file:
+
+	#  Re-Blocking an .xdf File
+	
+	fileName <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
+	rxGetInfo(fileName, getBlockSizes = TRUE)
+
+The following information is provided:
+	
+	File name: C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\ library\RevoScaleR\SampleData\CensusWorkers.xdf 
+	Number of observations: 351121 
+	Number of variables: 6 
+	Number of blocks: 6 
+	Compression type: zlib
+	Rows per block: 95420 42503 1799 131234 34726 45439
+
+We see that, in fact, the number of rows per block varies from a low of 1799 to a high of 131,234. To create a new file with more even-sized blocks, use the *rowsPerRead* argument in **rxDataStep**:
+
+	newFile <- "censusWorkersEvenBlocks.xdf"
+	rxDataStep(inData = fileName, outFile = newFile, rowsPerRead = 60000)
+	rxGetInfo(newFile, getBlockSizes = TRUE)	
+	
+The new file has blocks sizes of 60,000 for all but the last slightly smaller block:
+
+	File name: C:\Users\...\censusWorkersEvenBlocks.xdf 
+	Number of observations: 351121 
+	Number of variables: 6 
+	Number of blocks: 6 
+	Compression type: zlib
+	Rows per block: 60000 60000 60000 60000 60000 51121
+	
 ## Next steps
 
 XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](scaler-data-hdfs.md).

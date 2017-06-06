@@ -21,7 +21,7 @@
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-# [How-to guides](data-analysis-in-microsoft-r.md)
+# [Diving into data analysis](data-analysis-in-microsoft-r.md)
 ## Load and transform data
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import SQL Server data](scaler-data-sql.md)
@@ -30,11 +30,11 @@
 ### [Write back using rxDataStep](scaler-data-writeback.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### Concepts
-#### [RevoScaleR](scaler-user-guide-introduction)
+#### [RevoScaleR](scaler-user-guide-introduction.md)
 #### [Compute context](scaler-data-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
+#### [Data transformations](scaler-user-guide-transform-functions.md)
 #### [XDF files](scaler-data-xdf.md)
-#### [Transformations](scaler-user-guide-transform-functions.md)
 
 ## Summarize data
 ### [Statistical Summaries](scaler-user-guide-data-summaries.md)

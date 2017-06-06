@@ -26,16 +26,7 @@ ms.custom: ""
 
 # Transform and subset data in Microsft R
 
-RevoScaleR provides a full set of functions for modifying, transforming, and subsetting data stored in memory in a data frame or in an .xdf file on disk:
-
-| Function | Use case|
-|----------|-----------|
-| **rxDataStep** | Create a subset rows or variables, or create new variables by transforming existing variables. Also used for easy conversion between data in data frames and .xdf files. |
-| **rxSetVarInfo** | Change variable information, such as the name or description, in an .xdf file or data frame. |
-| **rxSetInfo** | Add or change a data set description. |
-| **rxFactors** | Create or modify factors (categorical variables) based on existing variables. |
-| **rxSort** | Sort a data set by one or more key variables. |
-| **rxMerge** | Merge two data sets by one or more key variables. |
+This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](scaler-user-guide-transform-functions.md).
 
 
 ## Create a subset
@@ -112,7 +103,7 @@ To provide maximum flexibility, RevoScaleR allows you to perform data transforma
 
 The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated and typically is an assignment either creating a new variable or modifying an existing variable from the original data set.
 
-### Create or modify a variable
+## Create or modify a variable
 
 To create or modify variables, we use the *transforms* argument to **rxDataStep**. The *transforms* argument is specified as a list of expressions. Any R expression that operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation) can be used. 
 
@@ -244,7 +235,9 @@ The resulting data set information is:
 	5  0.07431126 0.97069679
 
 
-### Subsetting and Transforming Variables
+## Create a factor variable via transformation
+
+was "Subsetting and Transforming Variables"
 
 Returning to our earlier example with CensusWorkers, we will now combine subsetting and transformations in one data step operation. Suppose we want to extract the same five variables as before from the CensusWorkers data set, but also add a factor variable based on the integer variable *age*. For example, to create our factor variable, we can use the following *transforms* argument:
 
@@ -357,39 +350,6 @@ If you have a large number of variables, you can choose to write out only a subs
 
 	rxDataStep(inData=claimsXdf, outFile=claimsTxt, varsToDrop="number", 
 	            overwrite=TRUE)
-
-## Re-Block an .xdf File 
-
-After a series of data import or row selection steps, you may find that you have an .xdf file with very uneven block sizes. This may make it difficult to efficiently perform computations by “chunk.” To find the sizes of the blocks in your .xdf file, use **rxGetInf** with the *getBlockSizes* argument set to TRUE. For example, let’s look at the block sizes for the sample CensusWorkers.xdf file:
-
-	#  Re-Blocking an .xdf File
-	
-	fileName <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
-	rxGetInfo(fileName, getBlockSizes = TRUE)
-
-The following information is provided:
-	
-	File name: C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\ library\RevoScaleR\SampleData\CensusWorkers.xdf 
-	Number of observations: 351121 
-	Number of variables: 6 
-	Number of blocks: 6 
-	Compression type: zlib
-	Rows per block: 95420 42503 1799 131234 34726 45439
-
-We see that, in fact, the number of rows per block varies from a low of 1799 to a high of 131,234. To create a new file with more even-sized blocks, use the *rowsPerRead* argument in **rxDataStep**:
-
-	newFile <- "censusWorkersEvenBlocks.xdf"
-	rxDataStep(inData = fileName, outFile = newFile, rowsPerRead = 60000)
-	rxGetInfo(newFile, getBlockSizes = TRUE)	
-	
-The new file has blocks sizes of 60,000 for all but the last slightly smaller block:
-
-	File name: C:\Users\...\censusWorkersEvenBlocks.xdf 
-	Number of observations: 351121 
-	Number of variables: 6 
-	Number of blocks: 6 
-	Compression type: zlib
-	Rows per block: 60000 60000 60000 60000 60000 51121
 
 ## Modify variable metadata
 
@@ -1007,7 +967,7 @@ The **rxMerge** function automatically checks for factor variable compatibility 
 
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
-+ [Transformation functions](scaler-user-guide-transform-functions.md)	
++ [Data transformations (introduction)](scaler-user-guide-transform-functions.md)	
 + [XDF files](scaler-data-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](scaler-user-guide-data-import.md)
