@@ -23,24 +23,17 @@
 
 # [How-to guides](data-analysis-in-microsoft-r.md)
 ## Load and transform data
-### Concepts
-#### [Compute context](scaler-data-compute-context.md)
-#### [Data source objects](scaler-user-guide-data-source.md)
-#### [XDF files](scaler-data-xdf.md)
-#### [Transformations](scaler-user-guide-transform-functions.md)
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import SQL Server data](scaler-data-sql.md)
 ### [Import HDFS data](scaler-data-hdfs.md)
 ### [Import ODBC data](scaler-data-odbc.md)
 ### [Write back using rxDataStep](scaler-data-writeback.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
-#### Create or modify variables
-#### Create a rowselection
-#### Create factors
-#### Convert data frame to XDF
-#### Convert XDF to Text
-### Sort data
-### Merge data
+### Concepts
+#### [Compute context](scaler-data-compute-context.md)
+#### [Data source objects](scaler-user-guide-data-source.md)
+#### [XDF files](scaler-data-xdf.md)
+#### [Transformations](scaler-user-guide-transform-functions.md)
 
 ## Summarize data
 ### [Statistical Summaries](scaler-user-guide-data-summaries.md)
