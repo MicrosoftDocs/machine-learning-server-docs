@@ -27,7 +27,6 @@
 ### [Import SQL Server data](scaler-data-sql.md)
 ### [Import HDFS data](scaler-data-hdfs.md)
 ### [Import ODBC data](scaler-data-odbc.md)
-### [Write back using rxDataStep](scaler-data-writeback.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### Concepts
 #### [RevoScaleR](scaler-user-guide-introduction.md)
@@ -51,7 +50,6 @@
 ## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
 ## [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
 ## [Clustering](scaler-user-guide-cluster.md)
-
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
 ## RevoScaleR Development
