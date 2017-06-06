@@ -29,7 +29,7 @@ ms.custom: ""
 This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](scaler-user-guide-transform-functions.md).
 
 
-## Create a subset
+## Subset by row
 
 A common use of **rxDataStep** is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. 
 
