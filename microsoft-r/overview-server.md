@@ -25,7 +25,6 @@ ms.technology:
 ms.custom: ""
 
 ---
-<<<<<<< HEAD
 
 # About Microsoft R Server
 
@@ -194,4 +193,3 @@ To review specific OS and database platform versions that can be used for an R S
 
 [Getting Started with ScaleR](scaler-getting-started-data-import-exploration.md)
 =======
->>>>>>> dev

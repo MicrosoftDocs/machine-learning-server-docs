@@ -25,7 +25,6 @@ ms.technology:
 ms.custom: ""
 
 ---
-<<<<<<< HEAD
 
 # Microsoft R products and features
 
@@ -111,5 +110,4 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 ## See Also
 
 [What's new in R Server](rserver-whats-new.md)
-=======
->>>>>>> dev
+
