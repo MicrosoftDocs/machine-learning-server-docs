@@ -104,9 +104,9 @@ However, because you have R Client, your script can also include functions shipp
 
 Tutorials in Microsoft R product documentation will help you learn how to use the functions in the proprietary packages:  
 
-+ [Get started with ScaleR](scaler-getting-started.md)
++ [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 
-+ [Explore R and ScaleR in 25 functions](microsoft-r-getting-started-tutorial.md)
++ [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 
 + [Introduction to MicrosoftML](microsoftml-introduction.md)
 

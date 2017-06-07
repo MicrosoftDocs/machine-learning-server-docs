@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Get started with ScaleR on Hadoop MapReduce"
+title: "Practice data import and exploration on Hadoop MapReduce"
 description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Get started with ScaleR on Hadoop MapReduce
+# Practice data import and exploration on Hadoop MapReduce
 
 ## Overview
 

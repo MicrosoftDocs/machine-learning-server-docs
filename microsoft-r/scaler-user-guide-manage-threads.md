@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Manage threads in ScaleR"
+title: "Manage threads in RevoScaleR"
 description: ""
 keywords: "How ScaleR establishes and manages thread pools for parallel processing."
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Managing Threads in Scale
+# Managing Threads in RevoScaleR
 
 A process is an instance of a software program, running under an operating system. RevoScaleR runs in two separate processes, one running R and R-related code, and one running RevoScaleR’s underlying compute engine.
 
