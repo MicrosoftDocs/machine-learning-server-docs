@@ -30,11 +30,6 @@ This section of the documentation is for data scientists, analysts, and statisti
 
 If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
-## Quickstarts and Tutorials
-
-* [Quickstart: data import csv-to-xdf](quickstart-rserver-data-import-csv.md) 
-* [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
-
 ## How-to guidance
 
 * [Data acquisition](scaler-user-guide-data-import.md)
