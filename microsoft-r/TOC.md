@@ -27,9 +27,9 @@
 ### [Import SQL Server data](scaler-data-sql.md)
 ### [Import HDFS data](scaler-data-hdfs.md)
 ### [Import ODBC data](scaler-data-odbc.md)
+### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Sort data](scaler-data-sort.md)
 ### [Merge data](scaler-data-merge.md)
-### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### Concepts
 #### [RevoScaleR](scaler-user-guide-introduction.md)
 #### [Compute context](scaler-data-compute-context.md)

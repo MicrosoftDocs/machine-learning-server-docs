@@ -38,16 +38,35 @@ Embedded transformations are supported in **rxImport**, **rxDataStep**, and in a
 
 Embedded transformations provide instructions within a formula, through arguments on a function. Using just arguments, you can manipulate data using *transformations*, or select a rowset with the *rowSelection* argument.
 
-Externally defined functions provide data manipulation instructions in an outer *function*, which is then referenced by a RevoScaleR function. An external transformation function is one that takes as input a list of variables and returns a list of (possibly different) variables. Due to the external definition, the object can assume a complex structure and be repurposed across multiple functions supporting transformation.  
+Externally defined functions provide data manipulation instructions in an outer *function*, which is then referenced by a RevoScaleR function. An external transformation function is one that takes as input a list of variables and returns a list of (possibly different) variables. Due to the external definition, the object can assume a complex structure and be repurposed across multiple functions supporting transformation.
 
-	# Construct a new variable using a transformation arguments
+	# Load data
+	> censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
+
+	# Option 1: Construct a new variable using an embedded transformation argument
+	> NewDS <- rxDataStep (inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
+			transforms = list(ageFactor = cut(age, breaks=seq(from = 20, to = 70, by = 5), 
+			right = FALSE)), overwrite=TRUE)
 
 
+	# Return variable metadata; ageFactor is a new variable
+	> rxGetVarInfo(NewDS)
 
-	# Construct a new variable based on a function reference
+	# Option 2: Construct a new variable using an external function and rxDataStep
+	> ageTransform <- function(dataList)
+			{
+				dataList$ageFactor <- cut(dataList$age, breaks=seq(from = 20, to = 70, 
+										by = 5), right = FALSE)
+				return(dataList)
+			}
 
+	> NewDS <- rxDataStep(inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
+	    transformFunc = ageTransform, transformVars=c("age"), overwrite=TRUE)
 
+	# Return variable metadata; it is identical to that of option 1
+	> rxGetVarInfo(NewDS)
 
+For more examples of both approaches, see [How to transform and subset data](scaler-user-guide-transform-functions.md).
 
 ## Arguments used in transformations
 
