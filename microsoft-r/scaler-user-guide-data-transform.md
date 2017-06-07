@@ -26,9 +26,15 @@ ms.custom: ""
 
 # How to transform and subset data in Microsft R
 
+A crucial step in many analyses is transforming the data into a form best suited for the chosen analysis. For example, to reduce variations in scale between variables, you might take a log or a power of the original variable before fitting the dataset to a linear model. Additionally, transforming data minimizes passes through the data, which is more efficient.
+
+In RevoScaleR, you can perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**,**rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**. 
+
+In all cases, the basic approach for data transforms are the same. The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated. The data step is typically is an assignment that either creates a new variable or modifies an existing variable from the original data set.
+
 This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](scaler-user-guide-transform-functions.md).
 
-## Subset data by row or variable
+## Subset data by row or variable (seed)
 
 A common use of **rxDataStep** is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. 
 
@@ -55,7 +61,6 @@ The call to **rxDataStep** uses the *rowSelection* argument to select only the r
 	Variable information: 
 	Var 1: y, Type: numeric, Low/High: (0.5516, 0.9941)
 	Var 2: z, Type: integer, Low/High: (1, 20)
-
 
 Subsetting is particularly useful if your original data set contains millions of rows or hundreds of thousands of variables. As a smaller example, the CensusWorkers.xdf sample data file has six variables and 351,121 rows. 
 
@@ -94,150 +99,10 @@ As noted above, if you omit the *outFile* argument to **rxDataStep**, then the r
 
 	rxGetVarInfo(partWorkersDS)
 
-## Transform Data with rxDataStep
 
-A crucial step in many analyses is transforming the data into the form best suited for the chosen analysis. For example, variations in scale between variables can sometimes make it convenient to take a log or a power of the original variable before fitting a linear model. In RevoScaleR, transforming data is an important issue because we are typically reading and processing data from disk, so we want to be as efficient as possible, minimizing the passes through the data. 
+## Subset and transform in one operation (census)
 
-To provide maximum flexibility, RevoScaleR allows you to perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**,**rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**. In all cases, the basic approach for data transforms are the same.
-
-The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated and typically is an assignment either creating a new variable or modifying an existing variable from the original data set.
-
-## Extended example showing a series of transformations
-
-A *transforms* argument can be a powerful way to effect a sequence of changes on a row by row basis. The *transforms* argument is specified as a list of expressions. Given R expressions operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation), you can combine them into a single *transforms* argument, as this example demonstrates.
-
-Start with a simple data frame containing a small sample of transaction data:
-	
-	#  Transforming Data with rxDataStep
-	
-	expData <- data.frame(
-	   BuyDate = c("2011/10/1", "2011/10/1", "2011/10/1", 
-	    "2011/10/2", "2011/10/2", "2011/10/2", "2011/10/2", 
-	    "2011/10/3", "2011/10/4", "2011/10/4"),
-	   Food =      c( 32, 102,  34,  5,   0, 175,  15, 76, 23, 14),
-	   Wine =      c( 0,  212,   0,  0, 425,  22,   0, 12,  0, 56),
-	   Garden =    c( 0,   46,   0,  0,   0,  45, 223,  0,  0, 0),
-	   House = c( 22,  72,  56,  3,   0,  0,    0, 37, 48, 23),
-	   Sex =   factor(c("F", "F", "M", "M", "M", "F", "F", "F", "M", "F")),
-	   Age =          c( 20,  51,  32,  16,  61, 42,  35, 99, 29, 55),
-	   stringsAsFactors = FALSE)
-	
-Apply a series of data transformations:
-
--   Compute the total expenditures for each store visit
--   Compute the average category expenditure for each store visit
--   Set the variable *Age* to missing if the value is 99
--   Create a new logical variable *UnderAge* if the purchaser is under 21
--   Find the day of week the purchase was made using R’s *as.POSIXlt* function, then convert it to a factor. [Note that when creating factors in a transform, you must specify the levels or you may get unpredictable results. Alternatively use *rxFactors*.]
--   Create a factor variable for categories of expenditure levels
--   Create a logical variable for expenditures of $50 or more on either Food or Wine
--   Remove the variable BuyDate from the data set
-
-The following call to **rxDataStep** will accomplish all of the above, returning a new data frame with the transformed variables:
-
-	newExpData = rxDataStep( inData = expData, 
-	    transforms = list(
-	        Total      = Food + Wine + Garden + House,
-	        AveCat     = Total/4,
-	        Age        = ifelse(Age == 99, NA, Age),
-	        UnderAge   = Age < 21,
-	        Day        = (as.POSIXlt(BuyDate))$wday, 
-	        Day        = factor(Day, levels = 0:6, 
-	                        labels = c("Su","M","Tu", "W", "Th","F", "Sa")),
-	        SpendCat   = cut(Total, breaks=c(0, 75, 250, 10000), 
-					   labels=c("low", "medium", "high"), right=FALSE),
-	        FoodWine = ifelse( Food > 50, TRUE, FALSE),
-	        FoodWine = ifelse( Wine > 50, TRUE, FoodWine),
-	        BuyDate  = NULL))
-	newExpData
-
-The new data frame shows all of the transformed data:
-
-	   Food Wine Garden House Sex Age Total AveCat UnderAge Day SpendCat FoodWine
-	1    32    0      0    22   F  20    54  13.50     TRUE  Sa      low    FALSE
-	2   102  212     46    72   F  51   432 108.00    FALSE  Sa     high     TRUE
-	3    34    0      0    56   M  32    90  22.50    FALSE  Sa   medium    FALSE
-	4     5    0      0     3   M  16     8   2.00     TRUE  Su      low    FALSE
-	5     0  425      0     0   M  61   425 106.25    FALSE  Su     high     TRUE
-	6   175   22     45     0   F  42   242  60.50    FALSE  Su   medium     TRUE
-	7    15    0    223     0   F  35   238  59.50    FALSE  Su   medium    FALSE
-	8    76   12      0    37   F  NA   125  31.25       NA   M   medium     TRUE
-	9    23    0      0    48   M  29    71  17.75    FALSE  Tu      low    FALSE
-	10   14   56      0    23   F  55    93  23.25    FALSE  Tu   medium     TRUE
-
-
-If we had a large data set containing expenditure data in an .xdf file, we could use exactly the same transformation code; the only changes in the call to **rxDataStep** would be the *inData* and the addition of an *outFile* for the newly created data set.
-
-
-## Impute values
-
-A common use case is replace missing values with the variable mean. This example uses generated data in a simple data frame. 
-
-	# Create a data frame with missing values
-	set.seed(59)
-	myData1 <- data.frame(x = rnorm(100), y = runif(100))
-	
-	xmiss <- seq.int(from = 5, to = 100, by = 5)
-	ymiss <- seq.int(from = 2, to = 100, by = 5)
-	myData1$x[xmiss] <- NA
-	myData1$y[ymiss] <- NA
-	rxGetInfo(myData1, numRows = 5)
-
-A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables.:
-
-	Data frame: myData1 
-	Number of observations: 100 
-	Number of variables: 2 
-	Data (5 rows starting with row 1):
-	           x          y
-	1 -1.8621337 0.06206201
-	2  1.1398069         NA
-	3  0.3176267 0.84132161
-	4  1.3998593 0.26298559
-	5         NA 0.97069679
-
-Now use **rxSummary** to compute summary statistics that includes a variable mean, putting both computed means into a named vector:
-
-	# Compute summary statistics and extract to a named vector
-	sumStats <- rxResultsDF(rxSummary(~., myData1))
-	sumStats
-	meanVals <- sumStats$Mean
-	names(meanVals) <- row.names(sumStats)
-
-The computed statistics are:
-
-	        Mean    StdDev         Min       Max ValidObs MissingObs
-	x 0.07431126 0.9350711 -1.94160646 1.9933814       80         20
-	y 0.54622241 0.3003457  0.04997869 0.9930338       80         20
-
-Finally, pass the computed means into a **rxDataStep** using the *transformObjects* argument:
-
-	# Use rxDataStep to replace missings with imputed mean values
-	myData2 <- rxDataStep(inData = myData1, transforms = list(
-	    x = ifelse(is.na(x), meanVals["x"], x),
-	    y = ifelse(is.na(y), meanVals["y"], y)),
-	    transformObjects = list(meanVals = meanVals))
-	rxGetInfo(myData2, numRows = 5)
-
-The resulting data set information substituates NA with computed means generated in the previous step:
-
-	Data frame: myData2 
-	Number of observations: 100 
-	Number of variables: 2 
-	Data (5 rows starting with row 1):
-	            x          y
-	1 -1.86213372 0.06206201
-	2  1.13980693 0.54622241
-	3  0.31762673 0.84132161
-	4  1.39985928 0.26298559
-	5  0.07431126 0.97069679
-
-
-## Create a factor variable via transformation
-
-was "Subsetting and Transforming Variables"
-
-Returning to our earlier example with CensusWorkers, we will now combine subsetting and transformations in one data step operation. Suppose we want to extract the same five variables as before from the CensusWorkers data set, but also add a factor variable based on the integer variable *age*. For example, to create our factor variable, we can use the following *transforms* argument:
+Still working with the CensusWorkers dataset, this exercise shows how to combine subsetting and transformations in one data step operation. Suppose we want to extract the same five variables as before from the CensusWorkers data set, but also add a factor variable based on the integer variable *age*. For example, to create our factor variable, we can use the following *transforms* argument:
 
 	transforms = list(ageFactor = cut(age, breaks=seq(from = 20, to = 70, 
 	                                  by = 5), right = FALSE))
@@ -306,12 +171,11 @@ The **rxGetInfo** function reveals the added variable:
 	         3 factor levels: Connecticut Indiana Washington
 	  Var 7: stateEducExpPC, Type: numeric, Low/High: (1170.4600, 1795.5700)
 	  
-## Convert a data frame to XDF
+## Convert a data frame to XDF (seed)
 
 You can use all of the functionality provided by the **rxDataStep** function to create an .xdf file from a data frame for further use. For example, create a simple data frame:
 
 	#  Using the Data Step to Create an .xdf File from a Data Frame
-	
 	set.seed(39)
 	myData <- data.frame(x1 = rnorm(10000), x2 = runif(10000))
 
@@ -329,7 +193,7 @@ Now create an .xdf file, using a row selection and creating a new variable. The 
 	  Number of blocks: 2
 
 
-## Convert XDF to Text
+## Convert XDF to Text (claims)
 
 If you need to share data with others not using .xdf data files, you can export your .xdf files to text format using the **rxDataStep** function. For example, we can write the claims.xdf file we created earlier to text format as follows:
 
@@ -349,37 +213,70 @@ If you have a large number of variables, you can choose to write out only a subs
 	rxDataStep(inData=claimsXdf, outFile=claimsTxt, varsToDrop="number", 
 	            overwrite=TRUE)
 
-## Modify variable metadata
+## Impute values (seed)
 
-To change variable information (rather than the data values themselves), use the function **rxSetVarInfo**. For example, using the data file created above, we can change the names of two variables and add descriptions:
-	
-	#  Modifying Variable Information
-	
-	newVarInfo <- list(
-	    incwage = list(newName = "WageIncome"),
-	    state   = list(newName = "State", description = "State of Residence"),
-	    stateEducExpPC = list(description = "State Per Capita Educ Exp"))     
-	fileName <- "censusWorkersWithEduc.xdf"
-	rxSetVarInfo(varInfo = newVarInfo, data = fileName)
-	rxGetVarInfo( fileName )
-	
-	Var 1: age, Age 
-	       Type: integer, Low/High: (20, 65)
-	Var 2: WageIncome, Wage and salary income 
-	       Type: integer, Low/High: (0, 354000)
-	Var 3: perwt, Type: integer, Low/High: (2, 168)
-	Var 4: sex, Sex 
-	       2 factor levels: Male Female
-	Var 5: wkswork1, Weeks worked last year 
-	       Type: integer, Low/High: (21, 52)
-	Var 6: State, State of Residence 
-	       3 factor levels: Connecticut Indiana Washington
-	Var 7: stateEducExpPC, State Per Capita Educ Exp 
-	       Type: numeric, Low/High: (1170.4600, 1795.5700)
+A common use case is replace missing values with the variable mean. This example uses generated data in a simple data frame. 
 
+	# Create a data frame with missing values
+	set.seed(59)
+	myData1 <- data.frame(x = rnorm(100), y = runif(100))
+	
+	xmiss <- seq.int(from = 5, to = 100, by = 5)
+	ymiss <- seq.int(from = 2, to = 100, by = 5)
+	myData1$x[xmiss] <- NA
+	myData1$y[ymiss] <- NA
+	rxGetInfo(myData1, numRows = 5)
 
-	  
-## Create and recode factors
+A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables.:
+
+	Data frame: myData1 
+	Number of observations: 100 
+	Number of variables: 2 
+	Data (5 rows starting with row 1):
+	           x          y
+	1 -1.8621337 0.06206201
+	2  1.1398069         NA
+	3  0.3176267 0.84132161
+	4  1.3998593 0.26298559
+	5         NA 0.97069679
+
+Now use **rxSummary** to compute summary statistics that includes a variable mean, putting both computed means into a named vector:
+
+	# Compute summary statistics and extract to a named vector
+	sumStats <- rxResultsDF(rxSummary(~., myData1))
+	sumStats
+	meanVals <- sumStats$Mean
+	names(meanVals) <- row.names(sumStats)
+
+The computed statistics are:
+
+	        Mean    StdDev         Min       Max ValidObs MissingObs
+	x 0.07431126 0.9350711 -1.94160646 1.9933814       80         20
+	y 0.54622241 0.3003457  0.04997869 0.9930338       80         20
+
+Finally, pass the computed means into a **rxDataStep** using the *transformObjects* argument:
+
+	# Use rxDataStep to replace missings with imputed mean values
+	myData2 <- rxDataStep(inData = myData1, transforms = list(
+	    x = ifelse(is.na(x), meanVals["x"], x),
+	    y = ifelse(is.na(y), meanVals["y"], y)),
+	    transformObjects = list(meanVals = meanVals))
+	rxGetInfo(myData2, numRows = 5)
+
+The resulting data set information substituates NA with computed means generated in the previous step:
+
+	Data frame: myData2 
+	Number of observations: 100 
+	Number of variables: 2 
+	Data (5 rows starting with row 1):
+	            x          y
+	1 -1.86213372 0.06206201
+	2  1.13980693 0.54622241
+	3  0.31762673 0.84132161
+	4  1.39985928 0.26298559
+	5  0.07431126 0.97069679
+
+## Convert strings to factors ('seed')
 
 Factors are variables that represent categories. An example is “sex”, which has the categories “Male” and “Female”. There are two parts to a factor variable:
 
@@ -390,7 +287,6 @@ Factors are variables that represent categories. An example is “sex”, which 
 If you have character data in an .xdf file or data frame, you can use the **rxFactors** function to convert it to a factor. Let’s create a simple data frame with character data. Note that by default, *data.frame* converts character data to factor data. That is, the *stringsAsFactors* argument defaults to *TRUE*. In RevoScaleR’s **rxImport** function, *stringsAsFactors* has a default of *FALSE*.
 
 	# Creating factors from character data
-	  
 	myData <- data.frame(
 	  id = 1:10,
 	  sex = c("M","F", "M", "F", "F", "M", "F", "F", "M", "M"),
@@ -510,17 +406,15 @@ Looking at just Q1, we see the recoded factor:
 	 [25] Neither Satisfied Nor Dissatisfied
 	 3 Levels: Largely Satisfied ... Largely Dissatisfied
 
-#### Recoding Factors to Ensure Variable Compatibility
+#### Recode factors for compatibility
 
 One important use of factor recoding in RevoScaleR is to ensure that the factor variables in two files are compatible, that is, have the same levels with the same coding. This use comes up in a variety of contexts, including prediction, merging, and distributed computing. For example, suppose you are creating a logistic regression model of whether a given airline flight will be late, and are using the first fifteen years of the airline data as a training set. You then want to test the model on the remaining years of the airline data. You need to ensure that the two files, the training set and the test set, have compatible factor variables. You can generally do this easily using **rxGetInfo** (with getVarInfo=TRUE) together with **rxFactors**. Use **rxGetInfo** to find all the levels in all the files, then use **rxFactors** to recode each file so that every factor variable contains all the levels found in any of the files.
 
 The **rxMerge** function automatically checks for factor variable compatibility and recodes on the fly if necessary.
 
+## Create a variable (census)
 
-
-## Create variables
-
-Suppose we want to extract five variables from the *CensusWorkers* data set, but also add a factor variable based on the integer variable age. We considered this example in Chapter 4, when we used the *transforms* argument to create the new variable. We can also use a transform function to create new variables. 
+Suppose we want to extract five variables from the *CensusWorkers* data set, but also add a factor variable based on the integer variable age. This example shows how to use a transform function to create new variables. 
 
 For example, to create our factor variable, we can create the following function:
 
@@ -586,8 +480,36 @@ The *rxGetInfo* function reveals the added and dropped variables:
 	  Var 6: ageFactor
 			 10 factor levels: [20,25) [25,30) [30,35) [35,40) [40,45) [45,50) 
 	  [50,55) [55,60) [60,65) [65,70)
+
+## Modify variable metadata (census)
+
+To change variable information (rather than the data values themselves), use the function **rxSetVarInfo**. For example, using the CensusData, we can change the names of two variables and add descriptions:
+	
+	#  Modifying Variable Information
+	
+	newVarInfo <- list(
+	    incwage = list(newName = "WageIncome"),
+	    state   = list(newName = "State", description = "State of Residence"),
+	    stateEducExpPC = list(description = "State Per Capita Educ Exp"))     
+	fileName <- "censusWorkersWithEduc.xdf"
+	rxSetVarInfo(varInfo = newVarInfo, data = fileName)
+	rxGetVarInfo( fileName )
+	
+	Var 1: age, Age 
+	       Type: integer, Low/High: (20, 65)
+	Var 2: WageIncome, Wage and salary income 
+	       Type: integer, Low/High: (0, 354000)
+	Var 3: perwt, Type: integer, Low/High: (2, 168)
+	Var 4: sex, Sex 
+	       2 factor levels: Male Female
+	Var 5: wkswork1, Weeks worked last year 
+	       Type: integer, Low/High: (21, 52)
+	Var 6: State, State of Residence 
+	       3 factor levels: Connecticut Indiana Washington
+	Var 7: stateEducExpPC, State Per Capita Educ Exp 
+	       Type: numeric, Low/High: (1170.4600, 1795.5700)	
 	  
-## Add objects or data
+## Add objects or data (census)
 
 It is sometimes useful to access additional information from within a transform function. For example, you might want to match additional data in the process of creating new variables. Transform functions are evaluated in a “sterilized” environment which includes the parent environment of the function closure. To provide access to additional data within the function, you can use the *transformObjects* argument.
 
@@ -647,11 +569,12 @@ When the transform function is evaluated, it will have access to the *educExp* o
 	F-statistic:  9839 on 3 and 351117 DF,  p-value: < 2.2e-16 
 	Condition number: 1.1176
 
-## Create a row selection variable
+## Create a row selection variable (census)
 
 One common use of the *transformFunc* argument is to create a logical variable to use as a row selection variable. For example, suppose you want to create a random sample from a massive data set. You can use the *transformFunc* argument to specify a transformation that creates a random binomial variable, which can then be coerced to logical and used for row selection. The object name *.rxRowSelection* is reserved for the row selection variable; if RevoScaleR finds this object, it is used for row selection.
 
-[!Warning] If you both specify a *rowSelection* argument and define a *.rxRowSelection* variable in your transform function, the one specified in your transform function will be overwritten by the contents of the *rowSelection* argument, so that expression takes precedence.
+> [!Note] 
+> If you both specify a *rowSelection* argument and define a *.rxRowSelection* variable in your transform function, the one specified in your transform function will be overwritten by the contents of the *rowSelection* argument, so that expression takes precedence.
 
 The following code creates a random selection variable to create a data frame with a random 10% subset of the census workers file:
 
@@ -684,7 +607,7 @@ Equivalently, we could create the temporary row selection variable using the *ro
 	df <- rxDataStep(inData = censusWorkers, 
 		rowSelection = as.logical(rbinom(.rxNumRows, 1, .10)) == TRUE)
 
-## Use internal variables 
+## Use internal variables (canonical syntax, not sample data)
 
 This example shows how to compute moving averages using internal variables in a transformation function.
 
@@ -797,6 +720,71 @@ We could use this function with *rxDataStep* to add a variable to our data set, 
 ![](media/rserver-scaler-user-guide-18-transform-functions/image25.png)
 
 
+## Extended example showing a series of transformations (expenditures)
+
+A *transforms* argument can be a powerful way to effect a sequence of changes on a row by row basis. The *transforms* argument is specified as a list of expressions. Given R expressions operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation), you can combine them into a single *transforms* argument, as this example demonstrates.
+
+Start with a simple data frame containing a small sample of transaction data:
+	
+	#  Transforming Data with rxDataStep
+	
+	expData <- data.frame(
+	   BuyDate = c("2011/10/1", "2011/10/1", "2011/10/1", 
+	    "2011/10/2", "2011/10/2", "2011/10/2", "2011/10/2", 
+	    "2011/10/3", "2011/10/4", "2011/10/4"),
+	   Food =      c( 32, 102,  34,  5,   0, 175,  15, 76, 23, 14),
+	   Wine =      c( 0,  212,   0,  0, 425,  22,   0, 12,  0, 56),
+	   Garden =    c( 0,   46,   0,  0,   0,  45, 223,  0,  0, 0),
+	   House = c( 22,  72,  56,  3,   0,  0,    0, 37, 48, 23),
+	   Sex =   factor(c("F", "F", "M", "M", "M", "F", "F", "F", "M", "F")),
+	   Age =          c( 20,  51,  32,  16,  61, 42,  35, 99, 29, 55),
+	   stringsAsFactors = FALSE)
+	
+Apply a series of data transformations:
+
+-   Compute the total expenditures for each store visit
+-   Compute the average category expenditure for each store visit
+-   Set the variable *Age* to missing if the value is 99
+-   Create a new logical variable *UnderAge* if the purchaser is under 21
+-   Find the day of week the purchase was made using R’s *as.POSIXlt* function, then convert it to a factor. [Note that when creating factors in a transform, you must specify the levels or you may get unpredictable results. Alternatively use *rxFactors*.]
+-   Create a factor variable for categories of expenditure levels
+-   Create a logical variable for expenditures of $50 or more on either Food or Wine
+-   Remove the variable BuyDate from the data set
+
+The following call to **rxDataStep** will accomplish all of the above, returning a new data frame with the transformed variables:
+
+	newExpData = rxDataStep( inData = expData, 
+	    transforms = list(
+	        Total      = Food + Wine + Garden + House,
+	        AveCat     = Total/4,
+	        Age        = ifelse(Age == 99, NA, Age),
+	        UnderAge   = Age < 21,
+	        Day        = (as.POSIXlt(BuyDate))$wday, 
+	        Day        = factor(Day, levels = 0:6, 
+	                        labels = c("Su","M","Tu", "W", "Th","F", "Sa")),
+	        SpendCat   = cut(Total, breaks=c(0, 75, 250, 10000), 
+					   labels=c("low", "medium", "high"), right=FALSE),
+	        FoodWine = ifelse( Food > 50, TRUE, FALSE),
+	        FoodWine = ifelse( Wine > 50, TRUE, FoodWine),
+	        BuyDate  = NULL))
+	newExpData
+
+The new data frame shows all of the transformed data:
+
+	   Food Wine Garden House Sex Age Total AveCat UnderAge Day SpendCat FoodWine
+	1    32    0      0    22   F  20    54  13.50     TRUE  Sa      low    FALSE
+	2   102  212     46    72   F  51   432 108.00    FALSE  Sa     high     TRUE
+	3    34    0      0    56   M  32    90  22.50    FALSE  Sa   medium    FALSE
+	4     5    0      0     3   M  16     8   2.00     TRUE  Su      low    FALSE
+	5     0  425      0     0   M  61   425 106.25    FALSE  Su     high     TRUE
+	6   175   22     45     0   F  42   242  60.50    FALSE  Su   medium     TRUE
+	7    15    0    223     0   F  35   238  59.50    FALSE  Su   medium    FALSE
+	8    76   12      0    37   F  NA   125  31.25       NA   M   medium     TRUE
+	9    23    0      0    48   M  29    71  17.75    FALSE  Tu      low    FALSE
+	10   14   56      0    23   F  55    93  23.25    FALSE  Tu   medium     TRUE
+
+
+If we had a large data set containing expenditure data in an .xdf file, we could use exactly the same transformation code; the only changes in the call to **rxDataStep** would be the *inData* and the addition of an *outFile* for the newly created data set.
 
 
 ## Next Steps
