@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Example: Analyzing loan data using ScaleR in Microsoft R"
-description: "Learn how to work with big datasets using sample loan data in this ScaleR tutorial walkthrough."
+title: "Tutorial: Analyzing loan data using RevoScaleR in Microsoft R"
+description: "Learn how to work with big datasets using sample loan data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "11/03/2016"
+ms.date: "05/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,9 +24,9 @@ ms.custom: ""
 
 ---
 
-# Example: Analyzing loan data with ScaleR (Microsoft R)
+# Tutorial: Analyzing loan data with RevoScaleR (Microsoft R)
 
-This example builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by showing you how to import .csv files to create an .xdf file, and use statistical ScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in an [earlier tutorial](scaler-getting-started-data-import-exploration.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
 ## Get the mortgage default data set
 
@@ -191,7 +191,7 @@ Using the binary *default* variable as the dependent variable, estimate a logist
 
 Alternatively, we can treat year as a categorical or factor variable by using the F function. The benefit is that we get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates, while controlling for the other variables in the regression. The logistic regression is specified as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 	logitObj <- rxLogit(default~F(year) + creditScore +
 	       yearsEmploy + ccDebt,
@@ -400,7 +400,7 @@ The results should be printed to your console, with the highest default rate at 
 ~~~~
 ## Next steps
 
-- If you missed the first tutorial, see [Get started with ScaleR](scaler-getting-started.md) for an overview.
+- If you missed the first tutorial, see [Practice data import and exploration](scaler-getting-started-data-import-exploration.md) for an overview.
 - For more advanced lessons, see [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md).
 
 ## See Also

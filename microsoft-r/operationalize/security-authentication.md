@@ -38,8 +38,8 @@ To secure connections and communications, you have several options:
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
 |[Local `admin` account](#local)|For [one-box](configuration-initial.md) configurations|
-|[Active Directory / LDAP](#ldap)|For [enterprise](configure-enterprise.md) on-premise configurations|
-|[Active Directory / LDAP-S](#ldap)|For [enterprise](configure-enterprise.md) on-premise configurations with SSL/TLS enabled|
+|[Active Directory / LDAP](#ldap)|For [enterprise](configure-enterprise.md) on-premises configurations|
+|[Active Directory / LDAP-S](#ldap)|For [enterprise](configure-enterprise.md) on-premises configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|For [enterprise](configure-enterprise.md) cloud configurations|
 
 <a name="local"></a>
@@ -63,11 +63,11 @@ To log into Microsoft R Server with this user for remote execution or web servic
 
 ## Active Directory and LDAP/LDAP-S
 
-Active Directory (AD) and LDAP are a great authentication option for on-premise configurations to ensure that domain users have access to the APIs.  
+Active Directory (AD) and LDAP are a great authentication option for on-premises configurations to ensure that domain users have access to the APIs.  
 
 The standard protocol for reading data from and writing data to Active Directory (AD) domain controllers (DCs) is LDAP. AD LDAP traffic is unsecured by default, which makes it possible to use network-monitoring software to view the LDAP traffic between clients and DCs.  
 
-By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
+By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your configuration file. The values you assign to these properties must match the configuration of your LDAP Directory Information Tree (DIT).
 
 You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS.](security-https.md) Reasons for enabling LDAP-S include:
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Get started with ScaleR on Apache Spark"
+title: "Practice data import and exploration on Apache Spark"
 description: "Microsoft R Server with Apache Spark features and components overview."
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Get started with ScaleR on Apache Spark
+# Practice data import and exploration on Apache Spark
 
 ## Overview
 

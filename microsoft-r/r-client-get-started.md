@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Get Started with Microsoft R Client
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
@@ -71,7 +71,7 @@ To learn more about the supported platforms or installation steps, please see th
 
 While R is a command line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. To do so, you must point that IDE to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include R Tools for Visual Studio on Windows (Recommended), RStudio, or any other R development environment.
 
-+ **Set up RTVS for R Client on Windows**: [R Tools for Visual Studio](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/setup-or-configure-r-tools#Anchor_1) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  To make R Client the default R engine for RTVS, choose Change R to Microsoft R Client from the R Tools menu.  
++ **Set up RTVS for R Client on Windows**: [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  To make R Client the default R engine for RTVS, choose Change R to Microsoft R Client from the R Tools menu.  
 
 + **Set up RStudio for R Client on Windows or Linux**: [RStudio](https://www.rstudio.com/products/rstudio/download2/) is another popular R IDE. To make R Client the default R engine for RStudio, [update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R). For example, point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64` on Windows. 
 
@@ -104,7 +104,7 @@ You can learn more with these guides:
 
 + [Diving into Data Analysis with Microsoft R](data-analysis-in-microsoft-r.md)
 
-+ [Get started with RevoScaleR](microsoft-r-get-started-node.md)
++ [Get started with RevoScaleR](microsoft-r-tutorials.md)
 
 + [Get started with MicrosoftML](microsoftml-get-started.md)
 
