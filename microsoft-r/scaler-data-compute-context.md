@@ -53,15 +53,15 @@ Context name | Alternative name | Allowed data sources |
 [RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
 [RxSpark](scaler/packagehelp/RxSpark.md)         | spark     | RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](scaler/packagehelp/RxSparkData.md) including RxHiveData, RxParquetData, RxOrcData  |
 [RxHadoopMR](scaler/packagehelp/RxHadoopMR.md)      | hadoopmr  | [RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
-[RxInSqlServer](scaler/packagehelp/RxInSqlServer.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerDat.md) |
-[RxInTeradata](scaler/packagehelp/RxInTeradata.md)    | teradata  | [RxTeradataData](scaler/packagehelp/RxTeradataDat.md)  |
+[RxInSqlServer](scaler/packagehelp/RxInSqlServer.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) |
+[RxInTeradata](scaler/packagehelp/RxInTeradata.md)    | teradata  | [RxTeradataData](scaler/packagehelp/RxTeradataData.md)  |
 
 Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:
 
 Context name | Alternative name | 
 -----------|--------------------|
-[RxLocalParallel]() | localpar  |  
-[RxForeachDoPar]()  | dopar     |  
+[RxLocalParallel](scaler/packagehelp/RxRxLocalParallel.md) | localpar  |  
+[RxForeachDoPar](scaler/packagehelp/RxForeachDoPar,md)  | dopar     |  
 
 ## Get compute context
 
