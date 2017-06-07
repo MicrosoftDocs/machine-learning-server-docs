@@ -57,8 +57,7 @@ The following table numerates the arguments used in data manipulation tasks.
 
 | Argument | Usage |
 |----------|-------|
-| *transforms* |  A formula for manipulating or transforming data, passed as an argument to a RevoScaleR function like **rxImport** or **rxDataStep**. This expression can be defined outside of the function call using the expression function.
-|
+| *transforms* |  A formula for manipulating or transforming data, passed as an argument to a RevoScaleR function like **rxImport** or **rxDataStep**. This expression can be defined outside of the function call using the expression function. |
 | *rowSelection* | Criteria for selecting a subset of rows in the current data frame. |
 | *function* | A base R class used to create functions in R script.| 
 | *transformFunc* | Assigns a function to a RevoScaleR function supporting data manipulation and transformations. If this argument is specified, it is evaluated before any other transformations specified in the *transforms*, *rowSelection*, or *formula* arguments. The list of variables to be passed to the transform function is specified as the *transformVars* argument.|
@@ -74,8 +73,8 @@ The following functions support embedded transformations or reference an externa
 
 | Function | Use case|
 |----------|-----------|
-| **rxDataStep** | Create a subset rows or variables, or create new variables by transforming existing variables. Also used for easy conversion between data in data frames and .xdf files. 
-| **rxImport** | Invoke a transformation while loading data into a data frame or .xdf file.
+| **rxDataStep** | Create a subset rows or variables, or create new variables by transforming existing variables. Also used for easy conversion between data in data frames and .xdf files. |
+| **rxImport** | Invoke a transformation while loading data into a data frame or .xdf file. |
 | **rxSummary** | Transform data inline, while computing summary statistics. |
 | **rxLinMod** | Create or transform variables used in the data set of a linear regression.|
 | **rxLogit** | Create or transform variables used in the data set of a logistic regression. |

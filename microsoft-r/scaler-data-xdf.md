@@ -36,7 +36,7 @@ XDF files are not strictly required for statistical analysis and data mining, bu
 
 To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the *outFile* parameter, **rxImport** creates an XDF file.
 
-## Example: Simple case
+## Example: Create an XDF
 
 You can create an XDF using any data that can be loaded by **rxImport**, and by specifying an *outFile* consisting of a file path to a writable directory.
 
@@ -96,7 +96,7 @@ If you have one or more existing .xdf files and would like to compress them, you
 
 	> rxCompressXdf("C:/data", xdfCompressionLevel = 1, overwrite = TRUE)
 
-## Append new observations to an existing XDF
+## Append new observations
 
 If you have observations on the same variables in multiple input files, you can use the *append* argument to **rxImport** to combine them into one file. For example, we could append another copy of the claims text data set in a second block to the claimCAOrdered2.xdf file we created in section 2.6:
 	
@@ -128,9 +128,9 @@ If you have observations on the same variables in multiple input files, you can 
 	Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
 	Var 6: number, Type: integer, Low/High: (0, 434)
 
-    ## Reading Data from an XDF File into a Data Frame
+## Read XDF data into a data frame
 
-It is often convenient to store a large amount of data in an .xdf file and then read a subset of columns and rows of the data into a data frame in memory for analysis. The *rxDataStep* function makes this easy. For example, let’s consider taking subsamples from the sample data set CensusWorkers.xdf. Using a *rowSelection* expression and list of *varsToKeep*, we can extract the *age*, *perwt*, and *sex* variables for individuals over the age of 40 living in Washington State:
+It is often convenient to store a large amount of data in an .xdf file and then read a subset of columns and rows of the data into a data frame in memory for analysis. The **rxDataStep** function makes this easy. For example, let’s consider taking subsamples from the sample data set CensusWorkers.xdf. Using a *rowSelection* expression and list of *varsToKeep*, we can extract the *age*, *perwt*, and *sex* variables for individuals over the age of 40 living in Washington State:
 
 	#  Reading Data from an .xdf File into a Data Frame
 	

@@ -26,8 +26,6 @@ ms.custom: ""
 
 # Compute context (Microsoft R)
 
-**Applies to: Microsoft R Client, Microsoft R Server**
-
 *Compute context* refers to the location of RevoScaleR computations, as executed by the RevoScaleR interpreter provided by an R Server or R Client. The ability to switch a compute context means that you can push execution to another RevoScaleR interpreter if you want to leverage data resources on that server.
 
 The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for compute context typically leverage a database platform, such as SQL Server or Teradata, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
