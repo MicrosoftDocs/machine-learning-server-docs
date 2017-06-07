@@ -52,8 +52,7 @@ To create non-waiting jobs, you simply set wait=FALSE in your compute context ob
 		shareDir="\\AllShare\\myName",
 		revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
 		dataPath="C:\\data",
-		computeOnHeadNode= TRUE,
-		wait=FALSE)
+		computeOnHeadNode= TRUE, wait=FALSE)
 	rxOptions(computeContext=myNoWaitCluster)
 
 When *wait* is set to *FALSE*, a job information object rather than a job results object is returned from the submitted job. You should always *assign* this result so that you can use it to obtain job status while the job is running and obtain the job results when the job completes. For example, returning to our initial waiting job example, calling `rxExec` to get data set information, in the non-blocking case we augment our call to `rxExec` with an assignment, and then use the assigned object as input to the `rxGetJobStatus` and `rxGetJobResults` functions:

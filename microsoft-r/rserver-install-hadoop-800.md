@@ -344,7 +344,7 @@ That should return a list of files in the native file system. If either the call
 
 ## Next Steps
 
-To get started with Microsoft R Server on Hadoop, we recommend the [Get started with ScaleR on Hadoop ](scaler-hadoop-getting-started.md).
+To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](scaler-hadoop-getting-started.md).
 
 ## See Also
 

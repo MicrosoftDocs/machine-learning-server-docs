@@ -52,7 +52,7 @@ The following resources are available to you:
 * [Adding Azure Data Lake Storage Access to your VM](http://packages.revolutionanalytics.com/doc/8.0.0/azure/ADLS%20Setup%20for%20an%20R%20Server%20VM%20on%20Azure.pdf)
 
 ## R Tools for Visual Studio
-* [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/)
+* [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
 
 ## Documentation Roadmap
 
@@ -144,7 +144,7 @@ While the *RevoScaleR Distributed Computing Guide* focuses on running computatio
 ###Archived Product Documentation
 
 **R Productivity Environment (RPE)**
-The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/). RPE documentation can be found at the following links:
+The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/installation). RPE documentation can be found at the following links:
 * [RPE Getting Started](RevoRPE_Getting_Started.md)
 * [RPE User's Guide](RevoRPE_Users_Guide.md)
 

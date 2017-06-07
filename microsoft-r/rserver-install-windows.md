@@ -93,7 +93,7 @@ Post-installation, you can check the log files (RServerSetup_<timestamp>.log) lo
 
 ### Connect and validate
 
-R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://www.visualstudio.com/vs/rtvs/) or Rgui.exe connects to the server.
+R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
 
 As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
 
@@ -122,7 +122,7 @@ An installation of Microsoft R Server includes the following components.
 
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://www.visualstudio.com/vs/rtvs/)
++ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation)
 
 > [!NOTE]
 > By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
