@@ -1,10 +1,10 @@
 ---
 
 # required metadata
-title: "Transform and subset data in Microsft R"
+title: "How to transform and subset data in Microsft R"
 description: "How to manipulate and transform data in RevoScaleR."
 keywords: ""
-author: "richcalaway"
+author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "06/04/2017"
 ms.topic: "article"
@@ -28,8 +28,7 @@ ms.custom: ""
 
 This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](scaler-user-guide-transform-functions.md).
 
-
-## Subset by row
+## Subset data by row or variable
 
 A common use of **rxDataStep** is to create a new data set with a subset of rows and variables. The following simple example uses a data frame as the input data set. 
 
@@ -103,9 +102,9 @@ To provide maximum flexibility, RevoScaleR allows you to perform data transforma
 
 The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated and typically is an assignment either creating a new variable or modifying an existing variable from the original data set.
 
-## Create or modify a variable
+## Extended example showing a series of transformations
 
-To create or modify variables, we use the *transforms* argument to **rxDataStep**. The *transforms* argument is specified as a list of expressions. Any R expression that operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation) can be used. 
+A *transforms* argument can be a powerful way to effect a sequence of changes on a row by row basis. The *transforms* argument is specified as a list of expressions. Given R expressions operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation), you can combine them into a single *transforms* argument, as this example demonstrates.
 
 Start with a simple data frame containing a small sample of transaction data:
 	
@@ -169,9 +168,10 @@ The new data frame shows all of the transformed data:
 
 If we had a large data set containing expenditure data in an .xdf file, we could use exactly the same transformation code; the only changes in the call to **rxDataStep** would be the *inData* and the addition of an *outFile* for the newly created data set.
 
-Sometimes it is useful to use computed values as part of a transformation. For example, you might want to impute missing values, replacing any omissions with the variable mean. Let’s look at a simple data frame example; again the same basic code could be used for a huge data set. 
 
-First create a data set with missing values:
+## Impute values
+
+A common use case is replace missing values with the variable mean. This example uses generated data in a simple data frame. 
 
 	# Create a data frame with missing values
 	set.seed(59)
@@ -183,7 +183,7 @@ First create a data set with missing values:
 	myData1$y[ymiss] <- NA
 	rxGetInfo(myData1, numRows = 5)
 
-The call to **rxGetInfo** shows the following:
+A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables.:
 
 	Data frame: myData1 
 	Number of observations: 100 
@@ -196,10 +196,9 @@ The call to **rxGetInfo** shows the following:
 	4  1.3998593 0.26298559
 	5         NA 0.97069679
 
-Now use **rxSummary** to compute summary statistics, putting the computed means into a named vector:
+Now use **rxSummary** to compute summary statistics that includes a variable mean, putting both computed means into a named vector:
 
-	# Compute the summary statistics and extract
-	# the means in a named vector
+	# Compute summary statistics and extract to a named vector
 	sumStats <- rxResultsDF(rxSummary(~., myData1))
 	sumStats
 	meanVals <- sumStats$Mean
@@ -211,8 +210,7 @@ The computed statistics are:
 	x 0.07431126 0.9350711 -1.94160646 1.9933814       80         20
 	y 0.54622241 0.3003457  0.04997869 0.9930338       80         20
 
-
-Finally, we pass the computed means into a **rxDataStep** using the *transformObjects* argument:
+Finally, pass the computed means into a **rxDataStep** using the *transformObjects* argument:
 
 	# Use rxDataStep to replace missings with imputed mean values
 	myData2 <- rxDataStep(inData = myData1, transforms = list(
@@ -221,7 +219,7 @@ Finally, we pass the computed means into a **rxDataStep** using the *transformOb
 	    transformObjects = list(meanVals = meanVals))
 	rxGetInfo(myData2, numRows = 5)
 
-The resulting data set information is:
+The resulting data set information substituates NA with computed means generated in the previous step:
 
 	Data frame: myData2 
 	Number of observations: 100 
@@ -967,12 +965,11 @@ The **rxMerge** function automatically checks for factor variable compatibility 
 
 ## Create variables
 
-Suppose we want to extract five variables from the *CensusWorkers* data set, but also add a factor variable based on the integer variable age. We considered this example in Chapter 4, when we used the *transforms* argument to create the new variable. We can also use a transform function to create new variables. For example, to create our factor variable, we can create the following function:
+Suppose we want to extract five variables from the *CensusWorkers* data set, but also add a factor variable based on the integer variable age. We considered this example in Chapter 4, when we used the *transforms* argument to create the new variable. We can also use a transform function to create new variables. 
 
-	#  Creating Variables
-	Ch18Start <- Sys.time()
-	
-	  
+For example, to create our factor variable, we can create the following function:
+
+	#  Use a function to create a factor variable using age data	  
 	ageTransform <- function(dataList)
 	{
 	    dataList$ageFactor <- cut(dataList$age, breaks=seq(from = 20, to = 70, 
@@ -981,7 +978,7 @@ Suppose we want to extract five variables from the *CensusWorkers* data set, but
 	}
 	
 
-We can test the function by reading an arbitrary chunk out of the data set. For efficiency reasons, the data passed to the transformation function is stored as a list rather than a data frame, so when reading from the .xdf file we set the *returnDataFrame* argument to FALSE to emulate this behavior. Since we only use the variable *age* in our transformation function, we restrict the variables extracted to that.
+To test the function, read an arbitrary chunk out of the data set. For efficiency reasons, the data passed to the transformation function is stored as a list rather than a data frame, so when reading from the .xdf file we set the *returnDataFrame* argument to FALSE to emulate this behavior. Since we only use the variable *age* in our transformation function, we restrict the variables extracted to that.
 
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")	
 	testData <- rxReadXdf(file = censusWorkers, startRow = 100, numRows = 10, 
@@ -1004,6 +1001,7 @@ The resulting list of data (displayed as a data frame) shows us that our transfo
 	8   23   [20,25)
 	9   32   [30,35)
 	10  42   [40,45)
+
 
 In doing a data step operation, RevoScaleR reads in a chunk of data read from the original data set, including only the variables indicated in *varsToKeep*, or omitting variables specified in *varsToDrop*. It then passes the variables needed for data transformations back to R for manipulation. We specify the variables needed to process the transformation in the *transformVars* argument. Including extra variables does not alter the analysis, but it does reduce the efficiency of the data step. In this case, since *ageFactor* depends only on the *age* variable for its creation, the *transformVars* argument needs to specify just that:
 
