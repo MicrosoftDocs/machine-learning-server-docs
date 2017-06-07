@@ -5,6 +5,8 @@
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
+## [Operationalize analytics](operationalize/about.md)
+## [Interoperability with R](overview-interoperability.md)
 
 # Get started with RevoScaleR
 ## [Tutorials](microsoft-r-tutorials.md)
@@ -20,6 +22,14 @@
 ### [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
+
+# [Get started with MicrosoftML](microsoftml-get-started.md)
+## [Introduction to MicrosoftML](microsoftml-introduction.md)
+## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
+## [MicrosoftML function reference](microsoftml/microsoftml.md)
+## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Diving into data analysis](data-analysis-in-microsoft-r.md)
 ## Load and transform data
