@@ -177,7 +177,7 @@ As an example of a large data classification tree, consider the following simple
 	airlineTree <- rxDTree(ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData,
 	    blocksPerRead = 30, maxDepth = 5, cp = 1e-5)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 The default cp of 0 produces a very large number of splits; specifying *cp* = 1e-5 produces a more manageable set of splits in this model:
 

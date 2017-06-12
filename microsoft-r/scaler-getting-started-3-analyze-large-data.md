@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyze a large data set with ScaleR in Microsoft R"
-description: "Learn how to work with big data using a sample airline dataset in this ScaleR tutorial walkthrough."
+title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Microsoft R"
+description: "Learn how to work with big data using a sample airline dataset in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# Tutorial: Analyzing a Large Data Set with ScaleR (Microsoft R)
+# Tutorial: Load and analyze a large airline data set with RevoScaleR (Microsoft R)
 
-This tutorial builds on what you learned in the [quick start introduction to ScaleR](scaler-getting-started.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps.
+This tutorial builds on what you learned in the [first RevoScaleR tutorial](scaler-getting-started-data-import-exploration.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
 ## Download the airline dataset
 
-To really get a feel for ScaleR, you may want to use larger data sets. You can download these larger data sets [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+To really get a feel for RevoScaleR, you should work with functions using a larger data set. Larger data sets are available for download [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 You can use a smaller or larger data set with this tutorial. Datasets for this tutorial include the following:
 
@@ -205,7 +205,7 @@ In the next section you will see how you can analyze a data set that is too big 
 
 The RevoScaleR compute engine is designed to work very efficiently with .xdf files, particularly with factor data. When working with larger data sets, the *blocksPerRead* argument is important in controlling how much data is processed in memory at one time.  If too many blocks are read in at one time, you may run out of memory.  If too few blocks are read in at one time, you may experience slower total processing time. You can experiment with *blocksPerRead* on your system and  time the estimation of a linear model as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 	system.time(
 		delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS,
@@ -272,7 +272,7 @@ You should see the following plot for the full data set:
 
 By default, **RevoScaleR** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 	delayDep <- rxLinMod(DepDelay ~ DayOfWeek, data = bigAirDS,
 		cube = TRUE, blocksPerRead = 30, reportProgress = 0)
@@ -281,7 +281,7 @@ By default, **RevoScaleR** reports on the progress of the model fitting so that 
 
 The data set contains a variable *UniqueCarrier* which contains airline codes for 29 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 29 instead of 7 factor levels.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier,
 		data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -331,7 +331,7 @@ which results in:
 
 One ambitious question we could ask is to what extent the difference in delays is due to the differences in origins and destinations of the flights. To control for Origin and Destination we would need to add over 700 dummy variables in the full data set to represent the factor levels of *Origin* and *Dest*. The RevoScaleR Compute Engine is particularly efficient at handling this type of problem, so we can in fact run the regression:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 
 	delayCarrierLoc <- rxLinMod(ArrDelay ~ UniqueCarrier + Origin+Dest,
@@ -438,7 +438,7 @@ Now you can re-run the large scale regression from Section 6.6, this time just s
 	delayCarrierLocDist <- rxLinMod(ArrDelay ~ UniqueCarrier+Origin+Dest,
 	    data = dataFile, cube = TRUE, blocksPerRead = 30)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
 
 The computations are automatically distributed over all the nodes of the cluster.
 
@@ -448,7 +448,7 @@ To reset the compute context to your local machine, use:
 
 ## Next steps
 
-- If you missed the first tutorial, see [Get started with ScaleR](scaler-getting-started.md) for an overview.
+- If you missed the first tutorial, see [Practice data import and exploration](scaler-getting-started-data-import-exploration.md) for an overview.
 - For more advanced lessons, see [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md).
 
 ## See Also
