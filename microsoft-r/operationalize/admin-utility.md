@@ -69,7 +69,7 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 |Version|Commands|
 |----|------------|
-|9.1|`/usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
+|9.1|`cd /usr/lib64/microsoft-r/rserver/o16n/9.1`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
 |9.0|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
 
 <br><a name="admin-password"></a>
