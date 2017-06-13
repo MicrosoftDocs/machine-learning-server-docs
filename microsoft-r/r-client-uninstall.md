@@ -90,14 +90,16 @@ The **rm** command removes the folder. Parameter "f" is for force and "r" for re
 
 You can learn more with these guides:
 
-+ [Get Started with Microsoft R Client](r-client-get-started.md) 
++ [Overview of Microsoft R](index.md) 
 
-+ [Microsoft R Getting Started](microsoft-r-getting-started.md) 
++ [Overview of Microsoft R Client](r-client-get-started.md) 
 
-+ [Diving into Data Analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
 
-+ [Get started with RevoScaleR](microsoft-r-tutorials.md)
++ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
 
-+ [Get started with MicrosoftML](microsoftml-get-started.md)
++ [RevoScaleR R package reference](microsoft-r-tutorials.md)
 
-+ [Get started with mrsdeploy](mrsdeploy/mrsdeploy.md)
++ [MicrosoftML R package reference](microsoftml-get-started.md)
+
++ [mrsdeploy R package reference](mrsdeploy/mrsdeploy.md)
