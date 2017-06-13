@@ -28,7 +28,7 @@ ms.custom: ""
 
 # Interoperability with R language and across Microsoft R
 
-R Server is built on open source R and is 100% compatible with the R language. You can run any pure open source R solution on a [Microsoft R Open](https://mran.microsoft.com/open/), [Microsoft R Client](overview-r-client.md), or [Microsoft R Server](overview-server.md) deployment.
+R Server is built on open source R and is 100% compatible with the R language. You can run any pure open source R solution on a [Microsoft R Open](https://mran.microsoft.com/open/), [Microsoft R Client](r-client.md), or [Microsoft R Server](rserver.md) deployment.
 
 Value-added packages like RevoScaleR, MicrosoftML, and mrsdeploy are available in both Microsoft R Client and Microsoft R Server. Although packages are equally available, the infrastructure backed by each product is substantially different. R Client is limited to in-memory data storage and can use a maximum of two processors.
 
