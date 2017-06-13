@@ -127,7 +127,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
            "UseLDAPS": "True",
            "QueryUserDn": "CN=deployradmin,CN=DeployR,DC=TEST,DC=COM",
            "QueryUserPasswordEncrypted": true,
-           "QueryUserPassword": "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQR",
+           "QueryUserPassword": "ABCD00000123400000000000mnop00000000WXYZ",
            "SearchBase": "CN=DeployR,DC=TEST,DC=COM",
            "SearchFilter": "cn={0}"  
            "UniqueUserIdentifierAttributeName": "userPrincipalName",
@@ -296,7 +296,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
    ```
    "AzureActiveDirectory": {
       "Enabled": true,
-      "Authority": "https://login.windows.net/rserver.contoso.com",
+      "Authority": "https://login.windows.net/myMRServer.contoso.com",
       "Audience": "00000000-0000-0000-0000-000000000000",
       "ClientId": "00000000-0000-0000-0000-000000000000",
       "Key": "ABCD000000000000000000000000WXYZ", 
