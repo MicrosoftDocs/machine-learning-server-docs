@@ -218,7 +218,7 @@
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
 
-# Microsoft R Client
+# [Microsoft R Client](r-client.md)
 ## [Get Started with R Client](r-client-get-started.md)
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
