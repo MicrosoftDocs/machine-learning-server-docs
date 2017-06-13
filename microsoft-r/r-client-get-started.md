@@ -94,18 +94,18 @@ When ready, you can run that R code using R Client or even send those R commands
 
 <br>
 
-## Next steps
+## Learn More
 
 You can learn more with these guides:
 
-+ [Quickstart for Microsoft R Client](quickstart-r-code.md) (example)
++ [Overview of Microsoft R](index.md) 
 
-+ [Microsoft R Getting Started](microsoft-r-getting-started.md) 
++ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
 
-+ [Diving into Data Analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
 
-+ [Get started with RevoScaleR](microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](microsoft-r-tutorials.md)
 
-+ [Get started with MicrosoftML](microsoftml-get-started.md)
++ [MicrosoftML R package reference](microsoftml-get-started.md)
 
-+ [Get started with mrsdeploy](mrsdeploy/mrsdeploy.md)
++ [mrsdeploy R package reference](mrsdeploy/mrsdeploy.md)
