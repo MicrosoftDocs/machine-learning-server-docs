@@ -39,7 +39,7 @@ In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux,
 
 This release includes **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
-You can now run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Get started with ScaleR on Apache Spark](scaler-spark-getting-started.md).
+You can now run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
 
 **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually.
 

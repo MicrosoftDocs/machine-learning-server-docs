@@ -62,7 +62,7 @@ By default, Microsoft R Server includes all the R tools installed with a base in
 
 However, you might wish to install additional R tools, such as RStudio, R Tools for Visual Studio, or Microsoft R Client. See the following links for download locations and instructions:
 
-+ [R Tools for Visual Studio](https://www.visualstudio.com/vs/rtvs/)
++ [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation)
 + [Microsoft R Client](https://msdn.microsoft.com/microsoft-r/r-client-install)
 + [RStudio for Windows](https://www.rstudio.com/products/rstudio/download3/)
 
