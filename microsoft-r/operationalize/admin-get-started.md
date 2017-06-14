@@ -145,7 +145,7 @@ This section provides a quick summary of useful links for administrators working
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)
--   [Comparison between 8.x and 9.x](./rserver-whats-new.md#8vs9)
+-   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**
 -   [Application Developers](app-developer-get-started.md)

@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 # DeployR API Overview
 
-**Applies to: DeployR 8.x**
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
 >Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
