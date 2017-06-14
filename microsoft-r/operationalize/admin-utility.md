@@ -78,8 +78,7 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `admin`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
->[!NOTE]
->The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
+The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
 
 **To set or update the local admin account password:**
 
@@ -94,6 +93,10 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 1. Confirm the password.
 
+>[!NOTE]
+>You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all commandline switches for this script, [here](#switch).
+
+You can also 
 <br><a name="startstop"></a>
 
 ## Starting and Stopping Services
@@ -173,3 +176,16 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached. 
 
 [Learn how to configure the test parameters, run the test, and interpret the results.](admin-evaluate-capacity.md)
+
+<br><a name="switch"></a>
+
+## Commandline switches
+
+The following commandline switches are available for the admininistration utility.
+
+|Switch|Description|Example|Version|
+|----|-----|-----|:---:|
+|-setpassword <local-password>|Sets the local password. Cannot be used  if LDAP or AAD was configured.|`-setpassword mypass123`|9.1|
+|-silentoneboxinstall <local-password>|Sets up a one-box configuration silently  and provides a local password.|`-silentoneboxinstall mypass123`|9.1|
+|-silentwebnodeinstall <local-password>|Sets up a web node configuration silently and provides a local password.|`-silentwebnodeinstall mypass123`|9.1|
+|-silentcomputenodeinstall|Sets up a compute node silently.|`-silentcomputenodeinstall`|9.1|
