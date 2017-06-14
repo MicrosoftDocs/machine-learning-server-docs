@@ -63,7 +63,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Compatibility with R Server](r-client-compatibility.md)
 
-<a name="configure-ide"></a>
+<br><a name="configure-ide"></a>
 
 ### 2. Configure Your IDE
 
