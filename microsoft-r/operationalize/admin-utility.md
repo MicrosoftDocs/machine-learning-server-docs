@@ -78,8 +78,7 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `admin`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
->[!NOTE]
->The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
+The password for the local `admin` account must be 8-16 characters long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), and 1 or more special character(s).
 
 **To set or update the local admin account password:**
 
@@ -94,6 +93,10 @@ When no other form of [authentication](security-authentication.md) is used, you 
 
 1. Confirm the password.
 
+>[!NOTE]  **Script switch**
+>You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`.
+
+You can also 
 <br><a name="startstop"></a>
 
 ## Starting and Stopping Services

@@ -215,7 +215,7 @@ Some term equilavents in the R Server 9.x:
 |Version 8|Version 9|
 |------------|---------------|
 |Projects|Sessions|
-|RBroker pool|Now part of web services implementation with an internal [pool of R shells](admin-evaluate-capacity.md#r-shell-pool)|
+|RBroker pool|Now part of web services implementation with an internal [pool of R shells](/operationalize/admin-evaluate-capacity.md#r-shell-pool)|
 
 ##### R Server 9.0.1 for Linux
 
