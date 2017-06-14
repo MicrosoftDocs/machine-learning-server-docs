@@ -93,7 +93,7 @@ The password for the local `admin` account must be 8-16 characters long and cont
 
 1. Confirm the password.
 
->[!NOTE]  **Script switch**
+>[!NOTE]
 >You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all commandline switches for this script, [here](#switch).
 
 You can also 
