@@ -94,6 +94,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Comparison between 8.x and 9.x](./rserver-whats-new.md#8vs9)
 
 **Other Getting Started Guides**
 + [Application Developers](app-developer-get-started.md)
