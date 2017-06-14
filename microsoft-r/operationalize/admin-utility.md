@@ -185,7 +185,7 @@ The following commandline switches are available for the admininistration utilit
 
 |Switch|Description|Example|Version|
 |----|-----|-----|:---:|
-|-setpassword <local-password>|Sets the local password. Cannot be used  if LDAP or AAD was configured.|`-setpassword mypass123`|9.1|
-|-silentoneboxinstall <local-password>|Sets up a one-box configuration silently  and provides a local password.|`-silentoneboxinstall mypass123`|9.1|
-|-silentwebnodeinstall <local-password>|Sets up a web node configuration silently and provides a local password.|`-silentwebnodeinstall mypass123`|9.1|
-|-silentcomputenodeinstall|Sets up a compute node silently.|`-silentcomputenodeinstall`|9.1|
+|`-setpassword password`|Sets the local password. Cannot be used  if LDAP or AAD was configured.<br> For example: <br>`-setpassword mypass123`||9.1|
+|`-silentoneboxinstall password`|Sets up a one-box configuration silently  and provides a local password.<br> For example: <br>`-silentoneboxinstall mypass123`|9.1|
+|`-silentwebnodeinstall password`|Sets up a web node configuration silently and provides a local password.<br> For example: <br>`-silentwebnodeinstall mypass123`|9.1|
+|`-silentcomputenodeinstall`|Sets up a compute node silently.<br> For example: <br>`-silentcomputenodeinstall`|9.1|
