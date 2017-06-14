@@ -219,7 +219,6 @@
 
 
 # [Microsoft R Client](r-client.md)
-## [Get Started with R Client](r-client-get-started.md)
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)
