@@ -56,12 +56,26 @@ There are two types of configuration:
 
 1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in this [Enterprise configuration](configure-enterprise.md) article.
 
+<a name="security"></a>
 
 ## Security policies
 
+R Server has many features that support the creation of secure applications. Common security considerations, such as data theft or vandalism, apply regardless of the version of R Server you are using. Data integrity should also be considered as a security issue. If data is not protected, it is possible that it could become worthless if ad hoc data manipulation is permitted and the data is inadvertently or maliciously modified. In addition, there are often legal requirements that must be adhered to, such as the correct storage of confidential information. 
+
 User access to the R Server and the operationalization services offered on its [API](api.md) are entirely under your control as the server administrator. R Server's operationalization feature offers seamless integration with popular enterprise security solutions like Active Directory LDAP or Azure Active Directory. You can configure R Server to [authenticate](security-authentication.md) using these methods to establish a trust relationship between your user community and the operationalization engine for R Server. Your users can then supply simple `username` and `password` credentials in order to verify their identity. [A token will be issued to an authenticated user.](security-access-tokens.md)
 
-However, authentication is only one part of the full set of [security](security.md) features, which includes full [HTTPS/SSL encryption](security-https.md) support and [CORS support](security-cors.md). 
+In addition to authentication, you can add other enterprise security around Microsoft R Server such as:
+
++ Secured connections using [SSL/TLS 1.2](security-https.md). For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.** 
+
++ [Cross-Origin Resource Sharing](security-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
+
++ [Role-based access control](security-roles.md) over web services in R Server.
+
+Additionally, we recommend that you review the following [Security Considerations](security-rserve.md).
+
+![Security](../media/o16n/security.png)
+
 
 ## R package policies
 
@@ -128,10 +142,10 @@ This section provides a quick summary of useful links for administrators working
 **Key Documents**
 -   [About Operationalization](about.md)
 -   [Configuration](configuration-initial.md)
--   [Security](security.md)
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)
+-   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**
 -   [Application Developers](app-developer-get-started.md)

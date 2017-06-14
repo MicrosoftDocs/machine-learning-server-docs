@@ -173,7 +173,7 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 #### General updates in 9.0.1
 
 <a name="operationalize"></a>
-#### Operationalization features
+##### Operationalization features
 
 Formerly known as DeployR, the operationalization feature is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and [configure](operationalize/configuration-initial.md) R Server to host R analytics web services and remote R sessions.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
@@ -183,14 +183,41 @@ An operationalized R server offers the ability to host and bundle R analytics in
 
 The operationalization feature can be configured [on a single machine](operationalize/configuration-initial.md#onebox). It can also be [scaled](operationalize/configure-enterprise.md) for business-critical applications with multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/security.md).
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/admin-get-started.md#security).
 
 For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
 
-#### R Server 9.0.1 for Linux
+<a name="8vs9"></a>
+The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5 which was available in R Server 8.0.5.
+
+>[!Important]
+>R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
+
+Release|Microsoft R Server 8.0.5|Microsoft R Server 9.x
+----|-----|------
+Name of feature|DeployR|_integrated in R Server_
+Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure R Server to operationalize analytics](configuration-initial.md) and enable R Server to deploy and host web services
+Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using [new `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) or from a REST API.
+Application Integration|Use client libraries and RBroker framework|[Swagger-based API for quicker exploration and integration](app-developer-get-started.md)
+Architecture|Apache Tomcat|ASP .Net Core
+Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM<br><br><br>|[Authentication options](security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator account<br><br><small>[Roles](security-roles.md) are supported in R Server 9.1, but not in 9.0.1.
+High Availability|Active-Active recovery not supported|Active-Active recovery supported
+Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](remote-execution.md) in the `mrsdeploy` package.
+Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Coming with new design in future release
+APIs|Over 100 RESTful APIs|[About 40 RESTful APIs](api.md)<br> (not backwards compatible)
+
+
+Some term equilavents in the R Server 9.x:
+
+|Version 8|Version 9|
+|------------|---------------|
+|Projects|Sessions|
+|RBroker pool|Now part of web services implementation with an internal [pool of R shells](admin-evaluate-capacity.md#r-shell-pool)|
+
+##### R Server 9.0.1 for Linux
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
 
@@ -212,7 +239,7 @@ Additional new ScaleR functions for Spark 2.0:
 
 For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
 
-#### R Server 9.0.1 for Windows
+##### R Server 9.0.1 for Windows
 
 As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
 

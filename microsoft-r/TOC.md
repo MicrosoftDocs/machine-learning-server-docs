@@ -141,7 +141,6 @@
 #### [Microsoft Data Science VM](vm-data-science.md)
 
 ## Deploy and consume analytics
-### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)

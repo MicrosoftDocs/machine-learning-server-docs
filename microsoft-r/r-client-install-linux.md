@@ -294,3 +294,5 @@ You can learn more with these guides:
 + [MicrosoftML R package reference](microsoftml-get-started.md)
 
 + [mrsdeploy R package reference](mrsdeploy/mrsdeploy.md)
+
++ [Execute code on remote R Server](operationalize/remote-execution.md)

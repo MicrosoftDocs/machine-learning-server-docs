@@ -31,14 +31,11 @@ Microsoft R Client is a free, [community-supported](https://social.msdn.microsof
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](r-client-compatibility.md). 
 
 You can also run your code remotely on R Server using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package to offload heavy processing on server or to test your analytics during their development. 
- 
-
-**Video introduction**
 
 <div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
  
 
-## Microsoft R Server vs Microsoft R Client
+## R Server vs R Client
 
 Microsoft R Server and Microsoft R Client offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
 
@@ -46,9 +43,7 @@ You can work with R Client standalone. You can also use it with R Server, where 
 
 ## Get started with R Client
 
-Getting started with Microsoft R Client is as easy as 1-2-3.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click a step to get started:
+Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get started:
 <br>
 <div align=center>
 <a href="#installrclient" title="Click Step 1"><img src="./media/rclient/Step1.png" width=200 /></a>&nbsp;&nbsp;
@@ -58,7 +53,7 @@ Getting started with Microsoft R Client is as easy as 1-2-3.
 
 <br><a name="installrclient"></a>
 
-### Step 1: Install Microsoft R Client 
+### 1. Install R Client 
 
 The first step is to download Microsoft R Client for your operating system and install it. To learn more about the supported platforms or installation steps, please see the following articles:
 
@@ -68,9 +63,9 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Compatibility with R Server](r-client-compatibility.md)
 
-<a name="configure-ide"></a>
+<br><a name="configure-ide"></a>
 
-### Step 2: Configure Your IDE
+### 2. Configure Your IDE
 
 While R is a command line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. To do so, you must point that IDE to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include R Tools for Visual Studio on Windows (Recommended), RStudio, or any other R development environment.
 
@@ -85,13 +80,13 @@ After you configure the IDE, a message appears in the console signaling that the
 
 <br><a name="try-r-client"></a>
 
-### Step 3: Try Out R Client
+### 3. Try Out R Client
 
 Now that you've installed R Client, you can start building and running some R code. Launch R on the command-line or in your IDE and:
 
 + Run the sample R code as described in this [quickstart guide](quickstart-r-code.md). 
 
-+ Or, **develop your own solutions** with some [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. 
++ Or, develop your own solutions using [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. 
 
 When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 
@@ -113,3 +108,5 @@ You can learn more with these guides:
 + [MicrosoftML R package reference](microsoftml-get-started.md)
 
 + [mrsdeploy R package reference](mrsdeploy/mrsdeploy.md)
+
++ [Execute code on remote R Server](operationalize/remote-execution.md)
