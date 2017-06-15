@@ -119,14 +119,11 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 1. Install Microsoft R Server and any dependencies:
    <br>
-   **On Windows**
-
-   Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   <br>
+   **On Windows**: Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
    <br>
-   **On Linux**
-
-   Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   **On Linux**:  Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
       
    Additional dependencies for R Server on Linux 9.0.1. If you have installed R Server 9.0.1 on Linux, you must add a few symlinks:
 
@@ -136,24 +133,24 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) to begin configuring a one-box setup.
 
     >[!NOTE]
-    >You can bypass the interactive configuration steps of the node using the argument `-silentoneboxinstall` and by defining a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next 3 steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next 3 substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all commandline switches for this script, [here](admin-utility.md#switch).
 
-1. Choose the option to **Configure R Server for Operationalization**.
+    1. Choose the option to **Configure R Server for Operationalization**.
 
-1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
+    1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
-   >[!IMPORTANT]
-   > Do not choose the sub-options **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines, which is described below as an **Enterprise** configuration.
+       >[!IMPORTANT]
+       > Do not choose the sub-options **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines, which is described as an [**Enterprise** configuration in this article](configure-enterprise.md).
 
-1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
+    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
 
-1. Return to the main menu of the utility when the configuration ends.
+    1. Return to the main menu of the utility when the configuration ends.
 
-1. [Run a diagnostic test of the configuration](admin-diagnostics.md).
+    1. [Run a diagnostic test of the configuration](admin-diagnostics.md).
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 

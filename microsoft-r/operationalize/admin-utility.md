@@ -50,18 +50,19 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Windows:**
 
-+ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**.  
-  >[!WARNING]
-  > If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted". Read this article on [powershell execution policies](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) for details. 
+You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**.  
 
-+ Alternately, open a command line window with administrator privileges and enter the following commands:
+>[!WARNING]
+> If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted". Read this article on [powershell execution policies](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) for details. 
 
-  |Version|Commands|
-  |----|------------|
-  |9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
-  |9.0|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+Alternately, open a command line window with administrator privileges and enter the following commands:
 
-  where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+|Version|Commands|
+|----|------------|
+|9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
+|9.0|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+
+where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
 **On Linux:**
 
@@ -183,9 +184,9 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 The following commandline switches are available for the admininistration utility.
 
-|Switch|Description|Example|Version|
-|----|-----|-----|:---:|
-|`-setpassword password`|Sets the local password. Cannot be used  if LDAP or AAD was configured.<br> For example: <br>`-setpassword mypass123`||9.1|
-|`-silentoneboxinstall password`|Sets up a one-box configuration silently  and provides a local password.<br> For example: <br>`-silentoneboxinstall mypass123`|9.1|
-|`-silentwebnodeinstall password`|Sets up a web node configuration silently and provides a local password.<br> For example: <br>`-silentwebnodeinstall mypass123`|9.1|
-|`-silentcomputenodeinstall`|Sets up a compute node silently.<br> For example: <br>`-silentcomputenodeinstall`|9.1|
+|Switch|Description|Version|
+|----|-----|:---:|
+|`-setpassword password`|Sets the local password. Cannot be used  if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
+|`-silentoneboxinstall password`|Sets up a one-box configuration silently  and provides a local password. For example: <br>`-silentoneboxinstall mypass123`|9.1|
+|`-silentwebnodeinstall password`|Sets up a web node configuration silently and provides a local password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
+|`-silentcomputenodeinstall`|Sets up a compute node silently. For example: <br>`-silentcomputenodeinstall`|9.1|
