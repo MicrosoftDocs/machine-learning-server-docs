@@ -39,7 +39,7 @@ Use the utility to:
 + [Run diagnostic tests](admin-diagnostics.md)
 + [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](admin-evaluate-capacity.md)
-
++ [Commandline switches to this utility script](#switch)
 
 <br>
 <a name="launch"></a>
