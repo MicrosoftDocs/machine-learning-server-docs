@@ -49,7 +49,7 @@ R Server offers two types of configuration for operationalizing analytics and re
 
 1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](configure-enterprise.md) article.
 
-For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
+For added security, you can [configure SSL](security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
 
 ## Supported platforms 
@@ -62,17 +62,17 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade a one-box configuration from 9.0 to 9.1 
 
-To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
+To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
 >[!IMPORTANT]
->Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the `appsettings.json` file on each node you can restore in the event of an upgrade issue.
 
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
    >[!Warning]
-   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you will not be able to retrieve your database data.
+   >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you cannot retrieve your database data.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -89,12 +89,12 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
-     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
      >1. Manually install .NET Core 1.1.
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
 1. From the menus, choose **Configure R Server for Operationalization** and then choose **Configure for one box**. The configuration script begins.
 
@@ -107,7 +107,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 1. Repeat these steps for each node.
 
    >[!WARNING]
-   >The entities created by the users, specifically web services and [snapshots](remote-execution.md#snapshot), are tied to their usernames. For this reason, you must be very careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+   >The entities created by users, specifically web services and [snapshots](remote-execution.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
 
 
 
@@ -133,10 +133,10 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    >**Note:** If there are issues with starting the compute node, see [here](admin-diagnostics.md).
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) to begin configuring a one-box setup.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
-    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next 3 substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](admin-utility.md#switch).
 
     1. Choose the option to **Configure R Server for Operationalization**.
@@ -144,7 +144,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
     1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
        >[!IMPORTANT]
-       > Do not choose the sub-options **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines, which is described as an [**Enterprise** configuration in this article](configure-enterprise.md).
+       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-enterprise.md).
 
     1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
 
@@ -155,6 +155,6 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
->R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
+>R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
-You are now ready to begin operationalizating your R analytics with R Server.
+You are now ready to begin operationalizing your R analytics with R Server.

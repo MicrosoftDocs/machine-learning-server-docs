@@ -92,18 +92,10 @@ The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to pr
 **Tasks supported**: binary and multiclass classification, regression
 
 
-## Get help on MicrosoftML functions
-
-Links to the references documentation for the key algorithms and transforms in the MicrosoftML package, are provided in [MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md).
-
-To see the **MicrosoftML** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="MicrosoftML")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
-
 ## See also
 
 [Introduction to MicrosoftML](microsoftml-introduction.md)
+
+[All function help pages for this package](microsoftml/microsoftml.md)
 
 For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
