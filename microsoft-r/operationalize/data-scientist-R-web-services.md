@@ -36,7 +36,7 @@ Using the `mrsdeploy` R package, you can [publish](#publishService) two kinds of
 + Standard R web services
 + Realtime R web services
 
-There are other kinds of web services, but they cannot be publish in R with this package.
+There are other kinds of web services, but they cannot be published in R with this package.
 
 Once you have published a service, you can [update](#updateService) or [delete](#deleteService) that web service.
 
@@ -45,7 +45,7 @@ Additionally, for any type of web service, you can:
 + [Get the web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption
 + [Share](howto-consume-web-service-interact-in-r.md#consume-service) the service with others
 
-If you wish to publish or interact with a web service outside of R, you can use the set of [RESTful APIs](api.md) that provide direct programmatic access to a service's lifecycle.
+To publish or interact with a web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
@@ -80,7 +80,7 @@ A code sample for publishing web services can be [found later in this article](#
 
 Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that there no R session is needed to consume this type of web service. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
 
-Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with a supported functions. No other R code is supported with `Realtime` web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
+Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with supported functions. No other R code is supported with `Realtime` web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
 
 `Realtime` web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
 
@@ -89,7 +89,7 @@ A longer [realtime example](#realtime-example) is also available.
 
 |R Source|Can come from|
 |------|---------|
-|R model|A model object created with a supported functions, such as:<li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`. <li>These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.|
+|R model|A model object created with supported functions, such as:<li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`. <li>These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.|
 
 ## Permissions for managing web services
 
@@ -124,7 +124,7 @@ After you've authenticated, use the `publishService` function in the `mrsdeploy`
 |----|----|:----:|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
 
-You can publish web services to a local R Server from your commandline. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local commandline.  
+You can publish web services to a local R Server from your command-line. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command-line.  
 
 
 Example of standard web service:
@@ -377,7 +377,7 @@ remoteLogout()
 
 #### 2. R code as object and `.RData` as file 
 
-In this example, the code is still an object (`code = manualTransmission`), but the model now comes from an .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
+In this example, the code is still an object (`code = manualTransmission`), but the model now comes from a .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
 # For R Server 9.0, load mrsdeploy package on R Server     
@@ -451,7 +451,7 @@ remoteLogout()
 ```
 
 
-#### 3. Code and model as .R scripts 
+#### 3. Code and model as R scripts 
 
 In this example, the code (`code = transmission-code.R,`) and the model comes from R scripts (`model = "transmission.R"`). The result is still the same as in the first example.
 
@@ -526,7 +526,7 @@ status
 remoteLogout()
 ```
 
-#### 4. Code as script and model as .RData file
+#### 4. Code as script and model as a .RData file
 
 In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
@@ -690,7 +690,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
-+ [Data scientist get started guide](data-scientist-get-started.md)
++ [Get started guide for data scientists](data-scientist-get-started.md)
++ [Get started guide for application developers](app-developer-get-started.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
-+ [Application developer get started guide](app-developer-get-started.md)

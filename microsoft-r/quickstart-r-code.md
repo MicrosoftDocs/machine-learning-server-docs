@@ -43,7 +43,7 @@ If you have completed the prerequisites, this task will take approximately *5* m
 
 This quickstart assumes that you have:
 + An installed instance of Microsoft R Client or Microsoft R Server 
-+ R running on the commandline or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
++ R running on the command-line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 + An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ## Example code

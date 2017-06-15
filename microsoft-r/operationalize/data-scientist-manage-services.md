@@ -100,7 +100,7 @@ The `mrsdeploy` function for publishing as web services is `publishService`.
 |----|----|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|
 
-From your local commandline, you can publish web services to a local R Server or remotely if you set up a remote session.
+From your local command-line, you can publish web services to a local R Server or remotely if you set up a remote session.
 
 >[!WARNING]
 >In the case where you are working with a [remote R session](../operationalize/remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
