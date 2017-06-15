@@ -26,7 +26,6 @@
 # [Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Introduction to MicrosoftML](microsoftml-introduction.md)
 ## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML function reference](microsoftml/microsoftml.md)
 ## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
 ## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)

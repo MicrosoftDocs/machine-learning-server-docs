@@ -27,34 +27,19 @@ ms.custom: ""
 
 **MicrosoftML** is a new package for **Microsoft R Server** and **Microsoft R Client** that adds state-of-the-art machine learning algorithms and data transforms to Microsoft R Server functionality. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters. Pretrained models for sentiment analysis and image featurization can also be installed and deployed with the  MicrosoftML package.
 
-- For an introduction to MicrosoftML, see [Introduction to MicrosoftML](microsoftml-introduction.md).
-- For an overview of the data transforms and machine learning algorithms provided by the MicrosoftML package, see [Overview of MicrosoftML functions](overview-microsoftml-functions.md).
-- For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
-- For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
-- To get started with the pretrained models, see [How to install and deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
-- For MicrosoftML samples and quickstarts, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
-
-
 <a name="platform-availability"></a>
-## Platform availability
-The **MicrosoftML** package is currently available on the following platforms:
 
-- [Microsoft R Server for Windows](rserver-install-windows.md): install Microsoft R Server 9.1.0 on a standalone Windows server.
-- [Microsoft R Client on Windows](r-client-install-windows.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Windows machine.
-- [Microsoft R Client on Linux](r-client-install-linux.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Linux machine.
-- [Microsoft R Server for Linux](rserver-install-linux-server.md): install Microsoft R Server 9.1.0 on a standalone Linux server.
-- [Microsoft R Server 9.1.0 on Hadoop](rserver-install-hadoop.md): R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
-- [Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md): uses Cloudera's parcel installation methodology to add R Server to a cluster.
-- [SQL Server Machine Learning Services](sql-server-r-services.md): The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services or SQL Server Machine Learning Services** on an instance of SQL Server 2016 or 2017.
- 
-The pretrained ML models are not installed by default with R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+## Platform availability
+
+The **MicrosoftML** package is currently shipped as part of Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client installers. To also install pretrained machine learning models, you must opt-in during setup. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 For additional information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
 
 ## What’s new?
 
-MicrosoftML supports new end-to-end scenarios that include new features and functionality. You can now:
+MicrosoftML supports new end-to-end scenarios that include new features and functionality. For the latest features, see [What's New in R Server](rserver-whats-new.md)
 
+You can now:
 -  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
 -  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
 -  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
@@ -68,18 +53,12 @@ MicrosoftML supports new end-to-end scenarios that include new features and func
 - Reduce training time up to 10x while still retaining model accuracy using **feature selection**.
 
 
-## What's next?
+## See also
 
-For additional information on R Server, see:
-
-- [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-- [What's New in SQL Server Machine Learning  Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
-- For quickstarts that show how to use pretrained models  
-
-
-
-
-
-
-
-
+ [Microsoft R Server Overview](rserver.md)    
+ [Introduction to MicrosoftML](microsoftml-introduction.md)    
+ [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md)    
+ [MicrosoftML function help pages](microsoftml/microsoftml.md)    
+ [Choose a MicrosoftML algorithm (cheatsheet)](microsoftml-algorithm-cheat-sheet.md)    
+ [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)    
+ [MicrosoftML samples](microsoftml-quickstarts.md)    

@@ -32,6 +32,8 @@ After a web service has been published or updated, any authenticated user can li
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
+To list, examine, or consume the web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
+
 <a name="auth"></a>
 
 ## Requirements
@@ -39,7 +41,7 @@ If you do not want to list, examine, or consume the web service in R, a set of [
 Before you can use the web service management functions in the `mrsdeploy` R package, you must:
 + Have access to an R Server instance that was  [properly configured](../mrsdeploy/mrsdeploy.md#configure) to host web services. 
 
-+ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
++ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)."
 
 
 <a name="listServices"></a>
@@ -182,7 +184,7 @@ Web services are published to facilitate the consumption and integration of the 
 
 When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the `listServices` function](#listServices)).
 
-Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described below. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
+Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described in the following section. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
   
 <a name="data-scientists-share"></a>
 
@@ -190,13 +192,13 @@ Users can consume the service directly using a single consumption call. This app
 
 Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
-As the owner of the service, you can share the name and version number for the service with fellow data scientists so they can call the service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
+You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
 
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
 
 
-In this example, replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+In this example, replace the following `remoteLogin()` function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
 ##########################################################################
@@ -239,7 +241,7 @@ Using the Swagger-based JSON file, application developers can generate client li
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 
-+ A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This is often the faster approach. They can get the file in R with the following code and send it to the application developer:
++ A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This approach is often faster than the following one. They can get the file in R with the following code and send it to the application developer:
    ```R
    api <- getService("<name>", "<version>")
    swagger <- api$swagger()
@@ -258,7 +260,7 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 + [How to publish and manage web services in R](data-scientist-manage-services.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
-+ [Data scientist get started guide](data-scientist-get-started.md)
++ [Get started guide for data scientists](data-scientist-get-started.md)
++ [Get started guide for application developers](app-developer-get-started.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
-+ [Application developer get started guide](app-developer-get-started.md)

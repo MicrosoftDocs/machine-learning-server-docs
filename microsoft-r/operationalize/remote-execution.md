@@ -113,7 +113,7 @@ If your R Script has R package dependencies, those packages must be installed on
 
 Certain functions are masked from execution, such as ‘help’, ‘browser’, ‘q’ and ‘quit’.   
 
-In a remote context, you won’t be able to display vignettes or get help at your commandline prompt.  
+In a remote context, you won’t be able to display vignettes or get help at your command-line prompt.  
 
 In most cases, “system” commands will work.  However, system commands that write to stdout/stderr may not display their output nor wait until the entire system command has completed before displaying output.   `install.packages` is the only exception for which we explicitly handle stdout and stderr in a remote context. 
 
@@ -283,7 +283,7 @@ After you understand the mechanics of remote execution, consider incorporating w
 
 To publish a web service after you've created a remote session (argument `session = TRUE` with `remoteLogin()` or `remoteLoginAAD()`), you have two approaches:
 
-+ Publish from your local session:  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session. Then, publish your service. Use `resume()` from your local prompt to return to the commandline in the remote R session.
++ Publish from your local session:  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session. Then, publish your service. Use `resume()` from your local prompt to return to the command-line in the remote R session.
 
 + Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with `remoteLogin()` or `remoteLoginAAD()`. But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to login from a remote session, you will not be prompted for user credentials. You must pass valid values for `username` and `password` to this function. Then, you'll be authenticated and able to publish from the `REMOTE>` prompt.
 
