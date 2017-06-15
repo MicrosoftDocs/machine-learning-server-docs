@@ -24,28 +24,30 @@ ms.custom: ""
 
 ---
 
-# How to publish, manage, and consume web services in R
+# How to publish and manage web services in R
 
 **Applies to:  Microsoft R Server 9.x**
-
-
 
 To expose your R models, scripts, and arbitrary  code as **analytic web services** in R, you can use the functions found  in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md) to publish, manage and consume these services. This R package is installed with both Microsoft R Server and Microsoft R Client. 
 
 This article details how you can interact with and manage your analytic web services in R using these functions.  These web services are discoverable by other authenticated users who can then [consume them in R](data-scientist-get-started.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
-
 Using the `mrsdeploy` R package, you can [publish](#publishService) two kinds of web services:
-+ **Standard R web services** offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those integrating the services inside their applications.
++ Standard R web services
++ Realtime R web services
 
-+ **Realtime R web services**, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that there no R session is needed to consume this type of web service. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
+There are other kinds of web services, but they cannot be publish in R with this package.
 
-Once a web service has been published, you can do the following with the service in R:
-+ [Update](#updateService) an existing web service
-+ [Delete](#deleteService) an existing web service
-+ [Get a list](#listServices) of all web services
-+ [Get the web service object](#getService) for consumption
-+ [Share](#consume-service) the service with others
+**Web service management tasks**
+
+Once you have  [published](#publishService) a service, you can do the following in R:
++ [Update](#updateService) that web service
++ [Delete](#deleteService) that web service
+
+Additionally, for any type of web service, you can:
++ [Get a list](howto-consume-web-service-interact-in-r.md#listServices) of all web services
++ [Get the web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption
++ [Share](howto-consume-web-service-interact-in-r.md#consume-service) the service with others
 
 If you wish to publish, update, or interact with a web service outside of R, a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -59,6 +61,40 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 + Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
+## Web service types
+
+<a name="standard"></a>
+
+**Standard R web services**
+
+These web services offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those integrating the services inside their applications.
+
+Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any R code, models, and any necessary model assets. When publishing a standard web service, you must also define the inputs required by the service as well as the output that application developers will use to integrate the service in their applications.
+
+A code sample for publishing web services can be [found later in this article](#publishService).
+
+|R source|Can come from|
+|----|----|
+|R code|<li>A filepath to a local R script, such as:<br>&nbsp;&nbsp;  `code = "/path/to/R/script.R"`<li>A block of R code as a character string, such as:<br>&nbsp;&nbsp;  `code = "result <- x + y"`<li>A function handle, such as:<br>&nbsp;&nbsp;  `code = function(hp, wt) {`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br>&nbsp;&nbsp;  `}`|
+|R model|The R model can come from an `object` or a file-path to an external representation of R objects to be loaded and used with `code`, including: <li>A filepath to an `.RData` file holding the external R objects to be loaded and used with the code, such as:<br>&nbsp;&nbsp;  `model = "/path/to/glm-model.RData"`<li>A filepath to an `.R` file that is evaluated into an environment and loaded, such as:<br>&nbsp;&nbsp;  `model = "/path/to/glm-model.R"`<li>A model object, such as:<br>&nbsp;&nbsp;  `model = am.glm`|
+
+
+<a name="realtime"></a>
+
+**Realtime R web services**
+
+Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that there no R session is needed to consume this type of web service. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
+
+Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with a supported functions. No other R code is supported with `Realtime` web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
+
+Note that `Realtime` web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
+
+A code sample for publishing realtime services can be [found later in this article](#publishService).
+
+
+|R Source|Can come from|
+|------|---------|
+|R model|A model object created with a supported functions, such as:<li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`. <li>These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.|
 
 ## Permissions for managing web services
 
@@ -69,25 +105,6 @@ Beginning in version 9.1, your administrator can also **[assign role-based autho
 ## Publish and update web services
 
 To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, you can update and manage them. They can also be consumed by other users. 
-
-<a name="standard"></a>
-
-**Standard web services**, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any R code, models, and any necessary model assets. When publishing a standard web service, you must also define the inputs required by the service as well as the output that application developers will use to integrate the service in their applications.
-
-|R source|Can come from|
-|----|----|
-|R code|<li>A filepath to a local R script, such as:<br>&nbsp;&nbsp;  `code = "/path/to/R/script.R"`<li>A block of R code as a character string, such as:<br>&nbsp;&nbsp;  `code = "result <- x + y"`<li>A function handle, such as:<br>&nbsp;&nbsp;  `code = function(hp, wt) {`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br>&nbsp;&nbsp;  `}`|
-|R model|The R model can come from an `object` or a file-path to an external representation of R objects to be loaded and used with `code`, including: <li>A filepath to an `.RData` file holding the external R objects to be loaded and used with the code, such as:<br>&nbsp;&nbsp;  `model = "/path/to/glm-model.RData"`<li>A filepath to an `.R` file that is evaluated into an environment and loaded, such as:<br>&nbsp;&nbsp;  `model = "/path/to/glm-model.R"`<li>A model object, such as:<br>&nbsp;&nbsp;  `model = am.glm`|
-
-<a name="realtime"></a>
-
-**Realtime web services**, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with a supported functions. No other R code is supported with `Realtime` web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
-
-Note that `Realtime` web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
-
-|R Source|Can come from|
-|------|---------|
-|R model|A model object created with a supported functions, such as:<li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`. <li>These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.|
 
 See an [end-to-end realtime example](#realtime-example).
 
@@ -184,9 +201,6 @@ api <- updateService(
 )
 ```
 
-
-
-
 <a name="data-types"></a>
 
 ### Supported I/O data types
@@ -224,207 +238,6 @@ Example:
 result <- deleteService("mtService", "v1.0.0")
 print(result)
 ```
-
-## Interact with services in R
-
-<a name="listServices"></a>
-
-### List web services
-
-Any authenticated user can retrieve a list of web services using the `listServices` function in the `mrsdeploy` package.  
-
-You can use function arguments to filter the list to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments.
-
-If you published the web service or have the "Owner" role, you will also be able to see the R code inside that web service. If you are not the user who published the service or you are not assigned to the "Owner" role, then you will not be able see the actual R code used to create the web service. Ask your administrator about roles.
-
-|Function|Response|R Help|
-|----|----|:----:|
-|`listServices(...)`| R `list` containing service metadata.|[View](../mrsdeploy/packagehelp/listServices.md)|
-
-
-Example code:
-
-```R
-# Return metadata for all services hosted on this R Server
-allServices <- listServices()
-
-# Return metadata for every version of the 
-# service "mtService" hosted on this R Server
-mtServiceAll <- listServices("mtService")
-
-# Return metadata for version v1.0.0 of the 
-# service "mtService" hosted on this R Server
-mtServiceV1 <- listServices("mtService", "v1")
-
-# View service capabilities/schema. 
-# For example, the input schema:
-#   list(name = "wt", type = "numeric")
-#   list(name = "dist", type = "numeric")
-print(mtService)
-```
-
-Example output:
-
-|R Server 9.1+|R Server 9.0|
-|--------|--------|
-|![9.1 output](../media/o16n/returns91.png)|![9.0 output](../media/o16n/returns90.png)|
-
-<a name="getService"></a>
-
-### Retrieve and examine service objects
-
-Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
-
-After you've authenticated, use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../mrsdeploy/packagehelp/getService.md) for the full description of all arguments. 
-
-
-|Function|Response|R Help|
-|----|----|:----:|
-|`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/getService.md)|
-
-
-Example:
-
-```R
-# Get service using `getService()` function from `mrsdeploy` package.
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-     
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission`
-# contained in this service.
-result <- api$manualTransmission(120, 2.8)
-```
-
-<a name="api-client"></a>
-
-### Interact with API clients
-
-When you publish, update, or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a `client stub` you can use to consumethat service and view its service holdings. 
-
-You can use the following supported public functions to interact with the API client instance.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| `print`       |	Print method that lists all members of the object      |
-| `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
-| `consume`     |	Consume the service based on I/O schema                |
-| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the [`publishService` function](../mrsdeploy/packagehelp/publishService.md)). |
-| `swagger`     |	Displays the service's `swagger` specification         |
-| `batch` |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](data-scientist-batch-mode.md#public-fx-batch).|
-
-
-Example:
-
-```R
-# Get service using `getService()` function from `mrsdeploy`.
-# Assign service to the variable `api`
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api)
-
-# Print the service name, version, inputs, outputs, and the
-# Swagger-based JSON file used to consume the service 
-cap <- api$capabilities()
-print(cap$name)
-print(cap$version)
-print(cap$inputs)
-print(cap$outputs)
-print(cap$swagger)
-
-# Start interacting with the service by calling it with the
-# generic name `consume` based on I/O schema
-result <- api$consume(120, 2.8)
-
-# Or, start interacting with the service using the alias argument
-# that was defined at publication time.
-result <- api$manualTransmission(120, 2.8)
-
-# Since you're authenticated, get this service's `swagger.json`.
-swagger <- api$swagger(json = FALSE)
-cat(swagger)
-```
-
-<a name="consume-service"></a>
-
-### Consume web services 
-
-After a web service has been published, it can be consumed. Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically to define the service to facilitate consumption and integration.
-
-When you publish a service, you should let people know that is ready for them to try out. Users can get the Swagger file they need to consume the service directly in R or via the API.  If you do not provide them with a service name or version, they can discover the service on their own using the `listServices` function described earlier in this article.
-
-Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described below. Another approach is the [asynchronous "Batch" consumption approach](data-scientist-batch-mode.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
-  
-<a name="data-scientists-share"></a>
-
-#### Collaborate with data scientists
-
-Other data scientist may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package installed with Microsoft R Server and R Client. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
-
-As the owner of the service, you can share the name and version number for the service with fellow data scientists so they can call the service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
-
->[!NOTE]
-> It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
-
-
-In this example, replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
-
-```R
-##########################################################################
-#      Perform Request-Response Consumption & Get Swagger Back in R      #
-##########################################################################
-
-# Use `remoteLogin` to authenticate with R Server using the local admin 
-# account. Use session = false so no remote R session started
-remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
-            session = FALSE)
-   
-# Get service using `getService()` function from `mrsdeploy`
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission` contained in this service.
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125  
-
-# Since you're authenticated now, get `swagger.json`.
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
-```
-
-<a name="swagger-app-dev"></a>
-
-#### Collaborate with application developers
-
-Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
-
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[Application Developer Get Started Guide](app-developer-get-started.md)" for more details.  
-   
-Application developers can get the Swagger-based JSON file in one of these ways:
-
-+ A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This is often the faster approach. They can get the file in R with the following code and send it to the application developer:
-   ```R
-   api <- getService("<name>", "<version>")
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE) 
-   ```
-
-+ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](app-developer-get-started.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
-  ```
-  GET /api/<service-name>/<service-version>/swagger.json
-  ```
 
 <a name="workflow"></a>
 
@@ -879,6 +692,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ## See also
 
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Data scientist get started guide](data-scientist-get-started.md)
