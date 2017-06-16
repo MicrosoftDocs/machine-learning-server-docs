@@ -39,7 +39,7 @@ This topic is a high-level description of package functionality. These functions
 For remote execution, participating nodes can be either of the following configurations:
 
 + Two machines running the same version of R Server (v9+), even if on different supported platforms, such as one Linux and one Windows.
-+ One machine running R Client 3.3.2 and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
++ One machine running R Client 3.x and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
 
 The requirements for remote execution include:
 
@@ -160,7 +160,9 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Remote Execution](../operationalize/remote-execution.md)
 
-+ [Web Service](../operationalize/data-scientist-manage-services.md)
++ [How to publish and manage web services in R](../operationalize/data-scientist-manage-services.md)
+
++ [How to interact with and consume web services in R](../operationalize/howto-consume-web-service-interact-in-r.md)
 
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 
