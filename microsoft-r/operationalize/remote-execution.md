@@ -29,9 +29,9 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Client 3.3.x, Microsoft R Server 9.x**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server as well as test your work.  It is especially useful while developing and testing your analytics.
+Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
 
-Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
+Remote execution is supported via the command-line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
 + [Log in to and out of an R Server remotely](../operationalize/mrsdeploy-connection.md)
@@ -154,7 +154,7 @@ REMOTE>pause()
 
 ## Work with R objects and files remotely
 
-After you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model such as `m<-lm(x~y)`, and you want to work with that model in your local R session, you can retrieve the object `m` by using the function `getRemoteObject()`.
+After you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session. For example, if you have an R script that creates a linear model `m<-lm(x~y)`, use the function `getRemoteObject()` to retrieve the object `m` in your local R session.
 
 Conversely, if you have a local R object that you want to make available to your remote R session, you can use the function `putLocalObject()`. If you want to sync your local and remote workspaces, the functions `putLocalWorkspace()` and `getRemoteWorkspace()` can be used.
 
@@ -201,7 +201,7 @@ When working on the REMOTE command line, you need to combine these three stateme
 REMOTE> png(filename="myplot.png", width=1440, height=900);ggplot(aes(x=value, group=am, colour=factor(am)), data=mtcarsmelt) + geom_density() + facet_wrap(~variable, scales="free");dev.off()
 ```
 
-As an alternative you can use the `remoteScript()` function as follows:
+As an alternative, you can use the `remoteScript()` function as follows:
 
 ```R
 #Open a new script window in your IDE
@@ -236,7 +236,7 @@ If you need a prepared environment for remote script execution that includes R p
 + The session's workspace along with the installed R packages
 + Any files and artifacts in the working directory
 
-A session snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. You must load any packages again as described later in this section.
+A session snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. However, any necessary packages must be reloaded as described in the following section.
 
 Snapshots are only accessible to the user who creates them and cannot be shared across users.
 
@@ -288,7 +288,7 @@ To publish a web service after you create a remote session (argument `session = 
 
 + Publish from your local session:  At the `REMOTE>` prompt, use `pause()` to return the R command line in your local session. Then, publish your service. Use `resume()` from your local prompt to return to the command-line in the remote R session.
 
-+ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with `remoteLogin()` or `remoteLoginAAD()`. But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to login from a remote session, you are not prompted for user credentials. You must pass valid values for `username` and `password` to this function. Then, you are authenticated and able to publish from the `REMOTE>` prompt.
++ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with `remoteLogin()` or `remoteLoginAAD()`. But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to log in from a remote session, you are not prompted for user credentials. Instead, pass valid values for `username` and `password` to this function. Then, you are authenticated and able to publish from the `REMOTE>` prompt.
 
 >[!WARNING]
 >If you try to publish a web service from the remote R session without authenticating from that session, you get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
