@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
-The typical approach to consuming web services, ["Request Response" consumption](data-scientist-manage-services.md#consume-service), involves a single API call to execute the code in that web service once. In this article, you'll learn how to perform "Asynchronous Batch" consumption, which is especially useful with large input data sets and long-running computations. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server will immediately execute those operations once for every row of data provided. 
+The typical approach to consuming web services, ["Request Response" consumption](howto-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once. In this article, you'll learn how to perform "Asynchronous Batch" consumption, which is especially useful with large input data sets and long-running computations. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server will immediately execute those operations once for every row of data provided. 
 
 ## Asynchronous batch workflow
 
@@ -234,7 +234,7 @@ Once you have authenticated (see workflow example), you can retrieve the web ser
 
 Batching begins by retrieving the web service containing the code against which you'll score the data records you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
 
-The `getService` function is covered in detail in [this article](data-scientist-manage-services.md). 
+The `getService` function is covered in detail in [this article](howto-consume-web-service-interact-in-r.md). 
 
 **Syntax:** `getService("<serviceName>", "<version>")`
 

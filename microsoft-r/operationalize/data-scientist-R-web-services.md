@@ -32,14 +32,7 @@ You can deploy your R models, scripts, and code as **analytic web services** in 
 
 This article details how you can publish and manage your analytic web services directly in R.  These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
-Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services:
-+ Standard R web services
-+ Realtime R web services
-
-Additionally, you can:
-+ [Get a list](howto-consume-web-service-interact-in-r.md#listServices) of any kind of web services
-+ [Get a web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption
-+ [Share](howto-consume-web-service-interact-in-r.md#consume-service) the service with others
+Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others
 
 To publish or interact with a web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -56,7 +49,7 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 <a name="standard"></a>
 
-**Standard R web services**
+### Standard R web services
 
 These web services offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those who are integrating the services inside their applications.
 
@@ -72,7 +65,7 @@ A code sample for publishing web services can be [found later in this article](#
 
 <a name="realtime"></a>
 
-**Realtime R web services**
+### Realtime R web services
 
 Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that there no R session is needed to consume this type of web service. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
 
@@ -85,7 +78,7 @@ A longer [realtime example](#realtime-example) is also available.
 
 |R Source|Can come from|
 |------|---------|
-|R model|A model object created with supported functions, such as:<li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest`. <li>These machine learning and transform task functions from the [`MicrosoftML` package](../microsoftml/microsoftml.md): `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`.|
+|R model|A model object created with supported functions, such as:<br><br><ul><li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../microsoftml/microsoftml.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`</ul>|
 
 ## Permissions for managing web services
 

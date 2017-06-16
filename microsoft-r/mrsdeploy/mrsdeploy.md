@@ -160,7 +160,9 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Remote Execution](../operationalize/remote-execution.md)
 
-+ [Web Service](../operationalize/data-scientist-manage-services.md)
++ [How to publish and manage web services in R](../operationalize/data-scientist-manage-services.md)
+
++ [How to interact with and consume web services in R](../operationalize/howto-consume-web-service-interact-in-r.md)
 
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 

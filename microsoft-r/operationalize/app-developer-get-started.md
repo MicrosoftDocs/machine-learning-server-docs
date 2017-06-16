@@ -58,7 +58,7 @@ To simplify the integration, R Server provides several Swagger templates each de
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
 Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
-Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](data-scientist-manage-services.md#swagger-app-dev)
+Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](howto-consume-web-service-interact-in-r.md#swagger-app-dev)
 
 
 ### Build the Core Client Library

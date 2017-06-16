@@ -6,7 +6,7 @@ description: "Web service deployment functions in the mrsdeploy package in Micro
 keywords: "mrsdeploy package"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/16/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
