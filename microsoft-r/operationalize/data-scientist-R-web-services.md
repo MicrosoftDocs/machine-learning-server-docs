@@ -28,21 +28,17 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-You can deploy your R models, scripts, and code as **analytic web services** in R by publishing and managing them using the functions in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md). These web services can then be shared with and consumed by others. The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client. 
+You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client. 
 
-This article details how you can publish and manage your analytic web services in R.  These web services are discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
+This article details how you can publish and manage your analytic web services directly in R.  These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
-Using the `mrsdeploy` R package, you can [publish](#publishService) two kinds of web services:
+Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services:
 + Standard R web services
 + Realtime R web services
 
-There are other kinds of web services, but they cannot be published in R with this package.
-
-Once you have published a service, you can [update](#updateService) or [delete](#deleteService) that web service.
-
-Additionally, for any type of web service, you can:
-+ [Get a list](howto-consume-web-service-interact-in-r.md#listServices) of all web services
-+ [Get the web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption
+Additionally, you can:
++ [Get a list](howto-consume-web-service-interact-in-r.md#listServices) of any kind of web services
++ [Get a web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption
 + [Share](howto-consume-web-service-interact-in-r.md#consume-service) the service with others
 
 To publish or interact with a web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
