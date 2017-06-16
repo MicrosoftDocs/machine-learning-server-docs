@@ -1013,7 +1013,7 @@ The Call Stack window appears as follows:
 
 After you have opened the window, you can position it wherever you like. In addition to displaying the current call stack, you may double click on the first entry in the window to take you to the currently executing line of code, or click on the last entry to take you to the top-level command being executed.
 
-> ![NOTE]
+> [!NOTE]
 > If you are sourcing rather than running files, clicking on the last source() entry will simply take you to the first line of the currently executing file.
 
 ### Debugging in the R Console
