@@ -6,7 +6,7 @@ description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/26/2017"
+ms.date: "6/16/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -279,7 +279,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services in a remote session
 
-After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](data-scientist-manage-services.md#publishservice)  guide. 
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](data-scientist-manage-services.md#publishService)  guide. 
 
 To publish a web service after you've created a remote session (argument `session = TRUE` with `remoteLogin()` or `remoteLoginAAD()`), you have two approaches:
 

@@ -260,7 +260,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 ## Next steps
 
 After it has been deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](data-scientist-manage-services.md#data-scientists-share), for testing purposes for example 
++ [Consumed directly in R by another data scientist](howto-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 
