@@ -93,4 +93,4 @@ Now that you know about R Server's capability to operationalize your analytics, 
 + [What's new in R Server](../rserver-whats-new.md)
 + [Administrator Get Started](admin-get-started.md)
 + [Data Scientist Get Started](data-scientist-get-started.md)
-+ [Application Developer Get Started](app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](app-developer-get-started.md)
