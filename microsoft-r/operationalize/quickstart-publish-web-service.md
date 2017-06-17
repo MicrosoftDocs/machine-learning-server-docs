@@ -35,7 +35,7 @@ An R Server web service is an R code execution on the [operationalization comput
 
 ## Time estimate
 
-If you have completed the prerequisites, this task will take approximately *10* minutes to complete.
+If you have completed the prerequisites, this task takes approximately *10* minutes to complete.
 
 ## Prerequisites
 
@@ -45,15 +45,15 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Server installed](../rserver.md) that has been [configured to operationalize analytics](configuration-initial.md).
 
-+ The connection details and access to that instance of Microsoft R Server. Please contact your administrator for any missing connection details. After R Server is configured properly, you can [connect to it from your local machine](../operationalize/mrsdeploy-connection.md) in R to deploy your models and other analytics as web services so they can be consumed. 
++ The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](../operationalize/mrsdeploy-connection.md) in R to deploy your analytics as web services so they can be consumed. 
 
 
 ## Example code
 
-This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we'll walkthrough in the sections that follow.
+This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function below with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the `remoteLogin()` function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```r
 ##########################################################
@@ -168,19 +168,19 @@ Now let's dive into this example down. Let's start by creating the model locally
    print(manualTransmission(120, 2.8)) # 0.6418125
    ```
 
-1. Examine the results of the locally executed code. You'll compare these to the results of the web service later.
+1. Examine the results of the locally executed code. You can compare these results to the results of the web service later.
 
 <br> 
 
 ## B. Publish model as a web service
 
-1. From your local R IDE, log into Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
+1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   For simplicity, the code below uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+   For simplicity, the following code uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
 
 
    >[!IMPORTANT]
-   >Be sure to replace the `remoteLogin()` function below with the [correct login details for your configuration](mrsdeploy-connection.md).
+   >Be sure to replace the `remoteLogin()` function with the [correct login details for your configuration](mrsdeploy-connection.md).
 
    ```R  
    # Use `remoteLogin` to authenticate with R Server using 
@@ -199,7 +199,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
 
-   When publishing, you must specify, among other parameters, a service name and version, the R code, the inputs, as well as the outputs that application developers will need to integrate in their applications. 
+   When publishing, you must specify, among other parameters, a service name, a version, the R code, the inputs, as well as the outputs that application developers need to integrate in their applications. 
 
    >[!NOTE]
    >To publish a web service while in a remote R session, carefully [review these guidelines](remote-execution.md#publish-remote-session). 
@@ -243,7 +243,7 @@ As long as the package versions are the same on R Server as they are locally, yo
 
 ## D. Get the Swagger-based JSON file
 
-During the authenticated session in which you published the service, you can download the Swagger-based JSON file specific to this service so that you or other authenticated users can test and consume the service. This Swagger-based JSON file is generated when the service was published. It will be downloaded to the local file system. 
+You, or others, can test and consume the service using the Swagger-based JSON file that was generated automatically when the service was published. This Swagger-based JSON file is specific to this service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. This file can also be obtained later as described in the article "[How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)." 
 
 In this example, we executed these commands to download the Swagger-based JSON file:
 
@@ -261,6 +261,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 After it has been deployed, the web service can be: 
 + [Consumed directly in R by another data scientist](howto-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
+
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 
@@ -271,8 +272,8 @@ You can use Microsoft R Client to run your R code locally and from R Client you 
 
 Requirements for remote execution include:
 
-+ You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ You must also have [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
++ Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
++ Obtain [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configuration-initial.md).
 
 ## More resources
 
