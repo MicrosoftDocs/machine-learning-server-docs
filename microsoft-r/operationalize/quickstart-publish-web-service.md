@@ -176,7 +176,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   For simplicity, the following code uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+   For simplicity, the following code uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)."
 
 
    >[!IMPORTANT]
@@ -199,7 +199,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
 
-   When publishing, you must specify, among other parameters, a service name, a version, the R code, the inputs, as well as the outputs that application developers need to integrate in their applications. 
+   When publishing, you must specify a name, a version, R code, inputs, and outputs needed for application integration among other parameters,. 
 
    >[!NOTE]
    >To publish a web service while in a remote R session, carefully [review these guidelines](remote-execution.md#publish-remote-session). 
@@ -236,7 +236,7 @@ print(result$output("answer")) # 0.6418125
 ``` 
 
 The results should match the results obtained when the model was run locally earlier.
-As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report"](remote-execution.md#diff). 
+As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](remote-execution.md#diff) 
 
 >[!WARNING]
 >If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](admin-diagnostics.md#logs). 
@@ -279,19 +279,19 @@ Requirements for remote execution include:
 
 This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
 
->Use the table of contents to find all of the guides and documentation needed by the administrator.
+>Use the table of contents to find all the guides and documentation needed by the administrator.
 
 **Key Documents**
-+ [About Operationalization](about.md)
-+ [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)
-+ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
-+ [Working with web services in R](../operationalize/data-scientist-manage-services.md)
-+ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
+ + [About Operationalization](about.md)    
+ + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)    
+ + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)    
+ + [Working with web services in R](../operationalize/data-scientist-manage-services.md)    
+ + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)    
+ + [Execute on a remote Microsoft R Server](remote-execution.md)    
 
 **Other Getting Started Guides**
-+ [How to integrate web services and authentication into your application](app-developer-get-started.md)
-+ [Administrators](admin-get-started.md)
+ + [How to integrate web services and authentication into your application](app-developer-get-started.md)    
+ + [Administrators](admin-get-started.md)    
 
 **Support Channel**
-+ [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+ + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
