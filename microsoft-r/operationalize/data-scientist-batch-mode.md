@@ -46,7 +46,7 @@ Use these following [public API functions](#public-fx-batch)  to define, start, 
 
 **End-to-end workflow example**
 
-Here is the sample code for the workflow example described in greater details in the following sections in this article. 
+Use this sample code to follow along with the workflow described in greater detail in the following sections. 
 
 Here, we publish the same web service that was published [in this tutorial](data-scientist-get-started.md) article. Then, we consume that web service asynchronously. 
 
@@ -230,10 +230,9 @@ Once you have the batch object, use these public functions to interact with it.
 
 ## 1. Get the web service
 
-Once you have authenticated (see workflow example), you can retrieve the web service from R Server, assign it to a variable, and define the inputs to it as record data in a data frame (or CSV, TSV, ...). 
+Once you have authenticated, retrieve the web service from R Server, assign it to a variable, and define the inputs to it as record data in a data frame, CSV, or TSV. 
 
 Batching begins by retrieving the web service containing the code against which you score the data records you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
-
 The `getService` function is covered in detail in the article "[How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)."
 
 **Syntax:** `getService("<serviceName>", "<version>")`
@@ -392,7 +391,7 @@ There are several public functions you can use to get the results and status of 
 + **Returns:** The status of the batch execution.<br>&nbsp;
 
 **Example:**
-In this example, we monitor return partial results every three seconds until the batch execution fails or completes. Then, we return results for a given index row returned as an array.
+In this example, we return partial results every three seconds until the batch execution fails or completes. Then, we return results for a given index row returned as an array.
 ```R
 batchRes <- NULL
 while(TRUE) {
@@ -427,7 +426,7 @@ Get the execution results for a given index row.
 **Returns:** The execution results for a given index row as an array. 
 
 **Example:**
-In this example, we  monitor the results, return partial results every three seconds until the batch execution fails or completes, and then return results for a given index row returned as an array:
+In this example, we return partial results every three seconds until the batch execution fails or completes. Then, we return results for a given index row returned as an array.
 ```R
 # In a loop, get results for a given index row returned as an array in a loop
 # assign it to 'exe' and output a data frame for each row.
@@ -460,7 +459,7 @@ Retrieve a list of every artifact that was generated during the batch execution 
 
 ### Display artifact contents
 
-Display the contents of a named artifact returned in the above list with `artifact()`. R Server returns the ID for the named batch object. 
+Display the contents of a named artifact returned in the preceding list with `artifact()`. R Server returns the ID for the named batch object. 
 
 **Syntax:** `artifact(index, fileName)`
 
