@@ -40,11 +40,11 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 + Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](admin-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
-+ The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you setup a [SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
++ The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
 
-In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, when you have multiple web nodes, you'll need to use a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data and web services can be shared and available for all requests across web node services.   
+In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](configure-remote-database.md) to share data and web services across web node services.   
 
-For added security, you can [configure SSL](security-https.md) as well as authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
+For added security, you can [configure SSL](security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
 Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](configuration-initial.md). 
 
@@ -60,13 +60,13 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade an enterprise configuration from 9.0 to 9.1 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the steps below.** 
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
 
 ### Upgrade a compute node
 
 >[!IMPORTANT]
->Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -78,18 +78,18 @@ To replace an older version, you can uninstall the older distribution before ins
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Manually install .NET Core 1.1.
-     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-1. From the sub-menu, choose the option to **Configure a compute node**.
+1. From the submenu, choose the option to **Configure a compute node**.
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically setup using the configuration you had for R Server 9.0. 
-   Your compute node is now configured. 
+1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0. 
+   The compute node is now configured. 
 
 1. Repeat these steps for each compute node.
 
@@ -98,7 +98,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ### Upgrade a web node
 
 >[!IMPORTANT]
->Before you begin, please back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -109,17 +109,17 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
      >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must also manually install .NET Core 1.1 as well as add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+     >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned above.
+1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-1. From the sub-menu, choose the option to **Configure a web node**.     
+1. From the submenu, choose the option to **Configure a web node**.     
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically setup using the configuration you had for R Server 9.0. 
+1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0. 
    Note: You can safely ignore the Python warning during upgrade.
 
 1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](admin-diagnostics.md).
@@ -136,19 +136,19 @@ To replace an older version, you can uninstall the older distribution before ins
 
 By default, the web node configuration sets up a local SQLite database. We strongly recommend that you use a SQL Server or PostgreSQL database for this configuration to achieve higher availability. In fact, you cannot use SQLite database at all if you have multiple web nodes or need a remote database. 
 
-Follow these instructions to [configure that database](configure-remote-database.md).
+To configure that database, [follow these instructions](configure-remote-database.md).
 
 If you intend to configure multiple web nodes, then you **must** set up a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
 
 >[!WARNING] 
->Choose and configure your database now. If you attempt to configure a different database later, you'll lose the data in your current database.
+>Choose and configure your database now. If you attempt to configure a different database later, all data in your current database will be lost.
 
 <a name="add-compute-nodes"></a>
 
 ### 2. Configure compute nodes
 
 >[!Note]
->Side-by-side installations of R Server web nodes and compute nodes are not supported at this time.
+>Side-by-side installations of R Server web nodes and compute nodes are not supported.
 
 In an enterprise configuration, you can set up one or more compute nodes. 
 
@@ -162,7 +162,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
    
    >[!IMPORTANT]
-   >For SQL Server Machine Learning Services, you must also manually install .NET Core 1.1 as well as add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+   >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    <br>
    **On Linux**
@@ -180,12 +180,12 @@ In an enterprise configuration, you can set up one or more compute nodes.
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges. 
 
     >[!NOTE]
-    >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next 2 steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command-line switches for this script, [here](admin-utility.md#switch).
     
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-1. From the sub-menu, choose the option to **Configure a compute node**.
+1. From the submenu, choose the option to **Configure a compute node**.
 
 1. When the configuration  utility is finished, open port 12805: 
    + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
@@ -195,14 +195,14 @@ In an enterprise configuration, you can set up one or more compute nodes.
 1. From the main utility menu, choose the option **Stop and start services** and restart the compute node to define it as a service.
 
 
-Your compute node is now configured. Repeat these steps for each compute node you want to add.
+The compute node is now configured. Repeat these steps for each compute node you want to add.
 
 
 <a name="webnode"></a>
 
 ### 3. Configure web nodes
 
-In an enterprise configuration, you can set up one or more web nodes. Please note that it is possible to run the web node service from within IIS.
+In an enterprise configuration, you can set up one or more web nodes. Note that it is possible to run the web node service from within IIS.
 
 >[!IMPORTANT]
 >We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
@@ -213,7 +213,7 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Manually install .NET Core 1.1.
-     >1. Add a new registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
@@ -257,21 +257,21 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
         }
         ```
  
-      > Do not update any other properties in this file at this point. It will be updated during the compute node configuration.
+      > Do not update any other properties in this file at this point. These other properties are updated during the compute node configuration.
 
    1. Close and save the file.
 
-   1. Repeat these steps on each web node to declare each and every compute node.
+   1. Repeat these steps on each web node to declare each compute node.
 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
 
     >[!NOTE]
-    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next 3 steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command-line switches for this script, [here](admin-utility.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-   1. From the sub-menu, choose the option to **Configure a web node**.     
+   1. From the submenu, choose the option to **Configure a web node**.     
 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
         Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md#local).
@@ -282,12 +282,12 @@ In an enterprise configuration, you can set up one or more web nodes. Please not
 
    1. Exit the utility.
 
-1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+1. If using the IPTABLES firewall or equivalent service on Linux, then allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent) to open port 12800.
 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
 >[!Important]
->R Server uses Kestrel as the web server for its operationalization web nodes. Consequently, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
+>R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
 
 ### 4. Setup enterprise-grade security
 
