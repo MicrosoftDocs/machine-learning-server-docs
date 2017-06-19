@@ -148,7 +148,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**
--   [Application Developers](app-developer-get-started.md)
+-   [How to integrate web services and authentication into your application](app-developer-get-started.md)
 -   [Data Scientists](data-scientist-get-started.md)
 
 **Support Channel**

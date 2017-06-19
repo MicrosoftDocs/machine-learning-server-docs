@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Get Started for Application Developers 
+# How to integrate web services and authentication into your application 
 
 **Applies to:  Microsoft R Server 9.x**
 

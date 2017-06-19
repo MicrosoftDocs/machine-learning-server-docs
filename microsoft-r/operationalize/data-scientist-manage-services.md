@@ -78,7 +78,7 @@ A longer [realtime example](#realtime-example) is also available.
 
 |R Source|Can come from|
 |------|---------|
-|R model|A model object created with supported functions, such as:<br><br><ul><li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../microsoftml/microsoftml.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`</ul>|
+|R model|A model object created with supported functions, such as:<ul><li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../microsoftml/microsoftml.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`<br><br>While `mlTransform` featurization is supported in realtime scoring, R transforms are not supported. Instead, use `sp_execute_external_script `.</ul>|
 
 ## Permissions for managing web services
 
@@ -678,10 +678,10 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ## See also
 
 + [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
-+ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](data-scientist-get-started.md)
-+ [Get started guide for application developers](app-developer-get-started.md)
++ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
++ [How to integrate web services and authentication into your application](app-developer-get-started.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
