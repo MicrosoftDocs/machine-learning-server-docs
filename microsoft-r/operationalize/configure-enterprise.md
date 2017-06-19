@@ -93,6 +93,8 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. Repeat these steps for each compute node.
 
+<a name="upgradewebnode"></a>
+
 ### Upgrade a web node
 
 >[!IMPORTANT]

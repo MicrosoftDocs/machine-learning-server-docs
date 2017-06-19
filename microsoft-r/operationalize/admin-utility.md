@@ -158,6 +158,10 @@ For security purposes, we strongly recommend that you encrypt strings, such as r
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 
+>[!NOTE]
+>You can bypass script interface using the argument ``-encryptsecret encryptSecret ` `encryptSecretCertificateStoreName` `encryptSecretCertificateStoreLocation` `encryptSecretCertificateSubjectName`. See the table at the end of this topic, [here](#switch).
+
+
 <br><a name="test"></a>
 
 ## Diagnostic Testing
@@ -186,7 +190,9 @@ The following command-line switches are available for the administration utility
 
 |Switch|Description|Version|
 |----|-----|:---:|
-|`-setpassword password`|Sets the local password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
-|`-silentoneboxinstall password`|Sets up a one-box configuration silently<br>  and provides a local password. For example: <br>`-silentoneboxinstall mypass123`|9.1|
-|`-silentwebnodeinstall password`|Sets up a web node configuration silently<br> and provides a local password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
-|`-silentcomputenodeinstall`|Sets up a compute node silently. For example: <br>`-silentcomputenodeinstall`|9.1|
+|`-silentoneboxinstall password`|Sets up a one-box configuration silently<br>  and sets an admin  password. For example: <br>`-silentoneboxinstall mypass123`|9.1|
+|`-silentwebnodeinstall password`|Configures a web node configuration silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
+|`-silentcomputenodeinstall`|Configures a compute node silently. For example: <br>`-silentcomputenodeinstall`|9.1|
+|`-setpassword password`|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
+|`-preparedbmigration [appSettingsPath]`|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](configure-enterprise.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/Microsoft/mrs/o16n/Microsoft.RServer.WebNode/appsettings.json`|9.1|
+|`-encryptsecret encryptSecret ` `encryptSecretCertificateStoreName` `encryptSecretCertificateStoreLocation` `encryptSecretCertificateSubjectName`|Silently [encrypts secrets](#encrypt). For example: <br>`-encryptsecret thesecret` ` storeName storeLocation` `subjectName`|9.1|

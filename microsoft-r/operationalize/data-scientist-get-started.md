@@ -53,7 +53,7 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
 
-We recommend that you follow [this publish quickstart] to publish an R model as a service yourself. 
+We recommend that you follow [this publish quickstart](quickstart-publish-web-service.md) to publish an R model as a service yourself. 
 
 <a name="share"></a>
 
@@ -66,6 +66,7 @@ When the web service is published, a Swagger-based JSON file is generated automa
 
 Services can be consumed in multiple ways: 
 1. Direct consumption in R using the `mrsdeploy` package, which installed with Microsoft R Server and R Client. Approaches include "Request - Response" and "Asynchronous Batch Execution".
+
 2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
 
 Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](howto-consume-web-service-interact-in-r.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
