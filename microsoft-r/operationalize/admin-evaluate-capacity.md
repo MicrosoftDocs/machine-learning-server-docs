@@ -37,6 +37,8 @@ You can define the parameters for the traffic simulation for a given configurati
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
+> [!NOTE]
+> Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
 <br>
 
 ## Configure Test Parameters

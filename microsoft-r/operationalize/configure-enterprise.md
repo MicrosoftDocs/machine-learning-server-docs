@@ -38,7 +38,7 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 + Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
 
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](admin-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](admin-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](configure-remote-database.md) database instead.
 
@@ -60,7 +60,7 @@ The web nodes and compute nodes are supported on:
 
 ## How to upgrade an enterprise configuration from 9.0 to 9.1 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps:** 
 
 
 ### Upgrade a compute node
@@ -109,7 +109,7 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
      >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+     >For SQL Server Machine Learning Services, manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
 
@@ -141,7 +141,7 @@ To configure that database, [follow these instructions](configure-remote-databas
 If you intend to configure multiple web nodes, then you **must** set up a [SQL Server or PostgreSQL database](configure-remote-database.md) so that data can be shared across web node services.
 
 >[!WARNING] 
->Choose and configure your database now. If you attempt to configure a different database later, all data in your current database will be lost.
+>Choose and configure your database now. If you configure a different database later, all data in your current database is lost.
 
 <a name="add-compute-nodes"></a>
 
@@ -190,7 +190,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
 1. When the configuration  utility is finished, open port 12805: 
    + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
 
-   + On Linux: If using the IPTABLES firewall or equivalent service on Linux, then use the `iptables` command (or the equivalent) to open port 12805.
+   + On Linux: If using IPTABLES or equivalent firewall service on Linux, then open port 12805 using `iptables`  or the equivalent command.
 
 1. From the main utility menu, choose the option **Stop and start services** and restart the compute node to define it as a service.
 
@@ -287,7 +287,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
 >[!Important]
->R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy set up.
+>R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 ### 4. Setup enterprise-grade security
 
@@ -313,4 +313,4 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.
 
-1. Set up the load balance of your choosing. 
+1. Set up the load balance of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required.
