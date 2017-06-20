@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Machine learning algorithm cheat sheet"
+title: "Cheat Sheet: How to choose a MicrosoftML algorithm"
 description: "A printable machine learning algorithm cheat sheet that helps you choose the right MicrosoftML algorithm for your predictive model when using Microsoft 
 R Server."
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "05/05/2017"
+ms.date: "06/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.custom: ""
 
 ---
 
-# MicrosoftML algorithm cheat sheet
+# Cheat Sheet: How to choose a MicrosoftML algorithm
 
 The **MicrosoftML: Algorithm Cheat Sheet** helps you choose the right machine learning algorithm for a predictive analytics model when using Microsoft R Server.
 
@@ -47,7 +47,7 @@ For a list by category of all the machine learning algorithms available in the M
 
 * The suggestions offered in this algorithm cheat sheet are approximate rules-of-thumb. Some can be bent and some can be flagrantly violated. This sheet is only intended to suggest a starting point. Don’t be afraid to run a head-to-head competition between several algorithms on your data. There is simply no substitute for understanding the principles of each algorithm and understanding the system that generated your data.
 
-* Every machine learning algorithm has its own style or *inductive bias*. For a specific problem, several algorithms may be appropriate and one algorithm may be a better fit than others. But knowing which will be the best fit beforehand is not always possible. In cases like these, several algorithms are listed together in the cheat sheet. An appropriate strategy would be to try one algorithm, and if the results are not yet satisfactory, try the others. 
+* Every machine learning algorithm has its own style or *inductive bias*. For a specific problem, several algorithms may be appropriate and one algorithm may be a better fit than others. But anticipating which will be the best fit beforehand is not always possible. In cases like these, several algorithms are listed together in the cheat sheet. An appropriate strategy would be to try one algorithm, and if the results are not yet satisfactory, try the others. 
 
 * Two categories of machine learning are supported by MicrosoftML: **supervised learning** and **unsupervised learning**.
 

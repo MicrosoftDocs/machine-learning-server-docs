@@ -73,7 +73,7 @@ Reasons for choosing R Server include:
 |[Microsoft R Open](https://mran.microsoft.com/open/) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
 |[Operationalized analytics](operationalize/about.md) |An engine only in R Server used to deploy R script or code as a web service with support for remote runtime execution and to consume such services. Console users can exercise the functions in [mrsdeploy package](mrsdeploy/mrsdeploy.md). Developers can use the Swagger-APIs to create programmatic solutions. |
 |[ScaleR](scaler-getting-started-data-import-exploration.md) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
-|[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
+|[Overview of MicrosoftML algorithms](microsoftml/microsoftml.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
 |Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](pemar/pemar.md). For the complete list, see [Package reference on MSDN](package-reference.md). |
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. Platform-specific components are available when you install R server on that platform. For more information, see [installation links](#installationlinks) below.|
 |Rgui.exe and R.exe| R Server includes console applications for command line execution in a local session.|
@@ -133,7 +133,7 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 + [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
-+ [Introduction to MicrosoftML](microsoftml-introduction.md)
++ [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md)
 
 
 **See also**
