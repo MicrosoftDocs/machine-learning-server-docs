@@ -23,10 +23,9 @@
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-# [Get started with MicrosoftML](microsoftml-get-started.md)
-## [Introduction to MicrosoftML](microsoftml-introduction.md)
+# [How to get started with MicrosoftML](microsoftml-get-started.md)
 ## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
+## [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md)
 ## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
