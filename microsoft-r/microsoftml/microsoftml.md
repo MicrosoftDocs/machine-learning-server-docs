@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML: State-of-the-art machine learning R algorithms" 
+title: "MicrosoftML: machine learning R algorithms" 
 description: "A package that provides state-of-the-art machine learning algorithms for R, developed  by Microsoft. It is used with the **RevoScaleR** package." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "05/05/2017" 
+ms.date: "06/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,9 +26,7 @@ ms.custom: ""
  
  
  
-# MicrosoftML: State-of-the-art machine learning R algorithms  
-
-##Description
+# MicrosoftML: machine learning R algorithms  
  
 The MicrosoftML package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
 
@@ -104,17 +102,6 @@ This topic includes links to the reference documentation for the ML algorithms a
 **Functions for neural networks.**
 * [optimizer](packagehelp/optimizer.md) Specifies optimization algorithms for the [rxNeuralNet](packagehelp/rxNeuralNet.md) machine learning algorithm.
 
-## Get help on MicrosoftML functions from the R console
-
-To see the **MicrosoftML** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="MicrosoftML")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="MicrosoftML") at the R prompt.
->
  
 ## What's next?
 
@@ -122,15 +109,13 @@ To see the **MicrosoftML** functions that can be called from the R console:
 
 [Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
 
-[Overview of MicrosoftML functions](../overview-microsoftml-functions.md)
+[Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md)
 
-[MicrosoftML algorithm cheat sheet](../microsoftml-algorithm-cheat-sheet.md)
-
-[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md).
+[MicrosoftML samples](../microsoftml-quickstarts.md).
 
 
 ##Microsoft Technical Support
- To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
+To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
  
  
  
