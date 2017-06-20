@@ -24,7 +24,6 @@
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [Get started with MicrosoftML](microsoftml-get-started.md)
-## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
 ## [Cheat Sheet: Choosing a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 

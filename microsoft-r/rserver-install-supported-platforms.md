@@ -49,7 +49,7 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
+<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
 
 <sup>5</sup>To operationalize your analytics or use the MicrosoftML package on R Server for Hadoop, you must deploy on edge nodes in a Hadoop cluster, if the underlying operating system is CentOS/RHEL 7.x or Ubuntu 14.04. It is not supported on SUSE SLES11.
 

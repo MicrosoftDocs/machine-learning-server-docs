@@ -136,7 +136,7 @@ If you haven't upgraded recently, you can review the feature announcments from t
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
-+ [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md)
++ [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md)
 + [Remote execution](operationalize/remote-execution.md)
 + [Web service deployment](operationalize/data-scientist-manage-services.md)
 
@@ -150,7 +150,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux, Hadoop, and [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/) is projected for the first quarter of 2017.
 
-To learn more, see [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md).
+To learn more, see [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md).
 
 **mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
 
@@ -245,7 +245,7 @@ For installation instructions, see [Install R Server for Hadoop](rserver-install
 
 ##### R Server 9.0.1 for Windows
 
-As noted, installation of R Server or R Client on Windows delivers the new [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md) for machine learning.
+As noted, installation of R Server or R Client on Windows delivers the new [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md) for machine learning.
 
 Additionally, this release adds a simplified setup program for an  Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
