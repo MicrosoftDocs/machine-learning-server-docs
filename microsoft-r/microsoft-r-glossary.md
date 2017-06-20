@@ -6,7 +6,7 @@ description: "DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "06/06/2017"
+ms.date: "06/16/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -36,7 +36,7 @@ ms.custom: ""
 
 <hr>
 
->Didn't find what you were looking for?  Suggest a term using the **"Is this page helpful?"** link below.
+>Didn't find what you were looking for?  Suggest a term below.
 >
 >For general R language terminology, check out CRAN's [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 >
@@ -314,9 +314,3 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 **Term**
 
 -->
-
-
-<br>
-<br>
-
-## Suggest terms with <br>"Is this page helpful?"
