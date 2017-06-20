@@ -178,7 +178,6 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    For simplicity, the following code uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)."
 
-
    >[!IMPORTANT]
    >Be sure to replace the `remoteLogin()` function with the [correct login details for your configuration](mrsdeploy-connection.md).
 

@@ -30,7 +30,7 @@ ms.custom: ""
 
 The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
-This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
+This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
 <a name="configure"></a>
 
@@ -138,20 +138,6 @@ The following functions are used to bundle R code or script as a web service. Th
 |`listServices` |Lists the different published web services on the R Server instance. |
 |`getService` |Gets a web service for consumption. |
 |`deleteService `|Deletes a web service on an R Server instance. |
-
-<a name="findmore"></a>
-## Get help on mrsdeploy functions from the R console
-
-To see the **mrsdeploy** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. Load `mrsdeploy` from the command line by typing `library(mrsdeploy)`.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="mrsdeploy")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="mrsdeploy") at the R prompt.
->
 
 
 ## Next steps
