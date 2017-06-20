@@ -6,7 +6,7 @@ description: "MicrosoftML functions"
 keywords: "MicrosoftML"
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "06/20/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,22 +26,41 @@ ms.custom: ""
 
 # Overview of MicrosoftML functions
 
-The **MicrosoftML** package provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
+**MicrosoftML** is a package that adds state-of-the-art machine learning algorithms and data transforms to **Microsoft R** products. Microsoft R is a collection of servers and tools that extend the capabilities of R, making it easier and faster to build and deploy R-based solutions. Microsoft R brings you the ability to do parallel and chunked data processing that relax the restrictions on dataset size imposed by in-memory open source R. 
+
+The **MicrosoftML** package brings new machine learning functionality to Microsoft R with increased speed, performance and scalability, especially for handling a large corpus of text data or high-dimensional categorical data. It provides machine learning algorithms and transforms that enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers, to the design and implement intelligent products, services and devices. This topic outlines the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
 ## Data transforms
 
 The transform pipelines of **MicrosoftML** allow you to compose a custom set of transforms that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. 
 
-- **concat**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
-- **categoricalHash**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
-- **categorical**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
-- **selectFeatures**: selects features from the specified variables using one of the two modes: count or mutual information.
-- **featurizeText**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
-- **featurizeImage**: featurizes an image using the specifies pre-trained deep neural network model. 
-- **getSentiment**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
-- **rxEnsemble**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
+- **`concat()`**: creates a single vector-valued column from multiple  columns. The concatenation  can significantly speed up the processing of data when the number of columns is as large as hundreds to thousands.
+- **`categoricalHash()`**: converts a categorical value into an indicator array using hashing. Useful when the number of categories is large or highly variable.
+- **`categorical()`**: converts a categorical value into an indicator array using a dictionary. Useful when the number of categories is smaller or fixed.
+- **`selectFeatures()`**: selects features from the specified variables using one of the two modes: count or mutual information.
+- **`featurizeText()`**: produces a bag of counts of n-grams (sequences of consecutive words) from a given text. It offers language detection, tokenization, stopwords removing, text normalization, feature generation, and term weighting using TF, IDF and TF-IDF. It supports the following languages by default: English, French, German, Dutch, Italian, Spanish and Japanese.
+- **`featurizeImage()`**: featurizes an image using the specifies pre-trained deep neural network model. 
+- **`getSentiment()`**: returns a sentiment score of the specified natural language text, without the need for any text pre-processing. A value that is closer to 0 indicates a negative sentiment while a value that is closer to 1 indicates a positive sentiment. Available only on Microsoft R 9.1 and later.
+- **`rxEnsemble()`**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
+
 
 ## Machine learning algorithms
+
+The **MicrosoftML** package provides fast and scalable machine learning algorithms that enable you to tackle common machine learning tasks such as classification, regression and anomaly detection. These are high-performance algorithms that are multi-threaded, some of which execute off disk, so that they can scale up to to 100s of GBs on a single-node. The following table summarizes the algorithms, the tasks they support, heir scalability and lists some example applications. A more detailed discussion of the nature of the machine learning tasks and of each of the algorithms is provided following the table.
+
+Algorithm | ML task supported | Scalability | Application Examples
+--------- | ----------------- | ------------ | -----------
+**`rxFastLiner()`** <br>Fast Linear model <br>(SDCA) |  binary classification, linear regression | #cols: ~1B;<br> #rows: ~1B;<br> CPU: multi-proc | Mortgage default prediction, Email spam filtering
+**`rxOneClassSvm()`** <br>OneClass SVM | anomaly detection | cols: ~1K;<br> #rows: RAM-bound;<br> CPU: single-proc | Credit card fraud detection
+**`rxFastTrees()`** <br>Fast Tree | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Bankruptcy prediction
+**`rxFastForest()`** <br>Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
+**`rxNeuralNet()`** <br>Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
+**`rxLogisticRegression()`** <br>Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
+- **`rxEnsemble()`**: trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
+
+For documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](microsoftml/microsoftml.md).
+
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md).
 
 ### Machine learning tasks
 
@@ -92,10 +111,16 @@ The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to pr
 **Tasks supported**: binary and multiclass classification, regression
 
 
-## See also
+## What's next?
 
-[Introduction to MicrosoftML](microsoftml-introduction.md)
+[Introduction to Microsoft R](microsoft-r-getting-started.md) for platform availability of Microsoft R Server, what's new with the current release, and guidance to the MicrosoftML documentation. 
 
-[All function help pages for this package](microsoftml/microsoftml.md)
+[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md) on how to use the [ScaleR functions](scaler-user-guide-introduction.md) for data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies.
 
-For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
+[Overview of MicrosoftML functions](overview-microsoftml-functions.md) for a brief overview of the MicrosoftML functions that enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. 
+
+[MicrosoftML: State-of-the-art machine learning R algorithms](microsoftml/microsoftml.md) for reference documentation of the algorithms and transforms in the package.
+
+[Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
+
+[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.

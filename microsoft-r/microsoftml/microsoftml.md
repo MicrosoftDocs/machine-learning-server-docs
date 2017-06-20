@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML: State-of-the-art machine learning R algorithms" 
+title: "MicrosoftML: machine learning R algorithms" 
 description: "A package that provides state-of-the-art machine learning algorithms for R, developed  by Microsoft. It is used with the **RevoScaleR** package." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "05/05/2017" 
+ms.date: "06/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,9 +26,7 @@ ms.custom: ""
  
  
  
-# MicrosoftML: State-of-the-art machine learning R algorithms  
-
-##Description
+# MicrosoftML: machine learning R algorithms  
  
 The MicrosoftML package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
 
@@ -124,13 +122,13 @@ To see the **MicrosoftML** functions that can be called from the R console:
 
 [Overview of MicrosoftML functions](../overview-microsoftml-functions.md)
 
-[MicrosoftML algorithm cheat sheet](../microsoftml-algorithm-cheat-sheet.md)
+[Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md)
 
-[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md).
+[Quickstart samples for MicrosoftML](../microsoftml-quickstarts.md).
 
 
 ##Microsoft Technical Support
- To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
+To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
  
  
  
