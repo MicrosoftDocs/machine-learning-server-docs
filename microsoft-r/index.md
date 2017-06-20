@@ -108,7 +108,7 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 
-+ [Introduction to MicrosoftML](microsoftml-introduction.md)
++ [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md)
 
 Learn more about Microsoft R in these articles as well:
 

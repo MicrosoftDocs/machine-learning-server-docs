@@ -37,7 +37,7 @@ Also, check out our [blog announcement post](https://blogs.technet.microsoft.com
 
 In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). Here are highlights of what you can do with this release:
 
--  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
+-  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](microsoftml-quickstarts.md).
 -  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
 -  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
 -  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
@@ -136,7 +136,7 @@ If you haven't upgraded recently, you can review the feature announcments from t
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
-+ [Machine learning algorthms](microsoftml-introduction.md)
++ [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md)
 + [Remote execution](operationalize/remote-execution.md)
 + [Web service deployment](operationalize/data-scientist-manage-services.md)
 
@@ -150,7 +150,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux, Hadoop, and [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/) is projected for the first quarter of 2017.
 
-To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+To learn more, see [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md).
 
 **mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
 
@@ -245,7 +245,7 @@ For installation instructions, see [Install R Server for Hadoop](rserver-install
 
 ##### R Server 9.0.1 for Windows
 
-As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
+As noted, installation of R Server or R Client on Windows delivers the new [Overview of MicrosoftML algorithms](overview-microsoftml-functions.md) for machine learning.
 
 Additionally, this release adds a simplified setup program for an  Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 
