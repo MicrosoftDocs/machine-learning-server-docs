@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "Quickstarts for MicrosoftML"
+title: "Quickstart samples for MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "05/05/2017"
+ms.date: "06/20/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,9 +23,9 @@ ms.custom: ""
 
 ---
 
-# Quickstarts for MicrosoftML
+# Quickstart samples for MicrosoftML
 
-Samples are described and linked here to help you get started quickly using MicrosoftML. The sentiment analysis and image featurization quickstarts both use pretrained models. These models are not install by default with Microsoft R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Client and Microsoft R Server.For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+Samples are described and linked here to help you get started quickly using MicrosoftML. The sentiment analysis and image featurization quickstarts both use pretrained models. These models are not install by default with Microsoft R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Client and Microsoft R Server. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 
 ## Breast cancer prediction using rxFastLinear

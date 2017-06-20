@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "05/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,15 +35,19 @@ Also, check out our [blog announcement post](https://blogs.technet.microsoft.com
 
 ## Machine Learning enhancements
 
-In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). 
+In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). Here are highlights of what you can do with this release:
 
-This release includes **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
-
-You can now run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
-
-**Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually.
-
-Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way provides much faster prediction performance in enterprise production scenarios. 
+-  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
+-  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
+-  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
+-  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
+-	Create **text classification** models for problems such as sentiment analysis and support ticket classification. 
+-	Train deep neural nets with **GPU acceleration** in order to solve complex problems such as retail image classification and handwriting analysis.
+-	Work with **high-dimensional categorical data** for scenarios like online advertising click-through prediction.
+-	Solve many other **common machine learning tasks** such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
+- **Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA).
+- **Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets.
+- Reduce training time up to 10x while still retaining model accuracy using **feature selection**.
 
 
 <a name="sparkinterop"></a>
