@@ -23,10 +23,9 @@
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
-# [How to get started with MicrosoftML](microsoftml-get-started.md)
+# [Get started with MicrosoftML](microsoftml-get-started.md)
 ## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md)
-## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Cheat Sheet: Choosing a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Diving into data analysis](data-analysis-in-microsoft-r.md)
@@ -115,6 +114,8 @@
 ##### [Install R Server 8.0.5 on a Teradata Server](rserver-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
+
+### [Pretrained machine learning models](deploy-pretrained-microsoftml-models.md)
 
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
