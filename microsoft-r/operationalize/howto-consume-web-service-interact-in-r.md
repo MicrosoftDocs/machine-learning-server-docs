@@ -108,7 +108,7 @@ After you've authenticated, use the `getService` function in the `mrsdeploy` pac
 Example:
 
 ```R
-# Get service using `getService()` function from `mrsdeploy` package.
+# Get service using getService() function from `mrsdeploy` package.
 # Assign service to the variable `api`.
 api <- getService("mtService", "v1.0.0")
 
@@ -145,7 +145,7 @@ You can use the following supported public functions to interact with the API cl
 Example:
 
 ```R
-# Get service using `getService()` function from `mrsdeploy`.
+# Get service using getService() function from `mrsdeploy`.
 # Assign service to the variable `api`
 api <- getService("mtService", "v1.0.0")
 
@@ -198,7 +198,7 @@ You can share the name and version of a web service with fellow data scientists 
 > It is also possible to perform batch consumption as [described here](data-scientist-batch-mode.md).
 
 
-In this example, replace the following `remoteLogin()` function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
 ##########################################################################
@@ -212,7 +212,7 @@ remoteLogin("http://localhost:12800",
             password = “{{YOUR_PASSWORD}}”,
             session = FALSE)
    
-# Get service using `getService()` function from `mrsdeploy`
+# Get service using getService() function from `mrsdeploy`
 # Assign service to the variable `api`.
 api <- getService("mtService", "v1.0.0")
 

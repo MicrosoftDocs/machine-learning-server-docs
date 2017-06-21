@@ -94,3 +94,4 @@ Now that you know about R Server's capability to operationalize your analytics, 
 + [Administrator Get Started](admin-get-started.md)
 + [Data Scientist Get Started](data-scientist-get-started.md)
 + [How to integrate web services and authentication into your application](app-developer-get-started.md)
++ [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).

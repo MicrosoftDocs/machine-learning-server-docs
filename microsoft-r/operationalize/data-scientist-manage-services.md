@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Working with web services in R"
+title: "How to publish and manage web services in R"
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block. A web service runs on R Server 9.0 instances."
 keywords: "mrsdeploy package"
 author: "j-martens"
@@ -234,9 +234,9 @@ The following workflow examples demonstrate how to publish a web service, intera
 ### Before you begin
 
 >[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function in each of the following examples with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the remoteLogin() function in each of the following examples with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
-The base path for files is set to your working directory, but you can change that as follows:
+The base path for files is set to your working directory, but you can change that using ServiceOption as follows:
 
 + To specify a different base path for `code` and `model` arguments, use:  
   ```R
@@ -244,10 +244,16 @@ The base path for files is set to your working directory, but you can change tha
   opts$set("data-dir", "/base/path/to/some-other/location"))
   ```
 
-+ To clear the path and specify full paths, use:
++ To clear the path and expect that the current working directory will be used to look for files for code and model values during publishService(), use:
   ```R
   opts <- serviceOption() s
   opts$set("data-dir", NULL))
+  ```
+
++ To clear the path and require the FULLY QUALIFIED path for code and model parameters in publishService(), use:
+  ```R
+  opts <- serviceOption() s
+  opts$set("data-dir", ""))
   ```
 
 ### Standard web service examples
@@ -308,7 +314,7 @@ remoteLogin("http://localhost:12800",
 # and assign to variable serviceName
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
-# Publish as service using `publishService()` function from 
+# Publish as service using publishService() function from 
 # `mrsdeploy` package. Use the service name variable and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
@@ -636,7 +642,7 @@ remoteLogin("http://localhost:12800",
 # and assign to variable serviceName
 serviceName <- paste0("kyphosis", round(as.numeric(Sys.time()), 0))
  
-# Publish as service using `publishService()` function. 
+# Publish as service using publishService() function. 
 # Use the variable name for the service and version `v1.0`
 # Assign service to the variable `realtimeApi`.
 realtimeApi <- publishService(

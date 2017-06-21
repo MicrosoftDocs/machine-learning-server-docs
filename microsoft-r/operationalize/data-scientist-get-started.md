@@ -51,7 +51,7 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 ## Deploy R code and models as web services
 
-You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
+You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the publishService() function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
 
 We recommend that you follow [this publish quickstart](quickstart-publish-web-service.md) to publish an R model as a service yourself. 
 
@@ -74,7 +74,7 @@ Learn more about sharing the Swagger-based JSON file with others in the article 
 
 ## Execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using `pause()` and `resume()` functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
 
 Requirements for remote execution include:
 

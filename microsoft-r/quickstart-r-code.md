@@ -158,7 +158,7 @@ This article walks through some R code you can use to predict whether a flight w
         overwrite = TRUE
       )
 
-##Call `rxFactors()` function to convert `OriginAirportID` and `DestAirportID` as categorical.
+##Call the rxFactors() function to convert `OriginAirportID` and `DestAirportID` as categorical.
       rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,
                 factorInfo = c("OriginAirportID", "DestAirportID"),
                 overwrite = TRUE)
@@ -367,7 +367,7 @@ This article walks through some R code you can use to predict whether a flight w
       )
       ```
 
-   1. Call `rxFactors()` function to convert `OriginAirportID` and `DestAirportID` as categorical.
+   1. Call the rxFactors() function to convert `OriginAirportID` and `DestAirportID` as categorical.
 
       ```r
       rxFactors(inData = destData_mrs, outFile = outFileFinal, sortLevels = TRUE,

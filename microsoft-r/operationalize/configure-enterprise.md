@@ -266,14 +266,14 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges:
 
     >[!NOTE]
-    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command-line switches for this script, [here](admin-utility.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
    1. From the submenu, choose the option to **Configure a web node**.     
 
-   1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
+   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
         Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](security-authentication.md#local).
 
    1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on each web node.
@@ -314,3 +314,8 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 1. [Evaluate](admin-evaluate-capacity.md) the configuration's capacity.
 
 1. Set up the load balance of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required.
+
+
+## See also
+
+* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)

@@ -76,6 +76,9 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 
 **Autoscaling of a grid of web and compute nodes on Azure**. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage.
 
+
+Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
+
 ## Executing remotely 
 Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
 
@@ -200,26 +203,7 @@ The following table presents some of the main differences between Microsoft R Se
 >[!Important]
 >R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
 
-Release|Microsoft R Server 8.0.5|Microsoft R Server 9.x
-----|-----|------
-Name of feature|DeployR|_integrated in R Server_
-Install|Installer available separately from R Server|Integrated with R Server. Use the Administration Utility to [configure R Server to operationalize analytics](/operationalize/configuration-initial.md) and enable R Server to deploy and host web services
-Deployment<br><small>(Turn R analytics into web services)</small>|Involves multiple steps, beginning with the upload of R analytics to the repository DB.|Publish R analytics directly from the R console using [new `mrsdeploy` package](/mrsdeploy/mrsdeploy.md) or from a REST API.
-Application Integration|Use client libraries and RBroker framework|[Swagger-based API for quicker exploration and integration](/operationalize/app-developer-get-started.md)
-Architecture|Apache Tomcat|ASP .Net Core
-Authentication|Authentication options:<br>-Basic<br>-Active Directory/LDAP<br>-PAM<br><br><br>|[Authentication options](/operationalize/security-authentication.md):<br>-Active Directory/LDAP<br>-Azure Active Directory<br>-Local Administrator account<br><br><small>[Roles](/operationalize/security-roles.md) are supported in R Server 9.1, but not in 9.0.1.
-High Availability|Active-Active recovery not supported|Active-Active recovery supported
-Remote Execution|Use DeployR APIs to build your custom approach to remote execution|Use the [built-in remote execution functions](/operationalize/remote-execution.md) in the `mrsdeploy` package.
-Web UI|Login, Admin Console, Repository Manager, API Explorer, Event Console|Coming with new design in future release
-APIs|Over 100 RESTful APIs|[About 40 RESTful APIs](/operationalize/api.md)<br> (not backwards compatible)
-
-
-Some term equilavents in the R Server 9.x:
-
-|Version 8|Version 9|
-|------------|---------------|
-|Projects|Sessions|
-|RBroker pool|Now part of web services implementation with an internal [pool of R shells](/operationalize/admin-evaluate-capacity.md#r-shell-pool)|
+Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
 
 ##### R Server 9.0.1 for Linux
 

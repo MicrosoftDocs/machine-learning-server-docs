@@ -51,7 +51,7 @@ Use this sample code to follow along with the workflow described in greater deta
 Here, we publish the same web service that was published [in this tutorial](data-scientist-get-started.md) article. Then, we consume that web service asynchronously. 
 
 >[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
@@ -101,7 +101,7 @@ remoteLogin("http://localhost:12800",
 # Generate a unique serviceName for demos and assign to variable serviceName
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
-# Publish as service using `publishService()` function from `mrsdeploy` 
+# Publish as service using publishService() function from `mrsdeploy` 
 # package. Use the name variable and provide unique version number.
 # Assign service to the variable `api`
 api <- publishService(
@@ -127,7 +127,7 @@ print(result$output("answer")) # 0.6418125
 #            Perform Batch Consumption & Get Swagger in R                #
 ##########################################################################
 
-# Get the service using `getService()` function from `mrsdeploy`
+# Get the service using getService() function from `mrsdeploy`
 # Assign service to the variable `txService`.
 txService <- getService(serviceName, "v1.0.0")
 
@@ -232,14 +232,14 @@ Once you have the batch object, use these public functions to interact with it.
 
 Once you have authenticated, retrieve the web service from R Server, assign it to a variable, and define the inputs to it as record data in a data frame, CSV, or TSV. 
 
-Batching begins by retrieving the web service containing the code against which you score the data records you define next. You can get a service using its name and version with the `getService()` function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
+Batching begins by retrieving the web service containing the code against which you score the data records you define next. You can get a service using its name and version with the getService() function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
 The `getService` function is covered in detail in the article "[How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)."
 
 **Syntax:** `getService("<serviceName>", "<version>")`
 
 **Example:**
 ```R   
-# Get the service using `getService()` function from `mrsdeploy`
+# Get the service using getService() function from `mrsdeploy`
 # Assign service to the variable `txService`.
 txService <- getService("mtService", "v1.0.0")
 ```
