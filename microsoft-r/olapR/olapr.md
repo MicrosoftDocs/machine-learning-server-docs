@@ -55,7 +55,7 @@ ms.custom: ""
 
 To execute an MDX query on an OLAP Cube, you need to first create a connection string (`olapCnn`) and validate using the function `OlapConnection(connectionString)`. The connection string must have a Data Source (such as localhost) and a Provider (MSOLAP). 
 
-After the connection is established, construct the query using the `Query()` object. Set the query details using `cube()`, `axis()`, `columns()`, `slicers()`, and so forth. 
+After the connection is established, construct the query using the Query() object. Set the query details using cube(), axis(), columns(), slicers(), and so forth. 
 
 Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to get a multidimensional array or a data frame back.
 

@@ -37,7 +37,7 @@ To secure connections and communications, you have several options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|[Local `admin` account](#local)|For [one-box](configuration-initial.md) configurations|
+|[Local 'admin' account](#local)|For [one-box](configuration-initial.md) configurations|
 |[Active Directory / LDAP](#ldap)|For [enterprise](configure-enterprise.md) on-premises configurations|
 |[Active Directory / LDAP-S](#ldap)|For [enterprise](configure-enterprise.md) on-premises configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|For [enterprise](configure-enterprise.md) cloud configurations|
@@ -46,17 +46,17 @@ To secure connections and communications, you have several options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, `admin`, is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
 While this might be sufficient when trying this feature out with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configure-enterprise.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
-To log into Microsoft R Server with this user for remote execution or web service functionalities, use `remoteLogin()` as described in the article "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+To log into Microsoft R Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)".
 
 
 >[!WARNING]
-> If you enable Azure Active Directory or Active Directory/LDAP authentication, this `admin` account can no longer be used to authenticate with R Server.
+> If you enable Azure Active Directory or Active Directory/LDAP authentication, this 'admin' account can no longer be used to authenticate with R Server.
 
 
 <a name="ldap"></a>
@@ -154,6 +154,8 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
     
    1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you'll need this info later.
 
+      > Read [this blog post](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a **self-signed certificate in Linux** for access token signing.
+
    1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
 
    1. Enable this section and update the properties so that they match the values for your token signing certificate:
@@ -176,7 +178,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who authenticates with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLogin()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
+1. Share the connection details with any users who authenticates with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
 
 
 <br>
@@ -315,9 +317,14 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 5: Share the required AAD connection details with your users**
 
-Share the connection details such as the values for Authority, Audience, and so on with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using `remoteLoginAAD()` function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
+Share the connection details such as the values for Authority, Audience, and so on with any users who will authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
 
 Note that if you do not specify a username and password as arguments to the login call or R functions, you'll be prompted for your AAD username (`<username>@<AAD-account-domain>`) and password. 
 
 >[!IMPORTANT]
 >Learn how to authenticate with Azure Active Directory from your R script using  the `remoteLoginAAD` function in [the  `mrsdeploy` package using the steps in this article: ["Connecting to R Server with mrsdeploy"](../operationalize/mrsdeploy-connection.md).
+
+
+## See also
+
+* [Blog article: Step-by-step setup for LDAPS on Windows Server](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/04/10/step-by-step-guide-to-setup-ldaps-on-windows-server/)

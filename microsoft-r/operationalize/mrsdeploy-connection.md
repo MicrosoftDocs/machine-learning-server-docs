@@ -44,7 +44,7 @@ In R Server, every API call between the Web server and client must be authentica
 
 By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](security-roles.md) to further control the permissions around web services. 
 
-`mrsdeploy` provides two functions for authentication against R Server: `remoteLogin()` and `remoteLoginAAD()`. These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
+`mrsdeploy` provides two functions for authentication against R Server: remoteLogin() and remoteLoginAAD(). These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
  The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
 
 ### On premises authentication
@@ -73,7 +73,7 @@ For example, here is an AD authentication that creates a remote R session, but p
             session = FALSE)
 ```
 
-Or this example where we authenticate with the local `admin` account and password, create a remote R session, go to the remote session's command prompt upon login, and returns a report of the differences between local and remote environments.
+Or this example where we authenticate with the local 'admin' account and password, create a remote R session, go to the remote session's command prompt upon login, and returns a report of the differences between local and remote environments.
 
 ```R
 >  remoteLogin("http://localhost:12800", 
@@ -265,7 +265,7 @@ REMOTE> exit     # Destroy remote session and logout
 
 ### Remain local without creating a remote R session (3)
 
-In this state, you can authenticate with `remoteLogin()` and its argument `session = FALSE` so that no remote R session is started. Without a remote R session, you'll only have the local R environment and command line.
+In this state, you can authenticate with remoteLogin() and its argument `session = FALSE` so that no remote R session is started. Without a remote R session, you'll only have the local R environment and command line.
 
 |Command|State|
 |---|---|
@@ -308,14 +308,14 @@ When the `REMOTE>` command line is displayed in the R console, any R commands en
 
 ![Switch](../media/o16n/mrsdeploy-connect-switch-context.png)
 
-Switching between the local command line and the remote command line is done using these functions: `pause()` and `resume()`. To switch back to the local R session, type `pause()`. If you have switched to the local R session, you can go back to the remote R session by typing `resume()`.
+Switching between the local command line and the remote command line is done using these functions: pause() and resume(). To switch back to the local R session, type 'pause()'. If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.
 
-To terminate the remote R session, type `exit` at the `REMOTE>` prompt.  Also, to terminate the remote session from the local R session, type `remoteLogout()`.
+To terminate the remote R session, type 'exit' at the REMOTE> prompt.  Also, to terminate the remote session from the local R session, type 'remoteLogout()'.
 
 |Convenience Functions|Description|
 |---|---|
-|`pause()`|When executed from the remote R session, returns the user to the local `> ` command prompt.|
-|`resume()`|When executed from the local R session, returns the user to the `REMOTE>` command prompt, and sets a remote execution context.|
+|pause()|When executed from the remote R session, returns the user to the local '>' command prompt.|
+|resume()|When executed from the local R session, returns the user to the 'REMOTE>' command prompt, and sets a remote execution context.|
 
 **Example**
 
@@ -333,9 +333,9 @@ REMOTE>exit  #logout and terminate the remote R session
 
 ## Logout of a remote session
 
-To terminate the remote R session while you are on the remote command line, type `exit` at the `REMOTE>` prompt.  
+To terminate the remote R session while you are on the remote command line, type 'exit' at the REMOTE> prompt.  
 
-To terminate the remote session from the local R session, type `remoteLogout()`.
+To terminate the remote session from the local R session, type 'remoteLogout()'.
 
 
 

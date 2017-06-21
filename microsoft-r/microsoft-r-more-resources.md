@@ -36,6 +36,11 @@ The following resources are available to you:
 * [About R](https://mran.microsoft.com/documents/what-is-r/)
 * [R Language Resources](https://mran.microsoft.com/documents/getting-started/)
 * [R Blog](http://blog.revolutionanalytics.com/)
+* [Microsoft R Server Operationalization Examples](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/02/03/microsoft-r-server-operationalization-examples/)
+* [Galaxy classification with neural networks: a data science workflow](https://blogs.msdn.microsoft.com/rserver/2017/03/22/galaxy-classification-with-neural-networks-a-data-science-workflow/)
+* [Running your R code on Azure with mrsdeploy](http://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
+
+
 
 ## Support
 * [Microsoft R Support Forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)

@@ -332,3 +332,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
     
    Console.Out.WriteLine(serviceResult.OutputParameters);
    ```
+
+## See also
+
++ [Blog article: REST Calls using PostMan](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/02/22/rest-calls-using-postman-for-r-server-o16n/)

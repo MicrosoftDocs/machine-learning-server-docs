@@ -53,7 +53,7 @@ Before you begin this QuickStart, have the following ready:
 This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the `remoteLogin()` function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
 
 ```r
 ##########################################################
@@ -100,7 +100,7 @@ remoteLogin("http://localhost:12800",
 # and assign to variable serviceName
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
-# Publish as service using `publishService()` function from 
+# Publish as service using publishService() function from 
 # `mrsdeploy` package. Name service "mtService" and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
@@ -176,10 +176,10 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   For simplicity, the following code uses the basic local `admin` account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)."
+   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)."
 
    >[!IMPORTANT]
-   >Be sure to replace the `remoteLogin()` function with the [correct login details for your configuration](mrsdeploy-connection.md).
+   >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](mrsdeploy-connection.md).
 
    ```R  
    # Use `remoteLogin` to authenticate with R Server using 
@@ -193,7 +193,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package. 
+1. Publish the model as a web service to R Server using [the publishService() function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package. 
 
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
@@ -267,7 +267,7 @@ After it has been deployed, the web service can be:
 
 ## How to execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using `pause()` and `resume()` functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
 
 Requirements for remote execution include:
 
