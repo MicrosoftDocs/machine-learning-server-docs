@@ -136,7 +136,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
-    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local `admin` account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](admin-utility.md#switch).
 
     1. Choose the option to **Configure R Server for Operationalization**.
@@ -146,7 +146,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
        >[!IMPORTANT]
        > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-enterprise.md).
 
-    1. When prompted, provide a password for the built-in, local operationalization administrator account called `admin`.
+    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
 
     1. Return to the main menu of the utility when the configuration ends.
 
@@ -158,3 +158,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 >R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R analytics with R Server.
+
+## See also
+
+* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)

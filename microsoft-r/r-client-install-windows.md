@@ -112,7 +112,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
-1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: `mrupdate::mrCheckForUpdates()`
+1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: mrupdate::mrCheckForUpdates()
 
 >[!IMPORTANT]
 >Review the recommendations in [Package Management](/operationalize/package-management.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.

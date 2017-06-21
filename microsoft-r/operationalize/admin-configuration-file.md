@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Roles and Groups | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication Roles for Operationalization with Microsoft R Server"
-keywords: ""
+title: "R Server configuration file (appsettings.json) | Microsoft R Server Docs"
+description: "R Server configuration file, appsettings.json"
+keywords: "R Server configuration file, appsettings.json"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "4/19/2017"

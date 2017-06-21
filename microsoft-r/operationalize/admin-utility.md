@@ -70,22 +70,22 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 |Version|Commands|
 |----|------------|
-|9.1|`cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0`<br>`sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll`|
-|9.0|`cd /usr/lib64/microsoft-deployr/9.0.1`<br>`sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll`|
+|9.1|cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0<br>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0|cd /usr/lib64/microsoft-deployr/9.0.1<br>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
 
 <br><a name="admin-password"></a>
 
 ## Set/Update Local Administrator Password
 
-When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called `admin`.  If you do enable another form of authentication, the local administrator account is automatically disabled.
+When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called 'admin'.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
-This local `admin` password must be 8-16 characters long and contain at least 1 uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
+This local 'admin' password must be 8-16 characters long and contain at least 1 uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
 
 **To set or update the local admin account password:**
 
 1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
-1. From the main menu, choose the option to set a password for the local `admin` account.
+1. From the main menu, choose the option to set a password for the local 'admin' account.
 
 1. If a password was already defined, provide the current password.
 
