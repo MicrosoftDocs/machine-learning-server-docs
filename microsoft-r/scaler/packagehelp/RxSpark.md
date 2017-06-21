@@ -323,10 +323,8 @@ context.
  
  ##Details
  
-This compute context is supported for Cloudera, Hortonworks, and MapR Hadoop distributions on Red Hat Enterprise Linux 5 and 6.
- 
- 
- 
+
+
  ##Value
  
 object of class RxSpark.
