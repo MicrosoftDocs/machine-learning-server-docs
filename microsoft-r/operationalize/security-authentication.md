@@ -48,7 +48,7 @@ To secure connections and communications, you have several options:
 
 During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this default account might be sufficient when trying out this feature with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configure-enterprise.md).
+While this account might be sufficient when trying to operationalize with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](configure-enterprise.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -150,7 +150,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >
    >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the web node and the LDAP server.
    >
-   >Tokens are useful to the application developer who can use them to identify and authenticate the user who is sending the API call within his or her application. [Learn more...](security-access-tokens.md)
+   >Tokens are useful to the application developers who use them to identify and authenticate users who are sending API calls within their application. [Learn more...](security-access-tokens.md)
     
    1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.
 
@@ -174,7 +174,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
    >[!IMPORTANT]
-   >If you run into connection issues when configuring for Active Directory/LDAP, try the ldp.exe tool to search the LDAP settings and compare them to what you declared in appsettings.json.  Consult with any Active Directory experts in your organization to identify the correct parameters.
+   >If you run into connection issues when configuring for Active Directory/LDAP, try the ldp.exe tool to search the LDAP settings and compare them to what you declared in appsettings.json.  To identify the correct parameters, consult with any Active Directory experts in your organization.
 
 1. Repeat these steps on each machine hosting the web node.
 
@@ -235,7 +235,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 Now, create a native app. This app links the web app to the Microsoft R Server web node.
 
-   1. In the **Applications** tab, click **ADD** at the bottom to create a app registration. A dialog appears.
+   1. In the **Applications** tab, click **ADD** at the bottom to create an app registration. A dialog appears.
 
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 

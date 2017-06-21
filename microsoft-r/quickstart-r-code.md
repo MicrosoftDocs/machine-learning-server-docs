@@ -29,15 +29,15 @@ ms.custom: ""
 
 ## Objective
 
-Learn how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
+Learn how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight is delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight is delayed or on-time.
 
 In machine learning and statistics, classification is the task of identifying the class or category to which an observation belongs based on a training dataset containing observations with known categories. Classification is generally a supervised learning problem. This quick start is a binary classification task with two classes.
 
-In this example, you train a model using many examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are `0` for ontime flights and `1` for flights delayed longer than 15 minutes.
+In this example, you train a model using many examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are '0' for on-time flights and '1' for flights delayed longer than 15 minutes.
 
 ## Time estimate
 
-If you have completed the prerequisites, this task takes approximately ten minutes to complete.
+If you have completed the prerequisites, this task takes approximately 10 minutes to complete.
 
 ## Prerequisites
 
