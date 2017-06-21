@@ -43,6 +43,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 ##Key algorithms and transforms in the package
 
+<a name="ml-algorithms"></a>
 ### Machine learning algorithms
 
 * [rxFastTrees](packagehelp/rxFastTrees.md): An implementation of FastRank, an efficient implementation  of the MART gradient boosting algorithm.  
@@ -53,6 +54,8 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression. 
 * [rxEnsemble](packagehelp/rxEnsemble.md): trains a number of models of various kinds to obtain better predictive performance than could be obtained from a single model.
 
+
+<a name="ml-transforms"></a>
 ### Machine learning transforms
 
 * [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
