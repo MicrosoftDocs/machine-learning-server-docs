@@ -48,7 +48,7 @@ To secure connections and communications, you have several options:
 
 During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this might be sufficient when trying out this feature with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configure-enterprise.md).
+While this default account might be sufficient when trying out this feature with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is not sufficient for [enterprise configurations](configure-enterprise.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
@@ -143,7 +143,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
 
-1. If using a certificate for access token signing, do the following: 
+1. If using a certificate for access token signing, you must: 
 
    >[!Important]
    >You must use a certificate for access token signing whenever you have multiple web nodes so the tokens are signed consistently by every web node in your configuration. 
@@ -174,7 +174,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
 
    >[!IMPORTANT]
-   >If you run into connection issues when configuring R Server for Active Directory/LDAP, we recommend using the ldp.exe tool to search the LDAP settings and compare them to what you declared in appsettings.json.  Consult with any Active Directory experts in your organization to identify the correct parameters.
+   >If you run into connection issues when configuring for Active Directory/LDAP, try the ldp.exe tool to search the LDAP settings and compare them to what you declared in appsettings.json.  Consult with any Active Directory experts in your organization to identify the correct parameters.
 
 1. Repeat these steps on each machine hosting the web node.
 
@@ -201,7 +201,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 Now, create a web app that is tied to the Azure Active Directory as follows: 
 
-   1. In the **Applications** tab, click **ADD** at the bottom to create a app registration. A dialog appears.
+   1. In the **Applications** tab, click **ADD** at the bottom to create an app registration. A dialog appears.
  
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 
@@ -223,7 +223,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    1. Add a client key to the web app's **Keys** section by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as you'll need it if you choose to configure [roles to give web services permissions to certain users](security-roles.md). See following example.
+      > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](security-roles.md). See following example.
 
       ![Configure web application](../media/o16n/webapp2.png)
 
@@ -292,7 +292,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
    |Audience|Use the CLIENT ID value for the WEB app you created in the Azure portal.|
    |ClientId|Use the CLIENT ID value for the NATIVE app you created in the Azure portal.|
    |Key|This is the key for the WEB application you took note of before.  |
-   |KeyEncrypted|We highly recommend that you [encrypt login credentials](admin-utility.md#encrypt) before adding the information to this file. If you do, set this to 'true'. For plain text, set to 'false'.|
+   |KeyEncrypted|We highly recommend that you [encrypt login credentials](admin-utility.md#encrypt) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
 
    For example:
    ```
@@ -317,7 +317,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 5: Share the required AAD connection details with your users**
 
-Share the connection details, such as the values for Authority, Audience, with any users who need to authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
+Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
 
 If you do not specify a username and password as arguments to the login call or R functions, you are prompted for your AAD username (<username>@<AAD-account-domain>) and password. 
 
