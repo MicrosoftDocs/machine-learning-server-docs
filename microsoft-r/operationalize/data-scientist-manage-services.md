@@ -51,7 +51,7 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 ### Standard R web services
 
-These web services offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those who are integrating the services inside their applications.
+ These web services offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those who are integrating the services inside their applications.
 
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any R code, models, and any necessary model assets. When publishing a standard web service, you must also define the required inputs and any output the application developers use to integrate the service in their applications.
 
@@ -67,7 +67,9 @@ A code sample for publishing web services can be [found later in this article](#
 
 ### Realtime R web services
 
-Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that there no R session is needed to consume this type of web service. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
+Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario,where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
+
+Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services use the R objects you create when you train the model without themselves relying on an R interpreter at consumption time. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
 
 Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with supported functions. No other R code is supported with `Realtime` web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
 
@@ -113,7 +115,7 @@ After you've authenticated, use the `publishService` function in the `mrsdeploy`
 |----|----|:----:|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
 
-You can publish web services to a local R Server from your command-line. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command-line.  
+You can publish web services to a local R Server from your command line. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
 
 
 Example of standard web service:

@@ -39,7 +39,7 @@ Use the utility to:
 + [Run diagnostic tests](admin-diagnostics.md)
 + [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](admin-evaluate-capacity.md)
-+ [Learn about command-line switches to this utility script](#switch)
++ [Learn about command line switches to this utility script](#switch)
 
 <br>
 <a name="launch"></a>
@@ -55,7 +55,7 @@ You can launch the administration utility AS AN ADMINISTRATOR (right-click) usin
 >[!WARNING]
 > If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted." Read this article on [powershell execution policies](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) for details. 
 
-Alternately, open a command-line window with administrator privileges and enter the following commands:
+Alternately, open a command line window with administrator privileges and enter the following commands:
 
 |Version|Commands|
 |----|------------|
@@ -95,7 +95,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command-line switches for this script, [here](#switch).
+>You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
 
 You can also 
 <br><a name="startstop"></a>
@@ -184,9 +184,9 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 <br><a name="switch"></a>
 
-## Command-line switches
+## Command line switches
 
-The following command-line switches are available for the administration utility.
+The following command line switches are available for the administration utility.
 
 |Switch|Description|Version|
 |----|-----|:---:|
