@@ -53,7 +53,7 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 
  R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
 
-In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](overview-operationalize-analytics.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](operationalize/about.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 Reasons for choosing R Server include:
 
@@ -95,7 +95,7 @@ Developers can use Swagger APIs to automate R analytics over single and multi-se
 
 Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](operationalize/configuration-initial.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
-[Learn more about operationalizing analytics with R Server.](overview-operationalize-analytics.md)
+[Learn more about operationalizing analytics with R Server.](operationalize/about.md)
 
 ## Machine learning
 
