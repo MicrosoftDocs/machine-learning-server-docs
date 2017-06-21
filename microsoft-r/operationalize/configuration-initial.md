@@ -137,7 +137,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
     >[!NOTE]
     >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](admin-utility.md#switch).
 
     1. Choose the option to **Configure R Server for Operationalization**.
 

@@ -31,7 +31,7 @@ ms.custom: ""
 
 Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
 
-Remote execution is supported via the command-line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
+Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
 + [Log in to and out of an R Server remotely](../operationalize/mrsdeploy-connection.md)
@@ -116,7 +116,7 @@ If your R Script has R package dependencies, those packages must be installed on
 
 Certain functions are masked from execution, such as 'help', 'browser', 'q' and 'quit'.   
 
-In a remote context, you cannot display vignettes or get help at your command-line prompt.  
+In a remote context, you cannot display vignettes or get help at your command line prompt.  
 
 In most cases, “system” commands work.  However, system commands that write to stdout/stderr may not display their output nor wait until the entire system command has completed before displaying output.   `install.packages` is the only exception for which we explicitly handle stdout and stderr in a remote context. 
 
@@ -286,7 +286,7 @@ After you understand the mechanics of remote execution, consider incorporating w
 
 To publish a web service after you create a remote session (argument `session = TRUE` with remoteLogin() or remoteLoginAAD()), you have two approaches:
 
-+ Publish from your local session:  At the `REMOTE>` prompt, use pause() to return the R command line in your local session. Then, publish your service. Use resume() from your local prompt to return to the command-line in the remote R session.
++ Publish from your local session:  At the `REMOTE>` prompt, use pause() to return the R command line in your local session. Then, publish your service. Use resume() from your local prompt to return to the command line in the remote R session.
 
 + Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with remoteLogin() or remoteLoginAAD(). But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to log in from a remote session, you are not prompted for user credentials. Instead, pass valid values for `username` and `password` to this function. Then, you are authenticated and able to publish from the `REMOTE>` prompt.
 

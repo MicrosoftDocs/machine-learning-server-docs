@@ -121,7 +121,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 ## Silent and Passive Installs
 
-To install Microsoft R Client from a script on Windows, use the following command-line switches:
+To install Microsoft R Client from a script on Windows, use the following command line switches:
 
 |Mode        |Install Command|Description|
 |-----------|-------------------------------|--------------|

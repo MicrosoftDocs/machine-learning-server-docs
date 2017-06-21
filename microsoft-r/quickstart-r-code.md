@@ -6,7 +6,7 @@ description: "Microsoft R Client quickstart"
 keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "5/10/2016"
+ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,26 +29,26 @@ ms.custom: ""
 
 ## Objective
 
-Learn how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight will be delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight will be delayed, or whether it will be on time.
+Learn how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight is delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight is delayed or on-time.
 
-Broadly speaking, in machine learning and statistics, classification is the task of identifying the class or category to which a new observation belongs on the basis of a training set of data containing observations with known categories. Classification is generally a supervised learning problem. Since this is a binary classification task, there are only two classes.
+In machine learning and statistics, classification is the task of identifying the class or category to which an observation belongs based on a training dataset containing observations with known categories. Classification is generally a supervised learning problem. This quick start is a binary classification task with two classes.
 
-In this example, you train a model using a large number of examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are `0` for ontime flights and `1` for flights delayed longer than 15 minutes.
+In this example, you train a model using many examples from historic flight data, along with an outcome measure that indicates the appropriate category or class for each example. The two classes are '0' for on-time flights and '1' for flights delayed longer than 15 minutes.
 
 ## Time estimate
 
-If you have completed the prerequisites, this task will take approximately *5* minutes to complete.
+If you have completed the prerequisites, this task takes approximately 10 minutes to complete.
 
 ## Prerequisites
 
 This quickstart assumes that you have:
 + An installed instance of Microsoft R Client or Microsoft R Server 
-+ R running on the command-line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
++ R running on the command line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
 + An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ## Example code
 
-This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we'll walkthrough in the sections.
+This article walks through some R code you can use to predict whether a flight will be delayed. Here is the entire R code for the example that we walk through in the sections.
 
 ```r
        #############################################
@@ -82,7 +82,7 @@ This article walks through some R code you can use to predict whether a flight w
       overwrite = TRUE
     )
 
-#Review the first 6 rows of flight data.
+#Review the first six rows of flight data.
     head(flight_mrs)
 
 #Summarize the flight data.
@@ -129,7 +129,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 
 #Step 2: Pre-process Data
-#Rename some column names in the weather data to prepare it for merging.
+#Prepare for a merge by renaming some colum in the weather data.
     newVarInfo <- list(
       AdjustedMonth = list(newName = "Month"),
       AdjustedDay = list(newName = "DayofMonth"),
@@ -275,7 +275,7 @@ This article walks through some R code you can use to predict whether a flight w
     )
    ```
 
-1. Review the first 6 rows of flight data.
+1. Review the first six rows of flight data.
    ```r
    head(flight_mrs)
    ```
@@ -469,7 +469,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 ## Next steps
 
-Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](microsoftml/microsoftml.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution. 
 
 ## Learn More
 

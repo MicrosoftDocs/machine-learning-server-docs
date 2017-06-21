@@ -82,7 +82,7 @@ After you configure the IDE, a message appears in the console signaling that the
 
 ### 3. Try Out R Client
 
-Now that you've installed R Client, you can start building and running some R code. Launch R on the command-line or in your IDE and:
+Now that you've installed R Client, you can start building and running some R code. Launch R on the command line or in your IDE and:
 
 + Run the sample R code as described in this [quickstart guide](quickstart-r-code.md). 
 
