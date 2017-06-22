@@ -47,6 +47,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 * [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
 
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
+* [Quickstart: Deploy R code as a web service](quickstart-publish-web-service.md) 
 
 ## Pre-built solutions and 
 
@@ -75,6 +76,8 @@ Since the R engine lies underneath, you can use the R Core Team manuals that are
 However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](microsoftml/microsoftml.md), [olapR](olapr/olapr.md), [mrsdeploy](mrsdeploy/mrsdeploy.md), and [RevoScaleR](scaler/scaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
 
 Learn more about Microsoft R in these articles:
+
++ [Operationalizing R code with R Server](operationalize/about.md)
 
 + [What's new in R Server](rserver-whats-new.md)
 
