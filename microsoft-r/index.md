@@ -26,7 +26,7 @@ ms.custom: ""
 
 ---
 
-# What is Microsoft R?
+# Microsoft R
 
 Microsoft R is a collection of packages, interpreters, and infrastructure for developing and deploying R-based machine learning and data science solutions on a range of platforms, from local standalone installations on Linux and Windows, to large distributed deployments on node clusters. We make these capabilities available in several products and services to meet the needs of individual or teams of data scientists and developers.
 
