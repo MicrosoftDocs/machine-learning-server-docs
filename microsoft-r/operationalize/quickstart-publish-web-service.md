@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Quick Start for Microsoft R Client"
-description: "Microsoft R Client quickstart"
-keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
+title: "Quickstart for deploying models as web services - Microsoft R Server | Microsoft Docs"
+description: "How to deploy an R model as a service"
+keywords: "quickstart, Microsoft R Server, deploy r models"
 author: "j-martens"
 manager: "jhubbard"
 ms.date: "5/10/2017"
@@ -19,7 +19,9 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+ms.technology: 
+  - deployr
+  - r-server
 ms.custom: ""
 
 ---

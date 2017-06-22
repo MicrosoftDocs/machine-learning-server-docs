@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Getting Started for DeployR Administrators"
-description: "Getting started for DeployR Administrators: high level introdution to DeployR for the server administrator"
+title: "Quickstart for Administrators configuring for operationalization - Microsoft R Server | Microsoft Docs"
+description: "Getting started for Administrators"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +24,7 @@ ms.custom: ""
 
 ---
 
-# Configuring: Get Started for Administrators
+# Quickstart for administrating R Server's operationalization configuration
 
 **Applies to:  Microsoft R Server 9.x**
 

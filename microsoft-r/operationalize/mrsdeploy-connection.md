@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Logging into R Server and connecting with mrsdeploy"
+title: "Connect to R Server remotely using mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "Logging into R Server and connecting with mrsdeploy"
 keywords: "remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -19,12 +19,14 @@ ms.devlang: ""
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+ms.technology: 
+  - deployr
+  - r-server
 ms.custom: ""
 
 ---
 
-# Logging into R Server with mrsdeploy
+# Logging into R Server with mrsdeploy and opening a remote session
 
 **Applies to:  Microsoft R Server 9.x**
 

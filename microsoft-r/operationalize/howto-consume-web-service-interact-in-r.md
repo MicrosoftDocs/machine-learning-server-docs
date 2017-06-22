@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Working with web services in R"
-description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block. A web service runs on R Server 9.0 instances."
+title: "How to get and consume web services in R - Microsoft R Server | Microsoft Docs"
+description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: "mrsdeploy package"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "6/16/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

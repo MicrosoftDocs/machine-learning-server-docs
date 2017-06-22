@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Get Started for Application Developers  | Microsoft R Server Docs"
-description: "Get Started for Application Developers for Microsoft R Server"
+title: "Integrate analytic web services and authentication into your application - Microsoft R Server | Microsoft Docs"
+description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

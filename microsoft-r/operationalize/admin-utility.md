@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Administration Utility | Microsoft R Server Docs"
-description: "Operationalization of R Analytics with Microsoft R Server"
+title: "Administration Utility - Microsoft R Server | Microsoft Docs"
+description: "configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "3/15/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-You can configure the operationalization feature for Microsoft R Server using the administration utility. 
+This article describes how to use the administration utility to configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
 
 Use the utility to:
 + [Configure R Server for operationalization](configuration-initial.md) front-ends and back-ends
@@ -136,19 +136,27 @@ You can update the ports numbers for the web node, compute node, or [`deployr-rs
 
 ## Encrypt Credentials 
 
-For security purposes, we strongly recommend that you encrypt strings, such as remote database connection strings and LDAP/LDAP-S passwords, rather than store strings in plain text in the `appsettings.json` configuration file. Here's how: 
+For security purposes, we strongly recommend that you encrypt strings, such as remote database connection strings and LDAP/LDAP-S passwords, rather than store strings in plain text in the appsettings.json configuration file. 
+
+The encryption function available in the administration utility relies on the RSA algorithm for encryption. 
+
+**To encrypt credentials:**
        
-1. On the web node, install a credential encryption certificate with a private key. Install the certificate into the default certificate store on the local machine. 
+1. On the web node, install a credential encryption certificate with a private key into the default certificate store on the local machine. That location is in the Windows certificate store or in the Linux-based PFX file. 
+
+   The length of the encryption key depends on the certificate, however, we recommend a length of at least 1048 bits.
+
+   Ensure that your certificate is secured properly. On Windows, for example, you can use Bitlocker to encrypt the disk.  
 
 1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
       1. From the main menu, choose the option **Encrypt Credentials**.
 
       1. Specify where is the encryption certificate installed: 
-    + Local machine (Computer account)
-    + Current user (My user account)
+         + Local machine (Computer account)
+         + Current user (My user account)
 
-        The list of available certificates appears.
+         The list of available certificates appears.
 
       1. Specify which encryption certificate to use.
 

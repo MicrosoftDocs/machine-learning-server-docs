@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Enterprise-Grade Security: Authentication | Microsoft R Server Docs"
+title: "LDAP AD and Azure Active Directory authentication for Microsoft R Server | Microsoft Docs"
 description: "Enterprise-Grade Security: Authentication with Microsoft R Server"
 keywords: "R Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Authentication options for R Server when operationalizing analytics
+# Authenticate R Server users against LDAP AD or Azure Active Directory
 
 **Applies to:  Microsoft R Server 9.x**
 

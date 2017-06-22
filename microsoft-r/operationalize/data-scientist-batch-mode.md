@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Batch Scoring & Deployment"
-description: "mrsdeploy Functions"
-keywords: "mrsdeploy package reference"
+title: "Consume web services asynchronously with batch scoring - Microsoft R Server | Microsoft Docs"
+description: "Asynchronous web service consumption via batch processing in R Server"
+keywords: "batch processing of web services"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,11 +24,11 @@ ms.custom: ""
 
 ---
 
-# Asynchronous service consumption via batch processing
+# Asynchronous web service consumption via batch processing in R Server
 
 **Applies to:  Microsoft R Server 9.1**
 
-The typical approach to consuming web services, ["Request Response" consumption](howto-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once. In this article, you can learn how to perform "Asynchronous Batch" consumption, which is especially useful with large input data sets and long-running computations. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server immediately executes those operations once for every row of data provided. 
+In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](howto-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server immediately executes those operations once for every row of data provided. 
 
 ## Asynchronous batch workflow
 

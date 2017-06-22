@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Configure a remote database for operationalization | Microsoft R Server Docs"
-description: "Configure a remote database for operationalization with Microsoft R Server"
+title: "Configure a database for operationalization - Microsoft R Server | Microsoft Docs"
+description: "Configure a SQL Server or PostgreSQL Database database for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configuring an SQL Server or PostgreSQL Database
+# Configuring an SQL Server or PostgreSQL database for R Server
 
 **Applies to:  Microsoft R Server 9.x**
 

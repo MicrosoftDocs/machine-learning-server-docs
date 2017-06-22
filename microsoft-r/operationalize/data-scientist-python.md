@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Publish and consume Python web services | Microsoft R Server Docs"
+title: "Publish and consume Python web services - Microsoft R Server | Microsoft Docs"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
