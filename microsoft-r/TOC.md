@@ -1,12 +1,12 @@
 # [Overview of Microsoft R](index.md)
-## [Microsoft R products and features](index.md)
+## [what is Microosft R](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
 ## [Operationalize analytics](operationalize/about.md)
-## [Interoperability with R](overview-interoperability.md)
+## [Interoperability](overview-interoperability.md)
 
 # Get started with RevoScaleR
 ## [Tutorials](microsoft-r-tutorials.md)
