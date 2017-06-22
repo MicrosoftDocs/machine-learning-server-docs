@@ -1,5 +1,5 @@
 # [Overview of Microsoft R](index.md)
-## [what is Microosft R](index.md)
+## [What is Microosft R](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
