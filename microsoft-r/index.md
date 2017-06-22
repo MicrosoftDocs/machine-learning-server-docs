@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Introduction to Microsoft R Server and R Client"
+title: "What is Microsoft R Server and R Client"
 description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/10/2017"
+ms.date: "06/22/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -28,9 +28,11 @@ ms.custom: ""
 
 # Microsoft R Server and R Client
 
-R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and visualizations. As an open source technology, R is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Although R is widely used, deploying R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or requirements for scale and support in production environments emerge.
+Microsoft R is a collection of packages, interpreters, and infrastructure for developing and deploying R-based machine learning and data science solutions on a range of platforms, from local standalone installations on Linux and Windows to large distributed deployments on node clusters. We make these capabilities available in several products and services to meet the needs of individual or teams of data scientists and developers.
 
-Microsoft R fills the functional void in enterprise deployments by providing a collection of servers and tools that extend the capabilities of R. The Microsoft R product family builds on top of open source R, offering free and commercial products in the form of [Microsoft R Server](rserver.md), [Microsoft R Client](r-client.md), and [Microsoft R Open](https://mran.microsoft.com/open/). In addition to the over 10,000 standard R packages available to all R users, Microsoft R Server and R Client include additional R packages and connectivity tools that enable remote compute context and remote execution, web service deployment, machine learning integration, and scalable solutions through clusters or parallelized workloads on platforms that support it.
++ [Microsoft R Server](rserver.md) is the flagship product and supports very large workloads. 
++ [Microsoft R Client](r-client.md) is a free workstation version. It includes the same functionality as R Server, but on a smaller scale, supporting local workloads.
++ [Microsoft R Open](https://mran.microsoft.com/open/) is Microsoft's distribution of open source R, without the proprietary packages and infrastructure of our other products. This R distribution is included in both Microsoft R Client and R Server. 
 
 ## Quickstarts and Step-by-Step Tutorials
 
@@ -42,7 +44,18 @@ In minutes, you can step through a classic what-if problem using sample data and
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
 * [Quickstart: Deploy R code as a web service](quickstart-publish-web-service.md) 
 
-## Next steps
+## Pre-built solutions and embedded R Server
+
+We offer solutions tailored to specific industries and problem sets. Additionally, you can use embedded Microsoft R packages, interpreters, and libraries in Azure data science virtual machines, in Azure HDInsight (Microsoft's distribution of Hadoop), and as an in-database service in SQL Server.
+
+* [Solution: Predicting length of stay in hospitals](https://gallery.cortanaintelligence.com/Solution/Predicting-Length-of-Stay-in-Hospitals-1) 
+* [Azure: HDInsight and R Server](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) 
+* [Azure Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
+* [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services)
+
+Find more solutions on the [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/browse?s=R%20Server&skip=0&categories=%5B%2210%22%5D&tags=%5B%22Microsoft%20R%20Server%22%5D).
+
+## Start with a local installation
 
 If you are new to Microsoft R, we recommend starting with either the free R Server developer edition, or the free R Client, and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). This configuration gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 

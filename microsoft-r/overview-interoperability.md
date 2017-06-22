@@ -28,6 +28,12 @@ ms.custom: ""
 
 # Interoperability with R language and Microsoft R products and features
 
+R is the world’s most powerful, and preferred, programming language for statistical computing, machine learning, and visualizations. As an open source technology, R is supported by a thriving global community of users, developers, and contributors. Developers frequently provide tools incorporating their expertise in the form of R packages. Although R is widely used, deploying R in an enterprise setting has presented certain challenges, especially as the volume of data rises, or requirements for scale and support in production environments emerge.
+
+Microsoft R fills the functional void in enterprise deployments by providing a collection of servers and tools that extend the capabilities of R. The Microsoft R product family builds on top of open source R, offering free and commercial products in the form of [Microsoft R Server](rserver.md), [Microsoft R Client](r-client.md), and [Microsoft R Open](https://mran.microsoft.com/open/). In addition to the over 10,000 standard R packages available to all R users, Microsoft R Server and R Client include additional R packages and connectivity tools that enable remote compute context and remote execution, web service deployment, machine learning integration, and scalable solutions through clusters or parallelized workloads on platforms that support it.
+
+## Packages in Microsoft R
+
 R Server is built on open source R and is 100% compatible with the R language. You can run any pure open source R solution on a [Microsoft R Open](https://mran.microsoft.com/open/), [Microsoft R Client](r-client.md), or [Microsoft R Server](rserver.md) deployment.
 
 Value-added packages like RevoScaleR, MicrosoftML, and mrsdeploy are available in both Microsoft R Client and Microsoft R Server. Although packages are equally available, the infrastructure backed by each product is substantially different. R Client is limited to in-memory data storage and can use a maximum of two processors.
