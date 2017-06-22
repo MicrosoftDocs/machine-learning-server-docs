@@ -50,7 +50,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
 
-## Pre-built solutions and 
+## Pre-built solutions
 
 We offer solutions tailored to specific industries and problem sets. Find more solutions on the [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/browse?s=R%20Server&skip=0&categories=%5B%2210%22%5D&tags=%5B%22Microsoft%20R%20Server%22%5D).
 
