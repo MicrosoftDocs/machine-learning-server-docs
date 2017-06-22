@@ -40,6 +40,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 * [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md) 
 * [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
+* [Quickstart: Deploy R code as a web service](quickstart-publish-web-service.md) 
 
 ## Next steps
 
@@ -56,6 +57,8 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
 
 + [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md)
+
++ [Operationalizing R code with R Server](operationalize/about.md)
 
 Learn more about Microsoft R in these articles as well:
 
