@@ -4,7 +4,7 @@
 title: "How R language, R Server, and R Client relate"
 description: "Understand the relationship and interaction between R language and Microsoft R features and components in R Server, R Client, R Open."
 keywords: ""
-author: "heidisteen"
+author: "j-martens"
 manager: "jhubbard"
 ms.date: "06/22/2017"
 ms.topic: "get-started-article"
@@ -46,7 +46,7 @@ The [mrsdeploy package](mrsdeploy/mrsdeploy.md) gives you the ability to toggle 
 
 <a name="compare-prods"></a>
 
-## Compare products
+## Compare Microsoft R products
 
 The following table broadly compares members of the Microsoft R product family. All Microsoft R products are built on Microsoft R Open and install the package automatically.
 
