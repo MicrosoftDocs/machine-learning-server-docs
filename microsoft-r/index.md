@@ -32,7 +32,7 @@ Microsoft R is a collection of packages, interpreters, and infrastructure for de
 
 + [Microsoft R Server](rserver.md) is the flagship product and supports very large workloads in the enterprise. 
 
-+ [Microsoft R Client](r-client.md) is a free workstation version. It includes the same functionality as R Server, but on a smaller scale, as local workloads.
++ [Microsoft R Client](r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
 
 + [Microsoft R Open](https://mran.microsoft.com/open/) is Microsoft's distribution of open source R, without the proprietary packages and infrastructure of our other products. This R distribution is included in both Microsoft R Client and R Server. 
 
@@ -42,12 +42,13 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 * [Quickstart: Run R code in Microsoft R](quickstart-r-code.md) 
 
+* [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-web-service.md) 
+
 * [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md) 
 
 * [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
 
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
-* [Quickstart: Deploy R code as a web service](quickstart-publish-web-service.md) 
 
 ## Pre-built solutions and 
 
@@ -61,19 +62,21 @@ Additionally, you can use embedded Microsoft R packages, interpreters, and libra
 
 * [Azure: HDInsight and R Server](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) 
 
-* [Azure Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
+* [Azure: Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
 
 * [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services)
 
 ## Start with a local installation
 
-If you are new to Microsoft R, we recommend starting with either [R Server for Windows](rserver-install-windows.md), [R Server for Linux](rserver-install-linux-server.md) or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
+If you are new to Microsoft R, we recommend starting with either [R Server for Windows](rserver-install-windows.md), [R Server for Linux](rserver-install-linux-server.md), or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
 
 You can install these configurations for free. Each one gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 
 Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
 However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](microsoftml/microsoftml.md), [olapR](olapr/olapr.md), [mrsdeploy](mrsdeploy/mrsdeploy.md), and [RevoScaleR](scaler/scaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
+
+## Next steps
 
 Learn more about Microsoft R in these articles:
 
