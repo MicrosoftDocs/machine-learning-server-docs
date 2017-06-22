@@ -41,7 +41,18 @@ In minutes, you can step through a classic what-if problem using sample data and
 * [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
 
-## Next steps
+## Pre-built solutions and embedded R Server
+
+We offer solutions tailored to specific industries and problem sets. Additionally, you can use embedded Microsoft R packages, interpreters, and libraries in Azure data science virtual machines, in Azure HDInsight (Microsoft's distribution of Hadoop), and as an in-database service in SQL Server.
+
+* [Solution: Predicting length of stay in hospitals](https://gallery.cortanaintelligence.com/Solution/Predicting-Length-of-Stay-in-Hospitals-1) 
+* [Azure: HDInsight and R Server](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) 
+* [Azure Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
+* [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services)
+
+Find more solutions on the [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/browse?s=R%20Server&skip=0&categories=%5B%2210%22%5D&tags=%5B%22Microsoft%20R%20Server%22%5D).
+
+## Start with a local installation
 
 If you are new to Microsoft R, we recommend starting with either the free R Server developer edition, or the free R Client, and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). This configuration gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 
