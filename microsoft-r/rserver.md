@@ -104,7 +104,7 @@ In R Server, you can use the **MicrosoftML** package, which provides state of th
 You can also install **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, when you select them in R Server Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 
-## R Server installations
+## R Server platforms
 
 <a name="installationlinks"></a>
 

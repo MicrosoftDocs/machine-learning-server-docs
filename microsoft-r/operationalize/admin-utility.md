@@ -59,8 +59,8 @@ Alternately, open a command line window with administrator privileges and enter 
 
 |Version|Commands|
 |----|------------|
-|9.1|`cd <MRS_home>\o16n`<br>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`|
-|9.0|`cd <MRS_home>\deployr`<br>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`|
+|9.1|cd <MRS_home>\o16n<br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0|cd <MRS_home>\deployr<br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
 
 where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -95,7 +95,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument `-setpassword <password>` such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
+>You can bypass script interface using the argument '-setpassword <password>' such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
 
 You can also 
 <br><a name="startstop"></a>
@@ -116,7 +116,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 ## Update Port Numbers
 
-You can update the ports numbers for the web node, compute node, or [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve)(a forked version of RServe).
+You can update the ports numbers for the web node, compute node, or [deployr-rserve](https://github.com/Microsoft/deployr-rserve)(a forked version of RServe).
 
 **To update the port values:**
 
@@ -167,7 +167,7 @@ The encryption function available in the administration utility relies on the RS
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
 
 >[!NOTE]
->You can bypass script interface using the argument ``-encryptsecret encryptSecret ` `encryptSecretCertificateStoreName` `encryptSecretCertificateStoreLocation` `encryptSecretCertificateSubjectName`. See the table at the end of this topic, [here](#switch).
+>You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).
 
 
 <br><a name="test"></a>
@@ -198,9 +198,9 @@ The following command line switches are available for the administration utility
 
 |Switch|Description|Version|
 |----|-----|:---:|
-|`-silentoneboxinstall <password>`<br>`-silentinstall <password>`|Sets up a [one-box configuration](configuration-initial.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
-|`-silentwebnodeinstall <password>`|Configures a [web node](configure-enterprise.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
-|`-silentcomputenodeinstall`|Configures a [compute node](configure-enterprise.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
-|`-setpassword <password>`|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
-|`-preparedbmigration <appSettingsPath>`|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](configure-enterprise.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>`appsettings.json`|9.1|
-|`-encryptsecret encryptSecret`<br>`encryptSecretCertificateStoreName`<br>`encryptSecretCertificateStoreLocation`<br>`encryptSecretCertificateSubjectName`|Silently [encrypts secrets](#encrypt). For example: <br>`-encryptsecret thesecret` ` storeName storeLocation` `subjectName`|9.1|
+|-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](configuration-initial.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
+|-silentwebnodeinstall <password>|Configures a [web node](configure-enterprise.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
+|-silentcomputenodeinstall|Configures a [compute node](configure-enterprise.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
+|-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
+|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](configure-enterprise.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>`appsettings.json`|9.1|
+|-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName|Silently [encrypts secrets](#encrypt). For example: <br>-encryptsecret thesecret storeName storeLocationsubjectName|9.1|
