@@ -28,7 +28,7 @@ ms.custom: ""
 
 The following release notes apply to Microsoft R Client.
 
-[See here](../index.md#compare-prods) for a comparison between R Client and R Server.
+[See here](../overview-interoperability.md#compare-prods) for a comparison between R Client and R Server.
 
 
 ## Microsoft R Client 3.3.3
