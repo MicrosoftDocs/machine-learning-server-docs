@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Enterprise Configuration of Operationalization for R Server | Microsoft R Server Docs"
-description: "Enterprise Configuration of Operationalization for Microsoft R Server"
+title: "Configure R Server to operationalize analytics (enterprise) - Microsoft R Server | Microsoft Docs"
+description: "Configure Operationalization for Microsoft R Server, load balancer, "
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,11 +24,12 @@ ms.technology:
   - r-server
 ms.custom: ""
 ---
+
 # Configuring R Server to operationalize analytics (Enterprise Configuration)
 
 **Applies to:  Microsoft R Server 9.x**
 
-To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services. This article describes how to perform an enterprise configuration of these features. 
+This article explains how to configure R Server after installation to act as a deployment server and to host analytic web services for operationalization. This article describes how to perform an enterprise configuration of these features. 
 
 With an enterprise configuration, you can work with your production-grade data within a scalable, multi-machine setup, and benefit from enterprise-grade security.
 

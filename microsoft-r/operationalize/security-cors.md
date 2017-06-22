@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Enterprise-Grade Security: CORS | Microsoft R Server Docs"
+title: "Cross-Origin Resource Sharing CORS in Microsoft R Server | Microsoft Docs"
 description: "Enterprise-Grade Security: CORS with Microsoft R Server"
 keywords: ""
 author: "j-martens"
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Cross-Origin Resource Sharing
+# Cross-Origin Resource Sharing 
 
 **Applies to:  Microsoft R Server 9.x**
 

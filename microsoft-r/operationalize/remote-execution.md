@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Remote Execution | Microsoft R Server Docs"
+title: "Remote Execution with mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "6/16/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

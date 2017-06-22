@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "How to publish and manage web services in R"
-description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block. A web service runs on R Server 9.0 instances."
+title: "How to publish and manage web services in R - Microsoft R Server | Microsoft Docs"
+description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block."
 keywords: "mrsdeploy package"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "6/16/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# How to publish and manage web services in R
+# How to publish and manage R web services in R Server
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Microsoft R Server 9.x** 
 
-You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client. 
+This article details how you can publish and manage your analytic web services directly in R. You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
 
-This article details how you can publish and manage your analytic web services directly in R.  These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
+These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
 
 Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others.
 

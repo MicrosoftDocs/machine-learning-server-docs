@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Get Started for Data Scientists: Operationalize Your Analytics | Microsoft R Docs"
+title: "What is operationalization of web services - Microsoft R Server | Microsoft Docs"
 description: "Operationalize Your Analytics with Microsoft R Server Get Started"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Get Started for Data Scientists
+# What does it mean to deploy and consume analytics for Data Scientists
 
 **Applies to:  Microsoft R Server 9.x**
 

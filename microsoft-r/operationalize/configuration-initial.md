@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Configure R Server for Operationalization One Box | Microsoft R Server Docs"
+title: "Configure R Server to operationalize analytics (one-box) - Microsoft R Server | Microsoft Docs"
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Configuring R Server to operationalize analytics (One-Box Configuration)
+# Configuring R Server to operationalize analytics with a one-box configuration
 
 **Applies to:  Microsoft R Server 9.x**
 

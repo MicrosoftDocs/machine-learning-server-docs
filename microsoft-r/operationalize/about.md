@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalize R Analytics with R Server | Microsoft R Server Docs"
-description: "Operationalize R Analytics with Microsoft R Server"
+title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Microsoft R Server | Microsoft Docs"
+description: "What is operationalization in Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "05/10/2017"
+ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -26,7 +26,7 @@ ms.custom: ""
 
 ---
 
-# About operationalizing analytics with R Server
+# Operationalize your analytics with R Server
 
 **Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](../deployr-about.md).)
 

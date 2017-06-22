@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Roles and Groups | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication Roles with Microsoft R Server"
+title: "Control web services permissions with roles - Microsoft R Server | Microsoft Docs"
+description: "Owner, contributor, reader authentication roles with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""

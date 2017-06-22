@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Server configuration file (appsettings.json) | Microsoft R Server Docs"
-description: "R Server configuration file, appsettings.json"
+title: "Finding the appsettings.json configuration file for R Server - Microsoft R Server | Microsoft Docs"
+description: "Where to find appsettings.json for R Server, web node, compute node"
 keywords: "R Server configuration file, appsettings.json"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Server configuration file (appsettings.json)
+# Finding the appsettings.json configuration file for R Server
 
 **Applies to:  Microsoft R Server 9.x**
 

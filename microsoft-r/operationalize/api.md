@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization APIs | Microsoft R Server Docs"
-description: "Operationalization APIs for Microsoft R Server"
+title: "APIs for operationalizing your models and analytics - Microsoft R Server | Microsoft Docs"
+description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Microsoft R Server."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Operationalization APIs for R Server 
+# APIs for operationalizing your models and analytics with Microsoft R Server 
 
 **Applies to:  Microsoft R Server 9.x**
 
