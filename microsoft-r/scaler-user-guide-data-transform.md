@@ -718,7 +718,7 @@ We could use this function with **rxDataStep** to add a variable to our data set
 	    transformFunc=makeMoveAveTransFunc(numDays=360),
 	    transformVars=c("Adj.Close"))
 
-![](media/rserver-scaler-user-guide-18-transform-functions/image25.png)
+![](media/scaler-user-guide-transform-functions/image25.png)
 
 
 ## Extended example showing a series of transformations

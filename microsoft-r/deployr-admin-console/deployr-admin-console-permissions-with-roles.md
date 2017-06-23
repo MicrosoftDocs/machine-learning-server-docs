@@ -36,7 +36,7 @@ You can view the available roles by clicking **Roles** in the main menu. Clickin
 
 _Figure: Role List page_
 
-![](media/deployr-admin-console-permisssions-with-roles/0300000D_624x290.png)  
+![](./media/deployr-admin-console-permisssions-with-roles/0300000D_624x290.png)  
 
 ## Predefined System Roles
 
@@ -63,7 +63,7 @@ You can review, edit, and assign custom roles. System roles cannot be edited.
 	
 	_Figure: Role Details page_
 	
-	![](media/deployr-admin-console-permisssions-with-roles/0300000E_624x207.png)  
+	![](./media/deployr-admin-console-permisssions-with-roles/0300000E_624x207.png)  
 
 3.  To edit a custom role, do the following:
     1.  Click **Edit**.
@@ -100,7 +100,7 @@ Any script author can set the access rights to his or her script to **Restricted
 
 	_Figure: New Role page_
         
-	![](media/deployr-admin-console-permisssions-with-roles/0300000F.png)  
+	![](./media/deployr-admin-console-permisssions-with-roles/0300000F.png)  
 
 3. Enter a **Role name** and **Description** for the new role.
 
@@ -125,7 +125,7 @@ You can export roles in a CSV file. Exporting can be useful when you want to cop
 
 _Figure: Export Roles page_
 
-![](media/deployr-admin-console-permisssions-with-roles/03000010_624x306.png)  
+![](./media/deployr-admin-console-permisssions-with-roles/03000010_624x306.png)  
 
 **To export:**
 
@@ -143,7 +143,7 @@ Importing into the server database allows you to retrieve all of the roles from 
 
 _Figure: Import Roles page_
 
-![](media/deployr-admin-console-permisssions-with-roles/03000011_624x288.png)  
+![](./media/deployr-admin-console-permisssions-with-roles/03000011_624x288.png)  
 
 **To import:**
 

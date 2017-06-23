@@ -335,7 +335,7 @@ For models fit with 2-fold or greater cross-validation, it is useful to use the 
 
 This yields the following plot:
 
-![](media/rserver-scaler-user-guide-11-decision-tree/image20.png)
+![](media/scaler-user-guide-decision-tree/image20.png)
 
 From this plot, it appears we can prune even further, to perhaps seven or eight splits. Looking again at the cptable, a cp of 2.5e-4 seems a reasonable pruning choice:
 
@@ -449,7 +449,7 @@ Now, you can display a HTML version of the tree output by plotting the object pr
 	library(RevoTreeView)
 	plot(createTreeView(kyphTree))
 
-![](media/rserver-scaler-user-guide-11-decision-tree/image21.png)
+![](media/scaler-user-guide-decision-tree/image21.png)
 
 In this interactive tree, click on the circular split nodes to expand or collapse the tree branch. Clicking a node will expand and collapse the node to the last view of that branch. If you use a *CTRL + Click*, the tree will display only the children of the selected node. If you click *ALT + Click*, the tree will display all levels below the selected node. The square-shaped nodes, called leaf or terminal nodes, cannot be expanded.
 
@@ -464,4 +464,4 @@ You can also use the rpart *plot* and *text* methods with *rxDTree* objects, pro
 
 This provides the following plot:
 
-![](media/rserver-scaler-user-guide-11-decision-tree/image22.png)
+![](media/scaler-user-guide-decision-tree/image22.png)

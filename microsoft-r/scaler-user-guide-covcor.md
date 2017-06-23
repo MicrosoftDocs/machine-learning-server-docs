@@ -342,7 +342,7 @@ The default plot method for objects of class princomp is a *screeplot*, which is
 
 This yields the following plot:
 
-![](media/rserver-scaler-user-guide-15-covcor/image23.png)
+![](media/scaler-user-guide-covcor/image23.png)
 
 Another useful bit of output is given by the loadings function, which returns a set of columns showing the linear combinations for each principal component:
 
@@ -431,7 +431,7 @@ This yields the following output:
 
 The screeplot is shown below:
 
-![](media/rserver-scaler-user-guide-15-covcor/image24.png)
+![](media/scaler-user-guide-covcor/image24.png)
 
 Between them, the first two principal components explain 99% of the variance; we can therefore replace the five original variables by these two principal components with no appreciable loss of information.
 
@@ -443,17 +443,17 @@ Another application of correlation matrices is to calculate ridge regression, a 
 
 Where the ordinary least squares regression minimizes the sum of squared residuals
 
-![](media/rserver-scaler-user-guide-15-covcor/math1.png)
+![](media/scaler-user-guide-covcor/math1.png)
 
 ridge regression minimizes the slightly modified sum
 
-![](media/rserver-scaler-user-guide-15-covcor/math2.png)
+![](media/scaler-user-guide-covcor/math2.png)
 
 The solution to the ridge regression is
 
-![](media/rserver-scaler-user-guide-15-covcor/math3.png)
+![](media/scaler-user-guide-covcor/math3.png)
 
-where ![](media/rserver-scaler-user-guide-15-covcor/math4.png) is the model matrix. This is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
+where ![](media/scaler-user-guide-covcor/math4.png) is the model matrix. This is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
 
 Since the model matrix is embedded in the correlation matrix, the following function allows us to compute the ridge regression solution:
 
