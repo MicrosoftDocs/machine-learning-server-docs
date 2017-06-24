@@ -38,10 +38,8 @@ To perform k-means clustering with RevoScaleR, use the *rxKmeans* function.
 
 As a first example of k-means clustering, we will cluster the arrival delay and scheduled departure time in the airline data 7% subsample. To start, we extract variables of interest into a new working data set to which we’ll be writing additional information:
 
-	######################################################## 
-	# Chapter 16: Clustering
 	#  K-means Clustering
-	Ch16Start <- Sys.time()
+
 	#   Clustering the Airline Data  
 	bigDataDir <- "C:/MRS/Data"
 	sampleAirData <- file.path(bigDataDir, "AirOnTime7Pct.xdf")

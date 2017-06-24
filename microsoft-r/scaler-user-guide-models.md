@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Models in RevoScaleR
 
-Specifying a model with RevoScaleR is similar to specifying a model with the standard R statistical modeling functions, but there are some significant differences. Understanding these differences can help you make better use of RevoScaleR. The purpose of this chapter is to explain these differences at a high level so that when we begin fitting models in the next chapter, the terminology does not seem too foreign.
+Specifying a model with RevoScaleR is similar to specifying a model with the standard R statistical modeling functions, but there are some significant differences. Understanding these differences can help you make better use of RevoScaleR. The purpose of this article is to explain these differences at a high level so that when we begin fitting models in script, the terminology does not seem too foreign.
 
 ### External Memory Algorithms
 
@@ -52,13 +52,13 @@ An asterisk (\*) between two variables adds all subsets of interactions to the m
 
 The special function syntax *F(x)* can be used to have RevoScaleR treat a numeric variable *x* as a categorical variable (factor) for the purposes of the analysis. You can include additional arguments *low* and *high* to specify the minimum and maximum values to be included in the factor variable; RevoScaleR creates a bin for each integer value from the low to high values. You can use the logical flag *exclude* to specify whether values outside that range are omitted from the model (*exclude=TRUE*) or included as a separate level (*exclude=FALSE*).
 
-Similarly, the special function syntax *N(x)* can be used to have RevoScaleR treat *x* as a continuous numeric variable. (This syntax is provided for completeness, but is not recommended. In general, if you want to recover numeric data from a factor, you will want to do so from the *levels* of the factor. We give several examples of this in Chapter 6, 7, and 11.)
+Similarly, the special function syntax *N(x)* can be used to have RevoScaleR treat *x* as a continuous numeric variable. (This syntax is provided for completeness, but is not recommended. In general, if you want to recover numeric data from a factor, you will want to do so from the *levels* of the factor.)
 
 In RevoScaleR, formulas in which the first independent variable is categorical may be handled specially, as *cubes*. See the following section for more details.
 
 ## Letting the Data Speak For Itself
 
-Classical statistics is largely concerned with fitting predictive models to limited observations. Data analysts and statisticians use exploratory techniques to visualize the data and then make informed guesses as to the appropriate form for a predictive model. Large data analysis, on the other hand, provides the opportunity to let the data speak for itself—with millions of observations in hand, we don’t have to guess about the form of relationships between variables: they become clear. We will give several examples of this in the chapters that follow, but here’s a general idea of how to find the relationship between two numeric variables x and y. First, bin the x values. Then, for each bin, plot the mean of the y values contained in that bin. As the bins become narrower and narrower, the resulting plot becomes a plot of E(y|x) for each value of x.
+Classical statistics is largely concerned with fitting predictive models to limited observations. Data analysts and statisticians use exploratory techniques to visualize the data and then make informed guesses as to the appropriate form for a predictive model. Large data analysis, on the other hand, provides the opportunity to let the data speak for itself—with millions of observations in hand, we don’t have to guess about the form of relationships between variables: they become clear. A general approach to finding the relationship between two numeric variables x and y might be as follows. First, bin the x values. Then, for each bin, plot the mean of the y values contained in that bin. As the bins become narrower and narrower, the resulting plot becomes a plot of E(y|x) for each value of x.
 
 ## Cubes and Cube Regression
 

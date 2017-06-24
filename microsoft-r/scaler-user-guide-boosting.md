@@ -38,12 +38,9 @@ Different model types are supported by specifying different loss functions, as f
 
 ### A Simple Binary Classification Forest
 
-In Chapter 11, we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
+In [Logistic Regression](scaler-user-guide-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
 
-	######################################################## 
-	# Chapter 13: Estimating Models Using Stochastic Gradient Boosting
 	#  A Simple Classification Forest
-	Ch13Start <- Sys.time()
 	  
 	data("kyphosis", package="rpart")
 	kyphBTrees <- rxBTrees(Kyphosis ~ Age + Start + Number, seed = 10,

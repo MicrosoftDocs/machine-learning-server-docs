@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Naïve Bayes Classifier
 
-In this Chapter, we describe one simple and effective family of classification methods known as Naïve Bayes. In RevoScaleR, Naïve Bayes classifiers can be implemented using the *rxNaiveBayes* function. Classification, simply put, is the act of dividing observations into classes or categories. Some examples of this are the classification of product reviews into positive or negative categories or the detection of email spam. These classification examples can be achieved manually using a set of rules. However, this is not efficient or scalable. In Naïve Bayes and other machine learning based classification algorithms, the decision criteria for assigning class are learned from a training data set, which has classes assigned manually to each observation.
+In this article, we describe one simple and effective family of classification methods known as Naïve Bayes. In RevoScaleR, Naïve Bayes classifiers can be implemented using the *rxNaiveBayes* function. Classification, simply put, is the act of dividing observations into classes or categories. Some examples of this are the classification of product reviews into positive or negative categories or the detection of email spam. These classification examples can be achieved manually using a set of rules. However, this is not efficient or scalable. In Naïve Bayes and other machine learning based classification algorithms, the decision criteria for assigning class are learned from a training data set, which has classes assigned manually to each observation.
 
 ### The rxNaiveBayes Algorithm
 
@@ -34,14 +34,10 @@ The Naïves Bayes classification method is simple, effective, and robust. This m
 
 ### A Simple Naïve Bayes Classifier
 
-In["Logistic Regression Models"](scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data and in ["Decision Trees"](scaler-user-guide-decision-tree.md) and ["Decision Forests"](scaler-user-guide-decision-forest.md) we used the kyphosis data again to create classification and regression trees. We can use the same data with our Naïve Bayes classifier to see which patients are more likely to acquire Kyphosis based on age, number, and start. We can train and test our classifier on the kyphosis data for the sake of illustration. We use the *rxNaiveBayes* function to construct a classifier for the kyphosis data:
+In [Logistic Regression Models](scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data and in [Decision Trees](scaler-user-guide-decision-tree.md) and [Decision Forests](scaler-user-guide-decision-forest.md) we used the kyphosis data again to create classification and regression trees. We can use the same data with our Naïve Bayes classifier to see which patients are more likely to acquire Kyphosis based on age, number, and start. We can train and test our classifier on the kyphosis data for the sake of illustration. We use the *rxNaiveBayes* function to construct a classifier for the kyphosis data:
 
-	######################################################## 
-	# Chapter 14: Naïve Bayes Classifier
 	#  A Simple Naïve Bayes Classifier
-	Ch14Start <- Sys.time()
-
-	  
+	
 	data("kyphosis", package="rpart")
 	kyphNaiveBayes <- rxNaiveBayes(Kyphosis ~ Age + Start + Number, data = kyphosis)
 	kyphNaiveBayes
@@ -93,7 +89,7 @@ When we table the results from the Naïve Bayes classifier with the original Kyp
 
 ### A Larger Naïve Bayes Classifier
 
-As a more complex example, consider the mortgage default example used in Chapter 9.3 of this guide. For that example, there are ten input files total and we use nine input data files to create the training data set. We then use the model built from those files to make predictions on the final dataset. In this section we will use the same strategy to build a Naïve Bayes classifier on the first nine data sets and assign the outcome variable for the tenth data set.
+As a more complex example, consider the mortgage default example. For that example, there are ten input files total and we use nine input data files to create the training data set. We then use the model built from those files to make predictions on the final dataset. In this section we will use the same strategy to build a Naïve Bayes classifier on the first nine data sets and assign the outcome variable for the tenth data set.
 
 The mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). With the data downloaded we can create the training data set and test data set as follows (remember to modify the first line to match the location of the mortgage default text data files on your own system):
 

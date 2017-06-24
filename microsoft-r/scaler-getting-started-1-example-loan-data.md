@@ -335,7 +335,7 @@ We can extract the coefficients from logitObj for the houseAge variables and plo
 ~~~~
 The resulting plot shows that the age of the house is associated with a higher default rate in the middle of the range than for younger and older houses.
 
-![HouseAge Plot](media/rserver-scaler-getting-started/houseage_plot.png)
+![HouseAge Plot](media/scaler-getting-started-1-example-loan-data/houseage_plot.png)
 
 ## Compute the Probability of Default
 

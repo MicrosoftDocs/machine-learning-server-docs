@@ -163,7 +163,7 @@ After you have installed the rpms, change directory to the "teradata" directory 
 	chmod u+x ./revoTdSetup.sh
 	./revoTdSetup.sh
 
-Enter the parent user database name and password at the prompts. Do not modify this script, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in Chapter 5, Adding and Configuring Users.
+Enter the parent user database name and password at the prompts. Do not modify this script, and in particular, do not modify the name of the revoAnalytics_Zqht2 database. The database administrator running the script must have specific grants, as described in the next section.
 
 If you have previously run Microsoft R Server on your Teradata database, restart the database before proceeding.
 

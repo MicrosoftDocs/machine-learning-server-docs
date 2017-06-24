@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Fitting Linear Models"
+title: "Fitting Linear Models (RevoScaleR)"
 description: "Linear Models with RevoScaleR."
 keywords: ""
 author: "richcalaway"
@@ -29,10 +29,8 @@ Linear regression models are fitted in RevoScaleR using the *rxLinMod* function.
 
 As a simple example, let’s use the sample data set AirlineDemoSmall.xdf and fit the arrival delay by day of week:
 
-	########################################################
-	# Chapter 8: Fitting Linear Models
-	Ch8Start <- Sys.time()
 
+	# Fitting Linear Models
 
 	readPath <- rxGetOption("sampleDataDir")
 	airlineDemoSmall <- file.path(readPath, "AirlineDemoSmall.xdf")
@@ -495,7 +493,7 @@ We can view the original data, the fitted prediction line, and the confidence in
 
 The resulting plot is shown below:
 
-![](media/rserver-scaler-user-guide-8-linear-model/image6.png)
+![](media/scaler-user-guide-linear-model/image6.png)
 
 The prediction intervals can be obtained and plotted as follows:
 
@@ -512,7 +510,7 @@ The prediction intervals can be obtained and plotted as follows:
 
 The resulting plot is shown below:
 
-![](media/rserver-scaler-user-guide-8-linear-model/image7.png)
+![](media/scaler-user-guide-linear-model/image7.png)
 
 We can fit the prediction standard errors on our big airline regression model if we first refit it with covCoef=TRUE:
 
@@ -779,7 +777,7 @@ Trying to glean patterns and information from a table can be difficult. So we’
 
 rxStepPlot(rxlm.step)
 
-![](media/rserver-scaler-user-guide-8-linear-model/image8.jpeg)
+![](media/scaler-user-guide-linear-model/image8.jpeg)
 
 From this plot, we can tell when a variable enters the model by noting the step when it becomes non-zero. Lines are labelled with the numbers on the right axis to indicate the parameter. The numbers correspond to the order they appear in the data frame *stepCoef*. You’ll notice that the 7<sup>th</sup> and 10<sup>th</sup> parameters don’t show up in this plot because the *species3* parameter is the reference category for species.
 
@@ -791,7 +789,7 @@ The function *rxStepPlot* is easily customized by using additional graphical par
 	    main = "Step Plot – Iris Coefficients")
 
 
-![](media/rserver-scaler-user-guide-8-linear-model/image9.jpeg)
+![](media/scaler-user-guide-linear-model/image9.jpeg)
 
 By default, the *rxStepPlot* function uses 7 line colors. If the number of parameters exceeds the number of colors, they will be reused in the same order. However, the line types are set to vary from 1 to 5, so lines that have the same color may differ in line type. The line types can also be specified using the *lty* argument in the *rxStepPlot* call.
 
@@ -993,7 +991,7 @@ With large data sets it is common to estimate many interaction terms, and if som
 
 #### Using Dummy Variables in rxLinMod: Letting the Data Speak Example 2
 
-In Chapter 6, we looked at the CensusWorkers.xdf data set and examined the relationship between wage income and age. Now let’s add another variable, and examine the relationship between wage income and sex and age.
+In previous articles, we looked at the CensusWorkers.xdf data set and examined the relationship between wage income and age. Now let’s add another variable, and examine the relationship between wage income and sex and age.
 
 We can start with a simple dummy variable model, computing the mean wage income by sex:
 
@@ -1063,7 +1061,7 @@ Computing the two end points on the regression line, we can plot it:
 	rxLinePlot(incwage_Pred~age, data=plotData1)
 
 
-![](media/rserver-scaler-user-guide-8-linear-model/image10.png)
+![](media/scaler-user-guide-linear-model/image10.png)
 
 The next typical step is to combine the two approaches by estimating separate intercepts for males and females:
 
@@ -1110,7 +1108,7 @@ We will create a small sample data set with the same variables we use in censusW
 	plotData2p <- rxPredict(linMod2, data=plotData2, outData=plotData2)
 	rxLinePlot(incwage_Pred~age, groups=sex, data=plotData2p)
 
-![](media/rserver-scaler-user-guide-8-linear-model/image11.png)
+![](media/scaler-user-guide-linear-model/image11.png)
 
 These types of models are often relaxed further by allowing both the slope and itercept to vary by group:
 
@@ -1151,9 +1149,9 @@ Again getting predictions and plotting:
 	rxLinePlot(incwage_Pred~age, groups=sex, data=plotData3p)
 
 
-![](media/rserver-scaler-user-guide-8-linear-model/image12.png)
+![](media/scaler-user-guide-linear-model/image12.png)
 
-We could continue the process, experimenting with functional forms for age. But, since we have many observations (and therefore many degrees of freedom), we can take advantage of the F() function available in revoScaleR to let the data speak for itself. As we saw in Chapter 6, the F() function creates a factor variable from a numeric variable “on-the-fly”, creating a level for every integer value. This allows us to compute and observe the shape of the functional form using a purely dummy variable model:
+We could continue the process, experimenting with functional forms for age. But, since we have many observations (and therefore many degrees of freedom), we can take advantage of the F() function available in revoScaleR to let the data speak for itself. The F() function creates a factor variable from a numeric variable “on-the-fly”, creating a level for every integer value. This allows us to compute and observe the shape of the functional form using a purely dummy variable model:
 
 	linMod4 <- rxLinMod(incwage~sex:F(age), data=censusWorkers, pweights="perwt",
 	cube=TRUE)
@@ -1167,7 +1165,7 @@ This model estimated a total of 92 coefficients, all for dummy variables represe
 	rxLinePlot(incwage~age, groups=sex, data=plotData4)
 
 
-![](media/rserver-scaler-user-guide-8-linear-model/image13.png)
+![](media/scaler-user-guide-linear-model/image13.png)
 
 ### Intercept-Only Models
 

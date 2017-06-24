@@ -29,7 +29,7 @@ Microsoft R Server will be released a few times per year with each update versio
 
 This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
 
-![Servicing Support](./media/rserver-servicing-support.png)
+![Servicing Support](./media/rserver-servicing-support/rserver-servicing-support.png)
 <br>_Figure 1. Example of servicing support_
 
 <br>

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Distributed analysis (ScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Distributed analysis (RevoScaleR in Microsoft R)"
+description: "Microsoft R Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
@@ -160,7 +160,7 @@ Notice that in this case we have returned an `rxCube` object. We can use this ob
     names(plotData)[1] <- "DepTime"
     rxLinePlot(ArrDelay~DepTime|DayOfWeek, data=plotData)
 
-![Plotted Results](media/rserver-scaler-distributed-computing/plotted_results.png)
+![Plotted Results](media/scaler-distributed-computing-distributed-analysis/plotted_results.png)
 
 ### Cross-Tabulating Arrival Delay
 

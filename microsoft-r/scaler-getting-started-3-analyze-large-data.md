@@ -266,7 +266,7 @@ Then use the following code to plot the results, comparing the Arrival and Depar
 
 You should see the following plot for the full data set:
 
-![DayOfWeek Plot](media/rserver-scaler-getting-started/dayofweek_plot_2.png)
+![DayOfWeek Plot](media/scaler-getting-started-3-analyze-large-data/dayofweek_plot_2.png)
 
 ## Turning Off Progress Reports
 

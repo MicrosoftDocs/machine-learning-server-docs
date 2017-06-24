@@ -204,7 +204,7 @@ Now plot the average arrival delay for each day of the week:
 
 The following plot is generated, showing the lowest average arrival delay on Thursdays:
 
-![DayOfWeek Plot](media/rserver-scaler-getting-started/dayofweek_plot.png)
+![DayOfWeek Plot](media/scaler-getting-started-data-visualization-analysis/dayofweek_plot.png)
 
 ### Linear model with multiple independent variables
 
@@ -251,7 +251,7 @@ Now plot the results:
 
 You should see the following plot:
 
-![CRSDepTime Plot](media/rserver-scaler-getting-started/crsdeptime_plot.png)
+![CRSDepTime Plot](media/scaler-getting-started-data-visualization-analysis/crsdeptime_plot.png)
 
 ## Subset the data and compute a crosstab
 
