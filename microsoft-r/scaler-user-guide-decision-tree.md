@@ -40,12 +40,7 @@ In the case of integer predictors for which the number of bins equals or exceeds
 
 ### A Simple Classification Tree
 
-In Chapter 9, we fit a simple logistic regression model to rpart’s kyphosis data. That model is easily recast as a classification tree using *rxDTree* as follows:
-
-	######################################################## 
-	# Chapter 11: Estimating Decision Tree Models
-	#  A Simple Classification Tree
-	Ch11Start <- Sys.time()
+In a [previous article](scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data. That model is easily recast as a classification tree using *rxDTree* as follows:
 		  
 	data("kyphosis", package="rpart")
 	kyphTree <- rxDTree(Kyphosis ~ Age + Start + Number, data = kyphosis, 

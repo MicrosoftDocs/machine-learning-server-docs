@@ -26,20 +26,14 @@ ms.custom: ""
 
 # Data Summaries
 
-In previous chapters, we’ve used the rxGetVarInfo and rxSummary functions to view summary information about data files and the data itself. In this chapter we explore the use of these functions in more detail, and also take a look at the rxLorenz function as a way of visually summarizing cumulative distributions of variables.
+In other articles, we’ve used the rxGetVarInfo and rxSummary functions to view summary information about data files and the data itself. In this article, we explore the use of these functions in more detail, and also take a look at the rxLorenz function as a way of visually summarizing cumulative distributions of variables.
 
 ### Using Variable Information
 
 The rxGetVarInfo function returns a list containing information about each variable in a .xdf file. For numeric data, this information includes Low/High values. These Low/High values do not necessarily indicate the minimum and maximum of a numeric or integer variable. Rather, they indicate the values RevoScaleR uses to establish the lowest and highest factor levels when treating the variable as a factor. For practical purposes, this is what you will want—for example, if you want to create histograms or hexbin plots, you want to treat the numerical data as categorical, with levels corresponding to the plotting bins. It is often convenient to cut off the highest and lowest data points, and the Low/High information allows you to do this.
 
-For example, consider again the census data we manipulated in Chapter 3.
+For example, consider again the census data from earlier tutorials.
 
-	######################################################## 
-	# Chapter 6: Data Summaries
-	#  Using Variable Information
-	Ch6Start <- Sys.time()
-	
-	  
 	readPath <- rxGetOption("sampleDataDir")
 	censusWorkers <- file.path(readPath, "CensusWorkers.xdf")
 	censusWorkerInfo <- rxGetVarInfo(censusWorkers)
@@ -121,7 +115,7 @@ To reset the low and high values, we use the same process with the original valu
 
 ## Formulas for rxSummary
 
-The *rxSummary* function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. With one exception, the formula given to *rxSummary* may not contain a response variable, so that *rxSummary* is generally given a formula of the form “~ predictors.” For example, returning to the CensusWorkers data file we used in Chapter 4, we can obtain a data summary of that file as follows:
+The *rxSummary* function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. With one exception, the formula given to *rxSummary* may not contain a response variable, so that *rxSummary* is generally given a formula of the form “~ predictors.” For example, returning to the CensusWorkers data file we used in other aritcles and tutorials, we can obtain a data summary of that file as follows:
 
 	# Formulas in rxSummary
 	  
@@ -416,7 +410,7 @@ This gives the following output:
 
 The functions *rxGetVarInfo* and *rxSummary* provide useful information for summarizing your data set, but these two functions may need to be used differently when the data contain many variables. You will find that building a better understanding of the distribution of each variable and the relationships between variables will allow you to make better decisions during the modeling phase. This is especially important for wide data that may contain hundreds if not thousands of variables. The main goal for your data exploration should be to find any outliers or influential data points, identify redundant variables or correlated variables and transform or combine any variables that seem appropriate.
 
-Once you have your data imported to .xdf, the data type information can easily be accessed using the *rxGetVarInfo* function. However, since wide data has so many variables, printed output can be hard to read. As an alternative, try saving your variable information to an object that can serve as in informal data dictionary. We demonstrate this using the claims data from Chapter 2:
+Once you have your data imported to .xdf, the data type information can easily be accessed using the *rxGetVarInfo* function. However, since wide data has so many variables, printed output can be hard to read. As an alternative, try saving your variable information to an object that can serve as in informal data dictionary. We demonstrate this using the claims data from the sample data directory:
 
 	# Using rxGetVarInfo and rxSummary with Wide Data
 	  

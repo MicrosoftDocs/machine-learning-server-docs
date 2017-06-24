@@ -44,12 +44,8 @@ The 5% sample of the U.S. 2000 census has over 14 million observations. In this 
 
 First, we specify the name and location of the data set:
 
-	######################################################## 
-	# Chapter 15: Estimating Correlation and Variance/Covariance Matrices
 	#  Computing a Correlation Matrix for Use in Factor Analysis
-	Ch15Start <- Sys.time()
-	
-	  
+  
 	bigDataDir <- "C:/MRS/Data"
 	bigCensusData <- file.path(bigDataDir, "Census5PCT2000.xdf"
 

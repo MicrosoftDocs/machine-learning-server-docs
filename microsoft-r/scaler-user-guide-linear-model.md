@@ -29,10 +29,8 @@ Linear regression models are fitted in RevoScaleR using the *rxLinMod* function.
 
 As a simple example, let’s use the sample data set AirlineDemoSmall.xdf and fit the arrival delay by day of week:
 
-	########################################################
-	# Chapter 8: Fitting Linear Models
-	Ch8Start <- Sys.time()
 
+	# Fitting Linear Models
 
 	readPath <- rxGetOption("sampleDataDir")
 	airlineDemoSmall <- file.path(readPath, "AirlineDemoSmall.xdf")
@@ -993,7 +991,7 @@ With large data sets it is common to estimate many interaction terms, and if som
 
 #### Using Dummy Variables in rxLinMod: Letting the Data Speak Example 2
 
-In Chapter 6, we looked at the CensusWorkers.xdf data set and examined the relationship between wage income and age. Now let’s add another variable, and examine the relationship between wage income and sex and age.
+In previous articles, we looked at the CensusWorkers.xdf data set and examined the relationship between wage income and age. Now let’s add another variable, and examine the relationship between wage income and sex and age.
 
 We can start with a simple dummy variable model, computing the mean wage income by sex:
 
@@ -1153,7 +1151,7 @@ Again getting predictions and plotting:
 
 ![](media/scaler-user-guide-linear-model/image12.png)
 
-We could continue the process, experimenting with functional forms for age. But, since we have many observations (and therefore many degrees of freedom), we can take advantage of the F() function available in revoScaleR to let the data speak for itself. As we saw in Chapter 6, the F() function creates a factor variable from a numeric variable “on-the-fly”, creating a level for every integer value. This allows us to compute and observe the shape of the functional form using a purely dummy variable model:
+We could continue the process, experimenting with functional forms for age. But, since we have many observations (and therefore many degrees of freedom), we can take advantage of the F() function available in revoScaleR to let the data speak for itself. The F() function creates a factor variable from a numeric variable “on-the-fly”, creating a level for every integer value. This allows us to compute and observe the shape of the functional form using a purely dummy variable model:
 
 	linMod4 <- rxLinMod(incwage~sex:F(age), data=censusWorkers, pweights="perwt",
 	cube=TRUE)

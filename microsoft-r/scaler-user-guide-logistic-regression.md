@@ -34,11 +34,6 @@ As an example, consider the *kyphosis* data set in the *rpart* package. This dat
 
 We can use *rxLogit* to model the probability that kyphosis is present as follows:
 
-	########################################################
-	# Chapter 9: Fitting Logistic Regression Models
-	Ch9Start <- Sys.time()
-
-
 	library(rpart)
 	rxLogit(Kyphosis ~ Age + Start + Number, data = kyphosis)
 

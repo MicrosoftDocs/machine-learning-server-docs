@@ -880,6 +880,6 @@ You can run the following commands to clean up data in this tutorial:
 
 ## Continuing with Distributed Computing
 
-With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. You will find this analysis in Chapter 3 of the guide, Running Distributed Analyses.
+With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. 
 
-The *Distributed Computing Guide* also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.
+The *Distributed Computing* section also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.

@@ -38,10 +38,8 @@ This example focuses on a basic demographic pattern: in general, more boys than 
 
 We can examine this pattern in the United States using the 5% Public Use Microdata Sample (PUMS) of the 2000 United States Census, stored in an .xdf file of about 12 gigabytes.[1] Using the rxGetInfo function, we can get a quick summary of the data set:
 
-	########################################################
-	# Chapter 19: Visualizing Huge Data Sets: An Example from the U.S. Census
+	#  Visualizing Huge Data Sets: An Example from the U.S. Census
 	#  Examining the Data
-	Ch19Start <- Sys.time()
 
 	bigDataDir <- "C:/MRS/Data"
 	bigCensusData <- file.path(bigDataDir,"CensusUS5Pct2000.xdf")

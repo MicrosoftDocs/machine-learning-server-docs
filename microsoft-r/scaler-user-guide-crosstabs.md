@@ -32,11 +32,6 @@ For large data sets, cross-tabulations of binned numeric data, that is, data whi
 
 For example, the built-in data set *UCBAdmissions* includes information on admissions by gender to various departments at the University of California at Berkeley. We can look at the contingency table as follows:
 
-	######################################################## 
-	# Chapter 7: Crosstabs
-	Ch7Start <- Sys.time()
-	
-	  
 	UCBADF <- as.data.frame(UCBAdmissions)
 	z <- rxCube(Freq ~ Gender:Admit, data = UCBADF)
 
@@ -109,7 +104,7 @@ This yields the following output:
 
 The CensusWorkers.xdf data set contains a subset of the U.S. 2000 5% Census for individuals aged 20 to 65 who worked at least 20 weeks during the year from three states. Let’s examine the relationship between wage income (represented in the data set by the variable *incwage*) and age.
 
-As we mentioned in Chapter 4, a useful way to observe the relationship between numeric variables is to bin the predictor variable (in our case, age), and then plot the mean of the response for each bin. The simplest way to bin age is to use the F() wrapper within our initial formula; it creates a separate bin for each distinct value of age. (More precisely, it creates a bin of length one from the low value of age to the high value of age—if some ages are missing in the original data set, bins are created for them anyway.)
+A useful way to observe the relationship between numeric variables is to bin the predictor variable (in our case, age), and then plot the mean of the response for each bin. The simplest way to bin age is to use the F() wrapper within our initial formula; it creates a separate bin for each distinct value of age. (More precisely, it creates a bin of length one from the low value of age to the high value of age—if some ages are missing in the original data set, bins are created for them anyway.)
 
 We create our original model as follows:
 
@@ -611,7 +606,7 @@ For large contingency tables such as this one, the chi-squared test is the tool 
 	 Error in FUN(tbl[, , i], ...) : FEXACT error 40.
 	 Out of workspace. 
 
-To show the Fisher test, we return to the admissions data from the beginning of the chapter. This time we use *rxCrossTabs* to return an *xtabs* object:
+To show the Fisher test, we return to the admissions data from the beginning of the article. This time we use *rxCrossTabs* to return an *xtabs* object:
 
 	UCBADF <- as.data.frame(UCBAdmissions)
 	admissCTabs <- rxCrossTabs(Freq ~ Gender:Admit, data = UCBADF, 

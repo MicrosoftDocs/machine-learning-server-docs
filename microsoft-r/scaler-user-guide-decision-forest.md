@@ -32,14 +32,8 @@ Unlike individual decision trees, decision forests are not prone to overfitting,
 
 ### A Simple Classification Forest
 
-In Chapter 11, we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxDForest* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
-
-	######################################################## 
-	# Chapter 12: Estimating Decision Forest Models
-	#  A Simple Classification Forest
-	Ch12Start <- Sys.time()
-
-	  
+In [Logistic Regression Models](scaler-user-guide-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxDForest* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
+  
 	data("kyphosis", package="rpart")
 	kyphForest <- rxDForest(Kyphosis ~ Age + Start + Number, seed = 10,
 		data = kyphosis, cp=0.01, nTree=500, mTry=3)

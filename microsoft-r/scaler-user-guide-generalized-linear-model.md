@@ -55,11 +55,8 @@ We’ll start with a simple example from Kabacoff’s **R in Action** book, usin
 
 To access this data, first make sure the ***robust*** package is installed, then use the *data* command to load the the data frame:
 
-	######################################################## 
-	# Chapter 10: Fitting Generalized Linear Models
+
 	  #  A Simple Example Using the Poisson Family
-	Ch10Start <- Sys.time()
-	
 	  
 	if ("robust" %in% .packages()){	
 	data(breslow.dat, package = "robust")

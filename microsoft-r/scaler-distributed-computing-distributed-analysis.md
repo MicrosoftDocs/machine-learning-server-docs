@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Distributed analysis (ScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Distributed analysis (RevoScaleR in Microsoft R)"
+description: "Microsoft R Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
