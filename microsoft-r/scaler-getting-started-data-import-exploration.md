@@ -198,7 +198,7 @@ To get a sense of data shape, use the **rxHistogram** function to show the distr
 ~~~~
 	rxHistogram(~ArrDelay|DayOfWeek,  data = airXdfData)
 ~~~~
-![](media/rserver-scaler-user-guide-1-introduction/image2.png)
+![](media/scaler-getting-started-data-import-exploration/image2.png)
 
 You can also compute descriptive statistics for the variable:
 ~~~~
@@ -321,11 +321,11 @@ To get a better feel for the data, you can draw histograms for each variable. Ru
 	rxHistogram(~CRSDepTime, data=airXdfData)
 	rxHistogram(~DayOfWeek, data=airXdfData)
 
-![ArrDelay Histogram](media/rserver-scaler-getting-started/arrdelay_histogram_1.png)
+![ArrDelay Histogram](media/scaler-getting-started-data-import-exploration/arrdelay_histogram_1.png)
 
-![CRSDepTime Histogram](media/rserver-scaler-getting-started/crsdeptime_histogram.png)
+![CRSDepTime Histogram](media/scaler-getting-started-data-import-exploration/crsdeptime_histogram.png)
 
-![DayOfWeek Histogram](media/rserver-scaler-getting-started/dayofweek_histogram.png)
+![DayOfWeek Histogram](media/scaler-getting-started-data-import-exploration/dayofweek_histogram.png)
 
 We can also easily extract a subsample of the data file into a data frame in memory. For example, we can look at just the flights that were between 4 and 5 hours late:
 
@@ -334,7 +334,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 		varsToKeep = c("ArrDelay", "DayOfWeek"))
 	rxHistogram(~ArrDelay, data = myData)
 
-![ArrDelay Histogram](media/rserver-scaler-getting-started/arrdelay_histogram_2.png)
+![ArrDelay Histogram](media/scaler-getting-started-data-import-exploration/arrdelay_histogram_2.png)
 
 ## Load a data subset
 

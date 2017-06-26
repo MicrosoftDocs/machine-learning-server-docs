@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Roles and Groups | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication Roles for Operationalization with Microsoft R Server"
-keywords: ""
+title: "Finding the appsettings.json configuration file for R Server - Microsoft R Server | Microsoft Docs"
+description: "Where to find appsettings.json for R Server, web node, compute node"
+keywords: "R Server configuration file, appsettings.json"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Server configuration file (appsettings.json)
+# Finding the appsettings.json configuration file for R Server
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -61,8 +61,8 @@ The file can be found here:
 
 |Node|Path on version 9.1|
 |----|------------|
-|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.WebNode|
-|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.ComputeNode|
+|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.WebNode|
+|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.ComputeNode|
 
 <br>
 

@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "R Package Management with R Server | Microsoft R Server Docs"
+title: "R Package Management when operationalizing with R Server - Microsoft R Server | Microsoft Docs"
 description: "R Package Management with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/08/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -29,17 +29,17 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes a number of functions that make it easy to download and install these packages. Whenever you or your users are writing, testing, and deploying R scripts, it is imperative that the packages (and their dependencies) needed by that R code are available at runtime or the execution will fail. 
+One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes various functions that make it easy to download and install these packages. Whenever you write, test, and deploy R scripts, it is imperative that the packages (and their dependencies) needed by that R code are available at runtime or the execution fails. 
 
-By adopting one or both R package management approaches described below, your data scientists can avoid such issues where a script they've tested locally now fails due to missing packages or package dependencies when executed in the remote environment.
+By adopting the following R package management approaches, data scientists can avoid issues such as a script tested locally now fails due to missing package dependencies when executed in the remote environment.
 
-As the R Server administrator, one of your responsibilities is to ensure the R code that runs on the compute node(s) has access to the R package dependencies declared within that code. This means that the right set of R package versions have been installed for the organization and are accessible to all users.  
+As the R Server administrator, you must ensure that the R code running on any compute nodes has access to the R package dependencies declared within that code. The right set of R package versions must be installed for the organization and accessible to all users.  
 
 However, in many enterprise environments, access to the Internet is limited or non-existent. In such environments, it is useful to create a local package repository that users can access from within the corporate firewall using [Option 1](#offline).
 
 You can also manually install the packages using a master script using [Option 2](#master).
 
-Of course, data scientists can also test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
+Data scientists can also test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
 
 <br>
 
@@ -71,14 +71,14 @@ This production-safe approach provides an excellent way to:
       library(miniCRAN)
       ```   
    
-   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open will be used. For example, for Microsoft R Server 9.1.0 that date is 2017-03-15.
+   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open is used. For example, for Microsoft R Server 9.1.0 that date is 2017-03-15.
 
       ```
       # Define the package source: a CRAN mirror, or an MRAN snapshot
       CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-11-01")
       ```
 
-   1. Create a miniCRAN repository in which the packages will be downloaded and installed.  This will create the folder structure that you need to copy the packages to each compute node later.
+   1. Create a miniCRAN repository in which the packages are downloaded and installed.  This repository creates the folder structure that you need to copy the packages to each compute node later.
       ``` 
       # Define the local download location
       local_repo <- "~/my-miniCRAN-repo"
@@ -96,9 +96,9 @@ This production-safe approach provides an excellent way to:
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
    
-   1. At the R prompt, run the R command `install.packages()`. 
+   1. At the R prompt, run the R command install.packages(). 
 
-   1. At the prompt, specify a repository and specify the directory containing the files you just copied; that is, the local miniCRAN repository.
+   1. At the prompt, specify a repository and specify the directory containing the files you copied. That is, the local miniCRAN repository.
       ```
       pkgs_needed <- c("Package-A", "Package-B", "Package-...")
       local_repo  <- "~/my-miniCRAN-repo"
@@ -124,13 +124,13 @@ This production-safe approach provides an excellent way to:
 >
 >**Applies to:** Development -or- Production Environments
 
-As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all of its required package dependency) are installed each time it is run. 
+As we mentioned before, it is imperative that the right set of R package versions have been installed and are accessible to all users. To achieve this end, another recommended option involves using an R script to install a master list of default packages across the configuration on behalf of your users. That master script ensures that the same versions of each declared package (along with all its required package dependency) are installed each time it is run. 
 
 To produce the list of packages, consider which R packages (and versions) are needed and sanctioned for production. Also consider requests from users to add new R packages or update package versions.
 
 This production-safe approach provides an excellent way to
 + Keep a standard (and sanctioned) library of R packages for production use.
-+ Manage R package dependencies as well as package versions.
++ Manage R package dependencies and package versions.
 + Schedule timely updates to R packages.
 
 This option does require the  machines hosting the compute node have access to the Internet to install the packages.
@@ -158,20 +158,20 @@ This option does require the  machines hosting the compute node have access to t
 >
 >**Applies to:** Development Environments
 
-To avoid issues where a script you've tested locally now fails due to missing package dependencies when executed in the R Server environment, you can install the needed R packages into the workspace of a remote R session yourself. 
+To avoid issues where a script tested locally fails when executed in the R Server environment due to missing package dependencies, install the needed R packages into the workspace of a remote R session yourself. 
 
 This remote execution and snapshotting approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
 + Install packages without requiring any intervention from the administrator
 
-The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot** and then recalling the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were at the time the snapshot was created. 
+The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot**. Then you can recall the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were. 
 
 [Learn more about snapshots and remote execution...](remote-execution.md)
 
 >[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
 
-**Note:** After you've sufficiently tested the package(s) as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
+**Note:** After you've sufficiently tested the packages as described in this section, you can request that a package be installed across the configuration for all users by the administrator.
 
 **To install packages within an R session:**
 
@@ -182,7 +182,7 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: ["Connecting to R Server from mrsdeploy"](../operationalize/mrsdeploy-connection.md).  
+1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md). " 
 
    + For example, for Azure Active Directory:
      ```
@@ -217,13 +217,13 @@ The packages you install using this method do not 'contaminate' the production e
       REMOTE> install.packages("ggplot2")
       ```
    
-   1. Pause the remote session and execute your R script(s) to test the code and newly installed packages in the remote environment. 
+   1. Pause the remote session and execute your R scripts to test the code and newly installed packages in the remote environment. 
       ```
       REMOTE> pause()
       > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of a R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](remote-execution.md)
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of an R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](remote-execution.md)
 
    ```
    REMOTE>pause()
@@ -243,7 +243,7 @@ You can reload the snapshot (installed packages, objects, files) within the cont
 > loadSnapshot("123456789-abcdef-123456789")
 ```
 
-You can request that a package be installed across the configuration for all users by the administrator once you've sufficiently tested the package(s) as described in this section.
+You can request that a package be installed across the configuration for all users by the administrator once you've sufficiently tested the package as described in this section.
 
 >[!WARNING]
 >**R Server 9.0 users!** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 

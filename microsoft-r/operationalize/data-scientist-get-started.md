@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Get Started for Data Scientists: Operationalize Your Analytics | Microsoft R Docs"
+title: "What is operationalization of web services - Microsoft R Server | Microsoft Docs"
 description: "Operationalize Your Analytics with Microsoft R Server Get Started"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Get Started for Data Scientists
+# What does it mean to deploy and consume analytics for Data Scientists
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -36,7 +36,7 @@ Data scientists work locally with [Microsoft R Client](../r-client-get-started.m
 An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](remote-execution.md) session in a console application.  [Learn more about this package](../mrsdeploy/mrsdeploy.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
 After it has been deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](data-scientist-manage-services.md#data-scientists-share), for testing purposes for example 
++ [Consumed directly in R by another data scientist](howto-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
 + [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 ![Operationalization Engine](../media/o16n/data-scientist-easy-deploy.png) 
@@ -51,9 +51,9 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 ## Deploy R code and models as web services
 
-You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the `publishService()` function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
+You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the publishService() function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` R package. 
 
-We recommend that you follow [this publish quickstart] to publish an R model as a service yourself. 
+We recommend that you follow [this publish quickstart](quickstart-publish-web-service.md) to publish an R model as a service yourself. 
 
 <a name="share"></a>
 
@@ -66,14 +66,15 @@ When the web service is published, a Swagger-based JSON file is generated automa
 
 Services can be consumed in multiple ways: 
 1. Direct consumption in R using the `mrsdeploy` package, which installed with Microsoft R Server and R Client. Approaches include "Request - Response" and "Asynchronous Batch Execution".
+
 2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
 
-Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](data-scientist-manage-services.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
+Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](howto-consume-web-service-interact-in-r.md) and the article [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md).
 
 
 ## Execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using `pause()` and `resume()` functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
 
 Requirements for remote execution include:
 
@@ -94,9 +95,10 @@ This section provides a quick summary of useful links for data scientists operat
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**
-+ [Application Developers](app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](app-developer-get-started.md)
 + [Administrators](admin-get-started.md)
 
 **Support Channel**

@@ -25,7 +25,7 @@ ms.custom: ""
 ---
 # DeployR API Overview
 
-**Applies to: DeployR 8.x**
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
 
 >Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
@@ -416,7 +416,7 @@ If the `storenoproject` parameter is not set to true then a project is always cr
 ####Understanding the Jobs Lifecycle
 The following diagram provides an overview of the full set of Job APIs and indicates the lifecycle of jobs managed by those APIs:
 
-![](media/deployr/deployr-api-asynch-jobs.png)
+![](media/deployr-api-reference/deployr-api-asynch-jobs.png)
 
 
 <a name="repository"></a>
@@ -637,7 +637,7 @@ All streams push a streamHandshakeEvent event when a connection if first establi
 
 While it is not necessary to understand the internal architecture of the DeployR server in order to use this API the following overview is provided in order to lend context to server administrators intending to support the API and to client application developers intending to use the API.
 
-![](media/deployr/deployr-architecture.png)
+![](media/deployr-api-reference/deployr-architecture.png)
 
 **R User Web, Desktop, Mobile Apps**
 

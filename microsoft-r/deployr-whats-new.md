@@ -26,7 +26,7 @@ ms.custom: ""
 
 # What's New in DeployR
 
-**Applies to: DeployR 8.x**
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
 
 >Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
@@ -99,5 +99,5 @@ The following list highlights the major changes and improvements to DeployR 7.3.
 -   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
 -   New and updated API support.
 -   New user account password and user account locking policies as detailed in the [Security Guide](deployr-admin-security/deployr-security.md).
--   New Administrator Diagnostic Tools that the `admin` can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.
+-   New Administrator Diagnostic Tools that the 'admin' can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.
 -   New [Server Log Events](deployr-common-administration-tasks.md#inspecting-server-logs) are now captured in the DeployR server log files. These log events provide a permanent record of API call/response events, authentication events, HTTP session events, and grid R session events.

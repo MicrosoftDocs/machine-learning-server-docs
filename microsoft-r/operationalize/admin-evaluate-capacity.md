@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Evaluate Operationalization Load Balancing Capacity | Microsoft R Server Docs"
-description: "Evaluate Operationalization Load Balancing Capacity | Microsoft R Server Docs"
+title: "Evaluate the load balancing capacity of your R Server configuration to operationalize - Microsoft R Server | Microsoft Docs"
+description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Evaluate Load Balancing Capacity
+# Evaluate the load balancing capacity of your R Server configuration to operationalize
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -37,6 +37,8 @@ You can define the parameters for the traffic simulation for a given configurati
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
+> [!NOTE]
+> Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
 <br>
 
 ## Configure Test Parameters
@@ -115,6 +117,7 @@ You can also explore the results visually in a break-down graph using the URL th
 ![URL results](../media/o16n/admin-capacity-results-url.png)
 
 <a name="pool"></a>
+
 ### R Shell Pool 
 
 When using R Server for operationalization, R code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, R Server is capable of establishing and maintaining a pool of R shells for R code execution.  This pool limits the maximum number of R shells can be used to execute in parallel.

@@ -25,7 +25,7 @@ ms.custom: ""
 
 # About DeployR
 
-**Applies to: DeployR 8.x**
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
 
 >Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
@@ -40,7 +40,7 @@ DeployR Enterprise scales for business-critical applications and offers support 
 
 This diagram captures the basic workflow used by data scientists and application developers when collaborating on the delivery of solutions powered by analytics Web services.
 
-![DeployR Workflow](./media/deployr-about/DeployRWorkflow.png)
+![DeployR Workflow](media/deployr-about/DeployRWorkflow.png)
 
 ## Workflow In Action
 
@@ -78,7 +78,7 @@ In this section, you will find a description of the roles and responsibilities o
 
 This diagram depicts how data scientists and application developers collaborate when working with DeployR.
 
-![story](./media/deployr-about/DeployRWorkflowStory.png)
+![story](media/deployr-about/DeployRWorkflowStory.png)
 
 ### Data Scientists
 
@@ -146,7 +146,7 @@ DeployR is a standalone server product, potentially sitting alongside but never 
 
 Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](deployr-api-reference.md).
 
-![](media/deployr/deployr-architecture.png)
+![](media/deployr-about/deployr-architecture.png)
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-samples.md).
 

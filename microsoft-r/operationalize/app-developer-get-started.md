@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Get Started for Application Developers  | Microsoft R Server Docs"
-description: "Get Started for Application Developers for Microsoft R Server"
+title: "Integrate analytic web services and authentication into your application - Microsoft R Server | Microsoft Docs"
+description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Get Started for Application Developers 
+# How to integrate web services and authentication into your application 
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -58,7 +58,7 @@ To simplify the integration, R Server provides several Swagger templates each de
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
 Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
-Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](data-scientist-manage-services.md#swagger-app-dev)
+Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](howto-consume-web-service-interact-in-r.md#swagger-app-dev)
 
 
 ### Build the Core Client Library
@@ -332,3 +332,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
     
    Console.Out.WriteLine(serviceResult.OutputParameters);
    ```
+
+## See also
+
++ [Blog article: REST Calls using PostMan](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/02/22/rest-calls-using-postman-for-r-server-o16n/)

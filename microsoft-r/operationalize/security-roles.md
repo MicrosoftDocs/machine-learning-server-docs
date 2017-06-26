@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Roles and Groups | Microsoft R Server Docs"
-description: "Enterprise-Grade Security: Authentication Roles with Microsoft R Server"
+title: "Control web services permissions with roles - Microsoft R Server | Microsoft Docs"
+description: "Owner, contributor, reader authentication roles with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -95,9 +95,9 @@ A user might change roles because they no longer belong to the same security gro
 
 Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publis a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still be allowed to interact with that web service version as you did before, but you won't be allowed to update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
 
-## Declaring roles for the local `admin` account
+## Declaring roles for the local 'admin' account
 
-If you only have the default local administrator account, `admin`, defined for R Server, then this is the only user and the `admin` user is implicitly assigned to the "Contributor" role.
+If you only have the default local administrator account, 'admin', defined for R Server, then this is the only user and the 'admin' user is implicitly assigned to the "Contributor" role.
 
 ## Declaring roles for AD/LDAP and Azure AD users
 
@@ -169,7 +169,7 @@ Return to [the `appsetting.json` file](admin-configuration-file.md) and do the f
 
 #### Step 3. Apply the changes to R Server
 
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local `admin` account](../operationalize/security-authentication.md#local) in the administration utility.
+1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](../operationalize/security-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 
@@ -204,3 +204,13 @@ Authentication: {
    "Contributor": [ "RProgrammers", "Quality" ]      
 }
 ```
+
+## See Also
+
++ [How to publish and manage web services in R](data-scientist-manage-services.md)
+
++ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
+
++ [Authentication options for R Server when operationalizing analytics](security-authentication.md)
+
++ [Blog article: Role Based Access Control With MRS 9.1.0](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/04/10/role-based-access-control-with-mrs-9-1-0/)

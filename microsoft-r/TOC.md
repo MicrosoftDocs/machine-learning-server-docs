@@ -1,12 +1,12 @@
 # [Overview of Microsoft R](index.md)
-## [Microsoft R products and features](index.md)
+## [What is Microsoft R](index.md)
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client.md)
 ## [Operationalize analytics](operationalize/about.md)
-## [Interoperability with R](overview-interoperability.md)
+## [Interoperability](overview-interoperability.md)
 
 # Get started with RevoScaleR
 ## [Tutorials](microsoft-r-tutorials.md)
@@ -24,11 +24,7 @@
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [Get started with MicrosoftML](microsoftml-get-started.md)
-## [Introduction to MicrosoftML](microsoftml-introduction.md)
-## [Overview of MicrosoftML functions](overview-microsoftml-functions.md)
-## [MicrosoftML function reference](microsoftml/microsoftml.md)
-## [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md)
-## [Install and deploy pretrained models](deploy-pretrained-microsoftml-models.md)
+## [Cheat Sheet: Choosing a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
 # [Diving into data analysis](data-analysis-in-microsoft-r.md)
@@ -118,21 +114,23 @@
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
+### [Pretrained machine learning models](deploy-pretrained-microsoftml-models.md)
+
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [One-box configuration](operationalize/configuration-initial.md)
 #### [Enterprise configuration](operationalize/configure-enterprise.md)
-#### [Diagnostics & troubleshooting](operationalize/admin-diagnostics.md)
+#### [Troubleshoot](operationalize/admin-diagnostics.md)
 #### [Administration utility](operationalize/admin-utility.md)
-#### [Advanced configuration file](operationalize/admin-configuration-file.md)
-#### [Capacity evaluation](operationalize/admin-evaluate-capacity.md)
-#### [Authentication](operationalize/security-authentication.md)
-#### [Connection security (SSL/TLS)](operationalize/security-https.md)
-#### [Managing permissions with roles](operationalize/security-roles.md)
-#### [Cross-origin resource sharing](operationalize/security-cors.md)
+#### [Find advanced configuration file](operationalize/admin-configuration-file.md)
+#### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
+#### [Configure authentication](operationalize/security-authentication.md)
+#### [Configure connection security (SSL/TLS)](operationalize/security-https.md)
+#### [Manage permissions with roles](operationalize/security-roles.md)
+#### [Configure CORS](operationalize/security-cors.md)
 #### [R execution security](operationalize/security-rserve.md)
-#### [Database configuration](operationalize/configure-remote-database.md)
-#### [R package management](operationalize/package-management.md)
+#### [Configure database](operationalize/configure-remote-database.md)
+#### [Manage R packages](operationalize/package-management.md)
 
 ### [Provision in the Cloud](vm-cloud.md)
 #### [Azure HDInsight](vm-r-server-hdinsight.md)
@@ -141,15 +139,15 @@
 #### [Microsoft Data Science VM](vm-data-science.md)
 
 ## Deploy and consume analytics
-### [Compare version 8 and 9](operationalize/about-compare-to-8.0.5.md)
 ### Data scientists
 #### [Get started for data scientists](operationalize/data-scientist-get-started.md)
 #### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
 #### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
-#### [Publish, manage, and consume services in R](operationalize/data-scientist-manage-services.md)
+#### [Publish and manage services in R](operationalize/data-scientist-manage-services.md)
+#### [Get and consume services in R](operationalize/howto-consume-web-service-interact-in-r.md)
 #### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)
 ### Application developers
-#### [Get started for application developers](operationalize/app-developer-get-started.md)
+#### [Integrate web services and authentication into apps](operationalize/app-developer-get-started.md)
 #### [API overview](operationalize/api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
 ### [Archive] DeployR 8.x docs
@@ -219,7 +217,6 @@
 
 
 # [Microsoft R Client](r-client.md)
-## [Get Started with R Client](r-client-get-started.md)
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
 ## [Install R Client on Linux](r-client-install-linux.md)

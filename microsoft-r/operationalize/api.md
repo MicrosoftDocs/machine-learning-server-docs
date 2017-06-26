@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Operationalization APIs | Microsoft R Server Docs"
-description: "Operationalization APIs for Microsoft R Server"
+title: "APIs for operationalizing your models and analytics - Microsoft R Server | Microsoft Docs"
+description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Microsoft R Server."
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,15 +25,16 @@ ms.technology:
 ms.custom: ""
 ---
 
-# R Server Operationalization API Overview
+# APIs for operationalizing your models and analytics with Microsoft R Server 
 
 **Applies to:  Microsoft R Server 9.x**
 
 The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">operationalization REST APIs</a> are exposed by R Server's operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](configure-enterprise.md). With the operationalization feature configured, the full statistics, analytics and visualization capabilities of R can now be directly leveraged inside Web, desktop and mobile applications.
 
+The APIs available with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
+
 ><big>Looking for a specific core API call? <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">Look in this online API reference</a>.</big>
 
-The APIs available with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
 
 <a name="core"></a>
 
@@ -55,7 +56,7 @@ The core APIs are accessible from and described in  `rserver-swagger-<version>.j
 
 You can access all of these core APIs using a client library built from `rserver-swagger-<version>.json` using [these instructions and example](app-developer-get-started.md).
 
-Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) directly to list, discover, and consume services. [Learn more in this vignette](../operationalize/data-scientist-manage-services.md).
+Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) directly to list, discover, and consume services. [Learn more in this article](../operationalize/howto-consume-web-service-interact-in-r.md).
 
 ## Service Consumption APIs
 

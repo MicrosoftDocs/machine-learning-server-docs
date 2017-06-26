@@ -6,7 +6,7 @@ description: "Updates, improvements, and changes in this release of Microsoft R 
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "04/19/2017"
+ms.date: "05/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -35,15 +35,19 @@ Also, check out our [blog announcement post](https://blogs.technet.microsoft.com
 
 ## Machine Learning enhancements
 
-In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). 
+In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). Here are highlights of what you can do with this release:
 
-This release includes **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, easily installed and immediately available when you select them in Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
-
-You can now run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
-
-**Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually.
-
-Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way provides much faster prediction performance in enterprise production scenarios. 
+-  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](microsoftml-quickstarts.md).
+-  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
+-  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
+-  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
+-	Create **text classification** models for problems such as sentiment analysis and support ticket classification. 
+-	Train deep neural nets with **GPU acceleration** in order to solve complex problems such as retail image classification and handwriting analysis.
+-	Work with **high-dimensional categorical data** for scenarios like online advertising click-through prediction.
+-	Solve many other **common machine learning tasks** such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
+- **Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA).
+- **Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets.
+- Reduce training time up to 10x while still retaining model accuracy using **feature selection**.
 
 
 <a name="sparkinterop"></a>
@@ -68,9 +72,12 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
  
 **Scoring perform boosts with real time scoring**: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](./operationalize/data-scientist-manage-services.md#realtime).
  
-**Asynchronously batch processing for large input data**: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](./operationalize/data-scientist-manage-services.md#consume-service). Learn more about [asynchronous batch consumption](./operationalize/data-scientist-batch-mode.md).
+**Asynchronously batch processing for large input data**: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](./operationalize/howto-consume-web-service-interact-in-r.md#consume-service). Learn more about [asynchronous batch consumption](./operationalize/data-scientist-batch-mode.md).
 
 **Autoscaling of a grid of web and compute nodes on Azure**. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage.
+
+
+Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
 
 ## Executing remotely 
 Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](./operationalize/remote-execution.md#async).
@@ -132,7 +139,7 @@ If you haven't upgraded recently, you can review the feature announcments from t
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
-+ [Machine learning algorthms](microsoftml-introduction.md)
++ [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md)
 + [Remote execution](operationalize/remote-execution.md)
 + [Web service deployment](operationalize/data-scientist-manage-services.md)
 
@@ -146,7 +153,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux, Hadoop, and [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/) is projected for the first quarter of 2017.
 
-To learn more, see [Introduction to MicrosoftML](microsoftml-introduction.md).
+To learn more, see [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md).
 
 **mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
 
@@ -173,7 +180,7 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 #### General updates in 9.0.1
 
 <a name="operationalize"></a>
-#### Operationalization features
+##### Operationalization features
 
 Formerly known as DeployR, the operationalization feature is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and [configure](operationalize/configuration-initial.md) R Server to host R analytics web services and remote R sessions.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
@@ -183,14 +190,22 @@ An operationalized R server offers the ability to host and bundle R analytics in
 
 The operationalization feature can be configured [on a single machine](operationalize/configuration-initial.md#onebox). It can also be [scaled](operationalize/configure-enterprise.md) for business-critical applications with multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/security.md).
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/admin-get-started.md#security).
 
 For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](operationalize/configuration-initial.md).
 
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
 
-#### R Server 9.0.1 for Linux
+<a name="8vs9"></a>
+The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5 which was available in R Server 8.0.5.
+
+>[!Important]
+>R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
+
+Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
+
+##### R Server 9.0.1 for Linux
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
 
@@ -212,9 +227,9 @@ Additional new ScaleR functions for Spark 2.0:
 
 For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
 
-#### R Server 9.0.1 for Windows
+##### R Server 9.0.1 for Windows
 
-As noted, installation of R Server or R Client on Windows delivers the new [MicrosoftML package](microsoftML-introduction.md) for machine learning.
+As noted, installation of R Server or R Client on Windows delivers the new [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md) for machine learning.
 
 Additionally, this release adds a simplified setup program for an  Server installation on Windows. This setup is in addition to SQL Server Setup, which continues to be a viable option for installation.
 

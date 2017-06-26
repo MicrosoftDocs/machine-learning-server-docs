@@ -88,7 +88,7 @@ Now plot the number of males and females by age.
 
 The resulting graph is shown below:
 
-![Age Graph](media/rserver-scaler-getting-started/age_graph.png)
+![Age Graph](media/scaler-getting-started-2-example-census-data/age_graph.png)
 
 The graph shows us that for the population in the data set, there are more men than women at every age.
 
@@ -105,7 +105,7 @@ Next, run a regression looking at the relationship between age, sex, and wage in
 
 The resulting graph shows that, in this data set, wage income is higher for males than females at every age:
 
-![Wage Income by Age and Sex](media/rserver-scaler-getting-started/wage_income_age_graph.png)
+![Wage Income by Age and Sex](media/scaler-getting-started-2-example-census-data/wage_income_age_graph.png)
 
 ## Looking at Weeks Worked by Age and Sex
 
@@ -120,7 +120,7 @@ We can further explore the data by looking at the relationship between weeks wor
 
 This resulting graph shows that it is also the case that on average females work fewer weeks per year at every age during the working years:
 
-![Weeks Worked by Age and Sex](media/rserver-scaler-getting-started/weeks_worked_age_graph.png)
+![Weeks Worked by Age and Sex](media/scaler-getting-started-2-example-census-data/weeks_worked_age_graph.png)
 
 ## Looking at Wage Income by Age, Sex, and State
 
@@ -137,7 +137,7 @@ Now draw the plot:
 	rxLinePlot(WageIncome~Age|State, groups=Sex, data=wageAgeSexState,
 		layout=c(3,1), main="Wage Income by Age and Sex")
 
-![Wage Income by Age and Sex](media/rserver-scaler-getting-started/wage_income_age_graph_2.png)
+![Wage Income by Age and Sex](media/scaler-getting-started-2-example-census-data/wage_income_age_graph_2.png)
 
 ## Subsetting an .xdf File into a Data Frame
 

@@ -53,7 +53,7 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 
  R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
 
-In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](overview-operationalize-analytics.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](operationalize/about.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 Reasons for choosing R Server include:
 
@@ -73,7 +73,7 @@ Reasons for choosing R Server include:
 |[Microsoft R Open](https://mran.microsoft.com/open/) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
 |[Operationalized analytics](operationalize/about.md) |An engine only in R Server used to deploy R script or code as a web service with support for remote runtime execution and to consume such services. Console users can exercise the functions in [mrsdeploy package](mrsdeploy/mrsdeploy.md). Developers can use the Swagger-APIs to create programmatic solutions. |
 |[ScaleR](scaler-getting-started-data-import-exploration.md) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](scaler/scaler.md). |
-|[Machine learning algorithms](microsoftml-introduction.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
+|[Overview of MicrosoftML algorithms](microsoftml/microsoftml.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](microsoftml/microsoftml.md).|
 |Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](pemar/pemar.md). For the complete list, see [Package reference on MSDN](package-reference.md). |
 |Platform-specific Components | Windows, Linux, and Hadoop components are only available in R Server. Cloud services, like Azure HDInsight, integrate R Server internally so that you don't have to provision or manage the server manually. Platform-specific components are available when you install R server on that platform. For more information, see [installation links](#installationlinks) below.|
 |Rgui.exe and R.exe| R Server includes console applications for command line execution in a local session.|
@@ -95,7 +95,7 @@ Developers can use Swagger APIs to automate R analytics over single and multi-se
 
 Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](operationalize/configuration-initial.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
-[Learn more about operationalizing analytics with R Server.](overview-operationalize-analytics.md)
+[Learn more about operationalizing analytics with R Server.](operationalize/about.md)
 
 ## Machine learning
 
@@ -104,7 +104,7 @@ In R Server, you can use the **MicrosoftML** package, which provides state of th
 You can also install **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, when you select them in R Server Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
 
-## R Server installations
+## R Server platforms
 
 <a name="installationlinks"></a>
 
@@ -133,7 +133,7 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 + [Practice data import and exploration](scaler-getting-started-data-import-exploration.md)
 + [Explore R and ScaleR in 25 functions](microsoft-r-tutorial-R2RevoScaleR.md)
-+ [Introduction to MicrosoftML](microsoftml-introduction.md)
++ [Overview of MicrosoftML algorithms](microsoftml/microsoftml.md)
 
 
 **See also**

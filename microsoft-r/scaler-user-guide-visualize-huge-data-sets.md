@@ -38,10 +38,8 @@ This example focuses on a basic demographic pattern: in general, more boys than 
 
 We can examine this pattern in the United States using the 5% Public Use Microdata Sample (PUMS) of the 2000 United States Census, stored in an .xdf file of about 12 gigabytes.[1] Using the rxGetInfo function, we can get a quick summary of the data set:
 
-	########################################################
-	# Chapter 19: Visualizing Huge Data Sets: An Example from the U.S. Census
+	#  Visualizing Huge Data Sets: An Example from the U.S. Census
 	#  Examining the Data
-	Ch19Start <- Sys.time()
 
 	bigDataDir <- "C:/MRS/Data"
 	bigCensusData <- file.path(bigDataDir,"CensusUS5Pct2000.xdf")
@@ -95,7 +93,7 @@ Let’s use that function and then plot the results:
 	    main = "Figure 1: Sex Ratio by Age, U.S. 2000 5% Census")
 
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image26.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image26.png)
 
 The graph shows the expected downward trend at the younger ages. But look at what happens at the age of 65! At the age of 65, there are suddenly about 12 men for every 10 women.
 
@@ -110,7 +108,7 @@ We can quickly drill down, and do the same computation for each region:
 
 We see the unlikely “spike” at age 65 in all regions:
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image27.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image27.png)
 
 Let’s try looking at ethnicity, comparing whites with non-whites.
 
@@ -123,7 +121,7 @@ Let’s try looking at ethnicity, comparing whites with non-whites.
 
 There are interesting differences between the two groups, but again there is the familiar spike at age 65 in both cases.
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image28.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image28.png)
 
 How about comparing married people with those not living with a spouse? We can create a temporary variable using the transform argument to do this computation:
 
@@ -136,7 +134,7 @@ How about comparing married people with those not living with a spouse? We can c
 		xlab="Age", ylab = "Sex Ratio",
 	main="Figure 4: Sex Ratio by Age, Living/Not Living with Spouse, U.S. 2000 5% Census")
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image29.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image29.png)
 
 First, notice that the spike at age 65 is absent for unmarried people. But also look at the very different trends. For married 20 year-olds, there are about 5 men for every 10 women, but for married 60 year-olds, there would be about 11 men for every 10 women. This may at first seem counter-intuitive, but it’s consistent with the notion that men tend to marry younger women. Let’s explore that next.
 
@@ -313,7 +311,7 @@ Now for each husband age we can compute the distribution of spouse age. Then, af
 		xlab="Age of Husband", ylab = "Age Difference (Husband-Wife)",
 	main="Figure 5: Age Difference of Spouses Living Together, U.S. 2000 5% Census")
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image30.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image30.png)
 
 Beginning at ages in the early 20’s, men tend to be married to younger women. The age difference increases as men get older. But beginning at age 65, our smooth trend stops and we see more erratic behavior, suggesting that our data has misinformation about ages of spouses within households at age 65 and above.
 
@@ -334,7 +332,7 @@ A level plot is a good way to visualize the results, where the color indicates t
 		xlab="Age of Husband", ylab = "Age of Wife",
 	main="Figure 6: Counts by Age (40-60) and Spouse Age, U.S. 2000 5% Census")
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image31.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image31.png)
 
 In the level plot, there is a very clear pattern with the mode of the relative age of wife dropping gradually as the age of husband increases. Now, repeat with husbands aged 60 to 80.
 
@@ -343,7 +341,7 @@ In the level plot, there is a very clear pattern with the mode of the relative a
 		xlab = "Age of Husband", ylab = "Age of Wife",
 		main ="Figure 7: Counts by Age(60-80)and Spouse Age , U.S. 2000 5% Census")
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image32.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image32.png)
 
 This shows a different story. Notice that there are very few men in the 60 to 80 age range married to 65 year-old women, and in particular, there are very few 65-year-old men married to 65-year-old women. To examine this further, we can look at line plots of the distributions of wife’s ages for men ages 62 to 67:
 
@@ -355,6 +353,6 @@ This shows a different story. Notice that there are very few men in the 60 to 80
 	main = "Figure 8: Ages of Wives (> 45) for Husband's Ages 62 to 67, U.S. 2000 5% Census")
 
 
-![](media/rserver-scaler-user-guide-19-visualize-huge-data-sets/image33.png)
+![](media/scaler-user-guide-visualize-huge-data-sets/image33.png)
 
 The blue lines show husbands ages 62 through 64. The mode of the wife’s age is a couple of years younger than the husband, and we have a reasonable looking distribution in both tails. But starting at age 65, with the red lines, we have a very different pattern. It appears that when husbands reach the age of 65 they begin to leave (or lose) their 65-year-old wives in droves – and marry older women. This certainly makes one suspicious of the data. In fact, it turns out the aberration in the data was introduced by disclosure avoidance techniques applied to the data by the census bureau.

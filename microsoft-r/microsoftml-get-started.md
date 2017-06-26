@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "Get started with MicrosoftML"
+title: "How to get started with MicrosoftML"
 keywords: ""
 author: "bradsev"
 manager: "jhubbard"
-ms.date: "05/05/2017"
+ms.date: "06/20/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -23,63 +23,70 @@ ms.custom: ""
 
 ---
 
-# Get started with MicrosoftML
+# What is the MicrosoftML package?
 
-**MicrosoftML** is a new package for **Microsoft R Server** and **Microsoft R Client** that adds state-of-the-art machine learning algorithms and data transforms to Microsoft R Server functionality. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters. Pretrained models for sentiment analysis and image featurization can also be installed and deployed with the  MicrosoftML package.
+**MicrosoftML** is a package for **Microsoft R Server**,  **Microsoft R Client**, and **SQL Server Machine Learning Services** that adds state-of-the-art data transforms, machine learning algorithms, and pretrained models to Microsoft R functionality.  
 
-- For an introduction to MicrosoftML, see [Introduction to MicrosoftML](microsoftml-introduction.md).
-- For an overview of the data transforms and machine learning algorithms provided by the MicrosoftML package, see [Overview of MicrosoftML functions](overview-microsoftml-functions.md).
-- For documentation on the individual transforms and functions in the product help, see [MicrosoftML: State-of-the-Art Machine Learning Algorithms from Microsoft Corporation](microsoftml/microsoftml.md).
-- For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [MicrosoftML algorithm cheat sheet](microsoftml-algorithm-cheat-sheet.md).
-- To get started with the pretrained models, see [How to install and deploy pretrained models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
-- For MicrosoftML samples and quickstarts, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
+The **data transforms** provided by MicrosoftML allow you to compose a custom set of transforms in a pipeline that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to featurize your data. 
+
+The MicrosoftML package provides fast and scalable **machine learning algorithms** that enable you to tackle common machine learning tasks such as classification, regression and anomaly detection. These are high-performance algorithms that are multi-threaded, some of which execute off disk, so that they can scale up to to 100s of GBs on a single-node. They are especially suitable for handling a large corpus of text data or high-dimensional categorical data. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters.
+
+**Pretrained models** for sentiment analysis and image featurization can also be installed and deployed with the  MicrosoftML package. For more information on the pretrained models and samples, see [Samples for MicrosoftML](microsoftml-quickstarts.md).
 
 
 <a name="platform-availability"></a>
-## Platform availability
-The **MicrosoftML** package is currently available on the following platforms:
+## Installation and platform availability
 
-- [Microsoft R Server for Windows](rserver-install-windows.md): install Microsoft R Server 9.1.0 on a standalone Windows server.
-- [Microsoft R Client on Windows](r-client-install-windows.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Windows machine.
-- [Microsoft R Client on Linux](r-client-install-linux.md): a free, data science tool built on top of Microsoft R Open for high performance analytics on a Linux machine.
-- [Microsoft R Server for Linux](rserver-install-linux-server.md): install Microsoft R Server 9.1.0 on a standalone Linux server.
-- [Microsoft R Server 9.1.0 on Hadoop](rserver-install-hadoop.md): R Server requires MapReduce, Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
-- [Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md): uses Cloudera's parcel installation methodology to add R Server to a cluster.
-- [SQL Server Machine Learning Services](sql-server-r-services.md): The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services or SQL Server Machine Learning Services** on an instance of SQL Server 2016 or 2017.
- 
-The pretrained ML models are not installed by default with R Server. If you want to have access to the pretrained models, you must check the **ML Models** checkbox on the **Configure the installation** page for Microsoft R Server. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+MicrosoftML is installed as part of **Microsoft R Server 9.1.0 and 9.0.1**, **Microsoft R Client 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
 
-For additional information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
+To install pretrained machine learning models for sentiment analysis and image featurization, you must opt-in during setup. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
 
-## What’s new?
 
-MicrosoftML supports new end-to-end scenarios that include new features and functionality. You can now:
+## Match algorithms to machine learning tasks
 
--  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
--  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
--  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
--  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
--	Create **text classification** models for problems such as sentiment analysis and support ticket classification. 
--	Train deep neural nets with **GPU acceleration** in order to solve complex problems such as retail image classification and handwriting analysis.
--	Work with **high-dimensional categorical data** for scenarios like online advertising click-through prediction.
--	Solve many other **common machine learning tasks** such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
-- **Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA).
-- **Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets.
-- Reduce training time up to 10x while still retaining model accuracy using **feature selection**.
+Matching data transforms and machine learning algorithms to appropriate data science tasks is key designing successful intelligent applications.
+
+### Machine learning tasks
+
+The **MicrosoftML** package implements algorithms that can perform a variety of machine learning tasks:
+
+- **binary classification**: algorithms that learn to predict which of two classes an instance of data belongs to. This is supervised learning in which the input of a classification algorithm is a set of labeled examples. Each example is represented as a feature vector, and each label is an integer of value of 0 or 1. The output of a the binary classification algorithms is a classifier, which can be used to predict the label of new unlabeled instances.
+- **multi-class classification**: algorithms that learn to predict the category of an instance of data. This is supervised learning in which the input of a classification algorithm is a set of labeled examples. Each example is represented as a feature vector, and each label is an integer between 0 and k-1, where k is the number of classes. The output of a classification algorithm is a classifier, which can be used to predict the label of a new unlabeled instance.
+- **regression**: algorithms that learn to predict the value of a dependent variable from a set of related independent variables. Regression algorithms model this relationship to determine how the typical values of dependent variables change as the values of the independent variables are varied. This is supervised learning in which the input of a regression algorithm is a set of examples with dependent variables of known values. The output of a regression algorithm is a function, which can be used to predict the value of a new data instance whose dependent variable are not known.
+- **anomaly detection**: algorithms that identify outliers that do not belong to some target class or conform to an expected pattern. One-class anomaly detection is a type of unsupervised learning as the input data only contains data that is from the target class and does not contain instances of anomalies to learn from.
+
+### Machine learning algorithms
+
+The following table summarizes the MicrosoftML algorithms, the tasks they support, their scalability, and lists some example applications.
+
+Algorithm | ML task supported | Scalability | Application Examples
+--------- | ----------------- | ------------ | -----------
+**`rxFastLiner()`** <br>Fast Linear model <br>(SDCA) |  binary classification, linear regression | #cols: ~1B;<br> #rows: ~1B;<br> CPU: multi-proc | Mortgage default prediction, Email spam filtering
+**`rxOneClassSvm()`** <br>OneClass SVM | anomaly detection | cols: ~1K;<br> #rows: RAM-bound;<br> CPU: single-proc | Credit card fraud detection
+**`rxFastTrees()`** <br>Fast Tree | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Bankruptcy prediction
+**`rxFastForest()`** <br>Fast Forest | binary classification, regression | #cols: ~50K;<br> #rows: RAM-bound;<br> CPU: multi-proc | Churn Prediction
+**`rxNeuralNet()`** <br>Neural Network | binary and multiclass classification, regression | #cols: ~10M;<br> #rows: Inf;<br> CPU: multi-proc CUDA GPU | Check signature recognition, OCR, Click Prediction
+**`rxLogisticRegression()`** <br>Logistic regression | binary and multiclass classification |#cols: ~100M; <br>#rows: Inf for single-proc CPU<br> #rows: RAM-bound for multi-proc CPU| Classifying sentiments from feedback
+
+### Data transforms
+
+**MicrosoftML** also provides transforms to help featurize your data for machine learning. They are used to clean, wrangle, train and score your data. For a description of the transforms, see [Machine learning transforms](microsoftml/microsoftml.md#ml-transforms) reference documentation.
+
+
+## What's new?
+For the new features included in latest release of MicrosoftML, see [What's New in R Server](rserver-whats-new.md#machinelearning).
 
 
 ## What's next?
 
-For additional information on R Server, see:
+For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](microsoftml/microsoftml.md).
 
-- [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
-- [What's New in SQL Server Machine Learning  Services](https://msdn.microsoft.com/en-us/library/mt604847.aspx).
-- For quickstarts that show how to use pretrained models  
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md).
 
+## See also
 
+[About Microsoft R Server](rserver.md) for general information about R Server.   
 
+[Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
 
-
-
-
-
+[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.

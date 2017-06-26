@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Token Management for API Requests | Microsoft R Server Docs"
+title: "Managing access tokens, bearer tokens, access_token, refresh_token - Microsoft R Server | Microsoft Docs"
 description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,11 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Access Token Management for API Requests
+# Managing Access Tokens for R Server API Requests
 
 **Applies to:  Microsoft R Server 9.x**
 
-Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the `POST /login HTTP/1.1` API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
+Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the 'POST /login HTTP/1.1' API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
 
 This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
 
@@ -45,12 +45,12 @@ If a token is transmitted in the clear, a man-in the middle attack can be used b
 
 <br>
 
-## Token Creation
+## Create tokens
 
-The API bearer token's properties include an `access_token` / `refresh_token` pair and expiration dates. 
+The API bearer token's properties include an access_token / refresh_token pair and expiration dates. 
 
 Tokens can be generated in one of two ways:
-+ If Active Directory LDAP or a local administrator account is enabled, then send a `POST /login HTTP/1.1` API request to retrieve the bearer token.
++ If Active Directory LDAP or a local administrator account is enabled, then send a 'POST /login HTTP/1.1' API request to retrieve the bearer token.
 
 + If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
@@ -80,24 +80,24 @@ Tokens can be generated in one of two ways:
 
 ## Token Lifecycle
 
-The bearer token is made of an `access_token` property and  a `refresh_token` property.
+The bearer token is made of an access_token property and  a refresh_token property.
 
 | |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
 |**Gets<br>Created**|Whenever the user logs in, or<br><br> a refreshToken api is called|Whenever the user logs in|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the `refresh_token` was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of `access_token`/`refresh_token` has been created|If not used for 336 hours (14 days), or<br><br>When the `refresh_token` expires, or<br><br>When a new `access_token`/`refresh_token` pair was created, or<br><br>If the `refresh_token` was revoked<br> <br>|
+|**Becomes<br>Invalid**|If the refresh_token was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of access_token/refresh_token has been created|If not used for 336 hours (14 days), or<br><br>When the refresh_token expires, or<br><br>When a new access_token/refresh_token pair was created, or<br><br>If the refresh_token was revoked<br> <br>|
 
-## Token Usage
+## Use tokens
 
-As defined by HTTP/1.1 [RFC2617], the application should send the `access_token` directly in the Authorization request header. 
+As defined by HTTP/1.1 [RFC2617], the application should send the access_token directly in the Authorization request header. 
 
-You can do so by including the bearer token's `access_token` value in the HTTP request body as `Authorization: Bearer {access_token_value}`. 
+You can do so by including the bearer token's access_token value in the HTTP request body as 'Authorization: Bearer {access_token_value}'. 
 
 When the API call is sent with the token, R Server will attempt to validate that the user is successfully authenticated and that the token itself is not expired.
-+  If the user is successfully authenticated but the bearer token's `access_token` or `refresh_token` is expired, a `401 - Unauthorized (invalid or expired refresh token)` error is returned.
++  If the user is successfully authenticated but the bearer token's access_token or refresh_token is expired, a '401 - Unauthorized (invalid or expired refresh token)' error is returned.
 
-+ If the user is not successfully authenticated, a `401 - Unauthorized (invalid credentials)` error is returned.
++ If the user is not successfully authenticated, a '401 - Unauthorized (invalid credentials)' error is returned.
 
 #### Examples
 
@@ -117,13 +117,13 @@ Example HTTP header for publishing web service:
      ...
 ```
 
-## Token Renewal
+## Renew tokens
 
-A valid bearer token (with active `access_token` or `refresh_token` properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
+A valid bearer token (with active access_token or refresh_token properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
 
-The `access_token` can be used for as long as it’s active, which is up to one hour after login or renewal.  The `refresh_token` is active for 336 hours (14 days).  After the `access_token` expires, an active `refresh_token` can be used to get a new `access_token` / `refresh_token` pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the `refresh_token` expires, the tokens cannot be renewed and the user must log in again.  
+The access_token can be used for as long as it’s active, which is up to one hour after login or renewal.  The refresh_token is active for 336 hours (14 days).  After the access_token expires, an active refresh_token can be used to get a new access_token / refresh_token pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the refresh_token expires, the tokens cannot be renewed and the user must log in again.  
 
-Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token)  to refresh a token. 
+Use [the 'POST /login/refreshToken HTTP/1.1' API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token)  to refresh a token. 
 
 #### Example: Refresh access_token
 
@@ -154,13 +154,13 @@ Use [the `POST /login/refreshToken HTTP/1.1 `  API call](https://microsoft.gith
 
 <a name="revoke"></a>
 
-## Token Revocation
+## Revoke refresh tokens
 
-A `refresh_token` should be revoked:
+A refresh_token should be revoked:
 + If a user is no longer permitted to make requests on the API, or 
-+ If the `access_token` or `refresh_token` have been compromised.
++ If the access_token or refresh_token have been compromised.
 
-Use [the `DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1 `  API call](https://microsoft.github.io/deployr-api-docs/?tags=User#delete-user-access-token)  to revoke a token. 
+Use [the 'DELETE /login/refreshToken?refreshToken={refresh_token_value} HTTP/1.1' API call](https://microsoft.github.io/deployr-api-docs/?tags=User#delete-user-access-token)  to revoke a token. 
 
 #### Example: Revoke token
 

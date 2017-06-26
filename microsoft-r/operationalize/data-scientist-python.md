@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Publish and consume Python web services | Microsoft R Server Docs"
+title: "Publish and consume Python web services - Microsoft R Server | Microsoft Docs"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -55,7 +55,7 @@ This example assumes you have satisfied the [prerequisites](#prereq) to generate
 A step-by-step walkthrough with more detailed descriptions is provided below this code block.
 
 >[!IMPORTANT]
->This full example uses the local `admin` account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
+>This full example uses the local 'admin' account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
 
 ```python
 ##################################################
@@ -339,7 +339,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 1. Add the authentication logic to your application to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
 
-   **AD/LDAP or `admin` account authentication**
+   **AD/LDAP or 'admin' account authentication**
 
    You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
    ```python

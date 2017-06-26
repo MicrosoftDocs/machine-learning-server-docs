@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Troubleshooting and Diagnostics | Microsoft R Server Docs"
-description: "Troubleshooting and Diagnostic Microsoft R Server"
+title: "Running diagnostics & troubleshooting the configuration for operationalization - Microsoft R Server | Microsoft Docs"
+description: "Troubleshooting and Diagnostics when configuring Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,7 +25,7 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Diagnostics & Troubleshooting
+# Running diagnostics & troubleshooting the R Server configuration for operationalization 
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -103,8 +103,8 @@ The logs can be found here:
 
 |Node|Path on version 9.1|
 |----|------------|
-|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.WebNode/logs|
-|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1/Microsoft.RServer.ComputeNode/logs|
+|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.WebNode/logs|
+|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.ComputeNode/logs|
 
 <br>
 

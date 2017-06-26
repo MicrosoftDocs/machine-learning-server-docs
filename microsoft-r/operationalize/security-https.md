@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Enterprise-Grade Security: SSL / TLS 1.2 | Microsoft R Server Docs"
+title: "HTTPS SSL / TLS 1.2 connection security for Microsoft R Server | Microsoft Docs"
 description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -25,12 +25,11 @@ ms.technology:
 ms.custom: ""
 ---
 
-# Connection Security (SSL/TLS)
+# Enable SSL or TLS for Connection Security in R Server
 
 **Applies to:  Microsoft R Server 9.x**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
-
 
 You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/TLS, you'll need some or all of these certificates.
 
@@ -59,16 +58,16 @@ This section walks you through the steps for securing the connections between th
    1. Make sure the name of the certificate matches the domain name of the web node URL. 
    1. Set the private key permissions. 
       1. Right click on the certificate and choose Manage private certificate from the menu.
-      1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
+      1. Add a group called NETWORK SERVICE and give that group `Read` access. 
       ![Group](../media/o16n/security-http-addgroup.png) 
        
    1. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
+1. [Open the appsettings.json configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
 
 1. In that file, search for the section starting with `"Kestrel": {` .
 
-1. Update and add properties in the `Kestrel` section to match the values for the API certificate. The `Subject` name can be found as a property of your certificate in the certificate store.
+1. Update and add properties in the Kestrel section to match the values for the API certificate. The Subject name can be found as a property of your certificate in the certificate store.
    ```
    {
        "Kestrel": {
@@ -86,7 +85,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
-1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
 
 1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
 
@@ -337,7 +336,7 @@ This section walks you through the steps for authenticating the web node with th
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
     
    1. Repeat on each web node.
 

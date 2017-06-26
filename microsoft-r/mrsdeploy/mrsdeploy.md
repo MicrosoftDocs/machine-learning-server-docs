@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "mrsdeploy Functions"
+title: "What is mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "j-martens"
 manager: "jhubbard"
-ms.date: "02/08/2017"
+ms.date: "06/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,13 +24,13 @@ ms.custom: ""
 
 ---
 
-# mrsdeploy functions
-
+# Introducing the mrsdeploy package
+ 
 **Applies to:  Microsoft R Server 9.x**
 
 The `mrsdeploy` package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
-This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, follow these steps to [view function help pages](#findmore) or vignettes.
+This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
 <a name="configure"></a>
 
@@ -39,7 +39,7 @@ This topic is a high-level description of package functionality. These functions
 For remote execution, participating nodes can be either of the following configurations:
 
 + Two machines running the same version of R Server (v9+), even if on different supported platforms, such as one Linux and one Windows.
-+ One machine running R Client 3.3.2 and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
++ One machine running R Client 3.x and one machine running R Server v9+, where the R Client user issues a remote login sequence to the R Server instance. Execution is always on the R Server side. It's not possible to set up a remote session that runs on R Client.
 
 The requirements for remote execution include:
 
@@ -139,20 +139,6 @@ The following functions are used to bundle R code or script as a web service. Th
 |`getService` |Gets a web service for consumption. |
 |`deleteService `|Deletes a web service on an R Server instance. |
 
-<a name="findmore"></a>
-## Get help on mrsdeploy functions from the R console
-
-To see the **mrsdeploy** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. Load `mrsdeploy` from the command line by typing `library(mrsdeploy)`.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="mrsdeploy")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="mrsdeploy") at the R prompt.
->
-
 
 ## Next steps
 
@@ -160,7 +146,9 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Remote Execution](../operationalize/remote-execution.md)
 
-+ [Web Service](../operationalize/data-scientist-manage-services.md)
++ [How to publish and manage web services in R](../operationalize/data-scientist-manage-services.md)
+
++ [How to interact with and consume web services in R](../operationalize/howto-consume-web-service-interact-in-r.md)
 
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
 

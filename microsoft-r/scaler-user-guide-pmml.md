@@ -34,11 +34,8 @@ RevoScaleR provides a set of coercion methods to convert a RevoScaleR model obje
 
 For example, let’s create an rxLinMod object by estimating a linear regression on a very large dataset: the airline data with almost 150 million observations.
 
-	######################################################## 
-	# Chapter 17: Converting RevoScaleR Model Objects for
+
 	#  Use in PMML
-	########################################################
-	Ch17Start <- Sys.time()
 
 	bigDataDir <- "C:/MRS/Data"
 	bigAirData <- file.path(bigDataDir, "AirOnTime87to12/AirOnTime87to12.xdf")	
