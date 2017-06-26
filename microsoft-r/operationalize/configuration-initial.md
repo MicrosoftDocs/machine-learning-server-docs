@@ -161,4 +161,4 @@ You are now ready to begin operationalizing your R analytics with R Server.
 
 ## See also
 
-* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)
+* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)
