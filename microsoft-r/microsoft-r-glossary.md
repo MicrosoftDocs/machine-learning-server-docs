@@ -52,7 +52,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Compute Context**
 
-A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). <a href="scaler-distributed-computing.md">Learn more…</a>
+A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](scaler-distributed-computing.md)
 
 
 
@@ -66,19 +66,19 @@ A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment,
 
 **Data chunking**
 
-Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. <a href="scaler-getting-started-data-import-exploration.md#chunking">Learn more…</a>
+Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. [Learn more…](scaler-getting-started-data-import-exploration.md#chunking)
 
 <br>
 
 **DeployR**
 
-See <a href="#o16n"><i>Operationalizing Analytics</i></a>
+See [<i>Operationalizing Analytics</i>](#o16n)
 
 <br>
 
 **Distributed computing**
 
-The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. <a href="scaler-distributed-computing.md">Learn more…</a>
+The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. [Learn more…](scaler-distributed-computing.md)
 
 
 <a name="H"></a>
@@ -89,7 +89,7 @@ The breakdown of a complicated computation into pieces that can be performed ind
 
 <a name="hpa"></a>**High-performance analytics (HPA)**
 
-HPA is paradigm describing the distribution of data across multiple cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. <p/> ScaleR, which is designed to process large data one chunk at a time, is also designed to process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. <p/> In ScaleR, HPA is evident in functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. <a href="scaler-user-guide-manage-threads.md">Learn more…</a>
+HPA is paradigm describing the distribution of data across multiple cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. <p/> ScaleR, which is designed to process large data one chunk at a time, is also designed to process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. <p/> In ScaleR, HPA is evident in functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. [Learn more…](scaler-user-guide-manage-threads.md)
 
 <br>
 
@@ -106,25 +106,25 @@ HPC is a paradigm for sharing tasks among multiple computing resources. HPC mech
 
 <a name="mrc"></a>**Microsoft R Client**
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. <a href="r-client.md">Learn more…</a>
+Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. [Learn more…](r-client.md)
 
 <br>
 
 <a name="mro"></a>**Microsoft R Open**
 
-Microsoft R Open is the enhanced distribution of open source R from Microsoft that is fully compatibility with all R packages, scripts and applications. Enhancements include multi-core processing, a fixed CRAN repository date, and reproducible R with the checkpoint package.  <a href="https://mran.microsoft.com/open/" target=_blank>Learn more…</a>
+Microsoft R Open is the enhanced distribution of open source R from Microsoft that is fully compatibility with all R packages, scripts and applications. Enhancements include multi-core processing, a fixed CRAN repository date, and reproducible R with the checkpoint package. Learn more at https://mran.microsoft.com/open/. 
 
 <br>
 
 <a name="mrs"></a>**Microsoft R Server**
 
-Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). <a href="rserver.md">Learn more…</a>
+Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). [Learn more…](rserver.md)
 
 <br>
 
 <a name="mkl"></a>**MKL**
 
-The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. <a href="https://mran.microsoft.com/documents/rro/multithread/">Learn more…</a>
+The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math routines. This library makes it possible for so many common R operations, such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations, to compute in parallel and use all of the processing power available to reduce computation times. [Learn more…](https://mran.microsoft.com/documents/rro/multithread/)
 
 <a name="O"></a>
 
@@ -134,7 +134,7 @@ The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math rou
 
 <a name="o16n"></a>**Operationalizing Analytics**
 
-Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. <a href="operationalize/about.md">Learn more…</a>
+Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. [Learn more…](operationalize/about.md)
 
 
 <a name="P"></a>
@@ -145,7 +145,7 @@ Configure R Server to act as a deployment engine to publish your analytics and e
 
 <a name="parallel"></a>**Parallel computing**
 
-A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. ScaleR performs parallel computing on any computer with multiple computing cores. <a href="scaler-distributed-computing.md">Learn more…</a>
+A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. ScaleR performs parallel computing on any computer with multiple computing cores. [Learn more…](scaler-distributed-computing.md)
  
 
 
@@ -175,7 +175,7 @@ See <a href="#mrs"><i>Microsoft R Server</i></a>
 
 **RevoScaleR**
 
-A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client.   <a href="scaler/scaler.md">Learn more…</a>
+A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client. [Learn more…](scaler/scaler.md)
 
 <br>
 
@@ -225,4 +225,4 @@ Refers to the ability to create script locally, with the option of running it re
 
 **XDF File Format**
 
-The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  <a href="https://msdn.microsoft.com/en-us/microsoft-r/scaler-user-guide-introduction">Learn more…</a>
+The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more…](https://msdn.microsoft.com/en-us/microsoft-r/scaler-user-guide-introduction)
