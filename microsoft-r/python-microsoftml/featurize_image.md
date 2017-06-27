@@ -6,7 +6,7 @@ description: "Featurizes an image using a pre-trained deep neural network model.
 keywords: "transform image featurize dnn cnn resnet alexnet" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# featurize_image
+## featurize_image
+
+
+### Usage
 
 
 
@@ -35,33 +38,33 @@ microsoftml.modules.image_analytics.featurize_image(cols: [<class ‘dict’>, <
 
 
 
-## Description
+### Description
 
 Featurizes an image using a pre-trained deep neural network model.
 
 
-## Details
+### Details
 
 ``featurize_image`` featurizes an image using the specified
 pre-trained deep neural network model. The input variables to this transforms must
 be extracted pixel values.
 
 
-## Parameters
+### Arguments
 
 
-### var
+##### var
 
 Input variable containing extracted pixel values.
 
 
-### out_var
+##### out_var
 
 The prefix of the output variables containing the image features.
 If null, the input variable name will be used. The default value is *None*.
 
 
-### dnn_model
+##### dnn_model
 
 The pre-trained deep neural network. The possible options are:
 
@@ -78,17 +81,17 @@ See [Deep Residual Learning for Image Recognition](http://www.cv-foundation.org/
 for details about ResNet.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## Example
+### Example
 
 
 

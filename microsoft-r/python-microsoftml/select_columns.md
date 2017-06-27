@@ -6,7 +6,7 @@ description: "Selects a set of columns to retrain, dropping all others."
 keywords: "transform" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# select_columns
+## select_columns
+
+
+### Usage
 
 
 
@@ -35,24 +38,24 @@ microsoftml.modules.schema_manipulation.select_columns(cols: (<class ‘list’>
 
 
 
-## Description
+### Description
 
 Selects a set of columns to retrain, dropping all others.
 
 
-## Parameters
+### Arguments
 
 
-### cols
+##### cols
 
 Specifiies character vector or list of the names of the variables to keep.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)

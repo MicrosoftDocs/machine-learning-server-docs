@@ -6,7 +6,7 @@ description: "Compute predicted values and residuals using rx_lin_mod and"
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_predict_default
+## rx_predict_default
+
+
+### Usage
 
 
 
@@ -35,56 +38,56 @@ revoscalepy.functions.RxPredict.rx_predict_default(model_object=None, data: revo
 
 
 
-## Description
+### Description
 
 Compute predicted values and residuals using rx_lin_mod and
 rx_logit objects.
 
 
-## Parameters
+### Arguments
 
 
-### model_object
+##### model_object
 
 object returned from a call to rx_lin_mod and rx_logit.
 Objects with multiple dependent variables are not supported.
 
 
-### data
+##### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
 
 
-### output_data
+##### output_data
 
 an RxXdfData data source object or existing data frame
 to store predictions.
 
 
-### compute_standard_errors
+##### compute_standard_errors
 
 logical value. If True, the standard errors
 for each dependent variable are calculated.
 
 
-### interval
+##### interval
 
 character string defining the type of interval calculation
 to perform. Supported values are “none”, “confidence”, and “prediction”.
 
 
-### confidence_level
+##### confidence_level
 
 numeric value representing the confidence level on
 the interval [0, 1].
 
 
-### compute_residuals
+##### compute_residuals
 
 logical value. If True, residuals are computed.
 
 
-### type
+##### type
 
 the type of prediction desired. Supported choices are: “response”
 and “link”. If type = “response”, the predictions are on the scale of the
@@ -94,7 +97,7 @@ of the linear predictors. Thus for the binomial model, the predictions are
 of log-odds.
 
 
-### write_model_vars
+##### write_model_vars
 
 logical value. If True, and the output data set is
 different from the input data set, variables in the model will be written
@@ -104,19 +107,19 @@ the input data set are transformed in the model, the transformed variables
 will also be included.
 
 
-### extra_vars_to_write
+##### extra_vars_to_write
 
 None or character vector of additional variables
 names from the input data or transforms to include in the outData. If
 writeModelVars is True, model variables will be included as well.
 
 
-### remove_missings
+##### remove_missings
 
 logical value. If True, rows with missing values are removed.
 
 
-### append
+##### append
 
 either “none” to create a new files or “rows” to append rows
 to an existing file. If outData exists and append is “none”, the overwrite
@@ -124,28 +127,28 @@ argument must be set to True. You can append only to RxTeradata data source.
 Ignored for data frames.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, an existing output_data will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
-### check_factor_levels
+##### check_factor_levels
 
 logical value.
 
 
-### predict_var_names
+##### predict_var_names
 
 character vector specifying name(s) to give to the prediction results
 
 
-### residual_var_names
+##### residual_var_names
 
 character vector specifying name(s) to give to the residual results.
 
 
-### interval_var_names
+##### interval_var_names
 
 None or a character vector defining low and high
 confidence interval variable names, respectively. If None, the strings
@@ -153,7 +156,7 @@ confidence interval variable names, respectively. If None, the strings
 form the confidence interval variable names.
 
 
-### std_errors_var_names
+##### std_errors_var_names
 
 None or a character vector defining variable
 names corresponding to the standard errors, if calculated. If None, the
@@ -161,14 +164,14 @@ string “_StdErr” is appended to the dependent variable names to form the
 standard errors variable names.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data read
 from the data source. If the data and outData are the same file,
 blocksPerRead must be 1.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -177,42 +180,42 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-### xdf_compression_level
+##### xdf_compression_level
 
 integer in the range of -1 to 9 indicating the
 compression level for the output data if written to an .xdf file.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object for prediction.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a data frame or a data source object of prediction results.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

@@ -6,7 +6,7 @@ description: "Fit linear models on small or large data."
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_lin_mod
+## rx_lin_mod
+
+
+### Usage
 
 
 
@@ -35,38 +38,38 @@ revoscalepy.functions.RxLinMod.rx_lin_mod(formula, data, pweights=None, fweights
 
 
 
-## Description
+### Description
 
 Fit linear models on small or large data.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 formula as described in rxFormula.
 
 
-### data
+##### data
 
 either a data source object, a character string specifying a
 .xdf file, or a data frame object.
 
 
-### pweights
+##### pweights
 
 character string specifying the variable to use as probability
 weights for the observations.
 
 
-### fweights
+##### fweights
 
 character string specifying the variable to use as frequency
 weights for the observations.
 
 
-### cube
+##### cube
 
 logical flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
@@ -74,52 +77,52 @@ performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
 inverse to save on computation time and memory. See Details section below.
 
 
-### cube_predictions
+##### cube_predictions
 
 logical flag. If True and cube is True the predicted
 values are computed and included in the countDF component of the returned
 value. This may be memory intensive. See Details section below.
 
 
-### row_selection
+##### row_selection
 
 None. Not currently supported, reserved for future use.
 
 
-### transforms
+##### transforms
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_objects
+##### transform_objects
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_function
+##### transform_function
 
 variable transformation function. The variables used
 in the transformation function must be specified in transformVars if they
 are not variables used in the model. See rxTransform for details.
 
 
-### transform_variables
+##### transform_variables
 
 character vector of input data set variables needed
 for the transformation function. See rx_transform for details.
 
 
-### transform_packages
+##### transform_packages
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
+##### transform_environment
 
 None. Not currently supported, reserved for future use.
 
 
-### drop_first
+##### drop_first
 
 logical flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
@@ -130,33 +133,33 @@ that for cube regressions, the first set of factors is excluded from these rules
 and the intercept is dropped.
 
 
-### drop_main
+##### drop_main
 
 logical value. If True, main-effect terms are dropped before their
 interactions.
 
 
-### cov_coef
+##### cov_coef
 
 logical flag. If True and if cube is False, the variance-covariance
 matrix of the regression coefficients is returned. Use the rxCovCoef function to
 obtain these data.
 
 
-### cov_data
+##### cov_data
 
 logical flag. If True and if cube is False and if constant term is
 included in the formula, then the variance-covariance matrix of the data is
 returned. Use the rxCovData function to obtain these data.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data read from
 the data source.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -165,36 +168,36 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object for prediction.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a rx_lin_mod_results object of linear model.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

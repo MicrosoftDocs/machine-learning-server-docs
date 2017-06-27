@@ -6,7 +6,7 @@ description: "Fit classification and regression trees on an ‘.xdf’ file or d
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_dtree
+## rx_dtree
+
+
+### Usage
 
 
 
@@ -35,27 +38,27 @@ revoscalepy.functions.RxDTree.rx_dtree(formula, data, output_file=None, output_c
 
 
 
-## Description
+### Description
 
 Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 formula as described in rxFormula. Currently, formula
 functions are not supported.
 
 
-### data
+##### data
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
 
 
-### output_file
+##### output_file
 
 either an RxXdfData data source object or a character
 string specifying the ‘.xdf’ file for storing the resulting node indices.
@@ -66,7 +69,7 @@ the resulting set of node indices will generally not have the same number
 of rows as the original data source.
 
 
-### output_column_name
+##### output_column_name
 
 character string to be used as a column name for
 the resulting node indices if outFile is not None. Note that make.names is
@@ -75,7 +78,7 @@ is an RxOdbcData source, dots are first converted to underscores. Thus, the
 default outColName becomes “X_rxNode”.
 
 
-### write_model_vars
+##### write_model_vars
 
 logical value. If True, and the output file is
 different from the input file, variables in the model will be written to
@@ -84,39 +87,39 @@ input data set are transformed in the model, the transformed variables will
 also be written out.
 
 
-### extra_vars_to_write
+##### extra_vars_to_write
 
 None or character vector of additional
 variables names from the input data or transforms to include in the
 outFile. If writeModelVars is True, model variables will be included as well.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, an existing outFile with an
 existing column named outColName will be overwritten.
 
 
-### pweights
+##### pweights
 
 character string specifying the variable of numeric values
 to use as probability weights for the observations.
 
 
-### fweights
+##### fweights
 
 character string specifying the variable of integer values
 to use as frequency weights for the observations.
 
 
-### method
+##### method
 
 character string specifying the splitting method. Currently,
 only “class” or “anova” are supported. The default is “class” if the
 response is a factor, otherwise “anova”.
 
 
-### parms
+##### parms
 
 optional list with components specifying additional
 parameters for the “class” splitting method, as follows:
@@ -133,7 +136,7 @@ If parms is specified, any of the components can be specified or
     omitted. The defaults will be used for missing components.
 
 
-### cost
+##### cost
 
 a vector of non-negative costs, containing one element for
 each variable in the model. Defaults to one for all variables. When
@@ -141,7 +144,7 @@ deciding which split: to choose, the improvement on splitting on a variable
 is divided by its cost.
 
 
-### min_split
+##### min_split
 
 the minimum number of observations that must exist in a
 node before a split is attempted. By default, this is sqrt(num of obs). For
@@ -149,26 +152,26 @@ non-XDF data sources, as (num of obs) is unknown in advance, it is wisest
 to specify this argument directly.
 
 
-### min_bucket
+##### min_bucket
 
 the minimum number of observations in a terminal node
 (or leaf). By default, this is minSplit/3.
 
 
-### cp
+##### cp
 
 numeric scalar specifying the complexity parameter. Any split
 that does not decrease overall lack-of-fit by at least cp is not attempted.
 
 
-### max_compete
+##### max_compete
 
 the maximum number of competitor splits retained in the
 output. These are useful model diagnostics, as they allow you to compare
 splits in the output with the alternatives.
 
 
-### max_surrogate
+##### max_surrogate
 
 the maximum number of surrogate splits retained in
 the output. See the Details for a description of how surrogate splits are
@@ -177,7 +180,7 @@ performance of the algorithm; in some cases almost half the computation
 time is spent in computing surrogate splits.
 
 
-### use_surrogate
+##### use_surrogate
 
 an integer specifying how surrogates are to be used
 in the splitting process:
@@ -197,7 +200,7 @@ The 0 value corresponds to the behavior of the tree function, and 2
     (the default) corresponds to the recommendations of Breiman et al.
 
 
-### x_val
+##### x_val
 
 the number of cross-validations to be performed along with
 the model building. Currently, 1:xVal is repeated and used to identify the
@@ -209,7 +212,7 @@ cross-validation will be used to evaluate the fitted model because a value
 of k increases the compute time to (k+1)-fold over a value of zero.
 
 
-### surrogate_style
+##### surrogate_style
 
 an integer controlling selection of a best
 surrogate. The default, 0, instructs the program to use the total number of
@@ -219,14 +222,14 @@ non-missing values of the surrogate. Thus, 0 penalizes potential surrogates
 with a large number of missing values.
 
 
-### max_depth
+##### max_depth
 
 the maximum depth of any tree node. The computations take
 much longer at greater depth, so lowering max_depth can greatly speed up
 computation time.
 
 
-### max_num_bins
+##### max_num_bins
 
 the maximum number of bins to use to cut numeric data.
 The default is min(1001, max(101, sqrt(num of obs))). For non-XDF data
@@ -235,19 +238,19 @@ this argument directly. If set to 0, unit binning will be used instead of
 cutting. See the ‘Details’ section for more information.
 
 
-### max_unordered_levels
+##### max_unordered_levels
 
 the maximum number of levels allowed for an
 unordered factor predictor for multiclass (>2) classification.
 
 
-### remove_missings
+##### remove_missings
 
 logical value. If True, rows with missing values
 are removed and will not be included in the output data.
 
 
-### compute_obs_node_id
+##### compute_obs_node_id
 
 logical value or None. If True, the tree node
 IDs for all the observations are computed and returned. If None, the IDs
@@ -255,19 +258,19 @@ are computed for data.frame with less than 1000 observations and are
 returned as the where component in the fitted rxDTree object.
 
 
-### use_sparse_cube
+##### use_sparse_cube
 
 logical value. If True, sparse cube is used.
 
 
-### find_splits_in_parallel
+##### find_splits_in_parallel
 
 logical value. If True, optimal splits for
 each node are determined using parallelization methods; this will typically
 speed up computation as the number of nodes on the same level is increased.
 
 
-### prune_cp
+##### prune_cp
 
 Optional complexity parameter for pruning. If prune_cp >
 0, prune.rxDTree is called on the completed tree with the specified
@@ -278,52 +281,52 @@ rxDTreeBestCp on the completed tree, then use its return value as the cp
 value for prune.rxDTree.
 
 
-### row_selection
+##### row_selection
 
 None. Not currently supported, reserved for future
 use.
 
 
-### transforms
+##### transforms
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_objects
+##### transform_objects
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_function
+##### transform_function
 
 variable transformation function. The variables used
 in the transformation function must be specified in transformVars if they
 are not variables used in the model. See rxTransform for details.
 
 
-### transform_variables
+##### transform_variables
 
 character vector of input data set variables needed
 for the transformation function. See rx_transform for details.
 
 
-### transform_packages
+##### transform_packages
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
+##### transform_environment
 
 None. Not currently supported, reserved for future use.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data read from
 the data source.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -332,36 +335,36 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object for prediction.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a rx_dtree_results object of dtree model.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

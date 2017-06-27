@@ -6,7 +6,7 @@ description: "Produce univariate summaries of objects in RevoScalePy."
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_summary
+## rx_summary
+
+
+### Usage
 
 
 
@@ -35,27 +38,27 @@ revoscalepy.functions.RxSummary.rx_summary(formula, data, by_group_out_file=None
 
 
 
-## Description
+### Description
 
 Produce univariate summaries of objects in RevoScalePy.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 formula, as described in rxFormula. The formula typically
 does not contain a response variable, i.e. it should be of the form ~ terms.
 
 
-### data
+##### data
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object to summarize.
 
 
-### by_group_out_file
+##### by_group_out_file
 
 None, a character string or vector of character
 strings specifying .xdf file names(s), or an RxXdfData object or list of
@@ -67,14 +70,14 @@ name for additional file names. The resulting RxXdfData objects will be
 listed in the categorical component of the output object.
 
 
-### summary_stats
+##### summary_stats
 
 a character vector containing one or more of the
 following values: “Mean”, “StdDev”, “Min”, “Max”, “ValidObs”, “MissingObs”,
 “Sum”.
 
 
-### by_term
+##### by_term
 
 logical variable. If True, missings will be removed by term
 (by variable or by interaction expression) before computing summary
@@ -82,70 +85,70 @@ statistics. If False, observations with missings in any term will be
 removed before computations.
 
 
-### pweights
+##### pweights
 
 character string specifying the variable to use as
 probability weights for the observations.
 
 
-### fweights
+##### fweights
 
 character string specifying the variable to use as
 frequency weights for the observations.
 
 
-### row_selection
+##### row_selection
 
 None. Not currently supported, reserved for future use.
 
 
-### transforms
+##### transforms
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_objects
+##### transform_objects
 
 None. Not currently supported, reserved for
 future use.
 
 
-### transform_function
+##### transform_function
 
 variable transformation function. See
 rxTransform for details.
 
 
-### transform_variables
+##### transform_variables
 
 character vector of input data set variables
 needed for the transformation function. See rxTransform for details.
 
 
-### transform_packages
+##### transform_packages
 
 None. Not currently supported, reserved for
 future use.
 
 
-### transform_environment
+##### transform_environment
 
 None. Not currently supported, reserved for
 future use.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, an existing byGroupOutFile will
 be overwritten. overwrite is ignored byGroupOutFile is None.
 
 
-### use_sparse_cube
+##### use_sparse_cube
 
 logical value. If True, sparse cube is used.
 
 
-### remove_zero_counts
+##### remove_zero_counts
 
 logical flag. If True, rows with no observations
 will be removed from the output for counts of categorical data. By default,
@@ -154,19 +157,19 @@ should be set to True, otherwise R may run out of memory even if the
 internal C++ computation succeeds.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data
 read from the data source.
 
 
-### rows_per_block
+##### rows_per_block
 
 maximum number of rows to write to each block in the
 byGroupOutFile (if it is not None).
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -175,24 +178,24 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-### compute_context
+##### compute_context
 
 a valid RxComputeContext object.
 
 
-### kwargs
+##### kwargs
 
 additional arguments to be passed directly to the Revolution
 Compute Engine.
 
 
-## Returns
+### Returns
 
 an RxSummary object containing the following elements:
 nobs.valid: number of valid observations.
@@ -203,15 +206,15 @@ categorical.type: types of categorical summaries: can be “counts”, or “cub
 formula: formula used to obtain the summary.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

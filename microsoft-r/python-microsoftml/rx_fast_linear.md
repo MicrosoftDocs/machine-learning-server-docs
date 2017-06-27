@@ -6,7 +6,7 @@ description: "Creates a list containing the function name and arguments to train
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_fast_linear
+## rx_fast_linear
+
+
+### Usage
 
 
 
@@ -35,7 +38,7 @@ microsoftml.modules.fast_linear.rx_fast_linear(formula, data, method: [‘binary
 
 
 
-## Description
+### Description
 
 Creates a list containing the function name and arguments to train a
 Fast Linear model with ``rx_ensemble()``.
@@ -57,10 +60,10 @@ default value depends on the type of learning:
 * ``squared_loss()`` for linear regression. 
 
 
-## Parameters
+### Arguments
 
 
-### l1_weight
+##### l1_weight
 
 Specifies the L1 regularization weight. The value must be
 either non-negative or *None*. If *None* is specified, the
@@ -68,7 +71,7 @@ actual value is automatically computed based on data set. *None*
 is the default value.
 
 
-### l2_weight
+##### l2_weight
 
 Specifies the L2 regularization weight. The value must be
 either non-negative or *None*. If *None* is specified, the
@@ -76,7 +79,7 @@ actual value is automatically computed based on data set. *None*
 is the default value.
 
 
-### train_threads
+##### train_threads
 
 Specifies how many concurrent threads can be used to run
 the algorithm. When this parameter is set to *None*, the number of
@@ -85,7 +88,7 @@ available to the process as well as the sparsity of data. Set it to ``1``
 to run the algorithm in a single thread.
 
 
-### convergence_tolerance
+##### convergence_tolerance
 
 Specifies the tolerance threshold used as a
 convergence criterion. It must be between 0 and 1. The default value is
@@ -94,7 +97,7 @@ duality gap, which is the ratio between the duality gap and the primal loss,
 falls below the specified convergence tolerance.
 
 
-### max_iterations
+##### max_iterations
 
 Specifies an upper bound on the number of training
 iterations. This parameter must be positive or *None*. If *None*
@@ -104,7 +107,7 @@ terminates after the total number of iterations reaches the specified
 upper bound or when the loss function converges, whichever happens earlier.
 
 
-### shuffle
+##### shuffle
 
 Specifies whether to shuffle the training data. Set ``TRUE``
 to shuffle the data; ``FALSE`` not to shuffle. The default
@@ -112,7 +115,7 @@ value is ``TRUE``. SDCA is a stochastic optimization algorithm.  If
 shuffling is turned on, the training data is shuffled on each iteration.
 
 
-### check_frequency
+##### check_frequency
 
 The number of iterations after which the loss function
 is computed and checked to determine whether it has converged. The value

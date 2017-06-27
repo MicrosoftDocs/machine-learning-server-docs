@@ -6,7 +6,7 @@ description: "Use rx_logit to fit logistic regression models for small or large 
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_logit
+## rx_logit
+
+
+### Usage
 
 
 
@@ -35,15 +38,15 @@ revoscalepy.functions.RxLogit.rx_logit(formula: str, data: typing.Union[revoscal
 
 
 
-## Description
+### Description
 
 Use rx_logit to fit logistic regression models for small or large data.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 formula as described in rxFormula. Dependent variable must
 be binary. It can be a logical variable, a factor with only two categories,
@@ -51,25 +54,25 @@ or a numeric variable with values in the range (0,1). In the latter case
 it will be converted to a logical.
 
 
-### data
+##### data
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
 
 
-### pweights
+##### pweights
 
 character string specifying the variable to use as probability
 weights for the observations.
 
 
-### fweights
+##### fweights
 
 character string specifying the variable to use as frequency
 weights for the observations.
 
 
-### cube
+##### cube
 
 logical flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
@@ -77,7 +80,7 @@ performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
 inverse to save on computation time and memory. See Details section below.
 
 
-### cube_predictions
+##### cube_predictions
 
 logical flag. If True and cube is True the estimated
 model is evaluated (predicted) for each cell in the cube, fixing the non-cube
@@ -86,7 +89,7 @@ in the countDF component of the returned value. This may be time and memory
 intensive for large models. See Details section below.
 
 
-### variable_selection
+##### variable_selection
 
 a list specifying various parameters that control
 aspects of stepwise regression. If it is an empty list (default), no stepwise
@@ -94,43 +97,43 @@ model selection will be performed. If not, stepwise regression will be
 performed and cube must be False. See rxStepControl for details.
 
 
-### row_selection
+##### row_selection
 
 None. Not currently supported, reserved for future use.
 
 
-### transforms
+##### transforms
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_objects
+##### transform_objects
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_function
+##### transform_function
 
 variable transformation function.
 
 
-### transform_variables
+##### transform_variables
 
 character vector of input data set variables needed
 for the transformation function. See rxTransform for details.
 
 
-### transform_packages
+##### transform_packages
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
+##### transform_environment
 
 None. Not currently supported, reserved for future use.
 
 
-### drop_first
+##### drop_first
 
 logical flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
@@ -141,50 +144,50 @@ level. Note that for cube regressions, the first set of factors is excluded
 from these rules and the intercept is dropped.
 
 
-### drop_main
+##### drop_main
 
 logical value. If True, main-effect terms are dropped before
 their interactions.
 
 
-### cov_coef
+##### cov_coef
 
 logical flag. If True and if cube is False, the variance-covariance
 matrix of the regression coefficients is returned. Use the rxCovCoef function
 to obtain these data.
 
 
-### cov_data
+##### cov_data
 
 logical flag. If True and if cube is False and if constant term
 is included in the formula, then the variance-covariance matrix of the data
 is returned. Use the rxCovData function to obtain these data.
 
 
-### initial_values
+##### initial_values
 
 Starting values for the Iteratively Reweighted Least
 Squares algorithm used to estimate the model coefficients.
 
 
-### coef_label_styl
+##### coef_label_styl
 
 character string specifying the coefficient label style.
 The default is “Revo”.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data read
 from the data source.
 
 
-### max_iterations
+##### max_iterations
 
 maximum number of iterations.
 
 
-### coefficent_tolerance
+##### coefficent_tolerance
 
 convergence tolerance for coefficients. If the
 maximum absolute change in the coefficients (step), divided by the maximum
@@ -193,17 +196,17 @@ end of an iteration, the estimation is considered to have converged. To
 disable this test, set this value to 0.
 
 
-### gradient_tolerance
+##### gradient_tolerance
 
 This argument is deprecated.
 
 
-### objective_function_tolerance
+##### objective_function_tolerance
 
 convergence tolerance for the objective function.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -212,35 +215,35 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object for prediction.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a rx_logit_results object of linear model.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

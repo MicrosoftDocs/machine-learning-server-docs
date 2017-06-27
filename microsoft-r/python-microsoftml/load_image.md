@@ -6,7 +6,7 @@ description: "Loads image data."
 keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# load_image
+## load_image
+
+
+### Usage
 
 
 
@@ -35,20 +38,20 @@ microsoftml.modules.image_analytics.load_image(cols: [<class ‘str’>, <class 
 
 
 
-## Description
+### Description
 
 Loads image data.
 
 
-## Details
+### Details
 
 ``load_image`` loads images from paths.
 
 
-## Parameters
+### Arguments
 
 
-### cols
+##### cols
 
 A named list of character vectors of input variable names and
 the name of the output variable. Note that the input variables must
@@ -56,17 +59,17 @@ be of the same type. For one-to-one mappings between input and output
 variables, a named character vector can be used.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## Example
+### Example
 
 
 

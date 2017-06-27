@@ -6,7 +6,7 @@ description: "Import data into an ‘.xdf’ file or data.frame."
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_import_datasource
+## rx_import_datasource
+
+
+### Usage
 
 
 
@@ -35,15 +38,15 @@ revoscalepy.etl.RxImport.rx_import_datasource(input_data: revoscalepy.datasource
 
 
 
-## Description
+### Description
 
 Import data into an ‘.xdf’ file or data.frame.
 
 
-## Parameters
+### Arguments
 
 
-### input_data
+##### input_data
 
 a character string with the path for the data to import
 (delimited, fixed format, ODBC, or XDF). Alternatively, a data source
@@ -51,65 +54,65 @@ object representing the input data source can be specified. (See
 RxTextData, and RxOdbcData.)
 
 
-### output_file
+##### output_file
 
 a character string representing the output ‘.xdf’ file,
 or a RxXdfData object. If None, a data frame will be returned in memory.
 
 
-### vars_to_keep
+##### vars_to_keep
 
 character vector of variable names to include when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with varsToDrop. Not supported for ODBC or fixed format text files.
 
 
-### vars_to_drop
+##### vars_to_drop
 
 character vector of variable names to exclude when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with varsToKeep. Not supported for ODBC or fixed format text files.
 
 
-### row_selection
+##### row_selection
 
 None. Not currently supported, reserved for future use.
 
 
-### transforms
+##### transforms
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_objects
+##### transform_objects
 
 None. Not currently supported, reserved for
 future use.
 
 
-### transform_function
+##### transform_function
 
 variable transformation function. See
 rxTransform for details.
 
 
-### transform_variables
+##### transform_variables
 
 character vector of input data set variables
 needed for the transformation function. See rxTransform for details.
 
 
-### transform_packages
+##### transform_packages
 
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
+##### transform_environment
 
 None. Not currently supported, reserved for future use.
 
 
-### append
+##### append
 
 either “none” to create a new ‘.xdf’ file or “rows” to
 append rows to an existing ‘.xdf’ file. If outFile exists and append is
@@ -117,19 +120,19 @@ append rows to an existing ‘.xdf’ file. If outFile exists and append is
 is returned.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, the existing outData will be
 overwritten. Ignored if a dataframe is returned.
 
 
-### number_rows
+##### number_rows
 
 integer value specifying the maximum number of rows to
 import. If set to -1, all rows will be imported.
 
 
-### strings_as_factors
+##### strings_as_factors
 
 logical indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
@@ -139,7 +142,7 @@ ordering is row dependent, the preferred method for handling factor columns
 is to use colInfo with specified “levels”.
 
 
-### column_classes
+##### column_classes
 
 character vector specifying the column types to use
 when converting the data. The element names for the vector are used to
@@ -180,7 +183,7 @@ equivalent to “string” - for the moment, if you wish to import a column
 as factor data you must use the colInfo argument, documented below.
 
 
-### column_info
+##### column_info
 
 list of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
@@ -233,12 +236,12 @@ Currently available properties for a column information list are:
     decimalPlaces: the number of decimal places.
 
 
-### rows_per_read
+##### rows_per_read
 
 number of rows to read at a time.
 
 
-### type
+##### type
 
 character string set specifying file type of inData. This is
 ignored if inData is a data source. Possible values are:
@@ -273,7 +276,7 @@ ignored if inData is a data source. Possible values are:
     RxOdbcData.)
 
 
-### max_rows_by_columns
+##### max_rows_by_columns
 
 the maximum size of a data frame that will be
 read in if outData is set to None, measured by the number of rows times the
@@ -284,7 +287,7 @@ large, you may experience problems from loading a huge data frame into
 memory.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -293,13 +296,13 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 information on the import type is printed if type is set to auto.
 
 
-### xdf_compression_level
+##### xdf_compression_level
 
 integer in the range of -1 to 9. The higher
 the value, the greater the amount of compression - resulting in smaller
@@ -309,7 +312,7 @@ release of Revolution R Enterprise. If set to -1, a default level of
 compression will be used.
 
 
-### create_composite_set
+##### create_composite_set
 
 logical value or None. If True, a composite
 set of files will be created instead of a single ‘.xdf’ file. A directory
@@ -323,7 +326,7 @@ meta data for all of the ‘.xdfd’ files in the ‘data’ subdirectory. When 
 compute context is RxHadoopMR a composite set of files is always created.
 
 
-### blocks_per_composite_file
+##### blocks_per_composite_file
 
 integer value. If
 createCompositeSet=True, and if the compute context is not RxHadoopMR, this
@@ -335,28 +338,28 @@ rowsPerRead. If the outFile is an RxXdfData object, set the value for
 blocksPerCompositeFile there instead.
 
 
-### kwargs
+##### kwargs
 
 additional arguments to be passed directly to the underlying
 data source objects to be imported.
 
 
-## Returns
+### Returns
 
 If an output_file is not specified, an output data frame is
 returned. If an output_file is specified, an RxXdfData data source is
 returned that can be used in subsequent RevoScalePy analysis.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

@@ -6,7 +6,7 @@ description: "Allows distributed execution of a function in parallel across node
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_exec
+## rx_exec
+
+
+### Usage
 
 
 
@@ -35,35 +38,35 @@ revoscalepy.computecontext.RxInSqlServer.rx_exec(function: <built-in function ca
 
 
 
-## Description
+### Description
 
 Allows distributed execution of a function in parallel across nodes
 (computers) or cores of a “compute context” such as a cluster.
 
 
-## Parameters
+### Arguments
 
 
-### function
+##### function
 
 the function to be executed; the nodes or cores on which it
 is run are determined by the currently-active compute context and by the
 other arguments of rx_exec.
 
 
-### args
+##### args
 
 arguments passed to the function FUN each time it is executed.
 Separate argument values can be sent for each computation by wrapping a
 vector or list of argument values in rxElemArg.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object
 
 
-## Returns
+### Returns
 
 If a waiting compute context is active, a list with an element for
 each job, where each element contains the value(s) returned by that job’s
@@ -71,15 +74,15 @@ function call(s). If a non-waiting compute context is active, a jobInfo
 object. See rxGetJobResults.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

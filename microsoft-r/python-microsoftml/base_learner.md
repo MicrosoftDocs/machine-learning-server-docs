@@ -6,7 +6,7 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# BaseLearner
+## BaseLearner
+
+
+### Usage
 
 
 
@@ -37,6 +40,9 @@ class microsoftml.modules.base_learner.BaseLearner(**kwargs)
 base class for all the learners
 
 
+### Usage
+
+
 
 ```
 coef_
@@ -45,6 +51,9 @@ coef_
 
 
 get model coefficients
+
+
+### Usage
 
 
 
@@ -57,6 +66,9 @@ fit(formula, data, ml_transforms=None, ml_transform_vars=None, row_selection=Non
 fit the model
 
 
+### Usage
+
+
 
 ```
 get_algo_args()
@@ -65,6 +77,9 @@ get_algo_args()
 
 
 get algorithm arguments
+
+
+### Usage
 
 
 
@@ -77,6 +92,9 @@ get_model_summary()
 get model summary
 
 
+### Usage
+
+
 
 ```
 get_train_node(**kargs)
@@ -85,6 +103,9 @@ get_train_node(**kargs)
 
 
 get train node
+
+
+### Usage
 
 
 

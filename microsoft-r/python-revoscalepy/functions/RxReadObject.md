@@ -6,7 +6,7 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_read_object
+## rx_read_object
+
+
+### Usage
 
 
 
@@ -35,13 +38,13 @@ revoscalepy.functions.RxReadObject.rx_read_object(src: revoscalepy.datasource.Rx
 
 
 
-## Description
+### Description
 
 Store/Retrieve objects to/from ODBC data sources. The APIs are modelled
 after a simple key value store.
 
 
-## Details
+### Details
 
 rx_write_object stores an object into the ODBC data source. The object
 is identified by a key, and optionally, by a version (key+version). By
@@ -69,69 +72,69 @@ conversions to other types might work, however, they are dependant on
 the ODBC driver and on the underlying package functions.
 
 
-## Parameters
+### Arguments
 
 
-### key
+##### key
 
 a character string identifying the object. The intended use is
 for the key+version to be unique.
 
 
-### value
+##### value
 
 the object being stored into the data source.
 
 
-### version
+##### version
 
 None or a character string which carries the version of the
 object. Combined with key identifies the object.
 
 
-### key_name
+##### key_name
 
 character string specifying the column name for the key in
 the underlying table.
 
 
-### value_name
+##### value_name
 
 character string specifying the column name for the
 objects in the underlying table.
 
 
-### version_name
+##### version_name
 
 character string specifying the column name for the
 version in the underlying table.
 
 
-### serialize
+##### serialize
 
 logical value. Dictates whether the object is to be
 serialized. Only raw values are supported if serialization is off.
 
 
-### compress
+##### compress
 
 character string defining the compression algorithm to use
 for memCompress.
 
 
-### deserialize
+##### deserialize
 
 logical value. Defines whether the object is to be
 de-serialized.
 
 
-### decompress
+##### decompress
 
 character string defining the compression algorithm to
 use for memDecompress.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, rx_write_object first removes the
 key (or the key+version combination) before writing the new value. Even
@@ -139,28 +142,28 @@ when overwrite is False, rx_write_object may still succeed if there is no
 database constraint (or index) enforcing uniqueness.
 
 
-### all
+##### all
 
 logical value. True to remove all objects from the data source.
 If True, the ‘key’ parameter is ignored.
 
 
-## Returns
+### Returns
 
 rx_read_object returns an object. rx_write_object and rx_delete_object
 return logical, True on success. rx_list_keys returns a single column
 data frame containing strings.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

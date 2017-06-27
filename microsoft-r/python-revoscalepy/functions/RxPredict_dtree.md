@@ -6,7 +6,7 @@ description: "Calculate predicted or fitted values for a data set from an rx_dtr
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_predict_rx_dtree
+## rx_predict_rx_dtree
+
+
+### Usage
 
 
 
@@ -35,36 +38,36 @@ revoscalepy.functions.RxPredict.rx_predict_rx_dtree(model_object=None, data: rev
 
 
 
-## Description
+### Description
 
 Calculate predicted or fitted values for a data set from an rx_dtree object.
 
 
-## Parameters
+### Arguments
 
 
-### model_object
+##### model_object
 
 object returned from a call to rx_dtree.
 
 
-### data
+##### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
 
 
-### output_data
+##### output_data
 
 an RxXdfData data source object or existing data frame
 to store predictions.
 
 
-### predict_var_names
+##### predict_var_names
 
 character vector specifying name(s) to give to the prediction results
 
 
-### write_model_vars
+##### write_model_vars
 
 logical value. If True, and the output data set is
 different from the input data set, variables in the model will be written
@@ -74,14 +77,14 @@ the input data set are transformed in the model, the transformed variables
 will also be included.
 
 
-### extra_vars_to_write
+##### extra_vars_to_write
 
 None or character vector of additional variables
 names from the input data or transforms to include in the outData. If
 writeModelVars is True, model variables will be included as well.
 
 
-### append
+##### append
 
 either “none” to create a new files or “rows” to append rows
 to an existing file. If outData exists and append is “none”, the overwrite
@@ -89,46 +92,46 @@ argument must be set to True. You can append only to RxTeradata data source.
 Ignored for data frames.
 
 
-### overwrite
+##### overwrite
 
 logical value. If True, an existing outData will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
-### type
+##### type
 
 the type of prediction desired. Supported choices are: “vector”,
 “prob”, “class”, and “matrix”.
 
 
-### remove_missings
+##### remove_missings
 
 logical value. If True, rows with missing values are removed.
 
 
-### compute_residuals
+##### compute_residuals
 
 logical value. If True, residuals are computed.
 
 
-### residual_type
+##### residual_type
 
 Indicates the type of residual desired.
 
 
-### residual_var_names
+##### residual_var_names
 
 character vector specifying name(s) to give to the residual results.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 number of blocks to read for each chunk of data read
 from the data source. If the data and outData are the same file,
 blocksPerRead must be 1.
 
 
-### report_progress
+##### report_progress
 
 integer value with options:
 0: no progress is reported.
@@ -137,42 +140,42 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-### verbose
+##### verbose
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-### xdf_compression_level
+##### xdf_compression_level
 
 integer in the range of -1 to 9 indicating the
 compression level for the output data if written to an .xdf file.
 
 
-### compute_context
+##### compute_context
 
 a RxComputeContext object for prediction.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a data frame or a data source object of prediction results.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

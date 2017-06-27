@@ -6,7 +6,7 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# revoscalepy
+## revoscalepy
 
 * [computecontext](computecontext.md) 
 
@@ -35,7 +35,7 @@ ms.custom: ""
 * [utils](utils.md) 
 
 
-## computecontext
+### computecontext
 
 * [RxComputeContext](computecontext/RxComputeContext.md) 
 
@@ -56,12 +56,12 @@ ms.custom: ""
 * [RxLocalSeq](computecontext/RxLocalSeq.md) 
 
 
-## etl
+### etl
 
 * [rx_import_datasource](etl/RxImport.md) 
 
 
-## functions
+### functions
 
 * [rx_data_step](functions/RxDataStep.md) 
 
@@ -79,7 +79,7 @@ ms.custom: ""
 
 * [rx_logit](functions/RxLogit.md) 
 
-* [rx_predict](functions/RxPredict.md) 
+* [``rx_predict``: Score using a Microsoft ML Machine Learning model](functions/RxPredict.md) 
 
 * [rx_predict_default](functions/RxPredict_default.md) 
 
@@ -94,6 +94,6 @@ ms.custom: ""
 * [rx_write_object](functions/RxWriteObject.md) 
 
 
-## utils
+### utils
 
 * [RxOptions](utils/RxOptions.md) 

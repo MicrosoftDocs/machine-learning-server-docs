@@ -6,7 +6,7 @@ description: "Creates a local compute context object. Computations using rx_exec
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# RxLocalSeq
+## RxLocalSeq
+
+
+### Usage
 
 
 
@@ -35,28 +38,28 @@ revoscalepy.computecontext.RxLocalSeq.RxLocalSeq()
 
 
 
-## Description
+### Description
 
 Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context.
 
 
-## Parameters
+### Arguments
 
 
-## Returns
+### Returns
 
 object of class RxLocalSeq.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 

@@ -6,7 +6,7 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_cancel_job
+## rx_cancel_job
+
+
+### Usage
 
 
 
@@ -41,15 +44,15 @@ flag can be used to display it.  This function does, however, remove all job-rel
 computing resources including any job results.
 
 
-# Parameters
+## Arguments
 
 
-## job_info
+#### job_info
 
 A job to cancel
 
 
-## console_output
+#### console_output
 
 If ``None`` use the console option that was present when the job was created, if ``True``
 

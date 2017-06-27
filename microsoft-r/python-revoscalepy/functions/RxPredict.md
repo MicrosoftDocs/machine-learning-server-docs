@@ -6,7 +6,7 @@ description: "Generic function to compute predicted values and residuals using"
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_predict
+## ``rx_predict``: Score using a Microsoft ML Machine Learning model
+
+
+### Usage
 
 
 
@@ -35,7 +38,7 @@ revoscalepy.functions.RxPredict.rx_predict(model_object=None, data=None, output_
 
 
 
-## Description
+### Description
 
 Generic function to compute predicted values and residuals using
 rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.
@@ -46,45 +49,45 @@ For specific functions, see:
     rx_predict_rx_dforest for rx_dforest object.
 
 
-## Parameters
+### Arguments
 
 
-### model_object
+##### model_object
 
 object returned from a call to rx_lin_mod, rx_logit, rx_dtree,
 rx_dforest and rx_btrees. Objects with multiple dependent variables are not
 supported.
 
 
-### data
+##### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
 
 
-### output_data
+##### output_data
 
 an RxXdfData data source object or existing data frame to store predictions.
 
 
-### kwargs
+##### kwargs
 
 additional parameters
 
 
-## Returns
+### Returns
 
 a data frame or a data source object of prediction results.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 
-## Example
+### Example
 
 
 
@@ -98,6 +101,20 @@ mort_df = rx_data_step(mort_ds)
 
 lin_mod = rx_lin_mod("creditScore ~ yearsEmploy", mort_df)
 pred = rx_predict(lin_mod, data = mort_df)
-pred.head()
+print(pred.head())
+```
+
+
+Output:
+
+
+
+```
+   creditScore_Pred
+0        700.089114
+1        699.834355
+2        699.783403
+3        699.681499
+4        699.783403
 ```
 

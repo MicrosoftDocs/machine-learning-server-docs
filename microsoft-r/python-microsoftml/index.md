@@ -6,7 +6,7 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# modules
+## modules
 
 * [BaseLearner](base_learner.md) 
 
@@ -45,6 +45,8 @@ ms.custom: ""
 * [extract_pixels](extract_pixels.md) 
 
 * [featurize_image](featurize_image.md) 
+
+* [featurize_text](featurize_text.md) 
 
 * [get_sentiment](get_sentiment.md) 
 
@@ -72,7 +74,7 @@ ms.custom: ""
 
 * [rx_oneclass_svm](rx_oneclass_svm.md) 
 
-* [rx_predict](rx_predict.md) 
+* [``rx_predict``: Score using a Microsoft ML Machine Learning model](rx_predict.md) 
 
 * [select_columns](select_columns.md) 
 
